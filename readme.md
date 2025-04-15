@@ -20,11 +20,11 @@ The **ISO20022 Playset** is a swiss army knife for experimentation with ISO20022
 
 Here are some things it can do out of the box:
 
-* **Parse messages**: Messages can be parsed from a variety of sources.
-* **Create and modify messages**: Messages can be created with user-supplied data, or fields in existing messages can be modified.
-* **Validate messages**: Messages can be validated against the ISO20022 schema.
-* **Generate sample messages**: Schema-compliant messages of a specified type can be generated with synthetic data.
-* **Serialise and deserialise messages**: *coming soon!*
+* [**Parse messages**](#message-parsing): Messages can be parsed from a variety of sources.
+* [**Create and modify messages**](#message-editing): Messages can be created with user-supplied data, or fields in existing messages can be modified.
+* [**Validate messages**](#message-validation): Messages can be validated against the ISO20022 schema.
+* [**Generate sample messages**](#message-generation): Schema-compliant messages of a specified type can be generated with synthetic data.
+* [**Serialise and deserialise messages**](#message-serialisationdeserialisation): *coming soon!*
 
 ## Quickstart
 
