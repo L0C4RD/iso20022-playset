@@ -1,6 +1,4 @@
-![Banner](images/banner.png)
-
-![Banner](../logo/banner.png)
+![Banner](banner.png)
 
 <details>
 <summary>🧭 Quick navigation links </summary>
