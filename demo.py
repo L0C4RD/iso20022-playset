@@ -246,4 +246,4 @@ if __name__ == "__main__":
 	elif demo_number == "4":
 		demo_4()
 	else:
-		print("Unknown demo id {demo_number}")
+		print(f"Unknown demo id {demo_number}")
