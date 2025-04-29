@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?valid true?>
+<?description Sample Message?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema‑instance"
+xmlns="urn:iso:std:iso:20022:tech:xsd:pain.008.001.03">
+  <CstmrDrctDbtInitn>
+    <GrpHdr>
+      <MsgId>CAVAY1234</MsgId>
+      <CreDtTm>2013‑06‑02T14:25:00</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>985</CtrlSum>
+      <InitgPty>
+        <Nm>Smith</Nm>
+        <PstlAdr>
+          <StrtNm>Virginia Lane</StrtNm>
+          <BldgNb>3</BldgNb>
+          <PstCd>W12 8QT</PstCd>
+          <TwnNm>London</TwnNm>
+          <Ctry>GB</Ctry>
+        </PstlAdr>
+        <CtctDtls>
+          <Nm>J. Thompson</Nm>
+          <EmailAdr>Thompson@Smith.com</EmailAdr>
+        </CtctDtls>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>CAVAY/88683</PmtInfId>
+      <PmtMtd>DD</PmtMtd>
+      <BtchBookg>false</BtchBookg>
+      <ReqdColltnDt>2013‑07‑13</ReqdColltnDt>
+      <Cdtr>
+        <Nm>Smith</Nm>
+        <PstlAdr>
+          <StrtNm>Virginia Lane</StrtNm>
+          <BldgNb>3</BldgNb>
+          <PstCd>W12 8QT</PstCd>
+          <TwnNm>London</TwnNm>
+          <Ctry>GB</Ctry>
+        </PstlAdr>
+      </Cdtr>
+      <CdtrAcct>
+        <Id>
+          <Othr>
+            <Id>789123</Id>
+          </Othr>
+        </Id>
+      </CdtrAcct>
+      <CdtrAgt>
+        <FinInstnId>
+          <BICFI>AAAAUS29</BICFI>
+        </FinInstnId>
+      </CdtrAgt>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>AY090327/456</EndToEndId>
+        </PmtId>
+        <PmtTpInf>
+          <InstrPrty>NORM</InstrPrty>
+          <SvcLvl>
+            <Prtry>VERPA‑1</Prtry>
+          </SvcLvl>
+          <SeqTp>OOFF</SeqTp>
+        </PmtTpInf>
+        <InstdAmt Ccy="GBP">985</InstdAmt>
+        <ChrgBr>SHAR</ChrgBr>
+        <DrctDbtTx>
+          <PreNtfctnId>Smith2435/2013</PreNtfctnId>
+          <PreNtfctnDt>2013‑06‑08</PreNtfctnDt>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <BICFI>CCCCUS27</BICFI>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>Lee</Nm>
+          <PstlAdr>
+            <StrtNm>Cross Road</StrtNm>
+            <BldgNb>45</BldgNb>
+            <PstCd>E56 7HY</PstCd>
+            <TwnNm>London</TwnNm>
+            <Ctry>GB</Ctry>
+          </PstlAdr>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <Othr>
+              <Id>789101</Id>
+            </Othr>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>CAR INSURANCE PREMIUM</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+    </PmtInf>
+  </CstmrDrctDbtInitn>
+</Document>

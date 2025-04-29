@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?valid true?>
+<?description Sample CustomerPaymentStatusReport to acknowledge that the message passed 
+validation and was accepted based on the customer profile.?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema‑instance" 
+xmlns="urn:iso:std:iso:20022:tech:xsd:pain.002.001.14">
+ <CstmrPmtStsRpt>
+  <GrpHdr>
+   <MsgId>BBBB/120928-PSR/001</MsgId>
+   <CreDtTm>2013-09-28T14:09:00</CreDtTm>
+   <InitgPty>
+    <Nm>Smith</Nm>
+    <PstlAdr>
+     <StrtNm>Virginia Lane</StrtNm>
+     <BldgNb>3</BldgNb>
+     <PstCd>W12 8QT</PstCd>
+     <TwnNm>London</TwnNm>
+     <Ctry>GB</Ctry>
+    </PstlAdr>
+   </InitgPty>
+   <DbtrAgt>
+    <FinInstnId>
+     <BICFI>AAAAUS29</BICFI>
+    </FinInstnId>
+   </DbtrAgt>
+  </GrpHdr>
+  <OrgnlGrpInfAndSts>
+   <OrgnlMsgId>CAVAY1234</OrgnlMsgId>
+   <OrgnlMsgNmId>pain.008.001.03</OrgnlMsgNmId>
+   <OrgnlCreDtTm>2013-09-28T14:07:00</OrgnlCreDtTm>
+   <OrgnlNbOfTxs>1</OrgnlNbOfTxs>
+   <OrgnlCtrlSum>985</OrgnlCtrlSum>
+   <GrpSts>ACCP</GrpSts>
+  </OrgnlGrpInfAndSts>
+ </CstmrPmtStsRpt>
+</Document>

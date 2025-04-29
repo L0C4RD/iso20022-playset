@@ -15,7 +15,7 @@ __node_info__ = __namedtuple__("__node_info__", ["ns", "msgtype", "tagname", "ms
 def parse_file(filepath, msgtype=None):
 
 	try:
-		tree = ETree.ElementTree(ET.parse(filepath))
+		tree = ET.parse(filepath)
 	except Exception as e:
 		raise iso20022.ParseError(str(e))
 

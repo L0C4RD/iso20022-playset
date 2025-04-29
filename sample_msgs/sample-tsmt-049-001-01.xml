@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?valid true?>
+<?description Sample CustomerPaymentStatusReport to acknowledge that the message passed 
+validation and was accepted based on the customer profile.?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema‑instance" 
+xmlns="urn:iso:std:iso:20022:tech:xsd:tsmt.049.001.01">
+ <RoleAndBaselnAccptnc>
+  <AccptncId>
+   <Id>Acceptance_Id_sample1</Id>
+   <CreDtTm>2013-09-28T14:09:00Z</CreDtTm>
+  </AccptncId>
+  <RltdMsgRef>
+   <Id>Acceptance_Id_sample2</Id>
+   <CreDtTm>2013-09-28T14:10:00Z</CreDtTm>
+  </RltdMsgRef>
+  <TxId>
+   <Id>Acceptance_Id_sample3</Id>
+  </TxId>
+ </RoleAndBaselnAccptnc>
+</Document>

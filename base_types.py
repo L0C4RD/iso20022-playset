@@ -108,7 +108,8 @@ class _BaseElemType(object):
 		xml = (indent * indentlevel) + "<" + " ".join(xml_toks)
 
 		if contents is not None:
-			xml += ">\n" + contents + f"{'\n' if contents else ''}{(indent * indentlevel)}</{self.tag()}>"
+			end_bit = '\n' if contents else ''
+			xml += ">\n" + contents + f"{end_bit}{(indent * indentlevel)}</{self.tag()}>"
 		else:
 			xml += "/>"
 
