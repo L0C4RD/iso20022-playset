@@ -80,7 +80,58 @@ print(isomsg.RoleAndBaselnAccptnc.TxId.Id.get())
 
 ### Message editing
 
-#### Create message from stratch
+#### Create message from scratch
+
+```python
+isomsg = iso20022.PAIN_002_001_14.Document("Document")
+
+isomsg.CstmrPmtStsRpt = iso20022.auto()
+isomsg.CstmrPmtStsRpt.GrpHdr = iso20022.auto()
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts = iso20022.auto()
+
+isomsg.CstmrPmtStsRpt.GrpHdr.MsgId = iso20022.auto()
+isomsg.CstmrPmtStsRpt.GrpHdr.MsgId.set("Example header msgid")
+
+isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm = iso20022.auto()
+isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm.set("1970-01-01T12:00:00")
+
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId = iso20022.auto()
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId.set("Example original msgid")
+
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022.auto()
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.set("pain.001.001.02")
+
+print(isomsg.to_xml())
+```
+
+##### Output
+
+```xml
+<Document>
+	<CstmrPmtStsRpt>
+		<OrgnlGrpInfAndSts>
+			<OrgnlMsgId>
+				Example original msgid
+			</OrgnlMsgId>
+			<OrgnlMsgNmId>
+				pain.001.001.02
+			</OrgnlMsgNmId>
+		</OrgnlGrpInfAndSts>
+		<GrpHdr>
+			<CreDtTm>
+				1970-01-01T12:00:00
+			</CreDtTm>
+			<MsgId>
+				Example header msgid
+			</MsgId>
+		</GrpHdr>
+	</CstmrPmtStsRpt>
+</Document>
+```
+
+#### Create message from scratch (manually defined fields)
+
+Instead of using `auto()` as above, it is possible to manually define fields, as shown below.
 
 ```python
 isomsg = iso20022.PAIN_002_001_14.Document("Document")
@@ -102,6 +153,31 @@ isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022.Max35Text("Orgnl
 isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.set("pain.001.001.02")
 
 print(isomsg.to_xml())
+```
+
+##### Output
+
+```xml
+<Document>
+	<CstmrPmtStsRpt>
+		<OrgnlGrpInfAndSts>
+			<OrgnlMsgId>
+				Example original msgid
+			</OrgnlMsgId>
+			<OrgnlMsgNmId>
+				pain.001.001.02
+			</OrgnlMsgNmId>
+		</OrgnlGrpInfAndSts>
+		<GrpHdr>
+			<CreDtTm>
+				1970-01-01T12:00:00
+			</CreDtTm>
+			<MsgId>
+				Example header msgid
+			</MsgId>
+		</GrpHdr>
+	</CstmrPmtStsRpt>
+</Document>
 ```
 
 #### Update message field
@@ -137,7 +213,36 @@ xml_string = """
 isomsg = iso20022.parse_xml(xml_string)
 isomsg.RsltnOfInvstgtn.Sts.RjctdMod[0].Prtry.set("Some other string")
 print(isomsg.to_xml())
+```
 
+##### Output
+
+```xml
+    <Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.029.001.13">
+        <RsltnOfInvstgtn>
+            <Assgnmt>
+                <Id>RES123</Id>
+                <Assgnr>
+                    <Pty>
+                        <Nm>AssigningBank</Nm>
+                    </Pty>
+                </Assgnr>
+                <Assgne>
+                    <Pty>
+                        <Nm>ReceivingBank</Nm>
+                    </Pty>
+                </Assgne>
+                <CreDtTm>1970-01-01T12:00:00</CreDtTm>
+            </Assgnmt>
+            <Sts>
+                <RjctdMod>
+                    <Prtry>
+                        Some other string
+                    </Prtry>
+                </RjctdMod>
+            </Sts>
+        </RsltnOfInvstgtn>
+    </Document>
 ```
 
 ### Message validation

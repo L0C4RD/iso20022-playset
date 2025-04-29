@@ -3,6 +3,7 @@
 
 import re
 import defusedxml.ElementTree as ET
+import xml.etree.ElementTree as ETree
 from collections import namedtuple as __namedtuple__
 
 import iso20022
@@ -14,7 +15,7 @@ __node_info__ = __namedtuple__("__node_info__", ["ns", "msgtype", "tagname", "ms
 def parse_file(filepath, msgtype=None):
 
 	try:
-		tree = ET.parse(filepath)
+		tree = ETree.ElementTree(ET.parse(filepath))
 	except Exception as e:
 		raise iso20022.ParseError(str(e))
 
@@ -23,7 +24,7 @@ def parse_file(filepath, msgtype=None):
 def parse_xml(xml, msgtype=None):
 
 	try:
-		tree = ET.ElementTree(ET.fromstring(xml))
+		tree = ETree.ElementTree(ET.fromstring(xml))
 	except Exception as e:
 		raise iso20022.ParseError(str(e))
 

@@ -12,6 +12,9 @@ FieldEntry = namedtuple("FieldEntry", ["name", "type", "min", "max", "mutex_grou
 
 AttributeEntry = namedtuple("AttributeEntry", ["name", "type", "required"])
 
+class auto(object):
+	pass
+
 class _BaseElemType(object):
 
 	_tag = None
@@ -188,6 +191,27 @@ class _BaseFieldType(_BaseElemType):
 			raise ValueError(f"{self._whoami()} : Cannot contain data (Contains data {data})")
 		"""
 
+	def make_default(self, fieldname):
+
+		#Does this field exist?
+		matching_fields = { f for f in self._field_defs if f.name == fieldname }
+		if len(matching_fields) == 0:
+			raise ValueError(f'No field matching "{fieldname}"')
+		elif len(matching_fields) > 1:
+			raise ValueError(f'Multiple fields matching "{fieldname}"')
+		else:
+
+			field_def = matching_fields.pop()
+
+			if field_def.type is None:
+				f = None
+			elif field_def.array:
+				f = [field_def.type(fieldname),]
+			else:
+				f = field_def.type(fieldname)
+			
+			return f
+
 	def _do_validation(self, path_in=None):
 
 		seen_mutex_groups = set()
@@ -220,7 +244,7 @@ class _BaseFieldType(_BaseElemType):
 				if field_def.max is not None and field_length > field_def.max:
 					raise ValidateError(f"{self._whoami()} : length of {field_def.name} has upper size bound {field_def.max}, but is defined as length {field_length}.")
 			else:
-				# (This is basically checking that mandatory fields  are defined)
+				# (This is basically checking that mandatory fields are defined)
 				if field_def.min > 0 and field is None:
 					raise ValidateError(f"{self._whoami()} : Missing required field {field_def.name}")
 
@@ -295,7 +319,6 @@ class _BaseFieldType(_BaseElemType):
 				getattr(self, field_def.name).append(new_item)
 			else:
 				setattr(self, field_def.name, new_item)
-
 
 	def _do_xml(self, indentlevel=0, indent="\t"):
 
