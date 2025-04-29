@@ -237,7 +237,7 @@ if __name__ == "__main__":
 		demo_2()
 		demo_3()
 		demo_4()
-	if demo_number == "1":
+	elif demo_number == "1":
 		demo_1()
 	elif demo_number == "2":
 		demo_2()
