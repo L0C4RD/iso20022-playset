@@ -1,6 +1,6 @@
 from . import base_types
-from .LimitType1Choice import LimitType1Choice
 from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .LimitType1Choice import LimitType1Choice
 from .AccountIdentification4Choice import AccountIdentification4Choice
 from .SystemIdentification2Choice import SystemIdentification2Choice
 
@@ -13,7 +13,7 @@ class LimitIdentification9(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != auto else self.make_default("SysId")
+		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
 
 	@SysId.deleter
 	def SysId(self):
@@ -26,7 +26,7 @@ class LimitIdentification9(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -39,7 +39,7 @@ class LimitIdentification9(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -52,7 +52,7 @@ class LimitIdentification9(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):

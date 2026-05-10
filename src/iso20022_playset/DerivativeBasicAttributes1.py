@@ -11,7 +11,7 @@ class DerivativeBasicAttributes1(base_types._BaseFieldType):
 
 	@IntrstInclInPric.setter
 	def IntrstInclInPric(self, value):
-		self._IntrstInclInPric = value if type(value) != auto else self.make_default("IntrstInclInPric")
+		self._IntrstInclInPric = value if type(value) != base_types.auto else self.make_default("IntrstInclInPric")
 
 	@IntrstInclInPric.deleter
 	def IntrstInclInPric(self):
@@ -24,7 +24,7 @@ class DerivativeBasicAttributes1(base_types._BaseFieldType):
 
 	@NtnlCcyAndAmt.setter
 	def NtnlCcyAndAmt(self, value):
-		self._NtnlCcyAndAmt = value if type(value) != auto else self.make_default("NtnlCcyAndAmt")
+		self._NtnlCcyAndAmt = value if type(value) != base_types.auto else self.make_default("NtnlCcyAndAmt")
 
 	@NtnlCcyAndAmt.deleter
 	def NtnlCcyAndAmt(self):

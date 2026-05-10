@@ -12,7 +12,7 @@ class PAIN_009_001_08():
 
 		@MndtInitnReq.setter
 		def MndtInitnReq(self, value):
-			self._MndtInitnReq = value if type(value) != auto else self.make_default("MndtInitnReq")
+			self._MndtInitnReq = value if type(value) != base_types.auto else self.make_default("MndtInitnReq")
 
 		@MndtInitnReq.deleter
 		def MndtInitnReq(self):

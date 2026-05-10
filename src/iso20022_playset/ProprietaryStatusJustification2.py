@@ -11,7 +11,7 @@ class ProprietaryStatusJustification2(base_types._BaseFieldType):
 
 	@PrtryStsRsn.setter
 	def PrtryStsRsn(self, value):
-		self._PrtryStsRsn = value if type(value) != auto else self.make_default("PrtryStsRsn")
+		self._PrtryStsRsn = value if type(value) != base_types.auto else self.make_default("PrtryStsRsn")
 
 	@PrtryStsRsn.deleter
 	def PrtryStsRsn(self):
@@ -24,7 +24,7 @@ class ProprietaryStatusJustification2(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):

@@ -12,7 +12,7 @@ class CAIN_018_001_03():
 
 		@VrfctnInitn.setter
 		def VrfctnInitn(self, value):
-			self._VrfctnInitn = value if type(value) != auto else self.make_default("VrfctnInitn")
+			self._VrfctnInitn = value if type(value) != base_types.auto else self.make_default("VrfctnInitn")
 
 		@VrfctnInitn.deleter
 		def VrfctnInitn(self):

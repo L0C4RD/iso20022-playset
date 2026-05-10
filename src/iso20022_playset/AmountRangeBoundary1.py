@@ -1,6 +1,6 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .YesNoIndicator import YesNoIndicator
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class AmountRangeBoundary1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AmountRangeBoundary1(base_types._BaseFieldType):
 
 	@Incl.setter
 	def Incl(self, value):
-		self._Incl = value if type(value) != auto else self.make_default("Incl")
+		self._Incl = value if type(value) != base_types.auto else self.make_default("Incl")
 
 	@Incl.deleter
 	def Incl(self):
@@ -24,7 +24,7 @@ class AmountRangeBoundary1(base_types._BaseFieldType):
 
 	@BdryAmt.setter
 	def BdryAmt(self, value):
-		self._BdryAmt = value if type(value) != auto else self.make_default("BdryAmt")
+		self._BdryAmt = value if type(value) != base_types.auto else self.make_default("BdryAmt")
 
 	@BdryAmt.deleter
 	def BdryAmt(self):

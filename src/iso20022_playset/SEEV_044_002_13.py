@@ -12,7 +12,7 @@ class SEEV_044_002_13():
 
 		@CorpActnMvmntPrlimryAdvcCxlAdvc.setter
 		def CorpActnMvmntPrlimryAdvcCxlAdvc(self, value):
-			self._CorpActnMvmntPrlimryAdvcCxlAdvc = value if type(value) != auto else self.make_default("CorpActnMvmntPrlimryAdvcCxlAdvc")
+			self._CorpActnMvmntPrlimryAdvcCxlAdvc = value if type(value) != base_types.auto else self.make_default("CorpActnMvmntPrlimryAdvcCxlAdvc")
 
 		@CorpActnMvmntPrlimryAdvcCxlAdvc.deleter
 		def CorpActnMvmntPrlimryAdvcCxlAdvc(self):

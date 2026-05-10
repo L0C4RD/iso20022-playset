@@ -1,20 +1,33 @@
 from . import base_types
+from .ReportHeader7 import ReportHeader7
+from .CaseAssignment6 import CaseAssignment6
 from .SupplementaryData1 import SupplementaryData1
 from .CaseForwardingNotification3 import CaseForwardingNotification3
-from .CaseAssignment6 import CaseAssignment6
-from .ReportHeader7 import ReportHeader7
 from .Case6 import Case6
 
 class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Ntfctn", "_Assgnmt", "_Hdr", "_Case"]
+	__slots__ = ["_Case", "_SplmtryData", "_Ntfctn", "_Hdr", "_Assgnmt"]
+	@property
+	def Case(self):
+		return self._Case
+
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -27,7 +40,7 @@ class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 
 	@Ntfctn.setter
 	def Ntfctn(self, value):
-		self._Ntfctn = value if type(value) != auto else self.make_default("Ntfctn")
+		self._Ntfctn = value if type(value) != base_types.auto else self.make_default("Ntfctn")
 
 	@Ntfctn.deleter
 	def Ntfctn(self):
@@ -35,25 +48,12 @@ class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 		self._Ntfctn = None
 
 	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -61,23 +61,23 @@ class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def Case(self):
-		return self._Case
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
 
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ntfctn', type=CaseForwardingNotification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=ReportHeader7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 	))
 

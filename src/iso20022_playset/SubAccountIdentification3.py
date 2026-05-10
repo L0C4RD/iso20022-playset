@@ -1,18 +1,18 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
 from .AggregateBalanceInformation3 import AggregateBalanceInformation3
+from .YesNoIndicator import YesNoIndicator
 from .AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 
 class SubAccountIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_FngbInd", "_ActvtyInd", "_BalForSubAcct"]
+	__slots__ = ["_Id", "_BalForSubAcct", "_ActvtyInd", "_FngbInd"]
 	@property
 	def Id(self):
 		return self._Id
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -20,17 +20,17 @@ class SubAccountIdentification3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def FngbInd(self):
-		return self._FngbInd
+	def BalForSubAcct(self):
+		return self._BalForSubAcct
 
-	@FngbInd.setter
-	def FngbInd(self, value):
-		self._FngbInd = value if type(value) != auto else self.make_default("FngbInd")
+	@BalForSubAcct.setter
+	def BalForSubAcct(self, value):
+		self._BalForSubAcct = value if type(value) != base_types.auto else self.make_default("BalForSubAcct")
 
-	@FngbInd.deleter
-	def FngbInd(self):
-		del self._FngbInd
-		self._FngbInd = None
+	@BalForSubAcct.deleter
+	def BalForSubAcct(self):
+		del self._BalForSubAcct
+		self._BalForSubAcct = None
 
 	@property
 	def ActvtyInd(self):
@@ -38,7 +38,7 @@ class SubAccountIdentification3(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
@@ -46,22 +46,22 @@ class SubAccountIdentification3(base_types._BaseFieldType):
 		self._ActvtyInd = None
 
 	@property
-	def BalForSubAcct(self):
-		return self._BalForSubAcct
+	def FngbInd(self):
+		return self._FngbInd
 
-	@BalForSubAcct.setter
-	def BalForSubAcct(self, value):
-		self._BalForSubAcct = value if type(value) != auto else self.make_default("BalForSubAcct")
+	@FngbInd.setter
+	def FngbInd(self, value):
+		self._FngbInd = value if type(value) != base_types.auto else self.make_default("FngbInd")
 
-	@BalForSubAcct.deleter
-	def BalForSubAcct(self):
-		del self._BalForSubAcct
-		self._BalForSubAcct = None
+	@FngbInd.deleter
+	def FngbInd(self):
+		del self._FngbInd
+		self._FngbInd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

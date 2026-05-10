@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DocumentNumber6Choice import DocumentNumber6Choice
+from .Max35Text import Max35Text
 
 class DocumentIdentification55(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DocumentIdentification55(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
 	@Ref.deleter
 	def Ref(self):
@@ -24,7 +24,7 @@ class DocumentIdentification55(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
 
 	@MsgNb.deleter
 	def MsgNb(self):

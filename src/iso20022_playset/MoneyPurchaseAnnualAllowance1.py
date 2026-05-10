@@ -11,7 +11,7 @@ class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
 	@TrggrdDt.setter
 	def TrggrdDt(self, value):
-		self._TrggrdDt = value if type(value) != auto else self.make_default("TrggrdDt")
+		self._TrggrdDt = value if type(value) != base_types.auto else self.make_default("TrggrdDt")
 
 	@TrggrdDt.deleter
 	def TrggrdDt(self):
@@ -24,7 +24,7 @@ class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
 	@Trggrd.setter
 	def Trggrd(self, value):
-		self._Trggrd = value if type(value) != auto else self.make_default("Trggrd")
+		self._Trggrd = value if type(value) != base_types.auto else self.make_default("Trggrd")
 
 	@Trggrd.deleter
 	def Trggrd(self):

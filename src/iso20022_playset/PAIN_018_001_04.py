@@ -12,7 +12,7 @@ class PAIN_018_001_04():
 
 		@MndtSspnsnReq.setter
 		def MndtSspnsnReq(self, value):
-			self._MndtSspnsnReq = value if type(value) != auto else self.make_default("MndtSspnsnReq")
+			self._MndtSspnsnReq = value if type(value) != base_types.auto else self.make_default("MndtSspnsnReq")
 
 		@MndtSspnsnReq.deleter
 		def MndtSspnsnReq(self):

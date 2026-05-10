@@ -1,7 +1,7 @@
 from . import base_types
 from .BICFIDec2014Identifier import BICFIDec2014Identifier
-from .GenericIdentification84 import GenericIdentification84
 from .NameAndAddress12 import NameAndAddress12
+from .GenericIdentification84 import GenericIdentification84
 
 class PartyIdentification147Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PartyIdentification147Choice(base_types._BaseFieldType):
 
 	@BICFI.setter
 	def BICFI(self, value):
-		self._BICFI = value if type(value) != auto else self.make_default("BICFI")
+		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
 
 	@BICFI.deleter
 	def BICFI(self):
@@ -25,7 +25,7 @@ class PartyIdentification147Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
 	@PrtryId.deleter
 	def PrtryId(self):
@@ -38,7 +38,7 @@ class PartyIdentification147Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):

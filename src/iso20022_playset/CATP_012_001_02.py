@@ -12,7 +12,7 @@ class CATP_012_001_02():
 
 		@ATMDpstReq.setter
 		def ATMDpstReq(self, value):
-			self._ATMDpstReq = value if type(value) != auto else self.make_default("ATMDpstReq")
+			self._ATMDpstReq = value if type(value) != base_types.auto else self.make_default("ATMDpstReq")
 
 		@ATMDpstReq.deleter
 		def ATMDpstReq(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
 from .ActiveCurrencyAndAmountRange3 import ActiveCurrencyAndAmountRange3
+from .ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
 
 class ActiveAmountRange3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ActiveAmountRange3Choice(base_types._BaseFieldType):
 
 	@ImpldCcyAndAmtRg.setter
 	def ImpldCcyAndAmtRg(self, value):
-		self._ImpldCcyAndAmtRg = value if type(value) != auto else self.make_default("ImpldCcyAndAmtRg")
+		self._ImpldCcyAndAmtRg = value if type(value) != base_types.auto else self.make_default("ImpldCcyAndAmtRg")
 
 	@ImpldCcyAndAmtRg.deleter
 	def ImpldCcyAndAmtRg(self):
@@ -24,7 +24,7 @@ class ActiveAmountRange3Choice(base_types._BaseFieldType):
 
 	@CcyAndAmtRg.setter
 	def CcyAndAmtRg(self, value):
-		self._CcyAndAmtRg = value if type(value) != auto else self.make_default("CcyAndAmtRg")
+		self._CcyAndAmtRg = value if type(value) != base_types.auto else self.make_default("CcyAndAmtRg")
 
 	@CcyAndAmtRg.deleter
 	def CcyAndAmtRg(self):

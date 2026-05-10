@@ -11,7 +11,7 @@ class PostTradeRiskReductionIdentifier1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class PostTradeRiskReductionIdentifier1(base_types._BaseFieldType):
 
 	@Strr.setter
 	def Strr(self, value):
-		self._Strr = value if type(value) != auto else self.make_default("Strr")
+		self._Strr = value if type(value) != base_types.auto else self.make_default("Strr")
 
 	@Strr.deleter
 	def Strr(self):

@@ -12,7 +12,7 @@ class SEEV_002_001_10():
 
 		@MtgCxl.setter
 		def MtgCxl(self, value):
-			self._MtgCxl = value if type(value) != auto else self.make_default("MtgCxl")
+			self._MtgCxl = value if type(value) != base_types.auto else self.make_default("MtgCxl")
 
 		@MtgCxl.deleter
 		def MtgCxl(self):

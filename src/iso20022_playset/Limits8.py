@@ -10,7 +10,7 @@ class Limits8(base_types._BaseFieldType):
 
 	@CurLmt.setter
 	def CurLmt(self, value):
-		self._CurLmt = value if type(value) != auto else self.make_default("CurLmt")
+		self._CurLmt = value if type(value) != base_types.auto else self.make_default("CurLmt")
 
 	@CurLmt.deleter
 	def CurLmt(self):
@@ -23,7 +23,7 @@ class Limits8(base_types._BaseFieldType):
 
 	@DfltLmt.setter
 	def DfltLmt(self, value):
-		self._DfltLmt = value if type(value) != auto else self.make_default("DfltLmt")
+		self._DfltLmt = value if type(value) != base_types.auto else self.make_default("DfltLmt")
 
 	@DfltLmt.deleter
 	def DfltLmt(self):

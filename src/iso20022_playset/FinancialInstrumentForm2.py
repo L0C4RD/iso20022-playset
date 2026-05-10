@@ -11,7 +11,7 @@ class FinancialInstrumentForm2(base_types._BaseFieldType):
 
 	@LglForm.setter
 	def LglForm(self, value):
-		self._LglForm = value if type(value) != auto else self.make_default("LglForm")
+		self._LglForm = value if type(value) != base_types.auto else self.make_default("LglForm")
 
 	@LglForm.deleter
 	def LglForm(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentForm2(base_types._BaseFieldType):
 
 	@BookgApprnc.setter
 	def BookgApprnc(self, value):
-		self._BookgApprnc = value if type(value) != auto else self.make_default("BookgApprnc")
+		self._BookgApprnc = value if type(value) != base_types.auto else self.make_default("BookgApprnc")
 
 	@BookgApprnc.deleter
 	def BookgApprnc(self):

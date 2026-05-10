@@ -11,7 +11,7 @@ class Forms1(base_types._BaseFieldType):
 
 	@ApplForm.setter
 	def ApplForm(self, value):
-		self._ApplForm = value if type(value) != auto else self.make_default("ApplForm")
+		self._ApplForm = value if type(value) != base_types.auto else self.make_default("ApplForm")
 
 	@ApplForm.deleter
 	def ApplForm(self):
@@ -24,7 +24,7 @@ class Forms1(base_types._BaseFieldType):
 
 	@SgntrTp.setter
 	def SgntrTp(self, value):
-		self._SgntrTp = value if type(value) != auto else self.make_default("SgntrTp")
+		self._SgntrTp = value if type(value) != base_types.auto else self.make_default("SgntrTp")
 
 	@SgntrTp.deleter
 	def SgntrTp(self):

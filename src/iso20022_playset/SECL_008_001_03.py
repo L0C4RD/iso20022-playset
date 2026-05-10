@@ -12,7 +12,7 @@ class SECL_008_001_03():
 
 		@BuyInRspn.setter
 		def BuyInRspn(self, value):
-			self._BuyInRspn = value if type(value) != auto else self.make_default("BuyInRspn")
+			self._BuyInRspn = value if type(value) != base_types.auto else self.make_default("BuyInRspn")
 
 		@BuyInRspn.deleter
 		def BuyInRspn(self):

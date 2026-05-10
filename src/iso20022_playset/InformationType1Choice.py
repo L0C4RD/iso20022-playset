@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .InformationType1Code import InformationType1Code
+from .Max140Text import Max140Text
 
 class InformationType1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class InformationType1Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -24,7 +24,7 @@ class InformationType1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

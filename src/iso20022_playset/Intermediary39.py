@@ -1,9 +1,9 @@
 from . import base_types
-from .OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 from .PartyIdentification113 import PartyIdentification113
 from .Account22 import Account22
-from .TradingCapacity8Code import TradingCapacity8Code
+from .OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 from .InvestmentFundRole2Choice import InvestmentFundRole2Choice
+from .TradingCapacity8Code import TradingCapacity8Code
 
 class Intermediary39(base_types._BaseFieldType):
 
@@ -14,7 +14,7 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@TradgPtyCpcty.setter
 	def TradgPtyCpcty(self, value):
-		self._TradgPtyCpcty = value if type(value) != auto else self.make_default("TradgPtyCpcty")
+		self._TradgPtyCpcty = value if type(value) != base_types.auto else self.make_default("TradgPtyCpcty")
 
 	@TradgPtyCpcty.deleter
 	def TradgPtyCpcty(self):
@@ -27,7 +27,7 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@Role.setter
 	def Role(self, value):
-		self._Role = value if type(value) != auto else self.make_default("Role")
+		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
 
 	@Role.deleter
 	def Role(self):
@@ -40,7 +40,7 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -53,7 +53,7 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
 	@Acct.deleter
 	def Acct(self):
@@ -66,7 +66,7 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@OrdrOrgtrElgblty.setter
 	def OrdrOrgtrElgblty(self, value):
-		self._OrdrOrgtrElgblty = value if type(value) != auto else self.make_default("OrdrOrgtrElgblty")
+		self._OrdrOrgtrElgblty = value if type(value) != base_types.auto else self.make_default("OrdrOrgtrElgblty")
 
 	@OrdrOrgtrElgblty.deleter
 	def OrdrOrgtrElgblty(self):

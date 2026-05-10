@@ -6,32 +6,19 @@ from .OriginalNotification16 import OriginalNotification16
 
 class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_OrgnlNtfctn", "_GrpHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_OrgnlNtfctn", "_CxlRsn"]
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
-	@property
-	def OrgnlNtfctn(self):
-		return self._OrgnlNtfctn
-
-	@OrgnlNtfctn.setter
-	def OrgnlNtfctn(self, value):
-		self._OrgnlNtfctn = value if type(value) != auto else self.make_default("OrgnlNtfctn")
-
-	@OrgnlNtfctn.deleter
-	def OrgnlNtfctn(self):
-		del self._OrgnlNtfctn
-		self._OrgnlNtfctn = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def GrpHdr(self):
@@ -39,7 +26,7 @@ class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
@@ -47,22 +34,35 @@ class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrgnlNtfctn(self):
+		return self._OrgnlNtfctn
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OrgnlNtfctn.setter
+	def OrgnlNtfctn(self, value):
+		self._OrgnlNtfctn = value if type(value) != base_types.auto else self.make_default("OrgnlNtfctn")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrgnlNtfctn.deleter
+	def OrgnlNtfctn(self):
+		del self._OrgnlNtfctn
+		self._OrgnlNtfctn = None
+
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=NotificationCancellationReason2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlNtfctn', type=OriginalNotification16, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader117, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader117, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNtfctn', type=OriginalNotification16, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=NotificationCancellationReason2, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification176 import GenericIdentification176
 from .TerminalManagementDataSet34 import TerminalManagementDataSet34
+from .GenericIdentification176 import GenericIdentification176
 
 class ManagementPlan13(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ManagementPlan13(base_types._BaseFieldType):
 
 	@POIId.setter
 	def POIId(self, value):
-		self._POIId = value if type(value) != auto else self.make_default("POIId")
+		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
 
 	@POIId.deleter
 	def POIId(self):
@@ -24,7 +24,7 @@ class ManagementPlan13(base_types._BaseFieldType):
 
 	@TermnlMgrId.setter
 	def TermnlMgrId(self, value):
-		self._TermnlMgrId = value if type(value) != auto else self.make_default("TermnlMgrId")
+		self._TermnlMgrId = value if type(value) != base_types.auto else self.make_default("TermnlMgrId")
 
 	@TermnlMgrId.deleter
 	def TermnlMgrId(self):
@@ -37,7 +37,7 @@ class ManagementPlan13(base_types._BaseFieldType):
 
 	@DataSet.setter
 	def DataSet(self, value):
-		self._DataSet = value if type(value) != auto else self.make_default("DataSet")
+		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
 
 	@DataSet.deleter
 	def DataSet(self):

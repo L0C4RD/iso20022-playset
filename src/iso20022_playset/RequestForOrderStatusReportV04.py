@@ -1,23 +1,23 @@
 from . import base_types
+from .MessageAndBusinessReference10 import MessageAndBusinessReference10
 from .MessageIdentification1 import MessageIdentification1
 from .Extension1 import Extension1
-from .MessageAndBusinessReference10 import MessageAndBusinessReference10
 
 class RequestForOrderStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqDtls", "_MsgId", "_Xtnsn"]
+	__slots__ = ["_Xtnsn", "_MsgId", "_ReqDtls"]
 	@property
-	def ReqDtls(self):
-		return self._ReqDtls
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@ReqDtls.setter
-	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
 
-	@ReqDtls.deleter
-	def ReqDtls(self):
-		del self._ReqDtls
-		self._ReqDtls = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
 	def MsgId(self):
@@ -25,7 +25,7 @@ class RequestForOrderStatusReportV04(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
 	@MsgId.deleter
 	def MsgId(self):
@@ -33,21 +33,21 @@ class RequestForOrderStatusReportV04(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def ReqDtls(self):
+		return self._ReqDtls
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+	@ReqDtls.setter
+	def ReqDtls(self, value):
+		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@ReqDtls.deleter
+	def ReqDtls(self):
+		del self._ReqDtls
+		self._ReqDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference10, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference10, min=1, max=None, mutex_group=None, array=True),
 	))
 

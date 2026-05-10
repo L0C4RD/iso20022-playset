@@ -11,7 +11,7 @@ class ActionMessage5(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
 
 	@Frmt.deleter
 	def Frmt(self):
@@ -24,7 +24,7 @@ class ActionMessage5(base_types._BaseFieldType):
 
 	@MsgCntt.setter
 	def MsgCntt(self, value):
-		self._MsgCntt = value if type(value) != auto else self.make_default("MsgCntt")
+		self._MsgCntt = value if type(value) != base_types.auto else self.make_default("MsgCntt")
 
 	@MsgCntt.deleter
 	def MsgCntt(self):

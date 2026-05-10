@@ -1,7 +1,7 @@
 from . import base_types
+from .CountryCode import CountryCode
 from .IdentificationType42Choice import IdentificationType42Choice
 from .Max35Text import Max35Text
-from .CountryCode import CountryCode
 
 class AlternatePartyIdentification7(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class AlternatePartyIdentification7(base_types._BaseFieldType):
 
 	@IdTp.setter
 	def IdTp(self, value):
-		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
+		self._IdTp = value if type(value) != base_types.auto else self.make_default("IdTp")
 
 	@IdTp.deleter
 	def IdTp(self):
@@ -25,7 +25,7 @@ class AlternatePartyIdentification7(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -38,7 +38,7 @@ class AlternatePartyIdentification7(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
 	@AltrnId.deleter
 	def AltrnId(self):

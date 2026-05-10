@@ -1,18 +1,31 @@
 from . import base_types
-from .Max15NumericText import Max15NumericText
-from .DecimalNumber import DecimalNumber
 from .CreditDebitCode import CreditDebitCode
+from .DecimalNumber import DecimalNumber
+from .Max15NumericText import Max15NumericText
 
 class NumberAndSumOfTransactions2(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Sum", "_TtlNetNtryAmt", "_NbOfNtries"]
+	__slots__ = ["_NbOfNtries", "_CdtDbtInd", "_Sum", "_TtlNetNtryAmt"]
+	@property
+	def NbOfNtries(self):
+		return self._NbOfNtries
+
+	@NbOfNtries.setter
+	def NbOfNtries(self, value):
+		self._NbOfNtries = value if type(value) != base_types.auto else self.make_default("NbOfNtries")
+
+	@NbOfNtries.deleter
+	def NbOfNtries(self):
+		del self._NbOfNtries
+		self._NbOfNtries = None
+
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
@@ -25,7 +38,7 @@ class NumberAndSumOfTransactions2(base_types._BaseFieldType):
 
 	@Sum.setter
 	def Sum(self, value):
-		self._Sum = value if type(value) != auto else self.make_default("Sum")
+		self._Sum = value if type(value) != base_types.auto else self.make_default("Sum")
 
 	@Sum.deleter
 	def Sum(self):
@@ -38,30 +51,17 @@ class NumberAndSumOfTransactions2(base_types._BaseFieldType):
 
 	@TtlNetNtryAmt.setter
 	def TtlNetNtryAmt(self, value):
-		self._TtlNetNtryAmt = value if type(value) != auto else self.make_default("TtlNetNtryAmt")
+		self._TtlNetNtryAmt = value if type(value) != base_types.auto else self.make_default("TtlNetNtryAmt")
 
 	@TtlNetNtryAmt.deleter
 	def TtlNetNtryAmt(self):
 		del self._TtlNetNtryAmt
 		self._TtlNetNtryAmt = None
 
-	@property
-	def NbOfNtries(self):
-		return self._NbOfNtries
-
-	@NbOfNtries.setter
-	def NbOfNtries(self, value):
-		self._NbOfNtries = value if type(value) != auto else self.make_default("NbOfNtries")
-
-	@NbOfNtries.deleter
-	def NbOfNtries(self):
-		del self._NbOfNtries
-		self._NbOfNtries = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NbOfNtries', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNetNtryAmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfNtries', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

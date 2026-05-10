@@ -11,7 +11,7 @@ class CancelledStatus5(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
@@ -24,7 +24,7 @@ class CancelledStatus5(base_types._BaseFieldType):
 
 	@CancQty.setter
 	def CancQty(self, value):
-		self._CancQty = value if type(value) != auto else self.make_default("CancQty")
+		self._CancQty = value if type(value) != base_types.auto else self.make_default("CancQty")
 
 	@CancQty.deleter
 	def CancQty(self):

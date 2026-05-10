@@ -1,6 +1,6 @@
 from . import base_types
-from .Max3NumericText import Max3NumericText
 from .YesNoIndicator import YesNoIndicator
+from .Max3NumericText import Max3NumericText
 
 class CrystallisationDay1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CrystallisationDay1(base_types._BaseFieldType):
 
 	@Day.setter
 	def Day(self, value):
-		self._Day = value if type(value) != auto else self.make_default("Day")
+		self._Day = value if type(value) != base_types.auto else self.make_default("Day")
 
 	@Day.deleter
 	def Day(self):
@@ -24,7 +24,7 @@ class CrystallisationDay1(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
 	@Prd.deleter
 	def Prd(self):

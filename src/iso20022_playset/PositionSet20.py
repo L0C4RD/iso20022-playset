@@ -1,6 +1,6 @@
 from . import base_types
-from .PositionSetDimensions15 import PositionSetDimensions15
 from .PositionSetMetrics10 import PositionSetMetrics10
+from .PositionSetDimensions15 import PositionSetDimensions15
 
 class PositionSet20(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PositionSet20(base_types._BaseFieldType):
 
 	@Mtrcs.setter
 	def Mtrcs(self, value):
-		self._Mtrcs = value if type(value) != auto else self.make_default("Mtrcs")
+		self._Mtrcs = value if type(value) != base_types.auto else self.make_default("Mtrcs")
 
 	@Mtrcs.deleter
 	def Mtrcs(self):
@@ -24,7 +24,7 @@ class PositionSet20(base_types._BaseFieldType):
 
 	@Dmnsns.setter
 	def Dmnsns(self, value):
-		self._Dmnsns = value if type(value) != auto else self.make_default("Dmnsns")
+		self._Dmnsns = value if type(value) != base_types.auto else self.make_default("Dmnsns")
 
 	@Dmnsns.deleter
 	def Dmnsns(self):

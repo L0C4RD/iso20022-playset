@@ -12,7 +12,7 @@ class CAMT_026_001_10():
 
 		@UblToApply.setter
 		def UblToApply(self, value):
-			self._UblToApply = value if type(value) != auto else self.make_default("UblToApply")
+			self._UblToApply = value if type(value) != base_types.auto else self.make_default("UblToApply")
 
 		@UblToApply.deleter
 		def UblToApply(self):

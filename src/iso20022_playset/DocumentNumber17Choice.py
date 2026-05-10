@@ -1,18 +1,31 @@
 from . import base_types
 from .ISO20022MessageIdentificationText import ISO20022MessageIdentificationText
-from .GenericIdentification30 import GenericIdentification30
 from .Exact3NumericText import Exact3NumericText
+from .GenericIdentification30 import GenericIdentification30
 
 class DocumentNumber17Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LngNb", "_PrtryNb", "_ShrtNb"]
+	__slots__ = ["_ShrtNb", "_LngNb", "_PrtryNb"]
+	@property
+	def ShrtNb(self):
+		return self._ShrtNb
+
+	@ShrtNb.setter
+	def ShrtNb(self, value):
+		self._ShrtNb = value if type(value) != base_types.auto else self.make_default("ShrtNb")
+
+	@ShrtNb.deleter
+	def ShrtNb(self):
+		del self._ShrtNb
+		self._ShrtNb = None
+
 	@property
 	def LngNb(self):
 		return self._LngNb
 
 	@LngNb.setter
 	def LngNb(self, value):
-		self._LngNb = value if type(value) != auto else self.make_default("LngNb")
+		self._LngNb = value if type(value) != base_types.auto else self.make_default("LngNb")
 
 	@LngNb.deleter
 	def LngNb(self):
@@ -25,29 +38,16 @@ class DocumentNumber17Choice(base_types._BaseFieldType):
 
 	@PrtryNb.setter
 	def PrtryNb(self, value):
-		self._PrtryNb = value if type(value) != auto else self.make_default("PrtryNb")
+		self._PrtryNb = value if type(value) != base_types.auto else self.make_default("PrtryNb")
 
 	@PrtryNb.deleter
 	def PrtryNb(self):
 		del self._PrtryNb
 		self._PrtryNb = None
 
-	@property
-	def ShrtNb(self):
-		return self._ShrtNb
-
-	@ShrtNb.setter
-	def ShrtNb(self, value):
-		self._ShrtNb = value if type(value) != auto else self.make_default("ShrtNb")
-
-	@ShrtNb.deleter
-	def ShrtNb(self):
-		del self._ShrtNb
-		self._ShrtNb = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ShrtNb', type=Exact3NumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LngNb', type=ISO20022MessageIdentificationText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryNb', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ShrtNb', type=Exact3NumericText, min=0, max=1, mutex_group=1, array=False),
 	))
 

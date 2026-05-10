@@ -1,23 +1,23 @@
 from . import base_types
+from .ATMContext13 import ATMContext13
 from .AutomatedTellerMachine3 import AutomatedTellerMachine3
 from .ATMTransaction45 import ATMTransaction45
-from .ATMContext13 import ATMContext13
 
 class ATMCompletionAcknowledgement3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_ATM", "_Cntxt"]
+	__slots__ = ["_Cntxt", "_ATM", "_Tx"]
 	@property
-	def Tx(self):
-		return self._Tx
+	def Cntxt(self):
+		return self._Cntxt
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	@property
 	def ATM(self):
@@ -25,7 +25,7 @@ class ATMCompletionAcknowledgement3(base_types._BaseFieldType):
 
 	@ATM.setter
 	def ATM(self, value):
-		self._ATM = value if type(value) != auto else self.make_default("ATM")
+		self._ATM = value if type(value) != base_types.auto else self.make_default("ATM")
 
 	@ATM.deleter
 	def ATM(self):
@@ -33,21 +33,21 @@ class ATMCompletionAcknowledgement3(base_types._BaseFieldType):
 		self._ATM = None
 
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def Tx(self):
+		return self._Tx
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tx', type=ATMTransaction45, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=ATMContext13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=ATMTransaction45, min=1, max=1, mutex_group=None, array=False),
 	))
 

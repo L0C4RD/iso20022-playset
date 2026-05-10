@@ -1,6 +1,6 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
 from .Number import Number
+from .YesNoIndicator import YesNoIndicator
 
 class TimeFrame7Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TimeFrame7Choice(base_types._BaseFieldType):
 
 	@TPlus.setter
 	def TPlus(self, value):
-		self._TPlus = value if type(value) != auto else self.make_default("TPlus")
+		self._TPlus = value if type(value) != base_types.auto else self.make_default("TPlus")
 
 	@TPlus.deleter
 	def TPlus(self):
@@ -24,7 +24,7 @@ class TimeFrame7Choice(base_types._BaseFieldType):
 
 	@Prepmt.setter
 	def Prepmt(self, value):
-		self._Prepmt = value if type(value) != auto else self.make_default("Prepmt")
+		self._Prepmt = value if type(value) != base_types.auto else self.make_default("Prepmt")
 
 	@Prepmt.deleter
 	def Prepmt(self):

@@ -12,7 +12,7 @@ class PAIN_012_001_08():
 
 		@MndtAccptncRpt.setter
 		def MndtAccptncRpt(self, value):
-			self._MndtAccptncRpt = value if type(value) != auto else self.make_default("MndtAccptncRpt")
+			self._MndtAccptncRpt = value if type(value) != base_types.auto else self.make_default("MndtAccptncRpt")
 
 		@MndtAccptncRpt.deleter
 		def MndtAccptncRpt(self):

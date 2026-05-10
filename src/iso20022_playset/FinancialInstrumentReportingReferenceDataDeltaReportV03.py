@@ -12,7 +12,7 @@ class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFi
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFi
 
 	@FinInstrm.setter
 	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
+		self._FinInstrm = value if type(value) != base_types.auto else self.make_default("FinInstrm")
 
 	@FinInstrm.deleter
 	def FinInstrm(self):
@@ -38,7 +38,7 @@ class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFi
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
 	@RptHdr.deleter
 	def RptHdr(self):

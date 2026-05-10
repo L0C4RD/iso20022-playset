@@ -10,7 +10,7 @@ class Requirement1(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmtRqrmnt.setter
 	def SgrtdIndpdntAmtRqrmnt(self, value):
-		self._SgrtdIndpdntAmtRqrmnt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmtRqrmnt")
+		self._SgrtdIndpdntAmtRqrmnt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmtRqrmnt")
 
 	@SgrtdIndpdntAmtRqrmnt.deleter
 	def SgrtdIndpdntAmtRqrmnt(self):
@@ -23,7 +23,7 @@ class Requirement1(base_types._BaseFieldType):
 
 	@VartnMrgnRqrmnt.setter
 	def VartnMrgnRqrmnt(self, value):
-		self._VartnMrgnRqrmnt = value if type(value) != auto else self.make_default("VartnMrgnRqrmnt")
+		self._VartnMrgnRqrmnt = value if type(value) != base_types.auto else self.make_default("VartnMrgnRqrmnt")
 
 	@VartnMrgnRqrmnt.deleter
 	def VartnMrgnRqrmnt(self):

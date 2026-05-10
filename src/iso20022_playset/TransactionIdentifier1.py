@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class TransactionIdentifier1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TransactionIdentifier1(base_types._BaseFieldType):
 
 	@TxRef.setter
 	def TxRef(self, value):
-		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
+		self._TxRef = value if type(value) != base_types.auto else self.make_default("TxRef")
 
 	@TxRef.deleter
 	def TxRef(self):
@@ -24,7 +24,7 @@ class TransactionIdentifier1(base_types._BaseFieldType):
 
 	@TxDtTm.setter
 	def TxDtTm(self, value):
-		self._TxDtTm = value if type(value) != auto else self.make_default("TxDtTm")
+		self._TxDtTm = value if type(value) != base_types.auto else self.make_default("TxDtTm")
 
 	@TxDtTm.deleter
 	def TxDtTm(self):

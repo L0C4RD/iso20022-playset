@@ -11,7 +11,7 @@ class SecurityCSDLinkUpdate3(base_types._BaseFieldType):
 
 	@VldTo.setter
 	def VldTo(self, value):
-		self._VldTo = value if type(value) != auto else self.make_default("VldTo")
+		self._VldTo = value if type(value) != base_types.auto else self.make_default("VldTo")
 
 	@VldTo.deleter
 	def VldTo(self):
@@ -24,7 +24,7 @@ class SecurityCSDLinkUpdate3(base_types._BaseFieldType):
 
 	@DfltLk.setter
 	def DfltLk(self, value):
-		self._DfltLk = value if type(value) != auto else self.make_default("DfltLk")
+		self._DfltLk = value if type(value) != base_types.auto else self.make_default("DfltLk")
 
 	@DfltLk.deleter
 	def DfltLk(self):

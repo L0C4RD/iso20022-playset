@@ -1,23 +1,23 @@
 from . import base_types
 from .DatePeriod3 import DatePeriod3
-from .QueryType3Code import QueryType3Code
 from .TimePeriod2 import TimePeriod2
+from .QueryType3Code import QueryType3Code
 
 class ReportingPeriod4(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToTm", "_Tp", "_FrToDt"]
+	__slots__ = ["_FrToDt", "_Tp", "_FrToTm"]
 	@property
-	def FrToTm(self):
-		return self._FrToTm
+	def FrToDt(self):
+		return self._FrToDt
 
-	@FrToTm.setter
-	def FrToTm(self, value):
-		self._FrToTm = value if type(value) != auto else self.make_default("FrToTm")
+	@FrToDt.setter
+	def FrToDt(self, value):
+		self._FrToDt = value if type(value) != base_types.auto else self.make_default("FrToDt")
 
-	@FrToTm.deleter
-	def FrToTm(self):
-		del self._FrToTm
-		self._FrToTm = None
+	@FrToDt.deleter
+	def FrToDt(self):
+		del self._FrToDt
+		self._FrToDt = None
 
 	@property
 	def Tp(self):
@@ -25,7 +25,7 @@ class ReportingPeriod4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -33,21 +33,21 @@ class ReportingPeriod4(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def FrToDt(self):
-		return self._FrToDt
+	def FrToTm(self):
+		return self._FrToTm
 
-	@FrToDt.setter
-	def FrToDt(self, value):
-		self._FrToDt = value if type(value) != auto else self.make_default("FrToDt")
+	@FrToTm.setter
+	def FrToTm(self, value):
+		self._FrToTm = value if type(value) != base_types.auto else self.make_default("FrToTm")
 
-	@FrToDt.deleter
-	def FrToDt(self):
-		del self._FrToDt
-		self._FrToDt = None
+	@FrToTm.deleter
+	def FrToTm(self):
+		del self._FrToTm
+		self._FrToTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrToTm', type=TimePeriod2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=QueryType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrToDt', type=DatePeriod3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=QueryType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrToTm', type=TimePeriod2, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -12,7 +12,7 @@ class PAIN_017_001_04():
 
 		@MndtCpyReq.setter
 		def MndtCpyReq(self, value):
-			self._MndtCpyReq = value if type(value) != auto else self.make_default("MndtCpyReq")
+			self._MndtCpyReq = value if type(value) != base_types.auto else self.make_default("MndtCpyReq")
 
 		@MndtCpyReq.deleter
 		def MndtCpyReq(self):

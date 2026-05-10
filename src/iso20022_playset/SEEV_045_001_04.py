@@ -12,7 +12,7 @@ class SEEV_045_001_04():
 
 		@ShrhldrsIdDsclsrReq.setter
 		def ShrhldrsIdDsclsrReq(self, value):
-			self._ShrhldrsIdDsclsrReq = value if type(value) != auto else self.make_default("ShrhldrsIdDsclsrReq")
+			self._ShrhldrsIdDsclsrReq = value if type(value) != base_types.auto else self.make_default("ShrhldrsIdDsclsrReq")
 
 		@ShrhldrsIdDsclsrReq.deleter
 		def ShrhldrsIdDsclsrReq(self):

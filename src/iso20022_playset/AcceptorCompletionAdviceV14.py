@@ -1,23 +1,23 @@
 from . import base_types
-from .Header70 import Header70
-from .AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
 from .ContentInformationType37 import ContentInformationType37
+from .AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
+from .Header70 import Header70
 
 class AcceptorCompletionAdviceV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_CmpltnAdvc", "_Hdr"]
+	__slots__ = ["_Hdr", "_CmpltnAdvc", "_SctyTrlr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def Hdr(self):
+		return self._Hdr
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def CmpltnAdvc(self):
@@ -25,7 +25,7 @@ class AcceptorCompletionAdviceV14(base_types._BaseFieldType):
 
 	@CmpltnAdvc.setter
 	def CmpltnAdvc(self, value):
-		self._CmpltnAdvc = value if type(value) != auto else self.make_default("CmpltnAdvc")
+		self._CmpltnAdvc = value if type(value) != base_types.auto else self.make_default("CmpltnAdvc")
 
 	@CmpltnAdvc.deleter
 	def CmpltnAdvc(self):
@@ -33,21 +33,21 @@ class AcceptorCompletionAdviceV14(base_types._BaseFieldType):
 		self._CmpltnAdvc = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpltnAdvc', type=AcceptorCompletionAdvice14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltnAdvc', type=AcceptorCompletionAdvice14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 	))
 

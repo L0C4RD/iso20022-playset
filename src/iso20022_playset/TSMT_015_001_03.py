@@ -12,7 +12,7 @@ class TSMT_015_001_03():
 
 		@DltaRpt.setter
 		def DltaRpt(self, value):
-			self._DltaRpt = value if type(value) != auto else self.make_default("DltaRpt")
+			self._DltaRpt = value if type(value) != base_types.auto else self.make_default("DltaRpt")
 
 		@DltaRpt.deleter
 		def DltaRpt(self):

@@ -12,7 +12,7 @@ class CAAM_014_001_01():
 
 		@ATMCfgtnCtrl.setter
 		def ATMCfgtnCtrl(self, value):
-			self._ATMCfgtnCtrl = value if type(value) != auto else self.make_default("ATMCfgtnCtrl")
+			self._ATMCfgtnCtrl = value if type(value) != base_types.auto else self.make_default("ATMCfgtnCtrl")
 
 		@ATMCfgtnCtrl.deleter
 		def ATMCfgtnCtrl(self):

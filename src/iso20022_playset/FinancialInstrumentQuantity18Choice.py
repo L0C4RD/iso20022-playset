@@ -1,6 +1,6 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .DecimalNumber import DecimalNumber
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity18Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class FinancialInstrumentQuantity18Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
 	@Unit.deleter
 	def Unit(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentQuantity18Choice(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
 
 	@FaceAmt.deleter
 	def FaceAmt(self):

@@ -11,7 +11,7 @@ class AddendumData7(base_types._BaseFieldType):
 
 	@FleetLineItm.setter
 	def FleetLineItm(self, value):
-		self._FleetLineItm = value if type(value) != auto else self.make_default("FleetLineItm")
+		self._FleetLineItm = value if type(value) != base_types.auto else self.make_default("FleetLineItm")
 
 	@FleetLineItm.deleter
 	def FleetLineItm(self):
@@ -24,7 +24,7 @@ class AddendumData7(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
 
 	@AddtlData.deleter
 	def AddtlData(self):

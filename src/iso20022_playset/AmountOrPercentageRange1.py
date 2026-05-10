@@ -11,7 +11,7 @@ class AmountOrPercentageRange1(base_types._BaseFieldType):
 
 	@Term.setter
 	def Term(self, value):
-		self._Term = value if type(value) != auto else self.make_default("Term")
+		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
 
 	@Term.deleter
 	def Term(self):
@@ -24,7 +24,7 @@ class AmountOrPercentageRange1(base_types._BaseFieldType):
 
 	@Opr.setter
 	def Opr(self, value):
-		self._Opr = value if type(value) != auto else self.make_default("Opr")
+		self._Opr = value if type(value) != base_types.auto else self.make_default("Opr")
 
 	@Opr.deleter
 	def Opr(self):

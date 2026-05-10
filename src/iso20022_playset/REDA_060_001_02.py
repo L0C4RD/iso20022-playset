@@ -12,7 +12,7 @@ class REDA_060_001_02():
 
 		@NetgCutOffRefDataUpdReq.setter
 		def NetgCutOffRefDataUpdReq(self, value):
-			self._NetgCutOffRefDataUpdReq = value if type(value) != auto else self.make_default("NetgCutOffRefDataUpdReq")
+			self._NetgCutOffRefDataUpdReq = value if type(value) != base_types.auto else self.make_default("NetgCutOffRefDataUpdReq")
 
 		@NetgCutOffRefDataUpdReq.deleter
 		def NetgCutOffRefDataUpdReq(self):

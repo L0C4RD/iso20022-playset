@@ -10,7 +10,7 @@ class BICIdentification1(base_types._BaseFieldType):
 
 	@BIC.setter
 	def BIC(self, value):
-		self._BIC = value if type(value) != auto else self.make_default("BIC")
+		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
 
 	@BIC.deleter
 	def BIC(self):

@@ -12,7 +12,7 @@ class COLR_005_001_06():
 
 		@CollMgmtCxlReq.setter
 		def CollMgmtCxlReq(self, value):
-			self._CollMgmtCxlReq = value if type(value) != auto else self.make_default("CollMgmtCxlReq")
+			self._CollMgmtCxlReq = value if type(value) != base_types.auto else self.make_default("CollMgmtCxlReq")
 
 		@CollMgmtCxlReq.deleter
 		def CollMgmtCxlReq(self):

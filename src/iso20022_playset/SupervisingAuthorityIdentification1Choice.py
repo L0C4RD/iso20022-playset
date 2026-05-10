@@ -11,7 +11,7 @@ class SupervisingAuthorityIdentification1Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
 	@PrtryId.deleter
 	def PrtryId(self):
@@ -24,7 +24,7 @@ class SupervisingAuthorityIdentification1Choice(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
+		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
 
 	@FullNm.deleter
 	def FullNm(self):

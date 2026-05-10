@@ -1,20 +1,46 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
 from .CollateralStatus1Code import CollateralStatus1Code
+from .GenericIdentification30 import GenericIdentification30
 from .ExposureType23Choice import ExposureType23Choice
 from .PercentageRate import PercentageRate
 from .CollateralAmount16 import CollateralAmount16
 
 class ExposureTypeAggregation3(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnRate", "_ValtnAmts", "_GblXpsrTpSts", "_XpsrTp", "_SttlmPrc"]
+	__slots__ = ["_SttlmPrc", "_GblXpsrTpSts", "_MrgnRate", "_ValtnAmts", "_XpsrTp"]
+	@property
+	def SttlmPrc(self):
+		return self._SttlmPrc
+
+	@SttlmPrc.setter
+	def SttlmPrc(self, value):
+		self._SttlmPrc = value if type(value) != base_types.auto else self.make_default("SttlmPrc")
+
+	@SttlmPrc.deleter
+	def SttlmPrc(self):
+		del self._SttlmPrc
+		self._SttlmPrc = None
+
+	@property
+	def GblXpsrTpSts(self):
+		return self._GblXpsrTpSts
+
+	@GblXpsrTpSts.setter
+	def GblXpsrTpSts(self, value):
+		self._GblXpsrTpSts = value if type(value) != base_types.auto else self.make_default("GblXpsrTpSts")
+
+	@GblXpsrTpSts.deleter
+	def GblXpsrTpSts(self):
+		del self._GblXpsrTpSts
+		self._GblXpsrTpSts = None
+
 	@property
 	def MrgnRate(self):
 		return self._MrgnRate
 
 	@MrgnRate.setter
 	def MrgnRate(self, value):
-		self._MrgnRate = value if type(value) != auto else self.make_default("MrgnRate")
+		self._MrgnRate = value if type(value) != base_types.auto else self.make_default("MrgnRate")
 
 	@MrgnRate.deleter
 	def MrgnRate(self):
@@ -27,7 +53,7 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 
 	@ValtnAmts.setter
 	def ValtnAmts(self, value):
-		self._ValtnAmts = value if type(value) != auto else self.make_default("ValtnAmts")
+		self._ValtnAmts = value if type(value) != base_types.auto else self.make_default("ValtnAmts")
 
 	@ValtnAmts.deleter
 	def ValtnAmts(self):
@@ -35,49 +61,23 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 		self._ValtnAmts = None
 
 	@property
-	def GblXpsrTpSts(self):
-		return self._GblXpsrTpSts
-
-	@GblXpsrTpSts.setter
-	def GblXpsrTpSts(self, value):
-		self._GblXpsrTpSts = value if type(value) != auto else self.make_default("GblXpsrTpSts")
-
-	@GblXpsrTpSts.deleter
-	def GblXpsrTpSts(self):
-		del self._GblXpsrTpSts
-		self._GblXpsrTpSts = None
-
-	@property
 	def XpsrTp(self):
 		return self._XpsrTp
 
 	@XpsrTp.setter
 	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+		self._XpsrTp = value if type(value) != base_types.auto else self.make_default("XpsrTp")
 
 	@XpsrTp.deleter
 	def XpsrTp(self):
 		del self._XpsrTp
 		self._XpsrTp = None
 
-	@property
-	def SttlmPrc(self):
-		return self._SttlmPrc
-
-	@SttlmPrc.setter
-	def SttlmPrc(self, value):
-		self._SttlmPrc = value if type(value) != auto else self.make_default("SttlmPrc")
-
-	@SttlmPrc.deleter
-	def SttlmPrc(self):
-		del self._SttlmPrc
-		self._SttlmPrc = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GblXpsrTpSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GblXpsrTpSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
 

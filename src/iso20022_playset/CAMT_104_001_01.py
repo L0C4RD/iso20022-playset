@@ -12,7 +12,7 @@ class CAMT_104_001_01():
 
 		@CretMmb.setter
 		def CretMmb(self, value):
-			self._CretMmb = value if type(value) != auto else self.make_default("CretMmb")
+			self._CretMmb = value if type(value) != base_types.auto else self.make_default("CretMmb")
 
 		@CretMmb.deleter
 		def CretMmb(self):

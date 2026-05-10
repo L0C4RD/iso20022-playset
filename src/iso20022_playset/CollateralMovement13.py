@@ -11,7 +11,7 @@ class CollateralMovement13(base_types._BaseFieldType):
 
 	@Dlvr.setter
 	def Dlvr(self, value):
-		self._Dlvr = value if type(value) != auto else self.make_default("Dlvr")
+		self._Dlvr = value if type(value) != base_types.auto else self.make_default("Dlvr")
 
 	@Dlvr.deleter
 	def Dlvr(self):
@@ -24,7 +24,7 @@ class CollateralMovement13(base_types._BaseFieldType):
 
 	@Rtr.setter
 	def Rtr(self, value):
-		self._Rtr = value if type(value) != auto else self.make_default("Rtr")
+		self._Rtr = value if type(value) != base_types.auto else self.make_default("Rtr")
 
 	@Rtr.deleter
 	def Rtr(self):

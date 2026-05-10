@@ -1,6 +1,6 @@
 from . import base_types
-from .PledgeeFormat6Choice import PledgeeFormat6Choice
 from .LEIIdentifier import LEIIdentifier
+from .PledgeeFormat6Choice import PledgeeFormat6Choice
 
 class Pledgee4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Pledgee4(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -24,7 +24,7 @@ class Pledgee4(base_types._BaseFieldType):
 
 	@PldgeeTpAndId.setter
 	def PldgeeTpAndId(self, value):
-		self._PldgeeTpAndId = value if type(value) != auto else self.make_default("PldgeeTpAndId")
+		self._PldgeeTpAndId = value if type(value) != base_types.auto else self.make_default("PldgeeTpAndId")
 
 	@PldgeeTpAndId.deleter
 	def PldgeeTpAndId(self):

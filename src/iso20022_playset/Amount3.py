@@ -10,7 +10,7 @@ class Amount3(base_types._BaseFieldType):
 
 	@RptgAmt.setter
 	def RptgAmt(self, value):
-		self._RptgAmt = value if type(value) != auto else self.make_default("RptgAmt")
+		self._RptgAmt = value if type(value) != base_types.auto else self.make_default("RptgAmt")
 
 	@RptgAmt.deleter
 	def RptgAmt(self):
@@ -23,7 +23,7 @@ class Amount3(base_types._BaseFieldType):
 
 	@OrgnlAmt.setter
 	def OrgnlAmt(self, value):
-		self._OrgnlAmt = value if type(value) != auto else self.make_default("OrgnlAmt")
+		self._OrgnlAmt = value if type(value) != base_types.auto else self.make_default("OrgnlAmt")
 
 	@OrgnlAmt.deleter
 	def OrgnlAmt(self):

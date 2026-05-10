@@ -1,19 +1,19 @@
 from . import base_types
 from .CashAccountIdentification1Choice import CashAccountIdentification1Choice
+from .ActiveCurrencyCode import ActiveCurrencyCode
 from .BICIdentifier import BICIdentifier
 from .PartyIdentification2Choice import PartyIdentification2Choice
-from .ActiveCurrencyCode import ActiveCurrencyCode
 
 class CashAccount17(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_AcctId", "_PmtCcy", "_CrspdtBkId"]
+	__slots__ = ["_AcctOwnrId", "_CrspdtBkId", "_PmtCcy", "_AcctId"]
 	@property
 	def AcctOwnrId(self):
 		return self._AcctOwnrId
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
@@ -21,17 +21,17 @@ class CashAccount17(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def CrspdtBkId(self):
+		return self._CrspdtBkId
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@CrspdtBkId.setter
+	def CrspdtBkId(self, value):
+		self._CrspdtBkId = value if type(value) != base_types.auto else self.make_default("CrspdtBkId")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@CrspdtBkId.deleter
+	def CrspdtBkId(self):
+		del self._CrspdtBkId
+		self._CrspdtBkId = None
 
 	@property
 	def PmtCcy(self):
@@ -39,7 +39,7 @@ class CashAccount17(base_types._BaseFieldType):
 
 	@PmtCcy.setter
 	def PmtCcy(self, value):
-		self._PmtCcy = value if type(value) != auto else self.make_default("PmtCcy")
+		self._PmtCcy = value if type(value) != base_types.auto else self.make_default("PmtCcy")
 
 	@PmtCcy.deleter
 	def PmtCcy(self):
@@ -47,22 +47,22 @@ class CashAccount17(base_types._BaseFieldType):
 		self._PmtCcy = None
 
 	@property
-	def CrspdtBkId(self):
-		return self._CrspdtBkId
+	def AcctId(self):
+		return self._AcctId
 
-	@CrspdtBkId.setter
-	def CrspdtBkId(self, value):
-		self._CrspdtBkId = value if type(value) != auto else self.make_default("CrspdtBkId")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@CrspdtBkId.deleter
-	def CrspdtBkId(self):
-		del self._CrspdtBkId
-		self._CrspdtBkId = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=CashAccountIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrspdtBkId', type=BICIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=CashAccountIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

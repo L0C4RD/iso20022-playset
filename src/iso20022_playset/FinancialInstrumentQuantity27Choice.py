@@ -4,27 +4,14 @@ from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssAmt", "_UnitsNb", "_NetAmt"]
-	@property
-	def GrssAmt(self):
-		return self._GrssAmt
-
-	@GrssAmt.setter
-	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != auto else self.make_default("GrssAmt")
-
-	@GrssAmt.deleter
-	def GrssAmt(self):
-		del self._GrssAmt
-		self._GrssAmt = None
-
+	__slots__ = ["_UnitsNb", "_GrssAmt", "_NetAmt"]
 	@property
 	def UnitsNb(self):
 		return self._UnitsNb
 
 	@UnitsNb.setter
 	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != auto else self.make_default("UnitsNb")
+		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
 
 	@UnitsNb.deleter
 	def UnitsNb(self):
@@ -32,12 +19,25 @@ class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 		self._UnitsNb = None
 
 	@property
+	def GrssAmt(self):
+		return self._GrssAmt
+
+	@GrssAmt.setter
+	def GrssAmt(self, value):
+		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+
+	@GrssAmt.deleter
+	def GrssAmt(self):
+		del self._GrssAmt
+		self._GrssAmt = None
+
+	@property
 	def NetAmt(self):
 		return self._NetAmt
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
+		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
 
 	@NetAmt.deleter
 	def NetAmt(self):
@@ -45,8 +45,8 @@ class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 		self._NetAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

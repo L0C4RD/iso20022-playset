@@ -10,7 +10,7 @@ class PositionSetMetrics7(base_types._BaseFieldType):
 
 	@VolMtrcs.setter
 	def VolMtrcs(self, value):
-		self._VolMtrcs = value if type(value) != auto else self.make_default("VolMtrcs")
+		self._VolMtrcs = value if type(value) != base_types.auto else self.make_default("VolMtrcs")
 
 	@VolMtrcs.deleter
 	def VolMtrcs(self):

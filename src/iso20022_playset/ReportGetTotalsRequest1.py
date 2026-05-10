@@ -1,6 +1,6 @@
 from . import base_types
-from .TotalDetails1Code import TotalDetails1Code
 from .TotalFilter1 import TotalFilter1
+from .TotalDetails1Code import TotalDetails1Code
 
 class ReportGetTotalsRequest1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ReportGetTotalsRequest1(base_types._BaseFieldType):
 
 	@TtlDtls.setter
 	def TtlDtls(self, value):
-		self._TtlDtls = value if type(value) != auto else self.make_default("TtlDtls")
+		self._TtlDtls = value if type(value) != base_types.auto else self.make_default("TtlDtls")
 
 	@TtlDtls.deleter
 	def TtlDtls(self):
@@ -24,7 +24,7 @@ class ReportGetTotalsRequest1(base_types._BaseFieldType):
 
 	@TtlFltr.setter
 	def TtlFltr(self, value):
-		self._TtlFltr = value if type(value) != auto else self.make_default("TtlFltr")
+		self._TtlFltr = value if type(value) != base_types.auto else self.make_default("TtlFltr")
 
 	@TtlFltr.deleter
 	def TtlFltr(self):

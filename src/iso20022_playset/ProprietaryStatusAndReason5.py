@@ -1,23 +1,23 @@
 from . import base_types
+from .ProprietaryReason1Choice import ProprietaryReason1Choice
 from .GenericIdentification36 import GenericIdentification36
 from .Max210Text import Max210Text
-from .ProprietaryReason1Choice import ProprietaryReason1Choice
 
 class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Rsn", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_Rsn", "_Sts"]
 	@property
-	def Sts(self):
-		return self._Sts
+	def AddtlRsnInf(self):
+		return self._AddtlRsnInf
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@AddtlRsnInf.setter
+	def AddtlRsnInf(self, value):
+		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@AddtlRsnInf.deleter
+	def AddtlRsnInf(self):
+		del self._AddtlRsnInf
+		self._AddtlRsnInf = None
 
 	@property
 	def Rsn(self):
@@ -25,7 +25,7 @@ class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):
@@ -33,21 +33,21 @@ class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def AddtlRsnInf(self):
-		return self._AddtlRsnInf
+	def Sts(self):
+		return self._Sts
 
-	@AddtlRsnInf.setter
-	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@AddtlRsnInf.deleter
-	def AddtlRsnInf(self):
-		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=ProprietaryReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=ProprietaryReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
 	))
 

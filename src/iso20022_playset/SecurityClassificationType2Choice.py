@@ -1,6 +1,6 @@
 from . import base_types
-from .CFIOct2015Identifier import CFIOct2015Identifier
 from .GenericIdentification3 import GenericIdentification3
+from .CFIOct2015Identifier import CFIOct2015Identifier
 
 class SecurityClassificationType2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecurityClassificationType2Choice(base_types._BaseFieldType):
 
 	@CFI.setter
 	def CFI(self, value):
-		self._CFI = value if type(value) != auto else self.make_default("CFI")
+		self._CFI = value if type(value) != base_types.auto else self.make_default("CFI")
 
 	@CFI.deleter
 	def CFI(self):
@@ -24,7 +24,7 @@ class SecurityClassificationType2Choice(base_types._BaseFieldType):
 
 	@AltrnClssfctn.setter
 	def AltrnClssfctn(self, value):
-		self._AltrnClssfctn = value if type(value) != auto else self.make_default("AltrnClssfctn")
+		self._AltrnClssfctn = value if type(value) != base_types.auto else self.make_default("AltrnClssfctn")
 
 	@AltrnClssfctn.deleter
 	def AltrnClssfctn(self):

@@ -1,19 +1,19 @@
 from . import base_types
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType15 import ContentInformationType15
-from .Header31 import Header31
 from .ATMDepositResponse2 import ATMDepositResponse2
+from .Header31 import Header31
+from .ContentInformationType15 import ContentInformationType15
+from .ContentInformationType10 import ContentInformationType10
 
 class ATMDepositResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMDpstRspn", "_PrtctdATMDpstRspn", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_ATMDpstRspn", "_SctyTrlr", "_Hdr", "_PrtctdATMDpstRspn"]
 	@property
 	def ATMDpstRspn(self):
 		return self._ATMDpstRspn
 
 	@ATMDpstRspn.setter
 	def ATMDpstRspn(self, value):
-		self._ATMDpstRspn = value if type(value) != auto else self.make_default("ATMDpstRspn")
+		self._ATMDpstRspn = value if type(value) != base_types.auto else self.make_default("ATMDpstRspn")
 
 	@ATMDpstRspn.deleter
 	def ATMDpstRspn(self):
@@ -21,17 +21,17 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 		self._ATMDpstRspn = None
 
 	@property
-	def PrtctdATMDpstRspn(self):
-		return self._PrtctdATMDpstRspn
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@PrtctdATMDpstRspn.setter
-	def PrtctdATMDpstRspn(self, value):
-		self._PrtctdATMDpstRspn = value if type(value) != auto else self.make_default("PrtctdATMDpstRspn")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@PrtctdATMDpstRspn.deleter
-	def PrtctdATMDpstRspn(self):
-		del self._PrtctdATMDpstRspn
-		self._PrtctdATMDpstRspn = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -39,7 +39,7 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -47,22 +47,22 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def PrtctdATMDpstRspn(self):
+		return self._PrtctdATMDpstRspn
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@PrtctdATMDpstRspn.setter
+	def PrtctdATMDpstRspn(self, value):
+		self._PrtctdATMDpstRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMDpstRspn")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@PrtctdATMDpstRspn.deleter
+	def PrtctdATMDpstRspn(self):
+		del self._PrtctdATMDpstRspn
+		self._PrtctdATMDpstRspn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMDpstRspn', type=ATMDepositResponse2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMDpstRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMDpstRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

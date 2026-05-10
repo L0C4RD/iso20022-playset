@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .MissingData1Choice import MissingData1Choice
+from .Max140Text import Max140Text
 
 class UnableToApplyMissing2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UnableToApplyMissing2(base_types._BaseFieldType):
 
 	@AddtlMssngInf.setter
 	def AddtlMssngInf(self, value):
-		self._AddtlMssngInf = value if type(value) != auto else self.make_default("AddtlMssngInf")
+		self._AddtlMssngInf = value if type(value) != base_types.auto else self.make_default("AddtlMssngInf")
 
 	@AddtlMssngInf.deleter
 	def AddtlMssngInf(self):
@@ -24,7 +24,7 @@ class UnableToApplyMissing2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

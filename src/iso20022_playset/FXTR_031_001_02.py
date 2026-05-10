@@ -12,7 +12,7 @@ class FXTR_031_001_02():
 
 		@FXTradCaptrRpt.setter
 		def FXTradCaptrRpt(self, value):
-			self._FXTradCaptrRpt = value if type(value) != auto else self.make_default("FXTradCaptrRpt")
+			self._FXTradCaptrRpt = value if type(value) != base_types.auto else self.make_default("FXTradCaptrRpt")
 
 		@FXTradCaptrRpt.deleter
 		def FXTradCaptrRpt(self):

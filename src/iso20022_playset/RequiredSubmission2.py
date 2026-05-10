@@ -10,7 +10,7 @@ class RequiredSubmission2(base_types._BaseFieldType):
 
 	@Submitr.setter
 	def Submitr(self, value):
-		self._Submitr = value if type(value) != auto else self.make_default("Submitr")
+		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
 
 	@Submitr.deleter
 	def Submitr(self):

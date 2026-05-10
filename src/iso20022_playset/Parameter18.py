@@ -10,7 +10,7 @@ class Parameter18(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):

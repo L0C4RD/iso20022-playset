@@ -12,7 +12,7 @@ class CAMT_105_001_03():
 
 		@ChrgsPmtNtfctn.setter
 		def ChrgsPmtNtfctn(self, value):
-			self._ChrgsPmtNtfctn = value if type(value) != auto else self.make_default("ChrgsPmtNtfctn")
+			self._ChrgsPmtNtfctn = value if type(value) != base_types.auto else self.make_default("ChrgsPmtNtfctn")
 
 		@ChrgsPmtNtfctn.deleter
 		def ChrgsPmtNtfctn(self):

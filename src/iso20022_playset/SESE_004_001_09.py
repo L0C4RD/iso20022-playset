@@ -12,7 +12,7 @@ class SESE_004_001_09():
 
 		@RvslOfTrfOutConf.setter
 		def RvslOfTrfOutConf(self, value):
-			self._RvslOfTrfOutConf = value if type(value) != auto else self.make_default("RvslOfTrfOutConf")
+			self._RvslOfTrfOutConf = value if type(value) != base_types.auto else self.make_default("RvslOfTrfOutConf")
 
 		@RvslOfTrfOutConf.deleter
 		def RvslOfTrfOutConf(self):

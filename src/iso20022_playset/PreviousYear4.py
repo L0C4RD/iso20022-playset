@@ -11,7 +11,7 @@ class PreviousYear4(base_types._BaseFieldType):
 
 	@CshCmpntInd.setter
 	def CshCmpntInd(self, value):
-		self._CshCmpntInd = value if type(value) != auto else self.make_default("CshCmpntInd")
+		self._CshCmpntInd = value if type(value) != base_types.auto else self.make_default("CshCmpntInd")
 
 	@CshCmpntInd.deleter
 	def CshCmpntInd(self):
@@ -24,7 +24,7 @@ class PreviousYear4(base_types._BaseFieldType):
 
 	@PrvsYrs.setter
 	def PrvsYrs(self, value):
-		self._PrvsYrs = value if type(value) != auto else self.make_default("PrvsYrs")
+		self._PrvsYrs = value if type(value) != base_types.auto else self.make_default("PrvsYrs")
 
 	@PrvsYrs.deleter
 	def PrvsYrs(self):

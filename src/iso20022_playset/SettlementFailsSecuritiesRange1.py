@@ -10,7 +10,7 @@ class SettlementFailsSecuritiesRange1(base_types._BaseFieldType):
 
 	@HghstInVol.setter
 	def HghstInVol(self, value):
-		self._HghstInVol = value if type(value) != auto else self.make_default("HghstInVol")
+		self._HghstInVol = value if type(value) != base_types.auto else self.make_default("HghstInVol")
 
 	@HghstInVol.deleter
 	def HghstInVol(self):
@@ -23,7 +23,7 @@ class SettlementFailsSecuritiesRange1(base_types._BaseFieldType):
 
 	@HghstInVal.setter
 	def HghstInVal(self, value):
-		self._HghstInVal = value if type(value) != auto else self.make_default("HghstInVal")
+		self._HghstInVal = value if type(value) != base_types.auto else self.make_default("HghstInVal")
 
 	@HghstInVal.deleter
 	def HghstInVal(self):

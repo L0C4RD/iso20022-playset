@@ -12,7 +12,7 @@ class TSRV_014_001_01():
 
 		@XtndOrPayReq.setter
 		def XtndOrPayReq(self, value):
-			self._XtndOrPayReq = value if type(value) != auto else self.make_default("XtndOrPayReq")
+			self._XtndOrPayReq = value if type(value) != base_types.auto else self.make_default("XtndOrPayReq")
 
 		@XtndOrPayReq.deleter
 		def XtndOrPayReq(self):

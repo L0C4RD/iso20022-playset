@@ -12,7 +12,7 @@ class SESE_036_002_08():
 
 		@SctiesFincgModInstr.setter
 		def SctiesFincgModInstr(self, value):
-			self._SctiesFincgModInstr = value if type(value) != auto else self.make_default("SctiesFincgModInstr")
+			self._SctiesFincgModInstr = value if type(value) != base_types.auto else self.make_default("SctiesFincgModInstr")
 
 		@SctiesFincgModInstr.deleter
 		def SctiesFincgModInstr(self):

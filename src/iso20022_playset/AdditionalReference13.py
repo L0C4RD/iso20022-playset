@@ -1,22 +1,22 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .PartyIdentification125Choice import PartyIdentification125Choice
+from .Max35Text import Max35Text
 
 class AdditionalReference13(base_types._BaseFieldType):
 
-	__slots__ = ["_RefIssr", "_MsgNm", "_Ref"]
+	__slots__ = ["_Ref", "_MsgNm", "_RefIssr"]
 	@property
-	def RefIssr(self):
-		return self._RefIssr
+	def Ref(self):
+		return self._Ref
 
-	@RefIssr.setter
-	def RefIssr(self, value):
-		self._RefIssr = value if type(value) != auto else self.make_default("RefIssr")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
-	@RefIssr.deleter
-	def RefIssr(self):
-		del self._RefIssr
-		self._RefIssr = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def MsgNm(self):
@@ -24,7 +24,7 @@ class AdditionalReference13(base_types._BaseFieldType):
 
 	@MsgNm.setter
 	def MsgNm(self, value):
-		self._MsgNm = value if type(value) != auto else self.make_default("MsgNm")
+		self._MsgNm = value if type(value) != base_types.auto else self.make_default("MsgNm")
 
 	@MsgNm.deleter
 	def MsgNm(self):
@@ -32,21 +32,21 @@ class AdditionalReference13(base_types._BaseFieldType):
 		self._MsgNm = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def RefIssr(self):
+		return self._RefIssr
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@RefIssr.setter
+	def RefIssr(self, value):
+		self._RefIssr = value if type(value) != base_types.auto else self.make_default("RefIssr")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@RefIssr.deleter
+	def RefIssr(self):
+		del self._RefIssr
+		self._RefIssr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefIssr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefIssr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

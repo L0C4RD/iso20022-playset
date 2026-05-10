@@ -12,7 +12,7 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
+		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
 
 	@BalFr.deleter
 	def BalFr(self):
@@ -25,7 +25,7 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
@@ -38,7 +38,7 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 
 	@IntraPosMvmnt.setter
 	def IntraPosMvmnt(self, value):
-		self._IntraPosMvmnt = value if type(value) != auto else self.make_default("IntraPosMvmnt")
+		self._IntraPosMvmnt = value if type(value) != base_types.auto else self.make_default("IntraPosMvmnt")
 
 	@IntraPosMvmnt.deleter
 	def IntraPosMvmnt(self):

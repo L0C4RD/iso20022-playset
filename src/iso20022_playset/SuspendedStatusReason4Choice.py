@@ -11,7 +11,7 @@ class SuspendedStatusReason4Choice(base_types._BaseFieldType):
 
 	@RsnDtls.setter
 	def RsnDtls(self, value):
-		self._RsnDtls = value if type(value) != auto else self.make_default("RsnDtls")
+		self._RsnDtls = value if type(value) != base_types.auto else self.make_default("RsnDtls")
 
 	@RsnDtls.deleter
 	def RsnDtls(self):
@@ -24,7 +24,7 @@ class SuspendedStatusReason4Choice(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):

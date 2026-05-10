@@ -11,7 +11,7 @@ class QuantityNominalValue2Choice(base_types._BaseFieldType):
 
 	@NmnlVal.setter
 	def NmnlVal(self, value):
-		self._NmnlVal = value if type(value) != auto else self.make_default("NmnlVal")
+		self._NmnlVal = value if type(value) != base_types.auto else self.make_default("NmnlVal")
 
 	@NmnlVal.deleter
 	def NmnlVal(self):
@@ -24,7 +24,7 @@ class QuantityNominalValue2Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):

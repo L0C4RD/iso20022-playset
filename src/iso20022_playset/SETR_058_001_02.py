@@ -12,7 +12,7 @@ class SETR_058_001_02():
 
 		@ReqForOrdrConfStsRpt.setter
 		def ReqForOrdrConfStsRpt(self, value):
-			self._ReqForOrdrConfStsRpt = value if type(value) != auto else self.make_default("ReqForOrdrConfStsRpt")
+			self._ReqForOrdrConfStsRpt = value if type(value) != base_types.auto else self.make_default("ReqForOrdrConfStsRpt")
 
 		@ReqForOrdrConfStsRpt.deleter
 		def ReqForOrdrConfStsRpt(self):

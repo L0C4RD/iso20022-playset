@@ -12,7 +12,7 @@ class REDA_045_001_01():
 
 		@SctyCSDLkCreReq.setter
 		def SctyCSDLkCreReq(self, value):
-			self._SctyCSDLkCreReq = value if type(value) != auto else self.make_default("SctyCSDLkCreReq")
+			self._SctyCSDLkCreReq = value if type(value) != base_types.auto else self.make_default("SctyCSDLkCreReq")
 
 		@SctyCSDLkCreReq.deleter
 		def SctyCSDLkCreReq(self):

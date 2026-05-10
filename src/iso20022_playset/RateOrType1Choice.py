@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
 from .GenericIdentification1 import GenericIdentification1
+from .PercentageRate import PercentageRate
 
 class RateOrType1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RateOrType1Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):
@@ -24,7 +24,7 @@ class RateOrType1Choice(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

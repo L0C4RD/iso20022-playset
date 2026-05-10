@@ -12,7 +12,7 @@ class CAMT_070_001_06():
 
 		@RtrStgOrdr.setter
 		def RtrStgOrdr(self, value):
-			self._RtrStgOrdr = value if type(value) != auto else self.make_default("RtrStgOrdr")
+			self._RtrStgOrdr = value if type(value) != base_types.auto else self.make_default("RtrStgOrdr")
 
 		@RtrStgOrdr.deleter
 		def RtrStgOrdr(self):

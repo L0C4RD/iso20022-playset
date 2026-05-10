@@ -1,6 +1,6 @@
 from . import base_types
-from .DateFormat49Choice import DateFormat49Choice
 from .DateFormat67Choice import DateFormat67Choice
+from .DateFormat49Choice import DateFormat49Choice
 
 class CorporateActionDate109(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CorporateActionDate109(base_types._BaseFieldType):
 
 	@CoverXprtnDdln.setter
 	def CoverXprtnDdln(self, value):
-		self._CoverXprtnDdln = value if type(value) != auto else self.make_default("CoverXprtnDdln")
+		self._CoverXprtnDdln = value if type(value) != base_types.auto else self.make_default("CoverXprtnDdln")
 
 	@CoverXprtnDdln.deleter
 	def CoverXprtnDdln(self):
@@ -24,7 +24,7 @@ class CorporateActionDate109(base_types._BaseFieldType):
 
 	@TradgDt.setter
 	def TradgDt(self, value):
-		self._TradgDt = value if type(value) != auto else self.make_default("TradgDt")
+		self._TradgDt = value if type(value) != base_types.auto else self.make_default("TradgDt")
 
 	@TradgDt.deleter
 	def TradgDt(self):

@@ -1,20 +1,33 @@
 from . import base_types
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from .CancellationStatus29Choice import CancellationStatus29Choice
-from .PendingStatus56Choice import PendingStatus56Choice
 from .RejectionStatus33Choice import RejectionStatus33Choice
+from .PendingStatus56Choice import PendingStatus56Choice
 from .ProprietaryReason4 import ProprietaryReason4
+from .CancellationStatus29Choice import CancellationStatus29Choice
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class ProcessingStatus82Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prcd", "_CxlReq", "_Canc", "_Futr", "_PdgCxl", "_Prtry", "_Rjctd"]
+	__slots__ = ["_Canc", "_Prcd", "_CxlReq", "_Futr", "_Prtry", "_Rjctd", "_PdgCxl"]
+	@property
+	def Canc(self):
+		return self._Canc
+
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
+
 	@property
 	def Prcd(self):
 		return self._Prcd
 
 	@Prcd.setter
 	def Prcd(self, value):
-		self._Prcd = value if type(value) != auto else self.make_default("Prcd")
+		self._Prcd = value if type(value) != base_types.auto else self.make_default("Prcd")
 
 	@Prcd.deleter
 	def Prcd(self):
@@ -27,7 +40,7 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@CxlReq.setter
 	def CxlReq(self, value):
-		self._CxlReq = value if type(value) != auto else self.make_default("CxlReq")
+		self._CxlReq = value if type(value) != base_types.auto else self.make_default("CxlReq")
 
 	@CxlReq.deleter
 	def CxlReq(self):
@@ -35,25 +48,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 		self._CxlReq = None
 
 	@property
-	def Canc(self):
-		return self._Canc
-
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
-
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
-
-	@property
 	def Futr(self):
 		return self._Futr
 
 	@Futr.setter
 	def Futr(self, value):
-		self._Futr = value if type(value) != auto else self.make_default("Futr")
+		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
 
 	@Futr.deleter
 	def Futr(self):
@@ -61,25 +61,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 		self._Futr = None
 
 	@property
-	def PdgCxl(self):
-		return self._PdgCxl
-
-	@PdgCxl.setter
-	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != auto else self.make_default("PdgCxl")
-
-	@PdgCxl.deleter
-	def PdgCxl(self):
-		del self._PdgCxl
-		self._PdgCxl = None
-
-	@property
 	def Prtry(self):
 		return self._Prtry
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -92,20 +79,33 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
 		self._Rjctd = None
 
+	@property
+	def PdgCxl(self):
+		return self._PdgCxl
+
+	@PdgCxl.setter
+	def PdgCxl(self, value):
+		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+
+	@PdgCxl.deleter
+	def PdgCxl(self):
+		del self._PdgCxl
+		self._PdgCxl = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlReq', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Futr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgCxl', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus33Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgCxl', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

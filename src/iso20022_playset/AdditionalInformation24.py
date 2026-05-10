@@ -10,7 +10,7 @@ class AdditionalInformation24(base_types._BaseFieldType):
 
 	@CollInstr.setter
 	def CollInstr(self, value):
-		self._CollInstr = value if type(value) != auto else self.make_default("CollInstr")
+		self._CollInstr = value if type(value) != base_types.auto else self.make_default("CollInstr")
 
 	@CollInstr.deleter
 	def CollInstr(self):
@@ -23,7 +23,7 @@ class AdditionalInformation24(base_types._BaseFieldType):
 
 	@Note.setter
 	def Note(self, value):
-		self._Note = value if type(value) != auto else self.make_default("Note")
+		self._Note = value if type(value) != base_types.auto else self.make_default("Note")
 
 	@Note.deleter
 	def Note(self):

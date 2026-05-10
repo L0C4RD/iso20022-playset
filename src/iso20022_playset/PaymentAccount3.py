@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
 from .Acquirer10 import Acquirer10
+from .ActiveCurrencyCode import ActiveCurrencyCode
 from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class PaymentAccount3(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class PaymentAccount3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -25,7 +25,7 @@ class PaymentAccount3(base_types._BaseFieldType):
 
 	@CurBal.setter
 	def CurBal(self, value):
-		self._CurBal = value if type(value) != auto else self.make_default("CurBal")
+		self._CurBal = value if type(value) != base_types.auto else self.make_default("CurBal")
 
 	@CurBal.deleter
 	def CurBal(self):
@@ -38,7 +38,7 @@ class PaymentAccount3(base_types._BaseFieldType):
 
 	@PmtAcqrrData.setter
 	def PmtAcqrrData(self, value):
-		self._PmtAcqrrData = value if type(value) != auto else self.make_default("PmtAcqrrData")
+		self._PmtAcqrrData = value if type(value) != base_types.auto else self.make_default("PmtAcqrrData")
 
 	@PmtAcqrrData.deleter
 	def PmtAcqrrData(self):

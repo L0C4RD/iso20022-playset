@@ -11,7 +11,7 @@ class Derivative4(base_types._BaseFieldType):
 
 	@Optn.setter
 	def Optn(self, value):
-		self._Optn = value if type(value) != auto else self.make_default("Optn")
+		self._Optn = value if type(value) != base_types.auto else self.make_default("Optn")
 
 	@Optn.deleter
 	def Optn(self):
@@ -24,7 +24,7 @@ class Derivative4(base_types._BaseFieldType):
 
 	@Futr.setter
 	def Futr(self, value):
-		self._Futr = value if type(value) != auto else self.make_default("Futr")
+		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
 
 	@Futr.deleter
 	def Futr(self):

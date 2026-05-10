@@ -10,7 +10,7 @@ class AdviceType1(base_types._BaseFieldType):
 
 	@DbtAdvc.setter
 	def DbtAdvc(self, value):
-		self._DbtAdvc = value if type(value) != auto else self.make_default("DbtAdvc")
+		self._DbtAdvc = value if type(value) != base_types.auto else self.make_default("DbtAdvc")
 
 	@DbtAdvc.deleter
 	def DbtAdvc(self):
@@ -23,7 +23,7 @@ class AdviceType1(base_types._BaseFieldType):
 
 	@CdtAdvc.setter
 	def CdtAdvc(self, value):
-		self._CdtAdvc = value if type(value) != auto else self.make_default("CdtAdvc")
+		self._CdtAdvc = value if type(value) != base_types.auto else self.make_default("CdtAdvc")
 
 	@CdtAdvc.deleter
 	def CdtAdvc(self):

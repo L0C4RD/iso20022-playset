@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max210Text import Max210Text
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max210Text import Max210Text
+from .Max35Text import Max35Text
 
 class Amount1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Amount1(base_types._BaseFieldType):
 
 	@MrgnCallReqId.setter
 	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != auto else self.make_default("MrgnCallReqId")
+		self._MrgnCallReqId = value if type(value) != base_types.auto else self.make_default("MrgnCallReqId")
 
 	@MrgnCallReqId.deleter
 	def MrgnCallReqId(self):
@@ -25,7 +25,7 @@ class Amount1(base_types._BaseFieldType):
 
 	@AgrdAmt.setter
 	def AgrdAmt(self, value):
-		self._AgrdAmt = value if type(value) != auto else self.make_default("AgrdAmt")
+		self._AgrdAmt = value if type(value) != base_types.auto else self.make_default("AgrdAmt")
 
 	@AgrdAmt.deleter
 	def AgrdAmt(self):
@@ -38,7 +38,7 @@ class Amount1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):

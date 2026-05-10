@@ -1,23 +1,23 @@
 from . import base_types
-from .PercentageRate import PercentageRate
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .PercentageRate import PercentageRate
 from .WaivingInstruction2Choice import WaivingInstruction2Choice
 
 class ChargeOrCommissionDiscount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Amt", "_Bsis"]
+	__slots__ = ["_Bsis", "_Amt", "_Rate"]
 	@property
-	def Rate(self):
-		return self._Rate
+	def Bsis(self):
+		return self._Bsis
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@Bsis.setter
+	def Bsis(self, value):
+		self._Bsis = value if type(value) != base_types.auto else self.make_default("Bsis")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@Bsis.deleter
+	def Bsis(self):
+		del self._Bsis
+		self._Bsis = None
 
 	@property
 	def Amt(self):
@@ -25,7 +25,7 @@ class ChargeOrCommissionDiscount2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -33,21 +33,21 @@ class ChargeOrCommissionDiscount2(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Bsis(self):
-		return self._Bsis
+	def Rate(self):
+		return self._Rate
 
-	@Bsis.setter
-	def Bsis(self, value):
-		self._Bsis = value if type(value) != auto else self.make_default("Bsis")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
-	@Bsis.deleter
-	def Bsis(self):
-		del self._Bsis
-		self._Bsis = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bsis', type=WaivingInstruction2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

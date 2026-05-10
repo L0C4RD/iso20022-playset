@@ -12,7 +12,7 @@ class PAIN_007_001_12():
 
 		@CstmrPmtRvsl.setter
 		def CstmrPmtRvsl(self, value):
-			self._CstmrPmtRvsl = value if type(value) != auto else self.make_default("CstmrPmtRvsl")
+			self._CstmrPmtRvsl = value if type(value) != base_types.auto else self.make_default("CstmrPmtRvsl")
 
 		@CstmrPmtRvsl.deleter
 		def CstmrPmtRvsl(self):

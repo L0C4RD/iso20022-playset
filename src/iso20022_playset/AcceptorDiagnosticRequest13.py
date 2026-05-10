@@ -11,7 +11,7 @@ class AcceptorDiagnosticRequest13(base_types._BaseFieldType):
 
 	@AcqrrAvlbtyReqd.setter
 	def AcqrrAvlbtyReqd(self, value):
-		self._AcqrrAvlbtyReqd = value if type(value) != auto else self.make_default("AcqrrAvlbtyReqd")
+		self._AcqrrAvlbtyReqd = value if type(value) != base_types.auto else self.make_default("AcqrrAvlbtyReqd")
 
 	@AcqrrAvlbtyReqd.deleter
 	def AcqrrAvlbtyReqd(self):
@@ -24,7 +24,7 @@ class AcceptorDiagnosticRequest13(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):

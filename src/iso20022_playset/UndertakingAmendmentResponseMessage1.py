@@ -11,7 +11,7 @@ class UndertakingAmendmentResponseMessage1(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntRspnDtls.setter
 	def UdrtkgAmdmntRspnDtls(self, value):
-		self._UdrtkgAmdmntRspnDtls = value if type(value) != auto else self.make_default("UdrtkgAmdmntRspnDtls")
+		self._UdrtkgAmdmntRspnDtls = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntRspnDtls")
 
 	@UdrtkgAmdmntRspnDtls.deleter
 	def UdrtkgAmdmntRspnDtls(self):
@@ -24,7 +24,7 @@ class UndertakingAmendmentResponseMessage1(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):

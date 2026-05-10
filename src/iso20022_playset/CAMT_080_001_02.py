@@ -12,7 +12,7 @@ class CAMT_080_001_02():
 
 		@IntraBalMvmntModQry.setter
 		def IntraBalMvmntModQry(self, value):
-			self._IntraBalMvmntModQry = value if type(value) != auto else self.make_default("IntraBalMvmntModQry")
+			self._IntraBalMvmntModQry = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntModQry")
 
 		@IntraBalMvmntModQry.deleter
 		def IntraBalMvmntModQry(self):

@@ -1,24 +1,24 @@
 from . import base_types
 from .Max35Text import Max35Text
-from .Max140Text import Max140Text
-from .RejectionReason68Code import RejectionReason68Code
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .RejectionReason68Code import RejectionReason68Code
+from .Max140Text import Max140Text
 
 class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSbstitnReqId", "_RjctnRsn", "_RjctnRsnInf", "_RjctdAmt"]
+	__slots__ = ["_RjctdAmt", "_RjctnRsn", "_RjctnRsnInf", "_CollSbstitnReqId"]
 	@property
-	def CollSbstitnReqId(self):
-		return self._CollSbstitnReqId
+	def RjctdAmt(self):
+		return self._RjctdAmt
 
-	@CollSbstitnReqId.setter
-	def CollSbstitnReqId(self, value):
-		self._CollSbstitnReqId = value if type(value) != auto else self.make_default("CollSbstitnReqId")
+	@RjctdAmt.setter
+	def RjctdAmt(self, value):
+		self._RjctdAmt = value if type(value) != base_types.auto else self.make_default("RjctdAmt")
 
-	@CollSbstitnReqId.deleter
-	def CollSbstitnReqId(self):
-		del self._CollSbstitnReqId
-		self._CollSbstitnReqId = None
+	@RjctdAmt.deleter
+	def RjctdAmt(self):
+		del self._RjctdAmt
+		self._RjctdAmt = None
 
 	@property
 	def RjctnRsn(self):
@@ -26,7 +26,7 @@ class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
@@ -39,7 +39,7 @@ class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 
 	@RjctnRsnInf.setter
 	def RjctnRsnInf(self, value):
-		self._RjctnRsnInf = value if type(value) != auto else self.make_default("RjctnRsnInf")
+		self._RjctnRsnInf = value if type(value) != base_types.auto else self.make_default("RjctnRsnInf")
 
 	@RjctnRsnInf.deleter
 	def RjctnRsnInf(self):
@@ -47,22 +47,22 @@ class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 		self._RjctnRsnInf = None
 
 	@property
-	def RjctdAmt(self):
-		return self._RjctdAmt
+	def CollSbstitnReqId(self):
+		return self._CollSbstitnReqId
 
-	@RjctdAmt.setter
-	def RjctdAmt(self, value):
-		self._RjctdAmt = value if type(value) != auto else self.make_default("RjctdAmt")
+	@CollSbstitnReqId.setter
+	def CollSbstitnReqId(self, value):
+		self._CollSbstitnReqId = value if type(value) != base_types.auto else self.make_default("CollSbstitnReqId")
 
-	@RjctdAmt.deleter
-	def RjctdAmt(self):
-		del self._RjctdAmt
-		self._RjctdAmt = None
+	@CollSbstitnReqId.deleter
+	def CollSbstitnReqId(self):
+		del self._CollSbstitnReqId
+		self._CollSbstitnReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason68Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

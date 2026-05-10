@@ -10,7 +10,7 @@ class AmountToAmountRatio1(base_types._BaseFieldType):
 
 	@Amt1.setter
 	def Amt1(self, value):
-		self._Amt1 = value if type(value) != auto else self.make_default("Amt1")
+		self._Amt1 = value if type(value) != base_types.auto else self.make_default("Amt1")
 
 	@Amt1.deleter
 	def Amt1(self):
@@ -23,7 +23,7 @@ class AmountToAmountRatio1(base_types._BaseFieldType):
 
 	@Amt2.setter
 	def Amt2(self, value):
-		self._Amt2 = value if type(value) != auto else self.make_default("Amt2")
+		self._Amt2 = value if type(value) != base_types.auto else self.make_default("Amt2")
 
 	@Amt2.deleter
 	def Amt2(self):

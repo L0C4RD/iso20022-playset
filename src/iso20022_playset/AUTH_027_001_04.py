@@ -12,7 +12,7 @@ class AUTH_027_001_04():
 
 		@CcyCtrlStsAdvc.setter
 		def CcyCtrlStsAdvc(self, value):
-			self._CcyCtrlStsAdvc = value if type(value) != auto else self.make_default("CcyCtrlStsAdvc")
+			self._CcyCtrlStsAdvc = value if type(value) != base_types.auto else self.make_default("CcyCtrlStsAdvc")
 
 		@CcyCtrlStsAdvc.deleter
 		def CcyCtrlStsAdvc(self):

@@ -11,7 +11,7 @@ class FinancialInstrumentIdentification7Choice(base_types._BaseFieldType):
 
 	@Sngl.setter
 	def Sngl(self, value):
-		self._Sngl = value if type(value) != auto else self.make_default("Sngl")
+		self._Sngl = value if type(value) != base_types.auto else self.make_default("Sngl")
 
 	@Sngl.deleter
 	def Sngl(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentIdentification7Choice(base_types._BaseFieldType):
 
 	@Bskt.setter
 	def Bskt(self, value):
-		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
+		self._Bskt = value if type(value) != base_types.auto else self.make_default("Bskt")
 
 	@Bskt.deleter
 	def Bskt(self):

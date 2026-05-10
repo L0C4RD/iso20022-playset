@@ -5,27 +5,14 @@ from .SystemParty7 import SystemParty7
 
 class PartyCreationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_Pty"]
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_Pty"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -33,12 +20,25 @@ class PartyCreationRequestV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
+	@property
 	def Pty(self):
 		return self._Pty
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
 	@Pty.deleter
 	def Pty(self):
@@ -46,8 +46,8 @@ class PartyCreationRequestV02(base_types._BaseFieldType):
 		self._Pty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty', type=SystemParty7, min=1, max=1, mutex_group=None, array=False),
 	))
 

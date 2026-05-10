@@ -10,7 +10,7 @@ class CompareReferenceParty1(base_types._BaseFieldType):
 
 	@Val1.setter
 	def Val1(self, value):
-		self._Val1 = value if type(value) != auto else self.make_default("Val1")
+		self._Val1 = value if type(value) != base_types.auto else self.make_default("Val1")
 
 	@Val1.deleter
 	def Val1(self):
@@ -23,7 +23,7 @@ class CompareReferenceParty1(base_types._BaseFieldType):
 
 	@Val2.setter
 	def Val2(self, value):
-		self._Val2 = value if type(value) != auto else self.make_default("Val2")
+		self._Val2 = value if type(value) != base_types.auto else self.make_default("Val2")
 
 	@Val2.deleter
 	def Val2(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .TransactionStatus1Choice import TransactionStatus1Choice
 from .StatusReasonInformation12 import StatusReasonInformation12
+from .TransactionStatus1Choice import TransactionStatus1Choice
 
 class PaymentTransactionStatus1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PaymentTransactionStatus1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
@@ -24,7 +24,7 @@ class PaymentTransactionStatus1(base_types._BaseFieldType):
 
 	@StsRsnInf.setter
 	def StsRsnInf(self, value):
-		self._StsRsnInf = value if type(value) != auto else self.make_default("StsRsnInf")
+		self._StsRsnInf = value if type(value) != base_types.auto else self.make_default("StsRsnInf")
 
 	@StsRsnInf.deleter
 	def StsRsnInf(self):

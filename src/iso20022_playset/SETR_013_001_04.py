@@ -12,7 +12,7 @@ class SETR_013_001_04():
 
 		@SwtchOrdr.setter
 		def SwtchOrdr(self, value):
-			self._SwtchOrdr = value if type(value) != auto else self.make_default("SwtchOrdr")
+			self._SwtchOrdr = value if type(value) != base_types.auto else self.make_default("SwtchOrdr")
 
 		@SwtchOrdr.deleter
 		def SwtchOrdr(self):

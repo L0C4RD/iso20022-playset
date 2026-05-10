@@ -1,6 +1,6 @@
 from . import base_types
-from .ReportPeriodActivity3Code import ReportPeriodActivity3Code
 from .SecuredMarketTransaction4 import SecuredMarketTransaction4
+from .ReportPeriodActivity3Code import ReportPeriodActivity3Code
 
 class SecuredMarketReport4Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuredMarketReport4Choice(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
 	@Tx.deleter
 	def Tx(self):
@@ -24,7 +24,7 @@ class SecuredMarketReport4Choice(base_types._BaseFieldType):
 
 	@DataSetActn.setter
 	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
+		self._DataSetActn = value if type(value) != base_types.auto else self.make_default("DataSetActn")
 
 	@DataSetActn.deleter
 	def DataSetActn(self):

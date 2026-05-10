@@ -10,7 +10,7 @@ class TransactionStatus3(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):

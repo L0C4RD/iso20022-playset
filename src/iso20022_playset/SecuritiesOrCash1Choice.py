@@ -1,6 +1,6 @@
 from . import base_types
-from .CashParties24 import CashParties24
 from .SettlementParties35 import SettlementParties35
+from .CashParties24 import CashParties24
 
 class SecuritiesOrCash1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesOrCash1Choice(base_types._BaseFieldType):
 
 	@CshPtiesDtls.setter
 	def CshPtiesDtls(self, value):
-		self._CshPtiesDtls = value if type(value) != auto else self.make_default("CshPtiesDtls")
+		self._CshPtiesDtls = value if type(value) != base_types.auto else self.make_default("CshPtiesDtls")
 
 	@CshPtiesDtls.deleter
 	def CshPtiesDtls(self):
@@ -24,7 +24,7 @@ class SecuritiesOrCash1Choice(base_types._BaseFieldType):
 
 	@SctiesDtls.setter
 	def SctiesDtls(self, value):
-		self._SctiesDtls = value if type(value) != auto else self.make_default("SctiesDtls")
+		self._SctiesDtls = value if type(value) != base_types.auto else self.make_default("SctiesDtls")
 
 	@SctiesDtls.deleter
 	def SctiesDtls(self):

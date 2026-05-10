@@ -12,7 +12,7 @@ class SETR_014_001_04():
 
 		@SwtchOrdrCxlReq.setter
 		def SwtchOrdrCxlReq(self, value):
-			self._SwtchOrdrCxlReq = value if type(value) != auto else self.make_default("SwtchOrdrCxlReq")
+			self._SwtchOrdrCxlReq = value if type(value) != base_types.auto else self.make_default("SwtchOrdrCxlReq")
 
 		@SwtchOrdrCxlReq.deleter
 		def SwtchOrdrCxlReq(self):

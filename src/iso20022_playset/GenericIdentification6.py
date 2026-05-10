@@ -1,23 +1,23 @@
 from . import base_types
+from .Number import Number
 from .Exact4AlphaNumericText import Exact4AlphaNumericText
 from .Max8Text import Max8Text
-from .Number import Number
 
 class GenericIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_Inf", "_Issr", "_Bal"]
+	__slots__ = ["_Bal", "_Issr", "_Inf"]
 	@property
-	def Inf(self):
-		return self._Inf
+	def Bal(self):
+		return self._Bal
 
-	@Inf.setter
-	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
 
-	@Inf.deleter
-	def Inf(self):
-		del self._Inf
-		self._Inf = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	@property
 	def Issr(self):
@@ -25,7 +25,7 @@ class GenericIdentification6(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -33,21 +33,21 @@ class GenericIdentification6(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def Inf(self):
+		return self._Inf
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@Inf.setter
+	def Inf(self, value):
+		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@Inf.deleter
+	def Inf(self):
+		del self._Inf
+		self._Inf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

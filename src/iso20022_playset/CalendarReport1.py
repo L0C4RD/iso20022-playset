@@ -11,7 +11,7 @@ class CalendarReport1(base_types._BaseFieldType):
 
 	@Svc.setter
 	def Svc(self, value):
-		self._Svc = value if type(value) != auto else self.make_default("Svc")
+		self._Svc = value if type(value) != base_types.auto else self.make_default("Svc")
 
 	@Svc.deleter
 	def Svc(self):
@@ -24,7 +24,7 @@ class CalendarReport1(base_types._BaseFieldType):
 
 	@CalOrErr.setter
 	def CalOrErr(self, value):
-		self._CalOrErr = value if type(value) != auto else self.make_default("CalOrErr")
+		self._CalOrErr = value if type(value) != base_types.auto else self.make_default("CalOrErr")
 
 	@CalOrErr.deleter
 	def CalOrErr(self):

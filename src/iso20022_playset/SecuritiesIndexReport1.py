@@ -1,24 +1,24 @@
 from . import base_types
 from .CountryCode import CountryCode
-from .Max35Text import Max35Text
-from .FinancialInstrument46Choice import FinancialInstrument46Choice
 from .Period4Choice import Period4Choice
+from .FinancialInstrument46Choice import FinancialInstrument46Choice
+from .Max35Text import Max35Text
 
 class SecuritiesIndexReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_RqstngNtty", "_VldtyPrd", "_TechRcrdId"]
+	__slots__ = ["_TechRcrdId", "_RqstngNtty", "_Indx", "_VldtyPrd"]
 	@property
-	def Indx(self):
-		return self._Indx
+	def TechRcrdId(self):
+		return self._TechRcrdId
 
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
 
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	@property
 	def RqstngNtty(self):
@@ -26,7 +26,7 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 
 	@RqstngNtty.setter
 	def RqstngNtty(self, value):
-		self._RqstngNtty = value if type(value) != auto else self.make_default("RqstngNtty")
+		self._RqstngNtty = value if type(value) != base_types.auto else self.make_default("RqstngNtty")
 
 	@RqstngNtty.deleter
 	def RqstngNtty(self):
@@ -34,35 +34,35 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 		self._RqstngNtty = None
 
 	@property
+	def Indx(self):
+		return self._Indx
+
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
+
+	@property
 	def VldtyPrd(self):
 		return self._VldtyPrd
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
 		del self._VldtyPrd
 		self._VldtyPrd = None
 
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Indx', type=FinancialInstrument46Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RqstngNtty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RqstngNtty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Indx', type=FinancialInstrument46Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-from .DateAndDateTimeChoice import DateAndDateTimeChoice
-from .CashAccount18 import CashAccount18
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .CashAccount18 import CashAccount18
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
 from .ISODate import ISODate
 
 class CashMovement3(base_types._BaseFieldType):
@@ -13,7 +13,7 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@PstngDtTm.setter
 	def PstngDtTm(self, value):
-		self._PstngDtTm = value if type(value) != auto else self.make_default("PstngDtTm")
+		self._PstngDtTm = value if type(value) != base_types.auto else self.make_default("PstngDtTm")
 
 	@PstngDtTm.deleter
 	def PstngDtTm(self):
@@ -26,7 +26,7 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
@@ -39,7 +39,7 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
 
 	@ValDt.deleter
 	def ValDt(self):
@@ -52,7 +52,7 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@PstngAmt.setter
 	def PstngAmt(self, value):
-		self._PstngAmt = value if type(value) != auto else self.make_default("PstngAmt")
+		self._PstngAmt = value if type(value) != base_types.auto else self.make_default("PstngAmt")
 
 	@PstngAmt.deleter
 	def PstngAmt(self):

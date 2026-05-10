@@ -12,7 +12,7 @@ class SECL_007_001_03():
 
 		@BuyInNtfctn.setter
 		def BuyInNtfctn(self, value):
-			self._BuyInNtfctn = value if type(value) != auto else self.make_default("BuyInNtfctn")
+			self._BuyInNtfctn = value if type(value) != base_types.auto else self.make_default("BuyInNtfctn")
 
 		@BuyInNtfctn.deleter
 		def BuyInNtfctn(self):

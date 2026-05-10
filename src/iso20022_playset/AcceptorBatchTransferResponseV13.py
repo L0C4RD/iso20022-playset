@@ -1,7 +1,7 @@
 from . import base_types
+from .ContentInformationType37 import ContentInformationType37
 from .Header56 import Header56
 from .CardPaymentBatchTransferResponse12 import CardPaymentBatchTransferResponse12
-from .ContentInformationType37 import ContentInformationType37
 
 class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -25,7 +25,7 @@ class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
@@ -38,7 +38,7 @@ class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
 	@BtchTrfRspn.setter
 	def BtchTrfRspn(self, value):
-		self._BtchTrfRspn = value if type(value) != auto else self.make_default("BtchTrfRspn")
+		self._BtchTrfRspn = value if type(value) != base_types.auto else self.make_default("BtchTrfRspn")
 
 	@BtchTrfRspn.deleter
 	def BtchTrfRspn(self):

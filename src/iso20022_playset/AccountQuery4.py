@@ -11,7 +11,7 @@ class AccountQuery4(base_types._BaseFieldType):
 
 	@AcctCrit.setter
 	def AcctCrit(self, value):
-		self._AcctCrit = value if type(value) != auto else self.make_default("AcctCrit")
+		self._AcctCrit = value if type(value) != base_types.auto else self.make_default("AcctCrit")
 
 	@AcctCrit.deleter
 	def AcctCrit(self):
@@ -24,7 +24,7 @@ class AccountQuery4(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

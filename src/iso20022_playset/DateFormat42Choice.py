@@ -11,7 +11,7 @@ class DateFormat42Choice(base_types._BaseFieldType):
 
 	@YrMnth.setter
 	def YrMnth(self, value):
-		self._YrMnth = value if type(value) != auto else self.make_default("YrMnth")
+		self._YrMnth = value if type(value) != base_types.auto else self.make_default("YrMnth")
 
 	@YrMnth.deleter
 	def YrMnth(self):
@@ -24,7 +24,7 @@ class DateFormat42Choice(base_types._BaseFieldType):
 
 	@YrMnthDay.setter
 	def YrMnthDay(self, value):
-		self._YrMnthDay = value if type(value) != auto else self.make_default("YrMnthDay")
+		self._YrMnthDay = value if type(value) != base_types.auto else self.make_default("YrMnthDay")
 
 	@YrMnthDay.deleter
 	def YrMnthDay(self):

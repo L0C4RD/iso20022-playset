@@ -1,6 +1,6 @@
 from . import base_types
-from .PositionSetReport3Choice import PositionSetReport3Choice
 from .SupplementaryData1 import SupplementaryData1
+from .PositionSetReport3Choice import PositionSetReport3Choice
 
 class SecuritiesFinancingReportingPositionSetReportV01(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesFinancingReportingPositionSetReportV01(base_types._BaseFieldType
 
 	@AggtdPoss.setter
 	def AggtdPoss(self, value):
-		self._AggtdPoss = value if type(value) != auto else self.make_default("AggtdPoss")
+		self._AggtdPoss = value if type(value) != base_types.auto else self.make_default("AggtdPoss")
 
 	@AggtdPoss.deleter
 	def AggtdPoss(self):
@@ -24,7 +24,7 @@ class SecuritiesFinancingReportingPositionSetReportV01(base_types._BaseFieldType
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):

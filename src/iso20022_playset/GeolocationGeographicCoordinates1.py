@@ -10,7 +10,7 @@ class GeolocationGeographicCoordinates1(base_types._BaseFieldType):
 
 	@Lat.setter
 	def Lat(self, value):
-		self._Lat = value if type(value) != auto else self.make_default("Lat")
+		self._Lat = value if type(value) != base_types.auto else self.make_default("Lat")
 
 	@Lat.deleter
 	def Lat(self):
@@ -23,7 +23,7 @@ class GeolocationGeographicCoordinates1(base_types._BaseFieldType):
 
 	@Long.setter
 	def Long(self, value):
-		self._Long = value if type(value) != auto else self.make_default("Long")
+		self._Long = value if type(value) != base_types.auto else self.make_default("Long")
 
 	@Long.deleter
 	def Long(self):

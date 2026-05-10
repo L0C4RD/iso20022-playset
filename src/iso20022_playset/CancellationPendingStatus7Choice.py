@@ -1,7 +1,7 @@
 from . import base_types
-from .Max350Text import Max350Text
 from .GenericIdentification1 import GenericIdentification1
 from .NoReasonCode import NoReasonCode
+from .Max350Text import Max350Text
 
 class CancellationPendingStatus7Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CancellationPendingStatus7Choice(base_types._BaseFieldType):
 
 	@DataSrcSchme.setter
 	def DataSrcSchme(self, value):
-		self._DataSrcSchme = value if type(value) != auto else self.make_default("DataSrcSchme")
+		self._DataSrcSchme = value if type(value) != base_types.auto else self.make_default("DataSrcSchme")
 
 	@DataSrcSchme.deleter
 	def DataSrcSchme(self):
@@ -25,7 +25,7 @@ class CancellationPendingStatus7Choice(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):
@@ -38,7 +38,7 @@ class CancellationPendingStatus7Choice(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):

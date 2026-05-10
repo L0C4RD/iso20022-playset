@@ -1,6 +1,6 @@
 from . import base_types
-from .ProprietaryReason4 import ProprietaryReason4
 from .NoReasonCode import NoReasonCode
+from .ProprietaryReason4 import ProprietaryReason4
 
 class Reason18Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Reason18Choice(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):
@@ -24,7 +24,7 @@ class Reason18Choice(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):

@@ -12,7 +12,7 @@ class CATP_002_001_03():
 
 		@ATMWdrwlRspn.setter
 		def ATMWdrwlRspn(self, value):
-			self._ATMWdrwlRspn = value if type(value) != auto else self.make_default("ATMWdrwlRspn")
+			self._ATMWdrwlRspn = value if type(value) != base_types.auto else self.make_default("ATMWdrwlRspn")
 
 		@ATMWdrwlRspn.deleter
 		def ATMWdrwlRspn(self):

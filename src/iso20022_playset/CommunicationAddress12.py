@@ -10,7 +10,7 @@ class CommunicationAddress12(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != auto else self.make_default("URLAdr")
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
 
 	@URLAdr.deleter
 	def URLAdr(self):

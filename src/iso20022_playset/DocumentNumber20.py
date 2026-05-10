@@ -1,6 +1,6 @@
 from . import base_types
-from .DocumentNumber5Choice import DocumentNumber5Choice
 from .Identification30 import Identification30
+from .DocumentNumber5Choice import DocumentNumber5Choice
 
 class DocumentNumber20(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DocumentNumber20(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
 
 	@Nb.deleter
 	def Nb(self):
@@ -24,7 +24,7 @@ class DocumentNumber20(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != auto else self.make_default("Refs")
+		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
 
 	@Refs.deleter
 	def Refs(self):

@@ -1,21 +1,34 @@
 from . import base_types
-from .InterestAmount3 import InterestAmount3
-from .Max35Text import Max35Text
 from .Agreement4 import Agreement4
-from .SupplementaryData1 import SupplementaryData1
 from .InterestResponse1 import InterestResponse1
+from .InterestAmount3 import InterestAmount3
+from .SupplementaryData1 import SupplementaryData1
 from .Obligation9 import Obligation9
+from .Max35Text import Max35Text
 
 class InterestPaymentResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstDueToB", "_IntrstDueToA", "_SplmtryData", "_Oblgtn", "_TxId", "_IntrstRspn", "_Agrmt"]
+	__slots__ = ["_IntrstRspn", "_IntrstDueToB", "_Agrmt", "_SplmtryData", "_IntrstDueToA", "_Oblgtn", "_TxId"]
+	@property
+	def IntrstRspn(self):
+		return self._IntrstRspn
+
+	@IntrstRspn.setter
+	def IntrstRspn(self, value):
+		self._IntrstRspn = value if type(value) != base_types.auto else self.make_default("IntrstRspn")
+
+	@IntrstRspn.deleter
+	def IntrstRspn(self):
+		del self._IntrstRspn
+		self._IntrstRspn = None
+
 	@property
 	def IntrstDueToB(self):
 		return self._IntrstDueToB
 
 	@IntrstDueToB.setter
 	def IntrstDueToB(self, value):
-		self._IntrstDueToB = value if type(value) != auto else self.make_default("IntrstDueToB")
+		self._IntrstDueToB = value if type(value) != base_types.auto else self.make_default("IntrstDueToB")
 
 	@IntrstDueToB.deleter
 	def IntrstDueToB(self):
@@ -23,17 +36,17 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 		self._IntrstDueToB = None
 
 	@property
-	def IntrstDueToA(self):
-		return self._IntrstDueToA
+	def Agrmt(self):
+		return self._Agrmt
 
-	@IntrstDueToA.setter
-	def IntrstDueToA(self, value):
-		self._IntrstDueToA = value if type(value) != auto else self.make_default("IntrstDueToA")
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
 
-	@IntrstDueToA.deleter
-	def IntrstDueToA(self):
-		del self._IntrstDueToA
-		self._IntrstDueToA = None
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
 
 	@property
 	def SplmtryData(self):
@@ -41,7 +54,7 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -49,12 +62,25 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def IntrstDueToA(self):
+		return self._IntrstDueToA
+
+	@IntrstDueToA.setter
+	def IntrstDueToA(self, value):
+		self._IntrstDueToA = value if type(value) != base_types.auto else self.make_default("IntrstDueToA")
+
+	@IntrstDueToA.deleter
+	def IntrstDueToA(self):
+		del self._IntrstDueToA
+		self._IntrstDueToA = None
+
+	@property
 	def Oblgtn(self):
 		return self._Oblgtn
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
@@ -67,46 +93,20 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
 
-	@property
-	def IntrstRspn(self):
-		return self._IntrstRspn
-
-	@IntrstRspn.setter
-	def IntrstRspn(self, value):
-		self._IntrstRspn = value if type(value) != auto else self.make_default("IntrstRspn")
-
-	@IntrstRspn.deleter
-	def IntrstRspn(self):
-		del self._IntrstRspn
-		self._IntrstRspn = None
-
-	@property
-	def Agrmt(self):
-		return self._Agrmt
-
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
-
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IntrstRspn', type=InterestResponse1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstDueToB', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstDueToA', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrstDueToA', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRspn', type=InterestResponse1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=1, max=1, mutex_group=None, array=False),
 	))
 

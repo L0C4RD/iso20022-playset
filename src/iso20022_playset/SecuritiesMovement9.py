@@ -1,40 +1,27 @@
 from . import base_types
-from .Max35Text import Max35Text
+from .CollateralEntryType1Code import CollateralEntryType1Code
+from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from .YesNoIndicator import YesNoIndicator
 from .SecurityIdentification19 import SecurityIdentification19
-from .BlockChainAddressWallet3 import BlockChainAddressWallet3
-from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from .SecuritiesAccount19 import SecuritiesAccount19
-from .CollateralEntryType1Code import CollateralEntryType1Code
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .Max35Text import Max35Text
 
 class SecuritiesMovement9(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_BlckChainAdrOrWllt", "_Qty", "_SctiesMvmntTp", "_FinInstrmId", "_ClntSctiesMvmntId", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_CollMvmnt"]
+	__slots__ = ["_ClntSctiesMvmntId", "_Qty", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_SctiesMvmntTp", "_FinInstrmId", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_CollMvmnt"]
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def ClntSctiesMvmntId(self):
+		return self._ClntSctiesMvmntId
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@ClntSctiesMvmntId.setter
+	def ClntSctiesMvmntId(self, value):
+		self._ClntSctiesMvmntId = value if type(value) != base_types.auto else self.make_default("ClntSctiesMvmntId")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@ClntSctiesMvmntId.deleter
+	def ClntSctiesMvmntId(self):
+		del self._ClntSctiesMvmntId
+		self._ClntSctiesMvmntId = None
 
 	@property
 	def Qty(self):
@@ -42,7 +29,7 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -50,12 +37,25 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
+	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
+		return self._TrptyAgtSvcPrvdrSctiesMvmntId
+
+	@TrptyAgtSvcPrvdrSctiesMvmntId.setter
+	def TrptyAgtSvcPrvdrSctiesMvmntId(self, value):
+		self._TrptyAgtSvcPrvdrSctiesMvmntId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrSctiesMvmntId")
+
+	@TrptyAgtSvcPrvdrSctiesMvmntId.deleter
+	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
+		del self._TrptyAgtSvcPrvdrSctiesMvmntId
+		self._TrptyAgtSvcPrvdrSctiesMvmntId = None
+
+	@property
 	def SctiesMvmntTp(self):
 		return self._SctiesMvmntTp
 
 	@SctiesMvmntTp.setter
 	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
+		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
 
 	@SctiesMvmntTp.deleter
 	def SctiesMvmntTp(self):
@@ -68,7 +68,7 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
@@ -76,30 +76,30 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def ClntSctiesMvmntId(self):
-		return self._ClntSctiesMvmntId
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@ClntSctiesMvmntId.setter
-	def ClntSctiesMvmntId(self, value):
-		self._ClntSctiesMvmntId = value if type(value) != auto else self.make_default("ClntSctiesMvmntId")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
 
-	@ClntSctiesMvmntId.deleter
-	def ClntSctiesMvmntId(self):
-		del self._ClntSctiesMvmntId
-		self._ClntSctiesMvmntId = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
-	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
-		return self._TrptyAgtSvcPrvdrSctiesMvmntId
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@TrptyAgtSvcPrvdrSctiesMvmntId.setter
-	def TrptyAgtSvcPrvdrSctiesMvmntId(self, value):
-		self._TrptyAgtSvcPrvdrSctiesMvmntId = value if type(value) != auto else self.make_default("TrptyAgtSvcPrvdrSctiesMvmntId")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
 
-	@TrptyAgtSvcPrvdrSctiesMvmntId.deleter
-	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
-		del self._TrptyAgtSvcPrvdrSctiesMvmntId
-		self._TrptyAgtSvcPrvdrSctiesMvmntId = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def CollMvmnt(self):
@@ -107,7 +107,7 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@CollMvmnt.setter
 	def CollMvmnt(self, value):
-		self._CollMvmnt = value if type(value) != auto else self.make_default("CollMvmnt")
+		self._CollMvmnt = value if type(value) != base_types.auto else self.make_default("CollMvmnt")
 
 	@CollMvmnt.deleter
 	def CollMvmnt(self):
@@ -115,13 +115,13 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 		self._CollMvmnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntTp', type=CollateralEntryType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

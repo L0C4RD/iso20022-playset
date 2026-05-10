@@ -1,6 +1,6 @@
 from . import base_types
-from .NameAndAddress9 import NameAndAddress9
 from .VoteInstructionType1Choice import VoteInstructionType1Choice
+from .NameAndAddress9 import NameAndAddress9
 
 class VoteInstructionForMeetingResolution3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class VoteInstructionForMeetingResolution3Choice(base_types._BaseFieldType):
 
 	@Shrhldr.setter
 	def Shrhldr(self, value):
-		self._Shrhldr = value if type(value) != auto else self.make_default("Shrhldr")
+		self._Shrhldr = value if type(value) != base_types.auto else self.make_default("Shrhldr")
 
 	@Shrhldr.deleter
 	def Shrhldr(self):
@@ -24,7 +24,7 @@ class VoteInstructionForMeetingResolution3Choice(base_types._BaseFieldType):
 
 	@VoteIndctn.setter
 	def VoteIndctn(self, value):
-		self._VoteIndctn = value if type(value) != auto else self.make_default("VoteIndctn")
+		self._VoteIndctn = value if type(value) != base_types.auto else self.make_default("VoteIndctn")
 
 	@VoteIndctn.deleter
 	def VoteIndctn(self):

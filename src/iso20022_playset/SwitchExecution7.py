@@ -1,259 +1,38 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from .YesNoIndicator import YesNoIndicator
-from .PaymentTransaction71 import PaymentTransaction71
 from .OrderWaiver1 import OrderWaiver1
+from .CustomerConductClassification1Choice import CustomerConductClassification1Choice
+from .FinancialAdvice1Code import FinancialAdvice1Code
+from .Intermediary39 import Intermediary39
+from .TransactionChannelType1Choice import TransactionChannelType1Choice
 from .ISODate import ISODate
-from .BestExecution1Code import BestExecution1Code
+from .InvestmentAccount58 import InvestmentAccount58
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ForeignExchangeTerms33 import ForeignExchangeTerms33
+from .YesNoIndicator import YesNoIndicator
+from .ISODateTime import ISODateTime
+from .CancellationRight1Choice import CancellationRight1Choice
+from .LateReport1Code import LateReport1Code
+from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from .AdditionalAmount1Choice import AdditionalAmount1Choice
+from .Max35Text import Max35Text
+from .SignatureType1Choice import SignatureType1Choice
+from .BestExecution1Code import BestExecution1Code
 from .NegotiatedTrade1Code import NegotiatedTrade1Code
+from .PaymentTransaction71 import PaymentTransaction71
+from .PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
 from .SwitchSubscriptionLegExecution4 import SwitchSubscriptionLegExecution4
 from .SwitchRedemptionLegExecution4 import SwitchRedemptionLegExecution4
-from .CancellationRight1Choice import CancellationRight1Choice
-from .InvestmentAccount58 import InvestmentAccount58
-from .LateReport1Code import LateReport1Code
-from .TransactionChannelType1Choice import TransactionChannelType1Choice
-from .PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
-from .Intermediary39 import Intermediary39
-from .CustomerConductClassification1Choice import CustomerConductClassification1Choice
-from .ForeignExchangeTerms33 import ForeignExchangeTerms33
-from .FinancialAdvice1Code import FinancialAdvice1Code
-from .SignatureType1Choice import SignatureType1Choice
-from .ISODateTime import ISODateTime
 
 class SwitchExecution7(base_types._BaseFieldType):
 
-	__slots__ = ["_BestExctn", "_LateRpt", "_CxlRght", "_FinAdvc", "_RedLegDtls", "_DealRef", "_RltdPtyDtls", "_ReqdFutrTradDt", "_CstmrCndctClssfctn", "_TxChanlTp", "_FXDtls", "_SbcptLegDtls", "_PlcOfTrad", "_ClntRef", "_SttlmAmt", "_SgntrTp", "_CshSttlmDt", "_AddtlAmt", "_CshSttlmDtls", "_OrdrWvrDtls", "_AmdmntInd", "_NgtdTrad", "_InvstmtAcctDtls", "_SttlmMtd", "_MstrRef", "_OrdrDtTm", "_OrdrRef", "_RcvdDtTm"]
-	@property
-	def BestExctn(self):
-		return self._BestExctn
-
-	@BestExctn.setter
-	def BestExctn(self, value):
-		self._BestExctn = value if type(value) != auto else self.make_default("BestExctn")
-
-	@BestExctn.deleter
-	def BestExctn(self):
-		del self._BestExctn
-		self._BestExctn = None
-
-	@property
-	def LateRpt(self):
-		return self._LateRpt
-
-	@LateRpt.setter
-	def LateRpt(self, value):
-		self._LateRpt = value if type(value) != auto else self.make_default("LateRpt")
-
-	@LateRpt.deleter
-	def LateRpt(self):
-		del self._LateRpt
-		self._LateRpt = None
-
-	@property
-	def CxlRght(self):
-		return self._CxlRght
-
-	@CxlRght.setter
-	def CxlRght(self, value):
-		self._CxlRght = value if type(value) != auto else self.make_default("CxlRght")
-
-	@CxlRght.deleter
-	def CxlRght(self):
-		del self._CxlRght
-		self._CxlRght = None
-
-	@property
-	def FinAdvc(self):
-		return self._FinAdvc
-
-	@FinAdvc.setter
-	def FinAdvc(self, value):
-		self._FinAdvc = value if type(value) != auto else self.make_default("FinAdvc")
-
-	@FinAdvc.deleter
-	def FinAdvc(self):
-		del self._FinAdvc
-		self._FinAdvc = None
-
-	@property
-	def RedLegDtls(self):
-		return self._RedLegDtls
-
-	@RedLegDtls.setter
-	def RedLegDtls(self, value):
-		self._RedLegDtls = value if type(value) != auto else self.make_default("RedLegDtls")
-
-	@RedLegDtls.deleter
-	def RedLegDtls(self):
-		del self._RedLegDtls
-		self._RedLegDtls = None
-
-	@property
-	def DealRef(self):
-		return self._DealRef
-
-	@DealRef.setter
-	def DealRef(self, value):
-		self._DealRef = value if type(value) != auto else self.make_default("DealRef")
-
-	@DealRef.deleter
-	def DealRef(self):
-		del self._DealRef
-		self._DealRef = None
-
-	@property
-	def RltdPtyDtls(self):
-		return self._RltdPtyDtls
-
-	@RltdPtyDtls.setter
-	def RltdPtyDtls(self, value):
-		self._RltdPtyDtls = value if type(value) != auto else self.make_default("RltdPtyDtls")
-
-	@RltdPtyDtls.deleter
-	def RltdPtyDtls(self):
-		del self._RltdPtyDtls
-		self._RltdPtyDtls = None
-
-	@property
-	def ReqdFutrTradDt(self):
-		return self._ReqdFutrTradDt
-
-	@ReqdFutrTradDt.setter
-	def ReqdFutrTradDt(self, value):
-		self._ReqdFutrTradDt = value if type(value) != auto else self.make_default("ReqdFutrTradDt")
-
-	@ReqdFutrTradDt.deleter
-	def ReqdFutrTradDt(self):
-		del self._ReqdFutrTradDt
-		self._ReqdFutrTradDt = None
-
-	@property
-	def CstmrCndctClssfctn(self):
-		return self._CstmrCndctClssfctn
-
-	@CstmrCndctClssfctn.setter
-	def CstmrCndctClssfctn(self, value):
-		self._CstmrCndctClssfctn = value if type(value) != auto else self.make_default("CstmrCndctClssfctn")
-
-	@CstmrCndctClssfctn.deleter
-	def CstmrCndctClssfctn(self):
-		del self._CstmrCndctClssfctn
-		self._CstmrCndctClssfctn = None
-
-	@property
-	def TxChanlTp(self):
-		return self._TxChanlTp
-
-	@TxChanlTp.setter
-	def TxChanlTp(self, value):
-		self._TxChanlTp = value if type(value) != auto else self.make_default("TxChanlTp")
-
-	@TxChanlTp.deleter
-	def TxChanlTp(self):
-		del self._TxChanlTp
-		self._TxChanlTp = None
-
-	@property
-	def FXDtls(self):
-		return self._FXDtls
-
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
-
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
-
-	@property
-	def SbcptLegDtls(self):
-		return self._SbcptLegDtls
-
-	@SbcptLegDtls.setter
-	def SbcptLegDtls(self, value):
-		self._SbcptLegDtls = value if type(value) != auto else self.make_default("SbcptLegDtls")
-
-	@SbcptLegDtls.deleter
-	def SbcptLegDtls(self):
-		del self._SbcptLegDtls
-		self._SbcptLegDtls = None
-
-	@property
-	def PlcOfTrad(self):
-		return self._PlcOfTrad
-
-	@PlcOfTrad.setter
-	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != auto else self.make_default("PlcOfTrad")
-
-	@PlcOfTrad.deleter
-	def PlcOfTrad(self):
-		del self._PlcOfTrad
-		self._PlcOfTrad = None
-
-	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
-
-	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
-
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
-
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
-
-	@property
-	def SgntrTp(self):
-		return self._SgntrTp
-
-	@SgntrTp.setter
-	def SgntrTp(self, value):
-		self._SgntrTp = value if type(value) != auto else self.make_default("SgntrTp")
-
-	@SgntrTp.deleter
-	def SgntrTp(self):
-		del self._SgntrTp
-		self._SgntrTp = None
-
-	@property
-	def CshSttlmDt(self):
-		return self._CshSttlmDt
-
-	@CshSttlmDt.setter
-	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != auto else self.make_default("CshSttlmDt")
-
-	@CshSttlmDt.deleter
-	def CshSttlmDt(self):
-		del self._CshSttlmDt
-		self._CshSttlmDt = None
-
+	__slots__ = ["_AddtlAmt", "_NgtdTrad", "_BestExctn", "_PlcOfTrad", "_ReqdFutrTradDt", "_SttlmMtd", "_OrdrRef", "_CshSttlmDtls", "_RedLegDtls", "_InvstmtAcctDtls", "_CstmrCndctClssfctn", "_FinAdvc", "_ClntRef", "_FXDtls", "_MstrRef", "_OrdrDtTm", "_SbcptLegDtls", "_OrdrWvrDtls", "_LateRpt", "_AmdmntInd", "_CxlRght", "_RcvdDtTm", "_RltdPtyDtls", "_CshSttlmDt", "_TxChanlTp", "_SgntrTp", "_SttlmAmt", "_DealRef"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt
 
 	@AddtlAmt.setter
 	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
+		self._AddtlAmt = value if type(value) != base_types.auto else self.make_default("AddtlAmt")
 
 	@AddtlAmt.deleter
 	def AddtlAmt(self):
@@ -261,51 +40,12 @@ class SwitchExecution7(base_types._BaseFieldType):
 		self._AddtlAmt = None
 
 	@property
-	def CshSttlmDtls(self):
-		return self._CshSttlmDtls
-
-	@CshSttlmDtls.setter
-	def CshSttlmDtls(self, value):
-		self._CshSttlmDtls = value if type(value) != auto else self.make_default("CshSttlmDtls")
-
-	@CshSttlmDtls.deleter
-	def CshSttlmDtls(self):
-		del self._CshSttlmDtls
-		self._CshSttlmDtls = None
-
-	@property
-	def OrdrWvrDtls(self):
-		return self._OrdrWvrDtls
-
-	@OrdrWvrDtls.setter
-	def OrdrWvrDtls(self, value):
-		self._OrdrWvrDtls = value if type(value) != auto else self.make_default("OrdrWvrDtls")
-
-	@OrdrWvrDtls.deleter
-	def OrdrWvrDtls(self):
-		del self._OrdrWvrDtls
-		self._OrdrWvrDtls = None
-
-	@property
-	def AmdmntInd(self):
-		return self._AmdmntInd
-
-	@AmdmntInd.setter
-	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != auto else self.make_default("AmdmntInd")
-
-	@AmdmntInd.deleter
-	def AmdmntInd(self):
-		del self._AmdmntInd
-		self._AmdmntInd = None
-
-	@property
 	def NgtdTrad(self):
 		return self._NgtdTrad
 
 	@NgtdTrad.setter
 	def NgtdTrad(self, value):
-		self._NgtdTrad = value if type(value) != auto else self.make_default("NgtdTrad")
+		self._NgtdTrad = value if type(value) != base_types.auto else self.make_default("NgtdTrad")
 
 	@NgtdTrad.deleter
 	def NgtdTrad(self):
@@ -313,17 +53,43 @@ class SwitchExecution7(base_types._BaseFieldType):
 		self._NgtdTrad = None
 
 	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
+	def BestExctn(self):
+		return self._BestExctn
 
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != auto else self.make_default("InvstmtAcctDtls")
+	@BestExctn.setter
+	def BestExctn(self, value):
+		self._BestExctn = value if type(value) != base_types.auto else self.make_default("BestExctn")
 
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+	@BestExctn.deleter
+	def BestExctn(self):
+		del self._BestExctn
+		self._BestExctn = None
+
+	@property
+	def PlcOfTrad(self):
+		return self._PlcOfTrad
+
+	@PlcOfTrad.setter
+	def PlcOfTrad(self, value):
+		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+
+	@PlcOfTrad.deleter
+	def PlcOfTrad(self):
+		del self._PlcOfTrad
+		self._PlcOfTrad = None
+
+	@property
+	def ReqdFutrTradDt(self):
+		return self._ReqdFutrTradDt
+
+	@ReqdFutrTradDt.setter
+	def ReqdFutrTradDt(self, value):
+		self._ReqdFutrTradDt = value if type(value) != base_types.auto else self.make_default("ReqdFutrTradDt")
+
+	@ReqdFutrTradDt.deleter
+	def ReqdFutrTradDt(self):
+		del self._ReqdFutrTradDt
+		self._ReqdFutrTradDt = None
 
 	@property
 	def SttlmMtd(self):
@@ -331,7 +97,7 @@ class SwitchExecution7(base_types._BaseFieldType):
 
 	@SttlmMtd.setter
 	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != auto else self.make_default("SttlmMtd")
+		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
 
 	@SttlmMtd.deleter
 	def SttlmMtd(self):
@@ -339,12 +105,116 @@ class SwitchExecution7(base_types._BaseFieldType):
 		self._SttlmMtd = None
 
 	@property
+	def OrdrRef(self):
+		return self._OrdrRef
+
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
+
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
+
+	@property
+	def CshSttlmDtls(self):
+		return self._CshSttlmDtls
+
+	@CshSttlmDtls.setter
+	def CshSttlmDtls(self, value):
+		self._CshSttlmDtls = value if type(value) != base_types.auto else self.make_default("CshSttlmDtls")
+
+	@CshSttlmDtls.deleter
+	def CshSttlmDtls(self):
+		del self._CshSttlmDtls
+		self._CshSttlmDtls = None
+
+	@property
+	def RedLegDtls(self):
+		return self._RedLegDtls
+
+	@RedLegDtls.setter
+	def RedLegDtls(self, value):
+		self._RedLegDtls = value if type(value) != base_types.auto else self.make_default("RedLegDtls")
+
+	@RedLegDtls.deleter
+	def RedLegDtls(self):
+		del self._RedLegDtls
+		self._RedLegDtls = None
+
+	@property
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
+
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
+
+	@property
+	def CstmrCndctClssfctn(self):
+		return self._CstmrCndctClssfctn
+
+	@CstmrCndctClssfctn.setter
+	def CstmrCndctClssfctn(self, value):
+		self._CstmrCndctClssfctn = value if type(value) != base_types.auto else self.make_default("CstmrCndctClssfctn")
+
+	@CstmrCndctClssfctn.deleter
+	def CstmrCndctClssfctn(self):
+		del self._CstmrCndctClssfctn
+		self._CstmrCndctClssfctn = None
+
+	@property
+	def FinAdvc(self):
+		return self._FinAdvc
+
+	@FinAdvc.setter
+	def FinAdvc(self, value):
+		self._FinAdvc = value if type(value) != base_types.auto else self.make_default("FinAdvc")
+
+	@FinAdvc.deleter
+	def FinAdvc(self):
+		del self._FinAdvc
+		self._FinAdvc = None
+
+	@property
+	def ClntRef(self):
+		return self._ClntRef
+
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
+
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
+	@property
 	def MstrRef(self):
 		return self._MstrRef
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
 
 	@MstrRef.deleter
 	def MstrRef(self):
@@ -357,7 +227,7 @@ class SwitchExecution7(base_types._BaseFieldType):
 
 	@OrdrDtTm.setter
 	def OrdrDtTm(self, value):
-		self._OrdrDtTm = value if type(value) != auto else self.make_default("OrdrDtTm")
+		self._OrdrDtTm = value if type(value) != base_types.auto else self.make_default("OrdrDtTm")
 
 	@OrdrDtTm.deleter
 	def OrdrDtTm(self):
@@ -365,17 +235,69 @@ class SwitchExecution7(base_types._BaseFieldType):
 		self._OrdrDtTm = None
 
 	@property
-	def OrdrRef(self):
-		return self._OrdrRef
+	def SbcptLegDtls(self):
+		return self._SbcptLegDtls
 
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
+	@SbcptLegDtls.setter
+	def SbcptLegDtls(self, value):
+		self._SbcptLegDtls = value if type(value) != base_types.auto else self.make_default("SbcptLegDtls")
 
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
+	@SbcptLegDtls.deleter
+	def SbcptLegDtls(self):
+		del self._SbcptLegDtls
+		self._SbcptLegDtls = None
+
+	@property
+	def OrdrWvrDtls(self):
+		return self._OrdrWvrDtls
+
+	@OrdrWvrDtls.setter
+	def OrdrWvrDtls(self, value):
+		self._OrdrWvrDtls = value if type(value) != base_types.auto else self.make_default("OrdrWvrDtls")
+
+	@OrdrWvrDtls.deleter
+	def OrdrWvrDtls(self):
+		del self._OrdrWvrDtls
+		self._OrdrWvrDtls = None
+
+	@property
+	def LateRpt(self):
+		return self._LateRpt
+
+	@LateRpt.setter
+	def LateRpt(self, value):
+		self._LateRpt = value if type(value) != base_types.auto else self.make_default("LateRpt")
+
+	@LateRpt.deleter
+	def LateRpt(self):
+		del self._LateRpt
+		self._LateRpt = None
+
+	@property
+	def AmdmntInd(self):
+		return self._AmdmntInd
+
+	@AmdmntInd.setter
+	def AmdmntInd(self, value):
+		self._AmdmntInd = value if type(value) != base_types.auto else self.make_default("AmdmntInd")
+
+	@AmdmntInd.deleter
+	def AmdmntInd(self):
+		del self._AmdmntInd
+		self._AmdmntInd = None
+
+	@property
+	def CxlRght(self):
+		return self._CxlRght
+
+	@CxlRght.setter
+	def CxlRght(self, value):
+		self._CxlRght = value if type(value) != base_types.auto else self.make_default("CxlRght")
+
+	@CxlRght.deleter
+	def CxlRght(self):
+		del self._CxlRght
+		self._CxlRght = None
 
 	@property
 	def RcvdDtTm(self):
@@ -383,41 +305,119 @@ class SwitchExecution7(base_types._BaseFieldType):
 
 	@RcvdDtTm.setter
 	def RcvdDtTm(self, value):
-		self._RcvdDtTm = value if type(value) != auto else self.make_default("RcvdDtTm")
+		self._RcvdDtTm = value if type(value) != base_types.auto else self.make_default("RcvdDtTm")
 
 	@RcvdDtTm.deleter
 	def RcvdDtTm(self):
 		del self._RcvdDtTm
 		self._RcvdDtTm = None
 
+	@property
+	def RltdPtyDtls(self):
+		return self._RltdPtyDtls
+
+	@RltdPtyDtls.setter
+	def RltdPtyDtls(self, value):
+		self._RltdPtyDtls = value if type(value) != base_types.auto else self.make_default("RltdPtyDtls")
+
+	@RltdPtyDtls.deleter
+	def RltdPtyDtls(self):
+		del self._RltdPtyDtls
+		self._RltdPtyDtls = None
+
+	@property
+	def CshSttlmDt(self):
+		return self._CshSttlmDt
+
+	@CshSttlmDt.setter
+	def CshSttlmDt(self, value):
+		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
+
+	@CshSttlmDt.deleter
+	def CshSttlmDt(self):
+		del self._CshSttlmDt
+		self._CshSttlmDt = None
+
+	@property
+	def TxChanlTp(self):
+		return self._TxChanlTp
+
+	@TxChanlTp.setter
+	def TxChanlTp(self, value):
+		self._TxChanlTp = value if type(value) != base_types.auto else self.make_default("TxChanlTp")
+
+	@TxChanlTp.deleter
+	def TxChanlTp(self):
+		del self._TxChanlTp
+		self._TxChanlTp = None
+
+	@property
+	def SgntrTp(self):
+		return self._SgntrTp
+
+	@SgntrTp.setter
+	def SgntrTp(self, value):
+		self._SgntrTp = value if type(value) != base_types.auto else self.make_default("SgntrTp")
+
+	@SgntrTp.deleter
+	def SgntrTp(self):
+		del self._SgntrTp
+		self._SgntrTp = None
+
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
+	@property
+	def DealRef(self):
+		return self._DealRef
+
+	@DealRef.setter
+	def DealRef(self, value):
+		self._DealRef = value if type(value) != base_types.auto else self.make_default("DealRef")
+
+	@DealRef.deleter
+	def DealRef(self):
+		del self._DealRef
+		self._DealRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BestExctn', type=BestExecution1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LateRpt', type=LateReport1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRght', type=CancellationRight1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinAdvc', type=FinancialAdvice1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedLegDtls', type=SwitchRedemptionLegExecution4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DealRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdPtyDtls', type=Intermediary39, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqdFutrTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrCndctClssfctn', type=CustomerConductClassification1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxChanlTp', type=TransactionChannelType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms33, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SbcptLegDtls', type=SwitchSubscriptionLegExecution4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PlcOfTrad', type=PlaceOfTradeIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrTp', type=SignatureType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlAmt', type=AdditionalAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSttlmDtls', type=PaymentTransaction71, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrWvrDtls', type=OrderWaiver1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NgtdTrad', type=NegotiatedTrade1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BestExctn', type=BestExecution1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfTrad', type=PlaceOfTradeIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdFutrTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmMtd', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSttlmDtls', type=PaymentTransaction71, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedLegDtls', type=SwitchRedemptionLegExecution4, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrCndctClssfctn', type=CustomerConductClassification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinAdvc', type=FinancialAdvice1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms33, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbcptLegDtls', type=SwitchSubscriptionLegExecution4, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrdrWvrDtls', type=OrderWaiver1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LateRpt', type=LateReport1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRght', type=CancellationRight1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvdDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdPtyDtls', type=Intermediary39, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxChanlTp', type=TransactionChannelType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrTp', type=SignatureType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

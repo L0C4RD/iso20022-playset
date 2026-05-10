@@ -1,6 +1,6 @@
 from . import base_types
-from .Incoterms4Choice import Incoterms4Choice
 from .Max70Text import Max70Text
+from .Incoterms4Choice import Incoterms4Choice
 
 class Incoterms4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Incoterms4(base_types._BaseFieldType):
 
 	@IncotrmsCd.setter
 	def IncotrmsCd(self, value):
-		self._IncotrmsCd = value if type(value) != auto else self.make_default("IncotrmsCd")
+		self._IncotrmsCd = value if type(value) != base_types.auto else self.make_default("IncotrmsCd")
 
 	@IncotrmsCd.deleter
 	def IncotrmsCd(self):
@@ -24,7 +24,7 @@ class Incoterms4(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
 
 	@Lctn.deleter
 	def Lctn(self):

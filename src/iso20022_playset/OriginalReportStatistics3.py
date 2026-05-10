@@ -1,6 +1,6 @@
 from . import base_types
-from .Max15NumericText import Max15NumericText
 from .NumberOfRecordsPerStatus1 import NumberOfRecordsPerStatus1
+from .Max15NumericText import Max15NumericText
 
 class OriginalReportStatistics3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class OriginalReportStatistics3(base_types._BaseFieldType):
 
 	@TtlNbOfRcrds.setter
 	def TtlNbOfRcrds(self, value):
-		self._TtlNbOfRcrds = value if type(value) != auto else self.make_default("TtlNbOfRcrds")
+		self._TtlNbOfRcrds = value if type(value) != base_types.auto else self.make_default("TtlNbOfRcrds")
 
 	@TtlNbOfRcrds.deleter
 	def TtlNbOfRcrds(self):
@@ -24,7 +24,7 @@ class OriginalReportStatistics3(base_types._BaseFieldType):
 
 	@NbOfRcrdsPerSts.setter
 	def NbOfRcrdsPerSts(self, value):
-		self._NbOfRcrdsPerSts = value if type(value) != auto else self.make_default("NbOfRcrdsPerSts")
+		self._NbOfRcrdsPerSts = value if type(value) != base_types.auto else self.make_default("NbOfRcrdsPerSts")
 
 	@NbOfRcrdsPerSts.deleter
 	def NbOfRcrdsPerSts(self):

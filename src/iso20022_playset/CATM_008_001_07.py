@@ -12,7 +12,7 @@ class CATM_008_001_07():
 
 		@CertMgmtRspn.setter
 		def CertMgmtRspn(self, value):
-			self._CertMgmtRspn = value if type(value) != auto else self.make_default("CertMgmtRspn")
+			self._CertMgmtRspn = value if type(value) != base_types.auto else self.make_default("CertMgmtRspn")
 
 		@CertMgmtRspn.deleter
 		def CertMgmtRspn(self):

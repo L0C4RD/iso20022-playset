@@ -1,6 +1,6 @@
 from . import base_types
-from .CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
 from .TrueFalseIndicator import TrueFalseIndicator
+from .CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
 from .PartyIdentification248Choice import PartyIdentification248Choice
 
 class Counterparty46(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class Counterparty46(base_types._BaseFieldType):
 
 	@RptgOblgtn.setter
 	def RptgOblgtn(self, value):
-		self._RptgOblgtn = value if type(value) != auto else self.make_default("RptgOblgtn")
+		self._RptgOblgtn = value if type(value) != base_types.auto else self.make_default("RptgOblgtn")
 
 	@RptgOblgtn.deleter
 	def RptgOblgtn(self):
@@ -25,7 +25,7 @@ class Counterparty46(base_types._BaseFieldType):
 
 	@Ntr.setter
 	def Ntr(self, value):
-		self._Ntr = value if type(value) != auto else self.make_default("Ntr")
+		self._Ntr = value if type(value) != base_types.auto else self.make_default("Ntr")
 
 	@Ntr.deleter
 	def Ntr(self):
@@ -38,7 +38,7 @@ class Counterparty46(base_types._BaseFieldType):
 
 	@IdTp.setter
 	def IdTp(self, value):
-		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
+		self._IdTp = value if type(value) != base_types.auto else self.make_default("IdTp")
 
 	@IdTp.deleter
 	def IdTp(self):

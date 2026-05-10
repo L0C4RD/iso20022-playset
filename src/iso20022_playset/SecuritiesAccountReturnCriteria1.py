@@ -3,14 +3,40 @@ from .RequestedIndicator import RequestedIndicator
 
 class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngDt", "_PtyTp", "_AcctSvcr", "_PtyId", "_ClsgDt", "_EndInvstrFlg", "_PricgSchme", "_AcctTp", "_AcctId"]
+	__slots__ = ["_ClsgDt", "_AcctSvcr", "_OpngDt", "_PtyTp", "_PtyId", "_AcctTp", "_EndInvstrFlg", "_PricgSchme", "_AcctId"]
+	@property
+	def ClsgDt(self):
+		return self._ClsgDt
+
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
+
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
 	@property
 	def OpngDt(self):
 		return self._OpngDt
 
 	@OpngDt.setter
 	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != auto else self.make_default("OpngDt")
+		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
 
 	@OpngDt.deleter
 	def OpngDt(self):
@@ -23,7 +49,7 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@PtyTp.setter
 	def PtyTp(self, value):
-		self._PtyTp = value if type(value) != auto else self.make_default("PtyTp")
+		self._PtyTp = value if type(value) != base_types.auto else self.make_default("PtyTp")
 
 	@PtyTp.deleter
 	def PtyTp(self):
@@ -31,25 +57,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 		self._PtyTp = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
 	def PtyId(self):
 		return self._PtyId
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
 	@PtyId.deleter
 	def PtyId(self):
@@ -57,17 +70,17 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def ClsgDt(self):
-		return self._ClsgDt
+	def AcctTp(self):
+		return self._AcctTp
 
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+	@AcctTp.setter
+	def AcctTp(self, value):
+		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
 
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
+	@AcctTp.deleter
+	def AcctTp(self):
+		del self._AcctTp
+		self._AcctTp = None
 
 	@property
 	def EndInvstrFlg(self):
@@ -75,7 +88,7 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@EndInvstrFlg.setter
 	def EndInvstrFlg(self, value):
-		self._EndInvstrFlg = value if type(value) != auto else self.make_default("EndInvstrFlg")
+		self._EndInvstrFlg = value if type(value) != base_types.auto else self.make_default("EndInvstrFlg")
 
 	@EndInvstrFlg.deleter
 	def EndInvstrFlg(self):
@@ -88,7 +101,7 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@PricgSchme.setter
 	def PricgSchme(self, value):
-		self._PricgSchme = value if type(value) != auto else self.make_default("PricgSchme")
+		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
 
 	@PricgSchme.deleter
 	def PricgSchme(self):
@@ -96,25 +109,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 		self._PricgSchme = None
 
 	@property
-	def AcctTp(self):
-		return self._AcctTp
-
-	@AcctTp.setter
-	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != auto else self.make_default("AcctTp")
-
-	@AcctTp.deleter
-	def AcctTp(self):
-		del self._AcctTp
-		self._AcctTp = None
-
-	@property
 	def AcctId(self):
 		return self._AcctId
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -122,14 +122,14 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 		self._AcctId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClsgDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyTp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndInvstrFlg', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgSchme', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctTp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

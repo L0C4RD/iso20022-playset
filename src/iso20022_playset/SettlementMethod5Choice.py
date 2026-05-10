@@ -10,7 +10,7 @@ class SettlementMethod5Choice(base_types._BaseFieldType):
 
 	@Cdt.setter
 	def Cdt(self, value):
-		self._Cdt = value if type(value) != auto else self.make_default("Cdt")
+		self._Cdt = value if type(value) != base_types.auto else self.make_default("Cdt")
 
 	@Cdt.deleter
 	def Cdt(self):
@@ -23,7 +23,7 @@ class SettlementMethod5Choice(base_types._BaseFieldType):
 
 	@Dbt.setter
 	def Dbt(self, value):
-		self._Dbt = value if type(value) != auto else self.make_default("Dbt")
+		self._Dbt = value if type(value) != base_types.auto else self.make_default("Dbt")
 
 	@Dbt.deleter
 	def Dbt(self):

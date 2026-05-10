@@ -10,7 +10,7 @@ class ExposureMetrics6(base_types._BaseFieldType):
 
 	@PstdMrgnOrColl.setter
 	def PstdMrgnOrColl(self, value):
-		self._PstdMrgnOrColl = value if type(value) != auto else self.make_default("PstdMrgnOrColl")
+		self._PstdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("PstdMrgnOrColl")
 
 	@PstdMrgnOrColl.deleter
 	def PstdMrgnOrColl(self):

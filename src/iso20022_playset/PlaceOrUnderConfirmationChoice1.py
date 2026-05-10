@@ -1,6 +1,6 @@
 from . import base_types
-from .PresentationParty1Code import PresentationParty1Code
 from .PlaceOfPresentation1 import PlaceOfPresentation1
+from .PresentationParty1Code import PresentationParty1Code
 
 class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
 	@PlcOfPresntn.setter
 	def PlcOfPresntn(self, value):
-		self._PlcOfPresntn = value if type(value) != auto else self.make_default("PlcOfPresntn")
+		self._PlcOfPresntn = value if type(value) != base_types.auto else self.make_default("PlcOfPresntn")
 
 	@PlcOfPresntn.deleter
 	def PlcOfPresntn(self):
@@ -24,7 +24,7 @@ class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
 	@PresntnUdrConf.setter
 	def PresntnUdrConf(self, value):
-		self._PresntnUdrConf = value if type(value) != auto else self.make_default("PresntnUdrConf")
+		self._PresntnUdrConf = value if type(value) != base_types.auto else self.make_default("PresntnUdrConf")
 
 	@PresntnUdrConf.deleter
 	def PresntnUdrConf(self):

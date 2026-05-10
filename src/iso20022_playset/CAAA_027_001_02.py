@@ -12,7 +12,7 @@ class CAAA_027_001_02():
 
 		@AcqrrToAccptrBtchFileXchg.setter
 		def AcqrrToAccptrBtchFileXchg(self, value):
-			self._AcqrrToAccptrBtchFileXchg = value if type(value) != auto else self.make_default("AcqrrToAccptrBtchFileXchg")
+			self._AcqrrToAccptrBtchFileXchg = value if type(value) != base_types.auto else self.make_default("AcqrrToAccptrBtchFileXchg")
 
 		@AcqrrToAccptrBtchFileXchg.deleter
 		def AcqrrToAccptrBtchFileXchg(self):

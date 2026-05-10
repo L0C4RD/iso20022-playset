@@ -12,7 +12,7 @@ class SETR_003_001_04():
 
 		@RedBlkOrdrConf.setter
 		def RedBlkOrdrConf(self, value):
-			self._RedBlkOrdrConf = value if type(value) != auto else self.make_default("RedBlkOrdrConf")
+			self._RedBlkOrdrConf = value if type(value) != base_types.auto else self.make_default("RedBlkOrdrConf")
 
 		@RedBlkOrdrConf.deleter
 		def RedBlkOrdrConf(self):

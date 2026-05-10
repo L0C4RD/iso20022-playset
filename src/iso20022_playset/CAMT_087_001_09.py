@@ -12,7 +12,7 @@ class CAMT_087_001_09():
 
 		@ReqToModfyPmt.setter
 		def ReqToModfyPmt(self, value):
-			self._ReqToModfyPmt = value if type(value) != auto else self.make_default("ReqToModfyPmt")
+			self._ReqToModfyPmt = value if type(value) != base_types.auto else self.make_default("ReqToModfyPmt")
 
 		@ReqToModfyPmt.deleter
 		def ReqToModfyPmt(self):

@@ -12,7 +12,7 @@ class TSMT_036_001_03():
 
 		@StsXtnsnReqNtfctn.setter
 		def StsXtnsnReqNtfctn(self, value):
-			self._StsXtnsnReqNtfctn = value if type(value) != auto else self.make_default("StsXtnsnReqNtfctn")
+			self._StsXtnsnReqNtfctn = value if type(value) != base_types.auto else self.make_default("StsXtnsnReqNtfctn")
 
 		@StsXtnsnReqNtfctn.deleter
 		def StsXtnsnReqNtfctn(self):

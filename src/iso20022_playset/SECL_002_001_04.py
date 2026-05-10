@@ -12,7 +12,7 @@ class SECL_002_001_04():
 
 		@TradLegNtfctnCxl.setter
 		def TradLegNtfctnCxl(self, value):
-			self._TradLegNtfctnCxl = value if type(value) != auto else self.make_default("TradLegNtfctnCxl")
+			self._TradLegNtfctnCxl = value if type(value) != base_types.auto else self.make_default("TradLegNtfctnCxl")
 
 		@TradLegNtfctnCxl.deleter
 		def TradLegNtfctnCxl(self):

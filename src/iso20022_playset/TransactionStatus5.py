@@ -1,7 +1,7 @@
 from . import base_types
-from .Max140Text import Max140Text
-from .ISODateTime import ISODateTime
 from .BaselineStatus3Code import BaselineStatus3Code
+from .ISODateTime import ISODateTime
+from .Max140Text import Max140Text
 
 class TransactionStatus5(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class TransactionStatus5(base_types._BaseFieldType):
 
 	@ChngDtTm.setter
 	def ChngDtTm(self, value):
-		self._ChngDtTm = value if type(value) != auto else self.make_default("ChngDtTm")
+		self._ChngDtTm = value if type(value) != base_types.auto else self.make_default("ChngDtTm")
 
 	@ChngDtTm.deleter
 	def ChngDtTm(self):
@@ -25,7 +25,7 @@ class TransactionStatus5(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
@@ -38,7 +38,7 @@ class TransactionStatus5(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):

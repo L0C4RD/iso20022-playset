@@ -1,6 +1,6 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .Max70Text import Max70Text
+from .CountryCode import CountryCode
 
 class CountryCodeAndName3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CountryCodeAndName3(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -24,7 +24,7 @@ class CountryCodeAndName3(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

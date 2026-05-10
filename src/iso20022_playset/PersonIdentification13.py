@@ -1,6 +1,6 @@
 from . import base_types
-from .DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
 from .GenericPersonIdentification1 import GenericPersonIdentification1
+from .DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
 
 class PersonIdentification13(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PersonIdentification13(base_types._BaseFieldType):
 
 	@DtAndPlcOfBirth.setter
 	def DtAndPlcOfBirth(self, value):
-		self._DtAndPlcOfBirth = value if type(value) != auto else self.make_default("DtAndPlcOfBirth")
+		self._DtAndPlcOfBirth = value if type(value) != base_types.auto else self.make_default("DtAndPlcOfBirth")
 
 	@DtAndPlcOfBirth.deleter
 	def DtAndPlcOfBirth(self):
@@ -24,7 +24,7 @@ class PersonIdentification13(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):

@@ -1,61 +1,22 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyType26Code import PartyType26Code
-from .AdditionalData1 import AdditionalData1
 from .Exact6AlphaNumericText import Exact6AlphaNumericText
-from .PartyType9Code import PartyType9Code
+from .PartyType26Code import PartyType26Code
 from .ISOMax3ACountryCode import ISOMax3ACountryCode
 from .ISO8583ResponseCode import ISO8583ResponseCode
+from .AdditionalData1 import AdditionalData1
+from .PartyType9Code import PartyType9Code
+from .Max35Text import Max35Text
 
 class ProcessingResult25(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_RspnSrcAssgnr", "_RspnSrcCtry", "_RspnCd", "_RspnSrcOthrTp", "_RspnSrcId", "_RspnSrcShrtNm", "_RspnSrcTp", "_ApprvlCd"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def RspnSrcAssgnr(self):
-		return self._RspnSrcAssgnr
-
-	@RspnSrcAssgnr.setter
-	def RspnSrcAssgnr(self, value):
-		self._RspnSrcAssgnr = value if type(value) != auto else self.make_default("RspnSrcAssgnr")
-
-	@RspnSrcAssgnr.deleter
-	def RspnSrcAssgnr(self):
-		del self._RspnSrcAssgnr
-		self._RspnSrcAssgnr = None
-
-	@property
-	def RspnSrcCtry(self):
-		return self._RspnSrcCtry
-
-	@RspnSrcCtry.setter
-	def RspnSrcCtry(self, value):
-		self._RspnSrcCtry = value if type(value) != auto else self.make_default("RspnSrcCtry")
-
-	@RspnSrcCtry.deleter
-	def RspnSrcCtry(self):
-		del self._RspnSrcCtry
-		self._RspnSrcCtry = None
-
+	__slots__ = ["_RspnCd", "_RspnSrcId", "_RspnSrcShrtNm", "_ApprvlCd", "_RspnSrcCtry", "_RspnSrcTp", "_RspnSrcAssgnr", "_RspnSrcOthrTp", "_AddtlInf"]
 	@property
 	def RspnCd(self):
 		return self._RspnCd
 
 	@RspnCd.setter
 	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != auto else self.make_default("RspnCd")
+		self._RspnCd = value if type(value) != base_types.auto else self.make_default("RspnCd")
 
 	@RspnCd.deleter
 	def RspnCd(self):
@@ -63,25 +24,12 @@ class ProcessingResult25(base_types._BaseFieldType):
 		self._RspnCd = None
 
 	@property
-	def RspnSrcOthrTp(self):
-		return self._RspnSrcOthrTp
-
-	@RspnSrcOthrTp.setter
-	def RspnSrcOthrTp(self, value):
-		self._RspnSrcOthrTp = value if type(value) != auto else self.make_default("RspnSrcOthrTp")
-
-	@RspnSrcOthrTp.deleter
-	def RspnSrcOthrTp(self):
-		del self._RspnSrcOthrTp
-		self._RspnSrcOthrTp = None
-
-	@property
 	def RspnSrcId(self):
 		return self._RspnSrcId
 
 	@RspnSrcId.setter
 	def RspnSrcId(self, value):
-		self._RspnSrcId = value if type(value) != auto else self.make_default("RspnSrcId")
+		self._RspnSrcId = value if type(value) != base_types.auto else self.make_default("RspnSrcId")
 
 	@RspnSrcId.deleter
 	def RspnSrcId(self):
@@ -94,7 +42,7 @@ class ProcessingResult25(base_types._BaseFieldType):
 
 	@RspnSrcShrtNm.setter
 	def RspnSrcShrtNm(self, value):
-		self._RspnSrcShrtNm = value if type(value) != auto else self.make_default("RspnSrcShrtNm")
+		self._RspnSrcShrtNm = value if type(value) != base_types.auto else self.make_default("RspnSrcShrtNm")
 
 	@RspnSrcShrtNm.deleter
 	def RspnSrcShrtNm(self):
@@ -102,12 +50,38 @@ class ProcessingResult25(base_types._BaseFieldType):
 		self._RspnSrcShrtNm = None
 
 	@property
+	def ApprvlCd(self):
+		return self._ApprvlCd
+
+	@ApprvlCd.setter
+	def ApprvlCd(self, value):
+		self._ApprvlCd = value if type(value) != base_types.auto else self.make_default("ApprvlCd")
+
+	@ApprvlCd.deleter
+	def ApprvlCd(self):
+		del self._ApprvlCd
+		self._ApprvlCd = None
+
+	@property
+	def RspnSrcCtry(self):
+		return self._RspnSrcCtry
+
+	@RspnSrcCtry.setter
+	def RspnSrcCtry(self, value):
+		self._RspnSrcCtry = value if type(value) != base_types.auto else self.make_default("RspnSrcCtry")
+
+	@RspnSrcCtry.deleter
+	def RspnSrcCtry(self):
+		del self._RspnSrcCtry
+		self._RspnSrcCtry = None
+
+	@property
 	def RspnSrcTp(self):
 		return self._RspnSrcTp
 
 	@RspnSrcTp.setter
 	def RspnSrcTp(self, value):
-		self._RspnSrcTp = value if type(value) != auto else self.make_default("RspnSrcTp")
+		self._RspnSrcTp = value if type(value) != base_types.auto else self.make_default("RspnSrcTp")
 
 	@RspnSrcTp.deleter
 	def RspnSrcTp(self):
@@ -115,27 +89,53 @@ class ProcessingResult25(base_types._BaseFieldType):
 		self._RspnSrcTp = None
 
 	@property
-	def ApprvlCd(self):
-		return self._ApprvlCd
+	def RspnSrcAssgnr(self):
+		return self._RspnSrcAssgnr
 
-	@ApprvlCd.setter
-	def ApprvlCd(self, value):
-		self._ApprvlCd = value if type(value) != auto else self.make_default("ApprvlCd")
+	@RspnSrcAssgnr.setter
+	def RspnSrcAssgnr(self, value):
+		self._RspnSrcAssgnr = value if type(value) != base_types.auto else self.make_default("RspnSrcAssgnr")
 
-	@ApprvlCd.deleter
-	def ApprvlCd(self):
-		del self._ApprvlCd
-		self._ApprvlCd = None
+	@RspnSrcAssgnr.deleter
+	def RspnSrcAssgnr(self):
+		del self._RspnSrcAssgnr
+		self._RspnSrcAssgnr = None
+
+	@property
+	def RspnSrcOthrTp(self):
+		return self._RspnSrcOthrTp
+
+	@RspnSrcOthrTp.setter
+	def RspnSrcOthrTp(self, value):
+		self._RspnSrcOthrTp = value if type(value) != base_types.auto else self.make_default("RspnSrcOthrTp")
+
+	@RspnSrcOthrTp.deleter
+	def RspnSrcOthrTp(self):
+		del self._RspnSrcOthrTp
+		self._RspnSrcOthrTp = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspnSrcAssgnr', type=PartyType9Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnSrcCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnSrcOthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnSrcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnSrcShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnSrcTp', type=PartyType26Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApprvlCd', type=Exact6AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSrcCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSrcTp', type=PartyType26Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSrcAssgnr', type=PartyType9Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSrcOthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

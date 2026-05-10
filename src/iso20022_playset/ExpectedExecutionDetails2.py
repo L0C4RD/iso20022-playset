@@ -11,7 +11,7 @@ class ExpectedExecutionDetails2(base_types._BaseFieldType):
 
 	@XpctdCshSttlmDt.setter
 	def XpctdCshSttlmDt(self, value):
-		self._XpctdCshSttlmDt = value if type(value) != auto else self.make_default("XpctdCshSttlmDt")
+		self._XpctdCshSttlmDt = value if type(value) != base_types.auto else self.make_default("XpctdCshSttlmDt")
 
 	@XpctdCshSttlmDt.deleter
 	def XpctdCshSttlmDt(self):
@@ -24,7 +24,7 @@ class ExpectedExecutionDetails2(base_types._BaseFieldType):
 
 	@XpctdTradDtTm.setter
 	def XpctdTradDtTm(self, value):
-		self._XpctdTradDtTm = value if type(value) != auto else self.make_default("XpctdTradDtTm")
+		self._XpctdTradDtTm = value if type(value) != base_types.auto else self.make_default("XpctdTradDtTm")
 
 	@XpctdTradDtTm.deleter
 	def XpctdTradDtTm(self):

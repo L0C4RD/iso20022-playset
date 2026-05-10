@@ -10,7 +10,7 @@ class MarginPortfolio4(base_types._BaseFieldType):
 
 	@InitlMrgnPrtflCd.setter
 	def InitlMrgnPrtflCd(self, value):
-		self._InitlMrgnPrtflCd = value if type(value) != auto else self.make_default("InitlMrgnPrtflCd")
+		self._InitlMrgnPrtflCd = value if type(value) != base_types.auto else self.make_default("InitlMrgnPrtflCd")
 
 	@InitlMrgnPrtflCd.deleter
 	def InitlMrgnPrtflCd(self):
@@ -23,7 +23,7 @@ class MarginPortfolio4(base_types._BaseFieldType):
 
 	@VartnMrgnPrtflCd.setter
 	def VartnMrgnPrtflCd(self, value):
-		self._VartnMrgnPrtflCd = value if type(value) != auto else self.make_default("VartnMrgnPrtflCd")
+		self._VartnMrgnPrtflCd = value if type(value) != base_types.auto else self.make_default("VartnMrgnPrtflCd")
 
 	@VartnMrgnPrtflCd.deleter
 	def VartnMrgnPrtflCd(self):

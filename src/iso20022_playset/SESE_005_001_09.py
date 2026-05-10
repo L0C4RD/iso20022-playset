@@ -12,7 +12,7 @@ class SESE_005_001_09():
 
 		@TrfInInstr.setter
 		def TrfInInstr(self, value):
-			self._TrfInInstr = value if type(value) != auto else self.make_default("TrfInInstr")
+			self._TrfInInstr = value if type(value) != base_types.auto else self.make_default("TrfInInstr")
 
 		@TrfInInstr.deleter
 		def TrfInInstr(self):

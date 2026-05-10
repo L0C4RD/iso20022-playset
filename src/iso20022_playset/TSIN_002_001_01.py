@@ -12,7 +12,7 @@ class TSIN_002_001_01():
 
 		@InvcFincgReqSts.setter
 		def InvcFincgReqSts(self, value):
-			self._InvcFincgReqSts = value if type(value) != auto else self.make_default("InvcFincgReqSts")
+			self._InvcFincgReqSts = value if type(value) != base_types.auto else self.make_default("InvcFincgReqSts")
 
 		@InvcFincgReqSts.deleter
 		def InvcFincgReqSts(self):

@@ -12,7 +12,7 @@ class REDA_070_001_02():
 
 		@ReqToPayDbtrActvtnReq.setter
 		def ReqToPayDbtrActvtnReq(self, value):
-			self._ReqToPayDbtrActvtnReq = value if type(value) != auto else self.make_default("ReqToPayDbtrActvtnReq")
+			self._ReqToPayDbtrActvtnReq = value if type(value) != base_types.auto else self.make_default("ReqToPayDbtrActvtnReq")
 
 		@ReqToPayDbtrActvtnReq.deleter
 		def ReqToPayDbtrActvtnReq(self):

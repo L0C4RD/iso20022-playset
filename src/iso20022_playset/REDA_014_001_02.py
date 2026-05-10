@@ -12,7 +12,7 @@ class REDA_014_001_02():
 
 		@PtyCreReq.setter
 		def PtyCreReq(self, value):
-			self._PtyCreReq = value if type(value) != auto else self.make_default("PtyCreReq")
+			self._PtyCreReq = value if type(value) != base_types.auto else self.make_default("PtyCreReq")
 
 		@PtyCreReq.deleter
 		def PtyCreReq(self):

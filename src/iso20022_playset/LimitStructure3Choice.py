@@ -1,6 +1,6 @@
 from . import base_types
-from .LimitIdentification8 import LimitIdentification8
 from .LimitIdentification9 import LimitIdentification9
+from .LimitIdentification8 import LimitIdentification8
 
 class LimitStructure3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class LimitStructure3Choice(base_types._BaseFieldType):
 
 	@CurLmtId.setter
 	def CurLmtId(self, value):
-		self._CurLmtId = value if type(value) != auto else self.make_default("CurLmtId")
+		self._CurLmtId = value if type(value) != base_types.auto else self.make_default("CurLmtId")
 
 	@CurLmtId.deleter
 	def CurLmtId(self):
@@ -24,7 +24,7 @@ class LimitStructure3Choice(base_types._BaseFieldType):
 
 	@AllCurLmts.setter
 	def AllCurLmts(self, value):
-		self._AllCurLmts = value if type(value) != auto else self.make_default("AllCurLmts")
+		self._AllCurLmts = value if type(value) != base_types.auto else self.make_default("AllCurLmts")
 
 	@AllCurLmts.deleter
 	def AllCurLmts(self):

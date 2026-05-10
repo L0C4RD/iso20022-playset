@@ -12,7 +12,7 @@ class CAMT_012_001_08():
 
 		@DelLmt.setter
 		def DelLmt(self, value):
-			self._DelLmt = value if type(value) != auto else self.make_default("DelLmt")
+			self._DelLmt = value if type(value) != base_types.auto else self.make_default("DelLmt")
 
 		@DelLmt.deleter
 		def DelLmt(self):

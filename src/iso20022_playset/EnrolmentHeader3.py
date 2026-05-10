@@ -1,31 +1,18 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
 from .RTPPartyIdentification2 import RTPPartyIdentification2
+from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class EnrolmentHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_InitgPty", "_MsgOrgtr", "_MsgRcpt", "_CreDtTm"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_InitgPty", "_MsgRcpt", "_MsgId", "_CreDtTm", "_MsgOrgtr"]
 	@property
 	def InitgPty(self):
 		return self._InitgPty
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
 
 	@InitgPty.deleter
 	def InitgPty(self):
@@ -33,25 +20,12 @@ class EnrolmentHeader3(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
-
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
-
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
-
-	@property
 	def MsgRcpt(self):
 		return self._MsgRcpt
 
 	@MsgRcpt.setter
 	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
+		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
 
 	@MsgRcpt.deleter
 	def MsgRcpt(self):
@@ -59,23 +33,49 @@ class EnrolmentHeader3(base_types._BaseFieldType):
 		self._MsgRcpt = None
 
 	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
+
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgOrgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgOrgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
 

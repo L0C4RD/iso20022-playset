@@ -12,7 +12,7 @@ class CAAA_001_001_14():
 
 		@AccptrAuthstnReq.setter
 		def AccptrAuthstnReq(self, value):
-			self._AccptrAuthstnReq = value if type(value) != auto else self.make_default("AccptrAuthstnReq")
+			self._AccptrAuthstnReq = value if type(value) != base_types.auto else self.make_default("AccptrAuthstnReq")
 
 		@AccptrAuthstnReq.deleter
 		def AccptrAuthstnReq(self):

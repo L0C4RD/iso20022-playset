@@ -10,7 +10,7 @@ class ClosingBalance7Choice(base_types._BaseFieldType):
 
 	@Fnl.setter
 	def Fnl(self, value):
-		self._Fnl = value if type(value) != auto else self.make_default("Fnl")
+		self._Fnl = value if type(value) != base_types.auto else self.make_default("Fnl")
 
 	@Fnl.deleter
 	def Fnl(self):
@@ -23,7 +23,7 @@ class ClosingBalance7Choice(base_types._BaseFieldType):
 
 	@Intrmy.setter
 	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != auto else self.make_default("Intrmy")
+		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
 
 	@Intrmy.deleter
 	def Intrmy(self):

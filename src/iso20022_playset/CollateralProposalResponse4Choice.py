@@ -1,6 +1,6 @@
 from . import base_types
-from .CollateralProposalResponseType4 import CollateralProposalResponseType4
 from .CollateralProposalResponse4 import CollateralProposalResponse4
+from .CollateralProposalResponseType4 import CollateralProposalResponseType4
 
 class CollateralProposalResponse4Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CollateralProposalResponse4Choice(base_types._BaseFieldType):
 
 	@CollPrpsl.setter
 	def CollPrpsl(self, value):
-		self._CollPrpsl = value if type(value) != auto else self.make_default("CollPrpsl")
+		self._CollPrpsl = value if type(value) != base_types.auto else self.make_default("CollPrpsl")
 
 	@CollPrpsl.deleter
 	def CollPrpsl(self):
@@ -24,7 +24,7 @@ class CollateralProposalResponse4Choice(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):

@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalUndertakingAmountType1Code import ExternalUndertakingAmountType1Code
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ExternalUndertakingAmountType1Code import ExternalUndertakingAmountType1Code
+from .Max35Text import Max35Text
 
 class ReportedAmount1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class ReportedAmount1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -25,7 +25,7 @@ class ReportedAmount1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -38,7 +38,7 @@ class ReportedAmount1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

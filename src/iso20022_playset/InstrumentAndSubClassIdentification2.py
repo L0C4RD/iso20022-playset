@@ -1,23 +1,23 @@
 from . import base_types
+from .ISINOct2015Identifier import ISINOct2015Identifier
 from .NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
 from .NonEquitySubClass1 import NonEquitySubClass1
-from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class InstrumentAndSubClassIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_FinInstrmClssfctn", "_DerivSubClss"]
+	__slots__ = ["_DerivSubClss", "_FinInstrmClssfctn", "_ISIN"]
 	@property
-	def ISIN(self):
-		return self._ISIN
+	def DerivSubClss(self):
+		return self._DerivSubClss
 
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+	@DerivSubClss.setter
+	def DerivSubClss(self, value):
+		self._DerivSubClss = value if type(value) != base_types.auto else self.make_default("DerivSubClss")
 
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
+	@DerivSubClss.deleter
+	def DerivSubClss(self):
+		del self._DerivSubClss
+		self._DerivSubClss = None
 
 	@property
 	def FinInstrmClssfctn(self):
@@ -25,7 +25,7 @@ class InstrumentAndSubClassIdentification2(base_types._BaseFieldType):
 
 	@FinInstrmClssfctn.setter
 	def FinInstrmClssfctn(self, value):
-		self._FinInstrmClssfctn = value if type(value) != auto else self.make_default("FinInstrmClssfctn")
+		self._FinInstrmClssfctn = value if type(value) != base_types.auto else self.make_default("FinInstrmClssfctn")
 
 	@FinInstrmClssfctn.deleter
 	def FinInstrmClssfctn(self):
@@ -33,21 +33,21 @@ class InstrumentAndSubClassIdentification2(base_types._BaseFieldType):
 		self._FinInstrmClssfctn = None
 
 	@property
-	def DerivSubClss(self):
-		return self._DerivSubClss
+	def ISIN(self):
+		return self._ISIN
 
-	@DerivSubClss.setter
-	def DerivSubClss(self, value):
-		self._DerivSubClss = value if type(value) != auto else self.make_default("DerivSubClss")
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
 
-	@DerivSubClss.deleter
-	def DerivSubClss(self):
-		del self._DerivSubClss
-		self._DerivSubClss = None
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmClssfctn', type=NonEquityInstrumentReportingClassification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivSubClss', type=NonEquitySubClass1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmClssfctn', type=NonEquityInstrumentReportingClassification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

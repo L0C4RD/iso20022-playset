@@ -1,6 +1,6 @@
 from . import base_types
-from .CorporateActionOption2 import CorporateActionOption2
 from .ISODateTime import ISODateTime
+from .CorporateActionOption2 import CorporateActionOption2
 
 class CorporateActionDeactivationInstruction1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CorporateActionDeactivationInstruction1(base_types._BaseFieldType):
 
 	@DeactvtnDtAndTm.setter
 	def DeactvtnDtAndTm(self, value):
-		self._DeactvtnDtAndTm = value if type(value) != auto else self.make_default("DeactvtnDtAndTm")
+		self._DeactvtnDtAndTm = value if type(value) != base_types.auto else self.make_default("DeactvtnDtAndTm")
 
 	@DeactvtnDtAndTm.deleter
 	def DeactvtnDtAndTm(self):
@@ -24,7 +24,7 @@ class CorporateActionDeactivationInstruction1(base_types._BaseFieldType):
 
 	@OptnDtls.setter
 	def OptnDtls(self, value):
-		self._OptnDtls = value if type(value) != auto else self.make_default("OptnDtls")
+		self._OptnDtls = value if type(value) != base_types.auto else self.make_default("OptnDtls")
 
 	@OptnDtls.deleter
 	def OptnDtls(self):

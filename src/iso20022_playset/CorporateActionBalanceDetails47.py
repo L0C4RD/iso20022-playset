@@ -10,7 +10,7 @@ class CorporateActionBalanceDetails47(base_types._BaseFieldType):
 
 	@TtlAmtOutsdng.setter
 	def TtlAmtOutsdng(self, value):
-		self._TtlAmtOutsdng = value if type(value) != auto else self.make_default("TtlAmtOutsdng")
+		self._TtlAmtOutsdng = value if type(value) != base_types.auto else self.make_default("TtlAmtOutsdng")
 
 	@TtlAmtOutsdng.deleter
 	def TtlAmtOutsdng(self):
@@ -23,7 +23,7 @@ class CorporateActionBalanceDetails47(base_types._BaseFieldType):
 
 	@SctyClldAmt.setter
 	def SctyClldAmt(self, value):
-		self._SctyClldAmt = value if type(value) != auto else self.make_default("SctyClldAmt")
+		self._SctyClldAmt = value if type(value) != base_types.auto else self.make_default("SctyClldAmt")
 
 	@SctyClldAmt.deleter
 	def SctyClldAmt(self):

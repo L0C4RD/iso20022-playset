@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .ISODate import ISODate
+from .Max140Text import Max140Text
 
 class DueDate1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DueDate1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class DueDate1(base_types._BaseFieldType):
 
 	@DueDt.setter
 	def DueDt(self, value):
-		self._DueDt = value if type(value) != auto else self.make_default("DueDt")
+		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
 
 	@DueDt.deleter
 	def DueDt(self):

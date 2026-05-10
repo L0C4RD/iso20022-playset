@@ -1,6 +1,6 @@
 from . import base_types
-from .DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
 from .IntraBalanceStatusType2 import IntraBalanceStatusType2
+from .DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
 
 class IntraBalanceQueryStatus3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class IntraBalanceQueryStatus3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class IntraBalanceQueryStatus3(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
+		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
 
 	@DtPrd.deleter
 	def DtPrd(self):

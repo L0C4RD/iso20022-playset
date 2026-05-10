@@ -1,6 +1,6 @@
 from . import base_types
-from .ISODate import ISODate
 from .AmountAndDirection106 import AmountAndDirection106
+from .ISODate import ISODate
 
 class Schedule11(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Schedule11(base_types._BaseFieldType):
 
 	@UadjstdFctvDt.setter
 	def UadjstdFctvDt(self, value):
-		self._UadjstdFctvDt = value if type(value) != auto else self.make_default("UadjstdFctvDt")
+		self._UadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("UadjstdFctvDt")
 
 	@UadjstdFctvDt.deleter
 	def UadjstdFctvDt(self):
@@ -24,7 +24,7 @@ class Schedule11(base_types._BaseFieldType):
 
 	@UadjstdEndDt.setter
 	def UadjstdEndDt(self, value):
-		self._UadjstdEndDt = value if type(value) != auto else self.make_default("UadjstdEndDt")
+		self._UadjstdEndDt = value if type(value) != base_types.auto else self.make_default("UadjstdEndDt")
 
 	@UadjstdEndDt.deleter
 	def UadjstdEndDt(self):
@@ -37,7 +37,7 @@ class Schedule11(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

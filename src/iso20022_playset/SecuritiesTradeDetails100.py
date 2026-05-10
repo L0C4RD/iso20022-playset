@@ -1,23 +1,23 @@
 from . import base_types
 from .Max350Text import Max350Text
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
 from .Max3Number import Max3Number
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_OpngSttlmDt", "_NbOfDaysAcrd", "_InstrPrcgAddtlDtls"]
+	__slots__ = ["_InstrPrcgAddtlDtls", "_OpngSttlmDt", "_NbOfDaysAcrd", "_TradDt"]
 	@property
-	def TradDt(self):
-		return self._TradDt
+	def InstrPrcgAddtlDtls(self):
+		return self._InstrPrcgAddtlDtls
 
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+	@InstrPrcgAddtlDtls.setter
+	def InstrPrcgAddtlDtls(self, value):
+		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
 
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@InstrPrcgAddtlDtls.deleter
+	def InstrPrcgAddtlDtls(self):
+		del self._InstrPrcgAddtlDtls
+		self._InstrPrcgAddtlDtls = None
 
 	@property
 	def OpngSttlmDt(self):
@@ -25,7 +25,7 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
 	@OpngSttlmDt.setter
 	def OpngSttlmDt(self, value):
-		self._OpngSttlmDt = value if type(value) != auto else self.make_default("OpngSttlmDt")
+		self._OpngSttlmDt = value if type(value) != base_types.auto else self.make_default("OpngSttlmDt")
 
 	@OpngSttlmDt.deleter
 	def OpngSttlmDt(self):
@@ -38,7 +38,7 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
 	@NbOfDaysAcrd.setter
 	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
+		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
 
 	@NbOfDaysAcrd.deleter
 	def NbOfDaysAcrd(self):
@@ -46,22 +46,22 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 		self._NbOfDaysAcrd = None
 
 	@property
-	def InstrPrcgAddtlDtls(self):
-		return self._InstrPrcgAddtlDtls
+	def TradDt(self):
+		return self._TradDt
 
-	@InstrPrcgAddtlDtls.setter
-	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("InstrPrcgAddtlDtls")
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
 
-	@InstrPrcgAddtlDtls.deleter
-	def InstrPrcgAddtlDtls(self):
-		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngSttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDaysAcrd', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

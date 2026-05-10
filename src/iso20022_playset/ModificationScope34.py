@@ -11,7 +11,7 @@ class ModificationScope34(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
@@ -24,7 +24,7 @@ class ModificationScope34(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):

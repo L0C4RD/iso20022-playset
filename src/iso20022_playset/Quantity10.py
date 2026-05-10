@@ -1,6 +1,6 @@
 from . import base_types
-from .UnitOfMeasure3Choice import UnitOfMeasure3Choice
 from .DecimalNumber import DecimalNumber
+from .UnitOfMeasure3Choice import UnitOfMeasure3Choice
 
 class Quantity10(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Quantity10(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
@@ -24,7 +24,7 @@ class Quantity10(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):

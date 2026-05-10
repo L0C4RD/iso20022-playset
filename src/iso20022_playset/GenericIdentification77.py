@@ -1,31 +1,18 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Min2Max3AlphaText import Min2Max3AlphaText
 from .PartyType12Code import PartyType12Code
+from .Min2Max3AlphaText import Min2Max3AlphaText
+from .Max35Text import Max35Text
 
 class GenericIdentification77(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Id", "_Ctry", "_Tp", "_ShrtNm"]
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
+	__slots__ = ["_Id", "_Tp", "_ShrtNm", "_Issr", "_Ctry"]
 	@property
 	def Id(self):
 		return self._Id
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -33,25 +20,12 @@ class GenericIdentification77(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -64,18 +38,44 @@ class GenericIdentification77(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
 		self._ShrtNm = None
 
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=PartyType12Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PartyType12Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyType12Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
 	))
 

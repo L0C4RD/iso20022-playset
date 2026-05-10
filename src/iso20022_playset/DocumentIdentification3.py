@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Number import Number
+from .Max35Text import Max35Text
 
 class DocumentIdentification3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DocumentIdentification3(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
 	@Vrsn.deleter
 	def Vrsn(self):
@@ -24,7 +24,7 @@ class DocumentIdentification3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

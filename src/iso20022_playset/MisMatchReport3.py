@@ -1,6 +1,6 @@
 from . import base_types
-from .ValidationResult5 import ValidationResult5
 from .Number import Number
+from .ValidationResult5 import ValidationResult5
 
 class MisMatchReport3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MisMatchReport3(base_types._BaseFieldType):
 
 	@MisMtchInf.setter
 	def MisMtchInf(self, value):
-		self._MisMtchInf = value if type(value) != auto else self.make_default("MisMtchInf")
+		self._MisMtchInf = value if type(value) != base_types.auto else self.make_default("MisMtchInf")
 
 	@MisMtchInf.deleter
 	def MisMtchInf(self):
@@ -24,7 +24,7 @@ class MisMatchReport3(base_types._BaseFieldType):
 
 	@NbOfMisMtchs.setter
 	def NbOfMisMtchs(self, value):
-		self._NbOfMisMtchs = value if type(value) != auto else self.make_default("NbOfMisMtchs")
+		self._NbOfMisMtchs = value if type(value) != base_types.auto else self.make_default("NbOfMisMtchs")
 
 	@NbOfMisMtchs.deleter
 	def NbOfMisMtchs(self):

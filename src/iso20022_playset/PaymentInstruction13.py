@@ -11,7 +11,7 @@ class PaymentInstruction13(base_types._BaseFieldType):
 
 	@PmtTp.setter
 	def PmtTp(self, value):
-		self._PmtTp = value if type(value) != auto else self.make_default("PmtTp")
+		self._PmtTp = value if type(value) != base_types.auto else self.make_default("PmtTp")
 
 	@PmtTp.deleter
 	def PmtTp(self):
@@ -24,7 +24,7 @@ class PaymentInstruction13(base_types._BaseFieldType):
 
 	@ReqdExctnDtTm.setter
 	def ReqdExctnDtTm(self, value):
-		self._ReqdExctnDtTm = value if type(value) != auto else self.make_default("ReqdExctnDtTm")
+		self._ReqdExctnDtTm = value if type(value) != base_types.auto else self.make_default("ReqdExctnDtTm")
 
 	@ReqdExctnDtTm.deleter
 	def ReqdExctnDtTm(self):

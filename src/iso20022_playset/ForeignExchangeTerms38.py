@@ -11,7 +11,7 @@ class ForeignExchangeTerms38(base_types._BaseFieldType):
 
 	@UnitCcy.setter
 	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
 
 	@UnitCcy.deleter
 	def UnitCcy(self):
@@ -24,7 +24,7 @@ class ForeignExchangeTerms38(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
 
 	@XchgRate.deleter
 	def XchgRate(self):
@@ -37,7 +37,7 @@ class ForeignExchangeTerms38(base_types._BaseFieldType):
 
 	@QtdCcy.setter
 	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
 
 	@QtdCcy.deleter
 	def QtdCcy(self):

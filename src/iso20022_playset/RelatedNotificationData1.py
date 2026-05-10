@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .NotificationLocationData1 import NotificationLocationData1
+from .Max35Text import Max35Text
 
 class RelatedNotificationData1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RelatedNotificationData1(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
 
 	@Lctn.deleter
 	def Lctn(self):
@@ -24,7 +24,7 @@ class RelatedNotificationData1(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
 
 	@NtfctnId.deleter
 	def NtfctnId(self):

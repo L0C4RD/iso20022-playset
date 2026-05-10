@@ -10,7 +10,7 @@ class CorporateAction59(base_types._BaseFieldType):
 
 	@ExDvddDt.setter
 	def ExDvddDt(self, value):
-		self._ExDvddDt = value if type(value) != auto else self.make_default("ExDvddDt")
+		self._ExDvddDt = value if type(value) != base_types.auto else self.make_default("ExDvddDt")
 
 	@ExDvddDt.deleter
 	def ExDvddDt(self):
@@ -23,7 +23,7 @@ class CorporateAction59(base_types._BaseFieldType):
 
 	@RcrdDt.setter
 	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != auto else self.make_default("RcrdDt")
+		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
 
 	@RcrdDt.deleter
 	def RcrdDt(self):

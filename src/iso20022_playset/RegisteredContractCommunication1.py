@@ -1,6 +1,6 @@
 from . import base_types
-from .ISODate import ISODate
 from .CommunicationMethod4Code import CommunicationMethod4Code
+from .ISODate import ISODate
 
 class RegisteredContractCommunication1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RegisteredContractCommunication1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -24,7 +24,7 @@ class RegisteredContractCommunication1(base_types._BaseFieldType):
 
 	@Mtd.setter
 	def Mtd(self, value):
-		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
+		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
 
 	@Mtd.deleter
 	def Mtd(self):

@@ -1,19 +1,19 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .Max70Text import Max70Text
 from .TrueFalseIndicator import TrueFalseIndicator
+from .Max70Text import Max70Text
+from .ActiveCurrencyCode import ActiveCurrencyCode
 from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class DetailedAmount18(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Labl", "_Amt", "_ChrgAcctTo"]
+	__slots__ = ["_Ccy", "_ChrgAcctTo", "_Amt", "_Labl"]
 	@property
 	def Ccy(self):
 		return self._Ccy
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -21,17 +21,17 @@ class DetailedAmount18(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def Labl(self):
-		return self._Labl
+	def ChrgAcctTo(self):
+		return self._ChrgAcctTo
 
-	@Labl.setter
-	def Labl(self, value):
-		self._Labl = value if type(value) != auto else self.make_default("Labl")
+	@ChrgAcctTo.setter
+	def ChrgAcctTo(self, value):
+		self._ChrgAcctTo = value if type(value) != base_types.auto else self.make_default("ChrgAcctTo")
 
-	@Labl.deleter
-	def Labl(self):
-		del self._Labl
-		self._Labl = None
+	@ChrgAcctTo.deleter
+	def ChrgAcctTo(self):
+		del self._ChrgAcctTo
+		self._ChrgAcctTo = None
 
 	@property
 	def Amt(self):
@@ -39,7 +39,7 @@ class DetailedAmount18(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -47,22 +47,22 @@ class DetailedAmount18(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def ChrgAcctTo(self):
-		return self._ChrgAcctTo
+	def Labl(self):
+		return self._Labl
 
-	@ChrgAcctTo.setter
-	def ChrgAcctTo(self, value):
-		self._ChrgAcctTo = value if type(value) != auto else self.make_default("ChrgAcctTo")
+	@Labl.setter
+	def Labl(self, value):
+		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
 
-	@ChrgAcctTo.deleter
-	def ChrgAcctTo(self):
-		del self._ChrgAcctTo
-		self._ChrgAcctTo = None
+	@Labl.deleter
+	def Labl(self):
+		del self._Labl
+		self._Labl = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgAcctTo', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

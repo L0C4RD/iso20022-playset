@@ -12,7 +12,7 @@ class SEEV_052_001_03():
 
 		@MktClmStsAdvc.setter
 		def MktClmStsAdvc(self, value):
-			self._MktClmStsAdvc = value if type(value) != auto else self.make_default("MktClmStsAdvc")
+			self._MktClmStsAdvc = value if type(value) != base_types.auto else self.make_default("MktClmStsAdvc")
 
 		@MktClmStsAdvc.deleter
 		def MktClmStsAdvc(self):

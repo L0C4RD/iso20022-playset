@@ -11,7 +11,7 @@ class FixedRate11(base_types._BaseFieldType):
 
 	@DayCntBsis.setter
 	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != auto else self.make_default("DayCntBsis")
+		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
 
 	@DayCntBsis.deleter
 	def DayCntBsis(self):
@@ -24,7 +24,7 @@ class FixedRate11(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

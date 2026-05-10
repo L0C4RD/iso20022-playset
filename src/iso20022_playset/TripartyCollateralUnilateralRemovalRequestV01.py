@@ -1,39 +1,52 @@
 from . import base_types
 from .PartyIdentification232 import PartyIdentification232
-from .Max35Text import Max35Text
+from .CollateralRole1Code import CollateralRole1Code
 from .SupplementaryData1 import SupplementaryData1
+from .Max35Text import Max35Text
 from .RequestDetails28 import RequestDetails28
 from .Pagination1 import Pagination1
-from .CollateralRole1Code import CollateralRole1Code
 
 class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqDtls", "_RmvlReqId", "_Pgntn", "_ClntPtyA", "_CollSd", "_SplmtryData", "_PtyA"]
+	__slots__ = ["_CollSd", "_PtyA", "_SplmtryData", "_Pgntn", "_ClntPtyA", "_ReqDtls", "_RmvlReqId"]
 	@property
-	def ReqDtls(self):
-		return self._ReqDtls
+	def CollSd(self):
+		return self._CollSd
 
-	@ReqDtls.setter
-	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
+	@CollSd.setter
+	def CollSd(self, value):
+		self._CollSd = value if type(value) != base_types.auto else self.make_default("CollSd")
 
-	@ReqDtls.deleter
-	def ReqDtls(self):
-		del self._ReqDtls
-		self._ReqDtls = None
+	@CollSd.deleter
+	def CollSd(self):
+		del self._CollSd
+		self._CollSd = None
 
 	@property
-	def RmvlReqId(self):
-		return self._RmvlReqId
+	def PtyA(self):
+		return self._PtyA
 
-	@RmvlReqId.setter
-	def RmvlReqId(self, value):
-		self._RmvlReqId = value if type(value) != auto else self.make_default("RmvlReqId")
+	@PtyA.setter
+	def PtyA(self, value):
+		self._PtyA = value if type(value) != base_types.auto else self.make_default("PtyA")
 
-	@RmvlReqId.deleter
-	def RmvlReqId(self):
-		del self._RmvlReqId
-		self._RmvlReqId = None
+	@PtyA.deleter
+	def PtyA(self):
+		del self._PtyA
+		self._PtyA = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Pgntn(self):
@@ -41,7 +54,7 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
 	@Pgntn.deleter
 	def Pgntn(self):
@@ -54,7 +67,7 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@ClntPtyA.setter
 	def ClntPtyA(self, value):
-		self._ClntPtyA = value if type(value) != auto else self.make_default("ClntPtyA")
+		self._ClntPtyA = value if type(value) != base_types.auto else self.make_default("ClntPtyA")
 
 	@ClntPtyA.deleter
 	def ClntPtyA(self):
@@ -62,51 +75,38 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 		self._ClntPtyA = None
 
 	@property
-	def CollSd(self):
-		return self._CollSd
+	def ReqDtls(self):
+		return self._ReqDtls
 
-	@CollSd.setter
-	def CollSd(self, value):
-		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
+	@ReqDtls.setter
+	def ReqDtls(self, value):
+		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
 
-	@CollSd.deleter
-	def CollSd(self):
-		del self._CollSd
-		self._CollSd = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ReqDtls.deleter
+	def ReqDtls(self):
+		del self._ReqDtls
+		self._ReqDtls = None
 
 	@property
-	def PtyA(self):
-		return self._PtyA
+	def RmvlReqId(self):
+		return self._RmvlReqId
 
-	@PtyA.setter
-	def PtyA(self, value):
-		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
+	@RmvlReqId.setter
+	def RmvlReqId(self, value):
+		self._RmvlReqId = value if type(value) != base_types.auto else self.make_default("RmvlReqId")
 
-	@PtyA.deleter
-	def PtyA(self):
-		del self._PtyA
-		self._PtyA = None
+	@RmvlReqId.deleter
+	def RmvlReqId(self):
+		del self._RmvlReqId
+		self._RmvlReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqDtls', type=RequestDetails28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmvlReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyA', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyA', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqDtls', type=RequestDetails28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmvlReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

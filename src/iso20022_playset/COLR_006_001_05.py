@@ -12,7 +12,7 @@ class COLR_006_001_05():
 
 		@CollMgmtCxlSts.setter
 		def CollMgmtCxlSts(self, value):
-			self._CollMgmtCxlSts = value if type(value) != auto else self.make_default("CollMgmtCxlSts")
+			self._CollMgmtCxlSts = value if type(value) != base_types.auto else self.make_default("CollMgmtCxlSts")
 
 		@CollMgmtCxlSts.deleter
 		def CollMgmtCxlSts(self):

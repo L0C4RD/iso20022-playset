@@ -11,7 +11,7 @@ class PartyReport1Choice(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
+		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
 
 	@Cxl.deleter
 	def Cxl(self):
@@ -24,7 +24,7 @@ class PartyReport1Choice(base_types._BaseFieldType):
 
 	@Upd.setter
 	def Upd(self, value):
-		self._Upd = value if type(value) != auto else self.make_default("Upd")
+		self._Upd = value if type(value) != base_types.auto else self.make_default("Upd")
 
 	@Upd.deleter
 	def Upd(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .CollateralAmount9 import CollateralAmount9
 from .BaseOneRate import BaseOneRate
+from .CollateralAmount9 import CollateralAmount9
 
 class ValuationsDetails2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ValuationsDetails2(base_types._BaseFieldType):
 
 	@Hrcut.setter
 	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != auto else self.make_default("Hrcut")
+		self._Hrcut = value if type(value) != base_types.auto else self.make_default("Hrcut")
 
 	@Hrcut.deleter
 	def Hrcut(self):
@@ -24,7 +24,7 @@ class ValuationsDetails2(base_types._BaseFieldType):
 
 	@ValtnDtlsAmt.setter
 	def ValtnDtlsAmt(self, value):
-		self._ValtnDtlsAmt = value if type(value) != auto else self.make_default("ValtnDtlsAmt")
+		self._ValtnDtlsAmt = value if type(value) != base_types.auto else self.make_default("ValtnDtlsAmt")
 
 	@ValtnDtlsAmt.deleter
 	def ValtnDtlsAmt(self):

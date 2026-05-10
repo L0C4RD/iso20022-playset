@@ -12,7 +12,7 @@ class FXTR_017_001_06():
 
 		@FXTradStsAndDtlsNtfctn.setter
 		def FXTradStsAndDtlsNtfctn(self, value):
-			self._FXTradStsAndDtlsNtfctn = value if type(value) != auto else self.make_default("FXTradStsAndDtlsNtfctn")
+			self._FXTradStsAndDtlsNtfctn = value if type(value) != base_types.auto else self.make_default("FXTradStsAndDtlsNtfctn")
 
 		@FXTradStsAndDtlsNtfctn.deleter
 		def FXTradStsAndDtlsNtfctn(self):

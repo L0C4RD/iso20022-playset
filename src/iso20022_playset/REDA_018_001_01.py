@@ -12,7 +12,7 @@ class REDA_018_001_01():
 
 		@SctiesAcctCreReq.setter
 		def SctiesAcctCreReq(self, value):
-			self._SctiesAcctCreReq = value if type(value) != auto else self.make_default("SctiesAcctCreReq")
+			self._SctiesAcctCreReq = value if type(value) != base_types.auto else self.make_default("SctiesAcctCreReq")
 
 		@SctiesAcctCreReq.deleter
 		def SctiesAcctCreReq(self):

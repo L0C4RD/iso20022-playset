@@ -1,23 +1,23 @@
 from . import base_types
-from .MessageHeader7 import MessageHeader7
 from .SupplementaryData1 import SupplementaryData1
+from .MessageHeader7 import MessageHeader7
 from .ExchangeRateReportOrError3Choice import ExchangeRateReportOrError3Choice
 
 class ReturnCurrencyExchangeRateV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_RptOrErr"]
+	__slots__ = ["_RptOrErr", "_SplmtryData", "_MsgHdr"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def RptOrErr(self):
+		return self._RptOrErr
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@RptOrErr.setter
+	def RptOrErr(self, value):
+		self._RptOrErr = value if type(value) != base_types.auto else self.make_default("RptOrErr")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@RptOrErr.deleter
+	def RptOrErr(self):
+		del self._RptOrErr
+		self._RptOrErr = None
 
 	@property
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class ReturnCurrencyExchangeRateV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class ReturnCurrencyExchangeRateV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RptOrErr(self):
-		return self._RptOrErr
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@RptOrErr.setter
-	def RptOrErr(self, value):
-		self._RptOrErr = value if type(value) != auto else self.make_default("RptOrErr")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
-	@RptOrErr.deleter
-	def RptOrErr(self):
-		del self._RptOrErr
-		self._RptOrErr = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptOrErr', type=ExchangeRateReportOrError3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader7, min=1, max=1, mutex_group=None, array=False),
 	))
 

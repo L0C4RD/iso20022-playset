@@ -1,6 +1,6 @@
 from . import base_types
-from .Max4Text import Max4Text
 from .WithdrawalReason1Code import WithdrawalReason1Code
+from .Max4Text import Max4Text
 
 class WithdrawalReason1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class WithdrawalReason1(base_types._BaseFieldType):
 
 	@WdrwlRsnSubCd.setter
 	def WdrwlRsnSubCd(self, value):
-		self._WdrwlRsnSubCd = value if type(value) != auto else self.make_default("WdrwlRsnSubCd")
+		self._WdrwlRsnSubCd = value if type(value) != base_types.auto else self.make_default("WdrwlRsnSubCd")
 
 	@WdrwlRsnSubCd.deleter
 	def WdrwlRsnSubCd(self):
@@ -24,7 +24,7 @@ class WithdrawalReason1(base_types._BaseFieldType):
 
 	@WdrwlRsnCd.setter
 	def WdrwlRsnCd(self, value):
-		self._WdrwlRsnCd = value if type(value) != auto else self.make_default("WdrwlRsnCd")
+		self._WdrwlRsnCd = value if type(value) != base_types.auto else self.make_default("WdrwlRsnCd")
 
 	@WdrwlRsnCd.deleter
 	def WdrwlRsnCd(self):

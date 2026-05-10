@@ -1,6 +1,6 @@
 from . import base_types
-from .DateCode19Choice import DateCode19Choice
 from .ISODate import ISODate
+from .DateCode19Choice import DateCode19Choice
 
 class DateFormat30Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DateFormat30Choice(base_types._BaseFieldType):
 
 	@DtCd.setter
 	def DtCd(self, value):
-		self._DtCd = value if type(value) != auto else self.make_default("DtCd")
+		self._DtCd = value if type(value) != base_types.auto else self.make_default("DtCd")
 
 	@DtCd.deleter
 	def DtCd(self):
@@ -24,7 +24,7 @@ class DateFormat30Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):

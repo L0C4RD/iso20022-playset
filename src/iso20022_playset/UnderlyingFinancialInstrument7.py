@@ -1,6 +1,6 @@
 from . import base_types
-from .FinancialInstrumentAttributes124 import FinancialInstrumentAttributes124
 from .SecurityIdentification19 import SecurityIdentification19
+from .FinancialInstrumentAttributes124 import FinancialInstrumentAttributes124
 
 class UnderlyingFinancialInstrument7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UnderlyingFinancialInstrument7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class UnderlyingFinancialInstrument7(base_types._BaseFieldType):
 
 	@Attrbts.setter
 	def Attrbts(self, value):
-		self._Attrbts = value if type(value) != auto else self.make_default("Attrbts")
+		self._Attrbts = value if type(value) != base_types.auto else self.make_default("Attrbts")
 
 	@Attrbts.deleter
 	def Attrbts(self):

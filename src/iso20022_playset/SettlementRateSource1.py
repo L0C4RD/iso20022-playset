@@ -1,19 +1,19 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .Exact2AlphaNumericText import Exact2AlphaNumericText
-from .RateSourceText import RateSourceText
 from .Exact4NumericText import Exact4NumericText
+from .CountryCode import CountryCode
+from .RateSourceText import RateSourceText
 
 class SettlementRateSource1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tm", "_RateSrc", "_CtryCd", "_LctnCd"]
+	__slots__ = ["_Tm", "_CtryCd", "_RateSrc", "_LctnCd"]
 	@property
 	def Tm(self):
 		return self._Tm
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != auto else self.make_default("Tm")
+		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
 
 	@Tm.deleter
 	def Tm(self):
@@ -21,25 +21,12 @@ class SettlementRateSource1(base_types._BaseFieldType):
 		self._Tm = None
 
 	@property
-	def RateSrc(self):
-		return self._RateSrc
-
-	@RateSrc.setter
-	def RateSrc(self, value):
-		self._RateSrc = value if type(value) != auto else self.make_default("RateSrc")
-
-	@RateSrc.deleter
-	def RateSrc(self):
-		del self._RateSrc
-		self._RateSrc = None
-
-	@property
 	def CtryCd(self):
 		return self._CtryCd
 
 	@CtryCd.setter
 	def CtryCd(self, value):
-		self._CtryCd = value if type(value) != auto else self.make_default("CtryCd")
+		self._CtryCd = value if type(value) != base_types.auto else self.make_default("CtryCd")
 
 	@CtryCd.deleter
 	def CtryCd(self):
@@ -47,12 +34,25 @@ class SettlementRateSource1(base_types._BaseFieldType):
 		self._CtryCd = None
 
 	@property
+	def RateSrc(self):
+		return self._RateSrc
+
+	@RateSrc.setter
+	def RateSrc(self, value):
+		self._RateSrc = value if type(value) != base_types.auto else self.make_default("RateSrc")
+
+	@RateSrc.deleter
+	def RateSrc(self):
+		del self._RateSrc
+		self._RateSrc = None
+
+	@property
 	def LctnCd(self):
 		return self._LctnCd
 
 	@LctnCd.setter
 	def LctnCd(self, value):
-		self._LctnCd = value if type(value) != auto else self.make_default("LctnCd")
+		self._LctnCd = value if type(value) != base_types.auto else self.make_default("LctnCd")
 
 	@LctnCd.deleter
 	def LctnCd(self):
@@ -61,8 +61,8 @@ class SettlementRateSource1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tm', type=Exact4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateSrc', type=RateSourceText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryCd', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateSrc', type=RateSourceText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LctnCd', type=Exact2AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

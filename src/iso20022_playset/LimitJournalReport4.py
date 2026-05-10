@@ -11,7 +11,7 @@ class LimitJournalReport4(base_types._BaseFieldType):
 
 	@LmtId.setter
 	def LmtId(self, value):
-		self._LmtId = value if type(value) != auto else self.make_default("LmtId")
+		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
 
 	@LmtId.deleter
 	def LmtId(self):
@@ -24,7 +24,7 @@ class LimitJournalReport4(base_types._BaseFieldType):
 
 	@LmtRpt.setter
 	def LmtRpt(self, value):
-		self._LmtRpt = value if type(value) != auto else self.make_default("LmtRpt")
+		self._LmtRpt = value if type(value) != base_types.auto else self.make_default("LmtRpt")
 
 	@LmtRpt.deleter
 	def LmtRpt(self):

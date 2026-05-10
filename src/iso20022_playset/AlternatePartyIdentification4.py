@@ -1,23 +1,23 @@
 from . import base_types
 from .CountryCode import CountryCode
-from .Max35Text import Max35Text
 from .IdentificationType6Choice import IdentificationType6Choice
+from .Max35Text import Max35Text
 
 class AlternatePartyIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_Ctry", "_IdTp"]
+	__slots__ = ["_IdTp", "_Ctry", "_AltrnId"]
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def IdTp(self):
+		return self._IdTp
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@IdTp.setter
+	def IdTp(self, value):
+		self._IdTp = value if type(value) != base_types.auto else self.make_default("IdTp")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@IdTp.deleter
+	def IdTp(self):
+		del self._IdTp
+		self._IdTp = None
 
 	@property
 	def Ctry(self):
@@ -25,7 +25,7 @@ class AlternatePartyIdentification4(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -33,21 +33,21 @@ class AlternatePartyIdentification4(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def IdTp(self):
-		return self._IdTp
+	def AltrnId(self):
+		return self._AltrnId
 
-	@IdTp.setter
-	def IdTp(self, value):
-		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
-	@IdTp.deleter
-	def IdTp(self):
-		del self._IdTp
-		self._IdTp = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AltrnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IdTp', type=IdentificationType6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

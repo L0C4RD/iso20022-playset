@@ -1,6 +1,6 @@
 from . import base_types
-from .ProductIdentifier2 import ProductIdentifier2
 from .GenericIdentification4 import GenericIdentification4
+from .ProductIdentifier2 import ProductIdentifier2
 
 class ProductIdentifier2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ProductIdentifier2Choice(base_types._BaseFieldType):
 
 	@OthrPdctIdr.setter
 	def OthrPdctIdr(self, value):
-		self._OthrPdctIdr = value if type(value) != auto else self.make_default("OthrPdctIdr")
+		self._OthrPdctIdr = value if type(value) != base_types.auto else self.make_default("OthrPdctIdr")
 
 	@OthrPdctIdr.deleter
 	def OthrPdctIdr(self):
@@ -24,7 +24,7 @@ class ProductIdentifier2Choice(base_types._BaseFieldType):
 
 	@StrdPdctIdr.setter
 	def StrdPdctIdr(self, value):
-		self._StrdPdctIdr = value if type(value) != auto else self.make_default("StrdPdctIdr")
+		self._StrdPdctIdr = value if type(value) != base_types.auto else self.make_default("StrdPdctIdr")
 
 	@StrdPdctIdr.deleter
 	def StrdPdctIdr(self):

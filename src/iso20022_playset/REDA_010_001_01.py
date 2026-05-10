@@ -12,7 +12,7 @@ class REDA_010_001_01():
 
 		@SctyQry.setter
 		def SctyQry(self, value):
-			self._SctyQry = value if type(value) != auto else self.make_default("SctyQry")
+			self._SctyQry = value if type(value) != base_types.auto else self.make_default("SctyQry")
 
 		@SctyQry.deleter
 		def SctyQry(self):

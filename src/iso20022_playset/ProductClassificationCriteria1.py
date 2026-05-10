@@ -11,7 +11,7 @@ class ProductClassificationCriteria1(base_types._BaseFieldType):
 
 	@ClssfctnFinInstrm.setter
 	def ClssfctnFinInstrm(self, value):
-		self._ClssfctnFinInstrm = value if type(value) != auto else self.make_default("ClssfctnFinInstrm")
+		self._ClssfctnFinInstrm = value if type(value) != base_types.auto else self.make_default("ClssfctnFinInstrm")
 
 	@ClssfctnFinInstrm.deleter
 	def ClssfctnFinInstrm(self):
@@ -24,7 +24,7 @@ class ProductClassificationCriteria1(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):

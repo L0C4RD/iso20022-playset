@@ -1,40 +1,27 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .Max35Text import Max35Text
-from .YesNoIndicator import YesNoIndicator
 from .CopyInformation4 import CopyInformation4
-from .AdditionalReference8 import AdditionalReference8
+from .MessageIdentification1 import MessageIdentification1
 from .AdditionalReference9 import AdditionalReference9
 from .InvestmentFundOrder11 import InvestmentFundOrder11
+from .YesNoIndicator import YesNoIndicator
+from .AdditionalReference8 import AdditionalReference8
+from .Max35Text import Max35Text
 
 class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrRefs", "_PoolRef", "_AmdmntInd", "_RltdRef", "_MsgId", "_CpyDtls", "_MstrRef", "_PrvsRef"]
+	__slots__ = ["_PrvsRef", "_AmdmntInd", "_OrdrRefs", "_MsgId", "_MstrRef", "_RltdRef", "_CpyDtls", "_PoolRef"]
 	@property
-	def OrdrRefs(self):
-		return self._OrdrRefs
+	def PrvsRef(self):
+		return self._PrvsRef
 
-	@OrdrRefs.setter
-	def OrdrRefs(self, value):
-		self._OrdrRefs = value if type(value) != auto else self.make_default("OrdrRefs")
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
 
-	@OrdrRefs.deleter
-	def OrdrRefs(self):
-		del self._OrdrRefs
-		self._OrdrRefs = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	@property
 	def AmdmntInd(self):
@@ -42,7 +29,7 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@AmdmntInd.setter
 	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != auto else self.make_default("AmdmntInd")
+		self._AmdmntInd = value if type(value) != base_types.auto else self.make_default("AmdmntInd")
 
 	@AmdmntInd.deleter
 	def AmdmntInd(self):
@@ -50,17 +37,17 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 		self._AmdmntInd = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def OrdrRefs(self):
+		return self._OrdrRefs
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@OrdrRefs.setter
+	def OrdrRefs(self, value):
+		self._OrdrRefs = value if type(value) != base_types.auto else self.make_default("OrdrRefs")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@OrdrRefs.deleter
+	def OrdrRefs(self):
+		del self._OrdrRefs
+		self._OrdrRefs = None
 
 	@property
 	def MsgId(self):
@@ -68,7 +55,7 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
 	@MsgId.deleter
 	def MsgId(self):
@@ -76,25 +63,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 		self._MsgId = None
 
 	@property
-	def CpyDtls(self):
-		return self._CpyDtls
-
-	@CpyDtls.setter
-	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != auto else self.make_default("CpyDtls")
-
-	@CpyDtls.deleter
-	def CpyDtls(self):
-		del self._CpyDtls
-		self._CpyDtls = None
-
-	@property
 	def MstrRef(self):
 		return self._MstrRef
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
 
 	@MstrRef.deleter
 	def MstrRef(self):
@@ -102,26 +76,52 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 		self._MstrRef = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def RltdRef(self):
+		return self._RltdRef
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
+	def CpyDtls(self):
+		return self._CpyDtls
+
+	@CpyDtls.setter
+	def CpyDtls(self, value):
+		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
+
+	@CpyDtls.deleter
+	def CpyDtls(self):
+		del self._CpyDtls
+		self._CpyDtls = None
+
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrRefs', type=InvestmentFundOrder11, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AmdmntInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRefs', type=InvestmentFundOrder11, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
 	))
 

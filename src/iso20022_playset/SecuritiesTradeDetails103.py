@@ -5,27 +5,14 @@ from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class SecuritiesTradeDetails103(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_OpngSttlmDt", "_InstrPrcgAddtlDtls", "_NbOfDaysAcrd"]
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
-
+	__slots__ = ["_OpngSttlmDt", "_NbOfDaysAcrd", "_InstrPrcgAddtlDtls", "_TradDt"]
 	@property
 	def OpngSttlmDt(self):
 		return self._OpngSttlmDt
 
 	@OpngSttlmDt.setter
 	def OpngSttlmDt(self, value):
-		self._OpngSttlmDt = value if type(value) != auto else self.make_default("OpngSttlmDt")
+		self._OpngSttlmDt = value if type(value) != base_types.auto else self.make_default("OpngSttlmDt")
 
 	@OpngSttlmDt.deleter
 	def OpngSttlmDt(self):
@@ -33,12 +20,25 @@ class SecuritiesTradeDetails103(base_types._BaseFieldType):
 		self._OpngSttlmDt = None
 
 	@property
+	def NbOfDaysAcrd(self):
+		return self._NbOfDaysAcrd
+
+	@NbOfDaysAcrd.setter
+	def NbOfDaysAcrd(self, value):
+		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
+
+	@NbOfDaysAcrd.deleter
+	def NbOfDaysAcrd(self):
+		del self._NbOfDaysAcrd
+		self._NbOfDaysAcrd = None
+
+	@property
 	def InstrPrcgAddtlDtls(self):
 		return self._InstrPrcgAddtlDtls
 
 	@InstrPrcgAddtlDtls.setter
 	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("InstrPrcgAddtlDtls")
+		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
 
 	@InstrPrcgAddtlDtls.deleter
 	def InstrPrcgAddtlDtls(self):
@@ -46,22 +46,22 @@ class SecuritiesTradeDetails103(base_types._BaseFieldType):
 		self._InstrPrcgAddtlDtls = None
 
 	@property
-	def NbOfDaysAcrd(self):
-		return self._NbOfDaysAcrd
+	def TradDt(self):
+		return self._TradDt
 
-	@NbOfDaysAcrd.setter
-	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
 
-	@NbOfDaysAcrd.deleter
-	def NbOfDaysAcrd(self):
-		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngSttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDaysAcrd', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

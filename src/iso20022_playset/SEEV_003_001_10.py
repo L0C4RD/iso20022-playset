@@ -12,7 +12,7 @@ class SEEV_003_001_10():
 
 		@MtgEntitlmntNtfctn.setter
 		def MtgEntitlmntNtfctn(self, value):
-			self._MtgEntitlmntNtfctn = value if type(value) != auto else self.make_default("MtgEntitlmntNtfctn")
+			self._MtgEntitlmntNtfctn = value if type(value) != base_types.auto else self.make_default("MtgEntitlmntNtfctn")
 
 		@MtgEntitlmntNtfctn.deleter
 		def MtgEntitlmntNtfctn(self):

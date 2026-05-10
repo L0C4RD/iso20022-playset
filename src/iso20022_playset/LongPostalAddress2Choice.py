@@ -1,6 +1,6 @@
 from . import base_types
-from .PostalAddress1 import PostalAddress1
 from .Max350Text import Max350Text
+from .PostalAddress1 import PostalAddress1
 
 class LongPostalAddress2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class LongPostalAddress2Choice(base_types._BaseFieldType):
 
 	@Ustrd.setter
 	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != auto else self.make_default("Ustrd")
+		self._Ustrd = value if type(value) != base_types.auto else self.make_default("Ustrd")
 
 	@Ustrd.deleter
 	def Ustrd(self):
@@ -24,7 +24,7 @@ class LongPostalAddress2Choice(base_types._BaseFieldType):
 
 	@Strd.setter
 	def Strd(self, value):
-		self._Strd = value if type(value) != auto else self.make_default("Strd")
+		self._Strd = value if type(value) != base_types.auto else self.make_default("Strd")
 
 	@Strd.deleter
 	def Strd(self):

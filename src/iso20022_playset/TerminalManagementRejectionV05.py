@@ -11,7 +11,7 @@ class TerminalManagementRejectionV05(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -24,7 +24,7 @@ class TerminalManagementRejectionV05(base_types._BaseFieldType):
 
 	@Rjct.setter
 	def Rjct(self, value):
-		self._Rjct = value if type(value) != auto else self.make_default("Rjct")
+		self._Rjct = value if type(value) != base_types.auto else self.make_default("Rjct")
 
 	@Rjct.deleter
 	def Rjct(self):

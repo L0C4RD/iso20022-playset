@@ -12,7 +12,7 @@ class CAIN_020_001_03():
 
 		@Amdmnt.setter
 		def Amdmnt(self, value):
-			self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
+			self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
 
 		@Amdmnt.deleter
 		def Amdmnt(self):

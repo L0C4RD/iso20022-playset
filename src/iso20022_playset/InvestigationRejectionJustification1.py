@@ -10,7 +10,7 @@ class InvestigationRejectionJustification1(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):

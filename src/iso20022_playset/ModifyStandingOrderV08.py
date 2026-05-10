@@ -1,8 +1,8 @@
 from . import base_types
-from .StandingOrderIdentification8 import StandingOrderIdentification8
 from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
 from .StandingOrder10 import StandingOrder10
+from .StandingOrderIdentification8 import StandingOrderIdentification8
+from .MessageHeader1 import MessageHeader1
 
 class ModifyStandingOrderV08(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
@@ -26,7 +26,7 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 
 	@StgOrdrId.setter
 	def StgOrdrId(self, value):
-		self._StgOrdrId = value if type(value) != auto else self.make_default("StgOrdrId")
+		self._StgOrdrId = value if type(value) != base_types.auto else self.make_default("StgOrdrId")
 
 	@StgOrdrId.deleter
 	def StgOrdrId(self):
@@ -39,7 +39,7 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -52,7 +52,7 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 
 	@NewStgOrdrValSet.setter
 	def NewStgOrdrValSet(self, value):
-		self._NewStgOrdrValSet = value if type(value) != auto else self.make_default("NewStgOrdrValSet")
+		self._NewStgOrdrValSet = value if type(value) != base_types.auto else self.make_default("NewStgOrdrValSet")
 
 	@NewStgOrdrValSet.deleter
 	def NewStgOrdrValSet(self):

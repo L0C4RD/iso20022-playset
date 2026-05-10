@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
 from .Max70Text import Max70Text
+from .ActiveCurrencyCode import ActiveCurrencyCode
 from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ATMFeeComponent1(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class ATMFeeComponent1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -25,7 +25,7 @@ class ATMFeeComponent1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -38,7 +38,7 @@ class ATMFeeComponent1(base_types._BaseFieldType):
 
 	@FeeLabl.setter
 	def FeeLabl(self, value):
-		self._FeeLabl = value if type(value) != auto else self.make_default("FeeLabl")
+		self._FeeLabl = value if type(value) != base_types.auto else self.make_default("FeeLabl")
 
 	@FeeLabl.deleter
 	def FeeLabl(self):

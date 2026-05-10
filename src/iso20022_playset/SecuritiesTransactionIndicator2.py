@@ -6,19 +6,19 @@ from .ReportingWaiverType3Code import ReportingWaiverType3Code
 
 class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 
-	__slots__ = ["_RskRdcgTx", "_WvrInd", "_SctiesFincgTxInd", "_OTCPstTradInd", "_ShrtSellgInd"]
+	__slots__ = ["_OTCPstTradInd", "_WvrInd", "_SctiesFincgTxInd", "_RskRdcgTx", "_ShrtSellgInd"]
 	@property
-	def RskRdcgTx(self):
-		return self._RskRdcgTx
+	def OTCPstTradInd(self):
+		return self._OTCPstTradInd
 
-	@RskRdcgTx.setter
-	def RskRdcgTx(self, value):
-		self._RskRdcgTx = value if type(value) != auto else self.make_default("RskRdcgTx")
+	@OTCPstTradInd.setter
+	def OTCPstTradInd(self, value):
+		self._OTCPstTradInd = value if type(value) != base_types.auto else self.make_default("OTCPstTradInd")
 
-	@RskRdcgTx.deleter
-	def RskRdcgTx(self):
-		del self._RskRdcgTx
-		self._RskRdcgTx = None
+	@OTCPstTradInd.deleter
+	def OTCPstTradInd(self):
+		del self._OTCPstTradInd
+		self._OTCPstTradInd = None
 
 	@property
 	def WvrInd(self):
@@ -26,7 +26,7 @@ class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 
 	@WvrInd.setter
 	def WvrInd(self, value):
-		self._WvrInd = value if type(value) != auto else self.make_default("WvrInd")
+		self._WvrInd = value if type(value) != base_types.auto else self.make_default("WvrInd")
 
 	@WvrInd.deleter
 	def WvrInd(self):
@@ -39,7 +39,7 @@ class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 
 	@SctiesFincgTxInd.setter
 	def SctiesFincgTxInd(self, value):
-		self._SctiesFincgTxInd = value if type(value) != auto else self.make_default("SctiesFincgTxInd")
+		self._SctiesFincgTxInd = value if type(value) != base_types.auto else self.make_default("SctiesFincgTxInd")
 
 	@SctiesFincgTxInd.deleter
 	def SctiesFincgTxInd(self):
@@ -47,17 +47,17 @@ class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 		self._SctiesFincgTxInd = None
 
 	@property
-	def OTCPstTradInd(self):
-		return self._OTCPstTradInd
+	def RskRdcgTx(self):
+		return self._RskRdcgTx
 
-	@OTCPstTradInd.setter
-	def OTCPstTradInd(self, value):
-		self._OTCPstTradInd = value if type(value) != auto else self.make_default("OTCPstTradInd")
+	@RskRdcgTx.setter
+	def RskRdcgTx(self, value):
+		self._RskRdcgTx = value if type(value) != base_types.auto else self.make_default("RskRdcgTx")
 
-	@OTCPstTradInd.deleter
-	def OTCPstTradInd(self):
-		del self._OTCPstTradInd
-		self._OTCPstTradInd = None
+	@RskRdcgTx.deleter
+	def RskRdcgTx(self):
+		del self._RskRdcgTx
+		self._RskRdcgTx = None
 
 	@property
 	def ShrtSellgInd(self):
@@ -65,7 +65,7 @@ class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 
 	@ShrtSellgInd.setter
 	def ShrtSellgInd(self, value):
-		self._ShrtSellgInd = value if type(value) != auto else self.make_default("ShrtSellgInd")
+		self._ShrtSellgInd = value if type(value) != base_types.auto else self.make_default("ShrtSellgInd")
 
 	@ShrtSellgInd.deleter
 	def ShrtSellgInd(self):
@@ -73,10 +73,10 @@ class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 		self._ShrtSellgInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RskRdcgTx', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OTCPstTradInd', type=ReportingWaiverType3Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='WvrInd', type=ReportingWaiverType1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesFincgTxInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OTCPstTradInd', type=ReportingWaiverType3Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RskRdcgTx', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtSellgInd', type=Side5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

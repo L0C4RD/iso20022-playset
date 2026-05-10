@@ -1,6 +1,6 @@
 from . import base_types
-from .OriginalPaymentInstruction49 import OriginalPaymentInstruction49
 from .OriginalGroupHeader21 import OriginalGroupHeader21
+from .OriginalPaymentInstruction49 import OriginalPaymentInstruction49
 
 class UnderlyingTransaction33(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UnderlyingTransaction33(base_types._BaseFieldType):
 
 	@OrgnlPmtInfAndCxl.setter
 	def OrgnlPmtInfAndCxl(self, value):
-		self._OrgnlPmtInfAndCxl = value if type(value) != auto else self.make_default("OrgnlPmtInfAndCxl")
+		self._OrgnlPmtInfAndCxl = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfAndCxl")
 
 	@OrgnlPmtInfAndCxl.deleter
 	def OrgnlPmtInfAndCxl(self):
@@ -24,7 +24,7 @@ class UnderlyingTransaction33(base_types._BaseFieldType):
 
 	@OrgnlGrpInfAndCxl.setter
 	def OrgnlGrpInfAndCxl(self, value):
-		self._OrgnlGrpInfAndCxl = value if type(value) != auto else self.make_default("OrgnlGrpInfAndCxl")
+		self._OrgnlGrpInfAndCxl = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndCxl")
 
 	@OrgnlGrpInfAndCxl.deleter
 	def OrgnlGrpInfAndCxl(self):

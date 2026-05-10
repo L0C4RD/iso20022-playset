@@ -12,7 +12,7 @@ class CAMT_030_001_06():
 
 		@NtfctnOfCaseAssgnmt.setter
 		def NtfctnOfCaseAssgnmt(self, value):
-			self._NtfctnOfCaseAssgnmt = value if type(value) != auto else self.make_default("NtfctnOfCaseAssgnmt")
+			self._NtfctnOfCaseAssgnmt = value if type(value) != base_types.auto else self.make_default("NtfctnOfCaseAssgnmt")
 
 		@NtfctnOfCaseAssgnmt.deleter
 		def NtfctnOfCaseAssgnmt(self):

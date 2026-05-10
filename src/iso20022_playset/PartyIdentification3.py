@@ -10,7 +10,7 @@ class PartyIdentification3(base_types._BaseFieldType):
 
 	@BICOrBEI.setter
 	def BICOrBEI(self, value):
-		self._BICOrBEI = value if type(value) != auto else self.make_default("BICOrBEI")
+		self._BICOrBEI = value if type(value) != base_types.auto else self.make_default("BICOrBEI")
 
 	@BICOrBEI.deleter
 	def BICOrBEI(self):

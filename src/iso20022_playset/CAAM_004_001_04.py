@@ -12,7 +12,7 @@ class CAAM_004_001_04():
 
 		@ATMKeyDwnldRspn.setter
 		def ATMKeyDwnldRspn(self, value):
-			self._ATMKeyDwnldRspn = value if type(value) != auto else self.make_default("ATMKeyDwnldRspn")
+			self._ATMKeyDwnldRspn = value if type(value) != base_types.auto else self.make_default("ATMKeyDwnldRspn")
 
 		@ATMKeyDwnldRspn.deleter
 		def ATMKeyDwnldRspn(self):

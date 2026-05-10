@@ -12,7 +12,7 @@ class REDA_022_001_02():
 
 		@PtyModReq.setter
 		def PtyModReq(self, value):
-			self._PtyModReq = value if type(value) != auto else self.make_default("PtyModReq")
+			self._PtyModReq = value if type(value) != base_types.auto else self.make_default("PtyModReq")
 
 		@PtyModReq.deleter
 		def PtyModReq(self):

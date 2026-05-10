@@ -10,7 +10,7 @@ class Addition2(base_types._BaseFieldType):
 
 	@PropsdVal.setter
 	def PropsdVal(self, value):
-		self._PropsdVal = value if type(value) != auto else self.make_default("PropsdVal")
+		self._PropsdVal = value if type(value) != base_types.auto else self.make_default("PropsdVal")
 
 	@PropsdVal.deleter
 	def PropsdVal(self):

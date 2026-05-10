@@ -1,6 +1,6 @@
 from . import base_types
-from .RoundingMethod1Code import RoundingMethod1Code
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .RoundingMethod1Code import RoundingMethod1Code
 
 class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 
 	@MinTrfAmt.setter
 	def MinTrfAmt(self, value):
-		self._MinTrfAmt = value if type(value) != auto else self.make_default("MinTrfAmt")
+		self._MinTrfAmt = value if type(value) != base_types.auto else self.make_default("MinTrfAmt")
 
 	@MinTrfAmt.deleter
 	def MinTrfAmt(self):
@@ -24,7 +24,7 @@ class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 
 	@RndgMtd.setter
 	def RndgMtd(self, value):
-		self._RndgMtd = value if type(value) != auto else self.make_default("RndgMtd")
+		self._RndgMtd = value if type(value) != base_types.auto else self.make_default("RndgMtd")
 
 	@RndgMtd.deleter
 	def RndgMtd(self):
@@ -37,7 +37,7 @@ class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 
 	@RndgAmt.setter
 	def RndgAmt(self, value):
-		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
+		self._RndgAmt = value if type(value) != base_types.auto else self.make_default("RndgAmt")
 
 	@RndgAmt.deleter
 	def RndgAmt(self):

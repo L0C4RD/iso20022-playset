@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 from .AssetClassDetailedSubProductType1Choice import AssetClassDetailedSubProductType1Choice
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 
 class Commodity2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Commodity2(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
+		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
 
 	@MktVal.deleter
 	def MktVal(self):
@@ -24,7 +24,7 @@ class Commodity2(base_types._BaseFieldType):
 
 	@CmmdtyTp.setter
 	def CmmdtyTp(self, value):
-		self._CmmdtyTp = value if type(value) != auto else self.make_default("CmmdtyTp")
+		self._CmmdtyTp = value if type(value) != base_types.auto else self.make_default("CmmdtyTp")
 
 	@CmmdtyTp.deleter
 	def CmmdtyTp(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .PaymentTime3Code import PaymentTime3Code
 from .Number import Number
+from .PaymentTime3Code import PaymentTime3Code
 
 class PaymentPeriod3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PaymentPeriod3(base_types._BaseFieldType):
 
 	@NbOfDays.setter
 	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != auto else self.make_default("NbOfDays")
+		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
 
 	@NbOfDays.deleter
 	def NbOfDays(self):
@@ -24,7 +24,7 @@ class PaymentPeriod3(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

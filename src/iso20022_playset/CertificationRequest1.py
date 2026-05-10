@@ -4,19 +4,19 @@ from .Max140Text import Max140Text
 
 class CertificationRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyId", "_CertReqInf", "_KeyVrsn"]
+	__slots__ = ["_KeyVrsn", "_CertReqInf", "_KeyId"]
 	@property
-	def KeyId(self):
-		return self._KeyId
+	def KeyVrsn(self):
+		return self._KeyVrsn
 
-	@KeyId.setter
-	def KeyId(self, value):
-		self._KeyId = value if type(value) != auto else self.make_default("KeyId")
+	@KeyVrsn.setter
+	def KeyVrsn(self, value):
+		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
 
-	@KeyId.deleter
-	def KeyId(self):
-		del self._KeyId
-		self._KeyId = None
+	@KeyVrsn.deleter
+	def KeyVrsn(self):
+		del self._KeyVrsn
+		self._KeyVrsn = None
 
 	@property
 	def CertReqInf(self):
@@ -24,7 +24,7 @@ class CertificationRequest1(base_types._BaseFieldType):
 
 	@CertReqInf.setter
 	def CertReqInf(self, value):
-		self._CertReqInf = value if type(value) != auto else self.make_default("CertReqInf")
+		self._CertReqInf = value if type(value) != base_types.auto else self.make_default("CertReqInf")
 
 	@CertReqInf.deleter
 	def CertReqInf(self):
@@ -32,21 +32,21 @@ class CertificationRequest1(base_types._BaseFieldType):
 		self._CertReqInf = None
 
 	@property
-	def KeyVrsn(self):
-		return self._KeyVrsn
+	def KeyId(self):
+		return self._KeyId
 
-	@KeyVrsn.setter
-	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
+	@KeyId.setter
+	def KeyId(self, value):
+		self._KeyId = value if type(value) != base_types.auto else self.make_default("KeyId")
 
-	@KeyVrsn.deleter
-	def KeyVrsn(self):
-		del self._KeyVrsn
-		self._KeyVrsn = None
+	@KeyId.deleter
+	def KeyId(self):
+		del self._KeyId
+		self._KeyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertReqInf', type=CertificationRequest2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertReqInf', type=CertificationRequest2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

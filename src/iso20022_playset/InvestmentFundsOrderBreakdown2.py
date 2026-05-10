@@ -11,7 +11,7 @@ class InvestmentFundsOrderBreakdown2(base_types._BaseFieldType):
 
 	@OrdrBrkdwnTp.setter
 	def OrdrBrkdwnTp(self, value):
-		self._OrdrBrkdwnTp = value if type(value) != auto else self.make_default("OrdrBrkdwnTp")
+		self._OrdrBrkdwnTp = value if type(value) != base_types.auto else self.make_default("OrdrBrkdwnTp")
 
 	@OrdrBrkdwnTp.deleter
 	def OrdrBrkdwnTp(self):
@@ -24,7 +24,7 @@ class InvestmentFundsOrderBreakdown2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

@@ -1,10 +1,10 @@
 from . import base_types
-from .SettlementStatus16Choice import SettlementStatus16Choice
-from .SupplementaryData1 import SupplementaryData1
-from .Linkages75 import Linkages75
-from .TransactionIdentifications29 import TransactionIdentifications29
-from .IntraPositionDetails60 import IntraPositionDetails60
 from .IntraPositionProcessingStatus9Choice import IntraPositionProcessingStatus9Choice
+from .SupplementaryData1 import SupplementaryData1
+from .IntraPositionDetails60 import IntraPositionDetails60
+from .TransactionIdentifications29 import TransactionIdentifications29
+from .SettlementStatus16Choice import SettlementStatus16Choice
+from .Linkages75 import Linkages75
 
 class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
@@ -15,7 +15,7 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):
@@ -28,7 +28,7 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
 	@Lkg.setter
 	def Lkg(self, value):
-		self._Lkg = value if type(value) != auto else self.make_default("Lkg")
+		self._Lkg = value if type(value) != base_types.auto else self.make_default("Lkg")
 
 	@Lkg.deleter
 	def Lkg(self):
@@ -41,7 +41,7 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -54,7 +54,7 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
@@ -67,7 +67,7 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
 
 	@TxDtls.deleter
 	def TxDtls(self):
@@ -80,7 +80,7 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
 	@PrcgSts.deleter
 	def PrcgSts(self):

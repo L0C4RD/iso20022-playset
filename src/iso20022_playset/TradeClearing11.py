@@ -1,18 +1,31 @@
 from . import base_types
-from .Cleared23Choice import Cleared23Choice
 from .ClearingObligationType1Code import ClearingObligationType1Code
 from .TrueFalseIndicator import TrueFalseIndicator
+from .Cleared23Choice import Cleared23Choice
 
 class TradeClearing11(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSts", "_ClrOblgtn", "_IntraGrp"]
+	__slots__ = ["_IntraGrp", "_ClrSts", "_ClrOblgtn"]
+	@property
+	def IntraGrp(self):
+		return self._IntraGrp
+
+	@IntraGrp.setter
+	def IntraGrp(self, value):
+		self._IntraGrp = value if type(value) != base_types.auto else self.make_default("IntraGrp")
+
+	@IntraGrp.deleter
+	def IntraGrp(self):
+		del self._IntraGrp
+		self._IntraGrp = None
+
 	@property
 	def ClrSts(self):
 		return self._ClrSts
 
 	@ClrSts.setter
 	def ClrSts(self, value):
-		self._ClrSts = value if type(value) != auto else self.make_default("ClrSts")
+		self._ClrSts = value if type(value) != base_types.auto else self.make_default("ClrSts")
 
 	@ClrSts.deleter
 	def ClrSts(self):
@@ -25,29 +38,16 @@ class TradeClearing11(base_types._BaseFieldType):
 
 	@ClrOblgtn.setter
 	def ClrOblgtn(self, value):
-		self._ClrOblgtn = value if type(value) != auto else self.make_default("ClrOblgtn")
+		self._ClrOblgtn = value if type(value) != base_types.auto else self.make_default("ClrOblgtn")
 
 	@ClrOblgtn.deleter
 	def ClrOblgtn(self):
 		del self._ClrOblgtn
 		self._ClrOblgtn = None
 
-	@property
-	def IntraGrp(self):
-		return self._IntraGrp
-
-	@IntraGrp.setter
-	def IntraGrp(self, value):
-		self._IntraGrp = value if type(value) != auto else self.make_default("IntraGrp")
-
-	@IntraGrp.deleter
-	def IntraGrp(self):
-		del self._IntraGrp
-		self._IntraGrp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSts', type=Cleared23Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrOblgtn', type=ClearingObligationType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

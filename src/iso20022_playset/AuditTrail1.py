@@ -1,19 +1,19 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max350Text import Max350Text
-from .ISODateTime import ISODateTime
 from .Max256Text import Max256Text
+from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class AuditTrail1(base_types._BaseFieldType):
 
-	__slots__ = ["_OdFldVal", "_ApprvgUsr", "_NewFldVal", "_OprTmStmp", "_InstgUsr", "_FldNm"]
+	__slots__ = ["_OdFldVal", "_ApprvgUsr", "_NewFldVal", "_FldNm", "_InstgUsr", "_OprTmStmp"]
 	@property
 	def OdFldVal(self):
 		return self._OdFldVal
 
 	@OdFldVal.setter
 	def OdFldVal(self, value):
-		self._OdFldVal = value if type(value) != auto else self.make_default("OdFldVal")
+		self._OdFldVal = value if type(value) != base_types.auto else self.make_default("OdFldVal")
 
 	@OdFldVal.deleter
 	def OdFldVal(self):
@@ -26,7 +26,7 @@ class AuditTrail1(base_types._BaseFieldType):
 
 	@ApprvgUsr.setter
 	def ApprvgUsr(self, value):
-		self._ApprvgUsr = value if type(value) != auto else self.make_default("ApprvgUsr")
+		self._ApprvgUsr = value if type(value) != base_types.auto else self.make_default("ApprvgUsr")
 
 	@ApprvgUsr.deleter
 	def ApprvgUsr(self):
@@ -39,7 +39,7 @@ class AuditTrail1(base_types._BaseFieldType):
 
 	@NewFldVal.setter
 	def NewFldVal(self, value):
-		self._NewFldVal = value if type(value) != auto else self.make_default("NewFldVal")
+		self._NewFldVal = value if type(value) != base_types.auto else self.make_default("NewFldVal")
 
 	@NewFldVal.deleter
 	def NewFldVal(self):
@@ -47,17 +47,17 @@ class AuditTrail1(base_types._BaseFieldType):
 		self._NewFldVal = None
 
 	@property
-	def OprTmStmp(self):
-		return self._OprTmStmp
+	def FldNm(self):
+		return self._FldNm
 
-	@OprTmStmp.setter
-	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != auto else self.make_default("OprTmStmp")
+	@FldNm.setter
+	def FldNm(self, value):
+		self._FldNm = value if type(value) != base_types.auto else self.make_default("FldNm")
 
-	@OprTmStmp.deleter
-	def OprTmStmp(self):
-		del self._OprTmStmp
-		self._OprTmStmp = None
+	@FldNm.deleter
+	def FldNm(self):
+		del self._FldNm
+		self._FldNm = None
 
 	@property
 	def InstgUsr(self):
@@ -65,7 +65,7 @@ class AuditTrail1(base_types._BaseFieldType):
 
 	@InstgUsr.setter
 	def InstgUsr(self, value):
-		self._InstgUsr = value if type(value) != auto else self.make_default("InstgUsr")
+		self._InstgUsr = value if type(value) != base_types.auto else self.make_default("InstgUsr")
 
 	@InstgUsr.deleter
 	def InstgUsr(self):
@@ -73,24 +73,24 @@ class AuditTrail1(base_types._BaseFieldType):
 		self._InstgUsr = None
 
 	@property
-	def FldNm(self):
-		return self._FldNm
+	def OprTmStmp(self):
+		return self._OprTmStmp
 
-	@FldNm.setter
-	def FldNm(self, value):
-		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
+	@OprTmStmp.setter
+	def OprTmStmp(self, value):
+		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
 
-	@FldNm.deleter
-	def FldNm(self):
-		del self._FldNm
-		self._FldNm = None
+	@OprTmStmp.deleter
+	def OprTmStmp(self):
+		del self._OprTmStmp
+		self._OprTmStmp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OdFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApprvgUsr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgUsr', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgUsr', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

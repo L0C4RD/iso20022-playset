@@ -12,7 +12,7 @@ class CAMT_035_001_06():
 
 		@PrtryFrmtInvstgtn.setter
 		def PrtryFrmtInvstgtn(self, value):
-			self._PrtryFrmtInvstgtn = value if type(value) != auto else self.make_default("PrtryFrmtInvstgtn")
+			self._PrtryFrmtInvstgtn = value if type(value) != base_types.auto else self.make_default("PrtryFrmtInvstgtn")
 
 		@PrtryFrmtInvstgtn.deleter
 		def PrtryFrmtInvstgtn(self):

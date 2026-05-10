@@ -1,23 +1,23 @@
 from . import base_types
-from .AnyBICIdentifier import AnyBICIdentifier
-from .CountryCode import CountryCode
 from .NameAndAddress5 import NameAndAddress5
+from .CountryCode import CountryCode
+from .AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BIC", "_NmAndAdr", "_Ctry"]
+	__slots__ = ["_Ctry", "_NmAndAdr", "_BIC"]
 	@property
-	def BIC(self):
-		return self._BIC
+	def Ctry(self):
+		return self._Ctry
 
-	@BIC.setter
-	def BIC(self, value):
-		self._BIC = value if type(value) != auto else self.make_default("BIC")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@BIC.deleter
-	def BIC(self):
-		del self._BIC
-		self._BIC = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def NmAndAdr(self):
@@ -25,7 +25,7 @@ class PartyIdentification34Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
@@ -33,21 +33,21 @@ class PartyIdentification34Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def BIC(self):
+		return self._BIC
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@BIC.setter
+	def BIC(self, value):
+		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@BIC.deleter
+	def BIC(self):
+		del self._BIC
+		self._BIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BIC', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BIC', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

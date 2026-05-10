@@ -1,6 +1,6 @@
 from . import base_types
-from .Max210Text import Max210Text
 from .PendingProcessingReason11Choice import PendingProcessingReason11Choice
+from .Max210Text import Max210Text
 
 class PendingProcessingReason9(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PendingProcessingReason9(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class PendingProcessingReason9(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):

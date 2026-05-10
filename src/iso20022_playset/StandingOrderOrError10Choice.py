@@ -1,6 +1,6 @@
 from . import base_types
-from .StandingOrder11 import StandingOrder11
 from .ErrorHandling5 import ErrorHandling5
+from .StandingOrder11 import StandingOrder11
 
 class StandingOrderOrError10Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class StandingOrderOrError10Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):
@@ -24,7 +24,7 @@ class StandingOrderOrError10Choice(base_types._BaseFieldType):
 
 	@StgOrdr.setter
 	def StgOrdr(self, value):
-		self._StgOrdr = value if type(value) != auto else self.make_default("StgOrdr")
+		self._StgOrdr = value if type(value) != base_types.auto else self.make_default("StgOrdr")
 
 	@StgOrdr.deleter
 	def StgOrdr(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .ISO20022MessageIdentificationText import ISO20022MessageIdentificationText
-from .GenericIdentification36 import GenericIdentification36
 from .Exact3NumericText import Exact3NumericText
+from .GenericIdentification36 import GenericIdentification36
 
 class DocumentNumber5Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class DocumentNumber5Choice(base_types._BaseFieldType):
 
 	@LngNb.setter
 	def LngNb(self, value):
-		self._LngNb = value if type(value) != auto else self.make_default("LngNb")
+		self._LngNb = value if type(value) != base_types.auto else self.make_default("LngNb")
 
 	@LngNb.deleter
 	def LngNb(self):
@@ -25,7 +25,7 @@ class DocumentNumber5Choice(base_types._BaseFieldType):
 
 	@ShrtNb.setter
 	def ShrtNb(self, value):
-		self._ShrtNb = value if type(value) != auto else self.make_default("ShrtNb")
+		self._ShrtNb = value if type(value) != base_types.auto else self.make_default("ShrtNb")
 
 	@ShrtNb.deleter
 	def ShrtNb(self):
@@ -38,7 +38,7 @@ class DocumentNumber5Choice(base_types._BaseFieldType):
 
 	@PrtryNb.setter
 	def PrtryNb(self, value):
-		self._PrtryNb = value if type(value) != auto else self.make_default("PrtryNb")
+		self._PrtryNb = value if type(value) != base_types.auto else self.make_default("PrtryNb")
 
 	@PrtryNb.deleter
 	def PrtryNb(self):

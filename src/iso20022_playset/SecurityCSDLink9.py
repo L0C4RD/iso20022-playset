@@ -1,7 +1,7 @@
 from . import base_types
 from .SecurityIdentification19 import SecurityIdentification19
-from .IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
 from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
 
 class SecurityCSDLink9(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class SecurityCSDLink9(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
 
 	@VldFr.deleter
 	def VldFr(self):
@@ -25,7 +25,7 @@ class SecurityCSDLink9(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
@@ -38,7 +38,7 @@ class SecurityCSDLink9(base_types._BaseFieldType):
 
 	@IssrInvstrCSD.setter
 	def IssrInvstrCSD(self, value):
-		self._IssrInvstrCSD = value if type(value) != auto else self.make_default("IssrInvstrCSD")
+		self._IssrInvstrCSD = value if type(value) != base_types.auto else self.make_default("IssrInvstrCSD")
 
 	@IssrInvstrCSD.deleter
 	def IssrInvstrCSD(self):

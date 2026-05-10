@@ -11,7 +11,7 @@ class Number3Choice(base_types._BaseFieldType):
 
 	@Shrt.setter
 	def Shrt(self, value):
-		self._Shrt = value if type(value) != auto else self.make_default("Shrt")
+		self._Shrt = value if type(value) != base_types.auto else self.make_default("Shrt")
 
 	@Shrt.deleter
 	def Shrt(self):
@@ -24,7 +24,7 @@ class Number3Choice(base_types._BaseFieldType):
 
 	@Lng.setter
 	def Lng(self, value):
-		self._Lng = value if type(value) != auto else self.make_default("Lng")
+		self._Lng = value if type(value) != base_types.auto else self.make_default("Lng")
 
 	@Lng.deleter
 	def Lng(self):

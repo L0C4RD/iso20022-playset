@@ -1,37 +1,24 @@
 from . import base_types
-from .ContentInformationType10 import ContentInformationType10
 from .Header31 import Header31
-from .ATMTransferRequest2 import ATMTransferRequest2
 from .ContentInformationType15 import ContentInformationType15
+from .ContentInformationType10 import ContentInformationType10
+from .ATMTransferRequest2 import ATMTransferRequest2
 
 class ATMTransferRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMTrfReq", "_PrtctdATMTrfReq", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_PrtctdATMTrfReq", "_ATMTrfReq"]
 	@property
-	def ATMTrfReq(self):
-		return self._ATMTrfReq
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@ATMTrfReq.setter
-	def ATMTrfReq(self, value):
-		self._ATMTrfReq = value if type(value) != auto else self.make_default("ATMTrfReq")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@ATMTrfReq.deleter
-	def ATMTrfReq(self):
-		del self._ATMTrfReq
-		self._ATMTrfReq = None
-
-	@property
-	def PrtctdATMTrfReq(self):
-		return self._PrtctdATMTrfReq
-
-	@PrtctdATMTrfReq.setter
-	def PrtctdATMTrfReq(self, value):
-		self._PrtctdATMTrfReq = value if type(value) != auto else self.make_default("PrtctdATMTrfReq")
-
-	@PrtctdATMTrfReq.deleter
-	def PrtctdATMTrfReq(self):
-		del self._PrtctdATMTrfReq
-		self._PrtctdATMTrfReq = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -39,7 +26,7 @@ class ATMTransferRequestV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -47,22 +34,35 @@ class ATMTransferRequestV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def PrtctdATMTrfReq(self):
+		return self._PrtctdATMTrfReq
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@PrtctdATMTrfReq.setter
+	def PrtctdATMTrfReq(self, value):
+		self._PrtctdATMTrfReq = value if type(value) != base_types.auto else self.make_default("PrtctdATMTrfReq")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@PrtctdATMTrfReq.deleter
+	def PrtctdATMTrfReq(self):
+		del self._PrtctdATMTrfReq
+		self._PrtctdATMTrfReq = None
+
+	@property
+	def ATMTrfReq(self):
+		return self._ATMTrfReq
+
+	@ATMTrfReq.setter
+	def ATMTrfReq(self, value):
+		self._ATMTrfReq = value if type(value) != base_types.auto else self.make_default("ATMTrfReq")
+
+	@ATMTrfReq.deleter
+	def ATMTrfReq(self):
+		del self._ATMTrfReq
+		self._ATMTrfReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMTrfReq', type=ATMTransferRequest2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMTrfReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMTrfReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMTrfReq', type=ATMTransferRequest2, min=0, max=1, mutex_group=None, array=False),
 	))
 

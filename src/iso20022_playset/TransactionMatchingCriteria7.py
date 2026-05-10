@@ -1,192 +1,88 @@
 from . import base_types
-from .CompareAmountAndDirection3 import CompareAmountAndDirection3
-from .CompareReferenceParty1 import CompareReferenceParty1
-from .CompareTradeConfirmation2 import CompareTradeConfirmation2
-from .CompareUnitPrice8 import CompareUnitPrice8
-from .CompareFrequencyUnit1 import CompareFrequencyUnit1
-from .CompareBenchmarkCode1 import CompareBenchmarkCode1
-from .CompareEnergyLoadType1 import CompareEnergyLoadType1
-from .CompareISINIdentifier4 import CompareISINIdentifier4
-from .CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from .CompareOptionType1 import CompareOptionType1
-from .CompareDerivativeEvent1 import CompareDerivativeEvent1
-from .CompareUniqueTransactionIdentifier2 import CompareUniqueTransactionIdentifier2
-from .CompareExchangeRateBasis1 import CompareExchangeRateBasis1
-from .CompareMICIdentifier3 import CompareMICIdentifier3
-from .CompareUnitPrice4 import CompareUnitPrice4
-from .CompareTradeClearingObligation1 import CompareTradeClearingObligation1
-from .ComparePostTradeRiskReduction2 import ComparePostTradeRiskReduction2
-from .CompareDayCount1 import CompareDayCount1
-from .CompareOptionStyle1 import CompareOptionStyle1
-from .CompareOtherPayment1 import CompareOtherPayment1
-from .CompareEnergyDeliveryAttribute1 import CompareEnergyDeliveryAttribute1
-from .CompareDate3 import CompareDate3
-from .CompareExchangeRate1 import CompareExchangeRate1
-from .CompareDateTime3 import CompareDateTime3
-from .CompareNumber5 import CompareNumber5
-from .CompareDeliveryInterconnectionPoint1 import CompareDeliveryInterconnectionPoint1
-from .CompareTrancheIndicator1 import CompareTrancheIndicator1
-from .ComparePercentageRate3 import ComparePercentageRate3
-from .CompareMax350Text1 import CompareMax350Text1
-from .CompareNumber7 import CompareNumber7
 from .CompareReportingLevelType2 import CompareReportingLevelType2
 from .CompareActiveOrHistoricCurrencyAndAmount4 import CompareActiveOrHistoricCurrencyAndAmount4
-from .CompareUnitPrice5 import CompareUnitPrice5
-from .CompareMasterAgreementType1 import CompareMasterAgreementType1
-from .CompareDeliveryType1 import CompareDeliveryType1
-from .CompareText2 import CompareText2
-from .CompareCommodityAssetClass4 import CompareCommodityAssetClass4
-from .CompareUnitPrice7 import CompareUnitPrice7
-from .CompareTradeClearingStatus3 import CompareTradeClearingStatus3
-from .CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
-from .CompareMax50Text1 import CompareMax50Text1
+from .CompareUnitPrice4 import CompareUnitPrice4
 from .CompareSeniorityType1 import CompareSeniorityType1
+from .CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
+from .ComparePostTradeRiskReduction2 import ComparePostTradeRiskReduction2
+from .CompareUniqueTransactionIdentifier2 import CompareUniqueTransactionIdentifier2
+from .CompareEnergyLoadType1 import CompareEnergyLoadType1
+from .CompareDayCount1 import CompareDayCount1
+from .CompareDeliveryInterconnectionPoint1 import CompareDeliveryInterconnectionPoint1
+from .CompareUnitPrice5 import CompareUnitPrice5
+from .CompareFrequencyUnit1 import CompareFrequencyUnit1
+from .CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
+from .CompareNumber7 import CompareNumber7
+from .CompareText2 import CompareText2
+from .CompareDeliveryType1 import CompareDeliveryType1
+from .CompareBenchmarkCode1 import CompareBenchmarkCode1
+from .CompareTrancheIndicator1 import CompareTrancheIndicator1
+from .ComparePercentageRate3 import ComparePercentageRate3
+from .CompareExchangeRate1 import CompareExchangeRate1
+from .CompareExchangeRateBasis1 import CompareExchangeRateBasis1
+from .CompareDateTime3 import CompareDateTime3
+from .CompareOptionStyle1 import CompareOptionStyle1
+from .CompareReferenceParty1 import CompareReferenceParty1
+from .CompareOtherPayment1 import CompareOtherPayment1
+from .CompareEnergyDeliveryAttribute1 import CompareEnergyDeliveryAttribute1
+from .CompareAmountAndDirection3 import CompareAmountAndDirection3
+from .CompareUnitPrice7 import CompareUnitPrice7
+from .CompareMICIdentifier3 import CompareMICIdentifier3
+from .CompareTradeConfirmation2 import CompareTradeConfirmation2
+from .CompareDate3 import CompareDate3
+from .CompareUnitPrice8 import CompareUnitPrice8
+from .CompareMax350Text1 import CompareMax350Text1
+from .CompareNumber5 import CompareNumber5
+from .CompareTradeClearingObligation1 import CompareTradeClearingObligation1
+from .CompareDerivativeEvent1 import CompareDerivativeEvent1
+from .CompareMax50Text1 import CompareMax50Text1
+from .CompareTradeClearingStatus3 import CompareTradeClearingStatus3
+from .CompareCommodityAssetClass4 import CompareCommodityAssetClass4
+from .CompareOptionType1 import CompareOptionType1
+from .CompareISINIdentifier4 import CompareISINIdentifier4
+from .CompareMasterAgreementType1 import CompareMasterAgreementType1
 
 class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlAmtFrstLegUadjstdEndDt", "_IntrstRateFxdScndLeg", "_OptnPrmPmtDt", "_PackgPric", "_NtnlAmtScndLegSchdlAmt", "_OthrPmt", "_IntrstFltgRateFrstLegId", "_CcyXchgRate", "_TradClrSts", "_FctvDt", "_OptnTp", "_IntrstFxdRateScndLegDayCnt", "_NrgyIntrCnnctnPt", "_DerivEvt", "_IntrstFltgRateScndLegNm", "_SbsqntPosUnqTxIdr", "_MstrAgrmtVrsn", "_NtnlAmtFrstLegSchdlAmt", "_IntrstFxdRateFrstLegPmtFrqcyVal", "_CdtVrsn", "_EarlyTermntnDt", "_NtnlQtyFrstLegUadjstdFctvDt", "_OptnPrmAmt", "_CdtSrs", "_Cmmdty", "_IntrstFltgRateFrstLegRefPrdVal", "_CdtTrch", "_MstrAgrmtTp", "_OptnStrkPric", "_IntrstFltgRateScndLegRstFrqcyVal", "_IntrstFltgRateScndLegRstFrqcyUnit", "_IntrstFltgRateFrstLegRefPrdUnit", "_RptTrckgNb", "_PricSchdlUadjstdFctvDt", "_TradClrOblgtn", "_IntrstFltgRateScndLegRefPrdUnit", "_CcyXchgRateBsis", "_IntrstFltgRateFrstLegRstFrqcyVal", "_UnqTxIdr", "_NrgyLdTp", "_OptnExrcStyle", "_IntrstFltgRateFrstLegNm", "_IntrstFltgRateScndLegPmtFrqcyVal", "_IntrstFxdRateScndLegPmtFrqcyVal", "_DlvryTp", "_CdtRefPty", "_NtnlQtyScndLegUadjstdFctvDt", "_OptnStrkPricSchdlAmt", "_XprtnDt", "_IntrstFltgRateFrstLegCd", "_SttlmDt", "_NtnlAmtScndLegUadjstdFctvDt", "_IntrstFltgRateScndLegDayCnt", "_IntrstFltgRateFrstLegPmtFrqcyVal", "_IntrstFltgRateFrstLegRstFrqcyUnit", "_PricSchdlUadjstdEndDt", "_IntrstFxdRateScndLegPmtFrqcyUnit", "_IntrstFxdRateFrstLegDayCnt", "_CdtSnrty", "_ExctnTmStmp", "_CdtIndxFctr", "_NtnlAmtFrstLeg", "_NtnlQtyScndLegSchdlQty", "_TxPric", "_DlvryAttr", "_IntrstFltgRateScndLegId", "_Dlta", "_OptnMtrtyDtOfUndrlyg", "_IntrstFltgRateFrstLegDayCnt", "_IntrstFxdRateFrstLeg", "_NtnlQtyFrstLegUadjstdEndDt", "_NtnlAmtScndLegUadjstdEndDt", "_IntrstFltgRateScndLegPmtFrqcyUnit", "_NtnlAmtFrstLegUadjstdFctvDt", "_TradConf", "_IntrstFltgRateFrstLegSprd", "_IntrstFltgRateScndLegRefPrdVal", "_IntrstFltgRateScndLegCd", "_OptnStrkPricSchdlUadjstdEndDt", "_OptnStrkPricSchdlUadjstdFctvDt", "_NtnlQtyScndLeg", "_PrrUnqTxIdr", "_IntrstFxdRateFrstLegPmtFrqcyUnit", "_IntrstFltgRateScndLegSprd", "_TxSchdlPric", "_CcyFwdXchgRate", "_PackgSprd", "_PltfmIdr", "_NtnlAmtScndLeg", "_NtnlQtyFrstLeg", "_NtnlQtyScndLegUadjstdEndDt", "_IntrstFltgRateFrstLegPmtFrqcyUnit", "_PstTradRskRdctn", "_Lvl", "_NrgyDlvryPtOrZone", "_IntraGrp", "_NtnlQtyFrstLegSchdlQty"]
+	__slots__ = ["_IntrstFltgRateFrstLegPmtFrqcyVal", "_OptnExrcStyle", "_IntrstFxdRateScndLegPmtFrqcyVal", "_IntrstFxdRateScndLegDayCnt", "_TxSchdlPric", "_CdtSrs", "_IntrstFltgRateScndLegRstFrqcyVal", "_OptnPrmAmt", "_OptnStrkPricSchdlUadjstdFctvDt", "_TradConf", "_NtnlAmtFrstLeg", "_TxPric", "_PstTradRskRdctn", "_SttlmDt", "_MstrAgrmtTp", "_NtnlQtyFrstLeg", "_IntrstFltgRateScndLegCd", "_SbsqntPosUnqTxIdr", "_OptnStrkPricSchdlUadjstdEndDt", "_Cmmdty", "_IntrstFxdRateFrstLegPmtFrqcyVal", "_IntrstFxdRateFrstLegDayCnt", "_IntrstFltgRateScndLegPmtFrqcyUnit", "_NtnlAmtScndLegSchdlAmt", "_NtnlAmtFrstLegSchdlAmt", "_NtnlQtyScndLegUadjstdFctvDt", "_NtnlAmtFrstLegUadjstdEndDt", "_OthrPmt", "_OptnStrkPric", "_UnqTxIdr", "_NtnlQtyScndLeg", "_NtnlQtyFrstLegSchdlQty", "_NtnlAmtFrstLegUadjstdFctvDt", "_NrgyDlvryPtOrZone", "_PrrUnqTxIdr", "_IntrstRateFxdScndLeg", "_PricSchdlUadjstdFctvDt", "_TradClrSts", "_IntrstFltgRateFrstLegCd", "_Lvl", "_ExctnTmStmp", "_FctvDt", "_IntrstFltgRateFrstLegId", "_OptnPrmPmtDt", "_CdtVrsn", "_IntrstFltgRateFrstLegSprd", "_IntrstFltgRateFrstLegNm", "_TradClrOblgtn", "_IntrstFltgRateScndLegRefPrdUnit", "_NtnlAmtScndLegUadjstdFctvDt", "_CdtSnrty", "_IntrstFxdRateScndLegPmtFrqcyUnit", "_PackgSprd", "_CdtRefPty", "_NtnlAmtScndLeg", "_NtnlQtyFrstLegUadjstdEndDt", "_CcyXchgRate", "_NtnlQtyScndLegUadjstdEndDt", "_NtnlQtyScndLegSchdlQty", "_NrgyIntrCnnctnPt", "_IntrstFxdRateFrstLeg", "_RptTrckgNb", "_CcyXchgRateBsis", "_IntrstFltgRateScndLegRefPrdVal", "_NtnlQtyFrstLegUadjstdFctvDt", "_PltfmIdr", "_OptnMtrtyDtOfUndrlyg", "_CcyFwdXchgRate", "_IntrstFltgRateScndLegSprd", "_IntrstFltgRateScndLegDayCnt", "_IntrstFltgRateFrstLegPmtFrqcyUnit", "_IntrstFltgRateScndLegId", "_Dlta", "_IntrstFltgRateFrstLegRefPrdUnit", "_IntrstFltgRateScndLegNm", "_DlvryTp", "_IntrstFltgRateFrstLegRefPrdVal", "_PricSchdlUadjstdEndDt", "_IntrstFltgRateScndLegPmtFrqcyVal", "_OptnTp", "_IntrstFltgRateFrstLegRstFrqcyUnit", "_IntraGrp", "_DlvryAttr", "_CdtIndxFctr", "_PackgPric", "_IntrstFltgRateScndLegRstFrqcyUnit", "_IntrstFxdRateFrstLegPmtFrqcyUnit", "_CdtTrch", "_XprtnDt", "_IntrstFltgRateFrstLegDayCnt", "_MstrAgrmtVrsn", "_DerivEvt", "_OptnStrkPricSchdlAmt", "_EarlyTermntnDt", "_NrgyLdTp", "_IntrstFltgRateFrstLegRstFrqcyVal", "_NtnlAmtScndLegUadjstdEndDt"]
 	@property
-	def NtnlAmtFrstLegUadjstdEndDt(self):
-		return self._NtnlAmtFrstLegUadjstdEndDt
+	def IntrstFltgRateFrstLegPmtFrqcyVal(self):
+		return self._IntrstFltgRateFrstLegPmtFrqcyVal
 
-	@NtnlAmtFrstLegUadjstdEndDt.setter
-	def NtnlAmtFrstLegUadjstdEndDt(self, value):
-		self._NtnlAmtFrstLegUadjstdEndDt = value if type(value) != auto else self.make_default("NtnlAmtFrstLegUadjstdEndDt")
+	@IntrstFltgRateFrstLegPmtFrqcyVal.setter
+	def IntrstFltgRateFrstLegPmtFrqcyVal(self, value):
+		self._IntrstFltgRateFrstLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegPmtFrqcyVal")
 
-	@NtnlAmtFrstLegUadjstdEndDt.deleter
-	def NtnlAmtFrstLegUadjstdEndDt(self):
-		del self._NtnlAmtFrstLegUadjstdEndDt
-		self._NtnlAmtFrstLegUadjstdEndDt = None
-
-	@property
-	def IntrstRateFxdScndLeg(self):
-		return self._IntrstRateFxdScndLeg
-
-	@IntrstRateFxdScndLeg.setter
-	def IntrstRateFxdScndLeg(self, value):
-		self._IntrstRateFxdScndLeg = value if type(value) != auto else self.make_default("IntrstRateFxdScndLeg")
-
-	@IntrstRateFxdScndLeg.deleter
-	def IntrstRateFxdScndLeg(self):
-		del self._IntrstRateFxdScndLeg
-		self._IntrstRateFxdScndLeg = None
+	@IntrstFltgRateFrstLegPmtFrqcyVal.deleter
+	def IntrstFltgRateFrstLegPmtFrqcyVal(self):
+		del self._IntrstFltgRateFrstLegPmtFrqcyVal
+		self._IntrstFltgRateFrstLegPmtFrqcyVal = None
 
 	@property
-	def OptnPrmPmtDt(self):
-		return self._OptnPrmPmtDt
+	def OptnExrcStyle(self):
+		return self._OptnExrcStyle
 
-	@OptnPrmPmtDt.setter
-	def OptnPrmPmtDt(self, value):
-		self._OptnPrmPmtDt = value if type(value) != auto else self.make_default("OptnPrmPmtDt")
+	@OptnExrcStyle.setter
+	def OptnExrcStyle(self, value):
+		self._OptnExrcStyle = value if type(value) != base_types.auto else self.make_default("OptnExrcStyle")
 
-	@OptnPrmPmtDt.deleter
-	def OptnPrmPmtDt(self):
-		del self._OptnPrmPmtDt
-		self._OptnPrmPmtDt = None
-
-	@property
-	def PackgPric(self):
-		return self._PackgPric
-
-	@PackgPric.setter
-	def PackgPric(self, value):
-		self._PackgPric = value if type(value) != auto else self.make_default("PackgPric")
-
-	@PackgPric.deleter
-	def PackgPric(self):
-		del self._PackgPric
-		self._PackgPric = None
+	@OptnExrcStyle.deleter
+	def OptnExrcStyle(self):
+		del self._OptnExrcStyle
+		self._OptnExrcStyle = None
 
 	@property
-	def NtnlAmtScndLegSchdlAmt(self):
-		return self._NtnlAmtScndLegSchdlAmt
+	def IntrstFxdRateScndLegPmtFrqcyVal(self):
+		return self._IntrstFxdRateScndLegPmtFrqcyVal
 
-	@NtnlAmtScndLegSchdlAmt.setter
-	def NtnlAmtScndLegSchdlAmt(self, value):
-		self._NtnlAmtScndLegSchdlAmt = value if type(value) != auto else self.make_default("NtnlAmtScndLegSchdlAmt")
+	@IntrstFxdRateScndLegPmtFrqcyVal.setter
+	def IntrstFxdRateScndLegPmtFrqcyVal(self, value):
+		self._IntrstFxdRateScndLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateScndLegPmtFrqcyVal")
 
-	@NtnlAmtScndLegSchdlAmt.deleter
-	def NtnlAmtScndLegSchdlAmt(self):
-		del self._NtnlAmtScndLegSchdlAmt
-		self._NtnlAmtScndLegSchdlAmt = None
-
-	@property
-	def OthrPmt(self):
-		return self._OthrPmt
-
-	@OthrPmt.setter
-	def OthrPmt(self, value):
-		self._OthrPmt = value if type(value) != auto else self.make_default("OthrPmt")
-
-	@OthrPmt.deleter
-	def OthrPmt(self):
-		del self._OthrPmt
-		self._OthrPmt = None
-
-	@property
-	def IntrstFltgRateFrstLegId(self):
-		return self._IntrstFltgRateFrstLegId
-
-	@IntrstFltgRateFrstLegId.setter
-	def IntrstFltgRateFrstLegId(self, value):
-		self._IntrstFltgRateFrstLegId = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegId")
-
-	@IntrstFltgRateFrstLegId.deleter
-	def IntrstFltgRateFrstLegId(self):
-		del self._IntrstFltgRateFrstLegId
-		self._IntrstFltgRateFrstLegId = None
-
-	@property
-	def CcyXchgRate(self):
-		return self._CcyXchgRate
-
-	@CcyXchgRate.setter
-	def CcyXchgRate(self, value):
-		self._CcyXchgRate = value if type(value) != auto else self.make_default("CcyXchgRate")
-
-	@CcyXchgRate.deleter
-	def CcyXchgRate(self):
-		del self._CcyXchgRate
-		self._CcyXchgRate = None
-
-	@property
-	def TradClrSts(self):
-		return self._TradClrSts
-
-	@TradClrSts.setter
-	def TradClrSts(self, value):
-		self._TradClrSts = value if type(value) != auto else self.make_default("TradClrSts")
-
-	@TradClrSts.deleter
-	def TradClrSts(self):
-		del self._TradClrSts
-		self._TradClrSts = None
-
-	@property
-	def FctvDt(self):
-		return self._FctvDt
-
-	@FctvDt.setter
-	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
-
-	@FctvDt.deleter
-	def FctvDt(self):
-		del self._FctvDt
-		self._FctvDt = None
-
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
+	@IntrstFxdRateScndLegPmtFrqcyVal.deleter
+	def IntrstFxdRateScndLegPmtFrqcyVal(self):
+		del self._IntrstFxdRateScndLegPmtFrqcyVal
+		self._IntrstFxdRateScndLegPmtFrqcyVal = None
 
 	@property
 	def IntrstFxdRateScndLegDayCnt(self):
@@ -194,7 +90,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateScndLegDayCnt.setter
 	def IntrstFxdRateScndLegDayCnt(self, value):
-		self._IntrstFxdRateScndLegDayCnt = value if type(value) != auto else self.make_default("IntrstFxdRateScndLegDayCnt")
+		self._IntrstFxdRateScndLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateScndLegDayCnt")
 
 	@IntrstFxdRateScndLegDayCnt.deleter
 	def IntrstFxdRateScndLegDayCnt(self):
@@ -202,147 +98,17 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._IntrstFxdRateScndLegDayCnt = None
 
 	@property
-	def NrgyIntrCnnctnPt(self):
-		return self._NrgyIntrCnnctnPt
+	def TxSchdlPric(self):
+		return self._TxSchdlPric
 
-	@NrgyIntrCnnctnPt.setter
-	def NrgyIntrCnnctnPt(self, value):
-		self._NrgyIntrCnnctnPt = value if type(value) != auto else self.make_default("NrgyIntrCnnctnPt")
+	@TxSchdlPric.setter
+	def TxSchdlPric(self, value):
+		self._TxSchdlPric = value if type(value) != base_types.auto else self.make_default("TxSchdlPric")
 
-	@NrgyIntrCnnctnPt.deleter
-	def NrgyIntrCnnctnPt(self):
-		del self._NrgyIntrCnnctnPt
-		self._NrgyIntrCnnctnPt = None
-
-	@property
-	def DerivEvt(self):
-		return self._DerivEvt
-
-	@DerivEvt.setter
-	def DerivEvt(self, value):
-		self._DerivEvt = value if type(value) != auto else self.make_default("DerivEvt")
-
-	@DerivEvt.deleter
-	def DerivEvt(self):
-		del self._DerivEvt
-		self._DerivEvt = None
-
-	@property
-	def IntrstFltgRateScndLegNm(self):
-		return self._IntrstFltgRateScndLegNm
-
-	@IntrstFltgRateScndLegNm.setter
-	def IntrstFltgRateScndLegNm(self, value):
-		self._IntrstFltgRateScndLegNm = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegNm")
-
-	@IntrstFltgRateScndLegNm.deleter
-	def IntrstFltgRateScndLegNm(self):
-		del self._IntrstFltgRateScndLegNm
-		self._IntrstFltgRateScndLegNm = None
-
-	@property
-	def SbsqntPosUnqTxIdr(self):
-		return self._SbsqntPosUnqTxIdr
-
-	@SbsqntPosUnqTxIdr.setter
-	def SbsqntPosUnqTxIdr(self, value):
-		self._SbsqntPosUnqTxIdr = value if type(value) != auto else self.make_default("SbsqntPosUnqTxIdr")
-
-	@SbsqntPosUnqTxIdr.deleter
-	def SbsqntPosUnqTxIdr(self):
-		del self._SbsqntPosUnqTxIdr
-		self._SbsqntPosUnqTxIdr = None
-
-	@property
-	def MstrAgrmtVrsn(self):
-		return self._MstrAgrmtVrsn
-
-	@MstrAgrmtVrsn.setter
-	def MstrAgrmtVrsn(self, value):
-		self._MstrAgrmtVrsn = value if type(value) != auto else self.make_default("MstrAgrmtVrsn")
-
-	@MstrAgrmtVrsn.deleter
-	def MstrAgrmtVrsn(self):
-		del self._MstrAgrmtVrsn
-		self._MstrAgrmtVrsn = None
-
-	@property
-	def NtnlAmtFrstLegSchdlAmt(self):
-		return self._NtnlAmtFrstLegSchdlAmt
-
-	@NtnlAmtFrstLegSchdlAmt.setter
-	def NtnlAmtFrstLegSchdlAmt(self, value):
-		self._NtnlAmtFrstLegSchdlAmt = value if type(value) != auto else self.make_default("NtnlAmtFrstLegSchdlAmt")
-
-	@NtnlAmtFrstLegSchdlAmt.deleter
-	def NtnlAmtFrstLegSchdlAmt(self):
-		del self._NtnlAmtFrstLegSchdlAmt
-		self._NtnlAmtFrstLegSchdlAmt = None
-
-	@property
-	def IntrstFxdRateFrstLegPmtFrqcyVal(self):
-		return self._IntrstFxdRateFrstLegPmtFrqcyVal
-
-	@IntrstFxdRateFrstLegPmtFrqcyVal.setter
-	def IntrstFxdRateFrstLegPmtFrqcyVal(self, value):
-		self._IntrstFxdRateFrstLegPmtFrqcyVal = value if type(value) != auto else self.make_default("IntrstFxdRateFrstLegPmtFrqcyVal")
-
-	@IntrstFxdRateFrstLegPmtFrqcyVal.deleter
-	def IntrstFxdRateFrstLegPmtFrqcyVal(self):
-		del self._IntrstFxdRateFrstLegPmtFrqcyVal
-		self._IntrstFxdRateFrstLegPmtFrqcyVal = None
-
-	@property
-	def CdtVrsn(self):
-		return self._CdtVrsn
-
-	@CdtVrsn.setter
-	def CdtVrsn(self, value):
-		self._CdtVrsn = value if type(value) != auto else self.make_default("CdtVrsn")
-
-	@CdtVrsn.deleter
-	def CdtVrsn(self):
-		del self._CdtVrsn
-		self._CdtVrsn = None
-
-	@property
-	def EarlyTermntnDt(self):
-		return self._EarlyTermntnDt
-
-	@EarlyTermntnDt.setter
-	def EarlyTermntnDt(self, value):
-		self._EarlyTermntnDt = value if type(value) != auto else self.make_default("EarlyTermntnDt")
-
-	@EarlyTermntnDt.deleter
-	def EarlyTermntnDt(self):
-		del self._EarlyTermntnDt
-		self._EarlyTermntnDt = None
-
-	@property
-	def NtnlQtyFrstLegUadjstdFctvDt(self):
-		return self._NtnlQtyFrstLegUadjstdFctvDt
-
-	@NtnlQtyFrstLegUadjstdFctvDt.setter
-	def NtnlQtyFrstLegUadjstdFctvDt(self, value):
-		self._NtnlQtyFrstLegUadjstdFctvDt = value if type(value) != auto else self.make_default("NtnlQtyFrstLegUadjstdFctvDt")
-
-	@NtnlQtyFrstLegUadjstdFctvDt.deleter
-	def NtnlQtyFrstLegUadjstdFctvDt(self):
-		del self._NtnlQtyFrstLegUadjstdFctvDt
-		self._NtnlQtyFrstLegUadjstdFctvDt = None
-
-	@property
-	def OptnPrmAmt(self):
-		return self._OptnPrmAmt
-
-	@OptnPrmAmt.setter
-	def OptnPrmAmt(self, value):
-		self._OptnPrmAmt = value if type(value) != auto else self.make_default("OptnPrmAmt")
-
-	@OptnPrmAmt.deleter
-	def OptnPrmAmt(self):
-		del self._OptnPrmAmt
-		self._OptnPrmAmt = None
+	@TxSchdlPric.deleter
+	def TxSchdlPric(self):
+		del self._TxSchdlPric
+		self._TxSchdlPric = None
 
 	@property
 	def CdtSrs(self):
@@ -350,7 +116,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CdtSrs.setter
 	def CdtSrs(self, value):
-		self._CdtSrs = value if type(value) != auto else self.make_default("CdtSrs")
+		self._CdtSrs = value if type(value) != base_types.auto else self.make_default("CdtSrs")
 
 	@CdtSrs.deleter
 	def CdtSrs(self):
@@ -358,77 +124,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._CdtSrs = None
 
 	@property
-	def Cmmdty(self):
-		return self._Cmmdty
-
-	@Cmmdty.setter
-	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != auto else self.make_default("Cmmdty")
-
-	@Cmmdty.deleter
-	def Cmmdty(self):
-		del self._Cmmdty
-		self._Cmmdty = None
-
-	@property
-	def IntrstFltgRateFrstLegRefPrdVal(self):
-		return self._IntrstFltgRateFrstLegRefPrdVal
-
-	@IntrstFltgRateFrstLegRefPrdVal.setter
-	def IntrstFltgRateFrstLegRefPrdVal(self, value):
-		self._IntrstFltgRateFrstLegRefPrdVal = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegRefPrdVal")
-
-	@IntrstFltgRateFrstLegRefPrdVal.deleter
-	def IntrstFltgRateFrstLegRefPrdVal(self):
-		del self._IntrstFltgRateFrstLegRefPrdVal
-		self._IntrstFltgRateFrstLegRefPrdVal = None
-
-	@property
-	def CdtTrch(self):
-		return self._CdtTrch
-
-	@CdtTrch.setter
-	def CdtTrch(self, value):
-		self._CdtTrch = value if type(value) != auto else self.make_default("CdtTrch")
-
-	@CdtTrch.deleter
-	def CdtTrch(self):
-		del self._CdtTrch
-		self._CdtTrch = None
-
-	@property
-	def MstrAgrmtTp(self):
-		return self._MstrAgrmtTp
-
-	@MstrAgrmtTp.setter
-	def MstrAgrmtTp(self, value):
-		self._MstrAgrmtTp = value if type(value) != auto else self.make_default("MstrAgrmtTp")
-
-	@MstrAgrmtTp.deleter
-	def MstrAgrmtTp(self):
-		del self._MstrAgrmtTp
-		self._MstrAgrmtTp = None
-
-	@property
-	def OptnStrkPric(self):
-		return self._OptnStrkPric
-
-	@OptnStrkPric.setter
-	def OptnStrkPric(self, value):
-		self._OptnStrkPric = value if type(value) != auto else self.make_default("OptnStrkPric")
-
-	@OptnStrkPric.deleter
-	def OptnStrkPric(self):
-		del self._OptnStrkPric
-		self._OptnStrkPric = None
-
-	@property
 	def IntrstFltgRateScndLegRstFrqcyVal(self):
 		return self._IntrstFltgRateScndLegRstFrqcyVal
 
 	@IntrstFltgRateScndLegRstFrqcyVal.setter
 	def IntrstFltgRateScndLegRstFrqcyVal(self, value):
-		self._IntrstFltgRateScndLegRstFrqcyVal = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegRstFrqcyVal")
+		self._IntrstFltgRateScndLegRstFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRstFrqcyVal")
 
 	@IntrstFltgRateScndLegRstFrqcyVal.deleter
 	def IntrstFltgRateScndLegRstFrqcyVal(self):
@@ -436,43 +137,381 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._IntrstFltgRateScndLegRstFrqcyVal = None
 
 	@property
-	def IntrstFltgRateScndLegRstFrqcyUnit(self):
-		return self._IntrstFltgRateScndLegRstFrqcyUnit
+	def OptnPrmAmt(self):
+		return self._OptnPrmAmt
 
-	@IntrstFltgRateScndLegRstFrqcyUnit.setter
-	def IntrstFltgRateScndLegRstFrqcyUnit(self, value):
-		self._IntrstFltgRateScndLegRstFrqcyUnit = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegRstFrqcyUnit")
+	@OptnPrmAmt.setter
+	def OptnPrmAmt(self, value):
+		self._OptnPrmAmt = value if type(value) != base_types.auto else self.make_default("OptnPrmAmt")
 
-	@IntrstFltgRateScndLegRstFrqcyUnit.deleter
-	def IntrstFltgRateScndLegRstFrqcyUnit(self):
-		del self._IntrstFltgRateScndLegRstFrqcyUnit
-		self._IntrstFltgRateScndLegRstFrqcyUnit = None
-
-	@property
-	def IntrstFltgRateFrstLegRefPrdUnit(self):
-		return self._IntrstFltgRateFrstLegRefPrdUnit
-
-	@IntrstFltgRateFrstLegRefPrdUnit.setter
-	def IntrstFltgRateFrstLegRefPrdUnit(self, value):
-		self._IntrstFltgRateFrstLegRefPrdUnit = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegRefPrdUnit")
-
-	@IntrstFltgRateFrstLegRefPrdUnit.deleter
-	def IntrstFltgRateFrstLegRefPrdUnit(self):
-		del self._IntrstFltgRateFrstLegRefPrdUnit
-		self._IntrstFltgRateFrstLegRefPrdUnit = None
+	@OptnPrmAmt.deleter
+	def OptnPrmAmt(self):
+		del self._OptnPrmAmt
+		self._OptnPrmAmt = None
 
 	@property
-	def RptTrckgNb(self):
-		return self._RptTrckgNb
+	def OptnStrkPricSchdlUadjstdFctvDt(self):
+		return self._OptnStrkPricSchdlUadjstdFctvDt
 
-	@RptTrckgNb.setter
-	def RptTrckgNb(self, value):
-		self._RptTrckgNb = value if type(value) != auto else self.make_default("RptTrckgNb")
+	@OptnStrkPricSchdlUadjstdFctvDt.setter
+	def OptnStrkPricSchdlUadjstdFctvDt(self, value):
+		self._OptnStrkPricSchdlUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("OptnStrkPricSchdlUadjstdFctvDt")
 
-	@RptTrckgNb.deleter
-	def RptTrckgNb(self):
-		del self._RptTrckgNb
-		self._RptTrckgNb = None
+	@OptnStrkPricSchdlUadjstdFctvDt.deleter
+	def OptnStrkPricSchdlUadjstdFctvDt(self):
+		del self._OptnStrkPricSchdlUadjstdFctvDt
+		self._OptnStrkPricSchdlUadjstdFctvDt = None
+
+	@property
+	def TradConf(self):
+		return self._TradConf
+
+	@TradConf.setter
+	def TradConf(self, value):
+		self._TradConf = value if type(value) != base_types.auto else self.make_default("TradConf")
+
+	@TradConf.deleter
+	def TradConf(self):
+		del self._TradConf
+		self._TradConf = None
+
+	@property
+	def NtnlAmtFrstLeg(self):
+		return self._NtnlAmtFrstLeg
+
+	@NtnlAmtFrstLeg.setter
+	def NtnlAmtFrstLeg(self, value):
+		self._NtnlAmtFrstLeg = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLeg")
+
+	@NtnlAmtFrstLeg.deleter
+	def NtnlAmtFrstLeg(self):
+		del self._NtnlAmtFrstLeg
+		self._NtnlAmtFrstLeg = None
+
+	@property
+	def TxPric(self):
+		return self._TxPric
+
+	@TxPric.setter
+	def TxPric(self, value):
+		self._TxPric = value if type(value) != base_types.auto else self.make_default("TxPric")
+
+	@TxPric.deleter
+	def TxPric(self):
+		del self._TxPric
+		self._TxPric = None
+
+	@property
+	def PstTradRskRdctn(self):
+		return self._PstTradRskRdctn
+
+	@PstTradRskRdctn.setter
+	def PstTradRskRdctn(self, value):
+		self._PstTradRskRdctn = value if type(value) != base_types.auto else self.make_default("PstTradRskRdctn")
+
+	@PstTradRskRdctn.deleter
+	def PstTradRskRdctn(self):
+		del self._PstTradRskRdctn
+		self._PstTradRskRdctn = None
+
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
+	def MstrAgrmtTp(self):
+		return self._MstrAgrmtTp
+
+	@MstrAgrmtTp.setter
+	def MstrAgrmtTp(self, value):
+		self._MstrAgrmtTp = value if type(value) != base_types.auto else self.make_default("MstrAgrmtTp")
+
+	@MstrAgrmtTp.deleter
+	def MstrAgrmtTp(self):
+		del self._MstrAgrmtTp
+		self._MstrAgrmtTp = None
+
+	@property
+	def NtnlQtyFrstLeg(self):
+		return self._NtnlQtyFrstLeg
+
+	@NtnlQtyFrstLeg.setter
+	def NtnlQtyFrstLeg(self, value):
+		self._NtnlQtyFrstLeg = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLeg")
+
+	@NtnlQtyFrstLeg.deleter
+	def NtnlQtyFrstLeg(self):
+		del self._NtnlQtyFrstLeg
+		self._NtnlQtyFrstLeg = None
+
+	@property
+	def IntrstFltgRateScndLegCd(self):
+		return self._IntrstFltgRateScndLegCd
+
+	@IntrstFltgRateScndLegCd.setter
+	def IntrstFltgRateScndLegCd(self, value):
+		self._IntrstFltgRateScndLegCd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegCd")
+
+	@IntrstFltgRateScndLegCd.deleter
+	def IntrstFltgRateScndLegCd(self):
+		del self._IntrstFltgRateScndLegCd
+		self._IntrstFltgRateScndLegCd = None
+
+	@property
+	def SbsqntPosUnqTxIdr(self):
+		return self._SbsqntPosUnqTxIdr
+
+	@SbsqntPosUnqTxIdr.setter
+	def SbsqntPosUnqTxIdr(self, value):
+		self._SbsqntPosUnqTxIdr = value if type(value) != base_types.auto else self.make_default("SbsqntPosUnqTxIdr")
+
+	@SbsqntPosUnqTxIdr.deleter
+	def SbsqntPosUnqTxIdr(self):
+		del self._SbsqntPosUnqTxIdr
+		self._SbsqntPosUnqTxIdr = None
+
+	@property
+	def OptnStrkPricSchdlUadjstdEndDt(self):
+		return self._OptnStrkPricSchdlUadjstdEndDt
+
+	@OptnStrkPricSchdlUadjstdEndDt.setter
+	def OptnStrkPricSchdlUadjstdEndDt(self, value):
+		self._OptnStrkPricSchdlUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("OptnStrkPricSchdlUadjstdEndDt")
+
+	@OptnStrkPricSchdlUadjstdEndDt.deleter
+	def OptnStrkPricSchdlUadjstdEndDt(self):
+		del self._OptnStrkPricSchdlUadjstdEndDt
+		self._OptnStrkPricSchdlUadjstdEndDt = None
+
+	@property
+	def Cmmdty(self):
+		return self._Cmmdty
+
+	@Cmmdty.setter
+	def Cmmdty(self, value):
+		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
+
+	@Cmmdty.deleter
+	def Cmmdty(self):
+		del self._Cmmdty
+		self._Cmmdty = None
+
+	@property
+	def IntrstFxdRateFrstLegPmtFrqcyVal(self):
+		return self._IntrstFxdRateFrstLegPmtFrqcyVal
+
+	@IntrstFxdRateFrstLegPmtFrqcyVal.setter
+	def IntrstFxdRateFrstLegPmtFrqcyVal(self, value):
+		self._IntrstFxdRateFrstLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLegPmtFrqcyVal")
+
+	@IntrstFxdRateFrstLegPmtFrqcyVal.deleter
+	def IntrstFxdRateFrstLegPmtFrqcyVal(self):
+		del self._IntrstFxdRateFrstLegPmtFrqcyVal
+		self._IntrstFxdRateFrstLegPmtFrqcyVal = None
+
+	@property
+	def IntrstFxdRateFrstLegDayCnt(self):
+		return self._IntrstFxdRateFrstLegDayCnt
+
+	@IntrstFxdRateFrstLegDayCnt.setter
+	def IntrstFxdRateFrstLegDayCnt(self, value):
+		self._IntrstFxdRateFrstLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLegDayCnt")
+
+	@IntrstFxdRateFrstLegDayCnt.deleter
+	def IntrstFxdRateFrstLegDayCnt(self):
+		del self._IntrstFxdRateFrstLegDayCnt
+		self._IntrstFxdRateFrstLegDayCnt = None
+
+	@property
+	def IntrstFltgRateScndLegPmtFrqcyUnit(self):
+		return self._IntrstFltgRateScndLegPmtFrqcyUnit
+
+	@IntrstFltgRateScndLegPmtFrqcyUnit.setter
+	def IntrstFltgRateScndLegPmtFrqcyUnit(self, value):
+		self._IntrstFltgRateScndLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegPmtFrqcyUnit")
+
+	@IntrstFltgRateScndLegPmtFrqcyUnit.deleter
+	def IntrstFltgRateScndLegPmtFrqcyUnit(self):
+		del self._IntrstFltgRateScndLegPmtFrqcyUnit
+		self._IntrstFltgRateScndLegPmtFrqcyUnit = None
+
+	@property
+	def NtnlAmtScndLegSchdlAmt(self):
+		return self._NtnlAmtScndLegSchdlAmt
+
+	@NtnlAmtScndLegSchdlAmt.setter
+	def NtnlAmtScndLegSchdlAmt(self, value):
+		self._NtnlAmtScndLegSchdlAmt = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLegSchdlAmt")
+
+	@NtnlAmtScndLegSchdlAmt.deleter
+	def NtnlAmtScndLegSchdlAmt(self):
+		del self._NtnlAmtScndLegSchdlAmt
+		self._NtnlAmtScndLegSchdlAmt = None
+
+	@property
+	def NtnlAmtFrstLegSchdlAmt(self):
+		return self._NtnlAmtFrstLegSchdlAmt
+
+	@NtnlAmtFrstLegSchdlAmt.setter
+	def NtnlAmtFrstLegSchdlAmt(self, value):
+		self._NtnlAmtFrstLegSchdlAmt = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLegSchdlAmt")
+
+	@NtnlAmtFrstLegSchdlAmt.deleter
+	def NtnlAmtFrstLegSchdlAmt(self):
+		del self._NtnlAmtFrstLegSchdlAmt
+		self._NtnlAmtFrstLegSchdlAmt = None
+
+	@property
+	def NtnlQtyScndLegUadjstdFctvDt(self):
+		return self._NtnlQtyScndLegUadjstdFctvDt
+
+	@NtnlQtyScndLegUadjstdFctvDt.setter
+	def NtnlQtyScndLegUadjstdFctvDt(self, value):
+		self._NtnlQtyScndLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLegUadjstdFctvDt")
+
+	@NtnlQtyScndLegUadjstdFctvDt.deleter
+	def NtnlQtyScndLegUadjstdFctvDt(self):
+		del self._NtnlQtyScndLegUadjstdFctvDt
+		self._NtnlQtyScndLegUadjstdFctvDt = None
+
+	@property
+	def NtnlAmtFrstLegUadjstdEndDt(self):
+		return self._NtnlAmtFrstLegUadjstdEndDt
+
+	@NtnlAmtFrstLegUadjstdEndDt.setter
+	def NtnlAmtFrstLegUadjstdEndDt(self, value):
+		self._NtnlAmtFrstLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLegUadjstdEndDt")
+
+	@NtnlAmtFrstLegUadjstdEndDt.deleter
+	def NtnlAmtFrstLegUadjstdEndDt(self):
+		del self._NtnlAmtFrstLegUadjstdEndDt
+		self._NtnlAmtFrstLegUadjstdEndDt = None
+
+	@property
+	def OthrPmt(self):
+		return self._OthrPmt
+
+	@OthrPmt.setter
+	def OthrPmt(self, value):
+		self._OthrPmt = value if type(value) != base_types.auto else self.make_default("OthrPmt")
+
+	@OthrPmt.deleter
+	def OthrPmt(self):
+		del self._OthrPmt
+		self._OthrPmt = None
+
+	@property
+	def OptnStrkPric(self):
+		return self._OptnStrkPric
+
+	@OptnStrkPric.setter
+	def OptnStrkPric(self, value):
+		self._OptnStrkPric = value if type(value) != base_types.auto else self.make_default("OptnStrkPric")
+
+	@OptnStrkPric.deleter
+	def OptnStrkPric(self):
+		del self._OptnStrkPric
+		self._OptnStrkPric = None
+
+	@property
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
+
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
+
+	@property
+	def NtnlQtyScndLeg(self):
+		return self._NtnlQtyScndLeg
+
+	@NtnlQtyScndLeg.setter
+	def NtnlQtyScndLeg(self, value):
+		self._NtnlQtyScndLeg = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLeg")
+
+	@NtnlQtyScndLeg.deleter
+	def NtnlQtyScndLeg(self):
+		del self._NtnlQtyScndLeg
+		self._NtnlQtyScndLeg = None
+
+	@property
+	def NtnlQtyFrstLegSchdlQty(self):
+		return self._NtnlQtyFrstLegSchdlQty
+
+	@NtnlQtyFrstLegSchdlQty.setter
+	def NtnlQtyFrstLegSchdlQty(self, value):
+		self._NtnlQtyFrstLegSchdlQty = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLegSchdlQty")
+
+	@NtnlQtyFrstLegSchdlQty.deleter
+	def NtnlQtyFrstLegSchdlQty(self):
+		del self._NtnlQtyFrstLegSchdlQty
+		self._NtnlQtyFrstLegSchdlQty = None
+
+	@property
+	def NtnlAmtFrstLegUadjstdFctvDt(self):
+		return self._NtnlAmtFrstLegUadjstdFctvDt
+
+	@NtnlAmtFrstLegUadjstdFctvDt.setter
+	def NtnlAmtFrstLegUadjstdFctvDt(self, value):
+		self._NtnlAmtFrstLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLegUadjstdFctvDt")
+
+	@NtnlAmtFrstLegUadjstdFctvDt.deleter
+	def NtnlAmtFrstLegUadjstdFctvDt(self):
+		del self._NtnlAmtFrstLegUadjstdFctvDt
+		self._NtnlAmtFrstLegUadjstdFctvDt = None
+
+	@property
+	def NrgyDlvryPtOrZone(self):
+		return self._NrgyDlvryPtOrZone
+
+	@NrgyDlvryPtOrZone.setter
+	def NrgyDlvryPtOrZone(self, value):
+		self._NrgyDlvryPtOrZone = value if type(value) != base_types.auto else self.make_default("NrgyDlvryPtOrZone")
+
+	@NrgyDlvryPtOrZone.deleter
+	def NrgyDlvryPtOrZone(self):
+		del self._NrgyDlvryPtOrZone
+		self._NrgyDlvryPtOrZone = None
+
+	@property
+	def PrrUnqTxIdr(self):
+		return self._PrrUnqTxIdr
+
+	@PrrUnqTxIdr.setter
+	def PrrUnqTxIdr(self, value):
+		self._PrrUnqTxIdr = value if type(value) != base_types.auto else self.make_default("PrrUnqTxIdr")
+
+	@PrrUnqTxIdr.deleter
+	def PrrUnqTxIdr(self):
+		del self._PrrUnqTxIdr
+		self._PrrUnqTxIdr = None
+
+	@property
+	def IntrstRateFxdScndLeg(self):
+		return self._IntrstRateFxdScndLeg
+
+	@IntrstRateFxdScndLeg.setter
+	def IntrstRateFxdScndLeg(self, value):
+		self._IntrstRateFxdScndLeg = value if type(value) != base_types.auto else self.make_default("IntrstRateFxdScndLeg")
+
+	@IntrstRateFxdScndLeg.deleter
+	def IntrstRateFxdScndLeg(self):
+		del self._IntrstRateFxdScndLeg
+		self._IntrstRateFxdScndLeg = None
 
 	@property
 	def PricSchdlUadjstdFctvDt(self):
@@ -480,7 +519,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PricSchdlUadjstdFctvDt.setter
 	def PricSchdlUadjstdFctvDt(self, value):
-		self._PricSchdlUadjstdFctvDt = value if type(value) != auto else self.make_default("PricSchdlUadjstdFctvDt")
+		self._PricSchdlUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("PricSchdlUadjstdFctvDt")
 
 	@PricSchdlUadjstdFctvDt.deleter
 	def PricSchdlUadjstdFctvDt(self):
@@ -488,12 +527,142 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._PricSchdlUadjstdFctvDt = None
 
 	@property
+	def TradClrSts(self):
+		return self._TradClrSts
+
+	@TradClrSts.setter
+	def TradClrSts(self, value):
+		self._TradClrSts = value if type(value) != base_types.auto else self.make_default("TradClrSts")
+
+	@TradClrSts.deleter
+	def TradClrSts(self):
+		del self._TradClrSts
+		self._TradClrSts = None
+
+	@property
+	def IntrstFltgRateFrstLegCd(self):
+		return self._IntrstFltgRateFrstLegCd
+
+	@IntrstFltgRateFrstLegCd.setter
+	def IntrstFltgRateFrstLegCd(self, value):
+		self._IntrstFltgRateFrstLegCd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegCd")
+
+	@IntrstFltgRateFrstLegCd.deleter
+	def IntrstFltgRateFrstLegCd(self):
+		del self._IntrstFltgRateFrstLegCd
+		self._IntrstFltgRateFrstLegCd = None
+
+	@property
+	def Lvl(self):
+		return self._Lvl
+
+	@Lvl.setter
+	def Lvl(self, value):
+		self._Lvl = value if type(value) != base_types.auto else self.make_default("Lvl")
+
+	@Lvl.deleter
+	def Lvl(self):
+		del self._Lvl
+		self._Lvl = None
+
+	@property
+	def ExctnTmStmp(self):
+		return self._ExctnTmStmp
+
+	@ExctnTmStmp.setter
+	def ExctnTmStmp(self, value):
+		self._ExctnTmStmp = value if type(value) != base_types.auto else self.make_default("ExctnTmStmp")
+
+	@ExctnTmStmp.deleter
+	def ExctnTmStmp(self):
+		del self._ExctnTmStmp
+		self._ExctnTmStmp = None
+
+	@property
+	def FctvDt(self):
+		return self._FctvDt
+
+	@FctvDt.setter
+	def FctvDt(self, value):
+		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+
+	@FctvDt.deleter
+	def FctvDt(self):
+		del self._FctvDt
+		self._FctvDt = None
+
+	@property
+	def IntrstFltgRateFrstLegId(self):
+		return self._IntrstFltgRateFrstLegId
+
+	@IntrstFltgRateFrstLegId.setter
+	def IntrstFltgRateFrstLegId(self, value):
+		self._IntrstFltgRateFrstLegId = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegId")
+
+	@IntrstFltgRateFrstLegId.deleter
+	def IntrstFltgRateFrstLegId(self):
+		del self._IntrstFltgRateFrstLegId
+		self._IntrstFltgRateFrstLegId = None
+
+	@property
+	def OptnPrmPmtDt(self):
+		return self._OptnPrmPmtDt
+
+	@OptnPrmPmtDt.setter
+	def OptnPrmPmtDt(self, value):
+		self._OptnPrmPmtDt = value if type(value) != base_types.auto else self.make_default("OptnPrmPmtDt")
+
+	@OptnPrmPmtDt.deleter
+	def OptnPrmPmtDt(self):
+		del self._OptnPrmPmtDt
+		self._OptnPrmPmtDt = None
+
+	@property
+	def CdtVrsn(self):
+		return self._CdtVrsn
+
+	@CdtVrsn.setter
+	def CdtVrsn(self, value):
+		self._CdtVrsn = value if type(value) != base_types.auto else self.make_default("CdtVrsn")
+
+	@CdtVrsn.deleter
+	def CdtVrsn(self):
+		del self._CdtVrsn
+		self._CdtVrsn = None
+
+	@property
+	def IntrstFltgRateFrstLegSprd(self):
+		return self._IntrstFltgRateFrstLegSprd
+
+	@IntrstFltgRateFrstLegSprd.setter
+	def IntrstFltgRateFrstLegSprd(self, value):
+		self._IntrstFltgRateFrstLegSprd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegSprd")
+
+	@IntrstFltgRateFrstLegSprd.deleter
+	def IntrstFltgRateFrstLegSprd(self):
+		del self._IntrstFltgRateFrstLegSprd
+		self._IntrstFltgRateFrstLegSprd = None
+
+	@property
+	def IntrstFltgRateFrstLegNm(self):
+		return self._IntrstFltgRateFrstLegNm
+
+	@IntrstFltgRateFrstLegNm.setter
+	def IntrstFltgRateFrstLegNm(self, value):
+		self._IntrstFltgRateFrstLegNm = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegNm")
+
+	@IntrstFltgRateFrstLegNm.deleter
+	def IntrstFltgRateFrstLegNm(self):
+		del self._IntrstFltgRateFrstLegNm
+		self._IntrstFltgRateFrstLegNm = None
+
+	@property
 	def TradClrOblgtn(self):
 		return self._TradClrOblgtn
 
 	@TradClrOblgtn.setter
 	def TradClrOblgtn(self, value):
-		self._TradClrOblgtn = value if type(value) != auto else self.make_default("TradClrOblgtn")
+		self._TradClrOblgtn = value if type(value) != base_types.auto else self.make_default("TradClrOblgtn")
 
 	@TradClrOblgtn.deleter
 	def TradClrOblgtn(self):
@@ -506,7 +675,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegRefPrdUnit.setter
 	def IntrstFltgRateScndLegRefPrdUnit(self, value):
-		self._IntrstFltgRateScndLegRefPrdUnit = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegRefPrdUnit")
+		self._IntrstFltgRateScndLegRefPrdUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRefPrdUnit")
 
 	@IntrstFltgRateScndLegRefPrdUnit.deleter
 	def IntrstFltgRateScndLegRefPrdUnit(self):
@@ -514,207 +683,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._IntrstFltgRateScndLegRefPrdUnit = None
 
 	@property
-	def CcyXchgRateBsis(self):
-		return self._CcyXchgRateBsis
-
-	@CcyXchgRateBsis.setter
-	def CcyXchgRateBsis(self, value):
-		self._CcyXchgRateBsis = value if type(value) != auto else self.make_default("CcyXchgRateBsis")
-
-	@CcyXchgRateBsis.deleter
-	def CcyXchgRateBsis(self):
-		del self._CcyXchgRateBsis
-		self._CcyXchgRateBsis = None
-
-	@property
-	def IntrstFltgRateFrstLegRstFrqcyVal(self):
-		return self._IntrstFltgRateFrstLegRstFrqcyVal
-
-	@IntrstFltgRateFrstLegRstFrqcyVal.setter
-	def IntrstFltgRateFrstLegRstFrqcyVal(self, value):
-		self._IntrstFltgRateFrstLegRstFrqcyVal = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegRstFrqcyVal")
-
-	@IntrstFltgRateFrstLegRstFrqcyVal.deleter
-	def IntrstFltgRateFrstLegRstFrqcyVal(self):
-		del self._IntrstFltgRateFrstLegRstFrqcyVal
-		self._IntrstFltgRateFrstLegRstFrqcyVal = None
-
-	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
-
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
-
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
-
-	@property
-	def NrgyLdTp(self):
-		return self._NrgyLdTp
-
-	@NrgyLdTp.setter
-	def NrgyLdTp(self, value):
-		self._NrgyLdTp = value if type(value) != auto else self.make_default("NrgyLdTp")
-
-	@NrgyLdTp.deleter
-	def NrgyLdTp(self):
-		del self._NrgyLdTp
-		self._NrgyLdTp = None
-
-	@property
-	def OptnExrcStyle(self):
-		return self._OptnExrcStyle
-
-	@OptnExrcStyle.setter
-	def OptnExrcStyle(self, value):
-		self._OptnExrcStyle = value if type(value) != auto else self.make_default("OptnExrcStyle")
-
-	@OptnExrcStyle.deleter
-	def OptnExrcStyle(self):
-		del self._OptnExrcStyle
-		self._OptnExrcStyle = None
-
-	@property
-	def IntrstFltgRateFrstLegNm(self):
-		return self._IntrstFltgRateFrstLegNm
-
-	@IntrstFltgRateFrstLegNm.setter
-	def IntrstFltgRateFrstLegNm(self, value):
-		self._IntrstFltgRateFrstLegNm = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegNm")
-
-	@IntrstFltgRateFrstLegNm.deleter
-	def IntrstFltgRateFrstLegNm(self):
-		del self._IntrstFltgRateFrstLegNm
-		self._IntrstFltgRateFrstLegNm = None
-
-	@property
-	def IntrstFltgRateScndLegPmtFrqcyVal(self):
-		return self._IntrstFltgRateScndLegPmtFrqcyVal
-
-	@IntrstFltgRateScndLegPmtFrqcyVal.setter
-	def IntrstFltgRateScndLegPmtFrqcyVal(self, value):
-		self._IntrstFltgRateScndLegPmtFrqcyVal = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegPmtFrqcyVal")
-
-	@IntrstFltgRateScndLegPmtFrqcyVal.deleter
-	def IntrstFltgRateScndLegPmtFrqcyVal(self):
-		del self._IntrstFltgRateScndLegPmtFrqcyVal
-		self._IntrstFltgRateScndLegPmtFrqcyVal = None
-
-	@property
-	def IntrstFxdRateScndLegPmtFrqcyVal(self):
-		return self._IntrstFxdRateScndLegPmtFrqcyVal
-
-	@IntrstFxdRateScndLegPmtFrqcyVal.setter
-	def IntrstFxdRateScndLegPmtFrqcyVal(self, value):
-		self._IntrstFxdRateScndLegPmtFrqcyVal = value if type(value) != auto else self.make_default("IntrstFxdRateScndLegPmtFrqcyVal")
-
-	@IntrstFxdRateScndLegPmtFrqcyVal.deleter
-	def IntrstFxdRateScndLegPmtFrqcyVal(self):
-		del self._IntrstFxdRateScndLegPmtFrqcyVal
-		self._IntrstFxdRateScndLegPmtFrqcyVal = None
-
-	@property
-	def DlvryTp(self):
-		return self._DlvryTp
-
-	@DlvryTp.setter
-	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != auto else self.make_default("DlvryTp")
-
-	@DlvryTp.deleter
-	def DlvryTp(self):
-		del self._DlvryTp
-		self._DlvryTp = None
-
-	@property
-	def CdtRefPty(self):
-		return self._CdtRefPty
-
-	@CdtRefPty.setter
-	def CdtRefPty(self, value):
-		self._CdtRefPty = value if type(value) != auto else self.make_default("CdtRefPty")
-
-	@CdtRefPty.deleter
-	def CdtRefPty(self):
-		del self._CdtRefPty
-		self._CdtRefPty = None
-
-	@property
-	def NtnlQtyScndLegUadjstdFctvDt(self):
-		return self._NtnlQtyScndLegUadjstdFctvDt
-
-	@NtnlQtyScndLegUadjstdFctvDt.setter
-	def NtnlQtyScndLegUadjstdFctvDt(self, value):
-		self._NtnlQtyScndLegUadjstdFctvDt = value if type(value) != auto else self.make_default("NtnlQtyScndLegUadjstdFctvDt")
-
-	@NtnlQtyScndLegUadjstdFctvDt.deleter
-	def NtnlQtyScndLegUadjstdFctvDt(self):
-		del self._NtnlQtyScndLegUadjstdFctvDt
-		self._NtnlQtyScndLegUadjstdFctvDt = None
-
-	@property
-	def OptnStrkPricSchdlAmt(self):
-		return self._OptnStrkPricSchdlAmt
-
-	@OptnStrkPricSchdlAmt.setter
-	def OptnStrkPricSchdlAmt(self, value):
-		self._OptnStrkPricSchdlAmt = value if type(value) != auto else self.make_default("OptnStrkPricSchdlAmt")
-
-	@OptnStrkPricSchdlAmt.deleter
-	def OptnStrkPricSchdlAmt(self):
-		del self._OptnStrkPricSchdlAmt
-		self._OptnStrkPricSchdlAmt = None
-
-	@property
-	def XprtnDt(self):
-		return self._XprtnDt
-
-	@XprtnDt.setter
-	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
-
-	@XprtnDt.deleter
-	def XprtnDt(self):
-		del self._XprtnDt
-		self._XprtnDt = None
-
-	@property
-	def IntrstFltgRateFrstLegCd(self):
-		return self._IntrstFltgRateFrstLegCd
-
-	@IntrstFltgRateFrstLegCd.setter
-	def IntrstFltgRateFrstLegCd(self, value):
-		self._IntrstFltgRateFrstLegCd = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegCd")
-
-	@IntrstFltgRateFrstLegCd.deleter
-	def IntrstFltgRateFrstLegCd(self):
-		del self._IntrstFltgRateFrstLegCd
-		self._IntrstFltgRateFrstLegCd = None
-
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
 	def NtnlAmtScndLegUadjstdFctvDt(self):
 		return self._NtnlAmtScndLegUadjstdFctvDt
 
 	@NtnlAmtScndLegUadjstdFctvDt.setter
 	def NtnlAmtScndLegUadjstdFctvDt(self, value):
-		self._NtnlAmtScndLegUadjstdFctvDt = value if type(value) != auto else self.make_default("NtnlAmtScndLegUadjstdFctvDt")
+		self._NtnlAmtScndLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLegUadjstdFctvDt")
 
 	@NtnlAmtScndLegUadjstdFctvDt.deleter
 	def NtnlAmtScndLegUadjstdFctvDt(self):
@@ -722,90 +696,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._NtnlAmtScndLegUadjstdFctvDt = None
 
 	@property
-	def IntrstFltgRateScndLegDayCnt(self):
-		return self._IntrstFltgRateScndLegDayCnt
-
-	@IntrstFltgRateScndLegDayCnt.setter
-	def IntrstFltgRateScndLegDayCnt(self, value):
-		self._IntrstFltgRateScndLegDayCnt = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegDayCnt")
-
-	@IntrstFltgRateScndLegDayCnt.deleter
-	def IntrstFltgRateScndLegDayCnt(self):
-		del self._IntrstFltgRateScndLegDayCnt
-		self._IntrstFltgRateScndLegDayCnt = None
-
-	@property
-	def IntrstFltgRateFrstLegPmtFrqcyVal(self):
-		return self._IntrstFltgRateFrstLegPmtFrqcyVal
-
-	@IntrstFltgRateFrstLegPmtFrqcyVal.setter
-	def IntrstFltgRateFrstLegPmtFrqcyVal(self, value):
-		self._IntrstFltgRateFrstLegPmtFrqcyVal = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegPmtFrqcyVal")
-
-	@IntrstFltgRateFrstLegPmtFrqcyVal.deleter
-	def IntrstFltgRateFrstLegPmtFrqcyVal(self):
-		del self._IntrstFltgRateFrstLegPmtFrqcyVal
-		self._IntrstFltgRateFrstLegPmtFrqcyVal = None
-
-	@property
-	def IntrstFltgRateFrstLegRstFrqcyUnit(self):
-		return self._IntrstFltgRateFrstLegRstFrqcyUnit
-
-	@IntrstFltgRateFrstLegRstFrqcyUnit.setter
-	def IntrstFltgRateFrstLegRstFrqcyUnit(self, value):
-		self._IntrstFltgRateFrstLegRstFrqcyUnit = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegRstFrqcyUnit")
-
-	@IntrstFltgRateFrstLegRstFrqcyUnit.deleter
-	def IntrstFltgRateFrstLegRstFrqcyUnit(self):
-		del self._IntrstFltgRateFrstLegRstFrqcyUnit
-		self._IntrstFltgRateFrstLegRstFrqcyUnit = None
-
-	@property
-	def PricSchdlUadjstdEndDt(self):
-		return self._PricSchdlUadjstdEndDt
-
-	@PricSchdlUadjstdEndDt.setter
-	def PricSchdlUadjstdEndDt(self, value):
-		self._PricSchdlUadjstdEndDt = value if type(value) != auto else self.make_default("PricSchdlUadjstdEndDt")
-
-	@PricSchdlUadjstdEndDt.deleter
-	def PricSchdlUadjstdEndDt(self):
-		del self._PricSchdlUadjstdEndDt
-		self._PricSchdlUadjstdEndDt = None
-
-	@property
-	def IntrstFxdRateScndLegPmtFrqcyUnit(self):
-		return self._IntrstFxdRateScndLegPmtFrqcyUnit
-
-	@IntrstFxdRateScndLegPmtFrqcyUnit.setter
-	def IntrstFxdRateScndLegPmtFrqcyUnit(self, value):
-		self._IntrstFxdRateScndLegPmtFrqcyUnit = value if type(value) != auto else self.make_default("IntrstFxdRateScndLegPmtFrqcyUnit")
-
-	@IntrstFxdRateScndLegPmtFrqcyUnit.deleter
-	def IntrstFxdRateScndLegPmtFrqcyUnit(self):
-		del self._IntrstFxdRateScndLegPmtFrqcyUnit
-		self._IntrstFxdRateScndLegPmtFrqcyUnit = None
-
-	@property
-	def IntrstFxdRateFrstLegDayCnt(self):
-		return self._IntrstFxdRateFrstLegDayCnt
-
-	@IntrstFxdRateFrstLegDayCnt.setter
-	def IntrstFxdRateFrstLegDayCnt(self, value):
-		self._IntrstFxdRateFrstLegDayCnt = value if type(value) != auto else self.make_default("IntrstFxdRateFrstLegDayCnt")
-
-	@IntrstFxdRateFrstLegDayCnt.deleter
-	def IntrstFxdRateFrstLegDayCnt(self):
-		del self._IntrstFxdRateFrstLegDayCnt
-		self._IntrstFxdRateFrstLegDayCnt = None
-
-	@property
 	def CdtSnrty(self):
 		return self._CdtSnrty
 
 	@CdtSnrty.setter
 	def CdtSnrty(self, value):
-		self._CdtSnrty = value if type(value) != auto else self.make_default("CdtSnrty")
+		self._CdtSnrty = value if type(value) != base_types.auto else self.make_default("CdtSnrty")
 
 	@CdtSnrty.deleter
 	def CdtSnrty(self):
@@ -813,43 +709,95 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._CdtSnrty = None
 
 	@property
-	def ExctnTmStmp(self):
-		return self._ExctnTmStmp
+	def IntrstFxdRateScndLegPmtFrqcyUnit(self):
+		return self._IntrstFxdRateScndLegPmtFrqcyUnit
 
-	@ExctnTmStmp.setter
-	def ExctnTmStmp(self, value):
-		self._ExctnTmStmp = value if type(value) != auto else self.make_default("ExctnTmStmp")
+	@IntrstFxdRateScndLegPmtFrqcyUnit.setter
+	def IntrstFxdRateScndLegPmtFrqcyUnit(self, value):
+		self._IntrstFxdRateScndLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateScndLegPmtFrqcyUnit")
 
-	@ExctnTmStmp.deleter
-	def ExctnTmStmp(self):
-		del self._ExctnTmStmp
-		self._ExctnTmStmp = None
-
-	@property
-	def CdtIndxFctr(self):
-		return self._CdtIndxFctr
-
-	@CdtIndxFctr.setter
-	def CdtIndxFctr(self, value):
-		self._CdtIndxFctr = value if type(value) != auto else self.make_default("CdtIndxFctr")
-
-	@CdtIndxFctr.deleter
-	def CdtIndxFctr(self):
-		del self._CdtIndxFctr
-		self._CdtIndxFctr = None
+	@IntrstFxdRateScndLegPmtFrqcyUnit.deleter
+	def IntrstFxdRateScndLegPmtFrqcyUnit(self):
+		del self._IntrstFxdRateScndLegPmtFrqcyUnit
+		self._IntrstFxdRateScndLegPmtFrqcyUnit = None
 
 	@property
-	def NtnlAmtFrstLeg(self):
-		return self._NtnlAmtFrstLeg
+	def PackgSprd(self):
+		return self._PackgSprd
 
-	@NtnlAmtFrstLeg.setter
-	def NtnlAmtFrstLeg(self, value):
-		self._NtnlAmtFrstLeg = value if type(value) != auto else self.make_default("NtnlAmtFrstLeg")
+	@PackgSprd.setter
+	def PackgSprd(self, value):
+		self._PackgSprd = value if type(value) != base_types.auto else self.make_default("PackgSprd")
 
-	@NtnlAmtFrstLeg.deleter
-	def NtnlAmtFrstLeg(self):
-		del self._NtnlAmtFrstLeg
-		self._NtnlAmtFrstLeg = None
+	@PackgSprd.deleter
+	def PackgSprd(self):
+		del self._PackgSprd
+		self._PackgSprd = None
+
+	@property
+	def CdtRefPty(self):
+		return self._CdtRefPty
+
+	@CdtRefPty.setter
+	def CdtRefPty(self, value):
+		self._CdtRefPty = value if type(value) != base_types.auto else self.make_default("CdtRefPty")
+
+	@CdtRefPty.deleter
+	def CdtRefPty(self):
+		del self._CdtRefPty
+		self._CdtRefPty = None
+
+	@property
+	def NtnlAmtScndLeg(self):
+		return self._NtnlAmtScndLeg
+
+	@NtnlAmtScndLeg.setter
+	def NtnlAmtScndLeg(self, value):
+		self._NtnlAmtScndLeg = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLeg")
+
+	@NtnlAmtScndLeg.deleter
+	def NtnlAmtScndLeg(self):
+		del self._NtnlAmtScndLeg
+		self._NtnlAmtScndLeg = None
+
+	@property
+	def NtnlQtyFrstLegUadjstdEndDt(self):
+		return self._NtnlQtyFrstLegUadjstdEndDt
+
+	@NtnlQtyFrstLegUadjstdEndDt.setter
+	def NtnlQtyFrstLegUadjstdEndDt(self, value):
+		self._NtnlQtyFrstLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLegUadjstdEndDt")
+
+	@NtnlQtyFrstLegUadjstdEndDt.deleter
+	def NtnlQtyFrstLegUadjstdEndDt(self):
+		del self._NtnlQtyFrstLegUadjstdEndDt
+		self._NtnlQtyFrstLegUadjstdEndDt = None
+
+	@property
+	def CcyXchgRate(self):
+		return self._CcyXchgRate
+
+	@CcyXchgRate.setter
+	def CcyXchgRate(self, value):
+		self._CcyXchgRate = value if type(value) != base_types.auto else self.make_default("CcyXchgRate")
+
+	@CcyXchgRate.deleter
+	def CcyXchgRate(self):
+		del self._CcyXchgRate
+		self._CcyXchgRate = None
+
+	@property
+	def NtnlQtyScndLegUadjstdEndDt(self):
+		return self._NtnlQtyScndLegUadjstdEndDt
+
+	@NtnlQtyScndLegUadjstdEndDt.setter
+	def NtnlQtyScndLegUadjstdEndDt(self, value):
+		self._NtnlQtyScndLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLegUadjstdEndDt")
+
+	@NtnlQtyScndLegUadjstdEndDt.deleter
+	def NtnlQtyScndLegUadjstdEndDt(self):
+		del self._NtnlQtyScndLegUadjstdEndDt
+		self._NtnlQtyScndLegUadjstdEndDt = None
 
 	@property
 	def NtnlQtyScndLegSchdlQty(self):
@@ -857,7 +805,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyScndLegSchdlQty.setter
 	def NtnlQtyScndLegSchdlQty(self, value):
-		self._NtnlQtyScndLegSchdlQty = value if type(value) != auto else self.make_default("NtnlQtyScndLegSchdlQty")
+		self._NtnlQtyScndLegSchdlQty = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLegSchdlQty")
 
 	@NtnlQtyScndLegSchdlQty.deleter
 	def NtnlQtyScndLegSchdlQty(self):
@@ -865,30 +813,160 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._NtnlQtyScndLegSchdlQty = None
 
 	@property
-	def TxPric(self):
-		return self._TxPric
+	def NrgyIntrCnnctnPt(self):
+		return self._NrgyIntrCnnctnPt
 
-	@TxPric.setter
-	def TxPric(self, value):
-		self._TxPric = value if type(value) != auto else self.make_default("TxPric")
+	@NrgyIntrCnnctnPt.setter
+	def NrgyIntrCnnctnPt(self, value):
+		self._NrgyIntrCnnctnPt = value if type(value) != base_types.auto else self.make_default("NrgyIntrCnnctnPt")
 
-	@TxPric.deleter
-	def TxPric(self):
-		del self._TxPric
-		self._TxPric = None
+	@NrgyIntrCnnctnPt.deleter
+	def NrgyIntrCnnctnPt(self):
+		del self._NrgyIntrCnnctnPt
+		self._NrgyIntrCnnctnPt = None
 
 	@property
-	def DlvryAttr(self):
-		return self._DlvryAttr
+	def IntrstFxdRateFrstLeg(self):
+		return self._IntrstFxdRateFrstLeg
 
-	@DlvryAttr.setter
-	def DlvryAttr(self, value):
-		self._DlvryAttr = value if type(value) != auto else self.make_default("DlvryAttr")
+	@IntrstFxdRateFrstLeg.setter
+	def IntrstFxdRateFrstLeg(self, value):
+		self._IntrstFxdRateFrstLeg = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLeg")
 
-	@DlvryAttr.deleter
-	def DlvryAttr(self):
-		del self._DlvryAttr
-		self._DlvryAttr = None
+	@IntrstFxdRateFrstLeg.deleter
+	def IntrstFxdRateFrstLeg(self):
+		del self._IntrstFxdRateFrstLeg
+		self._IntrstFxdRateFrstLeg = None
+
+	@property
+	def RptTrckgNb(self):
+		return self._RptTrckgNb
+
+	@RptTrckgNb.setter
+	def RptTrckgNb(self, value):
+		self._RptTrckgNb = value if type(value) != base_types.auto else self.make_default("RptTrckgNb")
+
+	@RptTrckgNb.deleter
+	def RptTrckgNb(self):
+		del self._RptTrckgNb
+		self._RptTrckgNb = None
+
+	@property
+	def CcyXchgRateBsis(self):
+		return self._CcyXchgRateBsis
+
+	@CcyXchgRateBsis.setter
+	def CcyXchgRateBsis(self, value):
+		self._CcyXchgRateBsis = value if type(value) != base_types.auto else self.make_default("CcyXchgRateBsis")
+
+	@CcyXchgRateBsis.deleter
+	def CcyXchgRateBsis(self):
+		del self._CcyXchgRateBsis
+		self._CcyXchgRateBsis = None
+
+	@property
+	def IntrstFltgRateScndLegRefPrdVal(self):
+		return self._IntrstFltgRateScndLegRefPrdVal
+
+	@IntrstFltgRateScndLegRefPrdVal.setter
+	def IntrstFltgRateScndLegRefPrdVal(self, value):
+		self._IntrstFltgRateScndLegRefPrdVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRefPrdVal")
+
+	@IntrstFltgRateScndLegRefPrdVal.deleter
+	def IntrstFltgRateScndLegRefPrdVal(self):
+		del self._IntrstFltgRateScndLegRefPrdVal
+		self._IntrstFltgRateScndLegRefPrdVal = None
+
+	@property
+	def NtnlQtyFrstLegUadjstdFctvDt(self):
+		return self._NtnlQtyFrstLegUadjstdFctvDt
+
+	@NtnlQtyFrstLegUadjstdFctvDt.setter
+	def NtnlQtyFrstLegUadjstdFctvDt(self, value):
+		self._NtnlQtyFrstLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLegUadjstdFctvDt")
+
+	@NtnlQtyFrstLegUadjstdFctvDt.deleter
+	def NtnlQtyFrstLegUadjstdFctvDt(self):
+		del self._NtnlQtyFrstLegUadjstdFctvDt
+		self._NtnlQtyFrstLegUadjstdFctvDt = None
+
+	@property
+	def PltfmIdr(self):
+		return self._PltfmIdr
+
+	@PltfmIdr.setter
+	def PltfmIdr(self, value):
+		self._PltfmIdr = value if type(value) != base_types.auto else self.make_default("PltfmIdr")
+
+	@PltfmIdr.deleter
+	def PltfmIdr(self):
+		del self._PltfmIdr
+		self._PltfmIdr = None
+
+	@property
+	def OptnMtrtyDtOfUndrlyg(self):
+		return self._OptnMtrtyDtOfUndrlyg
+
+	@OptnMtrtyDtOfUndrlyg.setter
+	def OptnMtrtyDtOfUndrlyg(self, value):
+		self._OptnMtrtyDtOfUndrlyg = value if type(value) != base_types.auto else self.make_default("OptnMtrtyDtOfUndrlyg")
+
+	@OptnMtrtyDtOfUndrlyg.deleter
+	def OptnMtrtyDtOfUndrlyg(self):
+		del self._OptnMtrtyDtOfUndrlyg
+		self._OptnMtrtyDtOfUndrlyg = None
+
+	@property
+	def CcyFwdXchgRate(self):
+		return self._CcyFwdXchgRate
+
+	@CcyFwdXchgRate.setter
+	def CcyFwdXchgRate(self, value):
+		self._CcyFwdXchgRate = value if type(value) != base_types.auto else self.make_default("CcyFwdXchgRate")
+
+	@CcyFwdXchgRate.deleter
+	def CcyFwdXchgRate(self):
+		del self._CcyFwdXchgRate
+		self._CcyFwdXchgRate = None
+
+	@property
+	def IntrstFltgRateScndLegSprd(self):
+		return self._IntrstFltgRateScndLegSprd
+
+	@IntrstFltgRateScndLegSprd.setter
+	def IntrstFltgRateScndLegSprd(self, value):
+		self._IntrstFltgRateScndLegSprd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegSprd")
+
+	@IntrstFltgRateScndLegSprd.deleter
+	def IntrstFltgRateScndLegSprd(self):
+		del self._IntrstFltgRateScndLegSprd
+		self._IntrstFltgRateScndLegSprd = None
+
+	@property
+	def IntrstFltgRateScndLegDayCnt(self):
+		return self._IntrstFltgRateScndLegDayCnt
+
+	@IntrstFltgRateScndLegDayCnt.setter
+	def IntrstFltgRateScndLegDayCnt(self, value):
+		self._IntrstFltgRateScndLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegDayCnt")
+
+	@IntrstFltgRateScndLegDayCnt.deleter
+	def IntrstFltgRateScndLegDayCnt(self):
+		del self._IntrstFltgRateScndLegDayCnt
+		self._IntrstFltgRateScndLegDayCnt = None
+
+	@property
+	def IntrstFltgRateFrstLegPmtFrqcyUnit(self):
+		return self._IntrstFltgRateFrstLegPmtFrqcyUnit
+
+	@IntrstFltgRateFrstLegPmtFrqcyUnit.setter
+	def IntrstFltgRateFrstLegPmtFrqcyUnit(self, value):
+		self._IntrstFltgRateFrstLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegPmtFrqcyUnit")
+
+	@IntrstFltgRateFrstLegPmtFrqcyUnit.deleter
+	def IntrstFltgRateFrstLegPmtFrqcyUnit(self):
+		del self._IntrstFltgRateFrstLegPmtFrqcyUnit
+		self._IntrstFltgRateFrstLegPmtFrqcyUnit = None
 
 	@property
 	def IntrstFltgRateScndLegId(self):
@@ -896,7 +974,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegId.setter
 	def IntrstFltgRateScndLegId(self, value):
-		self._IntrstFltgRateScndLegId = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegId")
+		self._IntrstFltgRateScndLegId = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegId")
 
 	@IntrstFltgRateScndLegId.deleter
 	def IntrstFltgRateScndLegId(self):
@@ -909,7 +987,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@Dlta.setter
 	def Dlta(self, value):
-		self._Dlta = value if type(value) != auto else self.make_default("Dlta")
+		self._Dlta = value if type(value) != base_types.auto else self.make_default("Dlta")
 
 	@Dlta.deleter
 	def Dlta(self):
@@ -917,368 +995,108 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._Dlta = None
 
 	@property
-	def OptnMtrtyDtOfUndrlyg(self):
-		return self._OptnMtrtyDtOfUndrlyg
+	def IntrstFltgRateFrstLegRefPrdUnit(self):
+		return self._IntrstFltgRateFrstLegRefPrdUnit
 
-	@OptnMtrtyDtOfUndrlyg.setter
-	def OptnMtrtyDtOfUndrlyg(self, value):
-		self._OptnMtrtyDtOfUndrlyg = value if type(value) != auto else self.make_default("OptnMtrtyDtOfUndrlyg")
+	@IntrstFltgRateFrstLegRefPrdUnit.setter
+	def IntrstFltgRateFrstLegRefPrdUnit(self, value):
+		self._IntrstFltgRateFrstLegRefPrdUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRefPrdUnit")
 
-	@OptnMtrtyDtOfUndrlyg.deleter
-	def OptnMtrtyDtOfUndrlyg(self):
-		del self._OptnMtrtyDtOfUndrlyg
-		self._OptnMtrtyDtOfUndrlyg = None
-
-	@property
-	def IntrstFltgRateFrstLegDayCnt(self):
-		return self._IntrstFltgRateFrstLegDayCnt
-
-	@IntrstFltgRateFrstLegDayCnt.setter
-	def IntrstFltgRateFrstLegDayCnt(self, value):
-		self._IntrstFltgRateFrstLegDayCnt = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegDayCnt")
-
-	@IntrstFltgRateFrstLegDayCnt.deleter
-	def IntrstFltgRateFrstLegDayCnt(self):
-		del self._IntrstFltgRateFrstLegDayCnt
-		self._IntrstFltgRateFrstLegDayCnt = None
+	@IntrstFltgRateFrstLegRefPrdUnit.deleter
+	def IntrstFltgRateFrstLegRefPrdUnit(self):
+		del self._IntrstFltgRateFrstLegRefPrdUnit
+		self._IntrstFltgRateFrstLegRefPrdUnit = None
 
 	@property
-	def IntrstFxdRateFrstLeg(self):
-		return self._IntrstFxdRateFrstLeg
+	def IntrstFltgRateScndLegNm(self):
+		return self._IntrstFltgRateScndLegNm
 
-	@IntrstFxdRateFrstLeg.setter
-	def IntrstFxdRateFrstLeg(self, value):
-		self._IntrstFxdRateFrstLeg = value if type(value) != auto else self.make_default("IntrstFxdRateFrstLeg")
+	@IntrstFltgRateScndLegNm.setter
+	def IntrstFltgRateScndLegNm(self, value):
+		self._IntrstFltgRateScndLegNm = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegNm")
 
-	@IntrstFxdRateFrstLeg.deleter
-	def IntrstFxdRateFrstLeg(self):
-		del self._IntrstFxdRateFrstLeg
-		self._IntrstFxdRateFrstLeg = None
-
-	@property
-	def NtnlQtyFrstLegUadjstdEndDt(self):
-		return self._NtnlQtyFrstLegUadjstdEndDt
-
-	@NtnlQtyFrstLegUadjstdEndDt.setter
-	def NtnlQtyFrstLegUadjstdEndDt(self, value):
-		self._NtnlQtyFrstLegUadjstdEndDt = value if type(value) != auto else self.make_default("NtnlQtyFrstLegUadjstdEndDt")
-
-	@NtnlQtyFrstLegUadjstdEndDt.deleter
-	def NtnlQtyFrstLegUadjstdEndDt(self):
-		del self._NtnlQtyFrstLegUadjstdEndDt
-		self._NtnlQtyFrstLegUadjstdEndDt = None
+	@IntrstFltgRateScndLegNm.deleter
+	def IntrstFltgRateScndLegNm(self):
+		del self._IntrstFltgRateScndLegNm
+		self._IntrstFltgRateScndLegNm = None
 
 	@property
-	def NtnlAmtScndLegUadjstdEndDt(self):
-		return self._NtnlAmtScndLegUadjstdEndDt
+	def DlvryTp(self):
+		return self._DlvryTp
 
-	@NtnlAmtScndLegUadjstdEndDt.setter
-	def NtnlAmtScndLegUadjstdEndDt(self, value):
-		self._NtnlAmtScndLegUadjstdEndDt = value if type(value) != auto else self.make_default("NtnlAmtScndLegUadjstdEndDt")
+	@DlvryTp.setter
+	def DlvryTp(self, value):
+		self._DlvryTp = value if type(value) != base_types.auto else self.make_default("DlvryTp")
 
-	@NtnlAmtScndLegUadjstdEndDt.deleter
-	def NtnlAmtScndLegUadjstdEndDt(self):
-		del self._NtnlAmtScndLegUadjstdEndDt
-		self._NtnlAmtScndLegUadjstdEndDt = None
-
-	@property
-	def IntrstFltgRateScndLegPmtFrqcyUnit(self):
-		return self._IntrstFltgRateScndLegPmtFrqcyUnit
-
-	@IntrstFltgRateScndLegPmtFrqcyUnit.setter
-	def IntrstFltgRateScndLegPmtFrqcyUnit(self, value):
-		self._IntrstFltgRateScndLegPmtFrqcyUnit = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegPmtFrqcyUnit")
-
-	@IntrstFltgRateScndLegPmtFrqcyUnit.deleter
-	def IntrstFltgRateScndLegPmtFrqcyUnit(self):
-		del self._IntrstFltgRateScndLegPmtFrqcyUnit
-		self._IntrstFltgRateScndLegPmtFrqcyUnit = None
+	@DlvryTp.deleter
+	def DlvryTp(self):
+		del self._DlvryTp
+		self._DlvryTp = None
 
 	@property
-	def NtnlAmtFrstLegUadjstdFctvDt(self):
-		return self._NtnlAmtFrstLegUadjstdFctvDt
+	def IntrstFltgRateFrstLegRefPrdVal(self):
+		return self._IntrstFltgRateFrstLegRefPrdVal
 
-	@NtnlAmtFrstLegUadjstdFctvDt.setter
-	def NtnlAmtFrstLegUadjstdFctvDt(self, value):
-		self._NtnlAmtFrstLegUadjstdFctvDt = value if type(value) != auto else self.make_default("NtnlAmtFrstLegUadjstdFctvDt")
+	@IntrstFltgRateFrstLegRefPrdVal.setter
+	def IntrstFltgRateFrstLegRefPrdVal(self, value):
+		self._IntrstFltgRateFrstLegRefPrdVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRefPrdVal")
 
-	@NtnlAmtFrstLegUadjstdFctvDt.deleter
-	def NtnlAmtFrstLegUadjstdFctvDt(self):
-		del self._NtnlAmtFrstLegUadjstdFctvDt
-		self._NtnlAmtFrstLegUadjstdFctvDt = None
-
-	@property
-	def TradConf(self):
-		return self._TradConf
-
-	@TradConf.setter
-	def TradConf(self, value):
-		self._TradConf = value if type(value) != auto else self.make_default("TradConf")
-
-	@TradConf.deleter
-	def TradConf(self):
-		del self._TradConf
-		self._TradConf = None
+	@IntrstFltgRateFrstLegRefPrdVal.deleter
+	def IntrstFltgRateFrstLegRefPrdVal(self):
+		del self._IntrstFltgRateFrstLegRefPrdVal
+		self._IntrstFltgRateFrstLegRefPrdVal = None
 
 	@property
-	def IntrstFltgRateFrstLegSprd(self):
-		return self._IntrstFltgRateFrstLegSprd
+	def PricSchdlUadjstdEndDt(self):
+		return self._PricSchdlUadjstdEndDt
 
-	@IntrstFltgRateFrstLegSprd.setter
-	def IntrstFltgRateFrstLegSprd(self, value):
-		self._IntrstFltgRateFrstLegSprd = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegSprd")
+	@PricSchdlUadjstdEndDt.setter
+	def PricSchdlUadjstdEndDt(self, value):
+		self._PricSchdlUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("PricSchdlUadjstdEndDt")
 
-	@IntrstFltgRateFrstLegSprd.deleter
-	def IntrstFltgRateFrstLegSprd(self):
-		del self._IntrstFltgRateFrstLegSprd
-		self._IntrstFltgRateFrstLegSprd = None
-
-	@property
-	def IntrstFltgRateScndLegRefPrdVal(self):
-		return self._IntrstFltgRateScndLegRefPrdVal
-
-	@IntrstFltgRateScndLegRefPrdVal.setter
-	def IntrstFltgRateScndLegRefPrdVal(self, value):
-		self._IntrstFltgRateScndLegRefPrdVal = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegRefPrdVal")
-
-	@IntrstFltgRateScndLegRefPrdVal.deleter
-	def IntrstFltgRateScndLegRefPrdVal(self):
-		del self._IntrstFltgRateScndLegRefPrdVal
-		self._IntrstFltgRateScndLegRefPrdVal = None
+	@PricSchdlUadjstdEndDt.deleter
+	def PricSchdlUadjstdEndDt(self):
+		del self._PricSchdlUadjstdEndDt
+		self._PricSchdlUadjstdEndDt = None
 
 	@property
-	def IntrstFltgRateScndLegCd(self):
-		return self._IntrstFltgRateScndLegCd
+	def IntrstFltgRateScndLegPmtFrqcyVal(self):
+		return self._IntrstFltgRateScndLegPmtFrqcyVal
 
-	@IntrstFltgRateScndLegCd.setter
-	def IntrstFltgRateScndLegCd(self, value):
-		self._IntrstFltgRateScndLegCd = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegCd")
+	@IntrstFltgRateScndLegPmtFrqcyVal.setter
+	def IntrstFltgRateScndLegPmtFrqcyVal(self, value):
+		self._IntrstFltgRateScndLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegPmtFrqcyVal")
 
-	@IntrstFltgRateScndLegCd.deleter
-	def IntrstFltgRateScndLegCd(self):
-		del self._IntrstFltgRateScndLegCd
-		self._IntrstFltgRateScndLegCd = None
-
-	@property
-	def OptnStrkPricSchdlUadjstdEndDt(self):
-		return self._OptnStrkPricSchdlUadjstdEndDt
-
-	@OptnStrkPricSchdlUadjstdEndDt.setter
-	def OptnStrkPricSchdlUadjstdEndDt(self, value):
-		self._OptnStrkPricSchdlUadjstdEndDt = value if type(value) != auto else self.make_default("OptnStrkPricSchdlUadjstdEndDt")
-
-	@OptnStrkPricSchdlUadjstdEndDt.deleter
-	def OptnStrkPricSchdlUadjstdEndDt(self):
-		del self._OptnStrkPricSchdlUadjstdEndDt
-		self._OptnStrkPricSchdlUadjstdEndDt = None
+	@IntrstFltgRateScndLegPmtFrqcyVal.deleter
+	def IntrstFltgRateScndLegPmtFrqcyVal(self):
+		del self._IntrstFltgRateScndLegPmtFrqcyVal
+		self._IntrstFltgRateScndLegPmtFrqcyVal = None
 
 	@property
-	def OptnStrkPricSchdlUadjstdFctvDt(self):
-		return self._OptnStrkPricSchdlUadjstdFctvDt
+	def OptnTp(self):
+		return self._OptnTp
 
-	@OptnStrkPricSchdlUadjstdFctvDt.setter
-	def OptnStrkPricSchdlUadjstdFctvDt(self, value):
-		self._OptnStrkPricSchdlUadjstdFctvDt = value if type(value) != auto else self.make_default("OptnStrkPricSchdlUadjstdFctvDt")
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
 
-	@OptnStrkPricSchdlUadjstdFctvDt.deleter
-	def OptnStrkPricSchdlUadjstdFctvDt(self):
-		del self._OptnStrkPricSchdlUadjstdFctvDt
-		self._OptnStrkPricSchdlUadjstdFctvDt = None
-
-	@property
-	def NtnlQtyScndLeg(self):
-		return self._NtnlQtyScndLeg
-
-	@NtnlQtyScndLeg.setter
-	def NtnlQtyScndLeg(self, value):
-		self._NtnlQtyScndLeg = value if type(value) != auto else self.make_default("NtnlQtyScndLeg")
-
-	@NtnlQtyScndLeg.deleter
-	def NtnlQtyScndLeg(self):
-		del self._NtnlQtyScndLeg
-		self._NtnlQtyScndLeg = None
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
 
 	@property
-	def PrrUnqTxIdr(self):
-		return self._PrrUnqTxIdr
+	def IntrstFltgRateFrstLegRstFrqcyUnit(self):
+		return self._IntrstFltgRateFrstLegRstFrqcyUnit
 
-	@PrrUnqTxIdr.setter
-	def PrrUnqTxIdr(self, value):
-		self._PrrUnqTxIdr = value if type(value) != auto else self.make_default("PrrUnqTxIdr")
+	@IntrstFltgRateFrstLegRstFrqcyUnit.setter
+	def IntrstFltgRateFrstLegRstFrqcyUnit(self, value):
+		self._IntrstFltgRateFrstLegRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRstFrqcyUnit")
 
-	@PrrUnqTxIdr.deleter
-	def PrrUnqTxIdr(self):
-		del self._PrrUnqTxIdr
-		self._PrrUnqTxIdr = None
-
-	@property
-	def IntrstFxdRateFrstLegPmtFrqcyUnit(self):
-		return self._IntrstFxdRateFrstLegPmtFrqcyUnit
-
-	@IntrstFxdRateFrstLegPmtFrqcyUnit.setter
-	def IntrstFxdRateFrstLegPmtFrqcyUnit(self, value):
-		self._IntrstFxdRateFrstLegPmtFrqcyUnit = value if type(value) != auto else self.make_default("IntrstFxdRateFrstLegPmtFrqcyUnit")
-
-	@IntrstFxdRateFrstLegPmtFrqcyUnit.deleter
-	def IntrstFxdRateFrstLegPmtFrqcyUnit(self):
-		del self._IntrstFxdRateFrstLegPmtFrqcyUnit
-		self._IntrstFxdRateFrstLegPmtFrqcyUnit = None
-
-	@property
-	def IntrstFltgRateScndLegSprd(self):
-		return self._IntrstFltgRateScndLegSprd
-
-	@IntrstFltgRateScndLegSprd.setter
-	def IntrstFltgRateScndLegSprd(self, value):
-		self._IntrstFltgRateScndLegSprd = value if type(value) != auto else self.make_default("IntrstFltgRateScndLegSprd")
-
-	@IntrstFltgRateScndLegSprd.deleter
-	def IntrstFltgRateScndLegSprd(self):
-		del self._IntrstFltgRateScndLegSprd
-		self._IntrstFltgRateScndLegSprd = None
-
-	@property
-	def TxSchdlPric(self):
-		return self._TxSchdlPric
-
-	@TxSchdlPric.setter
-	def TxSchdlPric(self, value):
-		self._TxSchdlPric = value if type(value) != auto else self.make_default("TxSchdlPric")
-
-	@TxSchdlPric.deleter
-	def TxSchdlPric(self):
-		del self._TxSchdlPric
-		self._TxSchdlPric = None
-
-	@property
-	def CcyFwdXchgRate(self):
-		return self._CcyFwdXchgRate
-
-	@CcyFwdXchgRate.setter
-	def CcyFwdXchgRate(self, value):
-		self._CcyFwdXchgRate = value if type(value) != auto else self.make_default("CcyFwdXchgRate")
-
-	@CcyFwdXchgRate.deleter
-	def CcyFwdXchgRate(self):
-		del self._CcyFwdXchgRate
-		self._CcyFwdXchgRate = None
-
-	@property
-	def PackgSprd(self):
-		return self._PackgSprd
-
-	@PackgSprd.setter
-	def PackgSprd(self, value):
-		self._PackgSprd = value if type(value) != auto else self.make_default("PackgSprd")
-
-	@PackgSprd.deleter
-	def PackgSprd(self):
-		del self._PackgSprd
-		self._PackgSprd = None
-
-	@property
-	def PltfmIdr(self):
-		return self._PltfmIdr
-
-	@PltfmIdr.setter
-	def PltfmIdr(self, value):
-		self._PltfmIdr = value if type(value) != auto else self.make_default("PltfmIdr")
-
-	@PltfmIdr.deleter
-	def PltfmIdr(self):
-		del self._PltfmIdr
-		self._PltfmIdr = None
-
-	@property
-	def NtnlAmtScndLeg(self):
-		return self._NtnlAmtScndLeg
-
-	@NtnlAmtScndLeg.setter
-	def NtnlAmtScndLeg(self, value):
-		self._NtnlAmtScndLeg = value if type(value) != auto else self.make_default("NtnlAmtScndLeg")
-
-	@NtnlAmtScndLeg.deleter
-	def NtnlAmtScndLeg(self):
-		del self._NtnlAmtScndLeg
-		self._NtnlAmtScndLeg = None
-
-	@property
-	def NtnlQtyFrstLeg(self):
-		return self._NtnlQtyFrstLeg
-
-	@NtnlQtyFrstLeg.setter
-	def NtnlQtyFrstLeg(self, value):
-		self._NtnlQtyFrstLeg = value if type(value) != auto else self.make_default("NtnlQtyFrstLeg")
-
-	@NtnlQtyFrstLeg.deleter
-	def NtnlQtyFrstLeg(self):
-		del self._NtnlQtyFrstLeg
-		self._NtnlQtyFrstLeg = None
-
-	@property
-	def NtnlQtyScndLegUadjstdEndDt(self):
-		return self._NtnlQtyScndLegUadjstdEndDt
-
-	@NtnlQtyScndLegUadjstdEndDt.setter
-	def NtnlQtyScndLegUadjstdEndDt(self, value):
-		self._NtnlQtyScndLegUadjstdEndDt = value if type(value) != auto else self.make_default("NtnlQtyScndLegUadjstdEndDt")
-
-	@NtnlQtyScndLegUadjstdEndDt.deleter
-	def NtnlQtyScndLegUadjstdEndDt(self):
-		del self._NtnlQtyScndLegUadjstdEndDt
-		self._NtnlQtyScndLegUadjstdEndDt = None
-
-	@property
-	def IntrstFltgRateFrstLegPmtFrqcyUnit(self):
-		return self._IntrstFltgRateFrstLegPmtFrqcyUnit
-
-	@IntrstFltgRateFrstLegPmtFrqcyUnit.setter
-	def IntrstFltgRateFrstLegPmtFrqcyUnit(self, value):
-		self._IntrstFltgRateFrstLegPmtFrqcyUnit = value if type(value) != auto else self.make_default("IntrstFltgRateFrstLegPmtFrqcyUnit")
-
-	@IntrstFltgRateFrstLegPmtFrqcyUnit.deleter
-	def IntrstFltgRateFrstLegPmtFrqcyUnit(self):
-		del self._IntrstFltgRateFrstLegPmtFrqcyUnit
-		self._IntrstFltgRateFrstLegPmtFrqcyUnit = None
-
-	@property
-	def PstTradRskRdctn(self):
-		return self._PstTradRskRdctn
-
-	@PstTradRskRdctn.setter
-	def PstTradRskRdctn(self, value):
-		self._PstTradRskRdctn = value if type(value) != auto else self.make_default("PstTradRskRdctn")
-
-	@PstTradRskRdctn.deleter
-	def PstTradRskRdctn(self):
-		del self._PstTradRskRdctn
-		self._PstTradRskRdctn = None
-
-	@property
-	def Lvl(self):
-		return self._Lvl
-
-	@Lvl.setter
-	def Lvl(self, value):
-		self._Lvl = value if type(value) != auto else self.make_default("Lvl")
-
-	@Lvl.deleter
-	def Lvl(self):
-		del self._Lvl
-		self._Lvl = None
-
-	@property
-	def NrgyDlvryPtOrZone(self):
-		return self._NrgyDlvryPtOrZone
-
-	@NrgyDlvryPtOrZone.setter
-	def NrgyDlvryPtOrZone(self, value):
-		self._NrgyDlvryPtOrZone = value if type(value) != auto else self.make_default("NrgyDlvryPtOrZone")
-
-	@NrgyDlvryPtOrZone.deleter
-	def NrgyDlvryPtOrZone(self):
-		del self._NrgyDlvryPtOrZone
-		self._NrgyDlvryPtOrZone = None
+	@IntrstFltgRateFrstLegRstFrqcyUnit.deleter
+	def IntrstFltgRateFrstLegRstFrqcyUnit(self):
+		del self._IntrstFltgRateFrstLegRstFrqcyUnit
+		self._IntrstFltgRateFrstLegRstFrqcyUnit = None
 
 	@property
 	def IntraGrp(self):
@@ -1286,7 +1104,7 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntraGrp.setter
 	def IntraGrp(self, value):
-		self._IntraGrp = value if type(value) != auto else self.make_default("IntraGrp")
+		self._IntraGrp = value if type(value) != base_types.auto else self.make_default("IntraGrp")
 
 	@IntraGrp.deleter
 	def IntraGrp(self):
@@ -1294,115 +1112,297 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 		self._IntraGrp = None
 
 	@property
-	def NtnlQtyFrstLegSchdlQty(self):
-		return self._NtnlQtyFrstLegSchdlQty
+	def DlvryAttr(self):
+		return self._DlvryAttr
 
-	@NtnlQtyFrstLegSchdlQty.setter
-	def NtnlQtyFrstLegSchdlQty(self, value):
-		self._NtnlQtyFrstLegSchdlQty = value if type(value) != auto else self.make_default("NtnlQtyFrstLegSchdlQty")
+	@DlvryAttr.setter
+	def DlvryAttr(self, value):
+		self._DlvryAttr = value if type(value) != base_types.auto else self.make_default("DlvryAttr")
 
-	@NtnlQtyFrstLegSchdlQty.deleter
-	def NtnlQtyFrstLegSchdlQty(self):
-		del self._NtnlQtyFrstLegSchdlQty
-		self._NtnlQtyFrstLegSchdlQty = None
+	@DlvryAttr.deleter
+	def DlvryAttr(self):
+		del self._DlvryAttr
+		self._DlvryAttr = None
+
+	@property
+	def CdtIndxFctr(self):
+		return self._CdtIndxFctr
+
+	@CdtIndxFctr.setter
+	def CdtIndxFctr(self, value):
+		self._CdtIndxFctr = value if type(value) != base_types.auto else self.make_default("CdtIndxFctr")
+
+	@CdtIndxFctr.deleter
+	def CdtIndxFctr(self):
+		del self._CdtIndxFctr
+		self._CdtIndxFctr = None
+
+	@property
+	def PackgPric(self):
+		return self._PackgPric
+
+	@PackgPric.setter
+	def PackgPric(self, value):
+		self._PackgPric = value if type(value) != base_types.auto else self.make_default("PackgPric")
+
+	@PackgPric.deleter
+	def PackgPric(self):
+		del self._PackgPric
+		self._PackgPric = None
+
+	@property
+	def IntrstFltgRateScndLegRstFrqcyUnit(self):
+		return self._IntrstFltgRateScndLegRstFrqcyUnit
+
+	@IntrstFltgRateScndLegRstFrqcyUnit.setter
+	def IntrstFltgRateScndLegRstFrqcyUnit(self, value):
+		self._IntrstFltgRateScndLegRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRstFrqcyUnit")
+
+	@IntrstFltgRateScndLegRstFrqcyUnit.deleter
+	def IntrstFltgRateScndLegRstFrqcyUnit(self):
+		del self._IntrstFltgRateScndLegRstFrqcyUnit
+		self._IntrstFltgRateScndLegRstFrqcyUnit = None
+
+	@property
+	def IntrstFxdRateFrstLegPmtFrqcyUnit(self):
+		return self._IntrstFxdRateFrstLegPmtFrqcyUnit
+
+	@IntrstFxdRateFrstLegPmtFrqcyUnit.setter
+	def IntrstFxdRateFrstLegPmtFrqcyUnit(self, value):
+		self._IntrstFxdRateFrstLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLegPmtFrqcyUnit")
+
+	@IntrstFxdRateFrstLegPmtFrqcyUnit.deleter
+	def IntrstFxdRateFrstLegPmtFrqcyUnit(self):
+		del self._IntrstFxdRateFrstLegPmtFrqcyUnit
+		self._IntrstFxdRateFrstLegPmtFrqcyUnit = None
+
+	@property
+	def CdtTrch(self):
+		return self._CdtTrch
+
+	@CdtTrch.setter
+	def CdtTrch(self, value):
+		self._CdtTrch = value if type(value) != base_types.auto else self.make_default("CdtTrch")
+
+	@CdtTrch.deleter
+	def CdtTrch(self):
+		del self._CdtTrch
+		self._CdtTrch = None
+
+	@property
+	def XprtnDt(self):
+		return self._XprtnDt
+
+	@XprtnDt.setter
+	def XprtnDt(self, value):
+		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+
+	@XprtnDt.deleter
+	def XprtnDt(self):
+		del self._XprtnDt
+		self._XprtnDt = None
+
+	@property
+	def IntrstFltgRateFrstLegDayCnt(self):
+		return self._IntrstFltgRateFrstLegDayCnt
+
+	@IntrstFltgRateFrstLegDayCnt.setter
+	def IntrstFltgRateFrstLegDayCnt(self, value):
+		self._IntrstFltgRateFrstLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegDayCnt")
+
+	@IntrstFltgRateFrstLegDayCnt.deleter
+	def IntrstFltgRateFrstLegDayCnt(self):
+		del self._IntrstFltgRateFrstLegDayCnt
+		self._IntrstFltgRateFrstLegDayCnt = None
+
+	@property
+	def MstrAgrmtVrsn(self):
+		return self._MstrAgrmtVrsn
+
+	@MstrAgrmtVrsn.setter
+	def MstrAgrmtVrsn(self, value):
+		self._MstrAgrmtVrsn = value if type(value) != base_types.auto else self.make_default("MstrAgrmtVrsn")
+
+	@MstrAgrmtVrsn.deleter
+	def MstrAgrmtVrsn(self):
+		del self._MstrAgrmtVrsn
+		self._MstrAgrmtVrsn = None
+
+	@property
+	def DerivEvt(self):
+		return self._DerivEvt
+
+	@DerivEvt.setter
+	def DerivEvt(self, value):
+		self._DerivEvt = value if type(value) != base_types.auto else self.make_default("DerivEvt")
+
+	@DerivEvt.deleter
+	def DerivEvt(self):
+		del self._DerivEvt
+		self._DerivEvt = None
+
+	@property
+	def OptnStrkPricSchdlAmt(self):
+		return self._OptnStrkPricSchdlAmt
+
+	@OptnStrkPricSchdlAmt.setter
+	def OptnStrkPricSchdlAmt(self, value):
+		self._OptnStrkPricSchdlAmt = value if type(value) != base_types.auto else self.make_default("OptnStrkPricSchdlAmt")
+
+	@OptnStrkPricSchdlAmt.deleter
+	def OptnStrkPricSchdlAmt(self):
+		del self._OptnStrkPricSchdlAmt
+		self._OptnStrkPricSchdlAmt = None
+
+	@property
+	def EarlyTermntnDt(self):
+		return self._EarlyTermntnDt
+
+	@EarlyTermntnDt.setter
+	def EarlyTermntnDt(self, value):
+		self._EarlyTermntnDt = value if type(value) != base_types.auto else self.make_default("EarlyTermntnDt")
+
+	@EarlyTermntnDt.deleter
+	def EarlyTermntnDt(self):
+		del self._EarlyTermntnDt
+		self._EarlyTermntnDt = None
+
+	@property
+	def NrgyLdTp(self):
+		return self._NrgyLdTp
+
+	@NrgyLdTp.setter
+	def NrgyLdTp(self, value):
+		self._NrgyLdTp = value if type(value) != base_types.auto else self.make_default("NrgyLdTp")
+
+	@NrgyLdTp.deleter
+	def NrgyLdTp(self):
+		del self._NrgyLdTp
+		self._NrgyLdTp = None
+
+	@property
+	def IntrstFltgRateFrstLegRstFrqcyVal(self):
+		return self._IntrstFltgRateFrstLegRstFrqcyVal
+
+	@IntrstFltgRateFrstLegRstFrqcyVal.setter
+	def IntrstFltgRateFrstLegRstFrqcyVal(self, value):
+		self._IntrstFltgRateFrstLegRstFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRstFrqcyVal")
+
+	@IntrstFltgRateFrstLegRstFrqcyVal.deleter
+	def IntrstFltgRateFrstLegRstFrqcyVal(self):
+		del self._IntrstFltgRateFrstLegRstFrqcyVal
+		self._IntrstFltgRateFrstLegRstFrqcyVal = None
+
+	@property
+	def NtnlAmtScndLegUadjstdEndDt(self):
+		return self._NtnlAmtScndLegUadjstdEndDt
+
+	@NtnlAmtScndLegUadjstdEndDt.setter
+	def NtnlAmtScndLegUadjstdEndDt(self, value):
+		self._NtnlAmtScndLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLegUadjstdEndDt")
+
+	@NtnlAmtScndLegUadjstdEndDt.deleter
+	def NtnlAmtScndLegUadjstdEndDt(self):
+		del self._NtnlAmtScndLegUadjstdEndDt
+		self._NtnlAmtScndLegUadjstdEndDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtnlAmtFrstLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstRateFxdScndLeg', type=CompareUnitPrice7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnPrmPmtDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PackgPric', type=CompareUnitPrice5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlAmtScndLegSchdlAmt', type=CompareAmountAndDirection3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrPmt', type=CompareOtherPayment1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegId', type=CompareISINIdentifier4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyXchgRate', type=CompareExchangeRate1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradClrSts', type=CompareTradeClearingStatus3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CompareOptionType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnExrcStyle', type=CompareOptionStyle1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrstFxdRateScndLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstFxdRateScndLegDayCnt', type=CompareDayCount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NrgyIntrCnnctnPt', type=CompareDeliveryInterconnectionPoint1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivEvt', type=CompareDerivativeEvent1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegNm', type=CompareMax350Text1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbsqntPosUnqTxIdr', type=CompareUniqueTransactionIdentifier2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmtVrsn', type=CompareMax50Text1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlAmtFrstLegSchdlAmt', type=CompareAmountAndDirection3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstFxdRateFrstLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtVrsn', type=CompareNumber7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyTermntnDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlQtyFrstLegUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnPrmAmt', type=CompareActiveOrHistoricCurrencyAndAmount4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSchdlPric', type=CompareUnitPrice5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CdtSrs', type=CompareNumber7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmmdty', type=CompareCommodityAssetClass4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegRefPrdVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtTrch', type=CompareTrancheIndicator1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmtTp', type=CompareMasterAgreementType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnStrkPric', type=CompareUnitPrice4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstFltgRateScndLegRstFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegRstFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegRefPrdUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptTrckgNb', type=CompareText2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnPrmAmt', type=CompareActiveOrHistoricCurrencyAndAmount4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnStrkPricSchdlUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradConf', type=CompareTradeConfirmation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlAmtFrstLeg', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxPric', type=CompareUnitPrice5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstTradRskRdctn', type=ComparePostTradeRiskReduction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrAgrmtTp', type=CompareMasterAgreementType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlQtyFrstLeg', type=CompareLongFraction19DecimalNumber1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegCd', type=CompareBenchmarkCode1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbsqntPosUnqTxIdr', type=CompareUniqueTransactionIdentifier2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnStrkPricSchdlUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Cmmdty', type=CompareCommodityAssetClass4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFxdRateFrstLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFxdRateFrstLegDayCnt', type=CompareDayCount1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlAmtScndLegSchdlAmt', type=CompareAmountAndDirection3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtnlAmtFrstLegSchdlAmt', type=CompareAmountAndDirection3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtnlQtyScndLegUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtnlAmtFrstLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrPmt', type=CompareOtherPayment1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OptnStrkPric', type=CompareUnitPrice4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTxIdr', type=CompareUniqueTransactionIdentifier2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlQtyScndLeg', type=CompareLongFraction19DecimalNumber1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlQtyFrstLegSchdlQty', type=CompareLongFraction19DecimalNumber1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtnlAmtFrstLegUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NrgyDlvryPtOrZone', type=CompareDeliveryInterconnectionPoint1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrrUnqTxIdr', type=CompareUniqueTransactionIdentifier2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRateFxdScndLeg', type=CompareUnitPrice7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricSchdlUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradClrSts', type=CompareTradeClearingStatus3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegCd', type=CompareBenchmarkCode1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lvl', type=CompareReportingLevelType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnTmStmp', type=CompareDateTime3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegId', type=CompareISINIdentifier4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnPrmPmtDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtVrsn', type=CompareNumber7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegSprd', type=CompareUnitPrice8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegNm', type=CompareMax350Text1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradClrOblgtn', type=CompareTradeClearingObligation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstFltgRateScndLegRefPrdUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyXchgRateBsis', type=CompareExchangeRateBasis1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegRstFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTxIdr', type=CompareUniqueTransactionIdentifier2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NrgyLdTp', type=CompareEnergyLoadType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnExrcStyle', type=CompareOptionStyle1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegNm', type=CompareMax350Text1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFxdRateScndLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryTp', type=CompareDeliveryType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtRefPty', type=CompareReferenceParty1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlQtyScndLegUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnStrkPricSchdlAmt', type=CompareUnitPrice4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XprtnDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegCd', type=CompareBenchmarkCode1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtnlAmtScndLegUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegDayCnt', type=CompareDayCount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegRstFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricSchdlUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstFxdRateScndLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFxdRateFrstLegDayCnt', type=CompareDayCount1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtSnrty', type=CompareSeniorityType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnTmStmp', type=CompareDateTime3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtIndxFctr', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlAmtFrstLeg', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFxdRateScndLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PackgSprd', type=CompareUnitPrice8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtRefPty', type=CompareReferenceParty1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlAmtScndLeg', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlQtyFrstLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CcyXchgRate', type=CompareExchangeRate1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlQtyScndLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtnlQtyScndLegSchdlQty', type=CompareLongFraction19DecimalNumber1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxPric', type=CompareUnitPrice5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryAttr', type=CompareEnergyDeliveryAttribute1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NrgyIntrCnnctnPt', type=CompareDeliveryInterconnectionPoint1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFxdRateFrstLeg', type=CompareUnitPrice7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptTrckgNb', type=CompareText2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyXchgRateBsis', type=CompareExchangeRateBasis1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegRefPrdVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlQtyFrstLegUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PltfmIdr', type=CompareMICIdentifier3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnMtrtyDtOfUndrlyg', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyFwdXchgRate', type=CompareExchangeRate1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegSprd', type=CompareUnitPrice8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegDayCnt', type=CompareDayCount1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstFltgRateScndLegId', type=CompareISINIdentifier4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dlta', type=CompareLongFraction19DecimalNumber1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnMtrtyDtOfUndrlyg', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegDayCnt', type=CompareDayCount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFxdRateFrstLeg', type=CompareUnitPrice7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlQtyFrstLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtnlAmtScndLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlAmtFrstLegUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradConf', type=CompareTradeConfirmation2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegSprd', type=CompareUnitPrice8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegRefPrdVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegCd', type=CompareBenchmarkCode1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnStrkPricSchdlUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnStrkPricSchdlUadjstdFctvDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtnlQtyScndLeg', type=CompareLongFraction19DecimalNumber1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrrUnqTxIdr', type=CompareUniqueTransactionIdentifier2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFxdRateFrstLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstFltgRateScndLegSprd', type=CompareUnitPrice8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSchdlPric', type=CompareUnitPrice5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CcyFwdXchgRate', type=CompareExchangeRate1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PackgSprd', type=CompareUnitPrice8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PltfmIdr', type=CompareMICIdentifier3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlAmtScndLeg', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlQtyFrstLeg', type=CompareLongFraction19DecimalNumber1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlQtyScndLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstFltgRateFrstLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstTradRskRdctn', type=ComparePostTradeRiskReduction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lvl', type=CompareReportingLevelType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NrgyDlvryPtOrZone', type=CompareDeliveryInterconnectionPoint1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegRefPrdUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegNm', type=CompareMax350Text1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryTp', type=CompareDeliveryType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegRefPrdVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricSchdlUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegPmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CompareOptionType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegRstFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraGrp', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlQtyFrstLegSchdlQty', type=CompareLongFraction19DecimalNumber1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvryAttr', type=CompareEnergyDeliveryAttribute1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CdtIndxFctr', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PackgPric', type=CompareUnitPrice5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateScndLegRstFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFxdRateFrstLegPmtFrqcyUnit', type=CompareFrequencyUnit1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtTrch', type=CompareTrancheIndicator1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XprtnDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegDayCnt', type=CompareDayCount1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmtVrsn', type=CompareMax50Text1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivEvt', type=CompareDerivativeEvent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnStrkPricSchdlAmt', type=CompareUnitPrice4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EarlyTermntnDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NrgyLdTp', type=CompareEnergyLoadType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstFltgRateFrstLegRstFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlAmtScndLegUadjstdEndDt', type=CompareDate3, min=0, max=None, mutex_group=None, array=True),
 	))
 

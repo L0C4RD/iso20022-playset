@@ -11,7 +11,7 @@ class CashAvailabilityDate1Choice(base_types._BaseFieldType):
 
 	@NbOfDays.setter
 	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != auto else self.make_default("NbOfDays")
+		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
 
 	@NbOfDays.deleter
 	def NbOfDays(self):
@@ -24,7 +24,7 @@ class CashAvailabilityDate1Choice(base_types._BaseFieldType):
 
 	@ActlDt.setter
 	def ActlDt(self, value):
-		self._ActlDt = value if type(value) != auto else self.make_default("ActlDt")
+		self._ActlDt = value if type(value) != base_types.auto else self.make_default("ActlDt")
 
 	@ActlDt.deleter
 	def ActlDt(self):

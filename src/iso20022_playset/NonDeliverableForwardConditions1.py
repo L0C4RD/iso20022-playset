@@ -11,7 +11,7 @@ class NonDeliverableForwardConditions1(base_types._BaseFieldType):
 
 	@OpngInd.setter
 	def OpngInd(self, value):
-		self._OpngInd = value if type(value) != auto else self.make_default("OpngInd")
+		self._OpngInd = value if type(value) != base_types.auto else self.make_default("OpngInd")
 
 	@OpngInd.deleter
 	def OpngInd(self):
@@ -24,7 +24,7 @@ class NonDeliverableForwardConditions1(base_types._BaseFieldType):
 
 	@OpngFxgConds.setter
 	def OpngFxgConds(self, value):
-		self._OpngFxgConds = value if type(value) != auto else self.make_default("OpngFxgConds")
+		self._OpngFxgConds = value if type(value) != base_types.auto else self.make_default("OpngFxgConds")
 
 	@OpngFxgConds.deleter
 	def OpngFxgConds(self):

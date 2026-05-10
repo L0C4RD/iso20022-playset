@@ -11,7 +11,7 @@ class AddressModification3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
 
 	@Adr.deleter
 	def Adr(self):
@@ -24,7 +24,7 @@ class AddressModification3(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
 
 	@ModCd.deleter
 	def ModCd(self):

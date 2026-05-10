@@ -1,24 +1,24 @@
 from . import base_types
-from .AmountAndDirection31 import AmountAndDirection31
 from .Unrealised1Code import Unrealised1Code
-from .FinancialAssetTypeCategory1Code import FinancialAssetTypeCategory1Code
 from .BalanceType7Choice import BalanceType7Choice
+from .AmountAndDirection31 import AmountAndDirection31
+from .FinancialAssetTypeCategory1Code import FinancialAssetTypeCategory1Code
 
 class BalanceDetails6(base_types._BaseFieldType):
 
-	__slots__ = ["_Urlsd", "_Tp", "_Ctgy", "_Amt"]
+	__slots__ = ["_Amt", "_Tp", "_Ctgy", "_Urlsd"]
 	@property
-	def Urlsd(self):
-		return self._Urlsd
+	def Amt(self):
+		return self._Amt
 
-	@Urlsd.setter
-	def Urlsd(self, value):
-		self._Urlsd = value if type(value) != auto else self.make_default("Urlsd")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@Urlsd.deleter
-	def Urlsd(self):
-		del self._Urlsd
-		self._Urlsd = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Tp(self):
@@ -26,7 +26,7 @@ class BalanceDetails6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -39,7 +39,7 @@ class BalanceDetails6(base_types._BaseFieldType):
 
 	@Ctgy.setter
 	def Ctgy(self, value):
-		self._Ctgy = value if type(value) != auto else self.make_default("Ctgy")
+		self._Ctgy = value if type(value) != base_types.auto else self.make_default("Ctgy")
 
 	@Ctgy.deleter
 	def Ctgy(self):
@@ -47,22 +47,22 @@ class BalanceDetails6(base_types._BaseFieldType):
 		self._Ctgy = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Urlsd(self):
+		return self._Urlsd
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Urlsd.setter
+	def Urlsd(self, value):
+		self._Urlsd = value if type(value) != base_types.auto else self.make_default("Urlsd")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Urlsd.deleter
+	def Urlsd(self):
+		del self._Urlsd
+		self._Urlsd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Urlsd', type=Unrealised1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=AmountAndDirection31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctgy', type=FinancialAssetTypeCategory1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=AmountAndDirection31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Urlsd', type=Unrealised1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

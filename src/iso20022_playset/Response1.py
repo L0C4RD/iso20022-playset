@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .ResponseType1Choice import ResponseType1Choice
+from .Max140Text import Max140Text
 
 class Response1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Response1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):
@@ -24,7 +24,7 @@ class Response1(base_types._BaseFieldType):
 
 	@RspnTpDtls.setter
 	def RspnTpDtls(self, value):
-		self._RspnTpDtls = value if type(value) != auto else self.make_default("RspnTpDtls")
+		self._RspnTpDtls = value if type(value) != base_types.auto else self.make_default("RspnTpDtls")
 
 	@RspnTpDtls.deleter
 	def RspnTpDtls(self):

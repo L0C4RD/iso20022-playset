@@ -11,7 +11,7 @@ class ATMDeviceControl3(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -24,7 +24,7 @@ class ATMDeviceControl3(base_types._BaseFieldType):
 
 	@Cmd.setter
 	def Cmd(self, value):
-		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
+		self._Cmd = value if type(value) != base_types.auto else self.make_default("Cmd")
 
 	@Cmd.deleter
 	def Cmd(self):

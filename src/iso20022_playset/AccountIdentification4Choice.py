@@ -1,6 +1,6 @@
 from . import base_types
-from .IBAN2007Identifier import IBAN2007Identifier
 from .GenericAccountIdentification1 import GenericAccountIdentification1
+from .IBAN2007Identifier import IBAN2007Identifier
 
 class AccountIdentification4Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AccountIdentification4Choice(base_types._BaseFieldType):
 
 	@IBAN.setter
 	def IBAN(self, value):
-		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
+		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
 
 	@IBAN.deleter
 	def IBAN(self):
@@ -24,7 +24,7 @@ class AccountIdentification4Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):

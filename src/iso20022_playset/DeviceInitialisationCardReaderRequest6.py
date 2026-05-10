@@ -1,45 +1,19 @@
 from . import base_types
-from .CardDataReading8Code import CardDataReading8Code
-from .TrueFalseIndicator import TrueFalseIndicator
 from .Number import Number
+from .TrueFalseIndicator import TrueFalseIndicator
+from .CardDataReading8Code import CardDataReading8Code
 from .ActionMessage11 import ActionMessage11
 
 class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_DispOutpt", "_WarmRstFlg", "_ForceNtryMd", "_MaxWtgTm", "_LeavCardFlg"]
-	@property
-	def DispOutpt(self):
-		return self._DispOutpt
-
-	@DispOutpt.setter
-	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != auto else self.make_default("DispOutpt")
-
-	@DispOutpt.deleter
-	def DispOutpt(self):
-		del self._DispOutpt
-		self._DispOutpt = None
-
-	@property
-	def WarmRstFlg(self):
-		return self._WarmRstFlg
-
-	@WarmRstFlg.setter
-	def WarmRstFlg(self, value):
-		self._WarmRstFlg = value if type(value) != auto else self.make_default("WarmRstFlg")
-
-	@WarmRstFlg.deleter
-	def WarmRstFlg(self):
-		del self._WarmRstFlg
-		self._WarmRstFlg = None
-
+	__slots__ = ["_ForceNtryMd", "_WarmRstFlg", "_MaxWtgTm", "_DispOutpt", "_LeavCardFlg"]
 	@property
 	def ForceNtryMd(self):
 		return self._ForceNtryMd
 
 	@ForceNtryMd.setter
 	def ForceNtryMd(self, value):
-		self._ForceNtryMd = value if type(value) != auto else self.make_default("ForceNtryMd")
+		self._ForceNtryMd = value if type(value) != base_types.auto else self.make_default("ForceNtryMd")
 
 	@ForceNtryMd.deleter
 	def ForceNtryMd(self):
@@ -47,12 +21,25 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 		self._ForceNtryMd = None
 
 	@property
+	def WarmRstFlg(self):
+		return self._WarmRstFlg
+
+	@WarmRstFlg.setter
+	def WarmRstFlg(self, value):
+		self._WarmRstFlg = value if type(value) != base_types.auto else self.make_default("WarmRstFlg")
+
+	@WarmRstFlg.deleter
+	def WarmRstFlg(self):
+		del self._WarmRstFlg
+		self._WarmRstFlg = None
+
+	@property
 	def MaxWtgTm(self):
 		return self._MaxWtgTm
 
 	@MaxWtgTm.setter
 	def MaxWtgTm(self, value):
-		self._MaxWtgTm = value if type(value) != auto else self.make_default("MaxWtgTm")
+		self._MaxWtgTm = value if type(value) != base_types.auto else self.make_default("MaxWtgTm")
 
 	@MaxWtgTm.deleter
 	def MaxWtgTm(self):
@@ -60,12 +47,25 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 		self._MaxWtgTm = None
 
 	@property
+	def DispOutpt(self):
+		return self._DispOutpt
+
+	@DispOutpt.setter
+	def DispOutpt(self, value):
+		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
+
+	@DispOutpt.deleter
+	def DispOutpt(self):
+		del self._DispOutpt
+		self._DispOutpt = None
+
+	@property
 	def LeavCardFlg(self):
 		return self._LeavCardFlg
 
 	@LeavCardFlg.setter
 	def LeavCardFlg(self, value):
-		self._LeavCardFlg = value if type(value) != auto else self.make_default("LeavCardFlg")
+		self._LeavCardFlg = value if type(value) != base_types.auto else self.make_default("LeavCardFlg")
 
 	@LeavCardFlg.deleter
 	def LeavCardFlg(self):
@@ -73,10 +73,10 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 		self._LeavCardFlg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WarmRstFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ForceNtryMd', type=CardDataReading8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='WarmRstFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LeavCardFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

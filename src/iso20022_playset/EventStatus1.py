@@ -1,6 +1,6 @@
 from . import base_types
-from .EventCompletenessStatus1Code import EventCompletenessStatus1Code
 from .EventConfirmationStatus1Code import EventConfirmationStatus1Code
+from .EventCompletenessStatus1Code import EventCompletenessStatus1Code
 
 class EventStatus1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class EventStatus1(base_types._BaseFieldType):
 
 	@EvtCmpltnsSts.setter
 	def EvtCmpltnsSts(self, value):
-		self._EvtCmpltnsSts = value if type(value) != auto else self.make_default("EvtCmpltnsSts")
+		self._EvtCmpltnsSts = value if type(value) != base_types.auto else self.make_default("EvtCmpltnsSts")
 
 	@EvtCmpltnsSts.deleter
 	def EvtCmpltnsSts(self):
@@ -24,7 +24,7 @@ class EventStatus1(base_types._BaseFieldType):
 
 	@EvtConfSts.setter
 	def EvtConfSts(self, value):
-		self._EvtConfSts = value if type(value) != auto else self.make_default("EvtConfSts")
+		self._EvtConfSts = value if type(value) != base_types.auto else self.make_default("EvtConfSts")
 
 	@EvtConfSts.deleter
 	def EvtConfSts(self):

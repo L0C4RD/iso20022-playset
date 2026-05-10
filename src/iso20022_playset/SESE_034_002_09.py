@@ -12,7 +12,7 @@ class SESE_034_002_09():
 
 		@SctiesFincgStsAdvc.setter
 		def SctiesFincgStsAdvc(self, value):
-			self._SctiesFincgStsAdvc = value if type(value) != auto else self.make_default("SctiesFincgStsAdvc")
+			self._SctiesFincgStsAdvc = value if type(value) != base_types.auto else self.make_default("SctiesFincgStsAdvc")
 
 		@SctiesFincgStsAdvc.deleter
 		def SctiesFincgStsAdvc(self):

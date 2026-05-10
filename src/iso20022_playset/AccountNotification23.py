@@ -1,35 +1,22 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Party50Choice import Party50Choice
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .ISODate import ISODate
 from .CashAccount40 import CashAccount40
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .Party50Choice import Party50Choice
+from .ISODate import ISODate
 from .NotificationItem9 import NotificationItem9
 from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .Max35Text import Max35Text
 
 class AccountNotification23(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrmyAgt", "_Id", "_AcctSvcr", "_TtlAmt", "_Acct", "_DbtrAgt", "_RltdAcct", "_AcctOwnr", "_XpctdValDt", "_Dbtr", "_Itm"]
-	@property
-	def IntrmyAgt(self):
-		return self._IntrmyAgt
-
-	@IntrmyAgt.setter
-	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
-
-	@IntrmyAgt.deleter
-	def IntrmyAgt(self):
-		del self._IntrmyAgt
-		self._IntrmyAgt = None
-
+	__slots__ = ["_Id", "_DbtrAgt", "_AcctSvcr", "_IntrmyAgt", "_Itm", "_XpctdValDt", "_AcctOwnr", "_Dbtr", "_RltdAcct", "_TtlAmt", "_Acct"]
 	@property
 	def Id(self):
 		return self._Id
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -37,12 +24,25 @@ class AccountNotification23(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
+
+	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
@@ -50,12 +50,90 @@ class AccountNotification23(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
+	def IntrmyAgt(self):
+		return self._IntrmyAgt
+
+	@IntrmyAgt.setter
+	def IntrmyAgt(self, value):
+		self._IntrmyAgt = value if type(value) != base_types.auto else self.make_default("IntrmyAgt")
+
+	@IntrmyAgt.deleter
+	def IntrmyAgt(self):
+		del self._IntrmyAgt
+		self._IntrmyAgt = None
+
+	@property
+	def Itm(self):
+		return self._Itm
+
+	@Itm.setter
+	def Itm(self, value):
+		self._Itm = value if type(value) != base_types.auto else self.make_default("Itm")
+
+	@Itm.deleter
+	def Itm(self):
+		del self._Itm
+		self._Itm = None
+
+	@property
+	def XpctdValDt(self):
+		return self._XpctdValDt
+
+	@XpctdValDt.setter
+	def XpctdValDt(self, value):
+		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+
+	@XpctdValDt.deleter
+	def XpctdValDt(self):
+		del self._XpctdValDt
+		self._XpctdValDt = None
+
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def Dbtr(self):
+		return self._Dbtr
+
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
+	def RltdAcct(self):
+		return self._RltdAcct
+
+	@RltdAcct.setter
+	def RltdAcct(self, value):
+		self._RltdAcct = value if type(value) != base_types.auto else self.make_default("RltdAcct")
+
+	@RltdAcct.deleter
+	def RltdAcct(self):
+		del self._RltdAcct
+		self._RltdAcct = None
+
+	@property
 	def TtlAmt(self):
 		return self._TtlAmt
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
@@ -68,102 +146,24 @@ class AccountNotification23(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
 		self._Acct = None
 
-	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
-
-	@property
-	def RltdAcct(self):
-		return self._RltdAcct
-
-	@RltdAcct.setter
-	def RltdAcct(self, value):
-		self._RltdAcct = value if type(value) != auto else self.make_default("RltdAcct")
-
-	@RltdAcct.deleter
-	def RltdAcct(self):
-		del self._RltdAcct
-		self._RltdAcct = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def XpctdValDt(self):
-		return self._XpctdValDt
-
-	@XpctdValDt.setter
-	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
-
-	@XpctdValDt.deleter
-	def XpctdValDt(self):
-		del self._XpctdValDt
-		self._XpctdValDt = None
-
-	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
-	def Itm(self):
-		return self._Itm
-
-	@Itm.setter
-	def Itm(self, value):
-		self._Itm = value if type(value) != auto else self.make_default("Itm")
-
-	@Itm.deleter
-	def Itm(self):
-		del self._Itm
-		self._Itm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Itm', type=NotificationItem9, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Itm', type=NotificationItem9, min=1, max=None, mutex_group=None, array=True),
 	))
 

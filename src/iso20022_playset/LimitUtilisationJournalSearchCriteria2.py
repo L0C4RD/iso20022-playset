@@ -1,26 +1,26 @@
 from . import base_types
-from .LimitType4Code import LimitType4Code
+from .PartyIdentification136 import PartyIdentification136
 from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .AccountIdentification4Choice import AccountIdentification4Choice
+from .LimitType4Code import LimitType4Code
 from .ISODate import ISODate
 from .ActiveCurrencyCode import ActiveCurrencyCode
-from .PartyIdentification136 import PartyIdentification136
-from .AccountIdentification4Choice import AccountIdentification4Choice
 
 class LimitUtilisationJournalSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_JrnlActvtyDt", "_AcctOwnr", "_LmtTp", "_BilLmtCtrPtyId", "_AcctId", "_LmtCcy"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_LmtCcy", "_LmtTp", "_BilLmtCtrPtyId", "_JrnlActvtyDt"]
 	@property
-	def JrnlActvtyDt(self):
-		return self._JrnlActvtyDt
+	def AcctId(self):
+		return self._AcctId
 
-	@JrnlActvtyDt.setter
-	def JrnlActvtyDt(self, value):
-		self._JrnlActvtyDt = value if type(value) != auto else self.make_default("JrnlActvtyDt")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@JrnlActvtyDt.deleter
-	def JrnlActvtyDt(self):
-		del self._JrnlActvtyDt
-		self._JrnlActvtyDt = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def AcctOwnr(self):
@@ -28,7 +28,7 @@ class LimitUtilisationJournalSearchCriteria2(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
@@ -36,12 +36,25 @@ class LimitUtilisationJournalSearchCriteria2(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
+	def LmtCcy(self):
+		return self._LmtCcy
+
+	@LmtCcy.setter
+	def LmtCcy(self, value):
+		self._LmtCcy = value if type(value) != base_types.auto else self.make_default("LmtCcy")
+
+	@LmtCcy.deleter
+	def LmtCcy(self):
+		del self._LmtCcy
+		self._LmtCcy = None
+
+	@property
 	def LmtTp(self):
 		return self._LmtTp
 
 	@LmtTp.setter
 	def LmtTp(self, value):
-		self._LmtTp = value if type(value) != auto else self.make_default("LmtTp")
+		self._LmtTp = value if type(value) != base_types.auto else self.make_default("LmtTp")
 
 	@LmtTp.deleter
 	def LmtTp(self):
@@ -54,7 +67,7 @@ class LimitUtilisationJournalSearchCriteria2(base_types._BaseFieldType):
 
 	@BilLmtCtrPtyId.setter
 	def BilLmtCtrPtyId(self, value):
-		self._BilLmtCtrPtyId = value if type(value) != auto else self.make_default("BilLmtCtrPtyId")
+		self._BilLmtCtrPtyId = value if type(value) != base_types.auto else self.make_default("BilLmtCtrPtyId")
 
 	@BilLmtCtrPtyId.deleter
 	def BilLmtCtrPtyId(self):
@@ -62,37 +75,24 @@ class LimitUtilisationJournalSearchCriteria2(base_types._BaseFieldType):
 		self._BilLmtCtrPtyId = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def JrnlActvtyDt(self):
+		return self._JrnlActvtyDt
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@JrnlActvtyDt.setter
+	def JrnlActvtyDt(self, value):
+		self._JrnlActvtyDt = value if type(value) != base_types.auto else self.make_default("JrnlActvtyDt")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
-	def LmtCcy(self):
-		return self._LmtCcy
-
-	@LmtCcy.setter
-	def LmtCcy(self, value):
-		self._LmtCcy = value if type(value) != auto else self.make_default("LmtCcy")
-
-	@LmtCcy.deleter
-	def LmtCcy(self):
-		del self._LmtCcy
-		self._LmtCcy = None
+	@JrnlActvtyDt.deleter
+	def JrnlActvtyDt(self):
+		del self._JrnlActvtyDt
+		self._JrnlActvtyDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='JrnlActvtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtTp', type=LimitType4Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BilLmtCtrPtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='JrnlActvtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

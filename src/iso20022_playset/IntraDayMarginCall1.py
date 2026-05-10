@@ -1,31 +1,18 @@
 from . import base_types
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from .GenericIdentification165 import GenericIdentification165
 from .ISODateTime import ISODateTime
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class IntraDayMarginCall1(base_types._BaseFieldType):
 
-	__slots__ = ["_TmStmp", "_MrgnAcctId", "_IntraDayCall"]
-	@property
-	def TmStmp(self):
-		return self._TmStmp
-
-	@TmStmp.setter
-	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
-
-	@TmStmp.deleter
-	def TmStmp(self):
-		del self._TmStmp
-		self._TmStmp = None
-
+	__slots__ = ["_MrgnAcctId", "_TmStmp", "_IntraDayCall"]
 	@property
 	def MrgnAcctId(self):
 		return self._MrgnAcctId
 
 	@MrgnAcctId.setter
 	def MrgnAcctId(self, value):
-		self._MrgnAcctId = value if type(value) != auto else self.make_default("MrgnAcctId")
+		self._MrgnAcctId = value if type(value) != base_types.auto else self.make_default("MrgnAcctId")
 
 	@MrgnAcctId.deleter
 	def MrgnAcctId(self):
@@ -33,12 +20,25 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 		self._MrgnAcctId = None
 
 	@property
+	def TmStmp(self):
+		return self._TmStmp
+
+	@TmStmp.setter
+	def TmStmp(self, value):
+		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+
+	@TmStmp.deleter
+	def TmStmp(self):
+		del self._TmStmp
+		self._TmStmp = None
+
+	@property
 	def IntraDayCall(self):
 		return self._IntraDayCall
 
 	@IntraDayCall.setter
 	def IntraDayCall(self, value):
-		self._IntraDayCall = value if type(value) != auto else self.make_default("IntraDayCall")
+		self._IntraDayCall = value if type(value) != base_types.auto else self.make_default("IntraDayCall")
 
 	@IntraDayCall.deleter
 	def IntraDayCall(self):
@@ -46,8 +46,8 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 		self._IntraDayCall = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnAcctId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraDayCall', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

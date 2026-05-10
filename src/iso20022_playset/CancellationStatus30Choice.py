@@ -1,46 +1,20 @@
 from . import base_types
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from .RejectionStatus34Choice import RejectionStatus34Choice
-from .CancellationStatus29Choice import CancellationStatus29Choice
 from .PendingStatus56Choice import PendingStatus56Choice
+from .RejectionStatus34Choice import RejectionStatus34Choice
 from .ProprietaryReason4 import ProprietaryReason4
+from .CancellationStatus29Choice import CancellationStatus29Choice
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class CancellationStatus30Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prcd", "_Pdg", "_Canc", "_Rjctd", "_Prtry"]
-	@property
-	def Prcd(self):
-		return self._Prcd
-
-	@Prcd.setter
-	def Prcd(self, value):
-		self._Prcd = value if type(value) != auto else self.make_default("Prcd")
-
-	@Prcd.deleter
-	def Prcd(self):
-		del self._Prcd
-		self._Prcd = None
-
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
+	__slots__ = ["_Canc", "_Prcd", "_Rjctd", "_Prtry", "_Pdg"]
 	@property
 	def Canc(self):
 		return self._Canc
 
 	@Canc.setter
 	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
+		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
 
 	@Canc.deleter
 	def Canc(self):
@@ -48,12 +22,25 @@ class CancellationStatus30Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
+	def Prcd(self):
+		return self._Prcd
+
+	@Prcd.setter
+	def Prcd(self, value):
+		self._Prcd = value if type(value) != base_types.auto else self.make_default("Prcd")
+
+	@Prcd.deleter
+	def Prcd(self):
+		del self._Prcd
+		self._Prcd = None
+
+	@property
 	def Rjctd(self):
 		return self._Rjctd
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
 
 	@Rjctd.deleter
 	def Rjctd(self):
@@ -66,18 +53,31 @@ class CancellationStatus30Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus34Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .RejectionReason10FormatChoice import RejectionReason10FormatChoice
 from .Max350Text import Max350Text
+from .RejectionReason10FormatChoice import RejectionReason10FormatChoice
 
 class CorporateActionStandingInstructionCancellationRejectionStatus1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CorporateActionStandingInstructionCancellationRejectionStatus1(base_types.
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class CorporateActionStandingInstructionCancellationRejectionStatus1(base_types.
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):

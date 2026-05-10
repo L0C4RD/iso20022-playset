@@ -1,20 +1,59 @@
 from . import base_types
-from .AmountAndDirection49 import AmountAndDirection49
 from .CollateralTransactionAmountBreakdown2 import CollateralTransactionAmountBreakdown2
 from .Max3NumericText import Max3NumericText
+from .AmountAndDirection49 import AmountAndDirection49
 from .Frequency38Choice import Frequency38Choice
 from .CalculationMethod1Code import CalculationMethod1Code
 
 class CollateralAmount18(base_types._BaseFieldType):
 
-	__slots__ = ["_Termntn", "_ValSght", "_IntrstPmtDely", "_CmpndSmplAcrlClctn", "_PmtFrqcy", "_Acrd", "_TxAmtBrkdwn", "_Tx"]
+	__slots__ = ["_CmpndSmplAcrlClctn", "_Tx", "_IntrstPmtDely", "_Termntn", "_ValSght", "_Acrd", "_TxAmtBrkdwn", "_PmtFrqcy"]
+	@property
+	def CmpndSmplAcrlClctn(self):
+		return self._CmpndSmplAcrlClctn
+
+	@CmpndSmplAcrlClctn.setter
+	def CmpndSmplAcrlClctn(self, value):
+		self._CmpndSmplAcrlClctn = value if type(value) != base_types.auto else self.make_default("CmpndSmplAcrlClctn")
+
+	@CmpndSmplAcrlClctn.deleter
+	def CmpndSmplAcrlClctn(self):
+		del self._CmpndSmplAcrlClctn
+		self._CmpndSmplAcrlClctn = None
+
+	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
+
+	@property
+	def IntrstPmtDely(self):
+		return self._IntrstPmtDely
+
+	@IntrstPmtDely.setter
+	def IntrstPmtDely(self, value):
+		self._IntrstPmtDely = value if type(value) != base_types.auto else self.make_default("IntrstPmtDely")
+
+	@IntrstPmtDely.deleter
+	def IntrstPmtDely(self):
+		del self._IntrstPmtDely
+		self._IntrstPmtDely = None
+
 	@property
 	def Termntn(self):
 		return self._Termntn
 
 	@Termntn.setter
 	def Termntn(self, value):
-		self._Termntn = value if type(value) != auto else self.make_default("Termntn")
+		self._Termntn = value if type(value) != base_types.auto else self.make_default("Termntn")
 
 	@Termntn.deleter
 	def Termntn(self):
@@ -27,7 +66,7 @@ class CollateralAmount18(base_types._BaseFieldType):
 
 	@ValSght.setter
 	def ValSght(self, value):
-		self._ValSght = value if type(value) != auto else self.make_default("ValSght")
+		self._ValSght = value if type(value) != base_types.auto else self.make_default("ValSght")
 
 	@ValSght.deleter
 	def ValSght(self):
@@ -35,51 +74,12 @@ class CollateralAmount18(base_types._BaseFieldType):
 		self._ValSght = None
 
 	@property
-	def IntrstPmtDely(self):
-		return self._IntrstPmtDely
-
-	@IntrstPmtDely.setter
-	def IntrstPmtDely(self, value):
-		self._IntrstPmtDely = value if type(value) != auto else self.make_default("IntrstPmtDely")
-
-	@IntrstPmtDely.deleter
-	def IntrstPmtDely(self):
-		del self._IntrstPmtDely
-		self._IntrstPmtDely = None
-
-	@property
-	def CmpndSmplAcrlClctn(self):
-		return self._CmpndSmplAcrlClctn
-
-	@CmpndSmplAcrlClctn.setter
-	def CmpndSmplAcrlClctn(self, value):
-		self._CmpndSmplAcrlClctn = value if type(value) != auto else self.make_default("CmpndSmplAcrlClctn")
-
-	@CmpndSmplAcrlClctn.deleter
-	def CmpndSmplAcrlClctn(self):
-		del self._CmpndSmplAcrlClctn
-		self._CmpndSmplAcrlClctn = None
-
-	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
-
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
-
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
-
-	@property
 	def Acrd(self):
 		return self._Acrd
 
 	@Acrd.setter
 	def Acrd(self, value):
-		self._Acrd = value if type(value) != auto else self.make_default("Acrd")
+		self._Acrd = value if type(value) != base_types.auto else self.make_default("Acrd")
 
 	@Acrd.deleter
 	def Acrd(self):
@@ -92,7 +92,7 @@ class CollateralAmount18(base_types._BaseFieldType):
 
 	@TxAmtBrkdwn.setter
 	def TxAmtBrkdwn(self, value):
-		self._TxAmtBrkdwn = value if type(value) != auto else self.make_default("TxAmtBrkdwn")
+		self._TxAmtBrkdwn = value if type(value) != base_types.auto else self.make_default("TxAmtBrkdwn")
 
 	@TxAmtBrkdwn.deleter
 	def TxAmtBrkdwn(self):
@@ -100,26 +100,26 @@ class CollateralAmount18(base_types._BaseFieldType):
 		self._TxAmtBrkdwn = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CmpndSmplAcrlClctn', type=CalculationMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstPmtDely', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Termntn', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstPmtDely', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpndSmplAcrlClctn', type=CalculationMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFrqcy', type=Frequency38Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acrd', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmtBrkdwn', type=CollateralTransactionAmountBreakdown2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=Frequency38Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

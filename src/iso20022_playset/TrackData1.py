@@ -11,7 +11,7 @@ class TrackData1(base_types._BaseFieldType):
 
 	@TrckVal.setter
 	def TrckVal(self, value):
-		self._TrckVal = value if type(value) != auto else self.make_default("TrckVal")
+		self._TrckVal = value if type(value) != base_types.auto else self.make_default("TrckVal")
 
 	@TrckVal.deleter
 	def TrckVal(self):
@@ -24,7 +24,7 @@ class TrackData1(base_types._BaseFieldType):
 
 	@TrckNb.setter
 	def TrckNb(self, value):
-		self._TrckNb = value if type(value) != auto else self.make_default("TrckNb")
+		self._TrckNb = value if type(value) != base_types.auto else self.make_default("TrckNb")
 
 	@TrckNb.deleter
 	def TrckNb(self):

@@ -1,8 +1,8 @@
 from . import base_types
+from .PairedOrTurnedQuantity5Choice import PairedOrTurnedQuantity5Choice
+from .References47Choice import References47Choice
 from .DocumentNumber5Choice import DocumentNumber5Choice
 from .ProcessingPosition7Choice import ProcessingPosition7Choice
-from .References47Choice import References47Choice
-from .PairedOrTurnedQuantity5Choice import PairedOrTurnedQuantity5Choice
 
 class Linkages63(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class Linkages63(base_types._BaseFieldType):
 
 	@LkdQty.setter
 	def LkdQty(self, value):
-		self._LkdQty = value if type(value) != auto else self.make_default("LkdQty")
+		self._LkdQty = value if type(value) != base_types.auto else self.make_default("LkdQty")
 
 	@LkdQty.deleter
 	def LkdQty(self):
@@ -26,7 +26,7 @@ class Linkages63(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
 	@Ref.deleter
 	def Ref(self):
@@ -39,7 +39,7 @@ class Linkages63(base_types._BaseFieldType):
 
 	@PrcgPos.setter
 	def PrcgPos(self, value):
-		self._PrcgPos = value if type(value) != auto else self.make_default("PrcgPos")
+		self._PrcgPos = value if type(value) != base_types.auto else self.make_default("PrcgPos")
 
 	@PrcgPos.deleter
 	def PrcgPos(self):
@@ -52,7 +52,7 @@ class Linkages63(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
 
 	@MsgNb.deleter
 	def MsgNb(self):

@@ -1,20 +1,33 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODate import ISODate
-from .Entry2Code import Entry2Code
-from .Exact4AlphaNumericText import Exact4AlphaNumericText
 from .ISODateTime import ISODateTime
+from .ISODate import ISODate
+from .Max35Text import Max35Text
+from .Exact4AlphaNumericText import Exact4AlphaNumericText
+from .Entry2Code import Entry2Code
 
 class ReportData4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_SchdlTp", "_Tp", "_SttlmSsnIdr", "_DtAndTmStmp", "_ValDt"]
+	__slots__ = ["_DtAndTmStmp", "_MsgId", "_SchdlTp", "_SttlmSsnIdr", "_ValDt", "_Tp"]
+	@property
+	def DtAndTmStmp(self):
+		return self._DtAndTmStmp
+
+	@DtAndTmStmp.setter
+	def DtAndTmStmp(self, value):
+		self._DtAndTmStmp = value if type(value) != base_types.auto else self.make_default("DtAndTmStmp")
+
+	@DtAndTmStmp.deleter
+	def DtAndTmStmp(self):
+		del self._DtAndTmStmp
+		self._DtAndTmStmp = None
+
 	@property
 	def MsgId(self):
 		return self._MsgId
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
 	@MsgId.deleter
 	def MsgId(self):
@@ -27,7 +40,7 @@ class ReportData4(base_types._BaseFieldType):
 
 	@SchdlTp.setter
 	def SchdlTp(self, value):
-		self._SchdlTp = value if type(value) != auto else self.make_default("SchdlTp")
+		self._SchdlTp = value if type(value) != base_types.auto else self.make_default("SchdlTp")
 
 	@SchdlTp.deleter
 	def SchdlTp(self):
@@ -35,25 +48,12 @@ class ReportData4(base_types._BaseFieldType):
 		self._SchdlTp = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def SttlmSsnIdr(self):
 		return self._SttlmSsnIdr
 
 	@SttlmSsnIdr.setter
 	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != auto else self.make_default("SttlmSsnIdr")
+		self._SttlmSsnIdr = value if type(value) != base_types.auto else self.make_default("SttlmSsnIdr")
 
 	@SttlmSsnIdr.deleter
 	def SttlmSsnIdr(self):
@@ -61,37 +61,37 @@ class ReportData4(base_types._BaseFieldType):
 		self._SttlmSsnIdr = None
 
 	@property
-	def DtAndTmStmp(self):
-		return self._DtAndTmStmp
-
-	@DtAndTmStmp.setter
-	def DtAndTmStmp(self, value):
-		self._DtAndTmStmp = value if type(value) != auto else self.make_default("DtAndTmStmp")
-
-	@DtAndTmStmp.deleter
-	def DtAndTmStmp(self):
-		del self._DtAndTmStmp
-		self._DtAndTmStmp = None
-
-	@property
 	def ValDt(self):
 		return self._ValDt
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
 		self._ValDt = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DtAndTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchdlTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Entry2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtAndTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Entry2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

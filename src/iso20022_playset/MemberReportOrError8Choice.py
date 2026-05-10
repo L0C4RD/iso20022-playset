@@ -1,6 +1,6 @@
 from . import base_types
-from .Member7 import Member7
 from .ErrorHandling3 import ErrorHandling3
+from .Member7 import Member7
 
 class MemberReportOrError8Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MemberReportOrError8Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):
@@ -24,7 +24,7 @@ class MemberReportOrError8Choice(base_types._BaseFieldType):
 
 	@Mmb.setter
 	def Mmb(self, value):
-		self._Mmb = value if type(value) != auto else self.make_default("Mmb")
+		self._Mmb = value if type(value) != base_types.auto else self.make_default("Mmb")
 
 	@Mmb.deleter
 	def Mmb(self):

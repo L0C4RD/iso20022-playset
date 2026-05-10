@@ -1,32 +1,19 @@
 from . import base_types
-from .AlgorithmIdentification27 import AlgorithmIdentification27
-from .Recipient5Choice import Recipient5Choice
-from .Max5000Binary import Max5000Binary
 from .Number import Number
+from .AlgorithmIdentification27 import AlgorithmIdentification27
+from .Max5000Binary import Max5000Binary
+from .Recipient5Choice import Recipient5Choice
 
 class KeyTransport6(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptId", "_KeyNcrptnAlgo", "_Vrsn", "_NcrptdKey"]
-	@property
-	def RcptId(self):
-		return self._RcptId
-
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
-
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
-
+	__slots__ = ["_KeyNcrptnAlgo", "_NcrptdKey", "_Vrsn", "_RcptId"]
 	@property
 	def KeyNcrptnAlgo(self):
 		return self._KeyNcrptnAlgo
 
 	@KeyNcrptnAlgo.setter
 	def KeyNcrptnAlgo(self, value):
-		self._KeyNcrptnAlgo = value if type(value) != auto else self.make_default("KeyNcrptnAlgo")
+		self._KeyNcrptnAlgo = value if type(value) != base_types.auto else self.make_default("KeyNcrptnAlgo")
 
 	@KeyNcrptnAlgo.deleter
 	def KeyNcrptnAlgo(self):
@@ -34,12 +21,25 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._KeyNcrptnAlgo = None
 
 	@property
+	def NcrptdKey(self):
+		return self._NcrptdKey
+
+	@NcrptdKey.setter
+	def NcrptdKey(self, value):
+		self._NcrptdKey = value if type(value) != base_types.auto else self.make_default("NcrptdKey")
+
+	@NcrptdKey.deleter
+	def NcrptdKey(self):
+		del self._NcrptdKey
+		self._NcrptdKey = None
+
+	@property
 	def Vrsn(self):
 		return self._Vrsn
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
 	@Vrsn.deleter
 	def Vrsn(self):
@@ -47,22 +47,22 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def NcrptdKey(self):
-		return self._NcrptdKey
+	def RcptId(self):
+		return self._RcptId
 
-	@NcrptdKey.setter
-	def NcrptdKey(self, value):
-		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
 
-	@NcrptdKey.deleter
-	def NcrptdKey(self):
-		del self._NcrptdKey
-		self._NcrptdKey = None
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification27, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max5000Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

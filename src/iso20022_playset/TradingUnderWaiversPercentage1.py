@@ -1,18 +1,31 @@
 from . import base_types
+from .Max350Text import Max350Text
 from .PercentageRate import PercentageRate
 from .MICIdentifier import MICIdentifier
-from .Max350Text import Max350Text
 
 class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsclmr", "_TradgVn", "_TradgUdrWvrPctg"]
+	__slots__ = ["_TradgUdrWvrPctg", "_Dsclmr", "_TradgVn"]
+	@property
+	def TradgUdrWvrPctg(self):
+		return self._TradgUdrWvrPctg
+
+	@TradgUdrWvrPctg.setter
+	def TradgUdrWvrPctg(self, value):
+		self._TradgUdrWvrPctg = value if type(value) != base_types.auto else self.make_default("TradgUdrWvrPctg")
+
+	@TradgUdrWvrPctg.deleter
+	def TradgUdrWvrPctg(self):
+		del self._TradgUdrWvrPctg
+		self._TradgUdrWvrPctg = None
+
 	@property
 	def Dsclmr(self):
 		return self._Dsclmr
 
 	@Dsclmr.setter
 	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
+		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
 
 	@Dsclmr.deleter
 	def Dsclmr(self):
@@ -25,29 +38,16 @@ class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
 		self._TradgVn = None
 
-	@property
-	def TradgUdrWvrPctg(self):
-		return self._TradgUdrWvrPctg
-
-	@TradgUdrWvrPctg.setter
-	def TradgUdrWvrPctg(self, value):
-		self._TradgUdrWvrPctg = value if type(value) != auto else self.make_default("TradgUdrWvrPctg")
-
-	@TradgUdrWvrPctg.deleter
-	def TradgUdrWvrPctg(self):
-		del self._TradgUdrWvrPctg
-		self._TradgUdrWvrPctg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TradgUdrWvrPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsclmr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgUdrWvrPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

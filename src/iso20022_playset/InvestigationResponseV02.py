@@ -12,7 +12,7 @@ class InvestigationResponseV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class InvestigationResponseV02(base_types._BaseFieldType):
 
 	@OrgnlInvstgtnReq.setter
 	def OrgnlInvstgtnReq(self, value):
-		self._OrgnlInvstgtnReq = value if type(value) != auto else self.make_default("OrgnlInvstgtnReq")
+		self._OrgnlInvstgtnReq = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnReq")
 
 	@OrgnlInvstgtnReq.deleter
 	def OrgnlInvstgtnReq(self):
@@ -38,7 +38,7 @@ class InvestigationResponseV02(base_types._BaseFieldType):
 
 	@InvstgtnRspn.setter
 	def InvstgtnRspn(self, value):
-		self._InvstgtnRspn = value if type(value) != auto else self.make_default("InvstgtnRspn")
+		self._InvstgtnRspn = value if type(value) != base_types.auto else self.make_default("InvstgtnRspn")
 
 	@InvstgtnRspn.deleter
 	def InvstgtnRspn(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
 from .Frequency6Code import Frequency6Code
+from .DecimalNumber import DecimalNumber
 
 class FrequencyPeriod1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class FrequencyPeriod1(base_types._BaseFieldType):
 
 	@CntPerPrd.setter
 	def CntPerPrd(self, value):
-		self._CntPerPrd = value if type(value) != auto else self.make_default("CntPerPrd")
+		self._CntPerPrd = value if type(value) != base_types.auto else self.make_default("CntPerPrd")
 
 	@CntPerPrd.deleter
 	def CntPerPrd(self):
@@ -24,7 +24,7 @@ class FrequencyPeriod1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

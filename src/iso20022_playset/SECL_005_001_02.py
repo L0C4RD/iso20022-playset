@@ -12,7 +12,7 @@ class SECL_005_001_02():
 
 		@MrgnRpt.setter
 		def MrgnRpt(self, value):
-			self._MrgnRpt = value if type(value) != auto else self.make_default("MrgnRpt")
+			self._MrgnRpt = value if type(value) != base_types.auto else self.make_default("MrgnRpt")
 
 		@MrgnRpt.deleter
 		def MrgnRpt(self):

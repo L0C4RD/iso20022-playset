@@ -1,6 +1,6 @@
 from . import base_types
-from .SystemSecuritiesAccount6 import SystemSecuritiesAccount6
 from .ErrorHandling5 import ErrorHandling5
+from .SystemSecuritiesAccount6 import SystemSecuritiesAccount6
 
 class SecuritiesAccountOrBusinessError3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesAccountOrBusinessError3Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):
@@ -24,7 +24,7 @@ class SecuritiesAccountOrBusinessError3Choice(base_types._BaseFieldType):
 
 	@SctiesAcct.setter
 	def SctiesAcct(self, value):
-		self._SctiesAcct = value if type(value) != auto else self.make_default("SctiesAcct")
+		self._SctiesAcct = value if type(value) != base_types.auto else self.make_default("SctiesAcct")
 
 	@SctiesAcct.deleter
 	def SctiesAcct(self):

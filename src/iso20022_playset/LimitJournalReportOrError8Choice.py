@@ -11,7 +11,7 @@ class LimitJournalReportOrError8Choice(base_types._BaseFieldType):
 
 	@LmtJrnl.setter
 	def LmtJrnl(self, value):
-		self._LmtJrnl = value if type(value) != auto else self.make_default("LmtJrnl")
+		self._LmtJrnl = value if type(value) != base_types.auto else self.make_default("LmtJrnl")
 
 	@LmtJrnl.deleter
 	def LmtJrnl(self):
@@ -24,7 +24,7 @@ class LimitJournalReportOrError8Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):

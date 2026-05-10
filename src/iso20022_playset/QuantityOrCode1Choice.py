@@ -11,7 +11,7 @@ class QuantityOrCode1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class QuantityOrCode1Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):

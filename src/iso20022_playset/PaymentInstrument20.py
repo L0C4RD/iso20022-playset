@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .CreditTransfer11 import CreditTransfer11
+from .Max35Text import Max35Text
 
 class PaymentInstrument20(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PaymentInstrument20(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
 	@Ref.deleter
 	def Ref(self):
@@ -24,7 +24,7 @@ class PaymentInstrument20(base_types._BaseFieldType):
 
 	@CdtTrfDtls.setter
 	def CdtTrfDtls(self, value):
-		self._CdtTrfDtls = value if type(value) != auto else self.make_default("CdtTrfDtls")
+		self._CdtTrfDtls = value if type(value) != base_types.auto else self.make_default("CdtTrfDtls")
 
 	@CdtTrfDtls.deleter
 	def CdtTrfDtls(self):

@@ -1,7 +1,7 @@
 from . import base_types
-from .CorrespondenceNotification1 import CorrespondenceNotification1
 from .SupplementaryData1 import SupplementaryData1
 from .GroupHeader129 import GroupHeader129
+from .CorrespondenceNotification1 import CorrespondenceNotification1
 
 class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
 	@NtfctnData.setter
 	def NtfctnData(self, value):
-		self._NtfctnData = value if type(value) != auto else self.make_default("NtfctnData")
+		self._NtfctnData = value if type(value) != base_types.auto else self.make_default("NtfctnData")
 
 	@NtfctnData.deleter
 	def NtfctnData(self):
@@ -38,7 +38,7 @@ class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):

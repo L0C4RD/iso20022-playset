@@ -12,7 +12,7 @@ class SEEV_008_001_10():
 
 		@MtgRsltDssmntn.setter
 		def MtgRsltDssmntn(self, value):
-			self._MtgRsltDssmntn = value if type(value) != auto else self.make_default("MtgRsltDssmntn")
+			self._MtgRsltDssmntn = value if type(value) != base_types.auto else self.make_default("MtgRsltDssmntn")
 
 		@MtgRsltDssmntn.deleter
 		def MtgRsltDssmntn(self):

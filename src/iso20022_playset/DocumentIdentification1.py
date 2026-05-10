@@ -1,7 +1,7 @@
 from . import base_types
-from .BICIdentification1 import BICIdentification1
 from .Max35Text import Max35Text
 from .Number import Number
+from .BICIdentification1 import BICIdentification1
 
 class DocumentIdentification1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class DocumentIdentification1(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
 	@Vrsn.deleter
 	def Vrsn(self):
@@ -25,7 +25,7 @@ class DocumentIdentification1(base_types._BaseFieldType):
 
 	@Submitr.setter
 	def Submitr(self, value):
-		self._Submitr = value if type(value) != auto else self.make_default("Submitr")
+		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
 
 	@Submitr.deleter
 	def Submitr(self):
@@ -38,7 +38,7 @@ class DocumentIdentification1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

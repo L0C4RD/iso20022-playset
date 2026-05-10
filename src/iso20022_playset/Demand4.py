@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max35Text import Max35Text
 
 class Demand4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Demand4(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class Demand4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

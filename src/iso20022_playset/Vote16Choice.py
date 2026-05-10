@@ -1,6 +1,6 @@
 from . import base_types
-from .Vote15 import Vote15
 from .Vote14 import Vote14
+from .Vote15 import Vote15
 
 class Vote16Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Vote16Choice(base_types._BaseFieldType):
 
 	@GblVoteInstr.setter
 	def GblVoteInstr(self, value):
-		self._GblVoteInstr = value if type(value) != auto else self.make_default("GblVoteInstr")
+		self._GblVoteInstr = value if type(value) != base_types.auto else self.make_default("GblVoteInstr")
 
 	@GblVoteInstr.deleter
 	def GblVoteInstr(self):
@@ -24,7 +24,7 @@ class Vote16Choice(base_types._BaseFieldType):
 
 	@VoteInstr.setter
 	def VoteInstr(self, value):
-		self._VoteInstr = value if type(value) != auto else self.make_default("VoteInstr")
+		self._VoteInstr = value if type(value) != base_types.auto else self.make_default("VoteInstr")
 
 	@VoteInstr.deleter
 	def VoteInstr(self):

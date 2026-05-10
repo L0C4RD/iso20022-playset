@@ -11,7 +11,7 @@ class PortfolioCode3Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class PortfolioCode3Choice(base_types._BaseFieldType):
 
 	@NoPrtfl.setter
 	def NoPrtfl(self, value):
-		self._NoPrtfl = value if type(value) != auto else self.make_default("NoPrtfl")
+		self._NoPrtfl = value if type(value) != base_types.auto else self.make_default("NoPrtfl")
 
 	@NoPrtfl.deleter
 	def NoPrtfl(self):

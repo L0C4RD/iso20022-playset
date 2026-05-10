@@ -10,7 +10,7 @@ class UpdateType35Choice(base_types._BaseFieldType):
 
 	@Add.setter
 	def Add(self, value):
-		self._Add = value if type(value) != auto else self.make_default("Add")
+		self._Add = value if type(value) != base_types.auto else self.make_default("Add")
 
 	@Add.deleter
 	def Add(self):
@@ -23,7 +23,7 @@ class UpdateType35Choice(base_types._BaseFieldType):
 
 	@Del.setter
 	def Del(self, value):
-		self._Del = value if type(value) != auto else self.make_default("Del")
+		self._Del = value if type(value) != base_types.auto else self.make_default("Del")
 
 	@Del.deleter
 	def Del(self):
@@ -36,7 +36,7 @@ class UpdateType35Choice(base_types._BaseFieldType):
 
 	@Modfy.setter
 	def Modfy(self, value):
-		self._Modfy = value if type(value) != auto else self.make_default("Modfy")
+		self._Modfy = value if type(value) != base_types.auto else self.make_default("Modfy")
 
 	@Modfy.deleter
 	def Modfy(self):

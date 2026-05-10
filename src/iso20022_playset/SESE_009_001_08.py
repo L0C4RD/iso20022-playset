@@ -12,7 +12,7 @@ class SESE_009_001_08():
 
 		@ReqForTrfStsRpt.setter
 		def ReqForTrfStsRpt(self, value):
-			self._ReqForTrfStsRpt = value if type(value) != auto else self.make_default("ReqForTrfStsRpt")
+			self._ReqForTrfStsRpt = value if type(value) != base_types.auto else self.make_default("ReqForTrfStsRpt")
 
 		@ReqForTrfStsRpt.deleter
 		def ReqForTrfStsRpt(self):

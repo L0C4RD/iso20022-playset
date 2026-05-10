@@ -11,7 +11,7 @@ class DateAndDateTimeChoice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -24,7 +24,7 @@ class DateAndDateTimeChoice(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
+		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
 
 	@DtTm.deleter
 	def DtTm(self):

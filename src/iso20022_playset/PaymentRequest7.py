@@ -11,7 +11,7 @@ class PaymentRequest7(base_types._BaseFieldType):
 
 	@LltyData.setter
 	def LltyData(self, value):
-		self._LltyData = value if type(value) != auto else self.make_default("LltyData")
+		self._LltyData = value if type(value) != base_types.auto else self.make_default("LltyData")
 
 	@LltyData.deleter
 	def LltyData(self):
@@ -24,7 +24,7 @@ class PaymentRequest7(base_types._BaseFieldType):
 
 	@PmtTx.setter
 	def PmtTx(self, value):
-		self._PmtTx = value if type(value) != auto else self.make_default("PmtTx")
+		self._PmtTx = value if type(value) != base_types.auto else self.make_default("PmtTx")
 
 	@PmtTx.deleter
 	def PmtTx(self):

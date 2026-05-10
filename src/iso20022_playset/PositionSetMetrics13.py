@@ -1,6 +1,6 @@
 from . import base_types
-from .VolumeMetrics5 import VolumeMetrics5
 from .PriceMetrics3 import PriceMetrics3
+from .VolumeMetrics5 import VolumeMetrics5
 
 class PositionSetMetrics13(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PositionSetMetrics13(base_types._BaseFieldType):
 
 	@VolMtrcs.setter
 	def VolMtrcs(self, value):
-		self._VolMtrcs = value if type(value) != auto else self.make_default("VolMtrcs")
+		self._VolMtrcs = value if type(value) != base_types.auto else self.make_default("VolMtrcs")
 
 	@VolMtrcs.deleter
 	def VolMtrcs(self):
@@ -24,7 +24,7 @@ class PositionSetMetrics13(base_types._BaseFieldType):
 
 	@PricMtrcs.setter
 	def PricMtrcs(self, value):
-		self._PricMtrcs = value if type(value) != auto else self.make_default("PricMtrcs")
+		self._PricMtrcs = value if type(value) != base_types.auto else self.make_default("PricMtrcs")
 
 	@PricMtrcs.deleter
 	def PricMtrcs(self):

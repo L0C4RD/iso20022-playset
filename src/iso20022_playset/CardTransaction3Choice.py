@@ -1,6 +1,6 @@
 from . import base_types
-from .CardIndividualTransaction2 import CardIndividualTransaction2
 from .CardAggregated2 import CardAggregated2
+from .CardIndividualTransaction2 import CardIndividualTransaction2
 
 class CardTransaction3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CardTransaction3Choice(base_types._BaseFieldType):
 
 	@Aggtd.setter
 	def Aggtd(self, value):
-		self._Aggtd = value if type(value) != auto else self.make_default("Aggtd")
+		self._Aggtd = value if type(value) != base_types.auto else self.make_default("Aggtd")
 
 	@Aggtd.deleter
 	def Aggtd(self):
@@ -24,7 +24,7 @@ class CardTransaction3Choice(base_types._BaseFieldType):
 
 	@Indv.setter
 	def Indv(self, value):
-		self._Indv = value if type(value) != auto else self.make_default("Indv")
+		self._Indv = value if type(value) != base_types.auto else self.make_default("Indv")
 
 	@Indv.deleter
 	def Indv(self):

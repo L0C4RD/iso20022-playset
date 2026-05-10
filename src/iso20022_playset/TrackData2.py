@@ -1,31 +1,18 @@
 from . import base_types
 from .TrackFormat1Code import TrackFormat1Code
-from .Max140Text import Max140Text
 from .Number import Number
+from .Max140Text import Max140Text
 
 class TrackData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrckFrmt", "_TrckVal", "_TrckNb"]
-	@property
-	def TrckFrmt(self):
-		return self._TrckFrmt
-
-	@TrckFrmt.setter
-	def TrckFrmt(self, value):
-		self._TrckFrmt = value if type(value) != auto else self.make_default("TrckFrmt")
-
-	@TrckFrmt.deleter
-	def TrckFrmt(self):
-		del self._TrckFrmt
-		self._TrckFrmt = None
-
+	__slots__ = ["_TrckVal", "_TrckFrmt", "_TrckNb"]
 	@property
 	def TrckVal(self):
 		return self._TrckVal
 
 	@TrckVal.setter
 	def TrckVal(self, value):
-		self._TrckVal = value if type(value) != auto else self.make_default("TrckVal")
+		self._TrckVal = value if type(value) != base_types.auto else self.make_default("TrckVal")
 
 	@TrckVal.deleter
 	def TrckVal(self):
@@ -33,12 +20,25 @@ class TrackData2(base_types._BaseFieldType):
 		self._TrckVal = None
 
 	@property
+	def TrckFrmt(self):
+		return self._TrckFrmt
+
+	@TrckFrmt.setter
+	def TrckFrmt(self, value):
+		self._TrckFrmt = value if type(value) != base_types.auto else self.make_default("TrckFrmt")
+
+	@TrckFrmt.deleter
+	def TrckFrmt(self):
+		del self._TrckFrmt
+		self._TrckFrmt = None
+
+	@property
 	def TrckNb(self):
 		return self._TrckNb
 
 	@TrckNb.setter
 	def TrckNb(self, value):
-		self._TrckNb = value if type(value) != auto else self.make_default("TrckNb")
+		self._TrckNb = value if type(value) != base_types.auto else self.make_default("TrckNb")
 
 	@TrckNb.deleter
 	def TrckNb(self):
@@ -46,8 +46,8 @@ class TrackData2(base_types._BaseFieldType):
 		self._TrckNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrckFrmt', type=TrackFormat1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckVal', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckFrmt', type=TrackFormat1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

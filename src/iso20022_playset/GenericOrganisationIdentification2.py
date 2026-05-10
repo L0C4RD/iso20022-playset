@@ -11,7 +11,7 @@ class GenericOrganisationIdentification2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class GenericOrganisationIdentification2(base_types._BaseFieldType):
 
 	@SchmeNm.setter
 	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
 	@SchmeNm.deleter
 	def SchmeNm(self):
@@ -37,7 +37,7 @@ class GenericOrganisationIdentification2(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):

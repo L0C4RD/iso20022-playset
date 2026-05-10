@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ProductIdentifier2Code import ProductIdentifier2Code
+from .Max35Text import Max35Text
 
 class ProductIdentifier2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ProductIdentifier2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class ProductIdentifier2(base_types._BaseFieldType):
 
 	@Idr.setter
 	def Idr(self, value):
-		self._Idr = value if type(value) != auto else self.make_default("Idr")
+		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
 
 	@Idr.deleter
 	def Idr(self):

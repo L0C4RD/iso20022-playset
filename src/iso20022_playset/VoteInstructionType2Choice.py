@@ -11,7 +11,7 @@ class VoteInstructionType2Choice(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class VoteInstructionType2Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):

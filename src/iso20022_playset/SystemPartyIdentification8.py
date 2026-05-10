@@ -10,7 +10,7 @@ class SystemPartyIdentification8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -23,7 +23,7 @@ class SystemPartyIdentification8(base_types._BaseFieldType):
 
 	@RspnsblPtyId.setter
 	def RspnsblPtyId(self, value):
-		self._RspnsblPtyId = value if type(value) != auto else self.make_default("RspnsblPtyId")
+		self._RspnsblPtyId = value if type(value) != base_types.auto else self.make_default("RspnsblPtyId")
 
 	@RspnsblPtyId.deleter
 	def RspnsblPtyId(self):

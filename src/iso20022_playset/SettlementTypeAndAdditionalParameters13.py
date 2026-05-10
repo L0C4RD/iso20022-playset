@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .YesNoIndicator import YesNoIndicator
+from .Max35Text import Max35Text
 
 class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
 
 	@CmonId.deleter
 	def CmonId(self):
@@ -24,7 +24,7 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
 	@RcncltnInd.setter
 	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != auto else self.make_default("RcncltnInd")
+		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
 
 	@RcncltnInd.deleter
 	def RcncltnInd(self):
@@ -37,7 +37,7 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):

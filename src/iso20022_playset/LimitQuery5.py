@@ -1,6 +1,6 @@
 from . import base_types
-from .QueryType2Code import QueryType2Code
 from .LimitCriteria7Choice import LimitCriteria7Choice
+from .QueryType2Code import QueryType2Code
 
 class LimitQuery5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class LimitQuery5(base_types._BaseFieldType):
 
 	@LmtCrit.setter
 	def LmtCrit(self, value):
-		self._LmtCrit = value if type(value) != auto else self.make_default("LmtCrit")
+		self._LmtCrit = value if type(value) != base_types.auto else self.make_default("LmtCrit")
 
 	@LmtCrit.deleter
 	def LmtCrit(self):
@@ -24,7 +24,7 @@ class LimitQuery5(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

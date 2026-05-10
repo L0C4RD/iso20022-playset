@@ -1,19 +1,19 @@
 from . import base_types
 from .TradeDataReport2 import TradeDataReport2
-from .Pagination1 import Pagination1
 from .SupplementaryData1 import SupplementaryData1
 from .TradeData45 import TradeData45
+from .Pagination1 import Pagination1
 
 class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_StsDtls", "_SplmtryData", "_MsgPgntn", "_TradDataRpt"]
+	__slots__ = ["_StsDtls", "_MsgPgntn", "_TradDataRpt", "_SplmtryData"]
 	@property
 	def StsDtls(self):
 		return self._StsDtls
 
 	@StsDtls.setter
 	def StsDtls(self, value):
-		self._StsDtls = value if type(value) != auto else self.make_default("StsDtls")
+		self._StsDtls = value if type(value) != base_types.auto else self.make_default("StsDtls")
 
 	@StsDtls.deleter
 	def StsDtls(self):
@@ -21,25 +21,12 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 		self._StsDtls = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
@@ -52,17 +39,30 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
 	@TradDataRpt.setter
 	def TradDataRpt(self, value):
-		self._TradDataRpt = value if type(value) != auto else self.make_default("TradDataRpt")
+		self._TradDataRpt = value if type(value) != base_types.auto else self.make_default("TradDataRpt")
 
 	@TradDataRpt.deleter
 	def TradDataRpt(self):
 		del self._TradDataRpt
 		self._TradDataRpt = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StsDtls', type=TradeData45, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDataRpt', type=TradeDataReport2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

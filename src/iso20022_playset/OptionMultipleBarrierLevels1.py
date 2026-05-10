@@ -10,7 +10,7 @@ class OptionMultipleBarrierLevels1(base_types._BaseFieldType):
 
 	@LwrLvl.setter
 	def LwrLvl(self, value):
-		self._LwrLvl = value if type(value) != auto else self.make_default("LwrLvl")
+		self._LwrLvl = value if type(value) != base_types.auto else self.make_default("LwrLvl")
 
 	@LwrLvl.deleter
 	def LwrLvl(self):
@@ -23,7 +23,7 @@ class OptionMultipleBarrierLevels1(base_types._BaseFieldType):
 
 	@UpperLvl.setter
 	def UpperLvl(self, value):
-		self._UpperLvl = value if type(value) != auto else self.make_default("UpperLvl")
+		self._UpperLvl = value if type(value) != base_types.auto else self.make_default("UpperLvl")
 
 	@UpperLvl.deleter
 	def UpperLvl(self):

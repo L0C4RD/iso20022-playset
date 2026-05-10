@@ -10,7 +10,7 @@ class DerivativeInterest2(base_types._BaseFieldType):
 
 	@OthrNtnlCcy.setter
 	def OthrNtnlCcy(self, value):
-		self._OthrNtnlCcy = value if type(value) != auto else self.make_default("OthrNtnlCcy")
+		self._OthrNtnlCcy = value if type(value) != base_types.auto else self.make_default("OthrNtnlCcy")
 
 	@OthrNtnlCcy.deleter
 	def OthrNtnlCcy(self):

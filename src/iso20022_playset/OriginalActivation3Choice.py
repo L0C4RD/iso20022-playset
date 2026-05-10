@@ -11,7 +11,7 @@ class OriginalActivation3Choice(base_types._BaseFieldType):
 
 	@OrgnlActvtnData.setter
 	def OrgnlActvtnData(self, value):
-		self._OrgnlActvtnData = value if type(value) != auto else self.make_default("OrgnlActvtnData")
+		self._OrgnlActvtnData = value if type(value) != base_types.auto else self.make_default("OrgnlActvtnData")
 
 	@OrgnlActvtnData.deleter
 	def OrgnlActvtnData(self):
@@ -24,7 +24,7 @@ class OriginalActivation3Choice(base_types._BaseFieldType):
 
 	@OrgnlDbtrId.setter
 	def OrgnlDbtrId(self, value):
-		self._OrgnlDbtrId = value if type(value) != auto else self.make_default("OrgnlDbtrId")
+		self._OrgnlDbtrId = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrId")
 
 	@OrgnlDbtrId.deleter
 	def OrgnlDbtrId(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .ProprietaryReason5 import ProprietaryReason5
 from .GenericIdentification47 import GenericIdentification47
+from .ProprietaryReason5 import ProprietaryReason5
 
 class ProprietaryStatusAndReason7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ProprietaryStatusAndReason7(base_types._BaseFieldType):
 
 	@PrtryRsn.setter
 	def PrtryRsn(self, value):
-		self._PrtryRsn = value if type(value) != auto else self.make_default("PrtryRsn")
+		self._PrtryRsn = value if type(value) != base_types.auto else self.make_default("PrtryRsn")
 
 	@PrtryRsn.deleter
 	def PrtryRsn(self):
@@ -24,7 +24,7 @@ class ProprietaryStatusAndReason7(base_types._BaseFieldType):
 
 	@PrtrySts.setter
 	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
+		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
 
 	@PrtrySts.deleter
 	def PrtrySts(self):

@@ -12,7 +12,7 @@ class PAIN_011_001_08():
 
 		@MndtCxlReq.setter
 		def MndtCxlReq(self, value):
-			self._MndtCxlReq = value if type(value) != auto else self.make_default("MndtCxlReq")
+			self._MndtCxlReq = value if type(value) != base_types.auto else self.make_default("MndtCxlReq")
 
 		@MndtCxlReq.deleter
 		def MndtCxlReq(self):

@@ -1,19 +1,19 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .AlternatePartyIdentification11 import AlternatePartyIdentification11
 from .GenericIdentification84 import GenericIdentification84
 from .NameAndAddress12 import NameAndAddress12
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from .AlternatePartyIdentification11 import AlternatePartyIdentification11
 
 class PartyIdentification259Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvOwnrId", "_AnyBIC", "_PrtryId", "_NmAndAdr"]
+	__slots__ = ["_IndvOwnrId", "_PrtryId", "_NmAndAdr", "_AnyBIC"]
 	@property
 	def IndvOwnrId(self):
 		return self._IndvOwnrId
 
 	@IndvOwnrId.setter
 	def IndvOwnrId(self, value):
-		self._IndvOwnrId = value if type(value) != auto else self.make_default("IndvOwnrId")
+		self._IndvOwnrId = value if type(value) != base_types.auto else self.make_default("IndvOwnrId")
 
 	@IndvOwnrId.deleter
 	def IndvOwnrId(self):
@@ -21,25 +21,12 @@ class PartyIdentification259Choice(base_types._BaseFieldType):
 		self._IndvOwnrId = None
 
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
-	@property
 	def PrtryId(self):
 		return self._PrtryId
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
 	@PrtryId.deleter
 	def PrtryId(self):
@@ -52,17 +39,30 @@ class PartyIdentification259Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
 		self._NmAndAdr = None
 
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndvOwnrId', type=AlternatePartyIdentification11, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification84, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

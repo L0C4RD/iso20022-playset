@@ -11,7 +11,7 @@ class UndertakingNonExtensionNotificationV01(base_types._BaseFieldType):
 
 	@UdrtkgNonXtnsnNtfctnDtls.setter
 	def UdrtkgNonXtnsnNtfctnDtls(self, value):
-		self._UdrtkgNonXtnsnNtfctnDtls = value if type(value) != auto else self.make_default("UdrtkgNonXtnsnNtfctnDtls")
+		self._UdrtkgNonXtnsnNtfctnDtls = value if type(value) != base_types.auto else self.make_default("UdrtkgNonXtnsnNtfctnDtls")
 
 	@UdrtkgNonXtnsnNtfctnDtls.deleter
 	def UdrtkgNonXtnsnNtfctnDtls(self):
@@ -24,7 +24,7 @@ class UndertakingNonExtensionNotificationV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):

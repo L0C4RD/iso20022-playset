@@ -11,7 +11,7 @@ class TradeDataReport2(base_types._BaseFieldType):
 
 	@LkdRptId.setter
 	def LkdRptId(self, value):
-		self._LkdRptId = value if type(value) != auto else self.make_default("LkdRptId")
+		self._LkdRptId = value if type(value) != base_types.auto else self.make_default("LkdRptId")
 
 	@LkdRptId.deleter
 	def LkdRptId(self):
@@ -24,7 +24,7 @@ class TradeDataReport2(base_types._BaseFieldType):
 
 	@TradData.setter
 	def TradData(self, value):
-		self._TradData = value if type(value) != auto else self.make_default("TradData")
+		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
 
 	@TradData.deleter
 	def TradData(self):

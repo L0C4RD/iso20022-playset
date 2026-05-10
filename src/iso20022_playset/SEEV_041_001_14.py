@@ -12,7 +12,7 @@ class SEEV_041_001_14():
 
 		@CorpActnInstrCxlReqStsAdvc.setter
 		def CorpActnInstrCxlReqStsAdvc(self, value):
-			self._CorpActnInstrCxlReqStsAdvc = value if type(value) != auto else self.make_default("CorpActnInstrCxlReqStsAdvc")
+			self._CorpActnInstrCxlReqStsAdvc = value if type(value) != base_types.auto else self.make_default("CorpActnInstrCxlReqStsAdvc")
 
 		@CorpActnInstrCxlReqStsAdvc.deleter
 		def CorpActnInstrCxlReqStsAdvc(self):

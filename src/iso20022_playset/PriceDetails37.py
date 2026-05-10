@@ -1,31 +1,18 @@
 from . import base_types
-from .PriceFormat75Choice import PriceFormat75Choice
 from .PriceFormat76Choice import PriceFormat76Choice
+from .PriceFormat75Choice import PriceFormat75Choice
 from .PriceFormat77Choice import PriceFormat77Choice
 
 class PriceDetails37(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricPdPerPdct", "_CshInLieuOfShrPric", "_GncCshPricRcvdPerPdct"]
-	@property
-	def GncCshPricPdPerPdct(self):
-		return self._GncCshPricPdPerPdct
-
-	@GncCshPricPdPerPdct.setter
-	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
-
-	@GncCshPricPdPerPdct.deleter
-	def GncCshPricPdPerPdct(self):
-		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
-
+	__slots__ = ["_CshInLieuOfShrPric", "_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric
 
 	@CshInLieuOfShrPric.setter
 	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != auto else self.make_default("CshInLieuOfShrPric")
+		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
 
 	@CshInLieuOfShrPric.deleter
 	def CshInLieuOfShrPric(self):
@@ -33,12 +20,25 @@ class PriceDetails37(base_types._BaseFieldType):
 		self._CshInLieuOfShrPric = None
 
 	@property
+	def GncCshPricPdPerPdct(self):
+		return self._GncCshPricPdPerPdct
+
+	@GncCshPricPdPerPdct.setter
+	def GncCshPricPdPerPdct(self, value):
+		self._GncCshPricPdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricPdPerPdct")
+
+	@GncCshPricPdPerPdct.deleter
+	def GncCshPricPdPerPdct(self):
+		del self._GncCshPricPdPerPdct
+		self._GncCshPricPdPerPdct = None
+
+	@property
 	def GncCshPricRcvdPerPdct(self):
 		return self._GncCshPricRcvdPerPdct
 
 	@GncCshPricRcvdPerPdct.setter
 	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
+		self._GncCshPricRcvdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricRcvdPerPdct")
 
 	@GncCshPricRcvdPerPdct.deleter
 	def GncCshPricRcvdPerPdct(self):
@@ -46,8 +46,8 @@ class PriceDetails37(base_types._BaseFieldType):
 		self._GncCshPricRcvdPerPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat75Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat77Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat75Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat76Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

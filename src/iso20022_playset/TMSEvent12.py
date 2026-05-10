@@ -1,26 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DeviceResponse8 import DeviceResponse8
 from .Max70Text import Max70Text
-from .ISODateTime import ISODateTime
 from .TMSActionIdentification10 import TMSActionIdentification10
+from .ISODateTime import ISODateTime
 from .TerminalManagementActionResult5Code import TerminalManagementActionResult5Code
+from .Max35Text import Max35Text
 
 class TMSEvent12(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnId", "_DvcRspn", "_AddtlErrInf", "_TmStmp", "_TermnlMgrId", "_Rslt"]
+	__slots__ = ["_TermnlMgrId", "_DvcRspn", "_AddtlErrInf", "_ActnId", "_Rslt", "_TmStmp"]
 	@property
-	def ActnId(self):
-		return self._ActnId
+	def TermnlMgrId(self):
+		return self._TermnlMgrId
 
-	@ActnId.setter
-	def ActnId(self, value):
-		self._ActnId = value if type(value) != auto else self.make_default("ActnId")
+	@TermnlMgrId.setter
+	def TermnlMgrId(self, value):
+		self._TermnlMgrId = value if type(value) != base_types.auto else self.make_default("TermnlMgrId")
 
-	@ActnId.deleter
-	def ActnId(self):
-		del self._ActnId
-		self._ActnId = None
+	@TermnlMgrId.deleter
+	def TermnlMgrId(self):
+		del self._TermnlMgrId
+		self._TermnlMgrId = None
 
 	@property
 	def DvcRspn(self):
@@ -28,7 +28,7 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@DvcRspn.setter
 	def DvcRspn(self, value):
-		self._DvcRspn = value if type(value) != auto else self.make_default("DvcRspn")
+		self._DvcRspn = value if type(value) != base_types.auto else self.make_default("DvcRspn")
 
 	@DvcRspn.deleter
 	def DvcRspn(self):
@@ -41,7 +41,7 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@AddtlErrInf.setter
 	def AddtlErrInf(self, value):
-		self._AddtlErrInf = value if type(value) != auto else self.make_default("AddtlErrInf")
+		self._AddtlErrInf = value if type(value) != base_types.auto else self.make_default("AddtlErrInf")
 
 	@AddtlErrInf.deleter
 	def AddtlErrInf(self):
@@ -49,30 +49,17 @@ class TMSEvent12(base_types._BaseFieldType):
 		self._AddtlErrInf = None
 
 	@property
-	def TmStmp(self):
-		return self._TmStmp
+	def ActnId(self):
+		return self._ActnId
 
-	@TmStmp.setter
-	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+	@ActnId.setter
+	def ActnId(self, value):
+		self._ActnId = value if type(value) != base_types.auto else self.make_default("ActnId")
 
-	@TmStmp.deleter
-	def TmStmp(self):
-		del self._TmStmp
-		self._TmStmp = None
-
-	@property
-	def TermnlMgrId(self):
-		return self._TermnlMgrId
-
-	@TermnlMgrId.setter
-	def TermnlMgrId(self, value):
-		self._TermnlMgrId = value if type(value) != auto else self.make_default("TermnlMgrId")
-
-	@TermnlMgrId.deleter
-	def TermnlMgrId(self):
-		del self._TermnlMgrId
-		self._TermnlMgrId = None
+	@ActnId.deleter
+	def ActnId(self):
+		del self._ActnId
+		self._ActnId = None
 
 	@property
 	def Rslt(self):
@@ -80,19 +67,32 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
 		self._Rslt = None
 
+	@property
+	def TmStmp(self):
+		return self._TmStmp
+
+	@TmStmp.setter
+	def TmStmp(self, value):
+		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+
+	@TmStmp.deleter
+	def TmStmp(self):
+		del self._TmStmp
+		self._TmStmp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActnId', type=TMSActionIdentification10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermnlMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvcRspn', type=DeviceResponse8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlErrInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermnlMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnId', type=TMSActionIdentification10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rslt', type=TerminalManagementActionResult5Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

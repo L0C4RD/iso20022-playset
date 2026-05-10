@@ -11,7 +11,7 @@ class SpecialProgrammeQualification2(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
@@ -24,7 +24,7 @@ class SpecialProgrammeQualification2(base_types._BaseFieldType):
 
 	@Dtl.setter
 	def Dtl(self, value):
-		self._Dtl = value if type(value) != auto else self.make_default("Dtl")
+		self._Dtl = value if type(value) != base_types.auto else self.make_default("Dtl")
 
 	@Dtl.deleter
 	def Dtl(self):

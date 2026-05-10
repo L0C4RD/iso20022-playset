@@ -12,7 +12,7 @@ class TSMT_021_001_03():
 
 		@MisMtchAccptncNtfctn.setter
 		def MisMtchAccptncNtfctn(self, value):
-			self._MisMtchAccptncNtfctn = value if type(value) != auto else self.make_default("MisMtchAccptncNtfctn")
+			self._MisMtchAccptncNtfctn = value if type(value) != base_types.auto else self.make_default("MisMtchAccptncNtfctn")
 
 		@MisMtchAccptncNtfctn.deleter
 		def MisMtchAccptncNtfctn(self):

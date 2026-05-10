@@ -1,6 +1,6 @@
 from . import base_types
-from .StatisticsPerCounterparty16Choice import StatisticsPerCounterparty16Choice
 from .SupplementaryData1 import SupplementaryData1
+from .StatisticsPerCounterparty16Choice import StatisticsPerCounterparty16Choice
 
 class DerivativesTradeWarningsReportV01(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DerivativesTradeWarningsReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class DerivativesTradeWarningsReportV01(base_types._BaseFieldType):
 
 	@WrnngsSttstcs.setter
 	def WrnngsSttstcs(self, value):
-		self._WrnngsSttstcs = value if type(value) != auto else self.make_default("WrnngsSttstcs")
+		self._WrnngsSttstcs = value if type(value) != base_types.auto else self.make_default("WrnngsSttstcs")
 
 	@WrnngsSttstcs.deleter
 	def WrnngsSttstcs(self):

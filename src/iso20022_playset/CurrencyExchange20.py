@@ -1,24 +1,24 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from .BaseOneRate import BaseOneRate
 from .ExchangeRateOrPercentage1Choice import ExchangeRateOrPercentage1Choice
+from .BaseOneRate import BaseOneRate
 from .ISODateTime import ISODateTime
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class CurrencyExchange20(base_types._BaseFieldType):
 
-	__slots__ = ["_LwLmt", "_QtdCcy", "_XchgRate", "_QtnDt", "_HghLmt"]
+	__slots__ = ["_HghLmt", "_QtdCcy", "_LwLmt", "_QtnDt", "_XchgRate"]
 	@property
-	def LwLmt(self):
-		return self._LwLmt
+	def HghLmt(self):
+		return self._HghLmt
 
-	@LwLmt.setter
-	def LwLmt(self, value):
-		self._LwLmt = value if type(value) != auto else self.make_default("LwLmt")
+	@HghLmt.setter
+	def HghLmt(self, value):
+		self._HghLmt = value if type(value) != base_types.auto else self.make_default("HghLmt")
 
-	@LwLmt.deleter
-	def LwLmt(self):
-		del self._LwLmt
-		self._LwLmt = None
+	@HghLmt.deleter
+	def HghLmt(self):
+		del self._HghLmt
+		self._HghLmt = None
 
 	@property
 	def QtdCcy(self):
@@ -26,7 +26,7 @@ class CurrencyExchange20(base_types._BaseFieldType):
 
 	@QtdCcy.setter
 	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
 
 	@QtdCcy.deleter
 	def QtdCcy(self):
@@ -34,17 +34,17 @@ class CurrencyExchange20(base_types._BaseFieldType):
 		self._QtdCcy = None
 
 	@property
-	def XchgRate(self):
-		return self._XchgRate
+	def LwLmt(self):
+		return self._LwLmt
 
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+	@LwLmt.setter
+	def LwLmt(self, value):
+		self._LwLmt = value if type(value) != base_types.auto else self.make_default("LwLmt")
 
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
+	@LwLmt.deleter
+	def LwLmt(self):
+		del self._LwLmt
+		self._LwLmt = None
 
 	@property
 	def QtnDt(self):
@@ -52,7 +52,7 @@ class CurrencyExchange20(base_types._BaseFieldType):
 
 	@QtnDt.setter
 	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
 
 	@QtnDt.deleter
 	def QtnDt(self):
@@ -60,23 +60,23 @@ class CurrencyExchange20(base_types._BaseFieldType):
 		self._QtnDt = None
 
 	@property
-	def HghLmt(self):
-		return self._HghLmt
+	def XchgRate(self):
+		return self._XchgRate
 
-	@HghLmt.setter
-	def HghLmt(self, value):
-		self._HghLmt = value if type(value) != auto else self.make_default("HghLmt")
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
 
-	@HghLmt.deleter
-	def HghLmt(self):
-		del self._HghLmt
-		self._HghLmt = None
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LwLmt', type=ExchangeRateOrPercentage1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghLmt', type=ExchangeRateOrPercentage1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LwLmt', type=ExchangeRateOrPercentage1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

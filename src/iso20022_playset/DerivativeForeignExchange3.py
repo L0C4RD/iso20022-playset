@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from .AssetFXSubProductType1Code import AssetFXSubProductType1Code
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class DerivativeForeignExchange3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DerivativeForeignExchange3(base_types._BaseFieldType):
 
 	@OthrNtnlCcy.setter
 	def OthrNtnlCcy(self, value):
-		self._OthrNtnlCcy = value if type(value) != auto else self.make_default("OthrNtnlCcy")
+		self._OthrNtnlCcy = value if type(value) != base_types.auto else self.make_default("OthrNtnlCcy")
 
 	@OthrNtnlCcy.deleter
 	def OthrNtnlCcy(self):
@@ -24,7 +24,7 @@ class DerivativeForeignExchange3(base_types._BaseFieldType):
 
 	@FxTp.setter
 	def FxTp(self, value):
-		self._FxTp = value if type(value) != auto else self.make_default("FxTp")
+		self._FxTp = value if type(value) != base_types.auto else self.make_default("FxTp")
 
 	@FxTp.deleter
 	def FxTp(self):

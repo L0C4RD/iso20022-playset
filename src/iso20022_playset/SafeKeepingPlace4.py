@@ -1,6 +1,6 @@
 from . import base_types
-from .SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
 from .LEIIdentifier import LEIIdentifier
+from .SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
 
 class SafeKeepingPlace4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SafeKeepingPlace4(base_types._BaseFieldType):
 
 	@SfkpgPlcFrmt.setter
 	def SfkpgPlcFrmt(self, value):
-		self._SfkpgPlcFrmt = value if type(value) != auto else self.make_default("SfkpgPlcFrmt")
+		self._SfkpgPlcFrmt = value if type(value) != base_types.auto else self.make_default("SfkpgPlcFrmt")
 
 	@SfkpgPlcFrmt.deleter
 	def SfkpgPlcFrmt(self):
@@ -24,7 +24,7 @@ class SafeKeepingPlace4(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):

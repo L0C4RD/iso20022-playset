@@ -12,7 +12,7 @@ class CAMT_045_001_03():
 
 		@FndDtldConfdCshFcstRptCxl.setter
 		def FndDtldConfdCshFcstRptCxl(self, value):
-			self._FndDtldConfdCshFcstRptCxl = value if type(value) != auto else self.make_default("FndDtldConfdCshFcstRptCxl")
+			self._FndDtldConfdCshFcstRptCxl = value if type(value) != base_types.auto else self.make_default("FndDtldConfdCshFcstRptCxl")
 
 		@FndDtldConfdCshFcstRptCxl.deleter
 		def FndDtldConfdCshFcstRptCxl(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .BillingSubServiceQualifier1Choice import BillingSubServiceQualifier1Choice
+from .Max35Text import Max35Text
 
 class BillingSubServiceIdentification1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class BillingSubServiceIdentification1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -24,7 +24,7 @@ class BillingSubServiceIdentification1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

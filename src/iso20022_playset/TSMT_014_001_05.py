@@ -12,7 +12,7 @@ class TSMT_014_001_05():
 
 		@DataSetSubmissn.setter
 		def DataSetSubmissn(self, value):
-			self._DataSetSubmissn = value if type(value) != auto else self.make_default("DataSetSubmissn")
+			self._DataSetSubmissn = value if type(value) != base_types.auto else self.make_default("DataSetSubmissn")
 
 		@DataSetSubmissn.deleter
 		def DataSetSubmissn(self):

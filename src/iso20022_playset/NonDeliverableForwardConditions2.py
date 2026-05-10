@@ -1,6 +1,6 @@
 from . import base_types
-from .FixingConditions1 import FixingConditions1
 from .OpeningConditions1 import OpeningConditions1
+from .FixingConditions1 import FixingConditions1
 
 class NonDeliverableForwardConditions2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NonDeliverableForwardConditions2(base_types._BaseFieldType):
 
 	@OpngConds.setter
 	def OpngConds(self, value):
-		self._OpngConds = value if type(value) != auto else self.make_default("OpngConds")
+		self._OpngConds = value if type(value) != base_types.auto else self.make_default("OpngConds")
 
 	@OpngConds.deleter
 	def OpngConds(self):
@@ -24,7 +24,7 @@ class NonDeliverableForwardConditions2(base_types._BaseFieldType):
 
 	@FxgConds.setter
 	def FxgConds(self, value):
-		self._FxgConds = value if type(value) != auto else self.make_default("FxgConds")
+		self._FxgConds = value if type(value) != base_types.auto else self.make_default("FxgConds")
 
 	@FxgConds.deleter
 	def FxgConds(self):

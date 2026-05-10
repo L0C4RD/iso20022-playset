@@ -1,7 +1,7 @@
 from . import base_types
+from .Max8000Text import Max8000Text
 from .ISO2ALanguageCode import ISO2ALanguageCode
 from .Max1025Text import Max1025Text
-from .Max8000Text import Max8000Text
 
 class ItemDescription2(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class ItemDescription2(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):
@@ -25,7 +25,7 @@ class ItemDescription2(base_types._BaseFieldType):
 
 	@Titl.setter
 	def Titl(self, value):
-		self._Titl = value if type(value) != auto else self.make_default("Titl")
+		self._Titl = value if type(value) != base_types.auto else self.make_default("Titl")
 
 	@Titl.deleter
 	def Titl(self):
@@ -38,7 +38,7 @@ class ItemDescription2(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
 
 	@Lang.deleter
 	def Lang(self):

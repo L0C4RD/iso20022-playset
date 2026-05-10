@@ -5,19 +5,19 @@ from .Max35Text import Max35Text
 
 class CardPaymentTransactionAdviceResponse5(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SaleRefId", "_Rspn"]
+	__slots__ = ["_Rspn", "_SaleRefId", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def Rspn(self):
+		return self._Rspn
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
 
 	@property
 	def SaleRefId(self):
@@ -25,7 +25,7 @@ class CardPaymentTransactionAdviceResponse5(base_types._BaseFieldType):
 
 	@SaleRefId.setter
 	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
 
 	@SaleRefId.deleter
 	def SaleRefId(self):
@@ -33,21 +33,21 @@ class CardPaymentTransactionAdviceResponse5(base_types._BaseFieldType):
 		self._SaleRefId = None
 
 	@property
-	def Rspn(self):
-		return self._Rspn
+	def TxId(self):
+		return self._TxId
 
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=Response1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 	))
 

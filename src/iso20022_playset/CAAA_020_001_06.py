@@ -12,7 +12,7 @@ class CAAA_020_001_06():
 
 		@TxAdvc.setter
 		def TxAdvc(self, value):
-			self._TxAdvc = value if type(value) != auto else self.make_default("TxAdvc")
+			self._TxAdvc = value if type(value) != base_types.auto else self.make_default("TxAdvc")
 
 		@TxAdvc.deleter
 		def TxAdvc(self):

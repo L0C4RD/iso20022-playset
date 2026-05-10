@@ -11,7 +11,7 @@ class PartyAuditTrailSearchCriteria2(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
+		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
 
 	@DtPrd.deleter
 	def DtPrd(self):
@@ -24,7 +24,7 @@ class PartyAuditTrailSearchCriteria2(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
 	@PtyId.deleter
 	def PtyId(self):

@@ -12,7 +12,7 @@ class SEMT_001_001_03():
 
 		@SctiesMsgRjctn.setter
 		def SctiesMsgRjctn(self, value):
-			self._SctiesMsgRjctn = value if type(value) != auto else self.make_default("SctiesMsgRjctn")
+			self._SctiesMsgRjctn = value if type(value) != base_types.auto else self.make_default("SctiesMsgRjctn")
 
 		@SctiesMsgRjctn.deleter
 		def SctiesMsgRjctn(self):

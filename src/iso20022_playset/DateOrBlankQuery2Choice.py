@@ -1,6 +1,6 @@
 from . import base_types
-from .DatePeriod1 import DatePeriod1
 from .NotReported1Code import NotReported1Code
+from .DatePeriod1 import DatePeriod1
 
 class DateOrBlankQuery2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DateOrBlankQuery2Choice(base_types._BaseFieldType):
 
 	@NotRptd.setter
 	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
 
 	@NotRptd.deleter
 	def NotRptd(self):
@@ -24,7 +24,7 @@ class DateOrBlankQuery2Choice(base_types._BaseFieldType):
 
 	@Rg.setter
 	def Rg(self, value):
-		self._Rg = value if type(value) != auto else self.make_default("Rg")
+		self._Rg = value if type(value) != base_types.auto else self.make_default("Rg")
 
 	@Rg.deleter
 	def Rg(self):

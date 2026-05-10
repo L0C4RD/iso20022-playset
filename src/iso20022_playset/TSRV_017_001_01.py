@@ -12,7 +12,7 @@ class TSRV_017_001_01():
 
 		@DmndWdrwlNtfctn.setter
 		def DmndWdrwlNtfctn(self, value):
-			self._DmndWdrwlNtfctn = value if type(value) != auto else self.make_default("DmndWdrwlNtfctn")
+			self._DmndWdrwlNtfctn = value if type(value) != base_types.auto else self.make_default("DmndWdrwlNtfctn")
 
 		@DmndWdrwlNtfctn.deleter
 		def DmndWdrwlNtfctn(self):

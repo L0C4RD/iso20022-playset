@@ -1,18 +1,31 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
 from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 from .CollateralData33 import CollateralData33
 
 class PositionSetDimensions12(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_CollData", "_OtlrsIncl"]
+	__slots__ = ["_OtlrsIncl", "_RptgCtrPty", "_CollData"]
+	@property
+	def OtlrsIncl(self):
+		return self._OtlrsIncl
+
+	@OtlrsIncl.setter
+	def OtlrsIncl(self, value):
+		self._OtlrsIncl = value if type(value) != base_types.auto else self.make_default("OtlrsIncl")
+
+	@OtlrsIncl.deleter
+	def OtlrsIncl(self):
+		del self._OtlrsIncl
+		self._OtlrsIncl = None
+
 	@property
 	def RptgCtrPty(self):
 		return self._RptgCtrPty
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
@@ -25,29 +38,16 @@ class PositionSetDimensions12(base_types._BaseFieldType):
 
 	@CollData.setter
 	def CollData(self, value):
-		self._CollData = value if type(value) != auto else self.make_default("CollData")
+		self._CollData = value if type(value) != base_types.auto else self.make_default("CollData")
 
 	@CollData.deleter
 	def CollData(self):
 		del self._CollData
 		self._CollData = None
 
-	@property
-	def OtlrsIncl(self):
-		return self._OtlrsIncl
-
-	@OtlrsIncl.setter
-	def OtlrsIncl(self, value):
-		self._OtlrsIncl = value if type(value) != auto else self.make_default("OtlrsIncl")
-
-	@OtlrsIncl.deleter
-	def OtlrsIncl(self):
-		del self._OtlrsIncl
-		self._OtlrsIncl = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollData', type=CollateralData33, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

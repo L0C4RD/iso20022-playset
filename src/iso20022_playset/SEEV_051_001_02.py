@@ -12,7 +12,7 @@ class SEEV_051_001_02():
 
 		@MktClmCxlReq.setter
 		def MktClmCxlReq(self, value):
-			self._MktClmCxlReq = value if type(value) != auto else self.make_default("MktClmCxlReq")
+			self._MktClmCxlReq = value if type(value) != base_types.auto else self.make_default("MktClmCxlReq")
 
 		@MktClmCxlReq.deleter
 		def MktClmCxlReq(self):

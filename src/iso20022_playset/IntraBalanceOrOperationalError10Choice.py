@@ -1,6 +1,6 @@
 from . import base_types
-from .IntraBalanceCancellation7 import IntraBalanceCancellation7
 from .ErrorHandling5 import ErrorHandling5
+from .IntraBalanceCancellation7 import IntraBalanceCancellation7
 
 class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != auto else self.make_default("OprlErr")
+		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
 
 	@OprlErr.deleter
 	def OprlErr(self):
@@ -24,7 +24,7 @@ class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
 	@Cxls.setter
 	def Cxls(self, value):
-		self._Cxls = value if type(value) != auto else self.make_default("Cxls")
+		self._Cxls = value if type(value) != base_types.auto else self.make_default("Cxls")
 
 	@Cxls.deleter
 	def Cxls(self):

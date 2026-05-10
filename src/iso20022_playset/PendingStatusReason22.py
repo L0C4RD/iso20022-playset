@@ -11,7 +11,7 @@ class PendingStatusReason22(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):
@@ -24,7 +24,7 @@ class PendingStatusReason22(base_types._BaseFieldType):
 
 	@RsnCd.setter
 	def RsnCd(self, value):
-		self._RsnCd = value if type(value) != auto else self.make_default("RsnCd")
+		self._RsnCd = value if type(value) != base_types.auto else self.make_default("RsnCd")
 
 	@RsnCd.deleter
 	def RsnCd(self):

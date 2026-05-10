@@ -1,6 +1,6 @@
 from . import base_types
-from .ShortLong1Code import ShortLong1Code
 from .FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from .ShortLong1Code import ShortLong1Code
 
 class SignedQuantityFormat16(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SignedQuantityFormat16(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -24,7 +24,7 @@ class SignedQuantityFormat16(base_types._BaseFieldType):
 
 	@ShrtLngPos.setter
 	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
+		self._ShrtLngPos = value if type(value) != base_types.auto else self.make_default("ShrtLngPos")
 
 	@ShrtLngPos.deleter
 	def ShrtLngPos(self):

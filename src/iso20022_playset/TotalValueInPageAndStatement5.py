@@ -10,7 +10,7 @@ class TotalValueInPageAndStatement5(base_types._BaseFieldType):
 
 	@TtlCollHeldValOfPg.setter
 	def TtlCollHeldValOfPg(self, value):
-		self._TtlCollHeldValOfPg = value if type(value) != auto else self.make_default("TtlCollHeldValOfPg")
+		self._TtlCollHeldValOfPg = value if type(value) != base_types.auto else self.make_default("TtlCollHeldValOfPg")
 
 	@TtlCollHeldValOfPg.deleter
 	def TtlCollHeldValOfPg(self):
@@ -23,7 +23,7 @@ class TotalValueInPageAndStatement5(base_types._BaseFieldType):
 
 	@TtlXpsrValOfPg.setter
 	def TtlXpsrValOfPg(self, value):
-		self._TtlXpsrValOfPg = value if type(value) != auto else self.make_default("TtlXpsrValOfPg")
+		self._TtlXpsrValOfPg = value if type(value) != base_types.auto else self.make_default("TtlXpsrValOfPg")
 
 	@TtlXpsrValOfPg.deleter
 	def TtlXpsrValOfPg(self):

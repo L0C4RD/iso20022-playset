@@ -1,19 +1,19 @@
 from . import base_types
 from .AlgorithmIdentification36 import AlgorithmIdentification36
+from .Number import Number
 from .Max140Binary import Max140Binary
 from .EncapsulatedContent3 import EncapsulatedContent3
-from .Number import Number
 
 class DigestedData6(base_types._BaseFieldType):
 
-	__slots__ = ["_DgstAlgo", "_NcpsltdCntt", "_Vrsn", "_Dgst"]
+	__slots__ = ["_DgstAlgo", "_Dgst", "_Vrsn", "_NcpsltdCntt"]
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
@@ -21,17 +21,17 @@ class DigestedData6(base_types._BaseFieldType):
 		self._DgstAlgo = None
 
 	@property
-	def NcpsltdCntt(self):
-		return self._NcpsltdCntt
+	def Dgst(self):
+		return self._Dgst
 
-	@NcpsltdCntt.setter
-	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != auto else self.make_default("NcpsltdCntt")
+	@Dgst.setter
+	def Dgst(self, value):
+		self._Dgst = value if type(value) != base_types.auto else self.make_default("Dgst")
 
-	@NcpsltdCntt.deleter
-	def NcpsltdCntt(self):
-		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
+	@Dgst.deleter
+	def Dgst(self):
+		del self._Dgst
+		self._Dgst = None
 
 	@property
 	def Vrsn(self):
@@ -39,7 +39,7 @@ class DigestedData6(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
 	@Vrsn.deleter
 	def Vrsn(self):
@@ -47,22 +47,22 @@ class DigestedData6(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def Dgst(self):
-		return self._Dgst
+	def NcpsltdCntt(self):
+		return self._NcpsltdCntt
 
-	@Dgst.setter
-	def Dgst(self, value):
-		self._Dgst = value if type(value) != auto else self.make_default("Dgst")
+	@NcpsltdCntt.setter
+	def NcpsltdCntt(self, value):
+		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
 
-	@Dgst.deleter
-	def Dgst(self):
-		del self._Dgst
-		self._Dgst = None
+	@NcpsltdCntt.deleter
+	def NcpsltdCntt(self):
+		del self._NcpsltdCntt
+		self._NcpsltdCntt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dgst', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 	))
 

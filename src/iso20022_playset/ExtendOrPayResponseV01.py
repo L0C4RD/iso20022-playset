@@ -11,7 +11,7 @@ class ExtendOrPayResponseV01(base_types._BaseFieldType):
 
 	@XtndOrPayRspnDtls.setter
 	def XtndOrPayRspnDtls(self, value):
-		self._XtndOrPayRspnDtls = value if type(value) != auto else self.make_default("XtndOrPayRspnDtls")
+		self._XtndOrPayRspnDtls = value if type(value) != base_types.auto else self.make_default("XtndOrPayRspnDtls")
 
 	@XtndOrPayRspnDtls.deleter
 	def XtndOrPayRspnDtls(self):
@@ -24,7 +24,7 @@ class ExtendOrPayResponseV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):

@@ -12,7 +12,7 @@ class ACMT_002_001_08():
 
 		@AcctDtlsConf.setter
 		def AcctDtlsConf(self, value):
-			self._AcctDtlsConf = value if type(value) != auto else self.make_default("AcctDtlsConf")
+			self._AcctDtlsConf = value if type(value) != base_types.auto else self.make_default("AcctDtlsConf")
 
 		@AcctDtlsConf.deleter
 		def AcctDtlsConf(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification246Choice import PartyIdentification246Choice
 from .PartyAdditionalIdentification2Choice import PartyAdditionalIdentification2Choice
+from .PartyIdentification246Choice import PartyIdentification246Choice
 
 class PartyIdentification270(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification270(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class PartyIdentification270(base_types._BaseFieldType):
 
 	@AddtlIdInf.setter
 	def AddtlIdInf(self, value):
-		self._AddtlIdInf = value if type(value) != auto else self.make_default("AddtlIdInf")
+		self._AddtlIdInf = value if type(value) != base_types.auto else self.make_default("AddtlIdInf")
 
 	@AddtlIdInf.deleter
 	def AddtlIdInf(self):

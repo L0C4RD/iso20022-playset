@@ -11,7 +11,7 @@ class Purpose3Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -24,7 +24,7 @@ class Purpose3Choice(base_types._BaseFieldType):
 
 	@SctiesPurpCd.setter
 	def SctiesPurpCd(self, value):
-		self._SctiesPurpCd = value if type(value) != auto else self.make_default("SctiesPurpCd")
+		self._SctiesPurpCd = value if type(value) != base_types.auto else self.make_default("SctiesPurpCd")
 
 	@SctiesPurpCd.deleter
 	def SctiesPurpCd(self):

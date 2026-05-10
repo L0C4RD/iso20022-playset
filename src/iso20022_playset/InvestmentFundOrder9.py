@@ -11,7 +11,7 @@ class InvestmentFundOrder9(base_types._BaseFieldType):
 
 	@OrdrRef.setter
 	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
+		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
 
 	@OrdrRef.deleter
 	def OrdrRef(self):
@@ -24,7 +24,7 @@ class InvestmentFundOrder9(base_types._BaseFieldType):
 
 	@CxlRef.setter
 	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
+		self._CxlRef = value if type(value) != base_types.auto else self.make_default("CxlRef")
 
 	@CxlRef.deleter
 	def CxlRef(self):
@@ -37,7 +37,7 @@ class InvestmentFundOrder9(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
 
 	@ClntRef.deleter
 	def ClntRef(self):
@@ -50,7 +50,7 @@ class InvestmentFundOrder9(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
 
 	@CxlRsn.deleter
 	def CxlRsn(self):

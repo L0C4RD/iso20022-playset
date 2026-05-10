@@ -12,7 +12,7 @@ class CAMT_033_001_07():
 
 		@ReqForDplct.setter
 		def ReqForDplct(self, value):
-			self._ReqForDplct = value if type(value) != auto else self.make_default("ReqForDplct")
+			self._ReqForDplct = value if type(value) != base_types.auto else self.make_default("ReqForDplct")
 
 		@ReqForDplct.deleter
 		def ReqForDplct(self):

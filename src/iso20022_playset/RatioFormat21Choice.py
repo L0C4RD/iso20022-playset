@@ -11,7 +11,7 @@ class RatioFormat21Choice(base_types._BaseFieldType):
 
 	@AmtToAmt.setter
 	def AmtToAmt(self, value):
-		self._AmtToAmt = value if type(value) != auto else self.make_default("AmtToAmt")
+		self._AmtToAmt = value if type(value) != base_types.auto else self.make_default("AmtToAmt")
 
 	@AmtToAmt.deleter
 	def AmtToAmt(self):
@@ -24,7 +24,7 @@ class RatioFormat21Choice(base_types._BaseFieldType):
 
 	@QtyToQty.setter
 	def QtyToQty(self, value):
-		self._QtyToQty = value if type(value) != auto else self.make_default("QtyToQty")
+		self._QtyToQty = value if type(value) != base_types.auto else self.make_default("QtyToQty")
 
 	@QtyToQty.deleter
 	def QtyToQty(self):

@@ -1,45 +1,19 @@
 from . import base_types
+from .CreditDebitCode import CreditDebitCode
+from .AccountIdentification2Choice import AccountIdentification2Choice
 from .CashBalanceType1FormatType import CashBalanceType1FormatType
 from .PartyIdentification2Choice import PartyIdentification2Choice
-from .AccountIdentification2Choice import AccountIdentification2Choice
-from .CreditDebitCode import CreditDebitCode
 
 class CashAccount18(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_BalTp", "_AcctOwnrId", "_AcctId"]
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def BalTp(self):
-		return self._BalTp
-
-	@BalTp.setter
-	def BalTp(self, value):
-		self._BalTp = value if type(value) != auto else self.make_default("BalTp")
-
-	@BalTp.deleter
-	def BalTp(self):
-		del self._BalTp
-		self._BalTp = None
-
+	__slots__ = ["_AcctOwnrId", "_AcctId", "_CdtDbtInd", "_BalTp"]
 	@property
 	def AcctOwnrId(self):
 		return self._AcctOwnrId
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
@@ -52,17 +26,43 @@ class CashAccount18(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
 		self._AcctId = None
 
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
+	def BalTp(self):
+		return self._BalTp
+
+	@BalTp.setter
+	def BalTp(self, value):
+		self._BalTp = value if type(value) != base_types.auto else self.make_default("BalTp")
+
+	@BalTp.deleter
+	def BalTp(self):
+		del self._BalTp
+		self._BalTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTp', type=CashBalanceType1FormatType, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTp', type=CashBalanceType1FormatType, min=0, max=1, mutex_group=None, array=False),
 	))
 

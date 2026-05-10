@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .BusinessInformationCriteria1 import BusinessInformationCriteria1
+from .Max35Text import Max35Text
 
 class GeneralBusinessInformationCriteriaDefinition1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class GeneralBusinessInformationCriteriaDefinition1Choice(base_types._BaseFieldT
 
 	@QryNm.setter
 	def QryNm(self, value):
-		self._QryNm = value if type(value) != auto else self.make_default("QryNm")
+		self._QryNm = value if type(value) != base_types.auto else self.make_default("QryNm")
 
 	@QryNm.deleter
 	def QryNm(self):
@@ -24,7 +24,7 @@ class GeneralBusinessInformationCriteriaDefinition1Choice(base_types._BaseFieldT
 
 	@NewCrit.setter
 	def NewCrit(self, value):
-		self._NewCrit = value if type(value) != auto else self.make_default("NewCrit")
+		self._NewCrit = value if type(value) != base_types.auto else self.make_default("NewCrit")
 
 	@NewCrit.deleter
 	def NewCrit(self):

@@ -12,7 +12,7 @@ class TSMT_009_001_05():
 
 		@BaselnAmdmntReq.setter
 		def BaselnAmdmntReq(self, value):
-			self._BaselnAmdmntReq = value if type(value) != auto else self.make_default("BaselnAmdmntReq")
+			self._BaselnAmdmntReq = value if type(value) != base_types.auto else self.make_default("BaselnAmdmntReq")
 
 		@BaselnAmdmntReq.deleter
 		def BaselnAmdmntReq(self):

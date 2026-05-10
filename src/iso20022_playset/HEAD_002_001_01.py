@@ -13,7 +13,7 @@ class HEAD_002_001_01():
 
 		@Pyld.setter
 		def Pyld(self, value):
-			self._Pyld = value if type(value) != auto else self.make_default("Pyld")
+			self._Pyld = value if type(value) != base_types.auto else self.make_default("Pyld")
 
 		@Pyld.deleter
 		def Pyld(self):
@@ -26,7 +26,7 @@ class HEAD_002_001_01():
 
 		@PyldDesc.setter
 		def PyldDesc(self, value):
-			self._PyldDesc = value if type(value) != auto else self.make_default("PyldDesc")
+			self._PyldDesc = value if type(value) != base_types.auto else self.make_default("PyldDesc")
 
 		@PyldDesc.deleter
 		def PyldDesc(self):

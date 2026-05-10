@@ -12,7 +12,7 @@ class TSMT_022_001_02():
 
 		@MisMtchRjctn.setter
 		def MisMtchRjctn(self, value):
-			self._MisMtchRjctn = value if type(value) != auto else self.make_default("MisMtchRjctn")
+			self._MisMtchRjctn = value if type(value) != base_types.auto else self.make_default("MisMtchRjctn")
 
 		@MisMtchRjctn.deleter
 		def MisMtchRjctn(self):

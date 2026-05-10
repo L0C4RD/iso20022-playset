@@ -12,7 +12,7 @@ class TSMT_047_001_01():
 
 		@SpclReq.setter
 		def SpclReq(self, value):
-			self._SpclReq = value if type(value) != auto else self.make_default("SpclReq")
+			self._SpclReq = value if type(value) != base_types.auto else self.make_default("SpclReq")
 
 		@SpclReq.deleter
 		def SpclReq(self):

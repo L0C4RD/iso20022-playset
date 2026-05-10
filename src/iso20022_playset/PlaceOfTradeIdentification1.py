@@ -11,7 +11,7 @@ class PlaceOfTradeIdentification1(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -24,7 +24,7 @@ class PlaceOfTradeIdentification1(base_types._BaseFieldType):
 
 	@MktTpAndId.setter
 	def MktTpAndId(self, value):
-		self._MktTpAndId = value if type(value) != auto else self.make_default("MktTpAndId")
+		self._MktTpAndId = value if type(value) != base_types.auto else self.make_default("MktTpAndId")
 
 	@MktTpAndId.deleter
 	def MktTpAndId(self):

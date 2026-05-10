@@ -1,19 +1,19 @@
 from . import base_types
-from .Max35Text import Max35Text
+from .Max10000Binary import Max10000Binary
 from .OnLinePIN5 import OnLinePIN5
 from .TransactionIdentifier3 import TransactionIdentifier3
-from .Max10000Binary import Max10000Binary
+from .Max35Text import Max35Text
 
 class ATMTransaction43(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_CrdhldrNewPIN", "_RcncltnId", "_ICCRltdData"]
+	__slots__ = ["_TxId", "_RcncltnId", "_CrdhldrNewPIN", "_ICCRltdData"]
 	@property
 	def TxId(self):
 		return self._TxId
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):
@@ -21,25 +21,12 @@ class ATMTransaction43(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def CrdhldrNewPIN(self):
-		return self._CrdhldrNewPIN
-
-	@CrdhldrNewPIN.setter
-	def CrdhldrNewPIN(self, value):
-		self._CrdhldrNewPIN = value if type(value) != auto else self.make_default("CrdhldrNewPIN")
-
-	@CrdhldrNewPIN.deleter
-	def CrdhldrNewPIN(self):
-		del self._CrdhldrNewPIN
-		self._CrdhldrNewPIN = None
-
-	@property
 	def RcncltnId(self):
 		return self._RcncltnId
 
 	@RcncltnId.setter
 	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
 
 	@RcncltnId.deleter
 	def RcncltnId(self):
@@ -47,12 +34,25 @@ class ATMTransaction43(base_types._BaseFieldType):
 		self._RcncltnId = None
 
 	@property
+	def CrdhldrNewPIN(self):
+		return self._CrdhldrNewPIN
+
+	@CrdhldrNewPIN.setter
+	def CrdhldrNewPIN(self, value):
+		self._CrdhldrNewPIN = value if type(value) != base_types.auto else self.make_default("CrdhldrNewPIN")
+
+	@CrdhldrNewPIN.deleter
+	def CrdhldrNewPIN(self):
+		del self._CrdhldrNewPIN
+		self._CrdhldrNewPIN = None
+
+	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
@@ -61,8 +61,8 @@ class ATMTransaction43(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrNewPIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrNewPIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

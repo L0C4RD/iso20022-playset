@@ -1,6 +1,6 @@
 from . import base_types
-from .Max52Text import Max52Text
 from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from .Max52Text import Max52Text
 
 class Quantity47Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Quantity47Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -24,7 +24,7 @@ class Quantity47Choice(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):

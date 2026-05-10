@@ -12,7 +12,7 @@ class TSMT_024_001_03():
 
 		@ActnRmndr.setter
 		def ActnRmndr(self, value):
-			self._ActnRmndr = value if type(value) != auto else self.make_default("ActnRmndr")
+			self._ActnRmndr = value if type(value) != base_types.auto else self.make_default("ActnRmndr")
 
 		@ActnRmndr.deleter
 		def ActnRmndr(self):

@@ -10,7 +10,7 @@ class ExpectedCollateral2(base_types._BaseFieldType):
 
 	@VartnMrgn.setter
 	def VartnMrgn(self, value):
-		self._VartnMrgn = value if type(value) != auto else self.make_default("VartnMrgn")
+		self._VartnMrgn = value if type(value) != base_types.auto else self.make_default("VartnMrgn")
 
 	@VartnMrgn.deleter
 	def VartnMrgn(self):
@@ -23,7 +23,7 @@ class ExpectedCollateral2(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):

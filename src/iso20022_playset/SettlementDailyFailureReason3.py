@@ -10,7 +10,7 @@ class SettlementDailyFailureReason3(base_types._BaseFieldType):
 
 	@FaildCsh.setter
 	def FaildCsh(self, value):
-		self._FaildCsh = value if type(value) != auto else self.make_default("FaildCsh")
+		self._FaildCsh = value if type(value) != base_types.auto else self.make_default("FaildCsh")
 
 	@FaildCsh.deleter
 	def FaildCsh(self):
@@ -23,7 +23,7 @@ class SettlementDailyFailureReason3(base_types._BaseFieldType):
 
 	@FaildScties.setter
 	def FaildScties(self, value):
-		self._FaildScties = value if type(value) != auto else self.make_default("FaildScties")
+		self._FaildScties = value if type(value) != base_types.auto else self.make_default("FaildScties")
 
 	@FaildScties.deleter
 	def FaildScties(self):

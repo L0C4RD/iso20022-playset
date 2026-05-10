@@ -11,7 +11,7 @@ class MarketIdentification5Choice(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):
@@ -24,7 +24,7 @@ class MarketIdentification5Choice(base_types._BaseFieldType):
 
 	@MktIdrCd.setter
 	def MktIdrCd(self, value):
-		self._MktIdrCd = value if type(value) != auto else self.make_default("MktIdrCd")
+		self._MktIdrCd = value if type(value) != base_types.auto else self.make_default("MktIdrCd")
 
 	@MktIdrCd.deleter
 	def MktIdrCd(self):

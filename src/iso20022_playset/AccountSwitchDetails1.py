@@ -1,27 +1,53 @@
 from . import base_types
+from .ResponseDetails1 import ResponseDetails1
 from .SwitchStatus1Code import SwitchStatus1Code
 from .BalanceTransferWindow1Code import BalanceTransferWindow1Code
-from .Max35Text import Max35Text
-from .ResponseDetails1 import ResponseDetails1
+from .ISODateTime import ISODateTime
 from .ISODate import ISODate
 from .SwitchType1Code import SwitchType1Code
-from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class AccountSwitchDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_SwtchRcvdDtTm", "_SwtchTp", "_Rspn", "_SwtchDt", "_SwtchSts", "_BalTrfWndw", "_UnqRefNb", "_RtgUnqRefNb"]
+	__slots__ = ["_UnqRefNb", "_SwtchSts", "_RtgUnqRefNb", "_SwtchTp", "_BalTrfWndw", "_SwtchRcvdDtTm", "_Rspn", "_SwtchDt"]
 	@property
-	def SwtchRcvdDtTm(self):
-		return self._SwtchRcvdDtTm
+	def UnqRefNb(self):
+		return self._UnqRefNb
 
-	@SwtchRcvdDtTm.setter
-	def SwtchRcvdDtTm(self, value):
-		self._SwtchRcvdDtTm = value if type(value) != auto else self.make_default("SwtchRcvdDtTm")
+	@UnqRefNb.setter
+	def UnqRefNb(self, value):
+		self._UnqRefNb = value if type(value) != base_types.auto else self.make_default("UnqRefNb")
 
-	@SwtchRcvdDtTm.deleter
-	def SwtchRcvdDtTm(self):
-		del self._SwtchRcvdDtTm
-		self._SwtchRcvdDtTm = None
+	@UnqRefNb.deleter
+	def UnqRefNb(self):
+		del self._UnqRefNb
+		self._UnqRefNb = None
+
+	@property
+	def SwtchSts(self):
+		return self._SwtchSts
+
+	@SwtchSts.setter
+	def SwtchSts(self, value):
+		self._SwtchSts = value if type(value) != base_types.auto else self.make_default("SwtchSts")
+
+	@SwtchSts.deleter
+	def SwtchSts(self):
+		del self._SwtchSts
+		self._SwtchSts = None
+
+	@property
+	def RtgUnqRefNb(self):
+		return self._RtgUnqRefNb
+
+	@RtgUnqRefNb.setter
+	def RtgUnqRefNb(self, value):
+		self._RtgUnqRefNb = value if type(value) != base_types.auto else self.make_default("RtgUnqRefNb")
+
+	@RtgUnqRefNb.deleter
+	def RtgUnqRefNb(self):
+		del self._RtgUnqRefNb
+		self._RtgUnqRefNb = None
 
 	@property
 	def SwtchTp(self):
@@ -29,7 +55,7 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@SwtchTp.setter
 	def SwtchTp(self, value):
-		self._SwtchTp = value if type(value) != auto else self.make_default("SwtchTp")
+		self._SwtchTp = value if type(value) != base_types.auto else self.make_default("SwtchTp")
 
 	@SwtchTp.deleter
 	def SwtchTp(self):
@@ -37,12 +63,38 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 		self._SwtchTp = None
 
 	@property
+	def BalTrfWndw(self):
+		return self._BalTrfWndw
+
+	@BalTrfWndw.setter
+	def BalTrfWndw(self, value):
+		self._BalTrfWndw = value if type(value) != base_types.auto else self.make_default("BalTrfWndw")
+
+	@BalTrfWndw.deleter
+	def BalTrfWndw(self):
+		del self._BalTrfWndw
+		self._BalTrfWndw = None
+
+	@property
+	def SwtchRcvdDtTm(self):
+		return self._SwtchRcvdDtTm
+
+	@SwtchRcvdDtTm.setter
+	def SwtchRcvdDtTm(self, value):
+		self._SwtchRcvdDtTm = value if type(value) != base_types.auto else self.make_default("SwtchRcvdDtTm")
+
+	@SwtchRcvdDtTm.deleter
+	def SwtchRcvdDtTm(self):
+		del self._SwtchRcvdDtTm
+		self._SwtchRcvdDtTm = None
+
+	@property
 	def Rspn(self):
 		return self._Rspn
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
 
 	@Rspn.deleter
 	def Rspn(self):
@@ -55,73 +107,21 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@SwtchDt.setter
 	def SwtchDt(self, value):
-		self._SwtchDt = value if type(value) != auto else self.make_default("SwtchDt")
+		self._SwtchDt = value if type(value) != base_types.auto else self.make_default("SwtchDt")
 
 	@SwtchDt.deleter
 	def SwtchDt(self):
 		del self._SwtchDt
 		self._SwtchDt = None
 
-	@property
-	def SwtchSts(self):
-		return self._SwtchSts
-
-	@SwtchSts.setter
-	def SwtchSts(self, value):
-		self._SwtchSts = value if type(value) != auto else self.make_default("SwtchSts")
-
-	@SwtchSts.deleter
-	def SwtchSts(self):
-		del self._SwtchSts
-		self._SwtchSts = None
-
-	@property
-	def BalTrfWndw(self):
-		return self._BalTrfWndw
-
-	@BalTrfWndw.setter
-	def BalTrfWndw(self, value):
-		self._BalTrfWndw = value if type(value) != auto else self.make_default("BalTrfWndw")
-
-	@BalTrfWndw.deleter
-	def BalTrfWndw(self):
-		del self._BalTrfWndw
-		self._BalTrfWndw = None
-
-	@property
-	def UnqRefNb(self):
-		return self._UnqRefNb
-
-	@UnqRefNb.setter
-	def UnqRefNb(self, value):
-		self._UnqRefNb = value if type(value) != auto else self.make_default("UnqRefNb")
-
-	@UnqRefNb.deleter
-	def UnqRefNb(self):
-		del self._UnqRefNb
-		self._UnqRefNb = None
-
-	@property
-	def RtgUnqRefNb(self):
-		return self._RtgUnqRefNb
-
-	@RtgUnqRefNb.setter
-	def RtgUnqRefNb(self, value):
-		self._RtgUnqRefNb = value if type(value) != auto else self.make_default("RtgUnqRefNb")
-
-	@RtgUnqRefNb.deleter
-	def RtgUnqRefNb(self):
-		del self._RtgUnqRefNb
-		self._RtgUnqRefNb = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SwtchRcvdDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqRefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SwtchSts', type=SwitchStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtgUnqRefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SwtchTp', type=SwitchType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTrfWndw', type=BalanceTransferWindow1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SwtchRcvdDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=ResponseDetails1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SwtchDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SwtchSts', type=SwitchStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTrfWndw', type=BalanceTransferWindow1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqRefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtgUnqRefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

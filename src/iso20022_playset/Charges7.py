@@ -1,6 +1,6 @@
 from . import base_types
-from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 
 class Charges7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Charges7(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class Charges7(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != auto else self.make_default("Agt")
+		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
 
 	@Agt.deleter
 	def Agt(self):

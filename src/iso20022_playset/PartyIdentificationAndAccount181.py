@@ -1,46 +1,20 @@
 from . import base_types
 from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from .LEIIdentifier import LEIIdentifier
-from .AlternatePartyIdentification9 import AlternatePartyIdentification9
-from .PartyTextInformation3 import PartyTextInformation3
 from .PartyIdentification137Choice import PartyIdentification137Choice
+from .PartyTextInformation3 import PartyTextInformation3
+from .AlternatePartyIdentification9 import AlternatePartyIdentification9
 
 class PartyIdentificationAndAccount181(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_Id", "_AddtlInf", "_LEI", "_AltrnId"]
-	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_AddtlInf", "_Id", "_LEI", "_PrcgId", "_AltrnId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -48,12 +22,25 @@ class PartyIdentificationAndAccount181(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def LEI(self):
 		return self._LEI
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -61,12 +48,25 @@ class PartyIdentificationAndAccount181(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
+
+	@property
 	def AltrnId(self):
 		return self._AltrnId
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
 	@AltrnId.deleter
 	def AltrnId(self):
@@ -74,10 +74,10 @@ class PartyIdentificationAndAccount181(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
 

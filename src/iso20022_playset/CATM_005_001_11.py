@@ -12,7 +12,7 @@ class CATM_005_001_11():
 
 		@MntncDlgtnReq.setter
 		def MntncDlgtnReq(self, value):
-			self._MntncDlgtnReq = value if type(value) != auto else self.make_default("MntncDlgtnReq")
+			self._MntncDlgtnReq = value if type(value) != base_types.auto else self.make_default("MntncDlgtnReq")
 
 		@MntncDlgtnReq.deleter
 		def MntncDlgtnReq(self):

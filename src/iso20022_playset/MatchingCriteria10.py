@@ -1,23 +1,23 @@
 from . import base_types
 from .CounterpartyMatchingCriteria4 import CounterpartyMatchingCriteria4
-from .LoanMatchingCriteria9 import LoanMatchingCriteria9
 from .CollateralMatchingCriteria6 import CollateralMatchingCriteria6
+from .LoanMatchingCriteria9 import LoanMatchingCriteria9
 
 class MatchingCriteria10(base_types._BaseFieldType):
 
-	__slots__ = ["_CollMtchgCrit", "_CtrPtyMtchgCrit", "_LnMtchgCrit"]
+	__slots__ = ["_LnMtchgCrit", "_CtrPtyMtchgCrit", "_CollMtchgCrit"]
 	@property
-	def CollMtchgCrit(self):
-		return self._CollMtchgCrit
+	def LnMtchgCrit(self):
+		return self._LnMtchgCrit
 
-	@CollMtchgCrit.setter
-	def CollMtchgCrit(self, value):
-		self._CollMtchgCrit = value if type(value) != auto else self.make_default("CollMtchgCrit")
+	@LnMtchgCrit.setter
+	def LnMtchgCrit(self, value):
+		self._LnMtchgCrit = value if type(value) != base_types.auto else self.make_default("LnMtchgCrit")
 
-	@CollMtchgCrit.deleter
-	def CollMtchgCrit(self):
-		del self._CollMtchgCrit
-		self._CollMtchgCrit = None
+	@LnMtchgCrit.deleter
+	def LnMtchgCrit(self):
+		del self._LnMtchgCrit
+		self._LnMtchgCrit = None
 
 	@property
 	def CtrPtyMtchgCrit(self):
@@ -25,7 +25,7 @@ class MatchingCriteria10(base_types._BaseFieldType):
 
 	@CtrPtyMtchgCrit.setter
 	def CtrPtyMtchgCrit(self, value):
-		self._CtrPtyMtchgCrit = value if type(value) != auto else self.make_default("CtrPtyMtchgCrit")
+		self._CtrPtyMtchgCrit = value if type(value) != base_types.auto else self.make_default("CtrPtyMtchgCrit")
 
 	@CtrPtyMtchgCrit.deleter
 	def CtrPtyMtchgCrit(self):
@@ -33,21 +33,21 @@ class MatchingCriteria10(base_types._BaseFieldType):
 		self._CtrPtyMtchgCrit = None
 
 	@property
-	def LnMtchgCrit(self):
-		return self._LnMtchgCrit
+	def CollMtchgCrit(self):
+		return self._CollMtchgCrit
 
-	@LnMtchgCrit.setter
-	def LnMtchgCrit(self, value):
-		self._LnMtchgCrit = value if type(value) != auto else self.make_default("LnMtchgCrit")
+	@CollMtchgCrit.setter
+	def CollMtchgCrit(self, value):
+		self._CollMtchgCrit = value if type(value) != base_types.auto else self.make_default("CollMtchgCrit")
 
-	@LnMtchgCrit.deleter
-	def LnMtchgCrit(self):
-		del self._LnMtchgCrit
-		self._LnMtchgCrit = None
+	@CollMtchgCrit.deleter
+	def CollMtchgCrit(self):
+		del self._CollMtchgCrit
+		self._CollMtchgCrit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollMtchgCrit', type=CollateralMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnMtchgCrit', type=LoanMatchingCriteria9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollMtchgCrit', type=CollateralMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),
 	))
 

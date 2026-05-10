@@ -11,7 +11,7 @@ class RemittanceAmount4(base_types._BaseFieldType):
 
 	@RmtAmtAndTp.setter
 	def RmtAmtAndTp(self, value):
-		self._RmtAmtAndTp = value if type(value) != auto else self.make_default("RmtAmtAndTp")
+		self._RmtAmtAndTp = value if type(value) != base_types.auto else self.make_default("RmtAmtAndTp")
 
 	@RmtAmtAndTp.deleter
 	def RmtAmtAndTp(self):
@@ -24,7 +24,7 @@ class RemittanceAmount4(base_types._BaseFieldType):
 
 	@AdjstmntAmtAndRsn.setter
 	def AdjstmntAmtAndRsn(self, value):
-		self._AdjstmntAmtAndRsn = value if type(value) != auto else self.make_default("AdjstmntAmtAndRsn")
+		self._AdjstmntAmtAndRsn = value if type(value) != base_types.auto else self.make_default("AdjstmntAmtAndRsn")
 
 	@AdjstmntAmtAndRsn.deleter
 	def AdjstmntAmtAndRsn(self):

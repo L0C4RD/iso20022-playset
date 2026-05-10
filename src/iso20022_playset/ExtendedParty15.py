@@ -11,7 +11,7 @@ class ExtendedParty15(base_types._BaseFieldType):
 
 	@OthrPtyDtls.setter
 	def OthrPtyDtls(self, value):
-		self._OthrPtyDtls = value if type(value) != auto else self.make_default("OthrPtyDtls")
+		self._OthrPtyDtls = value if type(value) != base_types.auto else self.make_default("OthrPtyDtls")
 
 	@OthrPtyDtls.deleter
 	def OthrPtyDtls(self):
@@ -24,7 +24,7 @@ class ExtendedParty15(base_types._BaseFieldType):
 
 	@XtndedPtyRole.setter
 	def XtndedPtyRole(self, value):
-		self._XtndedPtyRole = value if type(value) != auto else self.make_default("XtndedPtyRole")
+		self._XtndedPtyRole = value if type(value) != base_types.auto else self.make_default("XtndedPtyRole")
 
 	@XtndedPtyRole.deleter
 	def XtndedPtyRole(self):

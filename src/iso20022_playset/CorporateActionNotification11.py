@@ -5,19 +5,19 @@ from .CorporateActionProcessingStatus6Choice import CorporateActionProcessingSta
 
 class CorporateActionNotification11(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnTp", "_NtfctnId", "_PrcgSts"]
+	__slots__ = ["_PrcgSts", "_NtfctnId", "_NtfctnTp"]
 	@property
-	def NtfctnTp(self):
-		return self._NtfctnTp
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@NtfctnTp.setter
-	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
-	@NtfctnTp.deleter
-	def NtfctnTp(self):
-		del self._NtfctnTp
-		self._NtfctnTp = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def NtfctnId(self):
@@ -25,7 +25,7 @@ class CorporateActionNotification11(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
 
 	@NtfctnId.deleter
 	def NtfctnId(self):
@@ -33,21 +33,21 @@ class CorporateActionNotification11(base_types._BaseFieldType):
 		self._NtfctnId = None
 
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def NtfctnTp(self):
+		return self._NtfctnTp
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@NtfctnTp.setter
+	def NtfctnTp(self, value):
+		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@NtfctnTp.deleter
+	def NtfctnTp(self):
+		del self._NtfctnTp
+		self._NtfctnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnTp', type=CorporateActionNotificationType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CorporateActionProcessingStatus6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnTp', type=CorporateActionNotificationType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

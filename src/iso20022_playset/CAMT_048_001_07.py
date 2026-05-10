@@ -12,7 +12,7 @@ class CAMT_048_001_07():
 
 		@ModfyRsvatn.setter
 		def ModfyRsvatn(self, value):
-			self._ModfyRsvatn = value if type(value) != auto else self.make_default("ModfyRsvatn")
+			self._ModfyRsvatn = value if type(value) != base_types.auto else self.make_default("ModfyRsvatn")
 
 		@ModfyRsvatn.deleter
 		def ModfyRsvatn(self):

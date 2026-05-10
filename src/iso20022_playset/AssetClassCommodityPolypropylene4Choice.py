@@ -11,7 +11,7 @@ class AssetClassCommodityPolypropylene4Choice(base_types._BaseFieldType):
 
 	@Plstc.setter
 	def Plstc(self, value):
-		self._Plstc = value if type(value) != auto else self.make_default("Plstc")
+		self._Plstc = value if type(value) != base_types.auto else self.make_default("Plstc")
 
 	@Plstc.deleter
 	def Plstc(self):
@@ -24,7 +24,7 @@ class AssetClassCommodityPolypropylene4Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):

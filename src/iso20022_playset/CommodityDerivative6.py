@@ -10,7 +10,7 @@ class CommodityDerivative6(base_types._BaseFieldType):
 
 	@SttlmLctn.setter
 	def SttlmLctn(self, value):
-		self._SttlmLctn = value if type(value) != auto else self.make_default("SttlmLctn")
+		self._SttlmLctn = value if type(value) != base_types.auto else self.make_default("SttlmLctn")
 
 	@SttlmLctn.deleter
 	def SttlmLctn(self):

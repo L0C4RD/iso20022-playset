@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .RejectionReason68Code import RejectionReason68Code
+from .Max35Text import Max35Text
 
 class RejectionStatus3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RejectionStatus3(base_types._BaseFieldType):
 
 	@RjctdRsn.setter
 	def RjctdRsn(self, value):
-		self._RjctdRsn = value if type(value) != auto else self.make_default("RjctdRsn")
+		self._RjctdRsn = value if type(value) != base_types.auto else self.make_default("RjctdRsn")
 
 	@RjctdRsn.deleter
 	def RjctdRsn(self):
@@ -24,7 +24,7 @@ class RejectionStatus3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .PaymentInstruction44 import PaymentInstruction44
 from .SupplementaryData1 import SupplementaryData1
+from .PaymentInstruction44 import PaymentInstruction44
 from .GroupHeader114 import GroupHeader114
 
 class CustomerCreditTransferInitiationV12(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class CustomerCreditTransferInitiationV12(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class CustomerCreditTransferInitiationV12(base_types._BaseFieldType):
 
 	@PmtInf.setter
 	def PmtInf(self, value):
-		self._PmtInf = value if type(value) != auto else self.make_default("PmtInf")
+		self._PmtInf = value if type(value) != base_types.auto else self.make_default("PmtInf")
 
 	@PmtInf.deleter
 	def PmtInf(self):
@@ -38,7 +38,7 @@ class CustomerCreditTransferInitiationV12(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):

@@ -12,7 +12,7 @@ class ACMT_024_001_04():
 
 		@IdVrfctnRpt.setter
 		def IdVrfctnRpt(self, value):
-			self._IdVrfctnRpt = value if type(value) != auto else self.make_default("IdVrfctnRpt")
+			self._IdVrfctnRpt = value if type(value) != base_types.auto else self.make_default("IdVrfctnRpt")
 
 		@IdVrfctnRpt.deleter
 		def IdVrfctnRpt(self):

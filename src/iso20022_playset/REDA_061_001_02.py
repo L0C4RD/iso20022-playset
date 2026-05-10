@@ -12,7 +12,7 @@ class REDA_061_001_02():
 
 		@NetgCutOffRefDataRpt.setter
 		def NetgCutOffRefDataRpt(self, value):
-			self._NetgCutOffRefDataRpt = value if type(value) != auto else self.make_default("NetgCutOffRefDataRpt")
+			self._NetgCutOffRefDataRpt = value if type(value) != base_types.auto else self.make_default("NetgCutOffRefDataRpt")
 
 		@NetgCutOffRefDataRpt.deleter
 		def NetgCutOffRefDataRpt(self):

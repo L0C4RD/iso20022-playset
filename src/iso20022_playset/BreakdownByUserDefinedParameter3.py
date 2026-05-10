@@ -1,27 +1,27 @@
 from . import base_types
-from .CountryCode import CountryCode
-from .NetCashForecast4 import NetCashForecast4
+from .CashOutForecast5 import CashOutForecast5
 from .InvestmentAccount42 import InvestmentAccount42
 from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from .DataFormat2Choice import DataFormat2Choice
 from .CashInForecast5 import CashInForecast5
-from .CashOutForecast5 import CashOutForecast5
+from .NetCashForecast4 import NetCashForecast4
+from .CountryCode import CountryCode
+from .DataFormat2Choice import DataFormat2Choice
 
 class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_CshOutFcst", "_NetCshFcst", "_CshInFcst", "_Ctry", "_UsrDfnd", "_Pty"]
+	__slots__ = ["_Pty", "_CshOutFcst", "_NetCshFcst", "_CshInFcst", "_Ccy", "_UsrDfnd", "_Ctry"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Pty(self):
+		return self._Pty
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
 
 	@property
 	def CshOutFcst(self):
@@ -29,7 +29,7 @@ class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 
 	@CshOutFcst.setter
 	def CshOutFcst(self, value):
-		self._CshOutFcst = value if type(value) != auto else self.make_default("CshOutFcst")
+		self._CshOutFcst = value if type(value) != base_types.auto else self.make_default("CshOutFcst")
 
 	@CshOutFcst.deleter
 	def CshOutFcst(self):
@@ -42,7 +42,7 @@ class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 
 	@NetCshFcst.setter
 	def NetCshFcst(self, value):
-		self._NetCshFcst = value if type(value) != auto else self.make_default("NetCshFcst")
+		self._NetCshFcst = value if type(value) != base_types.auto else self.make_default("NetCshFcst")
 
 	@NetCshFcst.deleter
 	def NetCshFcst(self):
@@ -55,7 +55,7 @@ class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 
 	@CshInFcst.setter
 	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
+		self._CshInFcst = value if type(value) != base_types.auto else self.make_default("CshInFcst")
 
 	@CshInFcst.deleter
 	def CshInFcst(self):
@@ -63,17 +63,17 @@ class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 		self._CshInFcst = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def Ccy(self):
+		return self._Ccy
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def UsrDfnd(self):
@@ -81,7 +81,7 @@ class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 
 	@UsrDfnd.setter
 	def UsrDfnd(self, value):
-		self._UsrDfnd = value if type(value) != auto else self.make_default("UsrDfnd")
+		self._UsrDfnd = value if type(value) != base_types.auto else self.make_default("UsrDfnd")
 
 	@UsrDfnd.deleter
 	def UsrDfnd(self):
@@ -89,25 +89,25 @@ class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 		self._UsrDfnd = None
 
 	@property
-	def Pty(self):
-		return self._Pty
+	def Ctry(self):
+		return self._Ctry
 
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty', type=InvestmentAccount42, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrDfnd', type=DataFormat2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty', type=InvestmentAccount42, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

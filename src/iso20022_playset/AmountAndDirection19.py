@@ -1,6 +1,6 @@
 from . import base_types
-from .RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
 from .CreditDebitCode import CreditDebitCode
+from .RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
 
 class AmountAndDirection19(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AmountAndDirection19(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
@@ -24,7 +24,7 @@ class AmountAndDirection19(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

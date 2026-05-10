@@ -11,7 +11,7 @@ class DateAndPeriod3Choice(base_types._BaseFieldType):
 
 	@StmtDt.setter
 	def StmtDt(self, value):
-		self._StmtDt = value if type(value) != auto else self.make_default("StmtDt")
+		self._StmtDt = value if type(value) != base_types.auto else self.make_default("StmtDt")
 
 	@StmtDt.deleter
 	def StmtDt(self):
@@ -24,7 +24,7 @@ class DateAndPeriod3Choice(base_types._BaseFieldType):
 
 	@StmtPrd.setter
 	def StmtPrd(self, value):
-		self._StmtPrd = value if type(value) != auto else self.make_default("StmtPrd")
+		self._StmtPrd = value if type(value) != base_types.auto else self.make_default("StmtPrd")
 
 	@StmtPrd.deleter
 	def StmtPrd(self):

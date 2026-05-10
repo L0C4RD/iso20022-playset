@@ -1,6 +1,6 @@
 from . import base_types
-from .ContactIdentification4 import ContactIdentification4
 from .PartyIdentification2Choice import PartyIdentification2Choice
+from .ContactIdentification4 import ContactIdentification4
 
 class ContactPerson1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ContactPerson1(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
@@ -24,7 +24,7 @@ class ContactPerson1(base_types._BaseFieldType):
 
 	@InstnId.setter
 	def InstnId(self, value):
-		self._InstnId = value if type(value) != auto else self.make_default("InstnId")
+		self._InstnId = value if type(value) != base_types.auto else self.make_default("InstnId")
 
 	@InstnId.deleter
 	def InstnId(self):

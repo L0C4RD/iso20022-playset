@@ -1,6 +1,6 @@
 from . import base_types
-from .AccountOrBusinessError6Choice import AccountOrBusinessError6Choice
 from .AccountIdentification4Choice import AccountIdentification4Choice
+from .AccountOrBusinessError6Choice import AccountOrBusinessError6Choice
 
 class AccountReport35(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AccountReport35(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -24,7 +24,7 @@ class AccountReport35(base_types._BaseFieldType):
 
 	@AcctOrErr.setter
 	def AcctOrErr(self, value):
-		self._AcctOrErr = value if type(value) != auto else self.make_default("AcctOrErr")
+		self._AcctOrErr = value if type(value) != base_types.auto else self.make_default("AcctOrErr")
 
 	@AcctOrErr.deleter
 	def AcctOrErr(self):

@@ -1,30 +1,17 @@
 from . import base_types
-from .CollateralType2Code import CollateralType2Code
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .CollateralType2Code import CollateralType2Code
 
 class Collateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_PstHrcutVal", "_MktVal", "_CollTp"]
-	@property
-	def PstHrcutVal(self):
-		return self._PstHrcutVal
-
-	@PstHrcutVal.setter
-	def PstHrcutVal(self, value):
-		self._PstHrcutVal = value if type(value) != auto else self.make_default("PstHrcutVal")
-
-	@PstHrcutVal.deleter
-	def PstHrcutVal(self):
-		del self._PstHrcutVal
-		self._PstHrcutVal = None
-
+	__slots__ = ["_MktVal", "_CollTp", "_PstHrcutVal"]
 	@property
 	def MktVal(self):
 		return self._MktVal
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
+		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
 
 	@MktVal.deleter
 	def MktVal(self):
@@ -37,16 +24,29 @@ class Collateral3(base_types._BaseFieldType):
 
 	@CollTp.setter
 	def CollTp(self, value):
-		self._CollTp = value if type(value) != auto else self.make_default("CollTp")
+		self._CollTp = value if type(value) != base_types.auto else self.make_default("CollTp")
 
 	@CollTp.deleter
 	def CollTp(self):
 		del self._CollTp
 		self._CollTp = None
 
+	@property
+	def PstHrcutVal(self):
+		return self._PstHrcutVal
+
+	@PstHrcutVal.setter
+	def PstHrcutVal(self, value):
+		self._PstHrcutVal = value if type(value) != base_types.auto else self.make_default("PstHrcutVal")
+
+	@PstHrcutVal.deleter
+	def PstHrcutVal(self):
+		del self._PstHrcutVal
+		self._PstHrcutVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollTp', type=CollateralType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

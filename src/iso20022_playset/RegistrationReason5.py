@@ -1,6 +1,6 @@
 from . import base_types
-from .Max210Text import Max210Text
 from .Registration10Choice import Registration10Choice
+from .Max210Text import Max210Text
 
 class RegistrationReason5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RegistrationReason5(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class RegistrationReason5(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

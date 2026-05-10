@@ -1,21 +1,47 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .StatusDetail1 import StatusDetail1
-from .PartyDetail1 import PartyDetail1
-from .SupplementaryData1 import SupplementaryData1
-from .Period4Choice import Period4Choice
 from .PartyIdentification136 import PartyIdentification136
+from .StatusDetail1 import StatusDetail1
+from .SupplementaryData1 import SupplementaryData1
+from .PartyDetail1 import PartyDetail1
+from .Period4Choice import Period4Choice
+from .Max35Text import Max35Text
 
 class PartyUpdate1(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_SplmtryData", "_PrvsId", "_Id", "_Othr", "_Sts", "_TechVldtyPrd"]
+	__slots__ = ["_TechVldtyPrd", "_Othr", "_TechRcrdId", "_SplmtryData", "_PrvsId", "_Id", "_Sts"]
+	@property
+	def TechVldtyPrd(self):
+		return self._TechVldtyPrd
+
+	@TechVldtyPrd.setter
+	def TechVldtyPrd(self, value):
+		self._TechVldtyPrd = value if type(value) != base_types.auto else self.make_default("TechVldtyPrd")
+
+	@TechVldtyPrd.deleter
+	def TechVldtyPrd(self):
+		del self._TechVldtyPrd
+		self._TechVldtyPrd = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
@@ -28,7 +54,7 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -41,7 +67,7 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@PrvsId.setter
 	def PrvsId(self, value):
-		self._PrvsId = value if type(value) != auto else self.make_default("PrvsId")
+		self._PrvsId = value if type(value) != base_types.auto else self.make_default("PrvsId")
 
 	@PrvsId.deleter
 	def PrvsId(self):
@@ -54,7 +80,7 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -62,51 +88,25 @@ class PartyUpdate1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
 	def Sts(self):
 		return self._Sts
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
 
-	@property
-	def TechVldtyPrd(self):
-		return self._TechVldtyPrd
-
-	@TechVldtyPrd.setter
-	def TechVldtyPrd(self, value):
-		self._TechVldtyPrd = value if type(value) != auto else self.make_default("TechVldtyPrd")
-
-	@TechVldtyPrd.deleter
-	def TechVldtyPrd(self):
-		del self._TechVldtyPrd
-		self._TechVldtyPrd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TechVldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=PartyDetail1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrvsId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=PartyDetail1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatusDetail1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TechVldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

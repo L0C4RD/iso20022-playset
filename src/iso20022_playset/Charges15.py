@@ -11,7 +11,7 @@ class Charges15(base_types._BaseFieldType):
 
 	@TtlChrgsAndTaxAmt.setter
 	def TtlChrgsAndTaxAmt(self, value):
-		self._TtlChrgsAndTaxAmt = value if type(value) != auto else self.make_default("TtlChrgsAndTaxAmt")
+		self._TtlChrgsAndTaxAmt = value if type(value) != base_types.auto else self.make_default("TtlChrgsAndTaxAmt")
 
 	@TtlChrgsAndTaxAmt.deleter
 	def TtlChrgsAndTaxAmt(self):
@@ -24,7 +24,7 @@ class Charges15(base_types._BaseFieldType):
 
 	@Rcrd.setter
 	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != auto else self.make_default("Rcrd")
+		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
 
 	@Rcrd.deleter
 	def Rcrd(self):

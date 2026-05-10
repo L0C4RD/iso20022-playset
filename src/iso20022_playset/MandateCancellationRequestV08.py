@@ -12,7 +12,7 @@ class MandateCancellationRequestV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class MandateCancellationRequestV08(base_types._BaseFieldType):
 
 	@UndrlygCxlDtls.setter
 	def UndrlygCxlDtls(self, value):
-		self._UndrlygCxlDtls = value if type(value) != auto else self.make_default("UndrlygCxlDtls")
+		self._UndrlygCxlDtls = value if type(value) != base_types.auto else self.make_default("UndrlygCxlDtls")
 
 	@UndrlygCxlDtls.deleter
 	def UndrlygCxlDtls(self):
@@ -38,7 +38,7 @@ class MandateCancellationRequestV08(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):

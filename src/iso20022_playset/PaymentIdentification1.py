@@ -10,7 +10,7 @@ class PaymentIdentification1(base_types._BaseFieldType):
 
 	@EndToEndId.setter
 	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
+		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
 
 	@EndToEndId.deleter
 	def EndToEndId(self):
@@ -23,7 +23,7 @@ class PaymentIdentification1(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
 
 	@InstrId.deleter
 	def InstrId(self):

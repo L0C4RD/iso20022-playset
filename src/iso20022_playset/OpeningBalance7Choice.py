@@ -10,7 +10,7 @@ class OpeningBalance7Choice(base_types._BaseFieldType):
 
 	@Frst.setter
 	def Frst(self, value):
-		self._Frst = value if type(value) != auto else self.make_default("Frst")
+		self._Frst = value if type(value) != base_types.auto else self.make_default("Frst")
 
 	@Frst.deleter
 	def Frst(self):
@@ -23,7 +23,7 @@ class OpeningBalance7Choice(base_types._BaseFieldType):
 
 	@Intrmy.setter
 	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != auto else self.make_default("Intrmy")
+		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
 
 	@Intrmy.deleter
 	def Intrmy(self):

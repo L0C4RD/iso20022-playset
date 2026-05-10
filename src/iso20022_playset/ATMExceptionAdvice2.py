@@ -1,18 +1,18 @@
 from . import base_types
+from .ATMEnvironment20 import ATMEnvironment20
 from .ATMTransaction40 import ATMTransaction40
 from .ATMContext25 import ATMContext25
-from .ATMEnvironment20 import ATMEnvironment20
 
 class ATMExceptionAdvice2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
+	__slots__ = ["_Cntxt", "_Tx", "_Envt"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
 	@Cntxt.deleter
 	def Cntxt(self):
@@ -20,34 +20,34 @@ class ATMExceptionAdvice2(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
-	@property
 	def Tx(self):
 		return self._Tx
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
 		self._Tx = None
 
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cntxt', type=ATMContext25, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=ATMEnvironment20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=ATMEnvironment20, min=0, max=1, mutex_group=None, array=False),
 	))
 

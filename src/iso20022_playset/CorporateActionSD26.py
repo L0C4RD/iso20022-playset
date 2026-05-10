@@ -1,7 +1,7 @@
 from . import base_types
 from .Max4AlphaNumericText import Max4AlphaNumericText
-from .Max15AlphaNumericText import Max15AlphaNumericText
 from .DecimalNumber import DecimalNumber
+from .Max15AlphaNumericText import Max15AlphaNumericText
 
 class CorporateActionSD26(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CorporateActionSD26(base_types._BaseFieldType):
 
 	@CertPrfx.setter
 	def CertPrfx(self, value):
-		self._CertPrfx = value if type(value) != auto else self.make_default("CertPrfx")
+		self._CertPrfx = value if type(value) != base_types.auto else self.make_default("CertPrfx")
 
 	@CertPrfx.deleter
 	def CertPrfx(self):
@@ -25,7 +25,7 @@ class CorporateActionSD26(base_types._BaseFieldType):
 
 	@CertNb.setter
 	def CertNb(self, value):
-		self._CertNb = value if type(value) != auto else self.make_default("CertNb")
+		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
 
 	@CertNb.deleter
 	def CertNb(self):
@@ -38,7 +38,7 @@ class CorporateActionSD26(base_types._BaseFieldType):
 
 	@CertClldAmt.setter
 	def CertClldAmt(self, value):
-		self._CertClldAmt = value if type(value) != auto else self.make_default("CertClldAmt")
+		self._CertClldAmt = value if type(value) != base_types.auto else self.make_default("CertClldAmt")
 
 	@CertClldAmt.deleter
 	def CertClldAmt(self):

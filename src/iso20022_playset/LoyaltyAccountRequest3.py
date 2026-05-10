@@ -1,6 +1,6 @@
 from . import base_types
-from .CustomerOrder1 import CustomerOrder1
 from .LoyaltyAccount3 import LoyaltyAccount3
+from .CustomerOrder1 import CustomerOrder1
 
 class LoyaltyAccountRequest3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class LoyaltyAccountRequest3(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
 	@Acct.deleter
 	def Acct(self):
@@ -24,7 +24,7 @@ class LoyaltyAccountRequest3(base_types._BaseFieldType):
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):

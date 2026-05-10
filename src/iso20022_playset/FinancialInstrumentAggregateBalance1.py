@@ -1,23 +1,23 @@
 from . import base_types
 from .FinancialInstrumentAggregateBalance1Choice import FinancialInstrumentAggregateBalance1Choice
-from .ISODate import ISODate
 from .Price6 import Price6
+from .ISODate import ISODate
 
 class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmDt", "_Pric", "_Hldgs"]
+	__slots__ = ["_Hldgs", "_Pric", "_ItmDt"]
 	@property
-	def ItmDt(self):
-		return self._ItmDt
+	def Hldgs(self):
+		return self._Hldgs
 
-	@ItmDt.setter
-	def ItmDt(self, value):
-		self._ItmDt = value if type(value) != auto else self.make_default("ItmDt")
+	@Hldgs.setter
+	def Hldgs(self, value):
+		self._Hldgs = value if type(value) != base_types.auto else self.make_default("Hldgs")
 
-	@ItmDt.deleter
-	def ItmDt(self):
-		del self._ItmDt
-		self._ItmDt = None
+	@Hldgs.deleter
+	def Hldgs(self):
+		del self._Hldgs
+		self._Hldgs = None
 
 	@property
 	def Pric(self):
@@ -25,7 +25,7 @@ class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != auto else self.make_default("Pric")
+		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
 
 	@Pric.deleter
 	def Pric(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 		self._Pric = None
 
 	@property
-	def Hldgs(self):
-		return self._Hldgs
+	def ItmDt(self):
+		return self._ItmDt
 
-	@Hldgs.setter
-	def Hldgs(self, value):
-		self._Hldgs = value if type(value) != auto else self.make_default("Hldgs")
+	@ItmDt.setter
+	def ItmDt(self, value):
+		self._ItmDt = value if type(value) != base_types.auto else self.make_default("ItmDt")
 
-	@Hldgs.deleter
-	def Hldgs(self):
-		del self._Hldgs
-		self._Hldgs = None
+	@ItmDt.deleter
+	def ItmDt(self):
+		del self._ItmDt
+		self._ItmDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ItmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pric', type=Price6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Hldgs', type=FinancialInstrumentAggregateBalance1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pric', type=Price6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ItmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

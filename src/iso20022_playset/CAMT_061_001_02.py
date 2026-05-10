@@ -12,7 +12,7 @@ class CAMT_061_001_02():
 
 		@PayInCall.setter
 		def PayInCall(self, value):
-			self._PayInCall = value if type(value) != auto else self.make_default("PayInCall")
+			self._PayInCall = value if type(value) != base_types.auto else self.make_default("PayInCall")
 
 		@PayInCall.deleter
 		def PayInCall(self):

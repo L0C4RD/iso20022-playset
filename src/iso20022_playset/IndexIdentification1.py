@@ -1,18 +1,18 @@
 from . import base_types
 from .Max350Text import Max350Text
-from .ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
 from .ISINOct2015Identifier import ISINOct2015Identifier
+from .ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
 
 class IndexIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_ISIN", "_Indx"]
+	__slots__ = ["_Nm", "_Indx", "_ISIN"]
 	@property
 	def Nm(self):
 		return self._Nm
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -20,34 +20,34 @@ class IndexIdentification1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def ISIN(self):
-		return self._ISIN
-
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
-
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
-
-	@property
 	def Indx(self):
 		return self._Indx
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
+		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
 		self._Indx = None
 
+	@property
+	def ISIN(self):
+		return self._ISIN
+
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Indx', type=ExternalBenchmarkCurveName1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

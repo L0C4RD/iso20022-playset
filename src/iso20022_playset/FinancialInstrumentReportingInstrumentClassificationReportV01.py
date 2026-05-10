@@ -11,7 +11,7 @@ class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._
 
 	@InstrmClssfctn.setter
 	def InstrmClssfctn(self, value):
-		self._InstrmClssfctn = value if type(value) != auto else self.make_default("InstrmClssfctn")
+		self._InstrmClssfctn = value if type(value) != base_types.auto else self.make_default("InstrmClssfctn")
 
 	@InstrmClssfctn.deleter
 	def InstrmClssfctn(self):

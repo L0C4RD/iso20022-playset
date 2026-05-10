@@ -1,58 +1,19 @@
 from . import base_types
 from .Max35Text import Max35Text
-from .PartyIdentification139 import PartyIdentification139
 from .Status31Choice import Status31Choice
+from .PartyIdentification139 import PartyIdentification139
 from .AdditionalReference10 import AdditionalReference10
 
 class CancellationStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_CxlRef", "_MstrRef", "_ClntRef", "_StsInitr", "_TrfRef"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
-	def CxlRef(self):
-		return self._CxlRef
-
-	@CxlRef.setter
-	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
-
-	@CxlRef.deleter
-	def CxlRef(self):
-		del self._CxlRef
-		self._CxlRef = None
-
-	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
+	__slots__ = ["_ClntRef", "_StsInitr", "_CxlRef", "_MstrRef", "_Sts", "_TrfRef"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
 
 	@ClntRef.deleter
 	def ClntRef(self):
@@ -65,7 +26,7 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 
 	@StsInitr.setter
 	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
+		self._StsInitr = value if type(value) != base_types.auto else self.make_default("StsInitr")
 
 	@StsInitr.deleter
 	def StsInitr(self):
@@ -73,12 +34,51 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 		self._StsInitr = None
 
 	@property
+	def CxlRef(self):
+		return self._CxlRef
+
+	@CxlRef.setter
+	def CxlRef(self, value):
+		self._CxlRef = value if type(value) != base_types.auto else self.make_default("CxlRef")
+
+	@CxlRef.deleter
+	def CxlRef(self):
+		del self._CxlRef
+		self._CxlRef = None
+
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
 	def TrfRef(self):
 		return self._TrfRef
 
 	@TrfRef.setter
 	def TrfRef(self, value):
-		self._TrfRef = value if type(value) != auto else self.make_default("TrfRef")
+		self._TrfRef = value if type(value) != base_types.auto else self.make_default("TrfRef")
 
 	@TrfRef.deleter
 	def TrfRef(self):
@@ -86,11 +86,11 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 		self._TrfRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=Status31Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsInitr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=Status31Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

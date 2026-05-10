@@ -10,7 +10,7 @@ class AdditionalProductInformation3(base_types._BaseFieldType):
 
 	@FinInstrmTxCostsExPstUK.setter
 	def FinInstrmTxCostsExPstUK(self, value):
-		self._FinInstrmTxCostsExPstUK = value if type(value) != auto else self.make_default("FinInstrmTxCostsExPstUK")
+		self._FinInstrmTxCostsExPstUK = value if type(value) != base_types.auto else self.make_default("FinInstrmTxCostsExPstUK")
 
 	@FinInstrmTxCostsExPstUK.deleter
 	def FinInstrmTxCostsExPstUK(self):
@@ -23,7 +23,7 @@ class AdditionalProductInformation3(base_types._BaseFieldType):
 
 	@FinInstrmTxCostsExAnteUK.setter
 	def FinInstrmTxCostsExAnteUK(self, value):
-		self._FinInstrmTxCostsExAnteUK = value if type(value) != auto else self.make_default("FinInstrmTxCostsExAnteUK")
+		self._FinInstrmTxCostsExAnteUK = value if type(value) != base_types.auto else self.make_default("FinInstrmTxCostsExAnteUK")
 
 	@FinInstrmTxCostsExAnteUK.deleter
 	def FinInstrmTxCostsExAnteUK(self):

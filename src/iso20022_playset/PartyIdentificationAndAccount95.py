@@ -1,31 +1,18 @@
 from . import base_types
 from .Max35Text import Max35Text
-from .PartyIdentification71Choice import PartyIdentification71Choice
 from .SecuritiesAccount22 import SecuritiesAccount22
+from .PartyIdentification71Choice import PartyIdentification71Choice
 
 class PartyIdentificationAndAccount95(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_PtyId", "_PrcgId"]
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
+	__slots__ = ["_PtyId", "_PrcgId", "_AcctId"]
 	@property
 	def PtyId(self):
 		return self._PtyId
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
 	@PtyId.deleter
 	def PtyId(self):
@@ -38,16 +25,29 @@ class PartyIdentificationAndAccount95(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
 
 	@PrcgId.deleter
 	def PrcgId(self):
 		del self._PrcgId
 		self._PrcgId = None
 
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification71Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount22, min=0, max=1, mutex_group=None, array=False),
 	))
 

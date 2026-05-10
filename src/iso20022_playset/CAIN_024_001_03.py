@@ -12,7 +12,7 @@ class CAIN_024_001_03():
 
 		@CardMgmtRspn.setter
 		def CardMgmtRspn(self, value):
-			self._CardMgmtRspn = value if type(value) != auto else self.make_default("CardMgmtRspn")
+			self._CardMgmtRspn = value if type(value) != base_types.auto else self.make_default("CardMgmtRspn")
 
 		@CardMgmtRspn.deleter
 		def CardMgmtRspn(self):

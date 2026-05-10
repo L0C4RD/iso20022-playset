@@ -4,14 +4,14 @@ from .SecuritiesReferenceDataReport6 import SecuritiesReferenceDataReport6
 
 class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntdRcrd", "_CancRcrd", "_NewRcrd", "_ModfdRcrd"]
+	__slots__ = ["_TermntdRcrd", "_ModfdRcrd", "_CancRcrd", "_NewRcrd"]
 	@property
 	def TermntdRcrd(self):
 		return self._TermntdRcrd
 
 	@TermntdRcrd.setter
 	def TermntdRcrd(self, value):
-		self._TermntdRcrd = value if type(value) != auto else self.make_default("TermntdRcrd")
+		self._TermntdRcrd = value if type(value) != base_types.auto else self.make_default("TermntdRcrd")
 
 	@TermntdRcrd.deleter
 	def TermntdRcrd(self):
@@ -19,12 +19,25 @@ class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 		self._TermntdRcrd = None
 
 	@property
+	def ModfdRcrd(self):
+		return self._ModfdRcrd
+
+	@ModfdRcrd.setter
+	def ModfdRcrd(self, value):
+		self._ModfdRcrd = value if type(value) != base_types.auto else self.make_default("ModfdRcrd")
+
+	@ModfdRcrd.deleter
+	def ModfdRcrd(self):
+		del self._ModfdRcrd
+		self._ModfdRcrd = None
+
+	@property
 	def CancRcrd(self):
 		return self._CancRcrd
 
 	@CancRcrd.setter
 	def CancRcrd(self, value):
-		self._CancRcrd = value if type(value) != auto else self.make_default("CancRcrd")
+		self._CancRcrd = value if type(value) != base_types.auto else self.make_default("CancRcrd")
 
 	@CancRcrd.deleter
 	def CancRcrd(self):
@@ -37,30 +50,17 @@ class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 
 	@NewRcrd.setter
 	def NewRcrd(self, value):
-		self._NewRcrd = value if type(value) != auto else self.make_default("NewRcrd")
+		self._NewRcrd = value if type(value) != base_types.auto else self.make_default("NewRcrd")
 
 	@NewRcrd.deleter
 	def NewRcrd(self):
 		del self._NewRcrd
 		self._NewRcrd = None
 
-	@property
-	def ModfdRcrd(self):
-		return self._ModfdRcrd
-
-	@ModfdRcrd.setter
-	def ModfdRcrd(self, value):
-		self._ModfdRcrd = value if type(value) != auto else self.make_default("ModfdRcrd")
-
-	@ModfdRcrd.deleter
-	def ModfdRcrd(self):
-		del self._ModfdRcrd
-		self._ModfdRcrd = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TermntdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ModfdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CancRcrd', type=SecuritiesReferenceDataReport7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NewRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ModfdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
 	))
 

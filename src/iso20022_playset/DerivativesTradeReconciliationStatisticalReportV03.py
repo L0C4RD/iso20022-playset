@@ -11,7 +11,7 @@ class DerivativesTradeReconciliationStatisticalReportV03(base_types._BaseFieldTy
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class DerivativesTradeReconciliationStatisticalReportV03(base_types._BaseFieldTy
 
 	@RcncltnSttstcs.setter
 	def RcncltnSttstcs(self, value):
-		self._RcncltnSttstcs = value if type(value) != auto else self.make_default("RcncltnSttstcs")
+		self._RcncltnSttstcs = value if type(value) != base_types.auto else self.make_default("RcncltnSttstcs")
 
 	@RcncltnSttstcs.deleter
 	def RcncltnSttstcs(self):

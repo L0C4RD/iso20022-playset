@@ -11,7 +11,7 @@ class NameAndAddress9(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
 
 	@Adr.deleter
 	def Adr(self):
@@ -24,7 +24,7 @@ class NameAndAddress9(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):

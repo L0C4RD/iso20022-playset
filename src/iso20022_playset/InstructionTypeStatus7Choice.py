@@ -11,7 +11,7 @@ class InstructionTypeStatus7Choice(base_types._BaseFieldType):
 
 	@InstrSts.setter
 	def InstrSts(self, value):
-		self._InstrSts = value if type(value) != auto else self.make_default("InstrSts")
+		self._InstrSts = value if type(value) != base_types.auto else self.make_default("InstrSts")
 
 	@InstrSts.deleter
 	def InstrSts(self):
@@ -24,7 +24,7 @@ class InstructionTypeStatus7Choice(base_types._BaseFieldType):
 
 	@CxlSts.setter
 	def CxlSts(self, value):
-		self._CxlSts = value if type(value) != auto else self.make_default("CxlSts")
+		self._CxlSts = value if type(value) != base_types.auto else self.make_default("CxlSts")
 
 	@CxlSts.deleter
 	def CxlSts(self):

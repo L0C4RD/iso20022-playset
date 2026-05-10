@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification36 import GenericIdentification36
 from .Max350Text import Max350Text
+from .GenericIdentification36 import GenericIdentification36
 
 class InnovativeFinance1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class InnovativeFinance1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class InnovativeFinance1(base_types._BaseFieldType):
 
 	@Inf.setter
 	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
+		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
 
 	@Inf.deleter
 	def Inf(self):

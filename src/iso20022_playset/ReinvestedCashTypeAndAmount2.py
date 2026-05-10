@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from .ReinvestmentType1Code import ReinvestmentType1Code
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class ReinvestedCashTypeAndAmount2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ReinvestedCashTypeAndAmount2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class ReinvestedCashTypeAndAmount2(base_types._BaseFieldType):
 
 	@RinvstdCshCcy.setter
 	def RinvstdCshCcy(self, value):
-		self._RinvstdCshCcy = value if type(value) != auto else self.make_default("RinvstdCshCcy")
+		self._RinvstdCshCcy = value if type(value) != base_types.auto else self.make_default("RinvstdCshCcy")
 
 	@RinvstdCshCcy.deleter
 	def RinvstdCshCcy(self):

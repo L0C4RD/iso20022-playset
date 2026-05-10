@@ -11,7 +11,7 @@ class ImplementationSpecification1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class ImplementationSpecification1(base_types._BaseFieldType):
 
 	@Regy.setter
 	def Regy(self, value):
-		self._Regy = value if type(value) != auto else self.make_default("Regy")
+		self._Regy = value if type(value) != base_types.auto else self.make_default("Regy")
 
 	@Regy.deleter
 	def Regy(self):

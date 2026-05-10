@@ -1,7 +1,7 @@
 from . import base_types
+from .LiquidityRequiredAndAvailable1 import LiquidityRequiredAndAvailable1
 from .Max256Text import Max256Text
 from .CoverTwoDefaulters1 import CoverTwoDefaulters1
-from .LiquidityRequiredAndAvailable1 import LiquidityRequiredAndAvailable1
 
 class LiquidityStressTestResult1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class LiquidityStressTestResult1(base_types._BaseFieldType):
 
 	@ScnroDfltrs.setter
 	def ScnroDfltrs(self, value):
-		self._ScnroDfltrs = value if type(value) != auto else self.make_default("ScnroDfltrs")
+		self._ScnroDfltrs = value if type(value) != base_types.auto else self.make_default("ScnroDfltrs")
 
 	@ScnroDfltrs.deleter
 	def ScnroDfltrs(self):
@@ -25,7 +25,7 @@ class LiquidityStressTestResult1(base_types._BaseFieldType):
 
 	@LqdtyReqrdAndAvlbl.setter
 	def LqdtyReqrdAndAvlbl(self, value):
-		self._LqdtyReqrdAndAvlbl = value if type(value) != auto else self.make_default("LqdtyReqrdAndAvlbl")
+		self._LqdtyReqrdAndAvlbl = value if type(value) != base_types.auto else self.make_default("LqdtyReqrdAndAvlbl")
 
 	@LqdtyReqrdAndAvlbl.deleter
 	def LqdtyReqrdAndAvlbl(self):
@@ -38,7 +38,7 @@ class LiquidityStressTestResult1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

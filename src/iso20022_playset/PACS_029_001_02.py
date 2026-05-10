@@ -12,7 +12,7 @@ class PACS_029_001_02():
 
 		@MulSttlmReq.setter
 		def MulSttlmReq(self, value):
-			self._MulSttlmReq = value if type(value) != auto else self.make_default("MulSttlmReq")
+			self._MulSttlmReq = value if type(value) != base_types.auto else self.make_default("MulSttlmReq")
 
 		@MulSttlmReq.deleter
 		def MulSttlmReq(self):

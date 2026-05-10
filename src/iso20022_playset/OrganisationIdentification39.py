@@ -1,23 +1,23 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .GenericOrganisationIdentification3 import GenericOrganisationIdentification3
 from .LEIIdentifier import LEIIdentifier
+from .GenericOrganisationIdentification3 import GenericOrganisationIdentification3
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class OrganisationIdentification39(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_LEI", "_Othr"]
+	__slots__ = ["_Othr", "_LEI", "_AnyBIC"]
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
+	def Othr(self):
+		return self._Othr
 
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def LEI(self):
@@ -25,7 +25,7 @@ class OrganisationIdentification39(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -33,21 +33,21 @@ class OrganisationIdentification39(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def AnyBIC(self):
+		return self._AnyBIC
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericOrganisationIdentification3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

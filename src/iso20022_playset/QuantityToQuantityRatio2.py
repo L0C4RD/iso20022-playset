@@ -10,7 +10,7 @@ class QuantityToQuantityRatio2(base_types._BaseFieldType):
 
 	@Qty2.setter
 	def Qty2(self, value):
-		self._Qty2 = value if type(value) != auto else self.make_default("Qty2")
+		self._Qty2 = value if type(value) != base_types.auto else self.make_default("Qty2")
 
 	@Qty2.deleter
 	def Qty2(self):
@@ -23,7 +23,7 @@ class QuantityToQuantityRatio2(base_types._BaseFieldType):
 
 	@Qty1.setter
 	def Qty1(self, value):
-		self._Qty1 = value if type(value) != auto else self.make_default("Qty1")
+		self._Qty1 = value if type(value) != base_types.auto else self.make_default("Qty1")
 
 	@Qty1.deleter
 	def Qty1(self):

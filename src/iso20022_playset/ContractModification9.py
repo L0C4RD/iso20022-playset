@@ -1,6 +1,6 @@
 from . import base_types
-from .ModificationLevel1Code import ModificationLevel1Code
 from .TransactionOperationType10Code import TransactionOperationType10Code
+from .ModificationLevel1Code import ModificationLevel1Code
 
 class ContractModification9(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ContractModification9(base_types._BaseFieldType):
 
 	@Lvl.setter
 	def Lvl(self, value):
-		self._Lvl = value if type(value) != auto else self.make_default("Lvl")
+		self._Lvl = value if type(value) != base_types.auto else self.make_default("Lvl")
 
 	@Lvl.deleter
 	def Lvl(self):
@@ -24,7 +24,7 @@ class ContractModification9(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
 
 	@ActnTp.deleter
 	def ActnTp(self):

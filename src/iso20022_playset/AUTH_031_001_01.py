@@ -12,7 +12,7 @@ class AUTH_031_001_01():
 
 		@FinInstrmRptgStsAdvc.setter
 		def FinInstrmRptgStsAdvc(self, value):
-			self._FinInstrmRptgStsAdvc = value if type(value) != auto else self.make_default("FinInstrmRptgStsAdvc")
+			self._FinInstrmRptgStsAdvc = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgStsAdvc")
 
 		@FinInstrmRptgStsAdvc.deleter
 		def FinInstrmRptgStsAdvc(self):

@@ -12,7 +12,7 @@ class CAMT_028_001_12():
 
 		@AddtlPmtInf.setter
 		def AddtlPmtInf(self, value):
-			self._AddtlPmtInf = value if type(value) != auto else self.make_default("AddtlPmtInf")
+			self._AddtlPmtInf = value if type(value) != base_types.auto else self.make_default("AddtlPmtInf")
 
 		@AddtlPmtInf.deleter
 		def AddtlPmtInf(self):

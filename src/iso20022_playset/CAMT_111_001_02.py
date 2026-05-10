@@ -12,7 +12,7 @@ class CAMT_111_001_02():
 
 		@InvstgtnRspn.setter
 		def InvstgtnRspn(self, value):
-			self._InvstgtnRspn = value if type(value) != auto else self.make_default("InvstgtnRspn")
+			self._InvstgtnRspn = value if type(value) != base_types.auto else self.make_default("InvstgtnRspn")
 
 		@InvstgtnRspn.deleter
 		def InvstgtnRspn(self):

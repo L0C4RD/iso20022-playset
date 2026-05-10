@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Pagination import Pagination
 from .DateAndDateTimeChoice import DateAndDateTimeChoice
+from .Max35Text import Max35Text
 
 class StatementReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtId", "_StmtDtTm", "_Pgntn"]
+	__slots__ = ["_Pgntn", "_StmtDtTm", "_StmtId"]
 	@property
-	def StmtId(self):
-		return self._StmtId
+	def Pgntn(self):
+		return self._Pgntn
 
-	@StmtId.setter
-	def StmtId(self, value):
-		self._StmtId = value if type(value) != auto else self.make_default("StmtId")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@StmtId.deleter
-	def StmtId(self):
-		del self._StmtId
-		self._StmtId = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def StmtDtTm(self):
@@ -25,7 +25,7 @@ class StatementReference1(base_types._BaseFieldType):
 
 	@StmtDtTm.setter
 	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
+		self._StmtDtTm = value if type(value) != base_types.auto else self.make_default("StmtDtTm")
 
 	@StmtDtTm.deleter
 	def StmtDtTm(self):
@@ -33,21 +33,21 @@ class StatementReference1(base_types._BaseFieldType):
 		self._StmtDtTm = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def StmtId(self):
+		return self._StmtId
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@StmtId.setter
+	def StmtId(self, value):
+		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@StmtId.deleter
+	def StmtId(self):
+		del self._StmtId
+		self._StmtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

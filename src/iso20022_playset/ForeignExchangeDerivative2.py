@@ -10,7 +10,7 @@ class ForeignExchangeDerivative2(base_types._BaseFieldType):
 
 	@CtrctSubTp.setter
 	def CtrctSubTp(self, value):
-		self._CtrctSubTp = value if type(value) != auto else self.make_default("CtrctSubTp")
+		self._CtrctSubTp = value if type(value) != base_types.auto else self.make_default("CtrctSubTp")
 
 	@CtrctSubTp.deleter
 	def CtrctSubTp(self):

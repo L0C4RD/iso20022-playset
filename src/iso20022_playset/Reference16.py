@@ -10,7 +10,7 @@ class Reference16(base_types._BaseFieldType):
 
 	@CollMsgCxlReqId.setter
 	def CollMsgCxlReqId(self, value):
-		self._CollMsgCxlReqId = value if type(value) != auto else self.make_default("CollMsgCxlReqId")
+		self._CollMsgCxlReqId = value if type(value) != base_types.auto else self.make_default("CollMsgCxlReqId")
 
 	@CollMsgCxlReqId.deleter
 	def CollMsgCxlReqId(self):

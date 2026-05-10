@@ -4,27 +4,14 @@ from .ISODate import ISODate
 
 class Period4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ToDt", "_Dt", "_FrDt", "_FrDtToDt"]
-	@property
-	def ToDt(self):
-		return self._ToDt
-
-	@ToDt.setter
-	def ToDt(self, value):
-		self._ToDt = value if type(value) != auto else self.make_default("ToDt")
-
-	@ToDt.deleter
-	def ToDt(self):
-		del self._ToDt
-		self._ToDt = None
-
+	__slots__ = ["_Dt", "_FrDtToDt", "_FrDt", "_ToDt"]
 	@property
 	def Dt(self):
 		return self._Dt
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -32,12 +19,25 @@ class Period4Choice(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
+	def FrDtToDt(self):
+		return self._FrDtToDt
+
+	@FrDtToDt.setter
+	def FrDtToDt(self, value):
+		self._FrDtToDt = value if type(value) != base_types.auto else self.make_default("FrDtToDt")
+
+	@FrDtToDt.deleter
+	def FrDtToDt(self):
+		del self._FrDtToDt
+		self._FrDtToDt = None
+
+	@property
 	def FrDt(self):
 		return self._FrDt
 
 	@FrDt.setter
 	def FrDt(self, value):
-		self._FrDt = value if type(value) != auto else self.make_default("FrDt")
+		self._FrDt = value if type(value) != base_types.auto else self.make_default("FrDt")
 
 	@FrDt.deleter
 	def FrDt(self):
@@ -45,22 +45,22 @@ class Period4Choice(base_types._BaseFieldType):
 		self._FrDt = None
 
 	@property
-	def FrDtToDt(self):
-		return self._FrDtToDt
+	def ToDt(self):
+		return self._ToDt
 
-	@FrDtToDt.setter
-	def FrDtToDt(self, value):
-		self._FrDtToDt = value if type(value) != auto else self.make_default("FrDtToDt")
+	@ToDt.setter
+	def ToDt(self, value):
+		self._ToDt = value if type(value) != base_types.auto else self.make_default("ToDt")
 
-	@FrDtToDt.deleter
-	def FrDtToDt(self):
-		del self._FrDtToDt
-		self._FrDtToDt = None
+	@ToDt.deleter
+	def ToDt(self):
+		del self._ToDt
+		self._ToDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ToDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrDtToDt', type=Period2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ToDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 	))
 

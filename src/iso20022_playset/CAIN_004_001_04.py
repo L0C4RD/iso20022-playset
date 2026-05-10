@@ -12,7 +12,7 @@ class CAIN_004_001_04():
 
 		@FinRspn.setter
 		def FinRspn(self, value):
-			self._FinRspn = value if type(value) != auto else self.make_default("FinRspn")
+			self._FinRspn = value if type(value) != base_types.auto else self.make_default("FinRspn")
 
 		@FinRspn.deleter
 		def FinRspn(self):

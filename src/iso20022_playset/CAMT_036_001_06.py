@@ -12,7 +12,7 @@ class CAMT_036_001_06():
 
 		@DbtAuthstnRspn.setter
 		def DbtAuthstnRspn(self, value):
-			self._DbtAuthstnRspn = value if type(value) != auto else self.make_default("DbtAuthstnRspn")
+			self._DbtAuthstnRspn = value if type(value) != base_types.auto else self.make_default("DbtAuthstnRspn")
 
 		@DbtAuthstnRspn.deleter
 		def DbtAuthstnRspn(self):

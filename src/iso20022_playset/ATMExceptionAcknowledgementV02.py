@@ -1,19 +1,19 @@
 from . import base_types
 from .ATMExceptionAcknowledgement2 import ATMExceptionAcknowledgement2
-from .ContentInformationType10 import ContentInformationType10
 from .ContentInformationType15 import ContentInformationType15
+from .ContentInformationType10 import ContentInformationType10
 from .Header32 import Header32
 
 class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMXcptnAck", "_Hdr", "_SctyTrlr", "_ATMXcptnAck"]
+	__slots__ = ["_PrtctdATMXcptnAck", "_ATMXcptnAck", "_SctyTrlr", "_Hdr"]
 	@property
 	def PrtctdATMXcptnAck(self):
 		return self._PrtctdATMXcptnAck
 
 	@PrtctdATMXcptnAck.setter
 	def PrtctdATMXcptnAck(self, value):
-		self._PrtctdATMXcptnAck = value if type(value) != auto else self.make_default("PrtctdATMXcptnAck")
+		self._PrtctdATMXcptnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMXcptnAck")
 
 	@PrtctdATMXcptnAck.deleter
 	def PrtctdATMXcptnAck(self):
@@ -21,17 +21,17 @@ class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 		self._PrtctdATMXcptnAck = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def ATMXcptnAck(self):
+		return self._ATMXcptnAck
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@ATMXcptnAck.setter
+	def ATMXcptnAck(self, value):
+		self._ATMXcptnAck = value if type(value) != base_types.auto else self.make_default("ATMXcptnAck")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@ATMXcptnAck.deleter
+	def ATMXcptnAck(self):
+		del self._ATMXcptnAck
+		self._ATMXcptnAck = None
 
 	@property
 	def SctyTrlr(self):
@@ -39,7 +39,7 @@ class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
@@ -47,22 +47,22 @@ class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def ATMXcptnAck(self):
-		return self._ATMXcptnAck
+	def Hdr(self):
+		return self._Hdr
 
-	@ATMXcptnAck.setter
-	def ATMXcptnAck(self, value):
-		self._ATMXcptnAck = value if type(value) != auto else self.make_default("ATMXcptnAck")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
-	@ATMXcptnAck.deleter
-	def ATMXcptnAck(self):
-		del self._ATMXcptnAck
-		self._ATMXcptnAck = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdATMXcptnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMXcptnAck', type=ATMExceptionAcknowledgement2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 	))
 

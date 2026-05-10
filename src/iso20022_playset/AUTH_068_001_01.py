@@ -12,7 +12,7 @@ class AUTH_068_001_01():
 
 		@CCPAcctPosRpt.setter
 		def CCPAcctPosRpt(self, value):
-			self._CCPAcctPosRpt = value if type(value) != auto else self.make_default("CCPAcctPosRpt")
+			self._CCPAcctPosRpt = value if type(value) != base_types.auto else self.make_default("CCPAcctPosRpt")
 
 		@CCPAcctPosRpt.deleter
 		def CCPAcctPosRpt(self):

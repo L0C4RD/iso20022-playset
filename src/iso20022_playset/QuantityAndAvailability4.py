@@ -1,6 +1,6 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
 from .FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from .YesNoIndicator import YesNoIndicator
 
 class QuantityAndAvailability4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class QuantityAndAvailability4(base_types._BaseFieldType):
 
 	@AvlbtyInd.setter
 	def AvlbtyInd(self, value):
-		self._AvlbtyInd = value if type(value) != auto else self.make_default("AvlbtyInd")
+		self._AvlbtyInd = value if type(value) != base_types.auto else self.make_default("AvlbtyInd")
 
 	@AvlbtyInd.deleter
 	def AvlbtyInd(self):
@@ -24,7 +24,7 @@ class QuantityAndAvailability4(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):

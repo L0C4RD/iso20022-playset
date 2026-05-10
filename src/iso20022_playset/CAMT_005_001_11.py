@@ -12,7 +12,7 @@ class CAMT_005_001_11():
 
 		@GetTx.setter
 		def GetTx(self, value):
-			self._GetTx = value if type(value) != auto else self.make_default("GetTx")
+			self._GetTx = value if type(value) != base_types.auto else self.make_default("GetTx")
 
 		@GetTx.deleter
 		def GetTx(self):

@@ -12,7 +12,7 @@ class CATP_004_001_03():
 
 		@ATMWdrwlCmpltnAck.setter
 		def ATMWdrwlCmpltnAck(self, value):
-			self._ATMWdrwlCmpltnAck = value if type(value) != auto else self.make_default("ATMWdrwlCmpltnAck")
+			self._ATMWdrwlCmpltnAck = value if type(value) != base_types.auto else self.make_default("ATMWdrwlCmpltnAck")
 
 		@ATMWdrwlCmpltnAck.deleter
 		def ATMWdrwlCmpltnAck(self):

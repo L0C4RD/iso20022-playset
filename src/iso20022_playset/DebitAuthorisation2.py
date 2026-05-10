@@ -1,19 +1,32 @@
 from . import base_types
 from .CancellationReason33Choice import CancellationReason33Choice
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from .Max105Text import Max105Text
 from .ISODate import ISODate
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class DebitAuthorisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlCxlRsnInf", "_AmtToDbt", "_CxlRsn", "_ValDtToDbt"]
+	__slots__ = ["_CxlRsn", "_AddtlCxlRsnInf", "_AmtToDbt", "_ValDtToDbt"]
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
 	@property
 	def AddtlCxlRsnInf(self):
 		return self._AddtlCxlRsnInf
 
 	@AddtlCxlRsnInf.setter
 	def AddtlCxlRsnInf(self, value):
-		self._AddtlCxlRsnInf = value if type(value) != auto else self.make_default("AddtlCxlRsnInf")
+		self._AddtlCxlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlCxlRsnInf")
 
 	@AddtlCxlRsnInf.deleter
 	def AddtlCxlRsnInf(self):
@@ -26,7 +39,7 @@ class DebitAuthorisation2(base_types._BaseFieldType):
 
 	@AmtToDbt.setter
 	def AmtToDbt(self, value):
-		self._AmtToDbt = value if type(value) != auto else self.make_default("AmtToDbt")
+		self._AmtToDbt = value if type(value) != base_types.auto else self.make_default("AmtToDbt")
 
 	@AmtToDbt.deleter
 	def AmtToDbt(self):
@@ -34,25 +47,12 @@ class DebitAuthorisation2(base_types._BaseFieldType):
 		self._AmtToDbt = None
 
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
-	@property
 	def ValDtToDbt(self):
 		return self._ValDtToDbt
 
 	@ValDtToDbt.setter
 	def ValDtToDbt(self, value):
-		self._ValDtToDbt = value if type(value) != auto else self.make_default("ValDtToDbt")
+		self._ValDtToDbt = value if type(value) != base_types.auto else self.make_default("ValDtToDbt")
 
 	@ValDtToDbt.deleter
 	def ValDtToDbt(self):
@@ -60,9 +60,9 @@ class DebitAuthorisation2(base_types._BaseFieldType):
 		self._ValDtToDbt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlRsn', type=CancellationReason33Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCxlRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AmtToDbt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=CancellationReason33Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

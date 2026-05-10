@@ -1,6 +1,6 @@
 from . import base_types
-from .Trigger1 import Trigger1
 from .AmountOrPercentage1Choice import AmountOrPercentage1Choice
+from .Trigger1 import Trigger1
 from .Max35Text import Max35Text
 
 class AmountAndTrigger1(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class AmountAndTrigger1(base_types._BaseFieldType):
 
 	@Trggr.setter
 	def Trggr(self, value):
-		self._Trggr = value if type(value) != auto else self.make_default("Trggr")
+		self._Trggr = value if type(value) != base_types.auto else self.make_default("Trggr")
 
 	@Trggr.deleter
 	def Trggr(self):
@@ -25,7 +25,7 @@ class AmountAndTrigger1(base_types._BaseFieldType):
 
 	@AmtDtlsChc.setter
 	def AmtDtlsChc(self, value):
-		self._AmtDtlsChc = value if type(value) != auto else self.make_default("AmtDtlsChc")
+		self._AmtDtlsChc = value if type(value) != base_types.auto else self.make_default("AmtDtlsChc")
 
 	@AmtDtlsChc.deleter
 	def AmtDtlsChc(self):
@@ -38,7 +38,7 @@ class AmountAndTrigger1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

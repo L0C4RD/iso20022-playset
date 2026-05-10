@@ -1,23 +1,23 @@
 from . import base_types
-from .SecuritiesAccount36 import SecuritiesAccount36
 from .PartyIdentification144 import PartyIdentification144
-from .FinancialInstrumentDetails46 import FinancialInstrumentDetails46
-from .BlockChainAddressWallet4 import BlockChainAddressWallet4
-from .Pagination1 import Pagination1
 from .SubAccountIdentification73 import SubAccountIdentification73
 from .Intermediary44 import Intermediary44
+from .Pagination1 import Pagination1
+from .BlockChainAddressWallet4 import BlockChainAddressWallet4
 from .Statement79 import Statement79
+from .SecuritiesAccount36 import SecuritiesAccount36
+from .FinancialInstrumentDetails46 import FinancialInstrumentDetails46
 
 class SecuritiesTransactionPostingReportV13(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_FinInstrmDtls", "_StmtGnlDtls", "_SfkpgAcct", "_SubAcctDtls", "_AcctOwnr", "_IntrmyInf", "_Pgntn"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_FinInstrmDtls", "_SfkpgAcct", "_Pgntn", "_AcctOwnr", "_StmtGnlDtls", "_IntrmyInf", "_SubAcctDtls"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
@@ -30,7 +30,7 @@ class SecuritiesTransactionPostingReportV13(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
@@ -38,25 +38,12 @@ class SecuritiesTransactionPostingReportV13(base_types._BaseFieldType):
 		self._FinInstrmDtls = None
 
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
-
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
-
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
@@ -64,17 +51,17 @@ class SecuritiesTransactionPostingReportV13(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
+	def Pgntn(self):
+		return self._Pgntn
 
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def AcctOwnr(self):
@@ -82,7 +69,7 @@ class SecuritiesTransactionPostingReportV13(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
@@ -90,12 +77,25 @@ class SecuritiesTransactionPostingReportV13(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
+
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
+
+	@property
 	def IntrmyInf(self):
 		return self._IntrmyInf
 
 	@IntrmyInf.setter
 	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != auto else self.make_default("IntrmyInf")
+		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
 
 	@IntrmyInf.deleter
 	def IntrmyInf(self):
@@ -103,26 +103,26 @@ class SecuritiesTransactionPostingReportV13(base_types._BaseFieldType):
 		self._IntrmyInf = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrumentDetails46, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement79, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount36, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification73, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyInf', type=Intermediary44, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement79, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyInf', type=Intermediary44, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification73, min=0, max=None, mutex_group=None, array=True),
 	))
 

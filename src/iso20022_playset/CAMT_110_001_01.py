@@ -12,7 +12,7 @@ class CAMT_110_001_01():
 
 		@InvstgtnReq.setter
 		def InvstgtnReq(self, value):
-			self._InvstgtnReq = value if type(value) != auto else self.make_default("InvstgtnReq")
+			self._InvstgtnReq = value if type(value) != base_types.auto else self.make_default("InvstgtnReq")
 
 		@InvstgtnReq.deleter
 		def InvstgtnReq(self):

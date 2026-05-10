@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification238 import PartyIdentification238
 from .PartyIdentification221 import PartyIdentification221
+from .PartyIdentification238 import PartyIdentification238
 
 class PartyIdentification231Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification231Choice(base_types._BaseFieldType):
 
 	@LglPrsn.setter
 	def LglPrsn(self, value):
-		self._LglPrsn = value if type(value) != auto else self.make_default("LglPrsn")
+		self._LglPrsn = value if type(value) != base_types.auto else self.make_default("LglPrsn")
 
 	@LglPrsn.deleter
 	def LglPrsn(self):
@@ -24,7 +24,7 @@ class PartyIdentification231Choice(base_types._BaseFieldType):
 
 	@NtrlPrsn.setter
 	def NtrlPrsn(self, value):
-		self._NtrlPrsn = value if type(value) != auto else self.make_default("NtrlPrsn")
+		self._NtrlPrsn = value if type(value) != base_types.auto else self.make_default("NtrlPrsn")
 
 	@NtrlPrsn.deleter
 	def NtrlPrsn(self):

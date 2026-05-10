@@ -12,7 +12,7 @@ class AUTH_013_001_02():
 
 		@MnyMktUscrdMktSttstclRpt.setter
 		def MnyMktUscrdMktSttstclRpt(self, value):
-			self._MnyMktUscrdMktSttstclRpt = value if type(value) != auto else self.make_default("MnyMktUscrdMktSttstclRpt")
+			self._MnyMktUscrdMktSttstclRpt = value if type(value) != base_types.auto else self.make_default("MnyMktUscrdMktSttstclRpt")
 
 		@MnyMktUscrdMktSttstclRpt.deleter
 		def MnyMktUscrdMktSttstclRpt(self):

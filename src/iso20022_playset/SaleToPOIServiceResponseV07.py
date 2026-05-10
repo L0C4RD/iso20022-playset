@@ -12,7 +12,7 @@ class SaleToPOIServiceResponseV07(base_types._BaseFieldType):
 
 	@SvcRspn.setter
 	def SvcRspn(self, value):
-		self._SvcRspn = value if type(value) != auto else self.make_default("SvcRspn")
+		self._SvcRspn = value if type(value) != base_types.auto else self.make_default("SvcRspn")
 
 	@SvcRspn.deleter
 	def SvcRspn(self):
@@ -25,7 +25,7 @@ class SaleToPOIServiceResponseV07(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -38,7 +38,7 @@ class SaleToPOIServiceResponseV07(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):

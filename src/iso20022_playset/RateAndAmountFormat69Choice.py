@@ -1,7 +1,7 @@
 from . import base_types
-from .RateValueType7Code import RateValueType7Code
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 from .Percentage14Rate import Percentage14Rate
+from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .RateValueType7Code import RateValueType7Code
 
 class RateAndAmountFormat69Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class RateAndAmountFormat69Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -25,7 +25,7 @@ class RateAndAmountFormat69Choice(base_types._BaseFieldType):
 
 	@NotSpcfdRate.setter
 	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
 
 	@NotSpcfdRate.deleter
 	def NotSpcfdRate(self):
@@ -38,7 +38,7 @@ class RateAndAmountFormat69Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

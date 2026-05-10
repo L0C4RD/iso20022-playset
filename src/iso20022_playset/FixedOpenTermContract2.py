@@ -11,7 +11,7 @@ class FixedOpenTermContract2(base_types._BaseFieldType):
 
 	@TermntnOptn.setter
 	def TermntnOptn(self, value):
-		self._TermntnOptn = value if type(value) != auto else self.make_default("TermntnOptn")
+		self._TermntnOptn = value if type(value) != base_types.auto else self.make_default("TermntnOptn")
 
 	@TermntnOptn.deleter
 	def TermntnOptn(self):
@@ -24,7 +24,7 @@ class FixedOpenTermContract2(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):

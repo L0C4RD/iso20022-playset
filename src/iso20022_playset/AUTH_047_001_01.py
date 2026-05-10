@@ -12,7 +12,7 @@ class AUTH_047_001_01():
 
 		@FinInstrmRptgCtryCdRpt.setter
 		def FinInstrmRptgCtryCdRpt(self, value):
-			self._FinInstrmRptgCtryCdRpt = value if type(value) != auto else self.make_default("FinInstrmRptgCtryCdRpt")
+			self._FinInstrmRptgCtryCdRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgCtryCdRpt")
 
 		@FinInstrmRptgCtryCdRpt.deleter
 		def FinInstrmRptgCtryCdRpt(self):

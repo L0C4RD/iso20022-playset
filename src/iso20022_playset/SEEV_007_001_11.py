@@ -12,7 +12,7 @@ class SEEV_007_001_11():
 
 		@MtgVoteExctnConf.setter
 		def MtgVoteExctnConf(self, value):
-			self._MtgVoteExctnConf = value if type(value) != auto else self.make_default("MtgVoteExctnConf")
+			self._MtgVoteExctnConf = value if type(value) != base_types.auto else self.make_default("MtgVoteExctnConf")
 
 		@MtgVoteExctnConf.deleter
 		def MtgVoteExctnConf(self):

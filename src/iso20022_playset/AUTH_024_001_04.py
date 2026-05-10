@@ -12,7 +12,7 @@ class AUTH_024_001_04():
 
 		@PmtRgltryInfNtfctn.setter
 		def PmtRgltryInfNtfctn(self, value):
-			self._PmtRgltryInfNtfctn = value if type(value) != auto else self.make_default("PmtRgltryInfNtfctn")
+			self._PmtRgltryInfNtfctn = value if type(value) != base_types.auto else self.make_default("PmtRgltryInfNtfctn")
 
 		@PmtRgltryInfNtfctn.deleter
 		def PmtRgltryInfNtfctn(self):

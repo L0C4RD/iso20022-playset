@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountAndDirection102 import AmountAndDirection102
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .AmountAndDirection102 import AmountAndDirection102
 
 class EndOfDayRequirement1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class EndOfDayRequirement1(base_types._BaseFieldType):
 
 	@InitlMrgnRqrmnt.setter
 	def InitlMrgnRqrmnt(self, value):
-		self._InitlMrgnRqrmnt = value if type(value) != auto else self.make_default("InitlMrgnRqrmnt")
+		self._InitlMrgnRqrmnt = value if type(value) != base_types.auto else self.make_default("InitlMrgnRqrmnt")
 
 	@InitlMrgnRqrmnt.deleter
 	def InitlMrgnRqrmnt(self):
@@ -24,7 +24,7 @@ class EndOfDayRequirement1(base_types._BaseFieldType):
 
 	@VartnMrgnRqrmnt.setter
 	def VartnMrgnRqrmnt(self, value):
-		self._VartnMrgnRqrmnt = value if type(value) != auto else self.make_default("VartnMrgnRqrmnt")
+		self._VartnMrgnRqrmnt = value if type(value) != base_types.auto else self.make_default("VartnMrgnRqrmnt")
 
 	@VartnMrgnRqrmnt.deleter
 	def VartnMrgnRqrmnt(self):

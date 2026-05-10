@@ -10,7 +10,7 @@ class ATMTransaction36(base_types._BaseFieldType):
 
 	@RcncltnOpr.setter
 	def RcncltnOpr(self, value):
-		self._RcncltnOpr = value if type(value) != auto else self.make_default("RcncltnOpr")
+		self._RcncltnOpr = value if type(value) != base_types.auto else self.make_default("RcncltnOpr")
 
 	@RcncltnOpr.deleter
 	def RcncltnOpr(self):

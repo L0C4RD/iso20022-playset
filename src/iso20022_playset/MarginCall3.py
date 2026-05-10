@@ -1,39 +1,52 @@
 from . import base_types
+from .MarginCall1 import MarginCall1
 from .ExpectedCollateral2Choice import ExpectedCollateral2Choice
-from .MarginCallResult3 import MarginCallResult3
-from .BlockChainAddressWallet5 import BlockChainAddressWallet5
 from .MarginRequirement1Choice import MarginRequirement1Choice
 from .CollateralAccount3 import CollateralAccount3
-from .MarginCall1 import MarginCall1
+from .BlockChainAddressWallet5 import BlockChainAddressWallet5
+from .MarginCallResult3 import MarginCallResult3
 
 class MarginCall3(base_types._BaseFieldType):
 
-	__slots__ = ["_RqrmntDtlsDueToB", "_XpctdCollDueToB", "_CollAcctId", "_XpctdCollDueToA", "_RqrmntDtlsDueToA", "_MrgnCallRslt", "_MrgnDtlDueToA", "_MrgnDtlDueToB", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_RqrmntDtlsDueToA", "_MrgnDtlDueToA", "_BlckChainAdrOrWllt", "_CollAcctId", "_XpctdCollDueToA", "_MrgnDtlDueToB", "_RqrmntDtlsDueToB", "_MrgnCallRslt", "_XpctdCollDueToB"]
 	@property
-	def RqrmntDtlsDueToB(self):
-		return self._RqrmntDtlsDueToB
+	def RqrmntDtlsDueToA(self):
+		return self._RqrmntDtlsDueToA
 
-	@RqrmntDtlsDueToB.setter
-	def RqrmntDtlsDueToB(self, value):
-		self._RqrmntDtlsDueToB = value if type(value) != auto else self.make_default("RqrmntDtlsDueToB")
+	@RqrmntDtlsDueToA.setter
+	def RqrmntDtlsDueToA(self, value):
+		self._RqrmntDtlsDueToA = value if type(value) != base_types.auto else self.make_default("RqrmntDtlsDueToA")
 
-	@RqrmntDtlsDueToB.deleter
-	def RqrmntDtlsDueToB(self):
-		del self._RqrmntDtlsDueToB
-		self._RqrmntDtlsDueToB = None
+	@RqrmntDtlsDueToA.deleter
+	def RqrmntDtlsDueToA(self):
+		del self._RqrmntDtlsDueToA
+		self._RqrmntDtlsDueToA = None
 
 	@property
-	def XpctdCollDueToB(self):
-		return self._XpctdCollDueToB
+	def MrgnDtlDueToA(self):
+		return self._MrgnDtlDueToA
 
-	@XpctdCollDueToB.setter
-	def XpctdCollDueToB(self, value):
-		self._XpctdCollDueToB = value if type(value) != auto else self.make_default("XpctdCollDueToB")
+	@MrgnDtlDueToA.setter
+	def MrgnDtlDueToA(self, value):
+		self._MrgnDtlDueToA = value if type(value) != base_types.auto else self.make_default("MrgnDtlDueToA")
 
-	@XpctdCollDueToB.deleter
-	def XpctdCollDueToB(self):
-		del self._XpctdCollDueToB
-		self._XpctdCollDueToB = None
+	@MrgnDtlDueToA.deleter
+	def MrgnDtlDueToA(self):
+		del self._MrgnDtlDueToA
+		self._MrgnDtlDueToA = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def CollAcctId(self):
@@ -41,7 +54,7 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@CollAcctId.setter
 	def CollAcctId(self, value):
-		self._CollAcctId = value if type(value) != auto else self.make_default("CollAcctId")
+		self._CollAcctId = value if type(value) != base_types.auto else self.make_default("CollAcctId")
 
 	@CollAcctId.deleter
 	def CollAcctId(self):
@@ -54,7 +67,7 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@XpctdCollDueToA.setter
 	def XpctdCollDueToA(self, value):
-		self._XpctdCollDueToA = value if type(value) != auto else self.make_default("XpctdCollDueToA")
+		self._XpctdCollDueToA = value if type(value) != base_types.auto else self.make_default("XpctdCollDueToA")
 
 	@XpctdCollDueToA.deleter
 	def XpctdCollDueToA(self):
@@ -62,51 +75,12 @@ class MarginCall3(base_types._BaseFieldType):
 		self._XpctdCollDueToA = None
 
 	@property
-	def RqrmntDtlsDueToA(self):
-		return self._RqrmntDtlsDueToA
-
-	@RqrmntDtlsDueToA.setter
-	def RqrmntDtlsDueToA(self, value):
-		self._RqrmntDtlsDueToA = value if type(value) != auto else self.make_default("RqrmntDtlsDueToA")
-
-	@RqrmntDtlsDueToA.deleter
-	def RqrmntDtlsDueToA(self):
-		del self._RqrmntDtlsDueToA
-		self._RqrmntDtlsDueToA = None
-
-	@property
-	def MrgnCallRslt(self):
-		return self._MrgnCallRslt
-
-	@MrgnCallRslt.setter
-	def MrgnCallRslt(self, value):
-		self._MrgnCallRslt = value if type(value) != auto else self.make_default("MrgnCallRslt")
-
-	@MrgnCallRslt.deleter
-	def MrgnCallRslt(self):
-		del self._MrgnCallRslt
-		self._MrgnCallRslt = None
-
-	@property
-	def MrgnDtlDueToA(self):
-		return self._MrgnDtlDueToA
-
-	@MrgnDtlDueToA.setter
-	def MrgnDtlDueToA(self, value):
-		self._MrgnDtlDueToA = value if type(value) != auto else self.make_default("MrgnDtlDueToA")
-
-	@MrgnDtlDueToA.deleter
-	def MrgnDtlDueToA(self):
-		del self._MrgnDtlDueToA
-		self._MrgnDtlDueToA = None
-
-	@property
 	def MrgnDtlDueToB(self):
 		return self._MrgnDtlDueToB
 
 	@MrgnDtlDueToB.setter
 	def MrgnDtlDueToB(self, value):
-		self._MrgnDtlDueToB = value if type(value) != auto else self.make_default("MrgnDtlDueToB")
+		self._MrgnDtlDueToB = value if type(value) != base_types.auto else self.make_default("MrgnDtlDueToB")
 
 	@MrgnDtlDueToB.deleter
 	def MrgnDtlDueToB(self):
@@ -114,27 +88,53 @@ class MarginCall3(base_types._BaseFieldType):
 		self._MrgnDtlDueToB = None
 
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def RqrmntDtlsDueToB(self):
+		return self._RqrmntDtlsDueToB
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@RqrmntDtlsDueToB.setter
+	def RqrmntDtlsDueToB(self, value):
+		self._RqrmntDtlsDueToB = value if type(value) != base_types.auto else self.make_default("RqrmntDtlsDueToB")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@RqrmntDtlsDueToB.deleter
+	def RqrmntDtlsDueToB(self):
+		del self._RqrmntDtlsDueToB
+		self._RqrmntDtlsDueToB = None
+
+	@property
+	def MrgnCallRslt(self):
+		return self._MrgnCallRslt
+
+	@MrgnCallRslt.setter
+	def MrgnCallRslt(self, value):
+		self._MrgnCallRslt = value if type(value) != base_types.auto else self.make_default("MrgnCallRslt")
+
+	@MrgnCallRslt.deleter
+	def MrgnCallRslt(self):
+		del self._MrgnCallRslt
+		self._MrgnCallRslt = None
+
+	@property
+	def XpctdCollDueToB(self):
+		return self._XpctdCollDueToB
+
+	@XpctdCollDueToB.setter
+	def XpctdCollDueToB(self, value):
+		self._XpctdCollDueToB = value if type(value) != base_types.auto else self.make_default("XpctdCollDueToB")
+
+	@XpctdCollDueToB.deleter
+	def XpctdCollDueToB(self):
+		del self._XpctdCollDueToB
+		self._XpctdCollDueToB = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RqrmntDtlsDueToB', type=MarginRequirement1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdCollDueToB', type=ExpectedCollateral2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RqrmntDtlsDueToA', type=MarginRequirement1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnDtlDueToA', type=MarginCall1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdCollDueToA', type=ExpectedCollateral2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RqrmntDtlsDueToA', type=MarginRequirement1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnCallRslt', type=MarginCallResult3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnDtlDueToA', type=MarginCall1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnDtlDueToB', type=MarginCall1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RqrmntDtlsDueToB', type=MarginRequirement1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnCallRslt', type=MarginCallResult3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdCollDueToB', type=ExpectedCollateral2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

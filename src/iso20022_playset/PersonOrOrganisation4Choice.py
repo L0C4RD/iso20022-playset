@@ -1,31 +1,18 @@
 from . import base_types
 from .GenericPersonIdentification1 import GenericPersonIdentification1
-from .PartyExceptionType1Code import PartyExceptionType1Code
 from .LEIIdentifier import LEIIdentifier
+from .PartyExceptionType1Code import PartyExceptionType1Code
 
 class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_XcptnId", "_Prsn", "_LEI"]
-	@property
-	def XcptnId(self):
-		return self._XcptnId
-
-	@XcptnId.setter
-	def XcptnId(self, value):
-		self._XcptnId = value if type(value) != auto else self.make_default("XcptnId")
-
-	@XcptnId.deleter
-	def XcptnId(self):
-		del self._XcptnId
-		self._XcptnId = None
-
+	__slots__ = ["_Prsn", "_XcptnId", "_LEI"]
 	@property
 	def Prsn(self):
 		return self._Prsn
 
 	@Prsn.setter
 	def Prsn(self, value):
-		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
+		self._Prsn = value if type(value) != base_types.auto else self.make_default("Prsn")
 
 	@Prsn.deleter
 	def Prsn(self):
@@ -33,12 +20,25 @@ class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 		self._Prsn = None
 
 	@property
+	def XcptnId(self):
+		return self._XcptnId
+
+	@XcptnId.setter
+	def XcptnId(self, value):
+		self._XcptnId = value if type(value) != base_types.auto else self.make_default("XcptnId")
+
+	@XcptnId.deleter
+	def XcptnId(self):
+		del self._XcptnId
+		self._XcptnId = None
+
+	@property
 	def LEI(self):
 		return self._LEI
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -46,8 +46,8 @@ class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 		self._LEI = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XcptnId', type=PartyExceptionType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prsn', type=GenericPersonIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XcptnId', type=PartyExceptionType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

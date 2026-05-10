@@ -12,7 +12,7 @@ class FXTR_035_001_02():
 
 		@FXTradConfReqAmdmntReq.setter
 		def FXTradConfReqAmdmntReq(self, value):
-			self._FXTradConfReqAmdmntReq = value if type(value) != auto else self.make_default("FXTradConfReqAmdmntReq")
+			self._FXTradConfReqAmdmntReq = value if type(value) != base_types.auto else self.make_default("FXTradConfReqAmdmntReq")
 
 		@FXTradConfReqAmdmntReq.deleter
 		def FXTradConfReqAmdmntReq(self):

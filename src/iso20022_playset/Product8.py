@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max70Text import Max70Text
+from .Max35Text import Max35Text
 
 class Product8(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Product8(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class Product8(base_types._BaseFieldType):
 
 	@SummryCmmdtyId.setter
 	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != auto else self.make_default("SummryCmmdtyId")
+		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
 
 	@SummryCmmdtyId.deleter
 	def SummryCmmdtyId(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .CorporateActionEventType110Choice import CorporateActionEventType110Choice
 from .SecuritiesTransactionType44Choice import SecuritiesTransactionType44Choice
+from .CorporateActionEventType110Choice import CorporateActionEventType110Choice
 
 class SettlementOrCorporateActionEvent34Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SettlementOrCorporateActionEvent34Choice(base_types._BaseFieldType):
 
 	@CorpActnEvtTp.setter
 	def CorpActnEvtTp(self, value):
-		self._CorpActnEvtTp = value if type(value) != auto else self.make_default("CorpActnEvtTp")
+		self._CorpActnEvtTp = value if type(value) != base_types.auto else self.make_default("CorpActnEvtTp")
 
 	@CorpActnEvtTp.deleter
 	def CorpActnEvtTp(self):
@@ -24,7 +24,7 @@ class SettlementOrCorporateActionEvent34Choice(base_types._BaseFieldType):
 
 	@SctiesTxTp.setter
 	def SctiesTxTp(self, value):
-		self._SctiesTxTp = value if type(value) != auto else self.make_default("SctiesTxTp")
+		self._SctiesTxTp = value if type(value) != base_types.auto else self.make_default("SctiesTxTp")
 
 	@SctiesTxTp.deleter
 	def SctiesTxTp(self):

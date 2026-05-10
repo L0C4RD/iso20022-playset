@@ -12,7 +12,7 @@ class CAAA_011_001_14():
 
 		@AccptrBtchTrf.setter
 		def AccptrBtchTrf(self, value):
-			self._AccptrBtchTrf = value if type(value) != auto else self.make_default("AccptrBtchTrf")
+			self._AccptrBtchTrf = value if type(value) != base_types.auto else self.make_default("AccptrBtchTrf")
 
 		@AccptrBtchTrf.deleter
 		def AccptrBtchTrf(self):

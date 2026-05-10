@@ -10,7 +10,7 @@ class TotalValueInPageAndStatement(base_types._BaseFieldType):
 
 	@TtlHldgsValOfPg.setter
 	def TtlHldgsValOfPg(self, value):
-		self._TtlHldgsValOfPg = value if type(value) != auto else self.make_default("TtlHldgsValOfPg")
+		self._TtlHldgsValOfPg = value if type(value) != base_types.auto else self.make_default("TtlHldgsValOfPg")
 
 	@TtlHldgsValOfPg.deleter
 	def TtlHldgsValOfPg(self):
@@ -23,7 +23,7 @@ class TotalValueInPageAndStatement(base_types._BaseFieldType):
 
 	@TtlHldgsValOfStmt.setter
 	def TtlHldgsValOfStmt(self, value):
-		self._TtlHldgsValOfStmt = value if type(value) != auto else self.make_default("TtlHldgsValOfStmt")
+		self._TtlHldgsValOfStmt = value if type(value) != base_types.auto else self.make_default("TtlHldgsValOfStmt")
 
 	@TtlHldgsValOfStmt.deleter
 	def TtlHldgsValOfStmt(self):

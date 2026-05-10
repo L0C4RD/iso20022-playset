@@ -1,6 +1,6 @@
 from . import base_types
-from .CancellationReason37Choice import CancellationReason37Choice
 from .RestrictedFINMax16Text import RestrictedFINMax16Text
+from .CancellationReason37Choice import CancellationReason37Choice
 
 class CancellationReason27(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CancellationReason27(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class CancellationReason27(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):

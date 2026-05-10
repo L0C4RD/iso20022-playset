@@ -10,7 +10,7 @@ class RemittanceInformation2(base_types._BaseFieldType):
 
 	@Ustrd.setter
 	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != auto else self.make_default("Ustrd")
+		self._Ustrd = value if type(value) != base_types.auto else self.make_default("Ustrd")
 
 	@Ustrd.deleter
 	def Ustrd(self):

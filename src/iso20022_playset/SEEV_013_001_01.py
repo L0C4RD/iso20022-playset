@@ -12,7 +12,7 @@ class SEEV_013_001_01():
 
 		@AgtCAElctnAmdmntReq.setter
 		def AgtCAElctnAmdmntReq(self, value):
-			self._AgtCAElctnAmdmntReq = value if type(value) != auto else self.make_default("AgtCAElctnAmdmntReq")
+			self._AgtCAElctnAmdmntReq = value if type(value) != base_types.auto else self.make_default("AgtCAElctnAmdmntReq")
 
 		@AgtCAElctnAmdmntReq.deleter
 		def AgtCAElctnAmdmntReq(self):

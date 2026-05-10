@@ -11,7 +11,7 @@ class TrancheIndicator3Choice(base_types._BaseFieldType):
 
 	@Trnchd.setter
 	def Trnchd(self, value):
-		self._Trnchd = value if type(value) != auto else self.make_default("Trnchd")
+		self._Trnchd = value if type(value) != base_types.auto else self.make_default("Trnchd")
 
 	@Trnchd.deleter
 	def Trnchd(self):
@@ -24,7 +24,7 @@ class TrancheIndicator3Choice(base_types._BaseFieldType):
 
 	@Utrnchd.setter
 	def Utrnchd(self, value):
-		self._Utrnchd = value if type(value) != auto else self.make_default("Utrnchd")
+		self._Utrnchd = value if type(value) != base_types.auto else self.make_default("Utrnchd")
 
 	@Utrnchd.deleter
 	def Utrnchd(self):

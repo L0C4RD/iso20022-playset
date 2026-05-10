@@ -12,7 +12,7 @@ class TSMT_004_001_02():
 
 		@ActvtyRptSetUpReq.setter
 		def ActvtyRptSetUpReq(self, value):
-			self._ActvtyRptSetUpReq = value if type(value) != auto else self.make_default("ActvtyRptSetUpReq")
+			self._ActvtyRptSetUpReq = value if type(value) != base_types.auto else self.make_default("ActvtyRptSetUpReq")
 
 		@ActvtyRptSetUpReq.deleter
 		def ActvtyRptSetUpReq(self):

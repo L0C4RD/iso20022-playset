@@ -1,7 +1,7 @@
 from . import base_types
+from .Number import Number
 from .ExternalDateFrequency1Code import ExternalDateFrequency1Code
 from .ISODate import ISODate
-from .Number import Number
 
 class DateInformation1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class DateInformation1(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
 
 	@Nb.deleter
 	def Nb(self):
@@ -25,7 +25,7 @@ class DateInformation1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
 
 	@StartDt.deleter
 	def StartDt(self):
@@ -38,7 +38,7 @@ class DateInformation1(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
 
 	@Frqcy.deleter
 	def Frqcy(self):

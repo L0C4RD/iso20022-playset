@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .PledgeeType1Code import PledgeeType1Code
+from .Max35Text import Max35Text
 
 class PledgeeTypeAndText1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PledgeeTypeAndText1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class PledgeeTypeAndText1(base_types._BaseFieldType):
 
 	@PldgeeTp.setter
 	def PldgeeTp(self, value):
-		self._PldgeeTp = value if type(value) != auto else self.make_default("PldgeeTp")
+		self._PldgeeTp = value if type(value) != base_types.auto else self.make_default("PldgeeTp")
 
 	@PldgeeTp.deleter
 	def PldgeeTp(self):

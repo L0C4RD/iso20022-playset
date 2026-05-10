@@ -1,46 +1,20 @@
 from . import base_types
-from .ISODate import ISODate
-from .Period4Choice import Period4Choice
 from .Modification1Code import Modification1Code
+from .ISODate import ISODate
 from .TrueFalseIndicator import TrueFalseIndicator
+from .Period4Choice import Period4Choice
 from .CountryCodeAndName3 import CountryCodeAndName3
 
 class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Mod", "_VldtyPrd", "_EEACtry", "_LastUpdtd"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
-
+	__slots__ = ["_VldtyPrd", "_LastUpdtd", "_Ctry", "_EEACtry", "_Mod"]
 	@property
 	def VldtyPrd(self):
 		return self._VldtyPrd
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
@@ -48,12 +22,38 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	@property
+	def LastUpdtd(self):
+		return self._LastUpdtd
+
+	@LastUpdtd.setter
+	def LastUpdtd(self, value):
+		self._LastUpdtd = value if type(value) != base_types.auto else self.make_default("LastUpdtd")
+
+	@LastUpdtd.deleter
+	def LastUpdtd(self):
+		del self._LastUpdtd
+		self._LastUpdtd = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
 	def EEACtry(self):
 		return self._EEACtry
 
 	@EEACtry.setter
 	def EEACtry(self, value):
-		self._EEACtry = value if type(value) != auto else self.make_default("EEACtry")
+		self._EEACtry = value if type(value) != base_types.auto else self.make_default("EEACtry")
 
 	@EEACtry.deleter
 	def EEACtry(self):
@@ -61,23 +61,23 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 		self._EEACtry = None
 
 	@property
-	def LastUpdtd(self):
-		return self._LastUpdtd
+	def Mod(self):
+		return self._Mod
 
-	@LastUpdtd.setter
-	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != auto else self.make_default("LastUpdtd")
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
 
-	@LastUpdtd.deleter
-	def LastUpdtd(self):
-		del self._LastUpdtd
-		self._LastUpdtd = None
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EEACtry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EEACtry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

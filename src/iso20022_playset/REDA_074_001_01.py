@@ -12,7 +12,7 @@ class REDA_074_001_01():
 
 		@TrptyCollUnltrlRmvlReq.setter
 		def TrptyCollUnltrlRmvlReq(self, value):
-			self._TrptyCollUnltrlRmvlReq = value if type(value) != auto else self.make_default("TrptyCollUnltrlRmvlReq")
+			self._TrptyCollUnltrlRmvlReq = value if type(value) != base_types.auto else self.make_default("TrptyCollUnltrlRmvlReq")
 
 		@TrptyCollUnltrlRmvlReq.deleter
 		def TrptyCollUnltrlRmvlReq(self):

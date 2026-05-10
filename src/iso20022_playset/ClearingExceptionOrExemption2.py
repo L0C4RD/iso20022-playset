@@ -10,7 +10,7 @@ class ClearingExceptionOrExemption2(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
@@ -23,7 +23,7 @@ class ClearingExceptionOrExemption2(base_types._BaseFieldType):
 
 	@OthrCtrPty.setter
 	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
+		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
 
 	@OthrCtrPty.deleter
 	def OthrCtrPty(self):

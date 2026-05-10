@@ -1,32 +1,19 @@
 from . import base_types
-from .ContentInformationType10 import ContentInformationType10
-from .ATMDeviceReport4 import ATMDeviceReport4
 from .Header31 import Header31
+from .ATMDeviceReport4 import ATMDeviceReport4
 from .ContentInformationType13 import ContentInformationType13
+from .ContentInformationType10 import ContentInformationType10
 
 class ATMDeviceReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMDvcRpt", "_SctyTrlr", "_Hdr", "_ATMDvcRpt"]
-	@property
-	def PrtctdATMDvcRpt(self):
-		return self._PrtctdATMDvcRpt
-
-	@PrtctdATMDvcRpt.setter
-	def PrtctdATMDvcRpt(self, value):
-		self._PrtctdATMDvcRpt = value if type(value) != auto else self.make_default("PrtctdATMDvcRpt")
-
-	@PrtctdATMDvcRpt.deleter
-	def PrtctdATMDvcRpt(self):
-		del self._PrtctdATMDvcRpt
-		self._PrtctdATMDvcRpt = None
-
+	__slots__ = ["_SctyTrlr", "_Hdr", "_ATMDvcRpt", "_PrtctdATMDvcRpt"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
@@ -39,7 +26,7 @@ class ATMDeviceReportV04(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -52,17 +39,30 @@ class ATMDeviceReportV04(base_types._BaseFieldType):
 
 	@ATMDvcRpt.setter
 	def ATMDvcRpt(self, value):
-		self._ATMDvcRpt = value if type(value) != auto else self.make_default("ATMDvcRpt")
+		self._ATMDvcRpt = value if type(value) != base_types.auto else self.make_default("ATMDvcRpt")
 
 	@ATMDvcRpt.deleter
 	def ATMDvcRpt(self):
 		del self._ATMDvcRpt
 		self._ATMDvcRpt = None
 
+	@property
+	def PrtctdATMDvcRpt(self):
+		return self._PrtctdATMDvcRpt
+
+	@PrtctdATMDvcRpt.setter
+	def PrtctdATMDvcRpt(self, value):
+		self._PrtctdATMDvcRpt = value if type(value) != base_types.auto else self.make_default("PrtctdATMDvcRpt")
+
+	@PrtctdATMDvcRpt.deleter
+	def PrtctdATMDvcRpt(self):
+		del self._PrtctdATMDvcRpt
+		self._PrtctdATMDvcRpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMDvcRpt', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMDvcRpt', type=ATMDeviceReport4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMDvcRpt', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

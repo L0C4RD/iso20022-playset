@@ -1,6 +1,6 @@
 from . import base_types
-from .TransparencyDataReport15 import TransparencyDataReport15
 from .SupplementaryData1 import SupplementaryData1
+from .TransparencyDataReport15 import TransparencyDataReport15
 from .SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
 
 class FinancialInstrumentReportingNonEquityTradingActivityReportV01(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class FinancialInstrumentReportingNonEquityTradingActivityReportV01(base_types._
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class FinancialInstrumentReportingNonEquityTradingActivityReportV01(base_types._
 
 	@NonEqtyTrnsprncyData.setter
 	def NonEqtyTrnsprncyData(self, value):
-		self._NonEqtyTrnsprncyData = value if type(value) != auto else self.make_default("NonEqtyTrnsprncyData")
+		self._NonEqtyTrnsprncyData = value if type(value) != base_types.auto else self.make_default("NonEqtyTrnsprncyData")
 
 	@NonEqtyTrnsprncyData.deleter
 	def NonEqtyTrnsprncyData(self):
@@ -38,7 +38,7 @@ class FinancialInstrumentReportingNonEquityTradingActivityReportV01(base_types._
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
 	@RptHdr.deleter
 	def RptHdr(self):

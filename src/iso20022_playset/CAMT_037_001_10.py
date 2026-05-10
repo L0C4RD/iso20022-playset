@@ -12,7 +12,7 @@ class CAMT_037_001_10():
 
 		@DbtAuthstnReq.setter
 		def DbtAuthstnReq(self, value):
-			self._DbtAuthstnReq = value if type(value) != auto else self.make_default("DbtAuthstnReq")
+			self._DbtAuthstnReq = value if type(value) != base_types.auto else self.make_default("DbtAuthstnReq")
 
 		@DbtAuthstnReq.deleter
 		def DbtAuthstnReq(self):

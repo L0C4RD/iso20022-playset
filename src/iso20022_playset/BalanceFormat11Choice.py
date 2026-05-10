@@ -4,19 +4,19 @@ from .SignedQuantityFormat10 import SignedQuantityFormat10
 
 class BalanceFormat11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgblBal", "_NotElgblBal", "_Bal"]
+	__slots__ = ["_Bal", "_NotElgblBal", "_ElgblBal"]
 	@property
-	def ElgblBal(self):
-		return self._ElgblBal
+	def Bal(self):
+		return self._Bal
 
-	@ElgblBal.setter
-	def ElgblBal(self, value):
-		self._ElgblBal = value if type(value) != auto else self.make_default("ElgblBal")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
 
-	@ElgblBal.deleter
-	def ElgblBal(self):
-		del self._ElgblBal
-		self._ElgblBal = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	@property
 	def NotElgblBal(self):
@@ -24,7 +24,7 @@ class BalanceFormat11Choice(base_types._BaseFieldType):
 
 	@NotElgblBal.setter
 	def NotElgblBal(self, value):
-		self._NotElgblBal = value if type(value) != auto else self.make_default("NotElgblBal")
+		self._NotElgblBal = value if type(value) != base_types.auto else self.make_default("NotElgblBal")
 
 	@NotElgblBal.deleter
 	def NotElgblBal(self):
@@ -32,21 +32,21 @@ class BalanceFormat11Choice(base_types._BaseFieldType):
 		self._NotElgblBal = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def ElgblBal(self):
+		return self._ElgblBal
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@ElgblBal.setter
+	def ElgblBal(self, value):
+		self._ElgblBal = value if type(value) != base_types.auto else self.make_default("ElgblBal")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@ElgblBal.deleter
+	def ElgblBal(self):
+		del self._ElgblBal
+		self._ElgblBal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ISODate import ISODate
+from .Max35Text import Max35Text
 
 class EndPoint1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class EndPoint1Choice(base_types._BaseFieldType):
 
 	@NbOfPmts.setter
 	def NbOfPmts(self, value):
-		self._NbOfPmts = value if type(value) != auto else self.make_default("NbOfPmts")
+		self._NbOfPmts = value if type(value) != base_types.auto else self.make_default("NbOfPmts")
 
 	@NbOfPmts.deleter
 	def NbOfPmts(self):
@@ -24,7 +24,7 @@ class EndPoint1Choice(base_types._BaseFieldType):
 
 	@LastPmtDt.setter
 	def LastPmtDt(self, value):
-		self._LastPmtDt = value if type(value) != auto else self.make_default("LastPmtDt")
+		self._LastPmtDt = value if type(value) != base_types.auto else self.make_default("LastPmtDt")
 
 	@LastPmtDt.deleter
 	def LastPmtDt(self):

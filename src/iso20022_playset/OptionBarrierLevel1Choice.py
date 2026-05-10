@@ -1,6 +1,6 @@
 from . import base_types
-from .OptionMultipleBarrierLevels1 import OptionMultipleBarrierLevels1
 from .SecuritiesTransactionPrice23Choice import SecuritiesTransactionPrice23Choice
+from .OptionMultipleBarrierLevels1 import OptionMultipleBarrierLevels1
 
 class OptionBarrierLevel1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class OptionBarrierLevel1Choice(base_types._BaseFieldType):
 
 	@Sngl.setter
 	def Sngl(self, value):
-		self._Sngl = value if type(value) != auto else self.make_default("Sngl")
+		self._Sngl = value if type(value) != base_types.auto else self.make_default("Sngl")
 
 	@Sngl.deleter
 	def Sngl(self):
@@ -24,7 +24,7 @@ class OptionBarrierLevel1Choice(base_types._BaseFieldType):
 
 	@Mltpl.setter
 	def Mltpl(self, value):
-		self._Mltpl = value if type(value) != auto else self.make_default("Mltpl")
+		self._Mltpl = value if type(value) != base_types.auto else self.make_default("Mltpl")
 
 	@Mltpl.deleter
 	def Mltpl(self):

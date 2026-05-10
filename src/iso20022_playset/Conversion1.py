@@ -1,6 +1,6 @@
 from . import base_types
-from .FinancialInstrumentIdentification1 import FinancialInstrumentIdentification1
 from .AdditionalInformation15 import AdditionalInformation15
+from .FinancialInstrumentIdentification1 import FinancialInstrumentIdentification1
 
 class Conversion1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Conversion1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class Conversion1(base_types._BaseFieldType):
 
 	@TrgtScty.setter
 	def TrgtScty(self, value):
-		self._TrgtScty = value if type(value) != auto else self.make_default("TrgtScty")
+		self._TrgtScty = value if type(value) != base_types.auto else self.make_default("TrgtScty")
 
 	@TrgtScty.deleter
 	def TrgtScty(self):

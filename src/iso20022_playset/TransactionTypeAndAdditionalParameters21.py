@@ -1,32 +1,19 @@
 from . import base_types
-from .Max35Text import Max35Text
+from .SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
 from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from .YesNoIndicator import YesNoIndicator
-from .SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
+from .Max35Text import Max35Text
 
 class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgTxTp", "_CmonId", "_Pmt", "_RcncltnInd", "_NonceId"]
-	@property
-	def SctiesFincgTxTp(self):
-		return self._SctiesFincgTxTp
-
-	@SctiesFincgTxTp.setter
-	def SctiesFincgTxTp(self, value):
-		self._SctiesFincgTxTp = value if type(value) != auto else self.make_default("SctiesFincgTxTp")
-
-	@SctiesFincgTxTp.deleter
-	def SctiesFincgTxTp(self):
-		del self._SctiesFincgTxTp
-		self._SctiesFincgTxTp = None
-
+	__slots__ = ["_CmonId", "_SctiesFincgTxTp", "_RcncltnInd", "_Pmt", "_NonceId"]
 	@property
 	def CmonId(self):
 		return self._CmonId
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
 
 	@CmonId.deleter
 	def CmonId(self):
@@ -34,17 +21,17 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def SctiesFincgTxTp(self):
+		return self._SctiesFincgTxTp
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+	@SctiesFincgTxTp.setter
+	def SctiesFincgTxTp(self, value):
+		self._SctiesFincgTxTp = value if type(value) != base_types.auto else self.make_default("SctiesFincgTxTp")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
+	@SctiesFincgTxTp.deleter
+	def SctiesFincgTxTp(self):
+		del self._SctiesFincgTxTp
+		self._SctiesFincgTxTp = None
 
 	@property
 	def RcncltnInd(self):
@@ -52,7 +39,7 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 
 	@RcncltnInd.setter
 	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != auto else self.make_default("RcncltnInd")
+		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
 
 	@RcncltnInd.deleter
 	def RcncltnInd(self):
@@ -60,12 +47,25 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 		self._RcncltnInd = None
 
 	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
+	@property
 	def NonceId(self):
 		return self._NonceId
 
 	@NonceId.setter
 	def NonceId(self, value):
-		self._NonceId = value if type(value) != auto else self.make_default("NonceId")
+		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
 
 	@NonceId.deleter
 	def NonceId(self):
@@ -73,10 +73,10 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 		self._NonceId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

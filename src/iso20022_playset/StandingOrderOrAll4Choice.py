@@ -1,6 +1,6 @@
 from . import base_types
-from .StandingOrderIdentification8 import StandingOrderIdentification8
 from .StandingOrderIdentification9 import StandingOrderIdentification9
+from .StandingOrderIdentification8 import StandingOrderIdentification8
 
 class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 
 	@AllStgOrdrs.setter
 	def AllStgOrdrs(self, value):
-		self._AllStgOrdrs = value if type(value) != auto else self.make_default("AllStgOrdrs")
+		self._AllStgOrdrs = value if type(value) != base_types.auto else self.make_default("AllStgOrdrs")
 
 	@AllStgOrdrs.deleter
 	def AllStgOrdrs(self):
@@ -24,7 +24,7 @@ class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 
 	@StgOrdr.setter
 	def StgOrdr(self, value):
-		self._StgOrdr = value if type(value) != auto else self.make_default("StgOrdr")
+		self._StgOrdr = value if type(value) != base_types.auto else self.make_default("StgOrdr")
 
 	@StgOrdr.deleter
 	def StgOrdr(self):

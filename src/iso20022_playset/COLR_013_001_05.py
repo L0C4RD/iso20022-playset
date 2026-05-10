@@ -12,7 +12,7 @@ class COLR_013_001_05():
 
 		@IntrstPmtReq.setter
 		def IntrstPmtReq(self, value):
-			self._IntrstPmtReq = value if type(value) != auto else self.make_default("IntrstPmtReq")
+			self._IntrstPmtReq = value if type(value) != base_types.auto else self.make_default("IntrstPmtReq")
 
 		@IntrstPmtReq.deleter
 		def IntrstPmtReq(self):

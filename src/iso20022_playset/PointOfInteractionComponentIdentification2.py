@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max256Text import Max256Text
+from .Max35Text import Max35Text
 
 class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
 	@ItmNb.setter
 	def ItmNb(self, value):
-		self._ItmNb = value if type(value) != auto else self.make_default("ItmNb")
+		self._ItmNb = value if type(value) != base_types.auto else self.make_default("ItmNb")
 
 	@ItmNb.deleter
 	def ItmNb(self):
@@ -37,7 +37,7 @@ class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
 
 	@SrlNb.deleter
 	def SrlNb(self):
@@ -50,7 +50,7 @@ class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
 	@PrvdrId.setter
 	def PrvdrId(self, value):
-		self._PrvdrId = value if type(value) != auto else self.make_default("PrvdrId")
+		self._PrvdrId = value if type(value) != base_types.auto else self.make_default("PrvdrId")
 
 	@PrvdrId.deleter
 	def PrvdrId(self):

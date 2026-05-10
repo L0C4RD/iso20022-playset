@@ -1,36 +1,23 @@
 from . import base_types
+from .Number import Number
 from .PercentageRate import PercentageRate
 from .BillingRateIdentification1Choice import BillingRateIdentification1Choice
-from .Number import Number
 
 class BillingRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Val", "_DaysInYr", "_DaysInPrd"]
+	__slots__ = ["_DaysInPrd", "_DaysInYr", "_Val", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def DaysInPrd(self):
+		return self._DaysInPrd
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@DaysInPrd.setter
+	def DaysInPrd(self, value):
+		self._DaysInPrd = value if type(value) != base_types.auto else self.make_default("DaysInPrd")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
+	@DaysInPrd.deleter
+	def DaysInPrd(self):
+		del self._DaysInPrd
+		self._DaysInPrd = None
 
 	@property
 	def DaysInYr(self):
@@ -38,7 +25,7 @@ class BillingRate1(base_types._BaseFieldType):
 
 	@DaysInYr.setter
 	def DaysInYr(self, value):
-		self._DaysInYr = value if type(value) != auto else self.make_default("DaysInYr")
+		self._DaysInYr = value if type(value) != base_types.auto else self.make_default("DaysInYr")
 
 	@DaysInYr.deleter
 	def DaysInYr(self):
@@ -46,22 +33,35 @@ class BillingRate1(base_types._BaseFieldType):
 		self._DaysInYr = None
 
 	@property
-	def DaysInPrd(self):
-		return self._DaysInPrd
+	def Val(self):
+		return self._Val
 
-	@DaysInPrd.setter
-	def DaysInPrd(self, value):
-		self._DaysInPrd = value if type(value) != auto else self.make_default("DaysInPrd")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
-	@DaysInPrd.deleter
-	def DaysInPrd(self):
-		del self._DaysInPrd
-		self._DaysInPrd = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=BillingRateIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DaysInYr', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DaysInPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DaysInYr', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=BillingRateIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

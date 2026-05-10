@@ -1,6 +1,6 @@
 from . import base_types
-from .TradingDateCode2Choice import TradingDateCode2Choice
 from .DateAndDateTime1Choice import DateAndDateTime1Choice
+from .TradingDateCode2Choice import TradingDateCode2Choice
 
 class TradeDate7Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TradeDate7Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -24,7 +24,7 @@ class TradeDate7Choice(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):

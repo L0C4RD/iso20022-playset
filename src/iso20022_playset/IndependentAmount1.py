@@ -1,6 +1,6 @@
 from . import base_types
-from .IndependentAmountConventionType1Code import IndependentAmountConventionType1Code
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .IndependentAmountConventionType1Code import IndependentAmountConventionType1Code
 
 class IndependentAmount1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class IndependentAmount1(base_types._BaseFieldType):
 
 	@Cnvntn.setter
 	def Cnvntn(self, value):
-		self._Cnvntn = value if type(value) != auto else self.make_default("Cnvntn")
+		self._Cnvntn = value if type(value) != base_types.auto else self.make_default("Cnvntn")
 
 	@Cnvntn.deleter
 	def Cnvntn(self):
@@ -24,7 +24,7 @@ class IndependentAmount1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

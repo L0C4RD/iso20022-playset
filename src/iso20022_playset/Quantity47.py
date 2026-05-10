@@ -1,25 +1,25 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max35Text import Max35Text
-from .PercentageRate import PercentageRate
 from .DecimalNumber import DecimalNumber
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from .PercentageRate import PercentageRate
+from .Max35Text import Max35Text
 
 class Quantity47(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAmt", "_PctgRate", "_Unit", "_AmtsdVal", "_FaceAmt", "_OthrAsst"]
+	__slots__ = ["_OthrAsst", "_PctgRate", "_CshAmt", "_AmtsdVal", "_FaceAmt", "_Unit"]
 	@property
-	def CshAmt(self):
-		return self._CshAmt
+	def OthrAsst(self):
+		return self._OthrAsst
 
-	@CshAmt.setter
-	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
+	@OthrAsst.setter
+	def OthrAsst(self, value):
+		self._OthrAsst = value if type(value) != base_types.auto else self.make_default("OthrAsst")
 
-	@CshAmt.deleter
-	def CshAmt(self):
-		del self._CshAmt
-		self._CshAmt = None
+	@OthrAsst.deleter
+	def OthrAsst(self):
+		del self._OthrAsst
+		self._OthrAsst = None
 
 	@property
 	def PctgRate(self):
@@ -27,7 +27,7 @@ class Quantity47(base_types._BaseFieldType):
 
 	@PctgRate.setter
 	def PctgRate(self, value):
-		self._PctgRate = value if type(value) != auto else self.make_default("PctgRate")
+		self._PctgRate = value if type(value) != base_types.auto else self.make_default("PctgRate")
 
 	@PctgRate.deleter
 	def PctgRate(self):
@@ -35,17 +35,17 @@ class Quantity47(base_types._BaseFieldType):
 		self._PctgRate = None
 
 	@property
-	def Unit(self):
-		return self._Unit
+	def CshAmt(self):
+		return self._CshAmt
 
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+	@CshAmt.setter
+	def CshAmt(self, value):
+		self._CshAmt = value if type(value) != base_types.auto else self.make_default("CshAmt")
 
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
+	@CshAmt.deleter
+	def CshAmt(self):
+		del self._CshAmt
+		self._CshAmt = None
 
 	@property
 	def AmtsdVal(self):
@@ -53,7 +53,7 @@ class Quantity47(base_types._BaseFieldType):
 
 	@AmtsdVal.setter
 	def AmtsdVal(self, value):
-		self._AmtsdVal = value if type(value) != auto else self.make_default("AmtsdVal")
+		self._AmtsdVal = value if type(value) != base_types.auto else self.make_default("AmtsdVal")
 
 	@AmtsdVal.deleter
 	def AmtsdVal(self):
@@ -66,7 +66,7 @@ class Quantity47(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
 
 	@FaceAmt.deleter
 	def FaceAmt(self):
@@ -74,24 +74,24 @@ class Quantity47(base_types._BaseFieldType):
 		self._FaceAmt = None
 
 	@property
-	def OthrAsst(self):
-		return self._OthrAsst
+	def Unit(self):
+		return self._Unit
 
-	@OthrAsst.setter
-	def OthrAsst(self, value):
-		self._OthrAsst = value if type(value) != auto else self.make_default("OthrAsst")
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
-	@OthrAsst.deleter
-	def OthrAsst(self):
-		del self._OthrAsst
-		self._OthrAsst = None
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAsst', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PctgRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrAsst', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

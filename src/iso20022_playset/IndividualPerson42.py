@@ -1,6 +1,6 @@
 from . import base_types
-from .AttendanceCard3 import AttendanceCard3
 from .PartyIdentification232Choice import PartyIdentification232Choice
+from .AttendanceCard3 import AttendanceCard3
 from .PartyIdentification129Choice import PartyIdentification129Choice
 
 class IndividualPerson42(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class IndividualPerson42(base_types._BaseFieldType):
 
 	@PrssgndPrxy.setter
 	def PrssgndPrxy(self, value):
-		self._PrssgndPrxy = value if type(value) != auto else self.make_default("PrssgndPrxy")
+		self._PrssgndPrxy = value if type(value) != base_types.auto else self.make_default("PrssgndPrxy")
 
 	@PrssgndPrxy.deleter
 	def PrssgndPrxy(self):
@@ -25,7 +25,7 @@ class IndividualPerson42(base_types._BaseFieldType):
 
 	@EmplngPty.setter
 	def EmplngPty(self, value):
-		self._EmplngPty = value if type(value) != auto else self.make_default("EmplngPty")
+		self._EmplngPty = value if type(value) != base_types.auto else self.make_default("EmplngPty")
 
 	@EmplngPty.deleter
 	def EmplngPty(self):
@@ -38,7 +38,7 @@ class IndividualPerson42(base_types._BaseFieldType):
 
 	@AttndncCardDtls.setter
 	def AttndncCardDtls(self, value):
-		self._AttndncCardDtls = value if type(value) != auto else self.make_default("AttndncCardDtls")
+		self._AttndncCardDtls = value if type(value) != base_types.auto else self.make_default("AttndncCardDtls")
 
 	@AttndncCardDtls.deleter
 	def AttndncCardDtls(self):

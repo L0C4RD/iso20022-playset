@@ -10,7 +10,7 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@SttlmOrDlvry.setter
 	def SttlmOrDlvry(self, value):
-		self._SttlmOrDlvry = value if type(value) != auto else self.make_default("SttlmOrDlvry")
+		self._SttlmOrDlvry = value if type(value) != base_types.auto else self.make_default("SttlmOrDlvry")
 
 	@SttlmOrDlvry.deleter
 	def SttlmOrDlvry(self):
@@ -23,7 +23,7 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@VartnMrgnPmtOblgtn.setter
 	def VartnMrgnPmtOblgtn(self, value):
-		self._VartnMrgnPmtOblgtn = value if type(value) != auto else self.make_default("VartnMrgnPmtOblgtn")
+		self._VartnMrgnPmtOblgtn = value if type(value) != base_types.auto else self.make_default("VartnMrgnPmtOblgtn")
 
 	@VartnMrgnPmtOblgtn.deleter
 	def VartnMrgnPmtOblgtn(self):
@@ -36,7 +36,7 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@OprlOutflw.setter
 	def OprlOutflw(self, value):
-		self._OprlOutflw = value if type(value) != auto else self.make_default("OprlOutflw")
+		self._OprlOutflw = value if type(value) != base_types.auto else self.make_default("OprlOutflw")
 
 	@OprlOutflw.deleter
 	def OprlOutflw(self):
@@ -49,7 +49,7 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):

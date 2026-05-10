@@ -1,6 +1,6 @@
 from . import base_types
-from .DecimalNumberFraction5 import DecimalNumberFraction5
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .DecimalNumberFraction5 import DecimalNumberFraction5
 
 class NumberAndVolume2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NumberAndVolume2(base_types._BaseFieldType):
 
 	@Vol.setter
 	def Vol(self, value):
-		self._Vol = value if type(value) != auto else self.make_default("Vol")
+		self._Vol = value if type(value) != base_types.auto else self.make_default("Vol")
 
 	@Vol.deleter
 	def Vol(self):
@@ -24,7 +24,7 @@ class NumberAndVolume2(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
 
 	@Nb.deleter
 	def Nb(self):

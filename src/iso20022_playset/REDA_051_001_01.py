@@ -12,7 +12,7 @@ class REDA_051_001_01():
 
 		@AcctLkStsAdvc.setter
 		def AcctLkStsAdvc(self, value):
-			self._AcctLkStsAdvc = value if type(value) != auto else self.make_default("AcctLkStsAdvc")
+			self._AcctLkStsAdvc = value if type(value) != base_types.auto else self.make_default("AcctLkStsAdvc")
 
 		@AcctLkStsAdvc.deleter
 		def AcctLkStsAdvc(self):

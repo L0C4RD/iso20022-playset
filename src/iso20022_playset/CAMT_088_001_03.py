@@ -12,7 +12,7 @@ class CAMT_088_001_03():
 
 		@NetRpt.setter
 		def NetRpt(self, value):
-			self._NetRpt = value if type(value) != auto else self.make_default("NetRpt")
+			self._NetRpt = value if type(value) != base_types.auto else self.make_default("NetRpt")
 
 		@NetRpt.deleter
 		def NetRpt(self):

@@ -10,7 +10,7 @@ class TimePeriod2(base_types._BaseFieldType):
 
 	@ToTm.setter
 	def ToTm(self, value):
-		self._ToTm = value if type(value) != auto else self.make_default("ToTm")
+		self._ToTm = value if type(value) != base_types.auto else self.make_default("ToTm")
 
 	@ToTm.deleter
 	def ToTm(self):
@@ -23,7 +23,7 @@ class TimePeriod2(base_types._BaseFieldType):
 
 	@FrTm.setter
 	def FrTm(self, value):
-		self._FrTm = value if type(value) != auto else self.make_default("FrTm")
+		self._FrTm = value if type(value) != base_types.auto else self.make_default("FrTm")
 
 	@FrTm.deleter
 	def FrTm(self):

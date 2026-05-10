@@ -11,7 +11,7 @@ class AccountOrBusinessError6Choice(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
 	@Acct.deleter
 	def Acct(self):
@@ -24,7 +24,7 @@ class AccountOrBusinessError6Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):

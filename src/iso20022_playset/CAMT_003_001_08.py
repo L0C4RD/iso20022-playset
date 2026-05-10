@@ -12,7 +12,7 @@ class CAMT_003_001_08():
 
 		@GetAcct.setter
 		def GetAcct(self, value):
-			self._GetAcct = value if type(value) != auto else self.make_default("GetAcct")
+			self._GetAcct = value if type(value) != base_types.auto else self.make_default("GetAcct")
 
 		@GetAcct.deleter
 		def GetAcct(self):

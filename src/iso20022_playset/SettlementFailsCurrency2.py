@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
 from .SettlementTotalData1 import SettlementTotalData1
+from .ActiveCurrencyCode import ActiveCurrencyCode
 
 class SettlementFailsCurrency2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SettlementFailsCurrency2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -24,7 +24,7 @@ class SettlementFailsCurrency2(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
+		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
 
 	@Data.deleter
 	def Data(self):

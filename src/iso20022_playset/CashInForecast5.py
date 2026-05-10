@@ -1,39 +1,26 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
-from .FundBalance1 import FundBalance1
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .ISODate import ISODate
 from .FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from .FundCashInBreakdown3 import FundCashInBreakdown3
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .FundBalance1 import FundBalance1
+from .ISODate import ISODate
+from .YesNoIndicator import YesNoIndicator
 
 class CashInForecast5(base_types._BaseFieldType):
 
-	__slots__ = ["_XcptnlCshFlowInd", "_CshInBrkdwnDtls", "_SubTtlAmt", "_AddtlBal", "_SubTtlUnitsNb", "_CshSttlmDt"]
+	__slots__ = ["_SubTtlUnitsNb", "_SubTtlAmt", "_AddtlBal", "_XcptnlCshFlowInd", "_CshInBrkdwnDtls", "_CshSttlmDt"]
 	@property
-	def XcptnlCshFlowInd(self):
-		return self._XcptnlCshFlowInd
+	def SubTtlUnitsNb(self):
+		return self._SubTtlUnitsNb
 
-	@XcptnlCshFlowInd.setter
-	def XcptnlCshFlowInd(self, value):
-		self._XcptnlCshFlowInd = value if type(value) != auto else self.make_default("XcptnlCshFlowInd")
+	@SubTtlUnitsNb.setter
+	def SubTtlUnitsNb(self, value):
+		self._SubTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("SubTtlUnitsNb")
 
-	@XcptnlCshFlowInd.deleter
-	def XcptnlCshFlowInd(self):
-		del self._XcptnlCshFlowInd
-		self._XcptnlCshFlowInd = None
-
-	@property
-	def CshInBrkdwnDtls(self):
-		return self._CshInBrkdwnDtls
-
-	@CshInBrkdwnDtls.setter
-	def CshInBrkdwnDtls(self, value):
-		self._CshInBrkdwnDtls = value if type(value) != auto else self.make_default("CshInBrkdwnDtls")
-
-	@CshInBrkdwnDtls.deleter
-	def CshInBrkdwnDtls(self):
-		del self._CshInBrkdwnDtls
-		self._CshInBrkdwnDtls = None
+	@SubTtlUnitsNb.deleter
+	def SubTtlUnitsNb(self):
+		del self._SubTtlUnitsNb
+		self._SubTtlUnitsNb = None
 
 	@property
 	def SubTtlAmt(self):
@@ -41,7 +28,7 @@ class CashInForecast5(base_types._BaseFieldType):
 
 	@SubTtlAmt.setter
 	def SubTtlAmt(self, value):
-		self._SubTtlAmt = value if type(value) != auto else self.make_default("SubTtlAmt")
+		self._SubTtlAmt = value if type(value) != base_types.auto else self.make_default("SubTtlAmt")
 
 	@SubTtlAmt.deleter
 	def SubTtlAmt(self):
@@ -54,7 +41,7 @@ class CashInForecast5(base_types._BaseFieldType):
 
 	@AddtlBal.setter
 	def AddtlBal(self, value):
-		self._AddtlBal = value if type(value) != auto else self.make_default("AddtlBal")
+		self._AddtlBal = value if type(value) != base_types.auto else self.make_default("AddtlBal")
 
 	@AddtlBal.deleter
 	def AddtlBal(self):
@@ -62,17 +49,30 @@ class CashInForecast5(base_types._BaseFieldType):
 		self._AddtlBal = None
 
 	@property
-	def SubTtlUnitsNb(self):
-		return self._SubTtlUnitsNb
+	def XcptnlCshFlowInd(self):
+		return self._XcptnlCshFlowInd
 
-	@SubTtlUnitsNb.setter
-	def SubTtlUnitsNb(self, value):
-		self._SubTtlUnitsNb = value if type(value) != auto else self.make_default("SubTtlUnitsNb")
+	@XcptnlCshFlowInd.setter
+	def XcptnlCshFlowInd(self, value):
+		self._XcptnlCshFlowInd = value if type(value) != base_types.auto else self.make_default("XcptnlCshFlowInd")
 
-	@SubTtlUnitsNb.deleter
-	def SubTtlUnitsNb(self):
-		del self._SubTtlUnitsNb
-		self._SubTtlUnitsNb = None
+	@XcptnlCshFlowInd.deleter
+	def XcptnlCshFlowInd(self):
+		del self._XcptnlCshFlowInd
+		self._XcptnlCshFlowInd = None
+
+	@property
+	def CshInBrkdwnDtls(self):
+		return self._CshInBrkdwnDtls
+
+	@CshInBrkdwnDtls.setter
+	def CshInBrkdwnDtls(self, value):
+		self._CshInBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("CshInBrkdwnDtls")
+
+	@CshInBrkdwnDtls.deleter
+	def CshInBrkdwnDtls(self):
+		del self._CshInBrkdwnDtls
+		self._CshInBrkdwnDtls = None
 
 	@property
 	def CshSttlmDt(self):
@@ -80,7 +80,7 @@ class CashInForecast5(base_types._BaseFieldType):
 
 	@CshSttlmDt.setter
 	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != auto else self.make_default("CshSttlmDt")
+		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
 
 	@CshSttlmDt.deleter
 	def CshSttlmDt(self):
@@ -88,11 +88,11 @@ class CashInForecast5(base_types._BaseFieldType):
 		self._CshSttlmDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XcptnlCshFlowInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInBrkdwnDtls', type=FundCashInBreakdown3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBal', type=FundBalance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcptnlCshFlowInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInBrkdwnDtls', type=FundCashInBreakdown3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

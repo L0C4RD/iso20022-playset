@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class MessageHeader1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MessageHeader1(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
 	@MsgId.deleter
 	def MsgId(self):
@@ -24,7 +24,7 @@ class MessageHeader1(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
 	@CreDtTm.deleter
 	def CreDtTm(self):

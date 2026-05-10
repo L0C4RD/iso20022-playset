@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CurrencyConversion32 import CurrencyConversion32
 from .CurrencyConversionResponse2Code import CurrencyConversionResponse2Code
+from .CurrencyConversion32 import CurrencyConversion32
+from .Max35Text import Max35Text
 
 class CurrencyConversion33(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CurrencyConversion33(base_types._BaseFieldType):
 
 	@Convs.setter
 	def Convs(self, value):
-		self._Convs = value if type(value) != auto else self.make_default("Convs")
+		self._Convs = value if type(value) != base_types.auto else self.make_default("Convs")
 
 	@Convs.deleter
 	def Convs(self):
@@ -25,7 +25,7 @@ class CurrencyConversion33(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
 
 	@Rslt.deleter
 	def Rslt(self):
@@ -38,7 +38,7 @@ class CurrencyConversion33(base_types._BaseFieldType):
 
 	@RsltRsn.setter
 	def RsltRsn(self, value):
-		self._RsltRsn = value if type(value) != auto else self.make_default("RsltRsn")
+		self._RsltRsn = value if type(value) != base_types.auto else self.make_default("RsltRsn")
 
 	@RsltRsn.deleter
 	def RsltRsn(self):

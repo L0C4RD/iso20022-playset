@@ -11,7 +11,7 @@ class SaleTerminalData1(base_types._BaseFieldType):
 
 	@SaleRcncltnId.setter
 	def SaleRcncltnId(self, value):
-		self._SaleRcncltnId = value if type(value) != auto else self.make_default("SaleRcncltnId")
+		self._SaleRcncltnId = value if type(value) != base_types.auto else self.make_default("SaleRcncltnId")
 
 	@SaleRcncltnId.deleter
 	def SaleRcncltnId(self):
@@ -24,7 +24,7 @@ class SaleTerminalData1(base_types._BaseFieldType):
 
 	@TermnlEnvt.setter
 	def TermnlEnvt(self, value):
-		self._TermnlEnvt = value if type(value) != auto else self.make_default("TermnlEnvt")
+		self._TermnlEnvt = value if type(value) != base_types.auto else self.make_default("TermnlEnvt")
 
 	@TermnlEnvt.deleter
 	def TermnlEnvt(self):

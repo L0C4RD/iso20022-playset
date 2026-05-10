@@ -1,23 +1,23 @@
 from . import base_types
-from .SecurityAttributes10 import SecurityAttributes10
 from .SupplementaryData1 import SupplementaryData1
+from .SecurityAttributes10 import SecurityAttributes10
 from .MessageHeader1 import MessageHeader1
 
 class SecurityCreationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_Scty", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_Scty", "_MsgHdr"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Scty(self):
@@ -25,7 +25,7 @@ class SecurityCreationRequestV01(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
+		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
 
 	@Scty.deleter
 	def Scty(self):
@@ -33,21 +33,21 @@ class SecurityCreationRequestV01(base_types._BaseFieldType):
 		self._Scty = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Scty', type=SecurityAttributes10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Scty', type=SecurityAttributes10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

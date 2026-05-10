@@ -1,23 +1,23 @@
 from . import base_types
-from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from .SecuritiesAccount8 import SecuritiesAccount8
 from .SecurityIdentification7 import SecurityIdentification7
+from .SecuritiesAccount8 import SecuritiesAccount8
+from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyId", "_SctiesQty", "_AcctDtls"]
+	__slots__ = ["_AcctDtls", "_SctiesQty", "_SctyId"]
 	@property
-	def SctyId(self):
-		return self._SctyId
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
 
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def SctiesQty(self):
@@ -25,7 +25,7 @@ class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 
 	@SctiesQty.setter
 	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+		self._SctiesQty = value if type(value) != base_types.auto else self.make_default("SctiesQty")
 
 	@SctiesQty.deleter
 	def SctiesQty(self):
@@ -33,21 +33,21 @@ class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 		self._SctiesQty = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def SctyId(self):
+		return self._SctyId
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount8, min=1, max=2, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 	))
 

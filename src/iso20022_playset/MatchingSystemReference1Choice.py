@@ -10,7 +10,7 @@ class MatchingSystemReference1Choice(base_types._BaseFieldType):
 
 	@MtchgSysUnqRef.setter
 	def MtchgSysUnqRef(self, value):
-		self._MtchgSysUnqRef = value if type(value) != auto else self.make_default("MtchgSysUnqRef")
+		self._MtchgSysUnqRef = value if type(value) != base_types.auto else self.make_default("MtchgSysUnqRef")
 
 	@MtchgSysUnqRef.deleter
 	def MtchgSysUnqRef(self):
@@ -23,7 +23,7 @@ class MatchingSystemReference1Choice(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
 
 	@RltdRef.deleter
 	def RltdRef(self):

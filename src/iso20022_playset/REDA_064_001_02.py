@@ -12,7 +12,7 @@ class REDA_064_001_02():
 
 		@CalQry.setter
 		def CalQry(self, value):
-			self._CalQry = value if type(value) != auto else self.make_default("CalQry")
+			self._CalQry = value if type(value) != base_types.auto else self.make_default("CalQry")
 
 		@CalQry.deleter
 		def CalQry(self):

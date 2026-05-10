@@ -12,7 +12,7 @@ class CAMT_029_001_13():
 
 		@RsltnOfInvstgtn.setter
 		def RsltnOfInvstgtn(self, value):
-			self._RsltnOfInvstgtn = value if type(value) != auto else self.make_default("RsltnOfInvstgtn")
+			self._RsltnOfInvstgtn = value if type(value) != base_types.auto else self.make_default("RsltnOfInvstgtn")
 
 		@RsltnOfInvstgtn.deleter
 		def RsltnOfInvstgtn(self):

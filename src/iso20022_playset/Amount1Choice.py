@@ -10,7 +10,7 @@ class Amount1Choice(base_types._BaseFieldType):
 
 	@DcrAmt.setter
 	def DcrAmt(self, value):
-		self._DcrAmt = value if type(value) != auto else self.make_default("DcrAmt")
+		self._DcrAmt = value if type(value) != base_types.auto else self.make_default("DcrAmt")
 
 	@DcrAmt.deleter
 	def DcrAmt(self):
@@ -23,7 +23,7 @@ class Amount1Choice(base_types._BaseFieldType):
 
 	@IncrAmt.setter
 	def IncrAmt(self, value):
-		self._IncrAmt = value if type(value) != auto else self.make_default("IncrAmt")
+		self._IncrAmt = value if type(value) != base_types.auto else self.make_default("IncrAmt")
 
 	@IncrAmt.deleter
 	def IncrAmt(self):

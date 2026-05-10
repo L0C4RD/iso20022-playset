@@ -1,7 +1,7 @@
 from . import base_types
+from .Frequency6Code import Frequency6Code
 from .FrequencyPeriod1 import FrequencyPeriod1
 from .FrequencyAndMoment1 import FrequencyAndMoment1
-from .Frequency6Code import Frequency6Code
 
 class Frequency36Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Frequency36Choice(base_types._BaseFieldType):
 
 	@PtInTm.setter
 	def PtInTm(self, value):
-		self._PtInTm = value if type(value) != auto else self.make_default("PtInTm")
+		self._PtInTm = value if type(value) != base_types.auto else self.make_default("PtInTm")
 
 	@PtInTm.deleter
 	def PtInTm(self):
@@ -25,7 +25,7 @@ class Frequency36Choice(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
 	@Prd.deleter
 	def Prd(self):
@@ -38,7 +38,7 @@ class Frequency36Choice(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

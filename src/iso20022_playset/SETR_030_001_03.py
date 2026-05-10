@@ -12,7 +12,7 @@ class SETR_030_001_03():
 
 		@SctiesTradConfRspn.setter
 		def SctiesTradConfRspn(self, value):
-			self._SctiesTradConfRspn = value if type(value) != auto else self.make_default("SctiesTradConfRspn")
+			self._SctiesTradConfRspn = value if type(value) != base_types.auto else self.make_default("SctiesTradConfRspn")
 
 		@SctiesTradConfRspn.deleter
 		def SctiesTradConfRspn(self):

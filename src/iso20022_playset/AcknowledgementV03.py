@@ -1,39 +1,26 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .SimpleIdentificationInformation import SimpleIdentificationInformation
-from .TransactionStatus4 import TransactionStatus4
-from .DocumentIdentification5 import DocumentIdentification5
-from .PendingActivity2 import PendingActivity2
 from .DocumentIdentification3 import DocumentIdentification3
+from .PendingActivity2 import PendingActivity2
+from .MessageIdentification1 import MessageIdentification1
+from .DocumentIdentification5 import DocumentIdentification5
+from .TransactionStatus4 import TransactionStatus4
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class AcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_AckdMsgRef", "_ReqForActn", "_TxId", "_TxSts", "_AckId", "_EstblishdBaselnId", "_UsrTxRef"]
+	__slots__ = ["_AckId", "_TxId", "_TxSts", "_ReqForActn", "_AckdMsgRef", "_UsrTxRef", "_EstblishdBaselnId"]
 	@property
-	def AckdMsgRef(self):
-		return self._AckdMsgRef
+	def AckId(self):
+		return self._AckId
 
-	@AckdMsgRef.setter
-	def AckdMsgRef(self, value):
-		self._AckdMsgRef = value if type(value) != auto else self.make_default("AckdMsgRef")
+	@AckId.setter
+	def AckId(self, value):
+		self._AckId = value if type(value) != base_types.auto else self.make_default("AckId")
 
-	@AckdMsgRef.deleter
-	def AckdMsgRef(self):
-		del self._AckdMsgRef
-		self._AckdMsgRef = None
-
-	@property
-	def ReqForActn(self):
-		return self._ReqForActn
-
-	@ReqForActn.setter
-	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != auto else self.make_default("ReqForActn")
-
-	@ReqForActn.deleter
-	def ReqForActn(self):
-		del self._ReqForActn
-		self._ReqForActn = None
+	@AckId.deleter
+	def AckId(self):
+		del self._AckId
+		self._AckId = None
 
 	@property
 	def TxId(self):
@@ -41,7 +28,7 @@ class AcknowledgementV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):
@@ -54,7 +41,7 @@ class AcknowledgementV03(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
 
 	@TxSts.deleter
 	def TxSts(self):
@@ -62,30 +49,30 @@ class AcknowledgementV03(base_types._BaseFieldType):
 		self._TxSts = None
 
 	@property
-	def AckId(self):
-		return self._AckId
+	def ReqForActn(self):
+		return self._ReqForActn
 
-	@AckId.setter
-	def AckId(self, value):
-		self._AckId = value if type(value) != auto else self.make_default("AckId")
+	@ReqForActn.setter
+	def ReqForActn(self, value):
+		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
 
-	@AckId.deleter
-	def AckId(self):
-		del self._AckId
-		self._AckId = None
+	@ReqForActn.deleter
+	def ReqForActn(self):
+		del self._ReqForActn
+		self._ReqForActn = None
 
 	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
+	def AckdMsgRef(self):
+		return self._AckdMsgRef
 
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
+	@AckdMsgRef.setter
+	def AckdMsgRef(self, value):
+		self._AckdMsgRef = value if type(value) != base_types.auto else self.make_default("AckdMsgRef")
 
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+	@AckdMsgRef.deleter
+	def AckdMsgRef(self):
+		del self._AckdMsgRef
+		self._AckdMsgRef = None
 
 	@property
 	def UsrTxRef(self):
@@ -93,20 +80,33 @@ class AcknowledgementV03(base_types._BaseFieldType):
 
 	@UsrTxRef.setter
 	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
 
 	@UsrTxRef.deleter
 	def UsrTxRef(self):
 		del self._UsrTxRef
 		self._UsrTxRef = None
 
+	@property
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
+
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
+
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AckdMsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AckId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AckId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AckdMsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
 	))
 

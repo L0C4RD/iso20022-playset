@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
 from .BaseOneRate import BaseOneRate
+from .PercentageRate import PercentageRate
 
 class ExchangeRateOrPercentage1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ExchangeRateOrPercentage1Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):
@@ -24,7 +24,7 @@ class ExchangeRateOrPercentage1Choice(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
 
 	@Pctg.deleter
 	def Pctg(self):

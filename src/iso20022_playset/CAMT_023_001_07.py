@@ -12,7 +12,7 @@ class CAMT_023_001_07():
 
 		@BckpPmt.setter
 		def BckpPmt(self, value):
-			self._BckpPmt = value if type(value) != auto else self.make_default("BckpPmt")
+			self._BckpPmt = value if type(value) != base_types.auto else self.make_default("BckpPmt")
 
 		@BckpPmt.deleter
 		def BckpPmt(self):

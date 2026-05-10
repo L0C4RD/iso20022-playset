@@ -11,7 +11,7 @@ class DetailedTransactionStatistics7Choice(base_types._BaseFieldType):
 
 	@DataSetActn.setter
 	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
+		self._DataSetActn = value if type(value) != base_types.auto else self.make_default("DataSetActn")
 
 	@DataSetActn.deleter
 	def DataSetActn(self):
@@ -24,7 +24,7 @@ class DetailedTransactionStatistics7Choice(base_types._BaseFieldType):
 
 	@DtldSttstcs.setter
 	def DtldSttstcs(self, value):
-		self._DtldSttstcs = value if type(value) != auto else self.make_default("DtldSttstcs")
+		self._DtldSttstcs = value if type(value) != base_types.auto else self.make_default("DtldSttstcs")
 
 	@DtldSttstcs.deleter
 	def DtldSttstcs(self):

@@ -1,27 +1,40 @@
 from . import base_types
-from .Report7 import Report7
-from .SupplementaryData1 import SupplementaryData1
-from .PartyIdentification253Choice import PartyIdentification253Choice
 from .SettlementParties37Choice import SettlementParties37Choice
 from .ReportParameters8 import ReportParameters8
+from .PartyIdentification253Choice import PartyIdentification253Choice
+from .SupplementaryData1 import SupplementaryData1
+from .Report7 import Report7
 from .SecuritiesAccount19 import SecuritiesAccount19
 from .Pagination1 import Pagination1
 
 class SettlementObligationReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_RptDtls", "_DlvryAcct", "_RptParams", "_ClrMmb", "_SttlmPties", "_Pgntn", "_SplmtryData", "_ClrSgmt"]
+	__slots__ = ["_SplmtryData", "_Pgntn", "_DlvryAcct", "_ClrSgmt", "_RptDtls", "_SttlmPties", "_RptParams", "_ClrMmb"]
 	@property
-	def RptDtls(self):
-		return self._RptDtls
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@RptDtls.setter
-	def RptDtls(self, value):
-		self._RptDtls = value if type(value) != auto else self.make_default("RptDtls")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@RptDtls.deleter
-	def RptDtls(self):
-		del self._RptDtls
-		self._RptDtls = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def DlvryAcct(self):
@@ -29,7 +42,7 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@DlvryAcct.setter
 	def DlvryAcct(self, value):
-		self._DlvryAcct = value if type(value) != auto else self.make_default("DlvryAcct")
+		self._DlvryAcct = value if type(value) != base_types.auto else self.make_default("DlvryAcct")
 
 	@DlvryAcct.deleter
 	def DlvryAcct(self):
@@ -37,12 +50,51 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 		self._DlvryAcct = None
 
 	@property
+	def ClrSgmt(self):
+		return self._ClrSgmt
+
+	@ClrSgmt.setter
+	def ClrSgmt(self, value):
+		self._ClrSgmt = value if type(value) != base_types.auto else self.make_default("ClrSgmt")
+
+	@ClrSgmt.deleter
+	def ClrSgmt(self):
+		del self._ClrSgmt
+		self._ClrSgmt = None
+
+	@property
+	def RptDtls(self):
+		return self._RptDtls
+
+	@RptDtls.setter
+	def RptDtls(self, value):
+		self._RptDtls = value if type(value) != base_types.auto else self.make_default("RptDtls")
+
+	@RptDtls.deleter
+	def RptDtls(self):
+		del self._RptDtls
+		self._RptDtls = None
+
+	@property
+	def SttlmPties(self):
+		return self._SttlmPties
+
+	@SttlmPties.setter
+	def SttlmPties(self, value):
+		self._SttlmPties = value if type(value) != base_types.auto else self.make_default("SttlmPties")
+
+	@SttlmPties.deleter
+	def SttlmPties(self):
+		del self._SttlmPties
+		self._SttlmPties = None
+
+	@property
 	def RptParams(self):
 		return self._RptParams
 
 	@RptParams.setter
 	def RptParams(self, value):
-		self._RptParams = value if type(value) != auto else self.make_default("RptParams")
+		self._RptParams = value if type(value) != base_types.auto else self.make_default("RptParams")
 
 	@RptParams.deleter
 	def RptParams(self):
@@ -55,73 +107,21 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
 		self._ClrMmb = None
 
-	@property
-	def SttlmPties(self):
-		return self._SttlmPties
-
-	@SttlmPties.setter
-	def SttlmPties(self, value):
-		self._SttlmPties = value if type(value) != auto else self.make_default("SttlmPties")
-
-	@SttlmPties.deleter
-	def SttlmPties(self):
-		del self._SttlmPties
-		self._SttlmPties = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def ClrSgmt(self):
-		return self._ClrSgmt
-
-	@ClrSgmt.setter
-	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
-
-	@ClrSgmt.deleter
-	def ClrSgmt(self):
-		del self._ClrSgmt
-		self._ClrSgmt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptDtls', type=Report7, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtls', type=Report7, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmPties', type=SettlementParties37Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptParams', type=ReportParameters8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPties', type=SettlementParties37Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

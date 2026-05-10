@@ -11,7 +11,7 @@ class GrossDividendRate2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class GrossDividendRate2(base_types._BaseFieldType):
 
 	@RateTp.setter
 	def RateTp(self, value):
-		self._RateTp = value if type(value) != auto else self.make_default("RateTp")
+		self._RateTp = value if type(value) != base_types.auto else self.make_default("RateTp")
 
 	@RateTp.deleter
 	def RateTp(self):

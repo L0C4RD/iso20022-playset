@@ -10,7 +10,7 @@ class ProprietaryBankTransactionCodeStructure1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -23,7 +23,7 @@ class ProprietaryBankTransactionCodeStructure1(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

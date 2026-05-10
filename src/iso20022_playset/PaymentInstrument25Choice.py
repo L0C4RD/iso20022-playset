@@ -11,7 +11,7 @@ class PaymentInstrument25Choice(base_types._BaseFieldType):
 
 	@ChqDtls.setter
 	def ChqDtls(self, value):
-		self._ChqDtls = value if type(value) != auto else self.make_default("ChqDtls")
+		self._ChqDtls = value if type(value) != base_types.auto else self.make_default("ChqDtls")
 
 	@ChqDtls.deleter
 	def ChqDtls(self):
@@ -24,7 +24,7 @@ class PaymentInstrument25Choice(base_types._BaseFieldType):
 
 	@CdtTrfDtls.setter
 	def CdtTrfDtls(self, value):
-		self._CdtTrfDtls = value if type(value) != auto else self.make_default("CdtTrfDtls")
+		self._CdtTrfDtls = value if type(value) != base_types.auto else self.make_default("CdtTrfDtls")
 
 	@CdtTrfDtls.deleter
 	def CdtTrfDtls(self):

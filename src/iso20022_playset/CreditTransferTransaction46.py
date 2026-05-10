@@ -1,171 +1,28 @@
 from . import base_types
 from .RemittanceInformation16 import RemittanceInformation16
-from .InstructionForNextAgent1 import InstructionForNextAgent1
-from .PartyIdentification135 import PartyIdentification135
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .TaxInformation8 import TaxInformation8
-from .InstructionForCreditorAgent3 import InstructionForCreditorAgent3
 from .CashAccount38 import CashAccount38
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .InstructionForNextAgent1 import InstructionForNextAgent1
 from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from .InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from .PartyIdentification135 import PartyIdentification135
+from .TaxInformation8 import TaxInformation8
 
 class CreditTransferTransaction46(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrAcct", "_IntrmyAgt3Acct", "_UltmtDbtr", "_InstdAmt", "_IntrmyAgt2", "_CdtrAgt", "_InstrForCdtrAgt", "_DbtrAgt", "_Dbtr", "_CdtrAgtAcct", "_Tax", "_UltmtCdtr", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt2", "_InitgPty", "_DbtrAgtAcct", "_IntrmyAgt3", "_PrvsInstgAgt3Acct", "_RmtInf", "_IntrmyAgt1Acct", "_PrvsInstgAgt1", "_CdtrAcct", "_InstrForNxtAgt", "_IntrmyAgt1", "_IntrmyAgt2Acct", "_Cdtr", "_PrvsInstgAgt3"]
+	__slots__ = ["_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_Dbtr", "_UltmtCdtr", "_CdtrAgtAcct", "_IntrmyAgt3", "_CdtrAgt", "_UltmtDbtr", "_PrvsInstgAgt3", "_DbtrAgt", "_PrvsInstgAgt3Acct", "_RmtInf", "_InstdAmt", "_CdtrAcct", "_DbtrAcct", "_Tax", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_DbtrAgtAcct", "_InstrForCdtrAgt", "_IntrmyAgt2Acct", "_Cdtr", "_InitgPty", "_InstrForNxtAgt", "_IntrmyAgt1", "_IntrmyAgt2", "_IntrmyAgt1Acct", "_IntrmyAgt3Acct"]
 	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
+	def PrvsInstgAgt1(self):
+		return self._PrvsInstgAgt1
 
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
+	@PrvsInstgAgt1.setter
+	def PrvsInstgAgt1(self, value):
+		self._PrvsInstgAgt1 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt1")
 
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
-
-	@property
-	def IntrmyAgt3Acct(self):
-		return self._IntrmyAgt3Acct
-
-	@IntrmyAgt3Acct.setter
-	def IntrmyAgt3Acct(self, value):
-		self._IntrmyAgt3Acct = value if type(value) != auto else self.make_default("IntrmyAgt3Acct")
-
-	@IntrmyAgt3Acct.deleter
-	def IntrmyAgt3Acct(self):
-		del self._IntrmyAgt3Acct
-		self._IntrmyAgt3Acct = None
-
-	@property
-	def UltmtDbtr(self):
-		return self._UltmtDbtr
-
-	@UltmtDbtr.setter
-	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != auto else self.make_default("UltmtDbtr")
-
-	@UltmtDbtr.deleter
-	def UltmtDbtr(self):
-		del self._UltmtDbtr
-		self._UltmtDbtr = None
-
-	@property
-	def InstdAmt(self):
-		return self._InstdAmt
-
-	@InstdAmt.setter
-	def InstdAmt(self, value):
-		self._InstdAmt = value if type(value) != auto else self.make_default("InstdAmt")
-
-	@InstdAmt.deleter
-	def InstdAmt(self):
-		del self._InstdAmt
-		self._InstdAmt = None
-
-	@property
-	def IntrmyAgt2(self):
-		return self._IntrmyAgt2
-
-	@IntrmyAgt2.setter
-	def IntrmyAgt2(self, value):
-		self._IntrmyAgt2 = value if type(value) != auto else self.make_default("IntrmyAgt2")
-
-	@IntrmyAgt2.deleter
-	def IntrmyAgt2(self):
-		del self._IntrmyAgt2
-		self._IntrmyAgt2 = None
-
-	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
-
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
-
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
-
-	@property
-	def InstrForCdtrAgt(self):
-		return self._InstrForCdtrAgt
-
-	@InstrForCdtrAgt.setter
-	def InstrForCdtrAgt(self, value):
-		self._InstrForCdtrAgt = value if type(value) != auto else self.make_default("InstrForCdtrAgt")
-
-	@InstrForCdtrAgt.deleter
-	def InstrForCdtrAgt(self):
-		del self._InstrForCdtrAgt
-		self._InstrForCdtrAgt = None
-
-	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
-
-	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
-	def CdtrAgtAcct(self):
-		return self._CdtrAgtAcct
-
-	@CdtrAgtAcct.setter
-	def CdtrAgtAcct(self, value):
-		self._CdtrAgtAcct = value if type(value) != auto else self.make_default("CdtrAgtAcct")
-
-	@CdtrAgtAcct.deleter
-	def CdtrAgtAcct(self):
-		del self._CdtrAgtAcct
-		self._CdtrAgtAcct = None
-
-	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
-
-	@property
-	def UltmtCdtr(self):
-		return self._UltmtCdtr
-
-	@UltmtCdtr.setter
-	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != auto else self.make_default("UltmtCdtr")
-
-	@UltmtCdtr.deleter
-	def UltmtCdtr(self):
-		del self._UltmtCdtr
-		self._UltmtCdtr = None
+	@PrvsInstgAgt1.deleter
+	def PrvsInstgAgt1(self):
+		del self._PrvsInstgAgt1
+		self._PrvsInstgAgt1 = None
 
 	@property
 	def PrvsInstgAgt1Acct(self):
@@ -173,7 +30,7 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 
 	@PrvsInstgAgt1Acct.setter
 	def PrvsInstgAgt1Acct(self, value):
-		self._PrvsInstgAgt1Acct = value if type(value) != auto else self.make_default("PrvsInstgAgt1Acct")
+		self._PrvsInstgAgt1Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt1Acct")
 
 	@PrvsInstgAgt1Acct.deleter
 	def PrvsInstgAgt1Acct(self):
@@ -181,56 +38,43 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 		self._PrvsInstgAgt1Acct = None
 
 	@property
-	def PrvsInstgAgt2Acct(self):
-		return self._PrvsInstgAgt2Acct
+	def Dbtr(self):
+		return self._Dbtr
 
-	@PrvsInstgAgt2Acct.setter
-	def PrvsInstgAgt2Acct(self, value):
-		self._PrvsInstgAgt2Acct = value if type(value) != auto else self.make_default("PrvsInstgAgt2Acct")
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
 
-	@PrvsInstgAgt2Acct.deleter
-	def PrvsInstgAgt2Acct(self):
-		del self._PrvsInstgAgt2Acct
-		self._PrvsInstgAgt2Acct = None
-
-	@property
-	def PrvsInstgAgt2(self):
-		return self._PrvsInstgAgt2
-
-	@PrvsInstgAgt2.setter
-	def PrvsInstgAgt2(self, value):
-		self._PrvsInstgAgt2 = value if type(value) != auto else self.make_default("PrvsInstgAgt2")
-
-	@PrvsInstgAgt2.deleter
-	def PrvsInstgAgt2(self):
-		del self._PrvsInstgAgt2
-		self._PrvsInstgAgt2 = None
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
 
 	@property
-	def InitgPty(self):
-		return self._InitgPty
+	def UltmtCdtr(self):
+		return self._UltmtCdtr
 
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+	@UltmtCdtr.setter
+	def UltmtCdtr(self, value):
+		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
 
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
+	@UltmtCdtr.deleter
+	def UltmtCdtr(self):
+		del self._UltmtCdtr
+		self._UltmtCdtr = None
 
 	@property
-	def DbtrAgtAcct(self):
-		return self._DbtrAgtAcct
+	def CdtrAgtAcct(self):
+		return self._CdtrAgtAcct
 
-	@DbtrAgtAcct.setter
-	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != auto else self.make_default("DbtrAgtAcct")
+	@CdtrAgtAcct.setter
+	def CdtrAgtAcct(self, value):
+		self._CdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("CdtrAgtAcct")
 
-	@DbtrAgtAcct.deleter
-	def DbtrAgtAcct(self):
-		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
+	@CdtrAgtAcct.deleter
+	def CdtrAgtAcct(self):
+		del self._CdtrAgtAcct
+		self._CdtrAgtAcct = None
 
 	@property
 	def IntrmyAgt3(self):
@@ -238,7 +82,7 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 
 	@IntrmyAgt3.setter
 	def IntrmyAgt3(self, value):
-		self._IntrmyAgt3 = value if type(value) != auto else self.make_default("IntrmyAgt3")
+		self._IntrmyAgt3 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt3")
 
 	@IntrmyAgt3.deleter
 	def IntrmyAgt3(self):
@@ -246,12 +90,64 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 		self._IntrmyAgt3 = None
 
 	@property
+	def CdtrAgt(self):
+		return self._CdtrAgt
+
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
+
+	@property
+	def UltmtDbtr(self):
+		return self._UltmtDbtr
+
+	@UltmtDbtr.setter
+	def UltmtDbtr(self, value):
+		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+
+	@UltmtDbtr.deleter
+	def UltmtDbtr(self):
+		del self._UltmtDbtr
+		self._UltmtDbtr = None
+
+	@property
+	def PrvsInstgAgt3(self):
+		return self._PrvsInstgAgt3
+
+	@PrvsInstgAgt3.setter
+	def PrvsInstgAgt3(self, value):
+		self._PrvsInstgAgt3 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt3")
+
+	@PrvsInstgAgt3.deleter
+	def PrvsInstgAgt3(self):
+		del self._PrvsInstgAgt3
+		self._PrvsInstgAgt3 = None
+
+	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
+
+	@property
 	def PrvsInstgAgt3Acct(self):
 		return self._PrvsInstgAgt3Acct
 
 	@PrvsInstgAgt3Acct.setter
 	def PrvsInstgAgt3Acct(self, value):
-		self._PrvsInstgAgt3Acct = value if type(value) != auto else self.make_default("PrvsInstgAgt3Acct")
+		self._PrvsInstgAgt3Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt3Acct")
 
 	@PrvsInstgAgt3Acct.deleter
 	def PrvsInstgAgt3Acct(self):
@@ -264,7 +160,7 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 
 	@RmtInf.setter
 	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
+		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
 
 	@RmtInf.deleter
 	def RmtInf(self):
@@ -272,30 +168,17 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 		self._RmtInf = None
 
 	@property
-	def IntrmyAgt1Acct(self):
-		return self._IntrmyAgt1Acct
+	def InstdAmt(self):
+		return self._InstdAmt
 
-	@IntrmyAgt1Acct.setter
-	def IntrmyAgt1Acct(self, value):
-		self._IntrmyAgt1Acct = value if type(value) != auto else self.make_default("IntrmyAgt1Acct")
+	@InstdAmt.setter
+	def InstdAmt(self, value):
+		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
 
-	@IntrmyAgt1Acct.deleter
-	def IntrmyAgt1Acct(self):
-		del self._IntrmyAgt1Acct
-		self._IntrmyAgt1Acct = None
-
-	@property
-	def PrvsInstgAgt1(self):
-		return self._PrvsInstgAgt1
-
-	@PrvsInstgAgt1.setter
-	def PrvsInstgAgt1(self, value):
-		self._PrvsInstgAgt1 = value if type(value) != auto else self.make_default("PrvsInstgAgt1")
-
-	@PrvsInstgAgt1.deleter
-	def PrvsInstgAgt1(self):
-		del self._PrvsInstgAgt1
-		self._PrvsInstgAgt1 = None
+	@InstdAmt.deleter
+	def InstdAmt(self):
+		del self._InstdAmt
+		self._InstdAmt = None
 
 	@property
 	def CdtrAcct(self):
@@ -303,7 +186,7 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
@@ -311,30 +194,82 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 		self._CdtrAcct = None
 
 	@property
-	def InstrForNxtAgt(self):
-		return self._InstrForNxtAgt
+	def DbtrAcct(self):
+		return self._DbtrAcct
 
-	@InstrForNxtAgt.setter
-	def InstrForNxtAgt(self, value):
-		self._InstrForNxtAgt = value if type(value) != auto else self.make_default("InstrForNxtAgt")
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
 
-	@InstrForNxtAgt.deleter
-	def InstrForNxtAgt(self):
-		del self._InstrForNxtAgt
-		self._InstrForNxtAgt = None
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	@property
-	def IntrmyAgt1(self):
-		return self._IntrmyAgt1
+	def Tax(self):
+		return self._Tax
 
-	@IntrmyAgt1.setter
-	def IntrmyAgt1(self, value):
-		self._IntrmyAgt1 = value if type(value) != auto else self.make_default("IntrmyAgt1")
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
 
-	@IntrmyAgt1.deleter
-	def IntrmyAgt1(self):
-		del self._IntrmyAgt1
-		self._IntrmyAgt1 = None
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
+
+	@property
+	def PrvsInstgAgt2(self):
+		return self._PrvsInstgAgt2
+
+	@PrvsInstgAgt2.setter
+	def PrvsInstgAgt2(self, value):
+		self._PrvsInstgAgt2 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt2")
+
+	@PrvsInstgAgt2.deleter
+	def PrvsInstgAgt2(self):
+		del self._PrvsInstgAgt2
+		self._PrvsInstgAgt2 = None
+
+	@property
+	def PrvsInstgAgt2Acct(self):
+		return self._PrvsInstgAgt2Acct
+
+	@PrvsInstgAgt2Acct.setter
+	def PrvsInstgAgt2Acct(self, value):
+		self._PrvsInstgAgt2Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt2Acct")
+
+	@PrvsInstgAgt2Acct.deleter
+	def PrvsInstgAgt2Acct(self):
+		del self._PrvsInstgAgt2Acct
+		self._PrvsInstgAgt2Acct = None
+
+	@property
+	def DbtrAgtAcct(self):
+		return self._DbtrAgtAcct
+
+	@DbtrAgtAcct.setter
+	def DbtrAgtAcct(self, value):
+		self._DbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("DbtrAgtAcct")
+
+	@DbtrAgtAcct.deleter
+	def DbtrAgtAcct(self):
+		del self._DbtrAgtAcct
+		self._DbtrAgtAcct = None
+
+	@property
+	def InstrForCdtrAgt(self):
+		return self._InstrForCdtrAgt
+
+	@InstrForCdtrAgt.setter
+	def InstrForCdtrAgt(self, value):
+		self._InstrForCdtrAgt = value if type(value) != base_types.auto else self.make_default("InstrForCdtrAgt")
+
+	@InstrForCdtrAgt.deleter
+	def InstrForCdtrAgt(self):
+		del self._InstrForCdtrAgt
+		self._InstrForCdtrAgt = None
 
 	@property
 	def IntrmyAgt2Acct(self):
@@ -342,7 +277,7 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 
 	@IntrmyAgt2Acct.setter
 	def IntrmyAgt2Acct(self, value):
-		self._IntrmyAgt2Acct = value if type(value) != auto else self.make_default("IntrmyAgt2Acct")
+		self._IntrmyAgt2Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt2Acct")
 
 	@IntrmyAgt2Acct.deleter
 	def IntrmyAgt2Acct(self):
@@ -355,7 +290,7 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
 
 	@Cdtr.deleter
 	def Cdtr(self):
@@ -363,46 +298,111 @@ class CreditTransferTransaction46(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def PrvsInstgAgt3(self):
-		return self._PrvsInstgAgt3
+	def InitgPty(self):
+		return self._InitgPty
 
-	@PrvsInstgAgt3.setter
-	def PrvsInstgAgt3(self, value):
-		self._PrvsInstgAgt3 = value if type(value) != auto else self.make_default("PrvsInstgAgt3")
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
 
-	@PrvsInstgAgt3.deleter
-	def PrvsInstgAgt3(self):
-		del self._PrvsInstgAgt3
-		self._PrvsInstgAgt3 = None
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
+
+	@property
+	def InstrForNxtAgt(self):
+		return self._InstrForNxtAgt
+
+	@InstrForNxtAgt.setter
+	def InstrForNxtAgt(self, value):
+		self._InstrForNxtAgt = value if type(value) != base_types.auto else self.make_default("InstrForNxtAgt")
+
+	@InstrForNxtAgt.deleter
+	def InstrForNxtAgt(self):
+		del self._InstrForNxtAgt
+		self._InstrForNxtAgt = None
+
+	@property
+	def IntrmyAgt1(self):
+		return self._IntrmyAgt1
+
+	@IntrmyAgt1.setter
+	def IntrmyAgt1(self, value):
+		self._IntrmyAgt1 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt1")
+
+	@IntrmyAgt1.deleter
+	def IntrmyAgt1(self):
+		del self._IntrmyAgt1
+		self._IntrmyAgt1 = None
+
+	@property
+	def IntrmyAgt2(self):
+		return self._IntrmyAgt2
+
+	@IntrmyAgt2.setter
+	def IntrmyAgt2(self, value):
+		self._IntrmyAgt2 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt2")
+
+	@IntrmyAgt2.deleter
+	def IntrmyAgt2(self):
+		del self._IntrmyAgt2
+		self._IntrmyAgt2 = None
+
+	@property
+	def IntrmyAgt1Acct(self):
+		return self._IntrmyAgt1Acct
+
+	@IntrmyAgt1Acct.setter
+	def IntrmyAgt1Acct(self, value):
+		self._IntrmyAgt1Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt1Acct")
+
+	@IntrmyAgt1Acct.deleter
+	def IntrmyAgt1Acct(self):
+		del self._IntrmyAgt1Acct
+		self._IntrmyAgt1Acct = None
+
+	@property
+	def IntrmyAgt3Acct(self):
+		return self._IntrmyAgt3Acct
+
+	@IntrmyAgt3Acct.setter
+	def IntrmyAgt3Acct(self, value):
+		self._IntrmyAgt3Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt3Acct")
+
+	@IntrmyAgt3Acct.deleter
+	def IntrmyAgt3Acct(self):
+		del self._IntrmyAgt3Acct
+		self._IntrmyAgt3Acct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DbtrAcct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt3Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtDbtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt2', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrForCdtrAgt', type=InstructionForCreditorAgent3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=TaxInformation8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsInstgAgt1', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsInstgAgt1Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsInstgAgt2Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsInstgAgt2', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyAgt3', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtDbtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsInstgAgt3', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsInstgAgt3Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt1Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsInstgAgt1', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAcct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrForNxtAgt', type=InstructionForNextAgent1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrmyAgt1', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAcct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=TaxInformation8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsInstgAgt2', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsInstgAgt2Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrForCdtrAgt', type=InstructionForCreditorAgent3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntrmyAgt2Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsInstgAgt3', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrForNxtAgt', type=InstructionForNextAgent1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrmyAgt1', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt2', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt1Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt3Acct', type=CashAccount38, min=0, max=1, mutex_group=None, array=False),
 	))
 

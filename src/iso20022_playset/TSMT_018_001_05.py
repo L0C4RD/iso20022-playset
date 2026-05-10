@@ -12,7 +12,7 @@ class TSMT_018_001_05():
 
 		@FullPushThrghRpt.setter
 		def FullPushThrghRpt(self, value):
-			self._FullPushThrghRpt = value if type(value) != auto else self.make_default("FullPushThrghRpt")
+			self._FullPushThrghRpt = value if type(value) != base_types.auto else self.make_default("FullPushThrghRpt")
 
 		@FullPushThrghRpt.deleter
 		def FullPushThrghRpt(self):

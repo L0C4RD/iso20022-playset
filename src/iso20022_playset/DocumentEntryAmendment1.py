@@ -1,6 +1,6 @@
 from . import base_types
-from .DocumentIdentification28 import DocumentIdentification28
 from .Number import Number
+from .DocumentIdentification28 import DocumentIdentification28
 
 class DocumentEntryAmendment1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DocumentEntryAmendment1(base_types._BaseFieldType):
 
 	@CrrctgNtryNb.setter
 	def CrrctgNtryNb(self, value):
-		self._CrrctgNtryNb = value if type(value) != auto else self.make_default("CrrctgNtryNb")
+		self._CrrctgNtryNb = value if type(value) != base_types.auto else self.make_default("CrrctgNtryNb")
 
 	@CrrctgNtryNb.deleter
 	def CrrctgNtryNb(self):
@@ -24,7 +24,7 @@ class DocumentEntryAmendment1(base_types._BaseFieldType):
 
 	@OrgnlDoc.setter
 	def OrgnlDoc(self, value):
-		self._OrgnlDoc = value if type(value) != auto else self.make_default("OrgnlDoc")
+		self._OrgnlDoc = value if type(value) != base_types.auto else self.make_default("OrgnlDoc")
 
 	@OrgnlDoc.deleter
 	def OrgnlDoc(self):

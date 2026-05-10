@@ -11,7 +11,7 @@ class IndividualPerson43(base_types._BaseFieldType):
 
 	@PrssgndPrxy.setter
 	def PrssgndPrxy(self, value):
-		self._PrssgndPrxy = value if type(value) != auto else self.make_default("PrssgndPrxy")
+		self._PrssgndPrxy = value if type(value) != base_types.auto else self.make_default("PrssgndPrxy")
 
 	@PrssgndPrxy.deleter
 	def PrssgndPrxy(self):
@@ -24,7 +24,7 @@ class IndividualPerson43(base_types._BaseFieldType):
 
 	@EmplngPty.setter
 	def EmplngPty(self, value):
-		self._EmplngPty = value if type(value) != auto else self.make_default("EmplngPty")
+		self._EmplngPty = value if type(value) != base_types.auto else self.make_default("EmplngPty")
 
 	@EmplngPty.deleter
 	def EmplngPty(self):

@@ -12,7 +12,7 @@ class COLR_008_001_06():
 
 		@CollPrpslRspn.setter
 		def CollPrpslRspn(self, value):
-			self._CollPrpslRspn = value if type(value) != auto else self.make_default("CollPrpslRspn")
+			self._CollPrpslRspn = value if type(value) != base_types.auto else self.make_default("CollPrpslRspn")
 
 		@CollPrpslRspn.deleter
 		def CollPrpslRspn(self):

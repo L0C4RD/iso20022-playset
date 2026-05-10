@@ -12,7 +12,7 @@ class SEEV_019_001_01():
 
 		@AgtCAMvmntInstr.setter
 		def AgtCAMvmntInstr(self, value):
-			self._AgtCAMvmntInstr = value if type(value) != auto else self.make_default("AgtCAMvmntInstr")
+			self._AgtCAMvmntInstr = value if type(value) != base_types.auto else self.make_default("AgtCAMvmntInstr")
 
 		@AgtCAMvmntInstr.deleter
 		def AgtCAMvmntInstr(self):

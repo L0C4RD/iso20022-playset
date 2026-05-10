@@ -11,7 +11,7 @@ class IndividualPersonIdentification3Choice(base_types._BaseFieldType):
 
 	@IdNb.setter
 	def IdNb(self, value):
-		self._IdNb = value if type(value) != auto else self.make_default("IdNb")
+		self._IdNb = value if type(value) != base_types.auto else self.make_default("IdNb")
 
 	@IdNb.deleter
 	def IdNb(self):
@@ -24,7 +24,7 @@ class IndividualPersonIdentification3Choice(base_types._BaseFieldType):
 
 	@PrsnNm.setter
 	def PrsnNm(self, value):
-		self._PrsnNm = value if type(value) != auto else self.make_default("PrsnNm")
+		self._PrsnNm = value if type(value) != base_types.auto else self.make_default("PrsnNm")
 
 	@PrsnNm.deleter
 	def PrsnNm(self):

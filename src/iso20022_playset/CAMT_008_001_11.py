@@ -12,7 +12,7 @@ class CAMT_008_001_11():
 
 		@CclTx.setter
 		def CclTx(self, value):
-			self._CclTx = value if type(value) != auto else self.make_default("CclTx")
+			self._CclTx = value if type(value) != base_types.auto else self.make_default("CclTx")
 
 		@CclTx.deleter
 		def CclTx(self):

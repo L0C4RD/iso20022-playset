@@ -1,6 +1,6 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .CRSStatus3Choice import CRSStatus3Choice
+from .CountryCode import CountryCode
 from .CRSSource1Choice import CRSSource1Choice
 
 class CRSStatus4(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class CRSStatus4(base_types._BaseFieldType):
 
 	@XcptnlRptgCtry.setter
 	def XcptnlRptgCtry(self, value):
-		self._XcptnlRptgCtry = value if type(value) != auto else self.make_default("XcptnlRptgCtry")
+		self._XcptnlRptgCtry = value if type(value) != base_types.auto else self.make_default("XcptnlRptgCtry")
 
 	@XcptnlRptgCtry.deleter
 	def XcptnlRptgCtry(self):
@@ -25,7 +25,7 @@ class CRSStatus4(base_types._BaseFieldType):
 
 	@Src.setter
 	def Src(self, value):
-		self._Src = value if type(value) != auto else self.make_default("Src")
+		self._Src = value if type(value) != base_types.auto else self.make_default("Src")
 
 	@Src.deleter
 	def Src(self):
@@ -38,7 +38,7 @@ class CRSStatus4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

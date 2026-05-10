@@ -10,7 +10,7 @@ class DatePeriod3(base_types._BaseFieldType):
 
 	@FrDt.setter
 	def FrDt(self, value):
-		self._FrDt = value if type(value) != auto else self.make_default("FrDt")
+		self._FrDt = value if type(value) != base_types.auto else self.make_default("FrDt")
 
 	@FrDt.deleter
 	def FrDt(self):
@@ -23,7 +23,7 @@ class DatePeriod3(base_types._BaseFieldType):
 
 	@ToDt.setter
 	def ToDt(self, value):
-		self._ToDt = value if type(value) != auto else self.make_default("ToDt")
+		self._ToDt = value if type(value) != base_types.auto else self.make_default("ToDt")
 
 	@ToDt.deleter
 	def ToDt(self):

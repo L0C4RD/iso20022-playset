@@ -1,7 +1,7 @@
 from . import base_types
+from .LegalOrganisation1 import LegalOrganisation1
 from .PartyIdentification43 import PartyIdentification43
 from .TaxParty1 import TaxParty1
-from .LegalOrganisation1 import LegalOrganisation1
 
 class PartyIdentification72(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PartyIdentification72(base_types._BaseFieldType):
 
 	@TaxPty.setter
 	def TaxPty(self, value):
-		self._TaxPty = value if type(value) != auto else self.make_default("TaxPty")
+		self._TaxPty = value if type(value) != base_types.auto else self.make_default("TaxPty")
 
 	@TaxPty.deleter
 	def TaxPty(self):
@@ -25,7 +25,7 @@ class PartyIdentification72(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
 	@PtyId.deleter
 	def PtyId(self):
@@ -38,7 +38,7 @@ class PartyIdentification72(base_types._BaseFieldType):
 
 	@LglOrg.setter
 	def LglOrg(self, value):
-		self._LglOrg = value if type(value) != auto else self.make_default("LglOrg")
+		self._LglOrg = value if type(value) != base_types.auto else self.make_default("LglOrg")
 
 	@LglOrg.deleter
 	def LglOrg(self):

@@ -1,32 +1,19 @@
 from . import base_types
-from .SecuritiesAccount12 import SecuritiesAccount12
 from .Max35Text import Max35Text
-from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 from .SecurityIdentification7 import SecurityIdentification7
+from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from .SecuritiesAccount12 import SecuritiesAccount12
 
 class SecurityMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyId", "_AcctDtls", "_SctiesQty", "_MvmntId"]
-	@property
-	def SctyId(self):
-		return self._SctyId
-
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
-
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
-
+	__slots__ = ["_AcctDtls", "_MvmntId", "_SctiesQty", "_SctyId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
@@ -34,12 +21,25 @@ class SecurityMovement1(base_types._BaseFieldType):
 		self._AcctDtls = None
 
 	@property
+	def MvmntId(self):
+		return self._MvmntId
+
+	@MvmntId.setter
+	def MvmntId(self, value):
+		self._MvmntId = value if type(value) != base_types.auto else self.make_default("MvmntId")
+
+	@MvmntId.deleter
+	def MvmntId(self):
+		del self._MvmntId
+		self._MvmntId = None
+
+	@property
 	def SctiesQty(self):
 		return self._SctiesQty
 
 	@SctiesQty.setter
 	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+		self._SctiesQty = value if type(value) != base_types.auto else self.make_default("SctiesQty")
 
 	@SctiesQty.deleter
 	def SctiesQty(self):
@@ -47,22 +47,22 @@ class SecurityMovement1(base_types._BaseFieldType):
 		self._SctiesQty = None
 
 	@property
-	def MvmntId(self):
-		return self._MvmntId
+	def SctyId(self):
+		return self._SctyId
 
-	@MvmntId.setter
-	def MvmntId(self, value):
-		self._MvmntId = value if type(value) != auto else self.make_default("MvmntId")
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
 
-	@MvmntId.deleter
-	def MvmntId(self):
-		del self._MvmntId
-		self._MvmntId = None
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount12, min=1, max=2, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 	))
 

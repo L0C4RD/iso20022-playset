@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .Max350Text import Max350Text
+from .Max140Text import Max140Text
 
 class PartyTextInformation2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyTextInformation2(base_types._BaseFieldType):
 
 	@PtyCtctDtls.setter
 	def PtyCtctDtls(self, value):
-		self._PtyCtctDtls = value if type(value) != auto else self.make_default("PtyCtctDtls")
+		self._PtyCtctDtls = value if type(value) != base_types.auto else self.make_default("PtyCtctDtls")
 
 	@PtyCtctDtls.deleter
 	def PtyCtctDtls(self):
@@ -24,7 +24,7 @@ class PartyTextInformation2(base_types._BaseFieldType):
 
 	@DclrtnDtls.setter
 	def DclrtnDtls(self, value):
-		self._DclrtnDtls = value if type(value) != auto else self.make_default("DclrtnDtls")
+		self._DclrtnDtls = value if type(value) != base_types.auto else self.make_default("DclrtnDtls")
 
 	@DclrtnDtls.deleter
 	def DclrtnDtls(self):

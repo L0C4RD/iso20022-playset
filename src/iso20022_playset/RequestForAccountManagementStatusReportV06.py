@@ -11,7 +11,7 @@ class RequestForAccountManagementStatusReportV06(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
 	@MsgId.deleter
 	def MsgId(self):
@@ -24,7 +24,7 @@ class RequestForAccountManagementStatusReportV06(base_types._BaseFieldType):
 
 	@ReqDtls.setter
 	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
+		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
 
 	@ReqDtls.deleter
 	def ReqDtls(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .AnyBICIdentifier import AnyBICIdentifier
 from .GenericOrganisationIdentification1 import GenericOrganisationIdentification1
+from .AnyBICIdentifier import AnyBICIdentifier
 
 class OrganisationIdentification6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class OrganisationIdentification6(base_types._BaseFieldType):
 
 	@BIC.setter
 	def BIC(self, value):
-		self._BIC = value if type(value) != auto else self.make_default("BIC")
+		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
 
 	@BIC.deleter
 	def BIC(self):
@@ -24,7 +24,7 @@ class OrganisationIdentification6(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):

@@ -11,7 +11,7 @@ class OtherContact1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class OtherContact1(base_types._BaseFieldType):
 
 	@ChanlTp.setter
 	def ChanlTp(self, value):
-		self._ChanlTp = value if type(value) != auto else self.make_default("ChanlTp")
+		self._ChanlTp = value if type(value) != base_types.auto else self.make_default("ChanlTp")
 
 	@ChanlTp.deleter
 	def ChanlTp(self):

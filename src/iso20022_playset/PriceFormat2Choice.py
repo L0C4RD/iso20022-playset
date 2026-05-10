@@ -5,19 +5,19 @@ from .PriceRate1 import PriceRate1
 
 class PriceFormat2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfd", "_Rate", "_Amt"]
+	__slots__ = ["_Amt", "_Rate", "_NotSpcfd"]
 	@property
-	def NotSpcfd(self):
-		return self._NotSpcfd
+	def Amt(self):
+		return self._Amt
 
-	@NotSpcfd.setter
-	def NotSpcfd(self, value):
-		self._NotSpcfd = value if type(value) != auto else self.make_default("NotSpcfd")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@NotSpcfd.deleter
-	def NotSpcfd(self):
-		del self._NotSpcfd
-		self._NotSpcfd = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Rate(self):
@@ -25,7 +25,7 @@ class PriceFormat2Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):
@@ -33,21 +33,21 @@ class PriceFormat2Choice(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def NotSpcfd(self):
+		return self._NotSpcfd
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@NotSpcfd.setter
+	def NotSpcfd(self, value):
+		self._NotSpcfd = value if type(value) != base_types.auto else self.make_default("NotSpcfd")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@NotSpcfd.deleter
+	def NotSpcfd(self):
+		del self._NotSpcfd
+		self._NotSpcfd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfd', type=PriceValueType5FormatChoice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=PriceRate1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountPrice1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=PriceRate1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfd', type=PriceValueType5FormatChoice, min=0, max=1, mutex_group=1, array=False),
 	))
 

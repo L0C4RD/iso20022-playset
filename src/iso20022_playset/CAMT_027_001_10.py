@@ -12,7 +12,7 @@ class CAMT_027_001_10():
 
 		@ClmNonRct.setter
 		def ClmNonRct(self, value):
-			self._ClmNonRct = value if type(value) != auto else self.make_default("ClmNonRct")
+			self._ClmNonRct = value if type(value) != base_types.auto else self.make_default("ClmNonRct")
 
 		@ClmNonRct.deleter
 		def ClmNonRct(self):

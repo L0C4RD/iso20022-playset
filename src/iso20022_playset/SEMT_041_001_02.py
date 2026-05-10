@@ -12,7 +12,7 @@ class SEMT_041_001_02():
 
 		@SctiesBalTrnsprncyRpt.setter
 		def SctiesBalTrnsprncyRpt(self, value):
-			self._SctiesBalTrnsprncyRpt = value if type(value) != auto else self.make_default("SctiesBalTrnsprncyRpt")
+			self._SctiesBalTrnsprncyRpt = value if type(value) != base_types.auto else self.make_default("SctiesBalTrnsprncyRpt")
 
 		@SctiesBalTrnsprncyRpt.deleter
 		def SctiesBalTrnsprncyRpt(self):

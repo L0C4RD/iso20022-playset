@@ -12,7 +12,7 @@ class CAAM_007_001_01():
 
 		@HstToATMReq.setter
 		def HstToATMReq(self, value):
-			self._HstToATMReq = value if type(value) != auto else self.make_default("HstToATMReq")
+			self._HstToATMReq = value if type(value) != base_types.auto else self.make_default("HstToATMReq")
 
 		@HstToATMReq.deleter
 		def HstToATMReq(self):

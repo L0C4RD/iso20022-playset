@@ -10,7 +10,7 @@ class AdditionalAmount1Choice(base_types._BaseFieldType):
 
 	@RsltgCshOut.setter
 	def RsltgCshOut(self, value):
-		self._RsltgCshOut = value if type(value) != auto else self.make_default("RsltgCshOut")
+		self._RsltgCshOut = value if type(value) != base_types.auto else self.make_default("RsltgCshOut")
 
 	@RsltgCshOut.deleter
 	def RsltgCshOut(self):
@@ -23,7 +23,7 @@ class AdditionalAmount1Choice(base_types._BaseFieldType):
 
 	@AddtlCshIn.setter
 	def AddtlCshIn(self, value):
-		self._AddtlCshIn = value if type(value) != auto else self.make_default("AddtlCshIn")
+		self._AddtlCshIn = value if type(value) != base_types.auto else self.make_default("AddtlCshIn")
 
 	@AddtlCshIn.deleter
 	def AddtlCshIn(self):

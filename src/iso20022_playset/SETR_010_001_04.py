@@ -12,7 +12,7 @@ class SETR_010_001_04():
 
 		@SbcptOrdr.setter
 		def SbcptOrdr(self, value):
-			self._SbcptOrdr = value if type(value) != auto else self.make_default("SbcptOrdr")
+			self._SbcptOrdr = value if type(value) != base_types.auto else self.make_default("SbcptOrdr")
 
 		@SbcptOrdr.deleter
 		def SbcptOrdr(self):

@@ -11,7 +11,7 @@ class IntraBalancePosting5(base_types._BaseFieldType):
 
 	@Mvmnt.setter
 	def Mvmnt(self, value):
-		self._Mvmnt = value if type(value) != auto else self.make_default("Mvmnt")
+		self._Mvmnt = value if type(value) != base_types.auto else self.make_default("Mvmnt")
 
 	@Mvmnt.deleter
 	def Mvmnt(self):
@@ -24,7 +24,7 @@ class IntraBalancePosting5(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
+		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
 
 	@BalFr.deleter
 	def BalFr(self):

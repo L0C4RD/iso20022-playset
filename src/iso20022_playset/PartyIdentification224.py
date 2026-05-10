@@ -1,7 +1,7 @@
 from . import base_types
 from .Max256Text import Max256Text
-from .PartyIdentification198Choice import PartyIdentification198Choice
 from .PersonName2 import PersonName2
+from .PartyIdentification198Choice import PartyIdentification198Choice
 
 class PartyIdentification224(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PartyIdentification224(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -25,7 +25,7 @@ class PartyIdentification224(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
@@ -38,7 +38,7 @@ class PartyIdentification224(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .MICIdentifier import MICIdentifier
+from .Max35Text import Max35Text
 
 class MarketIdentification1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MarketIdentification1Choice(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):
@@ -24,7 +24,7 @@ class MarketIdentification1Choice(base_types._BaseFieldType):
 
 	@MktIdrCd.setter
 	def MktIdrCd(self, value):
-		self._MktIdrCd = value if type(value) != auto else self.make_default("MktIdrCd")
+		self._MktIdrCd = value if type(value) != base_types.auto else self.make_default("MktIdrCd")
 
 	@MktIdrCd.deleter
 	def MktIdrCd(self):

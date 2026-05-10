@@ -12,7 +12,7 @@ class PledgeeFormat6Choice(base_types._BaseFieldType):
 
 	@TpAndId.setter
 	def TpAndId(self, value):
-		self._TpAndId = value if type(value) != auto else self.make_default("TpAndId")
+		self._TpAndId = value if type(value) != base_types.auto else self.make_default("TpAndId")
 
 	@TpAndId.deleter
 	def TpAndId(self):
@@ -25,7 +25,7 @@ class PledgeeFormat6Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -38,7 +38,7 @@ class PledgeeFormat6Choice(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

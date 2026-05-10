@@ -11,7 +11,7 @@ class CCPBackTestingResultReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class CCPBackTestingResultReportV01(base_types._BaseFieldType):
 
 	@MnthlyRslt.setter
 	def MnthlyRslt(self, value):
-		self._MnthlyRslt = value if type(value) != auto else self.make_default("MnthlyRslt")
+		self._MnthlyRslt = value if type(value) != base_types.auto else self.make_default("MnthlyRslt")
 
 	@MnthlyRslt.deleter
 	def MnthlyRslt(self):

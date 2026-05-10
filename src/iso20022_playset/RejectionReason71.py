@@ -1,6 +1,6 @@
 from . import base_types
-from .ReportingMessageStatus2Code import ReportingMessageStatus2Code
 from .GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from .ReportingMessageStatus2Code import ReportingMessageStatus2Code
 from .TradeTransactionIdentification24 import TradeTransactionIdentification24
 
 class RejectionReason71(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class RejectionReason71(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
@@ -25,7 +25,7 @@ class RejectionReason71(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):
@@ -38,7 +38,7 @@ class RejectionReason71(base_types._BaseFieldType):
 
 	@DtldVldtnRule.setter
 	def DtldVldtnRule(self, value):
-		self._DtldVldtnRule = value if type(value) != auto else self.make_default("DtldVldtnRule")
+		self._DtldVldtnRule = value if type(value) != base_types.auto else self.make_default("DtldVldtnRule")
 
 	@DtldVldtnRule.deleter
 	def DtldVldtnRule(self):

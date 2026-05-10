@@ -12,7 +12,7 @@ class AUTH_040_001_01():
 
 		@FinInstrmRptgEqtyTradgActvtyRpt.setter
 		def FinInstrmRptgEqtyTradgActvtyRpt(self, value):
-			self._FinInstrmRptgEqtyTradgActvtyRpt = value if type(value) != auto else self.make_default("FinInstrmRptgEqtyTradgActvtyRpt")
+			self._FinInstrmRptgEqtyTradgActvtyRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgEqtyTradgActvtyRpt")
 
 		@FinInstrmRptgEqtyTradgActvtyRpt.deleter
 		def FinInstrmRptgEqtyTradgActvtyRpt(self):

@@ -12,7 +12,7 @@ class COLR_004_001_05():
 
 		@MrgnCallRspn.setter
 		def MrgnCallRspn(self, value):
-			self._MrgnCallRspn = value if type(value) != auto else self.make_default("MrgnCallRspn")
+			self._MrgnCallRspn = value if type(value) != base_types.auto else self.make_default("MrgnCallRspn")
 
 		@MrgnCallRspn.deleter
 		def MrgnCallRspn(self):

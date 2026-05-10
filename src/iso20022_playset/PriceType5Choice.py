@@ -10,7 +10,7 @@ class PriceType5Choice(base_types._BaseFieldType):
 
 	@Mkt.setter
 	def Mkt(self, value):
-		self._Mkt = value if type(value) != auto else self.make_default("Mkt")
+		self._Mkt = value if type(value) != base_types.auto else self.make_default("Mkt")
 
 	@Mkt.deleter
 	def Mkt(self):
@@ -23,7 +23,7 @@ class PriceType5Choice(base_types._BaseFieldType):
 
 	@Indctv.setter
 	def Indctv(self, value):
-		self._Indctv = value if type(value) != auto else self.make_default("Indctv")
+		self._Indctv = value if type(value) != base_types.auto else self.make_default("Indctv")
 
 	@Indctv.deleter
 	def Indctv(self):

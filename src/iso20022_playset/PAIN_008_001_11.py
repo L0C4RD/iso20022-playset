@@ -12,7 +12,7 @@ class PAIN_008_001_11():
 
 		@CstmrDrctDbtInitn.setter
 		def CstmrDrctDbtInitn(self, value):
-			self._CstmrDrctDbtInitn = value if type(value) != auto else self.make_default("CstmrDrctDbtInitn")
+			self._CstmrDrctDbtInitn = value if type(value) != base_types.auto else self.make_default("CstmrDrctDbtInitn")
 
 		@CstmrDrctDbtInitn.deleter
 		def CstmrDrctDbtInitn(self):

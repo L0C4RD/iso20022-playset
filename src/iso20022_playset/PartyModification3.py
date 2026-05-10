@@ -11,7 +11,7 @@ class PartyModification3(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
 	@PtyId.deleter
 	def PtyId(self):
@@ -24,7 +24,7 @@ class PartyModification3(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
 
 	@ModCd.deleter
 	def ModCd(self):

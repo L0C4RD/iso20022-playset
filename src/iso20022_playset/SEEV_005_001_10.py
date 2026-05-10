@@ -12,7 +12,7 @@ class SEEV_005_001_10():
 
 		@MtgInstrCxlReq.setter
 		def MtgInstrCxlReq(self, value):
-			self._MtgInstrCxlReq = value if type(value) != auto else self.make_default("MtgInstrCxlReq")
+			self._MtgInstrCxlReq = value if type(value) != base_types.auto else self.make_default("MtgInstrCxlReq")
 
 		@MtgInstrCxlReq.deleter
 		def MtgInstrCxlReq(self):

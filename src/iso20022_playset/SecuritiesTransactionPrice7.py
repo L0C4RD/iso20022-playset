@@ -11,7 +11,7 @@ class SecuritiesTransactionPrice7(base_types._BaseFieldType):
 
 	@DgtlTknQty.setter
 	def DgtlTknQty(self, value):
-		self._DgtlTknQty = value if type(value) != auto else self.make_default("DgtlTknQty")
+		self._DgtlTknQty = value if type(value) != base_types.auto else self.make_default("DgtlTknQty")
 
 	@DgtlTknQty.deleter
 	def DgtlTknQty(self):
@@ -24,7 +24,7 @@ class SecuritiesTransactionPrice7(base_types._BaseFieldType):
 
 	@MntryVal.setter
 	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
+		self._MntryVal = value if type(value) != base_types.auto else self.make_default("MntryVal")
 
 	@MntryVal.deleter
 	def MntryVal(self):

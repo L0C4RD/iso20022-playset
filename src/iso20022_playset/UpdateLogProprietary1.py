@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max350Text import Max350Text
+from .Max35Text import Max35Text
 
 class UpdateLogProprietary1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 
 	@OdFldVal.setter
 	def OdFldVal(self, value):
-		self._OdFldVal = value if type(value) != auto else self.make_default("OdFldVal")
+		self._OdFldVal = value if type(value) != base_types.auto else self.make_default("OdFldVal")
 
 	@OdFldVal.deleter
 	def OdFldVal(self):
@@ -24,7 +24,7 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 
 	@NewFldVal.setter
 	def NewFldVal(self, value):
-		self._NewFldVal = value if type(value) != auto else self.make_default("NewFldVal")
+		self._NewFldVal = value if type(value) != base_types.auto else self.make_default("NewFldVal")
 
 	@NewFldVal.deleter
 	def NewFldVal(self):
@@ -37,7 +37,7 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 
 	@FldNm.setter
 	def FldNm(self, value):
-		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
+		self._FldNm = value if type(value) != base_types.auto else self.make_default("FldNm")
 
 	@FldNm.deleter
 	def FldNm(self):

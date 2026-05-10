@@ -1,31 +1,18 @@
 from . import base_types
-from .UpdatedURLlnformation7 import UpdatedURLlnformation7
 from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from .UpdatedURLlnformation7 import UpdatedURLlnformation7
 from .RestrictedFINZMax2048Text import RestrictedFINZMax2048Text
 
 class CorporateActionNarrative63(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtPrcgWebSiteAdr", "_Offerr", "_NewCpnyNm", "_URLAdr"]
-	@property
-	def EvtPrcgWebSiteAdr(self):
-		return self._EvtPrcgWebSiteAdr
-
-	@EvtPrcgWebSiteAdr.setter
-	def EvtPrcgWebSiteAdr(self, value):
-		self._EvtPrcgWebSiteAdr = value if type(value) != auto else self.make_default("EvtPrcgWebSiteAdr")
-
-	@EvtPrcgWebSiteAdr.deleter
-	def EvtPrcgWebSiteAdr(self):
-		del self._EvtPrcgWebSiteAdr
-		self._EvtPrcgWebSiteAdr = None
-
+	__slots__ = ["_Offerr", "_EvtPrcgWebSiteAdr", "_NewCpnyNm", "_URLAdr"]
 	@property
 	def Offerr(self):
 		return self._Offerr
 
 	@Offerr.setter
 	def Offerr(self, value):
-		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
+		self._Offerr = value if type(value) != base_types.auto else self.make_default("Offerr")
 
 	@Offerr.deleter
 	def Offerr(self):
@@ -33,12 +20,25 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 		self._Offerr = None
 
 	@property
+	def EvtPrcgWebSiteAdr(self):
+		return self._EvtPrcgWebSiteAdr
+
+	@EvtPrcgWebSiteAdr.setter
+	def EvtPrcgWebSiteAdr(self, value):
+		self._EvtPrcgWebSiteAdr = value if type(value) != base_types.auto else self.make_default("EvtPrcgWebSiteAdr")
+
+	@EvtPrcgWebSiteAdr.deleter
+	def EvtPrcgWebSiteAdr(self):
+		del self._EvtPrcgWebSiteAdr
+		self._EvtPrcgWebSiteAdr = None
+
+	@property
 	def NewCpnyNm(self):
 		return self._NewCpnyNm
 
 	@NewCpnyNm.setter
 	def NewCpnyNm(self, value):
-		self._NewCpnyNm = value if type(value) != auto else self.make_default("NewCpnyNm")
+		self._NewCpnyNm = value if type(value) != base_types.auto else self.make_default("NewCpnyNm")
 
 	@NewCpnyNm.deleter
 	def NewCpnyNm(self):
@@ -51,7 +51,7 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != auto else self.make_default("URLAdr")
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
 
 	@URLAdr.deleter
 	def URLAdr(self):
@@ -59,8 +59,8 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 		self._URLAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=RestrictedFINZMax2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Offerr', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=RestrictedFINZMax2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewCpnyNm', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
 	))

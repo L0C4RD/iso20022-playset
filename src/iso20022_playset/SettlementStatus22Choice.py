@@ -1,7 +1,7 @@
 from . import base_types
-from .ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 from .PendingStatus50Choice import PendingStatus50Choice
 from .FailingStatus12Choice import FailingStatus12Choice
+from .ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 
 class SettlementStatus22Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class SettlementStatus22Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
 
 	@Pdg.deleter
 	def Pdg(self):
@@ -25,7 +25,7 @@ class SettlementStatus22Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -38,7 +38,7 @@ class SettlementStatus22Choice(base_types._BaseFieldType):
 
 	@Flng.setter
 	def Flng(self, value):
-		self._Flng = value if type(value) != auto else self.make_default("Flng")
+		self._Flng = value if type(value) != base_types.auto else self.make_default("Flng")
 
 	@Flng.deleter
 	def Flng(self):

@@ -12,7 +12,7 @@ class TSIN_005_001_01():
 
 		@UdrtkgAppl.setter
 		def UdrtkgAppl(self, value):
-			self._UdrtkgAppl = value if type(value) != auto else self.make_default("UdrtkgAppl")
+			self._UdrtkgAppl = value if type(value) != base_types.auto else self.make_default("UdrtkgAppl")
 
 		@UdrtkgAppl.deleter
 		def UdrtkgAppl(self):

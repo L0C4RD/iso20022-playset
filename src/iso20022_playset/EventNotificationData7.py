@@ -1,19 +1,19 @@
 from . import base_types
 from .TrueFalseIndicator import TrueFalseIndicator
-from .LanguageCode import LanguageCode
 from .RetailerEvent7 import RetailerEvent7
 from .ActionMessage11 import ActionMessage11
+from .LanguageCode import LanguageCode
 
 class EventNotificationData7(base_types._BaseFieldType):
 
-	__slots__ = ["_RtlrEvt", "_DispOutpt", "_MntncReqrdFlg", "_CstmrLang"]
+	__slots__ = ["_RtlrEvt", "_CstmrLang", "_DispOutpt", "_MntncReqrdFlg"]
 	@property
 	def RtlrEvt(self):
 		return self._RtlrEvt
 
 	@RtlrEvt.setter
 	def RtlrEvt(self, value):
-		self._RtlrEvt = value if type(value) != auto else self.make_default("RtlrEvt")
+		self._RtlrEvt = value if type(value) != base_types.auto else self.make_default("RtlrEvt")
 
 	@RtlrEvt.deleter
 	def RtlrEvt(self):
@@ -21,12 +21,25 @@ class EventNotificationData7(base_types._BaseFieldType):
 		self._RtlrEvt = None
 
 	@property
+	def CstmrLang(self):
+		return self._CstmrLang
+
+	@CstmrLang.setter
+	def CstmrLang(self, value):
+		self._CstmrLang = value if type(value) != base_types.auto else self.make_default("CstmrLang")
+
+	@CstmrLang.deleter
+	def CstmrLang(self):
+		del self._CstmrLang
+		self._CstmrLang = None
+
+	@property
 	def DispOutpt(self):
 		return self._DispOutpt
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
 
 	@DispOutpt.deleter
 	def DispOutpt(self):
@@ -39,30 +52,17 @@ class EventNotificationData7(base_types._BaseFieldType):
 
 	@MntncReqrdFlg.setter
 	def MntncReqrdFlg(self, value):
-		self._MntncReqrdFlg = value if type(value) != auto else self.make_default("MntncReqrdFlg")
+		self._MntncReqrdFlg = value if type(value) != base_types.auto else self.make_default("MntncReqrdFlg")
 
 	@MntncReqrdFlg.deleter
 	def MntncReqrdFlg(self):
 		del self._MntncReqrdFlg
 		self._MntncReqrdFlg = None
 
-	@property
-	def CstmrLang(self):
-		return self._CstmrLang
-
-	@CstmrLang.setter
-	def CstmrLang(self, value):
-		self._CstmrLang = value if type(value) != auto else self.make_default("CstmrLang")
-
-	@CstmrLang.deleter
-	def CstmrLang(self):
-		del self._CstmrLang
-		self._CstmrLang = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RtlrEvt', type=RetailerEvent7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MntncReqrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

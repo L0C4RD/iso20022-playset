@@ -12,7 +12,7 @@ class ACMT_022_001_04():
 
 		@IdModAdvc.setter
 		def IdModAdvc(self, value):
-			self._IdModAdvc = value if type(value) != auto else self.make_default("IdModAdvc")
+			self._IdModAdvc = value if type(value) != base_types.auto else self.make_default("IdModAdvc")
 
 		@IdModAdvc.deleter
 		def IdModAdvc(self):

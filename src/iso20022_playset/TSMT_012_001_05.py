@@ -12,7 +12,7 @@ class TSMT_012_001_05():
 
 		@BaselnReSubmissn.setter
 		def BaselnReSubmissn(self, value):
-			self._BaselnReSubmissn = value if type(value) != auto else self.make_default("BaselnReSubmissn")
+			self._BaselnReSubmissn = value if type(value) != base_types.auto else self.make_default("BaselnReSubmissn")
 
 		@BaselnReSubmissn.deleter
 		def BaselnReSubmissn(self):

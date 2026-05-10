@@ -10,7 +10,7 @@ class SearchCriteria1(base_types._BaseFieldType):
 
 	@SchOr.setter
 	def SchOr(self, value):
-		self._SchOr = value if type(value) != auto else self.make_default("SchOr")
+		self._SchOr = value if type(value) != base_types.auto else self.make_default("SchOr")
 
 	@SchOr.deleter
 	def SchOr(self):

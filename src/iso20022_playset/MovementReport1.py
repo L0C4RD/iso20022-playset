@@ -1,18 +1,31 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .MovementResponseType1Code import MovementResponseType1Code
 from .YesNoIndicator import YesNoIndicator
+from .MovementResponseType1Code import MovementResponseType1Code
+from .Max35Text import Max35Text
 
 class MovementReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_QryTp", "_QryRef", "_RptId"]
+	__slots__ = ["_RptId", "_ActvtyInd", "_QryRef", "_QryTp"]
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
@@ -20,25 +33,12 @@ class MovementReport1(base_types._BaseFieldType):
 		self._ActvtyInd = None
 
 	@property
-	def QryTp(self):
-		return self._QryTp
-
-	@QryTp.setter
-	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
-
-	@QryTp.deleter
-	def QryTp(self):
-		del self._QryTp
-		self._QryTp = None
-
-	@property
 	def QryRef(self):
 		return self._QryRef
 
 	@QryRef.setter
 	def QryRef(self, value):
-		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
+		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
 
 	@QryRef.deleter
 	def QryRef(self):
@@ -46,22 +46,22 @@ class MovementReport1(base_types._BaseFieldType):
 		self._QryRef = None
 
 	@property
-	def RptId(self):
-		return self._RptId
+	def QryTp(self):
+		return self._QryTp
 
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != auto else self.make_default("RptId")
+	@QryTp.setter
+	def QryTp(self, value):
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
+	@QryTp.deleter
+	def QryTp(self):
+		del self._QryTp
+		self._QryTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryTp', type=MovementResponseType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryTp', type=MovementResponseType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

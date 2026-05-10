@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .OtherIdentification3Choice import OtherIdentification3Choice
+from .Max35Text import Max35Text
 
 class GenericIdentification81(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class GenericIdentification81(base_types._BaseFieldType):
 
 	@IdTp.setter
 	def IdTp(self, value):
-		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
+		self._IdTp = value if type(value) != base_types.auto else self.make_default("IdTp")
 
 	@IdTp.deleter
 	def IdTp(self):
@@ -24,7 +24,7 @@ class GenericIdentification81(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

@@ -10,7 +10,7 @@ class StressItem1(base_types._BaseFieldType):
 
 	@StrssPdct.setter
 	def StrssPdct(self, value):
-		self._StrssPdct = value if type(value) != auto else self.make_default("StrssPdct")
+		self._StrssPdct = value if type(value) != base_types.auto else self.make_default("StrssPdct")
 
 	@StrssPdct.deleter
 	def StrssPdct(self):

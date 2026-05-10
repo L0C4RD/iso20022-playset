@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CommunicationAddress8 import CommunicationAddress8
 from .PaymentRole1Code import PaymentRole1Code
+from .CommunicationAddress8 import CommunicationAddress8
+from .Max35Text import Max35Text
 
 class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -25,7 +25,7 @@ class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
 	@Role.setter
 	def Role(self, value):
-		self._Role = value if type(value) != auto else self.make_default("Role")
+		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
 
 	@Role.deleter
 	def Role(self):
@@ -38,7 +38,7 @@ class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
 	@ComAdr.setter
 	def ComAdr(self, value):
-		self._ComAdr = value if type(value) != auto else self.make_default("ComAdr")
+		self._ComAdr = value if type(value) != base_types.auto else self.make_default("ComAdr")
 
 	@ComAdr.deleter
 	def ComAdr(self):

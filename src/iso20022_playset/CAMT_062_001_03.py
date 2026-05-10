@@ -12,7 +12,7 @@ class CAMT_062_001_03():
 
 		@PayInSchdl.setter
 		def PayInSchdl(self, value):
-			self._PayInSchdl = value if type(value) != auto else self.make_default("PayInSchdl")
+			self._PayInSchdl = value if type(value) != base_types.auto else self.make_default("PayInSchdl")
 
 		@PayInSchdl.deleter
 		def PayInSchdl(self):

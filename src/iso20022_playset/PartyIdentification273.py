@@ -1,72 +1,20 @@
 from . import base_types
-from .CountryCode import CountryCode
+from .PostalAddress27 import PostalAddress27
 from .Max140Text import Max140Text
 from .Party56Choice import Party56Choice
 from .Contact13 import Contact13
-from .PostalAddress27 import PostalAddress27
+from .CountryCode import CountryCode
 
 class PartyIdentification273(base_types._BaseFieldType):
 
-	__slots__ = ["_LglNm", "_PstlAdr", "_CtryOfRes", "_Nm", "_Id", "_CtctDtls"]
-	@property
-	def LglNm(self):
-		return self._LglNm
-
-	@LglNm.setter
-	def LglNm(self, value):
-		self._LglNm = value if type(value) != auto else self.make_default("LglNm")
-
-	@LglNm.deleter
-	def LglNm(self):
-		del self._LglNm
-		self._LglNm = None
-
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
-	@property
-	def CtryOfRes(self):
-		return self._CtryOfRes
-
-	@CtryOfRes.setter
-	def CtryOfRes(self, value):
-		self._CtryOfRes = value if type(value) != auto else self.make_default("CtryOfRes")
-
-	@CtryOfRes.deleter
-	def CtryOfRes(self):
-		del self._CtryOfRes
-		self._CtryOfRes = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Id", "_CtctDtls", "_PstlAdr", "_LglNm", "_CtryOfRes", "_Nm"]
 	@property
 	def Id(self):
 		return self._Id
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -79,19 +27,71 @@ class PartyIdentification273(base_types._BaseFieldType):
 
 	@CtctDtls.setter
 	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
 
 	@CtctDtls.deleter
 	def CtctDtls(self):
 		del self._CtctDtls
 		self._CtctDtls = None
 
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
+	@property
+	def LglNm(self):
+		return self._LglNm
+
+	@LglNm.setter
+	def LglNm(self, value):
+		self._LglNm = value if type(value) != base_types.auto else self.make_default("LglNm")
+
+	@LglNm.deleter
+	def LglNm(self):
+		del self._LglNm
+		self._LglNm = None
+
+	@property
+	def CtryOfRes(self):
+		return self._CtryOfRes
+
+	@CtryOfRes.setter
+	def CtryOfRes(self, value):
+		self._CtryOfRes = value if type(value) != base_types.auto else self.make_default("CtryOfRes")
+
+	@CtryOfRes.deleter
+	def CtryOfRes(self):
+		del self._CtryOfRes
+		self._CtryOfRes = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LglNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Party56Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=Contact13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -5,40 +5,14 @@ from .DocumentIdentification1 import DocumentIdentification1
 
 class TransportDataSet5(base_types._BaseFieldType):
 
-	__slots__ = ["_Consgnr", "_Buyr", "_ShipTo", "_DataSetId", "_Sellr", "_Consgn", "_TrnsprtInf"]
-	@property
-	def Consgnr(self):
-		return self._Consgnr
-
-	@Consgnr.setter
-	def Consgnr(self, value):
-		self._Consgnr = value if type(value) != auto else self.make_default("Consgnr")
-
-	@Consgnr.deleter
-	def Consgnr(self):
-		del self._Consgnr
-		self._Consgnr = None
-
-	@property
-	def Buyr(self):
-		return self._Buyr
-
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
-
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
-
+	__slots__ = ["_ShipTo", "_Consgnr", "_TrnsprtInf", "_Sellr", "_Consgn", "_DataSetId", "_Buyr"]
 	@property
 	def ShipTo(self):
 		return self._ShipTo
 
 	@ShipTo.setter
 	def ShipTo(self, value):
-		self._ShipTo = value if type(value) != auto else self.make_default("ShipTo")
+		self._ShipTo = value if type(value) != base_types.auto else self.make_default("ShipTo")
 
 	@ShipTo.deleter
 	def ShipTo(self):
@@ -46,17 +20,30 @@ class TransportDataSet5(base_types._BaseFieldType):
 		self._ShipTo = None
 
 	@property
-	def DataSetId(self):
-		return self._DataSetId
+	def Consgnr(self):
+		return self._Consgnr
 
-	@DataSetId.setter
-	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
+	@Consgnr.setter
+	def Consgnr(self, value):
+		self._Consgnr = value if type(value) != base_types.auto else self.make_default("Consgnr")
 
-	@DataSetId.deleter
-	def DataSetId(self):
-		del self._DataSetId
-		self._DataSetId = None
+	@Consgnr.deleter
+	def Consgnr(self):
+		del self._Consgnr
+		self._Consgnr = None
+
+	@property
+	def TrnsprtInf(self):
+		return self._TrnsprtInf
+
+	@TrnsprtInf.setter
+	def TrnsprtInf(self, value):
+		self._TrnsprtInf = value if type(value) != base_types.auto else self.make_default("TrnsprtInf")
+
+	@TrnsprtInf.deleter
+	def TrnsprtInf(self):
+		del self._TrnsprtInf
+		self._TrnsprtInf = None
 
 	@property
 	def Sellr(self):
@@ -64,7 +51,7 @@ class TransportDataSet5(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
 
 	@Sellr.deleter
 	def Sellr(self):
@@ -77,7 +64,7 @@ class TransportDataSet5(base_types._BaseFieldType):
 
 	@Consgn.setter
 	def Consgn(self, value):
-		self._Consgn = value if type(value) != auto else self.make_default("Consgn")
+		self._Consgn = value if type(value) != base_types.auto else self.make_default("Consgn")
 
 	@Consgn.deleter
 	def Consgn(self):
@@ -85,25 +72,38 @@ class TransportDataSet5(base_types._BaseFieldType):
 		self._Consgn = None
 
 	@property
-	def TrnsprtInf(self):
-		return self._TrnsprtInf
+	def DataSetId(self):
+		return self._DataSetId
 
-	@TrnsprtInf.setter
-	def TrnsprtInf(self, value):
-		self._TrnsprtInf = value if type(value) != auto else self.make_default("TrnsprtInf")
+	@DataSetId.setter
+	def DataSetId(self, value):
+		self._DataSetId = value if type(value) != base_types.auto else self.make_default("DataSetId")
 
-	@TrnsprtInf.deleter
-	def TrnsprtInf(self):
-		del self._TrnsprtInf
-		self._TrnsprtInf = None
+	@DataSetId.deleter
+	def DataSetId(self):
+		del self._DataSetId
+		self._DataSetId = None
+
+	@property
+	def Buyr(self):
+		return self._Buyr
+
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Consgnr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShipTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSetId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Consgnr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsprtInf', type=TransportDetails4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Consgn', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsprtInf', type=TransportDetails4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataSetId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Status27Choice import Status27Choice
 from .Exact4AlphaNumericText import Exact4AlphaNumericText
+from .Status27Choice import Status27Choice
 
 class StatusAndSubStatus2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class StatusAndSubStatus2(base_types._BaseFieldType):
 
 	@SubStsCd.setter
 	def SubStsCd(self, value):
-		self._SubStsCd = value if type(value) != auto else self.make_default("SubStsCd")
+		self._SubStsCd = value if type(value) != base_types.auto else self.make_default("SubStsCd")
 
 	@SubStsCd.deleter
 	def SubStsCd(self):
@@ -24,7 +24,7 @@ class StatusAndSubStatus2(base_types._BaseFieldType):
 
 	@StsCd.setter
 	def StsCd(self, value):
-		self._StsCd = value if type(value) != auto else self.make_default("StsCd")
+		self._StsCd = value if type(value) != base_types.auto else self.make_default("StsCd")
 
 	@StsCd.deleter
 	def StsCd(self):

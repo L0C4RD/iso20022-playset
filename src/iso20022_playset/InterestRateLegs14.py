@@ -10,7 +10,7 @@ class InterestRateLegs14(base_types._BaseFieldType):
 
 	@ScndLeg.setter
 	def ScndLeg(self, value):
-		self._ScndLeg = value if type(value) != auto else self.make_default("ScndLeg")
+		self._ScndLeg = value if type(value) != base_types.auto else self.make_default("ScndLeg")
 
 	@ScndLeg.deleter
 	def ScndLeg(self):
@@ -23,7 +23,7 @@ class InterestRateLegs14(base_types._BaseFieldType):
 
 	@FrstLeg.setter
 	def FrstLeg(self, value):
-		self._FrstLeg = value if type(value) != auto else self.make_default("FrstLeg")
+		self._FrstLeg = value if type(value) != base_types.auto else self.make_default("FrstLeg")
 
 	@FrstLeg.deleter
 	def FrstLeg(self):

@@ -12,7 +12,7 @@ class SEMT_007_001_03():
 
 		@StmtOfInvstmtFndTxsCxl.setter
 		def StmtOfInvstmtFndTxsCxl(self, value):
-			self._StmtOfInvstmtFndTxsCxl = value if type(value) != auto else self.make_default("StmtOfInvstmtFndTxsCxl")
+			self._StmtOfInvstmtFndTxsCxl = value if type(value) != base_types.auto else self.make_default("StmtOfInvstmtFndTxsCxl")
 
 		@StmtOfInvstmtFndTxsCxl.deleter
 		def StmtOfInvstmtFndTxsCxl(self):

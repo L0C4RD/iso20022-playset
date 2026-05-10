@@ -1,6 +1,6 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
 from .ParticipationMethod3Choice import ParticipationMethod3Choice
+from .YesNoIndicator import YesNoIndicator
 
 class SpecificInstructionRequest4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SpecificInstructionRequest4(base_types._BaseFieldType):
 
 	@PrtcptnMtd.setter
 	def PrtcptnMtd(self, value):
-		self._PrtcptnMtd = value if type(value) != auto else self.make_default("PrtcptnMtd")
+		self._PrtcptnMtd = value if type(value) != base_types.auto else self.make_default("PrtcptnMtd")
 
 	@PrtcptnMtd.deleter
 	def PrtcptnMtd(self):
@@ -24,7 +24,7 @@ class SpecificInstructionRequest4(base_types._BaseFieldType):
 
 	@SctiesRegn.setter
 	def SctiesRegn(self, value):
-		self._SctiesRegn = value if type(value) != auto else self.make_default("SctiesRegn")
+		self._SctiesRegn = value if type(value) != base_types.auto else self.make_default("SctiesRegn")
 
 	@SctiesRegn.deleter
 	def SctiesRegn(self):

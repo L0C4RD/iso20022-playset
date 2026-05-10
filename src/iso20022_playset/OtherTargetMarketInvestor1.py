@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AdditionalInformation15 import AdditionalInformation15
 from .TargetMarket3Choice import TargetMarket3Choice
+from .AdditionalInformation15 import AdditionalInformation15
+from .Max35Text import Max35Text
 
 class OtherTargetMarketInvestor1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class OtherTargetMarketInvestor1(base_types._BaseFieldType):
 
 	@InvstrTp.setter
 	def InvstrTp(self, value):
-		self._InvstrTp = value if type(value) != auto else self.make_default("InvstrTp")
+		self._InvstrTp = value if type(value) != base_types.auto else self.make_default("InvstrTp")
 
 	@InvstrTp.deleter
 	def InvstrTp(self):
@@ -25,7 +25,7 @@ class OtherTargetMarketInvestor1(base_types._BaseFieldType):
 
 	@Trgt.setter
 	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
 
 	@Trgt.deleter
 	def Trgt(self):
@@ -38,7 +38,7 @@ class OtherTargetMarketInvestor1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):

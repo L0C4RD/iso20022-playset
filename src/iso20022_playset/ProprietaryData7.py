@@ -11,7 +11,7 @@ class ProprietaryData7(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
+		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
 
 	@Data.deleter
 	def Data(self):
@@ -24,7 +24,7 @@ class ProprietaryData7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

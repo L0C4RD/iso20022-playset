@@ -10,7 +10,7 @@ class HostToATMAcknowledgement1(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):

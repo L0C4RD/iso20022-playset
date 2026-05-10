@@ -12,7 +12,7 @@ class CAMT_039_001_06():
 
 		@CaseStsRpt.setter
 		def CaseStsRpt(self, value):
-			self._CaseStsRpt = value if type(value) != auto else self.make_default("CaseStsRpt")
+			self._CaseStsRpt = value if type(value) != base_types.auto else self.make_default("CaseStsRpt")
 
 		@CaseStsRpt.deleter
 		def CaseStsRpt(self):

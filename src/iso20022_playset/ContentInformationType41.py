@@ -1,6 +1,6 @@
 from . import base_types
-from .MACData1 import MACData1
 from .Max8HexBinaryText import Max8HexBinaryText
+from .MACData1 import MACData1
 
 class ContentInformationType41(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ContentInformationType41(base_types._BaseFieldType):
 
 	@MACData.setter
 	def MACData(self, value):
-		self._MACData = value if type(value) != auto else self.make_default("MACData")
+		self._MACData = value if type(value) != base_types.auto else self.make_default("MACData")
 
 	@MACData.deleter
 	def MACData(self):
@@ -24,7 +24,7 @@ class ContentInformationType41(base_types._BaseFieldType):
 
 	@MAC.setter
 	def MAC(self, value):
-		self._MAC = value if type(value) != auto else self.make_default("MAC")
+		self._MAC = value if type(value) != base_types.auto else self.make_default("MAC")
 
 	@MAC.deleter
 	def MAC(self):

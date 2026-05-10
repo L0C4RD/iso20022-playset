@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ContentInformationType10 import ContentInformationType10
 from .PINFormat4Code import PINFormat4Code
+from .ContentInformationType10 import ContentInformationType10
+from .Max35Text import Max35Text
 
 class OnLinePIN5(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class OnLinePIN5(base_types._BaseFieldType):
 
 	@NcrptdPINBlck.setter
 	def NcrptdPINBlck(self, value):
-		self._NcrptdPINBlck = value if type(value) != auto else self.make_default("NcrptdPINBlck")
+		self._NcrptdPINBlck = value if type(value) != base_types.auto else self.make_default("NcrptdPINBlck")
 
 	@NcrptdPINBlck.deleter
 	def NcrptdPINBlck(self):
@@ -25,7 +25,7 @@ class OnLinePIN5(base_types._BaseFieldType):
 
 	@PINFrmt.setter
 	def PINFrmt(self, value):
-		self._PINFrmt = value if type(value) != auto else self.make_default("PINFrmt")
+		self._PINFrmt = value if type(value) != base_types.auto else self.make_default("PINFrmt")
 
 	@PINFrmt.deleter
 	def PINFrmt(self):
@@ -38,7 +38,7 @@ class OnLinePIN5(base_types._BaseFieldType):
 
 	@AddtlInpt.setter
 	def AddtlInpt(self, value):
-		self._AddtlInpt = value if type(value) != auto else self.make_default("AddtlInpt")
+		self._AddtlInpt = value if type(value) != base_types.auto else self.make_default("AddtlInpt")
 
 	@AddtlInpt.deleter
 	def AddtlInpt(self):

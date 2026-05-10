@@ -12,7 +12,7 @@ class CAMT_086_001_05():
 
 		@BkSvcsBllgStmt.setter
 		def BkSvcsBllgStmt(self, value):
-			self._BkSvcsBllgStmt = value if type(value) != auto else self.make_default("BkSvcsBllgStmt")
+			self._BkSvcsBllgStmt = value if type(value) != base_types.auto else self.make_default("BkSvcsBllgStmt")
 
 		@BkSvcsBllgStmt.deleter
 		def BkSvcsBllgStmt(self):

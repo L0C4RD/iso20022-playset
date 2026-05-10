@@ -1,6 +1,6 @@
 from . import base_types
-from .Modification1Code import Modification1Code
 from .StatementFrequencyAndForm1 import StatementFrequencyAndForm1
+from .Modification1Code import Modification1Code
 
 class StatementFrequencyAndFormModification1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class StatementFrequencyAndFormModification1(base_types._BaseFieldType):
 
 	@StmtFrqcyAndForm.setter
 	def StmtFrqcyAndForm(self, value):
-		self._StmtFrqcyAndForm = value if type(value) != auto else self.make_default("StmtFrqcyAndForm")
+		self._StmtFrqcyAndForm = value if type(value) != base_types.auto else self.make_default("StmtFrqcyAndForm")
 
 	@StmtFrqcyAndForm.deleter
 	def StmtFrqcyAndForm(self):
@@ -24,7 +24,7 @@ class StatementFrequencyAndFormModification1(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
 
 	@ModCd.deleter
 	def ModCd(self):

@@ -11,7 +11,7 @@ class LimitReport8(base_types._BaseFieldType):
 
 	@LmtOrErr.setter
 	def LmtOrErr(self, value):
-		self._LmtOrErr = value if type(value) != auto else self.make_default("LmtOrErr")
+		self._LmtOrErr = value if type(value) != base_types.auto else self.make_default("LmtOrErr")
 
 	@LmtOrErr.deleter
 	def LmtOrErr(self):
@@ -24,7 +24,7 @@ class LimitReport8(base_types._BaseFieldType):
 
 	@LmtId.setter
 	def LmtId(self, value):
-		self._LmtId = value if type(value) != auto else self.make_default("LmtId")
+		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
 
 	@LmtId.deleter
 	def LmtId(self):

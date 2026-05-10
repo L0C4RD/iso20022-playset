@@ -11,7 +11,7 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlUnitsFrCshOrdrs.setter
 	def TtlUnitsFrCshOrdrs(self, value):
-		self._TtlUnitsFrCshOrdrs = value if type(value) != auto else self.make_default("TtlUnitsFrCshOrdrs")
+		self._TtlUnitsFrCshOrdrs = value if type(value) != base_types.auto else self.make_default("TtlUnitsFrCshOrdrs")
 
 	@TtlUnitsFrCshOrdrs.deleter
 	def TtlUnitsFrCshOrdrs(self):
@@ -24,7 +24,7 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlCshFrCshOrdrs.setter
 	def TtlCshFrCshOrdrs(self, value):
-		self._TtlCshFrCshOrdrs = value if type(value) != auto else self.make_default("TtlCshFrCshOrdrs")
+		self._TtlCshFrCshOrdrs = value if type(value) != base_types.auto else self.make_default("TtlCshFrCshOrdrs")
 
 	@TtlCshFrCshOrdrs.deleter
 	def TtlCshFrCshOrdrs(self):
@@ -37,7 +37,7 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlUnitsFrUnitOrdrs.setter
 	def TtlUnitsFrUnitOrdrs(self, value):
-		self._TtlUnitsFrUnitOrdrs = value if type(value) != auto else self.make_default("TtlUnitsFrUnitOrdrs")
+		self._TtlUnitsFrUnitOrdrs = value if type(value) != base_types.auto else self.make_default("TtlUnitsFrUnitOrdrs")
 
 	@TtlUnitsFrUnitOrdrs.deleter
 	def TtlUnitsFrUnitOrdrs(self):
@@ -50,7 +50,7 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlCshFrUnitOrdrs.setter
 	def TtlCshFrUnitOrdrs(self, value):
-		self._TtlCshFrUnitOrdrs = value if type(value) != auto else self.make_default("TtlCshFrUnitOrdrs")
+		self._TtlCshFrUnitOrdrs = value if type(value) != base_types.auto else self.make_default("TtlCshFrUnitOrdrs")
 
 	@TtlCshFrUnitOrdrs.deleter
 	def TtlCshFrUnitOrdrs(self):

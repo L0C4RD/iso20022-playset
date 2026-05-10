@@ -12,7 +12,7 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 
 	@PrtryStsRsn.setter
 	def PrtryStsRsn(self, value):
-		self._PrtryStsRsn = value if type(value) != auto else self.make_default("PrtryStsRsn")
+		self._PrtryStsRsn = value if type(value) != base_types.auto else self.make_default("PrtryStsRsn")
 
 	@PrtryStsRsn.deleter
 	def PrtryStsRsn(self):
@@ -25,7 +25,7 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 
 	@PmtInstrStsDtTm.setter
 	def PmtInstrStsDtTm(self, value):
-		self._PmtInstrStsDtTm = value if type(value) != auto else self.make_default("PmtInstrStsDtTm")
+		self._PmtInstrStsDtTm = value if type(value) != base_types.auto else self.make_default("PmtInstrStsDtTm")
 
 	@PmtInstrStsDtTm.deleter
 	def PmtInstrStsDtTm(self):
@@ -38,7 +38,7 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 
 	@PmtInstrSts.setter
 	def PmtInstrSts(self, value):
-		self._PmtInstrSts = value if type(value) != auto else self.make_default("PmtInstrSts")
+		self._PmtInstrSts = value if type(value) != base_types.auto else self.make_default("PmtInstrSts")
 
 	@PmtInstrSts.deleter
 	def PmtInstrSts(self):

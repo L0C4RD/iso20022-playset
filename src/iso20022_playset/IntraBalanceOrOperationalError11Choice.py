@@ -11,7 +11,7 @@ class IntraBalanceOrOperationalError11Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != auto else self.make_default("OprlErr")
+		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
 
 	@OprlErr.deleter
 	def OprlErr(self):
@@ -24,7 +24,7 @@ class IntraBalanceOrOperationalError11Choice(base_types._BaseFieldType):
 
 	@Mvmnts.setter
 	def Mvmnts(self, value):
-		self._Mvmnts = value if type(value) != auto else self.make_default("Mvmnts")
+		self._Mvmnts = value if type(value) != base_types.auto else self.make_default("Mvmnts")
 
 	@Mvmnts.deleter
 	def Mvmnts(self):

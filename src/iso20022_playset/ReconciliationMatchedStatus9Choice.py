@@ -11,7 +11,7 @@ class ReconciliationMatchedStatus9Choice(base_types._BaseFieldType):
 
 	@NotMtchd.setter
 	def NotMtchd(self, value):
-		self._NotMtchd = value if type(value) != auto else self.make_default("NotMtchd")
+		self._NotMtchd = value if type(value) != base_types.auto else self.make_default("NotMtchd")
 
 	@NotMtchd.deleter
 	def NotMtchd(self):
@@ -24,7 +24,7 @@ class ReconciliationMatchedStatus9Choice(base_types._BaseFieldType):
 
 	@Mtchd.setter
 	def Mtchd(self, value):
-		self._Mtchd = value if type(value) != auto else self.make_default("Mtchd")
+		self._Mtchd = value if type(value) != base_types.auto else self.make_default("Mtchd")
 
 	@Mtchd.deleter
 	def Mtchd(self):

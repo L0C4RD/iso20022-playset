@@ -4,14 +4,27 @@ from .Max35Text import Max35Text
 
 class AlternateSecurityIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryIdSrc", "_DmstIdSrc", "_Id"]
+	__slots__ = ["_Id", "_PrtryIdSrc", "_DmstIdSrc"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def PrtryIdSrc(self):
 		return self._PrtryIdSrc
 
 	@PrtryIdSrc.setter
 	def PrtryIdSrc(self, value):
-		self._PrtryIdSrc = value if type(value) != auto else self.make_default("PrtryIdSrc")
+		self._PrtryIdSrc = value if type(value) != base_types.auto else self.make_default("PrtryIdSrc")
 
 	@PrtryIdSrc.deleter
 	def PrtryIdSrc(self):
@@ -24,29 +37,16 @@ class AlternateSecurityIdentification1(base_types._BaseFieldType):
 
 	@DmstIdSrc.setter
 	def DmstIdSrc(self, value):
-		self._DmstIdSrc = value if type(value) != auto else self.make_default("DmstIdSrc")
+		self._DmstIdSrc = value if type(value) != base_types.auto else self.make_default("DmstIdSrc")
 
 	@DmstIdSrc.deleter
 	def DmstIdSrc(self):
 		del self._DmstIdSrc
 		self._DmstIdSrc = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryIdSrc', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DmstIdSrc', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,18 +1,18 @@
 from . import base_types
 from .CashAccountIdentification1Choice import CashAccountIdentification1Choice
-from .Max35Text import Max35Text
 from .PartyIdentification2Choice import PartyIdentification2Choice
+from .Max35Text import Max35Text
 
 class ProceedsDelivery1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctId", "_AcctOwnrId", "_AcctSvcrId", "_CshAcctId"]
+	__slots__ = ["_SctiesAcctId", "_AcctOwnrId", "_CshAcctId", "_AcctSvcrId"]
 	@property
 	def SctiesAcctId(self):
 		return self._SctiesAcctId
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):
@@ -25,7 +25,7 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
@@ -33,35 +33,35 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
-	def AcctSvcrId(self):
-		return self._AcctSvcrId
-
-	@AcctSvcrId.setter
-	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != auto else self.make_default("AcctSvcrId")
-
-	@AcctSvcrId.deleter
-	def AcctSvcrId(self):
-		del self._AcctSvcrId
-		self._AcctSvcrId = None
-
-	@property
 	def CshAcctId(self):
 		return self._CshAcctId
 
 	@CshAcctId.setter
 	def CshAcctId(self, value):
-		self._CshAcctId = value if type(value) != auto else self.make_default("CshAcctId")
+		self._CshAcctId = value if type(value) != base_types.auto else self.make_default("CshAcctId")
 
 	@CshAcctId.deleter
 	def CshAcctId(self):
 		del self._CshAcctId
 		self._CshAcctId = None
 
+	@property
+	def AcctSvcrId(self):
+		return self._AcctSvcrId
+
+	@AcctSvcrId.setter
+	def AcctSvcrId(self, value):
+		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+
+	@AcctSvcrId.deleter
+	def AcctSvcrId(self):
+		del self._AcctSvcrId
+		self._AcctSvcrId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctId', type=CashAccountIdentification1Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AcctSvcrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

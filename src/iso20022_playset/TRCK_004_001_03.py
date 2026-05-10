@@ -12,7 +12,7 @@ class TRCK_004_001_03():
 
 		@PmtStsCstmrTrckrRpt.setter
 		def PmtStsCstmrTrckrRpt(self, value):
-			self._PmtStsCstmrTrckrRpt = value if type(value) != auto else self.make_default("PmtStsCstmrTrckrRpt")
+			self._PmtStsCstmrTrckrRpt = value if type(value) != base_types.auto else self.make_default("PmtStsCstmrTrckrRpt")
 
 		@PmtStsCstmrTrckrRpt.deleter
 		def PmtStsCstmrTrckrRpt(self):

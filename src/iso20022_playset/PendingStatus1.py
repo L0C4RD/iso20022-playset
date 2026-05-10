@@ -11,7 +11,7 @@ class PendingStatus1(base_types._BaseFieldType):
 
 	@PdgRsn.setter
 	def PdgRsn(self, value):
-		self._PdgRsn = value if type(value) != auto else self.make_default("PdgRsn")
+		self._PdgRsn = value if type(value) != base_types.auto else self.make_default("PdgRsn")
 
 	@PdgRsn.deleter
 	def PdgRsn(self):
@@ -24,7 +24,7 @@ class PendingStatus1(base_types._BaseFieldType):
 
 	@PdgQty.setter
 	def PdgQty(self, value):
-		self._PdgQty = value if type(value) != auto else self.make_default("PdgQty")
+		self._PdgQty = value if type(value) != base_types.auto else self.make_default("PdgQty")
 
 	@PdgQty.deleter
 	def PdgQty(self):

@@ -12,7 +12,7 @@ class CAMT_013_001_04():
 
 		@GetMmb.setter
 		def GetMmb(self, value):
-			self._GetMmb = value if type(value) != auto else self.make_default("GetMmb")
+			self._GetMmb = value if type(value) != base_types.auto else self.make_default("GetMmb")
 
 		@GetMmb.deleter
 		def GetMmb(self):

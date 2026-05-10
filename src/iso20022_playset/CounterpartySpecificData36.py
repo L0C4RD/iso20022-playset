@@ -1,6 +1,6 @@
 from . import base_types
-from .TradeCounterpartyReport20 import TradeCounterpartyReport20
 from .ISODateTime import ISODateTime
+from .TradeCounterpartyReport20 import TradeCounterpartyReport20
 from .ContractValuationData8 import ContractValuationData8
 
 class CounterpartySpecificData36(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class CounterpartySpecificData36(base_types._BaseFieldType):
 
 	@Valtn.setter
 	def Valtn(self, value):
-		self._Valtn = value if type(value) != auto else self.make_default("Valtn")
+		self._Valtn = value if type(value) != base_types.auto else self.make_default("Valtn")
 
 	@Valtn.deleter
 	def Valtn(self):
@@ -25,7 +25,7 @@ class CounterpartySpecificData36(base_types._BaseFieldType):
 
 	@RptgTmStmp.setter
 	def RptgTmStmp(self, value):
-		self._RptgTmStmp = value if type(value) != auto else self.make_default("RptgTmStmp")
+		self._RptgTmStmp = value if type(value) != base_types.auto else self.make_default("RptgTmStmp")
 
 	@RptgTmStmp.deleter
 	def RptgTmStmp(self):
@@ -38,7 +38,7 @@ class CounterpartySpecificData36(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
+		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
 
 	@CtrPty.deleter
 	def CtrPty(self):

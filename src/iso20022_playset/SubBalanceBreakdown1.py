@@ -11,7 +11,7 @@ class SubBalanceBreakdown1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -24,7 +24,7 @@ class SubBalanceBreakdown1(base_types._BaseFieldType):
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
 
 	@SubBalTp.deleter
 	def SubBalTp(self):

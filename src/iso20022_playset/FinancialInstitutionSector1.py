@@ -1,6 +1,6 @@
 from . import base_types
-from .FinancialPartyClassification2Choice import FinancialPartyClassification2Choice
 from .TrueFalseIndicator import TrueFalseIndicator
+from .FinancialPartyClassification2Choice import FinancialPartyClassification2Choice
 
 class FinancialInstitutionSector1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class FinancialInstitutionSector1(base_types._BaseFieldType):
 
 	@ClrThrshld.setter
 	def ClrThrshld(self, value):
-		self._ClrThrshld = value if type(value) != auto else self.make_default("ClrThrshld")
+		self._ClrThrshld = value if type(value) != base_types.auto else self.make_default("ClrThrshld")
 
 	@ClrThrshld.deleter
 	def ClrThrshld(self):
@@ -24,7 +24,7 @@ class FinancialInstitutionSector1(base_types._BaseFieldType):
 
 	@Sctr.setter
 	def Sctr(self, value):
-		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
+		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
 
 	@Sctr.deleter
 	def Sctr(self):

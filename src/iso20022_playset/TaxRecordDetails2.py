@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from .TaxPeriod2 import TaxPeriod2
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TaxRecordDetails2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TaxRecordDetails2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class TaxRecordDetails2(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
 	@Prd.deleter
 	def Prd(self):

@@ -10,7 +10,7 @@ class CorporateActionNarrative34(base_types._BaseFieldType):
 
 	@RegnDtls.setter
 	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != auto else self.make_default("RegnDtls")
+		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
 
 	@RegnDtls.deleter
 	def RegnDtls(self):
@@ -23,7 +23,7 @@ class CorporateActionNarrative34(base_types._BaseFieldType):
 
 	@CertfctnBrkdwn.setter
 	def CertfctnBrkdwn(self, value):
-		self._CertfctnBrkdwn = value if type(value) != auto else self.make_default("CertfctnBrkdwn")
+		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
 
 	@CertfctnBrkdwn.deleter
 	def CertfctnBrkdwn(self):
@@ -36,7 +36,7 @@ class CorporateActionNarrative34(base_types._BaseFieldType):
 
 	@PtyCtctNrrtv.setter
 	def PtyCtctNrrtv(self, value):
-		self._PtyCtctNrrtv = value if type(value) != auto else self.make_default("PtyCtctNrrtv")
+		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
 
 	@PtyCtctNrrtv.deleter
 	def PtyCtctNrrtv(self):

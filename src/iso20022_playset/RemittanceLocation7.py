@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .RemittanceLocationData1 import RemittanceLocationData1
+from .Max35Text import Max35Text
 
 class RemittanceLocation7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RemittanceLocation7(base_types._BaseFieldType):
 
 	@RmtLctnDtls.setter
 	def RmtLctnDtls(self, value):
-		self._RmtLctnDtls = value if type(value) != auto else self.make_default("RmtLctnDtls")
+		self._RmtLctnDtls = value if type(value) != base_types.auto else self.make_default("RmtLctnDtls")
 
 	@RmtLctnDtls.deleter
 	def RmtLctnDtls(self):
@@ -24,7 +24,7 @@ class RemittanceLocation7(base_types._BaseFieldType):
 
 	@RmtId.setter
 	def RmtId(self, value):
-		self._RmtId = value if type(value) != auto else self.make_default("RmtId")
+		self._RmtId = value if type(value) != base_types.auto else self.make_default("RmtId")
 
 	@RmtId.deleter
 	def RmtId(self):

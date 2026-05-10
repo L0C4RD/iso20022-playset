@@ -1,6 +1,6 @@
 from . import base_types
-from .ElectronicInvoice1 import ElectronicInvoice1
 from .DebtorActivation6 import DebtorActivation6
+from .ElectronicInvoice1 import ElectronicInvoice1
 
 class DebtorActivationAmendment6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DebtorActivationAmendment6(base_types._BaseFieldType):
 
 	@ElctrncInvcData.setter
 	def ElctrncInvcData(self, value):
-		self._ElctrncInvcData = value if type(value) != auto else self.make_default("ElctrncInvcData")
+		self._ElctrncInvcData = value if type(value) != base_types.auto else self.make_default("ElctrncInvcData")
 
 	@ElctrncInvcData.deleter
 	def ElctrncInvcData(self):
@@ -24,7 +24,7 @@ class DebtorActivationAmendment6(base_types._BaseFieldType):
 
 	@DbtrActvtn.setter
 	def DbtrActvtn(self, value):
-		self._DbtrActvtn = value if type(value) != auto else self.make_default("DbtrActvtn")
+		self._DbtrActvtn = value if type(value) != base_types.auto else self.make_default("DbtrActvtn")
 
 	@DbtrActvtn.deleter
 	def DbtrActvtn(self):

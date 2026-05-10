@@ -12,7 +12,7 @@ class FXCommissionOrFee1(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
 
 	@Sgn.deleter
 	def Sgn(self):
@@ -25,7 +25,7 @@ class FXCommissionOrFee1(base_types._BaseFieldType):
 
 	@AmtOrRate.setter
 	def AmtOrRate(self, value):
-		self._AmtOrRate = value if type(value) != auto else self.make_default("AmtOrRate")
+		self._AmtOrRate = value if type(value) != base_types.auto else self.make_default("AmtOrRate")
 
 	@AmtOrRate.deleter
 	def AmtOrRate(self):
@@ -38,7 +38,7 @@ class FXCommissionOrFee1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

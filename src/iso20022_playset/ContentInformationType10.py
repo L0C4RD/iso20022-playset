@@ -11,7 +11,7 @@ class ContentInformationType10(base_types._BaseFieldType):
 
 	@CnttTp.setter
 	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
+		self._CnttTp = value if type(value) != base_types.auto else self.make_default("CnttTp")
 
 	@CnttTp.deleter
 	def CnttTp(self):
@@ -24,7 +24,7 @@ class ContentInformationType10(base_types._BaseFieldType):
 
 	@EnvlpdData.setter
 	def EnvlpdData(self, value):
-		self._EnvlpdData = value if type(value) != auto else self.make_default("EnvlpdData")
+		self._EnvlpdData = value if type(value) != base_types.auto else self.make_default("EnvlpdData")
 
 	@EnvlpdData.deleter
 	def EnvlpdData(self):

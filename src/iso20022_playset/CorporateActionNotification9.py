@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CorporateActionProcessingStatus5Choice import CorporateActionProcessingStatus5Choice
 from .CorporateActionNotificationType1Code import CorporateActionNotificationType1Code
+from .CorporateActionProcessingStatus5Choice import CorporateActionProcessingStatus5Choice
+from .Max35Text import Max35Text
 
 class CorporateActionNotification9(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CorporateActionNotification9(base_types._BaseFieldType):
 
 	@NtfctnTp.setter
 	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
+		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
 
 	@NtfctnTp.deleter
 	def NtfctnTp(self):
@@ -25,7 +25,7 @@ class CorporateActionNotification9(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
@@ -38,7 +38,7 @@ class CorporateActionNotification9(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
 
 	@NtfctnId.deleter
 	def NtfctnId(self):

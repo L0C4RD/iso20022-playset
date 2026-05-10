@@ -10,7 +10,7 @@ class OriginatorInformation1(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != auto else self.make_default("Cert")
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
 
 	@Cert.deleter
 	def Cert(self):

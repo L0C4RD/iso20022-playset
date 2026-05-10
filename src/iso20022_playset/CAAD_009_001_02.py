@@ -12,7 +12,7 @@ class CAAD_009_001_02():
 
 		@AdmstvRspn.setter
 		def AdmstvRspn(self, value):
-			self._AdmstvRspn = value if type(value) != auto else self.make_default("AdmstvRspn")
+			self._AdmstvRspn = value if type(value) != base_types.auto else self.make_default("AdmstvRspn")
 
 		@AdmstvRspn.deleter
 		def AdmstvRspn(self):

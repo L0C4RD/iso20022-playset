@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .ISODateTime import ISODateTime
+from .Max140Text import Max140Text
 
 class TechnicalAttributes6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TechnicalAttributes6(base_types._BaseFieldType):
 
 	@RptRctTmStmp.setter
 	def RptRctTmStmp(self, value):
-		self._RptRctTmStmp = value if type(value) != auto else self.make_default("RptRctTmStmp")
+		self._RptRctTmStmp = value if type(value) != base_types.auto else self.make_default("RptRctTmStmp")
 
 	@RptRctTmStmp.deleter
 	def RptRctTmStmp(self):
@@ -24,7 +24,7 @@ class TechnicalAttributes6(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):

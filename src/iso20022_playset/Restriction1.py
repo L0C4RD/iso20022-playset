@@ -11,7 +11,7 @@ class Restriction1(base_types._BaseFieldType):
 
 	@RstrctnTp.setter
 	def RstrctnTp(self, value):
-		self._RstrctnTp = value if type(value) != auto else self.make_default("RstrctnTp")
+		self._RstrctnTp = value if type(value) != base_types.auto else self.make_default("RstrctnTp")
 
 	@RstrctnTp.deleter
 	def RstrctnTp(self):
@@ -24,7 +24,7 @@ class Restriction1(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
 
 	@VldFr.deleter
 	def VldFr(self):
@@ -37,7 +37,7 @@ class Restriction1(base_types._BaseFieldType):
 
 	@VldUntil.setter
 	def VldUntil(self, value):
-		self._VldUntil = value if type(value) != auto else self.make_default("VldUntil")
+		self._VldUntil = value if type(value) != base_types.auto else self.make_default("VldUntil")
 
 	@VldUntil.deleter
 	def VldUntil(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max16Text import Max16Text
 from .AdditionalData1 import AdditionalData1
+from .Max16Text import Max16Text
 
 class Terminal8(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Terminal8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class Terminal8(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
 
 	@AddtlId.deleter
 	def AddtlId(self):

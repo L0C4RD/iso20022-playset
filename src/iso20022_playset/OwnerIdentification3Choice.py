@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification139 import PartyIdentification139
 from .IndividualPersonIdentification2Choice import IndividualPersonIdentification2Choice
+from .PartyIdentification139 import PartyIdentification139
 
 class OwnerIdentification3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class OwnerIdentification3Choice(base_types._BaseFieldType):
 
 	@OrgOwnrId.setter
 	def OrgOwnrId(self, value):
-		self._OrgOwnrId = value if type(value) != auto else self.make_default("OrgOwnrId")
+		self._OrgOwnrId = value if type(value) != base_types.auto else self.make_default("OrgOwnrId")
 
 	@OrgOwnrId.deleter
 	def OrgOwnrId(self):
@@ -24,7 +24,7 @@ class OwnerIdentification3Choice(base_types._BaseFieldType):
 
 	@IndvOwnrId.setter
 	def IndvOwnrId(self, value):
-		self._IndvOwnrId = value if type(value) != auto else self.make_default("IndvOwnrId")
+		self._IndvOwnrId = value if type(value) != base_types.auto else self.make_default("IndvOwnrId")
 
 	@IndvOwnrId.deleter
 	def IndvOwnrId(self):

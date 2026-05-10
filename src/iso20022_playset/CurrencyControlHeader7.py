@@ -1,33 +1,20 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyIdentification272 import PartyIdentification272
-from .Max15NumericText import Max15NumericText
 from .ISODateTime import ISODateTime
+from .Max15NumericText import Max15NumericText
+from .PartyIdentification272 import PartyIdentification272
 from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .Max35Text import Max35Text
 
 class CurrencyControlHeader7(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_RegnAgt", "_NbOfItms", "_RcvgPty", "_CreDtTm"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_RegnAgt", "_NbOfItms", "_RcvgPty", "_MsgId", "_CreDtTm"]
 	@property
 	def RegnAgt(self):
 		return self._RegnAgt
 
 	@RegnAgt.setter
 	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
+		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
 
 	@RegnAgt.deleter
 	def RegnAgt(self):
@@ -40,7 +27,7 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 
 	@NbOfItms.setter
 	def NbOfItms(self, value):
-		self._NbOfItms = value if type(value) != auto else self.make_default("NbOfItms")
+		self._NbOfItms = value if type(value) != base_types.auto else self.make_default("NbOfItms")
 
 	@NbOfItms.deleter
 	def NbOfItms(self):
@@ -53,7 +40,7 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 
 	@RcvgPty.setter
 	def RcvgPty(self, value):
-		self._RcvgPty = value if type(value) != auto else self.make_default("RcvgPty")
+		self._RcvgPty = value if type(value) != base_types.auto else self.make_default("RcvgPty")
 
 	@RcvgPty.deleter
 	def RcvgPty(self):
@@ -61,12 +48,25 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 		self._RcvgPty = None
 
 	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
@@ -74,10 +74,10 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -11,7 +11,7 @@ class PaginationBalance2(base_types._BaseFieldType):
 
 	@ClsgBal.setter
 	def ClsgBal(self, value):
-		self._ClsgBal = value if type(value) != auto else self.make_default("ClsgBal")
+		self._ClsgBal = value if type(value) != base_types.auto else self.make_default("ClsgBal")
 
 	@ClsgBal.deleter
 	def ClsgBal(self):
@@ -24,7 +24,7 @@ class PaginationBalance2(base_types._BaseFieldType):
 
 	@OpngBal.setter
 	def OpngBal(self, value):
-		self._OpngBal = value if type(value) != auto else self.make_default("OpngBal")
+		self._OpngBal = value if type(value) != base_types.auto else self.make_default("OpngBal")
 
 	@OpngBal.deleter
 	def OpngBal(self):

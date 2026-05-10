@@ -1,6 +1,6 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .SecurityIdentification19 import SecurityIdentification19
+from .CountryCode import CountryCode
 from .GenericIdentification37 import GenericIdentification37
 
 class RemovalProcessing2Choice(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
@@ -25,7 +25,7 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 
 	@IssrCtry.setter
 	def IssrCtry(self, value):
-		self._IssrCtry = value if type(value) != auto else self.make_default("IssrCtry")
+		self._IssrCtry = value if type(value) != base_types.auto else self.make_default("IssrCtry")
 
 	@IssrCtry.deleter
 	def IssrCtry(self):
@@ -38,7 +38,7 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 
 	@IndxId.setter
 	def IndxId(self, value):
-		self._IndxId = value if type(value) != auto else self.make_default("IndxId")
+		self._IndxId = value if type(value) != base_types.auto else self.make_default("IndxId")
 
 	@IndxId.deleter
 	def IndxId(self):

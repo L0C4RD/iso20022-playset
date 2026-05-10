@@ -1,20 +1,20 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max70Text import Max70Text
-from .PhoneNumber import PhoneNumber
-from .TrueFalseIndicator import TrueFalseIndicator
 from .CustomerType2Code import CustomerType2Code
+from .TrueFalseIndicator import TrueFalseIndicator
+from .PhoneNumber import PhoneNumber
+from .Max35Text import Max35Text
 
 class Customer4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AuthrsdCtctCpny", "_CstmrRltsh", "_TaxRegnId", "_AuthrsdCtctPhneNb", "_AuthrsdCtctNm", "_RefNb", "_VIPInd"]
+	__slots__ = ["_Tp", "_VIPInd", "_AuthrsdCtctCpny", "_TaxRegnId", "_AuthrsdCtctNm", "_RefNb", "_AuthrsdCtctPhneNb", "_CstmrRltsh"]
 	@property
 	def Tp(self):
 		return self._Tp
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -22,12 +22,25 @@ class Customer4(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def VIPInd(self):
+		return self._VIPInd
+
+	@VIPInd.setter
+	def VIPInd(self, value):
+		self._VIPInd = value if type(value) != base_types.auto else self.make_default("VIPInd")
+
+	@VIPInd.deleter
+	def VIPInd(self):
+		del self._VIPInd
+		self._VIPInd = None
+
+	@property
 	def AuthrsdCtctCpny(self):
 		return self._AuthrsdCtctCpny
 
 	@AuthrsdCtctCpny.setter
 	def AuthrsdCtctCpny(self, value):
-		self._AuthrsdCtctCpny = value if type(value) != auto else self.make_default("AuthrsdCtctCpny")
+		self._AuthrsdCtctCpny = value if type(value) != base_types.auto else self.make_default("AuthrsdCtctCpny")
 
 	@AuthrsdCtctCpny.deleter
 	def AuthrsdCtctCpny(self):
@@ -35,25 +48,12 @@ class Customer4(base_types._BaseFieldType):
 		self._AuthrsdCtctCpny = None
 
 	@property
-	def CstmrRltsh(self):
-		return self._CstmrRltsh
-
-	@CstmrRltsh.setter
-	def CstmrRltsh(self, value):
-		self._CstmrRltsh = value if type(value) != auto else self.make_default("CstmrRltsh")
-
-	@CstmrRltsh.deleter
-	def CstmrRltsh(self):
-		del self._CstmrRltsh
-		self._CstmrRltsh = None
-
-	@property
 	def TaxRegnId(self):
 		return self._TaxRegnId
 
 	@TaxRegnId.setter
 	def TaxRegnId(self, value):
-		self._TaxRegnId = value if type(value) != auto else self.make_default("TaxRegnId")
+		self._TaxRegnId = value if type(value) != base_types.auto else self.make_default("TaxRegnId")
 
 	@TaxRegnId.deleter
 	def TaxRegnId(self):
@@ -61,25 +61,12 @@ class Customer4(base_types._BaseFieldType):
 		self._TaxRegnId = None
 
 	@property
-	def AuthrsdCtctPhneNb(self):
-		return self._AuthrsdCtctPhneNb
-
-	@AuthrsdCtctPhneNb.setter
-	def AuthrsdCtctPhneNb(self, value):
-		self._AuthrsdCtctPhneNb = value if type(value) != auto else self.make_default("AuthrsdCtctPhneNb")
-
-	@AuthrsdCtctPhneNb.deleter
-	def AuthrsdCtctPhneNb(self):
-		del self._AuthrsdCtctPhneNb
-		self._AuthrsdCtctPhneNb = None
-
-	@property
 	def AuthrsdCtctNm(self):
 		return self._AuthrsdCtctNm
 
 	@AuthrsdCtctNm.setter
 	def AuthrsdCtctNm(self, value):
-		self._AuthrsdCtctNm = value if type(value) != auto else self.make_default("AuthrsdCtctNm")
+		self._AuthrsdCtctNm = value if type(value) != base_types.auto else self.make_default("AuthrsdCtctNm")
 
 	@AuthrsdCtctNm.deleter
 	def AuthrsdCtctNm(self):
@@ -92,7 +79,7 @@ class Customer4(base_types._BaseFieldType):
 
 	@RefNb.setter
 	def RefNb(self, value):
-		self._RefNb = value if type(value) != auto else self.make_default("RefNb")
+		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
 
 	@RefNb.deleter
 	def RefNb(self):
@@ -100,26 +87,39 @@ class Customer4(base_types._BaseFieldType):
 		self._RefNb = None
 
 	@property
-	def VIPInd(self):
-		return self._VIPInd
+	def AuthrsdCtctPhneNb(self):
+		return self._AuthrsdCtctPhneNb
 
-	@VIPInd.setter
-	def VIPInd(self, value):
-		self._VIPInd = value if type(value) != auto else self.make_default("VIPInd")
+	@AuthrsdCtctPhneNb.setter
+	def AuthrsdCtctPhneNb(self, value):
+		self._AuthrsdCtctPhneNb = value if type(value) != base_types.auto else self.make_default("AuthrsdCtctPhneNb")
 
-	@VIPInd.deleter
-	def VIPInd(self):
-		del self._VIPInd
-		self._VIPInd = None
+	@AuthrsdCtctPhneNb.deleter
+	def AuthrsdCtctPhneNb(self):
+		del self._AuthrsdCtctPhneNb
+		self._AuthrsdCtctPhneNb = None
+
+	@property
+	def CstmrRltsh(self):
+		return self._CstmrRltsh
+
+	@CstmrRltsh.setter
+	def CstmrRltsh(self, value):
+		self._CstmrRltsh = value if type(value) != base_types.auto else self.make_default("CstmrRltsh")
+
+	@CstmrRltsh.deleter
+	def CstmrRltsh(self):
+		del self._CstmrRltsh
+		self._CstmrRltsh = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=CustomerType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VIPInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthrsdCtctCpny', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrRltsh', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRegnId', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AuthrsdCtctPhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthrsdCtctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VIPInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrsdCtctPhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrRltsh', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -12,7 +12,7 @@ class TSMT_011_001_04():
 
 		@BaselnRpt.setter
 		def BaselnRpt(self, value):
-			self._BaselnRpt = value if type(value) != auto else self.make_default("BaselnRpt")
+			self._BaselnRpt = value if type(value) != base_types.auto else self.make_default("BaselnRpt")
 
 		@BaselnRpt.deleter
 		def BaselnRpt(self):

@@ -1,37 +1,37 @@
 from . import base_types
-from .CopyDuplicate1Code import CopyDuplicate1Code
-from .Max35Text import Max35Text
 from .PartyIdentification136 import PartyIdentification136
 from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CopyDuplicate1Code import CopyDuplicate1Code
+from .Max35Text import Max35Text
 
 class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRcpt", "_TxId", "_CpyDplct", "_CreDtTm", "_MsgOrgtr", "_DocId"]
+	__slots__ = ["_DocId", "_MsgOrgtr", "_CpyDplct", "_CreDtTm", "_TxId", "_MsgRcpt"]
 	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
+	def DocId(self):
+		return self._DocId
 
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
+	@DocId.setter
+	def DocId(self, value):
+		self._DocId = value if type(value) != base_types.auto else self.make_default("DocId")
 
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
+	@DocId.deleter
+	def DocId(self):
+		del self._DocId
+		self._DocId = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
 
 	@property
 	def CpyDplct(self):
@@ -39,7 +39,7 @@ class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 
 	@CpyDplct.setter
 	def CpyDplct(self, value):
-		self._CpyDplct = value if type(value) != auto else self.make_default("CpyDplct")
+		self._CpyDplct = value if type(value) != base_types.auto else self.make_default("CpyDplct")
 
 	@CpyDplct.deleter
 	def CpyDplct(self):
@@ -52,7 +52,7 @@ class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
@@ -60,37 +60,37 @@ class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
+	def TxId(self):
+		return self._TxId
 
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
-	def DocId(self):
-		return self._DocId
+	def MsgRcpt(self):
+		return self._MsgRcpt
 
-	@DocId.setter
-	def DocId(self, value):
-		self._DocId = value if type(value) != auto else self.make_default("DocId")
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
 
-	@DocId.deleter
-	def DocId(self):
-		del self._DocId
-		self._DocId = None
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

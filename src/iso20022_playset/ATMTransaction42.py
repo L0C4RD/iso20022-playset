@@ -1,47 +1,21 @@
 from . import base_types
-from .ContentInformationType10 import ContentInformationType10
-from .TransactionIdentifier3 import TransactionIdentifier3
-from .CardAccount20 import CardAccount20
-from .DetailedAmount12 import DetailedAmount12
 from .Max10000Binary import Max10000Binary
+from .TransactionIdentifier3 import TransactionIdentifier3
+from .ContentInformationType10 import ContentInformationType10
+from .CardAccount20 import CardAccount20
 from .AmountAndCurrency1 import AmountAndCurrency1
+from .DetailedAmount12 import DetailedAmount12
 
 class ATMTransaction42(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_PrtctdAcctData", "_AcctData", "_TtlReqdAmt", "_DtldReqdAmt", "_ICCRltdData"]
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def PrtctdAcctData(self):
-		return self._PrtctdAcctData
-
-	@PrtctdAcctData.setter
-	def PrtctdAcctData(self, value):
-		self._PrtctdAcctData = value if type(value) != auto else self.make_default("PrtctdAcctData")
-
-	@PrtctdAcctData.deleter
-	def PrtctdAcctData(self):
-		del self._PrtctdAcctData
-		self._PrtctdAcctData = None
-
+	__slots__ = ["_AcctData", "_TtlReqdAmt", "_DtldReqdAmt", "_TxId", "_PrtctdAcctData", "_ICCRltdData"]
 	@property
 	def AcctData(self):
 		return self._AcctData
 
 	@AcctData.setter
 	def AcctData(self, value):
-		self._AcctData = value if type(value) != auto else self.make_default("AcctData")
+		self._AcctData = value if type(value) != base_types.auto else self.make_default("AcctData")
 
 	@AcctData.deleter
 	def AcctData(self):
@@ -54,7 +28,7 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@TtlReqdAmt.setter
 	def TtlReqdAmt(self, value):
-		self._TtlReqdAmt = value if type(value) != auto else self.make_default("TtlReqdAmt")
+		self._TtlReqdAmt = value if type(value) != base_types.auto else self.make_default("TtlReqdAmt")
 
 	@TtlReqdAmt.deleter
 	def TtlReqdAmt(self):
@@ -67,7 +41,7 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@DtldReqdAmt.setter
 	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != auto else self.make_default("DtldReqdAmt")
+		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
 
 	@DtldReqdAmt.deleter
 	def DtldReqdAmt(self):
@@ -75,12 +49,38 @@ class ATMTransaction42(base_types._BaseFieldType):
 		self._DtldReqdAmt = None
 
 	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def PrtctdAcctData(self):
+		return self._PrtctdAcctData
+
+	@PrtctdAcctData.setter
+	def PrtctdAcctData(self, value):
+		self._PrtctdAcctData = value if type(value) != base_types.auto else self.make_default("PrtctdAcctData")
+
+	@PrtctdAcctData.deleter
+	def PrtctdAcctData(self):
+		del self._PrtctdAcctData
+		self._PrtctdAcctData = None
+
+	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
@@ -88,11 +88,11 @@ class ATMTransaction42(base_types._BaseFieldType):
 		self._ICCRltdData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctData', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlReqdAmt', type=AmountAndCurrency1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

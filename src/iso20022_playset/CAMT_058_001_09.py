@@ -12,7 +12,7 @@ class CAMT_058_001_09():
 
 		@NtfctnToRcvCxlAdvc.setter
 		def NtfctnToRcvCxlAdvc(self, value):
-			self._NtfctnToRcvCxlAdvc = value if type(value) != auto else self.make_default("NtfctnToRcvCxlAdvc")
+			self._NtfctnToRcvCxlAdvc = value if type(value) != base_types.auto else self.make_default("NtfctnToRcvCxlAdvc")
 
 		@NtfctnToRcvCxlAdvc.deleter
 		def NtfctnToRcvCxlAdvc(self):

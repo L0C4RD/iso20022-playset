@@ -1,6 +1,6 @@
 from . import base_types
-from .Max10KBinary import Max10KBinary
 from .PartyIdentification272 import PartyIdentification272
+from .Max10KBinary import Max10KBinary
 
 class PartyAndCertificate6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyAndCertificate6(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
 	@Pty.deleter
 	def Pty(self):
@@ -24,7 +24,7 @@ class PartyAndCertificate6(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != auto else self.make_default("Cert")
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
 
 	@Cert.deleter
 	def Cert(self):

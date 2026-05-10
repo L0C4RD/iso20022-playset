@@ -12,7 +12,7 @@ class CAAD_008_001_02():
 
 		@AdmstvInitn.setter
 		def AdmstvInitn(self, value):
-			self._AdmstvInitn = value if type(value) != auto else self.make_default("AdmstvInitn")
+			self._AdmstvInitn = value if type(value) != base_types.auto else self.make_default("AdmstvInitn")
 
 		@AdmstvInitn.deleter
 		def AdmstvInitn(self):

@@ -12,7 +12,7 @@ class TSIN_003_001_01():
 
 		@InvcFincgCxlReq.setter
 		def InvcFincgCxlReq(self, value):
-			self._InvcFincgCxlReq = value if type(value) != auto else self.make_default("InvcFincgCxlReq")
+			self._InvcFincgCxlReq = value if type(value) != base_types.auto else self.make_default("InvcFincgCxlReq")
 
 		@InvcFincgCxlReq.deleter
 		def InvcFincgCxlReq(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .AlgorithmIdentification26 import AlgorithmIdentification26
 from .Algorithm20Code import Algorithm20Code
+from .AlgorithmIdentification26 import AlgorithmIdentification26
 
 class Parameter13(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Parameter13(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
@@ -24,7 +24,7 @@ class Parameter13(base_types._BaseFieldType):
 
 	@MskGnrtrAlgo.setter
 	def MskGnrtrAlgo(self, value):
-		self._MskGnrtrAlgo = value if type(value) != auto else self.make_default("MskGnrtrAlgo")
+		self._MskGnrtrAlgo = value if type(value) != base_types.auto else self.make_default("MskGnrtrAlgo")
 
 	@MskGnrtrAlgo.deleter
 	def MskGnrtrAlgo(self):

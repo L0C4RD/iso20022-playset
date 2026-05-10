@@ -11,7 +11,7 @@ class OpeningBalance5(base_types._BaseFieldType):
 
 	@OpngBal.setter
 	def OpngBal(self, value):
-		self._OpngBal = value if type(value) != auto else self.make_default("OpngBal")
+		self._OpngBal = value if type(value) != base_types.auto else self.make_default("OpngBal")
 
 	@OpngBal.deleter
 	def OpngBal(self):
@@ -24,7 +24,7 @@ class OpeningBalance5(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):

@@ -10,7 +10,7 @@ class MarginCallResult2(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):
@@ -23,7 +23,7 @@ class MarginCallResult2(base_types._BaseFieldType):
 
 	@VartnMrgnRslt.setter
 	def VartnMrgnRslt(self, value):
-		self._VartnMrgnRslt = value if type(value) != auto else self.make_default("VartnMrgnRslt")
+		self._VartnMrgnRslt = value if type(value) != base_types.auto else self.make_default("VartnMrgnRslt")
 
 	@VartnMrgnRslt.deleter
 	def VartnMrgnRslt(self):

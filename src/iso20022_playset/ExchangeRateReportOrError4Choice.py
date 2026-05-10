@@ -11,7 +11,7 @@ class ExchangeRateReportOrError4Choice(base_types._BaseFieldType):
 
 	@CcyXchg.setter
 	def CcyXchg(self, value):
-		self._CcyXchg = value if type(value) != auto else self.make_default("CcyXchg")
+		self._CcyXchg = value if type(value) != base_types.auto else self.make_default("CcyXchg")
 
 	@CcyXchg.deleter
 	def CcyXchg(self):
@@ -24,7 +24,7 @@ class ExchangeRateReportOrError4Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):

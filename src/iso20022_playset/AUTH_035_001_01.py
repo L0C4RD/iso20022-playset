@@ -12,7 +12,7 @@ class AUTH_035_001_01():
 
 		@FinInstrmRptgTradgVolCapDataRpt.setter
 		def FinInstrmRptgTradgVolCapDataRpt(self, value):
-			self._FinInstrmRptgTradgVolCapDataRpt = value if type(value) != auto else self.make_default("FinInstrmRptgTradgVolCapDataRpt")
+			self._FinInstrmRptgTradgVolCapDataRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgTradgVolCapDataRpt")
 
 		@FinInstrmRptgTradgVolCapDataRpt.deleter
 		def FinInstrmRptgTradgVolCapDataRpt(self):

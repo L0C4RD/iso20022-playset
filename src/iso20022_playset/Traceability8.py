@@ -1,37 +1,24 @@
 from . import base_types
 from .Max6Text import Max6Text
-from .Max35Text import Max35Text
 from .GenericIdentification177 import GenericIdentification177
 from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class Traceability8(base_types._BaseFieldType):
 
-	__slots__ = ["_TracDtTmIn", "_TracDtTmOut", "_PrtcolNm", "_PrtcolVrsn", "_RlayId"]
+	__slots__ = ["_RlayId", "_PrtcolNm", "_TracDtTmOut", "_TracDtTmIn", "_PrtcolVrsn"]
 	@property
-	def TracDtTmIn(self):
-		return self._TracDtTmIn
+	def RlayId(self):
+		return self._RlayId
 
-	@TracDtTmIn.setter
-	def TracDtTmIn(self, value):
-		self._TracDtTmIn = value if type(value) != auto else self.make_default("TracDtTmIn")
+	@RlayId.setter
+	def RlayId(self, value):
+		self._RlayId = value if type(value) != base_types.auto else self.make_default("RlayId")
 
-	@TracDtTmIn.deleter
-	def TracDtTmIn(self):
-		del self._TracDtTmIn
-		self._TracDtTmIn = None
-
-	@property
-	def TracDtTmOut(self):
-		return self._TracDtTmOut
-
-	@TracDtTmOut.setter
-	def TracDtTmOut(self, value):
-		self._TracDtTmOut = value if type(value) != auto else self.make_default("TracDtTmOut")
-
-	@TracDtTmOut.deleter
-	def TracDtTmOut(self):
-		del self._TracDtTmOut
-		self._TracDtTmOut = None
+	@RlayId.deleter
+	def RlayId(self):
+		del self._RlayId
+		self._RlayId = None
 
 	@property
 	def PrtcolNm(self):
@@ -39,7 +26,7 @@ class Traceability8(base_types._BaseFieldType):
 
 	@PrtcolNm.setter
 	def PrtcolNm(self, value):
-		self._PrtcolNm = value if type(value) != auto else self.make_default("PrtcolNm")
+		self._PrtcolNm = value if type(value) != base_types.auto else self.make_default("PrtcolNm")
 
 	@PrtcolNm.deleter
 	def PrtcolNm(self):
@@ -47,36 +34,49 @@ class Traceability8(base_types._BaseFieldType):
 		self._PrtcolNm = None
 
 	@property
+	def TracDtTmOut(self):
+		return self._TracDtTmOut
+
+	@TracDtTmOut.setter
+	def TracDtTmOut(self, value):
+		self._TracDtTmOut = value if type(value) != base_types.auto else self.make_default("TracDtTmOut")
+
+	@TracDtTmOut.deleter
+	def TracDtTmOut(self):
+		del self._TracDtTmOut
+		self._TracDtTmOut = None
+
+	@property
+	def TracDtTmIn(self):
+		return self._TracDtTmIn
+
+	@TracDtTmIn.setter
+	def TracDtTmIn(self, value):
+		self._TracDtTmIn = value if type(value) != base_types.auto else self.make_default("TracDtTmIn")
+
+	@TracDtTmIn.deleter
+	def TracDtTmIn(self):
+		del self._TracDtTmIn
+		self._TracDtTmIn = None
+
+	@property
 	def PrtcolVrsn(self):
 		return self._PrtcolVrsn
 
 	@PrtcolVrsn.setter
 	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != auto else self.make_default("PrtcolVrsn")
+		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
 
 	@PrtcolVrsn.deleter
 	def PrtcolVrsn(self):
 		del self._PrtcolVrsn
 		self._PrtcolVrsn = None
 
-	@property
-	def RlayId(self):
-		return self._RlayId
-
-	@RlayId.setter
-	def RlayId(self, value):
-		self._RlayId = value if type(value) != auto else self.make_default("RlayId")
-
-	@RlayId.deleter
-	def RlayId(self):
-		del self._RlayId
-		self._RlayId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcolNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RlayId', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcolNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

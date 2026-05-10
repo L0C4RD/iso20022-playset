@@ -11,7 +11,7 @@ class OwnershipBeneficiaryRate1(base_types._BaseFieldType):
 
 	@Frctn.setter
 	def Frctn(self, value):
-		self._Frctn = value if type(value) != auto else self.make_default("Frctn")
+		self._Frctn = value if type(value) != base_types.auto else self.make_default("Frctn")
 
 	@Frctn.deleter
 	def Frctn(self):
@@ -24,7 +24,7 @@ class OwnershipBeneficiaryRate1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

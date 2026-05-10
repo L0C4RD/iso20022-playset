@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification178Choice import PartyIdentification178Choice
 from .YesNoIndicator import YesNoIndicator
+from .PartyIdentification178Choice import PartyIdentification178Choice
 
 class CollateralOwnership3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CollateralOwnership3(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -24,7 +24,7 @@ class CollateralOwnership3(base_types._BaseFieldType):
 
 	@ClntNm.setter
 	def ClntNm(self, value):
-		self._ClntNm = value if type(value) != auto else self.make_default("ClntNm")
+		self._ClntNm = value if type(value) != base_types.auto else self.make_default("ClntNm")
 
 	@ClntNm.deleter
 	def ClntNm(self):

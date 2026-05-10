@@ -11,7 +11,7 @@ class GenericIdentification184(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class GenericIdentification184(base_types._BaseFieldType):
 
 	@Src.setter
 	def Src(self, value):
-		self._Src = value if type(value) != auto else self.make_default("Src")
+		self._Src = value if type(value) != base_types.auto else self.make_default("Src")
 
 	@Src.deleter
 	def Src(self):

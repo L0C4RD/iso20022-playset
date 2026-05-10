@@ -10,7 +10,7 @@ class BalanceTransferFundingLimit1(base_types._BaseFieldType):
 
 	@CcyAmt.setter
 	def CcyAmt(self, value):
-		self._CcyAmt = value if type(value) != auto else self.make_default("CcyAmt")
+		self._CcyAmt = value if type(value) != base_types.auto else self.make_default("CcyAmt")
 
 	@CcyAmt.deleter
 	def CcyAmt(self):

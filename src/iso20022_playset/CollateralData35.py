@@ -1,31 +1,18 @@
 from . import base_types
-from .CollateralType21 import CollateralType21
 from .TrueFalseIndicator import TrueFalseIndicator
+from .CollateralType21 import CollateralType21
 from .SecurityIdentification26Choice import SecurityIdentification26Choice
 
 class CollateralData35(base_types._BaseFieldType):
 
-	__slots__ = ["_NetXpsrCollstnInd", "_AsstTp", "_BsktIdr"]
-	@property
-	def NetXpsrCollstnInd(self):
-		return self._NetXpsrCollstnInd
-
-	@NetXpsrCollstnInd.setter
-	def NetXpsrCollstnInd(self, value):
-		self._NetXpsrCollstnInd = value if type(value) != auto else self.make_default("NetXpsrCollstnInd")
-
-	@NetXpsrCollstnInd.deleter
-	def NetXpsrCollstnInd(self):
-		del self._NetXpsrCollstnInd
-		self._NetXpsrCollstnInd = None
-
+	__slots__ = ["_AsstTp", "_NetXpsrCollstnInd", "_BsktIdr"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp
 
 	@AsstTp.setter
 	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
+		self._AsstTp = value if type(value) != base_types.auto else self.make_default("AsstTp")
 
 	@AsstTp.deleter
 	def AsstTp(self):
@@ -33,12 +20,25 @@ class CollateralData35(base_types._BaseFieldType):
 		self._AsstTp = None
 
 	@property
+	def NetXpsrCollstnInd(self):
+		return self._NetXpsrCollstnInd
+
+	@NetXpsrCollstnInd.setter
+	def NetXpsrCollstnInd(self, value):
+		self._NetXpsrCollstnInd = value if type(value) != base_types.auto else self.make_default("NetXpsrCollstnInd")
+
+	@NetXpsrCollstnInd.deleter
+	def NetXpsrCollstnInd(self):
+		del self._NetXpsrCollstnInd
+		self._NetXpsrCollstnInd = None
+
+	@property
 	def BsktIdr(self):
 		return self._BsktIdr
 
 	@BsktIdr.setter
 	def BsktIdr(self, value):
-		self._BsktIdr = value if type(value) != auto else self.make_default("BsktIdr")
+		self._BsktIdr = value if type(value) != base_types.auto else self.make_default("BsktIdr")
 
 	@BsktIdr.deleter
 	def BsktIdr(self):
@@ -46,8 +46,8 @@ class CollateralData35(base_types._BaseFieldType):
 		self._BsktIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsktIdr', type=SecurityIdentification26Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

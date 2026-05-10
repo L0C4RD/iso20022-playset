@@ -11,7 +11,7 @@ class BusinessInformationQueryDefinition3(base_types._BaseFieldType):
 
 	@GnlBizInfCrit.setter
 	def GnlBizInfCrit(self, value):
-		self._GnlBizInfCrit = value if type(value) != auto else self.make_default("GnlBizInfCrit")
+		self._GnlBizInfCrit = value if type(value) != base_types.auto else self.make_default("GnlBizInfCrit")
 
 	@GnlBizInfCrit.deleter
 	def GnlBizInfCrit(self):
@@ -24,7 +24,7 @@ class BusinessInformationQueryDefinition3(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 from .QuantityBreakdown61 import QuantityBreakdown61
+from .SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 
 class SecuritiesSubBalanceTypeAndQuantityBreakdown5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesSubBalanceTypeAndQuantityBreakdown5(base_types._BaseFieldType):
 
 	@QtyBrkdwn.setter
 	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != auto else self.make_default("QtyBrkdwn")
+		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
 
 	@QtyBrkdwn.deleter
 	def QtyBrkdwn(self):
@@ -24,7 +24,7 @@ class SecuritiesSubBalanceTypeAndQuantityBreakdown5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

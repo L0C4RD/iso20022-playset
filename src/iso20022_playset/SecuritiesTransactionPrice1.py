@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from .PriceStatus1Code import PriceStatus1Code
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class SecuritiesTransactionPrice1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesTransactionPrice1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -24,7 +24,7 @@ class SecuritiesTransactionPrice1(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
 
 	@Pdg.deleter
 	def Pdg(self):

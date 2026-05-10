@@ -11,7 +11,7 @@ class ClearingPartyAndTime22Choice(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):
@@ -24,7 +24,7 @@ class ClearingPartyAndTime22Choice(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != auto else self.make_default("Dtls")
+		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
 
 	@Dtls.deleter
 	def Dtls(self):

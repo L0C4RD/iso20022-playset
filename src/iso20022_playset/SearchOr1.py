@@ -10,7 +10,7 @@ class SearchOr1(base_types._BaseFieldType):
 
 	@SchAnd.setter
 	def SchAnd(self, value):
-		self._SchAnd = value if type(value) != auto else self.make_default("SchAnd")
+		self._SchAnd = value if type(value) != base_types.auto else self.make_default("SchAnd")
 
 	@SchAnd.deleter
 	def SchAnd(self):

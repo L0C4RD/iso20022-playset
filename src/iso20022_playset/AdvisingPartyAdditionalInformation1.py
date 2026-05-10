@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max2000Text import Max2000Text
+from .Max35Text import Max35Text
 
 class AdvisingPartyAdditionalInformation1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AdvisingPartyAdditionalInformation1(base_types._BaseFieldType):
 
 	@RefNb.setter
 	def RefNb(self, value):
-		self._RefNb = value if type(value) != auto else self.make_default("RefNb")
+		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
 
 	@RefNb.deleter
 	def RefNb(self):
@@ -24,7 +24,7 @@ class AdvisingPartyAdditionalInformation1(base_types._BaseFieldType):
 
 	@BkToBnfcryInf.setter
 	def BkToBnfcryInf(self, value):
-		self._BkToBnfcryInf = value if type(value) != auto else self.make_default("BkToBnfcryInf")
+		self._BkToBnfcryInf = value if type(value) != base_types.auto else self.make_default("BkToBnfcryInf")
 
 	@BkToBnfcryInf.deleter
 	def BkToBnfcryInf(self):

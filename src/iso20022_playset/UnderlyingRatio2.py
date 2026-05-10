@@ -4,27 +4,14 @@ from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choi
 
 class UnderlyingRatio2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdFinInstrmId", "_UndrlygQtyNmrtr", "_UndrlygQtyDnmtr"]
-	@property
-	def RltdFinInstrmId(self):
-		return self._RltdFinInstrmId
-
-	@RltdFinInstrmId.setter
-	def RltdFinInstrmId(self, value):
-		self._RltdFinInstrmId = value if type(value) != auto else self.make_default("RltdFinInstrmId")
-
-	@RltdFinInstrmId.deleter
-	def RltdFinInstrmId(self):
-		del self._RltdFinInstrmId
-		self._RltdFinInstrmId = None
-
+	__slots__ = ["_UndrlygQtyNmrtr", "_UndrlygQtyDnmtr", "_RltdFinInstrmId"]
 	@property
 	def UndrlygQtyNmrtr(self):
 		return self._UndrlygQtyNmrtr
 
 	@UndrlygQtyNmrtr.setter
 	def UndrlygQtyNmrtr(self, value):
-		self._UndrlygQtyNmrtr = value if type(value) != auto else self.make_default("UndrlygQtyNmrtr")
+		self._UndrlygQtyNmrtr = value if type(value) != base_types.auto else self.make_default("UndrlygQtyNmrtr")
 
 	@UndrlygQtyNmrtr.deleter
 	def UndrlygQtyNmrtr(self):
@@ -37,16 +24,29 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 
 	@UndrlygQtyDnmtr.setter
 	def UndrlygQtyDnmtr(self, value):
-		self._UndrlygQtyDnmtr = value if type(value) != auto else self.make_default("UndrlygQtyDnmtr")
+		self._UndrlygQtyDnmtr = value if type(value) != base_types.auto else self.make_default("UndrlygQtyDnmtr")
 
 	@UndrlygQtyDnmtr.deleter
 	def UndrlygQtyDnmtr(self):
 		del self._UndrlygQtyDnmtr
 		self._UndrlygQtyDnmtr = None
 
+	@property
+	def RltdFinInstrmId(self):
+		return self._RltdFinInstrmId
+
+	@RltdFinInstrmId.setter
+	def RltdFinInstrmId(self, value):
+		self._RltdFinInstrmId = value if type(value) != base_types.auto else self.make_default("RltdFinInstrmId")
+
+	@RltdFinInstrmId.deleter
+	def RltdFinInstrmId(self):
+		del self._RltdFinInstrmId
+		self._RltdFinInstrmId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdFinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UndrlygQtyNmrtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygQtyDnmtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdFinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
 	))
 

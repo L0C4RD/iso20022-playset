@@ -12,7 +12,7 @@ class CAMT_054_001_13():
 
 		@BkToCstmrDbtCdtNtfctn.setter
 		def BkToCstmrDbtCdtNtfctn(self, value):
-			self._BkToCstmrDbtCdtNtfctn = value if type(value) != auto else self.make_default("BkToCstmrDbtCdtNtfctn")
+			self._BkToCstmrDbtCdtNtfctn = value if type(value) != base_types.auto else self.make_default("BkToCstmrDbtCdtNtfctn")
 
 		@BkToCstmrDbtCdtNtfctn.deleter
 		def BkToCstmrDbtCdtNtfctn(self):

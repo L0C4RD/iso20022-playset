@@ -1,6 +1,6 @@
 from . import base_types
-from .ISODate import ISODate
 from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .ISODate import ISODate
 
 class ClaimNonReceipt3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ClaimNonReceipt3(base_types._BaseFieldType):
 
 	@OrgnlNxtAgt.setter
 	def OrgnlNxtAgt(self, value):
-		self._OrgnlNxtAgt = value if type(value) != auto else self.make_default("OrgnlNxtAgt")
+		self._OrgnlNxtAgt = value if type(value) != base_types.auto else self.make_default("OrgnlNxtAgt")
 
 	@OrgnlNxtAgt.deleter
 	def OrgnlNxtAgt(self):
@@ -24,7 +24,7 @@ class ClaimNonReceipt3(base_types._BaseFieldType):
 
 	@DtPrcd.setter
 	def DtPrcd(self, value):
-		self._DtPrcd = value if type(value) != auto else self.make_default("DtPrcd")
+		self._DtPrcd = value if type(value) != base_types.auto else self.make_default("DtPrcd")
 
 	@DtPrcd.deleter
 	def DtPrcd(self):

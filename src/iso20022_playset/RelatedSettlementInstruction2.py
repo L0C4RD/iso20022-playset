@@ -1,8 +1,8 @@
 from . import base_types
-from .TransferOfProceedsType1Code import TransferOfProceedsType1Code
-from .Max35Text import Max35Text
 from .FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from .TransferOfProceedsType1Code import TransferOfProceedsType1Code
 from .ProceedsQuantityBreakdown1 import ProceedsQuantityBreakdown1
+from .Max35Text import Max35Text
 
 class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@PrcdsQtyBrkdwn.setter
 	def PrcdsQtyBrkdwn(self, value):
-		self._PrcdsQtyBrkdwn = value if type(value) != auto else self.make_default("PrcdsQtyBrkdwn")
+		self._PrcdsQtyBrkdwn = value if type(value) != base_types.auto else self.make_default("PrcdsQtyBrkdwn")
 
 	@PrcdsQtyBrkdwn.deleter
 	def PrcdsQtyBrkdwn(self):
@@ -26,7 +26,7 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@RltdSttlmInstrId.setter
 	def RltdSttlmInstrId(self, value):
-		self._RltdSttlmInstrId = value if type(value) != auto else self.make_default("RltdSttlmInstrId")
+		self._RltdSttlmInstrId = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrId")
 
 	@RltdSttlmInstrId.deleter
 	def RltdSttlmInstrId(self):
@@ -39,7 +39,7 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@RltdSttlmQty.setter
 	def RltdSttlmQty(self, value):
-		self._RltdSttlmQty = value if type(value) != auto else self.make_default("RltdSttlmQty")
+		self._RltdSttlmQty = value if type(value) != base_types.auto else self.make_default("RltdSttlmQty")
 
 	@RltdSttlmQty.deleter
 	def RltdSttlmQty(self):
@@ -52,7 +52,7 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@TrfOfPrcdsTpInd.setter
 	def TrfOfPrcdsTpInd(self, value):
-		self._TrfOfPrcdsTpInd = value if type(value) != auto else self.make_default("TrfOfPrcdsTpInd")
+		self._TrfOfPrcdsTpInd = value if type(value) != base_types.auto else self.make_default("TrfOfPrcdsTpInd")
 
 	@TrfOfPrcdsTpInd.deleter
 	def TrfOfPrcdsTpInd(self):

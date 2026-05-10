@@ -11,7 +11,7 @@ class Rate2(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
 
 	@Sgn.deleter
 	def Sgn(self):
@@ -24,7 +24,7 @@ class Rate2(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

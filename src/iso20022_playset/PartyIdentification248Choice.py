@@ -1,6 +1,6 @@
 from . import base_types
-from .NaturalPersonIdentification3 import NaturalPersonIdentification3
 from .LegalPersonIdentification1 import LegalPersonIdentification1
+from .NaturalPersonIdentification3 import NaturalPersonIdentification3
 
 class PartyIdentification248Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification248Choice(base_types._BaseFieldType):
 
 	@Lgl.setter
 	def Lgl(self, value):
-		self._Lgl = value if type(value) != auto else self.make_default("Lgl")
+		self._Lgl = value if type(value) != base_types.auto else self.make_default("Lgl")
 
 	@Lgl.deleter
 	def Lgl(self):
@@ -24,7 +24,7 @@ class PartyIdentification248Choice(base_types._BaseFieldType):
 
 	@Ntrl.setter
 	def Ntrl(self, value):
-		self._Ntrl = value if type(value) != auto else self.make_default("Ntrl")
+		self._Ntrl = value if type(value) != base_types.auto else self.make_default("Ntrl")
 
 	@Ntrl.deleter
 	def Ntrl(self):

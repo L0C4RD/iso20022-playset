@@ -12,7 +12,7 @@ class ACMT_001_001_08():
 
 		@AcctOpngInstr.setter
 		def AcctOpngInstr(self, value):
-			self._AcctOpngInstr = value if type(value) != auto else self.make_default("AcctOpngInstr")
+			self._AcctOpngInstr = value if type(value) != base_types.auto else self.make_default("AcctOpngInstr")
 
 		@AcctOpngInstr.deleter
 		def AcctOpngInstr(self):

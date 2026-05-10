@@ -12,7 +12,7 @@ class REDA_057_001_01():
 
 		@StgSttlmInstrDeltn.setter
 		def StgSttlmInstrDeltn(self, value):
-			self._StgSttlmInstrDeltn = value if type(value) != auto else self.make_default("StgSttlmInstrDeltn")
+			self._StgSttlmInstrDeltn = value if type(value) != base_types.auto else self.make_default("StgSttlmInstrDeltn")
 
 		@StgSttlmInstrDeltn.deleter
 		def StgSttlmInstrDeltn(self):

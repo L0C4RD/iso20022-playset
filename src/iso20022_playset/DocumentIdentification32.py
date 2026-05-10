@@ -1,18 +1,31 @@
 from . import base_types
-from .ProcessingPosition7Choice import ProcessingPosition7Choice
-from .DocumentNumber5Choice import DocumentNumber5Choice
 from .DocumentIdentification3Choice import DocumentIdentification3Choice
+from .DocumentNumber5Choice import DocumentNumber5Choice
+from .ProcessingPosition7Choice import ProcessingPosition7Choice
 
 class DocumentIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_DocNb", "_LkgTp", "_Id"]
+	__slots__ = ["_Id", "_DocNb", "_LkgTp"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def DocNb(self):
 		return self._DocNb
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
+		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
 
 	@DocNb.deleter
 	def DocNb(self):
@@ -25,29 +38,16 @@ class DocumentIdentification32(base_types._BaseFieldType):
 
 	@LkgTp.setter
 	def LkgTp(self, value):
-		self._LkgTp = value if type(value) != auto else self.make_default("LkgTp")
+		self._LkgTp = value if type(value) != base_types.auto else self.make_default("LkgTp")
 
 	@LkgTp.deleter
 	def LkgTp(self):
 		del self._LkgTp
 		self._LkgTp = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=DocumentIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

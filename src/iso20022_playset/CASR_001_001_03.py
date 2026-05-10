@@ -12,7 +12,7 @@ class CASR_001_001_03():
 
 		@SttlmRptgInitn.setter
 		def SttlmRptgInitn(self, value):
-			self._SttlmRptgInitn = value if type(value) != auto else self.make_default("SttlmRptgInitn")
+			self._SttlmRptgInitn = value if type(value) != base_types.auto else self.make_default("SttlmRptgInitn")
 
 		@SttlmRptgInitn.deleter
 		def SttlmRptgInitn(self):

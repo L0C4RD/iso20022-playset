@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Mandate20 import Mandate20
+from .Max35Text import Max35Text
 
 class OriginalMandate10Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class OriginalMandate10Choice(base_types._BaseFieldType):
 
 	@OrgnlMndt.setter
 	def OrgnlMndt(self, value):
-		self._OrgnlMndt = value if type(value) != auto else self.make_default("OrgnlMndt")
+		self._OrgnlMndt = value if type(value) != base_types.auto else self.make_default("OrgnlMndt")
 
 	@OrgnlMndt.deleter
 	def OrgnlMndt(self):
@@ -24,7 +24,7 @@ class OriginalMandate10Choice(base_types._BaseFieldType):
 
 	@OrgnlMndtId.setter
 	def OrgnlMndtId(self, value):
-		self._OrgnlMndtId = value if type(value) != auto else self.make_default("OrgnlMndtId")
+		self._OrgnlMndtId = value if type(value) != base_types.auto else self.make_default("OrgnlMndtId")
 
 	@OrgnlMndtId.deleter
 	def OrgnlMndtId(self):

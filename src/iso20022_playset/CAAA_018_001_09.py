@@ -12,7 +12,7 @@ class CAAA_018_001_09():
 
 		@AccptrCcyConvsAdvc.setter
 		def AccptrCcyConvsAdvc(self, value):
-			self._AccptrCcyConvsAdvc = value if type(value) != auto else self.make_default("AccptrCcyConvsAdvc")
+			self._AccptrCcyConvsAdvc = value if type(value) != base_types.auto else self.make_default("AccptrCcyConvsAdvc")
 
 		@AccptrCcyConvsAdvc.deleter
 		def AccptrCcyConvsAdvc(self):

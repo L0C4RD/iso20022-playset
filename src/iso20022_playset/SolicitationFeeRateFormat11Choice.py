@@ -1,24 +1,24 @@
 from . import base_types
-from .AmountAndQuantityRatio4 import AmountAndQuantityRatio4
 from .Percentage14Rate import Percentage14Rate
 from .RateValueType7Code import RateValueType7Code
+from .AmountAndQuantityRatio4 import AmountAndQuantityRatio4
 from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class SolicitationFeeRateFormat11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToQty", "_NotSpcfdRate", "_Amt", "_Rate"]
+	__slots__ = ["_Rate", "_NotSpcfdRate", "_Amt", "_AmtToQty"]
 	@property
-	def AmtToQty(self):
-		return self._AmtToQty
+	def Rate(self):
+		return self._Rate
 
-	@AmtToQty.setter
-	def AmtToQty(self, value):
-		self._AmtToQty = value if type(value) != auto else self.make_default("AmtToQty")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
-	@AmtToQty.deleter
-	def AmtToQty(self):
-		del self._AmtToQty
-		self._AmtToQty = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	@property
 	def NotSpcfdRate(self):
@@ -26,7 +26,7 @@ class SolicitationFeeRateFormat11Choice(base_types._BaseFieldType):
 
 	@NotSpcfdRate.setter
 	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
 
 	@NotSpcfdRate.deleter
 	def NotSpcfdRate(self):
@@ -39,7 +39,7 @@ class SolicitationFeeRateFormat11Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -47,22 +47,22 @@ class SolicitationFeeRateFormat11Choice(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def AmtToQty(self):
+		return self._AmtToQty
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@AmtToQty.setter
+	def AmtToQty(self, value):
+		self._AmtToQty = value if type(value) != base_types.auto else self.make_default("AmtToQty")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@AmtToQty.deleter
+	def AmtToQty(self):
+		del self._AmtToQty
+		self._AmtToQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
 	))
 

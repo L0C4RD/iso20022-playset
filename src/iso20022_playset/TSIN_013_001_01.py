@@ -12,7 +12,7 @@ class TSIN_013_001_01():
 
 		@InvcAssgnmtAck.setter
 		def InvcAssgnmtAck(self, value):
-			self._InvcAssgnmtAck = value if type(value) != auto else self.make_default("InvcAssgnmtAck")
+			self._InvcAssgnmtAck = value if type(value) != base_types.auto else self.make_default("InvcAssgnmtAck")
 
 		@InvcAssgnmtAck.deleter
 		def InvcAssgnmtAck(self):

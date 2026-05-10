@@ -3,19 +3,32 @@ from .Period1 import Period1
 
 class CorporateActionPeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_PricClctnPrd", "_ParllTradgPrd", "_SellThruIssrPrd", "_AssntdLinePrd", "_PrvlgSspnsnPrd", "_RvcbltyPrd", "_ActnPrd"]
+	__slots__ = ["_ActnPrd", "_RvcbltyPrd", "_ParllTradgPrd", "_PricClctnPrd", "_SellThruIssrPrd", "_AssntdLinePrd", "_PrvlgSspnsnPrd"]
 	@property
-	def PricClctnPrd(self):
-		return self._PricClctnPrd
+	def ActnPrd(self):
+		return self._ActnPrd
 
-	@PricClctnPrd.setter
-	def PricClctnPrd(self, value):
-		self._PricClctnPrd = value if type(value) != auto else self.make_default("PricClctnPrd")
+	@ActnPrd.setter
+	def ActnPrd(self, value):
+		self._ActnPrd = value if type(value) != base_types.auto else self.make_default("ActnPrd")
 
-	@PricClctnPrd.deleter
-	def PricClctnPrd(self):
-		del self._PricClctnPrd
-		self._PricClctnPrd = None
+	@ActnPrd.deleter
+	def ActnPrd(self):
+		del self._ActnPrd
+		self._ActnPrd = None
+
+	@property
+	def RvcbltyPrd(self):
+		return self._RvcbltyPrd
+
+	@RvcbltyPrd.setter
+	def RvcbltyPrd(self, value):
+		self._RvcbltyPrd = value if type(value) != base_types.auto else self.make_default("RvcbltyPrd")
+
+	@RvcbltyPrd.deleter
+	def RvcbltyPrd(self):
+		del self._RvcbltyPrd
+		self._RvcbltyPrd = None
 
 	@property
 	def ParllTradgPrd(self):
@@ -23,7 +36,7 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 
 	@ParllTradgPrd.setter
 	def ParllTradgPrd(self, value):
-		self._ParllTradgPrd = value if type(value) != auto else self.make_default("ParllTradgPrd")
+		self._ParllTradgPrd = value if type(value) != base_types.auto else self.make_default("ParllTradgPrd")
 
 	@ParllTradgPrd.deleter
 	def ParllTradgPrd(self):
@@ -31,12 +44,25 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 		self._ParllTradgPrd = None
 
 	@property
+	def PricClctnPrd(self):
+		return self._PricClctnPrd
+
+	@PricClctnPrd.setter
+	def PricClctnPrd(self, value):
+		self._PricClctnPrd = value if type(value) != base_types.auto else self.make_default("PricClctnPrd")
+
+	@PricClctnPrd.deleter
+	def PricClctnPrd(self):
+		del self._PricClctnPrd
+		self._PricClctnPrd = None
+
+	@property
 	def SellThruIssrPrd(self):
 		return self._SellThruIssrPrd
 
 	@SellThruIssrPrd.setter
 	def SellThruIssrPrd(self, value):
-		self._SellThruIssrPrd = value if type(value) != auto else self.make_default("SellThruIssrPrd")
+		self._SellThruIssrPrd = value if type(value) != base_types.auto else self.make_default("SellThruIssrPrd")
 
 	@SellThruIssrPrd.deleter
 	def SellThruIssrPrd(self):
@@ -49,7 +75,7 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 
 	@AssntdLinePrd.setter
 	def AssntdLinePrd(self, value):
-		self._AssntdLinePrd = value if type(value) != auto else self.make_default("AssntdLinePrd")
+		self._AssntdLinePrd = value if type(value) != base_types.auto else self.make_default("AssntdLinePrd")
 
 	@AssntdLinePrd.deleter
 	def AssntdLinePrd(self):
@@ -62,46 +88,20 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 
 	@PrvlgSspnsnPrd.setter
 	def PrvlgSspnsnPrd(self, value):
-		self._PrvlgSspnsnPrd = value if type(value) != auto else self.make_default("PrvlgSspnsnPrd")
+		self._PrvlgSspnsnPrd = value if type(value) != base_types.auto else self.make_default("PrvlgSspnsnPrd")
 
 	@PrvlgSspnsnPrd.deleter
 	def PrvlgSspnsnPrd(self):
 		del self._PrvlgSspnsnPrd
 		self._PrvlgSspnsnPrd = None
 
-	@property
-	def RvcbltyPrd(self):
-		return self._RvcbltyPrd
-
-	@RvcbltyPrd.setter
-	def RvcbltyPrd(self, value):
-		self._RvcbltyPrd = value if type(value) != auto else self.make_default("RvcbltyPrd")
-
-	@RvcbltyPrd.deleter
-	def RvcbltyPrd(self):
-		del self._RvcbltyPrd
-		self._RvcbltyPrd = None
-
-	@property
-	def ActnPrd(self):
-		return self._ActnPrd
-
-	@ActnPrd.setter
-	def ActnPrd(self, value):
-		self._ActnPrd = value if type(value) != auto else self.make_default("ActnPrd")
-
-	@ActnPrd.deleter
-	def ActnPrd(self):
-		del self._ActnPrd
-		self._ActnPrd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PricClctnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvcbltyPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ParllTradgPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricClctnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellThruIssrPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssntdLinePrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvlgSspnsnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvcbltyPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 	))
 

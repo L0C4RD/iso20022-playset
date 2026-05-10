@@ -12,7 +12,7 @@ class ATMTransaction41(base_types._BaseFieldType):
 
 	@Cmd.setter
 	def Cmd(self, value):
-		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
+		self._Cmd = value if type(value) != base_types.auto else self.make_default("Cmd")
 
 	@Cmd.deleter
 	def Cmd(self):
@@ -25,7 +25,7 @@ class ATMTransaction41(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
 
 	@Rspn.deleter
 	def Rspn(self):
@@ -38,7 +38,7 @@ class ATMTransaction41(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):

@@ -12,7 +12,7 @@ class SESE_043_001_01():
 
 		@PrtflTrfCmpltn.setter
 		def PrtflTrfCmpltn(self, value):
-			self._PrtflTrfCmpltn = value if type(value) != auto else self.make_default("PrtflTrfCmpltn")
+			self._PrtflTrfCmpltn = value if type(value) != base_types.auto else self.make_default("PrtflTrfCmpltn")
 
 		@PrtflTrfCmpltn.deleter
 		def PrtflTrfCmpltn(self):

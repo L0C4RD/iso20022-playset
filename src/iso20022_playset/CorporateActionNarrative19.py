@@ -10,7 +10,7 @@ class CorporateActionNarrative19(base_types._BaseFieldType):
 
 	@AddtlTxt.setter
 	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != auto else self.make_default("AddtlTxt")
+		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
 
 	@AddtlTxt.deleter
 	def AddtlTxt(self):
@@ -23,7 +23,7 @@ class CorporateActionNarrative19(base_types._BaseFieldType):
 
 	@PtyCtctNrrtv.setter
 	def PtyCtctNrrtv(self, value):
-		self._PtyCtctNrrtv = value if type(value) != auto else self.make_default("PtyCtctNrrtv")
+		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
 
 	@PtyCtctNrrtv.deleter
 	def PtyCtctNrrtv(self):

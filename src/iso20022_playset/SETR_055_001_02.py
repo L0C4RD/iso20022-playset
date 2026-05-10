@@ -12,7 +12,7 @@ class SETR_055_001_02():
 
 		@SwtchOrdrConfCxlInstr.setter
 		def SwtchOrdrConfCxlInstr(self, value):
-			self._SwtchOrdrConfCxlInstr = value if type(value) != auto else self.make_default("SwtchOrdrConfCxlInstr")
+			self._SwtchOrdrConfCxlInstr = value if type(value) != base_types.auto else self.make_default("SwtchOrdrConfCxlInstr")
 
 		@SwtchOrdrConfCxlInstr.deleter
 		def SwtchOrdrConfCxlInstr(self):

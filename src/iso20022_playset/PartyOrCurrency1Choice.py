@@ -11,7 +11,7 @@ class PartyOrCurrency1Choice(base_types._BaseFieldType):
 
 	@Dpstry.setter
 	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
+		self._Dpstry = value if type(value) != base_types.auto else self.make_default("Dpstry")
 
 	@Dpstry.deleter
 	def Dpstry(self):
@@ -24,7 +24,7 @@ class PartyOrCurrency1Choice(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):

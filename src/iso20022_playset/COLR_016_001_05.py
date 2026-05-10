@@ -12,7 +12,7 @@ class COLR_016_001_05():
 
 		@CollAndXpsrRpt.setter
 		def CollAndXpsrRpt(self, value):
-			self._CollAndXpsrRpt = value if type(value) != auto else self.make_default("CollAndXpsrRpt")
+			self._CollAndXpsrRpt = value if type(value) != base_types.auto else self.make_default("CollAndXpsrRpt")
 
 		@CollAndXpsrRpt.deleter
 		def CollAndXpsrRpt(self):

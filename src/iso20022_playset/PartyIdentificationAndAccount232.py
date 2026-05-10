@@ -1,19 +1,19 @@
 from . import base_types
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from .CashAccountIdentification12Choice import CashAccountIdentification12Choice
 from .AlternatePartyIdentification9 import AlternatePartyIdentification9
 from .PartyIdentification147Choice import PartyIdentification147Choice
-from .CashAccountIdentification12Choice import CashAccountIdentification12Choice
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcct", "_Id", "_PrcgId", "_AltrnId"]
+	__slots__ = ["_CshAcct", "_PrcgId", "_Id", "_AltrnId"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
 
 	@CshAcct.deleter
 	def CshAcct(self):
@@ -21,25 +21,12 @@ class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def PrcgId(self):
 		return self._PrcgId
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
 
 	@PrcgId.deleter
 	def PrcgId(self):
@@ -47,12 +34,25 @@ class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def AltrnId(self):
 		return self._AltrnId
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
 	@AltrnId.deleter
 	def AltrnId(self):
@@ -61,8 +61,8 @@ class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification12Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification147Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification147Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
 

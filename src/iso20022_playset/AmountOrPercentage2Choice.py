@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .PercentageRate import PercentageRate
 
 class AmountOrPercentage2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AmountOrPercentage2Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class AmountOrPercentage2Choice(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
 
 	@Pctg.deleter
 	def Pctg(self):

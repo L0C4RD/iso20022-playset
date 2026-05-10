@@ -11,7 +11,7 @@ class RecordTechnicalData5(base_types._BaseFieldType):
 
 	@XchgRsn.setter
 	def XchgRsn(self, value):
-		self._XchgRsn = value if type(value) != auto else self.make_default("XchgRsn")
+		self._XchgRsn = value if type(value) != base_types.auto else self.make_default("XchgRsn")
 
 	@XchgRsn.deleter
 	def XchgRsn(self):
@@ -24,7 +24,7 @@ class RecordTechnicalData5(base_types._BaseFieldType):
 
 	@RctDtTm.setter
 	def RctDtTm(self, value):
-		self._RctDtTm = value if type(value) != auto else self.make_default("RctDtTm")
+		self._RctDtTm = value if type(value) != base_types.auto else self.make_default("RctDtTm")
 
 	@RctDtTm.deleter
 	def RctDtTm(self):

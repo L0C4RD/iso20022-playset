@@ -1,49 +1,23 @@
 from . import base_types
-from .PercentageRange1Choice import PercentageRange1Choice
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ActiveAmountRange3Choice import ActiveAmountRange3Choice
-from .SystemIdentification2Choice import SystemIdentification2Choice
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from .LimitType1Choice import LimitType1Choice
+from .ActiveCurrencyCode import ActiveCurrencyCode
 from .AccountIdentification4Choice import AccountIdentification4Choice
+from .ActiveAmountRange3Choice import ActiveAmountRange3Choice
+from .PercentageRange1Choice import PercentageRange1Choice
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from .DateAndPeriod2Choice import DateAndPeriod2Choice
+from .SystemIdentification2Choice import SystemIdentification2Choice
 
 class LimitSearchCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_BilLmtCtrPtyId", "_CurLmtTp", "_SysId", "_UsdAmt", "_UsdPctg", "_LmtAmt", "_DfltLmtTp", "_LmtVldAsOfDt", "_AcctOwnr", "_AcctId", "_LmtCcy"]
-	@property
-	def BilLmtCtrPtyId(self):
-		return self._BilLmtCtrPtyId
-
-	@BilLmtCtrPtyId.setter
-	def BilLmtCtrPtyId(self, value):
-		self._BilLmtCtrPtyId = value if type(value) != auto else self.make_default("BilLmtCtrPtyId")
-
-	@BilLmtCtrPtyId.deleter
-	def BilLmtCtrPtyId(self):
-		del self._BilLmtCtrPtyId
-		self._BilLmtCtrPtyId = None
-
-	@property
-	def CurLmtTp(self):
-		return self._CurLmtTp
-
-	@CurLmtTp.setter
-	def CurLmtTp(self, value):
-		self._CurLmtTp = value if type(value) != auto else self.make_default("CurLmtTp")
-
-	@CurLmtTp.deleter
-	def CurLmtTp(self):
-		del self._CurLmtTp
-		self._CurLmtTp = None
-
+	__slots__ = ["_SysId", "_UsdAmt", "_AcctId", "_BilLmtCtrPtyId", "_DfltLmtTp", "_UsdPctg", "_LmtAmt", "_CurLmtTp", "_AcctOwnr", "_LmtVldAsOfDt", "_LmtCcy"]
 	@property
 	def SysId(self):
 		return self._SysId
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != auto else self.make_default("SysId")
+		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
 
 	@SysId.deleter
 	def SysId(self):
@@ -56,7 +30,7 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@UsdAmt.setter
 	def UsdAmt(self, value):
-		self._UsdAmt = value if type(value) != auto else self.make_default("UsdAmt")
+		self._UsdAmt = value if type(value) != base_types.auto else self.make_default("UsdAmt")
 
 	@UsdAmt.deleter
 	def UsdAmt(self):
@@ -64,12 +38,51 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 		self._UsdAmt = None
 
 	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def BilLmtCtrPtyId(self):
+		return self._BilLmtCtrPtyId
+
+	@BilLmtCtrPtyId.setter
+	def BilLmtCtrPtyId(self, value):
+		self._BilLmtCtrPtyId = value if type(value) != base_types.auto else self.make_default("BilLmtCtrPtyId")
+
+	@BilLmtCtrPtyId.deleter
+	def BilLmtCtrPtyId(self):
+		del self._BilLmtCtrPtyId
+		self._BilLmtCtrPtyId = None
+
+	@property
+	def DfltLmtTp(self):
+		return self._DfltLmtTp
+
+	@DfltLmtTp.setter
+	def DfltLmtTp(self, value):
+		self._DfltLmtTp = value if type(value) != base_types.auto else self.make_default("DfltLmtTp")
+
+	@DfltLmtTp.deleter
+	def DfltLmtTp(self):
+		del self._DfltLmtTp
+		self._DfltLmtTp = None
+
+	@property
 	def UsdPctg(self):
 		return self._UsdPctg
 
 	@UsdPctg.setter
 	def UsdPctg(self, value):
-		self._UsdPctg = value if type(value) != auto else self.make_default("UsdPctg")
+		self._UsdPctg = value if type(value) != base_types.auto else self.make_default("UsdPctg")
 
 	@UsdPctg.deleter
 	def UsdPctg(self):
@@ -82,7 +95,7 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@LmtAmt.setter
 	def LmtAmt(self, value):
-		self._LmtAmt = value if type(value) != auto else self.make_default("LmtAmt")
+		self._LmtAmt = value if type(value) != base_types.auto else self.make_default("LmtAmt")
 
 	@LmtAmt.deleter
 	def LmtAmt(self):
@@ -90,30 +103,17 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 		self._LmtAmt = None
 
 	@property
-	def DfltLmtTp(self):
-		return self._DfltLmtTp
+	def CurLmtTp(self):
+		return self._CurLmtTp
 
-	@DfltLmtTp.setter
-	def DfltLmtTp(self, value):
-		self._DfltLmtTp = value if type(value) != auto else self.make_default("DfltLmtTp")
+	@CurLmtTp.setter
+	def CurLmtTp(self, value):
+		self._CurLmtTp = value if type(value) != base_types.auto else self.make_default("CurLmtTp")
 
-	@DfltLmtTp.deleter
-	def DfltLmtTp(self):
-		del self._DfltLmtTp
-		self._DfltLmtTp = None
-
-	@property
-	def LmtVldAsOfDt(self):
-		return self._LmtVldAsOfDt
-
-	@LmtVldAsOfDt.setter
-	def LmtVldAsOfDt(self, value):
-		self._LmtVldAsOfDt = value if type(value) != auto else self.make_default("LmtVldAsOfDt")
-
-	@LmtVldAsOfDt.deleter
-	def LmtVldAsOfDt(self):
-		del self._LmtVldAsOfDt
-		self._LmtVldAsOfDt = None
+	@CurLmtTp.deleter
+	def CurLmtTp(self):
+		del self._CurLmtTp
+		self._CurLmtTp = None
 
 	@property
 	def AcctOwnr(self):
@@ -121,7 +121,7 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
@@ -129,17 +129,17 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def LmtVldAsOfDt(self):
+		return self._LmtVldAsOfDt
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@LmtVldAsOfDt.setter
+	def LmtVldAsOfDt(self, value):
+		self._LmtVldAsOfDt = value if type(value) != base_types.auto else self.make_default("LmtVldAsOfDt")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@LmtVldAsOfDt.deleter
+	def LmtVldAsOfDt(self):
+		del self._LmtVldAsOfDt
+		self._LmtVldAsOfDt = None
 
 	@property
 	def LmtCcy(self):
@@ -147,7 +147,7 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@LmtCcy.setter
 	def LmtCcy(self, value):
-		self._LmtCcy = value if type(value) != auto else self.make_default("LmtCcy")
+		self._LmtCcy = value if type(value) != base_types.auto else self.make_default("LmtCcy")
 
 	@LmtCcy.deleter
 	def LmtCcy(self):
@@ -155,16 +155,16 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 		self._LmtCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BilLmtCtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CurLmtTp', type=LimitType1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsdAmt', type=ActiveAmountRange3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BilLmtCtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DfltLmtTp', type=LimitType1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UsdPctg', type=PercentageRange1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtAmt', type=ActiveAmountRange3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfltLmtTp', type=LimitType1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LmtVldAsOfDt', type=DateAndPeriod2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurLmtTp', type=LimitType1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtVldAsOfDt', type=DateAndPeriod2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

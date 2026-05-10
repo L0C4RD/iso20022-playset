@@ -12,7 +12,7 @@ class CAMT_007_001_10():
 
 		@ModfyTx.setter
 		def ModfyTx(self, value):
-			self._ModfyTx = value if type(value) != auto else self.make_default("ModfyTx")
+			self._ModfyTx = value if type(value) != base_types.auto else self.make_default("ModfyTx")
 
 		@ModfyTx.deleter
 		def ModfyTx(self):

@@ -10,7 +10,7 @@ class DeviceSecureInputResponse6(base_types._BaseFieldType):
 
 	@CrdhldrPIN.setter
 	def CrdhldrPIN(self, value):
-		self._CrdhldrPIN = value if type(value) != auto else self.make_default("CrdhldrPIN")
+		self._CrdhldrPIN = value if type(value) != base_types.auto else self.make_default("CrdhldrPIN")
 
 	@CrdhldrPIN.deleter
 	def CrdhldrPIN(self):

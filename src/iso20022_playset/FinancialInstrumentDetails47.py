@@ -1,6 +1,6 @@
 from . import base_types
-from .IntraPositionDetails66 import IntraPositionDetails66
 from .SecurityIdentification19 import SecurityIdentification19
+from .IntraPositionDetails66 import IntraPositionDetails66
 from .FinancialInstrumentAttributes112 import FinancialInstrumentAttributes112
 
 class FinancialInstrumentDetails47(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class FinancialInstrumentDetails47(base_types._BaseFieldType):
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
@@ -25,7 +25,7 @@ class FinancialInstrumentDetails47(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
@@ -38,7 +38,7 @@ class FinancialInstrumentDetails47(base_types._BaseFieldType):
 
 	@SubBal.setter
 	def SubBal(self, value):
-		self._SubBal = value if type(value) != auto else self.make_default("SubBal")
+		self._SubBal = value if type(value) != base_types.auto else self.make_default("SubBal")
 
 	@SubBal.deleter
 	def SubBal(self):

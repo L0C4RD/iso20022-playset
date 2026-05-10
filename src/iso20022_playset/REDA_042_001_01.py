@@ -12,7 +12,7 @@ class REDA_042_001_01():
 
 		@PtyAudtTrlQry.setter
 		def PtyAudtTrlQry(self, value):
-			self._PtyAudtTrlQry = value if type(value) != auto else self.make_default("PtyAudtTrlQry")
+			self._PtyAudtTrlQry = value if type(value) != base_types.auto else self.make_default("PtyAudtTrlQry")
 
 		@PtyAudtTrlQry.deleter
 		def PtyAudtTrlQry(self):

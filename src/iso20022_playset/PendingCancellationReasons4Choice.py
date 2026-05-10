@@ -1,6 +1,6 @@
 from . import base_types
-from .PendingReason7Code import PendingReason7Code
 from .GenericIdentification30 import GenericIdentification30
+from .PendingReason7Code import PendingReason7Code
 
 class PendingCancellationReasons4Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PendingCancellationReasons4Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class PendingCancellationReasons4Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):

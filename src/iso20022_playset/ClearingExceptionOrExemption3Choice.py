@@ -1,6 +1,6 @@
 from . import base_types
-from .ClearingExceptionOrExemption2 import ClearingExceptionOrExemption2
 from .NoReasonCode import NoReasonCode
+from .ClearingExceptionOrExemption2 import ClearingExceptionOrExemption2
 
 class ClearingExceptionOrExemption3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ClearingExceptionOrExemption3Choice(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):
@@ -24,7 +24,7 @@ class ClearingExceptionOrExemption3Choice(base_types._BaseFieldType):
 
 	@CtrPties.setter
 	def CtrPties(self, value):
-		self._CtrPties = value if type(value) != auto else self.make_default("CtrPties")
+		self._CtrPties = value if type(value) != base_types.auto else self.make_default("CtrPties")
 
 	@CtrPties.deleter
 	def CtrPties(self):

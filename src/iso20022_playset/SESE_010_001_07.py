@@ -12,7 +12,7 @@ class SESE_010_001_07():
 
 		@TrfCxlStsRpt.setter
 		def TrfCxlStsRpt(self, value):
-			self._TrfCxlStsRpt = value if type(value) != auto else self.make_default("TrfCxlStsRpt")
+			self._TrfCxlStsRpt = value if type(value) != base_types.auto else self.make_default("TrfCxlStsRpt")
 
 		@TrfCxlStsRpt.deleter
 		def TrfCxlStsRpt(self):

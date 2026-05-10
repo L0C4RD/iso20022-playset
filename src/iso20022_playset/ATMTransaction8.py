@@ -1,33 +1,20 @@
 from . import base_types
+from .TrueFalseIndicator import TrueFalseIndicator
 from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max35Text import Max35Text
 from .ATMMediaMix2 import ATMMediaMix2
 from .ActiveCurrencyCode import ActiveCurrencyCode
-from .TrueFalseIndicator import TrueFalseIndicator
+from .Max35Text import Max35Text
 
 class ATMTransaction8(base_types._BaseFieldType):
 
-	__slots__ = ["_MixTp", "_Ccy", "_RctFlg", "_BalPrtFlg", "_Mix", "_Amt"]
-	@property
-	def MixTp(self):
-		return self._MixTp
-
-	@MixTp.setter
-	def MixTp(self, value):
-		self._MixTp = value if type(value) != auto else self.make_default("MixTp")
-
-	@MixTp.deleter
-	def MixTp(self):
-		del self._MixTp
-		self._MixTp = None
-
+	__slots__ = ["_Ccy", "_Amt", "_Mix", "_BalPrtFlg", "_MixTp", "_RctFlg"]
 	@property
 	def Ccy(self):
 		return self._Ccy
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -35,30 +22,17 @@ class ATMTransaction8(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def RctFlg(self):
-		return self._RctFlg
+	def Amt(self):
+		return self._Amt
 
-	@RctFlg.setter
-	def RctFlg(self, value):
-		self._RctFlg = value if type(value) != auto else self.make_default("RctFlg")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@RctFlg.deleter
-	def RctFlg(self):
-		del self._RctFlg
-		self._RctFlg = None
-
-	@property
-	def BalPrtFlg(self):
-		return self._BalPrtFlg
-
-	@BalPrtFlg.setter
-	def BalPrtFlg(self, value):
-		self._BalPrtFlg = value if type(value) != auto else self.make_default("BalPrtFlg")
-
-	@BalPrtFlg.deleter
-	def BalPrtFlg(self):
-		del self._BalPrtFlg
-		self._BalPrtFlg = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Mix(self):
@@ -66,7 +40,7 @@ class ATMTransaction8(base_types._BaseFieldType):
 
 	@Mix.setter
 	def Mix(self, value):
-		self._Mix = value if type(value) != auto else self.make_default("Mix")
+		self._Mix = value if type(value) != base_types.auto else self.make_default("Mix")
 
 	@Mix.deleter
 	def Mix(self):
@@ -74,24 +48,50 @@ class ATMTransaction8(base_types._BaseFieldType):
 		self._Mix = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def BalPrtFlg(self):
+		return self._BalPrtFlg
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@BalPrtFlg.setter
+	def BalPrtFlg(self, value):
+		self._BalPrtFlg = value if type(value) != base_types.auto else self.make_default("BalPrtFlg")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@BalPrtFlg.deleter
+	def BalPrtFlg(self):
+		del self._BalPrtFlg
+		self._BalPrtFlg = None
+
+	@property
+	def MixTp(self):
+		return self._MixTp
+
+	@MixTp.setter
+	def MixTp(self, value):
+		self._MixTp = value if type(value) != base_types.auto else self.make_default("MixTp")
+
+	@MixTp.deleter
+	def MixTp(self):
+		del self._MixTp
+		self._MixTp = None
+
+	@property
+	def RctFlg(self):
+		return self._RctFlg
+
+	@RctFlg.setter
+	def RctFlg(self, value):
+		self._RctFlg = value if type(value) != base_types.auto else self.make_default("RctFlg")
+
+	@RctFlg.deleter
+	def RctFlg(self):
+		del self._RctFlg
+		self._RctFlg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MixTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RctFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalPrtFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mix', type=ATMMediaMix2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mix', type=ATMMediaMix2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BalPrtFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MixTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RctFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -10,7 +10,7 @@ class CriteriaOrder1(base_types._BaseFieldType):
 
 	@Trgt.setter
 	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
 
 	@Trgt.deleter
 	def Trgt(self):

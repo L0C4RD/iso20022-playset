@@ -12,7 +12,7 @@ class AUTH_112_001_01():
 
 		@CCPIntrprbltyRpt.setter
 		def CCPIntrprbltyRpt(self, value):
-			self._CCPIntrprbltyRpt = value if type(value) != auto else self.make_default("CCPIntrprbltyRpt")
+			self._CCPIntrprbltyRpt = value if type(value) != base_types.auto else self.make_default("CCPIntrprbltyRpt")
 
 		@CCPIntrprbltyRpt.deleter
 		def CCPIntrprbltyRpt(self):

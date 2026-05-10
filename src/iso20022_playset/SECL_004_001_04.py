@@ -12,7 +12,7 @@ class SECL_004_001_04():
 
 		@NetPos.setter
 		def NetPos(self, value):
-			self._NetPos = value if type(value) != auto else self.make_default("NetPos")
+			self._NetPos = value if type(value) != base_types.auto else self.make_default("NetPos")
 
 		@NetPos.deleter
 		def NetPos(self):

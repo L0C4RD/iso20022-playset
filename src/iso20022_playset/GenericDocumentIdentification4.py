@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DocumentNumber5Choice import DocumentNumber5Choice
+from .Max35Text import Max35Text
 
 class GenericDocumentIdentification4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class GenericDocumentIdentification4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class GenericDocumentIdentification4(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
 
 	@MsgNb.deleter
 	def MsgNb(self):

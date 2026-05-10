@@ -1,8 +1,8 @@
 from . import base_types
-from .CertificateIssuer1 import CertificateIssuer1
 from .RelativeDistinguishedName2 import RelativeDistinguishedName2
 from .PublicRSAKey2 import PublicRSAKey2
 from .Number import Number
+from .CertificateIssuer1 import CertificateIssuer1
 
 class CertificationRequest2(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@SbjtNm.setter
 	def SbjtNm(self, value):
-		self._SbjtNm = value if type(value) != auto else self.make_default("SbjtNm")
+		self._SbjtNm = value if type(value) != base_types.auto else self.make_default("SbjtNm")
 
 	@SbjtNm.deleter
 	def SbjtNm(self):
@@ -26,7 +26,7 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@Attr.setter
 	def Attr(self, value):
-		self._Attr = value if type(value) != auto else self.make_default("Attr")
+		self._Attr = value if type(value) != base_types.auto else self.make_default("Attr")
 
 	@Attr.deleter
 	def Attr(self):
@@ -39,7 +39,7 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
 	@Vrsn.deleter
 	def Vrsn(self):
@@ -52,7 +52,7 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@SbjtPblcKeyInf.setter
 	def SbjtPblcKeyInf(self, value):
-		self._SbjtPblcKeyInf = value if type(value) != auto else self.make_default("SbjtPblcKeyInf")
+		self._SbjtPblcKeyInf = value if type(value) != base_types.auto else self.make_default("SbjtPblcKeyInf")
 
 	@SbjtPblcKeyInf.deleter
 	def SbjtPblcKeyInf(self):

@@ -12,7 +12,7 @@ class AUTH_113_001_01():
 
 		@OrdrBookRpt.setter
 		def OrdrBookRpt(self, value):
-			self._OrdrBookRpt = value if type(value) != auto else self.make_default("OrdrBookRpt")
+			self._OrdrBookRpt = value if type(value) != base_types.auto else self.make_default("OrdrBookRpt")
 
 		@OrdrBookRpt.deleter
 		def OrdrBookRpt(self):

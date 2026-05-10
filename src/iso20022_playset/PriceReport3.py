@@ -10,7 +10,7 @@ class PriceReport3(base_types._BaseFieldType):
 
 	@PricValtnDtls.setter
 	def PricValtnDtls(self, value):
-		self._PricValtnDtls = value if type(value) != auto else self.make_default("PricValtnDtls")
+		self._PricValtnDtls = value if type(value) != base_types.auto else self.make_default("PricValtnDtls")
 
 	@PricValtnDtls.deleter
 	def PricValtnDtls(self):

@@ -1,7 +1,7 @@
 from . import base_types
+from .AssetPriceType1Code import AssetPriceType1Code
 from .AssetClassTransactionType1Code import AssetClassTransactionType1Code
 from .AssetClassCommodity3Choice import AssetClassCommodity3Choice
-from .AssetPriceType1Code import AssetPriceType1Code
 
 class DerivativeCommodity2(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
 
 	@TxTp.deleter
 	def TxTp(self):
@@ -25,7 +25,7 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 
 	@Pdct.setter
 	def Pdct(self, value):
-		self._Pdct = value if type(value) != auto else self.make_default("Pdct")
+		self._Pdct = value if type(value) != base_types.auto else self.make_default("Pdct")
 
 	@Pdct.deleter
 	def Pdct(self):
@@ -38,7 +38,7 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 
 	@FnlPricTp.setter
 	def FnlPricTp(self, value):
-		self._FnlPricTp = value if type(value) != auto else self.make_default("FnlPricTp")
+		self._FnlPricTp = value if type(value) != base_types.auto else self.make_default("FnlPricTp")
 
 	@FnlPricTp.deleter
 	def FnlPricTp(self):

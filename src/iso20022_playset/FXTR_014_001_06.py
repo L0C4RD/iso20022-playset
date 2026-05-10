@@ -12,7 +12,7 @@ class FXTR_014_001_06():
 
 		@FXTradInstr.setter
 		def FXTradInstr(self, value):
-			self._FXTradInstr = value if type(value) != auto else self.make_default("FXTradInstr")
+			self._FXTradInstr = value if type(value) != base_types.auto else self.make_default("FXTradInstr")
 
 		@FXTradInstr.deleter
 		def FXTradInstr(self):

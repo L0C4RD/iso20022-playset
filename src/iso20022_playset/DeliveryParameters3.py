@@ -11,7 +11,7 @@ class DeliveryParameters3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
 
 	@Adr.deleter
 	def Adr(self):
@@ -24,7 +24,7 @@ class DeliveryParameters3(base_types._BaseFieldType):
 
 	@IssdCertNb.setter
 	def IssdCertNb(self, value):
-		self._IssdCertNb = value if type(value) != auto else self.make_default("IssdCertNb")
+		self._IssdCertNb = value if type(value) != base_types.auto else self.make_default("IssdCertNb")
 
 	@IssdCertNb.deleter
 	def IssdCertNb(self):

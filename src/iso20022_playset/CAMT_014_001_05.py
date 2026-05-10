@@ -12,7 +12,7 @@ class CAMT_014_001_05():
 
 		@RtrMmb.setter
 		def RtrMmb(self, value):
-			self._RtrMmb = value if type(value) != auto else self.make_default("RtrMmb")
+			self._RtrMmb = value if type(value) != base_types.auto else self.make_default("RtrMmb")
 
 		@RtrMmb.deleter
 		def RtrMmb(self):

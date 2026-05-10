@@ -12,7 +12,7 @@ class TSMT_055_001_01():
 
 		@PtyEvtAdvc.setter
 		def PtyEvtAdvc(self, value):
-			self._PtyEvtAdvc = value if type(value) != auto else self.make_default("PtyEvtAdvc")
+			self._PtyEvtAdvc = value if type(value) != base_types.auto else self.make_default("PtyEvtAdvc")
 
 		@PtyEvtAdvc.deleter
 		def PtyEvtAdvc(self):

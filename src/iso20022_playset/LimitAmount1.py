@@ -10,7 +10,7 @@ class LimitAmount1(base_types._BaseFieldType):
 
 	@AvlblAmt.setter
 	def AvlblAmt(self, value):
-		self._AvlblAmt = value if type(value) != auto else self.make_default("AvlblAmt")
+		self._AvlblAmt = value if type(value) != base_types.auto else self.make_default("AvlblAmt")
 
 	@AvlblAmt.deleter
 	def AvlblAmt(self):
@@ -23,7 +23,7 @@ class LimitAmount1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -36,7 +36,7 @@ class LimitAmount1(base_types._BaseFieldType):
 
 	@UtlstnAmt.setter
 	def UtlstnAmt(self, value):
-		self._UtlstnAmt = value if type(value) != auto else self.make_default("UtlstnAmt")
+		self._UtlstnAmt = value if type(value) != base_types.auto else self.make_default("UtlstnAmt")
 
 	@UtlstnAmt.deleter
 	def UtlstnAmt(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .AcceptorRejection2 import AcceptorRejection2
 from .Header57 import Header57
+from .AcceptorRejection2 import AcceptorRejection2
 
 class AcceptorRejectionV06(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AcceptorRejectionV06(base_types._BaseFieldType):
 
 	@Rjct.setter
 	def Rjct(self, value):
-		self._Rjct = value if type(value) != auto else self.make_default("Rjct")
+		self._Rjct = value if type(value) != base_types.auto else self.make_default("Rjct")
 
 	@Rjct.deleter
 	def Rjct(self):
@@ -24,7 +24,7 @@ class AcceptorRejectionV06(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):

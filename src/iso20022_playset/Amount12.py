@@ -1,19 +1,32 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max35Text import Max35Text
-from .Max6NumericText import Max6NumericText
 from .TemporaryServicesCharge1Code import TemporaryServicesCharge1Code
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max6NumericText import Max6NumericText
+from .Max35Text import Max35Text
 
 class Amount12(base_types._BaseFieldType):
 
-	__slots__ = ["_Hrs", "_Tp", "_OthrTp", "_Rate"]
+	__slots__ = ["_OthrTp", "_Hrs", "_Tp", "_Rate"]
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
 	@property
 	def Hrs(self):
 		return self._Hrs
 
 	@Hrs.setter
 	def Hrs(self, value):
-		self._Hrs = value if type(value) != auto else self.make_default("Hrs")
+		self._Hrs = value if type(value) != base_types.auto else self.make_default("Hrs")
 
 	@Hrs.deleter
 	def Hrs(self):
@@ -26,7 +39,7 @@ class Amount12(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -34,25 +47,12 @@ class Amount12(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
 	def Rate(self):
 		return self._Rate
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):
@@ -60,9 +60,9 @@ class Amount12(base_types._BaseFieldType):
 		self._Rate = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hrs', type=Max6NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TemporaryServicesCharge1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

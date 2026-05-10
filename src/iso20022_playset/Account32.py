@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .PartyIdentification125Choice import PartyIdentification125Choice
+from .Max35Text import Max35Text
 
 class Account32(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Account32(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class Account32(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):

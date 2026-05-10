@@ -1,6 +1,6 @@
 from . import base_types
-from .RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
 from .PlusOrMinusIndicator import PlusOrMinusIndicator
+from .RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
 
 class AmountAndDirection14(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AmountAndDirection14(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
 
 	@Sgn.deleter
 	def Sgn(self):
@@ -24,7 +24,7 @@ class AmountAndDirection14(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

@@ -12,7 +12,7 @@ class TSMT_002_001_04():
 
 		@ActvtyRpt.setter
 		def ActvtyRpt(self, value):
-			self._ActvtyRpt = value if type(value) != auto else self.make_default("ActvtyRpt")
+			self._ActvtyRpt = value if type(value) != base_types.auto else self.make_default("ActvtyRpt")
 
 		@ActvtyRpt.deleter
 		def ActvtyRpt(self):

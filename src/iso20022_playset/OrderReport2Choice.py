@@ -1,6 +1,6 @@
 from . import base_types
-from .CancelOrderReport1 import CancelOrderReport1
 from .NewOrderReport2 import NewOrderReport2
+from .CancelOrderReport1 import CancelOrderReport1
 
 class OrderReport2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class OrderReport2Choice(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
+		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
 
 	@Cxl.deleter
 	def Cxl(self):
@@ -24,7 +24,7 @@ class OrderReport2Choice(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != auto else self.make_default("New")
+		self._New = value if type(value) != base_types.auto else self.make_default("New")
 
 	@New.deleter
 	def New(self):

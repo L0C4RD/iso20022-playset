@@ -11,7 +11,7 @@ class DefinedAttributes1Choice(base_types._BaseFieldType):
 
 	@QtyDfndAttrbts.setter
 	def QtyDfndAttrbts(self, value):
-		self._QtyDfndAttrbts = value if type(value) != auto else self.make_default("QtyDfndAttrbts")
+		self._QtyDfndAttrbts = value if type(value) != base_types.auto else self.make_default("QtyDfndAttrbts")
 
 	@QtyDfndAttrbts.deleter
 	def QtyDfndAttrbts(self):
@@ -24,7 +24,7 @@ class DefinedAttributes1Choice(base_types._BaseFieldType):
 
 	@ValDfndAttrbts.setter
 	def ValDfndAttrbts(self, value):
-		self._ValDfndAttrbts = value if type(value) != auto else self.make_default("ValDfndAttrbts")
+		self._ValDfndAttrbts = value if type(value) != base_types.auto else self.make_default("ValDfndAttrbts")
 
 	@ValDfndAttrbts.deleter
 	def ValDfndAttrbts(self):

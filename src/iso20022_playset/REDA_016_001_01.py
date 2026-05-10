@@ -12,7 +12,7 @@ class REDA_016_001_01():
 
 		@PtyStsAdvc.setter
 		def PtyStsAdvc(self, value):
-			self._PtyStsAdvc = value if type(value) != auto else self.make_default("PtyStsAdvc")
+			self._PtyStsAdvc = value if type(value) != base_types.auto else self.make_default("PtyStsAdvc")
 
 		@PtyStsAdvc.deleter
 		def PtyStsAdvc(self):

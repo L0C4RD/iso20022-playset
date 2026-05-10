@@ -1,19 +1,19 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max2000Text import Max2000Text
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max2000Text import Max2000Text
 from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class Demand2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_SubmissnDtTm", "_Id", "_AddtlInf"]
+	__slots__ = ["_Amt", "_AddtlInf", "_Id", "_SubmissnDtTm"]
 	@property
 	def Amt(self):
 		return self._Amt
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -21,17 +21,17 @@ class Demand2(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def SubmissnDtTm(self):
-		return self._SubmissnDtTm
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@SubmissnDtTm.setter
-	def SubmissnDtTm(self, value):
-		self._SubmissnDtTm = value if type(value) != auto else self.make_default("SubmissnDtTm")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@SubmissnDtTm.deleter
-	def SubmissnDtTm(self):
-		del self._SubmissnDtTm
-		self._SubmissnDtTm = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Id(self):
@@ -39,7 +39,7 @@ class Demand2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -47,22 +47,22 @@ class Demand2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def SubmissnDtTm(self):
+		return self._SubmissnDtTm
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@SubmissnDtTm.setter
+	def SubmissnDtTm(self, value):
+		self._SubmissnDtTm = value if type(value) != base_types.auto else self.make_default("SubmissnDtTm")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@SubmissnDtTm.deleter
+	def SubmissnDtTm(self):
+		del self._SubmissnDtTm
+		self._SubmissnDtTm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

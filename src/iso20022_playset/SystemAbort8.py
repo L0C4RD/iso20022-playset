@@ -1,32 +1,19 @@
 from . import base_types
-from .PaymentContext30 import PaymentContext30
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 from .SupplementaryData1 import SupplementaryData1
 from .AbortData6 import AbortData6
+from .PaymentContext30 import PaymentContext30
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class SystemAbort8(base_types._BaseFieldType):
 
-	__slots__ = ["_SysAbrt", "_SplmtryData", "_Envt", "_Cntxt"]
-	@property
-	def SysAbrt(self):
-		return self._SysAbrt
-
-	@SysAbrt.setter
-	def SysAbrt(self, value):
-		self._SysAbrt = value if type(value) != auto else self.make_default("SysAbrt")
-
-	@SysAbrt.deleter
-	def SysAbrt(self):
-		del self._SysAbrt
-		self._SysAbrt = None
-
+	__slots__ = ["_SplmtryData", "_Envt", "_Cntxt", "_SysAbrt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -39,7 +26,7 @@ class SystemAbort8(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -52,17 +39,30 @@ class SystemAbort8(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
 		self._Cntxt = None
 
+	@property
+	def SysAbrt(self):
+		return self._SysAbrt
+
+	@SysAbrt.setter
+	def SysAbrt(self, value):
+		self._SysAbrt = value if type(value) != base_types.auto else self.make_default("SysAbrt")
+
+	@SysAbrt.deleter
+	def SysAbrt(self):
+		del self._SysAbrt
+		self._SysAbrt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysAbrt', type=AbortData6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysAbrt', type=AbortData6, min=1, max=1, mutex_group=None, array=False),
 	))
 

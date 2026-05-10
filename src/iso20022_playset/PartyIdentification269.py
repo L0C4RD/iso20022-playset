@@ -1,46 +1,20 @@
 from . import base_types
-from .CountryCode import CountryCode
-from .Max35Text import Max35Text
 from .PartyIdentification198Choice import PartyIdentification198Choice
 from .Max256Text import Max256Text
+from .CountryCode import CountryCode
 from .PersonName2 import PersonName2
+from .Max35Text import Max35Text
 
 class PartyIdentification269(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CpnyRegrShrhldrId", "_CtryOfIncorprtn", "_EmailAdr", "_NmAndAdr"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def CpnyRegrShrhldrId(self):
-		return self._CpnyRegrShrhldrId
-
-	@CpnyRegrShrhldrId.setter
-	def CpnyRegrShrhldrId(self, value):
-		self._CpnyRegrShrhldrId = value if type(value) != auto else self.make_default("CpnyRegrShrhldrId")
-
-	@CpnyRegrShrhldrId.deleter
-	def CpnyRegrShrhldrId(self):
-		del self._CpnyRegrShrhldrId
-		self._CpnyRegrShrhldrId = None
-
+	__slots__ = ["_CtryOfIncorprtn", "_Id", "_EmailAdr", "_CpnyRegrShrhldrId", "_NmAndAdr"]
 	@property
 	def CtryOfIncorprtn(self):
 		return self._CtryOfIncorprtn
 
 	@CtryOfIncorprtn.setter
 	def CtryOfIncorprtn(self, value):
-		self._CtryOfIncorprtn = value if type(value) != auto else self.make_default("CtryOfIncorprtn")
+		self._CtryOfIncorprtn = value if type(value) != base_types.auto else self.make_default("CtryOfIncorprtn")
 
 	@CtryOfIncorprtn.deleter
 	def CtryOfIncorprtn(self):
@@ -48,12 +22,25 @@ class PartyIdentification269(base_types._BaseFieldType):
 		self._CtryOfIncorprtn = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def EmailAdr(self):
 		return self._EmailAdr
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
@@ -61,12 +48,25 @@ class PartyIdentification269(base_types._BaseFieldType):
 		self._EmailAdr = None
 
 	@property
+	def CpnyRegrShrhldrId(self):
+		return self._CpnyRegrShrhldrId
+
+	@CpnyRegrShrhldrId.setter
+	def CpnyRegrShrhldrId(self, value):
+		self._CpnyRegrShrhldrId = value if type(value) != base_types.auto else self.make_default("CpnyRegrShrhldrId")
+
+	@CpnyRegrShrhldrId.deleter
+	def CpnyRegrShrhldrId(self):
+		del self._CpnyRegrShrhldrId
+		self._CpnyRegrShrhldrId = None
+
+	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
@@ -74,10 +74,10 @@ class PartyIdentification269(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpnyRegrShrhldrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfIncorprtn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpnyRegrShrhldrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=PersonName2, min=1, max=1, mutex_group=None, array=False),
 	))
 

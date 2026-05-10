@@ -1,7 +1,7 @@
 from . import base_types
+from .Number import Number
 from .Max3NumericText import Max3NumericText
 from .Max35Text import Max35Text
-from .Number import Number
 
 class DocumentIdentification6(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class DocumentIdentification6(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
 	@Vrsn.deleter
 	def Vrsn(self):
@@ -25,7 +25,7 @@ class DocumentIdentification6(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -38,7 +38,7 @@ class DocumentIdentification6(base_types._BaseFieldType):
 
 	@AmdmntSeqNb.setter
 	def AmdmntSeqNb(self, value):
-		self._AmdmntSeqNb = value if type(value) != auto else self.make_default("AmdmntSeqNb")
+		self._AmdmntSeqNb = value if type(value) != base_types.auto else self.make_default("AmdmntSeqNb")
 
 	@AmdmntSeqNb.deleter
 	def AmdmntSeqNb(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max8Text import Max8Text
+from .Max35Text import Max35Text
 
 class GenericIdentification7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class GenericIdentification7(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -24,7 +24,7 @@ class GenericIdentification7(base_types._BaseFieldType):
 
 	@Inf.setter
 	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
+		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
 
 	@Inf.deleter
 	def Inf(self):

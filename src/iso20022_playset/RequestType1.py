@@ -1,31 +1,18 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TransactionRequestType1Code import TransactionRequestType1Code
 from .Max500Text import Max500Text
+from .TransactionRequestType1Code import TransactionRequestType1Code
+from .Max35Text import Max35Text
 
 class RequestType1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Nb", "_Tp"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_Nb", "_Tp", "_AddtlInf"]
 	@property
 	def Nb(self):
 		return self._Nb
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
 
 	@Nb.deleter
 	def Nb(self):
@@ -38,16 +25,29 @@ class RequestType1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TransactionRequestType1Code, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

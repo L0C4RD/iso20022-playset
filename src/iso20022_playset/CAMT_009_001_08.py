@@ -12,7 +12,7 @@ class CAMT_009_001_08():
 
 		@GetLmt.setter
 		def GetLmt(self, value):
-			self._GetLmt = value if type(value) != auto else self.make_default("GetLmt")
+			self._GetLmt = value if type(value) != base_types.auto else self.make_default("GetLmt")
 
 		@GetLmt.deleter
 		def GetLmt(self):

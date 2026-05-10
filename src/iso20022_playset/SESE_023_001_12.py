@@ -12,7 +12,7 @@ class SESE_023_001_12():
 
 		@SctiesSttlmTxInstr.setter
 		def SctiesSttlmTxInstr(self, value):
-			self._SctiesSttlmTxInstr = value if type(value) != auto else self.make_default("SctiesSttlmTxInstr")
+			self._SctiesSttlmTxInstr = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxInstr")
 
 		@SctiesSttlmTxInstr.deleter
 		def SctiesSttlmTxInstr(self):

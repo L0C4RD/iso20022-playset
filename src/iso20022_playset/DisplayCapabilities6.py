@@ -1,50 +1,24 @@
 from . import base_types
-from .OutputFormat1Code import OutputFormat1Code
-from .UserInterface1Code import UserInterface1Code
-from .LanguageCode import LanguageCode
 from .Number import Number
+from .UserInterface1Code import UserInterface1Code
+from .OutputFormat1Code import OutputFormat1Code
+from .LanguageCode import LanguageCode
 
 class DisplayCapabilities6(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblLang", "_NbOfLines", "_Dstn", "_AvlblFrmt", "_LineWidth"]
+	__slots__ = ["_LineWidth", "_AvlblFrmt", "_NbOfLines", "_AvlblLang", "_Dstn"]
 	@property
-	def AvlblLang(self):
-		return self._AvlblLang
+	def LineWidth(self):
+		return self._LineWidth
 
-	@AvlblLang.setter
-	def AvlblLang(self, value):
-		self._AvlblLang = value if type(value) != auto else self.make_default("AvlblLang")
+	@LineWidth.setter
+	def LineWidth(self, value):
+		self._LineWidth = value if type(value) != base_types.auto else self.make_default("LineWidth")
 
-	@AvlblLang.deleter
-	def AvlblLang(self):
-		del self._AvlblLang
-		self._AvlblLang = None
-
-	@property
-	def NbOfLines(self):
-		return self._NbOfLines
-
-	@NbOfLines.setter
-	def NbOfLines(self, value):
-		self._NbOfLines = value if type(value) != auto else self.make_default("NbOfLines")
-
-	@NbOfLines.deleter
-	def NbOfLines(self):
-		del self._NbOfLines
-		self._NbOfLines = None
-
-	@property
-	def Dstn(self):
-		return self._Dstn
-
-	@Dstn.setter
-	def Dstn(self, value):
-		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
-
-	@Dstn.deleter
-	def Dstn(self):
-		del self._Dstn
-		self._Dstn = None
+	@LineWidth.deleter
+	def LineWidth(self):
+		del self._LineWidth
+		self._LineWidth = None
 
 	@property
 	def AvlblFrmt(self):
@@ -52,7 +26,7 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 
 	@AvlblFrmt.setter
 	def AvlblFrmt(self, value):
-		self._AvlblFrmt = value if type(value) != auto else self.make_default("AvlblFrmt")
+		self._AvlblFrmt = value if type(value) != base_types.auto else self.make_default("AvlblFrmt")
 
 	@AvlblFrmt.deleter
 	def AvlblFrmt(self):
@@ -60,23 +34,49 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 		self._AvlblFrmt = None
 
 	@property
-	def LineWidth(self):
-		return self._LineWidth
+	def NbOfLines(self):
+		return self._NbOfLines
 
-	@LineWidth.setter
-	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
+	@NbOfLines.setter
+	def NbOfLines(self, value):
+		self._NbOfLines = value if type(value) != base_types.auto else self.make_default("NbOfLines")
 
-	@LineWidth.deleter
-	def LineWidth(self):
-		del self._LineWidth
-		self._LineWidth = None
+	@NbOfLines.deleter
+	def NbOfLines(self):
+		del self._NbOfLines
+		self._NbOfLines = None
+
+	@property
+	def AvlblLang(self):
+		return self._AvlblLang
+
+	@AvlblLang.setter
+	def AvlblLang(self, value):
+		self._AvlblLang = value if type(value) != base_types.auto else self.make_default("AvlblLang")
+
+	@AvlblLang.deleter
+	def AvlblLang(self):
+		del self._AvlblLang
+		self._AvlblLang = None
+
+	@property
+	def Dstn(self):
+		return self._Dstn
+
+	@Dstn.setter
+	def Dstn(self, value):
+		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+
+	@Dstn.deleter
+	def Dstn(self):
+		del self._Dstn
+		self._Dstn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfLines', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dstn', type=UserInterface1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LineWidth', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NbOfLines', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dstn', type=UserInterface1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

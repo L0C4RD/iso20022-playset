@@ -10,7 +10,7 @@ class SettlementParties34Choice(base_types._BaseFieldType):
 
 	@IndrctPtcpt.setter
 	def IndrctPtcpt(self, value):
-		self._IndrctPtcpt = value if type(value) != auto else self.make_default("IndrctPtcpt")
+		self._IndrctPtcpt = value if type(value) != base_types.auto else self.make_default("IndrctPtcpt")
 
 	@IndrctPtcpt.deleter
 	def IndrctPtcpt(self):
@@ -23,7 +23,7 @@ class SettlementParties34Choice(base_types._BaseFieldType):
 
 	@CntrlSctiesDpstryPtcpt.setter
 	def CntrlSctiesDpstryPtcpt(self, value):
-		self._CntrlSctiesDpstryPtcpt = value if type(value) != auto else self.make_default("CntrlSctiesDpstryPtcpt")
+		self._CntrlSctiesDpstryPtcpt = value if type(value) != base_types.auto else self.make_default("CntrlSctiesDpstryPtcpt")
 
 	@CntrlSctiesDpstryPtcpt.deleter
 	def CntrlSctiesDpstryPtcpt(self):

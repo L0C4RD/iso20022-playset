@@ -1,6 +1,6 @@
 from . import base_types
-from .AgentNotificationCancellationIdentificationAndStatus1 import AgentNotificationCancellationIdentificationAndStatus1
 from .AgentNotificationIdentificationAndStatus1 import AgentNotificationIdentificationAndStatus1
+from .AgentNotificationCancellationIdentificationAndStatus1 import AgentNotificationCancellationIdentificationAndStatus1
 
 class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
 	@AgtCANtfctnAdvcIdAndSts.setter
 	def AgtCANtfctnAdvcIdAndSts(self, value):
-		self._AgtCANtfctnAdvcIdAndSts = value if type(value) != auto else self.make_default("AgtCANtfctnAdvcIdAndSts")
+		self._AgtCANtfctnAdvcIdAndSts = value if type(value) != base_types.auto else self.make_default("AgtCANtfctnAdvcIdAndSts")
 
 	@AgtCANtfctnAdvcIdAndSts.deleter
 	def AgtCANtfctnAdvcIdAndSts(self):
@@ -24,7 +24,7 @@ class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
 	@AgtCANtfctnCxlReqIdAndSts.setter
 	def AgtCANtfctnCxlReqIdAndSts(self, value):
-		self._AgtCANtfctnCxlReqIdAndSts = value if type(value) != auto else self.make_default("AgtCANtfctnCxlReqIdAndSts")
+		self._AgtCANtfctnCxlReqIdAndSts = value if type(value) != base_types.auto else self.make_default("AgtCANtfctnCxlReqIdAndSts")
 
 	@AgtCANtfctnCxlReqIdAndSts.deleter
 	def AgtCANtfctnCxlReqIdAndSts(self):

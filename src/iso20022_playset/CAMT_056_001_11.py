@@ -12,7 +12,7 @@ class CAMT_056_001_11():
 
 		@FIToFIPmtCxlReq.setter
 		def FIToFIPmtCxlReq(self, value):
-			self._FIToFIPmtCxlReq = value if type(value) != auto else self.make_default("FIToFIPmtCxlReq")
+			self._FIToFIPmtCxlReq = value if type(value) != base_types.auto else self.make_default("FIToFIPmtCxlReq")
 
 		@FIToFIPmtCxlReq.deleter
 		def FIToFIPmtCxlReq(self):

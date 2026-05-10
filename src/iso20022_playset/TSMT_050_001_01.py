@@ -12,7 +12,7 @@ class TSMT_050_001_01():
 
 		@RoleAndBaselnRjctn.setter
 		def RoleAndBaselnRjctn(self, value):
-			self._RoleAndBaselnRjctn = value if type(value) != auto else self.make_default("RoleAndBaselnRjctn")
+			self._RoleAndBaselnRjctn = value if type(value) != base_types.auto else self.make_default("RoleAndBaselnRjctn")
 
 		@RoleAndBaselnRjctn.deleter
 		def RoleAndBaselnRjctn(self):

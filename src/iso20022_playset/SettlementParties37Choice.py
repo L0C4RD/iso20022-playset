@@ -11,7 +11,7 @@ class SettlementParties37Choice(base_types._BaseFieldType):
 
 	@DlvrgSttlmPties.setter
 	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
+		self._DlvrgSttlmPties = value if type(value) != base_types.auto else self.make_default("DlvrgSttlmPties")
 
 	@DlvrgSttlmPties.deleter
 	def DlvrgSttlmPties(self):
@@ -24,7 +24,7 @@ class SettlementParties37Choice(base_types._BaseFieldType):
 
 	@RcvgSttlmPties.setter
 	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != auto else self.make_default("RcvgSttlmPties")
+		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
 
 	@RcvgSttlmPties.deleter
 	def RcvgSttlmPties(self):

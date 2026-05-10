@@ -12,7 +12,7 @@ class AUTH_025_001_04():
 
 		@CcyCtrlSpprtgDocDlvry.setter
 		def CcyCtrlSpprtgDocDlvry(self, value):
-			self._CcyCtrlSpprtgDocDlvry = value if type(value) != auto else self.make_default("CcyCtrlSpprtgDocDlvry")
+			self._CcyCtrlSpprtgDocDlvry = value if type(value) != base_types.auto else self.make_default("CcyCtrlSpprtgDocDlvry")
 
 		@CcyCtrlSpprtgDocDlvry.deleter
 		def CcyCtrlSpprtgDocDlvry(self):

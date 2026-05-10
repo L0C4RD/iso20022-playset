@@ -1,6 +1,6 @@
 from . import base_types
-from .DocumentToSend4 import DocumentToSend4
 from .DataModification1Code import DataModification1Code
+from .DocumentToSend4 import DocumentToSend4
 
 class ModificationScope44(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ModificationScope44(base_types._BaseFieldType):
 
 	@SvcLvlAgrmt.setter
 	def SvcLvlAgrmt(self, value):
-		self._SvcLvlAgrmt = value if type(value) != auto else self.make_default("SvcLvlAgrmt")
+		self._SvcLvlAgrmt = value if type(value) != base_types.auto else self.make_default("SvcLvlAgrmt")
 
 	@SvcLvlAgrmt.deleter
 	def SvcLvlAgrmt(self):
@@ -24,7 +24,7 @@ class ModificationScope44(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):

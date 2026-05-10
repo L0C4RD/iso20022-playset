@@ -1,6 +1,6 @@
 from . import base_types
-from .ISODateTime import ISODateTime
 from .SettlementDate1Code import SettlementDate1Code
+from .ISODateTime import ISODateTime
 from .ISODate import ISODate
 
 class DateFormat1Choice(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class DateFormat1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -25,7 +25,7 @@ class DateFormat1Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -38,7 +38,7 @@ class DateFormat1Choice(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
+		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
 
 	@DtTm.deleter
 	def DtTm(self):

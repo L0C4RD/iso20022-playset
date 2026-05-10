@@ -11,7 +11,7 @@ class FinancialInstrumentReportingCurrencyCodeReportV01(base_types._BaseFieldTyp
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentReportingCurrencyCodeReportV01(base_types._BaseFieldTyp
 
 	@CcyData.setter
 	def CcyData(self, value):
-		self._CcyData = value if type(value) != auto else self.make_default("CcyData")
+		self._CcyData = value if type(value) != base_types.auto else self.make_default("CcyData")
 
 	@CcyData.deleter
 	def CcyData(self):

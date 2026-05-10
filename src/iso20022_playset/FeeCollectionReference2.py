@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyType32Code import PartyType32Code
 from .FeeCollectionIdentification1 import FeeCollectionIdentification1
+from .PartyType32Code import PartyType32Code
+from .Max35Text import Max35Text
 
 class FeeCollectionReference2(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class FeeCollectionReference2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -25,7 +25,7 @@ class FeeCollectionReference2(base_types._BaseFieldType):
 
 	@OthrAssgnrNtty.setter
 	def OthrAssgnrNtty(self, value):
-		self._OthrAssgnrNtty = value if type(value) != auto else self.make_default("OthrAssgnrNtty")
+		self._OthrAssgnrNtty = value if type(value) != base_types.auto else self.make_default("OthrAssgnrNtty")
 
 	@OthrAssgnrNtty.deleter
 	def OthrAssgnrNtty(self):
@@ -38,7 +38,7 @@ class FeeCollectionReference2(base_types._BaseFieldType):
 
 	@AssgnrNtty.setter
 	def AssgnrNtty(self, value):
-		self._AssgnrNtty = value if type(value) != auto else self.make_default("AssgnrNtty")
+		self._AssgnrNtty = value if type(value) != base_types.auto else self.make_default("AssgnrNtty")
 
 	@AssgnrNtty.deleter
 	def AssgnrNtty(self):

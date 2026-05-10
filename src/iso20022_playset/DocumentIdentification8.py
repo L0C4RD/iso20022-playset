@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ISODateTime import ISODateTime
+from .Max35Text import Max35Text
 
 class DocumentIdentification8(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DocumentIdentification8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class DocumentIdentification8(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
 	@CreDtTm.deleter
 	def CreDtTm(self):

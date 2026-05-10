@@ -11,7 +11,7 @@ class OrderClassification2(base_types._BaseFieldType):
 
 	@OrdrTpClssfctn.setter
 	def OrdrTpClssfctn(self, value):
-		self._OrdrTpClssfctn = value if type(value) != auto else self.make_default("OrdrTpClssfctn")
+		self._OrdrTpClssfctn = value if type(value) != base_types.auto else self.make_default("OrdrTpClssfctn")
 
 	@OrdrTpClssfctn.deleter
 	def OrdrTpClssfctn(self):
@@ -24,7 +24,7 @@ class OrderClassification2(base_types._BaseFieldType):
 
 	@OrdrTp.setter
 	def OrdrTp(self, value):
-		self._OrdrTp = value if type(value) != auto else self.make_default("OrdrTp")
+		self._OrdrTp = value if type(value) != base_types.auto else self.make_default("OrdrTp")
 
 	@OrdrTp.deleter
 	def OrdrTp(self):

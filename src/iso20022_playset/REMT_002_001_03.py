@@ -12,7 +12,7 @@ class REMT_002_001_03():
 
 		@RmtLctnAdvc.setter
 		def RmtLctnAdvc(self, value):
-			self._RmtLctnAdvc = value if type(value) != auto else self.make_default("RmtLctnAdvc")
+			self._RmtLctnAdvc = value if type(value) != base_types.auto else self.make_default("RmtLctnAdvc")
 
 		@RmtLctnAdvc.deleter
 		def RmtLctnAdvc(self):

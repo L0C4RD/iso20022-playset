@@ -1,7 +1,7 @@
 from . import base_types
 from .AdjustmentDirection1Code import AdjustmentDirection1Code
-from .AdjustmentType1Choice import AdjustmentType1Choice
 from .CurrencyAndAmount import CurrencyAndAmount
+from .AdjustmentType1Choice import AdjustmentType1Choice
 
 class Adjustment6(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Adjustment6(base_types._BaseFieldType):
 
 	@Drctn.setter
 	def Drctn(self, value):
-		self._Drctn = value if type(value) != auto else self.make_default("Drctn")
+		self._Drctn = value if type(value) != base_types.auto else self.make_default("Drctn")
 
 	@Drctn.deleter
 	def Drctn(self):
@@ -25,7 +25,7 @@ class Adjustment6(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -38,7 +38,7 @@ class Adjustment6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

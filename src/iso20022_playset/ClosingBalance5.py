@@ -1,6 +1,6 @@
 from . import base_types
-from .ClosingBalance6Choice import ClosingBalance6Choice
 from .ShortLong1Code import ShortLong1Code
+from .ClosingBalance6Choice import ClosingBalance6Choice
 
 class ClosingBalance5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ClosingBalance5(base_types._BaseFieldType):
 
 	@ClsgBal.setter
 	def ClsgBal(self, value):
-		self._ClsgBal = value if type(value) != auto else self.make_default("ClsgBal")
+		self._ClsgBal = value if type(value) != base_types.auto else self.make_default("ClsgBal")
 
 	@ClsgBal.deleter
 	def ClsgBal(self):
@@ -24,7 +24,7 @@ class ClosingBalance5(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .MetalCommodityNonPrecious1 import MetalCommodityNonPrecious1
 from .MetalCommodityPrecious1 import MetalCommodityPrecious1
+from .MetalCommodityNonPrecious1 import MetalCommodityNonPrecious1
 
 class AssetClassCommodityMetal1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AssetClassCommodityMetal1Choice(base_types._BaseFieldType):
 
 	@Prcs.setter
 	def Prcs(self, value):
-		self._Prcs = value if type(value) != auto else self.make_default("Prcs")
+		self._Prcs = value if type(value) != base_types.auto else self.make_default("Prcs")
 
 	@Prcs.deleter
 	def Prcs(self):
@@ -24,7 +24,7 @@ class AssetClassCommodityMetal1Choice(base_types._BaseFieldType):
 
 	@NonPrcs.setter
 	def NonPrcs(self, value):
-		self._NonPrcs = value if type(value) != auto else self.make_default("NonPrcs")
+		self._NonPrcs = value if type(value) != base_types.auto else self.make_default("NonPrcs")
 
 	@NonPrcs.deleter
 	def NonPrcs(self):

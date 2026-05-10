@@ -1,53 +1,27 @@
 from . import base_types
+from .Number import Number
+from .ISODateTime import ISODateTime
 from .Traceability8 import Traceability8
-from .GenericIdentification176 import GenericIdentification176
 from .GenericIdentification177 import GenericIdentification177
 from .TrueFalseIndicator import TrueFalseIndicator
-from .Number import Number
+from .GenericIdentification176 import GenericIdentification176
 from .Max6Text import Max6Text
-from .ISODateTime import ISODateTime
 
 class TMSHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_DwnldTrf", "_XchgId", "_InitgPty", "_RcptPty", "_Tracblt", "_FrmtVrsn", "_CreDtTm"]
+	__slots__ = ["_FrmtVrsn", "_RcptPty", "_Tracblt", "_InitgPty", "_CreDtTm", "_XchgId", "_DwnldTrf"]
 	@property
-	def DwnldTrf(self):
-		return self._DwnldTrf
+	def FrmtVrsn(self):
+		return self._FrmtVrsn
 
-	@DwnldTrf.setter
-	def DwnldTrf(self, value):
-		self._DwnldTrf = value if type(value) != auto else self.make_default("DwnldTrf")
+	@FrmtVrsn.setter
+	def FrmtVrsn(self, value):
+		self._FrmtVrsn = value if type(value) != base_types.auto else self.make_default("FrmtVrsn")
 
-	@DwnldTrf.deleter
-	def DwnldTrf(self):
-		del self._DwnldTrf
-		self._DwnldTrf = None
-
-	@property
-	def XchgId(self):
-		return self._XchgId
-
-	@XchgId.setter
-	def XchgId(self, value):
-		self._XchgId = value if type(value) != auto else self.make_default("XchgId")
-
-	@XchgId.deleter
-	def XchgId(self):
-		del self._XchgId
-		self._XchgId = None
-
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
+	@FrmtVrsn.deleter
+	def FrmtVrsn(self):
+		del self._FrmtVrsn
+		self._FrmtVrsn = None
 
 	@property
 	def RcptPty(self):
@@ -55,7 +29,7 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@RcptPty.setter
 	def RcptPty(self, value):
-		self._RcptPty = value if type(value) != auto else self.make_default("RcptPty")
+		self._RcptPty = value if type(value) != base_types.auto else self.make_default("RcptPty")
 
 	@RcptPty.deleter
 	def RcptPty(self):
@@ -68,7 +42,7 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@Tracblt.setter
 	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
+		self._Tracblt = value if type(value) != base_types.auto else self.make_default("Tracblt")
 
 	@Tracblt.deleter
 	def Tracblt(self):
@@ -76,17 +50,17 @@ class TMSHeader1(base_types._BaseFieldType):
 		self._Tracblt = None
 
 	@property
-	def FrmtVrsn(self):
-		return self._FrmtVrsn
+	def InitgPty(self):
+		return self._InitgPty
 
-	@FrmtVrsn.setter
-	def FrmtVrsn(self, value):
-		self._FrmtVrsn = value if type(value) != auto else self.make_default("FrmtVrsn")
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
 
-	@FrmtVrsn.deleter
-	def FrmtVrsn(self):
-		del self._FrmtVrsn
-		self._FrmtVrsn = None
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def CreDtTm(self):
@@ -94,20 +68,46 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def XchgId(self):
+		return self._XchgId
+
+	@XchgId.setter
+	def XchgId(self, value):
+		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+
+	@XchgId.deleter
+	def XchgId(self):
+		del self._XchgId
+		self._XchgId = None
+
+	@property
+	def DwnldTrf(self):
+		return self._DwnldTrf
+
+	@DwnldTrf.setter
+	def DwnldTrf(self, value):
+		self._DwnldTrf = value if type(value) != base_types.auto else self.make_default("DwnldTrf")
+
+	@DwnldTrf.deleter
+	def DwnldTrf(self):
+		del self._DwnldTrf
+		self._DwnldTrf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DwnldTrf', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgId', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrmtVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptPty', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FrmtVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgId', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DwnldTrf', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -10,7 +10,7 @@ class TaxCalculationInformation9(base_types._BaseFieldType):
 
 	@Bsis.setter
 	def Bsis(self, value):
-		self._Bsis = value if type(value) != auto else self.make_default("Bsis")
+		self._Bsis = value if type(value) != base_types.auto else self.make_default("Bsis")
 
 	@Bsis.deleter
 	def Bsis(self):

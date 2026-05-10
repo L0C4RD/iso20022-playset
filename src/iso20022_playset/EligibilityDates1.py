@@ -10,7 +10,7 @@ class EligibilityDates1(base_types._BaseFieldType):
 
 	@EntitlmntFxgDt.setter
 	def EntitlmntFxgDt(self, value):
-		self._EntitlmntFxgDt = value if type(value) != auto else self.make_default("EntitlmntFxgDt")
+		self._EntitlmntFxgDt = value if type(value) != base_types.auto else self.make_default("EntitlmntFxgDt")
 
 	@EntitlmntFxgDt.deleter
 	def EntitlmntFxgDt(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .IntraBalanceQueryCriteria11 import IntraBalanceQueryCriteria11
 from .MovementResponseType1Code import MovementResponseType1Code
+from .IntraBalanceQueryCriteria11 import IntraBalanceQueryCriteria11
 
 class IntraBalanceQueryDefinition11(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class IntraBalanceQueryDefinition11(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
 
 	@SchCrit.deleter
 	def SchCrit(self):
@@ -24,7 +24,7 @@ class IntraBalanceQueryDefinition11(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

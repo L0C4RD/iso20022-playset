@@ -1,6 +1,6 @@
 from . import base_types
-from .CommissionType5Choice import CommissionType5Choice
 from .AmountOrRate3Choice import AmountOrRate3Choice
+from .CommissionType5Choice import CommissionType5Choice
 
 class Commission21(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Commission21(base_types._BaseFieldType):
 
 	@ComssnApld.setter
 	def ComssnApld(self, value):
-		self._ComssnApld = value if type(value) != auto else self.make_default("ComssnApld")
+		self._ComssnApld = value if type(value) != base_types.auto else self.make_default("ComssnApld")
 
 	@ComssnApld.deleter
 	def ComssnApld(self):
@@ -24,7 +24,7 @@ class Commission21(base_types._BaseFieldType):
 
 	@ComssnTp.setter
 	def ComssnTp(self, value):
-		self._ComssnTp = value if type(value) != auto else self.make_default("ComssnTp")
+		self._ComssnTp = value if type(value) != base_types.auto else self.make_default("ComssnTp")
 
 	@ComssnTp.deleter
 	def ComssnTp(self):

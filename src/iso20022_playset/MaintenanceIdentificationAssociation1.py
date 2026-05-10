@@ -10,7 +10,7 @@ class MaintenanceIdentificationAssociation1(base_types._BaseFieldType):
 
 	@MstrTMId.setter
 	def MstrTMId(self, value):
-		self._MstrTMId = value if type(value) != auto else self.make_default("MstrTMId")
+		self._MstrTMId = value if type(value) != base_types.auto else self.make_default("MstrTMId")
 
 	@MstrTMId.deleter
 	def MstrTMId(self):
@@ -23,7 +23,7 @@ class MaintenanceIdentificationAssociation1(base_types._BaseFieldType):
 
 	@TMId.setter
 	def TMId(self, value):
-		self._TMId = value if type(value) != auto else self.make_default("TMId")
+		self._TMId = value if type(value) != base_types.auto else self.make_default("TMId")
 
 	@TMId.deleter
 	def TMId(self):

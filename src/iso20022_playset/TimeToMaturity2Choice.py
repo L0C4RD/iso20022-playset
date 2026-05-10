@@ -11,7 +11,7 @@ class TimeToMaturity2Choice(base_types._BaseFieldType):
 
 	@Spcl.setter
 	def Spcl(self, value):
-		self._Spcl = value if type(value) != auto else self.make_default("Spcl")
+		self._Spcl = value if type(value) != base_types.auto else self.make_default("Spcl")
 
 	@Spcl.deleter
 	def Spcl(self):
@@ -24,7 +24,7 @@ class TimeToMaturity2Choice(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
 	@Prd.deleter
 	def Prd(self):

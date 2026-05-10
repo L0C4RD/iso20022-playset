@@ -1,6 +1,6 @@
 from . import base_types
-from .MatchingCriteria17 import MatchingCriteria17
 from .TradeTransactionIdentification24 import TradeTransactionIdentification24
+from .MatchingCriteria17 import MatchingCriteria17
 
 class ReconciliationReport15(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ReconciliationReport15(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):
@@ -24,7 +24,7 @@ class ReconciliationReport15(base_types._BaseFieldType):
 
 	@MtchgCrit.setter
 	def MtchgCrit(self, value):
-		self._MtchgCrit = value if type(value) != auto else self.make_default("MtchgCrit")
+		self._MtchgCrit = value if type(value) != base_types.auto else self.make_default("MtchgCrit")
 
 	@MtchgCrit.deleter
 	def MtchgCrit(self):

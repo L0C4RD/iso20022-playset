@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .TrueFalseIndicator import TrueFalseIndicator
+from .Max35Text import Max35Text
 
 class DiagnosisRequest1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DiagnosisRequest1(base_types._BaseFieldType):
 
 	@HstDgnssFlg.setter
 	def HstDgnssFlg(self, value):
-		self._HstDgnssFlg = value if type(value) != auto else self.make_default("HstDgnssFlg")
+		self._HstDgnssFlg = value if type(value) != base_types.auto else self.make_default("HstDgnssFlg")
 
 	@HstDgnssFlg.deleter
 	def HstDgnssFlg(self):
@@ -24,7 +24,7 @@ class DiagnosisRequest1(base_types._BaseFieldType):
 
 	@AcqrrId.setter
 	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != auto else self.make_default("AcqrrId")
+		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
 
 	@AcqrrId.deleter
 	def AcqrrId(self):

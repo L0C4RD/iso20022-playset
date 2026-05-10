@@ -12,7 +12,7 @@ class CAMT_018_001_05():
 
 		@GetBizDayInf.setter
 		def GetBizDayInf(self, value):
-			self._GetBizDayInf = value if type(value) != auto else self.make_default("GetBizDayInf")
+			self._GetBizDayInf = value if type(value) != base_types.auto else self.make_default("GetBizDayInf")
 
 		@GetBizDayInf.deleter
 		def GetBizDayInf(self):

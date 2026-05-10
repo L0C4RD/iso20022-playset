@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .Max35Text import Max35Text
 
 class ProprietaryPrice2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ProprietaryPrice2(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != auto else self.make_default("Pric")
+		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
 
 	@Pric.deleter
 	def Pric(self):
@@ -24,7 +24,7 @@ class ProprietaryPrice2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

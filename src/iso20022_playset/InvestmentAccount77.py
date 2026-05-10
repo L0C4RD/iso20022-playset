@@ -1,18 +1,31 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .OwnerIdentification3Choice import OwnerIdentification3Choice
 from .PartyIdentification125Choice import PartyIdentification125Choice
+from .Max35Text import Max35Text
 
 class InvestmentAccount77(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_AcctNm", "_AcctSvcr", "_OwnrId", "_AcctDsgnt"]
+	__slots__ = ["_OwnrId", "_AcctId", "_AcctNm", "_AcctSvcr", "_AcctDsgnt"]
+	@property
+	def OwnrId(self):
+		return self._OwnrId
+
+	@OwnrId.setter
+	def OwnrId(self, value):
+		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
+
+	@OwnrId.deleter
+	def OwnrId(self):
+		del self._OwnrId
+		self._OwnrId = None
+
 	@property
 	def AcctId(self):
 		return self._AcctId
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -25,7 +38,7 @@ class InvestmentAccount77(base_types._BaseFieldType):
 
 	@AcctNm.setter
 	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
 
 	@AcctNm.deleter
 	def AcctNm(self):
@@ -38,7 +51,7 @@ class InvestmentAccount77(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
@@ -46,25 +59,12 @@ class InvestmentAccount77(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def OwnrId(self):
-		return self._OwnrId
-
-	@OwnrId.setter
-	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
-
-	@OwnrId.deleter
-	def OwnrId(self):
-		del self._OwnrId
-		self._OwnrId = None
-
-	@property
 	def AcctDsgnt(self):
 		return self._AcctDsgnt
 
 	@AcctDsgnt.setter
 	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
+		self._AcctDsgnt = value if type(value) != base_types.auto else self.make_default("AcctDsgnt")
 
 	@AcctDsgnt.deleter
 	def AcctDsgnt(self):
@@ -72,10 +72,10 @@ class InvestmentAccount77(base_types._BaseFieldType):
 		self._AcctDsgnt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OwnrId', type=OwnerIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrId', type=OwnerIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

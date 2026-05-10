@@ -12,7 +12,7 @@ class TSMT_038_001_03():
 
 		@StsRptReq.setter
 		def StsRptReq(self, value):
-			self._StsRptReq = value if type(value) != auto else self.make_default("StsRptReq")
+			self._StsRptReq = value if type(value) != base_types.auto else self.make_default("StsRptReq")
 
 		@StsRptReq.deleter
 		def StsRptReq(self):

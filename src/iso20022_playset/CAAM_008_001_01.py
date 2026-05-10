@@ -12,7 +12,7 @@ class CAAM_008_001_01():
 
 		@HstToATMAck.setter
 		def HstToATMAck(self, value):
-			self._HstToATMAck = value if type(value) != auto else self.make_default("HstToATMAck")
+			self._HstToATMAck = value if type(value) != base_types.auto else self.make_default("HstToATMAck")
 
 		@HstToATMAck.deleter
 		def HstToATMAck(self):

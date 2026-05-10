@@ -12,7 +12,7 @@ class COLR_023_001_01():
 
 		@TrptyCollStsAdvc.setter
 		def TrptyCollStsAdvc(self, value):
-			self._TrptyCollStsAdvc = value if type(value) != auto else self.make_default("TrptyCollStsAdvc")
+			self._TrptyCollStsAdvc = value if type(value) != base_types.auto else self.make_default("TrptyCollStsAdvc")
 
 		@TrptyCollStsAdvc.deleter
 		def TrptyCollStsAdvc(self):

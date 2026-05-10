@@ -1,6 +1,6 @@
 from . import base_types
-from .AnyBICIdentifier import AnyBICIdentifier
 from .Max35Text import Max35Text
+from .AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification44(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification44(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
@@ -24,7 +24,7 @@ class PartyIdentification44(base_types._BaseFieldType):
 
 	@AltrntvIdr.setter
 	def AltrntvIdr(self, value):
-		self._AltrntvIdr = value if type(value) != auto else self.make_default("AltrntvIdr")
+		self._AltrntvIdr = value if type(value) != base_types.auto else self.make_default("AltrntvIdr")
 
 	@AltrntvIdr.deleter
 	def AltrntvIdr(self):

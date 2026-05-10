@@ -1,20 +1,20 @@
 from . import base_types
 from .GenericIdentification165 import GenericIdentification165
-from .StressItem1 import StressItem1
-from .Max2000Text import Max2000Text
 from .StrategyStressType1Code import StrategyStressType1Code
+from .StressItem1 import StressItem1
 from .ScenarioType1Code import ScenarioType1Code
+from .Max2000Text import Max2000Text
 
 class ScenarioDefinition2(base_types._BaseFieldType):
 
-	__slots__ = ["_StrtgyStrssTp", "_Id", "_Desc", "_StrssItm", "_ScnroTp"]
+	__slots__ = ["_StrtgyStrssTp", "_ScnroTp", "_Desc", "_StrssItm", "_Id"]
 	@property
 	def StrtgyStrssTp(self):
 		return self._StrtgyStrssTp
 
 	@StrtgyStrssTp.setter
 	def StrtgyStrssTp(self, value):
-		self._StrtgyStrssTp = value if type(value) != auto else self.make_default("StrtgyStrssTp")
+		self._StrtgyStrssTp = value if type(value) != base_types.auto else self.make_default("StrtgyStrssTp")
 
 	@StrtgyStrssTp.deleter
 	def StrtgyStrssTp(self):
@@ -22,17 +22,17 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 		self._StrtgyStrssTp = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def ScnroTp(self):
+		return self._ScnroTp
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@ScnroTp.setter
+	def ScnroTp(self, value):
+		self._ScnroTp = value if type(value) != base_types.auto else self.make_default("ScnroTp")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@ScnroTp.deleter
+	def ScnroTp(self):
+		del self._ScnroTp
+		self._ScnroTp = None
 
 	@property
 	def Desc(self):
@@ -40,7 +40,7 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):
@@ -53,7 +53,7 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 
 	@StrssItm.setter
 	def StrssItm(self, value):
-		self._StrssItm = value if type(value) != auto else self.make_default("StrssItm")
+		self._StrssItm = value if type(value) != base_types.auto else self.make_default("StrssItm")
 
 	@StrssItm.deleter
 	def StrssItm(self):
@@ -61,23 +61,23 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 		self._StrssItm = None
 
 	@property
-	def ScnroTp(self):
-		return self._ScnroTp
+	def Id(self):
+		return self._Id
 
-	@ScnroTp.setter
-	def ScnroTp(self, value):
-		self._ScnroTp = value if type(value) != auto else self.make_default("ScnroTp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@ScnroTp.deleter
-	def ScnroTp(self):
-		del self._ScnroTp
-		self._ScnroTp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StrtgyStrssTp', type=StrategyStressType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScnroTp', type=ScenarioType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrssItm', type=StressItem1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ScnroTp', type=ScenarioType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 	))
 

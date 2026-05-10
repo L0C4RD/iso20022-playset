@@ -1,6 +1,6 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .LEIIdentifier import LEIIdentifier
+from .CountryCode import CountryCode
 from .Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
 
 class IssuerCSDIdentification1(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class IssuerCSDIdentification1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -25,7 +25,7 @@ class IssuerCSDIdentification1(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -38,7 +38,7 @@ class IssuerCSDIdentification1(base_types._BaseFieldType):
 
 	@FrstTwoCharsInstrmId.setter
 	def FrstTwoCharsInstrmId(self, value):
-		self._FrstTwoCharsInstrmId = value if type(value) != auto else self.make_default("FrstTwoCharsInstrmId")
+		self._FrstTwoCharsInstrmId = value if type(value) != base_types.auto else self.make_default("FrstTwoCharsInstrmId")
 
 	@FrstTwoCharsInstrmId.deleter
 	def FrstTwoCharsInstrmId(self):

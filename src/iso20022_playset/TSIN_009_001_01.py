@@ -12,7 +12,7 @@ class TSIN_009_001_01():
 
 		@PtyRegnAndGrntReq.setter
 		def PtyRegnAndGrntReq(self, value):
-			self._PtyRegnAndGrntReq = value if type(value) != auto else self.make_default("PtyRegnAndGrntReq")
+			self._PtyRegnAndGrntReq = value if type(value) != base_types.auto else self.make_default("PtyRegnAndGrntReq")
 
 		@PtyRegnAndGrntReq.deleter
 		def PtyRegnAndGrntReq(self):

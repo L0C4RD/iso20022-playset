@@ -11,7 +11,7 @@ class SecuritiesQuantityOrAmount7Choice(base_types._BaseFieldType):
 
 	@SctiesQty.setter
 	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+		self._SctiesQty = value if type(value) != base_types.auto else self.make_default("SctiesQty")
 
 	@SctiesQty.deleter
 	def SctiesQty(self):
@@ -24,7 +24,7 @@ class SecuritiesQuantityOrAmount7Choice(base_types._BaseFieldType):
 
 	@InstdAmt.setter
 	def InstdAmt(self, value):
-		self._InstdAmt = value if type(value) != auto else self.make_default("InstdAmt")
+		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
 
 	@InstdAmt.deleter
 	def InstdAmt(self):

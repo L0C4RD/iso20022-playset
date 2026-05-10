@@ -1,6 +1,6 @@
 from . import base_types
-from .Absolute1 import Absolute1
 from .BaseOneRate import BaseOneRate
+from .Absolute1 import Absolute1
 
 class StressSize1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class StressSize1Choice(base_types._BaseFieldType):
 
 	@Abs.setter
 	def Abs(self, value):
-		self._Abs = value if type(value) != auto else self.make_default("Abs")
+		self._Abs = value if type(value) != base_types.auto else self.make_default("Abs")
 
 	@Abs.deleter
 	def Abs(self):
@@ -24,7 +24,7 @@ class StressSize1Choice(base_types._BaseFieldType):
 
 	@Rltv.setter
 	def Rltv(self, value):
-		self._Rltv = value if type(value) != auto else self.make_default("Rltv")
+		self._Rltv = value if type(value) != base_types.auto else self.make_default("Rltv")
 
 	@Rltv.deleter
 	def Rltv(self):

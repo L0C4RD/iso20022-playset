@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max70Text import Max70Text
+from .Max35Text import Max35Text
 
 class DocumentReference1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DocumentReference1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class DocumentReference1(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
 	@Ref.deleter
 	def Ref(self):

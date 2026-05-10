@@ -1,6 +1,6 @@
 from . import base_types
-from .QueryType2Code import QueryType2Code
 from .BusinessDayCriteria3Choice import BusinessDayCriteria3Choice
+from .QueryType2Code import QueryType2Code
 
 class BusinessDayQuery2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class BusinessDayQuery2(base_types._BaseFieldType):
 
 	@Crit.setter
 	def Crit(self, value):
-		self._Crit = value if type(value) != auto else self.make_default("Crit")
+		self._Crit = value if type(value) != base_types.auto else self.make_default("Crit")
 
 	@Crit.deleter
 	def Crit(self):
@@ -24,7 +24,7 @@ class BusinessDayQuery2(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

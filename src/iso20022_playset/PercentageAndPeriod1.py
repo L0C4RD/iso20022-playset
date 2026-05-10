@@ -11,7 +11,7 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
 
 	@Pctg.deleter
 	def Pctg(self):
@@ -24,7 +24,7 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
 
 	@EndDt.deleter
 	def EndDt(self):
@@ -37,7 +37,7 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
 
 	@StartDt.deleter
 	def StartDt(self):

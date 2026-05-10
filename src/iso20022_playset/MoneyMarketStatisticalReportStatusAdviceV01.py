@@ -1,31 +1,18 @@
 from . import base_types
-from .MoneyMarketTransactionStatus2 import MoneyMarketTransactionStatus2
 from .SupplementaryData1 import SupplementaryData1
 from .MoneyMarketStatusReportHeader1 import MoneyMarketStatusReportHeader1
+from .MoneyMarketTransactionStatus2 import MoneyMarketTransactionStatus2
 
 class MoneyMarketStatisticalReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxSts", "_StsRptHdr"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_TxSts", "_StsRptHdr", "_SplmtryData"]
 	@property
 	def TxSts(self):
 		return self._TxSts
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
 
 	@TxSts.deleter
 	def TxSts(self):
@@ -38,16 +25,29 @@ class MoneyMarketStatisticalReportStatusAdviceV01(base_types._BaseFieldType):
 
 	@StsRptHdr.setter
 	def StsRptHdr(self, value):
-		self._StsRptHdr = value if type(value) != auto else self.make_default("StsRptHdr")
+		self._StsRptHdr = value if type(value) != base_types.auto else self.make_default("StsRptHdr")
 
 	@StsRptHdr.deleter
 	def StsRptHdr(self):
 		del self._StsRptHdr
 		self._StsRptHdr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSts', type=MoneyMarketTransactionStatus2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsRptHdr', type=MoneyMarketStatusReportHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

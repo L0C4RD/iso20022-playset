@@ -12,7 +12,7 @@ class CAMT_102_001_03():
 
 		@CretStgOrdr.setter
 		def CretStgOrdr(self, value):
-			self._CretStgOrdr = value if type(value) != auto else self.make_default("CretStgOrdr")
+			self._CretStgOrdr = value if type(value) != base_types.auto else self.make_default("CretStgOrdr")
 
 		@CretStgOrdr.deleter
 		def CretStgOrdr(self):

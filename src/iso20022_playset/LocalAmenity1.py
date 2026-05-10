@@ -1,7 +1,7 @@
 from . import base_types
+from .TrueFalseIndicator import TrueFalseIndicator
 from .LocationAmenity1Code import LocationAmenity1Code
 from .Max35Text import Max35Text
-from .TrueFalseIndicator import TrueFalseIndicator
 
 class LocalAmenity1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class LocalAmenity1(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
 
 	@OthrTp.deleter
 	def OthrTp(self):
@@ -25,7 +25,7 @@ class LocalAmenity1(base_types._BaseFieldType):
 
 	@AvlblInd.setter
 	def AvlblInd(self, value):
-		self._AvlblInd = value if type(value) != auto else self.make_default("AvlblInd")
+		self._AvlblInd = value if type(value) != base_types.auto else self.make_default("AvlblInd")
 
 	@AvlblInd.deleter
 	def AvlblInd(self):
@@ -38,7 +38,7 @@ class LocalAmenity1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

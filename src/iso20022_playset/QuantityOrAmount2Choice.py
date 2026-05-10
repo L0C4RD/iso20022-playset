@@ -1,6 +1,6 @@
 from . import base_types
-from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class QuantityOrAmount2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class QuantityOrAmount2Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -24,7 +24,7 @@ class QuantityOrAmount2Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

@@ -10,7 +10,7 @@ class IndicativeOrMarketPrice13Choice(base_types._BaseFieldType):
 
 	@IndctvPric.setter
 	def IndctvPric(self, value):
-		self._IndctvPric = value if type(value) != auto else self.make_default("IndctvPric")
+		self._IndctvPric = value if type(value) != base_types.auto else self.make_default("IndctvPric")
 
 	@IndctvPric.deleter
 	def IndctvPric(self):
@@ -23,7 +23,7 @@ class IndicativeOrMarketPrice13Choice(base_types._BaseFieldType):
 
 	@MktPric.setter
 	def MktPric(self, value):
-		self._MktPric = value if type(value) != auto else self.make_default("MktPric")
+		self._MktPric = value if type(value) != base_types.auto else self.make_default("MktPric")
 
 	@MktPric.deleter
 	def MktPric(self):

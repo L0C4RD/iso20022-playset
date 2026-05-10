@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .UTIIdentifier import UTIIdentifier
+from .Max35Text import Max35Text
 
 class TradeLegNotificationIdentification1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TradeLegNotificationIdentification1Choice(base_types._BaseFieldType):
 
 	@TradLegNtfctnId.setter
 	def TradLegNtfctnId(self, value):
-		self._TradLegNtfctnId = value if type(value) != auto else self.make_default("TradLegNtfctnId")
+		self._TradLegNtfctnId = value if type(value) != base_types.auto else self.make_default("TradLegNtfctnId")
 
 	@TradLegNtfctnId.deleter
 	def TradLegNtfctnId(self):
@@ -24,7 +24,7 @@ class TradeLegNotificationIdentification1Choice(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):

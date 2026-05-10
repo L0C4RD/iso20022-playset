@@ -11,7 +11,7 @@ class AmountPrice6(base_types._BaseFieldType):
 
 	@AmtPricTp.setter
 	def AmtPricTp(self, value):
-		self._AmtPricTp = value if type(value) != auto else self.make_default("AmtPricTp")
+		self._AmtPricTp = value if type(value) != base_types.auto else self.make_default("AmtPricTp")
 
 	@AmtPricTp.deleter
 	def AmtPricTp(self):
@@ -24,7 +24,7 @@ class AmountPrice6(base_types._BaseFieldType):
 
 	@PricVal.setter
 	def PricVal(self, value):
-		self._PricVal = value if type(value) != auto else self.make_default("PricVal")
+		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
 
 	@PricVal.deleter
 	def PricVal(self):

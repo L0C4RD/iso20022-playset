@@ -12,7 +12,7 @@ class AUTH_026_001_04():
 
 		@CcyCtrlReqOrLttr.setter
 		def CcyCtrlReqOrLttr(self, value):
-			self._CcyCtrlReqOrLttr = value if type(value) != auto else self.make_default("CcyCtrlReqOrLttr")
+			self._CcyCtrlReqOrLttr = value if type(value) != base_types.auto else self.make_default("CcyCtrlReqOrLttr")
 
 		@CcyCtrlReqOrLttr.deleter
 		def CcyCtrlReqOrLttr(self):

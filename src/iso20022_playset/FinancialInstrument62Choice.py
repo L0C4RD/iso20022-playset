@@ -1,7 +1,7 @@
 from . import base_types
+from .OtherAsset2 import OtherAsset2
 from .CashAsset2 import CashAsset2
 from .FinancialInstrumentIdentification3 import FinancialInstrumentIdentification3
-from .OtherAsset2 import OtherAsset2
 
 class FinancialInstrument62Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class FinancialInstrument62Choice(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
+		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
 
 	@Scty.deleter
 	def Scty(self):
@@ -25,7 +25,7 @@ class FinancialInstrument62Choice(base_types._BaseFieldType):
 
 	@OthrAsst.setter
 	def OthrAsst(self, value):
-		self._OthrAsst = value if type(value) != auto else self.make_default("OthrAsst")
+		self._OthrAsst = value if type(value) != base_types.auto else self.make_default("OthrAsst")
 
 	@OthrAsst.deleter
 	def OthrAsst(self):
@@ -38,7 +38,7 @@ class FinancialInstrument62Choice(base_types._BaseFieldType):
 
 	@CshAsst.setter
 	def CshAsst(self, value):
-		self._CshAsst = value if type(value) != auto else self.make_default("CshAsst")
+		self._CshAsst = value if type(value) != base_types.auto else self.make_default("CshAsst")
 
 	@CshAsst.deleter
 	def CshAsst(self):

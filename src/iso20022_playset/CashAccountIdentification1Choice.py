@@ -1,19 +1,32 @@
 from . import base_types
+from .UPICIdentifier import UPICIdentifier
+from .IBANIdentifier import IBANIdentifier
 from .BBANIdentifier import BBANIdentifier
 from .SimpleIdentificationInformation import SimpleIdentificationInformation
-from .IBANIdentifier import IBANIdentifier
-from .UPICIdentifier import UPICIdentifier
 
 class CashAccountIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UPIC", "_DmstAcct", "_IBAN", "_BBAN"]
+	__slots__ = ["_BBAN", "_UPIC", "_IBAN", "_DmstAcct"]
+	@property
+	def BBAN(self):
+		return self._BBAN
+
+	@BBAN.setter
+	def BBAN(self, value):
+		self._BBAN = value if type(value) != base_types.auto else self.make_default("BBAN")
+
+	@BBAN.deleter
+	def BBAN(self):
+		del self._BBAN
+		self._BBAN = None
+
 	@property
 	def UPIC(self):
 		return self._UPIC
 
 	@UPIC.setter
 	def UPIC(self, value):
-		self._UPIC = value if type(value) != auto else self.make_default("UPIC")
+		self._UPIC = value if type(value) != base_types.auto else self.make_default("UPIC")
 
 	@UPIC.deleter
 	def UPIC(self):
@@ -21,25 +34,12 @@ class CashAccountIdentification1Choice(base_types._BaseFieldType):
 		self._UPIC = None
 
 	@property
-	def DmstAcct(self):
-		return self._DmstAcct
-
-	@DmstAcct.setter
-	def DmstAcct(self, value):
-		self._DmstAcct = value if type(value) != auto else self.make_default("DmstAcct")
-
-	@DmstAcct.deleter
-	def DmstAcct(self):
-		del self._DmstAcct
-		self._DmstAcct = None
-
-	@property
 	def IBAN(self):
 		return self._IBAN
 
 	@IBAN.setter
 	def IBAN(self, value):
-		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
+		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
 
 	@IBAN.deleter
 	def IBAN(self):
@@ -47,22 +47,22 @@ class CashAccountIdentification1Choice(base_types._BaseFieldType):
 		self._IBAN = None
 
 	@property
-	def BBAN(self):
-		return self._BBAN
+	def DmstAcct(self):
+		return self._DmstAcct
 
-	@BBAN.setter
-	def BBAN(self, value):
-		self._BBAN = value if type(value) != auto else self.make_default("BBAN")
+	@DmstAcct.setter
+	def DmstAcct(self, value):
+		self._DmstAcct = value if type(value) != base_types.auto else self.make_default("DmstAcct")
 
-	@BBAN.deleter
-	def BBAN(self):
-		del self._BBAN
-		self._BBAN = None
+	@DmstAcct.deleter
+	def DmstAcct(self):
+		del self._DmstAcct
+		self._DmstAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DmstAcct', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IBAN', type=IBANIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IBAN', type=IBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DmstAcct', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=1, array=False),
 	))
 

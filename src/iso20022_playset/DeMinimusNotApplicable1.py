@@ -10,7 +10,7 @@ class DeMinimusNotApplicable1(base_types._BaseFieldType):
 
 	@RstrctdPrsnRsn.setter
 	def RstrctdPrsnRsn(self, value):
-		self._RstrctdPrsnRsn = value if type(value) != auto else self.make_default("RstrctdPrsnRsn")
+		self._RstrctdPrsnRsn = value if type(value) != base_types.auto else self.make_default("RstrctdPrsnRsn")
 
 	@RstrctdPrsnRsn.deleter
 	def RstrctdPrsnRsn(self):

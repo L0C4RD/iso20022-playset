@@ -11,7 +11,7 @@ class SpecificCollateral3(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
@@ -24,7 +24,7 @@ class SpecificCollateral3(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
+		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
 
 	@MktVal.deleter
 	def MktVal(self):

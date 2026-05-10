@@ -12,7 +12,7 @@ class CAFM_002_001_03():
 
 		@FileActnRspn.setter
 		def FileActnRspn(self, value):
-			self._FileActnRspn = value if type(value) != auto else self.make_default("FileActnRspn")
+			self._FileActnRspn = value if type(value) != base_types.auto else self.make_default("FileActnRspn")
 
 		@FileActnRspn.deleter
 		def FileActnRspn(self):

@@ -1,7 +1,7 @@
 from . import base_types
-from .TradeData15 import TradeData15
 from .SupplementaryData1 import SupplementaryData1
 from .RegulatoryReporting8 import RegulatoryReporting8
+from .TradeData15 import TradeData15
 
 class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
 	@RgltryRptg.setter
 	def RgltryRptg(self, value):
-		self._RgltryRptg = value if type(value) != auto else self.make_default("RgltryRptg")
+		self._RgltryRptg = value if type(value) != base_types.auto else self.make_default("RgltryRptg")
 
 	@RgltryRptg.deleter
 	def RgltryRptg(self):
@@ -25,7 +25,7 @@ class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -38,7 +38,7 @@ class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
 	@TradData.setter
 	def TradData(self, value):
-		self._TradData = value if type(value) != auto else self.make_default("TradData")
+		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
 
 	@TradData.deleter
 	def TradData(self):

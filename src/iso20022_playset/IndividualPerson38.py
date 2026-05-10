@@ -1,67 +1,28 @@
 from . import base_types
-from .CountryCode import CountryCode
-from .Max35Text import Max35Text
-from .ISODate import ISODate
-from .PersonalInformation1 import PersonalInformation1
-from .ModificationScope34 import ModificationScope34
 from .Max350Text import Max350Text
-from .CivilStatus1Choice import CivilStatus1Choice
-from .ModificationScope39 import ModificationScope39
-from .Max140Text import Max140Text
-from .NamePrefix1Choice import NamePrefix1Choice
-from .GDPRData1 import GDPRData1
 from .Gender1Code import Gender1Code
 from .PoliticallyExposedPerson1 import PoliticallyExposedPerson1
+from .Max140Text import Max140Text
+from .PersonalInformation1 import PersonalInformation1
+from .ISODate import ISODate
+from .Max35Text import Max35Text
+from .NamePrefix1Choice import NamePrefix1Choice
+from .CivilStatus1Choice import CivilStatus1Choice
+from .ModificationScope39 import ModificationScope39
+from .GDPRData1 import GDPRData1
+from .ModificationScope34 import ModificationScope34
+from .CountryCode import CountryCode
 
 class IndividualPerson38(base_types._BaseFieldType):
 
-	__slots__ = ["_ModfdPstlAdr", "_BizFctn", "_EdctnLvl", "_Prfssn", "_Gndr", "_GDPRData", "_GvnNm", "_PrvcOfBirth", "_NmSfx", "_CtryOfBirth", "_EmplngCpny", "_BirthDt", "_Nm", "_FmlyInf", "_PltclyXpsdPrsn", "_NmPrfx", "_MddlNm", "_CityOfBirth", "_CvlSts", "_ModfdCtznsh", "_DthDt"]
-	@property
-	def ModfdPstlAdr(self):
-		return self._ModfdPstlAdr
-
-	@ModfdPstlAdr.setter
-	def ModfdPstlAdr(self, value):
-		self._ModfdPstlAdr = value if type(value) != auto else self.make_default("ModfdPstlAdr")
-
-	@ModfdPstlAdr.deleter
-	def ModfdPstlAdr(self):
-		del self._ModfdPstlAdr
-		self._ModfdPstlAdr = None
-
-	@property
-	def BizFctn(self):
-		return self._BizFctn
-
-	@BizFctn.setter
-	def BizFctn(self, value):
-		self._BizFctn = value if type(value) != auto else self.make_default("BizFctn")
-
-	@BizFctn.deleter
-	def BizFctn(self):
-		del self._BizFctn
-		self._BizFctn = None
-
-	@property
-	def EdctnLvl(self):
-		return self._EdctnLvl
-
-	@EdctnLvl.setter
-	def EdctnLvl(self, value):
-		self._EdctnLvl = value if type(value) != auto else self.make_default("EdctnLvl")
-
-	@EdctnLvl.deleter
-	def EdctnLvl(self):
-		del self._EdctnLvl
-		self._EdctnLvl = None
-
+	__slots__ = ["_Prfssn", "_PrvcOfBirth", "_PltclyXpsdPrsn", "_CvlSts", "_ModfdCtznsh", "_MddlNm", "_CityOfBirth", "_GvnNm", "_ModfdPstlAdr", "_EmplngCpny", "_BirthDt", "_CtryOfBirth", "_FmlyInf", "_DthDt", "_BizFctn", "_EdctnLvl", "_Nm", "_GDPRData", "_NmSfx", "_Gndr", "_NmPrfx"]
 	@property
 	def Prfssn(self):
 		return self._Prfssn
 
 	@Prfssn.setter
 	def Prfssn(self, value):
-		self._Prfssn = value if type(value) != auto else self.make_default("Prfssn")
+		self._Prfssn = value if type(value) != base_types.auto else self.make_default("Prfssn")
 
 	@Prfssn.deleter
 	def Prfssn(self):
@@ -69,51 +30,12 @@ class IndividualPerson38(base_types._BaseFieldType):
 		self._Prfssn = None
 
 	@property
-	def Gndr(self):
-		return self._Gndr
-
-	@Gndr.setter
-	def Gndr(self, value):
-		self._Gndr = value if type(value) != auto else self.make_default("Gndr")
-
-	@Gndr.deleter
-	def Gndr(self):
-		del self._Gndr
-		self._Gndr = None
-
-	@property
-	def GDPRData(self):
-		return self._GDPRData
-
-	@GDPRData.setter
-	def GDPRData(self, value):
-		self._GDPRData = value if type(value) != auto else self.make_default("GDPRData")
-
-	@GDPRData.deleter
-	def GDPRData(self):
-		del self._GDPRData
-		self._GDPRData = None
-
-	@property
-	def GvnNm(self):
-		return self._GvnNm
-
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
-
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
-
-	@property
 	def PrvcOfBirth(self):
 		return self._PrvcOfBirth
 
 	@PrvcOfBirth.setter
 	def PrvcOfBirth(self, value):
-		self._PrvcOfBirth = value if type(value) != auto else self.make_default("PrvcOfBirth")
+		self._PrvcOfBirth = value if type(value) != base_types.auto else self.make_default("PrvcOfBirth")
 
 	@PrvcOfBirth.deleter
 	def PrvcOfBirth(self):
@@ -121,90 +43,12 @@ class IndividualPerson38(base_types._BaseFieldType):
 		self._PrvcOfBirth = None
 
 	@property
-	def NmSfx(self):
-		return self._NmSfx
-
-	@NmSfx.setter
-	def NmSfx(self, value):
-		self._NmSfx = value if type(value) != auto else self.make_default("NmSfx")
-
-	@NmSfx.deleter
-	def NmSfx(self):
-		del self._NmSfx
-		self._NmSfx = None
-
-	@property
-	def CtryOfBirth(self):
-		return self._CtryOfBirth
-
-	@CtryOfBirth.setter
-	def CtryOfBirth(self, value):
-		self._CtryOfBirth = value if type(value) != auto else self.make_default("CtryOfBirth")
-
-	@CtryOfBirth.deleter
-	def CtryOfBirth(self):
-		del self._CtryOfBirth
-		self._CtryOfBirth = None
-
-	@property
-	def EmplngCpny(self):
-		return self._EmplngCpny
-
-	@EmplngCpny.setter
-	def EmplngCpny(self, value):
-		self._EmplngCpny = value if type(value) != auto else self.make_default("EmplngCpny")
-
-	@EmplngCpny.deleter
-	def EmplngCpny(self):
-		del self._EmplngCpny
-		self._EmplngCpny = None
-
-	@property
-	def BirthDt(self):
-		return self._BirthDt
-
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
-
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def FmlyInf(self):
-		return self._FmlyInf
-
-	@FmlyInf.setter
-	def FmlyInf(self, value):
-		self._FmlyInf = value if type(value) != auto else self.make_default("FmlyInf")
-
-	@FmlyInf.deleter
-	def FmlyInf(self):
-		del self._FmlyInf
-		self._FmlyInf = None
-
-	@property
 	def PltclyXpsdPrsn(self):
 		return self._PltclyXpsdPrsn
 
 	@PltclyXpsdPrsn.setter
 	def PltclyXpsdPrsn(self, value):
-		self._PltclyXpsdPrsn = value if type(value) != auto else self.make_default("PltclyXpsdPrsn")
+		self._PltclyXpsdPrsn = value if type(value) != base_types.auto else self.make_default("PltclyXpsdPrsn")
 
 	@PltclyXpsdPrsn.deleter
 	def PltclyXpsdPrsn(self):
@@ -212,51 +56,12 @@ class IndividualPerson38(base_types._BaseFieldType):
 		self._PltclyXpsdPrsn = None
 
 	@property
-	def NmPrfx(self):
-		return self._NmPrfx
-
-	@NmPrfx.setter
-	def NmPrfx(self, value):
-		self._NmPrfx = value if type(value) != auto else self.make_default("NmPrfx")
-
-	@NmPrfx.deleter
-	def NmPrfx(self):
-		del self._NmPrfx
-		self._NmPrfx = None
-
-	@property
-	def MddlNm(self):
-		return self._MddlNm
-
-	@MddlNm.setter
-	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
-
-	@MddlNm.deleter
-	def MddlNm(self):
-		del self._MddlNm
-		self._MddlNm = None
-
-	@property
-	def CityOfBirth(self):
-		return self._CityOfBirth
-
-	@CityOfBirth.setter
-	def CityOfBirth(self, value):
-		self._CityOfBirth = value if type(value) != auto else self.make_default("CityOfBirth")
-
-	@CityOfBirth.deleter
-	def CityOfBirth(self):
-		del self._CityOfBirth
-		self._CityOfBirth = None
-
-	@property
 	def CvlSts(self):
 		return self._CvlSts
 
 	@CvlSts.setter
 	def CvlSts(self, value):
-		self._CvlSts = value if type(value) != auto else self.make_default("CvlSts")
+		self._CvlSts = value if type(value) != base_types.auto else self.make_default("CvlSts")
 
 	@CvlSts.deleter
 	def CvlSts(self):
@@ -269,7 +74,7 @@ class IndividualPerson38(base_types._BaseFieldType):
 
 	@ModfdCtznsh.setter
 	def ModfdCtznsh(self, value):
-		self._ModfdCtznsh = value if type(value) != auto else self.make_default("ModfdCtznsh")
+		self._ModfdCtznsh = value if type(value) != base_types.auto else self.make_default("ModfdCtznsh")
 
 	@ModfdCtznsh.deleter
 	def ModfdCtznsh(self):
@@ -277,39 +82,234 @@ class IndividualPerson38(base_types._BaseFieldType):
 		self._ModfdCtznsh = None
 
 	@property
+	def MddlNm(self):
+		return self._MddlNm
+
+	@MddlNm.setter
+	def MddlNm(self, value):
+		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+
+	@MddlNm.deleter
+	def MddlNm(self):
+		del self._MddlNm
+		self._MddlNm = None
+
+	@property
+	def CityOfBirth(self):
+		return self._CityOfBirth
+
+	@CityOfBirth.setter
+	def CityOfBirth(self, value):
+		self._CityOfBirth = value if type(value) != base_types.auto else self.make_default("CityOfBirth")
+
+	@CityOfBirth.deleter
+	def CityOfBirth(self):
+		del self._CityOfBirth
+		self._CityOfBirth = None
+
+	@property
+	def GvnNm(self):
+		return self._GvnNm
+
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
+
+	@property
+	def ModfdPstlAdr(self):
+		return self._ModfdPstlAdr
+
+	@ModfdPstlAdr.setter
+	def ModfdPstlAdr(self, value):
+		self._ModfdPstlAdr = value if type(value) != base_types.auto else self.make_default("ModfdPstlAdr")
+
+	@ModfdPstlAdr.deleter
+	def ModfdPstlAdr(self):
+		del self._ModfdPstlAdr
+		self._ModfdPstlAdr = None
+
+	@property
+	def EmplngCpny(self):
+		return self._EmplngCpny
+
+	@EmplngCpny.setter
+	def EmplngCpny(self, value):
+		self._EmplngCpny = value if type(value) != base_types.auto else self.make_default("EmplngCpny")
+
+	@EmplngCpny.deleter
+	def EmplngCpny(self):
+		del self._EmplngCpny
+		self._EmplngCpny = None
+
+	@property
+	def BirthDt(self):
+		return self._BirthDt
+
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
+
+	@property
+	def CtryOfBirth(self):
+		return self._CtryOfBirth
+
+	@CtryOfBirth.setter
+	def CtryOfBirth(self, value):
+		self._CtryOfBirth = value if type(value) != base_types.auto else self.make_default("CtryOfBirth")
+
+	@CtryOfBirth.deleter
+	def CtryOfBirth(self):
+		del self._CtryOfBirth
+		self._CtryOfBirth = None
+
+	@property
+	def FmlyInf(self):
+		return self._FmlyInf
+
+	@FmlyInf.setter
+	def FmlyInf(self, value):
+		self._FmlyInf = value if type(value) != base_types.auto else self.make_default("FmlyInf")
+
+	@FmlyInf.deleter
+	def FmlyInf(self):
+		del self._FmlyInf
+		self._FmlyInf = None
+
+	@property
 	def DthDt(self):
 		return self._DthDt
 
 	@DthDt.setter
 	def DthDt(self, value):
-		self._DthDt = value if type(value) != auto else self.make_default("DthDt")
+		self._DthDt = value if type(value) != base_types.auto else self.make_default("DthDt")
 
 	@DthDt.deleter
 	def DthDt(self):
 		del self._DthDt
 		self._DthDt = None
 
+	@property
+	def BizFctn(self):
+		return self._BizFctn
+
+	@BizFctn.setter
+	def BizFctn(self, value):
+		self._BizFctn = value if type(value) != base_types.auto else self.make_default("BizFctn")
+
+	@BizFctn.deleter
+	def BizFctn(self):
+		del self._BizFctn
+		self._BizFctn = None
+
+	@property
+	def EdctnLvl(self):
+		return self._EdctnLvl
+
+	@EdctnLvl.setter
+	def EdctnLvl(self, value):
+		self._EdctnLvl = value if type(value) != base_types.auto else self.make_default("EdctnLvl")
+
+	@EdctnLvl.deleter
+	def EdctnLvl(self):
+		del self._EdctnLvl
+		self._EdctnLvl = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def GDPRData(self):
+		return self._GDPRData
+
+	@GDPRData.setter
+	def GDPRData(self, value):
+		self._GDPRData = value if type(value) != base_types.auto else self.make_default("GDPRData")
+
+	@GDPRData.deleter
+	def GDPRData(self):
+		del self._GDPRData
+		self._GDPRData = None
+
+	@property
+	def NmSfx(self):
+		return self._NmSfx
+
+	@NmSfx.setter
+	def NmSfx(self, value):
+		self._NmSfx = value if type(value) != base_types.auto else self.make_default("NmSfx")
+
+	@NmSfx.deleter
+	def NmSfx(self):
+		del self._NmSfx
+		self._NmSfx = None
+
+	@property
+	def Gndr(self):
+		return self._Gndr
+
+	@Gndr.setter
+	def Gndr(self, value):
+		self._Gndr = value if type(value) != base_types.auto else self.make_default("Gndr")
+
+	@Gndr.deleter
+	def Gndr(self):
+		del self._Gndr
+		self._Gndr = None
+
+	@property
+	def NmPrfx(self):
+		return self._NmPrfx
+
+	@NmPrfx.setter
+	def NmPrfx(self, value):
+		self._NmPrfx = value if type(value) != base_types.auto else self.make_default("NmPrfx")
+
+	@NmPrfx.deleter
+	def NmPrfx(self):
+		del self._NmPrfx
+		self._NmPrfx = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ModfdPstlAdr', type=ModificationScope34, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BizFctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EdctnLvl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prfssn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Gndr', type=Gender1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GDPRData', type=GDPRData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvcOfBirth', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmSfx', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfBirth', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmplngCpny', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FmlyInf', type=PersonalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PltclyXpsdPrsn', type=PoliticallyExposedPerson1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CityOfBirth', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CvlSts', type=CivilStatus1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModfdCtznsh', type=ModificationScope39, min=0, max=3, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CityOfBirth', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModfdPstlAdr', type=ModificationScope34, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EmplngCpny', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfBirth', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FmlyInf', type=PersonalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizFctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EdctnLvl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GDPRData', type=GDPRData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NmSfx', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Gndr', type=Gender1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

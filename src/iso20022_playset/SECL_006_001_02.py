@@ -12,7 +12,7 @@ class SECL_006_001_02():
 
 		@DfltFndCntrbtnRpt.setter
 		def DfltFndCntrbtnRpt(self, value):
-			self._DfltFndCntrbtnRpt = value if type(value) != auto else self.make_default("DfltFndCntrbtnRpt")
+			self._DfltFndCntrbtnRpt = value if type(value) != base_types.auto else self.make_default("DfltFndCntrbtnRpt")
 
 		@DfltFndCntrbtnRpt.deleter
 		def DfltFndCntrbtnRpt(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .RiskReductionService1Code import RiskReductionService1Code
 from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .RiskReductionService1Code import RiskReductionService1Code
 
 class PTRREvent2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PTRREvent2(base_types._BaseFieldType):
 
 	@SvcPrvdr.setter
 	def SvcPrvdr(self, value):
-		self._SvcPrvdr = value if type(value) != auto else self.make_default("SvcPrvdr")
+		self._SvcPrvdr = value if type(value) != base_types.auto else self.make_default("SvcPrvdr")
 
 	@SvcPrvdr.deleter
 	def SvcPrvdr(self):
@@ -24,7 +24,7 @@ class PTRREvent2(base_types._BaseFieldType):
 
 	@Tchnq.setter
 	def Tchnq(self, value):
-		self._Tchnq = value if type(value) != auto else self.make_default("Tchnq")
+		self._Tchnq = value if type(value) != base_types.auto else self.make_default("Tchnq")
 
 	@Tchnq.deleter
 	def Tchnq(self):

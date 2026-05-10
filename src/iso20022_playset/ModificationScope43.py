@@ -11,7 +11,7 @@ class ModificationScope43(base_types._BaseFieldType):
 
 	@Plcmnt.setter
 	def Plcmnt(self, value):
-		self._Plcmnt = value if type(value) != auto else self.make_default("Plcmnt")
+		self._Plcmnt = value if type(value) != base_types.auto else self.make_default("Plcmnt")
 
 	@Plcmnt.deleter
 	def Plcmnt(self):
@@ -24,7 +24,7 @@ class ModificationScope43(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):

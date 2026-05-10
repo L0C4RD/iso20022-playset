@@ -1,6 +1,6 @@
 from . import base_types
-from .Max3NumericText import Max3NumericText
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max3NumericText import Max3NumericText
 
 class MaximumAmountByPeriod1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MaximumAmountByPeriod1(base_types._BaseFieldType):
 
 	@NbOfDays.setter
 	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != auto else self.make_default("NbOfDays")
+		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
 
 	@NbOfDays.deleter
 	def NbOfDays(self):
@@ -24,7 +24,7 @@ class MaximumAmountByPeriod1(base_types._BaseFieldType):
 
 	@MaxAmt.setter
 	def MaxAmt(self, value):
-		self._MaxAmt = value if type(value) != auto else self.make_default("MaxAmt")
+		self._MaxAmt = value if type(value) != base_types.auto else self.make_default("MaxAmt")
 
 	@MaxAmt.deleter
 	def MaxAmt(self):

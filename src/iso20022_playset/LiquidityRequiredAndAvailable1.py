@@ -1,7 +1,7 @@
 from . import base_types
+from .SettlementDate6Code import SettlementDate6Code
 from .StressLiquidResourceRequirement1 import StressLiquidResourceRequirement1
 from .LiquidResources1 import LiquidResources1
-from .SettlementDate6Code import SettlementDate6Code
 
 class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
 	@StrssLqdRsrcRqrmnt.setter
 	def StrssLqdRsrcRqrmnt(self, value):
-		self._StrssLqdRsrcRqrmnt = value if type(value) != auto else self.make_default("StrssLqdRsrcRqrmnt")
+		self._StrssLqdRsrcRqrmnt = value if type(value) != base_types.auto else self.make_default("StrssLqdRsrcRqrmnt")
 
 	@StrssLqdRsrcRqrmnt.deleter
 	def StrssLqdRsrcRqrmnt(self):
@@ -25,7 +25,7 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
 	@LqdtyHrzn.setter
 	def LqdtyHrzn(self, value):
-		self._LqdtyHrzn = value if type(value) != auto else self.make_default("LqdtyHrzn")
+		self._LqdtyHrzn = value if type(value) != base_types.auto else self.make_default("LqdtyHrzn")
 
 	@LqdtyHrzn.deleter
 	def LqdtyHrzn(self):
@@ -38,7 +38,7 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
 	@LqdRsrcs.setter
 	def LqdRsrcs(self, value):
-		self._LqdRsrcs = value if type(value) != auto else self.make_default("LqdRsrcs")
+		self._LqdRsrcs = value if type(value) != base_types.auto else self.make_default("LqdRsrcs")
 
 	@LqdRsrcs.deleter
 	def LqdRsrcs(self):

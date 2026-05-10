@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
 from .YesNoIndicator import YesNoIndicator
+from .GenericIdentification30 import GenericIdentification30
 
 class TemporaryFinancialInstrumentIndicator3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TemporaryFinancialInstrumentIndicator3Choice(base_types._BaseFieldType):
 
 	@TempInd.setter
 	def TempInd(self, value):
-		self._TempInd = value if type(value) != auto else self.make_default("TempInd")
+		self._TempInd = value if type(value) != base_types.auto else self.make_default("TempInd")
 
 	@TempInd.deleter
 	def TempInd(self):
@@ -24,7 +24,7 @@ class TemporaryFinancialInstrumentIndicator3Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):

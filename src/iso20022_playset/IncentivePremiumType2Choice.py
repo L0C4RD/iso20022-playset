@@ -1,7 +1,7 @@
 from . import base_types
-from .VoteTypeAndQuantity1 import VoteTypeAndQuantity1
-from .YesNoIndicator import YesNoIndicator
 from .Number import Number
+from .YesNoIndicator import YesNoIndicator
+from .VoteTypeAndQuantity1 import VoteTypeAndQuantity1
 
 class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
 	@PerVote.setter
 	def PerVote(self, value):
-		self._PerVote = value if type(value) != auto else self.make_default("PerVote")
+		self._PerVote = value if type(value) != base_types.auto else self.make_default("PerVote")
 
 	@PerVote.deleter
 	def PerVote(self):
@@ -25,7 +25,7 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
 	@PerAttndee.setter
 	def PerAttndee(self, value):
-		self._PerAttndee = value if type(value) != auto else self.make_default("PerAttndee")
+		self._PerAttndee = value if type(value) != base_types.auto else self.make_default("PerAttndee")
 
 	@PerAttndee.deleter
 	def PerAttndee(self):
@@ -38,7 +38,7 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
 	@PerScty.setter
 	def PerScty(self, value):
-		self._PerScty = value if type(value) != auto else self.make_default("PerScty")
+		self._PerScty = value if type(value) != base_types.auto else self.make_default("PerScty")
 
 	@PerScty.deleter
 	def PerScty(self):

@@ -12,7 +12,7 @@ class CASP_005_001_07():
 
 		@SaleToPOISsnMgmtReq.setter
 		def SaleToPOISsnMgmtReq(self, value):
-			self._SaleToPOISsnMgmtReq = value if type(value) != auto else self.make_default("SaleToPOISsnMgmtReq")
+			self._SaleToPOISsnMgmtReq = value if type(value) != base_types.auto else self.make_default("SaleToPOISsnMgmtReq")
 
 		@SaleToPOISsnMgmtReq.deleter
 		def SaleToPOISsnMgmtReq(self):

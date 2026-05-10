@@ -12,7 +12,7 @@ class SECL_003_001_04():
 
 		@TradLegStmt.setter
 		def TradLegStmt(self, value):
-			self._TradLegStmt = value if type(value) != auto else self.make_default("TradLegStmt")
+			self._TradLegStmt = value if type(value) != base_types.auto else self.make_default("TradLegStmt")
 
 		@TradLegStmt.deleter
 		def TradLegStmt(self):

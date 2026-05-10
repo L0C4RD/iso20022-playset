@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification43 import PartyIdentification43
 from .Undertaking9 import Undertaking9
+from .PartyIdentification43 import PartyIdentification43
 
 class UndertakingNonExtensionRequest1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UndertakingNonExtensionRequest1(base_types._BaseFieldType):
 
 	@RqstngPty.setter
 	def RqstngPty(self, value):
-		self._RqstngPty = value if type(value) != auto else self.make_default("RqstngPty")
+		self._RqstngPty = value if type(value) != base_types.auto else self.make_default("RqstngPty")
 
 	@RqstngPty.deleter
 	def RqstngPty(self):
@@ -24,7 +24,7 @@ class UndertakingNonExtensionRequest1(base_types._BaseFieldType):
 
 	@UdrtkgId.setter
 	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
+		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
 
 	@UdrtkgId.deleter
 	def UdrtkgId(self):

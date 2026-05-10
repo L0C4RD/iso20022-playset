@@ -12,7 +12,7 @@ class TSMT_041_001_03():
 
 		@TxRpt.setter
 		def TxRpt(self, value):
-			self._TxRpt = value if type(value) != auto else self.make_default("TxRpt")
+			self._TxRpt = value if type(value) != base_types.auto else self.make_default("TxRpt")
 
 		@TxRpt.deleter
 		def TxRpt(self):

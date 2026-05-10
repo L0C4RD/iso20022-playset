@@ -12,7 +12,7 @@ class CATM_003_001_14():
 
 		@AccptrCfgtnUpd.setter
 		def AccptrCfgtnUpd(self, value):
-			self._AccptrCfgtnUpd = value if type(value) != auto else self.make_default("AccptrCfgtnUpd")
+			self._AccptrCfgtnUpd = value if type(value) != base_types.auto else self.make_default("AccptrCfgtnUpd")
 
 		@AccptrCfgtnUpd.deleter
 		def AccptrCfgtnUpd(self):

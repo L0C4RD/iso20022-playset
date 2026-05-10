@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from .ISODate import ISODate
+from .Max35Text import Max35Text
 
 class Dispute1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Dispute1(base_types._BaseFieldType):
 
 	@MrgnCallReqId.setter
 	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != auto else self.make_default("MrgnCallReqId")
+		self._MrgnCallReqId = value if type(value) != base_types.auto else self.make_default("MrgnCallReqId")
 
 	@MrgnCallReqId.deleter
 	def MrgnCallReqId(self):
@@ -25,7 +25,7 @@ class Dispute1(base_types._BaseFieldType):
 
 	@DsptdAmt.setter
 	def DsptdAmt(self, value):
-		self._DsptdAmt = value if type(value) != auto else self.make_default("DsptdAmt")
+		self._DsptdAmt = value if type(value) != base_types.auto else self.make_default("DsptdAmt")
 
 	@DsptdAmt.deleter
 	def DsptdAmt(self):
@@ -38,7 +38,7 @@ class Dispute1(base_types._BaseFieldType):
 
 	@DsptDt.setter
 	def DsptDt(self, value):
-		self._DsptDt = value if type(value) != auto else self.make_default("DsptDt")
+		self._DsptDt = value if type(value) != base_types.auto else self.make_default("DsptDt")
 
 	@DsptDt.deleter
 	def DsptDt(self):

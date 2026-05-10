@@ -1,6 +1,6 @@
 from . import base_types
-from .PaymentTransaction155 import PaymentTransaction155
 from .OriginalGroupHeader21 import OriginalGroupHeader21
+from .PaymentTransaction155 import PaymentTransaction155
 
 class UnderlyingTransaction34(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UnderlyingTransaction34(base_types._BaseFieldType):
 
 	@TxInf.setter
 	def TxInf(self, value):
-		self._TxInf = value if type(value) != auto else self.make_default("TxInf")
+		self._TxInf = value if type(value) != base_types.auto else self.make_default("TxInf")
 
 	@TxInf.deleter
 	def TxInf(self):
@@ -24,7 +24,7 @@ class UnderlyingTransaction34(base_types._BaseFieldType):
 
 	@OrgnlGrpInfAndCxl.setter
 	def OrgnlGrpInfAndCxl(self, value):
-		self._OrgnlGrpInfAndCxl = value if type(value) != auto else self.make_default("OrgnlGrpInfAndCxl")
+		self._OrgnlGrpInfAndCxl = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndCxl")
 
 	@OrgnlGrpInfAndCxl.deleter
 	def OrgnlGrpInfAndCxl(self):

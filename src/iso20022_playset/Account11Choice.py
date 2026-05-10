@@ -4,27 +4,14 @@ from .CashAccountIdentification12Choice import CashAccountIdentification12Choice
 
 class Account11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsAcct", "_TaxAcct", "_CshAcct"]
-	@property
-	def ChrgsAcct(self):
-		return self._ChrgsAcct
-
-	@ChrgsAcct.setter
-	def ChrgsAcct(self, value):
-		self._ChrgsAcct = value if type(value) != auto else self.make_default("ChrgsAcct")
-
-	@ChrgsAcct.deleter
-	def ChrgsAcct(self):
-		del self._ChrgsAcct
-		self._ChrgsAcct = None
-
+	__slots__ = ["_TaxAcct", "_ChrgsAcct", "_CshAcct"]
 	@property
 	def TaxAcct(self):
 		return self._TaxAcct
 
 	@TaxAcct.setter
 	def TaxAcct(self, value):
-		self._TaxAcct = value if type(value) != auto else self.make_default("TaxAcct")
+		self._TaxAcct = value if type(value) != base_types.auto else self.make_default("TaxAcct")
 
 	@TaxAcct.deleter
 	def TaxAcct(self):
@@ -32,12 +19,25 @@ class Account11Choice(base_types._BaseFieldType):
 		self._TaxAcct = None
 
 	@property
+	def ChrgsAcct(self):
+		return self._ChrgsAcct
+
+	@ChrgsAcct.setter
+	def ChrgsAcct(self, value):
+		self._ChrgsAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcct")
+
+	@ChrgsAcct.deleter
+	def ChrgsAcct(self):
+		del self._ChrgsAcct
+		self._ChrgsAcct = None
+
+	@property
 	def CshAcct(self):
 		return self._CshAcct
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
 
 	@CshAcct.deleter
 	def CshAcct(self):
@@ -45,8 +45,8 @@ class Account11Choice(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TaxAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification12Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

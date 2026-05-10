@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .SafekeepingPlace3Code import SafekeepingPlace3Code
+from .Max35Text import Max35Text
 
 class SafekeepingPlaceTypeAndText1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SafekeepingPlaceTypeAndText1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class SafekeepingPlaceTypeAndText1(base_types._BaseFieldType):
 
 	@SfkpgPlcTp.setter
 	def SfkpgPlcTp(self, value):
-		self._SfkpgPlcTp = value if type(value) != auto else self.make_default("SfkpgPlcTp")
+		self._SfkpgPlcTp = value if type(value) != base_types.auto else self.make_default("SfkpgPlcTp")
 
 	@SfkpgPlcTp.deleter
 	def SfkpgPlcTp(self):

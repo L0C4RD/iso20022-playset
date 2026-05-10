@@ -1,31 +1,18 @@
 from . import base_types
+from .Max70Text import Max70Text
 from .ATMService28 import ATMService28
 from .Max35Text import Max35Text
-from .Max70Text import Max70Text
 
 class ATMCustomerProfile7(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrId", "_PrflDesc", "_PrflRef", "_AllwdSvcs"]
-	@property
-	def CstmrId(self):
-		return self._CstmrId
-
-	@CstmrId.setter
-	def CstmrId(self, value):
-		self._CstmrId = value if type(value) != auto else self.make_default("CstmrId")
-
-	@CstmrId.deleter
-	def CstmrId(self):
-		del self._CstmrId
-		self._CstmrId = None
-
+	__slots__ = ["_PrflDesc", "_CstmrId", "_PrflRef", "_AllwdSvcs"]
 	@property
 	def PrflDesc(self):
 		return self._PrflDesc
 
 	@PrflDesc.setter
 	def PrflDesc(self, value):
-		self._PrflDesc = value if type(value) != auto else self.make_default("PrflDesc")
+		self._PrflDesc = value if type(value) != base_types.auto else self.make_default("PrflDesc")
 
 	@PrflDesc.deleter
 	def PrflDesc(self):
@@ -33,12 +20,25 @@ class ATMCustomerProfile7(base_types._BaseFieldType):
 		self._PrflDesc = None
 
 	@property
+	def CstmrId(self):
+		return self._CstmrId
+
+	@CstmrId.setter
+	def CstmrId(self, value):
+		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
+
+	@CstmrId.deleter
+	def CstmrId(self):
+		del self._CstmrId
+		self._CstmrId = None
+
+	@property
 	def PrflRef(self):
 		return self._PrflRef
 
 	@PrflRef.setter
 	def PrflRef(self, value):
-		self._PrflRef = value if type(value) != auto else self.make_default("PrflRef")
+		self._PrflRef = value if type(value) != base_types.auto else self.make_default("PrflRef")
 
 	@PrflRef.deleter
 	def PrflRef(self):
@@ -51,7 +51,7 @@ class ATMCustomerProfile7(base_types._BaseFieldType):
 
 	@AllwdSvcs.setter
 	def AllwdSvcs(self, value):
-		self._AllwdSvcs = value if type(value) != auto else self.make_default("AllwdSvcs")
+		self._AllwdSvcs = value if type(value) != base_types.auto else self.make_default("AllwdSvcs")
 
 	@AllwdSvcs.deleter
 	def AllwdSvcs(self):
@@ -59,8 +59,8 @@ class ATMCustomerProfile7(base_types._BaseFieldType):
 		self._AllwdSvcs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CstmrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrflDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrflRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdSvcs', type=ATMService28, min=0, max=None, mutex_group=None, array=True),
 	))

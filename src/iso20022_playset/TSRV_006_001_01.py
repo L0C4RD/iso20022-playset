@@ -12,7 +12,7 @@ class TSRV_006_001_01():
 
 		@UdrtkgAmdmntAdvc.setter
 		def UdrtkgAmdmntAdvc(self, value):
-			self._UdrtkgAmdmntAdvc = value if type(value) != auto else self.make_default("UdrtkgAmdmntAdvc")
+			self._UdrtkgAmdmntAdvc = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntAdvc")
 
 		@UdrtkgAmdmntAdvc.deleter
 		def UdrtkgAmdmntAdvc(self):

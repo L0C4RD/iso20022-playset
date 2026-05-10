@@ -10,7 +10,7 @@ class PercentageTolerance1(base_types._BaseFieldType):
 
 	@MnsPct.setter
 	def MnsPct(self, value):
-		self._MnsPct = value if type(value) != auto else self.make_default("MnsPct")
+		self._MnsPct = value if type(value) != base_types.auto else self.make_default("MnsPct")
 
 	@MnsPct.deleter
 	def MnsPct(self):
@@ -23,7 +23,7 @@ class PercentageTolerance1(base_types._BaseFieldType):
 
 	@PlusPct.setter
 	def PlusPct(self, value):
-		self._PlusPct = value if type(value) != auto else self.make_default("PlusPct")
+		self._PlusPct = value if type(value) != base_types.auto else self.make_default("PlusPct")
 
 	@PlusPct.deleter
 	def PlusPct(self):

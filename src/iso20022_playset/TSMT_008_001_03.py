@@ -12,7 +12,7 @@ class TSMT_008_001_03():
 
 		@AmdmntRjctnNtfctn.setter
 		def AmdmntRjctnNtfctn(self, value):
-			self._AmdmntRjctnNtfctn = value if type(value) != auto else self.make_default("AmdmntRjctnNtfctn")
+			self._AmdmntRjctnNtfctn = value if type(value) != base_types.auto else self.make_default("AmdmntRjctnNtfctn")
 
 		@AmdmntRjctnNtfctn.deleter
 		def AmdmntRjctnNtfctn(self):

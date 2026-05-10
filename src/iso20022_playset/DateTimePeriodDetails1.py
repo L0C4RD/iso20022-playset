@@ -10,7 +10,7 @@ class DateTimePeriodDetails1(base_types._BaseFieldType):
 
 	@ToDtTm.setter
 	def ToDtTm(self, value):
-		self._ToDtTm = value if type(value) != auto else self.make_default("ToDtTm")
+		self._ToDtTm = value if type(value) != base_types.auto else self.make_default("ToDtTm")
 
 	@ToDtTm.deleter
 	def ToDtTm(self):
@@ -23,7 +23,7 @@ class DateTimePeriodDetails1(base_types._BaseFieldType):
 
 	@FrDtTm.setter
 	def FrDtTm(self, value):
-		self._FrDtTm = value if type(value) != auto else self.make_default("FrDtTm")
+		self._FrDtTm = value if type(value) != base_types.auto else self.make_default("FrDtTm")
 
 	@FrDtTm.deleter
 	def FrDtTm(self):

@@ -12,7 +12,7 @@ class SESE_014_001_09():
 
 		@PrtflTrfCxlReq.setter
 		def PrtflTrfCxlReq(self, value):
-			self._PrtflTrfCxlReq = value if type(value) != auto else self.make_default("PrtflTrfCxlReq")
+			self._PrtflTrfCxlReq = value if type(value) != base_types.auto else self.make_default("PrtflTrfCxlReq")
 
 		@PrtflTrfCxlReq.deleter
 		def PrtflTrfCxlReq(self):

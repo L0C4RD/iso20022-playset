@@ -12,7 +12,7 @@ class REDA_046_001_01():
 
 		@SctyCSDLkMntncReq.setter
 		def SctyCSDLkMntncReq(self, value):
-			self._SctyCSDLkMntncReq = value if type(value) != auto else self.make_default("SctyCSDLkMntncReq")
+			self._SctyCSDLkMntncReq = value if type(value) != base_types.auto else self.make_default("SctyCSDLkMntncReq")
 
 		@SctyCSDLkMntncReq.deleter
 		def SctyCSDLkMntncReq(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .CountryCode import CountryCode
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from .NameAndAddress12 import NameAndAddress12
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class PartyIdentification145Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PartyIdentification145Choice(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -25,7 +25,7 @@ class PartyIdentification145Choice(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
@@ -38,7 +38,7 @@ class PartyIdentification145Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):

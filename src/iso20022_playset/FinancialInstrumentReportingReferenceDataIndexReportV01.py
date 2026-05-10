@@ -1,31 +1,18 @@
 from . import base_types
+from .SupplementaryData1 import SupplementaryData1
 from .SecuritiesIndexReport1 import SecuritiesIndexReport1
 from .SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
-from .SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingReferenceDataIndexReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxData", "_SplmtryData", "_RptHdr"]
-	@property
-	def IndxData(self):
-		return self._IndxData
-
-	@IndxData.setter
-	def IndxData(self, value):
-		self._IndxData = value if type(value) != auto else self.make_default("IndxData")
-
-	@IndxData.deleter
-	def IndxData(self):
-		del self._IndxData
-		self._IndxData = None
-
+	__slots__ = ["_SplmtryData", "_IndxData", "_RptHdr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -33,12 +20,25 @@ class FinancialInstrumentReportingReferenceDataIndexReportV01(base_types._BaseFi
 		self._SplmtryData = None
 
 	@property
+	def IndxData(self):
+		return self._IndxData
+
+	@IndxData.setter
+	def IndxData(self, value):
+		self._IndxData = value if type(value) != base_types.auto else self.make_default("IndxData")
+
+	@IndxData.deleter
+	def IndxData(self):
+		del self._IndxData
+		self._IndxData = None
+
+	@property
 	def RptHdr(self):
 		return self._RptHdr
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
 	@RptHdr.deleter
 	def RptHdr(self):
@@ -46,8 +46,8 @@ class FinancialInstrumentReportingReferenceDataIndexReportV01(base_types._BaseFi
 		self._RptHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndxData', type=SecuritiesIndexReport1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IndxData', type=SecuritiesIndexReport1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

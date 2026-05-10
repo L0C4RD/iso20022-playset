@@ -1,6 +1,6 @@
 from . import base_types
-from .NetworkType2Code import NetworkType2Code
 from .NetworkParameters7 import NetworkParameters7
+from .NetworkType2Code import NetworkType2Code
 
 class NetworkParameters8(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NetworkParameters8(base_types._BaseFieldType):
 
 	@Accs.setter
 	def Accs(self, value):
-		self._Accs = value if type(value) != auto else self.make_default("Accs")
+		self._Accs = value if type(value) != base_types.auto else self.make_default("Accs")
 
 	@Accs.deleter
 	def Accs(self):
@@ -24,7 +24,7 @@ class NetworkParameters8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

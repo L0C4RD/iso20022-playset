@@ -1,6 +1,6 @@
 from . import base_types
-from .ClearingPartyAndTime14 import ClearingPartyAndTime14
 from .NoReasonCode import NoReasonCode
+from .ClearingPartyAndTime14 import ClearingPartyAndTime14
 
 class Cleared16Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Cleared16Choice(base_types._BaseFieldType):
 
 	@Clrd.setter
 	def Clrd(self, value):
-		self._Clrd = value if type(value) != auto else self.make_default("Clrd")
+		self._Clrd = value if type(value) != base_types.auto else self.make_default("Clrd")
 
 	@Clrd.deleter
 	def Clrd(self):
@@ -24,7 +24,7 @@ class Cleared16Choice(base_types._BaseFieldType):
 
 	@NonClrd.setter
 	def NonClrd(self, value):
-		self._NonClrd = value if type(value) != auto else self.make_default("NonClrd")
+		self._NonClrd = value if type(value) != base_types.auto else self.make_default("NonClrd")
 
 	@NonClrd.deleter
 	def NonClrd(self):

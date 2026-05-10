@@ -1,6 +1,6 @@
 from . import base_types
-from .ISINOct2015Identifier import ISINOct2015Identifier
 from .Number import Number
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class FloatingRateNote2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class FloatingRateNote2(base_types._BaseFieldType):
 
 	@BsisPtSprd.setter
 	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != auto else self.make_default("BsisPtSprd")
+		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
 
 	@BsisPtSprd.deleter
 	def BsisPtSprd(self):
@@ -24,7 +24,7 @@ class FloatingRateNote2(base_types._BaseFieldType):
 
 	@RefRateIndx.setter
 	def RefRateIndx(self, value):
-		self._RefRateIndx = value if type(value) != auto else self.make_default("RefRateIndx")
+		self._RefRateIndx = value if type(value) != base_types.auto else self.make_default("RefRateIndx")
 
 	@RefRateIndx.deleter
 	def RefRateIndx(self):

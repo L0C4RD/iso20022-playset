@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
 from .PersonIdentificationSchemeName1Choice import PersonIdentificationSchemeName1Choice
+from .Max256Text import Max256Text
+from .Max35Text import Max35Text
 
 class GenericPersonIdentification2(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class GenericPersonIdentification2(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -25,7 +25,7 @@ class GenericPersonIdentification2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -38,7 +38,7 @@ class GenericPersonIdentification2(base_types._BaseFieldType):
 
 	@SchmeNm.setter
 	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
 	@SchmeNm.deleter
 	def SchmeNm(self):

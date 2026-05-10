@@ -1,6 +1,6 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .CreditDebit3Code import CreditDebit3Code
 
 class Amount17(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class Amount17(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
@@ -25,7 +25,7 @@ class Amount17(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -38,7 +38,7 @@ class Amount17(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

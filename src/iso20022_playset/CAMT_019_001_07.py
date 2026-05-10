@@ -12,7 +12,7 @@ class CAMT_019_001_07():
 
 		@RtrBizDayInf.setter
 		def RtrBizDayInf(self, value):
-			self._RtrBizDayInf = value if type(value) != auto else self.make_default("RtrBizDayInf")
+			self._RtrBizDayInf = value if type(value) != base_types.auto else self.make_default("RtrBizDayInf")
 
 		@RtrBizDayInf.deleter
 		def RtrBizDayInf(self):

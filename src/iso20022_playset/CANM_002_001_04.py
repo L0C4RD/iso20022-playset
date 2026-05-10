@@ -12,7 +12,7 @@ class CANM_002_001_04():
 
 		@NtwkMgmtRspn.setter
 		def NtwkMgmtRspn(self, value):
-			self._NtwkMgmtRspn = value if type(value) != auto else self.make_default("NtwkMgmtRspn")
+			self._NtwkMgmtRspn = value if type(value) != base_types.auto else self.make_default("NtwkMgmtRspn")
 
 		@NtwkMgmtRspn.deleter
 		def NtwkMgmtRspn(self):

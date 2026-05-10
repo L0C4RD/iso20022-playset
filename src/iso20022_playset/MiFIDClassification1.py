@@ -1,6 +1,6 @@
 from . import base_types
-from .Max350Text import Max350Text
 from .OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
+from .Max350Text import Max350Text
 
 class MiFIDClassification1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MiFIDClassification1(base_types._BaseFieldType):
 
 	@Clssfctn.setter
 	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
+		self._Clssfctn = value if type(value) != base_types.auto else self.make_default("Clssfctn")
 
 	@Clssfctn.deleter
 	def Clssfctn(self):
@@ -24,7 +24,7 @@ class MiFIDClassification1(base_types._BaseFieldType):
 
 	@Nrrtv.setter
 	def Nrrtv(self, value):
-		self._Nrrtv = value if type(value) != auto else self.make_default("Nrrtv")
+		self._Nrrtv = value if type(value) != base_types.auto else self.make_default("Nrrtv")
 
 	@Nrrtv.deleter
 	def Nrrtv(self):

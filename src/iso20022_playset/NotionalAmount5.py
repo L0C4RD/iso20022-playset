@@ -11,7 +11,7 @@ class NotionalAmount5(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class NotionalAmount5(base_types._BaseFieldType):
 
 	@SchdlPrd.setter
 	def SchdlPrd(self, value):
-		self._SchdlPrd = value if type(value) != auto else self.make_default("SchdlPrd")
+		self._SchdlPrd = value if type(value) != base_types.auto else self.make_default("SchdlPrd")
 
 	@SchdlPrd.deleter
 	def SchdlPrd(self):

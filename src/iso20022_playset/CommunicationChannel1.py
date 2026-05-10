@@ -1,8 +1,8 @@
 from . import base_types
-from .PostalAddress6 import PostalAddress6
-from .Max140Text import Max140Text
 from .PartyType1Choice import PartyType1Choice
 from .ExternalChannel1Code import ExternalChannel1Code
+from .PostalAddress6 import PostalAddress6
+from .Max140Text import Max140Text
 
 class CommunicationChannel1(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@DlvrToAdr.setter
 	def DlvrToAdr(self, value):
-		self._DlvrToAdr = value if type(value) != auto else self.make_default("DlvrToAdr")
+		self._DlvrToAdr = value if type(value) != base_types.auto else self.make_default("DlvrToAdr")
 
 	@DlvrToAdr.deleter
 	def DlvrToAdr(self):
@@ -26,7 +26,7 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@DlvrToNm.setter
 	def DlvrToNm(self, value):
-		self._DlvrToNm = value if type(value) != auto else self.make_default("DlvrToNm")
+		self._DlvrToNm = value if type(value) != base_types.auto else self.make_default("DlvrToNm")
 
 	@DlvrToNm.deleter
 	def DlvrToNm(self):
@@ -39,7 +39,7 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@DlvrToPtyTp.setter
 	def DlvrToPtyTp(self, value):
-		self._DlvrToPtyTp = value if type(value) != auto else self.make_default("DlvrToPtyTp")
+		self._DlvrToPtyTp = value if type(value) != base_types.auto else self.make_default("DlvrToPtyTp")
 
 	@DlvrToPtyTp.deleter
 	def DlvrToPtyTp(self):
@@ -52,7 +52,7 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@Mtd.setter
 	def Mtd(self, value):
-		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
+		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
 
 	@Mtd.deleter
 	def Mtd(self):

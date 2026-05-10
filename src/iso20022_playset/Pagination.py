@@ -1,6 +1,6 @@
 from . import base_types
-from .Max5NumericText import Max5NumericText
 from .YesNoIndicator import YesNoIndicator
+from .Max5NumericText import Max5NumericText
 
 class Pagination(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Pagination(base_types._BaseFieldType):
 
 	@LastPgInd.setter
 	def LastPgInd(self, value):
-		self._LastPgInd = value if type(value) != auto else self.make_default("LastPgInd")
+		self._LastPgInd = value if type(value) != base_types.auto else self.make_default("LastPgInd")
 
 	@LastPgInd.deleter
 	def LastPgInd(self):
@@ -24,7 +24,7 @@ class Pagination(base_types._BaseFieldType):
 
 	@PgNb.setter
 	def PgNb(self, value):
-		self._PgNb = value if type(value) != auto else self.make_default("PgNb")
+		self._PgNb = value if type(value) != base_types.auto else self.make_default("PgNb")
 
 	@PgNb.deleter
 	def PgNb(self):

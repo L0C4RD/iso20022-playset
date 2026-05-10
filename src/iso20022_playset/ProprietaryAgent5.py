@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .Max35Text import Max35Text
 
 class ProprietaryAgent5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ProprietaryAgent5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class ProprietaryAgent5(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != auto else self.make_default("Agt")
+		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
 
 	@Agt.deleter
 	def Agt(self):

@@ -10,7 +10,7 @@ class ReuseValue1Choice(base_types._BaseFieldType):
 
 	@Actl.setter
 	def Actl(self, value):
-		self._Actl = value if type(value) != auto else self.make_default("Actl")
+		self._Actl = value if type(value) != base_types.auto else self.make_default("Actl")
 
 	@Actl.deleter
 	def Actl(self):
@@ -23,7 +23,7 @@ class ReuseValue1Choice(base_types._BaseFieldType):
 
 	@Estmtd.setter
 	def Estmtd(self, value):
-		self._Estmtd = value if type(value) != auto else self.make_default("Estmtd")
+		self._Estmtd = value if type(value) != base_types.auto else self.make_default("Estmtd")
 
 	@Estmtd.deleter
 	def Estmtd(self):

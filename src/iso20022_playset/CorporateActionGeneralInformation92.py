@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .CorporateActionNarrative3Choice import CorporateActionNarrative3Choice
+from .Max35Text import Max35Text
 
 class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
 	@OffclCorpActnEvtId.setter
 	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != auto else self.make_default("OffclCorpActnEvtId")
+		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
 
 	@OffclCorpActnEvtId.deleter
 	def OffclCorpActnEvtId(self):
@@ -24,7 +24,7 @@ class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
 	@NrrtvTp.setter
 	def NrrtvTp(self, value):
-		self._NrrtvTp = value if type(value) != auto else self.make_default("NrrtvTp")
+		self._NrrtvTp = value if type(value) != base_types.auto else self.make_default("NrrtvTp")
 
 	@NrrtvTp.deleter
 	def NrrtvTp(self):
@@ -37,7 +37,7 @@ class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):

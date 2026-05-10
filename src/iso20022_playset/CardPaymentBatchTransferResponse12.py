@@ -11,7 +11,7 @@ class CardPaymentBatchTransferResponse12(base_types._BaseFieldType):
 
 	@TxTtls.setter
 	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != auto else self.make_default("TxTtls")
+		self._TxTtls = value if type(value) != base_types.auto else self.make_default("TxTtls")
 
 	@TxTtls.deleter
 	def TxTtls(self):
@@ -24,7 +24,7 @@ class CardPaymentBatchTransferResponse12(base_types._BaseFieldType):
 
 	@DataSet.setter
 	def DataSet(self, value):
-		self._DataSet = value if type(value) != auto else self.make_default("DataSet")
+		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
 
 	@DataSet.deleter
 	def DataSet(self):

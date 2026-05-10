@@ -11,7 +11,7 @@ class SecurityPosition22(base_types._BaseFieldType):
 
 	@Pos.setter
 	def Pos(self, value):
-		self._Pos = value if type(value) != auto else self.make_default("Pos")
+		self._Pos = value if type(value) != base_types.auto else self.make_default("Pos")
 
 	@Pos.deleter
 	def Pos(self):
@@ -24,7 +24,7 @@ class SecurityPosition22(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):

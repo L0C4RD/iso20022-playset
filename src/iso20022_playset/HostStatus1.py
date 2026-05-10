@@ -1,38 +1,38 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .TrueFalseIndicator import TrueFalseIndicator
+from .Max35Text import Max35Text
 
 class HostStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rchbl", "_AcqrrId"]
-	@property
-	def Rchbl(self):
-		return self._Rchbl
-
-	@Rchbl.setter
-	def Rchbl(self, value):
-		self._Rchbl = value if type(value) != auto else self.make_default("Rchbl")
-
-	@Rchbl.deleter
-	def Rchbl(self):
-		del self._Rchbl
-		self._Rchbl = None
-
+	__slots__ = ["_AcqrrId", "_Rchbl"]
 	@property
 	def AcqrrId(self):
 		return self._AcqrrId
 
 	@AcqrrId.setter
 	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != auto else self.make_default("AcqrrId")
+		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
 
 	@AcqrrId.deleter
 	def AcqrrId(self):
 		del self._AcqrrId
 		self._AcqrrId = None
 
+	@property
+	def Rchbl(self):
+		return self._Rchbl
+
+	@Rchbl.setter
+	def Rchbl(self, value):
+		self._Rchbl = value if type(value) != base_types.auto else self.make_default("Rchbl")
+
+	@Rchbl.deleter
+	def Rchbl(self):
+		del self._Rchbl
+		self._Rchbl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rchbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcqrrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rchbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

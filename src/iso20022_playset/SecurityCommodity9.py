@@ -11,7 +11,7 @@ class SecurityCommodity9(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
+		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
 
 	@Scty.deleter
 	def Scty(self):
@@ -24,7 +24,7 @@ class SecurityCommodity9(base_types._BaseFieldType):
 
 	@Cmmdty.setter
 	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != auto else self.make_default("Cmmdty")
+		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
 
 	@Cmmdty.deleter
 	def Cmmdty(self):

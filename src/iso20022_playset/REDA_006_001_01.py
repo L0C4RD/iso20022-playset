@@ -12,7 +12,7 @@ class REDA_006_001_01():
 
 		@SctyCreReq.setter
 		def SctyCreReq(self, value):
-			self._SctyCreReq = value if type(value) != auto else self.make_default("SctyCreReq")
+			self._SctyCreReq = value if type(value) != base_types.auto else self.make_default("SctyCreReq")
 
 		@SctyCreReq.deleter
 		def SctyCreReq(self):

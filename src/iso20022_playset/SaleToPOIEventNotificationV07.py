@@ -5,27 +5,14 @@ from .Header41 import Header41
 
 class SaleToPOIEventNotificationV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SctyTrlr", "_EvtNtfctn"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_SctyTrlr", "_EvtNtfctn", "_Hdr"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
@@ -38,16 +25,29 @@ class SaleToPOIEventNotificationV07(base_types._BaseFieldType):
 
 	@EvtNtfctn.setter
 	def EvtNtfctn(self, value):
-		self._EvtNtfctn = value if type(value) != auto else self.make_default("EvtNtfctn")
+		self._EvtNtfctn = value if type(value) != base_types.auto else self.make_default("EvtNtfctn")
 
 	@EvtNtfctn.deleter
 	def EvtNtfctn(self):
 		del self._EvtNtfctn
 		self._EvtNtfctn = None
 
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtNtfctn', type=SystemEventNotification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -12,7 +12,7 @@ class CAMT_015_001_04():
 
 		@ModfyMmb.setter
 		def ModfyMmb(self, value):
-			self._ModfyMmb = value if type(value) != auto else self.make_default("ModfyMmb")
+			self._ModfyMmb = value if type(value) != base_types.auto else self.make_default("ModfyMmb")
 
 		@ModfyMmb.deleter
 		def ModfyMmb(self):

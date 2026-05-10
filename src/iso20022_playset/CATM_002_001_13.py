@@ -12,7 +12,7 @@ class CATM_002_001_13():
 
 		@MgmtPlanRplcmnt.setter
 		def MgmtPlanRplcmnt(self, value):
-			self._MgmtPlanRplcmnt = value if type(value) != auto else self.make_default("MgmtPlanRplcmnt")
+			self._MgmtPlanRplcmnt = value if type(value) != base_types.auto else self.make_default("MgmtPlanRplcmnt")
 
 		@MgmtPlanRplcmnt.deleter
 		def MgmtPlanRplcmnt(self):

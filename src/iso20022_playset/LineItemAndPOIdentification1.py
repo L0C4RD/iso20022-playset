@@ -11,7 +11,7 @@ class LineItemAndPOIdentification1(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
@@ -24,7 +24,7 @@ class LineItemAndPOIdentification1(base_types._BaseFieldType):
 
 	@LineItmId.setter
 	def LineItmId(self, value):
-		self._LineItmId = value if type(value) != auto else self.make_default("LineItmId")
+		self._LineItmId = value if type(value) != base_types.auto else self.make_default("LineItmId")
 
 	@LineItmId.deleter
 	def LineItmId(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .NumberOfReportsPerStatus4 import NumberOfReportsPerStatus4
-from .SupplementaryData1 import SupplementaryData1
 from .ReconciliationReport8 import ReconciliationReport8
+from .SupplementaryData1 import SupplementaryData1
 
 class TradeData28(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class TradeData28(base_types._BaseFieldType):
 
 	@PairgRcncltnSts.setter
 	def PairgRcncltnSts(self, value):
-		self._PairgRcncltnSts = value if type(value) != auto else self.make_default("PairgRcncltnSts")
+		self._PairgRcncltnSts = value if type(value) != base_types.auto else self.make_default("PairgRcncltnSts")
 
 	@PairgRcncltnSts.deleter
 	def PairgRcncltnSts(self):
@@ -25,7 +25,7 @@ class TradeData28(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -38,7 +38,7 @@ class TradeData28(base_types._BaseFieldType):
 
 	@RcncltnRpt.setter
 	def RcncltnRpt(self, value):
-		self._RcncltnRpt = value if type(value) != auto else self.make_default("RcncltnRpt")
+		self._RcncltnRpt = value if type(value) != base_types.auto else self.make_default("RcncltnRpt")
 
 	@RcncltnRpt.deleter
 	def RcncltnRpt(self):

@@ -3,19 +3,19 @@ from .GenericIdentification1 import GenericIdentification1
 
 class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgbltySetPrfl", "_FllbckStartgBsktId", "_ExclsnBsktId", "_PrfrntlBsktIdNb"]
+	__slots__ = ["_PrfrntlBsktIdNb", "_FllbckStartgBsktId", "_ExclsnBsktId", "_ElgbltySetPrfl"]
 	@property
-	def ElgbltySetPrfl(self):
-		return self._ElgbltySetPrfl
+	def PrfrntlBsktIdNb(self):
+		return self._PrfrntlBsktIdNb
 
-	@ElgbltySetPrfl.setter
-	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != auto else self.make_default("ElgbltySetPrfl")
+	@PrfrntlBsktIdNb.setter
+	def PrfrntlBsktIdNb(self, value):
+		self._PrfrntlBsktIdNb = value if type(value) != base_types.auto else self.make_default("PrfrntlBsktIdNb")
 
-	@ElgbltySetPrfl.deleter
-	def ElgbltySetPrfl(self):
-		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+	@PrfrntlBsktIdNb.deleter
+	def PrfrntlBsktIdNb(self):
+		del self._PrfrntlBsktIdNb
+		self._PrfrntlBsktIdNb = None
 
 	@property
 	def FllbckStartgBsktId(self):
@@ -23,7 +23,7 @@ class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 
 	@FllbckStartgBsktId.setter
 	def FllbckStartgBsktId(self, value):
-		self._FllbckStartgBsktId = value if type(value) != auto else self.make_default("FllbckStartgBsktId")
+		self._FllbckStartgBsktId = value if type(value) != base_types.auto else self.make_default("FllbckStartgBsktId")
 
 	@FllbckStartgBsktId.deleter
 	def FllbckStartgBsktId(self):
@@ -36,7 +36,7 @@ class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 
 	@ExclsnBsktId.setter
 	def ExclsnBsktId(self, value):
-		self._ExclsnBsktId = value if type(value) != auto else self.make_default("ExclsnBsktId")
+		self._ExclsnBsktId = value if type(value) != base_types.auto else self.make_default("ExclsnBsktId")
 
 	@ExclsnBsktId.deleter
 	def ExclsnBsktId(self):
@@ -44,22 +44,22 @@ class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 		self._ExclsnBsktId = None
 
 	@property
-	def PrfrntlBsktIdNb(self):
-		return self._PrfrntlBsktIdNb
+	def ElgbltySetPrfl(self):
+		return self._ElgbltySetPrfl
 
-	@PrfrntlBsktIdNb.setter
-	def PrfrntlBsktIdNb(self, value):
-		self._PrfrntlBsktIdNb = value if type(value) != auto else self.make_default("PrfrntlBsktIdNb")
+	@ElgbltySetPrfl.setter
+	def ElgbltySetPrfl(self, value):
+		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
 
-	@PrfrntlBsktIdNb.deleter
-	def PrfrntlBsktIdNb(self):
-		del self._PrfrntlBsktIdNb
-		self._PrfrntlBsktIdNb = None
+	@ElgbltySetPrfl.deleter
+	def ElgbltySetPrfl(self):
+		del self._ElgbltySetPrfl
+		self._ElgbltySetPrfl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrfrntlBsktIdNb', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FllbckStartgBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExclsnBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrfrntlBsktIdNb', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

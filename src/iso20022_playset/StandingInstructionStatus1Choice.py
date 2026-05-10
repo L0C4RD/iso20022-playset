@@ -1,6 +1,6 @@
 from . import base_types
-from .CorporateActionStandingInstructionRejectionStatus1 import CorporateActionStandingInstructionRejectionStatus1
 from .CorporateActionStandingInstructionProcessingStatus1 import CorporateActionStandingInstructionProcessingStatus1
+from .CorporateActionStandingInstructionRejectionStatus1 import CorporateActionStandingInstructionRejectionStatus1
 
 class StandingInstructionStatus1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class StandingInstructionStatus1Choice(base_types._BaseFieldType):
 
 	@RjctdSts.setter
 	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != auto else self.make_default("RjctdSts")
+		self._RjctdSts = value if type(value) != base_types.auto else self.make_default("RjctdSts")
 
 	@RjctdSts.deleter
 	def RjctdSts(self):
@@ -24,7 +24,7 @@ class StandingInstructionStatus1Choice(base_types._BaseFieldType):
 
 	@PrcdSts.setter
 	def PrcdSts(self, value):
-		self._PrcdSts = value if type(value) != auto else self.make_default("PrcdSts")
+		self._PrcdSts = value if type(value) != base_types.auto else self.make_default("PrcdSts")
 
 	@PrcdSts.deleter
 	def PrcdSts(self):

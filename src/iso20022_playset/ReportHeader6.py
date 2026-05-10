@@ -11,7 +11,7 @@ class ReportHeader6(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
@@ -24,7 +24,7 @@ class ReportHeader6(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != auto else self.make_default("RptId")
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
 
 	@RptId.deleter
 	def RptId(self):

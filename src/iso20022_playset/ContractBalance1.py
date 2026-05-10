@@ -1,23 +1,23 @@
 from . import base_types
-from .CreditDebit3Code import CreditDebit3Code
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from .ContractBalanceType1Choice import ContractBalanceType1Choice
+from .CreditDebit3Code import CreditDebit3Code
 
 class ContractBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_CdtDbtInd"]
+	__slots__ = ["_CdtDbtInd", "_Tp", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def Tp(self):
@@ -25,7 +25,7 @@ class ContractBalance1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -33,21 +33,21 @@ class ContractBalance1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def Amt(self):
+		return self._Amt
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ContractBalanceType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebit3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ContractBalanceType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

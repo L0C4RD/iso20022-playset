@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .AttributeType2Code import AttributeType2Code
+from .Max140Text import Max140Text
 
 class RelativeDistinguishedName2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RelativeDistinguishedName2(base_types._BaseFieldType):
 
 	@AttrVal.setter
 	def AttrVal(self, value):
-		self._AttrVal = value if type(value) != auto else self.make_default("AttrVal")
+		self._AttrVal = value if type(value) != base_types.auto else self.make_default("AttrVal")
 
 	@AttrVal.deleter
 	def AttrVal(self):
@@ -24,7 +24,7 @@ class RelativeDistinguishedName2(base_types._BaseFieldType):
 
 	@AttrTp.setter
 	def AttrTp(self, value):
-		self._AttrTp = value if type(value) != auto else self.make_default("AttrTp")
+		self._AttrTp = value if type(value) != base_types.auto else self.make_default("AttrTp")
 
 	@AttrTp.deleter
 	def AttrTp(self):

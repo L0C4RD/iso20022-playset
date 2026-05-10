@@ -12,7 +12,7 @@ class AUTH_101_001_01():
 
 		@SttlmFlsAnlRpt.setter
 		def SttlmFlsAnlRpt(self, value):
-			self._SttlmFlsAnlRpt = value if type(value) != auto else self.make_default("SttlmFlsAnlRpt")
+			self._SttlmFlsAnlRpt = value if type(value) != base_types.auto else self.make_default("SttlmFlsAnlRpt")
 
 		@SttlmFlsAnlRpt.deleter
 		def SttlmFlsAnlRpt(self):

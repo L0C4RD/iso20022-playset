@@ -1,6 +1,6 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .ResidentialStatus1Code import ResidentialStatus1Code
+from .CountryCode import CountryCode
 
 class CountryAndResidentialStatusType1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CountryAndResidentialStatusType1(base_types._BaseFieldType):
 
 	@ResdtlSts.setter
 	def ResdtlSts(self, value):
-		self._ResdtlSts = value if type(value) != auto else self.make_default("ResdtlSts")
+		self._ResdtlSts = value if type(value) != base_types.auto else self.make_default("ResdtlSts")
 
 	@ResdtlSts.deleter
 	def ResdtlSts(self):
@@ -24,7 +24,7 @@ class CountryAndResidentialStatusType1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):

@@ -12,7 +12,7 @@ class AUTH_090_001_02():
 
 		@DerivsTradPosSetRpt.setter
 		def DerivsTradPosSetRpt(self, value):
-			self._DerivsTradPosSetRpt = value if type(value) != auto else self.make_default("DerivsTradPosSetRpt")
+			self._DerivsTradPosSetRpt = value if type(value) != base_types.auto else self.make_default("DerivsTradPosSetRpt")
 
 		@DerivsTradPosSetRpt.deleter
 		def DerivsTradPosSetRpt(self):

@@ -1,23 +1,23 @@
 from . import base_types
-from .NotionalAmountLegs6 import NotionalAmountLegs6
 from .ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from .NotionalAmountLegs6 import NotionalAmountLegs6
 from .Max20PositiveNumber import Max20PositiveNumber
 
 class PositionSetTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTrds", "_Ntnl", "_NegVal", "_OthrPmtAmt", "_PostvVal"]
+	__slots__ = ["_PostvVal", "_Ntnl", "_OthrPmtAmt", "_NegVal", "_NbOfTrds"]
 	@property
-	def NbOfTrds(self):
-		return self._NbOfTrds
+	def PostvVal(self):
+		return self._PostvVal
 
-	@NbOfTrds.setter
-	def NbOfTrds(self, value):
-		self._NbOfTrds = value if type(value) != auto else self.make_default("NbOfTrds")
+	@PostvVal.setter
+	def PostvVal(self, value):
+		self._PostvVal = value if type(value) != base_types.auto else self.make_default("PostvVal")
 
-	@NbOfTrds.deleter
-	def NbOfTrds(self):
-		del self._NbOfTrds
-		self._NbOfTrds = None
+	@PostvVal.deleter
+	def PostvVal(self):
+		del self._PostvVal
+		self._PostvVal = None
 
 	@property
 	def Ntnl(self):
@@ -25,7 +25,7 @@ class PositionSetTotal2(base_types._BaseFieldType):
 
 	@Ntnl.setter
 	def Ntnl(self, value):
-		self._Ntnl = value if type(value) != auto else self.make_default("Ntnl")
+		self._Ntnl = value if type(value) != base_types.auto else self.make_default("Ntnl")
 
 	@Ntnl.deleter
 	def Ntnl(self):
@@ -33,25 +33,12 @@ class PositionSetTotal2(base_types._BaseFieldType):
 		self._Ntnl = None
 
 	@property
-	def NegVal(self):
-		return self._NegVal
-
-	@NegVal.setter
-	def NegVal(self, value):
-		self._NegVal = value if type(value) != auto else self.make_default("NegVal")
-
-	@NegVal.deleter
-	def NegVal(self):
-		del self._NegVal
-		self._NegVal = None
-
-	@property
 	def OthrPmtAmt(self):
 		return self._OthrPmtAmt
 
 	@OthrPmtAmt.setter
 	def OthrPmtAmt(self, value):
-		self._OthrPmtAmt = value if type(value) != auto else self.make_default("OthrPmtAmt")
+		self._OthrPmtAmt = value if type(value) != base_types.auto else self.make_default("OthrPmtAmt")
 
 	@OthrPmtAmt.deleter
 	def OthrPmtAmt(self):
@@ -59,23 +46,36 @@ class PositionSetTotal2(base_types._BaseFieldType):
 		self._OthrPmtAmt = None
 
 	@property
-	def PostvVal(self):
-		return self._PostvVal
+	def NegVal(self):
+		return self._NegVal
 
-	@PostvVal.setter
-	def PostvVal(self, value):
-		self._PostvVal = value if type(value) != auto else self.make_default("PostvVal")
+	@NegVal.setter
+	def NegVal(self, value):
+		self._NegVal = value if type(value) != base_types.auto else self.make_default("NegVal")
 
-	@PostvVal.deleter
-	def PostvVal(self):
-		del self._PostvVal
-		self._PostvVal = None
+	@NegVal.deleter
+	def NegVal(self):
+		del self._NegVal
+		self._NegVal = None
+
+	@property
+	def NbOfTrds(self):
+		return self._NbOfTrds
+
+	@NbOfTrds.setter
+	def NbOfTrds(self, value):
+		self._NbOfTrds = value if type(value) != base_types.auto else self.make_default("NbOfTrds")
+
+	@NbOfTrds.deleter
+	def NbOfTrds(self):
+		del self._NbOfTrds
+		self._NbOfTrds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfTrds', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ntnl', type=NotionalAmountLegs6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NegVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPmtAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PostvVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntnl', type=NotionalAmountLegs6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPmtAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NegVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTrds', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

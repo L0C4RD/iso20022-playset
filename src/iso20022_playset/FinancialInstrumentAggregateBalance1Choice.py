@@ -11,7 +11,7 @@ class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
 	@HldgBal.setter
 	def HldgBal(self, value):
-		self._HldgBal = value if type(value) != auto else self.make_default("HldgBal")
+		self._HldgBal = value if type(value) != base_types.auto else self.make_default("HldgBal")
 
 	@HldgBal.deleter
 	def HldgBal(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
 	@HldgsInd.setter
 	def HldgsInd(self, value):
-		self._HldgsInd = value if type(value) != auto else self.make_default("HldgsInd")
+		self._HldgsInd = value if type(value) != base_types.auto else self.make_default("HldgsInd")
 
 	@HldgsInd.deleter
 	def HldgsInd(self):

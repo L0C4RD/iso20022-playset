@@ -11,7 +11,7 @@ class SecuritiesFinancingReportingTransactionStateReportV02(base_types._BaseFiel
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class SecuritiesFinancingReportingTransactionStateReportV02(base_types._BaseFiel
 
 	@TradData.setter
 	def TradData(self, value):
-		self._TradData = value if type(value) != auto else self.make_default("TradData")
+		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
 
 	@TradData.deleter
 	def TradData(self):

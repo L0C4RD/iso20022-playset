@@ -1,23 +1,23 @@
 from . import base_types
-from .SupportingDocument4 import SupportingDocument4
 from .SupplementaryData1 import SupplementaryData1
 from .CurrencyControlHeader9 import CurrencyControlHeader9
+from .SupportingDocument4 import SupportingDocument4
 
 class CurrencyControlSupportingDocumentDeliveryV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SpprtgDoc", "_GrpHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_SpprtgDoc"]
 	@property
-	def SpprtgDoc(self):
-		return self._SpprtgDoc
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@SpprtgDoc.setter
-	def SpprtgDoc(self, value):
-		self._SpprtgDoc = value if type(value) != auto else self.make_default("SpprtgDoc")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@SpprtgDoc.deleter
-	def SpprtgDoc(self):
-		del self._SpprtgDoc
-		self._SpprtgDoc = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def GrpHdr(self):
@@ -25,7 +25,7 @@ class CurrencyControlSupportingDocumentDeliveryV04(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class CurrencyControlSupportingDocumentDeliveryV04(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def SpprtgDoc(self):
+		return self._SpprtgDoc
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@SpprtgDoc.setter
+	def SpprtgDoc(self, value):
+		self._SpprtgDoc = value if type(value) != base_types.auto else self.make_default("SpprtgDoc")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@SpprtgDoc.deleter
+	def SpprtgDoc(self):
+		del self._SpprtgDoc
+		self._SpprtgDoc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SpprtgDoc', type=SupportingDocument4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtgDoc', type=SupportingDocument4, min=1, max=None, mutex_group=None, array=True),
 	))
 

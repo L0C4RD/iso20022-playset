@@ -1,46 +1,20 @@
 from . import base_types
 from .AdditionalInformation15 import AdditionalInformation15
-from .DateAndAmount2 import DateAndAmount2
-from .AccountOwnershipType6Code import AccountOwnershipType6Code
-from .GeneralInvestmentAccountType2Choice import GeneralInvestmentAccountType2Choice
 from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from .DateAndAmount2 import DateAndAmount2
+from .GeneralInvestmentAccountType2Choice import GeneralInvestmentAccountType2Choice
+from .AccountOwnershipType6Code import AccountOwnershipType6Code
 
 class GeneralInvestment2(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrshTp", "_EstmtdVal", "_CurInvstmtAmt", "_AddtlInf", "_Tp"]
-	@property
-	def OwnrshTp(self):
-		return self._OwnrshTp
-
-	@OwnrshTp.setter
-	def OwnrshTp(self, value):
-		self._OwnrshTp = value if type(value) != auto else self.make_default("OwnrshTp")
-
-	@OwnrshTp.deleter
-	def OwnrshTp(self):
-		del self._OwnrshTp
-		self._OwnrshTp = None
-
-	@property
-	def EstmtdVal(self):
-		return self._EstmtdVal
-
-	@EstmtdVal.setter
-	def EstmtdVal(self, value):
-		self._EstmtdVal = value if type(value) != auto else self.make_default("EstmtdVal")
-
-	@EstmtdVal.deleter
-	def EstmtdVal(self):
-		del self._EstmtdVal
-		self._EstmtdVal = None
-
+	__slots__ = ["_CurInvstmtAmt", "_AddtlInf", "_OwnrshTp", "_EstmtdVal", "_Tp"]
 	@property
 	def CurInvstmtAmt(self):
 		return self._CurInvstmtAmt
 
 	@CurInvstmtAmt.setter
 	def CurInvstmtAmt(self, value):
-		self._CurInvstmtAmt = value if type(value) != auto else self.make_default("CurInvstmtAmt")
+		self._CurInvstmtAmt = value if type(value) != base_types.auto else self.make_default("CurInvstmtAmt")
 
 	@CurInvstmtAmt.deleter
 	def CurInvstmtAmt(self):
@@ -53,7 +27,7 @@ class GeneralInvestment2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -61,12 +35,38 @@ class GeneralInvestment2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
+	def OwnrshTp(self):
+		return self._OwnrshTp
+
+	@OwnrshTp.setter
+	def OwnrshTp(self, value):
+		self._OwnrshTp = value if type(value) != base_types.auto else self.make_default("OwnrshTp")
+
+	@OwnrshTp.deleter
+	def OwnrshTp(self):
+		del self._OwnrshTp
+		self._OwnrshTp = None
+
+	@property
+	def EstmtdVal(self):
+		return self._EstmtdVal
+
+	@EstmtdVal.setter
+	def EstmtdVal(self, value):
+		self._EstmtdVal = value if type(value) != base_types.auto else self.make_default("EstmtdVal")
+
+	@EstmtdVal.deleter
+	def EstmtdVal(self):
+		del self._EstmtdVal
+		self._EstmtdVal = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -74,10 +74,10 @@ class GeneralInvestment2(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OwnrshTp', type=AccountOwnershipType6Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurInvstmtAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OwnrshTp', type=AccountOwnershipType6Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GeneralInvestmentAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

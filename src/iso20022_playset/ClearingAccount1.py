@@ -1,6 +1,6 @@
 from . import base_types
-from .ClearingAccountType3Code import ClearingAccountType3Code
 from .CollateralAccount5 import CollateralAccount5
+from .ClearingAccountType3Code import ClearingAccountType3Code
 
 class ClearingAccount1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ClearingAccount1(base_types._BaseFieldType):
 
 	@AcctTp.setter
 	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != auto else self.make_default("AcctTp")
+		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
 
 	@AcctTp.deleter
 	def AcctTp(self):
@@ -24,7 +24,7 @@ class ClearingAccount1(base_types._BaseFieldType):
 
 	@CollAcctOwnr.setter
 	def CollAcctOwnr(self, value):
-		self._CollAcctOwnr = value if type(value) != auto else self.make_default("CollAcctOwnr")
+		self._CollAcctOwnr = value if type(value) != base_types.auto else self.make_default("CollAcctOwnr")
 
 	@CollAcctOwnr.deleter
 	def CollAcctOwnr(self):

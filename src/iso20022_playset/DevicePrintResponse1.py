@@ -10,7 +10,7 @@ class DevicePrintResponse1(base_types._BaseFieldType):
 
 	@DocQlfr.setter
 	def DocQlfr(self, value):
-		self._DocQlfr = value if type(value) != auto else self.make_default("DocQlfr")
+		self._DocQlfr = value if type(value) != base_types.auto else self.make_default("DocQlfr")
 
 	@DocQlfr.deleter
 	def DocQlfr(self):

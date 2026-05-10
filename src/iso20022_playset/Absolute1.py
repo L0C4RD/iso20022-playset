@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Number import Number
+from .Max35Text import Max35Text
 
 class Absolute1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Absolute1(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
 	@Unit.deleter
 	def Unit(self):
@@ -24,7 +24,7 @@ class Absolute1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):

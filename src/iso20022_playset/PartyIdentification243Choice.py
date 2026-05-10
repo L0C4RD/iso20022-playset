@@ -1,6 +1,6 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from .GenericIdentification30 import GenericIdentification30
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class PartyIdentification243Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification243Choice(base_types._BaseFieldType):
 
 	@BIC.setter
 	def BIC(self, value):
-		self._BIC = value if type(value) != auto else self.make_default("BIC")
+		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
 
 	@BIC.deleter
 	def BIC(self):
@@ -24,7 +24,7 @@ class PartyIdentification243Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
 	@PrtryId.deleter
 	def PrtryId(self):

@@ -1,7 +1,7 @@
 from . import base_types
-from .PriceSource import PriceSource
 from .GenericIdentification5 import GenericIdentification5
 from .MICIdentifier import MICIdentifier
+from .PriceSource import PriceSource
 
 class PriceSourceFormatChoice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 
 	@NonLclMktPlc.setter
 	def NonLclMktPlc(self, value):
-		self._NonLclMktPlc = value if type(value) != auto else self.make_default("NonLclMktPlc")
+		self._NonLclMktPlc = value if type(value) != base_types.auto else self.make_default("NonLclMktPlc")
 
 	@NonLclMktPlc.deleter
 	def NonLclMktPlc(self):
@@ -25,7 +25,7 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 
 	@PlcAsDSS.setter
 	def PlcAsDSS(self, value):
-		self._PlcAsDSS = value if type(value) != auto else self.make_default("PlcAsDSS")
+		self._PlcAsDSS = value if type(value) != base_types.auto else self.make_default("PlcAsDSS")
 
 	@PlcAsDSS.deleter
 	def PlcAsDSS(self):
@@ -38,7 +38,7 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 
 	@LclMktPlc.setter
 	def LclMktPlc(self, value):
-		self._LclMktPlc = value if type(value) != auto else self.make_default("LclMktPlc")
+		self._LclMktPlc = value if type(value) != base_types.auto else self.make_default("LclMktPlc")
 
 	@LclMktPlc.deleter
 	def LclMktPlc(self):

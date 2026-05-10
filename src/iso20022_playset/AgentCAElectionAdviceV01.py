@@ -1,47 +1,21 @@
 from . import base_types
-from .CorporateActionInformation1 import CorporateActionInformation1
-from .CorporateActionElection3 import CorporateActionElection3
 from .ContactPerson1 import ContactPerson1
+from .CorporateActionInformation1 import CorporateActionInformation1
 from .DocumentIdentification8 import DocumentIdentification8
-from .CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
 from .ElectionAdviceFunction1 import ElectionAdviceFunction1
+from .CorporateActionElection3 import CorporateActionElection3
+from .CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
 
 class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_Id", "_CtctDtls", "_ElctnAdvcTpAndLkg", "_AddtlInf", "_ElctnDtls"]
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_CtctDtls", "_AddtlInf", "_ElctnDtls", "_Id", "_ElctnAdvcTpAndLkg", "_CorpActnGnlInf"]
 	@property
 	def CtctDtls(self):
 		return self._CtctDtls
 
 	@CtctDtls.setter
 	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
 
 	@CtctDtls.deleter
 	def CtctDtls(self):
@@ -49,25 +23,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 		self._CtctDtls = None
 
 	@property
-	def ElctnAdvcTpAndLkg(self):
-		return self._ElctnAdvcTpAndLkg
-
-	@ElctnAdvcTpAndLkg.setter
-	def ElctnAdvcTpAndLkg(self, value):
-		self._ElctnAdvcTpAndLkg = value if type(value) != auto else self.make_default("ElctnAdvcTpAndLkg")
-
-	@ElctnAdvcTpAndLkg.deleter
-	def ElctnAdvcTpAndLkg(self):
-		del self._ElctnAdvcTpAndLkg
-		self._ElctnAdvcTpAndLkg = None
-
-	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -80,19 +41,58 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
 	@ElctnDtls.setter
 	def ElctnDtls(self, value):
-		self._ElctnDtls = value if type(value) != auto else self.make_default("ElctnDtls")
+		self._ElctnDtls = value if type(value) != base_types.auto else self.make_default("ElctnDtls")
 
 	@ElctnDtls.deleter
 	def ElctnDtls(self):
 		del self._ElctnDtls
 		self._ElctnDtls = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def ElctnAdvcTpAndLkg(self):
+		return self._ElctnAdvcTpAndLkg
+
+	@ElctnAdvcTpAndLkg.setter
+	def ElctnAdvcTpAndLkg(self, value):
+		self._ElctnAdvcTpAndLkg = value if type(value) != base_types.auto else self.make_default("ElctnAdvcTpAndLkg")
+
+	@ElctnAdvcTpAndLkg.deleter
+	def ElctnAdvcTpAndLkg(self):
+		del self._ElctnAdvcTpAndLkg
+		self._ElctnAdvcTpAndLkg = None
+
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctnAdvcTpAndLkg', type=ElectionAdviceFunction1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctnDtls', type=CorporateActionElection3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctnAdvcTpAndLkg', type=ElectionAdviceFunction1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

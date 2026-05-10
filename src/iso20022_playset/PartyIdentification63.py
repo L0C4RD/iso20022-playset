@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .PartyIdentification75Choice import PartyIdentification75Choice
+from .Max35Text import Max35Text
 
 class PartyIdentification63(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification63(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
 	@PtyId.deleter
 	def PtyId(self):
@@ -24,7 +24,7 @@ class PartyIdentification63(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
 
 	@PrcgId.deleter
 	def PrcgId(self):

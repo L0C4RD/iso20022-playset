@@ -1,7 +1,7 @@
 from . import base_types
 from .DayOfMonthNumber import DayOfMonthNumber
-from .WeekDay3Code import WeekDay3Code
 from .Frequency14Code import Frequency14Code
+from .WeekDay3Code import WeekDay3Code
 
 class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
 	@DlvryDay.setter
 	def DlvryDay(self, value):
-		self._DlvryDay = value if type(value) != auto else self.make_default("DlvryDay")
+		self._DlvryDay = value if type(value) != base_types.auto else self.make_default("DlvryDay")
 
 	@DlvryDay.deleter
 	def DlvryDay(self):
@@ -25,7 +25,7 @@ class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
 	@DayOfMnth.setter
 	def DayOfMnth(self, value):
-		self._DayOfMnth = value if type(value) != auto else self.make_default("DayOfMnth")
+		self._DayOfMnth = value if type(value) != base_types.auto else self.make_default("DayOfMnth")
 
 	@DayOfMnth.deleter
 	def DayOfMnth(self):
@@ -38,7 +38,7 @@ class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
 	@FrqcyTp.setter
 	def FrqcyTp(self, value):
-		self._FrqcyTp = value if type(value) != auto else self.make_default("FrqcyTp")
+		self._FrqcyTp = value if type(value) != base_types.auto else self.make_default("FrqcyTp")
 
 	@FrqcyTp.deleter
 	def FrqcyTp(self):

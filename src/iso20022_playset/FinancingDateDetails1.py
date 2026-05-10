@@ -10,7 +10,7 @@ class FinancingDateDetails1(base_types._BaseFieldType):
 
 	@BookDt.setter
 	def BookDt(self, value):
-		self._BookDt = value if type(value) != auto else self.make_default("BookDt")
+		self._BookDt = value if type(value) != base_types.auto else self.make_default("BookDt")
 
 	@BookDt.deleter
 	def BookDt(self):
@@ -23,7 +23,7 @@ class FinancingDateDetails1(base_types._BaseFieldType):
 
 	@CdtDt.setter
 	def CdtDt(self, value):
-		self._CdtDt = value if type(value) != auto else self.make_default("CdtDt")
+		self._CdtDt = value if type(value) != base_types.auto else self.make_default("CdtDt")
 
 	@CdtDt.deleter
 	def CdtDt(self):
@@ -36,7 +36,7 @@ class FinancingDateDetails1(base_types._BaseFieldType):
 
 	@DbtDt.setter
 	def DbtDt(self, value):
-		self._DbtDt = value if type(value) != auto else self.make_default("DbtDt")
+		self._DbtDt = value if type(value) != base_types.auto else self.make_default("DbtDt")
 
 	@DbtDt.deleter
 	def DbtDt(self):

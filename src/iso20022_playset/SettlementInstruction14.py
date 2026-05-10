@@ -1,7 +1,7 @@
 from . import base_types
-from .ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
 from .CashAccount40 import CashAccount40
 from .SettlementMethod2Code import SettlementMethod2Code
+from .ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
 
 class SettlementInstruction14(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class SettlementInstruction14(base_types._BaseFieldType):
 
 	@SttlmMtd.setter
 	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != auto else self.make_default("SttlmMtd")
+		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
 
 	@SttlmMtd.deleter
 	def SttlmMtd(self):
@@ -25,7 +25,7 @@ class SettlementInstruction14(base_types._BaseFieldType):
 
 	@SttlmAcct.setter
 	def SttlmAcct(self, value):
-		self._SttlmAcct = value if type(value) != auto else self.make_default("SttlmAcct")
+		self._SttlmAcct = value if type(value) != base_types.auto else self.make_default("SttlmAcct")
 
 	@SttlmAcct.deleter
 	def SttlmAcct(self):
@@ -38,7 +38,7 @@ class SettlementInstruction14(base_types._BaseFieldType):
 
 	@ClrSys.setter
 	def ClrSys(self, value):
-		self._ClrSys = value if type(value) != auto else self.make_default("ClrSys")
+		self._ClrSys = value if type(value) != base_types.auto else self.make_default("ClrSys")
 
 	@ClrSys.deleter
 	def ClrSys(self):

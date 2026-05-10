@@ -10,7 +10,7 @@ class BinRange1(base_types._BaseFieldType):
 
 	@HghrBin.setter
 	def HghrBin(self, value):
-		self._HghrBin = value if type(value) != auto else self.make_default("HghrBin")
+		self._HghrBin = value if type(value) != base_types.auto else self.make_default("HghrBin")
 
 	@HghrBin.deleter
 	def HghrBin(self):
@@ -23,7 +23,7 @@ class BinRange1(base_types._BaseFieldType):
 
 	@LwrBin.setter
 	def LwrBin(self, value):
-		self._LwrBin = value if type(value) != auto else self.make_default("LwrBin")
+		self._LwrBin = value if type(value) != base_types.auto else self.make_default("LwrBin")
 
 	@LwrBin.deleter
 	def LwrBin(self):

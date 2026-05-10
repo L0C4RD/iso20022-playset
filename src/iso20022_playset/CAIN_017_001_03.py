@@ -12,7 +12,7 @@ class CAIN_017_001_03():
 
 		@NqryRspn.setter
 		def NqryRspn(self, value):
-			self._NqryRspn = value if type(value) != auto else self.make_default("NqryRspn")
+			self._NqryRspn = value if type(value) != base_types.auto else self.make_default("NqryRspn")
 
 		@NqryRspn.deleter
 		def NqryRspn(self):

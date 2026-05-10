@@ -1,7 +1,7 @@
 from . import base_types
-from .LimitAmount1 import LimitAmount1
-from .ISODate import ISODate
 from .LimitJournalEntry3 import LimitJournalEntry3
+from .ISODate import ISODate
+from .LimitAmount1 import LimitAmount1
 
 class LimitJournal3(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class LimitJournal3(base_types._BaseFieldType):
 
 	@JrnlNtry.setter
 	def JrnlNtry(self, value):
-		self._JrnlNtry = value if type(value) != auto else self.make_default("JrnlNtry")
+		self._JrnlNtry = value if type(value) != base_types.auto else self.make_default("JrnlNtry")
 
 	@JrnlNtry.deleter
 	def JrnlNtry(self):
@@ -25,7 +25,7 @@ class LimitJournal3(base_types._BaseFieldType):
 
 	@Lmt.setter
 	def Lmt(self, value):
-		self._Lmt = value if type(value) != auto else self.make_default("Lmt")
+		self._Lmt = value if type(value) != base_types.auto else self.make_default("Lmt")
 
 	@Lmt.deleter
 	def Lmt(self):
@@ -38,7 +38,7 @@ class LimitJournal3(base_types._BaseFieldType):
 
 	@JrnlActvtyDt.setter
 	def JrnlActvtyDt(self, value):
-		self._JrnlActvtyDt = value if type(value) != auto else self.make_default("JrnlActvtyDt")
+		self._JrnlActvtyDt = value if type(value) != base_types.auto else self.make_default("JrnlActvtyDt")
 
 	@JrnlActvtyDt.deleter
 	def JrnlActvtyDt(self):

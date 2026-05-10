@@ -12,7 +12,7 @@ class CAIN_003_001_04():
 
 		@FinInitn.setter
 		def FinInitn(self, value):
-			self._FinInitn = value if type(value) != auto else self.make_default("FinInitn")
+			self._FinInitn = value if type(value) != base_types.auto else self.make_default("FinInitn")
 
 		@FinInitn.deleter
 		def FinInitn(self):

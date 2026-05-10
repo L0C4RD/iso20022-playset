@@ -12,7 +12,7 @@ class CAAD_004_001_03():
 
 		@BtchTrfRspn.setter
 		def BtchTrfRspn(self, value):
-			self._BtchTrfRspn = value if type(value) != auto else self.make_default("BtchTrfRspn")
+			self._BtchTrfRspn = value if type(value) != base_types.auto else self.make_default("BtchTrfRspn")
 
 		@BtchTrfRspn.deleter
 		def BtchTrfRspn(self):

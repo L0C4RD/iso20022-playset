@@ -1,7 +1,7 @@
 from . import base_types
-from .CollateralisationType3Code import CollateralisationType3Code
 from .CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
 from .ISODateTime import ISODateTime
+from .CollateralisationType3Code import CollateralisationType3Code
 
 class MarginCollateralReport4(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
 
 	@TmStmp.deleter
 	def TmStmp(self):
@@ -25,7 +25,7 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 
 	@CollPrtflCd.setter
 	def CollPrtflCd(self, value):
-		self._CollPrtflCd = value if type(value) != auto else self.make_default("CollPrtflCd")
+		self._CollPrtflCd = value if type(value) != base_types.auto else self.make_default("CollPrtflCd")
 
 	@CollPrtflCd.deleter
 	def CollPrtflCd(self):
@@ -38,7 +38,7 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 
 	@CollstnCtgy.setter
 	def CollstnCtgy(self, value):
-		self._CollstnCtgy = value if type(value) != auto else self.make_default("CollstnCtgy")
+		self._CollstnCtgy = value if type(value) != base_types.auto else self.make_default("CollstnCtgy")
 
 	@CollstnCtgy.deleter
 	def CollstnCtgy(self):

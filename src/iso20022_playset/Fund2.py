@@ -1,30 +1,30 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .OtherIdentification4 import OtherIdentification4
-from .PercentageRate import PercentageRate
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from .DateAndDateTimeChoice import DateAndDateTimeChoice
 from .Max350Text import Max350Text
 from .FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from .CashInOutForecast7 import CashInOutForecast7
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .PercentageRate import PercentageRate
+from .OtherIdentification4 import OtherIdentification4
 from .LEIIdentifier import LEIIdentifier
 from .NetCashForecast5 import NetCashForecast5
-from .CashInOutForecast7 import CashInOutForecast7
 
 class Fund2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_PctgOfFndTtlNAV", "_PrvsTradDtTm", "_Nm", "_TradDtTm", "_CshOutFcstDtls", "_NetCshFcstDtls", "_TtlUnitsNb", "_PrvsTtlUnitsNb", "_LglNttyIdr", "_PrvsTtlNAV", "_CshInFcstDtls", "_TtlNAV", "_Id"]
+	__slots__ = ["_Id", "_PctgOfFndTtlNAV", "_NetCshFcstDtls", "_CshInFcstDtls", "_Ccy", "_PrvsTradDtTm", "_LglNttyIdr", "_Nm", "_TradDtTm", "_PrvsTtlNAV", "_TtlUnitsNb", "_TtlNAV", "_CshOutFcstDtls", "_PrvsTtlUnitsNb"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Id(self):
+		return self._Id
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def PctgOfFndTtlNAV(self):
@@ -32,7 +32,7 @@ class Fund2(base_types._BaseFieldType):
 
 	@PctgOfFndTtlNAV.setter
 	def PctgOfFndTtlNAV(self, value):
-		self._PctgOfFndTtlNAV = value if type(value) != auto else self.make_default("PctgOfFndTtlNAV")
+		self._PctgOfFndTtlNAV = value if type(value) != base_types.auto else self.make_default("PctgOfFndTtlNAV")
 
 	@PctgOfFndTtlNAV.deleter
 	def PctgOfFndTtlNAV(self):
@@ -40,12 +40,51 @@ class Fund2(base_types._BaseFieldType):
 		self._PctgOfFndTtlNAV = None
 
 	@property
+	def NetCshFcstDtls(self):
+		return self._NetCshFcstDtls
+
+	@NetCshFcstDtls.setter
+	def NetCshFcstDtls(self, value):
+		self._NetCshFcstDtls = value if type(value) != base_types.auto else self.make_default("NetCshFcstDtls")
+
+	@NetCshFcstDtls.deleter
+	def NetCshFcstDtls(self):
+		del self._NetCshFcstDtls
+		self._NetCshFcstDtls = None
+
+	@property
+	def CshInFcstDtls(self):
+		return self._CshInFcstDtls
+
+	@CshInFcstDtls.setter
+	def CshInFcstDtls(self, value):
+		self._CshInFcstDtls = value if type(value) != base_types.auto else self.make_default("CshInFcstDtls")
+
+	@CshInFcstDtls.deleter
+	def CshInFcstDtls(self):
+		del self._CshInFcstDtls
+		self._CshInFcstDtls = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
 	def PrvsTradDtTm(self):
 		return self._PrvsTradDtTm
 
 	@PrvsTradDtTm.setter
 	def PrvsTradDtTm(self, value):
-		self._PrvsTradDtTm = value if type(value) != auto else self.make_default("PrvsTradDtTm")
+		self._PrvsTradDtTm = value if type(value) != base_types.auto else self.make_default("PrvsTradDtTm")
 
 	@PrvsTradDtTm.deleter
 	def PrvsTradDtTm(self):
@@ -53,12 +92,25 @@ class Fund2(base_types._BaseFieldType):
 		self._PrvsTradDtTm = None
 
 	@property
+	def LglNttyIdr(self):
+		return self._LglNttyIdr
+
+	@LglNttyIdr.setter
+	def LglNttyIdr(self, value):
+		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+
+	@LglNttyIdr.deleter
+	def LglNttyIdr(self):
+		del self._LglNttyIdr
+		self._LglNttyIdr = None
+
+	@property
 	def Nm(self):
 		return self._Nm
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -71,7 +123,7 @@ class Fund2(base_types._BaseFieldType):
 
 	@TradDtTm.setter
 	def TradDtTm(self, value):
-		self._TradDtTm = value if type(value) != auto else self.make_default("TradDtTm")
+		self._TradDtTm = value if type(value) != base_types.auto else self.make_default("TradDtTm")
 
 	@TradDtTm.deleter
 	def TradDtTm(self):
@@ -79,77 +131,12 @@ class Fund2(base_types._BaseFieldType):
 		self._TradDtTm = None
 
 	@property
-	def CshOutFcstDtls(self):
-		return self._CshOutFcstDtls
-
-	@CshOutFcstDtls.setter
-	def CshOutFcstDtls(self, value):
-		self._CshOutFcstDtls = value if type(value) != auto else self.make_default("CshOutFcstDtls")
-
-	@CshOutFcstDtls.deleter
-	def CshOutFcstDtls(self):
-		del self._CshOutFcstDtls
-		self._CshOutFcstDtls = None
-
-	@property
-	def NetCshFcstDtls(self):
-		return self._NetCshFcstDtls
-
-	@NetCshFcstDtls.setter
-	def NetCshFcstDtls(self, value):
-		self._NetCshFcstDtls = value if type(value) != auto else self.make_default("NetCshFcstDtls")
-
-	@NetCshFcstDtls.deleter
-	def NetCshFcstDtls(self):
-		del self._NetCshFcstDtls
-		self._NetCshFcstDtls = None
-
-	@property
-	def TtlUnitsNb(self):
-		return self._TtlUnitsNb
-
-	@TtlUnitsNb.setter
-	def TtlUnitsNb(self, value):
-		self._TtlUnitsNb = value if type(value) != auto else self.make_default("TtlUnitsNb")
-
-	@TtlUnitsNb.deleter
-	def TtlUnitsNb(self):
-		del self._TtlUnitsNb
-		self._TtlUnitsNb = None
-
-	@property
-	def PrvsTtlUnitsNb(self):
-		return self._PrvsTtlUnitsNb
-
-	@PrvsTtlUnitsNb.setter
-	def PrvsTtlUnitsNb(self, value):
-		self._PrvsTtlUnitsNb = value if type(value) != auto else self.make_default("PrvsTtlUnitsNb")
-
-	@PrvsTtlUnitsNb.deleter
-	def PrvsTtlUnitsNb(self):
-		del self._PrvsTtlUnitsNb
-		self._PrvsTtlUnitsNb = None
-
-	@property
-	def LglNttyIdr(self):
-		return self._LglNttyIdr
-
-	@LglNttyIdr.setter
-	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != auto else self.make_default("LglNttyIdr")
-
-	@LglNttyIdr.deleter
-	def LglNttyIdr(self):
-		del self._LglNttyIdr
-		self._LglNttyIdr = None
-
-	@property
 	def PrvsTtlNAV(self):
 		return self._PrvsTtlNAV
 
 	@PrvsTtlNAV.setter
 	def PrvsTtlNAV(self, value):
-		self._PrvsTtlNAV = value if type(value) != auto else self.make_default("PrvsTtlNAV")
+		self._PrvsTtlNAV = value if type(value) != base_types.auto else self.make_default("PrvsTtlNAV")
 
 	@PrvsTtlNAV.deleter
 	def PrvsTtlNAV(self):
@@ -157,17 +144,17 @@ class Fund2(base_types._BaseFieldType):
 		self._PrvsTtlNAV = None
 
 	@property
-	def CshInFcstDtls(self):
-		return self._CshInFcstDtls
+	def TtlUnitsNb(self):
+		return self._TtlUnitsNb
 
-	@CshInFcstDtls.setter
-	def CshInFcstDtls(self, value):
-		self._CshInFcstDtls = value if type(value) != auto else self.make_default("CshInFcstDtls")
+	@TtlUnitsNb.setter
+	def TtlUnitsNb(self, value):
+		self._TtlUnitsNb = value if type(value) != base_types.auto else self.make_default("TtlUnitsNb")
 
-	@CshInFcstDtls.deleter
-	def CshInFcstDtls(self):
-		del self._CshInFcstDtls
-		self._CshInFcstDtls = None
+	@TtlUnitsNb.deleter
+	def TtlUnitsNb(self):
+		del self._TtlUnitsNb
+		self._TtlUnitsNb = None
 
 	@property
 	def TtlNAV(self):
@@ -175,7 +162,7 @@ class Fund2(base_types._BaseFieldType):
 
 	@TtlNAV.setter
 	def TtlNAV(self, value):
-		self._TtlNAV = value if type(value) != auto else self.make_default("TtlNAV")
+		self._TtlNAV = value if type(value) != base_types.auto else self.make_default("TtlNAV")
 
 	@TtlNAV.deleter
 	def TtlNAV(self):
@@ -183,32 +170,45 @@ class Fund2(base_types._BaseFieldType):
 		self._TtlNAV = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def CshOutFcstDtls(self):
+		return self._CshOutFcstDtls
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@CshOutFcstDtls.setter
+	def CshOutFcstDtls(self, value):
+		self._CshOutFcstDtls = value if type(value) != base_types.auto else self.make_default("CshOutFcstDtls")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@CshOutFcstDtls.deleter
+	def CshOutFcstDtls(self):
+		del self._CshOutFcstDtls
+		self._CshOutFcstDtls = None
+
+	@property
+	def PrvsTtlUnitsNb(self):
+		return self._PrvsTtlUnitsNb
+
+	@PrvsTtlUnitsNb.setter
+	def PrvsTtlUnitsNb(self, value):
+		self._PrvsTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("PrvsTtlUnitsNb")
+
+	@PrvsTtlUnitsNb.deleter
+	def PrvsTtlUnitsNb(self):
+		del self._PrvsTtlUnitsNb
+		self._PrvsTtlUnitsNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=OtherIdentification4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PctgOfFndTtlNAV', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetCshFcstDtls', type=NetCashForecast5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshInFcstDtls', type=CashInOutForecast7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsTradDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshOutFcstDtls', type=CashInOutForecast7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NetCshFcstDtls', type=NetCashForecast5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInFcstDtls', type=CashInOutForecast7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=OtherIdentification4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshOutFcstDtls', type=CashInOutForecast7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 	))
 

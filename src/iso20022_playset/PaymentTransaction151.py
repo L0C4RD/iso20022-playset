@@ -10,7 +10,7 @@ class PaymentTransaction151(base_types._BaseFieldType):
 
 	@PmtInstrm.setter
 	def PmtInstrm(self, value):
-		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
+		self._PmtInstrm = value if type(value) != base_types.auto else self.make_default("PmtInstrm")
 
 	@PmtInstrm.deleter
 	def PmtInstrm(self):

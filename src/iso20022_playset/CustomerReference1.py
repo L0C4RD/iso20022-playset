@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max70Text import Max70Text
+from .Max35Text import Max35Text
 
 class CustomerReference1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CustomerReference1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class CustomerReference1(base_types._BaseFieldType):
 
 	@Dtl.setter
 	def Dtl(self, value):
-		self._Dtl = value if type(value) != auto else self.make_default("Dtl")
+		self._Dtl = value if type(value) != base_types.auto else self.make_default("Dtl")
 
 	@Dtl.deleter
 	def Dtl(self):

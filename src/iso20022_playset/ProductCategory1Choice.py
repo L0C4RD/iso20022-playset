@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification4 import GenericIdentification4
 from .ProductCategory1 import ProductCategory1
+from .GenericIdentification4 import GenericIdentification4
 
 class ProductCategory1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ProductCategory1Choice(base_types._BaseFieldType):
 
 	@OthrPdctCtgy.setter
 	def OthrPdctCtgy(self, value):
-		self._OthrPdctCtgy = value if type(value) != auto else self.make_default("OthrPdctCtgy")
+		self._OthrPdctCtgy = value if type(value) != base_types.auto else self.make_default("OthrPdctCtgy")
 
 	@OthrPdctCtgy.deleter
 	def OthrPdctCtgy(self):
@@ -24,7 +24,7 @@ class ProductCategory1Choice(base_types._BaseFieldType):
 
 	@StrdPdctCtgy.setter
 	def StrdPdctCtgy(self, value):
-		self._StrdPdctCtgy = value if type(value) != auto else self.make_default("StrdPdctCtgy")
+		self._StrdPdctCtgy = value if type(value) != base_types.auto else self.make_default("StrdPdctCtgy")
 
 	@StrdPdctCtgy.deleter
 	def StrdPdctCtgy(self):

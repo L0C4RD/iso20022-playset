@@ -1,6 +1,6 @@
 from . import base_types
-from .QueryType2Code import QueryType2Code
 from .MemberCriteriaDefinition2Choice import MemberCriteriaDefinition2Choice
+from .QueryType2Code import QueryType2Code
 
 class MemberQueryDefinition4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MemberQueryDefinition4(base_types._BaseFieldType):
 
 	@MmbCrit.setter
 	def MmbCrit(self, value):
-		self._MmbCrit = value if type(value) != auto else self.make_default("MmbCrit")
+		self._MmbCrit = value if type(value) != base_types.auto else self.make_default("MmbCrit")
 
 	@MmbCrit.deleter
 	def MmbCrit(self):
@@ -24,7 +24,7 @@ class MemberQueryDefinition4(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

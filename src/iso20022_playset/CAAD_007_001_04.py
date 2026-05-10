@@ -12,7 +12,7 @@ class CAAD_007_001_04():
 
 		@Err.setter
 		def Err(self, value):
-			self._Err = value if type(value) != auto else self.make_default("Err")
+			self._Err = value if type(value) != base_types.auto else self.make_default("Err")
 
 		@Err.deleter
 		def Err(self):

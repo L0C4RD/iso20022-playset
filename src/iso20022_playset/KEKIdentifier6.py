@@ -1,18 +1,31 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .Min5Max16Binary import Min5Max16Binary
 from .Number import Number
+from .Max140Text import Max140Text
 
 class KEKIdentifier6(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyVrsn", "_DerivtnId", "_SeqNb", "_KeyId"]
+	__slots__ = ["_KeyId", "_KeyVrsn", "_DerivtnId", "_SeqNb"]
+	@property
+	def KeyId(self):
+		return self._KeyId
+
+	@KeyId.setter
+	def KeyId(self, value):
+		self._KeyId = value if type(value) != base_types.auto else self.make_default("KeyId")
+
+	@KeyId.deleter
+	def KeyId(self):
+		del self._KeyId
+		self._KeyId = None
+
 	@property
 	def KeyVrsn(self):
 		return self._KeyVrsn
 
 	@KeyVrsn.setter
 	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
+		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
 
 	@KeyVrsn.deleter
 	def KeyVrsn(self):
@@ -25,7 +38,7 @@ class KEKIdentifier6(base_types._BaseFieldType):
 
 	@DerivtnId.setter
 	def DerivtnId(self, value):
-		self._DerivtnId = value if type(value) != auto else self.make_default("DerivtnId")
+		self._DerivtnId = value if type(value) != base_types.auto else self.make_default("DerivtnId")
 
 	@DerivtnId.deleter
 	def DerivtnId(self):
@@ -38,30 +51,17 @@ class KEKIdentifier6(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
 		self._SeqNb = None
 
-	@property
-	def KeyId(self):
-		return self._KeyId
-
-	@KeyId.setter
-	def KeyId(self, value):
-		self._KeyId = value if type(value) != auto else self.make_default("KeyId")
-
-	@KeyId.deleter
-	def KeyId(self):
-		del self._KeyId
-		self._KeyId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

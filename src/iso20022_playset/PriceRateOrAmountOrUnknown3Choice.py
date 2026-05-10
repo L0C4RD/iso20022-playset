@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
 from .RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount import RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount
+from .PercentageRate import PercentageRate
 from .YesNoIndicator import YesNoIndicator
 
 class PriceRateOrAmountOrUnknown3Choice(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class PriceRateOrAmountOrUnknown3Choice(base_types._BaseFieldType):
 
 	@UknwnInd.setter
 	def UknwnInd(self, value):
-		self._UknwnInd = value if type(value) != auto else self.make_default("UknwnInd")
+		self._UknwnInd = value if type(value) != base_types.auto else self.make_default("UknwnInd")
 
 	@UknwnInd.deleter
 	def UknwnInd(self):
@@ -25,7 +25,7 @@ class PriceRateOrAmountOrUnknown3Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):
@@ -38,7 +38,7 @@ class PriceRateOrAmountOrUnknown3Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

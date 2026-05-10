@@ -12,7 +12,7 @@ class AUTH_001_001_02():
 
 		@InfReqOpng.setter
 		def InfReqOpng(self, value):
-			self._InfReqOpng = value if type(value) != auto else self.make_default("InfReqOpng")
+			self._InfReqOpng = value if type(value) != base_types.auto else self.make_default("InfReqOpng")
 
 		@InfReqOpng.deleter
 		def InfReqOpng(self):

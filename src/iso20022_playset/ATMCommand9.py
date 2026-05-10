@@ -11,7 +11,7 @@ class ATMCommand9(base_types._BaseFieldType):
 
 	@CmdId.setter
 	def CmdId(self, value):
-		self._CmdId = value if type(value) != auto else self.make_default("CmdId")
+		self._CmdId = value if type(value) != base_types.auto else self.make_default("CmdId")
 
 	@CmdId.deleter
 	def CmdId(self):
@@ -24,7 +24,7 @@ class ATMCommand9(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

@@ -5,14 +5,27 @@ from .AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResp
 
 class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
-	__slots__ = ["_CmpltnAdvcRspn", "_BtchTrfRspn", "_CxlRspn"]
+	__slots__ = ["_CxlRspn", "_CmpltnAdvcRspn", "_BtchTrfRspn"]
+	@property
+	def CxlRspn(self):
+		return self._CxlRspn
+
+	@CxlRspn.setter
+	def CxlRspn(self, value):
+		self._CxlRspn = value if type(value) != base_types.auto else self.make_default("CxlRspn")
+
+	@CxlRspn.deleter
+	def CxlRspn(self):
+		del self._CxlRspn
+		self._CxlRspn = None
+
 	@property
 	def CmpltnAdvcRspn(self):
 		return self._CmpltnAdvcRspn
 
 	@CmpltnAdvcRspn.setter
 	def CmpltnAdvcRspn(self, value):
-		self._CmpltnAdvcRspn = value if type(value) != auto else self.make_default("CmpltnAdvcRspn")
+		self._CmpltnAdvcRspn = value if type(value) != base_types.auto else self.make_default("CmpltnAdvcRspn")
 
 	@CmpltnAdvcRspn.deleter
 	def CmpltnAdvcRspn(self):
@@ -25,29 +38,16 @@ class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
 	@BtchTrfRspn.setter
 	def BtchTrfRspn(self, value):
-		self._BtchTrfRspn = value if type(value) != auto else self.make_default("BtchTrfRspn")
+		self._BtchTrfRspn = value if type(value) != base_types.auto else self.make_default("BtchTrfRspn")
 
 	@BtchTrfRspn.deleter
 	def BtchTrfRspn(self):
 		del self._BtchTrfRspn
 		self._BtchTrfRspn = None
 
-	@property
-	def CxlRspn(self):
-		return self._CxlRspn
-
-	@CxlRspn.setter
-	def CxlRspn(self, value):
-		self._CxlRspn = value if type(value) != auto else self.make_default("CxlRspn")
-
-	@CxlRspn.deleter
-	def CxlRspn(self):
-		del self._CxlRspn
-		self._CxlRspn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlRspn', type=AcceptorCancellationAdviceResponse13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpltnAdvcRspn', type=AcceptorCompletionAdviceResponse13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrfRspn', type=CardPaymentBatchTransferResponse12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRspn', type=AcceptorCancellationAdviceResponse13, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .RejectedStatusReason8Code import RejectedStatusReason8Code
 from .GenericIdentification1 import GenericIdentification1
+from .RejectedStatusReason8Code import RejectedStatusReason8Code
 
 class RejectedReason21Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RejectedReason21Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -24,7 +24,7 @@ class RejectedReason21Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

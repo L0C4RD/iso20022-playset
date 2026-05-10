@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ATMService21 import ATMService21
+from .Max35Text import Max35Text
 
 class ATMContext17(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ATMContext17(base_types._BaseFieldType):
 
 	@Svc.setter
 	def Svc(self, value):
-		self._Svc = value if type(value) != auto else self.make_default("Svc")
+		self._Svc = value if type(value) != base_types.auto else self.make_default("Svc")
 
 	@Svc.deleter
 	def Svc(self):
@@ -24,7 +24,7 @@ class ATMContext17(base_types._BaseFieldType):
 
 	@SsnRef.setter
 	def SsnRef(self, value):
-		self._SsnRef = value if type(value) != auto else self.make_default("SsnRef")
+		self._SsnRef = value if type(value) != base_types.auto else self.make_default("SsnRef")
 
 	@SsnRef.deleter
 	def SsnRef(self):

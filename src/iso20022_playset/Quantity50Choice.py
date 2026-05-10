@@ -11,7 +11,7 @@ class Quantity50Choice(base_types._BaseFieldType):
 
 	@SgndQty.setter
 	def SgndQty(self, value):
-		self._SgndQty = value if type(value) != auto else self.make_default("SgndQty")
+		self._SgndQty = value if type(value) != base_types.auto else self.make_default("SgndQty")
 
 	@SgndQty.deleter
 	def SgndQty(self):
@@ -24,7 +24,7 @@ class Quantity50Choice(base_types._BaseFieldType):
 
 	@OrgnlAndCurFaceAmt.setter
 	def OrgnlAndCurFaceAmt(self, value):
-		self._OrgnlAndCurFaceAmt = value if type(value) != auto else self.make_default("OrgnlAndCurFaceAmt")
+		self._OrgnlAndCurFaceAmt = value if type(value) != base_types.auto else self.make_default("OrgnlAndCurFaceAmt")
 
 	@OrgnlAndCurFaceAmt.deleter
 	def OrgnlAndCurFaceAmt(self):

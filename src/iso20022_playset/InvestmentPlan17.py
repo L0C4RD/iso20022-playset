@@ -1,94 +1,29 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PlanStatus2Choice import PlanStatus2Choice
-from .Repartition6 import Repartition6
-from .YesNoIndicator import YesNoIndicator
-from .PartyRole4Choice import PartyRole4Choice
-from .IncomePreference2Code import IncomePreference2Code
-from .ISODate import ISODate
-from .CashSettlement3 import CashSettlement3
-from .InitialAmount1Choice import InitialAmount1Choice
 from .RoundingDirection1Code import RoundingDirection1Code
+from .Repartition6 import Repartition6
 from .Number import Number
-from .Frequency20Choice import Frequency20Choice
 from .UnitsOrAmount1Choice import UnitsOrAmount1Choice
+from .CashSettlement3 import CashSettlement3
 from .InsuranceType2Choice import InsuranceType2Choice
+from .PartyRole4Choice import PartyRole4Choice
+from .Max35Text import Max35Text
+from .IncomePreference2Code import IncomePreference2Code
+from .Frequency20Choice import Frequency20Choice
+from .ISODate import ISODate
+from .PlanStatus2Choice import PlanStatus2Choice
+from .InitialAmount1Choice import InitialAmount1Choice
+from .YesNoIndicator import YesNoIndicator
 
 class InvestmentPlan17(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_SctyDtls", "_InstlmtMgrRole", "_IncmPref", "_InitlAmt", "_RndgDrctn", "_PdctId", "_Qty", "_StartDt", "_InsrncCover", "_SLAChrgAndComssnRef", "_GrssAmtInd", "_PlanSts", "_TtlNbOfInstlmts", "_EndDt", "_CtrctRef", "_RltdCtrctRef", "_CshSttlm"]
-	@property
-	def Frqcy(self):
-		return self._Frqcy
-
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
-
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
-
-	@property
-	def SctyDtls(self):
-		return self._SctyDtls
-
-	@SctyDtls.setter
-	def SctyDtls(self, value):
-		self._SctyDtls = value if type(value) != auto else self.make_default("SctyDtls")
-
-	@SctyDtls.deleter
-	def SctyDtls(self):
-		del self._SctyDtls
-		self._SctyDtls = None
-
-	@property
-	def InstlmtMgrRole(self):
-		return self._InstlmtMgrRole
-
-	@InstlmtMgrRole.setter
-	def InstlmtMgrRole(self, value):
-		self._InstlmtMgrRole = value if type(value) != auto else self.make_default("InstlmtMgrRole")
-
-	@InstlmtMgrRole.deleter
-	def InstlmtMgrRole(self):
-		del self._InstlmtMgrRole
-		self._InstlmtMgrRole = None
-
-	@property
-	def IncmPref(self):
-		return self._IncmPref
-
-	@IncmPref.setter
-	def IncmPref(self, value):
-		self._IncmPref = value if type(value) != auto else self.make_default("IncmPref")
-
-	@IncmPref.deleter
-	def IncmPref(self):
-		del self._IncmPref
-		self._IncmPref = None
-
-	@property
-	def InitlAmt(self):
-		return self._InitlAmt
-
-	@InitlAmt.setter
-	def InitlAmt(self, value):
-		self._InitlAmt = value if type(value) != auto else self.make_default("InitlAmt")
-
-	@InitlAmt.deleter
-	def InitlAmt(self):
-		del self._InitlAmt
-		self._InitlAmt = None
-
+	__slots__ = ["_RndgDrctn", "_CshSttlm", "_PlanSts", "_InstlmtMgrRole", "_SctyDtls", "_InsrncCover", "_PdctId", "_RltdCtrctRef", "_TtlNbOfInstlmts", "_InitlAmt", "_EndDt", "_CtrctRef", "_Qty", "_IncmPref", "_GrssAmtInd", "_Frqcy", "_StartDt", "_SLAChrgAndComssnRef"]
 	@property
 	def RndgDrctn(self):
 		return self._RndgDrctn
 
 	@RndgDrctn.setter
 	def RndgDrctn(self, value):
-		self._RndgDrctn = value if type(value) != auto else self.make_default("RndgDrctn")
+		self._RndgDrctn = value if type(value) != base_types.auto else self.make_default("RndgDrctn")
 
 	@RndgDrctn.deleter
 	def RndgDrctn(self):
@@ -96,82 +31,17 @@ class InvestmentPlan17(base_types._BaseFieldType):
 		self._RndgDrctn = None
 
 	@property
-	def PdctId(self):
-		return self._PdctId
+	def CshSttlm(self):
+		return self._CshSttlm
 
-	@PdctId.setter
-	def PdctId(self, value):
-		self._PdctId = value if type(value) != auto else self.make_default("PdctId")
+	@CshSttlm.setter
+	def CshSttlm(self, value):
+		self._CshSttlm = value if type(value) != base_types.auto else self.make_default("CshSttlm")
 
-	@PdctId.deleter
-	def PdctId(self):
-		del self._PdctId
-		self._PdctId = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
-	@property
-	def InsrncCover(self):
-		return self._InsrncCover
-
-	@InsrncCover.setter
-	def InsrncCover(self, value):
-		self._InsrncCover = value if type(value) != auto else self.make_default("InsrncCover")
-
-	@InsrncCover.deleter
-	def InsrncCover(self):
-		del self._InsrncCover
-		self._InsrncCover = None
-
-	@property
-	def SLAChrgAndComssnRef(self):
-		return self._SLAChrgAndComssnRef
-
-	@SLAChrgAndComssnRef.setter
-	def SLAChrgAndComssnRef(self, value):
-		self._SLAChrgAndComssnRef = value if type(value) != auto else self.make_default("SLAChrgAndComssnRef")
-
-	@SLAChrgAndComssnRef.deleter
-	def SLAChrgAndComssnRef(self):
-		del self._SLAChrgAndComssnRef
-		self._SLAChrgAndComssnRef = None
-
-	@property
-	def GrssAmtInd(self):
-		return self._GrssAmtInd
-
-	@GrssAmtInd.setter
-	def GrssAmtInd(self, value):
-		self._GrssAmtInd = value if type(value) != auto else self.make_default("GrssAmtInd")
-
-	@GrssAmtInd.deleter
-	def GrssAmtInd(self):
-		del self._GrssAmtInd
-		self._GrssAmtInd = None
+	@CshSttlm.deleter
+	def CshSttlm(self):
+		del self._CshSttlm
+		self._CshSttlm = None
 
 	@property
 	def PlanSts(self):
@@ -179,7 +49,7 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@PlanSts.setter
 	def PlanSts(self, value):
-		self._PlanSts = value if type(value) != auto else self.make_default("PlanSts")
+		self._PlanSts = value if type(value) != base_types.auto else self.make_default("PlanSts")
 
 	@PlanSts.deleter
 	def PlanSts(self):
@@ -187,12 +57,77 @@ class InvestmentPlan17(base_types._BaseFieldType):
 		self._PlanSts = None
 
 	@property
+	def InstlmtMgrRole(self):
+		return self._InstlmtMgrRole
+
+	@InstlmtMgrRole.setter
+	def InstlmtMgrRole(self, value):
+		self._InstlmtMgrRole = value if type(value) != base_types.auto else self.make_default("InstlmtMgrRole")
+
+	@InstlmtMgrRole.deleter
+	def InstlmtMgrRole(self):
+		del self._InstlmtMgrRole
+		self._InstlmtMgrRole = None
+
+	@property
+	def SctyDtls(self):
+		return self._SctyDtls
+
+	@SctyDtls.setter
+	def SctyDtls(self, value):
+		self._SctyDtls = value if type(value) != base_types.auto else self.make_default("SctyDtls")
+
+	@SctyDtls.deleter
+	def SctyDtls(self):
+		del self._SctyDtls
+		self._SctyDtls = None
+
+	@property
+	def InsrncCover(self):
+		return self._InsrncCover
+
+	@InsrncCover.setter
+	def InsrncCover(self, value):
+		self._InsrncCover = value if type(value) != base_types.auto else self.make_default("InsrncCover")
+
+	@InsrncCover.deleter
+	def InsrncCover(self):
+		del self._InsrncCover
+		self._InsrncCover = None
+
+	@property
+	def PdctId(self):
+		return self._PdctId
+
+	@PdctId.setter
+	def PdctId(self, value):
+		self._PdctId = value if type(value) != base_types.auto else self.make_default("PdctId")
+
+	@PdctId.deleter
+	def PdctId(self):
+		del self._PdctId
+		self._PdctId = None
+
+	@property
+	def RltdCtrctRef(self):
+		return self._RltdCtrctRef
+
+	@RltdCtrctRef.setter
+	def RltdCtrctRef(self, value):
+		self._RltdCtrctRef = value if type(value) != base_types.auto else self.make_default("RltdCtrctRef")
+
+	@RltdCtrctRef.deleter
+	def RltdCtrctRef(self):
+		del self._RltdCtrctRef
+		self._RltdCtrctRef = None
+
+	@property
 	def TtlNbOfInstlmts(self):
 		return self._TtlNbOfInstlmts
 
 	@TtlNbOfInstlmts.setter
 	def TtlNbOfInstlmts(self, value):
-		self._TtlNbOfInstlmts = value if type(value) != auto else self.make_default("TtlNbOfInstlmts")
+		self._TtlNbOfInstlmts = value if type(value) != base_types.auto else self.make_default("TtlNbOfInstlmts")
 
 	@TtlNbOfInstlmts.deleter
 	def TtlNbOfInstlmts(self):
@@ -200,12 +135,25 @@ class InvestmentPlan17(base_types._BaseFieldType):
 		self._TtlNbOfInstlmts = None
 
 	@property
+	def InitlAmt(self):
+		return self._InitlAmt
+
+	@InitlAmt.setter
+	def InitlAmt(self, value):
+		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
+
+	@InitlAmt.deleter
+	def InitlAmt(self):
+		del self._InitlAmt
+		self._InitlAmt = None
+
+	@property
 	def EndDt(self):
 		return self._EndDt
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
 
 	@EndDt.deleter
 	def EndDt(self):
@@ -218,7 +166,7 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@CtrctRef.setter
 	def CtrctRef(self, value):
-		self._CtrctRef = value if type(value) != auto else self.make_default("CtrctRef")
+		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
 
 	@CtrctRef.deleter
 	def CtrctRef(self):
@@ -226,49 +174,101 @@ class InvestmentPlan17(base_types._BaseFieldType):
 		self._CtrctRef = None
 
 	@property
-	def RltdCtrctRef(self):
-		return self._RltdCtrctRef
+	def Qty(self):
+		return self._Qty
 
-	@RltdCtrctRef.setter
-	def RltdCtrctRef(self, value):
-		self._RltdCtrctRef = value if type(value) != auto else self.make_default("RltdCtrctRef")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
-	@RltdCtrctRef.deleter
-	def RltdCtrctRef(self):
-		del self._RltdCtrctRef
-		self._RltdCtrctRef = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
-	def CshSttlm(self):
-		return self._CshSttlm
+	def IncmPref(self):
+		return self._IncmPref
 
-	@CshSttlm.setter
-	def CshSttlm(self, value):
-		self._CshSttlm = value if type(value) != auto else self.make_default("CshSttlm")
+	@IncmPref.setter
+	def IncmPref(self, value):
+		self._IncmPref = value if type(value) != base_types.auto else self.make_default("IncmPref")
 
-	@CshSttlm.deleter
-	def CshSttlm(self):
-		del self._CshSttlm
-		self._CshSttlm = None
+	@IncmPref.deleter
+	def IncmPref(self):
+		del self._IncmPref
+		self._IncmPref = None
+
+	@property
+	def GrssAmtInd(self):
+		return self._GrssAmtInd
+
+	@GrssAmtInd.setter
+	def GrssAmtInd(self, value):
+		self._GrssAmtInd = value if type(value) != base_types.auto else self.make_default("GrssAmtInd")
+
+	@GrssAmtInd.deleter
+	def GrssAmtInd(self):
+		del self._GrssAmtInd
+		self._GrssAmtInd = None
+
+	@property
+	def Frqcy(self):
+		return self._Frqcy
+
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
+	def SLAChrgAndComssnRef(self):
+		return self._SLAChrgAndComssnRef
+
+	@SLAChrgAndComssnRef.setter
+	def SLAChrgAndComssnRef(self, value):
+		self._SLAChrgAndComssnRef = value if type(value) != base_types.auto else self.make_default("SLAChrgAndComssnRef")
+
+	@SLAChrgAndComssnRef.deleter
+	def SLAChrgAndComssnRef(self):
+		del self._SLAChrgAndComssnRef
+		self._SLAChrgAndComssnRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frqcy', type=Frequency20Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyDtls', type=Repartition6, min=1, max=50, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InstlmtMgrRole', type=PartyRole4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncmPref', type=IncomePreference2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlAmt', type=InitialAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RndgDrctn', type=RoundingDirection1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=UnitsOrAmount1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncCover', type=InsuranceType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SLAChrgAndComssnRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssAmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSttlm', type=CashSettlement3, min=0, max=8, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PlanSts', type=PlanStatus2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstlmtMgrRole', type=PartyRole4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyDtls', type=Repartition6, min=1, max=50, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InsrncCover', type=InsuranceType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdCtrctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfInstlmts', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlAmt', type=InitialAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdCtrctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSttlm', type=CashSettlement3, min=0, max=8, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Qty', type=UnitsOrAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmPref', type=IncomePreference2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssAmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency20Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SLAChrgAndComssnRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

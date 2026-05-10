@@ -10,7 +10,7 @@ class Amendment9(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntRspnMsg.setter
 	def UdrtkgAmdmntRspnMsg(self, value):
-		self._UdrtkgAmdmntRspnMsg = value if type(value) != auto else self.make_default("UdrtkgAmdmntRspnMsg")
+		self._UdrtkgAmdmntRspnMsg = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntRspnMsg")
 
 	@UdrtkgAmdmntRspnMsg.deleter
 	def UdrtkgAmdmntRspnMsg(self):

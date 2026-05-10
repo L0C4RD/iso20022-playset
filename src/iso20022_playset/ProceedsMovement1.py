@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesProceeds1 import SecuritiesProceeds1
 from .CashProceeds1 import CashProceeds1
+from .SecuritiesProceeds1 import SecuritiesProceeds1
 from .TaxVoucher1 import TaxVoucher1
 
 class ProceedsMovement1(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class ProceedsMovement1(base_types._BaseFieldType):
 
 	@SctiesPrcdsMvmntDtls.setter
 	def SctiesPrcdsMvmntDtls(self, value):
-		self._SctiesPrcdsMvmntDtls = value if type(value) != auto else self.make_default("SctiesPrcdsMvmntDtls")
+		self._SctiesPrcdsMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesPrcdsMvmntDtls")
 
 	@SctiesPrcdsMvmntDtls.deleter
 	def SctiesPrcdsMvmntDtls(self):
@@ -25,7 +25,7 @@ class ProceedsMovement1(base_types._BaseFieldType):
 
 	@CshPrcdsMvmntDtls.setter
 	def CshPrcdsMvmntDtls(self, value):
-		self._CshPrcdsMvmntDtls = value if type(value) != auto else self.make_default("CshPrcdsMvmntDtls")
+		self._CshPrcdsMvmntDtls = value if type(value) != base_types.auto else self.make_default("CshPrcdsMvmntDtls")
 
 	@CshPrcdsMvmntDtls.deleter
 	def CshPrcdsMvmntDtls(self):
@@ -38,7 +38,7 @@ class ProceedsMovement1(base_types._BaseFieldType):
 
 	@TaxDtls.setter
 	def TaxDtls(self, value):
-		self._TaxDtls = value if type(value) != auto else self.make_default("TaxDtls")
+		self._TaxDtls = value if type(value) != base_types.auto else self.make_default("TaxDtls")
 
 	@TaxDtls.deleter
 	def TaxDtls(self):

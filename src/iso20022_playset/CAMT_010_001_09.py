@@ -12,7 +12,7 @@ class CAMT_010_001_09():
 
 		@RtrLmt.setter
 		def RtrLmt(self, value):
-			self._RtrLmt = value if type(value) != auto else self.make_default("RtrLmt")
+			self._RtrLmt = value if type(value) != base_types.auto else self.make_default("RtrLmt")
 
 		@RtrLmt.deleter
 		def RtrLmt(self):

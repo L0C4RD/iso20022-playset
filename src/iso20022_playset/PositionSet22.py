@@ -1,6 +1,6 @@
 from . import base_types
-from .PositionSetCollateralMetrics2 import PositionSetCollateralMetrics2
 from .PositionSetCollateralDimensions3 import PositionSetCollateralDimensions3
+from .PositionSetCollateralMetrics2 import PositionSetCollateralMetrics2
 
 class PositionSet22(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PositionSet22(base_types._BaseFieldType):
 
 	@Mtrcs.setter
 	def Mtrcs(self, value):
-		self._Mtrcs = value if type(value) != auto else self.make_default("Mtrcs")
+		self._Mtrcs = value if type(value) != base_types.auto else self.make_default("Mtrcs")
 
 	@Mtrcs.deleter
 	def Mtrcs(self):
@@ -24,7 +24,7 @@ class PositionSet22(base_types._BaseFieldType):
 
 	@Dmnsns.setter
 	def Dmnsns(self, value):
-		self._Dmnsns = value if type(value) != auto else self.make_default("Dmnsns")
+		self._Dmnsns = value if type(value) != base_types.auto else self.make_default("Dmnsns")
 
 	@Dmnsns.deleter
 	def Dmnsns(self):

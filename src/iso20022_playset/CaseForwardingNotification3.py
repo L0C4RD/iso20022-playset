@@ -10,7 +10,7 @@ class CaseForwardingNotification3(base_types._BaseFieldType):
 
 	@Justfn.setter
 	def Justfn(self, value):
-		self._Justfn = value if type(value) != auto else self.make_default("Justfn")
+		self._Justfn = value if type(value) != base_types.auto else self.make_default("Justfn")
 
 	@Justfn.deleter
 	def Justfn(self):

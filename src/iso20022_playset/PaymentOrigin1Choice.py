@@ -1,7 +1,7 @@
 from . import base_types
 from .PaymentInstrument1Code import PaymentInstrument1Code
-from .Max35Text import Max35Text
 from .Max3NumericText import Max3NumericText
+from .Max35Text import Max35Text
 
 class PaymentOrigin1Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PaymentOrigin1Choice(base_types._BaseFieldType):
 
 	@Instrm.setter
 	def Instrm(self, value):
-		self._Instrm = value if type(value) != auto else self.make_default("Instrm")
+		self._Instrm = value if type(value) != base_types.auto else self.make_default("Instrm")
 
 	@Instrm.deleter
 	def Instrm(self):
@@ -25,7 +25,7 @@ class PaymentOrigin1Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -38,7 +38,7 @@ class PaymentOrigin1Choice(base_types._BaseFieldType):
 
 	@FINMT.setter
 	def FINMT(self, value):
-		self._FINMT = value if type(value) != auto else self.make_default("FINMT")
+		self._FINMT = value if type(value) != base_types.auto else self.make_default("FINMT")
 
 	@FINMT.deleter
 	def FINMT(self):
@@ -51,7 +51,7 @@ class PaymentOrigin1Choice(base_types._BaseFieldType):
 
 	@XMLMsgNm.setter
 	def XMLMsgNm(self, value):
-		self._XMLMsgNm = value if type(value) != auto else self.make_default("XMLMsgNm")
+		self._XMLMsgNm = value if type(value) != base_types.auto else self.make_default("XMLMsgNm")
 
 	@XMLMsgNm.deleter
 	def XMLMsgNm(self):

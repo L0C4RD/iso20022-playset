@@ -4,19 +4,19 @@ from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class AmountPricePerAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_AmtPricTp", "_PricVal"]
+	__slots__ = ["_PricVal", "_AmtPricTp", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def PricVal(self):
+		return self._PricVal
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@PricVal.setter
+	def PricVal(self, value):
+		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@PricVal.deleter
+	def PricVal(self):
+		del self._PricVal
+		self._PricVal = None
 
 	@property
 	def AmtPricTp(self):
@@ -24,7 +24,7 @@ class AmountPricePerAmount1(base_types._BaseFieldType):
 
 	@AmtPricTp.setter
 	def AmtPricTp(self, value):
-		self._AmtPricTp = value if type(value) != auto else self.make_default("AmtPricTp")
+		self._AmtPricTp = value if type(value) != base_types.auto else self.make_default("AmtPricTp")
 
 	@AmtPricTp.deleter
 	def AmtPricTp(self):
@@ -32,21 +32,21 @@ class AmountPricePerAmount1(base_types._BaseFieldType):
 		self._AmtPricTp = None
 
 	@property
-	def PricVal(self):
-		return self._PricVal
+	def Amt(self):
+		return self._Amt
 
-	@PricVal.setter
-	def PricVal(self, value):
-		self._PricVal = value if type(value) != auto else self.make_default("PricVal")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@PricVal.deleter
-	def PricVal(self):
-		del self._PricVal
-		self._PricVal = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricVal', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType1FormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -11,7 +11,7 @@ class InterestRateFrequency3Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -24,7 +24,7 @@ class InterestRateFrequency3Choice(base_types._BaseFieldType):
 
 	@Term.setter
 	def Term(self, value):
-		self._Term = value if type(value) != auto else self.make_default("Term")
+		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
 
 	@Term.deleter
 	def Term(self):

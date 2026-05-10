@@ -1,7 +1,7 @@
 from . import base_types
-from .Max15NumericText import Max15NumericText
-from .DecimalNumber import DecimalNumber
 from .TransactionIndividualStatus1Code import TransactionIndividualStatus1Code
+from .DecimalNumber import DecimalNumber
+from .Max15NumericText import Max15NumericText
 
 class NumberOfTransactionsPerStatus1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class NumberOfTransactionsPerStatus1(base_types._BaseFieldType):
 
 	@DtldNbOfTxs.setter
 	def DtldNbOfTxs(self, value):
-		self._DtldNbOfTxs = value if type(value) != auto else self.make_default("DtldNbOfTxs")
+		self._DtldNbOfTxs = value if type(value) != base_types.auto else self.make_default("DtldNbOfTxs")
 
 	@DtldNbOfTxs.deleter
 	def DtldNbOfTxs(self):
@@ -25,7 +25,7 @@ class NumberOfTransactionsPerStatus1(base_types._BaseFieldType):
 
 	@DtldCtrlSum.setter
 	def DtldCtrlSum(self, value):
-		self._DtldCtrlSum = value if type(value) != auto else self.make_default("DtldCtrlSum")
+		self._DtldCtrlSum = value if type(value) != base_types.auto else self.make_default("DtldCtrlSum")
 
 	@DtldCtrlSum.deleter
 	def DtldCtrlSum(self):
@@ -38,7 +38,7 @@ class NumberOfTransactionsPerStatus1(base_types._BaseFieldType):
 
 	@DtldSts.setter
 	def DtldSts(self, value):
-		self._DtldSts = value if type(value) != auto else self.make_default("DtldSts")
+		self._DtldSts = value if type(value) != base_types.auto else self.make_default("DtldSts")
 
 	@DtldSts.deleter
 	def DtldSts(self):

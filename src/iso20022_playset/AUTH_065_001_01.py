@@ -12,7 +12,7 @@ class AUTH_065_001_01():
 
 		@CCPBckTstgDefRpt.setter
 		def CCPBckTstgDefRpt(self, value):
-			self._CCPBckTstgDefRpt = value if type(value) != auto else self.make_default("CCPBckTstgDefRpt")
+			self._CCPBckTstgDefRpt = value if type(value) != base_types.auto else self.make_default("CCPBckTstgDefRpt")
 
 		@CCPBckTstgDefRpt.deleter
 		def CCPBckTstgDefRpt(self):

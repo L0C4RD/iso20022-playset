@@ -5,27 +5,14 @@ from .FinancialInstrument97 import FinancialInstrument97
 
 class SecurityAttributes10(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmTp", "_FinInstrmId", "_FinInstrmAttrbts"]
-	@property
-	def FinInstrmTp(self):
-		return self._FinInstrmTp
-
-	@FinInstrmTp.setter
-	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
-
-	@FinInstrmTp.deleter
-	def FinInstrmTp(self):
-		del self._FinInstrmTp
-		self._FinInstrmTp = None
-
+	__slots__ = ["_FinInstrmId", "_FinInstrmTp", "_FinInstrmAttrbts"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
@@ -33,12 +20,25 @@ class SecurityAttributes10(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
+	def FinInstrmTp(self):
+		return self._FinInstrmTp
+
+	@FinInstrmTp.setter
+	def FinInstrmTp(self, value):
+		self._FinInstrmTp = value if type(value) != base_types.auto else self.make_default("FinInstrmTp")
+
+	@FinInstrmTp.deleter
+	def FinInstrmTp(self):
+		del self._FinInstrmTp
+		self._FinInstrmTp = None
+
+	@property
 	def FinInstrmAttrbts(self):
 		return self._FinInstrmAttrbts
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
@@ -46,8 +46,8 @@ class SecurityAttributes10(base_types._BaseFieldType):
 		self._FinInstrmAttrbts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmTp', type=FinancialInstrument97, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmTp', type=FinancialInstrument97, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmAttrbts', type=CommonFinancialInstrumentAttributes10, min=0, max=None, mutex_group=None, array=True),
 	))
 

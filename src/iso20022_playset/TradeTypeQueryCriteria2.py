@@ -1,7 +1,7 @@
 from . import base_types
+from .CollateralType6Code import CollateralType6Code
 from .ExposureType10Code import ExposureType10Code
 from .Operation3Code import Operation3Code
-from .CollateralType6Code import CollateralType6Code
 
 class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
 	@SctiesFincgTxTp.setter
 	def SctiesFincgTxTp(self, value):
-		self._SctiesFincgTxTp = value if type(value) != auto else self.make_default("SctiesFincgTxTp")
+		self._SctiesFincgTxTp = value if type(value) != base_types.auto else self.make_default("SctiesFincgTxTp")
 
 	@SctiesFincgTxTp.deleter
 	def SctiesFincgTxTp(self):
@@ -25,7 +25,7 @@ class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
 	@CollCmpntTp.setter
 	def CollCmpntTp(self, value):
-		self._CollCmpntTp = value if type(value) != auto else self.make_default("CollCmpntTp")
+		self._CollCmpntTp = value if type(value) != base_types.auto else self.make_default("CollCmpntTp")
 
 	@CollCmpntTp.deleter
 	def CollCmpntTp(self):
@@ -38,7 +38,7 @@ class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
 	@Oprtr.setter
 	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != auto else self.make_default("Oprtr")
+		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
 
 	@Oprtr.deleter
 	def Oprtr(self):

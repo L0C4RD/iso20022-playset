@@ -1,7 +1,7 @@
 from . import base_types
+from .DateOrDateTimePeriod3Choice import DateOrDateTimePeriod3Choice
 from .GenericIdentification30 import GenericIdentification30
 from .Removal1Choice import Removal1Choice
-from .DateOrDateTimePeriod3Choice import DateOrDateTimePeriod3Choice
 
 class RemovalTypeAndReason1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 
 	@ExclsnPrd.setter
 	def ExclsnPrd(self, value):
-		self._ExclsnPrd = value if type(value) != auto else self.make_default("ExclsnPrd")
+		self._ExclsnPrd = value if type(value) != base_types.auto else self.make_default("ExclsnPrd")
 
 	@ExclsnPrd.deleter
 	def ExclsnPrd(self):
@@ -25,7 +25,7 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 
 	@RmvlTp.setter
 	def RmvlTp(self, value):
-		self._RmvlTp = value if type(value) != auto else self.make_default("RmvlTp")
+		self._RmvlTp = value if type(value) != base_types.auto else self.make_default("RmvlTp")
 
 	@RmvlTp.deleter
 	def RmvlTp(self):
@@ -38,7 +38,7 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):

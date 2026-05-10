@@ -1,38 +1,38 @@
 from . import base_types
-from .PartyIdentification8 import PartyIdentification8
 from .ContactIdentification1 import ContactIdentification1
+from .PartyIdentification8 import PartyIdentification8
 
 class PartyIdentificationAndContactInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_CtctInf"]
-	@property
-	def PtyId(self):
-		return self._PtyId
-
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
-
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
-
+	__slots__ = ["_CtctInf", "_PtyId"]
 	@property
 	def CtctInf(self):
 		return self._CtctInf
 
 	@CtctInf.setter
 	def CtctInf(self, value):
-		self._CtctInf = value if type(value) != auto else self.make_default("CtctInf")
+		self._CtctInf = value if type(value) != base_types.auto else self.make_default("CtctInf")
 
 	@CtctInf.deleter
 	def CtctInf(self):
 		del self._CtctInf
 		self._CtctInf = None
 
+	@property
+	def PtyId(self):
+		return self._PtyId
+
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctInf', type=ContactIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

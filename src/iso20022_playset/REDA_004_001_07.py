@@ -12,7 +12,7 @@ class REDA_004_001_07():
 
 		@FndRefDataRpt.setter
 		def FndRefDataRpt(self, value):
-			self._FndRefDataRpt = value if type(value) != auto else self.make_default("FndRefDataRpt")
+			self._FndRefDataRpt = value if type(value) != base_types.auto else self.make_default("FndRefDataRpt")
 
 		@FndRefDataRpt.deleter
 		def FndRefDataRpt(self):

@@ -12,7 +12,7 @@ class ADMI_006_001_01():
 
 		@RsndReq.setter
 		def RsndReq(self, value):
-			self._RsndReq = value if type(value) != auto else self.make_default("RsndReq")
+			self._RsndReq = value if type(value) != base_types.auto else self.make_default("RsndReq")
 
 		@RsndReq.deleter
 		def RsndReq(self):

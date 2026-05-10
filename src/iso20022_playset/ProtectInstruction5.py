@@ -1,7 +1,7 @@
 from . import base_types
-from .ProtectTransactionType2Code import ProtectTransactionType2Code
-from .RestrictedFINMax35Text import RestrictedFINMax35Text
 from .RestrictedFINMax15Text import RestrictedFINMax15Text
+from .RestrictedFINMax35Text import RestrictedFINMax35Text
+from .ProtectTransactionType2Code import ProtectTransactionType2Code
 from .ISODate import ISODate
 
 class ProtectInstruction5(base_types._BaseFieldType):
@@ -13,7 +13,7 @@ class ProtectInstruction5(base_types._BaseFieldType):
 
 	@PrtctDt.setter
 	def PrtctDt(self, value):
-		self._PrtctDt = value if type(value) != auto else self.make_default("PrtctDt")
+		self._PrtctDt = value if type(value) != base_types.auto else self.make_default("PrtctDt")
 
 	@PrtctDt.deleter
 	def PrtctDt(self):
@@ -26,7 +26,7 @@ class ProtectInstruction5(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):
@@ -39,7 +39,7 @@ class ProtectInstruction5(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
 
 	@TxTp.deleter
 	def TxTp(self):
@@ -52,7 +52,7 @@ class ProtectInstruction5(base_types._BaseFieldType):
 
 	@PrtctSfkpgAcct.setter
 	def PrtctSfkpgAcct(self, value):
-		self._PrtctSfkpgAcct = value if type(value) != auto else self.make_default("PrtctSfkpgAcct")
+		self._PrtctSfkpgAcct = value if type(value) != base_types.auto else self.make_default("PrtctSfkpgAcct")
 
 	@PrtctSfkpgAcct.deleter
 	def PrtctSfkpgAcct(self):

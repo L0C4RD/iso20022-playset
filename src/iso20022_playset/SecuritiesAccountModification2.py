@@ -1,6 +1,6 @@
 from . import base_types
-from .DataModification1Code import DataModification1Code
 from .SecuritiesAccountModification2Choice import SecuritiesAccountModification2Choice
+from .DataModification1Code import DataModification1Code
 
 class SecuritiesAccountModification2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesAccountModification2(base_types._BaseFieldType):
 
 	@ReqdMod.setter
 	def ReqdMod(self, value):
-		self._ReqdMod = value if type(value) != auto else self.make_default("ReqdMod")
+		self._ReqdMod = value if type(value) != base_types.auto else self.make_default("ReqdMod")
 
 	@ReqdMod.deleter
 	def ReqdMod(self):
@@ -24,7 +24,7 @@ class SecuritiesAccountModification2(base_types._BaseFieldType):
 
 	@ScpIndctn.setter
 	def ScpIndctn(self, value):
-		self._ScpIndctn = value if type(value) != auto else self.make_default("ScpIndctn")
+		self._ScpIndctn = value if type(value) != base_types.auto else self.make_default("ScpIndctn")
 
 	@ScpIndctn.deleter
 	def ScpIndctn(self):

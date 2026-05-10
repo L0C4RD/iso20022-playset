@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .CashAccountIdentification8Choice import CashAccountIdentification8Choice
+from .Max35Text import Max35Text
 
 class AccountIdentificationAndName7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AccountIdentificationAndName7(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -24,7 +24,7 @@ class AccountIdentificationAndName7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

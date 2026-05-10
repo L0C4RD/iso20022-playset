@@ -1,23 +1,23 @@
 from . import base_types
 from .DocumentLineIdentification1 import DocumentLineIdentification1
-from .RemittanceAmount4 import RemittanceAmount4
 from .Max2048Text import Max2048Text
+from .RemittanceAmount4 import RemittanceAmount4
 
 class DocumentLineInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Amt", "_Id"]
+	__slots__ = ["_Id", "_Amt", "_Desc"]
 	@property
-	def Desc(self):
-		return self._Desc
+	def Id(self):
+		return self._Id
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Amt(self):
@@ -25,7 +25,7 @@ class DocumentLineInformation2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -33,21 +33,21 @@ class DocumentLineInformation2(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Desc(self):
+		return self._Desc
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=RemittanceAmount4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentLineIdentification1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=RemittanceAmount4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

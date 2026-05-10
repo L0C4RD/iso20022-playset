@@ -1,6 +1,6 @@
 from . import base_types
-from .UndertakingDemandWithdrawal1 import UndertakingDemandWithdrawal1
 from .PartyAndSignature2 import PartyAndSignature2
+from .UndertakingDemandWithdrawal1 import UndertakingDemandWithdrawal1
 
 class DemandWithdrawalNotificationV01(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DemandWithdrawalNotificationV01(base_types._BaseFieldType):
 
 	@DmndWdrwlNtfctnDtls.setter
 	def DmndWdrwlNtfctnDtls(self, value):
-		self._DmndWdrwlNtfctnDtls = value if type(value) != auto else self.make_default("DmndWdrwlNtfctnDtls")
+		self._DmndWdrwlNtfctnDtls = value if type(value) != base_types.auto else self.make_default("DmndWdrwlNtfctnDtls")
 
 	@DmndWdrwlNtfctnDtls.deleter
 	def DmndWdrwlNtfctnDtls(self):
@@ -24,7 +24,7 @@ class DemandWithdrawalNotificationV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):

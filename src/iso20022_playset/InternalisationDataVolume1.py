@@ -1,6 +1,6 @@
 from . import base_types
-from .Max20PositiveNumber import Max20PositiveNumber
 from .Max20PositiveDecimalNumber import Max20PositiveDecimalNumber
+from .Max20PositiveNumber import Max20PositiveNumber
 
 class InternalisationDataVolume1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class InternalisationDataVolume1(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):
@@ -24,7 +24,7 @@ class InternalisationDataVolume1(base_types._BaseFieldType):
 
 	@Vol.setter
 	def Vol(self, value):
-		self._Vol = value if type(value) != auto else self.make_default("Vol")
+		self._Vol = value if type(value) != base_types.auto else self.make_default("Vol")
 
 	@Vol.deleter
 	def Vol(self):

@@ -1,18 +1,31 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TMSContactLevel1Code import TMSContactLevel1Code
 from .ISODateTime import ISODateTime
+from .TMSContactLevel1Code import TMSContactLevel1Code
+from .Max35Text import Max35Text
 
 class TMSTrigger1(base_types._BaseFieldType):
 
-	__slots__ = ["_TMSCtctDtTm", "_TMSId", "_TMSCtctLvl"]
+	__slots__ = ["_TMSCtctLvl", "_TMSCtctDtTm", "_TMSId"]
+	@property
+	def TMSCtctLvl(self):
+		return self._TMSCtctLvl
+
+	@TMSCtctLvl.setter
+	def TMSCtctLvl(self, value):
+		self._TMSCtctLvl = value if type(value) != base_types.auto else self.make_default("TMSCtctLvl")
+
+	@TMSCtctLvl.deleter
+	def TMSCtctLvl(self):
+		del self._TMSCtctLvl
+		self._TMSCtctLvl = None
+
 	@property
 	def TMSCtctDtTm(self):
 		return self._TMSCtctDtTm
 
 	@TMSCtctDtTm.setter
 	def TMSCtctDtTm(self, value):
-		self._TMSCtctDtTm = value if type(value) != auto else self.make_default("TMSCtctDtTm")
+		self._TMSCtctDtTm = value if type(value) != base_types.auto else self.make_default("TMSCtctDtTm")
 
 	@TMSCtctDtTm.deleter
 	def TMSCtctDtTm(self):
@@ -25,29 +38,16 @@ class TMSTrigger1(base_types._BaseFieldType):
 
 	@TMSId.setter
 	def TMSId(self, value):
-		self._TMSId = value if type(value) != auto else self.make_default("TMSId")
+		self._TMSId = value if type(value) != base_types.auto else self.make_default("TMSId")
 
 	@TMSId.deleter
 	def TMSId(self):
 		del self._TMSId
 		self._TMSId = None
 
-	@property
-	def TMSCtctLvl(self):
-		return self._TMSCtctLvl
-
-	@TMSCtctLvl.setter
-	def TMSCtctLvl(self, value):
-		self._TMSCtctLvl = value if type(value) != auto else self.make_default("TMSCtctLvl")
-
-	@TMSCtctLvl.deleter
-	def TMSCtctLvl(self):
-		del self._TMSCtctLvl
-		self._TMSCtctLvl = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TMSCtctLvl', type=TMSContactLevel1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSCtctDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMSCtctLvl', type=TMSContactLevel1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

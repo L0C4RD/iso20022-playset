@@ -11,7 +11,7 @@ class PreviousYear1Choice(base_types._BaseFieldType):
 
 	@AllPrvsYrs.setter
 	def AllPrvsYrs(self, value):
-		self._AllPrvsYrs = value if type(value) != auto else self.make_default("AllPrvsYrs")
+		self._AllPrvsYrs = value if type(value) != base_types.auto else self.make_default("AllPrvsYrs")
 
 	@AllPrvsYrs.deleter
 	def AllPrvsYrs(self):
@@ -24,7 +24,7 @@ class PreviousYear1Choice(base_types._BaseFieldType):
 
 	@SpcfcPrvsYrs.setter
 	def SpcfcPrvsYrs(self, value):
-		self._SpcfcPrvsYrs = value if type(value) != auto else self.make_default("SpcfcPrvsYrs")
+		self._SpcfcPrvsYrs = value if type(value) != base_types.auto else self.make_default("SpcfcPrvsYrs")
 
 	@SpcfcPrvsYrs.deleter
 	def SpcfcPrvsYrs(self):

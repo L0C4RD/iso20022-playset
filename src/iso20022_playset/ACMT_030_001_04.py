@@ -12,7 +12,7 @@ class ACMT_030_001_04():
 
 		@AcctSwtchReqRdrctn.setter
 		def AcctSwtchReqRdrctn(self, value):
-			self._AcctSwtchReqRdrctn = value if type(value) != auto else self.make_default("AcctSwtchReqRdrctn")
+			self._AcctSwtchReqRdrctn = value if type(value) != base_types.auto else self.make_default("AcctSwtchReqRdrctn")
 
 		@AcctSwtchReqRdrctn.deleter
 		def AcctSwtchReqRdrctn(self):

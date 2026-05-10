@@ -1,7 +1,7 @@
 from . import base_types
 from .BalanceTransferReference1 import BalanceTransferReference1
-from .SettlementMethod5Choice import SettlementMethod5Choice
 from .BalanceTransferFundingLimit1 import BalanceTransferFundingLimit1
+from .SettlementMethod5Choice import SettlementMethod5Choice
 
 class BalanceTransfer5(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class BalanceTransfer5(base_types._BaseFieldType):
 
 	@BalTrfFndgLmt.setter
 	def BalTrfFndgLmt(self, value):
-		self._BalTrfFndgLmt = value if type(value) != auto else self.make_default("BalTrfFndgLmt")
+		self._BalTrfFndgLmt = value if type(value) != base_types.auto else self.make_default("BalTrfFndgLmt")
 
 	@BalTrfFndgLmt.deleter
 	def BalTrfFndgLmt(self):
@@ -25,7 +25,7 @@ class BalanceTransfer5(base_types._BaseFieldType):
 
 	@BalTrfMtd.setter
 	def BalTrfMtd(self, value):
-		self._BalTrfMtd = value if type(value) != auto else self.make_default("BalTrfMtd")
+		self._BalTrfMtd = value if type(value) != base_types.auto else self.make_default("BalTrfMtd")
 
 	@BalTrfMtd.deleter
 	def BalTrfMtd(self):
@@ -38,7 +38,7 @@ class BalanceTransfer5(base_types._BaseFieldType):
 
 	@BalTrfRef.setter
 	def BalTrfRef(self, value):
-		self._BalTrfRef = value if type(value) != auto else self.make_default("BalTrfRef")
+		self._BalTrfRef = value if type(value) != base_types.auto else self.make_default("BalTrfRef")
 
 	@BalTrfRef.deleter
 	def BalTrfRef(self):

@@ -12,7 +12,7 @@ class CAMT_052_001_13():
 
 		@BkToCstmrAcctRpt.setter
 		def BkToCstmrAcctRpt(self, value):
-			self._BkToCstmrAcctRpt = value if type(value) != auto else self.make_default("BkToCstmrAcctRpt")
+			self._BkToCstmrAcctRpt = value if type(value) != base_types.auto else self.make_default("BkToCstmrAcctRpt")
 
 		@BkToCstmrAcctRpt.deleter
 		def BkToCstmrAcctRpt(self):

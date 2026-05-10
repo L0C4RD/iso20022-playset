@@ -12,7 +12,7 @@ class TSMT_013_001_03():
 
 		@DataSetMtchRpt.setter
 		def DataSetMtchRpt(self, value):
-			self._DataSetMtchRpt = value if type(value) != auto else self.make_default("DataSetMtchRpt")
+			self._DataSetMtchRpt = value if type(value) != base_types.auto else self.make_default("DataSetMtchRpt")
 
 		@DataSetMtchRpt.deleter
 		def DataSetMtchRpt(self):

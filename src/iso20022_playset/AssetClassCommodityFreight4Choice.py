@@ -1,8 +1,8 @@
 from . import base_types
 from .FreightCommodityOther2 import FreightCommodityOther2
-from .FreightCommodityWet3 import FreightCommodityWet3
-from .FreightCommodityContainerShip2 import FreightCommodityContainerShip2
 from .FreightCommodityDry3 import FreightCommodityDry3
+from .FreightCommodityContainerShip2 import FreightCommodityContainerShip2
+from .FreightCommodityWet3 import FreightCommodityWet3
 
 class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):
@@ -26,7 +26,7 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@Dry.setter
 	def Dry(self, value):
-		self._Dry = value if type(value) != auto else self.make_default("Dry")
+		self._Dry = value if type(value) != base_types.auto else self.make_default("Dry")
 
 	@Dry.deleter
 	def Dry(self):
@@ -39,7 +39,7 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@CntnrShip.setter
 	def CntnrShip(self, value):
-		self._CntnrShip = value if type(value) != auto else self.make_default("CntnrShip")
+		self._CntnrShip = value if type(value) != base_types.auto else self.make_default("CntnrShip")
 
 	@CntnrShip.deleter
 	def CntnrShip(self):
@@ -52,7 +52,7 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@Wet.setter
 	def Wet(self, value):
-		self._Wet = value if type(value) != auto else self.make_default("Wet")
+		self._Wet = value if type(value) != base_types.auto else self.make_default("Wet")
 
 	@Wet.deleter
 	def Wet(self):

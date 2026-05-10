@@ -1,36 +1,23 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CashAccount40 import CashAccount40
+from .CreditDebitCode import CreditDebitCode
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .BaseOneRate import BaseOneRate
-from .Charges6 import Charges6
 from .TransactionReferences6 import TransactionReferences6
 from .Max140Text import Max140Text
-from .CreditDebitCode import CreditDebitCode
-from .CashAccount40 import CashAccount40
+from .BaseOneRate import BaseOneRate
+from .Charges6 import Charges6
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class BookingConfirmation5(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_ValDt", "_CdtDbtInd", "_Acct", "_BookgDt", "_Rsn", "_XchgRate", "_Refs", "_Chrgs"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_ValDt", "_Rsn", "_BookgDt", "_XchgRate", "_Amt", "_Refs", "_CdtDbtInd", "_Acct", "_Chrgs"]
 	@property
 	def ValDt(self):
 		return self._ValDt
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
 
 	@ValDt.deleter
 	def ValDt(self):
@@ -38,12 +25,77 @@ class BookingConfirmation5(base_types._BaseFieldType):
 		self._ValDt = None
 
 	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
+	@property
+	def BookgDt(self):
+		return self._BookgDt
+
+	@BookgDt.setter
+	def BookgDt(self, value):
+		self._BookgDt = value if type(value) != base_types.auto else self.make_default("BookgDt")
+
+	@BookgDt.deleter
+	def BookgDt(self):
+		del self._BookgDt
+		self._BookgDt = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Refs(self):
+		return self._Refs
+
+	@Refs.setter
+	def Refs(self, value):
+		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+
+	@Refs.deleter
+	def Refs(self):
+		del self._Refs
+		self._Refs = None
+
+	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
@@ -56,7 +108,7 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
 	@Acct.deleter
 	def Acct(self):
@@ -64,64 +116,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
-	def BookgDt(self):
-		return self._BookgDt
-
-	@BookgDt.setter
-	def BookgDt(self, value):
-		self._BookgDt = value if type(value) != auto else self.make_default("BookgDt")
-
-	@BookgDt.deleter
-	def BookgDt(self):
-		del self._BookgDt
-		self._BookgDt = None
-
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
-	@property
-	def Refs(self):
-		return self._Refs
-
-	@Refs.setter
-	def Refs(self, value):
-		self._Refs = value if type(value) != auto else self.make_default("Refs")
-
-	@Refs.deleter
-	def Refs(self):
-		del self._Refs
-		self._Refs = None
-
-	@property
 	def Chrgs(self):
 		return self._Chrgs
 
 	@Chrgs.setter
 	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
+		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
 
 	@Chrgs.deleter
 	def Chrgs(self):
@@ -129,14 +129,14 @@ class BookingConfirmation5(base_types._BaseFieldType):
 		self._Chrgs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Refs', type=TransactionReferences6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BookgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Refs', type=TransactionReferences6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chrgs', type=Charges6, min=0, max=1, mutex_group=None, array=False),
 	))
 

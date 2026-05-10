@@ -10,7 +10,7 @@ class Counterparty16Choice(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
 
 	@Sellr.deleter
 	def Sellr(self):
@@ -23,7 +23,7 @@ class Counterparty16Choice(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
+		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
 
 	@Buyr.deleter
 	def Buyr(self):

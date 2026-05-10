@@ -12,7 +12,7 @@ class SESE_035_001_12():
 
 		@SctiesFincgConf.setter
 		def SctiesFincgConf(self, value):
-			self._SctiesFincgConf = value if type(value) != auto else self.make_default("SctiesFincgConf")
+			self._SctiesFincgConf = value if type(value) != base_types.auto else self.make_default("SctiesFincgConf")
 
 		@SctiesFincgConf.deleter
 		def SctiesFincgConf(self):

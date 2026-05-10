@@ -11,7 +11,7 @@ class ResponseProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
 
 	@Rjctd.deleter
 	def Rjctd(self):
@@ -24,7 +24,7 @@ class ResponseProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@Accptd.setter
 	def Accptd(self, value):
-		self._Accptd = value if type(value) != auto else self.make_default("Accptd")
+		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
 
 	@Accptd.deleter
 	def Accptd(self):

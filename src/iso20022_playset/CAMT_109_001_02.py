@@ -12,7 +12,7 @@ class CAMT_109_001_02():
 
 		@ChqCxlOrStopRpt.setter
 		def ChqCxlOrStopRpt(self, value):
-			self._ChqCxlOrStopRpt = value if type(value) != auto else self.make_default("ChqCxlOrStopRpt")
+			self._ChqCxlOrStopRpt = value if type(value) != base_types.auto else self.make_default("ChqCxlOrStopRpt")
 
 		@ChqCxlOrStopRpt.deleter
 		def ChqCxlOrStopRpt(self):

@@ -12,7 +12,7 @@ class TSMT_048_001_01():
 
 		@SpclNtfctn.setter
 		def SpclNtfctn(self, value):
-			self._SpclNtfctn = value if type(value) != auto else self.make_default("SpclNtfctn")
+			self._SpclNtfctn = value if type(value) != base_types.auto else self.make_default("SpclNtfctn")
 
 		@SpclNtfctn.deleter
 		def SpclNtfctn(self):

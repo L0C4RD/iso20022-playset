@@ -1,23 +1,23 @@
 from . import base_types
-from .Max20000Text import Max20000Text
 from .Max350Text import Max350Text
 from .BenchmarkCurveName2Code import BenchmarkCurveName2Code
+from .Max20000Text import Max20000Text
 
 class BenchmarkDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_FullNm", "_Cmnt", "_Indx"]
+	__slots__ = ["_Indx", "_Cmnt", "_FullNm"]
 	@property
-	def FullNm(self):
-		return self._FullNm
+	def Indx(self):
+		return self._Indx
 
-	@FullNm.setter
-	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
 
-	@FullNm.deleter
-	def FullNm(self):
-		del self._FullNm
-		self._FullNm = None
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
 
 	@property
 	def Cmnt(self):
@@ -25,7 +25,7 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 
 	@Cmnt.setter
 	def Cmnt(self, value):
-		self._Cmnt = value if type(value) != auto else self.make_default("Cmnt")
+		self._Cmnt = value if type(value) != base_types.auto else self.make_default("Cmnt")
 
 	@Cmnt.deleter
 	def Cmnt(self):
@@ -33,21 +33,21 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 		self._Cmnt = None
 
 	@property
-	def Indx(self):
-		return self._Indx
+	def FullNm(self):
+		return self._FullNm
 
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
+	@FullNm.setter
+	def FullNm(self, value):
+		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
 
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
+	@FullNm.deleter
+	def FullNm(self):
+		del self._FullNm
+		self._FullNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FullNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .ISO2ALanguageCode import ISO2ALanguageCode
 from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from .ISO2ALanguageCode import ISO2ALanguageCode
 
 class UpdatedAdditionalInformation25(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UpdatedAdditionalInformation25(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class UpdatedAdditionalInformation25(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
 
 	@Lang.deleter
 	def Lang(self):

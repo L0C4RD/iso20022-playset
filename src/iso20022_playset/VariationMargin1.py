@@ -1,44 +1,18 @@
 from . import base_types
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from .RoundingMethod1Code import RoundingMethod1Code
 from .ThresholdType1Code import ThresholdType1Code
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class VariationMargin1(base_types._BaseFieldType):
 
-	__slots__ = ["_RndgAmt", "_ThrshldAmt", "_RndgMtd", "_MinTrfAmt", "_ThrshldTp"]
-	@property
-	def RndgAmt(self):
-		return self._RndgAmt
-
-	@RndgAmt.setter
-	def RndgAmt(self, value):
-		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
-
-	@RndgAmt.deleter
-	def RndgAmt(self):
-		del self._RndgAmt
-		self._RndgAmt = None
-
-	@property
-	def ThrshldAmt(self):
-		return self._ThrshldAmt
-
-	@ThrshldAmt.setter
-	def ThrshldAmt(self, value):
-		self._ThrshldAmt = value if type(value) != auto else self.make_default("ThrshldAmt")
-
-	@ThrshldAmt.deleter
-	def ThrshldAmt(self):
-		del self._ThrshldAmt
-		self._ThrshldAmt = None
-
+	__slots__ = ["_RndgMtd", "_ThrshldAmt", "_MinTrfAmt", "_ThrshldTp", "_RndgAmt"]
 	@property
 	def RndgMtd(self):
 		return self._RndgMtd
 
 	@RndgMtd.setter
 	def RndgMtd(self, value):
-		self._RndgMtd = value if type(value) != auto else self.make_default("RndgMtd")
+		self._RndgMtd = value if type(value) != base_types.auto else self.make_default("RndgMtd")
 
 	@RndgMtd.deleter
 	def RndgMtd(self):
@@ -46,12 +20,25 @@ class VariationMargin1(base_types._BaseFieldType):
 		self._RndgMtd = None
 
 	@property
+	def ThrshldAmt(self):
+		return self._ThrshldAmt
+
+	@ThrshldAmt.setter
+	def ThrshldAmt(self, value):
+		self._ThrshldAmt = value if type(value) != base_types.auto else self.make_default("ThrshldAmt")
+
+	@ThrshldAmt.deleter
+	def ThrshldAmt(self):
+		del self._ThrshldAmt
+		self._ThrshldAmt = None
+
+	@property
 	def MinTrfAmt(self):
 		return self._MinTrfAmt
 
 	@MinTrfAmt.setter
 	def MinTrfAmt(self, value):
-		self._MinTrfAmt = value if type(value) != auto else self.make_default("MinTrfAmt")
+		self._MinTrfAmt = value if type(value) != base_types.auto else self.make_default("MinTrfAmt")
 
 	@MinTrfAmt.deleter
 	def MinTrfAmt(self):
@@ -64,18 +51,31 @@ class VariationMargin1(base_types._BaseFieldType):
 
 	@ThrshldTp.setter
 	def ThrshldTp(self, value):
-		self._ThrshldTp = value if type(value) != auto else self.make_default("ThrshldTp")
+		self._ThrshldTp = value if type(value) != base_types.auto else self.make_default("ThrshldTp")
 
 	@ThrshldTp.deleter
 	def ThrshldTp(self):
 		del self._ThrshldTp
 		self._ThrshldTp = None
 
+	@property
+	def RndgAmt(self):
+		return self._RndgAmt
+
+	@RndgAmt.setter
+	def RndgAmt(self, value):
+		self._RndgAmt = value if type(value) != base_types.auto else self.make_default("RndgAmt")
+
+	@RndgAmt.deleter
+	def RndgAmt(self):
+		del self._RndgAmt
+		self._RndgAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThrshldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RndgMtd', type=RoundingMethod1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrshldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinTrfAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrshldTp', type=ThresholdType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

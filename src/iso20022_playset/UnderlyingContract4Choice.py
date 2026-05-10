@@ -11,7 +11,7 @@ class UnderlyingContract4Choice(base_types._BaseFieldType):
 
 	@Trad.setter
 	def Trad(self, value):
-		self._Trad = value if type(value) != auto else self.make_default("Trad")
+		self._Trad = value if type(value) != base_types.auto else self.make_default("Trad")
 
 	@Trad.deleter
 	def Trad(self):
@@ -24,7 +24,7 @@ class UnderlyingContract4Choice(base_types._BaseFieldType):
 
 	@Ln.setter
 	def Ln(self, value):
-		self._Ln = value if type(value) != auto else self.make_default("Ln")
+		self._Ln = value if type(value) != base_types.auto else self.make_default("Ln")
 
 	@Ln.deleter
 	def Ln(self):

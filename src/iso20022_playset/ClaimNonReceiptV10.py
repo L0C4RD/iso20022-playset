@@ -1,34 +1,21 @@
 from . import base_types
-from .UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
 from .MissingCover6 import MissingCover6
-from .SupplementaryData1 import SupplementaryData1
 from .InstructionForAssignee1 import InstructionForAssignee1
+from .UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
 from .CaseAssignment6 import CaseAssignment6
+from .SupplementaryData1 import SupplementaryData1
 from .Case6 import Case6
 
 class ClaimNonReceiptV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Undrlyg", "_Case", "_SplmtryData", "_InstrForAssgne", "_CoverDtls", "_Assgnmt"]
-	@property
-	def Undrlyg(self):
-		return self._Undrlyg
-
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
-
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
-
+	__slots__ = ["_Case", "_InstrForAssgne", "_SplmtryData", "_CoverDtls", "_Assgnmt", "_Undrlyg"]
 	@property
 	def Case(self):
 		return self._Case
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
+		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
 
 	@Case.deleter
 	def Case(self):
@@ -36,25 +23,12 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def InstrForAssgne(self):
 		return self._InstrForAssgne
 
 	@InstrForAssgne.setter
 	def InstrForAssgne(self, value):
-		self._InstrForAssgne = value if type(value) != auto else self.make_default("InstrForAssgne")
+		self._InstrForAssgne = value if type(value) != base_types.auto else self.make_default("InstrForAssgne")
 
 	@InstrForAssgne.deleter
 	def InstrForAssgne(self):
@@ -62,12 +36,25 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 		self._InstrForAssgne = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def CoverDtls(self):
 		return self._CoverDtls
 
 	@CoverDtls.setter
 	def CoverDtls(self, value):
-		self._CoverDtls = value if type(value) != auto else self.make_default("CoverDtls")
+		self._CoverDtls = value if type(value) != base_types.auto else self.make_default("CoverDtls")
 
 	@CoverDtls.deleter
 	def CoverDtls(self):
@@ -80,19 +67,32 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
 
+	@property
+	def Undrlyg(self):
+		return self._Undrlyg
+
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstrForAssgne', type=InstructionForAssignee1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CoverDtls', type=MissingCover6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

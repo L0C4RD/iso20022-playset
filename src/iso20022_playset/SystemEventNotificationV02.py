@@ -10,7 +10,7 @@ class SystemEventNotificationV02(base_types._BaseFieldType):
 
 	@EvtInf.setter
 	def EvtInf(self, value):
-		self._EvtInf = value if type(value) != auto else self.make_default("EvtInf")
+		self._EvtInf = value if type(value) != base_types.auto else self.make_default("EvtInf")
 
 	@EvtInf.deleter
 	def EvtInf(self):

@@ -11,7 +11,7 @@ class TransactionModification7(base_types._BaseFieldType):
 
 	@PmtId.setter
 	def PmtId(self, value):
-		self._PmtId = value if type(value) != auto else self.make_default("PmtId")
+		self._PmtId = value if type(value) != base_types.auto else self.make_default("PmtId")
 
 	@PmtId.deleter
 	def PmtId(self):
@@ -24,7 +24,7 @@ class TransactionModification7(base_types._BaseFieldType):
 
 	@NewPmtValSet.setter
 	def NewPmtValSet(self, value):
-		self._NewPmtValSet = value if type(value) != auto else self.make_default("NewPmtValSet")
+		self._NewPmtValSet = value if type(value) != base_types.auto else self.make_default("NewPmtValSet")
 
 	@NewPmtValSet.deleter
 	def NewPmtValSet(self):

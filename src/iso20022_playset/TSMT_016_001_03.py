@@ -12,7 +12,7 @@ class TSMT_016_001_03():
 
 		@ErrRpt.setter
 		def ErrRpt(self, value):
-			self._ErrRpt = value if type(value) != auto else self.make_default("ErrRpt")
+			self._ErrRpt = value if type(value) != base_types.auto else self.make_default("ErrRpt")
 
 		@ErrRpt.deleter
 		def ErrRpt(self):

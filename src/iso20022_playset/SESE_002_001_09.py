@@ -12,7 +12,7 @@ class SESE_002_001_09():
 
 		@TrfOutCxlReq.setter
 		def TrfOutCxlReq(self, value):
-			self._TrfOutCxlReq = value if type(value) != auto else self.make_default("TrfOutCxlReq")
+			self._TrfOutCxlReq = value if type(value) != base_types.auto else self.make_default("TrfOutCxlReq")
 
 		@TrfOutCxlReq.deleter
 		def TrfOutCxlReq(self):

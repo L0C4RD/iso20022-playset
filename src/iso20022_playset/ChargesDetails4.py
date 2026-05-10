@@ -11,7 +11,7 @@ class ChargesDetails4(base_types._BaseFieldType):
 
 	@ChrgsTp.setter
 	def ChrgsTp(self, value):
-		self._ChrgsTp = value if type(value) != auto else self.make_default("ChrgsTp")
+		self._ChrgsTp = value if type(value) != base_types.auto else self.make_default("ChrgsTp")
 
 	@ChrgsTp.deleter
 	def ChrgsTp(self):
@@ -24,7 +24,7 @@ class ChargesDetails4(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

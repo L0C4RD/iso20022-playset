@@ -1,23 +1,23 @@
 from . import base_types
-from .SettlementFailsDerogation1 import SettlementFailsDerogation1
 from .SettlementTotalData1 import SettlementTotalData1
+from .SettlementFailsDerogation1 import SettlementFailsDerogation1
 from .SettlementFailureReason3 import SettlementFailureReason3
 
 class SettlementFailsData4(base_types._BaseFieldType):
 
-	__slots__ = ["_FailrRsn", "_Ttl", "_ElgblForDrgtn"]
+	__slots__ = ["_ElgblForDrgtn", "_Ttl", "_FailrRsn"]
 	@property
-	def FailrRsn(self):
-		return self._FailrRsn
+	def ElgblForDrgtn(self):
+		return self._ElgblForDrgtn
 
-	@FailrRsn.setter
-	def FailrRsn(self, value):
-		self._FailrRsn = value if type(value) != auto else self.make_default("FailrRsn")
+	@ElgblForDrgtn.setter
+	def ElgblForDrgtn(self, value):
+		self._ElgblForDrgtn = value if type(value) != base_types.auto else self.make_default("ElgblForDrgtn")
 
-	@FailrRsn.deleter
-	def FailrRsn(self):
-		del self._FailrRsn
-		self._FailrRsn = None
+	@ElgblForDrgtn.deleter
+	def ElgblForDrgtn(self):
+		del self._ElgblForDrgtn
+		self._ElgblForDrgtn = None
 
 	@property
 	def Ttl(self):
@@ -25,7 +25,7 @@ class SettlementFailsData4(base_types._BaseFieldType):
 
 	@Ttl.setter
 	def Ttl(self, value):
-		self._Ttl = value if type(value) != auto else self.make_default("Ttl")
+		self._Ttl = value if type(value) != base_types.auto else self.make_default("Ttl")
 
 	@Ttl.deleter
 	def Ttl(self):
@@ -33,21 +33,21 @@ class SettlementFailsData4(base_types._BaseFieldType):
 		self._Ttl = None
 
 	@property
-	def ElgblForDrgtn(self):
-		return self._ElgblForDrgtn
+	def FailrRsn(self):
+		return self._FailrRsn
 
-	@ElgblForDrgtn.setter
-	def ElgblForDrgtn(self, value):
-		self._ElgblForDrgtn = value if type(value) != auto else self.make_default("ElgblForDrgtn")
+	@FailrRsn.setter
+	def FailrRsn(self, value):
+		self._FailrRsn = value if type(value) != base_types.auto else self.make_default("FailrRsn")
 
-	@ElgblForDrgtn.deleter
-	def ElgblForDrgtn(self):
-		del self._ElgblForDrgtn
-		self._ElgblForDrgtn = None
+	@FailrRsn.deleter
+	def FailrRsn(self):
+		del self._FailrRsn
+		self._FailrRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FailrRsn', type=SettlementFailureReason3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ttl', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElgblForDrgtn', type=SettlementFailsDerogation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ttl', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FailrRsn', type=SettlementFailureReason3, min=1, max=1, mutex_group=None, array=False),
 	))
 

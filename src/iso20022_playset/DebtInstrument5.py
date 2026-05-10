@@ -1,6 +1,6 @@
 from . import base_types
-from .BondType1Code import BondType1Code
 from .ISODate import ISODate
+from .BondType1Code import BondType1Code
 
 class DebtInstrument5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DebtInstrument5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class DebtInstrument5(base_types._BaseFieldType):
 
 	@IssncDt.setter
 	def IssncDt(self, value):
-		self._IssncDt = value if type(value) != auto else self.make_default("IssncDt")
+		self._IssncDt = value if type(value) != base_types.auto else self.make_default("IssncDt")
 
 	@IssncDt.deleter
 	def IssncDt(self):

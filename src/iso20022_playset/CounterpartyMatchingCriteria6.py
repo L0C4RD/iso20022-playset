@@ -5,19 +5,19 @@ from .CompareOrganisationIdentification6 import CompareOrganisationIdentificatio
 
 class CounterpartyMatchingCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_DrctnOrSd", "_OthrCtrPty"]
+	__slots__ = ["_OthrCtrPty", "_DrctnOrSd", "_RptgCtrPty"]
 	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
+	def OthrCtrPty(self):
+		return self._OthrCtrPty
 
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+	@OthrCtrPty.setter
+	def OthrCtrPty(self, value):
+		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
 
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
+	@OthrCtrPty.deleter
+	def OthrCtrPty(self):
+		del self._OthrCtrPty
+		self._OthrCtrPty = None
 
 	@property
 	def DrctnOrSd(self):
@@ -25,7 +25,7 @@ class CounterpartyMatchingCriteria6(base_types._BaseFieldType):
 
 	@DrctnOrSd.setter
 	def DrctnOrSd(self, value):
-		self._DrctnOrSd = value if type(value) != auto else self.make_default("DrctnOrSd")
+		self._DrctnOrSd = value if type(value) != base_types.auto else self.make_default("DrctnOrSd")
 
 	@DrctnOrSd.deleter
 	def DrctnOrSd(self):
@@ -33,21 +33,21 @@ class CounterpartyMatchingCriteria6(base_types._BaseFieldType):
 		self._DrctnOrSd = None
 
 	@property
-	def OthrCtrPty(self):
-		return self._OthrCtrPty
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
 
-	@OthrCtrPty.setter
-	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
 
-	@OthrCtrPty.deleter
-	def OthrCtrPty(self):
-		del self._OthrCtrPty
-		self._OthrCtrPty = None
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgCtrPty', type=CompareOrganisationIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrctnOrSd', type=CompareLegDirection2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctnOrSd', type=CompareLegDirection2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=CompareOrganisationIdentification6, min=0, max=1, mutex_group=None, array=False),
 	))
 

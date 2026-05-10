@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max140Text import Max140Text
+from .Max35Text import Max35Text
 
 class UserDefinedInformation1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UserDefinedInformation1(base_types._BaseFieldType):
 
 	@Labl.setter
 	def Labl(self, value):
-		self._Labl = value if type(value) != auto else self.make_default("Labl")
+		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
 
 	@Labl.deleter
 	def Labl(self):
@@ -24,7 +24,7 @@ class UserDefinedInformation1(base_types._BaseFieldType):
 
 	@Inf.setter
 	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
+		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
 
 	@Inf.deleter
 	def Inf(self):

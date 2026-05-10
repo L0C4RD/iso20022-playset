@@ -12,7 +12,7 @@ class AUTH_054_001_01():
 
 		@CCPClrMmbRpt.setter
 		def CCPClrMmbRpt(self, value):
-			self._CCPClrMmbRpt = value if type(value) != auto else self.make_default("CCPClrMmbRpt")
+			self._CCPClrMmbRpt = value if type(value) != base_types.auto else self.make_default("CCPClrMmbRpt")
 
 		@CCPClrMmbRpt.deleter
 		def CCPClrMmbRpt(self):

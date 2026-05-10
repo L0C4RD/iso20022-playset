@@ -12,7 +12,7 @@ class TSMT_003_001_03():
 
 		@ActvtyReqRpt.setter
 		def ActvtyReqRpt(self, value):
-			self._ActvtyReqRpt = value if type(value) != auto else self.make_default("ActvtyReqRpt")
+			self._ActvtyReqRpt = value if type(value) != base_types.auto else self.make_default("ActvtyReqRpt")
 
 		@ActvtyReqRpt.deleter
 		def ActvtyReqRpt(self):

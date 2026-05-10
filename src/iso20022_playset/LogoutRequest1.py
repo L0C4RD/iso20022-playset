@@ -10,7 +10,7 @@ class LogoutRequest1(base_types._BaseFieldType):
 
 	@MntncAllwd.setter
 	def MntncAllwd(self, value):
-		self._MntncAllwd = value if type(value) != auto else self.make_default("MntncAllwd")
+		self._MntncAllwd = value if type(value) != base_types.auto else self.make_default("MntncAllwd")
 
 	@MntncAllwd.deleter
 	def MntncAllwd(self):

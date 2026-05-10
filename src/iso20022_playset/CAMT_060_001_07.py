@@ -12,7 +12,7 @@ class CAMT_060_001_07():
 
 		@AcctRptgReq.setter
 		def AcctRptgReq(self, value):
-			self._AcctRptgReq = value if type(value) != auto else self.make_default("AcctRptgReq")
+			self._AcctRptgReq = value if type(value) != base_types.auto else self.make_default("AcctRptgReq")
 
 		@AcctRptgReq.deleter
 		def AcctRptgReq(self):

@@ -12,7 +12,7 @@ class DeleteLimitV08(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
@@ -25,7 +25,7 @@ class DeleteLimitV08(base_types._BaseFieldType):
 
 	@LmtDtls.setter
 	def LmtDtls(self, value):
-		self._LmtDtls = value if type(value) != auto else self.make_default("LmtDtls")
+		self._LmtDtls = value if type(value) != base_types.auto else self.make_default("LmtDtls")
 
 	@LmtDtls.deleter
 	def LmtDtls(self):
@@ -38,7 +38,7 @@ class DeleteLimitV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):

@@ -10,7 +10,7 @@ class UpdateLogTechnicalAddress1(base_types._BaseFieldType):
 
 	@Od.setter
 	def Od(self, value):
-		self._Od = value if type(value) != auto else self.make_default("Od")
+		self._Od = value if type(value) != base_types.auto else self.make_default("Od")
 
 	@Od.deleter
 	def Od(self):
@@ -23,7 +23,7 @@ class UpdateLogTechnicalAddress1(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != auto else self.make_default("New")
+		self._New = value if type(value) != base_types.auto else self.make_default("New")
 
 	@New.deleter
 	def New(self):

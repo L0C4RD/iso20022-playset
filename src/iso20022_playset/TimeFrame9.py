@@ -1,19 +1,32 @@
 from . import base_types
-from .ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
 from .Max350Text import Max350Text
-from .BusinessDayConvention1Code import BusinessDayConvention1Code
 from .Number import Number
+from .BusinessDayConvention1Code import BusinessDayConvention1Code
+from .ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
 
 class TimeFrame9(base_types._BaseFieldType):
 
-	__slots__ = ["_TMns", "_NonWorkgDayAdjstmnt", "_OthrTmFrameDesc", "_RefrToOrdrDsk"]
+	__slots__ = ["_RefrToOrdrDsk", "_TMns", "_OthrTmFrameDesc", "_NonWorkgDayAdjstmnt"]
+	@property
+	def RefrToOrdrDsk(self):
+		return self._RefrToOrdrDsk
+
+	@RefrToOrdrDsk.setter
+	def RefrToOrdrDsk(self, value):
+		self._RefrToOrdrDsk = value if type(value) != base_types.auto else self.make_default("RefrToOrdrDsk")
+
+	@RefrToOrdrDsk.deleter
+	def RefrToOrdrDsk(self):
+		del self._RefrToOrdrDsk
+		self._RefrToOrdrDsk = None
+
 	@property
 	def TMns(self):
 		return self._TMns
 
 	@TMns.setter
 	def TMns(self, value):
-		self._TMns = value if type(value) != auto else self.make_default("TMns")
+		self._TMns = value if type(value) != base_types.auto else self.make_default("TMns")
 
 	@TMns.deleter
 	def TMns(self):
@@ -21,25 +34,12 @@ class TimeFrame9(base_types._BaseFieldType):
 		self._TMns = None
 
 	@property
-	def NonWorkgDayAdjstmnt(self):
-		return self._NonWorkgDayAdjstmnt
-
-	@NonWorkgDayAdjstmnt.setter
-	def NonWorkgDayAdjstmnt(self, value):
-		self._NonWorkgDayAdjstmnt = value if type(value) != auto else self.make_default("NonWorkgDayAdjstmnt")
-
-	@NonWorkgDayAdjstmnt.deleter
-	def NonWorkgDayAdjstmnt(self):
-		del self._NonWorkgDayAdjstmnt
-		self._NonWorkgDayAdjstmnt = None
-
-	@property
 	def OthrTmFrameDesc(self):
 		return self._OthrTmFrameDesc
 
 	@OthrTmFrameDesc.setter
 	def OthrTmFrameDesc(self, value):
-		self._OthrTmFrameDesc = value if type(value) != auto else self.make_default("OthrTmFrameDesc")
+		self._OthrTmFrameDesc = value if type(value) != base_types.auto else self.make_default("OthrTmFrameDesc")
 
 	@OthrTmFrameDesc.deleter
 	def OthrTmFrameDesc(self):
@@ -47,22 +47,22 @@ class TimeFrame9(base_types._BaseFieldType):
 		self._OthrTmFrameDesc = None
 
 	@property
-	def RefrToOrdrDsk(self):
-		return self._RefrToOrdrDsk
+	def NonWorkgDayAdjstmnt(self):
+		return self._NonWorkgDayAdjstmnt
 
-	@RefrToOrdrDsk.setter
-	def RefrToOrdrDsk(self, value):
-		self._RefrToOrdrDsk = value if type(value) != auto else self.make_default("RefrToOrdrDsk")
+	@NonWorkgDayAdjstmnt.setter
+	def NonWorkgDayAdjstmnt(self, value):
+		self._NonWorkgDayAdjstmnt = value if type(value) != base_types.auto else self.make_default("NonWorkgDayAdjstmnt")
 
-	@RefrToOrdrDsk.deleter
-	def RefrToOrdrDsk(self):
-		del self._RefrToOrdrDsk
-		self._RefrToOrdrDsk = None
+	@NonWorkgDayAdjstmnt.deleter
+	def NonWorkgDayAdjstmnt(self):
+		del self._NonWorkgDayAdjstmnt
+		self._NonWorkgDayAdjstmnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TMns', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMns', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

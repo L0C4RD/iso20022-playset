@@ -11,7 +11,7 @@ class MarketDetail2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -24,7 +24,7 @@ class MarketDetail2(base_types._BaseFieldType):
 
 	@AvrgDalyNbOfTxs.setter
 	def AvrgDalyNbOfTxs(self, value):
-		self._AvrgDalyNbOfTxs = value if type(value) != auto else self.make_default("AvrgDalyNbOfTxs")
+		self._AvrgDalyNbOfTxs = value if type(value) != base_types.auto else self.make_default("AvrgDalyNbOfTxs")
 
 	@AvrgDalyNbOfTxs.deleter
 	def AvrgDalyNbOfTxs(self):

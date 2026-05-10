@@ -12,7 +12,7 @@ class CAIN_025_001_03():
 
 		@AdddmInitn.setter
 		def AdddmInitn(self, value):
-			self._AdddmInitn = value if type(value) != auto else self.make_default("AdddmInitn")
+			self._AdddmInitn = value if type(value) != base_types.auto else self.make_default("AdddmInitn")
 
 		@AdddmInitn.deleter
 		def AdddmInitn(self):

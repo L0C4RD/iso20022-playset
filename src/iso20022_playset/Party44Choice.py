@@ -1,6 +1,6 @@
 from . import base_types
-from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 from .PartyIdentification135 import PartyIdentification135
+from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 
 class Party44Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Party44Choice(base_types._BaseFieldType):
 
 	@FIId.setter
 	def FIId(self, value):
-		self._FIId = value if type(value) != auto else self.make_default("FIId")
+		self._FIId = value if type(value) != base_types.auto else self.make_default("FIId")
 
 	@FIId.deleter
 	def FIId(self):
@@ -24,7 +24,7 @@ class Party44Choice(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != auto else self.make_default("OrgId")
+		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
 
 	@OrgId.deleter
 	def OrgId(self):

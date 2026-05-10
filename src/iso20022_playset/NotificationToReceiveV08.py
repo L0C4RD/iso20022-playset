@@ -1,6 +1,6 @@
 from . import base_types
-from .AccountNotification23 import AccountNotification23
 from .SupplementaryData1 import SupplementaryData1
+from .AccountNotification23 import AccountNotification23
 from .GroupHeader117 import GroupHeader117
 
 class NotificationToReceiveV08(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class NotificationToReceiveV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class NotificationToReceiveV08(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
@@ -38,7 +38,7 @@ class NotificationToReceiveV08(base_types._BaseFieldType):
 
 	@Ntfctn.setter
 	def Ntfctn(self, value):
-		self._Ntfctn = value if type(value) != auto else self.make_default("Ntfctn")
+		self._Ntfctn = value if type(value) != base_types.auto else self.make_default("Ntfctn")
 
 	@Ntfctn.deleter
 	def Ntfctn(self):

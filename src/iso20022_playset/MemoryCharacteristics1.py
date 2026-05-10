@@ -1,7 +1,7 @@
 from . import base_types
+from .DecimalNumber import DecimalNumber
 from .MemoryUnit1Code import MemoryUnit1Code
 from .Max35Text import Max35Text
-from .DecimalNumber import DecimalNumber
 
 class MemoryCharacteristics1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@TtlSz.setter
 	def TtlSz(self, value):
-		self._TtlSz = value if type(value) != auto else self.make_default("TtlSz")
+		self._TtlSz = value if type(value) != base_types.auto else self.make_default("TtlSz")
 
 	@TtlSz.deleter
 	def TtlSz(self):
@@ -25,7 +25,7 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -38,7 +38,7 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@FreeSz.setter
 	def FreeSz(self, value):
-		self._FreeSz = value if type(value) != auto else self.make_default("FreeSz")
+		self._FreeSz = value if type(value) != base_types.auto else self.make_default("FreeSz")
 
 	@FreeSz.deleter
 	def FreeSz(self):
@@ -51,7 +51,7 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
 	@Unit.deleter
 	def Unit(self):

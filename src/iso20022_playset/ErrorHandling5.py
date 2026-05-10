@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .ErrorHandling3Choice import ErrorHandling3Choice
+from .Max140Text import Max140Text
 
 class ErrorHandling5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ErrorHandling5(base_types._BaseFieldType):
 
 	@Err.setter
 	def Err(self, value):
-		self._Err = value if type(value) != auto else self.make_default("Err")
+		self._Err = value if type(value) != base_types.auto else self.make_default("Err")
 
 	@Err.deleter
 	def Err(self):
@@ -24,7 +24,7 @@ class ErrorHandling5(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):

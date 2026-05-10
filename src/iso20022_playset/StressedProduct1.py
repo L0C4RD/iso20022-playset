@@ -4,19 +4,19 @@ from .GenericIdentification168 import GenericIdentification168
 
 class StressedProduct1(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxStrssSz", "_Id", "_MinStrssSz"]
+	__slots__ = ["_MinStrssSz", "_Id", "_MaxStrssSz"]
 	@property
-	def MaxStrssSz(self):
-		return self._MaxStrssSz
+	def MinStrssSz(self):
+		return self._MinStrssSz
 
-	@MaxStrssSz.setter
-	def MaxStrssSz(self, value):
-		self._MaxStrssSz = value if type(value) != auto else self.make_default("MaxStrssSz")
+	@MinStrssSz.setter
+	def MinStrssSz(self, value):
+		self._MinStrssSz = value if type(value) != base_types.auto else self.make_default("MinStrssSz")
 
-	@MaxStrssSz.deleter
-	def MaxStrssSz(self):
-		del self._MaxStrssSz
-		self._MaxStrssSz = None
+	@MinStrssSz.deleter
+	def MinStrssSz(self):
+		del self._MinStrssSz
+		self._MinStrssSz = None
 
 	@property
 	def Id(self):
@@ -24,7 +24,7 @@ class StressedProduct1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -32,21 +32,21 @@ class StressedProduct1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def MinStrssSz(self):
-		return self._MinStrssSz
+	def MaxStrssSz(self):
+		return self._MaxStrssSz
 
-	@MinStrssSz.setter
-	def MinStrssSz(self, value):
-		self._MinStrssSz = value if type(value) != auto else self.make_default("MinStrssSz")
+	@MaxStrssSz.setter
+	def MaxStrssSz(self, value):
+		self._MaxStrssSz = value if type(value) != base_types.auto else self.make_default("MaxStrssSz")
 
-	@MinStrssSz.deleter
-	def MinStrssSz(self):
-		del self._MinStrssSz
-		self._MinStrssSz = None
+	@MaxStrssSz.deleter
+	def MaxStrssSz(self):
+		del self._MaxStrssSz
+		self._MaxStrssSz = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

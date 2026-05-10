@@ -12,7 +12,7 @@ class ADMI_004_001_02():
 
 		@SysEvtNtfctn.setter
 		def SysEvtNtfctn(self, value):
-			self._SysEvtNtfctn = value if type(value) != auto else self.make_default("SysEvtNtfctn")
+			self._SysEvtNtfctn = value if type(value) != base_types.auto else self.make_default("SysEvtNtfctn")
 
 		@SysEvtNtfctn.deleter
 		def SysEvtNtfctn(self):

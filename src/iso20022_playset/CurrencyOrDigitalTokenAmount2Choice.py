@@ -11,7 +11,7 @@ class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 
 	@DgtlTknAmt.setter
 	def DgtlTknAmt(self, value):
-		self._DgtlTknAmt = value if type(value) != auto else self.make_default("DgtlTknAmt")
+		self._DgtlTknAmt = value if type(value) != base_types.auto else self.make_default("DgtlTknAmt")
 
 	@DgtlTknAmt.deleter
 	def DgtlTknAmt(self):
@@ -24,7 +24,7 @@ class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

@@ -12,7 +12,7 @@ class ADMI_007_001_01():
 
 		@RctAck.setter
 		def RctAck(self, value):
-			self._RctAck = value if type(value) != auto else self.make_default("RctAck")
+			self._RctAck = value if type(value) != base_types.auto else self.make_default("RctAck")
 
 		@RctAck.deleter
 		def RctAck(self):

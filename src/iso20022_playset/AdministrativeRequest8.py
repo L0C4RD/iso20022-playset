@@ -1,32 +1,19 @@
 from . import base_types
-from .Max20000Text import Max20000Text
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 from .SupplementaryData1 import SupplementaryData1
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 from .PaymentContext30 import PaymentContext30
+from .Max20000Text import Max20000Text
 
 class AdministrativeRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_AdmstvSvcId", "_SplmtryData", "_Envt", "_Cntxt"]
-	@property
-	def AdmstvSvcId(self):
-		return self._AdmstvSvcId
-
-	@AdmstvSvcId.setter
-	def AdmstvSvcId(self, value):
-		self._AdmstvSvcId = value if type(value) != auto else self.make_default("AdmstvSvcId")
-
-	@AdmstvSvcId.deleter
-	def AdmstvSvcId(self):
-		del self._AdmstvSvcId
-		self._AdmstvSvcId = None
-
+	__slots__ = ["_SplmtryData", "_AdmstvSvcId", "_Envt", "_Cntxt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -34,12 +21,25 @@ class AdministrativeRequest8(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def AdmstvSvcId(self):
+		return self._AdmstvSvcId
+
+	@AdmstvSvcId.setter
+	def AdmstvSvcId(self, value):
+		self._AdmstvSvcId = value if type(value) != base_types.auto else self.make_default("AdmstvSvcId")
+
+	@AdmstvSvcId.deleter
+	def AdmstvSvcId(self):
+		del self._AdmstvSvcId
+		self._AdmstvSvcId = None
+
+	@property
 	def Envt(self):
 		return self._Envt
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -52,7 +52,7 @@ class AdministrativeRequest8(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
 	@Cntxt.deleter
 	def Cntxt(self):
@@ -60,8 +60,8 @@ class AdministrativeRequest8(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AdmstvSvcId', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdmstvSvcId', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 	))

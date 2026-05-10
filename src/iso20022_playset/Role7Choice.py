@@ -1,23 +1,23 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
 from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
 from .InvestmentFundRole2Code import InvestmentFundRole2Code
+from .GenericIdentification47 import GenericIdentification47
 
 class Role7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd", "_Txt"]
+	__slots__ = ["_Txt", "_Cd", "_Prtry"]
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def Txt(self):
+		return self._Txt
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@Txt.setter
+	def Txt(self, value):
+		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@Txt.deleter
+	def Txt(self):
+		del self._Txt
+		self._Txt = None
 
 	@property
 	def Cd(self):
@@ -25,7 +25,7 @@ class Role7Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -33,21 +33,21 @@ class Role7Choice(base_types._BaseFieldType):
 		self._Cd = None
 
 	@property
-	def Txt(self):
-		return self._Txt
+	def Prtry(self):
+		return self._Prtry
 
-	@Txt.setter
-	def Txt(self, value):
-		self._Txt = value if type(value) != auto else self.make_default("Txt")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
-	@Txt.deleter
-	def Txt(self):
-		del self._Txt
-		self._Txt = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cd', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Txt', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
 	))
 

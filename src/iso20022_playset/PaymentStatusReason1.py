@@ -1,6 +1,6 @@
 from . import base_types
-from .StatusReason6Choice import StatusReason6Choice
 from .Max105Text import Max105Text
+from .StatusReason6Choice import StatusReason6Choice
 
 class PaymentStatusReason1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PaymentStatusReason1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class PaymentStatusReason1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):

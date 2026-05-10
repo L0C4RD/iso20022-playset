@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Status11Code import Status11Code
 from .Max350Text import Max350Text
+from .Status11Code import Status11Code
+from .Max35Text import Max35Text
 
 class InstructionProcessingStatus6(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class InstructionProcessingStatus6(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -25,7 +25,7 @@ class InstructionProcessingStatus6(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
@@ -38,7 +38,7 @@ class InstructionProcessingStatus6(base_types._BaseFieldType):
 
 	@AttndncCardNb.setter
 	def AttndncCardNb(self, value):
-		self._AttndncCardNb = value if type(value) != auto else self.make_default("AttndncCardNb")
+		self._AttndncCardNb = value if type(value) != base_types.auto else self.make_default("AttndncCardNb")
 
 	@AttndncCardNb.deleter
 	def AttndncCardNb(self):

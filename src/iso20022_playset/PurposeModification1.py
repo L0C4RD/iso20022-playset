@@ -11,7 +11,7 @@ class PurposeModification1(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
+		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
 
 	@Purp.deleter
 	def Purp(self):
@@ -24,7 +24,7 @@ class PurposeModification1(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
 
 	@ModCd.deleter
 	def ModCd(self):

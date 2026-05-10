@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .YesNoIndicator import YesNoIndicator
+from .Max35Text import Max35Text
 
 class IncludedAccount1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class IncludedAccount1(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):
@@ -24,7 +24,7 @@ class IncludedAccount1(base_types._BaseFieldType):
 
 	@InclInd.setter
 	def InclInd(self, value):
-		self._InclInd = value if type(value) != auto else self.make_default("InclInd")
+		self._InclInd = value if type(value) != base_types.auto else self.make_default("InclInd")
 
 	@InclInd.deleter
 	def InclInd(self):

@@ -1,18 +1,31 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .DecimalNumber import DecimalNumber
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
+from .PercentageRate import PercentageRate
 
 class UnitsOrAmountOrPercentage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_Pctg", "_Amt"]
+	__slots__ = ["_Amt", "_Unit", "_Pctg"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def Unit(self):
 		return self._Unit
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
 	@Unit.deleter
 	def Unit(self):
@@ -25,29 +38,16 @@ class UnitsOrAmountOrPercentage1Choice(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
 
 	@Pctg.deleter
 	def Pctg(self):
 		del self._Pctg
 		self._Pctg = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

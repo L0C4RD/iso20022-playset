@@ -12,7 +12,7 @@ class CAAA_022_001_05():
 
 		@AccptrNonFinReq.setter
 		def AccptrNonFinReq(self, value):
-			self._AccptrNonFinReq = value if type(value) != auto else self.make_default("AccptrNonFinReq")
+			self._AccptrNonFinReq = value if type(value) != base_types.auto else self.make_default("AccptrNonFinReq")
 
 		@AccptrNonFinReq.deleter
 		def AccptrNonFinReq(self):

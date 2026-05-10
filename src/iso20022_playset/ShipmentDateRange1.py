@@ -10,7 +10,7 @@ class ShipmentDateRange1(base_types._BaseFieldType):
 
 	@LatstShipmntDt.setter
 	def LatstShipmntDt(self, value):
-		self._LatstShipmntDt = value if type(value) != auto else self.make_default("LatstShipmntDt")
+		self._LatstShipmntDt = value if type(value) != base_types.auto else self.make_default("LatstShipmntDt")
 
 	@LatstShipmntDt.deleter
 	def LatstShipmntDt(self):
@@ -23,7 +23,7 @@ class ShipmentDateRange1(base_types._BaseFieldType):
 
 	@EarlstShipmntDt.setter
 	def EarlstShipmntDt(self, value):
-		self._EarlstShipmntDt = value if type(value) != auto else self.make_default("EarlstShipmntDt")
+		self._EarlstShipmntDt = value if type(value) != base_types.auto else self.make_default("EarlstShipmntDt")
 
 	@EarlstShipmntDt.deleter
 	def EarlstShipmntDt(self):

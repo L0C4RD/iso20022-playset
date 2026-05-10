@@ -3,19 +3,19 @@ from .ISOTime import ISOTime
 
 class SettlementTimeRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_TillTm", "_CLSTm", "_FrTm", "_RjctTm"]
+	__slots__ = ["_RjctTm", "_CLSTm", "_FrTm", "_TillTm"]
 	@property
-	def TillTm(self):
-		return self._TillTm
+	def RjctTm(self):
+		return self._RjctTm
 
-	@TillTm.setter
-	def TillTm(self, value):
-		self._TillTm = value if type(value) != auto else self.make_default("TillTm")
+	@RjctTm.setter
+	def RjctTm(self, value):
+		self._RjctTm = value if type(value) != base_types.auto else self.make_default("RjctTm")
 
-	@TillTm.deleter
-	def TillTm(self):
-		del self._TillTm
-		self._TillTm = None
+	@RjctTm.deleter
+	def RjctTm(self):
+		del self._RjctTm
+		self._RjctTm = None
 
 	@property
 	def CLSTm(self):
@@ -23,7 +23,7 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 
 	@CLSTm.setter
 	def CLSTm(self, value):
-		self._CLSTm = value if type(value) != auto else self.make_default("CLSTm")
+		self._CLSTm = value if type(value) != base_types.auto else self.make_default("CLSTm")
 
 	@CLSTm.deleter
 	def CLSTm(self):
@@ -36,7 +36,7 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 
 	@FrTm.setter
 	def FrTm(self, value):
-		self._FrTm = value if type(value) != auto else self.make_default("FrTm")
+		self._FrTm = value if type(value) != base_types.auto else self.make_default("FrTm")
 
 	@FrTm.deleter
 	def FrTm(self):
@@ -44,22 +44,22 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 		self._FrTm = None
 
 	@property
-	def RjctTm(self):
-		return self._RjctTm
+	def TillTm(self):
+		return self._TillTm
 
-	@RjctTm.setter
-	def RjctTm(self, value):
-		self._RjctTm = value if type(value) != auto else self.make_default("RjctTm")
+	@TillTm.setter
+	def TillTm(self, value):
+		self._TillTm = value if type(value) != base_types.auto else self.make_default("TillTm")
 
-	@RjctTm.deleter
-	def RjctTm(self):
-		del self._RjctTm
-		self._RjctTm = None
+	@TillTm.deleter
+	def TillTm(self):
+		del self._TillTm
+		self._TillTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TillTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CLSTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TillTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

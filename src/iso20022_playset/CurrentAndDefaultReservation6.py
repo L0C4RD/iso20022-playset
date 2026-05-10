@@ -10,7 +10,7 @@ class CurrentAndDefaultReservation6(base_types._BaseFieldType):
 
 	@DfltRsvatn.setter
 	def DfltRsvatn(self, value):
-		self._DfltRsvatn = value if type(value) != auto else self.make_default("DfltRsvatn")
+		self._DfltRsvatn = value if type(value) != base_types.auto else self.make_default("DfltRsvatn")
 
 	@DfltRsvatn.deleter
 	def DfltRsvatn(self):
@@ -23,7 +23,7 @@ class CurrentAndDefaultReservation6(base_types._BaseFieldType):
 
 	@CurRsvatn.setter
 	def CurRsvatn(self, value):
-		self._CurRsvatn = value if type(value) != auto else self.make_default("CurRsvatn")
+		self._CurRsvatn = value if type(value) != base_types.auto else self.make_default("CurRsvatn")
 
 	@CurRsvatn.deleter
 	def CurRsvatn(self):

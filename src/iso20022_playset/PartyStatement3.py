@@ -11,7 +11,7 @@ class PartyStatement3(base_types._BaseFieldType):
 
 	@SysDt.setter
 	def SysDt(self, value):
-		self._SysDt = value if type(value) != auto else self.make_default("SysDt")
+		self._SysDt = value if type(value) != base_types.auto else self.make_default("SysDt")
 
 	@SysDt.deleter
 	def SysDt(self):
@@ -24,7 +24,7 @@ class PartyStatement3(base_types._BaseFieldType):
 
 	@Chng.setter
 	def Chng(self, value):
-		self._Chng = value if type(value) != auto else self.make_default("Chng")
+		self._Chng = value if type(value) != base_types.auto else self.make_default("Chng")
 
 	@Chng.deleter
 	def Chng(self):

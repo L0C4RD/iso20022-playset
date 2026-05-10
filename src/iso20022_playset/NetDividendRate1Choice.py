@@ -1,7 +1,7 @@
 from . import base_types
+from .NetDividendRate2 import NetDividendRate2
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from .RateValueType6FormatChoice import RateValueType6FormatChoice
-from .NetDividendRate2 import NetDividendRate2
 
 class NetDividendRate1Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class NetDividendRate1Choice(base_types._BaseFieldType):
 
 	@NotSpcfdRate.setter
 	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
 
 	@NotSpcfdRate.deleter
 	def NotSpcfdRate(self):
@@ -25,7 +25,7 @@ class NetDividendRate1Choice(base_types._BaseFieldType):
 
 	@RateTpAmt.setter
 	def RateTpAmt(self, value):
-		self._RateTpAmt = value if type(value) != auto else self.make_default("RateTpAmt")
+		self._RateTpAmt = value if type(value) != base_types.auto else self.make_default("RateTpAmt")
 
 	@RateTpAmt.deleter
 	def RateTpAmt(self):
@@ -38,7 +38,7 @@ class NetDividendRate1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

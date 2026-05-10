@@ -11,7 +11,7 @@ class NettingCutOff2(base_types._BaseFieldType):
 
 	@NewCutOff.setter
 	def NewCutOff(self, value):
-		self._NewCutOff = value if type(value) != auto else self.make_default("NewCutOff")
+		self._NewCutOff = value if type(value) != base_types.auto else self.make_default("NewCutOff")
 
 	@NewCutOff.deleter
 	def NewCutOff(self):
@@ -24,7 +24,7 @@ class NettingCutOff2(base_types._BaseFieldType):
 
 	@NetgId.setter
 	def NetgId(self, value):
-		self._NetgId = value if type(value) != auto else self.make_default("NetgId")
+		self._NetgId = value if type(value) != base_types.auto else self.make_default("NetgId")
 
 	@NetgId.deleter
 	def NetgId(self):

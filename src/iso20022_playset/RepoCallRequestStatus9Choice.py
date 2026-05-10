@@ -12,7 +12,7 @@ class RepoCallRequestStatus9Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
@@ -25,7 +25,7 @@ class RepoCallRequestStatus9Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -38,7 +38,7 @@ class RepoCallRequestStatus9Choice(base_types._BaseFieldType):
 
 	@Dnd.setter
 	def Dnd(self, value):
-		self._Dnd = value if type(value) != auto else self.make_default("Dnd")
+		self._Dnd = value if type(value) != base_types.auto else self.make_default("Dnd")
 
 	@Dnd.deleter
 	def Dnd(self):

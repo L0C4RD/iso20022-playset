@@ -12,7 +12,7 @@ class CAMT_079_001_02():
 
 		@IntraBalMvmntQryRspn.setter
 		def IntraBalMvmntQryRspn(self, value):
-			self._IntraBalMvmntQryRspn = value if type(value) != auto else self.make_default("IntraBalMvmntQryRspn")
+			self._IntraBalMvmntQryRspn = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntQryRspn")
 
 		@IntraBalMvmntQryRspn.deleter
 		def IntraBalMvmntQryRspn(self):

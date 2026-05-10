@@ -12,7 +12,7 @@ class FinancialInstrument59(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -25,7 +25,7 @@ class FinancialInstrument59(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -38,7 +38,7 @@ class FinancialInstrument59(base_types._BaseFieldType):
 
 	@Sctr.setter
 	def Sctr(self, value):
-		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
+		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
 
 	@Sctr.deleter
 	def Sctr(self):

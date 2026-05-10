@@ -1,6 +1,6 @@
 from . import base_types
-from .Max2NumericText import Max2NumericText
 from .SecurityIdentification19 import SecurityIdentification19
+from .Max2NumericText import Max2NumericText
 
 class SettlementFailsSecurities1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SettlementFailsSecurities1(base_types._BaseFieldType):
 
 	@Rank.setter
 	def Rank(self, value):
-		self._Rank = value if type(value) != auto else self.make_default("Rank")
+		self._Rank = value if type(value) != base_types.auto else self.make_default("Rank")
 
 	@Rank.deleter
 	def Rank(self):
@@ -24,7 +24,7 @@ class SettlementFailsSecurities1(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):

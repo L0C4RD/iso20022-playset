@@ -1,38 +1,38 @@
 from . import base_types
-from .SecuritiesOption81 import SecuritiesOption81
-from .YesNoIndicator import YesNoIndicator
-from .OptionFeaturesFormat28Choice import OptionFeaturesFormat28Choice
-from .OptionAvailabilityStatus3Choice import OptionAvailabilityStatus3Choice
-from .BidRangeType1Choice import BidRangeType1Choice
-from .DefaultProcessingOrStandingInstruction2Choice import DefaultProcessingOrStandingInstruction2Choice
+from .CorporateActionPrice90 import CorporateActionPrice90
+from .SecurityIdentification19 import SecurityIdentification19
+from .CorporateActionDate104 import CorporateActionDate104
 from .ActiveCurrencyCode import ActiveCurrencyCode
-from .CorporateActionRate126 import CorporateActionRate126
-from .CorporateActionNarrative59 import CorporateActionNarrative59
+from .OptionFeaturesFormat28Choice import OptionFeaturesFormat28Choice
+from .BidRangeType1Choice import BidRangeType1Choice
+from .CorporateActionPeriod12 import CorporateActionPeriod12
 from .CashOption107 import CashOption107
-from .BeneficiaryCertificationType13Choice import BeneficiaryCertificationType13Choice
-from .FractionDispositionType26Choice import FractionDispositionType26Choice
 from .SecuritiesOption113 import SecuritiesOption113
 from .ProrationBelowMinimumQuantity2Choice import ProrationBelowMinimumQuantity2Choice
-from .CorporateActionPeriod12 import CorporateActionPeriod12
-from .OfferTypeFormat14Choice import OfferTypeFormat14Choice
-from .Exact3NumericText import Exact3NumericText
-from .CorporateActionDate104 import CorporateActionDate104
 from .CountryCode import CountryCode
-from .CorporateActionPrice90 import CorporateActionPrice90
+from .OptionAvailabilityStatus3Choice import OptionAvailabilityStatus3Choice
+from .SecuritiesOption81 import SecuritiesOption81
+from .CorporateActionRate126 import CorporateActionRate126
 from .CorporateActionOption37Choice import CorporateActionOption37Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from .Exact3NumericText import Exact3NumericText
 from .Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
+from .OfferTypeFormat14Choice import OfferTypeFormat14Choice
+from .BeneficiaryCertificationType13Choice import BeneficiaryCertificationType13Choice
+from .FractionDispositionType26Choice import FractionDispositionType26Choice
+from .CorporateActionNarrative59 import CorporateActionNarrative59
+from .YesNoIndicator import YesNoIndicator
+from .DefaultProcessingOrStandingInstruction2Choice import DefaultProcessingOrStandingInstruction2Choice
 
 class CorporateActionOption236(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_ChngAllwdInd", "_FrctnDspstn", "_PrdDtls", "_OptnTp", "_PricDtls", "_AccptncPrtyLvl", "_VldDmclCtry", "_AddtlInf", "_OptnNb", "_BidRgTp", "_CcyOptn", "_NonDmclCtry", "_ApldOptnInd", "_FinInstrmId", "_DfltPrcgOrStgInstr", "_OptnAvlbtySts", "_CshMvmntDtls", "_OfferTp", "_SctiesQty", "_CertfctnBrkdwnTp", "_RateAndAmtDtls", "_PrratnBlwMinQty", "_SctiesMvmntDtls", "_CertfctnBrkdwnInd", "_WdrwlAllwdInd", "_ChrgsApldInd", "_OptnFeatrs"]
+	__slots__ = ["_DtDtls", "_AccptncPrtyLvl", "_ChrgsApldInd", "_VldDmclCtry", "_RateAndAmtDtls", "_PricDtls", "_CcyOptn", "_NonDmclCtry", "_ChngAllwdInd", "_OptnFeatrs", "_OfferTp", "_DfltPrcgOrStgInstr", "_CertfctnBrkdwnInd", "_CshMvmntDtls", "_FinInstrmId", "_FrctnDspstn", "_WdrwlAllwdInd", "_AddtlInf", "_SctiesMvmntDtls", "_BidRgTp", "_ApldOptnInd", "_PrdDtls", "_OptnTp", "_CertfctnBrkdwnTp", "_SctiesQty", "_OptnNb", "_PrratnBlwMinQty", "_OptnAvlbtySts"]
 	@property
 	def DtDtls(self):
 		return self._DtDtls
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
 
 	@DtDtls.deleter
 	def DtDtls(self):
@@ -40,77 +40,12 @@ class CorporateActionOption236(base_types._BaseFieldType):
 		self._DtDtls = None
 
 	@property
-	def ChngAllwdInd(self):
-		return self._ChngAllwdInd
-
-	@ChngAllwdInd.setter
-	def ChngAllwdInd(self, value):
-		self._ChngAllwdInd = value if type(value) != auto else self.make_default("ChngAllwdInd")
-
-	@ChngAllwdInd.deleter
-	def ChngAllwdInd(self):
-		del self._ChngAllwdInd
-		self._ChngAllwdInd = None
-
-	@property
-	def FrctnDspstn(self):
-		return self._FrctnDspstn
-
-	@FrctnDspstn.setter
-	def FrctnDspstn(self, value):
-		self._FrctnDspstn = value if type(value) != auto else self.make_default("FrctnDspstn")
-
-	@FrctnDspstn.deleter
-	def FrctnDspstn(self):
-		del self._FrctnDspstn
-		self._FrctnDspstn = None
-
-	@property
-	def PrdDtls(self):
-		return self._PrdDtls
-
-	@PrdDtls.setter
-	def PrdDtls(self, value):
-		self._PrdDtls = value if type(value) != auto else self.make_default("PrdDtls")
-
-	@PrdDtls.deleter
-	def PrdDtls(self):
-		del self._PrdDtls
-		self._PrdDtls = None
-
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
-
-	@property
-	def PricDtls(self):
-		return self._PricDtls
-
-	@PricDtls.setter
-	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != auto else self.make_default("PricDtls")
-
-	@PricDtls.deleter
-	def PricDtls(self):
-		del self._PricDtls
-		self._PricDtls = None
-
-	@property
 	def AccptncPrtyLvl(self):
 		return self._AccptncPrtyLvl
 
 	@AccptncPrtyLvl.setter
 	def AccptncPrtyLvl(self, value):
-		self._AccptncPrtyLvl = value if type(value) != auto else self.make_default("AccptncPrtyLvl")
+		self._AccptncPrtyLvl = value if type(value) != base_types.auto else self.make_default("AccptncPrtyLvl")
 
 	@AccptncPrtyLvl.deleter
 	def AccptncPrtyLvl(self):
@@ -118,12 +53,25 @@ class CorporateActionOption236(base_types._BaseFieldType):
 		self._AccptncPrtyLvl = None
 
 	@property
+	def ChrgsApldInd(self):
+		return self._ChrgsApldInd
+
+	@ChrgsApldInd.setter
+	def ChrgsApldInd(self, value):
+		self._ChrgsApldInd = value if type(value) != base_types.auto else self.make_default("ChrgsApldInd")
+
+	@ChrgsApldInd.deleter
+	def ChrgsApldInd(self):
+		del self._ChrgsApldInd
+		self._ChrgsApldInd = None
+
+	@property
 	def VldDmclCtry(self):
 		return self._VldDmclCtry
 
 	@VldDmclCtry.setter
 	def VldDmclCtry(self, value):
-		self._VldDmclCtry = value if type(value) != auto else self.make_default("VldDmclCtry")
+		self._VldDmclCtry = value if type(value) != base_types.auto else self.make_default("VldDmclCtry")
 
 	@VldDmclCtry.deleter
 	def VldDmclCtry(self):
@@ -131,43 +79,30 @@ class CorporateActionOption236(base_types._BaseFieldType):
 		self._VldDmclCtry = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def RateAndAmtDtls(self):
+		return self._RateAndAmtDtls
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@RateAndAmtDtls.setter
+	def RateAndAmtDtls(self, value):
+		self._RateAndAmtDtls = value if type(value) != base_types.auto else self.make_default("RateAndAmtDtls")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def OptnNb(self):
-		return self._OptnNb
-
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
-
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
+	@RateAndAmtDtls.deleter
+	def RateAndAmtDtls(self):
+		del self._RateAndAmtDtls
+		self._RateAndAmtDtls = None
 
 	@property
-	def BidRgTp(self):
-		return self._BidRgTp
+	def PricDtls(self):
+		return self._PricDtls
 
-	@BidRgTp.setter
-	def BidRgTp(self, value):
-		self._BidRgTp = value if type(value) != auto else self.make_default("BidRgTp")
+	@PricDtls.setter
+	def PricDtls(self, value):
+		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
 
-	@BidRgTp.deleter
-	def BidRgTp(self):
-		del self._BidRgTp
-		self._BidRgTp = None
+	@PricDtls.deleter
+	def PricDtls(self):
+		del self._PricDtls
+		self._PricDtls = None
 
 	@property
 	def CcyOptn(self):
@@ -175,7 +110,7 @@ class CorporateActionOption236(base_types._BaseFieldType):
 
 	@CcyOptn.setter
 	def CcyOptn(self, value):
-		self._CcyOptn = value if type(value) != auto else self.make_default("CcyOptn")
+		self._CcyOptn = value if type(value) != base_types.auto else self.make_default("CcyOptn")
 
 	@CcyOptn.deleter
 	def CcyOptn(self):
@@ -188,7 +123,7 @@ class CorporateActionOption236(base_types._BaseFieldType):
 
 	@NonDmclCtry.setter
 	def NonDmclCtry(self, value):
-		self._NonDmclCtry = value if type(value) != auto else self.make_default("NonDmclCtry")
+		self._NonDmclCtry = value if type(value) != base_types.auto else self.make_default("NonDmclCtry")
 
 	@NonDmclCtry.deleter
 	def NonDmclCtry(self):
@@ -196,186 +131,17 @@ class CorporateActionOption236(base_types._BaseFieldType):
 		self._NonDmclCtry = None
 
 	@property
-	def ApldOptnInd(self):
-		return self._ApldOptnInd
+	def ChngAllwdInd(self):
+		return self._ChngAllwdInd
 
-	@ApldOptnInd.setter
-	def ApldOptnInd(self, value):
-		self._ApldOptnInd = value if type(value) != auto else self.make_default("ApldOptnInd")
+	@ChngAllwdInd.setter
+	def ChngAllwdInd(self, value):
+		self._ChngAllwdInd = value if type(value) != base_types.auto else self.make_default("ChngAllwdInd")
 
-	@ApldOptnInd.deleter
-	def ApldOptnInd(self):
-		del self._ApldOptnInd
-		self._ApldOptnInd = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
-	def DfltPrcgOrStgInstr(self):
-		return self._DfltPrcgOrStgInstr
-
-	@DfltPrcgOrStgInstr.setter
-	def DfltPrcgOrStgInstr(self, value):
-		self._DfltPrcgOrStgInstr = value if type(value) != auto else self.make_default("DfltPrcgOrStgInstr")
-
-	@DfltPrcgOrStgInstr.deleter
-	def DfltPrcgOrStgInstr(self):
-		del self._DfltPrcgOrStgInstr
-		self._DfltPrcgOrStgInstr = None
-
-	@property
-	def OptnAvlbtySts(self):
-		return self._OptnAvlbtySts
-
-	@OptnAvlbtySts.setter
-	def OptnAvlbtySts(self, value):
-		self._OptnAvlbtySts = value if type(value) != auto else self.make_default("OptnAvlbtySts")
-
-	@OptnAvlbtySts.deleter
-	def OptnAvlbtySts(self):
-		del self._OptnAvlbtySts
-		self._OptnAvlbtySts = None
-
-	@property
-	def CshMvmntDtls(self):
-		return self._CshMvmntDtls
-
-	@CshMvmntDtls.setter
-	def CshMvmntDtls(self, value):
-		self._CshMvmntDtls = value if type(value) != auto else self.make_default("CshMvmntDtls")
-
-	@CshMvmntDtls.deleter
-	def CshMvmntDtls(self):
-		del self._CshMvmntDtls
-		self._CshMvmntDtls = None
-
-	@property
-	def OfferTp(self):
-		return self._OfferTp
-
-	@OfferTp.setter
-	def OfferTp(self, value):
-		self._OfferTp = value if type(value) != auto else self.make_default("OfferTp")
-
-	@OfferTp.deleter
-	def OfferTp(self):
-		del self._OfferTp
-		self._OfferTp = None
-
-	@property
-	def SctiesQty(self):
-		return self._SctiesQty
-
-	@SctiesQty.setter
-	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
-
-	@SctiesQty.deleter
-	def SctiesQty(self):
-		del self._SctiesQty
-		self._SctiesQty = None
-
-	@property
-	def CertfctnBrkdwnTp(self):
-		return self._CertfctnBrkdwnTp
-
-	@CertfctnBrkdwnTp.setter
-	def CertfctnBrkdwnTp(self, value):
-		self._CertfctnBrkdwnTp = value if type(value) != auto else self.make_default("CertfctnBrkdwnTp")
-
-	@CertfctnBrkdwnTp.deleter
-	def CertfctnBrkdwnTp(self):
-		del self._CertfctnBrkdwnTp
-		self._CertfctnBrkdwnTp = None
-
-	@property
-	def RateAndAmtDtls(self):
-		return self._RateAndAmtDtls
-
-	@RateAndAmtDtls.setter
-	def RateAndAmtDtls(self, value):
-		self._RateAndAmtDtls = value if type(value) != auto else self.make_default("RateAndAmtDtls")
-
-	@RateAndAmtDtls.deleter
-	def RateAndAmtDtls(self):
-		del self._RateAndAmtDtls
-		self._RateAndAmtDtls = None
-
-	@property
-	def PrratnBlwMinQty(self):
-		return self._PrratnBlwMinQty
-
-	@PrratnBlwMinQty.setter
-	def PrratnBlwMinQty(self, value):
-		self._PrratnBlwMinQty = value if type(value) != auto else self.make_default("PrratnBlwMinQty")
-
-	@PrratnBlwMinQty.deleter
-	def PrratnBlwMinQty(self):
-		del self._PrratnBlwMinQty
-		self._PrratnBlwMinQty = None
-
-	@property
-	def SctiesMvmntDtls(self):
-		return self._SctiesMvmntDtls
-
-	@SctiesMvmntDtls.setter
-	def SctiesMvmntDtls(self, value):
-		self._SctiesMvmntDtls = value if type(value) != auto else self.make_default("SctiesMvmntDtls")
-
-	@SctiesMvmntDtls.deleter
-	def SctiesMvmntDtls(self):
-		del self._SctiesMvmntDtls
-		self._SctiesMvmntDtls = None
-
-	@property
-	def CertfctnBrkdwnInd(self):
-		return self._CertfctnBrkdwnInd
-
-	@CertfctnBrkdwnInd.setter
-	def CertfctnBrkdwnInd(self, value):
-		self._CertfctnBrkdwnInd = value if type(value) != auto else self.make_default("CertfctnBrkdwnInd")
-
-	@CertfctnBrkdwnInd.deleter
-	def CertfctnBrkdwnInd(self):
-		del self._CertfctnBrkdwnInd
-		self._CertfctnBrkdwnInd = None
-
-	@property
-	def WdrwlAllwdInd(self):
-		return self._WdrwlAllwdInd
-
-	@WdrwlAllwdInd.setter
-	def WdrwlAllwdInd(self, value):
-		self._WdrwlAllwdInd = value if type(value) != auto else self.make_default("WdrwlAllwdInd")
-
-	@WdrwlAllwdInd.deleter
-	def WdrwlAllwdInd(self):
-		del self._WdrwlAllwdInd
-		self._WdrwlAllwdInd = None
-
-	@property
-	def ChrgsApldInd(self):
-		return self._ChrgsApldInd
-
-	@ChrgsApldInd.setter
-	def ChrgsApldInd(self, value):
-		self._ChrgsApldInd = value if type(value) != auto else self.make_default("ChrgsApldInd")
-
-	@ChrgsApldInd.deleter
-	def ChrgsApldInd(self):
-		del self._ChrgsApldInd
-		self._ChrgsApldInd = None
+	@ChngAllwdInd.deleter
+	def ChngAllwdInd(self):
+		del self._ChngAllwdInd
+		self._ChngAllwdInd = None
 
 	@property
 	def OptnFeatrs(self):
@@ -383,41 +149,275 @@ class CorporateActionOption236(base_types._BaseFieldType):
 
 	@OptnFeatrs.setter
 	def OptnFeatrs(self, value):
-		self._OptnFeatrs = value if type(value) != auto else self.make_default("OptnFeatrs")
+		self._OptnFeatrs = value if type(value) != base_types.auto else self.make_default("OptnFeatrs")
 
 	@OptnFeatrs.deleter
 	def OptnFeatrs(self):
 		del self._OptnFeatrs
 		self._OptnFeatrs = None
 
+	@property
+	def OfferTp(self):
+		return self._OfferTp
+
+	@OfferTp.setter
+	def OfferTp(self, value):
+		self._OfferTp = value if type(value) != base_types.auto else self.make_default("OfferTp")
+
+	@OfferTp.deleter
+	def OfferTp(self):
+		del self._OfferTp
+		self._OfferTp = None
+
+	@property
+	def DfltPrcgOrStgInstr(self):
+		return self._DfltPrcgOrStgInstr
+
+	@DfltPrcgOrStgInstr.setter
+	def DfltPrcgOrStgInstr(self, value):
+		self._DfltPrcgOrStgInstr = value if type(value) != base_types.auto else self.make_default("DfltPrcgOrStgInstr")
+
+	@DfltPrcgOrStgInstr.deleter
+	def DfltPrcgOrStgInstr(self):
+		del self._DfltPrcgOrStgInstr
+		self._DfltPrcgOrStgInstr = None
+
+	@property
+	def CertfctnBrkdwnInd(self):
+		return self._CertfctnBrkdwnInd
+
+	@CertfctnBrkdwnInd.setter
+	def CertfctnBrkdwnInd(self, value):
+		self._CertfctnBrkdwnInd = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwnInd")
+
+	@CertfctnBrkdwnInd.deleter
+	def CertfctnBrkdwnInd(self):
+		del self._CertfctnBrkdwnInd
+		self._CertfctnBrkdwnInd = None
+
+	@property
+	def CshMvmntDtls(self):
+		return self._CshMvmntDtls
+
+	@CshMvmntDtls.setter
+	def CshMvmntDtls(self, value):
+		self._CshMvmntDtls = value if type(value) != base_types.auto else self.make_default("CshMvmntDtls")
+
+	@CshMvmntDtls.deleter
+	def CshMvmntDtls(self):
+		del self._CshMvmntDtls
+		self._CshMvmntDtls = None
+
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def FrctnDspstn(self):
+		return self._FrctnDspstn
+
+	@FrctnDspstn.setter
+	def FrctnDspstn(self, value):
+		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+
+	@FrctnDspstn.deleter
+	def FrctnDspstn(self):
+		del self._FrctnDspstn
+		self._FrctnDspstn = None
+
+	@property
+	def WdrwlAllwdInd(self):
+		return self._WdrwlAllwdInd
+
+	@WdrwlAllwdInd.setter
+	def WdrwlAllwdInd(self, value):
+		self._WdrwlAllwdInd = value if type(value) != base_types.auto else self.make_default("WdrwlAllwdInd")
+
+	@WdrwlAllwdInd.deleter
+	def WdrwlAllwdInd(self):
+		del self._WdrwlAllwdInd
+		self._WdrwlAllwdInd = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def SctiesMvmntDtls(self):
+		return self._SctiesMvmntDtls
+
+	@SctiesMvmntDtls.setter
+	def SctiesMvmntDtls(self, value):
+		self._SctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesMvmntDtls")
+
+	@SctiesMvmntDtls.deleter
+	def SctiesMvmntDtls(self):
+		del self._SctiesMvmntDtls
+		self._SctiesMvmntDtls = None
+
+	@property
+	def BidRgTp(self):
+		return self._BidRgTp
+
+	@BidRgTp.setter
+	def BidRgTp(self, value):
+		self._BidRgTp = value if type(value) != base_types.auto else self.make_default("BidRgTp")
+
+	@BidRgTp.deleter
+	def BidRgTp(self):
+		del self._BidRgTp
+		self._BidRgTp = None
+
+	@property
+	def ApldOptnInd(self):
+		return self._ApldOptnInd
+
+	@ApldOptnInd.setter
+	def ApldOptnInd(self, value):
+		self._ApldOptnInd = value if type(value) != base_types.auto else self.make_default("ApldOptnInd")
+
+	@ApldOptnInd.deleter
+	def ApldOptnInd(self):
+		del self._ApldOptnInd
+		self._ApldOptnInd = None
+
+	@property
+	def PrdDtls(self):
+		return self._PrdDtls
+
+	@PrdDtls.setter
+	def PrdDtls(self, value):
+		self._PrdDtls = value if type(value) != base_types.auto else self.make_default("PrdDtls")
+
+	@PrdDtls.deleter
+	def PrdDtls(self):
+		del self._PrdDtls
+		self._PrdDtls = None
+
+	@property
+	def OptnTp(self):
+		return self._OptnTp
+
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
+
+	@property
+	def CertfctnBrkdwnTp(self):
+		return self._CertfctnBrkdwnTp
+
+	@CertfctnBrkdwnTp.setter
+	def CertfctnBrkdwnTp(self, value):
+		self._CertfctnBrkdwnTp = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwnTp")
+
+	@CertfctnBrkdwnTp.deleter
+	def CertfctnBrkdwnTp(self):
+		del self._CertfctnBrkdwnTp
+		self._CertfctnBrkdwnTp = None
+
+	@property
+	def SctiesQty(self):
+		return self._SctiesQty
+
+	@SctiesQty.setter
+	def SctiesQty(self, value):
+		self._SctiesQty = value if type(value) != base_types.auto else self.make_default("SctiesQty")
+
+	@SctiesQty.deleter
+	def SctiesQty(self):
+		del self._SctiesQty
+		self._SctiesQty = None
+
+	@property
+	def OptnNb(self):
+		return self._OptnNb
+
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
+
+	@property
+	def PrratnBlwMinQty(self):
+		return self._PrratnBlwMinQty
+
+	@PrratnBlwMinQty.setter
+	def PrratnBlwMinQty(self, value):
+		self._PrratnBlwMinQty = value if type(value) != base_types.auto else self.make_default("PrratnBlwMinQty")
+
+	@PrratnBlwMinQty.deleter
+	def PrratnBlwMinQty(self):
+		del self._PrratnBlwMinQty
+		self._PrratnBlwMinQty = None
+
+	@property
+	def OptnAvlbtySts(self):
+		return self._OptnAvlbtySts
+
+	@OptnAvlbtySts.setter
+	def OptnAvlbtySts(self, value):
+		self._OptnAvlbtySts = value if type(value) != base_types.auto else self.make_default("OptnAvlbtySts")
+
+	@OptnAvlbtySts.deleter
+	def OptnAvlbtySts(self):
+		del self._OptnAvlbtySts
+		self._OptnAvlbtySts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate104, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChngAllwdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType26Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrdDtls', type=CorporateActionPeriod12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption37Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricDtls', type=CorporateActionPrice90, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncPrtyLvl', type=Exact3UpperCaseAlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsApldInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldDmclCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative59, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BidRgTp', type=BidRangeType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateAndAmtDtls', type=CorporateActionRate126, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricDtls', type=CorporateActionPrice90, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyOptn', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonDmclCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ApldOptnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfltPrcgOrStgInstr', type=DefaultProcessingOrStandingInstruction2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnAvlbtySts', type=OptionAvailabilityStatus3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption107, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OfferTp', type=OfferTypeFormat14Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctiesQty', type=SecuritiesOption81, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnBrkdwnTp', type=BeneficiaryCertificationType13Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RateAndAmtDtls', type=CorporateActionRate126, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrratnBlwMinQty', type=ProrationBelowMinimumQuantity2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption113, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertfctnBrkdwnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WdrwlAllwdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsApldInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChngAllwdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnFeatrs', type=OptionFeaturesFormat28Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OfferTp', type=OfferTypeFormat14Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DfltPrcgOrStgInstr', type=DefaultProcessingOrStandingInstruction2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnBrkdwnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption107, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WdrwlAllwdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative59, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption113, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BidRgTp', type=BidRangeType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApldOptnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrdDtls', type=CorporateActionPeriod12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption37Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnBrkdwnTp', type=BeneficiaryCertificationType13Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctiesQty', type=SecuritiesOption81, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrratnBlwMinQty', type=ProrationBelowMinimumQuantity2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnAvlbtySts', type=OptionAvailabilityStatus3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

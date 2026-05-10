@@ -1,23 +1,23 @@
 from . import base_types
-from .Max2NumericText import Max2NumericText
-from .SettlementTotalData1 import SettlementTotalData1
 from .LEIIdentifier import LEIIdentifier
+from .SettlementTotalData1 import SettlementTotalData1
+from .Max2NumericText import Max2NumericText
 
 class SettlementFailsParticipant1(base_types._BaseFieldType):
 
-	__slots__ = ["_Aggt", "_Rank", "_LEI"]
+	__slots__ = ["_LEI", "_Rank", "_Aggt"]
 	@property
-	def Aggt(self):
-		return self._Aggt
+	def LEI(self):
+		return self._LEI
 
-	@Aggt.setter
-	def Aggt(self, value):
-		self._Aggt = value if type(value) != auto else self.make_default("Aggt")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
-	@Aggt.deleter
-	def Aggt(self):
-		del self._Aggt
-		self._Aggt = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def Rank(self):
@@ -25,7 +25,7 @@ class SettlementFailsParticipant1(base_types._BaseFieldType):
 
 	@Rank.setter
 	def Rank(self, value):
-		self._Rank = value if type(value) != auto else self.make_default("Rank")
+		self._Rank = value if type(value) != base_types.auto else self.make_default("Rank")
 
 	@Rank.deleter
 	def Rank(self):
@@ -33,21 +33,21 @@ class SettlementFailsParticipant1(base_types._BaseFieldType):
 		self._Rank = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def Aggt(self):
+		return self._Aggt
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+	@Aggt.setter
+	def Aggt(self, value):
+		self._Aggt = value if type(value) != base_types.auto else self.make_default("Aggt")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@Aggt.deleter
+	def Aggt(self):
+		del self._Aggt
+		self._Aggt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Aggt', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rank', type=Max2NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rank', type=Max2NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Aggt', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

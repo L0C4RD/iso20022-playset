@@ -1,18 +1,18 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from .ReceiveDelivery1Code import ReceiveDelivery1Code
+from .Max35Text import Max35Text
 
 class SettlementTypeAndAdditionalParameters12(base_types._BaseFieldType):
 
-	__slots__ = ["_CmonId", "_SctiesMvmntTp", "_Pmt"]
+	__slots__ = ["_CmonId", "_Pmt", "_SctiesMvmntTp"]
 	@property
 	def CmonId(self):
 		return self._CmonId
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
 
 	@CmonId.deleter
 	def CmonId(self):
@@ -20,34 +20,34 @@ class SettlementTypeAndAdditionalParameters12(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
-
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
-
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
-
-	@property
 	def Pmt(self):
 		return self._Pmt
 
 	@Pmt.setter
 	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
 
 	@Pmt.deleter
 	def Pmt(self):
 		del self._Pmt
 		self._Pmt = None
 
+	@property
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
+
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
+
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

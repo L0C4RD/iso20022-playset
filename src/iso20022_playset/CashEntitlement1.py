@@ -10,7 +10,7 @@ class CashEntitlement1(base_types._BaseFieldType):
 
 	@CshAmt.setter
 	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
+		self._CshAmt = value if type(value) != base_types.auto else self.make_default("CshAmt")
 
 	@CshAmt.deleter
 	def CshAmt(self):

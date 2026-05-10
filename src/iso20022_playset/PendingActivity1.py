@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .Action1Code import Action1Code
+from .Max140Text import Max140Text
 
 class PendingActivity1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PendingActivity1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class PendingActivity1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):

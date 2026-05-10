@@ -1,6 +1,6 @@
 from . import base_types
-from .InterestComputationMethod4Code import InterestComputationMethod4Code
 from .Max1000Text import Max1000Text
+from .InterestComputationMethod4Code import InterestComputationMethod4Code
 
 class InterestComputationMethodFormat7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class InterestComputationMethodFormat7(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class InterestComputationMethodFormat7(base_types._BaseFieldType):
 
 	@Nrrtv.setter
 	def Nrrtv(self, value):
-		self._Nrrtv = value if type(value) != auto else self.make_default("Nrrtv")
+		self._Nrrtv = value if type(value) != base_types.auto else self.make_default("Nrrtv")
 
 	@Nrrtv.deleter
 	def Nrrtv(self):

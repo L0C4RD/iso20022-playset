@@ -1,19 +1,19 @@
 from . import base_types
 from .Max3Number import Max3Number
 from .Frequency19Code import Frequency19Code
-from .UnitOfMeasure8Choice import UnitOfMeasure8Choice
 from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from .UnitOfMeasure8Choice import UnitOfMeasure8Choice
 
 class QuantityTerm1(base_types._BaseFieldType):
 
-	__slots__ = ["_TmUnit", "_UnitOfMeasr", "_Val", "_Qty"]
+	__slots__ = ["_TmUnit", "_Val", "_UnitOfMeasr", "_Qty"]
 	@property
 	def TmUnit(self):
 		return self._TmUnit
 
 	@TmUnit.setter
 	def TmUnit(self, value):
-		self._TmUnit = value if type(value) != auto else self.make_default("TmUnit")
+		self._TmUnit = value if type(value) != base_types.auto else self.make_default("TmUnit")
 
 	@TmUnit.deleter
 	def TmUnit(self):
@@ -21,25 +21,12 @@ class QuantityTerm1(base_types._BaseFieldType):
 		self._TmUnit = None
 
 	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
-
-	@property
 	def Val(self):
 		return self._Val
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):
@@ -47,12 +34,25 @@ class QuantityTerm1(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
+
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
+
+	@property
 	def Qty(self):
 		return self._Qty
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -61,8 +61,8 @@ class QuantityTerm1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TmUnit', type=Frequency19Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -10,7 +10,7 @@ class ReconciliationCategory4(base_types._BaseFieldType):
 
 	@FrthrMod.setter
 	def FrthrMod(self, value):
-		self._FrthrMod = value if type(value) != auto else self.make_default("FrthrMod")
+		self._FrthrMod = value if type(value) != base_types.auto else self.make_default("FrthrMod")
 
 	@FrthrMod.deleter
 	def FrthrMod(self):
@@ -23,7 +23,7 @@ class ReconciliationCategory4(base_types._BaseFieldType):
 
 	@Rvvd.setter
 	def Rvvd(self, value):
-		self._Rvvd = value if type(value) != auto else self.make_default("Rvvd")
+		self._Rvvd = value if type(value) != base_types.auto else self.make_default("Rvvd")
 
 	@Rvvd.deleter
 	def Rvvd(self):

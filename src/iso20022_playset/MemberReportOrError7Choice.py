@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling3 import ErrorHandling3
 from .MemberReport6 import MemberReport6
+from .ErrorHandling3 import ErrorHandling3
 
 class MemberReportOrError7Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MemberReportOrError7Choice(base_types._BaseFieldType):
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
+		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
 
 	@Rpt.deleter
 	def Rpt(self):
@@ -24,7 +24,7 @@ class MemberReportOrError7Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != auto else self.make_default("OprlErr")
+		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
 
 	@OprlErr.deleter
 	def OprlErr(self):

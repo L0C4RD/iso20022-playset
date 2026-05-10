@@ -11,7 +11,7 @@ class Party50Choice(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != auto else self.make_default("Agt")
+		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
 
 	@Agt.deleter
 	def Agt(self):
@@ -24,7 +24,7 @@ class Party50Choice(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
 	@Pty.deleter
 	def Pty(self):

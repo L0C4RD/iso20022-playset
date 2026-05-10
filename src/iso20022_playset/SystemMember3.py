@@ -11,7 +11,7 @@ class SystemMember3(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != auto else self.make_default("SysId")
+		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
 
 	@SysId.deleter
 	def SysId(self):
@@ -24,7 +24,7 @@ class SystemMember3(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != auto else self.make_default("MmbId")
+		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
 
 	@MmbId.deleter
 	def MmbId(self):

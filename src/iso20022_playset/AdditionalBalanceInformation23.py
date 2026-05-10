@@ -1,7 +1,7 @@
 from . import base_types
+from .SubBalanceQuantity9Choice import SubBalanceQuantity9Choice
 from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from .SubBalanceType14Choice import SubBalanceType14Choice
-from .SubBalanceQuantity9Choice import SubBalanceQuantity9Choice
 
 class AdditionalBalanceInformation23(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class AdditionalBalanceInformation23(base_types._BaseFieldType):
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
 
 	@SubBalTp.deleter
 	def SubBalTp(self):
@@ -25,7 +25,7 @@ class AdditionalBalanceInformation23(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -38,7 +38,7 @@ class AdditionalBalanceInformation23(base_types._BaseFieldType):
 
 	@SubBalAddtlDtls.setter
 	def SubBalAddtlDtls(self, value):
-		self._SubBalAddtlDtls = value if type(value) != auto else self.make_default("SubBalAddtlDtls")
+		self._SubBalAddtlDtls = value if type(value) != base_types.auto else self.make_default("SubBalAddtlDtls")
 
 	@SubBalAddtlDtls.deleter
 	def SubBalAddtlDtls(self):

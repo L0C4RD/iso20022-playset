@@ -1,7 +1,7 @@
 from . import base_types
+from .PriceFormat80Choice import PriceFormat80Choice
 from .PriceFormat81Choice import PriceFormat81Choice
 from .PriceFormat79Choice import PriceFormat79Choice
-from .PriceFormat80Choice import PriceFormat80Choice
 
 class PriceDetails40(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PriceDetails40(base_types._BaseFieldType):
 
 	@CshInLieuOfShrPric.setter
 	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != auto else self.make_default("CshInLieuOfShrPric")
+		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
 
 	@CshInLieuOfShrPric.deleter
 	def CshInLieuOfShrPric(self):
@@ -25,7 +25,7 @@ class PriceDetails40(base_types._BaseFieldType):
 
 	@GncCshPricRcvdPerPdct.setter
 	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
+		self._GncCshPricRcvdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricRcvdPerPdct")
 
 	@GncCshPricRcvdPerPdct.deleter
 	def GncCshPricRcvdPerPdct(self):
@@ -38,7 +38,7 @@ class PriceDetails40(base_types._BaseFieldType):
 
 	@GncCshPricPdPerPdct.setter
 	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
+		self._GncCshPricPdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricPdPerPdct")
 
 	@GncCshPricPdPerPdct.deleter
 	def GncCshPricPdPerPdct(self):

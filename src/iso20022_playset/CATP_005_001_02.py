@@ -12,7 +12,7 @@ class CATP_005_001_02():
 
 		@ATMRjct.setter
 		def ATMRjct(self, value):
-			self._ATMRjct = value if type(value) != auto else self.make_default("ATMRjct")
+			self._ATMRjct = value if type(value) != base_types.auto else self.make_default("ATMRjct")
 
 		@ATMRjct.deleter
 		def ATMRjct(self):

@@ -11,7 +11,7 @@ class ValuationMatchingCriteria1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -24,7 +24,7 @@ class ValuationMatchingCriteria1(base_types._BaseFieldType):
 
 	@CtrctVal.setter
 	def CtrctVal(self, value):
-		self._CtrctVal = value if type(value) != auto else self.make_default("CtrctVal")
+		self._CtrctVal = value if type(value) != base_types.auto else self.make_default("CtrctVal")
 
 	@CtrctVal.deleter
 	def CtrctVal(self):

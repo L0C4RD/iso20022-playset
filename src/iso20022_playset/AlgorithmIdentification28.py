@@ -1,6 +1,6 @@
 from . import base_types
-from .Algorithm13Code import Algorithm13Code
 from .Parameter14 import Parameter14
+from .Algorithm13Code import Algorithm13Code
 
 class AlgorithmIdentification28(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AlgorithmIdentification28(base_types._BaseFieldType):
 
 	@Param.setter
 	def Param(self, value):
-		self._Param = value if type(value) != auto else self.make_default("Param")
+		self._Param = value if type(value) != base_types.auto else self.make_default("Param")
 
 	@Param.deleter
 	def Param(self):
@@ -24,7 +24,7 @@ class AlgorithmIdentification28(base_types._BaseFieldType):
 
 	@Algo.setter
 	def Algo(self, value):
-		self._Algo = value if type(value) != auto else self.make_default("Algo")
+		self._Algo = value if type(value) != base_types.auto else self.make_default("Algo")
 
 	@Algo.deleter
 	def Algo(self):

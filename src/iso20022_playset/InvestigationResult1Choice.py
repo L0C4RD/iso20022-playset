@@ -11,7 +11,7 @@ class InvestigationResult1Choice(base_types._BaseFieldType):
 
 	@InvstgtnSts.setter
 	def InvstgtnSts(self, value):
-		self._InvstgtnSts = value if type(value) != auto else self.make_default("InvstgtnSts")
+		self._InvstgtnSts = value if type(value) != base_types.auto else self.make_default("InvstgtnSts")
 
 	@InvstgtnSts.deleter
 	def InvstgtnSts(self):
@@ -24,7 +24,7 @@ class InvestigationResult1Choice(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
 
 	@Rslt.deleter
 	def Rslt(self):

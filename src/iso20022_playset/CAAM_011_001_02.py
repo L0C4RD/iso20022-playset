@@ -12,7 +12,7 @@ class CAAM_011_001_02():
 
 		@ATMXcptnAdvc.setter
 		def ATMXcptnAdvc(self, value):
-			self._ATMXcptnAdvc = value if type(value) != auto else self.make_default("ATMXcptnAdvc")
+			self._ATMXcptnAdvc = value if type(value) != base_types.auto else self.make_default("ATMXcptnAdvc")
 
 		@ATMXcptnAdvc.deleter
 		def ATMXcptnAdvc(self):

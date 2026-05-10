@@ -1,6 +1,6 @@
 from . import base_types
-from .TradeTransactionIdentification15 import TradeTransactionIdentification15
 from .SupplementaryData1 import SupplementaryData1
+from .TradeTransactionIdentification15 import TradeTransactionIdentification15
 
 class SecuritiesFinancingReportingPairingRequestV02(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesFinancingReportingPairingRequestV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class SecuritiesFinancingReportingPairingRequestV02(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
 	@TxId.deleter
 	def TxId(self):

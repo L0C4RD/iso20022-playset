@@ -10,7 +10,7 @@ class ProfitAndLoss2Choice(base_types._BaseFieldType):
 
 	@Loss.setter
 	def Loss(self, value):
-		self._Loss = value if type(value) != auto else self.make_default("Loss")
+		self._Loss = value if type(value) != base_types.auto else self.make_default("Loss")
 
 	@Loss.deleter
 	def Loss(self):
@@ -23,7 +23,7 @@ class ProfitAndLoss2Choice(base_types._BaseFieldType):
 
 	@Prft.setter
 	def Prft(self, value):
-		self._Prft = value if type(value) != auto else self.make_default("Prft")
+		self._Prft = value if type(value) != base_types.auto else self.make_default("Prft")
 
 	@Prft.deleter
 	def Prft(self):

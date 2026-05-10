@@ -12,7 +12,7 @@ class SESE_030_002_09():
 
 		@SctiesSttlmCondsModReq.setter
 		def SctiesSttlmCondsModReq(self, value):
-			self._SctiesSttlmCondsModReq = value if type(value) != auto else self.make_default("SctiesSttlmCondsModReq")
+			self._SctiesSttlmCondsModReq = value if type(value) != base_types.auto else self.make_default("SctiesSttlmCondsModReq")
 
 		@SctiesSttlmCondsModReq.deleter
 		def SctiesSttlmCondsModReq(self):

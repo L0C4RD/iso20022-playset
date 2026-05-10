@@ -5,14 +5,14 @@ from .PhoneNumber import PhoneNumber
 
 class ContactInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_EmailAdr", "_TelNb", "_FaxNb"]
+	__slots__ = ["_Nm", "_FaxNb", "_TelNb", "_EmailAdr"]
 	@property
 	def Nm(self):
 		return self._Nm
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -20,17 +20,17 @@ class ContactInformation1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def FaxNb(self):
+		return self._FaxNb
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+	@FaxNb.setter
+	def FaxNb(self, value):
+		self._FaxNb = value if type(value) != base_types.auto else self.make_default("FaxNb")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@FaxNb.deleter
+	def FaxNb(self):
+		del self._FaxNb
+		self._FaxNb = None
 
 	@property
 	def TelNb(self):
@@ -38,7 +38,7 @@ class ContactInformation1(base_types._BaseFieldType):
 
 	@TelNb.setter
 	def TelNb(self, value):
-		self._TelNb = value if type(value) != auto else self.make_default("TelNb")
+		self._TelNb = value if type(value) != base_types.auto else self.make_default("TelNb")
 
 	@TelNb.deleter
 	def TelNb(self):
@@ -46,22 +46,22 @@ class ContactInformation1(base_types._BaseFieldType):
 		self._TelNb = None
 
 	@property
-	def FaxNb(self):
-		return self._FaxNb
+	def EmailAdr(self):
+		return self._EmailAdr
 
-	@FaxNb.setter
-	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
 
-	@FaxNb.deleter
-	def FaxNb(self):
-		del self._FaxNb
-		self._FaxNb = None
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TelNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TelNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

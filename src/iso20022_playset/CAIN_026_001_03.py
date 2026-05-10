@@ -12,7 +12,7 @@ class CAIN_026_001_03():
 
 		@AdddmRspn.setter
 		def AdddmRspn(self, value):
-			self._AdddmRspn = value if type(value) != auto else self.make_default("AdddmRspn")
+			self._AdddmRspn = value if type(value) != base_types.auto else self.make_default("AdddmRspn")
 
 		@AdddmRspn.deleter
 		def AdddmRspn(self):

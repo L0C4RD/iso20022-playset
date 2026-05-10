@@ -1,6 +1,6 @@
 from . import base_types
-from .CollaterisedData12 import CollaterisedData12
 from .NoReasonCode import NoReasonCode
+from .CollaterisedData12 import CollaterisedData12
 
 class CollateralFlag13Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CollateralFlag13Choice(base_types._BaseFieldType):
 
 	@Uncollsd.setter
 	def Uncollsd(self, value):
-		self._Uncollsd = value if type(value) != auto else self.make_default("Uncollsd")
+		self._Uncollsd = value if type(value) != base_types.auto else self.make_default("Uncollsd")
 
 	@Uncollsd.deleter
 	def Uncollsd(self):
@@ -24,7 +24,7 @@ class CollateralFlag13Choice(base_types._BaseFieldType):
 
 	@Collsd.setter
 	def Collsd(self, value):
-		self._Collsd = value if type(value) != auto else self.make_default("Collsd")
+		self._Collsd = value if type(value) != base_types.auto else self.make_default("Collsd")
 
 	@Collsd.deleter
 	def Collsd(self):

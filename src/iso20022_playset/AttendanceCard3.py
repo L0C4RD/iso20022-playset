@@ -1,7 +1,7 @@
 from . import base_types
-from .NameAndAddress9 import NameAndAddress9
 from .DeliveryPlace3Code import DeliveryPlace3Code
 from .Max105Text import Max105Text
+from .NameAndAddress9 import NameAndAddress9
 
 class AttendanceCard3(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class AttendanceCard3(base_types._BaseFieldType):
 
 	@DlvryMtd.setter
 	def DlvryMtd(self, value):
-		self._DlvryMtd = value if type(value) != auto else self.make_default("DlvryMtd")
+		self._DlvryMtd = value if type(value) != base_types.auto else self.make_default("DlvryMtd")
 
 	@DlvryMtd.deleter
 	def DlvryMtd(self):
@@ -25,7 +25,7 @@ class AttendanceCard3(base_types._BaseFieldType):
 
 	@OthrAdr.setter
 	def OthrAdr(self, value):
-		self._OthrAdr = value if type(value) != auto else self.make_default("OthrAdr")
+		self._OthrAdr = value if type(value) != base_types.auto else self.make_default("OthrAdr")
 
 	@OthrAdr.deleter
 	def OthrAdr(self):
@@ -38,7 +38,7 @@ class AttendanceCard3(base_types._BaseFieldType):
 
 	@AttndncCardLbllg.setter
 	def AttndncCardLbllg(self, value):
-		self._AttndncCardLbllg = value if type(value) != auto else self.make_default("AttndncCardLbllg")
+		self._AttndncCardLbllg = value if type(value) != base_types.auto else self.make_default("AttndncCardLbllg")
 
 	@AttndncCardLbllg.deleter
 	def AttndncCardLbllg(self):

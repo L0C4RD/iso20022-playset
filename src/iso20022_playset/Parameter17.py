@@ -12,7 +12,7 @@ class Parameter17(base_types._BaseFieldType):
 
 	@MskGnrtrAlgo.setter
 	def MskGnrtrAlgo(self, value):
-		self._MskGnrtrAlgo = value if type(value) != auto else self.make_default("MskGnrtrAlgo")
+		self._MskGnrtrAlgo = value if type(value) != base_types.auto else self.make_default("MskGnrtrAlgo")
 
 	@MskGnrtrAlgo.deleter
 	def MskGnrtrAlgo(self):
@@ -25,7 +25,7 @@ class Parameter17(base_types._BaseFieldType):
 
 	@NcrptnFrmt.setter
 	def NcrptnFrmt(self, value):
-		self._NcrptnFrmt = value if type(value) != auto else self.make_default("NcrptnFrmt")
+		self._NcrptnFrmt = value if type(value) != base_types.auto else self.make_default("NcrptnFrmt")
 
 	@NcrptnFrmt.deleter
 	def NcrptnFrmt(self):
@@ -38,7 +38,7 @@ class Parameter17(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):

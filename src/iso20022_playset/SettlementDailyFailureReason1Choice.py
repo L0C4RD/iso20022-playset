@@ -11,7 +11,7 @@ class SettlementDailyFailureReason1Choice(base_types._BaseFieldType):
 
 	@DataSetActn.setter
 	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
+		self._DataSetActn = value if type(value) != base_types.auto else self.make_default("DataSetActn")
 
 	@DataSetActn.deleter
 	def DataSetActn(self):
@@ -24,7 +24,7 @@ class SettlementDailyFailureReason1Choice(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
+		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
 
 	@Data.deleter
 	def Data(self):

@@ -12,7 +12,7 @@ class SETR_016_001_04():
 
 		@OrdrInstrStsRpt.setter
 		def OrdrInstrStsRpt(self, value):
-			self._OrdrInstrStsRpt = value if type(value) != auto else self.make_default("OrdrInstrStsRpt")
+			self._OrdrInstrStsRpt = value if type(value) != base_types.auto else self.make_default("OrdrInstrStsRpt")
 
 		@OrdrInstrStsRpt.deleter
 		def OrdrInstrStsRpt(self):

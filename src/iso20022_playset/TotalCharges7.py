@@ -1,45 +1,19 @@
 from . import base_types
-from .Max15NumericText import Max15NumericText
-from .DecimalNumber import DecimalNumber
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
 from .CreditDebitCode import CreditDebitCode
+from .Max15NumericText import Max15NumericText
 
 class TotalCharges7(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_NbOfChrgsRcrds", "_TtlChrgsAmt", "_CtrlSum"]
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def NbOfChrgsRcrds(self):
-		return self._NbOfChrgsRcrds
-
-	@NbOfChrgsRcrds.setter
-	def NbOfChrgsRcrds(self, value):
-		self._NbOfChrgsRcrds = value if type(value) != auto else self.make_default("NbOfChrgsRcrds")
-
-	@NbOfChrgsRcrds.deleter
-	def NbOfChrgsRcrds(self):
-		del self._NbOfChrgsRcrds
-		self._NbOfChrgsRcrds = None
-
+	__slots__ = ["_TtlChrgsAmt", "_CdtDbtInd", "_CtrlSum", "_NbOfChrgsRcrds"]
 	@property
 	def TtlChrgsAmt(self):
 		return self._TtlChrgsAmt
 
 	@TtlChrgsAmt.setter
 	def TtlChrgsAmt(self, value):
-		self._TtlChrgsAmt = value if type(value) != auto else self.make_default("TtlChrgsAmt")
+		self._TtlChrgsAmt = value if type(value) != base_types.auto else self.make_default("TtlChrgsAmt")
 
 	@TtlChrgsAmt.deleter
 	def TtlChrgsAmt(self):
@@ -47,22 +21,48 @@ class TotalCharges7(base_types._BaseFieldType):
 		self._TtlChrgsAmt = None
 
 	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
 	def CtrlSum(self):
 		return self._CtrlSum
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
 		self._CtrlSum = None
 
+	@property
+	def NbOfChrgsRcrds(self):
+		return self._NbOfChrgsRcrds
+
+	@NbOfChrgsRcrds.setter
+	def NbOfChrgsRcrds(self, value):
+		self._NbOfChrgsRcrds = value if type(value) != base_types.auto else self.make_default("NbOfChrgsRcrds")
+
+	@NbOfChrgsRcrds.deleter
+	def NbOfChrgsRcrds(self):
+		del self._NbOfChrgsRcrds
+		self._NbOfChrgsRcrds = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfChrgsRcrds', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfChrgsRcrds', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

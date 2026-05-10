@@ -12,7 +12,7 @@ class COLR_012_001_05():
 
 		@CollSbstitnConf.setter
 		def CollSbstitnConf(self, value):
-			self._CollSbstitnConf = value if type(value) != auto else self.make_default("CollSbstitnConf")
+			self._CollSbstitnConf = value if type(value) != base_types.auto else self.make_default("CollSbstitnConf")
 
 		@CollSbstitnConf.deleter
 		def CollSbstitnConf(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .GeneralInvestment2 import GeneralInvestment2
-from .TaxEfficientProduct6 import TaxEfficientProduct6
 from .Pension6 import Pension6
+from .TaxEfficientProduct6 import TaxEfficientProduct6
 
 class FundPortfolio8Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class FundPortfolio8Choice(base_types._BaseFieldType):
 
 	@GnlInvstmt.setter
 	def GnlInvstmt(self, value):
-		self._GnlInvstmt = value if type(value) != auto else self.make_default("GnlInvstmt")
+		self._GnlInvstmt = value if type(value) != base_types.auto else self.make_default("GnlInvstmt")
 
 	@GnlInvstmt.deleter
 	def GnlInvstmt(self):
@@ -25,7 +25,7 @@ class FundPortfolio8Choice(base_types._BaseFieldType):
 
 	@Pnsn.setter
 	def Pnsn(self, value):
-		self._Pnsn = value if type(value) != auto else self.make_default("Pnsn")
+		self._Pnsn = value if type(value) != base_types.auto else self.make_default("Pnsn")
 
 	@Pnsn.deleter
 	def Pnsn(self):
@@ -38,7 +38,7 @@ class FundPortfolio8Choice(base_types._BaseFieldType):
 
 	@TaxEffcntPdct.setter
 	def TaxEffcntPdct(self, value):
-		self._TaxEffcntPdct = value if type(value) != auto else self.make_default("TaxEffcntPdct")
+		self._TaxEffcntPdct = value if type(value) != base_types.auto else self.make_default("TaxEffcntPdct")
 
 	@TaxEffcntPdct.deleter
 	def TaxEffcntPdct(self):

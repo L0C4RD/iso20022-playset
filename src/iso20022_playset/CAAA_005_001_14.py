@@ -12,7 +12,7 @@ class CAAA_005_001_14():
 
 		@AccptrCxlReq.setter
 		def AccptrCxlReq(self, value):
-			self._AccptrCxlReq = value if type(value) != auto else self.make_default("AccptrCxlReq")
+			self._AccptrCxlReq = value if type(value) != base_types.auto else self.make_default("AccptrCxlReq")
 
 		@AccptrCxlReq.deleter
 		def AccptrCxlReq(self):

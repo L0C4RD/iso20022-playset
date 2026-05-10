@@ -1,18 +1,18 @@
 from . import base_types
+from .EncryptedData2Choice import EncryptedData2Choice
 from .EncryptedDataFormat1Code import EncryptedDataFormat1Code
 from .Max35Text import Max35Text
-from .EncryptedData2Choice import EncryptedData2Choice
 
 class EncryptedDataElement2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Data", "_ClearTxtFrmt", "_OthrClearTxtFrmt"]
+	__slots__ = ["_Id", "_ClearTxtFrmt", "_Data", "_OthrClearTxtFrmt"]
 	@property
 	def Id(self):
 		return self._Id
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -20,25 +20,12 @@ class EncryptedDataElement2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Data(self):
-		return self._Data
-
-	@Data.setter
-	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
-
-	@Data.deleter
-	def Data(self):
-		del self._Data
-		self._Data = None
-
-	@property
 	def ClearTxtFrmt(self):
 		return self._ClearTxtFrmt
 
 	@ClearTxtFrmt.setter
 	def ClearTxtFrmt(self, value):
-		self._ClearTxtFrmt = value if type(value) != auto else self.make_default("ClearTxtFrmt")
+		self._ClearTxtFrmt = value if type(value) != base_types.auto else self.make_default("ClearTxtFrmt")
 
 	@ClearTxtFrmt.deleter
 	def ClearTxtFrmt(self):
@@ -46,12 +33,25 @@ class EncryptedDataElement2(base_types._BaseFieldType):
 		self._ClearTxtFrmt = None
 
 	@property
+	def Data(self):
+		return self._Data
+
+	@Data.setter
+	def Data(self, value):
+		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+
+	@Data.deleter
+	def Data(self):
+		del self._Data
+		self._Data = None
+
+	@property
 	def OthrClearTxtFrmt(self):
 		return self._OthrClearTxtFrmt
 
 	@OthrClearTxtFrmt.setter
 	def OthrClearTxtFrmt(self, value):
-		self._OthrClearTxtFrmt = value if type(value) != auto else self.make_default("OthrClearTxtFrmt")
+		self._OthrClearTxtFrmt = value if type(value) != base_types.auto else self.make_default("OthrClearTxtFrmt")
 
 	@OthrClearTxtFrmt.deleter
 	def OthrClearTxtFrmt(self):
@@ -60,8 +60,8 @@ class EncryptedDataElement2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Data', type=EncryptedData2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClearTxtFrmt', type=EncryptedDataFormat1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Data', type=EncryptedData2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrClearTxtFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

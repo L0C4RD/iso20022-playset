@@ -11,7 +11,7 @@ class RepurchaseAgreementType1Choice(base_types._BaseFieldType):
 
 	@GnlColl.setter
 	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
+		self._GnlColl = value if type(value) != base_types.auto else self.make_default("GnlColl")
 
 	@GnlColl.deleter
 	def GnlColl(self):
@@ -24,7 +24,7 @@ class RepurchaseAgreementType1Choice(base_types._BaseFieldType):
 
 	@SpcfcColl.setter
 	def SpcfcColl(self, value):
-		self._SpcfcColl = value if type(value) != auto else self.make_default("SpcfcColl")
+		self._SpcfcColl = value if type(value) != base_types.auto else self.make_default("SpcfcColl")
 
 	@SpcfcColl.deleter
 	def SpcfcColl(self):

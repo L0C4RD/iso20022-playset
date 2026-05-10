@@ -12,7 +12,7 @@ class COLR_015_001_05():
 
 		@IntrstPmtStmt.setter
 		def IntrstPmtStmt(self, value):
-			self._IntrstPmtStmt = value if type(value) != auto else self.make_default("IntrstPmtStmt")
+			self._IntrstPmtStmt = value if type(value) != base_types.auto else self.make_default("IntrstPmtStmt")
 
 		@IntrstPmtStmt.deleter
 		def IntrstPmtStmt(self):

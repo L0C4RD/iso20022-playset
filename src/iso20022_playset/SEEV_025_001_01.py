@@ -12,7 +12,7 @@ class SEEV_025_001_01():
 
 		@AgtCAStgInstrReq.setter
 		def AgtCAStgInstrReq(self, value):
-			self._AgtCAStgInstrReq = value if type(value) != auto else self.make_default("AgtCAStgInstrReq")
+			self._AgtCAStgInstrReq = value if type(value) != base_types.auto else self.make_default("AgtCAStgInstrReq")
 
 		@AgtCAStgInstrReq.deleter
 		def AgtCAStgInstrReq(self):

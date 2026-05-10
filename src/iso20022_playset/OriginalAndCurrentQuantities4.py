@@ -10,7 +10,7 @@ class OriginalAndCurrentQuantities4(base_types._BaseFieldType):
 
 	@AmtsdVal.setter
 	def AmtsdVal(self, value):
-		self._AmtsdVal = value if type(value) != auto else self.make_default("AmtsdVal")
+		self._AmtsdVal = value if type(value) != base_types.auto else self.make_default("AmtsdVal")
 
 	@AmtsdVal.deleter
 	def AmtsdVal(self):
@@ -23,7 +23,7 @@ class OriginalAndCurrentQuantities4(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
 
 	@FaceAmt.deleter
 	def FaceAmt(self):

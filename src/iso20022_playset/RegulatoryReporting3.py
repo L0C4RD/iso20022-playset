@@ -1,7 +1,7 @@
 from . import base_types
-from .RegulatoryAuthority2 import RegulatoryAuthority2
 from .RegulatoryReportingType1Code import RegulatoryReportingType1Code
 from .StructuredRegulatoryReporting3 import StructuredRegulatoryReporting3
+from .RegulatoryAuthority2 import RegulatoryAuthority2
 
 class RegulatoryReporting3(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 
 	@DbtCdtRptgInd.setter
 	def DbtCdtRptgInd(self, value):
-		self._DbtCdtRptgInd = value if type(value) != auto else self.make_default("DbtCdtRptgInd")
+		self._DbtCdtRptgInd = value if type(value) != base_types.auto else self.make_default("DbtCdtRptgInd")
 
 	@DbtCdtRptgInd.deleter
 	def DbtCdtRptgInd(self):
@@ -25,7 +25,7 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != auto else self.make_default("Dtls")
+		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
 
 	@Dtls.deleter
 	def Dtls(self):
@@ -38,7 +38,7 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 
 	@Authrty.setter
 	def Authrty(self, value):
-		self._Authrty = value if type(value) != auto else self.make_default("Authrty")
+		self._Authrty = value if type(value) != base_types.auto else self.make_default("Authrty")
 
 	@Authrty.deleter
 	def Authrty(self):

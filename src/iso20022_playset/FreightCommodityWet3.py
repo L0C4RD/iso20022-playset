@@ -1,7 +1,7 @@
 from . import base_types
 from .AssetClassProductType4Code import AssetClassProductType4Code
-from .AssetClassDetailedSubProductType34Code import AssetClassDetailedSubProductType34Code
 from .AssetClassSubProductType32Code import AssetClassSubProductType32Code
+from .AssetClassDetailedSubProductType34Code import AssetClassDetailedSubProductType34Code
 
 class FreightCommodityWet3(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class FreightCommodityWet3(base_types._BaseFieldType):
 
 	@SubPdct.setter
 	def SubPdct(self, value):
-		self._SubPdct = value if type(value) != auto else self.make_default("SubPdct")
+		self._SubPdct = value if type(value) != base_types.auto else self.make_default("SubPdct")
 
 	@SubPdct.deleter
 	def SubPdct(self):
@@ -25,7 +25,7 @@ class FreightCommodityWet3(base_types._BaseFieldType):
 
 	@AddtlSubPdct.setter
 	def AddtlSubPdct(self, value):
-		self._AddtlSubPdct = value if type(value) != auto else self.make_default("AddtlSubPdct")
+		self._AddtlSubPdct = value if type(value) != base_types.auto else self.make_default("AddtlSubPdct")
 
 	@AddtlSubPdct.deleter
 	def AddtlSubPdct(self):
@@ -38,7 +38,7 @@ class FreightCommodityWet3(base_types._BaseFieldType):
 
 	@BasePdct.setter
 	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
+		self._BasePdct = value if type(value) != base_types.auto else self.make_default("BasePdct")
 
 	@BasePdct.deleter
 	def BasePdct(self):

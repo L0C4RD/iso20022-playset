@@ -11,7 +11,7 @@ class DocumentIdentification5(base_types._BaseFieldType):
 
 	@IdIssr.setter
 	def IdIssr(self, value):
-		self._IdIssr = value if type(value) != auto else self.make_default("IdIssr")
+		self._IdIssr = value if type(value) != base_types.auto else self.make_default("IdIssr")
 
 	@IdIssr.deleter
 	def IdIssr(self):
@@ -24,7 +24,7 @@ class DocumentIdentification5(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

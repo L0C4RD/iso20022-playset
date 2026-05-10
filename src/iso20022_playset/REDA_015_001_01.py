@@ -12,7 +12,7 @@ class REDA_015_001_01():
 
 		@PtyQry.setter
 		def PtyQry(self, value):
-			self._PtyQry = value if type(value) != auto else self.make_default("PtyQry")
+			self._PtyQry = value if type(value) != base_types.auto else self.make_default("PtyQry")
 
 		@PtyQry.deleter
 		def PtyQry(self):

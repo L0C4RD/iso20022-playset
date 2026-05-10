@@ -12,7 +12,7 @@ class TSMT_026_001_02():
 
 		@StsChngReq.setter
 		def StsChngReq(self, value):
-			self._StsChngReq = value if type(value) != auto else self.make_default("StsChngReq")
+			self._StsChngReq = value if type(value) != base_types.auto else self.make_default("StsChngReq")
 
 		@StsChngReq.deleter
 		def StsChngReq(self):

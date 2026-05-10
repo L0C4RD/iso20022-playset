@@ -1,6 +1,6 @@
 from . import base_types
-from .PersonIdentification13 import PersonIdentification13
 from .FinancialInstitutionIdentification21 import FinancialInstitutionIdentification21
+from .PersonIdentification13 import PersonIdentification13
 from .OrganisationIdentification29 import OrganisationIdentification29
 
 class TrackerParty2Choice(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 
 	@FinInstnId.setter
 	def FinInstnId(self, value):
-		self._FinInstnId = value if type(value) != auto else self.make_default("FinInstnId")
+		self._FinInstnId = value if type(value) != base_types.auto else self.make_default("FinInstnId")
 
 	@FinInstnId.deleter
 	def FinInstnId(self):
@@ -25,7 +25,7 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != auto else self.make_default("OrgId")
+		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
 
 	@OrgId.deleter
 	def OrgId(self):
@@ -38,7 +38,7 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 
 	@PrvtId.setter
 	def PrvtId(self, value):
-		self._PrvtId = value if type(value) != auto else self.make_default("PrvtId")
+		self._PrvtId = value if type(value) != base_types.auto else self.make_default("PrvtId")
 
 	@PrvtId.deleter
 	def PrvtId(self):

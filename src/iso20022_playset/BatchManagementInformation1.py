@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max15NumericText import Max15NumericText
 from .Max140Binary import Max140Binary
+from .Max15NumericText import Max15NumericText
+from .Max35Text import Max35Text
 
 class BatchManagementInformation1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@BtchId.setter
 	def BtchId(self, value):
-		self._BtchId = value if type(value) != auto else self.make_default("BtchId")
+		self._BtchId = value if type(value) != base_types.auto else self.make_default("BtchId")
 
 	@BtchId.deleter
 	def BtchId(self):
@@ -25,7 +25,7 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@MsgChcksmInptVal.setter
 	def MsgChcksmInptVal(self, value):
-		self._MsgChcksmInptVal = value if type(value) != auto else self.make_default("MsgChcksmInptVal")
+		self._MsgChcksmInptVal = value if type(value) != base_types.auto else self.make_default("MsgChcksmInptVal")
 
 	@MsgChcksmInptVal.deleter
 	def MsgChcksmInptVal(self):
@@ -38,7 +38,7 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@MsgSeqNb.setter
 	def MsgSeqNb(self, value):
-		self._MsgSeqNb = value if type(value) != auto else self.make_default("MsgSeqNb")
+		self._MsgSeqNb = value if type(value) != base_types.auto else self.make_default("MsgSeqNb")
 
 	@MsgSeqNb.deleter
 	def MsgSeqNb(self):
@@ -51,7 +51,7 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@ColltnId.setter
 	def ColltnId(self, value):
-		self._ColltnId = value if type(value) != auto else self.make_default("ColltnId")
+		self._ColltnId = value if type(value) != base_types.auto else self.make_default("ColltnId")
 
 	@ColltnId.deleter
 	def ColltnId(self):

@@ -1,7 +1,7 @@
 from . import base_types
-from .Max15NumericText import Max15NumericText
-from .UnitOfMeasure3Choice import UnitOfMeasure3Choice
 from .DecimalNumber import DecimalNumber
+from .UnitOfMeasure3Choice import UnitOfMeasure3Choice
+from .Max15NumericText import Max15NumericText
 
 class Quantity9(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Quantity9(base_types._BaseFieldType):
 
 	@Fctr.setter
 	def Fctr(self, value):
-		self._Fctr = value if type(value) != auto else self.make_default("Fctr")
+		self._Fctr = value if type(value) != base_types.auto else self.make_default("Fctr")
 
 	@Fctr.deleter
 	def Fctr(self):
@@ -25,7 +25,7 @@ class Quantity9(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
@@ -38,7 +38,7 @@ class Quantity9(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):

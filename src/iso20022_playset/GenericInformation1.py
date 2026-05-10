@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .Max70Text import Max70Text
+from .Max140Text import Max140Text
 
 class GenericInformation1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class GenericInformation1(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -24,7 +24,7 @@ class GenericInformation1(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):

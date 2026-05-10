@@ -1,17 +1,30 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max70Text import Max70Text
+from .Max35Text import Max35Text
 
 class CardholderName3(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_LastNm", "_MddlNm", "_GvnNm"]
+	__slots__ = ["_MddlNm", "_Nm", "_LastNm", "_GvnNm"]
+	@property
+	def MddlNm(self):
+		return self._MddlNm
+
+	@MddlNm.setter
+	def MddlNm(self, value):
+		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+
+	@MddlNm.deleter
+	def MddlNm(self):
+		del self._MddlNm
+		self._MddlNm = None
+
 	@property
 	def Nm(self):
 		return self._Nm
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -24,7 +37,7 @@ class CardholderName3(base_types._BaseFieldType):
 
 	@LastNm.setter
 	def LastNm(self, value):
-		self._LastNm = value if type(value) != auto else self.make_default("LastNm")
+		self._LastNm = value if type(value) != base_types.auto else self.make_default("LastNm")
 
 	@LastNm.deleter
 	def LastNm(self):
@@ -32,25 +45,12 @@ class CardholderName3(base_types._BaseFieldType):
 		self._LastNm = None
 
 	@property
-	def MddlNm(self):
-		return self._MddlNm
-
-	@MddlNm.setter
-	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
-
-	@MddlNm.deleter
-	def MddlNm(self):
-		del self._MddlNm
-		self._MddlNm = None
-
-	@property
 	def GvnNm(self):
 		return self._GvnNm
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
+		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
 
 	@GvnNm.deleter
 	def GvnNm(self):
@@ -58,9 +58,9 @@ class CardholderName3(base_types._BaseFieldType):
 		self._GvnNm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

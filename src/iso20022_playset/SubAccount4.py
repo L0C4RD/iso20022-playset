@@ -1,22 +1,22 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .AccountIdentification26 import AccountIdentification26
+from .Max35Text import Max35Text
 
 class SubAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_Chrtc", "_Nm", "_Id"]
+	__slots__ = ["_Id", "_Nm", "_Chrtc"]
 	@property
-	def Chrtc(self):
-		return self._Chrtc
+	def Id(self):
+		return self._Id
 
-	@Chrtc.setter
-	def Chrtc(self, value):
-		self._Chrtc = value if type(value) != auto else self.make_default("Chrtc")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Chrtc.deleter
-	def Chrtc(self):
-		del self._Chrtc
-		self._Chrtc = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Nm(self):
@@ -24,7 +24,7 @@ class SubAccount4(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -32,21 +32,21 @@ class SubAccount4(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Chrtc(self):
+		return self._Chrtc
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Chrtc.setter
+	def Chrtc(self, value):
+		self._Chrtc = value if type(value) != base_types.auto else self.make_default("Chrtc")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Chrtc.deleter
+	def Chrtc(self):
+		del self._Chrtc
+		self._Chrtc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Chrtc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrtc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

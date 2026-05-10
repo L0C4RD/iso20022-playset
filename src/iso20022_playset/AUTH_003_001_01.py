@@ -12,7 +12,7 @@ class AUTH_003_001_01():
 
 		@InfReqStsChngNtfctn.setter
 		def InfReqStsChngNtfctn(self, value):
-			self._InfReqStsChngNtfctn = value if type(value) != auto else self.make_default("InfReqStsChngNtfctn")
+			self._InfReqStsChngNtfctn = value if type(value) != base_types.auto else self.make_default("InfReqStsChngNtfctn")
 
 		@InfReqStsChngNtfctn.deleter
 		def InfReqStsChngNtfctn(self):

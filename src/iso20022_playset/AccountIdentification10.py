@@ -10,7 +10,7 @@ class AccountIdentification10(base_types._BaseFieldType):
 
 	@IdCd.setter
 	def IdCd(self, value):
-		self._IdCd = value if type(value) != auto else self.make_default("IdCd")
+		self._IdCd = value if type(value) != base_types.auto else self.make_default("IdCd")
 
 	@IdCd.deleter
 	def IdCd(self):

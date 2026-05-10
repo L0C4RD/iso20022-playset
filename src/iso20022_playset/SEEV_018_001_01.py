@@ -12,7 +12,7 @@ class SEEV_018_001_01():
 
 		@AgtCAGblDstrbtnStsAdvc.setter
 		def AgtCAGblDstrbtnStsAdvc(self, value):
-			self._AgtCAGblDstrbtnStsAdvc = value if type(value) != auto else self.make_default("AgtCAGblDstrbtnStsAdvc")
+			self._AgtCAGblDstrbtnStsAdvc = value if type(value) != base_types.auto else self.make_default("AgtCAGblDstrbtnStsAdvc")
 
 		@AgtCAGblDstrbtnStsAdvc.deleter
 		def AgtCAGblDstrbtnStsAdvc(self):

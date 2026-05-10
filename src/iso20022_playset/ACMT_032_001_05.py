@@ -12,7 +12,7 @@ class ACMT_032_001_05():
 
 		@AcctSwtchBalTrfAck.setter
 		def AcctSwtchBalTrfAck(self, value):
-			self._AcctSwtchBalTrfAck = value if type(value) != auto else self.make_default("AcctSwtchBalTrfAck")
+			self._AcctSwtchBalTrfAck = value if type(value) != base_types.auto else self.make_default("AcctSwtchBalTrfAck")
 
 		@AcctSwtchBalTrfAck.deleter
 		def AcctSwtchBalTrfAck(self):

@@ -1,38 +1,25 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
+from .Max105Text import Max105Text
 from .LEIIdentifier import LEIIdentifier
 from .StatisticalReportingStatus2Code import StatisticalReportingStatus2Code
+from .SupplementaryData1 import SupplementaryData1
 from .GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from .Max105Text import Max105Text
 
 class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_PrtryTxId", "_VldtnRule", "_BrnchId", "_UnqTxIdr", "_Sts"]
+	__slots__ = ["_Sts", "_VldtnRule", "_SplmtryData", "_UnqTxIdr", "_BrnchId", "_PrtryTxId"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Sts(self):
+		return self._Sts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def PrtryTxId(self):
-		return self._PrtryTxId
-
-	@PrtryTxId.setter
-	def PrtryTxId(self, value):
-		self._PrtryTxId = value if type(value) != auto else self.make_default("PrtryTxId")
-
-	@PrtryTxId.deleter
-	def PrtryTxId(self):
-		del self._PrtryTxId
-		self._PrtryTxId = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def VldtnRule(self):
@@ -40,7 +27,7 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@VldtnRule.setter
 	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
+		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
 
 	@VldtnRule.deleter
 	def VldtnRule(self):
@@ -48,17 +35,17 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 		self._VldtnRule = None
 
 	@property
-	def BrnchId(self):
-		return self._BrnchId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@BrnchId.setter
-	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@BrnchId.deleter
-	def BrnchId(self):
-		del self._BrnchId
-		self._BrnchId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def UnqTxIdr(self):
@@ -66,7 +53,7 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
@@ -74,24 +61,37 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 		self._UnqTxIdr = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def BrnchId(self):
+		return self._BrnchId
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@BrnchId.setter
+	def BrnchId(self, value):
+		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@BrnchId.deleter
+	def BrnchId(self):
+		del self._BrnchId
+		self._BrnchId = None
+
+	@property
+	def PrtryTxId(self):
+		return self._PrtryTxId
+
+	@PrtryTxId.setter
+	def PrtryTxId(self, value):
+		self._PrtryTxId = value if type(value) != base_types.auto else self.make_default("PrtryTxId")
+
+	@PrtryTxId.deleter
+	def PrtryTxId(self):
+		del self._PrtryTxId
+		self._PrtryTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

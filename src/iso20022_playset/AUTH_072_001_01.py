@@ -12,7 +12,7 @@ class AUTH_072_001_01():
 
 		@SttlmIntlrRpt.setter
 		def SttlmIntlrRpt(self, value):
-			self._SttlmIntlrRpt = value if type(value) != auto else self.make_default("SttlmIntlrRpt")
+			self._SttlmIntlrRpt = value if type(value) != base_types.auto else self.make_default("SttlmIntlrRpt")
 
 		@SttlmIntlrRpt.deleter
 		def SttlmIntlrRpt(self):

@@ -1,38 +1,25 @@
 from . import base_types
-from .Max9NumericText import Max9NumericText
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
-from .Traceability8 import Traceability8
 from .PaymentContext30 import PaymentContext30
+from .Traceability8 import Traceability8
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .Max9NumericText import Max9NumericText
 from .CardPaymentTransaction143 import CardPaymentTransaction143
 
 class CardPaymentDataSetTransaction50(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSeqCntr", "_Tx", "_Tracblt", "_Envt", "_Cntxt"]
+	__slots__ = ["_Cntxt", "_Tracblt", "_TxSeqCntr", "_Envt", "_Tx"]
 	@property
-	def TxSeqCntr(self):
-		return self._TxSeqCntr
+	def Cntxt(self):
+		return self._Cntxt
 
-	@TxSeqCntr.setter
-	def TxSeqCntr(self, value):
-		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
-	@TxSeqCntr.deleter
-	def TxSeqCntr(self):
-		del self._TxSeqCntr
-		self._TxSeqCntr = None
-
-	@property
-	def Tx(self):
-		return self._Tx
-
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
-
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	@property
 	def Tracblt(self):
@@ -40,7 +27,7 @@ class CardPaymentDataSetTransaction50(base_types._BaseFieldType):
 
 	@Tracblt.setter
 	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
+		self._Tracblt = value if type(value) != base_types.auto else self.make_default("Tracblt")
 
 	@Tracblt.deleter
 	def Tracblt(self):
@@ -48,12 +35,25 @@ class CardPaymentDataSetTransaction50(base_types._BaseFieldType):
 		self._Tracblt = None
 
 	@property
+	def TxSeqCntr(self):
+		return self._TxSeqCntr
+
+	@TxSeqCntr.setter
+	def TxSeqCntr(self, value):
+		self._TxSeqCntr = value if type(value) != base_types.auto else self.make_default("TxSeqCntr")
+
+	@TxSeqCntr.deleter
+	def TxSeqCntr(self):
+		del self._TxSeqCntr
+		self._TxSeqCntr = None
+
+	@property
 	def Envt(self):
 		return self._Envt
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -61,23 +61,23 @@ class CardPaymentDataSetTransaction50(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def Tx(self):
+		return self._Tx
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction143, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction143, min=1, max=1, mutex_group=None, array=False),
 	))
 

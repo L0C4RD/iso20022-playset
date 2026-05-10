@@ -10,7 +10,7 @@ class Product4(base_types._BaseFieldType):
 
 	@PdctCd.setter
 	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != auto else self.make_default("PdctCd")
+		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
 
 	@PdctCd.deleter
 	def PdctCd(self):
@@ -23,7 +23,7 @@ class Product4(base_types._BaseFieldType):
 
 	@AddtlPdctCd.setter
 	def AddtlPdctCd(self, value):
-		self._AddtlPdctCd = value if type(value) != auto else self.make_default("AddtlPdctCd")
+		self._AddtlPdctCd = value if type(value) != base_types.auto else self.make_default("AddtlPdctCd")
 
 	@AddtlPdctCd.deleter
 	def AddtlPdctCd(self):

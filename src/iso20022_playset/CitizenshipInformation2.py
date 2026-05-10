@@ -11,7 +11,7 @@ class CitizenshipInformation2(base_types._BaseFieldType):
 
 	@MnrInd.setter
 	def MnrInd(self, value):
-		self._MnrInd = value if type(value) != auto else self.make_default("MnrInd")
+		self._MnrInd = value if type(value) != base_types.auto else self.make_default("MnrInd")
 
 	@MnrInd.deleter
 	def MnrInd(self):
@@ -24,7 +24,7 @@ class CitizenshipInformation2(base_types._BaseFieldType):
 
 	@Ntlty.setter
 	def Ntlty(self, value):
-		self._Ntlty = value if type(value) != auto else self.make_default("Ntlty")
+		self._Ntlty = value if type(value) != base_types.auto else self.make_default("Ntlty")
 
 	@Ntlty.deleter
 	def Ntlty(self):

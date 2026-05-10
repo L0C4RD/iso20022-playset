@@ -11,7 +11,7 @@ class RejectedStatus11(base_types._BaseFieldType):
 
 	@RjctdQty.setter
 	def RjctdQty(self, value):
-		self._RjctdQty = value if type(value) != auto else self.make_default("RjctdQty")
+		self._RjctdQty = value if type(value) != base_types.auto else self.make_default("RjctdQty")
 
 	@RjctdQty.deleter
 	def RjctdQty(self):
@@ -24,7 +24,7 @@ class RejectedStatus11(base_types._BaseFieldType):
 
 	@RjctdRsn.setter
 	def RjctdRsn(self, value):
-		self._RjctdRsn = value if type(value) != auto else self.make_default("RjctdRsn")
+		self._RjctdRsn = value if type(value) != base_types.auto else self.make_default("RjctdRsn")
 
 	@RjctdRsn.deleter
 	def RjctdRsn(self):

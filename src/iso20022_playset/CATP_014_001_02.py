@@ -12,7 +12,7 @@ class CATP_014_001_02():
 
 		@ATMDpstCmpltnAdvc.setter
 		def ATMDpstCmpltnAdvc(self, value):
-			self._ATMDpstCmpltnAdvc = value if type(value) != auto else self.make_default("ATMDpstCmpltnAdvc")
+			self._ATMDpstCmpltnAdvc = value if type(value) != base_types.auto else self.make_default("ATMDpstCmpltnAdvc")
 
 		@ATMDpstCmpltnAdvc.deleter
 		def ATMDpstCmpltnAdvc(self):

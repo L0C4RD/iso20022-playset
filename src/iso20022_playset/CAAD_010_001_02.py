@@ -12,7 +12,7 @@ class CAAD_010_001_02():
 
 		@CstmRpt.setter
 		def CstmRpt(self, value):
-			self._CstmRpt = value if type(value) != auto else self.make_default("CstmRpt")
+			self._CstmRpt = value if type(value) != base_types.auto else self.make_default("CstmRpt")
 
 		@CstmRpt.deleter
 		def CstmRpt(self):

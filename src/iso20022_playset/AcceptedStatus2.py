@@ -1,6 +1,6 @@
 from . import base_types
-from .Quantity51Choice import Quantity51Choice
 from .AcceptedStatus8Choice import AcceptedStatus8Choice
+from .Quantity51Choice import Quantity51Choice
 
 class AcceptedStatus2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AcceptedStatus2(base_types._BaseFieldType):
 
 	@AccptdRsn.setter
 	def AccptdRsn(self, value):
-		self._AccptdRsn = value if type(value) != auto else self.make_default("AccptdRsn")
+		self._AccptdRsn = value if type(value) != base_types.auto else self.make_default("AccptdRsn")
 
 	@AccptdRsn.deleter
 	def AccptdRsn(self):
@@ -24,7 +24,7 @@ class AcceptedStatus2(base_types._BaseFieldType):
 
 	@AccptdQty.setter
 	def AccptdQty(self, value):
-		self._AccptdQty = value if type(value) != auto else self.make_default("AccptdQty")
+		self._AccptdQty = value if type(value) != base_types.auto else self.make_default("AccptdQty")
 
 	@AccptdQty.deleter
 	def AccptdQty(self):

@@ -1,32 +1,19 @@
 from . import base_types
-from .PostalAddress1 import PostalAddress1
-from .Party2Choice import Party2Choice
 from .Max70Text import Max70Text
 from .CountryCode import CountryCode
+from .PostalAddress1 import PostalAddress1
+from .Party2Choice import Party2Choice
 
 class PartyIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_PstlAdr", "_CtryOfRes", "_Id"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_PstlAdr", "_Nm", "_CtryOfRes", "_Id"]
 	@property
 	def PstlAdr(self):
 		return self._PstlAdr
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
@@ -34,12 +21,25 @@ class PartyIdentification8(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def CtryOfRes(self):
 		return self._CtryOfRes
 
 	@CtryOfRes.setter
 	def CtryOfRes(self, value):
-		self._CtryOfRes = value if type(value) != auto else self.make_default("CtryOfRes")
+		self._CtryOfRes = value if type(value) != base_types.auto else self.make_default("CtryOfRes")
 
 	@CtryOfRes.deleter
 	def CtryOfRes(self):
@@ -52,7 +52,7 @@ class PartyIdentification8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -60,8 +60,8 @@ class PartyIdentification8(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Party2Choice, min=0, max=1, mutex_group=None, array=False),
 	))

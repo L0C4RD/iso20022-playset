@@ -1,6 +1,6 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Amount3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Amount3Choice(base_types._BaseFieldType):
 
 	@AmtWthCcy.setter
 	def AmtWthCcy(self, value):
-		self._AmtWthCcy = value if type(value) != auto else self.make_default("AmtWthCcy")
+		self._AmtWthCcy = value if type(value) != base_types.auto else self.make_default("AmtWthCcy")
 
 	@AmtWthCcy.deleter
 	def AmtWthCcy(self):
@@ -24,7 +24,7 @@ class Amount3Choice(base_types._BaseFieldType):
 
 	@AmtWthtCcy.setter
 	def AmtWthtCcy(self, value):
-		self._AmtWthtCcy = value if type(value) != auto else self.make_default("AmtWthtCcy")
+		self._AmtWthtCcy = value if type(value) != base_types.auto else self.make_default("AmtWthtCcy")
 
 	@AmtWthtCcy.deleter
 	def AmtWthtCcy(self):

@@ -11,7 +11,7 @@ class GeographicLocation1Choice(base_types._BaseFieldType):
 
 	@UTMCordints.setter
 	def UTMCordints(self, value):
-		self._UTMCordints = value if type(value) != auto else self.make_default("UTMCordints")
+		self._UTMCordints = value if type(value) != base_types.auto else self.make_default("UTMCordints")
 
 	@UTMCordints.deleter
 	def UTMCordints(self):
@@ -24,7 +24,7 @@ class GeographicLocation1Choice(base_types._BaseFieldType):
 
 	@GeogcCordints.setter
 	def GeogcCordints(self, value):
-		self._GeogcCordints = value if type(value) != auto else self.make_default("GeogcCordints")
+		self._GeogcCordints = value if type(value) != base_types.auto else self.make_default("GeogcCordints")
 
 	@GeogcCordints.deleter
 	def GeogcCordints(self):

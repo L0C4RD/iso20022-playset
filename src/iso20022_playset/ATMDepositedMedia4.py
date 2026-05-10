@@ -1,19 +1,32 @@
 from . import base_types
-from .ATMMediaType3Code import ATMMediaType3Code
-from .ATMMediaType4Code import ATMMediaType4Code
-from .ATMDepositedMediaItem1 import ATMDepositedMediaItem1
 from .Number import Number
+from .ATMMediaType3Code import ATMMediaType3Code
+from .ATMDepositedMediaItem1 import ATMDepositedMediaItem1
+from .ATMMediaType4Code import ATMMediaType4Code
 
 class ATMDepositedMedia4(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSeqNb", "_MdiaTp", "_MdiaItm", "_MdiaCtgy"]
+	__slots__ = ["_MdiaCtgy", "_AcctSeqNb", "_MdiaTp", "_MdiaItm"]
+	@property
+	def MdiaCtgy(self):
+		return self._MdiaCtgy
+
+	@MdiaCtgy.setter
+	def MdiaCtgy(self, value):
+		self._MdiaCtgy = value if type(value) != base_types.auto else self.make_default("MdiaCtgy")
+
+	@MdiaCtgy.deleter
+	def MdiaCtgy(self):
+		del self._MdiaCtgy
+		self._MdiaCtgy = None
+
 	@property
 	def AcctSeqNb(self):
 		return self._AcctSeqNb
 
 	@AcctSeqNb.setter
 	def AcctSeqNb(self, value):
-		self._AcctSeqNb = value if type(value) != auto else self.make_default("AcctSeqNb")
+		self._AcctSeqNb = value if type(value) != base_types.auto else self.make_default("AcctSeqNb")
 
 	@AcctSeqNb.deleter
 	def AcctSeqNb(self):
@@ -26,7 +39,7 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 
 	@MdiaTp.setter
 	def MdiaTp(self, value):
-		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
+		self._MdiaTp = value if type(value) != base_types.auto else self.make_default("MdiaTp")
 
 	@MdiaTp.deleter
 	def MdiaTp(self):
@@ -39,30 +52,17 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 
 	@MdiaItm.setter
 	def MdiaItm(self, value):
-		self._MdiaItm = value if type(value) != auto else self.make_default("MdiaItm")
+		self._MdiaItm = value if type(value) != base_types.auto else self.make_default("MdiaItm")
 
 	@MdiaItm.deleter
 	def MdiaItm(self):
 		del self._MdiaItm
 		self._MdiaItm = None
 
-	@property
-	def MdiaCtgy(self):
-		return self._MdiaCtgy
-
-	@MdiaCtgy.setter
-	def MdiaCtgy(self, value):
-		self._MdiaCtgy = value if type(value) != auto else self.make_default("MdiaCtgy")
-
-	@MdiaCtgy.deleter
-	def MdiaCtgy(self):
-		del self._MdiaCtgy
-		self._MdiaCtgy = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaItm', type=ATMDepositedMediaItem1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

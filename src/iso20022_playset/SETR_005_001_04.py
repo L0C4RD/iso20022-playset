@@ -12,7 +12,7 @@ class SETR_005_001_04():
 
 		@RedOrdrCxlReq.setter
 		def RedOrdrCxlReq(self, value):
-			self._RedOrdrCxlReq = value if type(value) != auto else self.make_default("RedOrdrCxlReq")
+			self._RedOrdrCxlReq = value if type(value) != base_types.auto else self.make_default("RedOrdrCxlReq")
 
 		@RedOrdrCxlReq.deleter
 		def RedOrdrCxlReq(self):

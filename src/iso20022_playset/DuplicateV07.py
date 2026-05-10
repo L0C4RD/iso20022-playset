@@ -1,19 +1,19 @@
 from . import base_types
 from .ProprietaryData7 import ProprietaryData7
-from .CaseAssignment6 import CaseAssignment6
 from .SupplementaryData1 import SupplementaryData1
+from .CaseAssignment6 import CaseAssignment6
 from .Case6 import Case6
 
 class DuplicateV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Dplct", "_Assgnmt", "_Case", "_SplmtryData"]
+	__slots__ = ["_Dplct", "_Case", "_Assgnmt", "_SplmtryData"]
 	@property
 	def Dplct(self):
 		return self._Dplct
 
 	@Dplct.setter
 	def Dplct(self, value):
-		self._Dplct = value if type(value) != auto else self.make_default("Dplct")
+		self._Dplct = value if type(value) != base_types.auto else self.make_default("Dplct")
 
 	@Dplct.deleter
 	def Dplct(self):
@@ -21,25 +21,12 @@ class DuplicateV07(base_types._BaseFieldType):
 		self._Dplct = None
 
 	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
-
-	@property
 	def Case(self):
 		return self._Case
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
+		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
 
 	@Case.deleter
 	def Case(self):
@@ -47,12 +34,25 @@ class DuplicateV07(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
+	def Assgnmt(self):
+		return self._Assgnmt
+
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -61,8 +61,8 @@ class DuplicateV07(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dplct', type=ProprietaryData7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

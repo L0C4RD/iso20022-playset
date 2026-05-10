@@ -11,7 +11,7 @@ class Margin1(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmtMrgn.setter
 	def SgrtdIndpdntAmtMrgn(self, value):
-		self._SgrtdIndpdntAmtMrgn = value if type(value) != auto else self.make_default("SgrtdIndpdntAmtMrgn")
+		self._SgrtdIndpdntAmtMrgn = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmtMrgn")
 
 	@SgrtdIndpdntAmtMrgn.deleter
 	def SgrtdIndpdntAmtMrgn(self):
@@ -24,7 +24,7 @@ class Margin1(base_types._BaseFieldType):
 
 	@VartnMrgn.setter
 	def VartnMrgn(self, value):
-		self._VartnMrgn = value if type(value) != auto else self.make_default("VartnMrgn")
+		self._VartnMrgn = value if type(value) != base_types.auto else self.make_default("VartnMrgn")
 
 	@VartnMrgn.deleter
 	def VartnMrgn(self):

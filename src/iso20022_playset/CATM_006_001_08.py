@@ -12,7 +12,7 @@ class CATM_006_001_08():
 
 		@MntncDlgtnRspn.setter
 		def MntncDlgtnRspn(self, value):
-			self._MntncDlgtnRspn = value if type(value) != auto else self.make_default("MntncDlgtnRspn")
+			self._MntncDlgtnRspn = value if type(value) != base_types.auto else self.make_default("MntncDlgtnRspn")
 
 		@MntncDlgtnRspn.deleter
 		def MntncDlgtnRspn(self):

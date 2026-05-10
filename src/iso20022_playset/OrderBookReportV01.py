@@ -1,6 +1,6 @@
 from . import base_types
-from .OrderReport2Choice import OrderReport2Choice
 from .SupplementaryData1 import SupplementaryData1
+from .OrderReport2Choice import OrderReport2Choice
 from .SecuritiesMarketReportHeader3 import SecuritiesMarketReportHeader3
 
 class OrderBookReportV01(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class OrderBookReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class OrderBookReportV01(base_types._BaseFieldType):
 
 	@OrdrRpt.setter
 	def OrdrRpt(self, value):
-		self._OrdrRpt = value if type(value) != auto else self.make_default("OrdrRpt")
+		self._OrdrRpt = value if type(value) != base_types.auto else self.make_default("OrdrRpt")
 
 	@OrdrRpt.deleter
 	def OrdrRpt(self):
@@ -38,7 +38,7 @@ class OrderBookReportV01(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
 	@RptHdr.deleter
 	def RptHdr(self):

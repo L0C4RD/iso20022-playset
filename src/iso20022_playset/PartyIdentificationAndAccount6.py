@@ -11,7 +11,7 @@ class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 
 	@FincgAcct.setter
 	def FincgAcct(self, value):
-		self._FincgAcct = value if type(value) != auto else self.make_default("FincgAcct")
+		self._FincgAcct = value if type(value) != base_types.auto else self.make_default("FincgAcct")
 
 	@FincgAcct.deleter
 	def FincgAcct(self):
@@ -24,7 +24,7 @@ class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
 	@PtyId.deleter
 	def PtyId(self):
@@ -37,7 +37,7 @@ class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 
 	@CdtAcct.setter
 	def CdtAcct(self, value):
-		self._CdtAcct = value if type(value) != auto else self.make_default("CdtAcct")
+		self._CdtAcct = value if type(value) != base_types.auto else self.make_default("CdtAcct")
 
 	@CdtAcct.deleter
 	def CdtAcct(self):

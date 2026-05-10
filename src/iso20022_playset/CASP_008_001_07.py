@@ -12,7 +12,7 @@ class CASP_008_001_07():
 
 		@SaleToPOIAdmstvRspn.setter
 		def SaleToPOIAdmstvRspn(self, value):
-			self._SaleToPOIAdmstvRspn = value if type(value) != auto else self.make_default("SaleToPOIAdmstvRspn")
+			self._SaleToPOIAdmstvRspn = value if type(value) != base_types.auto else self.make_default("SaleToPOIAdmstvRspn")
 
 		@SaleToPOIAdmstvRspn.deleter
 		def SaleToPOIAdmstvRspn(self):

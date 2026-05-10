@@ -12,7 +12,7 @@ class TSMT_040_001_03():
 
 		@TmOutNtfctn.setter
 		def TmOutNtfctn(self, value):
-			self._TmOutNtfctn = value if type(value) != auto else self.make_default("TmOutNtfctn")
+			self._TmOutNtfctn = value if type(value) != base_types.auto else self.make_default("TmOutNtfctn")
 
 		@TmOutNtfctn.deleter
 		def TmOutNtfctn(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .ProcessedStatus1Format1Choice import ProcessedStatus1Format1Choice
 from .Max350Text import Max350Text
+from .ProcessedStatus1Format1Choice import ProcessedStatus1Format1Choice
 
 class NotificationProcessingStatus2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NotificationProcessingStatus2(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
@@ -24,7 +24,7 @@ class NotificationProcessingStatus2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):

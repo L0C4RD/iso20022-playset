@@ -1,6 +1,6 @@
 from . import base_types
-from .ReuseValue1Choice import ReuseValue1Choice
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ReuseValue1Choice import ReuseValue1Choice
 
 class VolumeMetrics4(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class VolumeMetrics4(base_types._BaseFieldType):
 
 	@RinvstdCshAmt.setter
 	def RinvstdCshAmt(self, value):
-		self._RinvstdCshAmt = value if type(value) != auto else self.make_default("RinvstdCshAmt")
+		self._RinvstdCshAmt = value if type(value) != base_types.auto else self.make_default("RinvstdCshAmt")
 
 	@RinvstdCshAmt.deleter
 	def RinvstdCshAmt(self):
@@ -24,7 +24,7 @@ class VolumeMetrics4(base_types._BaseFieldType):
 
 	@ReuseVal.setter
 	def ReuseVal(self, value):
-		self._ReuseVal = value if type(value) != auto else self.make_default("ReuseVal")
+		self._ReuseVal = value if type(value) != base_types.auto else self.make_default("ReuseVal")
 
 	@ReuseVal.deleter
 	def ReuseVal(self):

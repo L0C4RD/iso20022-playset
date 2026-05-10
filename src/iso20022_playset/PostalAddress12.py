@@ -4,19 +4,19 @@ from .Max35Text import Max35Text
 
 class PostalAddress12(base_types._BaseFieldType):
 
-	__slots__ = ["_TwnNm", "_Ctry", "_CtrySubDvsn"]
+	__slots__ = ["_CtrySubDvsn", "_Ctry", "_TwnNm"]
 	@property
-	def TwnNm(self):
-		return self._TwnNm
+	def CtrySubDvsn(self):
+		return self._CtrySubDvsn
 
-	@TwnNm.setter
-	def TwnNm(self, value):
-		self._TwnNm = value if type(value) != auto else self.make_default("TwnNm")
+	@CtrySubDvsn.setter
+	def CtrySubDvsn(self, value):
+		self._CtrySubDvsn = value if type(value) != base_types.auto else self.make_default("CtrySubDvsn")
 
-	@TwnNm.deleter
-	def TwnNm(self):
-		del self._TwnNm
-		self._TwnNm = None
+	@CtrySubDvsn.deleter
+	def CtrySubDvsn(self):
+		del self._CtrySubDvsn
+		self._CtrySubDvsn = None
 
 	@property
 	def Ctry(self):
@@ -24,7 +24,7 @@ class PostalAddress12(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -32,21 +32,21 @@ class PostalAddress12(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def CtrySubDvsn(self):
-		return self._CtrySubDvsn
+	def TwnNm(self):
+		return self._TwnNm
 
-	@CtrySubDvsn.setter
-	def CtrySubDvsn(self, value):
-		self._CtrySubDvsn = value if type(value) != auto else self.make_default("CtrySubDvsn")
+	@TwnNm.setter
+	def TwnNm(self, value):
+		self._TwnNm = value if type(value) != base_types.auto else self.make_default("TwnNm")
 
-	@CtrySubDvsn.deleter
-	def CtrySubDvsn(self):
-		del self._CtrySubDvsn
-		self._CtrySubDvsn = None
+	@TwnNm.deleter
+	def TwnNm(self):
+		del self._TwnNm
+		self._TwnNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TwnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TwnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

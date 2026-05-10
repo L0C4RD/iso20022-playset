@@ -12,7 +12,7 @@ class CAMT_085_001_02():
 
 		@IntraBalMvmntPdgRpt.setter
 		def IntraBalMvmntPdgRpt(self, value):
-			self._IntraBalMvmntPdgRpt = value if type(value) != auto else self.make_default("IntraBalMvmntPdgRpt")
+			self._IntraBalMvmntPdgRpt = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntPdgRpt")
 
 		@IntraBalMvmntPdgRpt.deleter
 		def IntraBalMvmntPdgRpt(self):

@@ -12,7 +12,7 @@ class SESE_019_001_08():
 
 		@AcctHldgInfReq.setter
 		def AcctHldgInfReq(self, value):
-			self._AcctHldgInfReq = value if type(value) != auto else self.make_default("AcctHldgInfReq")
+			self._AcctHldgInfReq = value if type(value) != base_types.auto else self.make_default("AcctHldgInfReq")
 
 		@AcctHldgInfReq.deleter
 		def AcctHldgInfReq(self):

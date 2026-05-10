@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .TransactionTotalsSet2 import TransactionTotalsSet2
+from .Max35Text import Max35Text
 
 class ReportGetTotalsResponse2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ReportGetTotalsResponse2(base_types._BaseFieldType):
 
 	@TxTtlsSet.setter
 	def TxTtlsSet(self, value):
-		self._TxTtlsSet = value if type(value) != auto else self.make_default("TxTtlsSet")
+		self._TxTtlsSet = value if type(value) != base_types.auto else self.make_default("TxTtlsSet")
 
 	@TxTtlsSet.deleter
 	def TxTtlsSet(self):
@@ -24,7 +24,7 @@ class ReportGetTotalsResponse2(base_types._BaseFieldType):
 
 	@POIRcncltnId.setter
 	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != auto else self.make_default("POIRcncltnId")
+		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
 
 	@POIRcncltnId.deleter
 	def POIRcncltnId(self):

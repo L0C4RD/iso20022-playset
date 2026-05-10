@@ -1,18 +1,18 @@
 from . import base_types
-from .PhoneNumber import PhoneNumber
 from .Max256Text import Max256Text
+from .PhoneNumber import PhoneNumber
 from .LongPostalAddress1Choice import LongPostalAddress1Choice
 
 class CommunicationAddress8(base_types._BaseFieldType):
 
-	__slots__ = ["_PhneNb", "_PstlAdr", "_EmailAdr", "_FaxNb"]
+	__slots__ = ["_PhneNb", "_PstlAdr", "_FaxNb", "_EmailAdr"]
 	@property
 	def PhneNb(self):
 		return self._PhneNb
 
 	@PhneNb.setter
 	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
+		self._PhneNb = value if type(value) != base_types.auto else self.make_default("PhneNb")
 
 	@PhneNb.deleter
 	def PhneNb(self):
@@ -25,7 +25,7 @@ class CommunicationAddress8(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
@@ -33,35 +33,35 @@ class CommunicationAddress8(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
-	@property
 	def FaxNb(self):
 		return self._FaxNb
 
 	@FaxNb.setter
 	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
+		self._FaxNb = value if type(value) != base_types.auto else self.make_default("FaxNb")
 
 	@FaxNb.deleter
 	def FaxNb(self):
 		del self._FaxNb
 		self._FaxNb = None
 
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=LongPostalAddress1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

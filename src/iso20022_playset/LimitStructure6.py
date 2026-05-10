@@ -1,19 +1,32 @@
 from . import base_types
-from .LimitIdentification8 import LimitIdentification8
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
 from .CreditDebitCode import CreditDebitCode
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
 from .Amount2Choice import Amount2Choice
+from .LimitIdentification8 import LimitIdentification8
 
 class LimitStructure6(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_StartDtTm", "_LmtId", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_LmtId", "_StartDtTm"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
@@ -21,25 +34,12 @@ class LimitStructure6(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def StartDtTm(self):
-		return self._StartDtTm
-
-	@StartDtTm.setter
-	def StartDtTm(self, value):
-		self._StartDtTm = value if type(value) != auto else self.make_default("StartDtTm")
-
-	@StartDtTm.deleter
-	def StartDtTm(self):
-		del self._StartDtTm
-		self._StartDtTm = None
-
-	@property
 	def LmtId(self):
 		return self._LmtId
 
 	@LmtId.setter
 	def LmtId(self, value):
-		self._LmtId = value if type(value) != auto else self.make_default("LmtId")
+		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
 
 	@LmtId.deleter
 	def LmtId(self):
@@ -47,22 +47,22 @@ class LimitStructure6(base_types._BaseFieldType):
 		self._LmtId = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def StartDtTm(self):
+		return self._StartDtTm
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@StartDtTm.setter
+	def StartDtTm(self, value):
+		self._StartDtTm = value if type(value) != base_types.auto else self.make_default("StartDtTm")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@StartDtTm.deleter
+	def StartDtTm(self):
+		del self._StartDtTm
+		self._StartDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtId', type=LimitIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtId', type=LimitIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

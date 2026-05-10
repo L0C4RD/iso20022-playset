@@ -1,23 +1,23 @@
 from . import base_types
-from .TradeData60Choice import TradeData60Choice
 from .SupplementaryData1 import SupplementaryData1
+from .TradeData60Choice import TradeData60Choice
 from .TradeReportHeader4 import TradeReportHeader4
 
 class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptHdr", "_TradData"]
+	__slots__ = ["_TradData", "_RptHdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TradData(self):
+		return self._TradData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@TradData.setter
+	def TradData(self, value):
+		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TradData.deleter
+	def TradData(self):
+		del self._TradData
+		self._TradData = None
 
 	@property
 	def RptHdr(self):
@@ -25,7 +25,7 @@ class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
 	@RptHdr.deleter
 	def RptHdr(self):
@@ -33,21 +33,21 @@ class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 		self._RptHdr = None
 
 	@property
-	def TradData(self):
-		return self._TradData
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@TradData.setter
-	def TradData(self, value):
-		self._TradData = value if type(value) != auto else self.make_default("TradData")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@TradData.deleter
-	def TradData(self):
-		del self._TradData
-		self._TradData = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptHdr', type=TradeReportHeader4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradData', type=TradeData60Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptHdr', type=TradeReportHeader4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

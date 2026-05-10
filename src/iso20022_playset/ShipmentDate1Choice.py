@@ -10,7 +10,7 @@ class ShipmentDate1Choice(base_types._BaseFieldType):
 
 	@ActlShipmntDt.setter
 	def ActlShipmntDt(self, value):
-		self._ActlShipmntDt = value if type(value) != auto else self.make_default("ActlShipmntDt")
+		self._ActlShipmntDt = value if type(value) != base_types.auto else self.make_default("ActlShipmntDt")
 
 	@ActlShipmntDt.deleter
 	def ActlShipmntDt(self):
@@ -23,7 +23,7 @@ class ShipmentDate1Choice(base_types._BaseFieldType):
 
 	@PropsdShipmntDt.setter
 	def PropsdShipmntDt(self, value):
-		self._PropsdShipmntDt = value if type(value) != auto else self.make_default("PropsdShipmntDt")
+		self._PropsdShipmntDt = value if type(value) != base_types.auto else self.make_default("PropsdShipmntDt")
 
 	@PropsdShipmntDt.deleter
 	def PropsdShipmntDt(self):

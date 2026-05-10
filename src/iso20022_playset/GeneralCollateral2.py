@@ -10,7 +10,7 @@ class GeneralCollateral2(base_types._BaseFieldType):
 
 	@ElgblFinInstrmId.setter
 	def ElgblFinInstrmId(self, value):
-		self._ElgblFinInstrmId = value if type(value) != auto else self.make_default("ElgblFinInstrmId")
+		self._ElgblFinInstrmId = value if type(value) != base_types.auto else self.make_default("ElgblFinInstrmId")
 
 	@ElgblFinInstrmId.deleter
 	def ElgblFinInstrmId(self):

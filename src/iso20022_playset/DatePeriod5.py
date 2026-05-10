@@ -10,7 +10,7 @@ class DatePeriod5(base_types._BaseFieldType):
 
 	@ReqdValDt.setter
 	def ReqdValDt(self, value):
-		self._ReqdValDt = value if type(value) != auto else self.make_default("ReqdValDt")
+		self._ReqdValDt = value if type(value) != base_types.auto else self.make_default("ReqdValDt")
 
 	@ReqdValDt.deleter
 	def ReqdValDt(self):
@@ -23,7 +23,7 @@ class DatePeriod5(base_types._BaseFieldType):
 
 	@CurValDt.setter
 	def CurValDt(self, value):
-		self._CurValDt = value if type(value) != auto else self.make_default("CurValDt")
+		self._CurValDt = value if type(value) != base_types.auto else self.make_default("CurValDt")
 
 	@CurValDt.deleter
 	def CurValDt(self):

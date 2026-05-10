@@ -3,19 +3,19 @@ from .Max35NumericText import Max35NumericText
 
 class SensitiveMobileData1(base_types._BaseFieldType):
 
-	__slots__ = ["_IMSI", "_MSISDN", "_IMEI"]
+	__slots__ = ["_IMEI", "_MSISDN", "_IMSI"]
 	@property
-	def IMSI(self):
-		return self._IMSI
+	def IMEI(self):
+		return self._IMEI
 
-	@IMSI.setter
-	def IMSI(self, value):
-		self._IMSI = value if type(value) != auto else self.make_default("IMSI")
+	@IMEI.setter
+	def IMEI(self, value):
+		self._IMEI = value if type(value) != base_types.auto else self.make_default("IMEI")
 
-	@IMSI.deleter
-	def IMSI(self):
-		del self._IMSI
-		self._IMSI = None
+	@IMEI.deleter
+	def IMEI(self):
+		del self._IMEI
+		self._IMEI = None
 
 	@property
 	def MSISDN(self):
@@ -23,7 +23,7 @@ class SensitiveMobileData1(base_types._BaseFieldType):
 
 	@MSISDN.setter
 	def MSISDN(self, value):
-		self._MSISDN = value if type(value) != auto else self.make_default("MSISDN")
+		self._MSISDN = value if type(value) != base_types.auto else self.make_default("MSISDN")
 
 	@MSISDN.deleter
 	def MSISDN(self):
@@ -31,21 +31,21 @@ class SensitiveMobileData1(base_types._BaseFieldType):
 		self._MSISDN = None
 
 	@property
-	def IMEI(self):
-		return self._IMEI
+	def IMSI(self):
+		return self._IMSI
 
-	@IMEI.setter
-	def IMEI(self, value):
-		self._IMEI = value if type(value) != auto else self.make_default("IMEI")
+	@IMSI.setter
+	def IMSI(self, value):
+		self._IMSI = value if type(value) != base_types.auto else self.make_default("IMSI")
 
-	@IMEI.deleter
-	def IMEI(self):
-		del self._IMEI
-		self._IMEI = None
+	@IMSI.deleter
+	def IMSI(self):
+		del self._IMSI
+		self._IMSI = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IMSI', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MSISDN', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IMEI', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MSISDN', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IMSI', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .RequestHandling2 import RequestHandling2
 from .MessageReference1 import MessageReference1
+from .RequestHandling2 import RequestHandling2
 
 class ReceiptAcknowledgementReport2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ReceiptAcknowledgementReport2(base_types._BaseFieldType):
 
 	@ReqHdlg.setter
 	def ReqHdlg(self, value):
-		self._ReqHdlg = value if type(value) != auto else self.make_default("ReqHdlg")
+		self._ReqHdlg = value if type(value) != base_types.auto else self.make_default("ReqHdlg")
 
 	@ReqHdlg.deleter
 	def ReqHdlg(self):
@@ -24,7 +24,7 @@ class ReceiptAcknowledgementReport2(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
 
 	@RltdRef.deleter
 	def RltdRef(self):

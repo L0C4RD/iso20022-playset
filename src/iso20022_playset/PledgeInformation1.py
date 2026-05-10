@@ -1,45 +1,19 @@
 from . import base_types
-from .GenericIdentification36 import GenericIdentification36
-from .ThirdPartyIdentification1 import ThirdPartyIdentification1
-from .YesNoIndicator import YesNoIndicator
 from .PartyIdentification232Choice import PartyIdentification232Choice
+from .ThirdPartyIdentification1 import ThirdPartyIdentification1
+from .GenericIdentification36 import GenericIdentification36
+from .YesNoIndicator import YesNoIndicator
 
 class PledgeInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_PldgTp", "_RtrSctiesInd", "_ThrdPty", "_Pldgr"]
-	@property
-	def PldgTp(self):
-		return self._PldgTp
-
-	@PldgTp.setter
-	def PldgTp(self, value):
-		self._PldgTp = value if type(value) != auto else self.make_default("PldgTp")
-
-	@PldgTp.deleter
-	def PldgTp(self):
-		del self._PldgTp
-		self._PldgTp = None
-
-	@property
-	def RtrSctiesInd(self):
-		return self._RtrSctiesInd
-
-	@RtrSctiesInd.setter
-	def RtrSctiesInd(self, value):
-		self._RtrSctiesInd = value if type(value) != auto else self.make_default("RtrSctiesInd")
-
-	@RtrSctiesInd.deleter
-	def RtrSctiesInd(self):
-		del self._RtrSctiesInd
-		self._RtrSctiesInd = None
-
+	__slots__ = ["_ThrdPty", "_Pldgr", "_RtrSctiesInd", "_PldgTp"]
 	@property
 	def ThrdPty(self):
 		return self._ThrdPty
 
 	@ThrdPty.setter
 	def ThrdPty(self, value):
-		self._ThrdPty = value if type(value) != auto else self.make_default("ThrdPty")
+		self._ThrdPty = value if type(value) != base_types.auto else self.make_default("ThrdPty")
 
 	@ThrdPty.deleter
 	def ThrdPty(self):
@@ -52,17 +26,43 @@ class PledgeInformation1(base_types._BaseFieldType):
 
 	@Pldgr.setter
 	def Pldgr(self, value):
-		self._Pldgr = value if type(value) != auto else self.make_default("Pldgr")
+		self._Pldgr = value if type(value) != base_types.auto else self.make_default("Pldgr")
 
 	@Pldgr.deleter
 	def Pldgr(self):
 		del self._Pldgr
 		self._Pldgr = None
 
+	@property
+	def RtrSctiesInd(self):
+		return self._RtrSctiesInd
+
+	@RtrSctiesInd.setter
+	def RtrSctiesInd(self, value):
+		self._RtrSctiesInd = value if type(value) != base_types.auto else self.make_default("RtrSctiesInd")
+
+	@RtrSctiesInd.deleter
+	def RtrSctiesInd(self):
+		del self._RtrSctiesInd
+		self._RtrSctiesInd = None
+
+	@property
+	def PldgTp(self):
+		return self._PldgTp
+
+	@PldgTp.setter
+	def PldgTp(self, value):
+		self._PldgTp = value if type(value) != base_types.auto else self.make_default("PldgTp")
+
+	@PldgTp.deleter
+	def PldgTp(self):
+		del self._PldgTp
+		self._PldgTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PldgTp', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrSctiesInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrdPty', type=ThirdPartyIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pldgr', type=PartyIdentification232Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrSctiesInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PldgTp', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
 	))
 

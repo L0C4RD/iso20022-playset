@@ -1,32 +1,19 @@
 from . import base_types
-from .PartyIdentification139 import PartyIdentification139
-from .Account27 import Account27
 from .Role4Choice import Role4Choice
 from .ContactIdentification2 import ContactIdentification2
+from .PartyIdentification139 import PartyIdentification139
+from .Account27 import Account27
 
 class Intermediary43(base_types._BaseFieldType):
 
-	__slots__ = ["_Role", "_Acct", "_CtctPrsn", "_Id"]
-	@property
-	def Role(self):
-		return self._Role
-
-	@Role.setter
-	def Role(self, value):
-		self._Role = value if type(value) != auto else self.make_default("Role")
-
-	@Role.deleter
-	def Role(self):
-		del self._Role
-		self._Role = None
-
+	__slots__ = ["_Acct", "_Role", "_CtctPrsn", "_Id"]
 	@property
 	def Acct(self):
 		return self._Acct
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
 	@Acct.deleter
 	def Acct(self):
@@ -34,12 +21,25 @@ class Intermediary43(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
+	def Role(self):
+		return self._Role
+
+	@Role.setter
+	def Role(self, value):
+		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
+
+	@Role.deleter
+	def Role(self):
+		del self._Role
+		self._Role = None
+
+	@property
 	def CtctPrsn(self):
 		return self._CtctPrsn
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
@@ -52,7 +52,7 @@ class Intermediary43(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -60,8 +60,8 @@ class Intermediary43(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Role', type=Role4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Role', type=Role4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
 	))

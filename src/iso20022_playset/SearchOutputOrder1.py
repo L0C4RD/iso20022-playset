@@ -10,7 +10,7 @@ class SearchOutputOrder1(base_types._BaseFieldType):
 
 	@CritOrdr.setter
 	def CritOrdr(self, value):
-		self._CritOrdr = value if type(value) != auto else self.make_default("CritOrdr")
+		self._CritOrdr = value if type(value) != base_types.auto else self.make_default("CritOrdr")
 
 	@CritOrdr.deleter
 	def CritOrdr(self):

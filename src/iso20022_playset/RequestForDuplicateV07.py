@@ -1,23 +1,23 @@
 from . import base_types
-from .CaseAssignment6 import CaseAssignment6
 from .SupplementaryData1 import SupplementaryData1
+from .CaseAssignment6 import CaseAssignment6
 from .Case6 import Case6
 
 class RequestForDuplicateV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_Case", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_Case", "_Assgnmt"]
 	@property
-	def Assgnmt(self):
-		return self._Assgnmt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Case(self):
@@ -25,7 +25,7 @@ class RequestForDuplicateV07(base_types._BaseFieldType):
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
+		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
 
 	@Case.deleter
 	def Case(self):
@@ -33,21 +33,21 @@ class RequestForDuplicateV07(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 	))
 

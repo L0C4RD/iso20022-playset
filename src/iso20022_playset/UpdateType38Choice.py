@@ -1,7 +1,7 @@
 from . import base_types
-from .SecuritiesSettlementTransactionDetails54 import SecuritiesSettlementTransactionDetails54
 from .SecuritiesSettlementTransactionDetails53 import SecuritiesSettlementTransactionDetails53
 from .SecuritiesSettlementTransactionDetails55 import SecuritiesSettlementTransactionDetails55
+from .SecuritiesSettlementTransactionDetails54 import SecuritiesSettlementTransactionDetails54
 
 class UpdateType38Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class UpdateType38Choice(base_types._BaseFieldType):
 
 	@Addtn.setter
 	def Addtn(self, value):
-		self._Addtn = value if type(value) != auto else self.make_default("Addtn")
+		self._Addtn = value if type(value) != base_types.auto else self.make_default("Addtn")
 
 	@Addtn.deleter
 	def Addtn(self):
@@ -25,7 +25,7 @@ class UpdateType38Choice(base_types._BaseFieldType):
 
 	@Deltn.setter
 	def Deltn(self, value):
-		self._Deltn = value if type(value) != auto else self.make_default("Deltn")
+		self._Deltn = value if type(value) != base_types.auto else self.make_default("Deltn")
 
 	@Deltn.deleter
 	def Deltn(self):
@@ -38,7 +38,7 @@ class UpdateType38Choice(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
+		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
 
 	@Mod.deleter
 	def Mod(self):

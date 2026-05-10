@@ -1,33 +1,20 @@
 from . import base_types
-from .BlockChainAddressWallet6 import BlockChainAddressWallet6
-from .YesNoIndicator import YesNoIndicator
 from .AggregateBalanceInformation44 import AggregateBalanceInformation44
 from .PartyIdentification156 import PartyIdentification156
+from .BlockChainAddressWallet6 import BlockChainAddressWallet6
 from .SecuritiesAccount34 import SecuritiesAccount34
+from .YesNoIndicator import YesNoIndicator
 
 class SubAccountIdentification69(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_BalForSubAcct", "_ActvtyInd", "_SfkpgAcct"]
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_BalForSubAcct", "_ActvtyInd", "_SfkpgAcct", "_AcctOwnr"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
@@ -40,7 +27,7 @@ class SubAccountIdentification69(base_types._BaseFieldType):
 
 	@BalForSubAcct.setter
 	def BalForSubAcct(self, value):
-		self._BalForSubAcct = value if type(value) != auto else self.make_default("BalForSubAcct")
+		self._BalForSubAcct = value if type(value) != base_types.auto else self.make_default("BalForSubAcct")
 
 	@BalForSubAcct.deleter
 	def BalForSubAcct(self):
@@ -53,7 +40,7 @@ class SubAccountIdentification69(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
@@ -66,18 +53,31 @@ class SubAccountIdentification69(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation44, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 	))
 

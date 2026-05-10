@@ -1,6 +1,6 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
 
 class UnitsOrAmount1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class UnitsOrAmount1Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
 	@Unit.deleter
 	def Unit(self):
@@ -24,7 +24,7 @@ class UnitsOrAmount1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

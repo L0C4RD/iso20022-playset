@@ -12,7 +12,7 @@ class SESE_003_001_09():
 
 		@TrfOutConf.setter
 		def TrfOutConf(self, value):
-			self._TrfOutConf = value if type(value) != auto else self.make_default("TrfOutConf")
+			self._TrfOutConf = value if type(value) != base_types.auto else self.make_default("TrfOutConf")
 
 		@TrfOutConf.deleter
 		def TrfOutConf(self):

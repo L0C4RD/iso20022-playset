@@ -1,20 +1,33 @@
 from . import base_types
-from .FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from .PartyIdentification218 import PartyIdentification218
 from .SupplementaryData1 import SupplementaryData1
 from .ShareholdingType1Code import ShareholdingType1Code
+from .FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from .PartyIdentification218 import PartyIdentification218
 from .DateFormat57Choice import DateFormat57Choice
 
 class ShareholdingBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_ThrdPty", "_SplmtryData", "_InitlDtOfShrhldg", "_Qty", "_ShrhldgTp"]
+	__slots__ = ["_ShrhldgTp", "_ThrdPty", "_SplmtryData", "_InitlDtOfShrhldg", "_Qty"]
+	@property
+	def ShrhldgTp(self):
+		return self._ShrhldgTp
+
+	@ShrhldgTp.setter
+	def ShrhldgTp(self, value):
+		self._ShrhldgTp = value if type(value) != base_types.auto else self.make_default("ShrhldgTp")
+
+	@ShrhldgTp.deleter
+	def ShrhldgTp(self):
+		del self._ShrhldgTp
+		self._ShrhldgTp = None
+
 	@property
 	def ThrdPty(self):
 		return self._ThrdPty
 
 	@ThrdPty.setter
 	def ThrdPty(self, value):
-		self._ThrdPty = value if type(value) != auto else self.make_default("ThrdPty")
+		self._ThrdPty = value if type(value) != base_types.auto else self.make_default("ThrdPty")
 
 	@ThrdPty.deleter
 	def ThrdPty(self):
@@ -27,7 +40,7 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -40,7 +53,7 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@InitlDtOfShrhldg.setter
 	def InitlDtOfShrhldg(self, value):
-		self._InitlDtOfShrhldg = value if type(value) != auto else self.make_default("InitlDtOfShrhldg")
+		self._InitlDtOfShrhldg = value if type(value) != base_types.auto else self.make_default("InitlDtOfShrhldg")
 
 	@InitlDtOfShrhldg.deleter
 	def InitlDtOfShrhldg(self):
@@ -53,31 +66,18 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
 		self._Qty = None
 
-	@property
-	def ShrhldgTp(self):
-		return self._ShrhldgTp
-
-	@ShrhldgTp.setter
-	def ShrhldgTp(self, value):
-		self._ShrhldgTp = value if type(value) != auto else self.make_default("ShrhldgTp")
-
-	@ShrhldgTp.deleter
-	def ShrhldgTp(self):
-		del self._ShrhldgTp
-		self._ShrhldgTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ShrhldgTp', type=ShareholdingType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrdPty', type=PartyIdentification218, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InitlDtOfShrhldg', type=DateFormat57Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrhldgTp', type=ShareholdingType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

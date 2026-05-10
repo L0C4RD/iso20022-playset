@@ -11,7 +11,7 @@ class FinancialInstrument53(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -24,7 +24,7 @@ class FinancialInstrument53(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
 
 	@ISIN.deleter
 	def ISIN(self):

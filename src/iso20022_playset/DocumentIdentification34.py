@@ -11,7 +11,7 @@ class DocumentIdentification34(base_types._BaseFieldType):
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
+		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
 
 	@DocNb.deleter
 	def DocNb(self):
@@ -24,7 +24,7 @@ class DocumentIdentification34(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

@@ -1,7 +1,7 @@
 from . import base_types
+from .NonEquityAssetClass1Code import NonEquityAssetClass1Code
 from .NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
 from .NonEquitySubClass1 import NonEquitySubClass1
-from .NonEquityAssetClass1Code import NonEquityAssetClass1Code
 
 class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
 	@DerivSubClss.setter
 	def DerivSubClss(self, value):
-		self._DerivSubClss = value if type(value) != auto else self.make_default("DerivSubClss")
+		self._DerivSubClss = value if type(value) != base_types.auto else self.make_default("DerivSubClss")
 
 	@DerivSubClss.deleter
 	def DerivSubClss(self):
@@ -25,7 +25,7 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
 	@FinInstrmClssfctn.setter
 	def FinInstrmClssfctn(self, value):
-		self._FinInstrmClssfctn = value if type(value) != auto else self.make_default("FinInstrmClssfctn")
+		self._FinInstrmClssfctn = value if type(value) != base_types.auto else self.make_default("FinInstrmClssfctn")
 
 	@FinInstrmClssfctn.deleter
 	def FinInstrmClssfctn(self):
@@ -38,7 +38,7 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
 	@AsstClss.setter
 	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != auto else self.make_default("AsstClss")
+		self._AsstClss = value if type(value) != base_types.auto else self.make_default("AsstClss")
 
 	@AsstClss.deleter
 	def AsstClss(self):

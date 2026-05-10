@@ -11,7 +11,7 @@ class Account7(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
@@ -24,7 +24,7 @@ class Account7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

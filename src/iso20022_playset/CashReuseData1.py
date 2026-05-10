@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
 from .ReinvestedCashTypeAndAmount1 import ReinvestedCashTypeAndAmount1
+from .PercentageRate import PercentageRate
 
 class CashReuseData1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CashReuseData1(base_types._BaseFieldType):
 
 	@RinvstdCsh.setter
 	def RinvstdCsh(self, value):
-		self._RinvstdCsh = value if type(value) != auto else self.make_default("RinvstdCsh")
+		self._RinvstdCsh = value if type(value) != base_types.auto else self.make_default("RinvstdCsh")
 
 	@RinvstdCsh.deleter
 	def RinvstdCsh(self):
@@ -24,7 +24,7 @@ class CashReuseData1(base_types._BaseFieldType):
 
 	@CshRinvstmtRate.setter
 	def CshRinvstmtRate(self, value):
-		self._CshRinvstmtRate = value if type(value) != auto else self.make_default("CshRinvstmtRate")
+		self._CshRinvstmtRate = value if type(value) != base_types.auto else self.make_default("CshRinvstmtRate")
 
 	@CshRinvstmtRate.deleter
 	def CshRinvstmtRate(self):

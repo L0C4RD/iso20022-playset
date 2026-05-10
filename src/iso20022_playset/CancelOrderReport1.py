@@ -10,7 +10,7 @@ class CancelOrderReport1(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != auto else self.make_default("RptId")
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
 
 	@RptId.deleter
 	def RptId(self):

@@ -11,7 +11,7 @@ class SignedQuantityFormat12(base_types._BaseFieldType):
 
 	@QtyChc.setter
 	def QtyChc(self, value):
-		self._QtyChc = value if type(value) != auto else self.make_default("QtyChc")
+		self._QtyChc = value if type(value) != base_types.auto else self.make_default("QtyChc")
 
 	@QtyChc.deleter
 	def QtyChc(self):
@@ -24,7 +24,7 @@ class SignedQuantityFormat12(base_types._BaseFieldType):
 
 	@ShrtLngPos.setter
 	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
+		self._ShrtLngPos = value if type(value) != base_types.auto else self.make_default("ShrtLngPos")
 
 	@ShrtLngPos.deleter
 	def ShrtLngPos(self):

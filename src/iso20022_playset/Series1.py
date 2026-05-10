@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DateFormat42Choice import DateFormat42Choice
+from .Max35Text import Max35Text
 
 class Series1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Series1(base_types._BaseFieldType):
 
 	@SrsNm.setter
 	def SrsNm(self, value):
-		self._SrsNm = value if type(value) != auto else self.make_default("SrsNm")
+		self._SrsNm = value if type(value) != base_types.auto else self.make_default("SrsNm")
 
 	@SrsNm.deleter
 	def SrsNm(self):
@@ -24,7 +24,7 @@ class Series1(base_types._BaseFieldType):
 
 	@SrsDt.setter
 	def SrsDt(self, value):
-		self._SrsDt = value if type(value) != auto else self.make_default("SrsDt")
+		self._SrsDt = value if type(value) != base_types.auto else self.make_default("SrsDt")
 
 	@SrsDt.deleter
 	def SrsDt(self):

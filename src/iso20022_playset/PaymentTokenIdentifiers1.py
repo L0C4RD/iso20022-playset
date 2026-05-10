@@ -10,7 +10,7 @@ class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 
 	@RqstrId.setter
 	def RqstrId(self, value):
-		self._RqstrId = value if type(value) != auto else self.make_default("RqstrId")
+		self._RqstrId = value if type(value) != base_types.auto else self.make_default("RqstrId")
 
 	@RqstrId.deleter
 	def RqstrId(self):
@@ -23,7 +23,7 @@ class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 
 	@PrvdrId.setter
 	def PrvdrId(self, value):
-		self._PrvdrId = value if type(value) != auto else self.make_default("PrvdrId")
+		self._PrvdrId = value if type(value) != base_types.auto else self.make_default("PrvdrId")
 
 	@PrvdrId.deleter
 	def PrvdrId(self):

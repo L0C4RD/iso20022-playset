@@ -11,7 +11,7 @@ class Parameter7(base_types._BaseFieldType):
 
 	@InitlstnVctr.setter
 	def InitlstnVctr(self, value):
-		self._InitlstnVctr = value if type(value) != auto else self.make_default("InitlstnVctr")
+		self._InitlstnVctr = value if type(value) != base_types.auto else self.make_default("InitlstnVctr")
 
 	@InitlstnVctr.deleter
 	def InitlstnVctr(self):
@@ -24,7 +24,7 @@ class Parameter7(base_types._BaseFieldType):
 
 	@BPddg.setter
 	def BPddg(self, value):
-		self._BPddg = value if type(value) != auto else self.make_default("BPddg")
+		self._BPddg = value if type(value) != base_types.auto else self.make_default("BPddg")
 
 	@BPddg.deleter
 	def BPddg(self):

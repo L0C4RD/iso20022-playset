@@ -12,7 +12,7 @@ class AUTH_018_001_04():
 
 		@CtrctRegnReq.setter
 		def CtrctRegnReq(self, value):
-			self._CtrctRegnReq = value if type(value) != auto else self.make_default("CtrctRegnReq")
+			self._CtrctRegnReq = value if type(value) != base_types.auto else self.make_default("CtrctRegnReq")
 
 		@CtrctRegnReq.deleter
 		def CtrctRegnReq(self):

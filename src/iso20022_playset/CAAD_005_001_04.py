@@ -12,7 +12,7 @@ class CAAD_005_001_04():
 
 		@RcncltnInitn.setter
 		def RcncltnInitn(self, value):
-			self._RcncltnInitn = value if type(value) != auto else self.make_default("RcncltnInitn")
+			self._RcncltnInitn = value if type(value) != base_types.auto else self.make_default("RcncltnInitn")
 
 		@RcncltnInitn.deleter
 		def RcncltnInitn(self):

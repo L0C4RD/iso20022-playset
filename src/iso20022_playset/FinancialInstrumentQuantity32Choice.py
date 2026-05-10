@@ -4,19 +4,19 @@ from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
 class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_NmnlVal", "_MntryVal"]
+	__slots__ = ["_MntryVal", "_NmnlVal", "_Unit"]
 	@property
-	def Unit(self):
-		return self._Unit
+	def MntryVal(self):
+		return self._MntryVal
 
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+	@MntryVal.setter
+	def MntryVal(self, value):
+		self._MntryVal = value if type(value) != base_types.auto else self.make_default("MntryVal")
 
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
+	@MntryVal.deleter
+	def MntryVal(self):
+		del self._MntryVal
+		self._MntryVal = None
 
 	@property
 	def NmnlVal(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 
 	@NmnlVal.setter
 	def NmnlVal(self, value):
-		self._NmnlVal = value if type(value) != auto else self.make_default("NmnlVal")
+		self._NmnlVal = value if type(value) != base_types.auto else self.make_default("NmnlVal")
 
 	@NmnlVal.deleter
 	def NmnlVal(self):
@@ -32,21 +32,21 @@ class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 		self._NmnlVal = None
 
 	@property
-	def MntryVal(self):
-		return self._MntryVal
+	def Unit(self):
+		return self._Unit
 
-	@MntryVal.setter
-	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
-	@MntryVal.deleter
-	def MntryVal(self):
-		del self._MntryVal
-		self._MntryVal = None
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmnlVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmnlVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

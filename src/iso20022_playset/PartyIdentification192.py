@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification152Choice import PartyIdentification152Choice
 from .LEIIdentifier import LEIIdentifier
+from .PartyIdentification152Choice import PartyIdentification152Choice
 
 class PartyIdentification192(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification192(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -24,7 +24,7 @@ class PartyIdentification192(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
 	@Pty.deleter
 	def Pty(self):

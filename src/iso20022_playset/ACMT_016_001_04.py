@@ -12,7 +12,7 @@ class ACMT_016_001_04():
 
 		@AcctExcldMndtMntncAmdmntReq.setter
 		def AcctExcldMndtMntncAmdmntReq(self, value):
-			self._AcctExcldMndtMntncAmdmntReq = value if type(value) != auto else self.make_default("AcctExcldMndtMntncAmdmntReq")
+			self._AcctExcldMndtMntncAmdmntReq = value if type(value) != base_types.auto else self.make_default("AcctExcldMndtMntncAmdmntReq")
 
 		@AcctExcldMndtMntncAmdmntReq.deleter
 		def AcctExcldMndtMntncAmdmntReq(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from .GenericIdentification47 import GenericIdentification47
 from .Max70Text import Max70Text
+from .GenericIdentification47 import GenericIdentification47
 
 class SecuritiesAccount40(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class SecuritiesAccount40(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -25,7 +25,7 @@ class SecuritiesAccount40(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -38,7 +38,7 @@ class SecuritiesAccount40(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -51,7 +51,7 @@ class SecuritiesAccount40(base_types._BaseFieldType):
 
 	@Dsgnt.setter
 	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
+		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
 
 	@Dsgnt.deleter
 	def Dsgnt(self):

@@ -1,19 +1,19 @@
 from . import base_types
-from .CountryCode import CountryCode
-from .ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
 from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
+from .CountryCode import CountryCode
 from .AccountIdentification4Choice import AccountIdentification4Choice
 
 class SystemSearch5(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_SysId", "_AcctId", "_MmbId"]
+	__slots__ = ["_Ctry", "_MmbId", "_AcctId", "_SysId"]
 	@property
 	def Ctry(self):
 		return self._Ctry
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -21,17 +21,17 @@ class SystemSearch5(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def SysId(self):
-		return self._SysId
+	def MmbId(self):
+		return self._MmbId
 
-	@SysId.setter
-	def SysId(self, value):
-		self._SysId = value if type(value) != auto else self.make_default("SysId")
+	@MmbId.setter
+	def MmbId(self, value):
+		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
 
-	@SysId.deleter
-	def SysId(self):
-		del self._SysId
-		self._SysId = None
+	@MmbId.deleter
+	def MmbId(self):
+		del self._MmbId
+		self._MmbId = None
 
 	@property
 	def AcctId(self):
@@ -39,7 +39,7 @@ class SystemSearch5(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -47,22 +47,22 @@ class SystemSearch5(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def MmbId(self):
-		return self._MmbId
+	def SysId(self):
+		return self._SysId
 
-	@MmbId.setter
-	def MmbId(self, value):
-		self._MmbId = value if type(value) != auto else self.make_default("MmbId")
+	@SysId.setter
+	def SysId(self, value):
+		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
 
-	@MmbId.deleter
-	def MmbId(self):
-		del self._MmbId
-		self._MmbId = None
+	@SysId.deleter
+	def SysId(self):
+		del self._SysId
+		self._SysId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysId', type=ClearingSystemIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysId', type=ClearingSystemIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

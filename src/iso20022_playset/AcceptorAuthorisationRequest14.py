@@ -1,8 +1,8 @@
 from . import base_types
-from .CardPaymentTransaction139 import CardPaymentTransaction139
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 from .SupplementaryData1 import SupplementaryData1
 from .PaymentContext30 import PaymentContext30
+from .CardPaymentTransaction139 import CardPaymentTransaction139
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -26,7 +26,7 @@ class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
 	@Tx.deleter
 	def Tx(self):
@@ -39,7 +39,7 @@ class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -52,7 +52,7 @@ class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
 	@Cntxt.deleter
 	def Cntxt(self):

@@ -12,7 +12,7 @@ class CAIN_028_001_03():
 
 		@ChrgBckRspn.setter
 		def ChrgBckRspn(self, value):
-			self._ChrgBckRspn = value if type(value) != auto else self.make_default("ChrgBckRspn")
+			self._ChrgBckRspn = value if type(value) != base_types.auto else self.make_default("ChrgBckRspn")
 
 		@ChrgBckRspn.deleter
 		def ChrgBckRspn(self):

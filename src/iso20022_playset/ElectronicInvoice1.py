@@ -10,7 +10,7 @@ class ElectronicInvoice1(base_types._BaseFieldType):
 
 	@PresntmntTp.setter
 	def PresntmntTp(self, value):
-		self._PresntmntTp = value if type(value) != auto else self.make_default("PresntmntTp")
+		self._PresntmntTp = value if type(value) != base_types.auto else self.make_default("PresntmntTp")
 
 	@PresntmntTp.deleter
 	def PresntmntTp(self):

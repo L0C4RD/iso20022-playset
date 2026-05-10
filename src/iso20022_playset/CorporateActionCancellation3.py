@@ -1,31 +1,18 @@
 from . import base_types
-from .Max140Text import Max140Text
-from .CorporateActionEventStatus1 import CorporateActionEventStatus1
 from .CorporateActionCancellationReason1Code import CorporateActionCancellationReason1Code
+from .CorporateActionEventStatus1 import CorporateActionEventStatus1
+from .Max140Text import Max140Text
 
 class CorporateActionCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_PrcgSts", "_CxlRsnCd"]
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
+	__slots__ = ["_PrcgSts", "_CxlRsnCd", "_CxlRsn"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
@@ -38,16 +25,29 @@ class CorporateActionCancellation3(base_types._BaseFieldType):
 
 	@CxlRsnCd.setter
 	def CxlRsnCd(self, value):
-		self._CxlRsnCd = value if type(value) != auto else self.make_default("CxlRsnCd")
+		self._CxlRsnCd = value if type(value) != base_types.auto else self.make_default("CxlRsnCd")
 
 	@CxlRsnCd.deleter
 	def CxlRsnCd(self):
 		del self._CxlRsnCd
 		self._CxlRsnCd = None
 
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CorporateActionEventStatus1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsnCd', type=CorporateActionCancellationReason1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -12,7 +12,7 @@ class REDA_030_001_01():
 
 		@SctyDeltnStsAdvc.setter
 		def SctyDeltnStsAdvc(self, value):
-			self._SctyDeltnStsAdvc = value if type(value) != auto else self.make_default("SctyDeltnStsAdvc")
+			self._SctyDeltnStsAdvc = value if type(value) != base_types.auto else self.make_default("SctyDeltnStsAdvc")
 
 		@SctyDeltnStsAdvc.deleter
 		def SctyDeltnStsAdvc(self):

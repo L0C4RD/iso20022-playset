@@ -10,7 +10,7 @@ class CorporateActionEventReference4Choice(base_types._BaseFieldType):
 
 	@LkdCorpActnId.setter
 	def LkdCorpActnId(self, value):
-		self._LkdCorpActnId = value if type(value) != auto else self.make_default("LkdCorpActnId")
+		self._LkdCorpActnId = value if type(value) != base_types.auto else self.make_default("LkdCorpActnId")
 
 	@LkdCorpActnId.deleter
 	def LkdCorpActnId(self):
@@ -23,7 +23,7 @@ class CorporateActionEventReference4Choice(base_types._BaseFieldType):
 
 	@LkdOffclCorpActnEvtId.setter
 	def LkdOffclCorpActnEvtId(self, value):
-		self._LkdOffclCorpActnEvtId = value if type(value) != auto else self.make_default("LkdOffclCorpActnEvtId")
+		self._LkdOffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("LkdOffclCorpActnEvtId")
 
 	@LkdOffclCorpActnEvtId.deleter
 	def LkdOffclCorpActnEvtId(self):

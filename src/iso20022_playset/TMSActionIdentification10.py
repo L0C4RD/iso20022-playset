@@ -11,7 +11,7 @@ class TMSActionIdentification10(base_types._BaseFieldType):
 
 	@DataSetId.setter
 	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
+		self._DataSetId = value if type(value) != base_types.auto else self.make_default("DataSetId")
 
 	@DataSetId.deleter
 	def DataSetId(self):
@@ -24,7 +24,7 @@ class TMSActionIdentification10(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
 
 	@ActnTp.deleter
 	def ActnTp(self):

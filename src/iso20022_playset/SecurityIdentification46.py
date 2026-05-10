@@ -13,7 +13,7 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
@@ -26,7 +26,7 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@PdctDesc.setter
 	def PdctDesc(self, value):
-		self._PdctDesc = value if type(value) != auto else self.make_default("PdctDesc")
+		self._PdctDesc = value if type(value) != base_types.auto else self.make_default("PdctDesc")
 
 	@PdctDesc.deleter
 	def PdctDesc(self):
@@ -39,7 +39,7 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
 
 	@ISIN.deleter
 	def ISIN(self):
@@ -52,7 +52,7 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@AltrntvInstrmId.setter
 	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
+		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
 
 	@AltrntvInstrmId.deleter
 	def AltrntvInstrmId(self):

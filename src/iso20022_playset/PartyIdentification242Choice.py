@@ -5,19 +5,19 @@ from .PartyIdentification265 import PartyIdentification265
 
 class PartyIdentification242Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_NmAndAdr", "_PtyId"]
+	__slots__ = ["_PtyId", "_NmAndAdr", "_AnyBIC"]
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
+	def PtyId(self):
+		return self._PtyId
 
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
 
 	@property
 	def NmAndAdr(self):
@@ -25,7 +25,7 @@ class PartyIdentification242Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
@@ -33,21 +33,21 @@ class PartyIdentification242Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	@property
-	def PtyId(self):
-		return self._PtyId
+	def AnyBIC(self):
+		return self._AnyBIC
 
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AnyBIC', type=PartyIdentification265, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification266, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=PartyIdentification265, min=0, max=1, mutex_group=1, array=False),
 	))
 

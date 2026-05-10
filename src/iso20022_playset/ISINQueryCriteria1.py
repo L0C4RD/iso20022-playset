@@ -11,7 +11,7 @@ class ISINQueryCriteria1(base_types._BaseFieldType):
 
 	@Idr.setter
 	def Idr(self, value):
-		self._Idr = value if type(value) != auto else self.make_default("Idr")
+		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
 
 	@Idr.deleter
 	def Idr(self):
@@ -24,7 +24,7 @@ class ISINQueryCriteria1(base_types._BaseFieldType):
 
 	@NotRptd.setter
 	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
 
 	@NotRptd.deleter
 	def NotRptd(self):

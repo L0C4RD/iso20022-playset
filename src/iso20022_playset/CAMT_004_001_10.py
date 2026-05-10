@@ -12,7 +12,7 @@ class CAMT_004_001_10():
 
 		@RtrAcct.setter
 		def RtrAcct(self, value):
-			self._RtrAcct = value if type(value) != auto else self.make_default("RtrAcct")
+			self._RtrAcct = value if type(value) != base_types.auto else self.make_default("RtrAcct")
 
 		@RtrAcct.deleter
 		def RtrAcct(self):

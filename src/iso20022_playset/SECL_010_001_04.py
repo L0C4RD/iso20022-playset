@@ -12,7 +12,7 @@ class SECL_010_001_04():
 
 		@SttlmOblgtnRpt.setter
 		def SttlmOblgtnRpt(self, value):
-			self._SttlmOblgtnRpt = value if type(value) != auto else self.make_default("SttlmOblgtnRpt")
+			self._SttlmOblgtnRpt = value if type(value) != base_types.auto else self.make_default("SttlmOblgtnRpt")
 
 		@SttlmOblgtnRpt.deleter
 		def SttlmOblgtnRpt(self):

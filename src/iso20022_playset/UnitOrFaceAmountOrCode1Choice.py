@@ -1,6 +1,6 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
 from .Quantity1Code import Quantity1Code
 
 class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
 	@Unit.deleter
 	def Unit(self):
@@ -25,7 +25,7 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -38,7 +38,7 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
 
 	@FaceAmt.deleter
 	def FaceAmt(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .BenchmarkCurveName2Code import BenchmarkCurveName2Code
 from .ISINOct2015Identifier import ISINOct2015Identifier
+from .BenchmarkCurveName2Code import BenchmarkCurveName2Code
 
 class FinancialInstrument46Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class FinancialInstrument46Choice(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
 
 	@ISIN.deleter
 	def ISIN(self):
@@ -24,7 +24,7 @@ class FinancialInstrument46Choice(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
+		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
 
 	@Indx.deleter
 	def Indx(self):

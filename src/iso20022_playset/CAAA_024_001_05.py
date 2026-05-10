@@ -12,7 +12,7 @@ class CAAA_024_001_05():
 
 		@AccptrTxLgRptReq.setter
 		def AccptrTxLgRptReq(self, value):
-			self._AccptrTxLgRptReq = value if type(value) != auto else self.make_default("AccptrTxLgRptReq")
+			self._AccptrTxLgRptReq = value if type(value) != base_types.auto else self.make_default("AccptrTxLgRptReq")
 
 		@AccptrTxLgRptReq.deleter
 		def AccptrTxLgRptReq(self):

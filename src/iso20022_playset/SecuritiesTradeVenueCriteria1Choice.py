@@ -1,6 +1,6 @@
 from . import base_types
-from .MICIdentifier import MICIdentifier
 from .AnyMIC1Code import AnyMIC1Code
+from .MICIdentifier import MICIdentifier
 
 class SecuritiesTradeVenueCriteria1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesTradeVenueCriteria1Choice(base_types._BaseFieldType):
 
 	@MIC.setter
 	def MIC(self, value):
-		self._MIC = value if type(value) != auto else self.make_default("MIC")
+		self._MIC = value if type(value) != base_types.auto else self.make_default("MIC")
 
 	@MIC.deleter
 	def MIC(self):
@@ -24,7 +24,7 @@ class SecuritiesTradeVenueCriteria1Choice(base_types._BaseFieldType):
 
 	@AnyMIC.setter
 	def AnyMIC(self, value):
-		self._AnyMIC = value if type(value) != auto else self.make_default("AnyMIC")
+		self._AnyMIC = value if type(value) != base_types.auto else self.make_default("AnyMIC")
 
 	@AnyMIC.deleter
 	def AnyMIC(self):

@@ -11,7 +11,7 @@ class UpdatedURLlnformation6(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != auto else self.make_default("URLAdr")
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
 
 	@URLAdr.deleter
 	def URLAdr(self):
@@ -24,7 +24,7 @@ class UpdatedURLlnformation6(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
 
 	@Lang.deleter
 	def Lang(self):

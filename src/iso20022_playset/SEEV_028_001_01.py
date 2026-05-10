@@ -12,7 +12,7 @@ class SEEV_028_001_01():
 
 		@AgtCADeactvtnInstr.setter
 		def AgtCADeactvtnInstr(self, value):
-			self._AgtCADeactvtnInstr = value if type(value) != auto else self.make_default("AgtCADeactvtnInstr")
+			self._AgtCADeactvtnInstr = value if type(value) != base_types.auto else self.make_default("AgtCADeactvtnInstr")
 
 		@AgtCADeactvtnInstr.deleter
 		def AgtCADeactvtnInstr(self):

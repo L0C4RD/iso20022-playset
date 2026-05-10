@@ -1,6 +1,6 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .CountryCode import CountryCode
 
 class Branch5Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Branch5Choice(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -24,7 +24,7 @@ class Branch5Choice(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

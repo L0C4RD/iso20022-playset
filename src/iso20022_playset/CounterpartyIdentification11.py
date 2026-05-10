@@ -1,7 +1,7 @@
 from . import base_types
-from .Branch5Choice import Branch5Choice
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from .CollateralRole1Code import CollateralRole1Code
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .Branch5Choice import Branch5Choice
 from .CounterpartyTradeNature7Choice import CounterpartyTradeNature7Choice
 
 class CounterpartyIdentification11(base_types._BaseFieldType):
@@ -13,7 +13,7 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Sd.setter
 	def Sd(self, value):
-		self._Sd = value if type(value) != auto else self.make_default("Sd")
+		self._Sd = value if type(value) != base_types.auto else self.make_default("Sd")
 
 	@Sd.deleter
 	def Sd(self):
@@ -26,7 +26,7 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Ntr.setter
 	def Ntr(self, value):
-		self._Ntr = value if type(value) != auto else self.make_default("Ntr")
+		self._Ntr = value if type(value) != base_types.auto else self.make_default("Ntr")
 
 	@Ntr.deleter
 	def Ntr(self):
@@ -39,7 +39,7 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -52,7 +52,7 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Brnch.setter
 	def Brnch(self, value):
-		self._Brnch = value if type(value) != auto else self.make_default("Brnch")
+		self._Brnch = value if type(value) != base_types.auto else self.make_default("Brnch")
 
 	@Brnch.deleter
 	def Brnch(self):

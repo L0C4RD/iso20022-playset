@@ -1,18 +1,31 @@
 from . import base_types
-from .Max20000Text import Max20000Text
-from .Presentation3 import Presentation3
 from .PresentationDocumentFormat1Choice import PresentationDocumentFormat1Choice
+from .Presentation3 import Presentation3
+from .Max20000Text import Max20000Text
 
 class Document8(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Wrdg", "_ElctrncDtls"]
+	__slots__ = ["_ElctrncDtls", "_Tp", "_Wrdg"]
+	@property
+	def ElctrncDtls(self):
+		return self._ElctrncDtls
+
+	@ElctrncDtls.setter
+	def ElctrncDtls(self, value):
+		self._ElctrncDtls = value if type(value) != base_types.auto else self.make_default("ElctrncDtls")
+
+	@ElctrncDtls.deleter
+	def ElctrncDtls(self):
+		del self._ElctrncDtls
+		self._ElctrncDtls = None
+
 	@property
 	def Tp(self):
 		return self._Tp
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -25,29 +38,16 @@ class Document8(base_types._BaseFieldType):
 
 	@Wrdg.setter
 	def Wrdg(self, value):
-		self._Wrdg = value if type(value) != auto else self.make_default("Wrdg")
+		self._Wrdg = value if type(value) != base_types.auto else self.make_default("Wrdg")
 
 	@Wrdg.deleter
 	def Wrdg(self):
 		del self._Wrdg
 		self._Wrdg = None
 
-	@property
-	def ElctrncDtls(self):
-		return self._ElctrncDtls
-
-	@ElctrncDtls.setter
-	def ElctrncDtls(self, value):
-		self._ElctrncDtls = value if type(value) != auto else self.make_default("ElctrncDtls")
-
-	@ElctrncDtls.deleter
-	def ElctrncDtls(self):
-		del self._ElctrncDtls
-		self._ElctrncDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ElctrncDtls', type=Presentation3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=PresentationDocumentFormat1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wrdg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctrncDtls', type=Presentation3, min=0, max=None, mutex_group=None, array=True),
 	))
 

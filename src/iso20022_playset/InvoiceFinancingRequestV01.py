@@ -1,6 +1,6 @@
 from . import base_types
-from .InvoiceRequestInformation1 import InvoiceRequestInformation1
 from .RequestGroupInformation1 import RequestGroupInformation1
+from .InvoiceRequestInformation1 import InvoiceRequestInformation1
 
 class InvoiceFinancingRequestV01(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class InvoiceFinancingRequestV01(base_types._BaseFieldType):
 
 	@InvcReqInf.setter
 	def InvcReqInf(self, value):
-		self._InvcReqInf = value if type(value) != auto else self.make_default("InvcReqInf")
+		self._InvcReqInf = value if type(value) != base_types.auto else self.make_default("InvcReqInf")
 
 	@InvcReqInf.deleter
 	def InvcReqInf(self):
@@ -24,7 +24,7 @@ class InvoiceFinancingRequestV01(base_types._BaseFieldType):
 
 	@ReqGrpInf.setter
 	def ReqGrpInf(self, value):
-		self._ReqGrpInf = value if type(value) != auto else self.make_default("ReqGrpInf")
+		self._ReqGrpInf = value if type(value) != base_types.auto else self.make_default("ReqGrpInf")
 
 	@ReqGrpInf.deleter
 	def ReqGrpInf(self):

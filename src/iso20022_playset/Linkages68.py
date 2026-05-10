@@ -1,25 +1,25 @@
 from . import base_types
+from .References78Choice import References78Choice
+from .DocumentNumber6Choice import DocumentNumber6Choice
 from .PartyIdentification136Choice import PartyIdentification136Choice
 from .PairedOrTurnedQuantity6Choice import PairedOrTurnedQuantity6Choice
-from .DocumentNumber6Choice import DocumentNumber6Choice
 from .ProcessingPosition10Choice import ProcessingPosition10Choice
-from .References78Choice import References78Choice
 
 class Linkages68(base_types._BaseFieldType):
 
-	__slots__ = ["_RefOwnr", "_MsgNb", "_Ref", "_PrcgPos", "_LkdQty"]
+	__slots__ = ["_LkdQty", "_MsgNb", "_PrcgPos", "_RefOwnr", "_Ref"]
 	@property
-	def RefOwnr(self):
-		return self._RefOwnr
+	def LkdQty(self):
+		return self._LkdQty
 
-	@RefOwnr.setter
-	def RefOwnr(self, value):
-		self._RefOwnr = value if type(value) != auto else self.make_default("RefOwnr")
+	@LkdQty.setter
+	def LkdQty(self, value):
+		self._LkdQty = value if type(value) != base_types.auto else self.make_default("LkdQty")
 
-	@RefOwnr.deleter
-	def RefOwnr(self):
-		del self._RefOwnr
-		self._RefOwnr = None
+	@LkdQty.deleter
+	def LkdQty(self):
+		del self._LkdQty
+		self._LkdQty = None
 
 	@property
 	def MsgNb(self):
@@ -27,7 +27,7 @@ class Linkages68(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
 
 	@MsgNb.deleter
 	def MsgNb(self):
@@ -35,25 +35,12 @@ class Linkages68(base_types._BaseFieldType):
 		self._MsgNb = None
 
 	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
 	def PrcgPos(self):
 		return self._PrcgPos
 
 	@PrcgPos.setter
 	def PrcgPos(self, value):
-		self._PrcgPos = value if type(value) != auto else self.make_default("PrcgPos")
+		self._PrcgPos = value if type(value) != base_types.auto else self.make_default("PrcgPos")
 
 	@PrcgPos.deleter
 	def PrcgPos(self):
@@ -61,23 +48,36 @@ class Linkages68(base_types._BaseFieldType):
 		self._PrcgPos = None
 
 	@property
-	def LkdQty(self):
-		return self._LkdQty
+	def RefOwnr(self):
+		return self._RefOwnr
 
-	@LkdQty.setter
-	def LkdQty(self, value):
-		self._LkdQty = value if type(value) != auto else self.make_default("LkdQty")
+	@RefOwnr.setter
+	def RefOwnr(self, value):
+		self._RefOwnr = value if type(value) != base_types.auto else self.make_default("RefOwnr")
 
-	@LkdQty.deleter
-	def LkdQty(self):
-		del self._LkdQty
-		self._LkdQty = None
+	@RefOwnr.deleter
+	def RefOwnr(self):
+		del self._RefOwnr
+		self._RefOwnr = None
+
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=References78Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkdQty', type=PairedOrTurnedQuantity6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References78Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

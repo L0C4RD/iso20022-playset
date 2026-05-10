@@ -12,7 +12,7 @@ class CAIN_016_001_03():
 
 		@NqryInitn.setter
 		def NqryInitn(self, value):
-			self._NqryInitn = value if type(value) != auto else self.make_default("NqryInitn")
+			self._NqryInitn = value if type(value) != base_types.auto else self.make_default("NqryInitn")
 
 		@NqryInitn.deleter
 		def NqryInitn(self):

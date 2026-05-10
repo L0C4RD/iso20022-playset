@@ -12,7 +12,7 @@ class AUTH_105_001_01():
 
 		@SctiesFincgRptgPosSetRpt.setter
 		def SctiesFincgRptgPosSetRpt(self, value):
-			self._SctiesFincgRptgPosSetRpt = value if type(value) != auto else self.make_default("SctiesFincgRptgPosSetRpt")
+			self._SctiesFincgRptgPosSetRpt = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgPosSetRpt")
 
 		@SctiesFincgRptgPosSetRpt.deleter
 		def SctiesFincgRptgPosSetRpt(self):

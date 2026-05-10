@@ -11,7 +11,7 @@ class MandateRelatedData3Choice(base_types._BaseFieldType):
 
 	@DrctDbtMndt.setter
 	def DrctDbtMndt(self, value):
-		self._DrctDbtMndt = value if type(value) != auto else self.make_default("DrctDbtMndt")
+		self._DrctDbtMndt = value if type(value) != base_types.auto else self.make_default("DrctDbtMndt")
 
 	@DrctDbtMndt.deleter
 	def DrctDbtMndt(self):
@@ -24,7 +24,7 @@ class MandateRelatedData3Choice(base_types._BaseFieldType):
 
 	@CdtTrfMndt.setter
 	def CdtTrfMndt(self, value):
-		self._CdtTrfMndt = value if type(value) != auto else self.make_default("CdtTrfMndt")
+		self._CdtTrfMndt = value if type(value) != base_types.auto else self.make_default("CdtTrfMndt")
 
 	@CdtTrfMndt.deleter
 	def CdtTrfMndt(self):

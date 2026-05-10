@@ -12,7 +12,7 @@ class AUTH_034_001_01():
 
 		@InvcTaxRpt.setter
 		def InvcTaxRpt(self, value):
-			self._InvcTaxRpt = value if type(value) != auto else self.make_default("InvcTaxRpt")
+			self._InvcTaxRpt = value if type(value) != base_types.auto else self.make_default("InvcTaxRpt")
 
 		@InvcTaxRpt.deleter
 		def InvcTaxRpt(self):

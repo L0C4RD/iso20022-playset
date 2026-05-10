@@ -12,7 +12,7 @@ class ADMI_005_001_02():
 
 		@RptQryReq.setter
 		def RptQryReq(self, value):
-			self._RptQryReq = value if type(value) != auto else self.make_default("RptQryReq")
+			self._RptQryReq = value if type(value) != base_types.auto else self.make_default("RptQryReq")
 
 		@RptQryReq.deleter
 		def RptQryReq(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .PaymentCommon6 import PaymentCommon6
-from .TransactionReport8 import TransactionReport8
 from .NumberAndSumOfTransactions2 import NumberAndSumOfTransactions2
+from .TransactionReport8 import TransactionReport8
 
 class Transactions11(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Transactions11(base_types._BaseFieldType):
 
 	@TxsSummry.setter
 	def TxsSummry(self, value):
-		self._TxsSummry = value if type(value) != auto else self.make_default("TxsSummry")
+		self._TxsSummry = value if type(value) != base_types.auto else self.make_default("TxsSummry")
 
 	@TxsSummry.deleter
 	def TxsSummry(self):
@@ -25,7 +25,7 @@ class Transactions11(base_types._BaseFieldType):
 
 	@TxRpt.setter
 	def TxRpt(self, value):
-		self._TxRpt = value if type(value) != auto else self.make_default("TxRpt")
+		self._TxRpt = value if type(value) != base_types.auto else self.make_default("TxRpt")
 
 	@TxRpt.deleter
 	def TxRpt(self):
@@ -38,7 +38,7 @@ class Transactions11(base_types._BaseFieldType):
 
 	@PmtCmonInf.setter
 	def PmtCmonInf(self, value):
-		self._PmtCmonInf = value if type(value) != auto else self.make_default("PmtCmonInf")
+		self._PmtCmonInf = value if type(value) != base_types.auto else self.make_default("PmtCmonInf")
 
 	@PmtCmonInf.deleter
 	def PmtCmonInf(self):

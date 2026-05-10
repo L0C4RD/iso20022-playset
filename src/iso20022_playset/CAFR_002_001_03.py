@@ -12,7 +12,7 @@ class CAFR_002_001_03():
 
 		@FrdRptgRspn.setter
 		def FrdRptgRspn(self, value):
-			self._FrdRptgRspn = value if type(value) != auto else self.make_default("FrdRptgRspn")
+			self._FrdRptgRspn = value if type(value) != base_types.auto else self.make_default("FrdRptgRspn")
 
 		@FrdRptgRspn.deleter
 		def FrdRptgRspn(self):

@@ -11,7 +11,7 @@ class ATMDiagnosticRequest3(base_types._BaseFieldType):
 
 	@ATMGblSts.setter
 	def ATMGblSts(self, value):
-		self._ATMGblSts = value if type(value) != auto else self.make_default("ATMGblSts")
+		self._ATMGblSts = value if type(value) != base_types.auto else self.make_default("ATMGblSts")
 
 	@ATMGblSts.deleter
 	def ATMGblSts(self):
@@ -24,7 +24,7 @@ class ATMDiagnosticRequest3(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):

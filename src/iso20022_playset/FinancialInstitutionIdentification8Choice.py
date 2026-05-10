@@ -1,8 +1,8 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ClearingSystemMemberIdentificationChoice import ClearingSystemMemberIdentificationChoice
 from .NameAndAddress5 import NameAndAddress5
 from .BICFIIdentifier import BICFIIdentifier
+from .ClearingSystemMemberIdentificationChoice import ClearingSystemMemberIdentificationChoice
+from .Max35Text import Max35Text
 
 class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
 	@PrtryId.deleter
 	def PrtryId(self):
@@ -26,7 +26,7 @@ class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
@@ -39,7 +39,7 @@ class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 
 	@BICFI.setter
 	def BICFI(self, value):
-		self._BICFI = value if type(value) != auto else self.make_default("BICFI")
+		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
 
 	@BICFI.deleter
 	def BICFI(self):
@@ -52,7 +52,7 @@ class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 
 	@ClrSysMmbId.setter
 	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != auto else self.make_default("ClrSysMmbId")
+		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
 
 	@ClrSysMmbId.deleter
 	def ClrSysMmbId(self):

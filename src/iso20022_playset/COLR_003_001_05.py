@@ -12,7 +12,7 @@ class COLR_003_001_05():
 
 		@MrgnCallReq.setter
 		def MrgnCallReq(self, value):
-			self._MrgnCallReq = value if type(value) != auto else self.make_default("MrgnCallReq")
+			self._MrgnCallReq = value if type(value) != base_types.auto else self.make_default("MrgnCallReq")
 
 		@MrgnCallReq.deleter
 		def MrgnCallReq(self):

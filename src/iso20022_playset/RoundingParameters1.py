@@ -1,6 +1,6 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
 from .RoundingDirection1Code import RoundingDirection1Code
+from .DecimalNumber import DecimalNumber
 
 class RoundingParameters1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RoundingParameters1(base_types._BaseFieldType):
 
 	@RndgDrctn.setter
 	def RndgDrctn(self, value):
-		self._RndgDrctn = value if type(value) != auto else self.make_default("RndgDrctn")
+		self._RndgDrctn = value if type(value) != base_types.auto else self.make_default("RndgDrctn")
 
 	@RndgDrctn.deleter
 	def RndgDrctn(self):
@@ -24,7 +24,7 @@ class RoundingParameters1(base_types._BaseFieldType):
 
 	@RndgMdlus.setter
 	def RndgMdlus(self, value):
-		self._RndgMdlus = value if type(value) != auto else self.make_default("RndgMdlus")
+		self._RndgMdlus = value if type(value) != base_types.auto else self.make_default("RndgMdlus")
 
 	@RndgMdlus.deleter
 	def RndgMdlus(self):

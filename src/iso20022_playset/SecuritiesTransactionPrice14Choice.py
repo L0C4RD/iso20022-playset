@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
 from .BaseOneRate import BaseOneRate
+from .PercentageRate import PercentageRate
 
 class SecuritiesTransactionPrice14Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesTransactionPrice14Choice(base_types._BaseFieldType):
 
 	@Dcml.setter
 	def Dcml(self, value):
-		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
+		self._Dcml = value if type(value) != base_types.auto else self.make_default("Dcml")
 
 	@Dcml.deleter
 	def Dcml(self):
@@ -24,7 +24,7 @@ class SecuritiesTransactionPrice14Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

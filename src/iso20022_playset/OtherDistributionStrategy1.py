@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DistributionStrategy1Choice import DistributionStrategy1Choice
 from .AdditionalInformation15 import AdditionalInformation15
+from .Max35Text import Max35Text
 
 class OtherDistributionStrategy1(base_types._BaseFieldType):
 
-	__slots__ = ["_DstrbtnStrtgyTp", "_Trgt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Trgt", "_DstrbtnStrtgyTp"]
 	@property
-	def DstrbtnStrtgyTp(self):
-		return self._DstrbtnStrtgyTp
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@DstrbtnStrtgyTp.setter
-	def DstrbtnStrtgyTp(self, value):
-		self._DstrbtnStrtgyTp = value if type(value) != auto else self.make_default("DstrbtnStrtgyTp")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@DstrbtnStrtgyTp.deleter
-	def DstrbtnStrtgyTp(self):
-		del self._DstrbtnStrtgyTp
-		self._DstrbtnStrtgyTp = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Trgt(self):
@@ -25,7 +25,7 @@ class OtherDistributionStrategy1(base_types._BaseFieldType):
 
 	@Trgt.setter
 	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
 
 	@Trgt.deleter
 	def Trgt(self):
@@ -33,21 +33,21 @@ class OtherDistributionStrategy1(base_types._BaseFieldType):
 		self._Trgt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def DstrbtnStrtgyTp(self):
+		return self._DstrbtnStrtgyTp
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@DstrbtnStrtgyTp.setter
+	def DstrbtnStrtgyTp(self, value):
+		self._DstrbtnStrtgyTp = value if type(value) != base_types.auto else self.make_default("DstrbtnStrtgyTp")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@DstrbtnStrtgyTp.deleter
+	def DstrbtnStrtgyTp(self):
+		del self._DstrbtnStrtgyTp
+		self._DstrbtnStrtgyTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DstrbtnStrtgyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnStrtgyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

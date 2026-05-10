@@ -1,32 +1,19 @@
 from . import base_types
 from .ProcessingPosition7Choice import ProcessingPosition7Choice
-from .PartyIdentification127Choice import PartyIdentification127Choice
-from .References41Choice import References41Choice
 from .DocumentNumber5Choice import DocumentNumber5Choice
+from .References41Choice import References41Choice
+from .PartyIdentification127Choice import PartyIdentification127Choice
 
 class Linkages59(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_RefOwnr", "_PrcgPos", "_MsgNb"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_RefOwnr", "_Ref", "_PrcgPos", "_MsgNb"]
 	@property
 	def RefOwnr(self):
 		return self._RefOwnr
 
 	@RefOwnr.setter
 	def RefOwnr(self, value):
-		self._RefOwnr = value if type(value) != auto else self.make_default("RefOwnr")
+		self._RefOwnr = value if type(value) != base_types.auto else self.make_default("RefOwnr")
 
 	@RefOwnr.deleter
 	def RefOwnr(self):
@@ -34,12 +21,25 @@ class Linkages59(base_types._BaseFieldType):
 		self._RefOwnr = None
 
 	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
 	def PrcgPos(self):
 		return self._PrcgPos
 
 	@PrcgPos.setter
 	def PrcgPos(self, value):
-		self._PrcgPos = value if type(value) != auto else self.make_default("PrcgPos")
+		self._PrcgPos = value if type(value) != base_types.auto else self.make_default("PrcgPos")
 
 	@PrcgPos.deleter
 	def PrcgPos(self):
@@ -52,7 +52,7 @@ class Linkages59(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
 
 	@MsgNb.deleter
 	def MsgNb(self):
@@ -60,8 +60,8 @@ class Linkages59(base_types._BaseFieldType):
 		self._MsgNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=References41Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References41Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),
 	))

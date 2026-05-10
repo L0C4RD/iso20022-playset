@@ -12,7 +12,7 @@ class CAMT_106_001_03():
 
 		@ChrgsPmtReq.setter
 		def ChrgsPmtReq(self, value):
-			self._ChrgsPmtReq = value if type(value) != auto else self.make_default("ChrgsPmtReq")
+			self._ChrgsPmtReq = value if type(value) != base_types.auto else self.make_default("ChrgsPmtReq")
 
 		@ChrgsPmtReq.deleter
 		def ChrgsPmtReq(self):

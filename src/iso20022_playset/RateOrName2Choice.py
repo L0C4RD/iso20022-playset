@@ -1,6 +1,6 @@
 from . import base_types
-from .RateName2 import RateName2
 from .Rate2 import Rate2
+from .RateName2 import RateName2
 
 class RateOrName2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RateOrName2Choice(base_types._BaseFieldType):
 
 	@RateNm.setter
 	def RateNm(self, value):
-		self._RateNm = value if type(value) != auto else self.make_default("RateNm")
+		self._RateNm = value if type(value) != base_types.auto else self.make_default("RateNm")
 
 	@RateNm.deleter
 	def RateNm(self):
@@ -24,7 +24,7 @@ class RateOrName2Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

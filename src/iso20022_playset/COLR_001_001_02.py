@@ -12,7 +12,7 @@ class COLR_001_001_02():
 
 		@CollValQry.setter
 		def CollValQry(self, value):
-			self._CollValQry = value if type(value) != auto else self.make_default("CollValQry")
+			self._CollValQry = value if type(value) != base_types.auto else self.make_default("CollValQry")
 
 		@CollValQry.deleter
 		def CollValQry(self):

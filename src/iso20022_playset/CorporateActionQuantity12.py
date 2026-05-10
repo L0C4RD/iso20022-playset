@@ -10,7 +10,7 @@ class CorporateActionQuantity12(base_types._BaseFieldType):
 
 	@BaseDnmtn.setter
 	def BaseDnmtn(self, value):
-		self._BaseDnmtn = value if type(value) != auto else self.make_default("BaseDnmtn")
+		self._BaseDnmtn = value if type(value) != base_types.auto else self.make_default("BaseDnmtn")
 
 	@BaseDnmtn.deleter
 	def BaseDnmtn(self):
@@ -23,7 +23,7 @@ class CorporateActionQuantity12(base_types._BaseFieldType):
 
 	@IncrmtlDnmtn.setter
 	def IncrmtlDnmtn(self, value):
-		self._IncrmtlDnmtn = value if type(value) != auto else self.make_default("IncrmtlDnmtn")
+		self._IncrmtlDnmtn = value if type(value) != base_types.auto else self.make_default("IncrmtlDnmtn")
 
 	@IncrmtlDnmtn.deleter
 	def IncrmtlDnmtn(self):

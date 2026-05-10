@@ -1,6 +1,6 @@
 from . import base_types
-from .PersonIdentification10 import PersonIdentification10
 from .LEIIdentifier import LEIIdentifier
+from .PersonIdentification10 import PersonIdentification10
 
 class PersonOrOrganisation2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PersonOrOrganisation2Choice(base_types._BaseFieldType):
 
 	@Prsn.setter
 	def Prsn(self, value):
-		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
+		self._Prsn = value if type(value) != base_types.auto else self.make_default("Prsn")
 
 	@Prsn.deleter
 	def Prsn(self):
@@ -24,7 +24,7 @@ class PersonOrOrganisation2Choice(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):

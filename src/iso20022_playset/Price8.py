@@ -1,7 +1,7 @@
 from . import base_types
 from .TypeOfPrice1Code import TypeOfPrice1Code
-from .PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
 from .PriceValueType3Code import PriceValueType3Code
+from .PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
 
 class Price8(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Price8(base_types._BaseFieldType):
 
 	@ValTp.setter
 	def ValTp(self, value):
-		self._ValTp = value if type(value) != auto else self.make_default("ValTp")
+		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
 
 	@ValTp.deleter
 	def ValTp(self):
@@ -25,7 +25,7 @@ class Price8(base_types._BaseFieldType):
 
 	@PricTp.setter
 	def PricTp(self, value):
-		self._PricTp = value if type(value) != auto else self.make_default("PricTp")
+		self._PricTp = value if type(value) != base_types.auto else self.make_default("PricTp")
 
 	@PricTp.deleter
 	def PricTp(self):
@@ -38,7 +38,7 @@ class Price8(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):

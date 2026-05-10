@@ -1,6 +1,6 @@
 from . import base_types
-from .NewIssueAllocation2 import NewIssueAllocation2
 from .DataModification1Code import DataModification1Code
+from .NewIssueAllocation2 import NewIssueAllocation2
 
 class ModificationScope21(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ModificationScope21(base_types._BaseFieldType):
 
 	@IsseAllcn.setter
 	def IsseAllcn(self, value):
-		self._IsseAllcn = value if type(value) != auto else self.make_default("IsseAllcn")
+		self._IsseAllcn = value if type(value) != base_types.auto else self.make_default("IsseAllcn")
 
 	@IsseAllcn.deleter
 	def IsseAllcn(self):
@@ -24,7 +24,7 @@ class ModificationScope21(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):

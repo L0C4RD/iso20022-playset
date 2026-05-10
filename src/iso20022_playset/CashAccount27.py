@@ -1,39 +1,26 @@
 from . import base_types
-from .Max70Text import Max70Text
-from .PartyIdentification41 import PartyIdentification41
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from .CashAccountType2 import CashAccountType2
-from .BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
+from .Max70Text import Max70Text
 from .AccountIdentification4Choice import AccountIdentification4Choice
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .PartyIdentification41 import PartyIdentification41
+from .BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
 
 class CashAccount27(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Ownr", "_Tp", "_Svcr", "_Nm", "_Id"]
+	__slots__ = ["_Id", "_Tp", "_Ownr", "_Nm", "_Svcr", "_Ccy"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Id(self):
+		return self._Id
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def Ownr(self):
-		return self._Ownr
-
-	@Ownr.setter
-	def Ownr(self, value):
-		self._Ownr = value if type(value) != auto else self.make_default("Ownr")
-
-	@Ownr.deleter
-	def Ownr(self):
-		del self._Ownr
-		self._Ownr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Tp(self):
@@ -41,7 +28,7 @@ class CashAccount27(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -49,17 +36,17 @@ class CashAccount27(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Svcr(self):
-		return self._Svcr
+	def Ownr(self):
+		return self._Ownr
 
-	@Svcr.setter
-	def Svcr(self, value):
-		self._Svcr = value if type(value) != auto else self.make_default("Svcr")
+	@Ownr.setter
+	def Ownr(self, value):
+		self._Ownr = value if type(value) != base_types.auto else self.make_default("Ownr")
 
-	@Svcr.deleter
-	def Svcr(self):
-		del self._Svcr
-		self._Svcr = None
+	@Ownr.deleter
+	def Ownr(self):
+		del self._Ownr
+		self._Ownr = None
 
 	@property
 	def Nm(self):
@@ -67,7 +54,7 @@ class CashAccount27(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):
@@ -75,24 +62,37 @@ class CashAccount27(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Svcr(self):
+		return self._Svcr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Svcr.setter
+	def Svcr(self, value):
+		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Svcr.deleter
+	def Svcr(self):
+		del self._Svcr
+		self._Svcr = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ownr', type=PartyIdentification41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ownr', type=PartyIdentification41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

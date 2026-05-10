@@ -12,7 +12,7 @@ class TSMT_001_001_03():
 
 		@Ack.setter
 		def Ack(self, value):
-			self._Ack = value if type(value) != auto else self.make_default("Ack")
+			self._Ack = value if type(value) != base_types.auto else self.make_default("Ack")
 
 		@Ack.deleter
 		def Ack(self):

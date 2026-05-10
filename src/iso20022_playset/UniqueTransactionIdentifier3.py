@@ -10,7 +10,7 @@ class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 
 	@PrrUnqTxIdr.setter
 	def PrrUnqTxIdr(self, value):
-		self._PrrUnqTxIdr = value if type(value) != auto else self.make_default("PrrUnqTxIdr")
+		self._PrrUnqTxIdr = value if type(value) != base_types.auto else self.make_default("PrrUnqTxIdr")
 
 	@PrrUnqTxIdr.deleter
 	def PrrUnqTxIdr(self):
@@ -23,7 +23,7 @@ class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):

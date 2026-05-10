@@ -10,7 +10,7 @@ class InternalisationDataRate1(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):
@@ -23,7 +23,7 @@ class InternalisationDataRate1(base_types._BaseFieldType):
 
 	@VolPctg.setter
 	def VolPctg(self, value):
-		self._VolPctg = value if type(value) != auto else self.make_default("VolPctg")
+		self._VolPctg = value if type(value) != base_types.auto else self.make_default("VolPctg")
 
 	@VolPctg.deleter
 	def VolPctg(self):

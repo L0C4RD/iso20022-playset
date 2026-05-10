@@ -12,7 +12,7 @@ class ACMT_013_001_04():
 
 		@AcctRptReq.setter
 		def AcctRptReq(self, value):
-			self._AcctRptReq = value if type(value) != auto else self.make_default("AcctRptReq")
+			self._AcctRptReq = value if type(value) != base_types.auto else self.make_default("AcctRptReq")
 
 		@AcctRptReq.deleter
 		def AcctRptReq(self):

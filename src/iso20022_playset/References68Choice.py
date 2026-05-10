@@ -10,7 +10,7 @@ class References68Choice(base_types._BaseFieldType):
 
 	@OthrRef.setter
 	def OthrRef(self, value):
-		self._OthrRef = value if type(value) != auto else self.make_default("OthrRef")
+		self._OthrRef = value if type(value) != base_types.auto else self.make_default("OthrRef")
 
 	@OthrRef.deleter
 	def OthrRef(self):
@@ -23,7 +23,7 @@ class References68Choice(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
 
 	@PrvsRef.deleter
 	def PrvsRef(self):

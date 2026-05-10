@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification242Choice import PartyIdentification242Choice
 from .FundIdentification5 import FundIdentification5
+from .PartyIdentification242Choice import PartyIdentification242Choice
 
 class TradePartyIdentification8(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TradePartyIdentification8(base_types._BaseFieldType):
 
 	@TradPty.setter
 	def TradPty(self, value):
-		self._TradPty = value if type(value) != auto else self.make_default("TradPty")
+		self._TradPty = value if type(value) != base_types.auto else self.make_default("TradPty")
 
 	@TradPty.deleter
 	def TradPty(self):
@@ -24,7 +24,7 @@ class TradePartyIdentification8(base_types._BaseFieldType):
 
 	@FndId.setter
 	def FndId(self, value):
-		self._FndId = value if type(value) != auto else self.make_default("FndId")
+		self._FndId = value if type(value) != base_types.auto else self.make_default("FndId")
 
 	@FndId.deleter
 	def FndId(self):
@@ -37,7 +37,7 @@ class TradePartyIdentification8(base_types._BaseFieldType):
 
 	@SubmitgPty.setter
 	def SubmitgPty(self, value):
-		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
+		self._SubmitgPty = value if type(value) != base_types.auto else self.make_default("SubmitgPty")
 
 	@SubmitgPty.deleter
 	def SubmitgPty(self):

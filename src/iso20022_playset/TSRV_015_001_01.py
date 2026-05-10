@@ -12,7 +12,7 @@ class TSRV_015_001_01():
 
 		@XtndOrPayRspn.setter
 		def XtndOrPayRspn(self, value):
-			self._XtndOrPayRspn = value if type(value) != auto else self.make_default("XtndOrPayRspn")
+			self._XtndOrPayRspn = value if type(value) != base_types.auto else self.make_default("XtndOrPayRspn")
 
 		@XtndOrPayRspn.deleter
 		def XtndOrPayRspn(self):

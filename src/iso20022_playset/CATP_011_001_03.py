@@ -12,7 +12,7 @@ class CATP_011_001_03():
 
 		@ATMPINMgmtRspn.setter
 		def ATMPINMgmtRspn(self, value):
-			self._ATMPINMgmtRspn = value if type(value) != auto else self.make_default("ATMPINMgmtRspn")
+			self._ATMPINMgmtRspn = value if type(value) != base_types.auto else self.make_default("ATMPINMgmtRspn")
 
 		@ATMPINMgmtRspn.deleter
 		def ATMPINMgmtRspn(self):

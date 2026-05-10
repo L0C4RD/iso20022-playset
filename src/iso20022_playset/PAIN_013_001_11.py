@@ -12,7 +12,7 @@ class PAIN_013_001_11():
 
 		@CdtrPmtActvtnReq.setter
 		def CdtrPmtActvtnReq(self, value):
-			self._CdtrPmtActvtnReq = value if type(value) != auto else self.make_default("CdtrPmtActvtnReq")
+			self._CdtrPmtActvtnReq = value if type(value) != base_types.auto else self.make_default("CdtrPmtActvtnReq")
 
 		@CdtrPmtActvtnReq.deleter
 		def CdtrPmtActvtnReq(self):

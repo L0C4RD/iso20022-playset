@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .GenericIdentification1 import GenericIdentification1
+from .Max35Text import Max35Text
 
 class Account23(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Account23(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -24,7 +24,7 @@ class Account23(base_types._BaseFieldType):
 
 	@RltdAcctDtls.setter
 	def RltdAcctDtls(self, value):
-		self._RltdAcctDtls = value if type(value) != auto else self.make_default("RltdAcctDtls")
+		self._RltdAcctDtls = value if type(value) != base_types.auto else self.make_default("RltdAcctDtls")
 
 	@RltdAcctDtls.deleter
 	def RltdAcctDtls(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentificationAndAccount219 import PartyIdentificationAndAccount219
 from .PartyIdentification243Choice import PartyIdentification243Choice
+from .PartyIdentificationAndAccount219 import PartyIdentificationAndAccount219
 
 class Clearing6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Clearing6(base_types._BaseFieldType):
 
 	@ClrSgmt.setter
 	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
+		self._ClrSgmt = value if type(value) != base_types.auto else self.make_default("ClrSgmt")
 
 	@ClrSgmt.deleter
 	def ClrSgmt(self):
@@ -24,7 +24,7 @@ class Clearing6(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
 
 	@ClrMmb.deleter
 	def ClrMmb(self):

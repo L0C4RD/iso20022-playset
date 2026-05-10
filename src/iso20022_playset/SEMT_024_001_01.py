@@ -12,7 +12,7 @@ class SEMT_024_001_01():
 
 		@TtlPrtflValtnRpt.setter
 		def TtlPrtflValtnRpt(self, value):
-			self._TtlPrtflValtnRpt = value if type(value) != auto else self.make_default("TtlPrtflValtnRpt")
+			self._TtlPrtflValtnRpt = value if type(value) != base_types.auto else self.make_default("TtlPrtflValtnRpt")
 
 		@TtlPrtflValtnRpt.deleter
 		def TtlPrtflValtnRpt(self):

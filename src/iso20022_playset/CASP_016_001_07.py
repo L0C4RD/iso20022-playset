@@ -12,7 +12,7 @@ class CASP_016_001_07():
 
 		@SaleToPOIDvcReq.setter
 		def SaleToPOIDvcReq(self, value):
-			self._SaleToPOIDvcReq = value if type(value) != auto else self.make_default("SaleToPOIDvcReq")
+			self._SaleToPOIDvcReq = value if type(value) != base_types.auto else self.make_default("SaleToPOIDvcReq")
 
 		@SaleToPOIDvcReq.deleter
 		def SaleToPOIDvcReq(self):

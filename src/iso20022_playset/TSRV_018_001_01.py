@@ -12,7 +12,7 @@ class TSRV_018_001_01():
 
 		@TradStsRpt.setter
 		def TradStsRpt(self, value):
-			self._TradStsRpt = value if type(value) != auto else self.make_default("TradStsRpt")
+			self._TradStsRpt = value if type(value) != base_types.auto else self.make_default("TradStsRpt")
 
 		@TradStsRpt.deleter
 		def TradStsRpt(self):

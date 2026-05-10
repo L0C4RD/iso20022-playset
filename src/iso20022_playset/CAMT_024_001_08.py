@@ -12,7 +12,7 @@ class CAMT_024_001_08():
 
 		@ModfyStgOrdr.setter
 		def ModfyStgOrdr(self, value):
-			self._ModfyStgOrdr = value if type(value) != auto else self.make_default("ModfyStgOrdr")
+			self._ModfyStgOrdr = value if type(value) != base_types.auto else self.make_default("ModfyStgOrdr")
 
 		@ModfyStgOrdr.deleter
 		def ModfyStgOrdr(self):

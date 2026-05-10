@@ -11,7 +11,7 @@ class UTCOffset1(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
 
 	@Sgn.deleter
 	def Sgn(self):
@@ -24,7 +24,7 @@ class UTCOffset1(base_types._BaseFieldType):
 
 	@NbOfHrs.setter
 	def NbOfHrs(self, value):
-		self._NbOfHrs = value if type(value) != auto else self.make_default("NbOfHrs")
+		self._NbOfHrs = value if type(value) != base_types.auto else self.make_default("NbOfHrs")
 
 	@NbOfHrs.deleter
 	def NbOfHrs(self):

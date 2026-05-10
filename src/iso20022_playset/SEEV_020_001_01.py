@@ -12,7 +12,7 @@ class SEEV_020_001_01():
 
 		@AgtCAMvmntCxlReq.setter
 		def AgtCAMvmntCxlReq(self, value):
-			self._AgtCAMvmntCxlReq = value if type(value) != auto else self.make_default("AgtCAMvmntCxlReq")
+			self._AgtCAMvmntCxlReq = value if type(value) != base_types.auto else self.make_default("AgtCAMvmntCxlReq")
 
 		@AgtCAMvmntCxlReq.deleter
 		def AgtCAMvmntCxlReq(self):

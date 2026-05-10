@@ -12,7 +12,7 @@ class FXTR_038_001_02():
 
 		@FXTradConfStsAdvcAck.setter
 		def FXTradConfStsAdvcAck(self, value):
-			self._FXTradConfStsAdvcAck = value if type(value) != auto else self.make_default("FXTradConfStsAdvcAck")
+			self._FXTradConfStsAdvcAck = value if type(value) != base_types.auto else self.make_default("FXTradConfStsAdvcAck")
 
 		@FXTradConfStsAdvcAck.deleter
 		def FXTradConfStsAdvcAck(self):

@@ -12,7 +12,7 @@ class REDA_065_001_02():
 
 		@CalRpt.setter
 		def CalRpt(self, value):
-			self._CalRpt = value if type(value) != auto else self.make_default("CalRpt")
+			self._CalRpt = value if type(value) != base_types.auto else self.make_default("CalRpt")
 
 		@CalRpt.deleter
 		def CalRpt(self):

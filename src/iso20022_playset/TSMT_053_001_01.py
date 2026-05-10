@@ -12,7 +12,7 @@ class TSMT_053_001_01():
 
 		@InvcPmtRcncltnAdvc.setter
 		def InvcPmtRcncltnAdvc(self, value):
-			self._InvcPmtRcncltnAdvc = value if type(value) != auto else self.make_default("InvcPmtRcncltnAdvc")
+			self._InvcPmtRcncltnAdvc = value if type(value) != base_types.auto else self.make_default("InvcPmtRcncltnAdvc")
 
 		@InvcPmtRcncltnAdvc.deleter
 		def InvcPmtRcncltnAdvc(self):

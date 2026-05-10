@@ -12,7 +12,7 @@ class TSRV_010_001_01():
 
 		@UdrtkgNonXtnsnReq.setter
 		def UdrtkgNonXtnsnReq(self, value):
-			self._UdrtkgNonXtnsnReq = value if type(value) != auto else self.make_default("UdrtkgNonXtnsnReq")
+			self._UdrtkgNonXtnsnReq = value if type(value) != base_types.auto else self.make_default("UdrtkgNonXtnsnReq")
 
 		@UdrtkgNonXtnsnReq.deleter
 		def UdrtkgNonXtnsnReq(self):

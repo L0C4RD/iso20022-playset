@@ -10,7 +10,7 @@ class DeviceTransmitMessageResponse1(base_types._BaseFieldType):
 
 	@RcvdMsg.setter
 	def RcvdMsg(self, value):
-		self._RcvdMsg = value if type(value) != auto else self.make_default("RcvdMsg")
+		self._RcvdMsg = value if type(value) != base_types.auto else self.make_default("RcvdMsg")
 
 	@RcvdMsg.deleter
 	def RcvdMsg(self):

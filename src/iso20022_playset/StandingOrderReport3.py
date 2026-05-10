@@ -1,6 +1,6 @@
 from . import base_types
-from .StandingOrderOrError10Choice import StandingOrderOrError10Choice
 from .StandingOrderIdentification8 import StandingOrderIdentification8
+from .StandingOrderOrError10Choice import StandingOrderOrError10Choice
 
 class StandingOrderReport3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class StandingOrderReport3(base_types._BaseFieldType):
 
 	@StgOrdrId.setter
 	def StgOrdrId(self, value):
-		self._StgOrdrId = value if type(value) != auto else self.make_default("StgOrdrId")
+		self._StgOrdrId = value if type(value) != base_types.auto else self.make_default("StgOrdrId")
 
 	@StgOrdrId.deleter
 	def StgOrdrId(self):
@@ -24,7 +24,7 @@ class StandingOrderReport3(base_types._BaseFieldType):
 
 	@StgOrdrOrErr.setter
 	def StgOrdrOrErr(self, value):
-		self._StgOrdrOrErr = value if type(value) != auto else self.make_default("StgOrdrOrErr")
+		self._StgOrdrOrErr = value if type(value) != base_types.auto else self.make_default("StgOrdrOrErr")
 
 	@StgOrdrOrErr.deleter
 	def StgOrdrOrErr(self):

@@ -10,7 +10,7 @@ class AlgorithmIdentification16(base_types._BaseFieldType):
 
 	@Algo.setter
 	def Algo(self, value):
-		self._Algo = value if type(value) != auto else self.make_default("Algo")
+		self._Algo = value if type(value) != base_types.auto else self.make_default("Algo")
 
 	@Algo.deleter
 	def Algo(self):

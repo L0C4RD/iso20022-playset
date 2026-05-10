@@ -11,7 +11,7 @@ class CreditorEnrolmentAmendment6(base_types._BaseFieldType):
 
 	@ActvtnData.setter
 	def ActvtnData(self, value):
-		self._ActvtnData = value if type(value) != auto else self.make_default("ActvtnData")
+		self._ActvtnData = value if type(value) != base_types.auto else self.make_default("ActvtnData")
 
 	@ActvtnData.deleter
 	def ActvtnData(self):
@@ -24,7 +24,7 @@ class CreditorEnrolmentAmendment6(base_types._BaseFieldType):
 
 	@CdtrEnrlmnt.setter
 	def CdtrEnrlmnt(self, value):
-		self._CdtrEnrlmnt = value if type(value) != auto else self.make_default("CdtrEnrlmnt")
+		self._CdtrEnrlmnt = value if type(value) != base_types.auto else self.make_default("CdtrEnrlmnt")
 
 	@CdtrEnrlmnt.deleter
 	def CdtrEnrlmnt(self):

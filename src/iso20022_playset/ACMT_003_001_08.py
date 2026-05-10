@@ -12,7 +12,7 @@ class ACMT_003_001_08():
 
 		@AcctModInstr.setter
 		def AcctModInstr(self, value):
-			self._AcctModInstr = value if type(value) != auto else self.make_default("AcctModInstr")
+			self._AcctModInstr = value if type(value) != base_types.auto else self.make_default("AcctModInstr")
 
 		@AcctModInstr.deleter
 		def AcctModInstr(self):

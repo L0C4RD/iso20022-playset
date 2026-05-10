@@ -11,7 +11,7 @@ class TradeData37Choice(base_types._BaseFieldType):
 
 	@DataSetActn.setter
 	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
+		self._DataSetActn = value if type(value) != base_types.auto else self.make_default("DataSetActn")
 
 	@DataSetActn.deleter
 	def DataSetActn(self):
@@ -24,7 +24,7 @@ class TradeData37Choice(base_types._BaseFieldType):
 
 	@Stat.setter
 	def Stat(self, value):
-		self._Stat = value if type(value) != auto else self.make_default("Stat")
+		self._Stat = value if type(value) != base_types.auto else self.make_default("Stat")
 
 	@Stat.deleter
 	def Stat(self):

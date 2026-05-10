@@ -10,7 +10,7 @@ class DeviceDisplayResponse2(base_types._BaseFieldType):
 
 	@OutptRslt.setter
 	def OutptRslt(self, value):
-		self._OutptRslt = value if type(value) != auto else self.make_default("OutptRslt")
+		self._OutptRslt = value if type(value) != base_types.auto else self.make_default("OutptRslt")
 
 	@OutptRslt.deleter
 	def OutptRslt(self):

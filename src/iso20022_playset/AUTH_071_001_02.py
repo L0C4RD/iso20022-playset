@@ -12,7 +12,7 @@ class AUTH_071_001_02():
 
 		@SctiesFincgRptgTxReusdCollDataRpt.setter
 		def SctiesFincgRptgTxReusdCollDataRpt(self, value):
-			self._SctiesFincgRptgTxReusdCollDataRpt = value if type(value) != auto else self.make_default("SctiesFincgRptgTxReusdCollDataRpt")
+			self._SctiesFincgRptgTxReusdCollDataRpt = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgTxReusdCollDataRpt")
 
 		@SctiesFincgRptgTxReusdCollDataRpt.deleter
 		def SctiesFincgRptgTxReusdCollDataRpt(self):

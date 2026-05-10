@@ -1,23 +1,23 @@
 from . import base_types
+from .NotReported1Code import NotReported1Code
 from .NACEDomainIdentifier import NACEDomainIdentifier
 from .FinancialPartySectorType2Code import FinancialPartySectorType2Code
-from .NotReported1Code import NotReported1Code
 
 class CorporateSectorCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_FISctr", "_NotRptd", "_NFISctr"]
+	__slots__ = ["_NFISctr", "_NotRptd", "_FISctr"]
 	@property
-	def FISctr(self):
-		return self._FISctr
+	def NFISctr(self):
+		return self._NFISctr
 
-	@FISctr.setter
-	def FISctr(self, value):
-		self._FISctr = value if type(value) != auto else self.make_default("FISctr")
+	@NFISctr.setter
+	def NFISctr(self, value):
+		self._NFISctr = value if type(value) != base_types.auto else self.make_default("NFISctr")
 
-	@FISctr.deleter
-	def FISctr(self):
-		del self._FISctr
-		self._FISctr = None
+	@NFISctr.deleter
+	def NFISctr(self):
+		del self._NFISctr
+		self._NFISctr = None
 
 	@property
 	def NotRptd(self):
@@ -25,7 +25,7 @@ class CorporateSectorCriteria5(base_types._BaseFieldType):
 
 	@NotRptd.setter
 	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
 
 	@NotRptd.deleter
 	def NotRptd(self):
@@ -33,21 +33,21 @@ class CorporateSectorCriteria5(base_types._BaseFieldType):
 		self._NotRptd = None
 
 	@property
-	def NFISctr(self):
-		return self._NFISctr
+	def FISctr(self):
+		return self._FISctr
 
-	@NFISctr.setter
-	def NFISctr(self, value):
-		self._NFISctr = value if type(value) != auto else self.make_default("NFISctr")
+	@FISctr.setter
+	def FISctr(self, value):
+		self._FISctr = value if type(value) != base_types.auto else self.make_default("FISctr")
 
-	@NFISctr.deleter
-	def NFISctr(self):
-		del self._NFISctr
-		self._NFISctr = None
+	@FISctr.deleter
+	def FISctr(self):
+		del self._FISctr
+		self._FISctr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FISctr', type=FinancialPartySectorType2Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NFISctr', type=NACEDomainIdentifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FISctr', type=FinancialPartySectorType2Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

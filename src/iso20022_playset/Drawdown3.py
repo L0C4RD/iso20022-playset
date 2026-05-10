@@ -1,6 +1,6 @@
 from . import base_types
-from .AdditionalInformation15 import AdditionalInformation15
 from .EmploymentDetails1 import EmploymentDetails1
+from .AdditionalInformation15 import AdditionalInformation15
 
 class Drawdown3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Drawdown3(base_types._BaseFieldType):
 
 	@MplymntDtls.setter
 	def MplymntDtls(self, value):
-		self._MplymntDtls = value if type(value) != auto else self.make_default("MplymntDtls")
+		self._MplymntDtls = value if type(value) != base_types.auto else self.make_default("MplymntDtls")
 
 	@MplymntDtls.deleter
 	def MplymntDtls(self):
@@ -24,7 +24,7 @@ class Drawdown3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):

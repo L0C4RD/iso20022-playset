@@ -12,7 +12,7 @@ class ACMT_011_001_04():
 
 		@AcctReqRjctn.setter
 		def AcctReqRjctn(self, value):
-			self._AcctReqRjctn = value if type(value) != auto else self.make_default("AcctReqRjctn")
+			self._AcctReqRjctn = value if type(value) != base_types.auto else self.make_default("AcctReqRjctn")
 
 		@AcctReqRjctn.deleter
 		def AcctReqRjctn(self):

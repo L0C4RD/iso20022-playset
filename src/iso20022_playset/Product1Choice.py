@@ -1,7 +1,7 @@
 from . import base_types
+from .FinancialInstrument59 import FinancialInstrument59
 from .RepurchaseAgreement3 import RepurchaseAgreement3
 from .Derivative3 import Derivative3
-from .FinancialInstrument59 import FinancialInstrument59
 
 class Product1Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Product1Choice(base_types._BaseFieldType):
 
 	@Deriv.setter
 	def Deriv(self, value):
-		self._Deriv = value if type(value) != auto else self.make_default("Deriv")
+		self._Deriv = value if type(value) != base_types.auto else self.make_default("Deriv")
 
 	@Deriv.deleter
 	def Deriv(self):
@@ -25,7 +25,7 @@ class Product1Choice(base_types._BaseFieldType):
 
 	@SctiesFincgTx.setter
 	def SctiesFincgTx(self, value):
-		self._SctiesFincgTx = value if type(value) != auto else self.make_default("SctiesFincgTx")
+		self._SctiesFincgTx = value if type(value) != base_types.auto else self.make_default("SctiesFincgTx")
 
 	@SctiesFincgTx.deleter
 	def SctiesFincgTx(self):
@@ -38,7 +38,7 @@ class Product1Choice(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
+		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
 
 	@Scty.deleter
 	def Scty(self):

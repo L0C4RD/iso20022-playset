@@ -12,7 +12,7 @@ class PACS_008_001_13():
 
 		@FIToFICstmrCdtTrf.setter
 		def FIToFICstmrCdtTrf(self, value):
-			self._FIToFICstmrCdtTrf = value if type(value) != auto else self.make_default("FIToFICstmrCdtTrf")
+			self._FIToFICstmrCdtTrf = value if type(value) != base_types.auto else self.make_default("FIToFICstmrCdtTrf")
 
 		@FIToFICstmrCdtTrf.deleter
 		def FIToFICstmrCdtTrf(self):

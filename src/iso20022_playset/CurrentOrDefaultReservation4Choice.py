@@ -10,7 +10,7 @@ class CurrentOrDefaultReservation4Choice(base_types._BaseFieldType):
 
 	@Dflt.setter
 	def Dflt(self, value):
-		self._Dflt = value if type(value) != auto else self.make_default("Dflt")
+		self._Dflt = value if type(value) != base_types.auto else self.make_default("Dflt")
 
 	@Dflt.deleter
 	def Dflt(self):
@@ -23,7 +23,7 @@ class CurrentOrDefaultReservation4Choice(base_types._BaseFieldType):
 
 	@Cur.setter
 	def Cur(self, value):
-		self._Cur = value if type(value) != auto else self.make_default("Cur")
+		self._Cur = value if type(value) != base_types.auto else self.make_default("Cur")
 
 	@Cur.deleter
 	def Cur(self):

@@ -12,7 +12,7 @@ class PACS_010_001_06():
 
 		@FIDrctDbt.setter
 		def FIDrctDbt(self, value):
-			self._FIDrctDbt = value if type(value) != auto else self.make_default("FIDrctDbt")
+			self._FIDrctDbt = value if type(value) != base_types.auto else self.make_default("FIDrctDbt")
 
 		@FIDrctDbt.deleter
 		def FIDrctDbt(self):

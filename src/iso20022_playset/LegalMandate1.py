@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max350Text import Max350Text
+from .Max35Text import Max35Text
 
 class LegalMandate1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class LegalMandate1(base_types._BaseFieldType):
 
 	@Dsclmr.setter
 	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
+		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
 
 	@Dsclmr.deleter
 	def Dsclmr(self):
@@ -24,7 +24,7 @@ class LegalMandate1(base_types._BaseFieldType):
 
 	@Prgrph.setter
 	def Prgrph(self, value):
-		self._Prgrph = value if type(value) != auto else self.make_default("Prgrph")
+		self._Prgrph = value if type(value) != base_types.auto else self.make_default("Prgrph")
 
 	@Prgrph.deleter
 	def Prgrph(self):

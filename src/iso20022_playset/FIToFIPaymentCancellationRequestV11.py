@@ -1,20 +1,20 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .UnderlyingTransaction34 import UnderlyingTransaction34
-from .Case6 import Case6
 from .CaseAssignment6 import CaseAssignment6
 from .ControlData1 import ControlData1
+from .SupplementaryData1 import SupplementaryData1
+from .Case6 import Case6
+from .UnderlyingTransaction34 import UnderlyingTransaction34
 
 class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrlData", "_Case", "_SplmtryData", "_Undrlyg", "_Assgnmt"]
+	__slots__ = ["_CtrlData", "_SplmtryData", "_Case", "_Assgnmt", "_Undrlyg"]
 	@property
 	def CtrlData(self):
 		return self._CtrlData
 
 	@CtrlData.setter
 	def CtrlData(self, value):
-		self._CtrlData = value if type(value) != auto else self.make_default("CtrlData")
+		self._CtrlData = value if type(value) != base_types.auto else self.make_default("CtrlData")
 
 	@CtrlData.deleter
 	def CtrlData(self):
@@ -22,25 +22,12 @@ class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 		self._CtrlData = None
 
 	@property
-	def Case(self):
-		return self._Case
-
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
-
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -48,17 +35,17 @@ class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Undrlyg(self):
-		return self._Undrlyg
+	def Case(self):
+		return self._Case
 
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
 
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
 
 	@property
 	def Assgnmt(self):
@@ -66,18 +53,31 @@ class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
 
+	@property
+	def Undrlyg(self):
+		return self._Undrlyg
+
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrlData', type=ControlData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction34, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction34, min=1, max=None, mutex_group=None, array=True),
 	))
 

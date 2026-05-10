@@ -1,33 +1,20 @@
 from . import base_types
-from .StatementType6Choice import StatementType6Choice
 from .StatementBasis9Choice import StatementBasis9Choice
-from .UpdateType16Choice import UpdateType16Choice
 from .Frequency26Choice import Frequency26Choice
+from .UpdateType16Choice import UpdateType16Choice
 from .DateAndPeriod3Choice import DateAndPeriod3Choice
+from .StatementType6Choice import StatementType6Choice
 
 class Statement84(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_UpdTp", "_StmtDtOrPrd", "_StmtBsis", "_StmtTp"]
-	@property
-	def Frqcy(self):
-		return self._Frqcy
-
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
-
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
-
+	__slots__ = ["_UpdTp", "_StmtTp", "_Frqcy", "_StmtBsis", "_StmtDtOrPrd"]
 	@property
 	def UpdTp(self):
 		return self._UpdTp
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
+		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
 
 	@UpdTp.deleter
 	def UpdTp(self):
@@ -35,17 +22,30 @@ class Statement84(base_types._BaseFieldType):
 		self._UpdTp = None
 
 	@property
-	def StmtDtOrPrd(self):
-		return self._StmtDtOrPrd
+	def StmtTp(self):
+		return self._StmtTp
 
-	@StmtDtOrPrd.setter
-	def StmtDtOrPrd(self, value):
-		self._StmtDtOrPrd = value if type(value) != auto else self.make_default("StmtDtOrPrd")
+	@StmtTp.setter
+	def StmtTp(self, value):
+		self._StmtTp = value if type(value) != base_types.auto else self.make_default("StmtTp")
 
-	@StmtDtOrPrd.deleter
-	def StmtDtOrPrd(self):
-		del self._StmtDtOrPrd
-		self._StmtDtOrPrd = None
+	@StmtTp.deleter
+	def StmtTp(self):
+		del self._StmtTp
+		self._StmtTp = None
+
+	@property
+	def Frqcy(self):
+		return self._Frqcy
+
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
 
 	@property
 	def StmtBsis(self):
@@ -53,7 +53,7 @@ class Statement84(base_types._BaseFieldType):
 
 	@StmtBsis.setter
 	def StmtBsis(self, value):
-		self._StmtBsis = value if type(value) != auto else self.make_default("StmtBsis")
+		self._StmtBsis = value if type(value) != base_types.auto else self.make_default("StmtBsis")
 
 	@StmtBsis.deleter
 	def StmtBsis(self):
@@ -61,23 +61,23 @@ class Statement84(base_types._BaseFieldType):
 		self._StmtBsis = None
 
 	@property
-	def StmtTp(self):
-		return self._StmtTp
+	def StmtDtOrPrd(self):
+		return self._StmtDtOrPrd
 
-	@StmtTp.setter
-	def StmtTp(self, value):
-		self._StmtTp = value if type(value) != auto else self.make_default("StmtTp")
+	@StmtDtOrPrd.setter
+	def StmtDtOrPrd(self, value):
+		self._StmtDtOrPrd = value if type(value) != base_types.auto else self.make_default("StmtDtOrPrd")
 
-	@StmtTp.deleter
-	def StmtTp(self):
-		del self._StmtTp
-		self._StmtTp = None
+	@StmtDtOrPrd.deleter
+	def StmtDtOrPrd(self):
+		del self._StmtDtOrPrd
+		self._StmtDtOrPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtTp', type=StatementType6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .DateAndDateTime1Choice import DateAndDateTime1Choice
 from .SettlementDateCode12Choice import SettlementDateCode12Choice
+from .DateAndDateTime1Choice import DateAndDateTime1Choice
 
 class SettlementDate16Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SettlementDate16Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -24,7 +24,7 @@ class SettlementDate16Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

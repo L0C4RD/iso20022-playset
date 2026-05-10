@@ -1,23 +1,23 @@
 from . import base_types
 from .GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from .Max140Text import Max140Text
 from .ReportingMessageStatus1Code import ReportingMessageStatus1Code
+from .Max140Text import Max140Text
 
 class RejectionReason45(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldVldtnRule", "_Sts", "_MsgRptId"]
+	__slots__ = ["_MsgRptId", "_Sts", "_DtldVldtnRule"]
 	@property
-	def DtldVldtnRule(self):
-		return self._DtldVldtnRule
+	def MsgRptId(self):
+		return self._MsgRptId
 
-	@DtldVldtnRule.setter
-	def DtldVldtnRule(self, value):
-		self._DtldVldtnRule = value if type(value) != auto else self.make_default("DtldVldtnRule")
+	@MsgRptId.setter
+	def MsgRptId(self, value):
+		self._MsgRptId = value if type(value) != base_types.auto else self.make_default("MsgRptId")
 
-	@DtldVldtnRule.deleter
-	def DtldVldtnRule(self):
-		del self._DtldVldtnRule
-		self._DtldVldtnRule = None
+	@MsgRptId.deleter
+	def MsgRptId(self):
+		del self._MsgRptId
+		self._MsgRptId = None
 
 	@property
 	def Sts(self):
@@ -25,7 +25,7 @@ class RejectionReason45(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
@@ -33,21 +33,21 @@ class RejectionReason45(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def MsgRptId(self):
-		return self._MsgRptId
+	def DtldVldtnRule(self):
+		return self._DtldVldtnRule
 
-	@MsgRptId.setter
-	def MsgRptId(self, value):
-		self._MsgRptId = value if type(value) != auto else self.make_default("MsgRptId")
+	@DtldVldtnRule.setter
+	def DtldVldtnRule(self, value):
+		self._DtldVldtnRule = value if type(value) != base_types.auto else self.make_default("DtldVldtnRule")
 
-	@MsgRptId.deleter
-	def MsgRptId(self):
-		del self._MsgRptId
-		self._MsgRptId = None
+	@DtldVldtnRule.deleter
+	def DtldVldtnRule(self):
+		del self._DtldVldtnRule
+		self._DtldVldtnRule = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldVldtnRule', type=GenericValidationRuleIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRptId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldVldtnRule', type=GenericValidationRuleIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

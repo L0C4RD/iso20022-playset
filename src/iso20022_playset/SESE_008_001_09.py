@@ -12,7 +12,7 @@ class SESE_008_001_09():
 
 		@RvslOfTrfInConf.setter
 		def RvslOfTrfInConf(self, value):
-			self._RvslOfTrfInConf = value if type(value) != auto else self.make_default("RvslOfTrfInConf")
+			self._RvslOfTrfInConf = value if type(value) != base_types.auto else self.make_default("RvslOfTrfInConf")
 
 		@RvslOfTrfInConf.deleter
 		def RvslOfTrfInConf(self):

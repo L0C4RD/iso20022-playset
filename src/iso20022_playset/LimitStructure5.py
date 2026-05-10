@@ -1,8 +1,8 @@
 from . import base_types
 from .Amount4Choice import Amount4Choice
+from .Limit10 import Limit10
 from .LimitIdentification3Choice import LimitIdentification3Choice
 from .Limit8 import Limit8
-from .Limit10 import Limit10
 
 class LimitStructure5(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@LmtId.setter
 	def LmtId(self, value):
-		self._LmtId = value if type(value) != auto else self.make_default("LmtId")
+		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
 
 	@LmtId.deleter
 	def LmtId(self):
@@ -26,7 +26,7 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@LmtValAmdmnt.setter
 	def LmtValAmdmnt(self, value):
-		self._LmtValAmdmnt = value if type(value) != auto else self.make_default("LmtValAmdmnt")
+		self._LmtValAmdmnt = value if type(value) != base_types.auto else self.make_default("LmtValAmdmnt")
 
 	@LmtValAmdmnt.deleter
 	def LmtValAmdmnt(self):
@@ -39,7 +39,7 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@OdLmtValSet.setter
 	def OdLmtValSet(self, value):
-		self._OdLmtValSet = value if type(value) != auto else self.make_default("OdLmtValSet")
+		self._OdLmtValSet = value if type(value) != base_types.auto else self.make_default("OdLmtValSet")
 
 	@OdLmtValSet.deleter
 	def OdLmtValSet(self):
@@ -52,7 +52,7 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@NewLmtValSet.setter
 	def NewLmtValSet(self, value):
-		self._NewLmtValSet = value if type(value) != auto else self.make_default("NewLmtValSet")
+		self._NewLmtValSet = value if type(value) != base_types.auto else self.make_default("NewLmtValSet")
 
 	@NewLmtValSet.deleter
 	def NewLmtValSet(self):

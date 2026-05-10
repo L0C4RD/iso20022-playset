@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "iso20022-playset"
-version = "0.1.6"
+version = "0.1.7"
 authors = [
   { name="Ed Wilson-Shah", email="L0C4RD@users.noreply.github.com" },
 ]
@@ -22,3 +22,4 @@ license-files = ["LICENCE.md"]
 [project.urls]
 Homepage = "https://github.com/L0C4RD/iso20022-playset"
 Issues = "https://github.com/L0C4RD/iso20022-playset/issues"
+

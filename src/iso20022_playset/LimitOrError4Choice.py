@@ -1,6 +1,6 @@
 from . import base_types
-from .Limit7 import Limit7
 from .ErrorHandling5 import ErrorHandling5
+from .Limit7 import Limit7
 
 class LimitOrError4Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class LimitOrError4Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):
@@ -24,7 +24,7 @@ class LimitOrError4Choice(base_types._BaseFieldType):
 
 	@Lmt.setter
 	def Lmt(self, value):
-		self._Lmt = value if type(value) != auto else self.make_default("Lmt")
+		self._Lmt = value if type(value) != base_types.auto else self.make_default("Lmt")
 
 	@Lmt.deleter
 	def Lmt(self):

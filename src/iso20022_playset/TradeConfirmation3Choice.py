@@ -1,6 +1,6 @@
 from . import base_types
-from .TradeNonConfirmation1 import TradeNonConfirmation1
 from .TradeConfirmation4 import TradeConfirmation4
+from .TradeNonConfirmation1 import TradeNonConfirmation1
 
 class TradeConfirmation3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TradeConfirmation3Choice(base_types._BaseFieldType):
 
 	@NonConfd.setter
 	def NonConfd(self, value):
-		self._NonConfd = value if type(value) != auto else self.make_default("NonConfd")
+		self._NonConfd = value if type(value) != base_types.auto else self.make_default("NonConfd")
 
 	@NonConfd.deleter
 	def NonConfd(self):
@@ -24,7 +24,7 @@ class TradeConfirmation3Choice(base_types._BaseFieldType):
 
 	@Confd.setter
 	def Confd(self, value):
-		self._Confd = value if type(value) != auto else self.make_default("Confd")
+		self._Confd = value if type(value) != base_types.auto else self.make_default("Confd")
 
 	@Confd.deleter
 	def Confd(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .Max19NumericText import Max19NumericText
-from .Max35Text import Max35Text
 from .Min2Max3NumericText import Min2Max3NumericText
+from .Max35Text import Max35Text
 
 class CardData14(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CardData14(base_types._BaseFieldType):
 
 	@PrtflIdr.setter
 	def PrtflIdr(self, value):
-		self._PrtflIdr = value if type(value) != auto else self.make_default("PrtflIdr")
+		self._PrtflIdr = value if type(value) != base_types.auto else self.make_default("PrtflIdr")
 
 	@PrtflIdr.deleter
 	def PrtflIdr(self):
@@ -25,7 +25,7 @@ class CardData14(base_types._BaseFieldType):
 
 	@CardSeqNb.setter
 	def CardSeqNb(self, value):
-		self._CardSeqNb = value if type(value) != auto else self.make_default("CardSeqNb")
+		self._CardSeqNb = value if type(value) != base_types.auto else self.make_default("CardSeqNb")
 
 	@CardSeqNb.deleter
 	def CardSeqNb(self):
@@ -38,7 +38,7 @@ class CardData14(base_types._BaseFieldType):
 
 	@PAN.setter
 	def PAN(self, value):
-		self._PAN = value if type(value) != auto else self.make_default("PAN")
+		self._PAN = value if type(value) != base_types.auto else self.make_default("PAN")
 
 	@PAN.deleter
 	def PAN(self):
@@ -51,7 +51,7 @@ class CardData14(base_types._BaseFieldType):
 
 	@PmtAcctRef.setter
 	def PmtAcctRef(self, value):
-		self._PmtAcctRef = value if type(value) != auto else self.make_default("PmtAcctRef")
+		self._PmtAcctRef = value if type(value) != base_types.auto else self.make_default("PmtAcctRef")
 
 	@PmtAcctRef.deleter
 	def PmtAcctRef(self):

@@ -12,7 +12,7 @@ class ResponseStatus8Choice(base_types._BaseFieldType):
 
 	@Cnsntd.setter
 	def Cnsntd(self, value):
-		self._Cnsntd = value if type(value) != auto else self.make_default("Cnsntd")
+		self._Cnsntd = value if type(value) != base_types.auto else self.make_default("Cnsntd")
 
 	@Cnsntd.deleter
 	def Cnsntd(self):
@@ -25,7 +25,7 @@ class ResponseStatus8Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
 
 	@Pdg.deleter
 	def Pdg(self):
@@ -38,7 +38,7 @@ class ResponseStatus8Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
 
 	@Rjctd.deleter
 	def Rjctd(self):

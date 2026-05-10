@@ -1,6 +1,6 @@
 from . import base_types
-from .DataModification1Code import DataModification1Code
 from .InvestmentPlan16 import InvestmentPlan16
+from .DataModification1Code import DataModification1Code
 
 class ModificationScope41(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ModificationScope41(base_types._BaseFieldType):
 
 	@InvstmtPlan.setter
 	def InvstmtPlan(self, value):
-		self._InvstmtPlan = value if type(value) != auto else self.make_default("InvstmtPlan")
+		self._InvstmtPlan = value if type(value) != base_types.auto else self.make_default("InvstmtPlan")
 
 	@InvstmtPlan.deleter
 	def InvstmtPlan(self):
@@ -24,7 +24,7 @@ class ModificationScope41(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):

@@ -1,8 +1,8 @@
 from . import base_types
-from .Price8 import Price8
 from .Organisation38 import Organisation38
-from .WarrantStyle3Choice import WarrantStyle3Choice
 from .BaseOneRate import BaseOneRate
+from .WarrantStyle3Choice import WarrantStyle3Choice
+from .Price8 import Price8
 
 class Warrant4(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class Warrant4(base_types._BaseFieldType):
 
 	@WarrtAgt.setter
 	def WarrtAgt(self, value):
-		self._WarrtAgt = value if type(value) != auto else self.make_default("WarrtAgt")
+		self._WarrtAgt = value if type(value) != base_types.auto else self.make_default("WarrtAgt")
 
 	@WarrtAgt.deleter
 	def WarrtAgt(self):
@@ -26,7 +26,7 @@ class Warrant4(base_types._BaseFieldType):
 
 	@Mltplr.setter
 	def Mltplr(self, value):
-		self._Mltplr = value if type(value) != auto else self.make_default("Mltplr")
+		self._Mltplr = value if type(value) != base_types.auto else self.make_default("Mltplr")
 
 	@Mltplr.deleter
 	def Mltplr(self):
@@ -39,7 +39,7 @@ class Warrant4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -52,7 +52,7 @@ class Warrant4(base_types._BaseFieldType):
 
 	@SbcptPric.setter
 	def SbcptPric(self, value):
-		self._SbcptPric = value if type(value) != auto else self.make_default("SbcptPric")
+		self._SbcptPric = value if type(value) != base_types.auto else self.make_default("SbcptPric")
 
 	@SbcptPric.deleter
 	def SbcptPric(self):

@@ -1,21 +1,21 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CorrectiveGroupInformation1 import CorrectiveGroupInformation1
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from .ISODate import ISODate
 from .UUIDv4Identifier import UUIDv4Identifier
+from .CorrectiveGroupInformation1 import CorrectiveGroupInformation1
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .Max35Text import Max35Text
 
 class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_InstdAmt", "_ReqdExctnDt", "_ReqdColltnDt", "_UETR", "_EndToEndId", "_PmtInfId", "_GrpHdr"]
+	__slots__ = ["_InstrId", "_EndToEndId", "_GrpHdr", "_InstdAmt", "_ReqdExctnDt", "_ReqdColltnDt", "_PmtInfId", "_UETR"]
 	@property
 	def InstrId(self):
 		return self._InstrId
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
 
 	@InstrId.deleter
 	def InstrId(self):
@@ -23,12 +23,38 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._InstrId = None
 
 	@property
+	def EndToEndId(self):
+		return self._EndToEndId
+
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
+
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
+
+	@property
 	def InstdAmt(self):
 		return self._InstdAmt
 
 	@InstdAmt.setter
 	def InstdAmt(self, value):
-		self._InstdAmt = value if type(value) != auto else self.make_default("InstdAmt")
+		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
 
 	@InstdAmt.deleter
 	def InstdAmt(self):
@@ -41,7 +67,7 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
@@ -54,7 +80,7 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 
 	@ReqdColltnDt.setter
 	def ReqdColltnDt(self, value):
-		self._ReqdColltnDt = value if type(value) != auto else self.make_default("ReqdColltnDt")
+		self._ReqdColltnDt = value if type(value) != base_types.auto else self.make_default("ReqdColltnDt")
 
 	@ReqdColltnDt.deleter
 	def ReqdColltnDt(self):
@@ -62,38 +88,12 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._ReqdColltnDt = None
 
 	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
-
-	@property
-	def EndToEndId(self):
-		return self._EndToEndId
-
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
-
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
-
-	@property
 	def PmtInfId(self):
 		return self._PmtInfId
 
 	@PmtInfId.setter
 	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
+		self._PmtInfId = value if type(value) != base_types.auto else self.make_default("PmtInfId")
 
 	@PmtInfId.deleter
 	def PmtInfId(self):
@@ -101,26 +101,26 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._PmtInfId = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def UETR(self):
+		return self._UETR
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrpHdr', type=CorrectiveGroupInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpHdr', type=CorrectiveGroupInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

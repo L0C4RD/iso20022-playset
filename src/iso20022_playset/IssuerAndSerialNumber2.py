@@ -1,6 +1,6 @@
 from . import base_types
-from .CertificateIssuer1 import CertificateIssuer1
 from .Max500Binary import Max500Binary
+from .CertificateIssuer1 import CertificateIssuer1
 
 class IssuerAndSerialNumber2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class IssuerAndSerialNumber2(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -24,7 +24,7 @@ class IssuerAndSerialNumber2(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
 
 	@SrlNb.deleter
 	def SrlNb(self):

@@ -1,38 +1,38 @@
 from . import base_types
-from .PartyIdentification127Choice import PartyIdentification127Choice
 from .PartyIdentificationAndAccount149 import PartyIdentificationAndAccount149
+from .PartyIdentification127Choice import PartyIdentification127Choice
 
 class Clearing5(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSgmt", "_ClrMmb"]
-	@property
-	def ClrSgmt(self):
-		return self._ClrSgmt
-
-	@ClrSgmt.setter
-	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
-
-	@ClrSgmt.deleter
-	def ClrSgmt(self):
-		del self._ClrSgmt
-		self._ClrSgmt = None
-
+	__slots__ = ["_ClrMmb", "_ClrSgmt"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
 		self._ClrMmb = None
 
+	@property
+	def ClrSgmt(self):
+		return self._ClrSgmt
+
+	@ClrSgmt.setter
+	def ClrSgmt(self, value):
+		self._ClrSgmt = value if type(value) != base_types.auto else self.make_default("ClrSgmt")
+
+	@ClrSgmt.deleter
+	def ClrSgmt(self):
+		del self._ClrSgmt
+		self._ClrSgmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentificationAndAccount149, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
 from .TransactionIdentifier1 import TransactionIdentifier1
-from .TransactionToPerform7Choice import TransactionToPerform7Choice
 from .TrueFalseIndicator import TrueFalseIndicator
+from .TransactionToPerform7Choice import TransactionToPerform7Choice
 
 class BatchRequest7(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class BatchRequest7(base_types._BaseFieldType):
 
 	@TxToPrfrm.setter
 	def TxToPrfrm(self, value):
-		self._TxToPrfrm = value if type(value) != auto else self.make_default("TxToPrfrm")
+		self._TxToPrfrm = value if type(value) != base_types.auto else self.make_default("TxToPrfrm")
 
 	@TxToPrfrm.deleter
 	def TxToPrfrm(self):
@@ -25,7 +25,7 @@ class BatchRequest7(base_types._BaseFieldType):
 
 	@SaleBtchId.setter
 	def SaleBtchId(self, value):
-		self._SaleBtchId = value if type(value) != auto else self.make_default("SaleBtchId")
+		self._SaleBtchId = value if type(value) != base_types.auto else self.make_default("SaleBtchId")
 
 	@SaleBtchId.deleter
 	def SaleBtchId(self):
@@ -38,7 +38,7 @@ class BatchRequest7(base_types._BaseFieldType):
 
 	@RmvAllFlg.setter
 	def RmvAllFlg(self, value):
-		self._RmvAllFlg = value if type(value) != auto else self.make_default("RmvAllFlg")
+		self._RmvAllFlg = value if type(value) != base_types.auto else self.make_default("RmvAllFlg")
 
 	@RmvAllFlg.deleter
 	def RmvAllFlg(self):

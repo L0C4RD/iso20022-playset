@@ -4,27 +4,14 @@ from .PartyIdentification192 import PartyIdentification192
 
 class AdditionalReference12(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNm", "_Ref", "_RefIssr"]
-	@property
-	def MsgNm(self):
-		return self._MsgNm
-
-	@MsgNm.setter
-	def MsgNm(self, value):
-		self._MsgNm = value if type(value) != auto else self.make_default("MsgNm")
-
-	@MsgNm.deleter
-	def MsgNm(self):
-		del self._MsgNm
-		self._MsgNm = None
-
+	__slots__ = ["_Ref", "_RefIssr", "_MsgNm"]
 	@property
 	def Ref(self):
 		return self._Ref
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
 	@Ref.deleter
 	def Ref(self):
@@ -37,16 +24,29 @@ class AdditionalReference12(base_types._BaseFieldType):
 
 	@RefIssr.setter
 	def RefIssr(self, value):
-		self._RefIssr = value if type(value) != auto else self.make_default("RefIssr")
+		self._RefIssr = value if type(value) != base_types.auto else self.make_default("RefIssr")
 
 	@RefIssr.deleter
 	def RefIssr(self):
 		del self._RefIssr
 		self._RefIssr = None
 
+	@property
+	def MsgNm(self):
+		return self._MsgNm
+
+	@MsgNm.setter
+	def MsgNm(self, value):
+		self._MsgNm = value if type(value) != base_types.auto else self.make_default("MsgNm")
+
+	@MsgNm.deleter
+	def MsgNm(self):
+		del self._MsgNm
+		self._MsgNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgNm', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefIssr', type=PartyIdentification192, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNm', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

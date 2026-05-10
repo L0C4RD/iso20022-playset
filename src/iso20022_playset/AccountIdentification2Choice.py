@@ -10,7 +10,7 @@ class AccountIdentification2Choice(base_types._BaseFieldType):
 
 	@CshAcctId.setter
 	def CshAcctId(self, value):
-		self._CshAcctId = value if type(value) != auto else self.make_default("CshAcctId")
+		self._CshAcctId = value if type(value) != base_types.auto else self.make_default("CshAcctId")
 
 	@CshAcctId.deleter
 	def CshAcctId(self):
@@ -23,7 +23,7 @@ class AccountIdentification2Choice(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):

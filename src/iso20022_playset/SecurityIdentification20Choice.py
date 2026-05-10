@@ -1,6 +1,6 @@
 from . import base_types
-from .Max25Text import Max25Text
 from .ISINOct2015Identifier import ISINOct2015Identifier
+from .Max25Text import Max25Text
 
 class SecurityIdentification20Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecurityIdentification20Choice(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
 
 	@ISIN.deleter
 	def ISIN(self):
@@ -24,7 +24,7 @@ class SecurityIdentification20Choice(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
 	@Nm.deleter
 	def Nm(self):

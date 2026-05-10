@@ -1,7 +1,7 @@
 from . import base_types
+from .Number import Number
 from .DecimalNumber import DecimalNumber
 from .FromToQuantityRange2 import FromToQuantityRange2
-from .Number import Number
 
 class TransactionsBin2(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class TransactionsBin2(base_types._BaseFieldType):
 
 	@NbOfTxs.setter
 	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
+		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
 
 	@NbOfTxs.deleter
 	def NbOfTxs(self):
@@ -25,7 +25,7 @@ class TransactionsBin2(base_types._BaseFieldType):
 
 	@Rg.setter
 	def Rg(self, value):
-		self._Rg = value if type(value) != auto else self.make_default("Rg")
+		self._Rg = value if type(value) != base_types.auto else self.make_default("Rg")
 
 	@Rg.deleter
 	def Rg(self):
@@ -38,7 +38,7 @@ class TransactionsBin2(base_types._BaseFieldType):
 
 	@TtlNtnlAmt.setter
 	def TtlNtnlAmt(self, value):
-		self._TtlNtnlAmt = value if type(value) != auto else self.make_default("TtlNtnlAmt")
+		self._TtlNtnlAmt = value if type(value) != base_types.auto else self.make_default("TtlNtnlAmt")
 
 	@TtlNtnlAmt.deleter
 	def TtlNtnlAmt(self):

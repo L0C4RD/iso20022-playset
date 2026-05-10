@@ -11,7 +11,7 @@ class DetailedAmount4(base_types._BaseFieldType):
 
 	@Labl.setter
 	def Labl(self, value):
-		self._Labl = value if type(value) != auto else self.make_default("Labl")
+		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
 
 	@Labl.deleter
 	def Labl(self):
@@ -24,7 +24,7 @@ class DetailedAmount4(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

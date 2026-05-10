@@ -1,7 +1,7 @@
 from . import base_types
 from .RepurchaseAgreementType1Choice import RepurchaseAgreementType1Choice
-from .ProductClassification1 import ProductClassification1
 from .LEIIdentifier import LEIIdentifier
+from .ProductClassification1 import ProductClassification1
 
 class RepurchaseAgreement3(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class RepurchaseAgreement3(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
@@ -25,7 +25,7 @@ class RepurchaseAgreement3(base_types._BaseFieldType):
 
 	@PdctClssfctn.setter
 	def PdctClssfctn(self, value):
-		self._PdctClssfctn = value if type(value) != auto else self.make_default("PdctClssfctn")
+		self._PdctClssfctn = value if type(value) != base_types.auto else self.make_default("PdctClssfctn")
 
 	@PdctClssfctn.deleter
 	def PdctClssfctn(self):
@@ -38,7 +38,7 @@ class RepurchaseAgreement3(base_types._BaseFieldType):
 
 	@RpAgrmtTp.setter
 	def RpAgrmtTp(self, value):
-		self._RpAgrmtTp = value if type(value) != auto else self.make_default("RpAgrmtTp")
+		self._RpAgrmtTp = value if type(value) != base_types.auto else self.make_default("RpAgrmtTp")
 
 	@RpAgrmtTp.deleter
 	def RpAgrmtTp(self):

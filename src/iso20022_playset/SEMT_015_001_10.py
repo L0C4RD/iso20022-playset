@@ -12,7 +12,7 @@ class SEMT_015_001_10():
 
 		@IntraPosMvmntConf.setter
 		def IntraPosMvmntConf(self, value):
-			self._IntraPosMvmntConf = value if type(value) != auto else self.make_default("IntraPosMvmntConf")
+			self._IntraPosMvmntConf = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntConf")
 
 		@IntraPosMvmntConf.deleter
 		def IntraPosMvmntConf(self):

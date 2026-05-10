@@ -1,18 +1,18 @@
 from . import base_types
-from .UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
-from .ISODateTime import ISODateTime
 from .Max256Text import Max256Text
+from .ISODateTime import ISODateTime
+from .UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
 
 class PartyAuditTrail2(base_types._BaseFieldType):
 
-	__slots__ = ["_InstgUsr", "_ApprvgUsr", "_OprTmStmp", "_Rcrd"]
+	__slots__ = ["_InstgUsr", "_Rcrd", "_ApprvgUsr", "_OprTmStmp"]
 	@property
 	def InstgUsr(self):
 		return self._InstgUsr
 
 	@InstgUsr.setter
 	def InstgUsr(self, value):
-		self._InstgUsr = value if type(value) != auto else self.make_default("InstgUsr")
+		self._InstgUsr = value if type(value) != base_types.auto else self.make_default("InstgUsr")
 
 	@InstgUsr.deleter
 	def InstgUsr(self):
@@ -20,12 +20,25 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 		self._InstgUsr = None
 
 	@property
+	def Rcrd(self):
+		return self._Rcrd
+
+	@Rcrd.setter
+	def Rcrd(self, value):
+		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
+
+	@Rcrd.deleter
+	def Rcrd(self):
+		del self._Rcrd
+		self._Rcrd = None
+
+	@property
 	def ApprvgUsr(self):
 		return self._ApprvgUsr
 
 	@ApprvgUsr.setter
 	def ApprvgUsr(self, value):
-		self._ApprvgUsr = value if type(value) != auto else self.make_default("ApprvgUsr")
+		self._ApprvgUsr = value if type(value) != base_types.auto else self.make_default("ApprvgUsr")
 
 	@ApprvgUsr.deleter
 	def ApprvgUsr(self):
@@ -38,30 +51,17 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 
 	@OprTmStmp.setter
 	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != auto else self.make_default("OprTmStmp")
+		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
 
 	@OprTmStmp.deleter
 	def OprTmStmp(self):
 		del self._OprTmStmp
 		self._OprTmStmp = None
 
-	@property
-	def Rcrd(self):
-		return self._Rcrd
-
-	@Rcrd.setter
-	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != auto else self.make_default("Rcrd")
-
-	@Rcrd.deleter
-	def Rcrd(self):
-		del self._Rcrd
-		self._Rcrd = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstgUsr', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ApprvgUsr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

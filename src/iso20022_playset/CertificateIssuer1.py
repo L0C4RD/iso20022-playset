@@ -10,7 +10,7 @@ class CertificateIssuer1(base_types._BaseFieldType):
 
 	@RltvDstngshdNm.setter
 	def RltvDstngshdNm(self, value):
-		self._RltvDstngshdNm = value if type(value) != auto else self.make_default("RltvDstngshdNm")
+		self._RltvDstngshdNm = value if type(value) != base_types.auto else self.make_default("RltvDstngshdNm")
 
 	@RltvDstngshdNm.deleter
 	def RltvDstngshdNm(self):

@@ -12,7 +12,7 @@ class SETR_029_001_02():
 
 		@SctiesTradConfCxl.setter
 		def SctiesTradConfCxl(self, value):
-			self._SctiesTradConfCxl = value if type(value) != auto else self.make_default("SctiesTradConfCxl")
+			self._SctiesTradConfCxl = value if type(value) != base_types.auto else self.make_default("SctiesTradConfCxl")
 
 		@SctiesTradConfCxl.deleter
 		def SctiesTradConfCxl(self):

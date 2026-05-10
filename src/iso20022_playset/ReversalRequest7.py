@@ -1,33 +1,20 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .CustomerOrder1 import CustomerOrder1
 from .PaymentTransaction165 import PaymentTransaction165
 from .LoyaltyRequestData3 import LoyaltyRequestData3
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .ReversalReason1Code import ReversalReason1Code
+from .CustomerOrder1 import CustomerOrder1
 
 class ReversalRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyData", "_CstmrOrdr", "_RvslRsn", "_RvsdAmt", "_RvslTx"]
-	@property
-	def LltyData(self):
-		return self._LltyData
-
-	@LltyData.setter
-	def LltyData(self, value):
-		self._LltyData = value if type(value) != auto else self.make_default("LltyData")
-
-	@LltyData.deleter
-	def LltyData(self):
-		del self._LltyData
-		self._LltyData = None
-
+	__slots__ = ["_CstmrOrdr", "_RvslRsn", "_RvslTx", "_RvsdAmt", "_LltyData"]
 	@property
 	def CstmrOrdr(self):
 		return self._CstmrOrdr
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):
@@ -40,7 +27,7 @@ class ReversalRequest7(base_types._BaseFieldType):
 
 	@RvslRsn.setter
 	def RvslRsn(self, value):
-		self._RvslRsn = value if type(value) != auto else self.make_default("RvslRsn")
+		self._RvslRsn = value if type(value) != base_types.auto else self.make_default("RvslRsn")
 
 	@RvslRsn.deleter
 	def RvslRsn(self):
@@ -48,12 +35,25 @@ class ReversalRequest7(base_types._BaseFieldType):
 		self._RvslRsn = None
 
 	@property
+	def RvslTx(self):
+		return self._RvslTx
+
+	@RvslTx.setter
+	def RvslTx(self, value):
+		self._RvslTx = value if type(value) != base_types.auto else self.make_default("RvslTx")
+
+	@RvslTx.deleter
+	def RvslTx(self):
+		del self._RvslTx
+		self._RvslTx = None
+
+	@property
 	def RvsdAmt(self):
 		return self._RvsdAmt
 
 	@RvsdAmt.setter
 	def RvsdAmt(self, value):
-		self._RvsdAmt = value if type(value) != auto else self.make_default("RvsdAmt")
+		self._RvsdAmt = value if type(value) != base_types.auto else self.make_default("RvsdAmt")
 
 	@RvsdAmt.deleter
 	def RvsdAmt(self):
@@ -61,23 +61,23 @@ class ReversalRequest7(base_types._BaseFieldType):
 		self._RvsdAmt = None
 
 	@property
-	def RvslTx(self):
-		return self._RvslTx
+	def LltyData(self):
+		return self._LltyData
 
-	@RvslTx.setter
-	def RvslTx(self, value):
-		self._RvslTx = value if type(value) != auto else self.make_default("RvslTx")
+	@LltyData.setter
+	def LltyData(self, value):
+		self._LltyData = value if type(value) != base_types.auto else self.make_default("LltyData")
 
-	@RvslTx.deleter
-	def RvslTx(self):
-		del self._RvslTx
-		self._RvslTx = None
+	@LltyData.deleter
+	def LltyData(self):
+		del self._LltyData
+		self._LltyData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LltyData', type=LoyaltyRequestData3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RvslRsn', type=ReversalReason1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RvslTx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyData', type=LoyaltyRequestData3, min=0, max=None, mutex_group=None, array=True),
 	))
 

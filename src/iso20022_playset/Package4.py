@@ -1,18 +1,31 @@
 from . import base_types
-from .Max100Text import Max100Text
 from .SecuritiesTransactionPrice20Choice import SecuritiesTransactionPrice20Choice
 from .SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
+from .Max100Text import Max100Text
 
 class Package4(base_types._BaseFieldType):
 
-	__slots__ = ["_FxSwpLkId", "_CmplxTradId", "_Pric", "_Sprd"]
+	__slots__ = ["_Sprd", "_FxSwpLkId", "_CmplxTradId", "_Pric"]
+	@property
+	def Sprd(self):
+		return self._Sprd
+
+	@Sprd.setter
+	def Sprd(self, value):
+		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
+
+	@Sprd.deleter
+	def Sprd(self):
+		del self._Sprd
+		self._Sprd = None
+
 	@property
 	def FxSwpLkId(self):
 		return self._FxSwpLkId
 
 	@FxSwpLkId.setter
 	def FxSwpLkId(self, value):
-		self._FxSwpLkId = value if type(value) != auto else self.make_default("FxSwpLkId")
+		self._FxSwpLkId = value if type(value) != base_types.auto else self.make_default("FxSwpLkId")
 
 	@FxSwpLkId.deleter
 	def FxSwpLkId(self):
@@ -25,7 +38,7 @@ class Package4(base_types._BaseFieldType):
 
 	@CmplxTradId.setter
 	def CmplxTradId(self, value):
-		self._CmplxTradId = value if type(value) != auto else self.make_default("CmplxTradId")
+		self._CmplxTradId = value if type(value) != base_types.auto else self.make_default("CmplxTradId")
 
 	@CmplxTradId.deleter
 	def CmplxTradId(self):
@@ -38,30 +51,17 @@ class Package4(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != auto else self.make_default("Pric")
+		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
 		self._Pric = None
 
-	@property
-	def Sprd(self):
-		return self._Sprd
-
-	@Sprd.setter
-	def Sprd(self, value):
-		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
-
-	@Sprd.deleter
-	def Sprd(self):
-		del self._Sprd
-		self._Sprd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice20Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FxSwpLkId', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmplxTradId', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice20Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

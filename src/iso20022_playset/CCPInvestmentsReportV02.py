@@ -11,7 +11,7 @@ class CCPInvestmentsReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class CCPInvestmentsReportV02(base_types._BaseFieldType):
 
 	@Invstmt.setter
 	def Invstmt(self, value):
-		self._Invstmt = value if type(value) != auto else self.make_default("Invstmt")
+		self._Invstmt = value if type(value) != base_types.auto else self.make_default("Invstmt")
 
 	@Invstmt.deleter
 	def Invstmt(self):

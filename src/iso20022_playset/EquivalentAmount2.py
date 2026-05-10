@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class EquivalentAmount2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class EquivalentAmount2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class EquivalentAmount2(base_types._BaseFieldType):
 
 	@CcyOfTrf.setter
 	def CcyOfTrf(self, value):
-		self._CcyOfTrf = value if type(value) != auto else self.make_default("CcyOfTrf")
+		self._CcyOfTrf = value if type(value) != base_types.auto else self.make_default("CcyOfTrf")
 
 	@CcyOfTrf.deleter
 	def CcyOfTrf(self):

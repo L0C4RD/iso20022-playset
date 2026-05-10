@@ -1,57 +1,18 @@
 from . import base_types
 from .PercentageRate import PercentageRate
-from .TargetMarket1Code import TargetMarket1Code
 from .OtherTargetMarketLossBearing1 import OtherTargetMarketLossBearing1
+from .TargetMarket1Code import TargetMarket1Code
 
 class LossBearing2(base_types._BaseFieldType):
 
-	__slots__ = ["_NoCptlLoss", "_LtdCptlLoss", "_LtdCptlLossLvl", "_NoCptlGrnt", "_LossByndCptl", "_Othr"]
-	@property
-	def NoCptlLoss(self):
-		return self._NoCptlLoss
-
-	@NoCptlLoss.setter
-	def NoCptlLoss(self, value):
-		self._NoCptlLoss = value if type(value) != auto else self.make_default("NoCptlLoss")
-
-	@NoCptlLoss.deleter
-	def NoCptlLoss(self):
-		del self._NoCptlLoss
-		self._NoCptlLoss = None
-
-	@property
-	def LtdCptlLoss(self):
-		return self._LtdCptlLoss
-
-	@LtdCptlLoss.setter
-	def LtdCptlLoss(self, value):
-		self._LtdCptlLoss = value if type(value) != auto else self.make_default("LtdCptlLoss")
-
-	@LtdCptlLoss.deleter
-	def LtdCptlLoss(self):
-		del self._LtdCptlLoss
-		self._LtdCptlLoss = None
-
-	@property
-	def LtdCptlLossLvl(self):
-		return self._LtdCptlLossLvl
-
-	@LtdCptlLossLvl.setter
-	def LtdCptlLossLvl(self, value):
-		self._LtdCptlLossLvl = value if type(value) != auto else self.make_default("LtdCptlLossLvl")
-
-	@LtdCptlLossLvl.deleter
-	def LtdCptlLossLvl(self):
-		del self._LtdCptlLossLvl
-		self._LtdCptlLossLvl = None
-
+	__slots__ = ["_NoCptlGrnt", "_LossByndCptl", "_LtdCptlLoss", "_LtdCptlLossLvl", "_NoCptlLoss", "_Othr"]
 	@property
 	def NoCptlGrnt(self):
 		return self._NoCptlGrnt
 
 	@NoCptlGrnt.setter
 	def NoCptlGrnt(self, value):
-		self._NoCptlGrnt = value if type(value) != auto else self.make_default("NoCptlGrnt")
+		self._NoCptlGrnt = value if type(value) != base_types.auto else self.make_default("NoCptlGrnt")
 
 	@NoCptlGrnt.deleter
 	def NoCptlGrnt(self):
@@ -64,7 +25,7 @@ class LossBearing2(base_types._BaseFieldType):
 
 	@LossByndCptl.setter
 	def LossByndCptl(self, value):
-		self._LossByndCptl = value if type(value) != auto else self.make_default("LossByndCptl")
+		self._LossByndCptl = value if type(value) != base_types.auto else self.make_default("LossByndCptl")
 
 	@LossByndCptl.deleter
 	def LossByndCptl(self):
@@ -72,12 +33,51 @@ class LossBearing2(base_types._BaseFieldType):
 		self._LossByndCptl = None
 
 	@property
+	def LtdCptlLoss(self):
+		return self._LtdCptlLoss
+
+	@LtdCptlLoss.setter
+	def LtdCptlLoss(self, value):
+		self._LtdCptlLoss = value if type(value) != base_types.auto else self.make_default("LtdCptlLoss")
+
+	@LtdCptlLoss.deleter
+	def LtdCptlLoss(self):
+		del self._LtdCptlLoss
+		self._LtdCptlLoss = None
+
+	@property
+	def LtdCptlLossLvl(self):
+		return self._LtdCptlLossLvl
+
+	@LtdCptlLossLvl.setter
+	def LtdCptlLossLvl(self, value):
+		self._LtdCptlLossLvl = value if type(value) != base_types.auto else self.make_default("LtdCptlLossLvl")
+
+	@LtdCptlLossLvl.deleter
+	def LtdCptlLossLvl(self):
+		del self._LtdCptlLossLvl
+		self._LtdCptlLossLvl = None
+
+	@property
+	def NoCptlLoss(self):
+		return self._NoCptlLoss
+
+	@NoCptlLoss.setter
+	def NoCptlLoss(self, value):
+		self._NoCptlLoss = value if type(value) != base_types.auto else self.make_default("NoCptlLoss")
+
+	@NoCptlLoss.deleter
+	def NoCptlLoss(self):
+		del self._NoCptlLoss
+		self._NoCptlLoss = None
+
+	@property
 	def Othr(self):
 		return self._Othr
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):
@@ -85,11 +85,11 @@ class LossBearing2(base_types._BaseFieldType):
 		self._Othr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NoCptlLoss', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtdCptlLoss', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtdCptlLossLvl', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NoCptlGrnt', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LossByndCptl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtdCptlLoss', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtdCptlLossLvl', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NoCptlLoss', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=OtherTargetMarketLossBearing1, min=0, max=None, mutex_group=None, array=True),
 	))
 

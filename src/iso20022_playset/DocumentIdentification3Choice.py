@@ -10,7 +10,7 @@ class DocumentIdentification3Choice(base_types._BaseFieldType):
 
 	@AcctOwnrDocId.setter
 	def AcctOwnrDocId(self, value):
-		self._AcctOwnrDocId = value if type(value) != auto else self.make_default("AcctOwnrDocId")
+		self._AcctOwnrDocId = value if type(value) != base_types.auto else self.make_default("AcctOwnrDocId")
 
 	@AcctOwnrDocId.deleter
 	def AcctOwnrDocId(self):
@@ -23,7 +23,7 @@ class DocumentIdentification3Choice(base_types._BaseFieldType):
 
 	@AcctSvcrDocId.setter
 	def AcctSvcrDocId(self, value):
-		self._AcctSvcrDocId = value if type(value) != auto else self.make_default("AcctSvcrDocId")
+		self._AcctSvcrDocId = value if type(value) != base_types.auto else self.make_default("AcctSvcrDocId")
 
 	@AcctSvcrDocId.deleter
 	def AcctSvcrDocId(self):

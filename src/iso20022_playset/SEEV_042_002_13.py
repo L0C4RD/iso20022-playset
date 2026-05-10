@@ -12,7 +12,7 @@ class SEEV_042_002_13():
 
 		@CorpActnInstrStmtRpt.setter
 		def CorpActnInstrStmtRpt(self, value):
-			self._CorpActnInstrStmtRpt = value if type(value) != auto else self.make_default("CorpActnInstrStmtRpt")
+			self._CorpActnInstrStmtRpt = value if type(value) != base_types.auto else self.make_default("CorpActnInstrStmtRpt")
 
 		@CorpActnInstrStmtRpt.deleter
 		def CorpActnInstrStmtRpt(self):

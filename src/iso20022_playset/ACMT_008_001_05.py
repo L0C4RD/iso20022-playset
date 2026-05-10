@@ -12,7 +12,7 @@ class ACMT_008_001_05():
 
 		@AcctOpngAmdmntReq.setter
 		def AcctOpngAmdmntReq(self, value):
-			self._AcctOpngAmdmntReq = value if type(value) != auto else self.make_default("AcctOpngAmdmntReq")
+			self._AcctOpngAmdmntReq = value if type(value) != base_types.auto else self.make_default("AcctOpngAmdmntReq")
 
 		@AcctOpngAmdmntReq.deleter
 		def AcctOpngAmdmntReq(self):

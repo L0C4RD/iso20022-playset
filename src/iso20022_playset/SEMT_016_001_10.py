@@ -12,7 +12,7 @@ class SEMT_016_001_10():
 
 		@IntraPosMvmntPstngRpt.setter
 		def IntraPosMvmntPstngRpt(self, value):
-			self._IntraPosMvmntPstngRpt = value if type(value) != auto else self.make_default("IntraPosMvmntPstngRpt")
+			self._IntraPosMvmntPstngRpt = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntPstngRpt")
 
 		@IntraPosMvmntPstngRpt.deleter
 		def IntraPosMvmntPstngRpt(self):

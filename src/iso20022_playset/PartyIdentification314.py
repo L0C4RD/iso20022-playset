@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .LEIIdentifier import LEIIdentifier
 from .PartyIdentification257Choice import PartyIdentification257Choice
+from .Max35Text import Max35Text
 
 class PartyIdentification314(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PartyIdentification314(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -25,7 +25,7 @@ class PartyIdentification314(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):
@@ -38,7 +38,7 @@ class PartyIdentification314(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
 
 	@PrcgId.deleter
 	def PrcgId(self):

@@ -12,7 +12,7 @@ class CAMT_064_001_01():
 
 		@LmtUtlstnJrnlQry.setter
 		def LmtUtlstnJrnlQry(self, value):
-			self._LmtUtlstnJrnlQry = value if type(value) != auto else self.make_default("LmtUtlstnJrnlQry")
+			self._LmtUtlstnJrnlQry = value if type(value) != base_types.auto else self.make_default("LmtUtlstnJrnlQry")
 
 		@LmtUtlstnJrnlQry.deleter
 		def LmtUtlstnJrnlQry(self):

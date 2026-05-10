@@ -1,20 +1,20 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max35Text import Max35Text
 from .InstalmentAmountDetailsType3Code import InstalmentAmountDetailsType3Code
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .CreditDebit3Code import CreditDebit3Code
 from .PercentageRate import PercentageRate
+from .Max35Text import Max35Text
 
 class InstalmentAmountDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Amt", "_Tp", "_CdtDbt", "_Pctg", "_SubTp"]
+	__slots__ = ["_OthrTp", "_SubTp", "_CdtDbt", "_Pctg", "_Amt", "_Tp"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
 
 	@OthrTp.deleter
 	def OthrTp(self):
@@ -22,30 +22,17 @@ class InstalmentAmountDetails3(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def SubTp(self):
+		return self._SubTp
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@SubTp.setter
+	def SubTp(self, value):
+		self._SubTp = value if type(value) != base_types.auto else self.make_default("SubTp")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@SubTp.deleter
+	def SubTp(self):
+		del self._SubTp
+		self._SubTp = None
 
 	@property
 	def CdtDbt(self):
@@ -53,7 +40,7 @@ class InstalmentAmountDetails3(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
@@ -66,7 +53,7 @@ class InstalmentAmountDetails3(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
 
 	@Pctg.deleter
 	def Pctg(self):
@@ -74,24 +61,37 @@ class InstalmentAmountDetails3(base_types._BaseFieldType):
 		self._Pctg = None
 
 	@property
-	def SubTp(self):
-		return self._SubTp
+	def Amt(self):
+		return self._Amt
 
-	@SubTp.setter
-	def SubTp(self, value):
-		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@SubTp.deleter
-	def SubTp(self):
-		del self._SubTp
-		self._SubTp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=InstalmentAmountDetailsType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=InstalmentAmountDetailsType3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

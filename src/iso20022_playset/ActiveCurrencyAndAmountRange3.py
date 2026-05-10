@@ -1,18 +1,31 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
 from .ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
 from .CreditDebitCode import CreditDebitCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
 
 class ActiveCurrencyAndAmountRange3(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Ccy", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_Ccy"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
@@ -25,29 +38,16 @@ class ActiveCurrencyAndAmountRange3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAmountRange1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAmountRange1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

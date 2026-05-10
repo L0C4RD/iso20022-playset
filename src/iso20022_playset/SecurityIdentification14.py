@@ -1,7 +1,7 @@
 from . import base_types
 from .ISINIdentifier import ISINIdentifier
-from .Max140Text import Max140Text
 from .OtherIdentification1 import OtherIdentification1
+from .Max140Text import Max140Text
 
 class SecurityIdentification14(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class SecurityIdentification14(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
+		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
 
 	@OthrId.deleter
 	def OthrId(self):
@@ -25,7 +25,7 @@ class SecurityIdentification14(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
 	@Desc.deleter
 	def Desc(self):
@@ -38,7 +38,7 @@ class SecurityIdentification14(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
 
 	@ISIN.deleter
 	def ISIN(self):

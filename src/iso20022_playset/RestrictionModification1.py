@@ -11,7 +11,7 @@ class RestrictionModification1(base_types._BaseFieldType):
 
 	@Rstrctn.setter
 	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != auto else self.make_default("Rstrctn")
+		self._Rstrctn = value if type(value) != base_types.auto else self.make_default("Rstrctn")
 
 	@Rstrctn.deleter
 	def Rstrctn(self):
@@ -24,7 +24,7 @@ class RestrictionModification1(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
 
 	@ModCd.deleter
 	def ModCd(self):

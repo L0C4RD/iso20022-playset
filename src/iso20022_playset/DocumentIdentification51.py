@@ -1,32 +1,19 @@
 from . import base_types
-from .CopyDuplicate1Code import CopyDuplicate1Code
-from .Max35Text import Max35Text
 from .PartyIdentification136 import PartyIdentification136
 from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CopyDuplicate1Code import CopyDuplicate1Code
+from .Max35Text import Max35Text
 
 class DocumentIdentification51(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRcpt", "_Id", "_CreDtTm", "_CpyDplct", "_MsgOrgtr"]
-	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
-
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
-
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
-
+	__slots__ = ["_Id", "_MsgOrgtr", "_CpyDplct", "_CreDtTm", "_MsgRcpt"]
 	@property
 	def Id(self):
 		return self._Id
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -34,17 +21,17 @@ class DocumentIdentification51(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
 
 	@property
 	def CpyDplct(self):
@@ -52,7 +39,7 @@ class DocumentIdentification51(base_types._BaseFieldType):
 
 	@CpyDplct.setter
 	def CpyDplct(self, value):
-		self._CpyDplct = value if type(value) != auto else self.make_default("CpyDplct")
+		self._CpyDplct = value if type(value) != base_types.auto else self.make_default("CpyDplct")
 
 	@CpyDplct.deleter
 	def CpyDplct(self):
@@ -60,23 +47,36 @@ class DocumentIdentification51(base_types._BaseFieldType):
 		self._CpyDplct = None
 
 	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
+	@property
+	def MsgRcpt(self):
+		return self._MsgRcpt
+
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
+
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

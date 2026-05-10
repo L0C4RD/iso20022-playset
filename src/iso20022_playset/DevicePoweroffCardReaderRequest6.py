@@ -1,6 +1,6 @@
 from . import base_types
-from .ActionMessage11 import ActionMessage11
 from .Number import Number
+from .ActionMessage11 import ActionMessage11
 
 class DevicePoweroffCardReaderRequest6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DevicePoweroffCardReaderRequest6(base_types._BaseFieldType):
 
 	@PwrOffMaxWtgTm.setter
 	def PwrOffMaxWtgTm(self, value):
-		self._PwrOffMaxWtgTm = value if type(value) != auto else self.make_default("PwrOffMaxWtgTm")
+		self._PwrOffMaxWtgTm = value if type(value) != base_types.auto else self.make_default("PwrOffMaxWtgTm")
 
 	@PwrOffMaxWtgTm.deleter
 	def PwrOffMaxWtgTm(self):
@@ -24,7 +24,7 @@ class DevicePoweroffCardReaderRequest6(base_types._BaseFieldType):
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
 
 	@DispOutpt.deleter
 	def DispOutpt(self):

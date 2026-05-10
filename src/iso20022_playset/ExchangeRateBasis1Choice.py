@@ -11,7 +11,7 @@ class ExchangeRateBasis1Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -24,7 +24,7 @@ class ExchangeRateBasis1Choice(base_types._BaseFieldType):
 
 	@CcyPair.setter
 	def CcyPair(self, value):
-		self._CcyPair = value if type(value) != auto else self.make_default("CcyPair")
+		self._CcyPair = value if type(value) != base_types.auto else self.make_default("CcyPair")
 
 	@CcyPair.deleter
 	def CcyPair(self):

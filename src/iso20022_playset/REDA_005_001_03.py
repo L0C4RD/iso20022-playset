@@ -12,7 +12,7 @@ class REDA_005_001_03():
 
 		@InvstmtFndRptReq.setter
 		def InvstmtFndRptReq(self, value):
-			self._InvstmtFndRptReq = value if type(value) != auto else self.make_default("InvstmtFndRptReq")
+			self._InvstmtFndRptReq = value if type(value) != base_types.auto else self.make_default("InvstmtFndRptReq")
 
 		@InvstmtFndRptReq.deleter
 		def InvstmtFndRptReq(self):

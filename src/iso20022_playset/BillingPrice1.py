@@ -1,24 +1,24 @@
 from . import base_types
 from .Max20Text import Max20Text
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from .AmountAndDirection34 import AmountAndDirection34
 from .BillingChargeMethod1Code import BillingChargeMethod1Code
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class BillingPrice1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Mtd", "_UnitPric", "_Rule"]
+	__slots__ = ["_Rule", "_Mtd", "_UnitPric", "_Ccy"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Rule(self):
+		return self._Rule
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@Rule.setter
+	def Rule(self, value):
+		self._Rule = value if type(value) != base_types.auto else self.make_default("Rule")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Rule.deleter
+	def Rule(self):
+		del self._Rule
+		self._Rule = None
 
 	@property
 	def Mtd(self):
@@ -26,7 +26,7 @@ class BillingPrice1(base_types._BaseFieldType):
 
 	@Mtd.setter
 	def Mtd(self, value):
-		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
+		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
 
 	@Mtd.deleter
 	def Mtd(self):
@@ -39,7 +39,7 @@ class BillingPrice1(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
 
 	@UnitPric.deleter
 	def UnitPric(self):
@@ -47,22 +47,22 @@ class BillingPrice1(base_types._BaseFieldType):
 		self._UnitPric = None
 
 	@property
-	def Rule(self):
-		return self._Rule
+	def Ccy(self):
+		return self._Ccy
 
-	@Rule.setter
-	def Rule(self, value):
-		self._Rule = value if type(value) != auto else self.make_default("Rule")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@Rule.deleter
-	def Rule(self):
-		del self._Rule
-		self._Rule = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rule', type=Max20Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mtd', type=BillingChargeMethod1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rule', type=Max20Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

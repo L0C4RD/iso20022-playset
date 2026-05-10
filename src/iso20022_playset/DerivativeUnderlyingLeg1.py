@@ -1,6 +1,6 @@
 from . import base_types
-from .DefinedAttributes1Choice import DefinedAttributes1Choice
 from .FinancialInstrumentAttributes88 import FinancialInstrumentAttributes88
+from .DefinedAttributes1Choice import DefinedAttributes1Choice
 
 class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 
 	@DfndAttrbts.setter
 	def DfndAttrbts(self, value):
-		self._DfndAttrbts = value if type(value) != auto else self.make_default("DfndAttrbts")
+		self._DfndAttrbts = value if type(value) != base_types.auto else self.make_default("DfndAttrbts")
 
 	@DfndAttrbts.deleter
 	def DfndAttrbts(self):
@@ -24,7 +24,7 @@ class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 
 	@CtrctAttrbts.setter
 	def CtrctAttrbts(self, value):
-		self._CtrctAttrbts = value if type(value) != auto else self.make_default("CtrctAttrbts")
+		self._CtrctAttrbts = value if type(value) != base_types.auto else self.make_default("CtrctAttrbts")
 
 	@CtrctAttrbts.deleter
 	def CtrctAttrbts(self):

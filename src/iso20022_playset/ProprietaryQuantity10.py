@@ -1,19 +1,19 @@
 from . import base_types
-from .Max4AlphaNumericText import Max4AlphaNumericText
 from .Exact4AlphaNumericText import Exact4AlphaNumericText
-from .ShortLong1Code import ShortLong1Code
 from .RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .ShortLong1Code import ShortLong1Code
 
 class ProprietaryQuantity10(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_SchmeNm", "_QtyTp", "_ShrtLngPos", "_Issr"]
+	__slots__ = ["_Qty", "_ShrtLngPos", "_SchmeNm", "_QtyTp", "_Issr"]
 	@property
 	def Qty(self):
 		return self._Qty
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -21,12 +21,25 @@ class ProprietaryQuantity10(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
+	def ShrtLngPos(self):
+		return self._ShrtLngPos
+
+	@ShrtLngPos.setter
+	def ShrtLngPos(self, value):
+		self._ShrtLngPos = value if type(value) != base_types.auto else self.make_default("ShrtLngPos")
+
+	@ShrtLngPos.deleter
+	def ShrtLngPos(self):
+		del self._ShrtLngPos
+		self._ShrtLngPos = None
+
+	@property
 	def SchmeNm(self):
 		return self._SchmeNm
 
 	@SchmeNm.setter
 	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
 	@SchmeNm.deleter
 	def SchmeNm(self):
@@ -39,7 +52,7 @@ class ProprietaryQuantity10(base_types._BaseFieldType):
 
 	@QtyTp.setter
 	def QtyTp(self, value):
-		self._QtyTp = value if type(value) != auto else self.make_default("QtyTp")
+		self._QtyTp = value if type(value) != base_types.auto else self.make_default("QtyTp")
 
 	@QtyTp.deleter
 	def QtyTp(self):
@@ -47,25 +60,12 @@ class ProprietaryQuantity10(base_types._BaseFieldType):
 		self._QtyTp = None
 
 	@property
-	def ShrtLngPos(self):
-		return self._ShrtLngPos
-
-	@ShrtLngPos.setter
-	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
-
-	@ShrtLngPos.deleter
-	def ShrtLngPos(self):
-		del self._ShrtLngPos
-		self._ShrtLngPos = None
-
-	@property
 	def Issr(self):
 		return self._Issr
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -74,9 +74,9 @@ class ProprietaryQuantity10(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=RestrictedFINDecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

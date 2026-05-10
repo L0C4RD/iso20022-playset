@@ -12,7 +12,7 @@ class SEMT_002_001_02():
 
 		@CtdyStmtOfHldgsV02.setter
 		def CtdyStmtOfHldgsV02(self, value):
-			self._CtdyStmtOfHldgsV02 = value if type(value) != auto else self.make_default("CtdyStmtOfHldgsV02")
+			self._CtdyStmtOfHldgsV02 = value if type(value) != base_types.auto else self.make_default("CtdyStmtOfHldgsV02")
 
 		@CtdyStmtOfHldgsV02.deleter
 		def CtdyStmtOfHldgsV02(self):

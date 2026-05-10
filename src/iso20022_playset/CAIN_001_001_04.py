@@ -12,7 +12,7 @@ class CAIN_001_001_04():
 
 		@AuthstnInitn.setter
 		def AuthstnInitn(self, value):
-			self._AuthstnInitn = value if type(value) != auto else self.make_default("AuthstnInitn")
+			self._AuthstnInitn = value if type(value) != base_types.auto else self.make_default("AuthstnInitn")
 
 		@AuthstnInitn.deleter
 		def AuthstnInitn(self):

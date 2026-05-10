@@ -12,7 +12,7 @@ class SEEV_004_001_10():
 
 		@MtgInstr.setter
 		def MtgInstr(self, value):
-			self._MtgInstr = value if type(value) != auto else self.make_default("MtgInstr")
+			self._MtgInstr = value if type(value) != base_types.auto else self.make_default("MtgInstr")
 
 		@MtgInstr.deleter
 		def MtgInstr(self):

@@ -10,7 +10,7 @@ class CorporateActionAmounts60(base_types._BaseFieldType):
 
 	@ScndLvlTaxAmt.setter
 	def ScndLvlTaxAmt(self, value):
-		self._ScndLvlTaxAmt = value if type(value) != auto else self.make_default("ScndLvlTaxAmt")
+		self._ScndLvlTaxAmt = value if type(value) != base_types.auto else self.make_default("ScndLvlTaxAmt")
 
 	@ScndLvlTaxAmt.deleter
 	def ScndLvlTaxAmt(self):
@@ -23,7 +23,7 @@ class CorporateActionAmounts60(base_types._BaseFieldType):
 
 	@WhldgTaxAmt.setter
 	def WhldgTaxAmt(self, value):
-		self._WhldgTaxAmt = value if type(value) != auto else self.make_default("WhldgTaxAmt")
+		self._WhldgTaxAmt = value if type(value) != base_types.auto else self.make_default("WhldgTaxAmt")
 
 	@WhldgTaxAmt.deleter
 	def WhldgTaxAmt(self):

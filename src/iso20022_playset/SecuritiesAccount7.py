@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .PartyIdentification2Choice import PartyIdentification2Choice
+from .Max35Text import Max35Text
 
 class SecuritiesAccount7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesAccount7(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -24,7 +24,7 @@ class SecuritiesAccount7(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):

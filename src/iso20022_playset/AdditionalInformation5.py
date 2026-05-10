@@ -10,7 +10,7 @@ class AdditionalInformation5(base_types._BaseFieldType):
 
 	@Inf.setter
 	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
+		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
 
 	@Inf.deleter
 	def Inf(self):

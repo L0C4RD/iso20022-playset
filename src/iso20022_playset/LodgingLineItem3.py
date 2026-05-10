@@ -1,25 +1,25 @@
 from . import base_types
+from .Tax41 import Tax41
 from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .AdditionalData1 import AdditionalData1
 from .Max35Text import Max35Text
-from .LodgingService1Code import LodgingService1Code
 from .ISOTime import ISOTime
 from .Max4NumericText import Max4NumericText
-from .ISODate import ISODate
+from .LodgingService1Code import LodgingService1Code
 from .CreditDebit3Code import CreditDebit3Code
-from .Tax41 import Tax41
-from .AdditionalData1 import AdditionalData1
+from .ISODate import ISODate
 from .TrueFalseIndicator import TrueFalseIndicator
 
 class LodgingLineItem3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tm", "_OthrTp", "_Tax", "_Dt", "_CdtDbt", "_PstChckOut", "_Tp", "_SubTtlAmt", "_AddtlData", "_Drtn", "_UnitAmt"]
+	__slots__ = ["_Tm", "_CdtDbt", "_UnitAmt", "_PstChckOut", "_SubTtlAmt", "_OthrTp", "_Tp", "_Dt", "_Drtn", "_Tax", "_AddtlData"]
 	@property
 	def Tm(self):
 		return self._Tm
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != auto else self.make_default("Tm")
+		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
 
 	@Tm.deleter
 	def Tm(self):
@@ -27,51 +27,12 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._Tm = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
-
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
 	def CdtDbt(self):
 		return self._CdtDbt
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
@@ -79,12 +40,25 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
+	def UnitAmt(self):
+		return self._UnitAmt
+
+	@UnitAmt.setter
+	def UnitAmt(self, value):
+		self._UnitAmt = value if type(value) != base_types.auto else self.make_default("UnitAmt")
+
+	@UnitAmt.deleter
+	def UnitAmt(self):
+		del self._UnitAmt
+		self._UnitAmt = None
+
+	@property
 	def PstChckOut(self):
 		return self._PstChckOut
 
 	@PstChckOut.setter
 	def PstChckOut(self, value):
-		self._PstChckOut = value if type(value) != auto else self.make_default("PstChckOut")
+		self._PstChckOut = value if type(value) != base_types.auto else self.make_default("PstChckOut")
 
 	@PstChckOut.deleter
 	def PstChckOut(self):
@@ -92,25 +66,12 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._PstChckOut = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def SubTtlAmt(self):
 		return self._SubTtlAmt
 
 	@SubTtlAmt.setter
 	def SubTtlAmt(self, value):
-		self._SubTtlAmt = value if type(value) != auto else self.make_default("SubTtlAmt")
+		self._SubTtlAmt = value if type(value) != base_types.auto else self.make_default("SubTtlAmt")
 
 	@SubTtlAmt.deleter
 	def SubTtlAmt(self):
@@ -118,17 +79,43 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._SubTtlAmt = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def OthrTp(self):
+		return self._OthrTp
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def Drtn(self):
@@ -136,7 +123,7 @@ class LodgingLineItem3(base_types._BaseFieldType):
 
 	@Drtn.setter
 	def Drtn(self, value):
-		self._Drtn = value if type(value) != auto else self.make_default("Drtn")
+		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
 
 	@Drtn.deleter
 	def Drtn(self):
@@ -144,29 +131,42 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._Drtn = None
 
 	@property
-	def UnitAmt(self):
-		return self._UnitAmt
+	def Tax(self):
+		return self._Tax
 
-	@UnitAmt.setter
-	def UnitAmt(self, value):
-		self._UnitAmt = value if type(value) != auto else self.make_default("UnitAmt")
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
 
-	@UnitAmt.deleter
-	def UnitAmt(self):
-		del self._UnitAmt
-		self._UnitAmt = None
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstChckOut', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=LodgingService1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstChckOut', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=LodgingService1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

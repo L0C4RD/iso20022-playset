@@ -11,7 +11,7 @@ class SecuritiesAccountOrOperationalError3Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != auto else self.make_default("OprlErr")
+		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
 
 	@OprlErr.deleter
 	def OprlErr(self):
@@ -24,7 +24,7 @@ class SecuritiesAccountOrOperationalError3Choice(base_types._BaseFieldType):
 
 	@SctiesAcctRpt.setter
 	def SctiesAcctRpt(self, value):
-		self._SctiesAcctRpt = value if type(value) != auto else self.make_default("SctiesAcctRpt")
+		self._SctiesAcctRpt = value if type(value) != base_types.auto else self.make_default("SctiesAcctRpt")
 
 	@SctiesAcctRpt.deleter
 	def SctiesAcctRpt(self):

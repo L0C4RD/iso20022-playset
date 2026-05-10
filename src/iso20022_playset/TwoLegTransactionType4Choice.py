@@ -1,6 +1,6 @@
 from . import base_types
-from .FutureOrOptionDetails3 import FutureOrOptionDetails3
 from .SecuritiesFinancing12 import SecuritiesFinancing12
+from .FutureOrOptionDetails3 import FutureOrOptionDetails3
 
 class TwoLegTransactionType4Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TwoLegTransactionType4Choice(base_types._BaseFieldType):
 
 	@SctiesFincgDtls.setter
 	def SctiesFincgDtls(self, value):
-		self._SctiesFincgDtls = value if type(value) != auto else self.make_default("SctiesFincgDtls")
+		self._SctiesFincgDtls = value if type(value) != base_types.auto else self.make_default("SctiesFincgDtls")
 
 	@SctiesFincgDtls.deleter
 	def SctiesFincgDtls(self):
@@ -24,7 +24,7 @@ class TwoLegTransactionType4Choice(base_types._BaseFieldType):
 
 	@FutrOrOptnDtls.setter
 	def FutrOrOptnDtls(self, value):
-		self._FutrOrOptnDtls = value if type(value) != auto else self.make_default("FutrOrOptnDtls")
+		self._FutrOrOptnDtls = value if type(value) != base_types.auto else self.make_default("FutrOrOptnDtls")
 
 	@FutrOrOptnDtls.deleter
 	def FutrOrOptnDtls(self):

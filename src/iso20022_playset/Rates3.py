@@ -11,7 +11,7 @@ class Rates3(base_types._BaseFieldType):
 
 	@BuySellBck.setter
 	def BuySellBck(self, value):
-		self._BuySellBck = value if type(value) != auto else self.make_default("BuySellBck")
+		self._BuySellBck = value if type(value) != base_types.auto else self.make_default("BuySellBck")
 
 	@BuySellBck.deleter
 	def BuySellBck(self):
@@ -24,7 +24,7 @@ class Rates3(base_types._BaseFieldType):
 
 	@Fltg.setter
 	def Fltg(self, value):
-		self._Fltg = value if type(value) != auto else self.make_default("Fltg")
+		self._Fltg = value if type(value) != base_types.auto else self.make_default("Fltg")
 
 	@Fltg.deleter
 	def Fltg(self):
@@ -37,7 +37,7 @@ class Rates3(base_types._BaseFieldType):
 
 	@Fxd.setter
 	def Fxd(self, value):
-		self._Fxd = value if type(value) != auto else self.make_default("Fxd")
+		self._Fxd = value if type(value) != base_types.auto else self.make_default("Fxd")
 
 	@Fxd.deleter
 	def Fxd(self):

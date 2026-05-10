@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification136 import PartyIdentification136
 from .PartyIdentification149 import PartyIdentification149
+from .PartyIdentification136 import PartyIdentification136
 
 class OtherParties38(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class OtherParties38(base_types._BaseFieldType):
 
 	@Invstr.setter
 	def Invstr(self, value):
-		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
 
 	@Invstr.deleter
 	def Invstr(self):
@@ -24,7 +24,7 @@ class OtherParties38(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):

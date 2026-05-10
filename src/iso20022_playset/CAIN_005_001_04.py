@@ -12,7 +12,7 @@ class CAIN_005_001_04():
 
 		@RvslInitn.setter
 		def RvslInitn(self, value):
-			self._RvslInitn = value if type(value) != auto else self.make_default("RvslInitn")
+			self._RvslInitn = value if type(value) != base_types.auto else self.make_default("RvslInitn")
 
 		@RvslInitn.deleter
 		def RvslInitn(self):

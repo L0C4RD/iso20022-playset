@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DocumentType2Choice import DocumentType2Choice
+from .Max35Text import Max35Text
 
 class DocumentType1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DocumentType1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -24,7 +24,7 @@ class DocumentType1(base_types._BaseFieldType):
 
 	@CdOrPrtry.setter
 	def CdOrPrtry(self, value):
-		self._CdOrPrtry = value if type(value) != auto else self.make_default("CdOrPrtry")
+		self._CdOrPrtry = value if type(value) != base_types.auto else self.make_default("CdOrPrtry")
 
 	@CdOrPrtry.deleter
 	def CdOrPrtry(self):

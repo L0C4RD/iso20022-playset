@@ -12,7 +12,7 @@ class AccountReportingRequestV07(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class AccountReportingRequestV07(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
@@ -38,7 +38,7 @@ class AccountReportingRequestV07(base_types._BaseFieldType):
 
 	@RptgReq.setter
 	def RptgReq(self, value):
-		self._RptgReq = value if type(value) != auto else self.make_default("RptgReq")
+		self._RptgReq = value if type(value) != base_types.auto else self.make_default("RptgReq")
 
 	@RptgReq.deleter
 	def RptgReq(self):

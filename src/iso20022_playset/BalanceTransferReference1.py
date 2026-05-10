@@ -10,7 +10,7 @@ class BalanceTransferReference1(base_types._BaseFieldType):
 
 	@BalTrfRef.setter
 	def BalTrfRef(self, value):
-		self._BalTrfRef = value if type(value) != auto else self.make_default("BalTrfRef")
+		self._BalTrfRef = value if type(value) != base_types.auto else self.make_default("BalTrfRef")
 
 	@BalTrfRef.deleter
 	def BalTrfRef(self):

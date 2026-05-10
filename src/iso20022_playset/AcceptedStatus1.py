@@ -10,7 +10,7 @@ class AcceptedStatus1(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):

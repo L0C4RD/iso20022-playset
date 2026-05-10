@@ -11,7 +11,7 @@ class GenericPersonType1(base_types._BaseFieldType):
 
 	@Reqd.setter
 	def Reqd(self, value):
-		self._Reqd = value if type(value) != auto else self.make_default("Reqd")
+		self._Reqd = value if type(value) != base_types.auto else self.make_default("Reqd")
 
 	@Reqd.deleter
 	def Reqd(self):
@@ -24,7 +24,7 @@ class GenericPersonType1(base_types._BaseFieldType):
 
 	@SchmeNm.setter
 	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
 	@SchmeNm.deleter
 	def SchmeNm(self):

@@ -11,7 +11,7 @@ class SpreadRate1(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
 
 	@Sgn.deleter
 	def Sgn(self):
@@ -24,7 +24,7 @@ class SpreadRate1(base_types._BaseFieldType):
 
 	@RateOrAmt.setter
 	def RateOrAmt(self, value):
-		self._RateOrAmt = value if type(value) != auto else self.make_default("RateOrAmt")
+		self._RateOrAmt = value if type(value) != base_types.auto else self.make_default("RateOrAmt")
 
 	@RateOrAmt.deleter
 	def RateOrAmt(self):

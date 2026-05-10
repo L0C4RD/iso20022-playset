@@ -12,7 +12,7 @@ class SESE_021_002_06():
 
 		@SctiesTxStsQry.setter
 		def SctiesTxStsQry(self, value):
-			self._SctiesTxStsQry = value if type(value) != auto else self.make_default("SctiesTxStsQry")
+			self._SctiesTxStsQry = value if type(value) != base_types.auto else self.make_default("SctiesTxStsQry")
 
 		@SctiesTxStsQry.deleter
 		def SctiesTxStsQry(self):

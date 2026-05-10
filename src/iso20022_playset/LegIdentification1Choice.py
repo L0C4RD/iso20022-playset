@@ -10,7 +10,7 @@ class LegIdentification1Choice(base_types._BaseFieldType):
 
 	@RedLegId.setter
 	def RedLegId(self, value):
-		self._RedLegId = value if type(value) != auto else self.make_default("RedLegId")
+		self._RedLegId = value if type(value) != base_types.auto else self.make_default("RedLegId")
 
 	@RedLegId.deleter
 	def RedLegId(self):
@@ -23,7 +23,7 @@ class LegIdentification1Choice(base_types._BaseFieldType):
 
 	@SbcptLegId.setter
 	def SbcptLegId(self, value):
-		self._SbcptLegId = value if type(value) != auto else self.make_default("SbcptLegId")
+		self._SbcptLegId = value if type(value) != base_types.auto else self.make_default("SbcptLegId")
 
 	@SbcptLegId.deleter
 	def SbcptLegId(self):

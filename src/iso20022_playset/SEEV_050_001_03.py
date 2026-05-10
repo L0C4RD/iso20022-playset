@@ -12,7 +12,7 @@ class SEEV_050_001_03():
 
 		@MktClmCre.setter
 		def MktClmCre(self, value):
-			self._MktClmCre = value if type(value) != auto else self.make_default("MktClmCre")
+			self._MktClmCre = value if type(value) != base_types.auto else self.make_default("MktClmCre")
 
 		@MktClmCre.deleter
 		def MktClmCre(self):

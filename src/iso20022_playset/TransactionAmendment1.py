@@ -11,7 +11,7 @@ class TransactionAmendment1(base_types._BaseFieldType):
 
 	@Rcrd.setter
 	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != auto else self.make_default("Rcrd")
+		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
 
 	@Rcrd.deleter
 	def Rcrd(self):
@@ -24,7 +24,7 @@ class TransactionAmendment1(base_types._BaseFieldType):
 
 	@Pth.setter
 	def Pth(self, value):
-		self._Pth = value if type(value) != auto else self.make_default("Pth")
+		self._Pth = value if type(value) != base_types.auto else self.make_default("Pth")
 
 	@Pth.deleter
 	def Pth(self):

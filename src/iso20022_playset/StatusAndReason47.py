@@ -11,7 +11,7 @@ class StatusAndReason47(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
 	@Tx.deleter
 	def Tx(self):
@@ -24,7 +24,7 @@ class StatusAndReason47(base_types._BaseFieldType):
 
 	@StsAndRsn.setter
 	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != auto else self.make_default("StsAndRsn")
+		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
 
 	@StsAndRsn.deleter
 	def StsAndRsn(self):

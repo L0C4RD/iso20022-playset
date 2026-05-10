@@ -1,18 +1,31 @@
 from . import base_types
 from .NameAndAddress16 import NameAndAddress16
-from .RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
 from .Max2048Text import Max2048Text
+from .RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
 
 class RemittanceLocationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctrncAdr", "_PstlAdr", "_Mtd"]
+	__slots__ = ["_Mtd", "_ElctrncAdr", "_PstlAdr"]
+	@property
+	def Mtd(self):
+		return self._Mtd
+
+	@Mtd.setter
+	def Mtd(self, value):
+		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+
+	@Mtd.deleter
+	def Mtd(self):
+		del self._Mtd
+		self._Mtd = None
+
 	@property
 	def ElctrncAdr(self):
 		return self._ElctrncAdr
 
 	@ElctrncAdr.setter
 	def ElctrncAdr(self, value):
-		self._ElctrncAdr = value if type(value) != auto else self.make_default("ElctrncAdr")
+		self._ElctrncAdr = value if type(value) != base_types.auto else self.make_default("ElctrncAdr")
 
 	@ElctrncAdr.deleter
 	def ElctrncAdr(self):
@@ -25,29 +38,16 @@ class RemittanceLocationData1(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
 		self._PstlAdr = None
 
-	@property
-	def Mtd(self):
-		return self._Mtd
-
-	@Mtd.setter
-	def Mtd(self, value):
-		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
-
-	@Mtd.deleter
-	def Mtd(self):
-		del self._Mtd
-		self._Mtd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Mtd', type=RemittanceLocationMethod2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=NameAndAddress16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mtd', type=RemittanceLocationMethod2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

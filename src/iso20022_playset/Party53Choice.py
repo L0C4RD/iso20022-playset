@@ -1,6 +1,6 @@
 from . import base_types
-from .OrganisationIdentification40 import OrganisationIdentification40
 from .PersonIdentification20 import PersonIdentification20
+from .OrganisationIdentification40 import OrganisationIdentification40
 
 class Party53Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Party53Choice(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != auto else self.make_default("OrgId")
+		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
 
 	@OrgId.deleter
 	def OrgId(self):
@@ -24,7 +24,7 @@ class Party53Choice(base_types._BaseFieldType):
 
 	@PrvtId.setter
 	def PrvtId(self, value):
-		self._PrvtId = value if type(value) != auto else self.make_default("PrvtId")
+		self._PrvtId = value if type(value) != base_types.auto else self.make_default("PrvtId")
 
 	@PrvtId.deleter
 	def PrvtId(self):

@@ -1,7 +1,7 @@
 from . import base_types
+from .SupplementaryData1 import SupplementaryData1
 from .AvailableFinancialResourcesAmount2 import AvailableFinancialResourcesAmount2
 from .ReportingAssetBreakdown2 import ReportingAssetBreakdown2
-from .SupplementaryData1 import SupplementaryData1
 
 class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
 	@AvlblFinRsrcsAmt.setter
 	def AvlblFinRsrcsAmt(self, value):
-		self._AvlblFinRsrcsAmt = value if type(value) != auto else self.make_default("AvlblFinRsrcsAmt")
+		self._AvlblFinRsrcsAmt = value if type(value) != base_types.auto else self.make_default("AvlblFinRsrcsAmt")
 
 	@AvlblFinRsrcsAmt.deleter
 	def AvlblFinRsrcsAmt(self):
@@ -38,7 +38,7 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
 	@OthrPrfnddRsrcs.setter
 	def OthrPrfnddRsrcs(self, value):
-		self._OthrPrfnddRsrcs = value if type(value) != auto else self.make_default("OthrPrfnddRsrcs")
+		self._OthrPrfnddRsrcs = value if type(value) != base_types.auto else self.make_default("OthrPrfnddRsrcs")
 
 	@OthrPrfnddRsrcs.deleter
 	def OthrPrfnddRsrcs(self):

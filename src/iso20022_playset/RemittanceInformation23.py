@@ -1,32 +1,19 @@
 from . import base_types
-from .StructuredRemittanceInformation18 import StructuredRemittanceInformation18
 from .Max35Text import Max35Text
 from .OriginalPaymentInformation10 import OriginalPaymentInformation10
+from .StructuredRemittanceInformation18 import StructuredRemittanceInformation18
 from .Max140Text import Max140Text
 
 class RemittanceInformation23(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPmtInf", "_Strd", "_Ustrd", "_RmtId"]
-	@property
-	def OrgnlPmtInf(self):
-		return self._OrgnlPmtInf
-
-	@OrgnlPmtInf.setter
-	def OrgnlPmtInf(self, value):
-		self._OrgnlPmtInf = value if type(value) != auto else self.make_default("OrgnlPmtInf")
-
-	@OrgnlPmtInf.deleter
-	def OrgnlPmtInf(self):
-		del self._OrgnlPmtInf
-		self._OrgnlPmtInf = None
-
+	__slots__ = ["_Strd", "_Ustrd", "_OrgnlPmtInf", "_RmtId"]
 	@property
 	def Strd(self):
 		return self._Strd
 
 	@Strd.setter
 	def Strd(self, value):
-		self._Strd = value if type(value) != auto else self.make_default("Strd")
+		self._Strd = value if type(value) != base_types.auto else self.make_default("Strd")
 
 	@Strd.deleter
 	def Strd(self):
@@ -39,7 +26,7 @@ class RemittanceInformation23(base_types._BaseFieldType):
 
 	@Ustrd.setter
 	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != auto else self.make_default("Ustrd")
+		self._Ustrd = value if type(value) != base_types.auto else self.make_default("Ustrd")
 
 	@Ustrd.deleter
 	def Ustrd(self):
@@ -47,12 +34,25 @@ class RemittanceInformation23(base_types._BaseFieldType):
 		self._Ustrd = None
 
 	@property
+	def OrgnlPmtInf(self):
+		return self._OrgnlPmtInf
+
+	@OrgnlPmtInf.setter
+	def OrgnlPmtInf(self, value):
+		self._OrgnlPmtInf = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInf")
+
+	@OrgnlPmtInf.deleter
+	def OrgnlPmtInf(self):
+		del self._OrgnlPmtInf
+		self._OrgnlPmtInf = None
+
+	@property
 	def RmtId(self):
 		return self._RmtId
 
 	@RmtId.setter
 	def RmtId(self, value):
-		self._RmtId = value if type(value) != auto else self.make_default("RmtId")
+		self._RmtId = value if type(value) != base_types.auto else self.make_default("RmtId")
 
 	@RmtId.deleter
 	def RmtId(self):
@@ -60,9 +60,9 @@ class RemittanceInformation23(base_types._BaseFieldType):
 		self._RmtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlPmtInf', type=OriginalPaymentInformation10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Strd', type=StructuredRemittanceInformation18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ustrd', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlPmtInf', type=OriginalPaymentInformation10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

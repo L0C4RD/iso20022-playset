@@ -12,7 +12,7 @@ class ACMT_006_001_07():
 
 		@AcctMgmtStsRpt.setter
 		def AcctMgmtStsRpt(self, value):
-			self._AcctMgmtStsRpt = value if type(value) != auto else self.make_default("AcctMgmtStsRpt")
+			self._AcctMgmtStsRpt = value if type(value) != base_types.auto else self.make_default("AcctMgmtStsRpt")
 
 		@AcctMgmtStsRpt.deleter
 		def AcctMgmtStsRpt(self):

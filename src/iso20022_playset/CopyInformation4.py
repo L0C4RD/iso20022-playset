@@ -1,38 +1,38 @@
 from . import base_types
-from .AnyBICIdentifier import AnyBICIdentifier
 from .YesNoIndicator import YesNoIndicator
+from .AnyBICIdentifier import AnyBICIdentifier
 
 class CopyInformation4(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlRcvr", "_CpyInd"]
-	@property
-	def OrgnlRcvr(self):
-		return self._OrgnlRcvr
-
-	@OrgnlRcvr.setter
-	def OrgnlRcvr(self, value):
-		self._OrgnlRcvr = value if type(value) != auto else self.make_default("OrgnlRcvr")
-
-	@OrgnlRcvr.deleter
-	def OrgnlRcvr(self):
-		del self._OrgnlRcvr
-		self._OrgnlRcvr = None
-
+	__slots__ = ["_CpyInd", "_OrgnlRcvr"]
 	@property
 	def CpyInd(self):
 		return self._CpyInd
 
 	@CpyInd.setter
 	def CpyInd(self, value):
-		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
+		self._CpyInd = value if type(value) != base_types.auto else self.make_default("CpyInd")
 
 	@CpyInd.deleter
 	def CpyInd(self):
 		del self._CpyInd
 		self._CpyInd = None
 
+	@property
+	def OrgnlRcvr(self):
+		return self._OrgnlRcvr
+
+	@OrgnlRcvr.setter
+	def OrgnlRcvr(self, value):
+		self._OrgnlRcvr = value if type(value) != base_types.auto else self.make_default("OrgnlRcvr")
+
+	@OrgnlRcvr.deleter
+	def OrgnlRcvr(self):
+		del self._OrgnlRcvr
+		self._OrgnlRcvr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlRcvr', type=AnyBICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRcvr', type=AnyBICIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

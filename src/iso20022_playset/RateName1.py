@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max8Text import Max8Text
+from .Max35Text import Max35Text
 
 class RateName1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RateName1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
 	@Issr.deleter
 	def Issr(self):
@@ -24,7 +24,7 @@ class RateName1(base_types._BaseFieldType):
 
 	@RateNm.setter
 	def RateNm(self, value):
-		self._RateNm = value if type(value) != auto else self.make_default("RateNm")
+		self._RateNm = value if type(value) != base_types.auto else self.make_default("RateNm")
 
 	@RateNm.deleter
 	def RateNm(self):

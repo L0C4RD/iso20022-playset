@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .PartyIdentification242Choice import PartyIdentification242Choice
+from .Max35Text import Max35Text
 
 class NettingIdentification2Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NettingIdentification2Choice(base_types._BaseFieldType):
 
 	@TradPty.setter
 	def TradPty(self, value):
-		self._TradPty = value if type(value) != auto else self.make_default("TradPty")
+		self._TradPty = value if type(value) != base_types.auto else self.make_default("TradPty")
 
 	@TradPty.deleter
 	def TradPty(self):
@@ -24,7 +24,7 @@ class NettingIdentification2Choice(base_types._BaseFieldType):
 
 	@NetgGrpId.setter
 	def NetgGrpId(self, value):
-		self._NetgGrpId = value if type(value) != auto else self.make_default("NetgGrpId")
+		self._NetgGrpId = value if type(value) != base_types.auto else self.make_default("NetgGrpId")
 
 	@NetgGrpId.deleter
 	def NetgGrpId(self):

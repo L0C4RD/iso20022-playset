@@ -1,19 +1,19 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max16Text import Max16Text
 from .Max70Text import Max70Text
 from .POIComponentType1Code import POIComponentType1Code
+from .Max16Text import Max16Text
+from .Max35Text import Max35Text
 
 class PointOfInteractionComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_ManfctrId", "_ApprvlNb", "_VrsnNb", "_POICmpntTp", "_SrlNb", "_Mdl"]
+	__slots__ = ["_ManfctrId", "_POICmpntTp", "_ApprvlNb", "_SrlNb", "_VrsnNb", "_Mdl"]
 	@property
 	def ManfctrId(self):
 		return self._ManfctrId
 
 	@ManfctrId.setter
 	def ManfctrId(self, value):
-		self._ManfctrId = value if type(value) != auto else self.make_default("ManfctrId")
+		self._ManfctrId = value if type(value) != base_types.auto else self.make_default("ManfctrId")
 
 	@ManfctrId.deleter
 	def ManfctrId(self):
@@ -21,38 +21,12 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		self._ManfctrId = None
 
 	@property
-	def ApprvlNb(self):
-		return self._ApprvlNb
-
-	@ApprvlNb.setter
-	def ApprvlNb(self, value):
-		self._ApprvlNb = value if type(value) != auto else self.make_default("ApprvlNb")
-
-	@ApprvlNb.deleter
-	def ApprvlNb(self):
-		del self._ApprvlNb
-		self._ApprvlNb = None
-
-	@property
-	def VrsnNb(self):
-		return self._VrsnNb
-
-	@VrsnNb.setter
-	def VrsnNb(self, value):
-		self._VrsnNb = value if type(value) != auto else self.make_default("VrsnNb")
-
-	@VrsnNb.deleter
-	def VrsnNb(self):
-		del self._VrsnNb
-		self._VrsnNb = None
-
-	@property
 	def POICmpntTp(self):
 		return self._POICmpntTp
 
 	@POICmpntTp.setter
 	def POICmpntTp(self, value):
-		self._POICmpntTp = value if type(value) != auto else self.make_default("POICmpntTp")
+		self._POICmpntTp = value if type(value) != base_types.auto else self.make_default("POICmpntTp")
 
 	@POICmpntTp.deleter
 	def POICmpntTp(self):
@@ -60,12 +34,25 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		self._POICmpntTp = None
 
 	@property
+	def ApprvlNb(self):
+		return self._ApprvlNb
+
+	@ApprvlNb.setter
+	def ApprvlNb(self, value):
+		self._ApprvlNb = value if type(value) != base_types.auto else self.make_default("ApprvlNb")
+
+	@ApprvlNb.deleter
+	def ApprvlNb(self):
+		del self._ApprvlNb
+		self._ApprvlNb = None
+
+	@property
 	def SrlNb(self):
 		return self._SrlNb
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
 
 	@SrlNb.deleter
 	def SrlNb(self):
@@ -73,12 +60,25 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		self._SrlNb = None
 
 	@property
+	def VrsnNb(self):
+		return self._VrsnNb
+
+	@VrsnNb.setter
+	def VrsnNb(self, value):
+		self._VrsnNb = value if type(value) != base_types.auto else self.make_default("VrsnNb")
+
+	@VrsnNb.deleter
+	def VrsnNb(self):
+		del self._VrsnNb
+		self._VrsnNb = None
+
+	@property
 	def Mdl(self):
 		return self._Mdl
 
 	@Mdl.setter
 	def Mdl(self, value):
-		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
+		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
 
 	@Mdl.deleter
 	def Mdl(self):
@@ -87,10 +87,10 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ManfctrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApprvlNb', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VrsnNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POICmpntTp', type=POIComponentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvlNb', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VrsnNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

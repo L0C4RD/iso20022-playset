@@ -11,7 +11,7 @@ class RejectionReason1Choice(base_types._BaseFieldType):
 
 	@RjctdElmt.setter
 	def RjctdElmt(self, value):
-		self._RjctdElmt = value if type(value) != auto else self.make_default("RjctdElmt")
+		self._RjctdElmt = value if type(value) != base_types.auto else self.make_default("RjctdElmt")
 
 	@RjctdElmt.deleter
 	def RjctdElmt(self):
@@ -24,7 +24,7 @@ class RejectionReason1Choice(base_types._BaseFieldType):
 
 	@GblRjctnRsn.setter
 	def GblRjctnRsn(self, value):
-		self._GblRjctnRsn = value if type(value) != auto else self.make_default("GblRjctnRsn")
+		self._GblRjctnRsn = value if type(value) != base_types.auto else self.make_default("GblRjctnRsn")
 
 	@GblRjctnRsn.deleter
 	def GblRjctnRsn(self):

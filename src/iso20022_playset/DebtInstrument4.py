@@ -10,7 +10,7 @@ class DebtInstrument4(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):

@@ -11,7 +11,7 @@ class BorrowerLendingDeadline5(base_types._BaseFieldType):
 
 	@Brrwr.setter
 	def Brrwr(self, value):
-		self._Brrwr = value if type(value) != auto else self.make_default("Brrwr")
+		self._Brrwr = value if type(value) != base_types.auto else self.make_default("Brrwr")
 
 	@Brrwr.deleter
 	def Brrwr(self):
@@ -24,7 +24,7 @@ class BorrowerLendingDeadline5(base_types._BaseFieldType):
 
 	@StockLndgDdln.setter
 	def StockLndgDdln(self, value):
-		self._StockLndgDdln = value if type(value) != auto else self.make_default("StockLndgDdln")
+		self._StockLndgDdln = value if type(value) != base_types.auto else self.make_default("StockLndgDdln")
 
 	@StockLndgDdln.deleter
 	def StockLndgDdln(self):

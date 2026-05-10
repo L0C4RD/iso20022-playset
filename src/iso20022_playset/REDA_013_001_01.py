@@ -12,7 +12,7 @@ class REDA_013_001_01():
 
 		@SctyDeltnReq.setter
 		def SctyDeltnReq(self, value):
-			self._SctyDeltnReq = value if type(value) != auto else self.make_default("SctyDeltnReq")
+			self._SctyDeltnReq = value if type(value) != base_types.auto else self.make_default("SctyDeltnReq")
 
 		@SctyDeltnReq.deleter
 		def SctyDeltnReq(self):

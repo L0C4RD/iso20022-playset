@@ -1,7 +1,7 @@
 from . import base_types
 from .Quantity52Choice import Quantity52Choice
-from .CorporateActionOption40Choice import CorporateActionOption40Choice
 from .OptionNumber1Choice import OptionNumber1Choice
+from .CorporateActionOption40Choice import CorporateActionOption40Choice
 
 class CorporateActionOption200(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CorporateActionOption200(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
 
 	@OptnNb.deleter
 	def OptnNb(self):
@@ -25,7 +25,7 @@ class CorporateActionOption200(base_types._BaseFieldType):
 
 	@InstdQty.setter
 	def InstdQty(self, value):
-		self._InstdQty = value if type(value) != auto else self.make_default("InstdQty")
+		self._InstdQty = value if type(value) != base_types.auto else self.make_default("InstdQty")
 
 	@InstdQty.deleter
 	def InstdQty(self):
@@ -38,7 +38,7 @@ class CorporateActionOption200(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
 
 	@OptnTp.deleter
 	def OptnTp(self):

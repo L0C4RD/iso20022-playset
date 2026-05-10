@@ -1,6 +1,6 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .Max350Text import Max350Text
+from .CountryCode import CountryCode
 
 class RegulatoryStipulations1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RegulatoryStipulations1(base_types._BaseFieldType):
 
 	@Stiptns.setter
 	def Stiptns(self, value):
-		self._Stiptns = value if type(value) != auto else self.make_default("Stiptns")
+		self._Stiptns = value if type(value) != base_types.auto else self.make_default("Stiptns")
 
 	@Stiptns.deleter
 	def Stiptns(self):
@@ -24,7 +24,7 @@ class RegulatoryStipulations1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):

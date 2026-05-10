@@ -1,6 +1,6 @@
 from . import base_types
-from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from .OriginalAndCurrentQuantities1 import OriginalAndCurrentQuantities1
+from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class Quantity6Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Quantity6Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -24,7 +24,7 @@ class Quantity6Choice(base_types._BaseFieldType):
 
 	@OrgnlAndCurFace.setter
 	def OrgnlAndCurFace(self, value):
-		self._OrgnlAndCurFace = value if type(value) != auto else self.make_default("OrgnlAndCurFace")
+		self._OrgnlAndCurFace = value if type(value) != base_types.auto else self.make_default("OrgnlAndCurFace")
 
 	@OrgnlAndCurFace.deleter
 	def OrgnlAndCurFace(self):

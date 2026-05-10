@@ -12,7 +12,7 @@ class CAIN_019_001_03():
 
 		@VrfctnRspn.setter
 		def VrfctnRspn(self, value):
-			self._VrfctnRspn = value if type(value) != auto else self.make_default("VrfctnRspn")
+			self._VrfctnRspn = value if type(value) != base_types.auto else self.make_default("VrfctnRspn")
 
 		@VrfctnRspn.deleter
 		def VrfctnRspn(self):

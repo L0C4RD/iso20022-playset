@@ -1,6 +1,6 @@
 from . import base_types
-from .RateBasis1Code import RateBasis1Code
 from .Max3Number import Max3Number
+from .RateBasis1Code import RateBasis1Code
 
 class MaturityTerm2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MaturityTerm2(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):
@@ -24,7 +24,7 @@ class MaturityTerm2(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
 	@Unit.deleter
 	def Unit(self):

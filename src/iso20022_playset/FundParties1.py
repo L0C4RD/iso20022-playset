@@ -1,6 +1,6 @@
 from . import base_types
-from .ExtendedParty13 import ExtendedParty13
 from .ContactAttributes5 import ContactAttributes5
+from .ExtendedParty13 import ExtendedParty13
 
 class FundParties1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class FundParties1(base_types._BaseFieldType):
 
 	@Audtr.setter
 	def Audtr(self, value):
-		self._Audtr = value if type(value) != auto else self.make_default("Audtr")
+		self._Audtr = value if type(value) != base_types.auto else self.make_default("Audtr")
 
 	@Audtr.deleter
 	def Audtr(self):
@@ -24,7 +24,7 @@ class FundParties1(base_types._BaseFieldType):
 
 	@Guarntr.setter
 	def Guarntr(self, value):
-		self._Guarntr = value if type(value) != auto else self.make_default("Guarntr")
+		self._Guarntr = value if type(value) != base_types.auto else self.make_default("Guarntr")
 
 	@Guarntr.deleter
 	def Guarntr(self):
@@ -37,7 +37,7 @@ class FundParties1(base_types._BaseFieldType):
 
 	@OthrPty.setter
 	def OthrPty(self, value):
-		self._OthrPty = value if type(value) != auto else self.make_default("OthrPty")
+		self._OthrPty = value if type(value) != base_types.auto else self.make_default("OthrPty")
 
 	@OthrPty.deleter
 	def OthrPty(self):
@@ -50,7 +50,7 @@ class FundParties1(base_types._BaseFieldType):
 
 	@Trstee.setter
 	def Trstee(self, value):
-		self._Trstee = value if type(value) != auto else self.make_default("Trstee")
+		self._Trstee = value if type(value) != base_types.auto else self.make_default("Trstee")
 
 	@Trstee.deleter
 	def Trstee(self):

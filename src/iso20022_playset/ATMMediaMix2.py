@@ -1,6 +1,6 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .Number import Number
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ATMMediaMix2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ATMMediaMix2(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
 
 	@Nb.deleter
 	def Nb(self):
@@ -24,7 +24,7 @@ class ATMMediaMix2(base_types._BaseFieldType):
 
 	@UnitVal.setter
 	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
+		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
 
 	@UnitVal.deleter
 	def UnitVal(self):

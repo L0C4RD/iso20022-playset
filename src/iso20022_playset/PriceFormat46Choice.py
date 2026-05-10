@@ -11,7 +11,7 @@ class PriceFormat46Choice(base_types._BaseFieldType):
 
 	@NotSpcfdPric.setter
 	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
+		self._NotSpcfdPric = value if type(value) != base_types.auto else self.make_default("NotSpcfdPric")
 
 	@NotSpcfdPric.deleter
 	def NotSpcfdPric(self):
@@ -24,7 +24,7 @@ class PriceFormat46Choice(base_types._BaseFieldType):
 
 	@AmtPric.setter
 	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != auto else self.make_default("AmtPric")
+		self._AmtPric = value if type(value) != base_types.auto else self.make_default("AmtPric")
 
 	@AmtPric.deleter
 	def AmtPric(self):

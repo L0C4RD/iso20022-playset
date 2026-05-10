@@ -1,7 +1,7 @@
 from . import base_types
 from .CardPaymentEnvironment81 import CardPaymentEnvironment81
-from .TMSTrigger1 import TMSTrigger1
 from .TrueFalseIndicator import TrueFalseIndicator
+from .TMSTrigger1 import TMSTrigger1
 
 class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 
 	@TMSTrggr.setter
 	def TMSTrggr(self, value):
-		self._TMSTrggr = value if type(value) != auto else self.make_default("TMSTrggr")
+		self._TMSTrggr = value if type(value) != base_types.auto else self.make_default("TMSTrggr")
 
 	@TMSTrggr.deleter
 	def TMSTrggr(self):
@@ -25,7 +25,7 @@ class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -38,7 +38,7 @@ class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 
 	@AcqrrAvlbl.setter
 	def AcqrrAvlbl(self, value):
-		self._AcqrrAvlbl = value if type(value) != auto else self.make_default("AcqrrAvlbl")
+		self._AcqrrAvlbl = value if type(value) != base_types.auto else self.make_default("AcqrrAvlbl")
 
 	@AcqrrAvlbl.deleter
 	def AcqrrAvlbl(self):

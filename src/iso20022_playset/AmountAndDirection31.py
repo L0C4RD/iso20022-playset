@@ -11,7 +11,7 @@ class AmountAndDirection31(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class AmountAndDirection31(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):

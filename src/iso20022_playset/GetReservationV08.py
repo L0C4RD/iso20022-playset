@@ -1,7 +1,7 @@
 from . import base_types
-from .MessageHeader9 import MessageHeader9
 from .SupplementaryData1 import SupplementaryData1
 from .ReservationQuery6 import ReservationQuery6
+from .MessageHeader9 import MessageHeader9
 
 class GetReservationV08(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class GetReservationV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class GetReservationV08(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
@@ -38,7 +38,7 @@ class GetReservationV08(base_types._BaseFieldType):
 
 	@RsvatnQryDef.setter
 	def RsvatnQryDef(self, value):
-		self._RsvatnQryDef = value if type(value) != auto else self.make_default("RsvatnQryDef")
+		self._RsvatnQryDef = value if type(value) != base_types.auto else self.make_default("RsvatnQryDef")
 
 	@RsvatnQryDef.deleter
 	def RsvatnQryDef(self):

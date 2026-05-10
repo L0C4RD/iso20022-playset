@@ -1,23 +1,23 @@
 from . import base_types
+from .SupplementaryData1 import SupplementaryData1
 from .GroupHeader122 import GroupHeader122
 from .RemittanceInformation23 import RemittanceInformation23
-from .SupplementaryData1 import SupplementaryData1
 
 class RemittanceAdviceV06(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtInf", "_GrpHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_RmtInf"]
 	@property
-	def RmtInf(self):
-		return self._RmtInf
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@RmtInf.setter
-	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@RmtInf.deleter
-	def RmtInf(self):
-		del self._RmtInf
-		self._RmtInf = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def GrpHdr(self):
@@ -25,7 +25,7 @@ class RemittanceAdviceV06(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class RemittanceAdviceV06(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def RmtInf(self):
+		return self._RmtInf
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@RmtInf.setter
+	def RmtInf(self, value):
+		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@RmtInf.deleter
+	def RmtInf(self):
+		del self._RmtInf
+		self._RmtInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation23, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader122, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader122, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation23, min=1, max=None, mutex_group=None, array=True),
 	))
 

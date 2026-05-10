@@ -1,43 +1,43 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max35Text import Max35Text
-from .UnitOfMeasure1Code import UnitOfMeasure1Code
-from .DecimalNumber import DecimalNumber
 from .Tax41 import Tax41
-from .ProductCodeType1Code import ProductCodeType1Code
+from .DecimalNumber import DecimalNumber
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from .Adjustment14 import Adjustment14
 from .Max140Text import Max140Text
+from .ProductCodeType1Code import ProductCodeType1Code
+from .Max35Text import Max35Text
+from .UnitOfMeasure1Code import UnitOfMeasure1Code
 from .Max70Text import Max70Text
 from .TrueFalseIndicator import TrueFalseIndicator
 
 class SaleItem4(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrUnitOfMeasr", "_Tax", "_PdctCd", "_AdjstdAmt", "_UnitOfMeasr", "_NonAdjstdUnitPric", "_Adjstmnt", "_AddtlPdctCd", "_TtlAmt", "_PdctTp", "_AddtlPdctCdTp", "_NonAdjstdTtlAmt", "_InsrncAmt", "_PdctQty", "_PdctCdModfr", "_PdctDesc", "_InsrncInd", "_PdctCdTp"]
+	__slots__ = ["_PdctDesc", "_PdctCdModfr", "_PdctCd", "_PdctTp", "_AdjstdAmt", "_PdctCdTp", "_Tax", "_PdctQty", "_AddtlPdctCdTp", "_UnitOfMeasr", "_NonAdjstdUnitPric", "_OthrUnitOfMeasr", "_TtlAmt", "_NonAdjstdTtlAmt", "_Adjstmnt", "_InsrncAmt", "_InsrncInd", "_AddtlPdctCd"]
 	@property
-	def OthrUnitOfMeasr(self):
-		return self._OthrUnitOfMeasr
+	def PdctDesc(self):
+		return self._PdctDesc
 
-	@OthrUnitOfMeasr.setter
-	def OthrUnitOfMeasr(self, value):
-		self._OthrUnitOfMeasr = value if type(value) != auto else self.make_default("OthrUnitOfMeasr")
+	@PdctDesc.setter
+	def PdctDesc(self, value):
+		self._PdctDesc = value if type(value) != base_types.auto else self.make_default("PdctDesc")
 
-	@OthrUnitOfMeasr.deleter
-	def OthrUnitOfMeasr(self):
-		del self._OthrUnitOfMeasr
-		self._OthrUnitOfMeasr = None
+	@PdctDesc.deleter
+	def PdctDesc(self):
+		del self._PdctDesc
+		self._PdctDesc = None
 
 	@property
-	def Tax(self):
-		return self._Tax
+	def PdctCdModfr(self):
+		return self._PdctCdModfr
 
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
+	@PdctCdModfr.setter
+	def PdctCdModfr(self, value):
+		self._PdctCdModfr = value if type(value) != base_types.auto else self.make_default("PdctCdModfr")
 
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
+	@PdctCdModfr.deleter
+	def PdctCdModfr(self):
+		del self._PdctCdModfr
+		self._PdctCdModfr = None
 
 	@property
 	def PdctCd(self):
@@ -45,7 +45,7 @@ class SaleItem4(base_types._BaseFieldType):
 
 	@PdctCd.setter
 	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != auto else self.make_default("PdctCd")
+		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
 
 	@PdctCd.deleter
 	def PdctCd(self):
@@ -53,12 +53,25 @@ class SaleItem4(base_types._BaseFieldType):
 		self._PdctCd = None
 
 	@property
+	def PdctTp(self):
+		return self._PdctTp
+
+	@PdctTp.setter
+	def PdctTp(self, value):
+		self._PdctTp = value if type(value) != base_types.auto else self.make_default("PdctTp")
+
+	@PdctTp.deleter
+	def PdctTp(self):
+		del self._PdctTp
+		self._PdctTp = None
+
+	@property
 	def AdjstdAmt(self):
 		return self._AdjstdAmt
 
 	@AdjstdAmt.setter
 	def AdjstdAmt(self, value):
-		self._AdjstdAmt = value if type(value) != auto else self.make_default("AdjstdAmt")
+		self._AdjstdAmt = value if type(value) != base_types.auto else self.make_default("AdjstdAmt")
 
 	@AdjstdAmt.deleter
 	def AdjstdAmt(self):
@@ -66,12 +79,64 @@ class SaleItem4(base_types._BaseFieldType):
 		self._AdjstdAmt = None
 
 	@property
+	def PdctCdTp(self):
+		return self._PdctCdTp
+
+	@PdctCdTp.setter
+	def PdctCdTp(self, value):
+		self._PdctCdTp = value if type(value) != base_types.auto else self.make_default("PdctCdTp")
+
+	@PdctCdTp.deleter
+	def PdctCdTp(self):
+		del self._PdctCdTp
+		self._PdctCdTp = None
+
+	@property
+	def Tax(self):
+		return self._Tax
+
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
+
+	@property
+	def PdctQty(self):
+		return self._PdctQty
+
+	@PdctQty.setter
+	def PdctQty(self, value):
+		self._PdctQty = value if type(value) != base_types.auto else self.make_default("PdctQty")
+
+	@PdctQty.deleter
+	def PdctQty(self):
+		del self._PdctQty
+		self._PdctQty = None
+
+	@property
+	def AddtlPdctCdTp(self):
+		return self._AddtlPdctCdTp
+
+	@AddtlPdctCdTp.setter
+	def AddtlPdctCdTp(self, value):
+		self._AddtlPdctCdTp = value if type(value) != base_types.auto else self.make_default("AddtlPdctCdTp")
+
+	@AddtlPdctCdTp.deleter
+	def AddtlPdctCdTp(self):
+		del self._AddtlPdctCdTp
+		self._AddtlPdctCdTp = None
+
+	@property
 	def UnitOfMeasr(self):
 		return self._UnitOfMeasr
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
@@ -84,7 +149,7 @@ class SaleItem4(base_types._BaseFieldType):
 
 	@NonAdjstdUnitPric.setter
 	def NonAdjstdUnitPric(self, value):
-		self._NonAdjstdUnitPric = value if type(value) != auto else self.make_default("NonAdjstdUnitPric")
+		self._NonAdjstdUnitPric = value if type(value) != base_types.auto else self.make_default("NonAdjstdUnitPric")
 
 	@NonAdjstdUnitPric.deleter
 	def NonAdjstdUnitPric(self):
@@ -92,30 +157,17 @@ class SaleItem4(base_types._BaseFieldType):
 		self._NonAdjstdUnitPric = None
 
 	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
+	def OthrUnitOfMeasr(self):
+		return self._OthrUnitOfMeasr
 
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
+	@OthrUnitOfMeasr.setter
+	def OthrUnitOfMeasr(self, value):
+		self._OthrUnitOfMeasr = value if type(value) != base_types.auto else self.make_default("OthrUnitOfMeasr")
 
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
-
-	@property
-	def AddtlPdctCd(self):
-		return self._AddtlPdctCd
-
-	@AddtlPdctCd.setter
-	def AddtlPdctCd(self, value):
-		self._AddtlPdctCd = value if type(value) != auto else self.make_default("AddtlPdctCd")
-
-	@AddtlPdctCd.deleter
-	def AddtlPdctCd(self):
-		del self._AddtlPdctCd
-		self._AddtlPdctCd = None
+	@OthrUnitOfMeasr.deleter
+	def OthrUnitOfMeasr(self):
+		del self._OthrUnitOfMeasr
+		self._OthrUnitOfMeasr = None
 
 	@property
 	def TtlAmt(self):
@@ -123,7 +175,7 @@ class SaleItem4(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
@@ -131,38 +183,12 @@ class SaleItem4(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
-	def PdctTp(self):
-		return self._PdctTp
-
-	@PdctTp.setter
-	def PdctTp(self, value):
-		self._PdctTp = value if type(value) != auto else self.make_default("PdctTp")
-
-	@PdctTp.deleter
-	def PdctTp(self):
-		del self._PdctTp
-		self._PdctTp = None
-
-	@property
-	def AddtlPdctCdTp(self):
-		return self._AddtlPdctCdTp
-
-	@AddtlPdctCdTp.setter
-	def AddtlPdctCdTp(self, value):
-		self._AddtlPdctCdTp = value if type(value) != auto else self.make_default("AddtlPdctCdTp")
-
-	@AddtlPdctCdTp.deleter
-	def AddtlPdctCdTp(self):
-		del self._AddtlPdctCdTp
-		self._AddtlPdctCdTp = None
-
-	@property
 	def NonAdjstdTtlAmt(self):
 		return self._NonAdjstdTtlAmt
 
 	@NonAdjstdTtlAmt.setter
 	def NonAdjstdTtlAmt(self, value):
-		self._NonAdjstdTtlAmt = value if type(value) != auto else self.make_default("NonAdjstdTtlAmt")
+		self._NonAdjstdTtlAmt = value if type(value) != base_types.auto else self.make_default("NonAdjstdTtlAmt")
 
 	@NonAdjstdTtlAmt.deleter
 	def NonAdjstdTtlAmt(self):
@@ -170,12 +196,25 @@ class SaleItem4(base_types._BaseFieldType):
 		self._NonAdjstdTtlAmt = None
 
 	@property
+	def Adjstmnt(self):
+		return self._Adjstmnt
+
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
+
+	@property
 	def InsrncAmt(self):
 		return self._InsrncAmt
 
 	@InsrncAmt.setter
 	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
+		self._InsrncAmt = value if type(value) != base_types.auto else self.make_default("InsrncAmt")
 
 	@InsrncAmt.deleter
 	def InsrncAmt(self):
@@ -183,51 +222,12 @@ class SaleItem4(base_types._BaseFieldType):
 		self._InsrncAmt = None
 
 	@property
-	def PdctQty(self):
-		return self._PdctQty
-
-	@PdctQty.setter
-	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
-
-	@PdctQty.deleter
-	def PdctQty(self):
-		del self._PdctQty
-		self._PdctQty = None
-
-	@property
-	def PdctCdModfr(self):
-		return self._PdctCdModfr
-
-	@PdctCdModfr.setter
-	def PdctCdModfr(self, value):
-		self._PdctCdModfr = value if type(value) != auto else self.make_default("PdctCdModfr")
-
-	@PdctCdModfr.deleter
-	def PdctCdModfr(self):
-		del self._PdctCdModfr
-		self._PdctCdModfr = None
-
-	@property
-	def PdctDesc(self):
-		return self._PdctDesc
-
-	@PdctDesc.setter
-	def PdctDesc(self, value):
-		self._PdctDesc = value if type(value) != auto else self.make_default("PdctDesc")
-
-	@PdctDesc.deleter
-	def PdctDesc(self):
-		del self._PdctDesc
-		self._PdctDesc = None
-
-	@property
 	def InsrncInd(self):
 		return self._InsrncInd
 
 	@InsrncInd.setter
 	def InsrncInd(self, value):
-		self._InsrncInd = value if type(value) != auto else self.make_default("InsrncInd")
+		self._InsrncInd = value if type(value) != base_types.auto else self.make_default("InsrncInd")
 
 	@InsrncInd.deleter
 	def InsrncInd(self):
@@ -235,36 +235,36 @@ class SaleItem4(base_types._BaseFieldType):
 		self._InsrncInd = None
 
 	@property
-	def PdctCdTp(self):
-		return self._PdctCdTp
+	def AddtlPdctCd(self):
+		return self._AddtlPdctCd
 
-	@PdctCdTp.setter
-	def PdctCdTp(self, value):
-		self._PdctCdTp = value if type(value) != auto else self.make_default("PdctCdTp")
+	@AddtlPdctCd.setter
+	def AddtlPdctCd(self, value):
+		self._AddtlPdctCd = value if type(value) != base_types.auto else self.make_default("AddtlPdctCd")
 
-	@PdctCdTp.deleter
-	def PdctCdTp(self):
-		del self._PdctCdTp
-		self._PdctCdTp = None
+	@AddtlPdctCd.deleter
+	def AddtlPdctCd(self):
+		del self._AddtlPdctCd
+		self._AddtlPdctCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrUnitOfMeasr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdctDesc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCdModfr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdjstdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCdTp', type=ProductCodeType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPdctCdTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonAdjstdUnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adjstmnt', type=Adjustment14, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrUnitOfMeasr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlPdctCdTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonAdjstdTtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstmnt', type=Adjustment14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCdModfr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctDesc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InsrncInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCdTp', type=ProductCodeType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

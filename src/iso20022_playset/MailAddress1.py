@@ -1,6 +1,6 @@
 from . import base_types
-from .PostalAddress1 import PostalAddress1
 from .Max256Text import Max256Text
+from .PostalAddress1 import PostalAddress1
 
 class MailAddress1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class MailAddress1(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
@@ -24,7 +24,7 @@ class MailAddress1(base_types._BaseFieldType):
 
 	@Crspdc.setter
 	def Crspdc(self, value):
-		self._Crspdc = value if type(value) != auto else self.make_default("Crspdc")
+		self._Crspdc = value if type(value) != base_types.auto else self.make_default("Crspdc")
 
 	@Crspdc.deleter
 	def Crspdc(self):

@@ -1,32 +1,19 @@
 from . import base_types
 from .ISODateTime import ISODateTime
-from .PointOfInteractionComponent17 import PointOfInteractionComponent17
 from .PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
+from .PointOfInteractionComponent17 import PointOfInteractionComponent17
 from .ActionMessage11 import ActionMessage11
 
 class LoginResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_POICpblties", "_POISftwr", "_POIDtTm", "_OutptDisp"]
-	@property
-	def POICpblties(self):
-		return self._POICpblties
-
-	@POICpblties.setter
-	def POICpblties(self, value):
-		self._POICpblties = value if type(value) != auto else self.make_default("POICpblties")
-
-	@POICpblties.deleter
-	def POICpblties(self):
-		del self._POICpblties
-		self._POICpblties = None
-
+	__slots__ = ["_POISftwr", "_POIDtTm", "_POICpblties", "_OutptDisp"]
 	@property
 	def POISftwr(self):
 		return self._POISftwr
 
 	@POISftwr.setter
 	def POISftwr(self, value):
-		self._POISftwr = value if type(value) != auto else self.make_default("POISftwr")
+		self._POISftwr = value if type(value) != base_types.auto else self.make_default("POISftwr")
 
 	@POISftwr.deleter
 	def POISftwr(self):
@@ -39,7 +26,7 @@ class LoginResponse7(base_types._BaseFieldType):
 
 	@POIDtTm.setter
 	def POIDtTm(self, value):
-		self._POIDtTm = value if type(value) != auto else self.make_default("POIDtTm")
+		self._POIDtTm = value if type(value) != base_types.auto else self.make_default("POIDtTm")
 
 	@POIDtTm.deleter
 	def POIDtTm(self):
@@ -47,12 +34,25 @@ class LoginResponse7(base_types._BaseFieldType):
 		self._POIDtTm = None
 
 	@property
+	def POICpblties(self):
+		return self._POICpblties
+
+	@POICpblties.setter
+	def POICpblties(self, value):
+		self._POICpblties = value if type(value) != base_types.auto else self.make_default("POICpblties")
+
+	@POICpblties.deleter
+	def POICpblties(self):
+		del self._POICpblties
+		self._POICpblties = None
+
+	@property
 	def OutptDisp(self):
 		return self._OutptDisp
 
 	@OutptDisp.setter
 	def OutptDisp(self, value):
-		self._OutptDisp = value if type(value) != auto else self.make_default("OutptDisp")
+		self._OutptDisp = value if type(value) != base_types.auto else self.make_default("OutptDisp")
 
 	@OutptDisp.deleter
 	def OutptDisp(self):
@@ -60,9 +60,9 @@ class LoginResponse7(base_types._BaseFieldType):
 		self._OutptDisp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POISftwr', type=PointOfInteractionComponent17, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptDisp', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 	))
 

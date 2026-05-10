@@ -11,7 +11,7 @@ class CollateralMovement12(base_types._BaseFieldType):
 
 	@AgrdAmt.setter
 	def AgrdAmt(self, value):
-		self._AgrdAmt = value if type(value) != auto else self.make_default("AgrdAmt")
+		self._AgrdAmt = value if type(value) != base_types.auto else self.make_default("AgrdAmt")
 
 	@AgrdAmt.deleter
 	def AgrdAmt(self):
@@ -24,7 +24,7 @@ class CollateralMovement12(base_types._BaseFieldType):
 
 	@MvmntDrctn.setter
 	def MvmntDrctn(self, value):
-		self._MvmntDrctn = value if type(value) != auto else self.make_default("MvmntDrctn")
+		self._MvmntDrctn = value if type(value) != base_types.auto else self.make_default("MvmntDrctn")
 
 	@MvmntDrctn.deleter
 	def MvmntDrctn(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .SupplementaryData1 import SupplementaryData1
-from .SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
 from .SecuritiesNonTradingDayReport1 import SecuritiesNonTradingDayReport1
+from .SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
 
 class FinancialInstrumentReportingNonWorkingDayReportV01(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class FinancialInstrumentReportingNonWorkingDayReportV01(base_types._BaseFieldTy
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class FinancialInstrumentReportingNonWorkingDayReportV01(base_types._BaseFieldTy
 
 	@NonWorkgDay.setter
 	def NonWorkgDay(self, value):
-		self._NonWorkgDay = value if type(value) != auto else self.make_default("NonWorkgDay")
+		self._NonWorkgDay = value if type(value) != base_types.auto else self.make_default("NonWorkgDay")
 
 	@NonWorkgDay.deleter
 	def NonWorkgDay(self):
@@ -38,7 +38,7 @@ class FinancialInstrumentReportingNonWorkingDayReportV01(base_types._BaseFieldTy
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
 	@RptHdr.deleter
 	def RptHdr(self):

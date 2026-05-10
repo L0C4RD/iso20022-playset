@@ -1,44 +1,31 @@
 from . import base_types
-from .Remittance1 import Remittance1
-from .PartyIdentification135 import PartyIdentification135
-from .ISODate import ISODate
-from .BICFIDec2014Identifier import BICFIDec2014Identifier
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max140Text import Max140Text
-from .Max4Text import Max4Text
-from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from .CashAccount40 import CashAccount40
 from .ISODateTime import ISODateTime
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from .Max140Text import Max140Text
+from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from .Max4Text import Max4Text
+from .BICFIDec2014Identifier import BICFIDec2014Identifier
+from .Remittance1 import Remittance1
+from .ISODate import ISODate
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .PartyIdentification135 import PartyIdentification135
 
 class TransactionAmendment1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_BICFI", "_Othr", "_Cd", "_Agt", "_Amt", "_CshAcct", "_Pty", "_Rmt", "_Dt", "_DtTm"]
+	__slots__ = ["_Pty", "_Othr", "_DtTm", "_AnyBIC", "_Cd", "_Agt", "_CshAcct", "_BICFI", "_Rmt", "_Dt", "_Amt"]
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
+	def Pty(self):
+		return self._Pty
 
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
-	@property
-	def BICFI(self):
-		return self._BICFI
-
-	@BICFI.setter
-	def BICFI(self, value):
-		self._BICFI = value if type(value) != auto else self.make_default("BICFI")
-
-	@BICFI.deleter
-	def BICFI(self):
-		del self._BICFI
-		self._BICFI = None
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
 
 	@property
 	def Othr(self):
@@ -46,7 +33,7 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):
@@ -54,12 +41,38 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
+	def DtTm(self):
+		return self._DtTm
+
+	@DtTm.setter
+	def DtTm(self, value):
+		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+
+	@DtTm.deleter
+	def DtTm(self):
+		del self._DtTm
+		self._DtTm = None
+
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
+	@property
 	def Cd(self):
 		return self._Cd
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -72,7 +85,7 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != auto else self.make_default("Agt")
+		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
 
 	@Agt.deleter
 	def Agt(self):
@@ -80,25 +93,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 		self._Agt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def CshAcct(self):
 		return self._CshAcct
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
 
 	@CshAcct.deleter
 	def CshAcct(self):
@@ -106,17 +106,17 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def Pty(self):
-		return self._Pty
+	def BICFI(self):
+		return self._BICFI
 
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+	@BICFI.setter
+	def BICFI(self, value):
+		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
 
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
+	@BICFI.deleter
+	def BICFI(self):
+		del self._BICFI
+		self._BICFI = None
 
 	@property
 	def Rmt(self):
@@ -124,7 +124,7 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Rmt.setter
 	def Rmt(self, value):
-		self._Rmt = value if type(value) != auto else self.make_default("Rmt")
+		self._Rmt = value if type(value) != base_types.auto else self.make_default("Rmt")
 
 	@Rmt.deleter
 	def Rmt(self):
@@ -137,7 +137,7 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -145,29 +145,29 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def DtTm(self):
-		return self._DtTm
+	def Amt(self):
+		return self._Amt
 
-	@DtTm.setter
-	def DtTm(self, value):
-		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@DtTm.deleter
-	def DtTm(self):
-		del self._DtTm
-		self._DtTm = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pty', type=PartyIdentification135, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=Max140Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=Max4Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pty', type=PartyIdentification135, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rmt', type=Remittance1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max15NumericText import Max15NumericText
 from .RejectionReason70 import RejectionReason70
+from .Max15NumericText import Max15NumericText
 
 class NumberOfTransactionsPerValidationRule6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NumberOfTransactionsPerValidationRule6(base_types._BaseFieldType):
 
 	@DtldNb.setter
 	def DtldNb(self, value):
-		self._DtldNb = value if type(value) != auto else self.make_default("DtldNb")
+		self._DtldNb = value if type(value) != base_types.auto else self.make_default("DtldNb")
 
 	@DtldNb.deleter
 	def DtldNb(self):
@@ -24,7 +24,7 @@ class NumberOfTransactionsPerValidationRule6(base_types._BaseFieldType):
 
 	@RptSts.setter
 	def RptSts(self, value):
-		self._RptSts = value if type(value) != auto else self.make_default("RptSts")
+		self._RptSts = value if type(value) != base_types.auto else self.make_default("RptSts")
 
 	@RptSts.deleter
 	def RptSts(self):

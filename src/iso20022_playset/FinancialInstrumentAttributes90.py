@@ -1,19 +1,32 @@
 from . import base_types
 from .Max35Text import Max35Text
-from .InterestComputationMethod2Code import InterestComputationMethod2Code
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from .GenericIdentification168 import GenericIdentification168
+from .InterestComputationMethod2Code import InterestComputationMethod2Code
 
 class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntnl", "_IntrstRateTerms", "_IndxId", "_IndxUnit", "_UnitVal"]
+	__slots__ = ["_IndxId", "_Ntnl", "_IntrstRateTerms", "_UnitVal", "_IndxUnit"]
+	@property
+	def IndxId(self):
+		return self._IndxId
+
+	@IndxId.setter
+	def IndxId(self, value):
+		self._IndxId = value if type(value) != base_types.auto else self.make_default("IndxId")
+
+	@IndxId.deleter
+	def IndxId(self):
+		del self._IndxId
+		self._IndxId = None
+
 	@property
 	def Ntnl(self):
 		return self._Ntnl
 
 	@Ntnl.setter
 	def Ntnl(self, value):
-		self._Ntnl = value if type(value) != auto else self.make_default("Ntnl")
+		self._Ntnl = value if type(value) != base_types.auto else self.make_default("Ntnl")
 
 	@Ntnl.deleter
 	def Ntnl(self):
@@ -26,7 +39,7 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
 	@IntrstRateTerms.setter
 	def IntrstRateTerms(self, value):
-		self._IntrstRateTerms = value if type(value) != auto else self.make_default("IntrstRateTerms")
+		self._IntrstRateTerms = value if type(value) != base_types.auto else self.make_default("IntrstRateTerms")
 
 	@IntrstRateTerms.deleter
 	def IntrstRateTerms(self):
@@ -34,17 +47,17 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 		self._IntrstRateTerms = None
 
 	@property
-	def IndxId(self):
-		return self._IndxId
+	def UnitVal(self):
+		return self._UnitVal
 
-	@IndxId.setter
-	def IndxId(self, value):
-		self._IndxId = value if type(value) != auto else self.make_default("IndxId")
+	@UnitVal.setter
+	def UnitVal(self, value):
+		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
 
-	@IndxId.deleter
-	def IndxId(self):
-		del self._IndxId
-		self._IndxId = None
+	@UnitVal.deleter
+	def UnitVal(self):
+		del self._UnitVal
+		self._UnitVal = None
 
 	@property
 	def IndxUnit(self):
@@ -52,31 +65,18 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
 	@IndxUnit.setter
 	def IndxUnit(self, value):
-		self._IndxUnit = value if type(value) != auto else self.make_default("IndxUnit")
+		self._IndxUnit = value if type(value) != base_types.auto else self.make_default("IndxUnit")
 
 	@IndxUnit.deleter
 	def IndxUnit(self):
 		del self._IndxUnit
 		self._IndxUnit = None
 
-	@property
-	def UnitVal(self):
-		return self._UnitVal
-
-	@UnitVal.setter
-	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
-
-	@UnitVal.deleter
-	def UnitVal(self):
-		del self._UnitVal
-		self._UnitVal = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IndxId', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntnl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRateTerms', type=InterestComputationMethod2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndxId', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndxUnit', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndxUnit', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

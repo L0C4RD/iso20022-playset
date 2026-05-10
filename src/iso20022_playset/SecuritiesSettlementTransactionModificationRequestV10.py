@@ -1,6 +1,6 @@
 from . import base_types
-from .TransactionDetails176 import TransactionDetails176
 from .UpdateType39Choice import UpdateType39Choice
+from .TransactionDetails176 import TransactionDetails176
 
 class SecuritiesSettlementTransactionModificationRequestV10(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecuritiesSettlementTransactionModificationRequestV10(base_types._BaseFiel
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
+		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
 
 	@UpdTp.deleter
 	def UpdTp(self):
@@ -24,7 +24,7 @@ class SecuritiesSettlementTransactionModificationRequestV10(base_types._BaseFiel
 
 	@ModfdTxDtls.setter
 	def ModfdTxDtls(self, value):
-		self._ModfdTxDtls = value if type(value) != auto else self.make_default("ModfdTxDtls")
+		self._ModfdTxDtls = value if type(value) != base_types.auto else self.make_default("ModfdTxDtls")
 
 	@ModfdTxDtls.deleter
 	def ModfdTxDtls(self):

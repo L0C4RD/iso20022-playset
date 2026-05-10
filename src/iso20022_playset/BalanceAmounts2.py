@@ -10,7 +10,7 @@ class BalanceAmounts2(base_types._BaseFieldType):
 
 	@UrlsdGnLoss.setter
 	def UrlsdGnLoss(self, value):
-		self._UrlsdGnLoss = value if type(value) != auto else self.make_default("UrlsdGnLoss")
+		self._UrlsdGnLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnLoss")
 
 	@UrlsdGnLoss.deleter
 	def UrlsdGnLoss(self):
@@ -23,7 +23,7 @@ class BalanceAmounts2(base_types._BaseFieldType):
 
 	@HldgVal.setter
 	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != auto else self.make_default("HldgVal")
+		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
 
 	@HldgVal.deleter
 	def HldgVal(self):
@@ -36,7 +36,7 @@ class BalanceAmounts2(base_types._BaseFieldType):
 
 	@BookVal.setter
 	def BookVal(self, value):
-		self._BookVal = value if type(value) != auto else self.make_default("BookVal")
+		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
 
 	@BookVal.deleter
 	def BookVal(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .CounterpartyData89 import CounterpartyData89
-from .ISODateTime import ISODateTime
 from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .ISODateTime import ISODateTime
 
 class CounterpartyData88(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CounterpartyData88(base_types._BaseFieldType):
 
 	@RptgDtTm.setter
 	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
+		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
 
 	@RptgDtTm.deleter
 	def RptgDtTm(self):
@@ -25,7 +25,7 @@ class CounterpartyData88(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
+		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
 
 	@CtrPty.deleter
 	def CtrPty(self):
@@ -38,7 +38,7 @@ class CounterpartyData88(base_types._BaseFieldType):
 
 	@RptSubmitgNtty.setter
 	def RptSubmitgNtty(self, value):
-		self._RptSubmitgNtty = value if type(value) != auto else self.make_default("RptSubmitgNtty")
+		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
 
 	@RptSubmitgNtty.deleter
 	def RptSubmitgNtty(self):

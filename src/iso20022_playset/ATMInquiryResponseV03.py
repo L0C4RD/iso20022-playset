@@ -1,8 +1,8 @@
 from . import base_types
-from .ATMInquiryResponse3 import ATMInquiryResponse3
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType15 import ContentInformationType15
 from .Header31 import Header31
+from .ContentInformationType15 import ContentInformationType15
+from .ContentInformationType10 import ContentInformationType10
+from .ATMInquiryResponse3 import ATMInquiryResponse3
 
 class ATMInquiryResponseV03(base_types._BaseFieldType):
 
@@ -13,7 +13,7 @@ class ATMInquiryResponseV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
@@ -26,7 +26,7 @@ class ATMInquiryResponseV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):
@@ -39,7 +39,7 @@ class ATMInquiryResponseV03(base_types._BaseFieldType):
 
 	@ATMNqryRspn.setter
 	def ATMNqryRspn(self, value):
-		self._ATMNqryRspn = value if type(value) != auto else self.make_default("ATMNqryRspn")
+		self._ATMNqryRspn = value if type(value) != base_types.auto else self.make_default("ATMNqryRspn")
 
 	@ATMNqryRspn.deleter
 	def ATMNqryRspn(self):
@@ -52,7 +52,7 @@ class ATMInquiryResponseV03(base_types._BaseFieldType):
 
 	@PrtctdATMNqryRspn.setter
 	def PrtctdATMNqryRspn(self, value):
-		self._PrtctdATMNqryRspn = value if type(value) != auto else self.make_default("PrtctdATMNqryRspn")
+		self._PrtctdATMNqryRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMNqryRspn")
 
 	@PrtctdATMNqryRspn.deleter
 	def PrtctdATMNqryRspn(self):

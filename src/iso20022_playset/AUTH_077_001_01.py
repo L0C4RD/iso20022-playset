@@ -12,7 +12,7 @@ class AUTH_077_001_01():
 
 		@FinBchmkRpt.setter
 		def FinBchmkRpt(self, value):
-			self._FinBchmkRpt = value if type(value) != auto else self.make_default("FinBchmkRpt")
+			self._FinBchmkRpt = value if type(value) != base_types.auto else self.make_default("FinBchmkRpt")
 
 		@FinBchmkRpt.deleter
 		def FinBchmkRpt(self):

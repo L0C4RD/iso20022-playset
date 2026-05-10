@@ -1,19 +1,19 @@
 from . import base_types
-from .CountryCode import CountryCode
 from .NetCashForecast4 import NetCashForecast4
-from .CashInForecast5 import CashInForecast5
 from .CashOutForecast5 import CashOutForecast5
+from .CountryCode import CountryCode
+from .CashInForecast5 import CashInForecast5
 
 class BreakdownByCountry2(base_types._BaseFieldType):
 
-	__slots__ = ["_CshInFcst", "_CshOutFcst", "_Ctry", "_NetCshFcst"]
+	__slots__ = ["_CshInFcst", "_NetCshFcst", "_Ctry", "_CshOutFcst"]
 	@property
 	def CshInFcst(self):
 		return self._CshInFcst
 
 	@CshInFcst.setter
 	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
+		self._CshInFcst = value if type(value) != base_types.auto else self.make_default("CshInFcst")
 
 	@CshInFcst.deleter
 	def CshInFcst(self):
@@ -21,17 +21,17 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 		self._CshInFcst = None
 
 	@property
-	def CshOutFcst(self):
-		return self._CshOutFcst
+	def NetCshFcst(self):
+		return self._NetCshFcst
 
-	@CshOutFcst.setter
-	def CshOutFcst(self, value):
-		self._CshOutFcst = value if type(value) != auto else self.make_default("CshOutFcst")
+	@NetCshFcst.setter
+	def NetCshFcst(self, value):
+		self._NetCshFcst = value if type(value) != base_types.auto else self.make_default("NetCshFcst")
 
-	@CshOutFcst.deleter
-	def CshOutFcst(self):
-		del self._CshOutFcst
-		self._CshOutFcst = None
+	@NetCshFcst.deleter
+	def NetCshFcst(self):
+		del self._NetCshFcst
+		self._NetCshFcst = None
 
 	@property
 	def Ctry(self):
@@ -39,7 +39,7 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
 	@Ctry.deleter
 	def Ctry(self):
@@ -47,22 +47,22 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def NetCshFcst(self):
-		return self._NetCshFcst
+	def CshOutFcst(self):
+		return self._CshOutFcst
 
-	@NetCshFcst.setter
-	def NetCshFcst(self, value):
-		self._NetCshFcst = value if type(value) != auto else self.make_default("NetCshFcst")
+	@CshOutFcst.setter
+	def CshOutFcst(self, value):
+		self._CshOutFcst = value if type(value) != base_types.auto else self.make_default("CshOutFcst")
 
-	@NetCshFcst.deleter
-	def NetCshFcst(self):
-		del self._NetCshFcst
-		self._NetCshFcst = None
+	@CshOutFcst.deleter
+	def CshOutFcst(self):
+		del self._CshOutFcst
+		self._CshOutFcst = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
 	))
 

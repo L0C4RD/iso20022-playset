@@ -12,7 +12,7 @@ class TSMT_045_001_02():
 
 		@FwdInttToPayNtfctn.setter
 		def FwdInttToPayNtfctn(self, value):
-			self._FwdInttToPayNtfctn = value if type(value) != auto else self.make_default("FwdInttToPayNtfctn")
+			self._FwdInttToPayNtfctn = value if type(value) != base_types.auto else self.make_default("FwdInttToPayNtfctn")
 
 		@FwdInttToPayNtfctn.deleter
 		def FwdInttToPayNtfctn(self):

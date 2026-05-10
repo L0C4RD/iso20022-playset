@@ -1,6 +1,6 @@
 from . import base_types
-from .TradeRecurrentQuery7 import TradeRecurrentQuery7
 from .TradeQueryCriteria14 import TradeQueryCriteria14
+from .TradeRecurrentQuery7 import TradeRecurrentQuery7
 
 class TradeReportQuery18Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TradeReportQuery18Choice(base_types._BaseFieldType):
 
 	@AdHocQry.setter
 	def AdHocQry(self, value):
-		self._AdHocQry = value if type(value) != auto else self.make_default("AdHocQry")
+		self._AdHocQry = value if type(value) != base_types.auto else self.make_default("AdHocQry")
 
 	@AdHocQry.deleter
 	def AdHocQry(self):
@@ -24,7 +24,7 @@ class TradeReportQuery18Choice(base_types._BaseFieldType):
 
 	@RcrntQry.setter
 	def RcrntQry(self, value):
-		self._RcrntQry = value if type(value) != auto else self.make_default("RcrntQry")
+		self._RcrntQry = value if type(value) != base_types.auto else self.make_default("RcrntQry")
 
 	@RcrntQry.deleter
 	def RcrntQry(self):

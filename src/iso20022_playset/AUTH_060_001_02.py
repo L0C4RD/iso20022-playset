@@ -12,7 +12,7 @@ class AUTH_060_001_02():
 
 		@CCPDalyCshFlowsRpt.setter
 		def CCPDalyCshFlowsRpt(self, value):
-			self._CCPDalyCshFlowsRpt = value if type(value) != auto else self.make_default("CCPDalyCshFlowsRpt")
+			self._CCPDalyCshFlowsRpt = value if type(value) != base_types.auto else self.make_default("CCPDalyCshFlowsRpt")
 
 		@CCPDalyCshFlowsRpt.deleter
 		def CCPDalyCshFlowsRpt(self):

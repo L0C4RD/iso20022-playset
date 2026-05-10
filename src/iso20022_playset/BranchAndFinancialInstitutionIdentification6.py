@@ -11,7 +11,7 @@ class BranchAndFinancialInstitutionIdentification6(base_types._BaseFieldType):
 
 	@FinInstnId.setter
 	def FinInstnId(self, value):
-		self._FinInstnId = value if type(value) != auto else self.make_default("FinInstnId")
+		self._FinInstnId = value if type(value) != base_types.auto else self.make_default("FinInstnId")
 
 	@FinInstnId.deleter
 	def FinInstnId(self):
@@ -24,7 +24,7 @@ class BranchAndFinancialInstitutionIdentification6(base_types._BaseFieldType):
 
 	@BrnchId.setter
 	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
+		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
 
 	@BrnchId.deleter
 	def BrnchId(self):

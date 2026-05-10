@@ -10,7 +10,7 @@ class PairedOrTurnedQuantity5Choice(base_types._BaseFieldType):
 
 	@PairdOffQty.setter
 	def PairdOffQty(self, value):
-		self._PairdOffQty = value if type(value) != auto else self.make_default("PairdOffQty")
+		self._PairdOffQty = value if type(value) != base_types.auto else self.make_default("PairdOffQty")
 
 	@PairdOffQty.deleter
 	def PairdOffQty(self):
@@ -23,7 +23,7 @@ class PairedOrTurnedQuantity5Choice(base_types._BaseFieldType):
 
 	@TrndQty.setter
 	def TrndQty(self, value):
-		self._TrndQty = value if type(value) != auto else self.make_default("TrndQty")
+		self._TrndQty = value if type(value) != base_types.auto else self.make_default("TrndQty")
 
 	@TrndQty.deleter
 	def TrndQty(self):

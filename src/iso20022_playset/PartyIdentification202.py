@@ -1,6 +1,6 @@
 from . import base_types
-from .NaturalPersonIdentification1 import NaturalPersonIdentification1
 from .PersonName1 import PersonName1
+from .NaturalPersonIdentification1 import NaturalPersonIdentification1
 
 class PartyIdentification202(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PartyIdentification202(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
@@ -24,7 +24,7 @@ class PartyIdentification202(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

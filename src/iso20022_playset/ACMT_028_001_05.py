@@ -12,7 +12,7 @@ class ACMT_028_001_05():
 
 		@AcctSwtchInfRspn.setter
 		def AcctSwtchInfRspn(self, value):
-			self._AcctSwtchInfRspn = value if type(value) != auto else self.make_default("AcctSwtchInfRspn")
+			self._AcctSwtchInfRspn = value if type(value) != base_types.auto else self.make_default("AcctSwtchInfRspn")
 
 		@AcctSwtchInfRspn.deleter
 		def AcctSwtchInfRspn(self):

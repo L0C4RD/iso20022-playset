@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesCountryIdentification2 import SecuritiesCountryIdentification2
 from .SupplementaryData1 import SupplementaryData1
+from .SecuritiesCountryIdentification2 import SecuritiesCountryIdentification2
 
 class FinancialInstrumentReportingCountryCodeReportV01(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class FinancialInstrumentReportingCountryCodeReportV01(base_types._BaseFieldType
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -24,7 +24,7 @@ class FinancialInstrumentReportingCountryCodeReportV01(base_types._BaseFieldType
 
 	@CtryData.setter
 	def CtryData(self, value):
-		self._CtryData = value if type(value) != auto else self.make_default("CtryData")
+		self._CtryData = value if type(value) != base_types.auto else self.make_default("CtryData")
 
 	@CtryData.deleter
 	def CtryData(self):

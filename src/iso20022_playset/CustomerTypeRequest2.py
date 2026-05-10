@@ -1,23 +1,23 @@
 from . import base_types
-from .PersonType2 import PersonType2
 from .RequestedIndicator import RequestedIndicator
+from .PersonType2 import PersonType2
 from .OrganisationType2 import OrganisationType2
 
 class CustomerTypeRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvtTp", "_Reqd", "_OrgTp"]
+	__slots__ = ["_OrgTp", "_Reqd", "_PrvtTp"]
 	@property
-	def PrvtTp(self):
-		return self._PrvtTp
+	def OrgTp(self):
+		return self._OrgTp
 
-	@PrvtTp.setter
-	def PrvtTp(self, value):
-		self._PrvtTp = value if type(value) != auto else self.make_default("PrvtTp")
+	@OrgTp.setter
+	def OrgTp(self, value):
+		self._OrgTp = value if type(value) != base_types.auto else self.make_default("OrgTp")
 
-	@PrvtTp.deleter
-	def PrvtTp(self):
-		del self._PrvtTp
-		self._PrvtTp = None
+	@OrgTp.deleter
+	def OrgTp(self):
+		del self._OrgTp
+		self._OrgTp = None
 
 	@property
 	def Reqd(self):
@@ -25,7 +25,7 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 
 	@Reqd.setter
 	def Reqd(self, value):
-		self._Reqd = value if type(value) != auto else self.make_default("Reqd")
+		self._Reqd = value if type(value) != base_types.auto else self.make_default("Reqd")
 
 	@Reqd.deleter
 	def Reqd(self):
@@ -33,21 +33,21 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 		self._Reqd = None
 
 	@property
-	def OrgTp(self):
-		return self._OrgTp
+	def PrvtTp(self):
+		return self._PrvtTp
 
-	@OrgTp.setter
-	def OrgTp(self, value):
-		self._OrgTp = value if type(value) != auto else self.make_default("OrgTp")
+	@PrvtTp.setter
+	def PrvtTp(self, value):
+		self._PrvtTp = value if type(value) != base_types.auto else self.make_default("PrvtTp")
 
-	@OrgTp.deleter
-	def OrgTp(self):
-		del self._OrgTp
-		self._OrgTp = None
+	@PrvtTp.deleter
+	def PrvtTp(self):
+		del self._PrvtTp
+		self._PrvtTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvtTp', type=PersonType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Reqd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgTp', type=OrganisationType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Reqd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvtTp', type=PersonType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

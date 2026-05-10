@@ -1,6 +1,6 @@
 from . import base_types
-from .Max9NumericText import Max9NumericText
 from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .Max9NumericText import Max9NumericText
 
 class TokenRequestComponent5(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TokenRequestComponent5(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -24,7 +24,7 @@ class TokenRequestComponent5(base_types._BaseFieldType):
 
 	@TxSeqCntr.setter
 	def TxSeqCntr(self, value):
-		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
+		self._TxSeqCntr = value if type(value) != base_types.auto else self.make_default("TxSeqCntr")
 
 	@TxSeqCntr.deleter
 	def TxSeqCntr(self):

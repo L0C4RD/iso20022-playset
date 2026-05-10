@@ -1,67 +1,28 @@
 from . import base_types
-from .MICIdentifier import MICIdentifier
-from .Max35Text import Max35Text
-from .TonsOrCurrency2Choice import TonsOrCurrency2Choice
-from .InstrumentOrSubClassIdentification2Choice import InstrumentOrSubClassIdentification2Choice
 from .Max350Text import Max350Text
-from .Period4Choice import Period4Choice
 from .StatisticsTransparency2 import StatisticsTransparency2
+from .TonsOrCurrency2Choice import TonsOrCurrency2Choice
+from .Max35Text import Max35Text
+from .InstrumentOrSubClassIdentification2Choice import InstrumentOrSubClassIdentification2Choice
+from .MICIdentifier import MICIdentifier
 from .TrueFalseIndicator import TrueFalseIndicator
+from .Period4Choice import Period4Choice
 
 class TransparencyDataReport20(base_types._BaseFieldType):
 
-	__slots__ = ["_PstTradInstrmSzSpcfcThrshld", "_Id", "_PreTradLrgInScaleThrshld", "_PstTradLrgInScaleThrshld", "_FullNm", "_Sttstcs", "_PreTradInstrmSzSpcfcThrshld", "_TradgVn", "_Lqdty", "_RptgPrd", "_TechRcrdId"]
+	__slots__ = ["_Lqdty", "_FullNm", "_PreTradInstrmSzSpcfcThrshld", "_TradgVn", "_PreTradLrgInScaleThrshld", "_PstTradLrgInScaleThrshld", "_Id", "_RptgPrd", "_TechRcrdId", "_PstTradInstrmSzSpcfcThrshld", "_Sttstcs"]
 	@property
-	def PstTradInstrmSzSpcfcThrshld(self):
-		return self._PstTradInstrmSzSpcfcThrshld
+	def Lqdty(self):
+		return self._Lqdty
 
-	@PstTradInstrmSzSpcfcThrshld.setter
-	def PstTradInstrmSzSpcfcThrshld(self, value):
-		self._PstTradInstrmSzSpcfcThrshld = value if type(value) != auto else self.make_default("PstTradInstrmSzSpcfcThrshld")
+	@Lqdty.setter
+	def Lqdty(self, value):
+		self._Lqdty = value if type(value) != base_types.auto else self.make_default("Lqdty")
 
-	@PstTradInstrmSzSpcfcThrshld.deleter
-	def PstTradInstrmSzSpcfcThrshld(self):
-		del self._PstTradInstrmSzSpcfcThrshld
-		self._PstTradInstrmSzSpcfcThrshld = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def PreTradLrgInScaleThrshld(self):
-		return self._PreTradLrgInScaleThrshld
-
-	@PreTradLrgInScaleThrshld.setter
-	def PreTradLrgInScaleThrshld(self, value):
-		self._PreTradLrgInScaleThrshld = value if type(value) != auto else self.make_default("PreTradLrgInScaleThrshld")
-
-	@PreTradLrgInScaleThrshld.deleter
-	def PreTradLrgInScaleThrshld(self):
-		del self._PreTradLrgInScaleThrshld
-		self._PreTradLrgInScaleThrshld = None
-
-	@property
-	def PstTradLrgInScaleThrshld(self):
-		return self._PstTradLrgInScaleThrshld
-
-	@PstTradLrgInScaleThrshld.setter
-	def PstTradLrgInScaleThrshld(self, value):
-		self._PstTradLrgInScaleThrshld = value if type(value) != auto else self.make_default("PstTradLrgInScaleThrshld")
-
-	@PstTradLrgInScaleThrshld.deleter
-	def PstTradLrgInScaleThrshld(self):
-		del self._PstTradLrgInScaleThrshld
-		self._PstTradLrgInScaleThrshld = None
+	@Lqdty.deleter
+	def Lqdty(self):
+		del self._Lqdty
+		self._Lqdty = None
 
 	@property
 	def FullNm(self):
@@ -69,7 +30,7 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
+		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
 
 	@FullNm.deleter
 	def FullNm(self):
@@ -77,25 +38,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 		self._FullNm = None
 
 	@property
-	def Sttstcs(self):
-		return self._Sttstcs
-
-	@Sttstcs.setter
-	def Sttstcs(self, value):
-		self._Sttstcs = value if type(value) != auto else self.make_default("Sttstcs")
-
-	@Sttstcs.deleter
-	def Sttstcs(self):
-		del self._Sttstcs
-		self._Sttstcs = None
-
-	@property
 	def PreTradInstrmSzSpcfcThrshld(self):
 		return self._PreTradInstrmSzSpcfcThrshld
 
 	@PreTradInstrmSzSpcfcThrshld.setter
 	def PreTradInstrmSzSpcfcThrshld(self, value):
-		self._PreTradInstrmSzSpcfcThrshld = value if type(value) != auto else self.make_default("PreTradInstrmSzSpcfcThrshld")
+		self._PreTradInstrmSzSpcfcThrshld = value if type(value) != base_types.auto else self.make_default("PreTradInstrmSzSpcfcThrshld")
 
 	@PreTradInstrmSzSpcfcThrshld.deleter
 	def PreTradInstrmSzSpcfcThrshld(self):
@@ -108,7 +56,7 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
 
 	@TradgVn.deleter
 	def TradgVn(self):
@@ -116,17 +64,43 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 		self._TradgVn = None
 
 	@property
-	def Lqdty(self):
-		return self._Lqdty
+	def PreTradLrgInScaleThrshld(self):
+		return self._PreTradLrgInScaleThrshld
 
-	@Lqdty.setter
-	def Lqdty(self, value):
-		self._Lqdty = value if type(value) != auto else self.make_default("Lqdty")
+	@PreTradLrgInScaleThrshld.setter
+	def PreTradLrgInScaleThrshld(self, value):
+		self._PreTradLrgInScaleThrshld = value if type(value) != base_types.auto else self.make_default("PreTradLrgInScaleThrshld")
 
-	@Lqdty.deleter
-	def Lqdty(self):
-		del self._Lqdty
-		self._Lqdty = None
+	@PreTradLrgInScaleThrshld.deleter
+	def PreTradLrgInScaleThrshld(self):
+		del self._PreTradLrgInScaleThrshld
+		self._PreTradLrgInScaleThrshld = None
+
+	@property
+	def PstTradLrgInScaleThrshld(self):
+		return self._PstTradLrgInScaleThrshld
+
+	@PstTradLrgInScaleThrshld.setter
+	def PstTradLrgInScaleThrshld(self, value):
+		self._PstTradLrgInScaleThrshld = value if type(value) != base_types.auto else self.make_default("PstTradLrgInScaleThrshld")
+
+	@PstTradLrgInScaleThrshld.deleter
+	def PstTradLrgInScaleThrshld(self):
+		del self._PstTradLrgInScaleThrshld
+		self._PstTradLrgInScaleThrshld = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def RptgPrd(self):
@@ -134,7 +108,7 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
@@ -147,24 +121,50 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
+	@property
+	def PstTradInstrmSzSpcfcThrshld(self):
+		return self._PstTradInstrmSzSpcfcThrshld
+
+	@PstTradInstrmSzSpcfcThrshld.setter
+	def PstTradInstrmSzSpcfcThrshld(self, value):
+		self._PstTradInstrmSzSpcfcThrshld = value if type(value) != base_types.auto else self.make_default("PstTradInstrmSzSpcfcThrshld")
+
+	@PstTradInstrmSzSpcfcThrshld.deleter
+	def PstTradInstrmSzSpcfcThrshld(self):
+		del self._PstTradInstrmSzSpcfcThrshld
+		self._PstTradInstrmSzSpcfcThrshld = None
+
+	@property
+	def Sttstcs(self):
+		return self._Sttstcs
+
+	@Sttstcs.setter
+	def Sttstcs(self, value):
+		self._Sttstcs = value if type(value) != base_types.auto else self.make_default("Sttstcs")
+
+	@Sttstcs.deleter
+	def Sttstcs(self):
+		del self._Sttstcs
+		self._Sttstcs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstTradInstrmSzSpcfcThrshld', type=TonsOrCurrency2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=InstrumentOrSubClassIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreTradLrgInScaleThrshld', type=TonsOrCurrency2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstTradLrgInScaleThrshld', type=TonsOrCurrency2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lqdty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sttstcs', type=StatisticsTransparency2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PreTradInstrmSzSpcfcThrshld', type=TonsOrCurrency2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lqdty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreTradLrgInScaleThrshld', type=TonsOrCurrency2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstTradLrgInScaleThrshld', type=TonsOrCurrency2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=InstrumentOrSubClassIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstTradInstrmSzSpcfcThrshld', type=TonsOrCurrency2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sttstcs', type=StatisticsTransparency2, min=0, max=1, mutex_group=None, array=False),
 	))
 

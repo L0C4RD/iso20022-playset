@@ -1,7 +1,7 @@
 from . import base_types
+from .GeneralBusinessInformationReturnCriteria1 import GeneralBusinessInformationReturnCriteria1
 from .GeneralBusinessInformationSearchCriteria1 import GeneralBusinessInformationSearchCriteria1
 from .Max35Text import Max35Text
-from .GeneralBusinessInformationReturnCriteria1 import GeneralBusinessInformationReturnCriteria1
 
 class BusinessInformationCriteria1(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class BusinessInformationCriteria1(base_types._BaseFieldType):
 
 	@RtrCrit.setter
 	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
+		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
 
 	@RtrCrit.deleter
 	def RtrCrit(self):
@@ -25,7 +25,7 @@ class BusinessInformationCriteria1(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
 
 	@SchCrit.deleter
 	def SchCrit(self):
@@ -38,7 +38,7 @@ class BusinessInformationCriteria1(base_types._BaseFieldType):
 
 	@NewQryNm.setter
 	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
+		self._NewQryNm = value if type(value) != base_types.auto else self.make_default("NewQryNm")
 
 	@NewQryNm.deleter
 	def NewQryNm(self):

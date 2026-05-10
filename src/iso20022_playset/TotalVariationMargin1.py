@@ -1,6 +1,6 @@
 from . import base_types
-from .ShortLong1Code import ShortLong1Code
 from .Amount2 import Amount2
+from .ShortLong1Code import ShortLong1Code
 
 class TotalVariationMargin1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class TotalVariationMargin1(base_types._BaseFieldType):
 
 	@AmtDtls.setter
 	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != auto else self.make_default("AmtDtls")
+		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
 
 	@AmtDtls.deleter
 	def AmtDtls(self):
@@ -24,7 +24,7 @@ class TotalVariationMargin1(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):

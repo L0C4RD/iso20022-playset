@@ -1,18 +1,18 @@
 from . import base_types
 from .Max4AlphaNumericText import Max4AlphaNumericText
-from .Max140Text import Max140Text
 from .ISODateTime import ISODateTime
+from .Max140Text import Max140Text
 
 class RequestHandling2(base_types._BaseFieldType):
 
-	__slots__ = ["_StsDtTm", "_Desc", "_StsCd"]
+	__slots__ = ["_StsDtTm", "_StsCd", "_Desc"]
 	@property
 	def StsDtTm(self):
 		return self._StsDtTm
 
 	@StsDtTm.setter
 	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != auto else self.make_default("StsDtTm")
+		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
 
 	@StsDtTm.deleter
 	def StsDtTm(self):
@@ -20,34 +20,34 @@ class RequestHandling2(base_types._BaseFieldType):
 		self._StsDtTm = None
 
 	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
 	def StsCd(self):
 		return self._StsCd
 
 	@StsCd.setter
 	def StsCd(self, value):
-		self._StsCd = value if type(value) != auto else self.make_default("StsCd")
+		self._StsCd = value if type(value) != base_types.auto else self.make_default("StsCd")
 
 	@StsCd.deleter
 	def StsCd(self):
 		del self._StsCd
 		self._StsCd = None
 
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsCd', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

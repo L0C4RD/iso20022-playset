@@ -1,18 +1,18 @@
 from . import base_types
-from .LimitStructure6 import LimitStructure6
 from .SupplementaryData1 import SupplementaryData1
+from .LimitStructure6 import LimitStructure6
 from .MessageHeader1 import MessageHeader1
 
 class CreateLimitV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_LmtData"]
+	__slots__ = ["_MsgHdr", "_LmtData", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
@@ -20,34 +20,34 @@ class CreateLimitV02(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def LmtData(self):
 		return self._LmtData
 
 	@LmtData.setter
 	def LmtData(self, value):
-		self._LmtData = value if type(value) != auto else self.make_default("LmtData")
+		self._LmtData = value if type(value) != base_types.auto else self.make_default("LmtData")
 
 	@LmtData.deleter
 	def LmtData(self):
 		del self._LmtData
 		self._LmtData = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LmtData', type=LimitStructure6, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

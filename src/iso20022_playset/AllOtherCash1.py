@@ -11,7 +11,7 @@ class AllOtherCash1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
 	@Ccy.deleter
 	def Ccy(self):
@@ -24,7 +24,7 @@ class AllOtherCash1(base_types._BaseFieldType):
 
 	@Ind.setter
 	def Ind(self, value):
-		self._Ind = value if type(value) != auto else self.make_default("Ind")
+		self._Ind = value if type(value) != base_types.auto else self.make_default("Ind")
 
 	@Ind.deleter
 	def Ind(self):

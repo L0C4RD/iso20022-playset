@@ -12,7 +12,7 @@ class CATM_004_001_05():
 
 		@TermnlMgmtRjctn.setter
 		def TermnlMgmtRjctn(self, value):
-			self._TermnlMgmtRjctn = value if type(value) != auto else self.make_default("TermnlMgmtRjctn")
+			self._TermnlMgmtRjctn = value if type(value) != base_types.auto else self.make_default("TermnlMgmtRjctn")
 
 		@TermnlMgmtRjctn.deleter
 		def TermnlMgmtRjctn(self):

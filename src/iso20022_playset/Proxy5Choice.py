@@ -1,6 +1,6 @@
 from . import base_types
-from .ProxyNotAllowed1Code import ProxyNotAllowed1Code
 from .ProxyAppointmentInformation6 import ProxyAppointmentInformation6
+from .ProxyNotAllowed1Code import ProxyNotAllowed1Code
 
 class Proxy5Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Proxy5Choice(base_types._BaseFieldType):
 
 	@Prxy.setter
 	def Prxy(self, value):
-		self._Prxy = value if type(value) != auto else self.make_default("Prxy")
+		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
 
 	@Prxy.deleter
 	def Prxy(self):
@@ -24,7 +24,7 @@ class Proxy5Choice(base_types._BaseFieldType):
 
 	@PrxyNotAllwd.setter
 	def PrxyNotAllwd(self, value):
-		self._PrxyNotAllwd = value if type(value) != auto else self.make_default("PrxyNotAllwd")
+		self._PrxyNotAllwd = value if type(value) != base_types.auto else self.make_default("PrxyNotAllwd")
 
 	@PrxyNotAllwd.deleter
 	def PrxyNotAllwd(self):

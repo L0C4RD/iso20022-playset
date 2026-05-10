@@ -11,7 +11,7 @@ class UndertakingAmount2(base_types._BaseFieldType):
 
 	@AmtChc.setter
 	def AmtChc(self, value):
-		self._AmtChc = value if type(value) != auto else self.make_default("AmtChc")
+		self._AmtChc = value if type(value) != base_types.auto else self.make_default("AmtChc")
 
 	@AmtChc.deleter
 	def AmtChc(self):
@@ -24,7 +24,7 @@ class UndertakingAmount2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):

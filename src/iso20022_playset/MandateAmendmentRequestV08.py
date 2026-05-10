@@ -12,7 +12,7 @@ class MandateAmendmentRequestV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class MandateAmendmentRequestV08(base_types._BaseFieldType):
 
 	@UndrlygAmdmntDtls.setter
 	def UndrlygAmdmntDtls(self, value):
-		self._UndrlygAmdmntDtls = value if type(value) != auto else self.make_default("UndrlygAmdmntDtls")
+		self._UndrlygAmdmntDtls = value if type(value) != base_types.auto else self.make_default("UndrlygAmdmntDtls")
 
 	@UndrlygAmdmntDtls.deleter
 	def UndrlygAmdmntDtls(self):
@@ -38,7 +38,7 @@ class MandateAmendmentRequestV08(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):

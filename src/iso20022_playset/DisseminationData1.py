@@ -4,19 +4,19 @@ from .Max52Text import Max52Text
 
 class DisseminationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlDssmntnIdr", "_TmStmp", "_DssmntnIdr"]
+	__slots__ = ["_DssmntnIdr", "_TmStmp", "_OrgnlDssmntnIdr"]
 	@property
-	def OrgnlDssmntnIdr(self):
-		return self._OrgnlDssmntnIdr
+	def DssmntnIdr(self):
+		return self._DssmntnIdr
 
-	@OrgnlDssmntnIdr.setter
-	def OrgnlDssmntnIdr(self, value):
-		self._OrgnlDssmntnIdr = value if type(value) != auto else self.make_default("OrgnlDssmntnIdr")
+	@DssmntnIdr.setter
+	def DssmntnIdr(self, value):
+		self._DssmntnIdr = value if type(value) != base_types.auto else self.make_default("DssmntnIdr")
 
-	@OrgnlDssmntnIdr.deleter
-	def OrgnlDssmntnIdr(self):
-		del self._OrgnlDssmntnIdr
-		self._OrgnlDssmntnIdr = None
+	@DssmntnIdr.deleter
+	def DssmntnIdr(self):
+		del self._DssmntnIdr
+		self._DssmntnIdr = None
 
 	@property
 	def TmStmp(self):
@@ -24,7 +24,7 @@ class DisseminationData1(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
 
 	@TmStmp.deleter
 	def TmStmp(self):
@@ -32,21 +32,21 @@ class DisseminationData1(base_types._BaseFieldType):
 		self._TmStmp = None
 
 	@property
-	def DssmntnIdr(self):
-		return self._DssmntnIdr
+	def OrgnlDssmntnIdr(self):
+		return self._OrgnlDssmntnIdr
 
-	@DssmntnIdr.setter
-	def DssmntnIdr(self, value):
-		self._DssmntnIdr = value if type(value) != auto else self.make_default("DssmntnIdr")
+	@OrgnlDssmntnIdr.setter
+	def OrgnlDssmntnIdr(self, value):
+		self._OrgnlDssmntnIdr = value if type(value) != base_types.auto else self.make_default("OrgnlDssmntnIdr")
 
-	@DssmntnIdr.deleter
-	def DssmntnIdr(self):
-		del self._DssmntnIdr
-		self._DssmntnIdr = None
+	@OrgnlDssmntnIdr.deleter
+	def OrgnlDssmntnIdr(self):
+		del self._OrgnlDssmntnIdr
+		self._OrgnlDssmntnIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlDssmntnIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DssmntnIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlDssmntnIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

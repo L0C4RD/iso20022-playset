@@ -1,7 +1,7 @@
 from . import base_types
-from .AlternatePartyIdentification9 import AlternatePartyIdentification9
 from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from .PartyIdentification258Choice import PartyIdentification258Choice
+from .AlternatePartyIdentification9 import AlternatePartyIdentification9
 
 class PartyIdentification318(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PartyIdentification318(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
 	@AltrnId.deleter
 	def AltrnId(self):
@@ -25,7 +25,7 @@ class PartyIdentification318(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
 
 	@PrcgId.deleter
 	def PrcgId(self):
@@ -38,7 +38,7 @@ class PartyIdentification318(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):

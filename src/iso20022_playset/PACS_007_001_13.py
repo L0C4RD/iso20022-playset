@@ -12,7 +12,7 @@ class PACS_007_001_13():
 
 		@FIToFIPmtRvsl.setter
 		def FIToFIPmtRvsl(self, value):
-			self._FIToFIPmtRvsl = value if type(value) != auto else self.make_default("FIToFIPmtRvsl")
+			self._FIToFIPmtRvsl = value if type(value) != base_types.auto else self.make_default("FIToFIPmtRvsl")
 
 		@FIToFIPmtRvsl.deleter
 		def FIToFIPmtRvsl(self):

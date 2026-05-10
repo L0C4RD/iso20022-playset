@@ -1,45 +1,19 @@
 from . import base_types
+from .SupplementaryData1 import SupplementaryData1
 from .OriginalPaymentInstruction50 import OriginalPaymentInstruction50
 from .OriginalGroupHeader20 import OriginalGroupHeader20
 from .GroupHeader124 import GroupHeader124
-from .SupplementaryData1 import SupplementaryData1
 
 class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPmtInfAndRvsl", "_OrgnlGrpInf", "_SplmtryData", "_GrpHdr"]
-	@property
-	def OrgnlPmtInfAndRvsl(self):
-		return self._OrgnlPmtInfAndRvsl
-
-	@OrgnlPmtInfAndRvsl.setter
-	def OrgnlPmtInfAndRvsl(self, value):
-		self._OrgnlPmtInfAndRvsl = value if type(value) != auto else self.make_default("OrgnlPmtInfAndRvsl")
-
-	@OrgnlPmtInfAndRvsl.deleter
-	def OrgnlPmtInfAndRvsl(self):
-		del self._OrgnlPmtInfAndRvsl
-		self._OrgnlPmtInfAndRvsl = None
-
-	@property
-	def OrgnlGrpInf(self):
-		return self._OrgnlGrpInf
-
-	@OrgnlGrpInf.setter
-	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
-
-	@OrgnlGrpInf.deleter
-	def OrgnlGrpInf(self):
-		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
-
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_OrgnlPmtInfAndRvsl", "_OrgnlGrpInf"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -52,17 +26,43 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
 		self._GrpHdr = None
 
+	@property
+	def OrgnlPmtInfAndRvsl(self):
+		return self._OrgnlPmtInfAndRvsl
+
+	@OrgnlPmtInfAndRvsl.setter
+	def OrgnlPmtInfAndRvsl(self, value):
+		self._OrgnlPmtInfAndRvsl = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfAndRvsl")
+
+	@OrgnlPmtInfAndRvsl.deleter
+	def OrgnlPmtInfAndRvsl(self):
+		del self._OrgnlPmtInfAndRvsl
+		self._OrgnlPmtInfAndRvsl = None
+
+	@property
+	def OrgnlGrpInf(self):
+		return self._OrgnlGrpInf
+
+	@OrgnlGrpInf.setter
+	def OrgnlGrpInf(self, value):
+		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+
+	@OrgnlGrpInf.deleter
+	def OrgnlGrpInf(self):
+		del self._OrgnlGrpInf
+		self._OrgnlGrpInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlPmtInfAndRvsl', type=OriginalPaymentInstruction50, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader124, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPmtInfAndRvsl', type=OriginalPaymentInstruction50, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader20, min=1, max=1, mutex_group=None, array=False),
 	))
 

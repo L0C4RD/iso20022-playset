@@ -10,7 +10,7 @@ class TimeOutResult2(base_types._BaseFieldType):
 
 	@TxFutrSts.setter
 	def TxFutrSts(self, value):
-		self._TxFutrSts = value if type(value) != auto else self.make_default("TxFutrSts")
+		self._TxFutrSts = value if type(value) != base_types.auto else self.make_default("TxFutrSts")
 
 	@TxFutrSts.deleter
 	def TxFutrSts(self):

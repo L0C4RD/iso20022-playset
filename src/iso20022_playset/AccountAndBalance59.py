@@ -1,25 +1,25 @@
 from . import base_types
-from .CorporateActionBalanceDetails43 import CorporateActionBalanceDetails43
-from .Max35Text import Max35Text
-from .Max140Text import Max140Text
 from .SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from .CorporateActionBalanceDetails43 import CorporateActionBalanceDetails43
 from .PartyIdentification127Choice import PartyIdentification127Choice
+from .Max140Text import Max140Text
+from .Max35Text import Max35Text
 
 class AccountAndBalance59(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_AcctOwnr", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_Bal"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_SfkpgPlc", "_SfkpgAcct", "_Bal"]
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def AcctOwnr(self):
@@ -27,7 +27,7 @@ class AccountAndBalance59(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
@@ -40,7 +40,7 @@ class AccountAndBalance59(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
@@ -48,17 +48,17 @@ class AccountAndBalance59(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def Bal(self):
@@ -66,7 +66,7 @@ class AccountAndBalance59(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
 
 	@Bal.deleter
 	def Bal(self):
@@ -74,10 +74,10 @@ class AccountAndBalance59(base_types._BaseFieldType):
 		self._Bal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=CorporateActionBalanceDetails43, min=0, max=1, mutex_group=None, array=False),
 	))
 

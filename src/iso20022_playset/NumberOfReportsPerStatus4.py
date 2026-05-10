@@ -11,7 +11,7 @@ class NumberOfReportsPerStatus4(base_types._BaseFieldType):
 
 	@DtldNbOfRpts.setter
 	def DtldNbOfRpts(self, value):
-		self._DtldNbOfRpts = value if type(value) != auto else self.make_default("DtldNbOfRpts")
+		self._DtldNbOfRpts = value if type(value) != base_types.auto else self.make_default("DtldNbOfRpts")
 
 	@DtldNbOfRpts.deleter
 	def DtldNbOfRpts(self):
@@ -24,7 +24,7 @@ class NumberOfReportsPerStatus4(base_types._BaseFieldType):
 
 	@DtldSts.setter
 	def DtldSts(self, value):
-		self._DtldSts = value if type(value) != auto else self.make_default("DtldSts")
+		self._DtldSts = value if type(value) != base_types.auto else self.make_default("DtldSts")
 
 	@DtldSts.deleter
 	def DtldSts(self):

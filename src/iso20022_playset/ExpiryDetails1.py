@@ -11,7 +11,7 @@ class ExpiryDetails1(base_types._BaseFieldType):
 
 	@AddtlXpryInf.setter
 	def AddtlXpryInf(self, value):
-		self._AddtlXpryInf = value if type(value) != auto else self.make_default("AddtlXpryInf")
+		self._AddtlXpryInf = value if type(value) != base_types.auto else self.make_default("AddtlXpryInf")
 
 	@AddtlXpryInf.deleter
 	def AddtlXpryInf(self):
@@ -24,7 +24,7 @@ class ExpiryDetails1(base_types._BaseFieldType):
 
 	@XpryTerms.setter
 	def XpryTerms(self, value):
-		self._XpryTerms = value if type(value) != auto else self.make_default("XpryTerms")
+		self._XpryTerms = value if type(value) != base_types.auto else self.make_default("XpryTerms")
 
 	@XpryTerms.deleter
 	def XpryTerms(self):

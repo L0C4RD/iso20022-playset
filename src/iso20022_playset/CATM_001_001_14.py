@@ -12,7 +12,7 @@ class CATM_001_001_14():
 
 		@StsRpt.setter
 		def StsRpt(self, value):
-			self._StsRpt = value if type(value) != auto else self.make_default("StsRpt")
+			self._StsRpt = value if type(value) != base_types.auto else self.make_default("StsRpt")
 
 		@StsRpt.deleter
 		def StsRpt(self):

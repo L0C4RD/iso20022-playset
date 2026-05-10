@@ -10,7 +10,7 @@ class PaymentTransaction71(base_types._BaseFieldType):
 
 	@CshInOrOut.setter
 	def CshInOrOut(self, value):
-		self._CshInOrOut = value if type(value) != auto else self.make_default("CshInOrOut")
+		self._CshInOrOut = value if type(value) != base_types.auto else self.make_default("CshInOrOut")
 
 	@CshInOrOut.deleter
 	def CshInOrOut(self):

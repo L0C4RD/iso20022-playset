@@ -12,7 +12,7 @@ class CAMT_055_001_12():
 
 		@CstmrPmtCxlReq.setter
 		def CstmrPmtCxlReq(self, value):
-			self._CstmrPmtCxlReq = value if type(value) != auto else self.make_default("CstmrPmtCxlReq")
+			self._CstmrPmtCxlReq = value if type(value) != base_types.auto else self.make_default("CstmrPmtCxlReq")
 
 		@CstmrPmtCxlReq.deleter
 		def CstmrPmtCxlReq(self):

@@ -11,7 +11,7 @@ class CashInOutForecast7(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class CashInOutForecast7(base_types._BaseFieldType):
 
 	@CshSttlmDt.setter
 	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != auto else self.make_default("CshSttlmDt")
+		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
 
 	@CshSttlmDt.deleter
 	def CshSttlmDt(self):

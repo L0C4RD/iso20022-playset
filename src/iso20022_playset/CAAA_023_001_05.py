@@ -12,7 +12,7 @@ class CAAA_023_001_05():
 
 		@AccptrNonFinRspn.setter
 		def AccptrNonFinRspn(self, value):
-			self._AccptrNonFinRspn = value if type(value) != auto else self.make_default("AccptrNonFinRspn")
+			self._AccptrNonFinRspn = value if type(value) != base_types.auto else self.make_default("AccptrNonFinRspn")
 
 		@AccptrNonFinRspn.deleter
 		def AccptrNonFinRspn(self):

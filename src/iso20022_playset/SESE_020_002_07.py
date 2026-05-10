@@ -12,7 +12,7 @@ class SESE_020_002_07():
 
 		@SctiesTxCxlReq.setter
 		def SctiesTxCxlReq(self, value):
-			self._SctiesTxCxlReq = value if type(value) != auto else self.make_default("SctiesTxCxlReq")
+			self._SctiesTxCxlReq = value if type(value) != base_types.auto else self.make_default("SctiesTxCxlReq")
 
 		@SctiesTxCxlReq.deleter
 		def SctiesTxCxlReq(self):

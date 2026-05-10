@@ -12,7 +12,7 @@ class CAAD_001_001_03():
 
 		@BtchMgmtInitn.setter
 		def BtchMgmtInitn(self, value):
-			self._BtchMgmtInitn = value if type(value) != auto else self.make_default("BtchMgmtInitn")
+			self._BtchMgmtInitn = value if type(value) != base_types.auto else self.make_default("BtchMgmtInitn")
 
 		@BtchMgmtInitn.deleter
 		def BtchMgmtInitn(self):

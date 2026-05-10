@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max35Text import Max35Text
 
 class HypotheticalCapitalMeasure1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class HypotheticalCapitalMeasure1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -24,7 +24,7 @@ class HypotheticalCapitalMeasure1(base_types._BaseFieldType):
 
 	@DfltWtrfllId.setter
 	def DfltWtrfllId(self, value):
-		self._DfltWtrfllId = value if type(value) != auto else self.make_default("DfltWtrfllId")
+		self._DfltWtrfllId = value if type(value) != base_types.auto else self.make_default("DfltWtrfllId")
 
 	@DfltWtrfllId.deleter
 	def DfltWtrfllId(self):

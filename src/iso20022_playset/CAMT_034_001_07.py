@@ -12,7 +12,7 @@ class CAMT_034_001_07():
 
 		@Dplct.setter
 		def Dplct(self, value):
-			self._Dplct = value if type(value) != auto else self.make_default("Dplct")
+			self._Dplct = value if type(value) != base_types.auto else self.make_default("Dplct")
 
 		@Dplct.deleter
 		def Dplct(self):

@@ -1,19 +1,19 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyIdentification139 import PartyIdentification139
 from .OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 from .SubAccount6 import SubAccount6
+from .PartyIdentification139 import PartyIdentification139
+from .Max35Text import Max35Text
 
 class InvestmentAccount78(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_SubAcctDtls", "_AcctNm", "_OwnrId", "_AcctSvcr", "_OrdrOrgtrElgblty", "_AcctDsgnt"]
+	__slots__ = ["_AcctId", "_SubAcctDtls", "_AcctNm", "_OwnrId", "_AcctSvcr", "_AcctDsgnt", "_OrdrOrgtrElgblty"]
 	@property
 	def AcctId(self):
 		return self._AcctId
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
 	@AcctId.deleter
 	def AcctId(self):
@@ -26,7 +26,7 @@ class InvestmentAccount78(base_types._BaseFieldType):
 
 	@SubAcctDtls.setter
 	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
+		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
 
 	@SubAcctDtls.deleter
 	def SubAcctDtls(self):
@@ -39,7 +39,7 @@ class InvestmentAccount78(base_types._BaseFieldType):
 
 	@AcctNm.setter
 	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
 
 	@AcctNm.deleter
 	def AcctNm(self):
@@ -52,7 +52,7 @@ class InvestmentAccount78(base_types._BaseFieldType):
 
 	@OwnrId.setter
 	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
+		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
 
 	@OwnrId.deleter
 	def OwnrId(self):
@@ -65,7 +65,7 @@ class InvestmentAccount78(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
@@ -73,30 +73,30 @@ class InvestmentAccount78(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def OrdrOrgtrElgblty(self):
-		return self._OrdrOrgtrElgblty
-
-	@OrdrOrgtrElgblty.setter
-	def OrdrOrgtrElgblty(self, value):
-		self._OrdrOrgtrElgblty = value if type(value) != auto else self.make_default("OrdrOrgtrElgblty")
-
-	@OrdrOrgtrElgblty.deleter
-	def OrdrOrgtrElgblty(self):
-		del self._OrdrOrgtrElgblty
-		self._OrdrOrgtrElgblty = None
-
-	@property
 	def AcctDsgnt(self):
 		return self._AcctDsgnt
 
 	@AcctDsgnt.setter
 	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
+		self._AcctDsgnt = value if type(value) != base_types.auto else self.make_default("AcctDsgnt")
 
 	@AcctDsgnt.deleter
 	def AcctDsgnt(self):
 		del self._AcctDsgnt
 		self._AcctDsgnt = None
+
+	@property
+	def OrdrOrgtrElgblty(self):
+		return self._OrdrOrgtrElgblty
+
+	@OrdrOrgtrElgblty.setter
+	def OrdrOrgtrElgblty(self, value):
+		self._OrdrOrgtrElgblty = value if type(value) != base_types.auto else self.make_default("OrdrOrgtrElgblty")
+
+	@OrdrOrgtrElgblty.deleter
+	def OrdrOrgtrElgblty(self):
+		del self._OrdrOrgtrElgblty
+		self._OrdrOrgtrElgblty = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
@@ -104,7 +104,7 @@ class InvestmentAccount78(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrId', type=PartyIdentification139, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

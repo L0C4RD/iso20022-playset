@@ -12,7 +12,7 @@ class InterestRateUsedForPaymentFormat12Choice(base_types._BaseFieldType):
 
 	@RateTpAndAmtAndRateSts.setter
 	def RateTpAndAmtAndRateSts(self, value):
-		self._RateTpAndAmtAndRateSts = value if type(value) != auto else self.make_default("RateTpAndAmtAndRateSts")
+		self._RateTpAndAmtAndRateSts = value if type(value) != base_types.auto else self.make_default("RateTpAndAmtAndRateSts")
 
 	@RateTpAndAmtAndRateSts.deleter
 	def RateTpAndAmtAndRateSts(self):
@@ -25,7 +25,7 @@ class InterestRateUsedForPaymentFormat12Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -38,7 +38,7 @@ class InterestRateUsedForPaymentFormat12Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

@@ -1,22 +1,22 @@
 from . import base_types
-from .Amount17 import Amount17
 from .Number import Number
+from .Amount17 import Amount17
 
 class SettlementCategoryTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgFee", "_Cnt", "_Amt", "_IntrchngFee"]
+	__slots__ = ["_IntrchngFee", "_Cnt", "_Amt", "_PrcgFee"]
 	@property
-	def PrcgFee(self):
-		return self._PrcgFee
+	def IntrchngFee(self):
+		return self._IntrchngFee
 
-	@PrcgFee.setter
-	def PrcgFee(self, value):
-		self._PrcgFee = value if type(value) != auto else self.make_default("PrcgFee")
+	@IntrchngFee.setter
+	def IntrchngFee(self, value):
+		self._IntrchngFee = value if type(value) != base_types.auto else self.make_default("IntrchngFee")
 
-	@PrcgFee.deleter
-	def PrcgFee(self):
-		del self._PrcgFee
-		self._PrcgFee = None
+	@IntrchngFee.deleter
+	def IntrchngFee(self):
+		del self._IntrchngFee
+		self._IntrchngFee = None
 
 	@property
 	def Cnt(self):
@@ -24,7 +24,7 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 
 	@Cnt.setter
 	def Cnt(self, value):
-		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
+		self._Cnt = value if type(value) != base_types.auto else self.make_default("Cnt")
 
 	@Cnt.deleter
 	def Cnt(self):
@@ -37,7 +37,7 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -45,22 +45,22 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def IntrchngFee(self):
-		return self._IntrchngFee
+	def PrcgFee(self):
+		return self._PrcgFee
 
-	@IntrchngFee.setter
-	def IntrchngFee(self, value):
-		self._IntrchngFee = value if type(value) != auto else self.make_default("IntrchngFee")
+	@PrcgFee.setter
+	def PrcgFee(self, value):
+		self._PrcgFee = value if type(value) != base_types.auto else self.make_default("PrcgFee")
 
-	@IntrchngFee.deleter
-	def IntrchngFee(self):
-		del self._IntrchngFee
-		self._IntrchngFee = None
+	@PrcgFee.deleter
+	def PrcgFee(self):
+		del self._PrcgFee
+		self._PrcgFee = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount17, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 	))
 

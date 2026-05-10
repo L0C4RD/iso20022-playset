@@ -11,7 +11,7 @@ class RiskContext3(base_types._BaseFieldType):
 
 	@Assmnt.setter
 	def Assmnt(self, value):
-		self._Assmnt = value if type(value) != auto else self.make_default("Assmnt")
+		self._Assmnt = value if type(value) != base_types.auto else self.make_default("Assmnt")
 
 	@Assmnt.deleter
 	def Assmnt(self):
@@ -24,7 +24,7 @@ class RiskContext3(base_types._BaseFieldType):
 
 	@InptData.setter
 	def InptData(self, value):
-		self._InptData = value if type(value) != auto else self.make_default("InptData")
+		self._InptData = value if type(value) != base_types.auto else self.make_default("InptData")
 
 	@InptData.deleter
 	def InptData(self):

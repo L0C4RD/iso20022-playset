@@ -11,7 +11,7 @@ class PendingBalance8(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
 
 	@Bal.deleter
 	def Bal(self):
@@ -24,7 +24,7 @@ class PendingBalance8(base_types._BaseFieldType):
 
 	@PdgTxs.setter
 	def PdgTxs(self, value):
-		self._PdgTxs = value if type(value) != auto else self.make_default("PdgTxs")
+		self._PdgTxs = value if type(value) != base_types.auto else self.make_default("PdgTxs")
 
 	@PdgTxs.deleter
 	def PdgTxs(self):

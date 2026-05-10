@@ -1,31 +1,18 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .SoftwareType1Code import SoftwareType1Code
 from .Max256Text import Max256Text
+from .Max35Text import Max35Text
 
 class Software1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrTp", "_Vrsn", "_SubTp"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_OthrTp", "_Tp", "_Vrsn", "_SubTp"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
 
 	@OthrTp.deleter
 	def OthrTp(self):
@@ -33,12 +20,25 @@ class Software1(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def Vrsn(self):
 		return self._Vrsn
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
 	@Vrsn.deleter
 	def Vrsn(self):
@@ -51,7 +51,7 @@ class Software1(base_types._BaseFieldType):
 
 	@SubTp.setter
 	def SubTp(self, value):
-		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
+		self._SubTp = value if type(value) != base_types.auto else self.make_default("SubTp")
 
 	@SubTp.deleter
 	def SubTp(self):
@@ -59,8 +59,8 @@ class Software1(base_types._BaseFieldType):
 		self._SubTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=SoftwareType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=SoftwareType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

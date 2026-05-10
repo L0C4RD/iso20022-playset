@@ -12,7 +12,7 @@ class CANM_003_001_04():
 
 		@KeyXchgInitn.setter
 		def KeyXchgInitn(self, value):
-			self._KeyXchgInitn = value if type(value) != auto else self.make_default("KeyXchgInitn")
+			self._KeyXchgInitn = value if type(value) != base_types.auto else self.make_default("KeyXchgInitn")
 
 		@KeyXchgInitn.deleter
 		def KeyXchgInitn(self):

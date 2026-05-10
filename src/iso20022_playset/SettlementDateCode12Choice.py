@@ -1,6 +1,6 @@
 from . import base_types
-from .SettlementDate5Code import SettlementDate5Code
 from .GenericIdentification30 import GenericIdentification30
+from .SettlementDate5Code import SettlementDate5Code
 
 class SettlementDateCode12Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SettlementDateCode12Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):
@@ -24,7 +24,7 @@ class SettlementDateCode12Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):

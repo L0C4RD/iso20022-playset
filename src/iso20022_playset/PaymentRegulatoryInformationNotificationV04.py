@@ -1,31 +1,18 @@
 from . import base_types
-from .RegulatoryReportingNotification4 import RegulatoryReportingNotification4
 from .SupplementaryData1 import SupplementaryData1
 from .CurrencyControlHeader9 import CurrencyControlHeader9
+from .RegulatoryReportingNotification4 import RegulatoryReportingNotification4
 
 class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_TxNtfctn"]
-	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_TxNtfctn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -33,12 +20,25 @@ class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
+
+	@property
 	def TxNtfctn(self):
 		return self._TxNtfctn
 
 	@TxNtfctn.setter
 	def TxNtfctn(self, value):
-		self._TxNtfctn = value if type(value) != auto else self.make_default("TxNtfctn")
+		self._TxNtfctn = value if type(value) != base_types.auto else self.make_default("TxNtfctn")
 
 	@TxNtfctn.deleter
 	def TxNtfctn(self):
@@ -46,8 +46,8 @@ class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 		self._TxNtfctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxNtfctn', type=RegulatoryReportingNotification4, min=1, max=None, mutex_group=None, array=True),
 	))
 

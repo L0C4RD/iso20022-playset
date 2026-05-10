@@ -1,25 +1,25 @@
 from . import base_types
-from .PaperCommodityContainerBoard1 import PaperCommodityContainerBoard1
-from .PaperCommodityRecoveredPaper2 import PaperCommodityRecoveredPaper2
+from .PaperCommodityPulp1 import PaperCommodityPulp1
 from .PaperCommodityNewsprint1 import PaperCommodityNewsprint1
 from .PaperCommodityRecoveredPaper1 import PaperCommodityRecoveredPaper1
-from .PaperCommodityPulp1 import PaperCommodityPulp1
+from .PaperCommodityRecoveredPaper2 import PaperCommodityRecoveredPaper2
+from .PaperCommodityContainerBoard1 import PaperCommodityContainerBoard1
 
 class AssetClassCommodityPaper3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CntnrBrd", "_Pulp", "_RcvrdPpr", "_Othr", "_Nwsprnt"]
+	__slots__ = ["_Othr", "_Pulp", "_RcvrdPpr", "_CntnrBrd", "_Nwsprnt"]
 	@property
-	def CntnrBrd(self):
-		return self._CntnrBrd
+	def Othr(self):
+		return self._Othr
 
-	@CntnrBrd.setter
-	def CntnrBrd(self, value):
-		self._CntnrBrd = value if type(value) != auto else self.make_default("CntnrBrd")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
-	@CntnrBrd.deleter
-	def CntnrBrd(self):
-		del self._CntnrBrd
-		self._CntnrBrd = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def Pulp(self):
@@ -27,7 +27,7 @@ class AssetClassCommodityPaper3Choice(base_types._BaseFieldType):
 
 	@Pulp.setter
 	def Pulp(self, value):
-		self._Pulp = value if type(value) != auto else self.make_default("Pulp")
+		self._Pulp = value if type(value) != base_types.auto else self.make_default("Pulp")
 
 	@Pulp.deleter
 	def Pulp(self):
@@ -40,7 +40,7 @@ class AssetClassCommodityPaper3Choice(base_types._BaseFieldType):
 
 	@RcvrdPpr.setter
 	def RcvrdPpr(self, value):
-		self._RcvrdPpr = value if type(value) != auto else self.make_default("RcvrdPpr")
+		self._RcvrdPpr = value if type(value) != base_types.auto else self.make_default("RcvrdPpr")
 
 	@RcvrdPpr.deleter
 	def RcvrdPpr(self):
@@ -48,17 +48,17 @@ class AssetClassCommodityPaper3Choice(base_types._BaseFieldType):
 		self._RcvrdPpr = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def CntnrBrd(self):
+		return self._CntnrBrd
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@CntnrBrd.setter
+	def CntnrBrd(self, value):
+		self._CntnrBrd = value if type(value) != base_types.auto else self.make_default("CntnrBrd")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@CntnrBrd.deleter
+	def CntnrBrd(self):
+		del self._CntnrBrd
+		self._CntnrBrd = None
 
 	@property
 	def Nwsprnt(self):
@@ -66,7 +66,7 @@ class AssetClassCommodityPaper3Choice(base_types._BaseFieldType):
 
 	@Nwsprnt.setter
 	def Nwsprnt(self, value):
-		self._Nwsprnt = value if type(value) != auto else self.make_default("Nwsprnt")
+		self._Nwsprnt = value if type(value) != base_types.auto else self.make_default("Nwsprnt")
 
 	@Nwsprnt.deleter
 	def Nwsprnt(self):
@@ -74,10 +74,10 @@ class AssetClassCommodityPaper3Choice(base_types._BaseFieldType):
 		self._Nwsprnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CntnrBrd', type=PaperCommodityContainerBoard1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=PaperCommodityRecoveredPaper2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pulp', type=PaperCommodityPulp1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcvrdPpr', type=PaperCommodityRecoveredPaper1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=PaperCommodityRecoveredPaper2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CntnrBrd', type=PaperCommodityContainerBoard1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Nwsprnt', type=PaperCommodityNewsprint1, min=0, max=1, mutex_group=1, array=False),
 	))
 

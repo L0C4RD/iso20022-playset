@@ -1,7 +1,7 @@
 from . import base_types
-from .PaymentPeriod3 import PaymentPeriod3
 from .Max140Text import Max140Text
 from .ISODate import ISODate
+from .PaymentPeriod3 import PaymentPeriod3
 
 class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 
 	@PmtCd.setter
 	def PmtCd(self, value):
-		self._PmtCd = value if type(value) != auto else self.make_default("PmtCd")
+		self._PmtCd = value if type(value) != base_types.auto else self.make_default("PmtCd")
 
 	@PmtCd.deleter
 	def PmtCd(self):
@@ -25,7 +25,7 @@ class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 
 	@OthrPmtTerms.setter
 	def OthrPmtTerms(self, value):
-		self._OthrPmtTerms = value if type(value) != auto else self.make_default("OthrPmtTerms")
+		self._OthrPmtTerms = value if type(value) != base_types.auto else self.make_default("OthrPmtTerms")
 
 	@OthrPmtTerms.deleter
 	def OthrPmtTerms(self):
@@ -38,7 +38,7 @@ class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 
 	@PmtDueDt.setter
 	def PmtDueDt(self, value):
-		self._PmtDueDt = value if type(value) != auto else self.make_default("PmtDueDt")
+		self._PmtDueDt = value if type(value) != base_types.auto else self.make_default("PmtDueDt")
 
 	@PmtDueDt.deleter
 	def PmtDueDt(self):

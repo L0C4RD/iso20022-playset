@@ -12,7 +12,7 @@ class CASP_012_001_07():
 
 		@SaleToPOIEvtNtfctn.setter
 		def SaleToPOIEvtNtfctn(self, value):
-			self._SaleToPOIEvtNtfctn = value if type(value) != auto else self.make_default("SaleToPOIEvtNtfctn")
+			self._SaleToPOIEvtNtfctn = value if type(value) != base_types.auto else self.make_default("SaleToPOIEvtNtfctn")
 
 		@SaleToPOIEvtNtfctn.deleter
 		def SaleToPOIEvtNtfctn(self):

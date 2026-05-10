@@ -1,19 +1,32 @@
 from . import base_types
-from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from .ISINOct2015Identifier import ISINOct2015Identifier
 from .DebtIssuerType1Code import DebtIssuerType1Code
 from .ProductType6Code import ProductType6Code
-from .ISINOct2015Identifier import ISINOct2015Identifier
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 
 class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_DebtIssrTp", "_Id", "_FinInstrmTp"]
+	__slots__ = ["_FinInstrmTp", "_MktVal", "_Id", "_DebtIssrTp"]
+	@property
+	def FinInstrmTp(self):
+		return self._FinInstrmTp
+
+	@FinInstrmTp.setter
+	def FinInstrmTp(self, value):
+		self._FinInstrmTp = value if type(value) != base_types.auto else self.make_default("FinInstrmTp")
+
+	@FinInstrmTp.deleter
+	def FinInstrmTp(self):
+		del self._FinInstrmTp
+		self._FinInstrmTp = None
+
 	@property
 	def MktVal(self):
 		return self._MktVal
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
+		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
 
 	@MktVal.deleter
 	def MktVal(self):
@@ -21,25 +34,12 @@ class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 		self._MktVal = None
 
 	@property
-	def DebtIssrTp(self):
-		return self._DebtIssrTp
-
-	@DebtIssrTp.setter
-	def DebtIssrTp(self, value):
-		self._DebtIssrTp = value if type(value) != auto else self.make_default("DebtIssrTp")
-
-	@DebtIssrTp.deleter
-	def DebtIssrTp(self):
-		del self._DebtIssrTp
-		self._DebtIssrTp = None
-
-	@property
 	def Id(self):
 		return self._Id
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
 	@Id.deleter
 	def Id(self):
@@ -47,22 +47,22 @@ class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def FinInstrmTp(self):
-		return self._FinInstrmTp
+	def DebtIssrTp(self):
+		return self._DebtIssrTp
 
-	@FinInstrmTp.setter
-	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
+	@DebtIssrTp.setter
+	def DebtIssrTp(self, value):
+		self._DebtIssrTp = value if type(value) != base_types.auto else self.make_default("DebtIssrTp")
 
-	@FinInstrmTp.deleter
-	def FinInstrmTp(self):
-		del self._FinInstrmTp
-		self._FinInstrmTp = None
+	@DebtIssrTp.deleter
+	def DebtIssrTp(self):
+		del self._DebtIssrTp
+		self._DebtIssrTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DebtIssrTp', type=DebtIssuerType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DebtIssrTp', type=DebtIssuerType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

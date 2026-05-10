@@ -1,6 +1,6 @@
 from . import base_types
-from .AccountIdentification10 import AccountIdentification10
 from .AccountAndBalance59 import AccountAndBalance59
+from .AccountIdentification10 import AccountIdentification10
 
 class AccountIdentification70Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class AccountIdentification70Choice(base_types._BaseFieldType):
 
 	@ForAllAccts.setter
 	def ForAllAccts(self, value):
-		self._ForAllAccts = value if type(value) != auto else self.make_default("ForAllAccts")
+		self._ForAllAccts = value if type(value) != base_types.auto else self.make_default("ForAllAccts")
 
 	@ForAllAccts.deleter
 	def ForAllAccts(self):
@@ -24,7 +24,7 @@ class AccountIdentification70Choice(base_types._BaseFieldType):
 
 	@AcctsListAndBalDtls.setter
 	def AcctsListAndBalDtls(self, value):
-		self._AcctsListAndBalDtls = value if type(value) != auto else self.make_default("AcctsListAndBalDtls")
+		self._AcctsListAndBalDtls = value if type(value) != base_types.auto else self.make_default("AcctsListAndBalDtls")
 
 	@AcctsListAndBalDtls.deleter
 	def AcctsListAndBalDtls(self):

@@ -11,7 +11,7 @@ class SecuritiesAccountAuditTrailSearchCriteria3(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
+		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
 
 	@DtPrd.deleter
 	def DtPrd(self):
@@ -24,7 +24,7 @@ class SecuritiesAccountAuditTrailSearchCriteria3(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):

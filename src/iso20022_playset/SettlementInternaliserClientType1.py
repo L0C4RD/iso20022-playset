@@ -10,7 +10,7 @@ class SettlementInternaliserClientType1(base_types._BaseFieldType):
 
 	@Rtl.setter
 	def Rtl(self, value):
-		self._Rtl = value if type(value) != auto else self.make_default("Rtl")
+		self._Rtl = value if type(value) != base_types.auto else self.make_default("Rtl")
 
 	@Rtl.deleter
 	def Rtl(self):
@@ -23,7 +23,7 @@ class SettlementInternaliserClientType1(base_types._BaseFieldType):
 
 	@Prfssnl.setter
 	def Prfssnl(self, value):
-		self._Prfssnl = value if type(value) != auto else self.make_default("Prfssnl")
+		self._Prfssnl = value if type(value) != base_types.auto else self.make_default("Prfssnl")
 
 	@Prfssnl.deleter
 	def Prfssnl(self):

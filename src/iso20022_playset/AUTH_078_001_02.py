@@ -12,7 +12,7 @@ class AUTH_078_001_02():
 
 		@SctiesFincgRptgPairgReq.setter
 		def SctiesFincgRptgPairgReq(self, value):
-			self._SctiesFincgRptgPairgReq = value if type(value) != auto else self.make_default("SctiesFincgRptgPairgReq")
+			self._SctiesFincgRptgPairgReq = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgPairgReq")
 
 		@SctiesFincgRptgPairgReq.deleter
 		def SctiesFincgRptgPairgReq(self):

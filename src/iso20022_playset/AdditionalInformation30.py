@@ -1,21 +1,21 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .UserInterface8Code import UserInterface8Code
 from .OutputFormat4Code import OutputFormat4Code
-from .ISOMax3ALanguageCode import ISOMax3ALanguageCode
 from .Max20KText import Max20KText
+from .ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from .UserInterface8Code import UserInterface8Code
 from .PartyType19Code import PartyType19Code
+from .Max35Text import Max35Text
 
 class AdditionalInformation30(base_types._BaseFieldType):
 
-	__slots__ = ["_Trgt", "_Lang", "_Tp", "_Frmt", "_Val", "_Rcpt"]
+	__slots__ = ["_Trgt", "_Val", "_Tp", "_Frmt", "_Rcpt", "_Lang"]
 	@property
 	def Trgt(self):
 		return self._Trgt
 
 	@Trgt.setter
 	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
 
 	@Trgt.deleter
 	def Trgt(self):
@@ -23,17 +23,17 @@ class AdditionalInformation30(base_types._BaseFieldType):
 		self._Trgt = None
 
 	@property
-	def Lang(self):
-		return self._Lang
+	def Val(self):
+		return self._Val
 
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def Tp(self):
@@ -41,7 +41,7 @@ class AdditionalInformation30(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -54,7 +54,7 @@ class AdditionalInformation30(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
 
 	@Frmt.deleter
 	def Frmt(self):
@@ -62,37 +62,37 @@ class AdditionalInformation30(base_types._BaseFieldType):
 		self._Frmt = None
 
 	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
-	@property
 	def Rcpt(self):
 		return self._Rcpt
 
 	@Rcpt.setter
 	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
+		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
 
 	@Rcpt.deleter
 	def Rcpt(self):
 		del self._Rcpt
 		self._Rcpt = None
 
+	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

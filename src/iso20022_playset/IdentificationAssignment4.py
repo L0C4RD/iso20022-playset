@@ -1,24 +1,24 @@
 from . import base_types
 from .Max35Text import Max35Text
-from .Party50Choice import Party50Choice
-from .ISODateTime import ISODateTime
 from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .ISODateTime import ISODateTime
+from .Party50Choice import Party50Choice
 
 class IdentificationAssignment4(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_MsgId", "_FrstAgt", "_Cretr", "_Assgne", "_CreDtTm"]
+	__slots__ = ["_Assgne", "_MsgId", "_FrstAgt", "_Assgnr", "_CreDtTm", "_Cretr"]
 	@property
-	def Assgnr(self):
-		return self._Assgnr
+	def Assgne(self):
+		return self._Assgne
 
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+	@Assgne.setter
+	def Assgne(self, value):
+		self._Assgne = value if type(value) != base_types.auto else self.make_default("Assgne")
 
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
+	@Assgne.deleter
+	def Assgne(self):
+		del self._Assgne
+		self._Assgne = None
 
 	@property
 	def MsgId(self):
@@ -26,7 +26,7 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
 	@MsgId.deleter
 	def MsgId(self):
@@ -39,7 +39,7 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@FrstAgt.setter
 	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != auto else self.make_default("FrstAgt")
+		self._FrstAgt = value if type(value) != base_types.auto else self.make_default("FrstAgt")
 
 	@FrstAgt.deleter
 	def FrstAgt(self):
@@ -47,30 +47,17 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 		self._FrstAgt = None
 
 	@property
-	def Cretr(self):
-		return self._Cretr
+	def Assgnr(self):
+		return self._Assgnr
 
-	@Cretr.setter
-	def Cretr(self, value):
-		self._Cretr = value if type(value) != auto else self.make_default("Cretr")
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
 
-	@Cretr.deleter
-	def Cretr(self):
-		del self._Cretr
-		self._Cretr = None
-
-	@property
-	def Assgne(self):
-		return self._Assgne
-
-	@Assgne.setter
-	def Assgne(self, value):
-		self._Assgne = value if type(value) != auto else self.make_default("Assgne")
-
-	@Assgne.deleter
-	def Assgne(self):
-		del self._Assgne
-		self._Assgne = None
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def CreDtTm(self):
@@ -78,19 +65,32 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def Cretr(self):
+		return self._Cretr
+
+	@Cretr.setter
+	def Cretr(self, value):
+		self._Cretr = value if type(value) != base_types.auto else self.make_default("Cretr")
+
+	@Cretr.deleter
+	def Cretr(self):
+		del self._Cretr
+		self._Cretr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

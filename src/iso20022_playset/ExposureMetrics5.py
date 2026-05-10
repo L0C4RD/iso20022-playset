@@ -10,7 +10,7 @@ class ExposureMetrics5(base_types._BaseFieldType):
 
 	@CshCollAmt.setter
 	def CshCollAmt(self, value):
-		self._CshCollAmt = value if type(value) != auto else self.make_default("CshCollAmt")
+		self._CshCollAmt = value if type(value) != base_types.auto else self.make_default("CshCollAmt")
 
 	@CshCollAmt.deleter
 	def CshCollAmt(self):
@@ -23,7 +23,7 @@ class ExposureMetrics5(base_types._BaseFieldType):
 
 	@CollMktVal.setter
 	def CollMktVal(self, value):
-		self._CollMktVal = value if type(value) != auto else self.make_default("CollMktVal")
+		self._CollMktVal = value if type(value) != base_types.auto else self.make_default("CollMktVal")
 
 	@CollMktVal.deleter
 	def CollMktVal(self):

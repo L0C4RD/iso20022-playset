@@ -12,7 +12,7 @@ class SEEV_036_002_16():
 
 		@CorpActnMvmntConf.setter
 		def CorpActnMvmntConf(self, value):
-			self._CorpActnMvmntConf = value if type(value) != auto else self.make_default("CorpActnMvmntConf")
+			self._CorpActnMvmntConf = value if type(value) != base_types.auto else self.make_default("CorpActnMvmntConf")
 
 		@CorpActnMvmntConf.deleter
 		def CorpActnMvmntConf(self):

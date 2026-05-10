@@ -12,7 +12,7 @@ class SESE_040_002_04():
 
 		@SctiesSttlmTxCtrPtyRspn.setter
 		def SctiesSttlmTxCtrPtyRspn(self, value):
-			self._SctiesSttlmTxCtrPtyRspn = value if type(value) != auto else self.make_default("SctiesSttlmTxCtrPtyRspn")
+			self._SctiesSttlmTxCtrPtyRspn = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxCtrPtyRspn")
 
 		@SctiesSttlmTxCtrPtyRspn.deleter
 		def SctiesSttlmTxCtrPtyRspn(self):

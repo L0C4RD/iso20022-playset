@@ -1,7 +1,7 @@
 from . import base_types
 from .AdjustmentDirection1Code import AdjustmentDirection1Code
-from .AdjustmentType1Choice import AdjustmentType1Choice
 from .AmountOrPercentage2Choice import AmountOrPercentage2Choice
+from .AdjustmentType1Choice import AdjustmentType1Choice
 
 class Adjustment7(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Adjustment7(base_types._BaseFieldType):
 
 	@Drctn.setter
 	def Drctn(self, value):
-		self._Drctn = value if type(value) != auto else self.make_default("Drctn")
+		self._Drctn = value if type(value) != base_types.auto else self.make_default("Drctn")
 
 	@Drctn.deleter
 	def Drctn(self):
@@ -25,7 +25,7 @@ class Adjustment7(base_types._BaseFieldType):
 
 	@AmtOrPctg.setter
 	def AmtOrPctg(self, value):
-		self._AmtOrPctg = value if type(value) != auto else self.make_default("AmtOrPctg")
+		self._AmtOrPctg = value if type(value) != base_types.auto else self.make_default("AmtOrPctg")
 
 	@AmtOrPctg.deleter
 	def AmtOrPctg(self):
@@ -38,7 +38,7 @@ class Adjustment7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

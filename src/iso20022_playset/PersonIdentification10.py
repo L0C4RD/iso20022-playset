@@ -1,18 +1,31 @@
 from . import base_types
 from .GenericPersonIdentification1 import GenericPersonIdentification1
-from .ISODate import ISODate
 from .Max140Text import Max140Text
+from .ISODate import ISODate
 
 class PersonIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Nm", "_FrstNm", "_BirthDt"]
+	__slots__ = ["_BirthDt", "_Othr", "_FrstNm", "_Nm"]
+	@property
+	def BirthDt(self):
+		return self._BirthDt
+
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
+
 	@property
 	def Othr(self):
 		return self._Othr
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):
@@ -20,25 +33,12 @@ class PersonIdentification10(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
 	def FrstNm(self):
 		return self._FrstNm
 
 	@FrstNm.setter
 	def FrstNm(self, value):
-		self._FrstNm = value if type(value) != auto else self.make_default("FrstNm")
+		self._FrstNm = value if type(value) != base_types.auto else self.make_default("FrstNm")
 
 	@FrstNm.deleter
 	def FrstNm(self):
@@ -46,22 +46,22 @@ class PersonIdentification10(base_types._BaseFieldType):
 		self._FrstNm = None
 
 	@property
-	def BirthDt(self):
-		return self._BirthDt
+	def Nm(self):
+		return self._Nm
 
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstNm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstNm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

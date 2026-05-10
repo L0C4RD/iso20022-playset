@@ -11,7 +11,7 @@ class TradingVenueType1Choice(base_types._BaseFieldType):
 
 	@OnVn.setter
 	def OnVn(self, value):
-		self._OnVn = value if type(value) != auto else self.make_default("OnVn")
+		self._OnVn = value if type(value) != base_types.auto else self.make_default("OnVn")
 
 	@OnVn.deleter
 	def OnVn(self):
@@ -24,7 +24,7 @@ class TradingVenueType1Choice(base_types._BaseFieldType):
 
 	@OffVn.setter
 	def OffVn(self, value):
-		self._OffVn = value if type(value) != auto else self.make_default("OffVn")
+		self._OffVn = value if type(value) != base_types.auto else self.make_default("OffVn")
 
 	@OffVn.deleter
 	def OffVn(self):

@@ -12,7 +12,7 @@ class SEMT_017_001_13():
 
 		@SctiesTxPstngRpt.setter
 		def SctiesTxPstngRpt(self, value):
-			self._SctiesTxPstngRpt = value if type(value) != auto else self.make_default("SctiesTxPstngRpt")
+			self._SctiesTxPstngRpt = value if type(value) != base_types.auto else self.make_default("SctiesTxPstngRpt")
 
 		@SctiesTxPstngRpt.deleter
 		def SctiesTxPstngRpt(self):

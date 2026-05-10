@@ -11,7 +11,7 @@ class AmountAndRateStatus1(base_types._BaseFieldType):
 
 	@RateSts.setter
 	def RateSts(self, value):
-		self._RateSts = value if type(value) != auto else self.make_default("RateSts")
+		self._RateSts = value if type(value) != base_types.auto else self.make_default("RateSts")
 
 	@RateSts.deleter
 	def RateSts(self):
@@ -24,7 +24,7 @@ class AmountAndRateStatus1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):

@@ -1,23 +1,23 @@
 from . import base_types
-from .CountryCode import CountryCode
-from .CurrencyDesignation1Code import CurrencyDesignation1Code
 from .Max350Text import Max350Text
+from .CurrencyDesignation1Code import CurrencyDesignation1Code
+from .CountryCode import CountryCode
 
 class CurrencyDesignation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CcyDsgnt", "_Lctn"]
+	__slots__ = ["_Lctn", "_CcyDsgnt", "_AddtlInf"]
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Lctn(self):
+		return self._Lctn
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
 
 	@property
 	def CcyDsgnt(self):
@@ -25,7 +25,7 @@ class CurrencyDesignation1(base_types._BaseFieldType):
 
 	@CcyDsgnt.setter
 	def CcyDsgnt(self, value):
-		self._CcyDsgnt = value if type(value) != auto else self.make_default("CcyDsgnt")
+		self._CcyDsgnt = value if type(value) != base_types.auto else self.make_default("CcyDsgnt")
 
 	@CcyDsgnt.deleter
 	def CcyDsgnt(self):
@@ -33,21 +33,21 @@ class CurrencyDesignation1(base_types._BaseFieldType):
 		self._CcyDsgnt = None
 
 	@property
-	def Lctn(self):
-		return self._Lctn
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyDsgnt', type=CurrencyDesignation1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyDsgnt', type=CurrencyDesignation1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

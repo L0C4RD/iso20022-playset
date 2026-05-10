@@ -12,7 +12,7 @@ class REDA_050_001_01():
 
 		@AcctLkMntncReq.setter
 		def AcctLkMntncReq(self, value):
-			self._AcctLkMntncReq = value if type(value) != auto else self.make_default("AcctLkMntncReq")
+			self._AcctLkMntncReq = value if type(value) != base_types.auto else self.make_default("AcctLkMntncReq")
 
 		@AcctLkMntncReq.deleter
 		def AcctLkMntncReq(self):

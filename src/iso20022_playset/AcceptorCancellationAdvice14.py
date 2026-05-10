@@ -1,7 +1,7 @@
 from . import base_types
-from .PaymentContext30 import PaymentContext30
 from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 from .CardPaymentTransaction143 import CardPaymentTransaction143
+from .PaymentContext30 import PaymentContext30
 
 class AcceptorCancellationAdvice14(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class AcceptorCancellationAdvice14(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -25,7 +25,7 @@ class AcceptorCancellationAdvice14(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
 	@Tx.deleter
 	def Tx(self):
@@ -38,7 +38,7 @@ class AcceptorCancellationAdvice14(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
 	@Cntxt.deleter
 	def Cntxt(self):

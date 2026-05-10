@@ -11,7 +11,7 @@ class BusinessDayReportOrError10Choice(base_types._BaseFieldType):
 
 	@BizDayInf.setter
 	def BizDayInf(self, value):
-		self._BizDayInf = value if type(value) != auto else self.make_default("BizDayInf")
+		self._BizDayInf = value if type(value) != base_types.auto else self.make_default("BizDayInf")
 
 	@BizDayInf.deleter
 	def BizDayInf(self):
@@ -24,7 +24,7 @@ class BusinessDayReportOrError10Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
 
 	@BizErr.deleter
 	def BizErr(self):

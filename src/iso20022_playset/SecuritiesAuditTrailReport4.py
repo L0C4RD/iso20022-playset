@@ -12,7 +12,7 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
+		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
 
 	@DtPrd.deleter
 	def DtPrd(self):
@@ -25,7 +25,7 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
 	@SctiesAudtTrlOrErr.setter
 	def SctiesAudtTrlOrErr(self, value):
-		self._SctiesAudtTrlOrErr = value if type(value) != auto else self.make_default("SctiesAudtTrlOrErr")
+		self._SctiesAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAudtTrlOrErr")
 
 	@SctiesAudtTrlOrErr.deleter
 	def SctiesAudtTrlOrErr(self):
@@ -38,7 +38,7 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):

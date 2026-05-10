@@ -12,7 +12,7 @@ class CAMT_032_001_05():
 
 		@CclCaseAssgnmt.setter
 		def CclCaseAssgnmt(self, value):
-			self._CclCaseAssgnmt = value if type(value) != auto else self.make_default("CclCaseAssgnmt")
+			self._CclCaseAssgnmt = value if type(value) != base_types.auto else self.make_default("CclCaseAssgnmt")
 
 		@CclCaseAssgnmt.deleter
 		def CclCaseAssgnmt(self):

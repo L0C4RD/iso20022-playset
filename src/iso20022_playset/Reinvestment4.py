@@ -1,7 +1,7 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
 from .PercentageRate import PercentageRate
 from .FinancialInstrument87 import FinancialInstrument87
+from .ActiveCurrencyCode import ActiveCurrencyCode
 
 class Reinvestment4(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class Reinvestment4(base_types._BaseFieldType):
 
 	@ReqdNAVCcy.setter
 	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != auto else self.make_default("ReqdNAVCcy")
+		self._ReqdNAVCcy = value if type(value) != base_types.auto else self.make_default("ReqdNAVCcy")
 
 	@ReqdNAVCcy.deleter
 	def ReqdNAVCcy(self):
@@ -25,7 +25,7 @@ class Reinvestment4(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
@@ -38,7 +38,7 @@ class Reinvestment4(base_types._BaseFieldType):
 
 	@RinvstmtPctg.setter
 	def RinvstmtPctg(self, value):
-		self._RinvstmtPctg = value if type(value) != auto else self.make_default("RinvstmtPctg")
+		self._RinvstmtPctg = value if type(value) != base_types.auto else self.make_default("RinvstmtPctg")
 
 	@RinvstmtPctg.deleter
 	def RinvstmtPctg(self):

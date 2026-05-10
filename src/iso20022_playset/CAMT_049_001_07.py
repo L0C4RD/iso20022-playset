@@ -12,7 +12,7 @@ class CAMT_049_001_07():
 
 		@DelRsvatn.setter
 		def DelRsvatn(self, value):
-			self._DelRsvatn = value if type(value) != auto else self.make_default("DelRsvatn")
+			self._DelRsvatn = value if type(value) != base_types.auto else self.make_default("DelRsvatn")
 
 		@DelRsvatn.deleter
 		def DelRsvatn(self):

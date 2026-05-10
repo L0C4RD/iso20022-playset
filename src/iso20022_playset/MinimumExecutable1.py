@@ -11,7 +11,7 @@ class MinimumExecutable1(base_types._BaseFieldType):
 
 	@Sz.setter
 	def Sz(self, value):
-		self._Sz = value if type(value) != auto else self.make_default("Sz")
+		self._Sz = value if type(value) != base_types.auto else self.make_default("Sz")
 
 	@Sz.deleter
 	def Sz(self):
@@ -24,7 +24,7 @@ class MinimumExecutable1(base_types._BaseFieldType):
 
 	@FrstExctnOnly.setter
 	def FrstExctnOnly(self, value):
-		self._FrstExctnOnly = value if type(value) != auto else self.make_default("FrstExctnOnly")
+		self._FrstExctnOnly = value if type(value) != base_types.auto else self.make_default("FrstExctnOnly")
 
 	@FrstExctnOnly.deleter
 	def FrstExctnOnly(self):

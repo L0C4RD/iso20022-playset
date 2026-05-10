@@ -10,7 +10,7 @@ class TotalNumber2(base_types._BaseFieldType):
 
 	@CurInstrNb.setter
 	def CurInstrNb(self, value):
-		self._CurInstrNb = value if type(value) != auto else self.make_default("CurInstrNb")
+		self._CurInstrNb = value if type(value) != base_types.auto else self.make_default("CurInstrNb")
 
 	@CurInstrNb.deleter
 	def CurInstrNb(self):
@@ -23,7 +23,7 @@ class TotalNumber2(base_types._BaseFieldType):
 
 	@TtlOfLkdInstrs.setter
 	def TtlOfLkdInstrs(self, value):
-		self._TtlOfLkdInstrs = value if type(value) != auto else self.make_default("TtlOfLkdInstrs")
+		self._TtlOfLkdInstrs = value if type(value) != base_types.auto else self.make_default("TtlOfLkdInstrs")
 
 	@TtlOfLkdInstrs.deleter
 	def TtlOfLkdInstrs(self):

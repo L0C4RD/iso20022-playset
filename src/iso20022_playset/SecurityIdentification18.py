@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .IdentificationType2Code import IdentificationType2Code
+from .Max35Text import Max35Text
 
 class SecurityIdentification18(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class SecurityIdentification18(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
+		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
 
 	@SctyId.deleter
 	def SctyId(self):
@@ -24,7 +24,7 @@ class SecurityIdentification18(base_types._BaseFieldType):
 
 	@SctyIdSrc.setter
 	def SctyIdSrc(self, value):
-		self._SctyIdSrc = value if type(value) != auto else self.make_default("SctyIdSrc")
+		self._SctyIdSrc = value if type(value) != base_types.auto else self.make_default("SctyIdSrc")
 
 	@SctyIdSrc.deleter
 	def SctyIdSrc(self):

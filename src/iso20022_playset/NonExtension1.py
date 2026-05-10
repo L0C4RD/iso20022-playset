@@ -1,20 +1,33 @@
 from . import base_types
-from .Max140Text import Max140Text
-from .CommunicationMethod1Choice import CommunicationMethod1Choice
+from .PartyType1Choice import PartyType1Choice
 from .Number import Number
 from .PostalAddress6 import PostalAddress6
-from .PartyType1Choice import PartyType1Choice
+from .Max140Text import Max140Text
+from .CommunicationMethod1Choice import CommunicationMethod1Choice
 
 class NonExtension1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnRcptTp", "_NtfctnMtd", "_NtfctnRcptNm", "_NtfctnRcptAdr", "_NtfctnPrd"]
+	__slots__ = ["_NtfctnPrd", "_NtfctnRcptTp", "_NtfctnMtd", "_NtfctnRcptAdr", "_NtfctnRcptNm"]
+	@property
+	def NtfctnPrd(self):
+		return self._NtfctnPrd
+
+	@NtfctnPrd.setter
+	def NtfctnPrd(self, value):
+		self._NtfctnPrd = value if type(value) != base_types.auto else self.make_default("NtfctnPrd")
+
+	@NtfctnPrd.deleter
+	def NtfctnPrd(self):
+		del self._NtfctnPrd
+		self._NtfctnPrd = None
+
 	@property
 	def NtfctnRcptTp(self):
 		return self._NtfctnRcptTp
 
 	@NtfctnRcptTp.setter
 	def NtfctnRcptTp(self, value):
-		self._NtfctnRcptTp = value if type(value) != auto else self.make_default("NtfctnRcptTp")
+		self._NtfctnRcptTp = value if type(value) != base_types.auto else self.make_default("NtfctnRcptTp")
 
 	@NtfctnRcptTp.deleter
 	def NtfctnRcptTp(self):
@@ -27,7 +40,7 @@ class NonExtension1(base_types._BaseFieldType):
 
 	@NtfctnMtd.setter
 	def NtfctnMtd(self, value):
-		self._NtfctnMtd = value if type(value) != auto else self.make_default("NtfctnMtd")
+		self._NtfctnMtd = value if type(value) != base_types.auto else self.make_default("NtfctnMtd")
 
 	@NtfctnMtd.deleter
 	def NtfctnMtd(self):
@@ -35,25 +48,12 @@ class NonExtension1(base_types._BaseFieldType):
 		self._NtfctnMtd = None
 
 	@property
-	def NtfctnRcptNm(self):
-		return self._NtfctnRcptNm
-
-	@NtfctnRcptNm.setter
-	def NtfctnRcptNm(self, value):
-		self._NtfctnRcptNm = value if type(value) != auto else self.make_default("NtfctnRcptNm")
-
-	@NtfctnRcptNm.deleter
-	def NtfctnRcptNm(self):
-		del self._NtfctnRcptNm
-		self._NtfctnRcptNm = None
-
-	@property
 	def NtfctnRcptAdr(self):
 		return self._NtfctnRcptAdr
 
 	@NtfctnRcptAdr.setter
 	def NtfctnRcptAdr(self, value):
-		self._NtfctnRcptAdr = value if type(value) != auto else self.make_default("NtfctnRcptAdr")
+		self._NtfctnRcptAdr = value if type(value) != base_types.auto else self.make_default("NtfctnRcptAdr")
 
 	@NtfctnRcptAdr.deleter
 	def NtfctnRcptAdr(self):
@@ -61,23 +61,23 @@ class NonExtension1(base_types._BaseFieldType):
 		self._NtfctnRcptAdr = None
 
 	@property
-	def NtfctnPrd(self):
-		return self._NtfctnPrd
+	def NtfctnRcptNm(self):
+		return self._NtfctnRcptNm
 
-	@NtfctnPrd.setter
-	def NtfctnPrd(self, value):
-		self._NtfctnPrd = value if type(value) != auto else self.make_default("NtfctnPrd")
+	@NtfctnRcptNm.setter
+	def NtfctnRcptNm(self, value):
+		self._NtfctnRcptNm = value if type(value) != base_types.auto else self.make_default("NtfctnRcptNm")
 
-	@NtfctnPrd.deleter
-	def NtfctnPrd(self):
-		del self._NtfctnPrd
-		self._NtfctnPrd = None
+	@NtfctnRcptNm.deleter
+	def NtfctnRcptNm(self):
+		del self._NtfctnRcptNm
+		self._NtfctnRcptNm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NtfctnPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcptTp', type=PartyType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnMtd', type=CommunicationMethod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnRcptNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcptAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnRcptNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

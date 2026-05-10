@@ -12,7 +12,7 @@ class CAFM_001_001_03():
 
 		@FileActnInitn.setter
 		def FileActnInitn(self, value):
-			self._FileActnInitn = value if type(value) != auto else self.make_default("FileActnInitn")
+			self._FileActnInitn = value if type(value) != base_types.auto else self.make_default("FileActnInitn")
 
 		@FileActnInitn.deleter
 		def FileActnInitn(self):

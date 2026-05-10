@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountAndDirection34 import AmountAndDirection34
 from .BillingServicesTax2 import BillingServicesTax2
+from .AmountAndDirection34 import AmountAndDirection34
 
 class BillingMethod3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class BillingMethod3(base_types._BaseFieldType):
 
 	@TaxId.setter
 	def TaxId(self, value):
-		self._TaxId = value if type(value) != auto else self.make_default("TaxId")
+		self._TaxId = value if type(value) != base_types.auto else self.make_default("TaxId")
 
 	@TaxId.deleter
 	def TaxId(self):
@@ -24,7 +24,7 @@ class BillingMethod3(base_types._BaseFieldType):
 
 	@SvcTaxPricAmt.setter
 	def SvcTaxPricAmt(self, value):
-		self._SvcTaxPricAmt = value if type(value) != auto else self.make_default("SvcTaxPricAmt")
+		self._SvcTaxPricAmt = value if type(value) != base_types.auto else self.make_default("SvcTaxPricAmt")
 
 	@SvcTaxPricAmt.deleter
 	def SvcTaxPricAmt(self):

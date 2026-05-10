@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification36 import GenericIdentification36
 from .Max4NumericText import Max4NumericText
+from .GenericIdentification36 import GenericIdentification36
 
 class Number24Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Number24Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -24,7 +24,7 @@ class Number24Choice(base_types._BaseFieldType):
 
 	@NbId.setter
 	def NbId(self, value):
-		self._NbId = value if type(value) != auto else self.make_default("NbId")
+		self._NbId = value if type(value) != base_types.auto else self.make_default("NbId")
 
 	@NbId.deleter
 	def NbId(self):

@@ -12,7 +12,7 @@ class SEEV_014_001_01():
 
 		@AgtCAElctnCxlReq.setter
 		def AgtCAElctnCxlReq(self, value):
-			self._AgtCAElctnCxlReq = value if type(value) != auto else self.make_default("AgtCAElctnCxlReq")
+			self._AgtCAElctnCxlReq = value if type(value) != base_types.auto else self.make_default("AgtCAElctnCxlReq")
 
 		@AgtCAElctnCxlReq.deleter
 		def AgtCAElctnCxlReq(self):

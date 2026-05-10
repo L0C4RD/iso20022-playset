@@ -1,6 +1,6 @@
 from . import base_types
-from .TradeData59Choice import TradeData59Choice
 from .SupplementaryData1 import SupplementaryData1
+from .TradeData59Choice import TradeData59Choice
 from .TradeReportHeader4 import TradeReportHeader4
 
 class DerivativesTradeReportV04(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class DerivativesTradeReportV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class DerivativesTradeReportV04(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
 	@RptHdr.deleter
 	def RptHdr(self):
@@ -38,7 +38,7 @@ class DerivativesTradeReportV04(base_types._BaseFieldType):
 
 	@TradData.setter
 	def TradData(self, value):
-		self._TradData = value if type(value) != auto else self.make_default("TradData")
+		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
 
 	@TradData.deleter
 	def TradData(self):

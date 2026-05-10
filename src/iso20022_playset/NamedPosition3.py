@@ -1,47 +1,21 @@
 from . import base_types
-from .PositionSet18 import PositionSet18
-from .PositionSet16 import PositionSet16
-from .ISODate import ISODate
-from .PositionSet19 import PositionSet19
 from .PositionSet20 import PositionSet20
+from .PositionSet18 import PositionSet18
+from .ISODate import ISODate
 from .PositionSet17 import PositionSet17
+from .PositionSet19 import PositionSet19
+from .PositionSet16 import PositionSet16
 
 class NamedPosition3(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlInf", "_Coll", "_Ln", "_RefDt", "_Mrgn", "_Reuse"]
-	@property
-	def GnlInf(self):
-		return self._GnlInf
-
-	@GnlInf.setter
-	def GnlInf(self, value):
-		self._GnlInf = value if type(value) != auto else self.make_default("GnlInf")
-
-	@GnlInf.deleter
-	def GnlInf(self):
-		del self._GnlInf
-		self._GnlInf = None
-
-	@property
-	def Coll(self):
-		return self._Coll
-
-	@Coll.setter
-	def Coll(self, value):
-		self._Coll = value if type(value) != auto else self.make_default("Coll")
-
-	@Coll.deleter
-	def Coll(self):
-		del self._Coll
-		self._Coll = None
-
+	__slots__ = ["_Ln", "_RefDt", "_Coll", "_Reuse", "_GnlInf", "_Mrgn"]
 	@property
 	def Ln(self):
 		return self._Ln
 
 	@Ln.setter
 	def Ln(self, value):
-		self._Ln = value if type(value) != auto else self.make_default("Ln")
+		self._Ln = value if type(value) != base_types.auto else self.make_default("Ln")
 
 	@Ln.deleter
 	def Ln(self):
@@ -54,7 +28,7 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@RefDt.setter
 	def RefDt(self, value):
-		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+		self._RefDt = value if type(value) != base_types.auto else self.make_default("RefDt")
 
 	@RefDt.deleter
 	def RefDt(self):
@@ -62,17 +36,17 @@ class NamedPosition3(base_types._BaseFieldType):
 		self._RefDt = None
 
 	@property
-	def Mrgn(self):
-		return self._Mrgn
+	def Coll(self):
+		return self._Coll
 
-	@Mrgn.setter
-	def Mrgn(self, value):
-		self._Mrgn = value if type(value) != auto else self.make_default("Mrgn")
+	@Coll.setter
+	def Coll(self, value):
+		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
 
-	@Mrgn.deleter
-	def Mrgn(self):
-		del self._Mrgn
-		self._Mrgn = None
+	@Coll.deleter
+	def Coll(self):
+		del self._Coll
+		self._Coll = None
 
 	@property
 	def Reuse(self):
@@ -80,19 +54,45 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@Reuse.setter
 	def Reuse(self, value):
-		self._Reuse = value if type(value) != auto else self.make_default("Reuse")
+		self._Reuse = value if type(value) != base_types.auto else self.make_default("Reuse")
 
 	@Reuse.deleter
 	def Reuse(self):
 		del self._Reuse
 		self._Reuse = None
 
+	@property
+	def GnlInf(self):
+		return self._GnlInf
+
+	@GnlInf.setter
+	def GnlInf(self, value):
+		self._GnlInf = value if type(value) != base_types.auto else self.make_default("GnlInf")
+
+	@GnlInf.deleter
+	def GnlInf(self):
+		del self._GnlInf
+		self._GnlInf = None
+
+	@property
+	def Mrgn(self):
+		return self._Mrgn
+
+	@Mrgn.setter
+	def Mrgn(self, value):
+		self._Mrgn = value if type(value) != base_types.auto else self.make_default("Mrgn")
+
+	@Mrgn.deleter
+	def Mrgn(self):
+		del self._Mrgn
+		self._Mrgn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GnlInf', type=PositionSet16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Coll', type=PositionSet18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ln', type=PositionSet17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mrgn', type=PositionSet20, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Coll', type=PositionSet18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Reuse', type=PositionSet19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GnlInf', type=PositionSet16, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Mrgn', type=PositionSet20, min=0, max=None, mutex_group=None, array=True),
 	))
 

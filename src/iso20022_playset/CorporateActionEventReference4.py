@@ -11,7 +11,7 @@ class CorporateActionEventReference4(base_types._BaseFieldType):
 
 	@LkgTp.setter
 	def LkgTp(self, value):
-		self._LkgTp = value if type(value) != auto else self.make_default("LkgTp")
+		self._LkgTp = value if type(value) != base_types.auto else self.make_default("LkgTp")
 
 	@LkgTp.deleter
 	def LkgTp(self):
@@ -24,7 +24,7 @@ class CorporateActionEventReference4(base_types._BaseFieldType):
 
 	@EvtId.setter
 	def EvtId(self, value):
-		self._EvtId = value if type(value) != auto else self.make_default("EvtId")
+		self._EvtId = value if type(value) != base_types.auto else self.make_default("EvtId")
 
 	@EvtId.deleter
 	def EvtId(self):

@@ -1,7 +1,7 @@
 from . import base_types
 from .ContactIdentification1 import ContactIdentification1
-from .MICIdentifier import MICIdentifier
 from .PartyIdentification129Choice import PartyIdentification129Choice
+from .MICIdentifier import MICIdentifier
 
 class MeetingContactPerson3(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 
 	@EmplngPty.setter
 	def EmplngPty(self, value):
-		self._EmplngPty = value if type(value) != auto else self.make_default("EmplngPty")
+		self._EmplngPty = value if type(value) != base_types.auto else self.make_default("EmplngPty")
 
 	@EmplngPty.deleter
 	def EmplngPty(self):
@@ -25,7 +25,7 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
@@ -38,7 +38,7 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 
 	@PlcOfListg.setter
 	def PlcOfListg(self, value):
-		self._PlcOfListg = value if type(value) != auto else self.make_default("PlcOfListg")
+		self._PlcOfListg = value if type(value) != base_types.auto else self.make_default("PlcOfListg")
 
 	@PlcOfListg.deleter
 	def PlcOfListg(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
 from .ExternalAgentInstruction1Code import ExternalAgentInstruction1Code
+from .Max140Text import Max140Text
 
 class InstructionForAssignee1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class InstructionForAssignee1(base_types._BaseFieldType):
 
 	@InstrInf.setter
 	def InstrInf(self, value):
-		self._InstrInf = value if type(value) != auto else self.make_default("InstrInf")
+		self._InstrInf = value if type(value) != base_types.auto else self.make_default("InstrInf")
 
 	@InstrInf.deleter
 	def InstrInf(self):
@@ -24,7 +24,7 @@ class InstructionForAssignee1(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

@@ -11,7 +11,7 @@ class CardReadingCapabilities1(base_types._BaseFieldType):
 
 	@Cpblty.setter
 	def Cpblty(self, value):
-		self._Cpblty = value if type(value) != auto else self.make_default("Cpblty")
+		self._Cpblty = value if type(value) != base_types.auto else self.make_default("Cpblty")
 
 	@Cpblty.deleter
 	def Cpblty(self):
@@ -24,7 +24,7 @@ class CardReadingCapabilities1(base_types._BaseFieldType):
 
 	@OthrCpblty.setter
 	def OthrCpblty(self, value):
-		self._OthrCpblty = value if type(value) != auto else self.make_default("OthrCpblty")
+		self._OthrCpblty = value if type(value) != base_types.auto else self.make_default("OthrCpblty")
 
 	@OthrCpblty.deleter
 	def OthrCpblty(self):

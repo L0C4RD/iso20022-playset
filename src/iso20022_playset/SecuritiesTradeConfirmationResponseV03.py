@@ -1,60 +1,21 @@
 from . import base_types
-from .StatusAndReason46 import StatusAndReason46
-from .Linkages76 import Linkages76
-from .SupplementaryData1 import SupplementaryData1
 from .ConfirmationParties8 import ConfirmationParties8
+from .StatusAndReason46 import StatusAndReason46
 from .TransactiontIdentification4 import TransactiontIdentification4
 from .Clearing6 import Clearing6
+from .Linkages76 import Linkages76
+from .SupplementaryData1 import SupplementaryData1
 
 class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SplmtryData", "_ConfPties", "_Refs", "_ClrDtls", "_Sts"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def ConfPties(self):
-		return self._ConfPties
-
-	@ConfPties.setter
-	def ConfPties(self, value):
-		self._ConfPties = value if type(value) != auto else self.make_default("ConfPties")
-
-	@ConfPties.deleter
-	def ConfPties(self):
-		del self._ConfPties
-		self._ConfPties = None
-
+	__slots__ = ["_Refs", "_ConfPties", "_Sts", "_SplmtryData", "_Id", "_ClrDtls"]
 	@property
 	def Refs(self):
 		return self._Refs
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != auto else self.make_default("Refs")
+		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
 
 	@Refs.deleter
 	def Refs(self):
@@ -62,17 +23,17 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 		self._Refs = None
 
 	@property
-	def ClrDtls(self):
-		return self._ClrDtls
+	def ConfPties(self):
+		return self._ConfPties
 
-	@ClrDtls.setter
-	def ClrDtls(self, value):
-		self._ClrDtls = value if type(value) != auto else self.make_default("ClrDtls")
+	@ConfPties.setter
+	def ConfPties(self, value):
+		self._ConfPties = value if type(value) != base_types.auto else self.make_default("ConfPties")
 
-	@ClrDtls.deleter
-	def ClrDtls(self):
-		del self._ClrDtls
-		self._ClrDtls = None
+	@ConfPties.deleter
+	def ConfPties(self):
+		del self._ConfPties
+		self._ConfPties = None
 
 	@property
 	def Sts(self):
@@ -80,19 +41,58 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def ClrDtls(self):
+		return self._ClrDtls
+
+	@ClrDtls.setter
+	def ClrDtls(self, value):
+		self._ClrDtls = value if type(value) != base_types.auto else self.make_default("ClrDtls")
+
+	@ClrDtls.deleter
+	def ClrDtls(self):
+		del self._ClrDtls
+		self._ClrDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Refs', type=Linkages76, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClrDtls', type=Clearing6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=StatusAndReason46, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrDtls', type=Clearing6, min=0, max=1, mutex_group=None, array=False),
 	))
 

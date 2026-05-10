@@ -12,7 +12,7 @@ class PACS_004_001_14():
 
 		@PmtRtr.setter
 		def PmtRtr(self, value):
-			self._PmtRtr = value if type(value) != auto else self.make_default("PmtRtr")
+			self._PmtRtr = value if type(value) != base_types.auto else self.make_default("PmtRtr")
 
 		@PmtRtr.deleter
 		def PmtRtr(self):

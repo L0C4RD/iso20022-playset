@@ -12,7 +12,7 @@ class CAMT_071_001_05():
 
 		@DelStgOrdr.setter
 		def DelStgOrdr(self, value):
-			self._DelStgOrdr = value if type(value) != auto else self.make_default("DelStgOrdr")
+			self._DelStgOrdr = value if type(value) != base_types.auto else self.make_default("DelStgOrdr")
 
 		@DelStgOrdr.deleter
 		def DelStgOrdr(self):

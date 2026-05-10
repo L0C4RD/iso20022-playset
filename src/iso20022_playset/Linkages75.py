@@ -10,7 +10,7 @@ class Linkages75(base_types._BaseFieldType):
 
 	@SctiesSttlmTxId.setter
 	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != auto else self.make_default("SctiesSttlmTxId")
+		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
 
 	@SctiesSttlmTxId.deleter
 	def SctiesSttlmTxId(self):

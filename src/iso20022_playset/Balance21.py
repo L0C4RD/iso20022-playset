@@ -1,6 +1,6 @@
 from . import base_types
-from .SubBalanceQuantity8Choice import SubBalanceQuantity8Choice
 from .ShortLong1Code import ShortLong1Code
+from .SubBalanceQuantity8Choice import SubBalanceQuantity8Choice
 
 class Balance21(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Balance21(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
@@ -24,7 +24,7 @@ class Balance21(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):

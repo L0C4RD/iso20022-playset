@@ -12,7 +12,7 @@ class SESE_025_002_11():
 
 		@SctiesSttlmTxConf.setter
 		def SctiesSttlmTxConf(self, value):
-			self._SctiesSttlmTxConf = value if type(value) != auto else self.make_default("SctiesSttlmTxConf")
+			self._SctiesSttlmTxConf = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxConf")
 
 		@SctiesSttlmTxConf.deleter
 		def SctiesSttlmTxConf(self):

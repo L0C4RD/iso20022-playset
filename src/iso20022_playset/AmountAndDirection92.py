@@ -1,9 +1,9 @@
 from . import base_types
-from .RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
-from .ForeignExchangeTerms27 import ForeignExchangeTerms27
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
 from .RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
 from .CreditDebitCode import CreditDebitCode
+from .ForeignExchangeTerms27 import ForeignExchangeTerms27
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
 
 class AmountAndDirection92(base_types._BaseFieldType):
 
@@ -14,7 +14,7 @@ class AmountAndDirection92(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
+		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
 
 	@FXDtls.deleter
 	def FXDtls(self):
@@ -27,7 +27,7 @@ class AmountAndDirection92(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -40,7 +40,7 @@ class AmountAndDirection92(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
 
 	@ValDt.deleter
 	def ValDt(self):
@@ -53,7 +53,7 @@ class AmountAndDirection92(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
@@ -66,7 +66,7 @@ class AmountAndDirection92(base_types._BaseFieldType):
 
 	@OrgnlCcyAndOrdrdAmt.setter
 	def OrgnlCcyAndOrdrdAmt(self, value):
-		self._OrgnlCcyAndOrdrdAmt = value if type(value) != auto else self.make_default("OrgnlCcyAndOrdrdAmt")
+		self._OrgnlCcyAndOrdrdAmt = value if type(value) != base_types.auto else self.make_default("OrgnlCcyAndOrdrdAmt")
 
 	@OrgnlCcyAndOrdrdAmt.deleter
 	def OrgnlCcyAndOrdrdAmt(self):

@@ -12,7 +12,7 @@ class AUTH_052_001_02():
 
 		@SctiesFincgRptgTxRpt.setter
 		def SctiesFincgRptgTxRpt(self, value):
-			self._SctiesFincgRptgTxRpt = value if type(value) != auto else self.make_default("SctiesFincgRptgTxRpt")
+			self._SctiesFincgRptgTxRpt = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgTxRpt")
 
 		@SctiesFincgRptgTxRpt.deleter
 		def SctiesFincgRptgTxRpt(self):

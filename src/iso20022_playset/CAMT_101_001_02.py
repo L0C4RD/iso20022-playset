@@ -12,7 +12,7 @@ class CAMT_101_001_02():
 
 		@CretLmt.setter
 		def CretLmt(self, value):
-			self._CretLmt = value if type(value) != auto else self.make_default("CretLmt")
+			self._CretLmt = value if type(value) != base_types.auto else self.make_default("CretLmt")
 
 		@CretLmt.deleter
 		def CretLmt(self):

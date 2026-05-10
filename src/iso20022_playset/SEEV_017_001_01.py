@@ -12,7 +12,7 @@ class SEEV_017_001_01():
 
 		@AgtCAGblDstrbtnAuthstnReq.setter
 		def AgtCAGblDstrbtnAuthstnReq(self, value):
-			self._AgtCAGblDstrbtnAuthstnReq = value if type(value) != auto else self.make_default("AgtCAGblDstrbtnAuthstnReq")
+			self._AgtCAGblDstrbtnAuthstnReq = value if type(value) != base_types.auto else self.make_default("AgtCAGblDstrbtnAuthstnReq")
 
 		@AgtCAGblDstrbtnAuthstnReq.deleter
 		def AgtCAGblDstrbtnAuthstnReq(self):

@@ -1,22 +1,22 @@
 from . import base_types
-from .PartyIdentification236Choice import PartyIdentification236Choice
 from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .PartyIdentification236Choice import PartyIdentification236Choice
 
 class CounterpartyData91(base_types._BaseFieldType):
 
-	__slots__ = ["_NttyRspnsblForRpt", "_RptgCtrPty", "_OthrCtrPty", "_RptSubmitgNtty"]
+	__slots__ = ["_RptSubmitgNtty", "_RptgCtrPty", "_OthrCtrPty", "_NttyRspnsblForRpt"]
 	@property
-	def NttyRspnsblForRpt(self):
-		return self._NttyRspnsblForRpt
+	def RptSubmitgNtty(self):
+		return self._RptSubmitgNtty
 
-	@NttyRspnsblForRpt.setter
-	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
+	@RptSubmitgNtty.setter
+	def RptSubmitgNtty(self, value):
+		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
 
-	@NttyRspnsblForRpt.deleter
-	def NttyRspnsblForRpt(self):
-		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
+	@RptSubmitgNtty.deleter
+	def RptSubmitgNtty(self):
+		del self._RptSubmitgNtty
+		self._RptSubmitgNtty = None
 
 	@property
 	def RptgCtrPty(self):
@@ -24,7 +24,7 @@ class CounterpartyData91(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
@@ -37,7 +37,7 @@ class CounterpartyData91(base_types._BaseFieldType):
 
 	@OthrCtrPty.setter
 	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
+		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
 
 	@OthrCtrPty.deleter
 	def OthrCtrPty(self):
@@ -45,22 +45,22 @@ class CounterpartyData91(base_types._BaseFieldType):
 		self._OthrCtrPty = None
 
 	@property
-	def RptSubmitgNtty(self):
-		return self._RptSubmitgNtty
+	def NttyRspnsblForRpt(self):
+		return self._NttyRspnsblForRpt
 
-	@RptSubmitgNtty.setter
-	def RptSubmitgNtty(self, value):
-		self._RptSubmitgNtty = value if type(value) != auto else self.make_default("RptSubmitgNtty")
+	@NttyRspnsblForRpt.setter
+	def NttyRspnsblForRpt(self, value):
+		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
 
-	@RptSubmitgNtty.deleter
-	def RptSubmitgNtty(self):
-		del self._RptSubmitgNtty
-		self._RptSubmitgNtty = None
+	@NttyRspnsblForRpt.deleter
+	def NttyRspnsblForRpt(self):
+		del self._NttyRspnsblForRpt
+		self._NttyRspnsblForRpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

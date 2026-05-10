@@ -12,7 +12,7 @@ class ADMI_024_001_01():
 
 		@NtfctnOfCrspdc.setter
 		def NtfctnOfCrspdc(self, value):
-			self._NtfctnOfCrspdc = value if type(value) != auto else self.make_default("NtfctnOfCrspdc")
+			self._NtfctnOfCrspdc = value if type(value) != base_types.auto else self.make_default("NtfctnOfCrspdc")
 
 		@NtfctnOfCrspdc.deleter
 		def NtfctnOfCrspdc(self):

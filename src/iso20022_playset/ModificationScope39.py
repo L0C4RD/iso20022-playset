@@ -1,6 +1,6 @@
 from . import base_types
-from .CitizenshipInformation2 import CitizenshipInformation2
 from .DataModification2Code import DataModification2Code
+from .CitizenshipInformation2 import CitizenshipInformation2
 
 class ModificationScope39(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ModificationScope39(base_types._BaseFieldType):
 
 	@Ctznsh.setter
 	def Ctznsh(self, value):
-		self._Ctznsh = value if type(value) != auto else self.make_default("Ctznsh")
+		self._Ctznsh = value if type(value) != base_types.auto else self.make_default("Ctznsh")
 
 	@Ctznsh.deleter
 	def Ctznsh(self):
@@ -24,7 +24,7 @@ class ModificationScope39(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):

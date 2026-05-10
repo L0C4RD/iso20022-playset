@@ -11,7 +11,7 @@ class StandingOrderQuery5(base_types._BaseFieldType):
 
 	@StgOrdrCrit.setter
 	def StgOrdrCrit(self, value):
-		self._StgOrdrCrit = value if type(value) != auto else self.make_default("StgOrdrCrit")
+		self._StgOrdrCrit = value if type(value) != base_types.auto else self.make_default("StgOrdrCrit")
 
 	@StgOrdrCrit.deleter
 	def StgOrdrCrit(self):
@@ -24,7 +24,7 @@ class StandingOrderQuery5(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

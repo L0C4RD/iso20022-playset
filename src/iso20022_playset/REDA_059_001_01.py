@@ -12,7 +12,7 @@ class REDA_059_001_01():
 
 		@StgSttlmInstrCxl.setter
 		def StgSttlmInstrCxl(self, value):
-			self._StgSttlmInstrCxl = value if type(value) != auto else self.make_default("StgSttlmInstrCxl")
+			self._StgSttlmInstrCxl = value if type(value) != base_types.auto else self.make_default("StgSttlmInstrCxl")
 
 		@StgSttlmInstrCxl.deleter
 		def StgSttlmInstrCxl(self):

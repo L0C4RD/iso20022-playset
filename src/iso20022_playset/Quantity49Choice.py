@@ -1,6 +1,6 @@
 from . import base_types
-from .Quantity50Choice import Quantity50Choice
 from .ProprietaryQuantity7 import ProprietaryQuantity7
+from .Quantity50Choice import Quantity50Choice
 
 class Quantity49Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Quantity49Choice(base_types._BaseFieldType):
 
 	@PrtryQty.setter
 	def PrtryQty(self, value):
-		self._PrtryQty = value if type(value) != auto else self.make_default("PrtryQty")
+		self._PrtryQty = value if type(value) != base_types.auto else self.make_default("PrtryQty")
 
 	@PrtryQty.deleter
 	def PrtryQty(self):
@@ -24,7 +24,7 @@ class Quantity49Choice(base_types._BaseFieldType):
 
 	@QtyChc.setter
 	def QtyChc(self, value):
-		self._QtyChc = value if type(value) != auto else self.make_default("QtyChc")
+		self._QtyChc = value if type(value) != base_types.auto else self.make_default("QtyChc")
 
 	@QtyChc.deleter
 	def QtyChc(self):

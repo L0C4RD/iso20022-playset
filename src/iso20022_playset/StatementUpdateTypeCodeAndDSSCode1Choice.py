@@ -11,7 +11,7 @@ class StatementUpdateTypeCodeAndDSSCode1Choice(base_types._BaseFieldType):
 
 	@StmtUpdTpAsDSS.setter
 	def StmtUpdTpAsDSS(self, value):
-		self._StmtUpdTpAsDSS = value if type(value) != auto else self.make_default("StmtUpdTpAsDSS")
+		self._StmtUpdTpAsDSS = value if type(value) != base_types.auto else self.make_default("StmtUpdTpAsDSS")
 
 	@StmtUpdTpAsDSS.deleter
 	def StmtUpdTpAsDSS(self):
@@ -24,7 +24,7 @@ class StatementUpdateTypeCodeAndDSSCode1Choice(base_types._BaseFieldType):
 
 	@StmtUpdTpAsCd.setter
 	def StmtUpdTpAsCd(self, value):
-		self._StmtUpdTpAsCd = value if type(value) != auto else self.make_default("StmtUpdTpAsCd")
+		self._StmtUpdTpAsCd = value if type(value) != base_types.auto else self.make_default("StmtUpdTpAsCd")
 
 	@StmtUpdTpAsCd.deleter
 	def StmtUpdTpAsCd(self):

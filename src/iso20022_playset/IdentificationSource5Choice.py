@@ -11,7 +11,7 @@ class IdentificationSource5Choice(base_types._BaseFieldType):
 
 	@PrtryIdSrc.setter
 	def PrtryIdSrc(self, value):
-		self._PrtryIdSrc = value if type(value) != auto else self.make_default("PrtryIdSrc")
+		self._PrtryIdSrc = value if type(value) != base_types.auto else self.make_default("PrtryIdSrc")
 
 	@PrtryIdSrc.deleter
 	def PrtryIdSrc(self):
@@ -24,7 +24,7 @@ class IdentificationSource5Choice(base_types._BaseFieldType):
 
 	@DmstIdSrc.setter
 	def DmstIdSrc(self, value):
-		self._DmstIdSrc = value if type(value) != auto else self.make_default("DmstIdSrc")
+		self._DmstIdSrc = value if type(value) != base_types.auto else self.make_default("DmstIdSrc")
 
 	@DmstIdSrc.deleter
 	def DmstIdSrc(self):

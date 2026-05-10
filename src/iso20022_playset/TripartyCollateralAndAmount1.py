@@ -11,7 +11,7 @@ class TripartyCollateralAndAmount1(base_types._BaseFieldType):
 
 	@Trpty.setter
 	def Trpty(self, value):
-		self._Trpty = value if type(value) != auto else self.make_default("Trpty")
+		self._Trpty = value if type(value) != base_types.auto else self.make_default("Trpty")
 
 	@Trpty.deleter
 	def Trpty(self):
@@ -24,7 +24,7 @@ class TripartyCollateralAndAmount1(base_types._BaseFieldType):
 
 	@CollTp.setter
 	def CollTp(self, value):
-		self._CollTp = value if type(value) != auto else self.make_default("CollTp")
+		self._CollTp = value if type(value) != base_types.auto else self.make_default("CollTp")
 
 	@CollTp.deleter
 	def CollTp(self):

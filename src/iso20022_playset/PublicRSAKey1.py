@@ -10,7 +10,7 @@ class PublicRSAKey1(base_types._BaseFieldType):
 
 	@Mdlus.setter
 	def Mdlus(self, value):
-		self._Mdlus = value if type(value) != auto else self.make_default("Mdlus")
+		self._Mdlus = value if type(value) != base_types.auto else self.make_default("Mdlus")
 
 	@Mdlus.deleter
 	def Mdlus(self):
@@ -23,7 +23,7 @@ class PublicRSAKey1(base_types._BaseFieldType):
 
 	@Expnt.setter
 	def Expnt(self, value):
-		self._Expnt = value if type(value) != auto else self.make_default("Expnt")
+		self._Expnt = value if type(value) != base_types.auto else self.make_default("Expnt")
 
 	@Expnt.deleter
 	def Expnt(self):

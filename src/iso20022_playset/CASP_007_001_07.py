@@ -12,7 +12,7 @@ class CASP_007_001_07():
 
 		@SaleToPOIAdmstvReq.setter
 		def SaleToPOIAdmstvReq(self, value):
-			self._SaleToPOIAdmstvReq = value if type(value) != auto else self.make_default("SaleToPOIAdmstvReq")
+			self._SaleToPOIAdmstvReq = value if type(value) != base_types.auto else self.make_default("SaleToPOIAdmstvReq")
 
 		@SaleToPOIAdmstvReq.deleter
 		def SaleToPOIAdmstvReq(self):

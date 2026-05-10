@@ -12,7 +12,7 @@ class CAAA_002_001_14():
 
 		@AccptrAuthstnRspn.setter
 		def AccptrAuthstnRspn(self, value):
-			self._AccptrAuthstnRspn = value if type(value) != auto else self.make_default("AccptrAuthstnRspn")
+			self._AccptrAuthstnRspn = value if type(value) != base_types.auto else self.make_default("AccptrAuthstnRspn")
 
 		@AccptrAuthstnRspn.deleter
 		def AccptrAuthstnRspn(self):

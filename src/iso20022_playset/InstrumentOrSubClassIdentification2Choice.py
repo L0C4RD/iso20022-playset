@@ -11,7 +11,7 @@ class InstrumentOrSubClassIdentification2Choice(base_types._BaseFieldType):
 
 	@ISINAndSubClss.setter
 	def ISINAndSubClss(self, value):
-		self._ISINAndSubClss = value if type(value) != auto else self.make_default("ISINAndSubClss")
+		self._ISINAndSubClss = value if type(value) != base_types.auto else self.make_default("ISINAndSubClss")
 
 	@ISINAndSubClss.deleter
 	def ISINAndSubClss(self):
@@ -24,7 +24,7 @@ class InstrumentOrSubClassIdentification2Choice(base_types._BaseFieldType):
 
 	@AsstClssAndSubClss.setter
 	def AsstClssAndSubClss(self, value):
-		self._AsstClssAndSubClss = value if type(value) != auto else self.make_default("AsstClssAndSubClss")
+		self._AsstClssAndSubClss = value if type(value) != base_types.auto else self.make_default("AsstClssAndSubClss")
 
 	@AsstClssAndSubClss.deleter
 	def AsstClssAndSubClss(self):

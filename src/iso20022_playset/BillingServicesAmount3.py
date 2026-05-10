@@ -10,7 +10,7 @@ class BillingServicesAmount3(base_types._BaseFieldType):
 
 	@SrcAmt.setter
 	def SrcAmt(self, value):
-		self._SrcAmt = value if type(value) != auto else self.make_default("SrcAmt")
+		self._SrcAmt = value if type(value) != base_types.auto else self.make_default("SrcAmt")
 
 	@SrcAmt.deleter
 	def SrcAmt(self):
@@ -23,7 +23,7 @@ class BillingServicesAmount3(base_types._BaseFieldType):
 
 	@HstAmt.setter
 	def HstAmt(self, value):
-		self._HstAmt = value if type(value) != auto else self.make_default("HstAmt")
+		self._HstAmt = value if type(value) != base_types.auto else self.make_default("HstAmt")
 
 	@HstAmt.deleter
 	def HstAmt(self):

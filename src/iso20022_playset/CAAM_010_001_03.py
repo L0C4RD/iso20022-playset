@@ -12,7 +12,7 @@ class CAAM_010_001_03():
 
 		@ATMRcncltnAck.setter
 		def ATMRcncltnAck(self, value):
-			self._ATMRcncltnAck = value if type(value) != auto else self.make_default("ATMRcncltnAck")
+			self._ATMRcncltnAck = value if type(value) != base_types.auto else self.make_default("ATMRcncltnAck")
 
 		@ATMRcncltnAck.deleter
 		def ATMRcncltnAck(self):

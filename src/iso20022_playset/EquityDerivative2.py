@@ -1,6 +1,6 @@
 from . import base_types
-from .EquityDerivative3Choice import EquityDerivative3Choice
 from .EquityReturnParameter1Code import EquityReturnParameter1Code
+from .EquityDerivative3Choice import EquityDerivative3Choice
 
 class EquityDerivative2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class EquityDerivative2(base_types._BaseFieldType):
 
 	@UndrlygTp.setter
 	def UndrlygTp(self, value):
-		self._UndrlygTp = value if type(value) != auto else self.make_default("UndrlygTp")
+		self._UndrlygTp = value if type(value) != base_types.auto else self.make_default("UndrlygTp")
 
 	@UndrlygTp.deleter
 	def UndrlygTp(self):
@@ -24,7 +24,7 @@ class EquityDerivative2(base_types._BaseFieldType):
 
 	@Param.setter
 	def Param(self, value):
-		self._Param = value if type(value) != auto else self.make_default("Param")
+		self._Param = value if type(value) != base_types.auto else self.make_default("Param")
 
 	@Param.deleter
 	def Param(self):

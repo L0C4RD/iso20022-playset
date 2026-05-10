@@ -12,7 +12,7 @@ class CAMT_107_001_02():
 
 		@ChqPresntmntNtfctn.setter
 		def ChqPresntmntNtfctn(self, value):
-			self._ChqPresntmntNtfctn = value if type(value) != auto else self.make_default("ChqPresntmntNtfctn")
+			self._ChqPresntmntNtfctn = value if type(value) != base_types.auto else self.make_default("ChqPresntmntNtfctn")
 
 		@ChqPresntmntNtfctn.deleter
 		def ChqPresntmntNtfctn(self):

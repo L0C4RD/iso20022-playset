@@ -1,6 +1,6 @@
 from . import base_types
-from .Organisation39 import Organisation39
 from .IndividualPerson37 import IndividualPerson37
+from .Organisation39 import Organisation39
 
 class Party47Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Party47Choice(base_types._BaseFieldType):
 
 	@IndvPrsn.setter
 	def IndvPrsn(self, value):
-		self._IndvPrsn = value if type(value) != auto else self.make_default("IndvPrsn")
+		self._IndvPrsn = value if type(value) != base_types.auto else self.make_default("IndvPrsn")
 
 	@IndvPrsn.deleter
 	def IndvPrsn(self):
@@ -24,7 +24,7 @@ class Party47Choice(base_types._BaseFieldType):
 
 	@Org.setter
 	def Org(self, value):
-		self._Org = value if type(value) != auto else self.make_default("Org")
+		self._Org = value if type(value) != base_types.auto else self.make_default("Org")
 
 	@Org.deleter
 	def Org(self):

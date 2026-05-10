@@ -12,7 +12,7 @@ class CAMT_051_001_07():
 
 		@LqdtyDbtTrf.setter
 		def LqdtyDbtTrf(self, value):
-			self._LqdtyDbtTrf = value if type(value) != auto else self.make_default("LqdtyDbtTrf")
+			self._LqdtyDbtTrf = value if type(value) != base_types.auto else self.make_default("LqdtyDbtTrf")
 
 		@LqdtyDbtTrf.deleter
 		def LqdtyDbtTrf(self):

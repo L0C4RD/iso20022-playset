@@ -1,7 +1,7 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .OrganisationIdentification38 import OrganisationIdentification38
 from .LEIIdentifier import LEIIdentifier
+from .OrganisationIdentification38 import OrganisationIdentification38
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class OrganisationIdentification15Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class OrganisationIdentification15Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
 	@Othr.deleter
 	def Othr(self):
@@ -25,7 +25,7 @@ class OrganisationIdentification15Choice(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
@@ -38,7 +38,7 @@ class OrganisationIdentification15Choice(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
 	@LEI.deleter
 	def LEI(self):

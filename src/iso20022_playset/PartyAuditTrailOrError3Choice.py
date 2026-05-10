@@ -11,7 +11,7 @@ class PartyAuditTrailOrError3Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != auto else self.make_default("OprlErr")
+		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
 
 	@OprlErr.deleter
 	def OprlErr(self):
@@ -24,7 +24,7 @@ class PartyAuditTrailOrError3Choice(base_types._BaseFieldType):
 
 	@PtyAudtTrlRpt.setter
 	def PtyAudtTrlRpt(self, value):
-		self._PtyAudtTrlRpt = value if type(value) != auto else self.make_default("PtyAudtTrlRpt")
+		self._PtyAudtTrlRpt = value if type(value) != base_types.auto else self.make_default("PtyAudtTrlRpt")
 
 	@PtyAudtTrlRpt.deleter
 	def PtyAudtTrlRpt(self):

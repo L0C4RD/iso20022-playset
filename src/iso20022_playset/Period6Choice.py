@@ -1,6 +1,6 @@
 from . import base_types
-from .DateType8Code import DateType8Code
 from .Period11 import Period11
+from .DateType8Code import DateType8Code
 
 class Period6Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Period6Choice(base_types._BaseFieldType):
 
 	@PrdCd.setter
 	def PrdCd(self, value):
-		self._PrdCd = value if type(value) != auto else self.make_default("PrdCd")
+		self._PrdCd = value if type(value) != base_types.auto else self.make_default("PrdCd")
 
 	@PrdCd.deleter
 	def PrdCd(self):
@@ -24,7 +24,7 @@ class Period6Choice(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
 	@Prd.deleter
 	def Prd(self):

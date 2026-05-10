@@ -11,7 +11,7 @@ class PartyOrOperationalError4Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != auto else self.make_default("OprlErr")
+		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
 
 	@OprlErr.deleter
 	def OprlErr(self):
@@ -24,7 +24,7 @@ class PartyOrOperationalError4Choice(base_types._BaseFieldType):
 
 	@PtyRpt.setter
 	def PtyRpt(self, value):
-		self._PtyRpt = value if type(value) != auto else self.make_default("PtyRpt")
+		self._PtyRpt = value if type(value) != base_types.auto else self.make_default("PtyRpt")
 
 	@PtyRpt.deleter
 	def PtyRpt(self):

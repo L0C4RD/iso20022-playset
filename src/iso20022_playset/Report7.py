@@ -11,7 +11,7 @@ class Report7(base_types._BaseFieldType):
 
 	@NonClrMmb.setter
 	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
+		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
 
 	@NonClrMmb.deleter
 	def NonClrMmb(self):
@@ -24,7 +24,7 @@ class Report7(base_types._BaseFieldType):
 
 	@SttlmOblgtnDtls.setter
 	def SttlmOblgtnDtls(self, value):
-		self._SttlmOblgtnDtls = value if type(value) != auto else self.make_default("SttlmOblgtnDtls")
+		self._SttlmOblgtnDtls = value if type(value) != base_types.auto else self.make_default("SttlmOblgtnDtls")
 
 	@SttlmOblgtnDtls.deleter
 	def SttlmOblgtnDtls(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .YesNoIndicator import YesNoIndicator
+from .Max35Text import Max35Text
 
 class NotificationUpdate2(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NotificationUpdate2(base_types._BaseFieldType):
 
 	@RcnfrmInstrs.setter
 	def RcnfrmInstrs(self, value):
-		self._RcnfrmInstrs = value if type(value) != auto else self.make_default("RcnfrmInstrs")
+		self._RcnfrmInstrs = value if type(value) != base_types.auto else self.make_default("RcnfrmInstrs")
 
 	@RcnfrmInstrs.deleter
 	def RcnfrmInstrs(self):
@@ -24,7 +24,7 @@ class NotificationUpdate2(base_types._BaseFieldType):
 
 	@PrvsNtfctnId.setter
 	def PrvsNtfctnId(self, value):
-		self._PrvsNtfctnId = value if type(value) != auto else self.make_default("PrvsNtfctnId")
+		self._PrvsNtfctnId = value if type(value) != base_types.auto else self.make_default("PrvsNtfctnId")
 
 	@PrvsNtfctnId.deleter
 	def PrvsNtfctnId(self):

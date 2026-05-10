@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification39 import GenericIdentification39
 from .FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from .GenericIdentification39 import GenericIdentification39
 
 class QuantityBreakdown64(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class QuantityBreakdown64(base_types._BaseFieldType):
 
 	@LotNb.setter
 	def LotNb(self, value):
-		self._LotNb = value if type(value) != auto else self.make_default("LotNb")
+		self._LotNb = value if type(value) != base_types.auto else self.make_default("LotNb")
 
 	@LotNb.deleter
 	def LotNb(self):
@@ -24,7 +24,7 @@ class QuantityBreakdown64(base_types._BaseFieldType):
 
 	@LotQty.setter
 	def LotQty(self, value):
-		self._LotQty = value if type(value) != auto else self.make_default("LotQty")
+		self._LotQty = value if type(value) != base_types.auto else self.make_default("LotQty")
 
 	@LotQty.deleter
 	def LotQty(self):

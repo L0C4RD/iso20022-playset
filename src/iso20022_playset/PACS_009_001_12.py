@@ -12,7 +12,7 @@ class PACS_009_001_12():
 
 		@FICdtTrf.setter
 		def FICdtTrf(self, value):
-			self._FICdtTrf = value if type(value) != auto else self.make_default("FICdtTrf")
+			self._FICdtTrf = value if type(value) != base_types.auto else self.make_default("FICdtTrf")
 
 		@FICdtTrf.deleter
 		def FICdtTrf(self):

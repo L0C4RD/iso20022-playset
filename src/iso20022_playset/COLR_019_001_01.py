@@ -12,7 +12,7 @@ class COLR_019_001_01():
 
 		@TrptyCollTxInstr.setter
 		def TrptyCollTxInstr(self, value):
-			self._TrptyCollTxInstr = value if type(value) != auto else self.make_default("TrptyCollTxInstr")
+			self._TrptyCollTxInstr = value if type(value) != base_types.auto else self.make_default("TrptyCollTxInstr")
 
 		@TrptyCollTxInstr.deleter
 		def TrptyCollTxInstr(self):

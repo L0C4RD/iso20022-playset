@@ -10,7 +10,7 @@ class TransportByRoad2(base_types._BaseFieldType):
 
 	@PlcOfDlvry.setter
 	def PlcOfDlvry(self, value):
-		self._PlcOfDlvry = value if type(value) != auto else self.make_default("PlcOfDlvry")
+		self._PlcOfDlvry = value if type(value) != base_types.auto else self.make_default("PlcOfDlvry")
 
 	@PlcOfDlvry.deleter
 	def PlcOfDlvry(self):
@@ -23,7 +23,7 @@ class TransportByRoad2(base_types._BaseFieldType):
 
 	@RoadCrrierNm.setter
 	def RoadCrrierNm(self, value):
-		self._RoadCrrierNm = value if type(value) != auto else self.make_default("RoadCrrierNm")
+		self._RoadCrrierNm = value if type(value) != base_types.auto else self.make_default("RoadCrrierNm")
 
 	@RoadCrrierNm.deleter
 	def RoadCrrierNm(self):
@@ -36,7 +36,7 @@ class TransportByRoad2(base_types._BaseFieldType):
 
 	@PlcOfRct.setter
 	def PlcOfRct(self, value):
-		self._PlcOfRct = value if type(value) != auto else self.make_default("PlcOfRct")
+		self._PlcOfRct = value if type(value) != base_types.auto else self.make_default("PlcOfRct")
 
 	@PlcOfRct.deleter
 	def PlcOfRct(self):

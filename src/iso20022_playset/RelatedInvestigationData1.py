@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .InvestigationLocationData1 import InvestigationLocationData1
+from .Max35Text import Max35Text
 
 class RelatedInvestigationData1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class RelatedInvestigationData1(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
 
 	@Lctn.deleter
 	def Lctn(self):
@@ -24,7 +24,7 @@ class RelatedInvestigationData1(base_types._BaseFieldType):
 
 	@InvstgtnId.setter
 	def InvstgtnId(self, value):
-		self._InvstgtnId = value if type(value) != auto else self.make_default("InvstgtnId")
+		self._InvstgtnId = value if type(value) != base_types.auto else self.make_default("InvstgtnId")
 
 	@InvstgtnId.deleter
 	def InvstgtnId(self):

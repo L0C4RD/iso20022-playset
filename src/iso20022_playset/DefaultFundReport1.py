@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountAndDirection21 import AmountAndDirection21
 from .DefaultFund1 import DefaultFund1
+from .AmountAndDirection21 import AmountAndDirection21
 from .Collateral3 import Collateral3
 
 class DefaultFundReport1(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class DefaultFundReport1(base_types._BaseFieldType):
 
 	@CollDesc.setter
 	def CollDesc(self, value):
-		self._CollDesc = value if type(value) != auto else self.make_default("CollDesc")
+		self._CollDesc = value if type(value) != base_types.auto else self.make_default("CollDesc")
 
 	@CollDesc.deleter
 	def CollDesc(self):
@@ -25,7 +25,7 @@ class DefaultFundReport1(base_types._BaseFieldType):
 
 	@NetXcssOrDfcit.setter
 	def NetXcssOrDfcit(self, value):
-		self._NetXcssOrDfcit = value if type(value) != auto else self.make_default("NetXcssOrDfcit")
+		self._NetXcssOrDfcit = value if type(value) != base_types.auto else self.make_default("NetXcssOrDfcit")
 
 	@NetXcssOrDfcit.deleter
 	def NetXcssOrDfcit(self):
@@ -38,7 +38,7 @@ class DefaultFundReport1(base_types._BaseFieldType):
 
 	@DfltFndClctn.setter
 	def DfltFndClctn(self, value):
-		self._DfltFndClctn = value if type(value) != auto else self.make_default("DfltFndClctn")
+		self._DfltFndClctn = value if type(value) != base_types.auto else self.make_default("DfltFndClctn")
 
 	@DfltFndClctn.deleter
 	def DfltFndClctn(self):

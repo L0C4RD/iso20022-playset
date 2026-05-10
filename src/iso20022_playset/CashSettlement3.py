@@ -1,6 +1,6 @@
 from . import base_types
-from .PaymentInstrument17 import PaymentInstrument17
 from .CashAccount204 import CashAccount204
+from .PaymentInstrument17 import PaymentInstrument17
 
 class CashSettlement3(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class CashSettlement3(base_types._BaseFieldType):
 
 	@OthrCshSttlmDtls.setter
 	def OthrCshSttlmDtls(self, value):
-		self._OthrCshSttlmDtls = value if type(value) != auto else self.make_default("OthrCshSttlmDtls")
+		self._OthrCshSttlmDtls = value if type(value) != base_types.auto else self.make_default("OthrCshSttlmDtls")
 
 	@OthrCshSttlmDtls.deleter
 	def OthrCshSttlmDtls(self):
@@ -24,7 +24,7 @@ class CashSettlement3(base_types._BaseFieldType):
 
 	@CshAcctDtls.setter
 	def CshAcctDtls(self, value):
-		self._CshAcctDtls = value if type(value) != auto else self.make_default("CshAcctDtls")
+		self._CshAcctDtls = value if type(value) != base_types.auto else self.make_default("CshAcctDtls")
 
 	@CshAcctDtls.deleter
 	def CshAcctDtls(self):

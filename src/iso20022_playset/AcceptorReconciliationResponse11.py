@@ -12,7 +12,7 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
 	@TxRspn.setter
 	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != auto else self.make_default("TxRspn")
+		self._TxRspn = value if type(value) != base_types.auto else self.make_default("TxRspn")
 
 	@TxRspn.deleter
 	def TxRspn(self):
@@ -25,7 +25,7 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -38,7 +38,7 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
 	@Tx.deleter
 	def Tx(self):

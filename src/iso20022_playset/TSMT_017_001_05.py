@@ -12,7 +12,7 @@ class TSMT_017_001_05():
 
 		@FwdDataSetSubmissnRpt.setter
 		def FwdDataSetSubmissnRpt(self, value):
-			self._FwdDataSetSubmissnRpt = value if type(value) != auto else self.make_default("FwdDataSetSubmissnRpt")
+			self._FwdDataSetSubmissnRpt = value if type(value) != base_types.auto else self.make_default("FwdDataSetSubmissnRpt")
 
 		@FwdDataSetSubmissnRpt.deleter
 		def FwdDataSetSubmissnRpt(self):

@@ -11,7 +11,7 @@ class Ownership1(base_types._BaseFieldType):
 
 	@UsfrctPctg.setter
 	def UsfrctPctg(self, value):
-		self._UsfrctPctg = value if type(value) != auto else self.make_default("UsfrctPctg")
+		self._UsfrctPctg = value if type(value) != base_types.auto else self.make_default("UsfrctPctg")
 
 	@UsfrctPctg.deleter
 	def UsfrctPctg(self):
@@ -24,7 +24,7 @@ class Ownership1(base_types._BaseFieldType):
 
 	@OwnrshPctg.setter
 	def OwnrshPctg(self, value):
-		self._OwnrshPctg = value if type(value) != auto else self.make_default("OwnrshPctg")
+		self._OwnrshPctg = value if type(value) != base_types.auto else self.make_default("OwnrshPctg")
 
 	@OwnrshPctg.deleter
 	def OwnrshPctg(self):
@@ -37,7 +37,7 @@ class Ownership1(base_types._BaseFieldType):
 
 	@OwnrshTp.setter
 	def OwnrshTp(self, value):
-		self._OwnrshTp = value if type(value) != auto else self.make_default("OwnrshTp")
+		self._OwnrshTp = value if type(value) != base_types.auto else self.make_default("OwnrshTp")
 
 	@OwnrshTp.deleter
 	def OwnrshTp(self):

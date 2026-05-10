@@ -1,6 +1,6 @@
 from . import base_types
-from .AdditionalInformation15 import AdditionalInformation15
 from .PensionOrderType1Choice import PensionOrderType1Choice
+from .AdditionalInformation15 import AdditionalInformation15
 
 class PensionOrder1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class PensionOrder1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class PensionOrder1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):

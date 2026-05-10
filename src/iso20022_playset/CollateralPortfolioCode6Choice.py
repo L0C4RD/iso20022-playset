@@ -11,7 +11,7 @@ class CollateralPortfolioCode6Choice(base_types._BaseFieldType):
 
 	@MrgnPrtflCd.setter
 	def MrgnPrtflCd(self, value):
-		self._MrgnPrtflCd = value if type(value) != auto else self.make_default("MrgnPrtflCd")
+		self._MrgnPrtflCd = value if type(value) != base_types.auto else self.make_default("MrgnPrtflCd")
 
 	@MrgnPrtflCd.deleter
 	def MrgnPrtflCd(self):
@@ -24,7 +24,7 @@ class CollateralPortfolioCode6Choice(base_types._BaseFieldType):
 
 	@Prtfl.setter
 	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != auto else self.make_default("Prtfl")
+		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
 
 	@Prtfl.deleter
 	def Prtfl(self):

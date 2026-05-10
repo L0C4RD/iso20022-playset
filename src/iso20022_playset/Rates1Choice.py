@@ -1,6 +1,6 @@
 from . import base_types
-from .ExternalRatesAndTenors1Code import ExternalRatesAndTenors1Code
 from .NoReasonCode import NoReasonCode
+from .ExternalRatesAndTenors1Code import ExternalRatesAndTenors1Code
 
 class Rates1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Rates1Choice(base_types._BaseFieldType):
 
 	@Fxd.setter
 	def Fxd(self, value):
-		self._Fxd = value if type(value) != auto else self.make_default("Fxd")
+		self._Fxd = value if type(value) != base_types.auto else self.make_default("Fxd")
 
 	@Fxd.deleter
 	def Fxd(self):
@@ -24,7 +24,7 @@ class Rates1Choice(base_types._BaseFieldType):
 
 	@Fltg.setter
 	def Fltg(self, value):
-		self._Fltg = value if type(value) != auto else self.make_default("Fltg")
+		self._Fltg = value if type(value) != base_types.auto else self.make_default("Fltg")
 
 	@Fltg.deleter
 	def Fltg(self):

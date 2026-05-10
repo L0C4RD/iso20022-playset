@@ -1,6 +1,6 @@
 from . import base_types
-from .RateOrAbsoluteValue1Choice import RateOrAbsoluteValue1Choice
 from .Operator1Code import Operator1Code
+from .RateOrAbsoluteValue1Choice import RateOrAbsoluteValue1Choice
 
 class Term1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Term1(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
 	@Val.deleter
 	def Val(self):
@@ -24,7 +24,7 @@ class Term1(base_types._BaseFieldType):
 
 	@Oprtr.setter
 	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != auto else self.make_default("Oprtr")
+		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
 
 	@Oprtr.deleter
 	def Oprtr(self):

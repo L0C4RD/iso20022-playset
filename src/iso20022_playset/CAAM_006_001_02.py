@@ -12,7 +12,7 @@ class CAAM_006_001_02():
 
 		@ATMDgnstcRspn.setter
 		def ATMDgnstcRspn(self, value):
-			self._ATMDgnstcRspn = value if type(value) != auto else self.make_default("ATMDgnstcRspn")
+			self._ATMDgnstcRspn = value if type(value) != base_types.auto else self.make_default("ATMDgnstcRspn")
 
 		@ATMDgnstcRspn.deleter
 		def ATMDgnstcRspn(self):

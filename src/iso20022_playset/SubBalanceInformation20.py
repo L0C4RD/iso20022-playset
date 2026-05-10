@@ -1,46 +1,20 @@
 from . import base_types
 from .QuantityBreakdown57 import QuantityBreakdown57
-from .Max140Text import Max140Text
 from .AdditionalBalanceInformation20 import AdditionalBalanceInformation20
 from .Balance21 import Balance21
+from .Max140Text import Max140Text
 from .SubBalanceType11Choice import SubBalanceType11Choice
 
 class SubBalanceInformation20(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlBalBrkdwnDtls", "_QtyBrkdwn", "_SubBalTp", "_SubBalAddtlDtls", "_Qty"]
-	@property
-	def AddtlBalBrkdwnDtls(self):
-		return self._AddtlBalBrkdwnDtls
-
-	@AddtlBalBrkdwnDtls.setter
-	def AddtlBalBrkdwnDtls(self, value):
-		self._AddtlBalBrkdwnDtls = value if type(value) != auto else self.make_default("AddtlBalBrkdwnDtls")
-
-	@AddtlBalBrkdwnDtls.deleter
-	def AddtlBalBrkdwnDtls(self):
-		del self._AddtlBalBrkdwnDtls
-		self._AddtlBalBrkdwnDtls = None
-
-	@property
-	def QtyBrkdwn(self):
-		return self._QtyBrkdwn
-
-	@QtyBrkdwn.setter
-	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != auto else self.make_default("QtyBrkdwn")
-
-	@QtyBrkdwn.deleter
-	def QtyBrkdwn(self):
-		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
-
+	__slots__ = ["_SubBalTp", "_QtyBrkdwn", "_Qty", "_AddtlBalBrkdwnDtls", "_SubBalAddtlDtls"]
 	@property
 	def SubBalTp(self):
 		return self._SubBalTp
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
 
 	@SubBalTp.deleter
 	def SubBalTp(self):
@@ -48,17 +22,17 @@ class SubBalanceInformation20(base_types._BaseFieldType):
 		self._SubBalTp = None
 
 	@property
-	def SubBalAddtlDtls(self):
-		return self._SubBalAddtlDtls
+	def QtyBrkdwn(self):
+		return self._QtyBrkdwn
 
-	@SubBalAddtlDtls.setter
-	def SubBalAddtlDtls(self, value):
-		self._SubBalAddtlDtls = value if type(value) != auto else self.make_default("SubBalAddtlDtls")
+	@QtyBrkdwn.setter
+	def QtyBrkdwn(self, value):
+		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
 
-	@SubBalAddtlDtls.deleter
-	def SubBalAddtlDtls(self):
-		del self._SubBalAddtlDtls
-		self._SubBalAddtlDtls = None
+	@QtyBrkdwn.deleter
+	def QtyBrkdwn(self):
+		del self._QtyBrkdwn
+		self._QtyBrkdwn = None
 
 	@property
 	def Qty(self):
@@ -66,18 +40,44 @@ class SubBalanceInformation20(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def AddtlBalBrkdwnDtls(self):
+		return self._AddtlBalBrkdwnDtls
+
+	@AddtlBalBrkdwnDtls.setter
+	def AddtlBalBrkdwnDtls(self, value):
+		self._AddtlBalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("AddtlBalBrkdwnDtls")
+
+	@AddtlBalBrkdwnDtls.deleter
+	def AddtlBalBrkdwnDtls(self):
+		del self._AddtlBalBrkdwnDtls
+		self._AddtlBalBrkdwnDtls = None
+
+	@property
+	def SubBalAddtlDtls(self):
+		return self._SubBalAddtlDtls
+
+	@SubBalAddtlDtls.setter
+	def SubBalAddtlDtls(self, value):
+		self._SubBalAddtlDtls = value if type(value) != base_types.auto else self.make_default("SubBalAddtlDtls")
+
+	@SubBalAddtlDtls.deleter
+	def SubBalAddtlDtls(self):
+		del self._SubBalAddtlDtls
+		self._SubBalAddtlDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation20, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown57, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType11Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown57, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Qty', type=Balance21, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation20, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

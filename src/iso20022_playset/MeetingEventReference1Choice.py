@@ -10,7 +10,7 @@ class MeetingEventReference1Choice(base_types._BaseFieldType):
 
 	@LkdMtgId.setter
 	def LkdMtgId(self, value):
-		self._LkdMtgId = value if type(value) != auto else self.make_default("LkdMtgId")
+		self._LkdMtgId = value if type(value) != base_types.auto else self.make_default("LkdMtgId")
 
 	@LkdMtgId.deleter
 	def LkdMtgId(self):
@@ -23,7 +23,7 @@ class MeetingEventReference1Choice(base_types._BaseFieldType):
 
 	@LkdIssrMtgId.setter
 	def LkdIssrMtgId(self, value):
-		self._LkdIssrMtgId = value if type(value) != auto else self.make_default("LkdIssrMtgId")
+		self._LkdIssrMtgId = value if type(value) != base_types.auto else self.make_default("LkdIssrMtgId")
 
 	@LkdIssrMtgId.deleter
 	def LkdIssrMtgId(self):

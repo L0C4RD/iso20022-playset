@@ -12,7 +12,7 @@ class REDA_012_001_01():
 
 		@SctyRpt.setter
 		def SctyRpt(self, value):
-			self._SctyRpt = value if type(value) != auto else self.make_default("SctyRpt")
+			self._SctyRpt = value if type(value) != base_types.auto else self.make_default("SctyRpt")
 
 		@SctyRpt.deleter
 		def SctyRpt(self):

@@ -10,7 +10,7 @@ class ATMCustomerProfile2(base_types._BaseFieldType):
 
 	@CstmrId.setter
 	def CstmrId(self, value):
-		self._CstmrId = value if type(value) != auto else self.make_default("CstmrId")
+		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
 
 	@CstmrId.deleter
 	def CstmrId(self):
@@ -23,7 +23,7 @@ class ATMCustomerProfile2(base_types._BaseFieldType):
 
 	@PrflRef.setter
 	def PrflRef(self, value):
-		self._PrflRef = value if type(value) != auto else self.make_default("PrflRef")
+		self._PrflRef = value if type(value) != base_types.auto else self.make_default("PrflRef")
 
 	@PrflRef.deleter
 	def PrflRef(self):

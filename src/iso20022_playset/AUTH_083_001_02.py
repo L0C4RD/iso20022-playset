@@ -12,7 +12,7 @@ class AUTH_083_001_02():
 
 		@SctiesFincgRptgMssngCollReq.setter
 		def SctiesFincgRptgMssngCollReq(self, value):
-			self._SctiesFincgRptgMssngCollReq = value if type(value) != auto else self.make_default("SctiesFincgRptgMssngCollReq")
+			self._SctiesFincgRptgMssngCollReq = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgMssngCollReq")
 
 		@SctiesFincgRptgMssngCollReq.deleter
 		def SctiesFincgRptgMssngCollReq(self):

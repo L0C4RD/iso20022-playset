@@ -1,32 +1,19 @@
 from . import base_types
+from .ContactPerson1 import ContactPerson1
+from .DocumentIdentification8 import DocumentIdentification8
 from .CorporateActionStandingInstruction1 import CorporateActionStandingInstruction1
 from .CorporateActionStandingInstructionGeneralInformation1 import CorporateActionStandingInstructionGeneralInformation1
-from .DocumentIdentification8 import DocumentIdentification8
-from .ContactPerson1 import ContactPerson1
 
 class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_StgInstrDtls", "_CtctDtls", "_StgInstrGnlInf"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_StgInstrDtls", "_Id", "_StgInstrGnlInf", "_CtctDtls"]
 	@property
 	def StgInstrDtls(self):
 		return self._StgInstrDtls
 
 	@StgInstrDtls.setter
 	def StgInstrDtls(self, value):
-		self._StgInstrDtls = value if type(value) != auto else self.make_default("StgInstrDtls")
+		self._StgInstrDtls = value if type(value) != base_types.auto else self.make_default("StgInstrDtls")
 
 	@StgInstrDtls.deleter
 	def StgInstrDtls(self):
@@ -34,17 +21,17 @@ class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 		self._StgInstrDtls = None
 
 	@property
-	def CtctDtls(self):
-		return self._CtctDtls
+	def Id(self):
+		return self._Id
 
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def StgInstrGnlInf(self):
@@ -52,17 +39,30 @@ class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 
 	@StgInstrGnlInf.setter
 	def StgInstrGnlInf(self, value):
-		self._StgInstrGnlInf = value if type(value) != auto else self.make_default("StgInstrGnlInf")
+		self._StgInstrGnlInf = value if type(value) != base_types.auto else self.make_default("StgInstrGnlInf")
 
 	@StgInstrGnlInf.deleter
 	def StgInstrGnlInf(self):
 		del self._StgInstrGnlInf
 		self._StgInstrGnlInf = None
 
+	@property
+	def CtctDtls(self):
+		return self._CtctDtls
+
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
+
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgInstrDtls', type=CorporateActionStandingInstruction1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgInstrGnlInf', type=CorporateActionStandingInstructionGeneralInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
 	))
 

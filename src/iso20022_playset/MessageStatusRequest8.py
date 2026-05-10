@@ -1,24 +1,24 @@
 from . import base_types
+from .MessageStatusRequestData2 import MessageStatusRequestData2
 from .PaymentContext30 import PaymentContext30
 from .CardPaymentEnvironment81 import CardPaymentEnvironment81
 from .SupplementaryData1 import SupplementaryData1
-from .MessageStatusRequestData2 import MessageStatusRequestData2
 
 class MessageStatusRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Envt", "_Cntxt", "_MsgStsReqData"]
+	__slots__ = ["_MsgStsReqData", "_Envt", "_Cntxt", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MsgStsReqData(self):
+		return self._MsgStsReqData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@MsgStsReqData.setter
+	def MsgStsReqData(self, value):
+		self._MsgStsReqData = value if type(value) != base_types.auto else self.make_default("MsgStsReqData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MsgStsReqData.deleter
+	def MsgStsReqData(self):
+		del self._MsgStsReqData
+		self._MsgStsReqData = None
 
 	@property
 	def Envt(self):
@@ -26,7 +26,7 @@ class MessageStatusRequest8(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
 
 	@Envt.deleter
 	def Envt(self):
@@ -39,7 +39,7 @@ class MessageStatusRequest8(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
 
 	@Cntxt.deleter
 	def Cntxt(self):
@@ -47,22 +47,22 @@ class MessageStatusRequest8(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def MsgStsReqData(self):
-		return self._MsgStsReqData
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MsgStsReqData.setter
-	def MsgStsReqData(self, value):
-		self._MsgStsReqData = value if type(value) != auto else self.make_default("MsgStsReqData")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@MsgStsReqData.deleter
-	def MsgStsReqData(self):
-		del self._MsgStsReqData
-		self._MsgStsReqData = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgStsReqData', type=MessageStatusRequestData2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgStsReqData', type=MessageStatusRequestData2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

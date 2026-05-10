@@ -11,7 +11,7 @@ class HoldIndicator7(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
 	@Rsn.deleter
 	def Rsn(self):
@@ -24,7 +24,7 @@ class HoldIndicator7(base_types._BaseFieldType):
 
 	@Ind.setter
 	def Ind(self, value):
-		self._Ind = value if type(value) != auto else self.make_default("Ind")
+		self._Ind = value if type(value) != base_types.auto else self.make_default("Ind")
 
 	@Ind.deleter
 	def Ind(self):

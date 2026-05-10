@@ -11,7 +11,7 @@ class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 
 	@ClrSysId.setter
 	def ClrSysId(self, value):
-		self._ClrSysId = value if type(value) != auto else self.make_default("ClrSysId")
+		self._ClrSysId = value if type(value) != base_types.auto else self.make_default("ClrSysId")
 
 	@ClrSysId.deleter
 	def ClrSysId(self):
@@ -24,7 +24,7 @@ class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != auto else self.make_default("MmbId")
+		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
 
 	@MmbId.deleter
 	def MmbId(self):

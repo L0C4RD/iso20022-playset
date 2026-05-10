@@ -1,6 +1,6 @@
 from . import base_types
-from .ClosingDate4Choice import ClosingDate4Choice
 from .CollateralAmount14 import CollateralAmount14
+from .ClosingDate4Choice import ClosingDate4Choice
 
 class DealTransactionDetails7(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DealTransactionDetails7(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
@@ -24,7 +24,7 @@ class DealTransactionDetails7(base_types._BaseFieldType):
 
 	@DealDtlsAmt.setter
 	def DealDtlsAmt(self, value):
-		self._DealDtlsAmt = value if type(value) != auto else self.make_default("DealDtlsAmt")
+		self._DealDtlsAmt = value if type(value) != base_types.auto else self.make_default("DealDtlsAmt")
 
 	@DealDtlsAmt.deleter
 	def DealDtlsAmt(self):

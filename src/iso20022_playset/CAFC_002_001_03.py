@@ -12,7 +12,7 @@ class CAFC_002_001_03():
 
 		@FeeColltnRspn.setter
 		def FeeColltnRspn(self, value):
-			self._FeeColltnRspn = value if type(value) != auto else self.make_default("FeeColltnRspn")
+			self._FeeColltnRspn = value if type(value) != base_types.auto else self.make_default("FeeColltnRspn")
 
 		@FeeColltnRspn.deleter
 		def FeeColltnRspn(self):

@@ -1,7 +1,7 @@
 from . import base_types
-from .CancelledStatusReason2Code import CancelledStatusReason2Code
 from .GenericIdentification1 import GenericIdentification1
 from .NoReasonCode import NoReasonCode
+from .CancelledStatusReason2Code import CancelledStatusReason2Code
 
 class CancelledReason12Choice(base_types._BaseFieldType):
 
@@ -12,7 +12,7 @@ class CancelledReason12Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
 	@Prtry.deleter
 	def Prtry(self):
@@ -25,7 +25,7 @@ class CancelledReason12Choice(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):
@@ -38,7 +38,7 @@ class CancelledReason12Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
 	@Cd.deleter
 	def Cd(self):

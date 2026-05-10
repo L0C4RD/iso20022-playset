@@ -11,7 +11,7 @@ class StatisticsPerCounterparty18Choice(base_types._BaseFieldType):
 
 	@DataSetActn.setter
 	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
+		self._DataSetActn = value if type(value) != base_types.auto else self.make_default("DataSetActn")
 
 	@DataSetActn.deleter
 	def DataSetActn(self):
@@ -24,7 +24,7 @@ class StatisticsPerCounterparty18Choice(base_types._BaseFieldType):
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
+		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
 
 	@Rpt.deleter
 	def Rpt(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .TotalNumber1 import TotalNumber1
 from .Exact3NumericText import Exact3NumericText
+from .TotalNumber1 import TotalNumber1
 
 class NumberCount1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class NumberCount1Choice(base_types._BaseFieldType):
 
 	@CurInstrNb.setter
 	def CurInstrNb(self, value):
-		self._CurInstrNb = value if type(value) != auto else self.make_default("CurInstrNb")
+		self._CurInstrNb = value if type(value) != base_types.auto else self.make_default("CurInstrNb")
 
 	@CurInstrNb.deleter
 	def CurInstrNb(self):
@@ -24,7 +24,7 @@ class NumberCount1Choice(base_types._BaseFieldType):
 
 	@TtlNb.setter
 	def TtlNb(self, value):
-		self._TtlNb = value if type(value) != auto else self.make_default("TtlNb")
+		self._TtlNb = value if type(value) != base_types.auto else self.make_default("TtlNb")
 
 	@TtlNb.deleter
 	def TtlNb(self):

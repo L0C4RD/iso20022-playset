@@ -12,7 +12,7 @@ class ACMT_007_001_05():
 
 		@AcctOpngReq.setter
 		def AcctOpngReq(self, value):
-			self._AcctOpngReq = value if type(value) != auto else self.make_default("AcctOpngReq")
+			self._AcctOpngReq = value if type(value) != base_types.auto else self.make_default("AcctOpngReq")
 
 		@AcctOpngReq.deleter
 		def AcctOpngReq(self):

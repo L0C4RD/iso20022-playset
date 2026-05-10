@@ -11,7 +11,7 @@ class ATMRejectV02(base_types._BaseFieldType):
 
 	@ATMRjct.setter
 	def ATMRjct(self, value):
-		self._ATMRjct = value if type(value) != auto else self.make_default("ATMRjct")
+		self._ATMRjct = value if type(value) != base_types.auto else self.make_default("ATMRjct")
 
 	@ATMRjct.deleter
 	def ATMRjct(self):
@@ -24,7 +24,7 @@ class ATMRejectV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
 	@Hdr.deleter
 	def Hdr(self):

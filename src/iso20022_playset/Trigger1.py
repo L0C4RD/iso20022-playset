@@ -11,7 +11,7 @@ class Trigger1(base_types._BaseFieldType):
 
 	@DtChc.setter
 	def DtChc(self, value):
-		self._DtChc = value if type(value) != auto else self.make_default("DtChc")
+		self._DtChc = value if type(value) != base_types.auto else self.make_default("DtChc")
 
 	@DtChc.deleter
 	def DtChc(self):
@@ -24,7 +24,7 @@ class Trigger1(base_types._BaseFieldType):
 
 	@DcmntryEvt.setter
 	def DcmntryEvt(self, value):
-		self._DcmntryEvt = value if type(value) != auto else self.make_default("DcmntryEvt")
+		self._DcmntryEvt = value if type(value) != base_types.auto else self.make_default("DcmntryEvt")
 
 	@DcmntryEvt.deleter
 	def DcmntryEvt(self):

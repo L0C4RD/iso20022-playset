@@ -1,23 +1,23 @@
 from . import base_types
-from .KEK4 import KEK4
-from .KEKIdentifier2 import KEKIdentifier2
 from .KeyTransport4 import KeyTransport4
+from .KEKIdentifier2 import KEKIdentifier2
+from .KEK4 import KEK4
 
 class Recipient4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyIdr", "_KeyTrnsprt", "_KEK"]
+	__slots__ = ["_KEK", "_KeyTrnsprt", "_KeyIdr"]
 	@property
-	def KeyIdr(self):
-		return self._KeyIdr
+	def KEK(self):
+		return self._KEK
 
-	@KeyIdr.setter
-	def KeyIdr(self, value):
-		self._KeyIdr = value if type(value) != auto else self.make_default("KeyIdr")
+	@KEK.setter
+	def KEK(self, value):
+		self._KEK = value if type(value) != base_types.auto else self.make_default("KEK")
 
-	@KeyIdr.deleter
-	def KeyIdr(self):
-		del self._KeyIdr
-		self._KeyIdr = None
+	@KEK.deleter
+	def KEK(self):
+		del self._KEK
+		self._KEK = None
 
 	@property
 	def KeyTrnsprt(self):
@@ -25,7 +25,7 @@ class Recipient4Choice(base_types._BaseFieldType):
 
 	@KeyTrnsprt.setter
 	def KeyTrnsprt(self, value):
-		self._KeyTrnsprt = value if type(value) != auto else self.make_default("KeyTrnsprt")
+		self._KeyTrnsprt = value if type(value) != base_types.auto else self.make_default("KeyTrnsprt")
 
 	@KeyTrnsprt.deleter
 	def KeyTrnsprt(self):
@@ -33,21 +33,21 @@ class Recipient4Choice(base_types._BaseFieldType):
 		self._KeyTrnsprt = None
 
 	@property
-	def KEK(self):
-		return self._KEK
+	def KeyIdr(self):
+		return self._KeyIdr
 
-	@KEK.setter
-	def KEK(self, value):
-		self._KEK = value if type(value) != auto else self.make_default("KEK")
+	@KeyIdr.setter
+	def KeyIdr(self, value):
+		self._KeyIdr = value if type(value) != base_types.auto else self.make_default("KeyIdr")
 
-	@KEK.deleter
-	def KEK(self):
-		del self._KEK
-		self._KEK = None
+	@KeyIdr.deleter
+	def KeyIdr(self):
+		del self._KeyIdr
+		self._KeyIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='KeyTrnsprt', type=KeyTransport4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='KEK', type=KEK4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='KeyTrnsprt', type=KeyTransport4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier2, min=0, max=1, mutex_group=1, array=False),
 	))
 

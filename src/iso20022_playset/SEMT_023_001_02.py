@@ -12,7 +12,7 @@ class SEMT_023_001_02():
 
 		@SctiesEndOfPrcRpt.setter
 		def SctiesEndOfPrcRpt(self, value):
-			self._SctiesEndOfPrcRpt = value if type(value) != auto else self.make_default("SctiesEndOfPrcRpt")
+			self._SctiesEndOfPrcRpt = value if type(value) != base_types.auto else self.make_default("SctiesEndOfPrcRpt")
 
 		@SctiesEndOfPrcRpt.deleter
 		def SctiesEndOfPrcRpt(self):

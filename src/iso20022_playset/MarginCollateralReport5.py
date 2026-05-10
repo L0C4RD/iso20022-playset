@@ -1,23 +1,23 @@
 from . import base_types
 from .CollateralisationType3Code import CollateralisationType3Code
-from .ISODateTime import ISODateTime
 from .CollateralPortfolioCode6Choice import CollateralPortfolioCode6Choice
+from .ISODateTime import ISODateTime
 
 class MarginCollateralReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_CollPrtflCd", "_TmStmp", "_CollstnCtgy"]
+	__slots__ = ["_CollstnCtgy", "_TmStmp", "_CollPrtflCd"]
 	@property
-	def CollPrtflCd(self):
-		return self._CollPrtflCd
+	def CollstnCtgy(self):
+		return self._CollstnCtgy
 
-	@CollPrtflCd.setter
-	def CollPrtflCd(self, value):
-		self._CollPrtflCd = value if type(value) != auto else self.make_default("CollPrtflCd")
+	@CollstnCtgy.setter
+	def CollstnCtgy(self, value):
+		self._CollstnCtgy = value if type(value) != base_types.auto else self.make_default("CollstnCtgy")
 
-	@CollPrtflCd.deleter
-	def CollPrtflCd(self):
-		del self._CollPrtflCd
-		self._CollPrtflCd = None
+	@CollstnCtgy.deleter
+	def CollstnCtgy(self):
+		del self._CollstnCtgy
+		self._CollstnCtgy = None
 
 	@property
 	def TmStmp(self):
@@ -25,7 +25,7 @@ class MarginCollateralReport5(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
 
 	@TmStmp.deleter
 	def TmStmp(self):
@@ -33,21 +33,21 @@ class MarginCollateralReport5(base_types._BaseFieldType):
 		self._TmStmp = None
 
 	@property
-	def CollstnCtgy(self):
-		return self._CollstnCtgy
+	def CollPrtflCd(self):
+		return self._CollPrtflCd
 
-	@CollstnCtgy.setter
-	def CollstnCtgy(self, value):
-		self._CollstnCtgy = value if type(value) != auto else self.make_default("CollstnCtgy")
+	@CollPrtflCd.setter
+	def CollPrtflCd(self, value):
+		self._CollPrtflCd = value if type(value) != base_types.auto else self.make_default("CollPrtflCd")
 
-	@CollstnCtgy.deleter
-	def CollstnCtgy(self):
-		del self._CollstnCtgy
-		self._CollstnCtgy = None
+	@CollPrtflCd.deleter
+	def CollPrtflCd(self):
+		del self._CollPrtflCd
+		self._CollPrtflCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollstnCtgy', type=CollateralisationType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

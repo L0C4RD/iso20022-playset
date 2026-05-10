@@ -1,7 +1,7 @@
 from . import base_types
 from .RateTypeAndAmountAndStatus24 import RateTypeAndAmountAndStatus24
-from .RateType13Code import RateType13Code
 from .Percentage14Rate import Percentage14Rate
+from .RateType13Code import RateType13Code
 from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class InterestRateUsedForPaymentFormat11Choice(base_types._BaseFieldType):
@@ -13,7 +13,7 @@ class InterestRateUsedForPaymentFormat11Choice(base_types._BaseFieldType):
 
 	@NotSpcfdRate.setter
 	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
 
 	@NotSpcfdRate.deleter
 	def NotSpcfdRate(self):
@@ -26,7 +26,7 @@ class InterestRateUsedForPaymentFormat11Choice(base_types._BaseFieldType):
 
 	@RateTpAndAmtAndRateSts.setter
 	def RateTpAndAmtAndRateSts(self, value):
-		self._RateTpAndAmtAndRateSts = value if type(value) != auto else self.make_default("RateTpAndAmtAndRateSts")
+		self._RateTpAndAmtAndRateSts = value if type(value) != base_types.auto else self.make_default("RateTpAndAmtAndRateSts")
 
 	@RateTpAndAmtAndRateSts.deleter
 	def RateTpAndAmtAndRateSts(self):
@@ -39,7 +39,7 @@ class InterestRateUsedForPaymentFormat11Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
 	@Amt.deleter
 	def Amt(self):
@@ -52,7 +52,7 @@ class InterestRateUsedForPaymentFormat11Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):

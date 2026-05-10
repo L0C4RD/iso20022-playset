@@ -11,7 +11,7 @@ class CounterpartyTradeNature7Choice(base_types._BaseFieldType):
 
 	@NFI.setter
 	def NFI(self, value):
-		self._NFI = value if type(value) != auto else self.make_default("NFI")
+		self._NFI = value if type(value) != base_types.auto else self.make_default("NFI")
 
 	@NFI.deleter
 	def NFI(self):
@@ -24,7 +24,7 @@ class CounterpartyTradeNature7Choice(base_types._BaseFieldType):
 
 	@FI.setter
 	def FI(self, value):
-		self._FI = value if type(value) != auto else self.make_default("FI")
+		self._FI = value if type(value) != base_types.auto else self.make_default("FI")
 
 	@FI.deleter
 	def FI(self):

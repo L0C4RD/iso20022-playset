@@ -1,31 +1,18 @@
 from . import base_types
-from .OvernightIndexSwap4Choice import OvernightIndexSwap4Choice
 from .SupplementaryData1 import SupplementaryData1
 from .MoneyMarketReportHeader1 import MoneyMarketReportHeader1
+from .OvernightIndexSwap4Choice import OvernightIndexSwap4Choice
 
 class MoneyMarketOvernightIndexSwapsStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_OvrnghtIndxSwpsRpt"]
-	@property
-	def RptHdr(self):
-		return self._RptHdr
-
-	@RptHdr.setter
-	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
-
-	@RptHdr.deleter
-	def RptHdr(self):
-		del self._RptHdr
-		self._RptHdr = None
-
+	__slots__ = ["_SplmtryData", "_OvrnghtIndxSwpsRpt", "_RptHdr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -38,16 +25,29 @@ class MoneyMarketOvernightIndexSwapsStatisticalReportV02(base_types._BaseFieldTy
 
 	@OvrnghtIndxSwpsRpt.setter
 	def OvrnghtIndxSwpsRpt(self, value):
-		self._OvrnghtIndxSwpsRpt = value if type(value) != auto else self.make_default("OvrnghtIndxSwpsRpt")
+		self._OvrnghtIndxSwpsRpt = value if type(value) != base_types.auto else self.make_default("OvrnghtIndxSwpsRpt")
 
 	@OvrnghtIndxSwpsRpt.deleter
 	def OvrnghtIndxSwpsRpt(self):
 		del self._OvrnghtIndxSwpsRpt
 		self._OvrnghtIndxSwpsRpt = None
 
+	@property
+	def RptHdr(self):
+		return self._RptHdr
+
+	@RptHdr.setter
+	def RptHdr(self, value):
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+
+	@RptHdr.deleter
+	def RptHdr(self):
+		del self._RptHdr
+		self._RptHdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OvrnghtIndxSwpsRpt', type=OvernightIndexSwap4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -12,7 +12,7 @@ class CAMT_017_001_05():
 
 		@RtrCcyXchgRate.setter
 		def RtrCcyXchgRate(self, value):
-			self._RtrCcyXchgRate = value if type(value) != auto else self.make_default("RtrCcyXchgRate")
+			self._RtrCcyXchgRate = value if type(value) != base_types.auto else self.make_default("RtrCcyXchgRate")
 
 		@RtrCcyXchgRate.deleter
 		def RtrCcyXchgRate(self):

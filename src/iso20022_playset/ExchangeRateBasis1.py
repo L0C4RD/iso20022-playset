@@ -10,7 +10,7 @@ class ExchangeRateBasis1(base_types._BaseFieldType):
 
 	@BaseCcy.setter
 	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
+		self._BaseCcy = value if type(value) != base_types.auto else self.make_default("BaseCcy")
 
 	@BaseCcy.deleter
 	def BaseCcy(self):
@@ -23,7 +23,7 @@ class ExchangeRateBasis1(base_types._BaseFieldType):
 
 	@QtdCcy.setter
 	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
 
 	@QtdCcy.deleter
 	def QtdCcy(self):

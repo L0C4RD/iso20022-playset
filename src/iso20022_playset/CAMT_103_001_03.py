@@ -12,7 +12,7 @@ class CAMT_103_001_03():
 
 		@CretRsvatn.setter
 		def CretRsvatn(self, value):
-			self._CretRsvatn = value if type(value) != auto else self.make_default("CretRsvatn")
+			self._CretRsvatn = value if type(value) != base_types.auto else self.make_default("CretRsvatn")
 
 		@CretRsvatn.deleter
 		def CretRsvatn(self):

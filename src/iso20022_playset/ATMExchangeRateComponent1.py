@@ -1,23 +1,23 @@
 from . import base_types
 from .PercentageRate import PercentageRate
-from .ISODateTime import ISODateTime
 from .Max256Text import Max256Text
+from .ISODateTime import ISODateTime
 
 class ATMExchangeRateComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_PblshDt", "_XchgRate", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_XchgRate", "_PblshDt"]
 	@property
-	def PblshDt(self):
-		return self._PblshDt
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@PblshDt.setter
-	def PblshDt(self, value):
-		self._PblshDt = value if type(value) != auto else self.make_default("PblshDt")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@PblshDt.deleter
-	def PblshDt(self):
-		del self._PblshDt
-		self._PblshDt = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def XchgRate(self):
@@ -25,7 +25,7 @@ class ATMExchangeRateComponent1(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
 
 	@XchgRate.deleter
 	def XchgRate(self):
@@ -33,21 +33,21 @@ class ATMExchangeRateComponent1(base_types._BaseFieldType):
 		self._XchgRate = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def PblshDt(self):
+		return self._PblshDt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@PblshDt.setter
+	def PblshDt(self, value):
+		self._PblshDt = value if type(value) != base_types.auto else self.make_default("PblshDt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@PblshDt.deleter
+	def PblshDt(self):
+		del self._PblshDt
+		self._PblshDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PblshDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PblshDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

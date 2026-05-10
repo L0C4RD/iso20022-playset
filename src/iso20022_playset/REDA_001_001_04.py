@@ -12,7 +12,7 @@ class REDA_001_001_04():
 
 		@PricRpt.setter
 		def PricRpt(self, value):
-			self._PricRpt = value if type(value) != auto else self.make_default("PricRpt")
+			self._PricRpt = value if type(value) != base_types.auto else self.make_default("PricRpt")
 
 		@PricRpt.deleter
 		def PricRpt(self):

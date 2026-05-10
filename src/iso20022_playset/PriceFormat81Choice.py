@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountPrice3 import AmountPrice3
 from .PriceValueType10Code import PriceValueType10Code
+from .AmountPrice3 import AmountPrice3
 from .PercentagePrice3 import PercentagePrice3
 
 class PriceFormat81Choice(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class PriceFormat81Choice(base_types._BaseFieldType):
 
 	@AmtPric.setter
 	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != auto else self.make_default("AmtPric")
+		self._AmtPric = value if type(value) != base_types.auto else self.make_default("AmtPric")
 
 	@AmtPric.deleter
 	def AmtPric(self):
@@ -25,7 +25,7 @@ class PriceFormat81Choice(base_types._BaseFieldType):
 
 	@NotSpcfdPric.setter
 	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
+		self._NotSpcfdPric = value if type(value) != base_types.auto else self.make_default("NotSpcfdPric")
 
 	@NotSpcfdPric.deleter
 	def NotSpcfdPric(self):
@@ -38,7 +38,7 @@ class PriceFormat81Choice(base_types._BaseFieldType):
 
 	@PctgPric.setter
 	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != auto else self.make_default("PctgPric")
+		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
 
 	@PctgPric.deleter
 	def PctgPric(self):

@@ -1,19 +1,19 @@
 from . import base_types
-from .IdentificationAssignment4 import IdentificationAssignment4
 from .SupplementaryData1 import SupplementaryData1
+from .IdentificationAssignment4 import IdentificationAssignment4
 from .OriginalTransactionReference43 import OriginalTransactionReference43
 from .IdentificationModification5 import IdentificationModification5
 
 class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Mod", "_Assgnmt", "_OrgnlTxRef"]
+	__slots__ = ["_SplmtryData", "_Assgnmt", "_Mod", "_OrgnlTxRef"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -21,25 +21,12 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
-
-	@property
 	def Assgnmt(self):
 		return self._Assgnmt
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
@@ -47,12 +34,25 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 		self._Assgnmt = None
 
 	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
+
+	@property
 	def OrgnlTxRef(self):
 		return self._OrgnlTxRef
 
 	@OrgnlTxRef.setter
 	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
+		self._OrgnlTxRef = value if type(value) != base_types.auto else self.make_default("OrgnlTxRef")
 
 	@OrgnlTxRef.deleter
 	def OrgnlTxRef(self):
@@ -61,8 +61,8 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Mod', type=IdentificationModification5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=IdentificationModification5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference43, min=0, max=1, mutex_group=None, array=False),
 	))
 

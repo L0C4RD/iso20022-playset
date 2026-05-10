@@ -4,35 +4,35 @@ from .MarginPortfolio3 import MarginPortfolio3
 
 class CollateralPortfolioCode5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnPrtflCd", "_Prtfl"]
-	@property
-	def MrgnPrtflCd(self):
-		return self._MrgnPrtflCd
-
-	@MrgnPrtflCd.setter
-	def MrgnPrtflCd(self, value):
-		self._MrgnPrtflCd = value if type(value) != auto else self.make_default("MrgnPrtflCd")
-
-	@MrgnPrtflCd.deleter
-	def MrgnPrtflCd(self):
-		del self._MrgnPrtflCd
-		self._MrgnPrtflCd = None
-
+	__slots__ = ["_Prtfl", "_MrgnPrtflCd"]
 	@property
 	def Prtfl(self):
 		return self._Prtfl
 
 	@Prtfl.setter
 	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != auto else self.make_default("Prtfl")
+		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
 
 	@Prtfl.deleter
 	def Prtfl(self):
 		del self._Prtfl
 		self._Prtfl = None
 
+	@property
+	def MrgnPrtflCd(self):
+		return self._MrgnPrtflCd
+
+	@MrgnPrtflCd.setter
+	def MrgnPrtflCd(self, value):
+		self._MrgnPrtflCd = value if type(value) != base_types.auto else self.make_default("MrgnPrtflCd")
+
+	@MrgnPrtflCd.deleter
+	def MrgnPrtflCd(self):
+		del self._MrgnPrtflCd
+		self._MrgnPrtflCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnPrtflCd', type=MarginPortfolio3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtfl', type=PortfolioCode3Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MrgnPrtflCd', type=MarginPortfolio3, min=0, max=1, mutex_group=1, array=False),
 	))
 

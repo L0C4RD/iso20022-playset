@@ -1,6 +1,6 @@
 from . import base_types
-from .CollateralProposal6Choice import CollateralProposal6Choice
 from .ProposalType1Code import ProposalType1Code
+from .CollateralProposal6Choice import CollateralProposal6Choice
 
 class Proposal6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Proposal6(base_types._BaseFieldType):
 
 	@CollPrpslTp.setter
 	def CollPrpslTp(self, value):
-		self._CollPrpslTp = value if type(value) != auto else self.make_default("CollPrpslTp")
+		self._CollPrpslTp = value if type(value) != base_types.auto else self.make_default("CollPrpslTp")
 
 	@CollPrpslTp.deleter
 	def CollPrpslTp(self):
@@ -24,7 +24,7 @@ class Proposal6(base_types._BaseFieldType):
 
 	@CollPrpsl.setter
 	def CollPrpsl(self, value):
-		self._CollPrpsl = value if type(value) != auto else self.make_default("CollPrpsl")
+		self._CollPrpsl = value if type(value) != base_types.auto else self.make_default("CollPrpsl")
 
 	@CollPrpsl.deleter
 	def CollPrpsl(self):

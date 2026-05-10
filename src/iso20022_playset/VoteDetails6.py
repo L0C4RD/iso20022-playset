@@ -1,6 +1,6 @@
 from . import base_types
-from .Vote15Choice import Vote15Choice
 from .VoteInstructionForMeetingResolution3Choice import VoteInstructionForMeetingResolution3Choice
+from .Vote15Choice import Vote15Choice
 
 class VoteDetails6(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class VoteDetails6(base_types._BaseFieldType):
 
 	@VoteInstrForAgndRsltn.setter
 	def VoteInstrForAgndRsltn(self, value):
-		self._VoteInstrForAgndRsltn = value if type(value) != auto else self.make_default("VoteInstrForAgndRsltn")
+		self._VoteInstrForAgndRsltn = value if type(value) != base_types.auto else self.make_default("VoteInstrForAgndRsltn")
 
 	@VoteInstrForAgndRsltn.deleter
 	def VoteInstrForAgndRsltn(self):
@@ -24,7 +24,7 @@ class VoteDetails6(base_types._BaseFieldType):
 
 	@VoteInstrForMtgRsltn.setter
 	def VoteInstrForMtgRsltn(self, value):
-		self._VoteInstrForMtgRsltn = value if type(value) != auto else self.make_default("VoteInstrForMtgRsltn")
+		self._VoteInstrForMtgRsltn = value if type(value) != base_types.auto else self.make_default("VoteInstrForMtgRsltn")
 
 	@VoteInstrForMtgRsltn.deleter
 	def VoteInstrForMtgRsltn(self):

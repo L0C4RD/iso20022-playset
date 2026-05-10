@@ -1,6 +1,6 @@
 from . import base_types
-from .SafekeepingAccount17 import SafekeepingAccount17
 from .NoReasonCode import NoReasonCode
+from .SafekeepingAccount17 import SafekeepingAccount17
 
 class Disclosure3Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class Disclosure3Choice(base_types._BaseFieldType):
 
 	@NoDsclsr.setter
 	def NoDsclsr(self, value):
-		self._NoDsclsr = value if type(value) != auto else self.make_default("NoDsclsr")
+		self._NoDsclsr = value if type(value) != base_types.auto else self.make_default("NoDsclsr")
 
 	@NoDsclsr.deleter
 	def NoDsclsr(self):
@@ -24,7 +24,7 @@ class Disclosure3Choice(base_types._BaseFieldType):
 
 	@SfkpgAcctAndHldgs.setter
 	def SfkpgAcctAndHldgs(self, value):
-		self._SfkpgAcctAndHldgs = value if type(value) != auto else self.make_default("SfkpgAcctAndHldgs")
+		self._SfkpgAcctAndHldgs = value if type(value) != base_types.auto else self.make_default("SfkpgAcctAndHldgs")
 
 	@SfkpgAcctAndHldgs.deleter
 	def SfkpgAcctAndHldgs(self):

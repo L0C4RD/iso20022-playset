@@ -12,7 +12,7 @@ class AUTH_039_001_01():
 
 		@FinInstrmRptgNonWorkgDayRpt.setter
 		def FinInstrmRptgNonWorkgDayRpt(self, value):
-			self._FinInstrmRptgNonWorkgDayRpt = value if type(value) != auto else self.make_default("FinInstrmRptgNonWorkgDayRpt")
+			self._FinInstrmRptgNonWorkgDayRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgNonWorkgDayRpt")
 
 		@FinInstrmRptgNonWorkgDayRpt.deleter
 		def FinInstrmRptgNonWorkgDayRpt(self):

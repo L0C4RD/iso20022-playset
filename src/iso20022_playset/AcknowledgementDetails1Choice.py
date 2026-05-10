@@ -10,7 +10,7 @@ class AcknowledgementDetails1Choice(base_types._BaseFieldType):
 
 	@PayInSchdlRef.setter
 	def PayInSchdlRef(self, value):
-		self._PayInSchdlRef = value if type(value) != auto else self.make_default("PayInSchdlRef")
+		self._PayInSchdlRef = value if type(value) != base_types.auto else self.make_default("PayInSchdlRef")
 
 	@PayInSchdlRef.deleter
 	def PayInSchdlRef(self):
@@ -23,7 +23,7 @@ class AcknowledgementDetails1Choice(base_types._BaseFieldType):
 
 	@PayInCallRef.setter
 	def PayInCallRef(self, value):
-		self._PayInCallRef = value if type(value) != auto else self.make_default("PayInCallRef")
+		self._PayInCallRef = value if type(value) != base_types.auto else self.make_default("PayInCallRef")
 
 	@PayInCallRef.deleter
 	def PayInCallRef(self):

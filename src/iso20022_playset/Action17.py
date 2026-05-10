@@ -1,20 +1,33 @@
 from . import base_types
-from .ProcessTiming6 import ProcessTiming6
-from .ActionType15Code import ActionType15Code
 from .ProcessRetry3 import ProcessRetry3
-from .NetworkParameters7 import NetworkParameters7
 from .ActionMessage11 import ActionMessage11
+from .NetworkParameters7 import NetworkParameters7
+from .ActionType15Code import ActionType15Code
+from .ProcessTiming6 import ProcessTiming6
 
 class Action17(base_types._BaseFieldType):
 
-	__slots__ = ["_TmCond", "_Rtry", "_ActnTp", "_MsgToPres", "_RmotAccs"]
+	__slots__ = ["_ActnTp", "_TmCond", "_Rtry", "_MsgToPres", "_RmotAccs"]
+	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
+
 	@property
 	def TmCond(self):
 		return self._TmCond
 
 	@TmCond.setter
 	def TmCond(self, value):
-		self._TmCond = value if type(value) != auto else self.make_default("TmCond")
+		self._TmCond = value if type(value) != base_types.auto else self.make_default("TmCond")
 
 	@TmCond.deleter
 	def TmCond(self):
@@ -27,7 +40,7 @@ class Action17(base_types._BaseFieldType):
 
 	@Rtry.setter
 	def Rtry(self, value):
-		self._Rtry = value if type(value) != auto else self.make_default("Rtry")
+		self._Rtry = value if type(value) != base_types.auto else self.make_default("Rtry")
 
 	@Rtry.deleter
 	def Rtry(self):
@@ -35,25 +48,12 @@ class Action17(base_types._BaseFieldType):
 		self._Rtry = None
 
 	@property
-	def ActnTp(self):
-		return self._ActnTp
-
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
-
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
-
-	@property
 	def MsgToPres(self):
 		return self._MsgToPres
 
 	@MsgToPres.setter
 	def MsgToPres(self, value):
-		self._MsgToPres = value if type(value) != auto else self.make_default("MsgToPres")
+		self._MsgToPres = value if type(value) != base_types.auto else self.make_default("MsgToPres")
 
 	@MsgToPres.deleter
 	def MsgToPres(self):
@@ -66,7 +66,7 @@ class Action17(base_types._BaseFieldType):
 
 	@RmotAccs.setter
 	def RmotAccs(self, value):
-		self._RmotAccs = value if type(value) != auto else self.make_default("RmotAccs")
+		self._RmotAccs = value if type(value) != base_types.auto else self.make_default("RmotAccs")
 
 	@RmotAccs.deleter
 	def RmotAccs(self):
@@ -74,9 +74,9 @@ class Action17(base_types._BaseFieldType):
 		self._RmotAccs = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ActnTp', type=ActionType15Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rtry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnTp', type=ActionType15Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgToPres', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
 	))

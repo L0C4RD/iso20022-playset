@@ -1,32 +1,19 @@
 from . import base_types
+from .PriceValueType10Code import PriceValueType10Code
 from .AmountPrice3 import AmountPrice3
 from .DecimalNumber import DecimalNumber
-from .PriceValueType10Code import PriceValueType10Code
 from .PercentagePrice3 import PercentagePrice3
 
 class PriceFormat80Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxPts", "_AmtPric", "_NotSpcfdPric", "_PctgPric"]
-	@property
-	def IndxPts(self):
-		return self._IndxPts
-
-	@IndxPts.setter
-	def IndxPts(self, value):
-		self._IndxPts = value if type(value) != auto else self.make_default("IndxPts")
-
-	@IndxPts.deleter
-	def IndxPts(self):
-		del self._IndxPts
-		self._IndxPts = None
-
+	__slots__ = ["_AmtPric", "_IndxPts", "_NotSpcfdPric", "_PctgPric"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric
 
 	@AmtPric.setter
 	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != auto else self.make_default("AmtPric")
+		self._AmtPric = value if type(value) != base_types.auto else self.make_default("AmtPric")
 
 	@AmtPric.deleter
 	def AmtPric(self):
@@ -34,12 +21,25 @@ class PriceFormat80Choice(base_types._BaseFieldType):
 		self._AmtPric = None
 
 	@property
+	def IndxPts(self):
+		return self._IndxPts
+
+	@IndxPts.setter
+	def IndxPts(self, value):
+		self._IndxPts = value if type(value) != base_types.auto else self.make_default("IndxPts")
+
+	@IndxPts.deleter
+	def IndxPts(self):
+		del self._IndxPts
+		self._IndxPts = None
+
+	@property
 	def NotSpcfdPric(self):
 		return self._NotSpcfdPric
 
 	@NotSpcfdPric.setter
 	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
+		self._NotSpcfdPric = value if type(value) != base_types.auto else self.make_default("NotSpcfdPric")
 
 	@NotSpcfdPric.deleter
 	def NotSpcfdPric(self):
@@ -52,7 +52,7 @@ class PriceFormat80Choice(base_types._BaseFieldType):
 
 	@PctgPric.setter
 	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != auto else self.make_default("PctgPric")
+		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
 
 	@PctgPric.deleter
 	def PctgPric(self):
@@ -60,8 +60,8 @@ class PriceFormat80Choice(base_types._BaseFieldType):
 		self._PctgPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice3, min=0, max=1, mutex_group=1, array=False),
 	))

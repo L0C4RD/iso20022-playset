@@ -11,7 +11,7 @@ class RateTypeAndPercentageRate18(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
 	@Rate.deleter
 	def Rate(self):
@@ -24,7 +24,7 @@ class RateTypeAndPercentageRate18(base_types._BaseFieldType):
 
 	@RateTp.setter
 	def RateTp(self, value):
-		self._RateTp = value if type(value) != auto else self.make_default("RateTp")
+		self._RateTp = value if type(value) != base_types.auto else self.make_default("RateTp")
 
 	@RateTp.deleter
 	def RateTp(self):

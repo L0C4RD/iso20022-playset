@@ -11,7 +11,7 @@ class Settlement2(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
@@ -24,7 +24,7 @@ class Settlement2(base_types._BaseFieldType):
 
 	@Dpstry.setter
 	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
+		self._Dpstry = value if type(value) != base_types.auto else self.make_default("Dpstry")
 
 	@Dpstry.deleter
 	def Dpstry(self):

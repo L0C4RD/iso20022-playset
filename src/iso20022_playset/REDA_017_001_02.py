@@ -12,7 +12,7 @@ class REDA_017_001_02():
 
 		@PtyRpt.setter
 		def PtyRpt(self, value):
-			self._PtyRpt = value if type(value) != auto else self.make_default("PtyRpt")
+			self._PtyRpt = value if type(value) != base_types.auto else self.make_default("PtyRpt")
 
 		@PtyRpt.deleter
 		def PtyRpt(self):

@@ -11,7 +11,7 @@ class CardPaymentTransaction145(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
+		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
 
 	@Actn.deleter
 	def Actn(self):
@@ -24,7 +24,7 @@ class CardPaymentTransaction145(base_types._BaseFieldType):
 
 	@AuthstnRslt.setter
 	def AuthstnRslt(self, value):
-		self._AuthstnRslt = value if type(value) != auto else self.make_default("AuthstnRslt")
+		self._AuthstnRslt = value if type(value) != base_types.auto else self.make_default("AuthstnRslt")
 
 	@AuthstnRslt.deleter
 	def AuthstnRslt(self):

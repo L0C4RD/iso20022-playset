@@ -1,6 +1,6 @@
 from . import base_types
-from .DataModification1Code import DataModification1Code
 from .AdditiononalInformation13 import AdditiononalInformation13
+from .DataModification1Code import DataModification1Code
 
 class ModificationScope45(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ModificationScope45(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
@@ -24,7 +24,7 @@ class ModificationScope45(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):

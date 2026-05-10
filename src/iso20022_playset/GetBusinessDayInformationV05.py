@@ -1,6 +1,6 @@
 from . import base_types
-from .MessageHeader9 import MessageHeader9
 from .SupplementaryData1 import SupplementaryData1
+from .MessageHeader9 import MessageHeader9
 from .BusinessDayQuery2 import BusinessDayQuery2
 
 class GetBusinessDayInformationV05(base_types._BaseFieldType):
@@ -12,7 +12,7 @@ class GetBusinessDayInformationV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
@@ -25,7 +25,7 @@ class GetBusinessDayInformationV05(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
@@ -38,7 +38,7 @@ class GetBusinessDayInformationV05(base_types._BaseFieldType):
 
 	@BizDayInfQryDef.setter
 	def BizDayInfQryDef(self, value):
-		self._BizDayInfQryDef = value if type(value) != auto else self.make_default("BizDayInfQryDef")
+		self._BizDayInfQryDef = value if type(value) != base_types.auto else self.make_default("BizDayInfQryDef")
 
 	@BizDayInfQryDef.deleter
 	def BizDayInfQryDef(self):

@@ -1,37 +1,24 @@
 from . import base_types
-from .PointOfInteraction1 import PointOfInteraction1
-from .PaymentCard4 import PaymentCard4
 from .CashAccount40 import CashAccount40
+from .PointOfInteraction1 import PointOfInteraction1
 from .CardTransaction3Choice import CardTransaction3Choice
+from .PaymentCard4 import PaymentCard4
 
 class CardTransaction18(base_types._BaseFieldType):
 
-	__slots__ = ["_Card", "_POI", "_Tx", "_PrePdAcct"]
+	__slots__ = ["_PrePdAcct", "_Tx", "_POI", "_Card"]
 	@property
-	def Card(self):
-		return self._Card
+	def PrePdAcct(self):
+		return self._PrePdAcct
 
-	@Card.setter
-	def Card(self, value):
-		self._Card = value if type(value) != auto else self.make_default("Card")
+	@PrePdAcct.setter
+	def PrePdAcct(self, value):
+		self._PrePdAcct = value if type(value) != base_types.auto else self.make_default("PrePdAcct")
 
-	@Card.deleter
-	def Card(self):
-		del self._Card
-		self._Card = None
-
-	@property
-	def POI(self):
-		return self._POI
-
-	@POI.setter
-	def POI(self, value):
-		self._POI = value if type(value) != auto else self.make_default("POI")
-
-	@POI.deleter
-	def POI(self):
-		del self._POI
-		self._POI = None
+	@PrePdAcct.deleter
+	def PrePdAcct(self):
+		del self._PrePdAcct
+		self._PrePdAcct = None
 
 	@property
 	def Tx(self):
@@ -39,7 +26,7 @@ class CardTransaction18(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
 	@Tx.deleter
 	def Tx(self):
@@ -47,22 +34,35 @@ class CardTransaction18(base_types._BaseFieldType):
 		self._Tx = None
 
 	@property
-	def PrePdAcct(self):
-		return self._PrePdAcct
+	def POI(self):
+		return self._POI
 
-	@PrePdAcct.setter
-	def PrePdAcct(self, value):
-		self._PrePdAcct = value if type(value) != auto else self.make_default("PrePdAcct")
+	@POI.setter
+	def POI(self, value):
+		self._POI = value if type(value) != base_types.auto else self.make_default("POI")
 
-	@PrePdAcct.deleter
-	def PrePdAcct(self):
-		del self._PrePdAcct
-		self._PrePdAcct = None
+	@POI.deleter
+	def POI(self):
+		del self._POI
+		self._POI = None
+
+	@property
+	def Card(self):
+		return self._Card
+
+	@Card.setter
+	def Card(self, value):
+		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+
+	@Card.deleter
+	def Card(self):
+		del self._Card
+		self._Card = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Card', type=PaymentCard4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POI', type=PointOfInteraction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tx', type=CardTransaction3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrePdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=CardTransaction3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POI', type=PointOfInteraction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Card', type=PaymentCard4, min=0, max=1, mutex_group=None, array=False),
 	))
 

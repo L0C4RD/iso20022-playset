@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .DecimalNumber import DecimalNumber
+from .Max35Text import Max35Text
 
 class BPOApplicableRules1Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class BPOApplicableRules1Choice(base_types._BaseFieldType):
 
 	@OthrRulesAndVrsn.setter
 	def OthrRulesAndVrsn(self, value):
-		self._OthrRulesAndVrsn = value if type(value) != auto else self.make_default("OthrRulesAndVrsn")
+		self._OthrRulesAndVrsn = value if type(value) != base_types.auto else self.make_default("OthrRulesAndVrsn")
 
 	@OthrRulesAndVrsn.deleter
 	def OthrRulesAndVrsn(self):
@@ -24,7 +24,7 @@ class BPOApplicableRules1Choice(base_types._BaseFieldType):
 
 	@URBPOVrsn.setter
 	def URBPOVrsn(self, value):
-		self._URBPOVrsn = value if type(value) != auto else self.make_default("URBPOVrsn")
+		self._URBPOVrsn = value if type(value) != base_types.auto else self.make_default("URBPOVrsn")
 
 	@URBPOVrsn.deleter
 	def URBPOVrsn(self):

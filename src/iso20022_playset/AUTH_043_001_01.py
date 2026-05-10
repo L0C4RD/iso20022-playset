@@ -12,7 +12,7 @@ class AUTH_043_001_01():
 
 		@FinInstrmRptgRefDataIndxRpt.setter
 		def FinInstrmRptgRefDataIndxRpt(self, value):
-			self._FinInstrmRptgRefDataIndxRpt = value if type(value) != auto else self.make_default("FinInstrmRptgRefDataIndxRpt")
+			self._FinInstrmRptgRefDataIndxRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgRefDataIndxRpt")
 
 		@FinInstrmRptgRefDataIndxRpt.deleter
 		def FinInstrmRptgRefDataIndxRpt(self):

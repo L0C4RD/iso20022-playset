@@ -11,7 +11,7 @@ class CurrencyQueryDefinition3(base_types._BaseFieldType):
 
 	@CcyCrit.setter
 	def CcyCrit(self, value):
-		self._CcyCrit = value if type(value) != auto else self.make_default("CcyCrit")
+		self._CcyCrit = value if type(value) != base_types.auto else self.make_default("CcyCrit")
 
 	@CcyCrit.deleter
 	def CcyCrit(self):
@@ -24,7 +24,7 @@ class CurrencyQueryDefinition3(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
 	@QryTp.deleter
 	def QryTp(self):

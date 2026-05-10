@@ -12,7 +12,7 @@ class AUTH_002_001_02():
 
 		@InfReqRspn.setter
 		def InfReqRspn(self, value):
-			self._InfReqRspn = value if type(value) != auto else self.make_default("InfReqRspn")
+			self._InfReqRspn = value if type(value) != base_types.auto else self.make_default("InfReqRspn")
 
 		@InfReqRspn.deleter
 		def InfReqRspn(self):

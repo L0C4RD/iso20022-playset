@@ -12,7 +12,7 @@ class SEEV_038_001_09():
 
 		@CorpActnNrrtv.setter
 		def CorpActnNrrtv(self, value):
-			self._CorpActnNrrtv = value if type(value) != auto else self.make_default("CorpActnNrrtv")
+			self._CorpActnNrrtv = value if type(value) != base_types.auto else self.make_default("CorpActnNrrtv")
 
 		@CorpActnNrrtv.deleter
 		def CorpActnNrrtv(self):

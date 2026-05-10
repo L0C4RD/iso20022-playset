@@ -12,7 +12,7 @@ class CAMT_020_001_04():
 
 		@GetGnlBizInf.setter
 		def GetGnlBizInf(self, value):
-			self._GetGnlBizInf = value if type(value) != auto else self.make_default("GetGnlBizInf")
+			self._GetGnlBizInf = value if type(value) != base_types.auto else self.make_default("GetGnlBizInf")
 
 		@GetGnlBizInf.deleter
 		def GetGnlBizInf(self):

@@ -10,7 +10,7 @@ class AssetClassCommodityOther1(base_types._BaseFieldType):
 
 	@BasePdct.setter
 	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
+		self._BasePdct = value if type(value) != base_types.auto else self.make_default("BasePdct")
 
 	@BasePdct.deleter
 	def BasePdct(self):

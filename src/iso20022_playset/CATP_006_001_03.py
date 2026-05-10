@@ -12,7 +12,7 @@ class CATP_006_001_03():
 
 		@ATMNqryReq.setter
 		def ATMNqryReq(self, value):
-			self._ATMNqryReq = value if type(value) != auto else self.make_default("ATMNqryReq")
+			self._ATMNqryReq = value if type(value) != base_types.auto else self.make_default("ATMNqryReq")
 
 		@ATMNqryReq.deleter
 		def ATMNqryReq(self):

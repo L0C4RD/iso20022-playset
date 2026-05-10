@@ -12,7 +12,7 @@ class SESE_042_001_02():
 
 		@BuyInRgltryAdvcRspn.setter
 		def BuyInRgltryAdvcRspn(self, value):
-			self._BuyInRgltryAdvcRspn = value if type(value) != auto else self.make_default("BuyInRgltryAdvcRspn")
+			self._BuyInRgltryAdvcRspn = value if type(value) != base_types.auto else self.make_default("BuyInRgltryAdvcRspn")
 
 		@BuyInRgltryAdvcRspn.deleter
 		def BuyInRgltryAdvcRspn(self):

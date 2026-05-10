@@ -5,19 +5,19 @@ from .ISODate import ISODate
 
 class CitizenshipInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntlty", "_EndDt", "_StartDt", "_MnrInd"]
+	__slots__ = ["_MnrInd", "_EndDt", "_Ntlty", "_StartDt"]
 	@property
-	def Ntlty(self):
-		return self._Ntlty
+	def MnrInd(self):
+		return self._MnrInd
 
-	@Ntlty.setter
-	def Ntlty(self, value):
-		self._Ntlty = value if type(value) != auto else self.make_default("Ntlty")
+	@MnrInd.setter
+	def MnrInd(self, value):
+		self._MnrInd = value if type(value) != base_types.auto else self.make_default("MnrInd")
 
-	@Ntlty.deleter
-	def Ntlty(self):
-		del self._Ntlty
-		self._Ntlty = None
+	@MnrInd.deleter
+	def MnrInd(self):
+		del self._MnrInd
+		self._MnrInd = None
 
 	@property
 	def EndDt(self):
@@ -25,7 +25,7 @@ class CitizenshipInformation1(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
 
 	@EndDt.deleter
 	def EndDt(self):
@@ -33,35 +33,35 @@ class CitizenshipInformation1(base_types._BaseFieldType):
 		self._EndDt = None
 
 	@property
+	def Ntlty(self):
+		return self._Ntlty
+
+	@Ntlty.setter
+	def Ntlty(self, value):
+		self._Ntlty = value if type(value) != base_types.auto else self.make_default("Ntlty")
+
+	@Ntlty.deleter
+	def Ntlty(self):
+		del self._Ntlty
+		self._Ntlty = None
+
+	@property
 	def StartDt(self):
 		return self._StartDt
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
 		self._StartDt = None
 
-	@property
-	def MnrInd(self):
-		return self._MnrInd
-
-	@MnrInd.setter
-	def MnrInd(self, value):
-		self._MnrInd = value if type(value) != auto else self.make_default("MnrInd")
-
-	@MnrInd.deleter
-	def MnrInd(self):
-		del self._MnrInd
-		self._MnrInd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ntlty', type=NationalityCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntlty', type=NationalityCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

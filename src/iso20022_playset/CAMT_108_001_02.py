@@ -12,7 +12,7 @@ class CAMT_108_001_02():
 
 		@ChqCxlOrStopReq.setter
 		def ChqCxlOrStopReq(self, value):
-			self._ChqCxlOrStopReq = value if type(value) != auto else self.make_default("ChqCxlOrStopReq")
+			self._ChqCxlOrStopReq = value if type(value) != base_types.auto else self.make_default("ChqCxlOrStopReq")
 
 		@ChqCxlOrStopReq.deleter
 		def ChqCxlOrStopReq(self):

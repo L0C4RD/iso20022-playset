@@ -10,7 +10,7 @@ class CorporateActionDate5(base_types._BaseFieldType):
 
 	@FXRateFxgDt.setter
 	def FXRateFxgDt(self, value):
-		self._FXRateFxgDt = value if type(value) != auto else self.make_default("FXRateFxgDt")
+		self._FXRateFxgDt = value if type(value) != base_types.auto else self.make_default("FXRateFxgDt")
 
 	@FXRateFxgDt.deleter
 	def FXRateFxgDt(self):
@@ -23,7 +23,7 @@ class CorporateActionDate5(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
 
 	@ValDt.deleter
 	def ValDt(self):
@@ -36,7 +36,7 @@ class CorporateActionDate5(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
+		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
 
 	@PmtDt.deleter
 	def PmtDt(self):
@@ -49,7 +49,7 @@ class CorporateActionDate5(base_types._BaseFieldType):
 
 	@EarlstPmtDt.setter
 	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+		self._EarlstPmtDt = value if type(value) != base_types.auto else self.make_default("EarlstPmtDt")
 
 	@EarlstPmtDt.deleter
 	def EarlstPmtDt(self):

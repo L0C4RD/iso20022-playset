@@ -1,8 +1,8 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
 from .SecuritiesAccount18 import SecuritiesAccount18
-from .MarginCalculation2 import MarginCalculation2
 from .PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
+from .MarginCalculation2 import MarginCalculation2
+from .YesNoIndicator import YesNoIndicator
 from .MarginCalculation1 import MarginCalculation1
 from .MarginProductType1Choice import MarginProductType1Choice
 
@@ -15,7 +15,7 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@CollsdMrgnAcctInd.setter
 	def CollsdMrgnAcctInd(self, value):
-		self._CollsdMrgnAcctInd = value if type(value) != auto else self.make_default("CollsdMrgnAcctInd")
+		self._CollsdMrgnAcctInd = value if type(value) != base_types.auto else self.make_default("CollsdMrgnAcctInd")
 
 	@CollsdMrgnAcctInd.deleter
 	def CollsdMrgnAcctInd(self):
@@ -28,7 +28,7 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnAcct.setter
 	def MrgnAcct(self, value):
-		self._MrgnAcct = value if type(value) != auto else self.make_default("MrgnAcct")
+		self._MrgnAcct = value if type(value) != base_types.auto else self.make_default("MrgnAcct")
 
 	@MrgnAcct.deleter
 	def MrgnAcct(self):
@@ -41,7 +41,7 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnClctn.setter
 	def MrgnClctn(self, value):
-		self._MrgnClctn = value if type(value) != auto else self.make_default("MrgnClctn")
+		self._MrgnClctn = value if type(value) != base_types.auto else self.make_default("MrgnClctn")
 
 	@MrgnClctn.deleter
 	def MrgnClctn(self):
@@ -54,7 +54,7 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@NonClrMmb.setter
 	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
+		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
 
 	@NonClrMmb.deleter
 	def NonClrMmb(self):
@@ -67,7 +67,7 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnClctnSummry.setter
 	def MrgnClctnSummry(self, value):
-		self._MrgnClctnSummry = value if type(value) != auto else self.make_default("MrgnClctnSummry")
+		self._MrgnClctnSummry = value if type(value) != base_types.auto else self.make_default("MrgnClctnSummry")
 
 	@MrgnClctnSummry.deleter
 	def MrgnClctnSummry(self):
@@ -80,7 +80,7 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnPdct.setter
 	def MrgnPdct(self, value):
-		self._MrgnPdct = value if type(value) != auto else self.make_default("MrgnPdct")
+		self._MrgnPdct = value if type(value) != base_types.auto else self.make_default("MrgnPdct")
 
 	@MrgnPdct.deleter
 	def MrgnPdct(self):

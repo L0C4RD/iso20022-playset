@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
 from .Max350Text import Max350Text
 from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .Max35Text import Max35Text
 
 class FinancialInstrumentName2(base_types._BaseFieldType):
 
-	__slots__ = ["_ISOLngNm", "_VldFr", "_ISOShrtNm"]
+	__slots__ = ["_ISOShrtNm", "_VldFr", "_ISOLngNm"]
 	@property
-	def ISOLngNm(self):
-		return self._ISOLngNm
+	def ISOShrtNm(self):
+		return self._ISOShrtNm
 
-	@ISOLngNm.setter
-	def ISOLngNm(self, value):
-		self._ISOLngNm = value if type(value) != auto else self.make_default("ISOLngNm")
+	@ISOShrtNm.setter
+	def ISOShrtNm(self, value):
+		self._ISOShrtNm = value if type(value) != base_types.auto else self.make_default("ISOShrtNm")
 
-	@ISOLngNm.deleter
-	def ISOLngNm(self):
-		del self._ISOLngNm
-		self._ISOLngNm = None
+	@ISOShrtNm.deleter
+	def ISOShrtNm(self):
+		del self._ISOShrtNm
+		self._ISOShrtNm = None
 
 	@property
 	def VldFr(self):
@@ -25,7 +25,7 @@ class FinancialInstrumentName2(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
 
 	@VldFr.deleter
 	def VldFr(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentName2(base_types._BaseFieldType):
 		self._VldFr = None
 
 	@property
-	def ISOShrtNm(self):
-		return self._ISOShrtNm
+	def ISOLngNm(self):
+		return self._ISOLngNm
 
-	@ISOShrtNm.setter
-	def ISOShrtNm(self, value):
-		self._ISOShrtNm = value if type(value) != auto else self.make_default("ISOShrtNm")
+	@ISOLngNm.setter
+	def ISOLngNm(self, value):
+		self._ISOLngNm = value if type(value) != base_types.auto else self.make_default("ISOLngNm")
 
-	@ISOShrtNm.deleter
-	def ISOShrtNm(self):
-		del self._ISOShrtNm
-		self._ISOShrtNm = None
+	@ISOLngNm.deleter
+	def ISOLngNm(self):
+		del self._ISOLngNm
+		self._ISOLngNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ISOLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISOShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISOLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

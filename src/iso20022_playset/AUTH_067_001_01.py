@@ -12,7 +12,7 @@ class AUTH_067_001_01():
 
 		@CCPCollRpt.setter
 		def CCPCollRpt(self, value):
-			self._CCPCollRpt = value if type(value) != auto else self.make_default("CCPCollRpt")
+			self._CCPCollRpt = value if type(value) != base_types.auto else self.make_default("CCPCollRpt")
 
 		@CCPCollRpt.deleter
 		def CCPCollRpt(self):

@@ -1,6 +1,6 @@
 from . import base_types
-from .DateFormat3Choice import DateFormat3Choice
 from .DateMode1Code import DateMode1Code
+from .DateFormat3Choice import DateFormat3Choice
 
 class DateFormat1(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class DateFormat1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
 	@Dt.deleter
 	def Dt(self):
@@ -24,7 +24,7 @@ class DateFormat1(base_types._BaseFieldType):
 
 	@DtMd.setter
 	def DtMd(self, value):
-		self._DtMd = value if type(value) != auto else self.make_default("DtMd")
+		self._DtMd = value if type(value) != base_types.auto else self.make_default("DtMd")
 
 	@DtMd.deleter
 	def DtMd(self):

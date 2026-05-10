@@ -10,7 +10,7 @@ class PrincipalAmount3(base_types._BaseFieldType):
 
 	@ValDtAmt.setter
 	def ValDtAmt(self, value):
-		self._ValDtAmt = value if type(value) != auto else self.make_default("ValDtAmt")
+		self._ValDtAmt = value if type(value) != base_types.auto else self.make_default("ValDtAmt")
 
 	@ValDtAmt.deleter
 	def ValDtAmt(self):
@@ -23,7 +23,7 @@ class PrincipalAmount3(base_types._BaseFieldType):
 
 	@MtrtyDtAmt.setter
 	def MtrtyDtAmt(self, value):
-		self._MtrtyDtAmt = value if type(value) != auto else self.make_default("MtrtyDtAmt")
+		self._MtrtyDtAmt = value if type(value) != base_types.auto else self.make_default("MtrtyDtAmt")
 
 	@MtrtyDtAmt.deleter
 	def MtrtyDtAmt(self):

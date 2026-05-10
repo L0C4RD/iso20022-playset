@@ -11,7 +11,7 @@ class ErrorAction5(base_types._BaseFieldType):
 
 	@ActnToPrc.setter
 	def ActnToPrc(self, value):
-		self._ActnToPrc = value if type(value) != auto else self.make_default("ActnToPrc")
+		self._ActnToPrc = value if type(value) != base_types.auto else self.make_default("ActnToPrc")
 
 	@ActnToPrc.deleter
 	def ActnToPrc(self):
@@ -24,7 +24,7 @@ class ErrorAction5(base_types._BaseFieldType):
 
 	@ActnRslt.setter
 	def ActnRslt(self, value):
-		self._ActnRslt = value if type(value) != auto else self.make_default("ActnRslt")
+		self._ActnRslt = value if type(value) != base_types.auto else self.make_default("ActnRslt")
 
 	@ActnRslt.deleter
 	def ActnRslt(self):

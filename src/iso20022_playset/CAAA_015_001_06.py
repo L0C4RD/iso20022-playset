@@ -12,7 +12,7 @@ class CAAA_015_001_06():
 
 		@AccptrRjctn.setter
 		def AccptrRjctn(self, value):
-			self._AccptrRjctn = value if type(value) != auto else self.make_default("AccptrRjctn")
+			self._AccptrRjctn = value if type(value) != base_types.auto else self.make_default("AccptrRjctn")
 
 		@AccptrRjctn.deleter
 		def AccptrRjctn(self):

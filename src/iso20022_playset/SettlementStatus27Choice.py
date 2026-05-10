@@ -1,17 +1,17 @@
 from . import base_types
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from .ProprietaryReason4 import ProprietaryReason4
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class SettlementStatus27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlSttlm", "_Prtry", "_Usttld", "_Sttld"]
+	__slots__ = ["_PrtlSttlm", "_Sttld", "_Usttld", "_Prtry"]
 	@property
 	def PrtlSttlm(self):
 		return self._PrtlSttlm
 
 	@PrtlSttlm.setter
 	def PrtlSttlm(self, value):
-		self._PrtlSttlm = value if type(value) != auto else self.make_default("PrtlSttlm")
+		self._PrtlSttlm = value if type(value) != base_types.auto else self.make_default("PrtlSttlm")
 
 	@PrtlSttlm.deleter
 	def PrtlSttlm(self):
@@ -19,17 +19,17 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 		self._PrtlSttlm = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def Sttld(self):
+		return self._Sttld
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@Sttld.setter
+	def Sttld(self, value):
+		self._Sttld = value if type(value) != base_types.auto else self.make_default("Sttld")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@Sttld.deleter
+	def Sttld(self):
+		del self._Sttld
+		self._Sttld = None
 
 	@property
 	def Usttld(self):
@@ -37,7 +37,7 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 
 	@Usttld.setter
 	def Usttld(self, value):
-		self._Usttld = value if type(value) != auto else self.make_default("Usttld")
+		self._Usttld = value if type(value) != base_types.auto else self.make_default("Usttld")
 
 	@Usttld.deleter
 	def Usttld(self):
@@ -45,22 +45,22 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 		self._Usttld = None
 
 	@property
-	def Sttld(self):
-		return self._Sttld
+	def Prtry(self):
+		return self._Prtry
 
-	@Sttld.setter
-	def Sttld(self, value):
-		self._Sttld = value if type(value) != auto else self.make_default("Sttld")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
-	@Sttld.deleter
-	def Sttld(self):
-		del self._Sttld
-		self._Sttld = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtlSttlm', type=ProprietaryReason4, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Usttld', type=ProprietaryReason4, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Sttld', type=ProprietaryReason4, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Usttld', type=ProprietaryReason4, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
 

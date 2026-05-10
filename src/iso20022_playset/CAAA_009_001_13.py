@@ -12,7 +12,7 @@ class CAAA_009_001_13():
 
 		@AccptrRcncltnReq.setter
 		def AccptrRcncltnReq(self, value):
-			self._AccptrRcncltnReq = value if type(value) != auto else self.make_default("AccptrRcncltnReq")
+			self._AccptrRcncltnReq = value if type(value) != base_types.auto else self.make_default("AccptrRcncltnReq")
 
 		@AccptrRcncltnReq.deleter
 		def AccptrRcncltnReq(self):

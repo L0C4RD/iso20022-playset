@@ -1,6 +1,6 @@
 from . import base_types
-from .RejectionOrRepairStatus31Choice import RejectionOrRepairStatus31Choice
 from .AcknowledgedAcceptedStatus33Choice import AcknowledgedAcceptedStatus33Choice
+from .RejectionOrRepairStatus31Choice import RejectionOrRepairStatus31Choice
 
 class ProcessingStatus79Choice(base_types._BaseFieldType):
 
@@ -11,7 +11,7 @@ class ProcessingStatus79Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
@@ -24,7 +24,7 @@ class ProcessingStatus79Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
 
 	@Rjctd.deleter
 	def Rjctd(self):

@@ -11,7 +11,7 @@ class QualifiedPartyAndXMLSignature1(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
 	@Pty.deleter
 	def Pty(self):
@@ -24,7 +24,7 @@ class QualifiedPartyAndXMLSignature1(base_types._BaseFieldType):
 
 	@Sgntr.setter
 	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
+		self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
 
 	@Sgntr.deleter
 	def Sgntr(self):

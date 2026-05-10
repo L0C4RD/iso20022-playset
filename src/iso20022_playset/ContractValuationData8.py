@@ -1,19 +1,32 @@
 from . import base_types
-from .ValuationType1Code import ValuationType1Code
-from .AmountAndDirection109 import AmountAndDirection109
 from .ISODateTime import ISODateTime
 from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from .ValuationType1Code import ValuationType1Code
+from .AmountAndDirection109 import AmountAndDirection109
 
 class ContractValuationData8(base_types._BaseFieldType):
 
-	__slots__ = ["_Dlta", "_TmStmp", "_CtrctVal", "_Tp"]
+	__slots__ = ["_CtrctVal", "_Dlta", "_TmStmp", "_Tp"]
+	@property
+	def CtrctVal(self):
+		return self._CtrctVal
+
+	@CtrctVal.setter
+	def CtrctVal(self, value):
+		self._CtrctVal = value if type(value) != base_types.auto else self.make_default("CtrctVal")
+
+	@CtrctVal.deleter
+	def CtrctVal(self):
+		del self._CtrctVal
+		self._CtrctVal = None
+
 	@property
 	def Dlta(self):
 		return self._Dlta
 
 	@Dlta.setter
 	def Dlta(self, value):
-		self._Dlta = value if type(value) != auto else self.make_default("Dlta")
+		self._Dlta = value if type(value) != base_types.auto else self.make_default("Dlta")
 
 	@Dlta.deleter
 	def Dlta(self):
@@ -26,7 +39,7 @@ class ContractValuationData8(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
 
 	@TmStmp.deleter
 	def TmStmp(self):
@@ -34,25 +47,12 @@ class ContractValuationData8(base_types._BaseFieldType):
 		self._TmStmp = None
 
 	@property
-	def CtrctVal(self):
-		return self._CtrctVal
-
-	@CtrctVal.setter
-	def CtrctVal(self, value):
-		self._CtrctVal = value if type(value) != auto else self.make_default("CtrctVal")
-
-	@CtrctVal.deleter
-	def CtrctVal(self):
-		del self._CtrctVal
-		self._CtrctVal = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
 	@Tp.deleter
 	def Tp(self):
@@ -60,9 +60,9 @@ class ContractValuationData8(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CtrctVal', type=AmountAndDirection109, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dlta', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctVal', type=AmountAndDirection109, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ValuationType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 
