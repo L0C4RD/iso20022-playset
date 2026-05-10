@@ -1,6 +1,6 @@
 import base_types
-import PostTradeRiskReductionIdentifier1
 import UTIIdentifier
+import PostTradeRiskReductionIdentifier1
 
 class EventIdentifier1Choice(base_types._BaseFieldType):
 

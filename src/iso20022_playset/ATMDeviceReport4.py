@@ -1,13 +1,26 @@
 import base_types
-import ATMSecurityContext5
+import ATMCommand16
+import ATMCommand15
 import ATMStatus2
 import ATMEnvironment6
-import ATMCommand15
-import ATMCommand16
+import ATMSecurityContext5
 
 class ATMDeviceReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSctyCntxt", "_ATMGblSts", "_CmdCntxt", "_Envt", "_CmdRslt"]
+	__slots__ = ["_Envt", "_ATMSctyCntxt", "_CmdCntxt", "_CmdRslt", "_ATMGblSts"]
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
 	@property
 	def ATMSctyCntxt(self):
 		return self._ATMSctyCntxt
@@ -20,19 +33,6 @@ class ATMDeviceReport4(base_types._BaseFieldType):
 	def ATMSctyCntxt(self):
 		del self._ATMSctyCntxt
 		self._ATMSctyCntxt = None
-
-	@property
-	def ATMGblSts(self):
-		return self._ATMGblSts
-
-	@ATMGblSts.setter
-	def ATMGblSts(self, value):
-		self._ATMGblSts = value if type(value) != auto else self.make_default("ATMGblSts")
-
-	@ATMGblSts.deleter
-	def ATMGblSts(self):
-		del self._ATMGblSts
-		self._ATMGblSts = None
 
 	@property
 	def CmdCntxt(self):
@@ -48,19 +48,6 @@ class ATMDeviceReport4(base_types._BaseFieldType):
 		self._CmdCntxt = None
 
 	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
-	@property
 	def CmdRslt(self):
 		return self._CmdRslt
 
@@ -73,11 +60,24 @@ class ATMDeviceReport4(base_types._BaseFieldType):
 		del self._CmdRslt
 		self._CmdRslt = None
 
+	@property
+	def ATMGblSts(self):
+		return self._ATMGblSts
+
+	@ATMGblSts.setter
+	def ATMGblSts(self, value):
+		self._ATMGblSts = value if type(value) != auto else self.make_default("ATMGblSts")
+
+	@ATMGblSts.deleter
+	def ATMGblSts(self):
+		del self._ATMGblSts
+		self._ATMGblSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMSctyCntxt', type=ATMSecurityContext5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMGblSts', type=ATMStatus2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand16, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMSctyCntxt', type=ATMSecurityContext5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand16, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmdRslt', type=ATMCommand15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ATMGblSts', type=ATMStatus2, min=1, max=1, mutex_group=None, array=False),
 	))
 

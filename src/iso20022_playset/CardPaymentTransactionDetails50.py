@@ -1,26 +1,13 @@
 import base_types
-import TrueFalseIndicator
 import ImpliedCurrencyAndAmount
-import ISODate
-import Max10000Binary
 import ActiveCurrencyCode
+import ISODate
+import TrueFalseIndicator
+import Max10000Binary
 
 class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_ICCRltdData", "_VldtyDt", "_TtlAmt", "_KeepAuthstnOpn"]
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
+	__slots__ = ["_ICCRltdData", "_TtlAmt", "_VldtyDt", "_Ccy", "_KeepAuthstnOpn"]
 	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
@@ -33,19 +20,6 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 	def ICCRltdData(self):
 		del self._ICCRltdData
 		self._ICCRltdData = None
-
-	@property
-	def VldtyDt(self):
-		return self._VldtyDt
-
-	@VldtyDt.setter
-	def VldtyDt(self, value):
-		self._VldtyDt = value if type(value) != auto else self.make_default("VldtyDt")
-
-	@VldtyDt.deleter
-	def VldtyDt(self):
-		del self._VldtyDt
-		self._VldtyDt = None
 
 	@property
 	def TtlAmt(self):
@@ -61,6 +35,32 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
+	def VldtyDt(self):
+		return self._VldtyDt
+
+	@VldtyDt.setter
+	def VldtyDt(self, value):
+		self._VldtyDt = value if type(value) != auto else self.make_default("VldtyDt")
+
+	@VldtyDt.deleter
+	def VldtyDt(self):
+		del self._VldtyDt
+		self._VldtyDt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
 	def KeepAuthstnOpn(self):
 		return self._KeepAuthstnOpn
 
@@ -74,10 +74,10 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 		self._KeepAuthstnOpn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeepAuthstnOpn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

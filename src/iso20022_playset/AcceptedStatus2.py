@@ -1,6 +1,6 @@
 import base_types
-import Quantity51Choice
 import AcceptedStatus8Choice
+import Quantity51Choice
 
 class AcceptedStatus2(base_types._BaseFieldType):
 

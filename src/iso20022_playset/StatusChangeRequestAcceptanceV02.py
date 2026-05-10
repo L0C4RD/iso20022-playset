@@ -1,24 +1,11 @@
 import base_types
-import TransactionStatus3
 import MessageIdentification1
+import TransactionStatus3
 import SimpleIdentificationInformation
 
 class StatusChangeRequestAcceptanceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdSts", "_TxId", "_SubmitrTxRef", "_AccptncId"]
-	@property
-	def AccptdSts(self):
-		return self._AccptdSts
-
-	@AccptdSts.setter
-	def AccptdSts(self, value):
-		self._AccptdSts = value if type(value) != auto else self.make_default("AccptdSts")
-
-	@AccptdSts.deleter
-	def AccptdSts(self):
-		del self._AccptdSts
-		self._AccptdSts = None
-
+	__slots__ = ["_TxId", "_AccptncId", "_SubmitrTxRef", "_AccptdSts"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -31,6 +18,19 @@ class StatusChangeRequestAcceptanceV02(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
+
+	@property
+	def AccptncId(self):
+		return self._AccptncId
+
+	@AccptncId.setter
+	def AccptncId(self, value):
+		self._AccptncId = value if type(value) != auto else self.make_default("AccptncId")
+
+	@AccptncId.deleter
+	def AccptncId(self):
+		del self._AccptncId
+		self._AccptncId = None
 
 	@property
 	def SubmitrTxRef(self):
@@ -46,22 +46,22 @@ class StatusChangeRequestAcceptanceV02(base_types._BaseFieldType):
 		self._SubmitrTxRef = None
 
 	@property
-	def AccptncId(self):
-		return self._AccptncId
+	def AccptdSts(self):
+		return self._AccptdSts
 
-	@AccptncId.setter
-	def AccptncId(self, value):
-		self._AccptncId = value if type(value) != auto else self.make_default("AccptncId")
+	@AccptdSts.setter
+	def AccptdSts(self, value):
+		self._AccptdSts = value if type(value) != auto else self.make_default("AccptdSts")
 
-	@AccptncId.deleter
-	def AccptncId(self):
-		del self._AccptncId
-		self._AccptncId = None
+	@AccptdSts.deleter
+	def AccptdSts(self):
+		del self._AccptdSts
+		self._AccptdSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AccptdSts', type=TransactionStatus3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AccptdSts', type=TransactionStatus3, min=1, max=1, mutex_group=None, array=False),
 	))
 

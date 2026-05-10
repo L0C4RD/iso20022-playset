@@ -1,12 +1,12 @@
 import base_types
-import Max35Text
-import AdditionalInformation15
 import ActiveCurrencyAnd13DecimalAmount
 import DecimalNumber
+import AdditionalInformation15
+import Max35Text
 
 class Crystallisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_CrstllsdAmt", "_TrchId", "_CrstllsdUnitsNb", "_AddtlInf", "_UcrstllsdAmt", "_UcrstllsdUnitsNb"]
+	__slots__ = ["_CrstllsdAmt", "_UcrstllsdAmt", "_CrstllsdUnitsNb", "_TrchId", "_AddtlInf", "_UcrstllsdUnitsNb"]
 	@property
 	def CrstllsdAmt(self):
 		return self._CrstllsdAmt
@@ -21,17 +21,17 @@ class Crystallisation2(base_types._BaseFieldType):
 		self._CrstllsdAmt = None
 
 	@property
-	def TrchId(self):
-		return self._TrchId
+	def UcrstllsdAmt(self):
+		return self._UcrstllsdAmt
 
-	@TrchId.setter
-	def TrchId(self, value):
-		self._TrchId = value if type(value) != auto else self.make_default("TrchId")
+	@UcrstllsdAmt.setter
+	def UcrstllsdAmt(self, value):
+		self._UcrstllsdAmt = value if type(value) != auto else self.make_default("UcrstllsdAmt")
 
-	@TrchId.deleter
-	def TrchId(self):
-		del self._TrchId
-		self._TrchId = None
+	@UcrstllsdAmt.deleter
+	def UcrstllsdAmt(self):
+		del self._UcrstllsdAmt
+		self._UcrstllsdAmt = None
 
 	@property
 	def CrstllsdUnitsNb(self):
@@ -47,6 +47,19 @@ class Crystallisation2(base_types._BaseFieldType):
 		self._CrstllsdUnitsNb = None
 
 	@property
+	def TrchId(self):
+		return self._TrchId
+
+	@TrchId.setter
+	def TrchId(self, value):
+		self._TrchId = value if type(value) != auto else self.make_default("TrchId")
+
+	@TrchId.deleter
+	def TrchId(self):
+		del self._TrchId
+		self._TrchId = None
+
+	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -58,19 +71,6 @@ class Crystallisation2(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
-
-	@property
-	def UcrstllsdAmt(self):
-		return self._UcrstllsdAmt
-
-	@UcrstllsdAmt.setter
-	def UcrstllsdAmt(self, value):
-		self._UcrstllsdAmt = value if type(value) != auto else self.make_default("UcrstllsdAmt")
-
-	@UcrstllsdAmt.deleter
-	def UcrstllsdAmt(self):
-		del self._UcrstllsdAmt
-		self._UcrstllsdAmt = None
 
 	@property
 	def UcrstllsdUnitsNb(self):
@@ -87,10 +87,10 @@ class Crystallisation2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrstllsdAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrchId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrstllsdUnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UcrstllsdAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrstllsdUnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrchId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UcrstllsdUnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

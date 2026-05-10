@@ -1,7 +1,7 @@
 import base_types
+import PartyIdentification247Choice
 import Max35Text
 import DocumentNumber5Choice
-import PartyIdentification247Choice
 
 class AdditionalReference14(base_types._BaseFieldType):
 

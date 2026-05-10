@@ -1,12 +1,12 @@
 import base_types
-import NoReasonCode
-import Extended350Code
 import CancelledStatusReason3Code
+import Extended350Code
 import GenericIdentification1
+import NoReasonCode
 
 class CancelledStatus13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSrcSchme", "_XtndedRsn", "_NoSpcfdRsn", "_Rsn"]
+	__slots__ = ["_DataSrcSchme", "_Rsn", "_XtndedRsn", "_NoSpcfdRsn"]
 	@property
 	def DataSrcSchme(self):
 		return self._DataSrcSchme
@@ -19,6 +19,19 @@ class CancelledStatus13Choice(base_types._BaseFieldType):
 	def DataSrcSchme(self):
 		del self._DataSrcSchme
 		self._DataSrcSchme = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def XtndedRsn(self):
@@ -46,23 +59,10 @@ class CancelledStatus13Choice(base_types._BaseFieldType):
 		del self._NoSpcfdRsn
 		self._NoSpcfdRsn = None
 
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rsn', type=CancelledStatusReason3Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rsn', type=CancelledStatusReason3Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

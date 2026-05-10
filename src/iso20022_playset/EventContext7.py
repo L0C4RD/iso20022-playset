@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import PointOfInteractionComponent17
 import RetailerService1Code
+import PointOfInteractionComponent17
+import Max35Text
 
 class EventContext7(base_types._BaseFieldType):
 
-	__slots__ = ["_CmpntId", "_SvcTp", "_SaleId"]
+	__slots__ = ["_SaleId", "_SvcTp", "_CmpntId"]
 	@property
-	def CmpntId(self):
-		return self._CmpntId
+	def SaleId(self):
+		return self._SaleId
 
-	@CmpntId.setter
-	def CmpntId(self, value):
-		self._CmpntId = value if type(value) != auto else self.make_default("CmpntId")
+	@SaleId.setter
+	def SaleId(self, value):
+		self._SaleId = value if type(value) != auto else self.make_default("SaleId")
 
-	@CmpntId.deleter
-	def CmpntId(self):
-		del self._CmpntId
-		self._CmpntId = None
+	@SaleId.deleter
+	def SaleId(self):
+		del self._SaleId
+		self._SaleId = None
 
 	@property
 	def SvcTp(self):
@@ -33,21 +33,21 @@ class EventContext7(base_types._BaseFieldType):
 		self._SvcTp = None
 
 	@property
-	def SaleId(self):
-		return self._SaleId
+	def CmpntId(self):
+		return self._CmpntId
 
-	@SaleId.setter
-	def SaleId(self, value):
-		self._SaleId = value if type(value) != auto else self.make_default("SaleId")
+	@CmpntId.setter
+	def CmpntId(self, value):
+		self._CmpntId = value if type(value) != auto else self.make_default("CmpntId")
 
-	@SaleId.deleter
-	def SaleId(self):
-		del self._SaleId
-		self._SaleId = None
+	@CmpntId.deleter
+	def CmpntId(self):
+		del self._CmpntId
+		self._CmpntId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmpntId', type=PointOfInteractionComponent17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcTp', type=RetailerService1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=RetailerService1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpntId', type=PointOfInteractionComponent17, min=0, max=1, mutex_group=None, array=False),
 	))
 

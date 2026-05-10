@@ -1,42 +1,29 @@
 import base_types
-import CashAccount40
-import SupplementaryData1
-import SystemPartyIdentification8
+import DocumentIdentification51
 import References14
+import SystemPartyIdentification8
+import IntraBalance5
+import CashAccount40
 import BranchAndFinancialInstitutionIdentification8
 import Max35Text
-import DocumentIdentification51
-import IntraBalance5
+import SupplementaryData1
 import ProcessingStatus69Choice
 
 class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_ReqRef", "_PrcgSts", "_UndrlygIntraBal", "_CshAcct", "_Id", "_CshAcctOwnr", "_SplmtryData", "_TxId"]
+	__slots__ = ["_SplmtryData", "_PrcgSts", "_UndrlygIntraBal", "_CshAcctOwnr", "_CshAcctSvcr", "_ReqRef", "_CshAcct", "_TxId", "_Id"]
 	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
-	def ReqRef(self):
-		return self._ReqRef
-
-	@ReqRef.setter
-	def ReqRef(self, value):
-		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
-
-	@ReqRef.deleter
-	def ReqRef(self):
-		del self._ReqRef
-		self._ReqRef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def PrcgSts(self):
@@ -65,32 +52,6 @@ class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFie
 		self._UndrlygIntraBal = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def CshAcctOwnr(self):
 		return self._CshAcctOwnr
 
@@ -104,17 +65,43 @@ class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFie
 		self._CshAcctOwnr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
+
+	@property
+	def ReqRef(self):
+		return self._ReqRef
+
+	@ReqRef.setter
+	def ReqRef(self, value):
+		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
+
+	@ReqRef.deleter
+	def ReqRef(self):
+		del self._ReqRef
+		self._ReqRef = None
+
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def TxId(self):
@@ -129,15 +116,28 @@ class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFie
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus69Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygIntraBal', type=IntraBalance5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=References14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 import base_types
-import Response12Code
 import ResultDetail5Code
-import Max10000Binary
 import TransactionIdentifier3
+import Response12Code
 import ATMCommand7
+import Max10000Binary
 
 class ATMTransaction45(base_types._BaseFieldType):
 
-	__slots__ = ["_ICCRltdData", "_Cmd", "_TxId", "_Rspn", "_RspnRsn"]
+	__slots__ = ["_ICCRltdData", "_TxId", "_Rspn", "_RspnRsn", "_Cmd"]
 	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
@@ -20,19 +20,6 @@ class ATMTransaction45(base_types._BaseFieldType):
 	def ICCRltdData(self):
 		del self._ICCRltdData
 		self._ICCRltdData = None
-
-	@property
-	def Cmd(self):
-		return self._Cmd
-
-	@Cmd.setter
-	def Cmd(self, value):
-		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
-
-	@Cmd.deleter
-	def Cmd(self):
-		del self._Cmd
-		self._Cmd = None
 
 	@property
 	def TxId(self):
@@ -73,11 +60,24 @@ class ATMTransaction45(base_types._BaseFieldType):
 		del self._RspnRsn
 		self._RspnRsn = None
 
+	@property
+	def Cmd(self):
+		return self._Cmd
+
+	@Cmd.setter
+	def Cmd(self, value):
+		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
+
+	@Cmd.deleter
+	def Cmd(self):
+		del self._Cmd
+		self._Cmd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=Response12Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnRsn', type=ResultDetail5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
 	))
 

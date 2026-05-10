@@ -1,7 +1,7 @@
 import base_types
 import SupplementaryData1
-import MandateCancellation8
 import GroupHeader110
+import MandateCancellation8
 
 class MandateCancellationRequestV08(base_types._BaseFieldType):
 

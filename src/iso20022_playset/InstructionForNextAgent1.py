@@ -1,23 +1,10 @@
 import base_types
-import Instruction4Code
 import Max140Text
+import Instruction4Code
 
 class InstructionForNextAgent1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrInf", "_Cd"]
-	@property
-	def InstrInf(self):
-		return self._InstrInf
-
-	@InstrInf.setter
-	def InstrInf(self, value):
-		self._InstrInf = value if type(value) != auto else self.make_default("InstrInf")
-
-	@InstrInf.deleter
-	def InstrInf(self):
-		del self._InstrInf
-		self._InstrInf = None
-
+	__slots__ = ["_Cd", "_InstrInf"]
 	@property
 	def Cd(self):
 		return self._Cd
@@ -31,8 +18,21 @@ class InstructionForNextAgent1(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def InstrInf(self):
+		return self._InstrInf
+
+	@InstrInf.setter
+	def InstrInf(self, value):
+		self._InstrInf = value if type(value) != auto else self.make_default("InstrInf")
+
+	@InstrInf.deleter
+	def InstrInf(self):
+		del self._InstrInf
+		self._InstrInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=Instruction4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

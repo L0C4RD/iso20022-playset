@@ -5,7 +5,7 @@ import FinancialInstrumentQuantity33Choice
 
 class TransactionQuantities4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_OrgnlAndCurFaceAmt", "_Qty"]
+	__slots__ = ["_Prtry", "_Qty", "_OrgnlAndCurFaceAmt"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -20,19 +20,6 @@ class TransactionQuantities4Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def OrgnlAndCurFaceAmt(self):
-		return self._OrgnlAndCurFaceAmt
-
-	@OrgnlAndCurFaceAmt.setter
-	def OrgnlAndCurFaceAmt(self, value):
-		self._OrgnlAndCurFaceAmt = value if type(value) != auto else self.make_default("OrgnlAndCurFaceAmt")
-
-	@OrgnlAndCurFaceAmt.deleter
-	def OrgnlAndCurFaceAmt(self):
-		del self._OrgnlAndCurFaceAmt
-		self._OrgnlAndCurFaceAmt = None
-
-	@property
 	def Qty(self):
 		return self._Qty
 
@@ -45,9 +32,22 @@ class TransactionQuantities4Choice(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def OrgnlAndCurFaceAmt(self):
+		return self._OrgnlAndCurFaceAmt
+
+	@OrgnlAndCurFaceAmt.setter
+	def OrgnlAndCurFaceAmt(self, value):
+		self._OrgnlAndCurFaceAmt = value if type(value) != auto else self.make_default("OrgnlAndCurFaceAmt")
+
+	@OrgnlAndCurFaceAmt.deleter
+	def OrgnlAndCurFaceAmt(self):
+		del self._OrgnlAndCurFaceAmt
+		self._OrgnlAndCurFaceAmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=ProprietaryQuantity1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OrgnlAndCurFaceAmt', type=OriginalAndCurrentQuantities1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OrgnlAndCurFaceAmt', type=OriginalAndCurrentQuantities1, min=0, max=1, mutex_group=1, array=False),
 	))
 

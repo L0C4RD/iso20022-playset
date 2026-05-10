@@ -1,14 +1,40 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
-import AccountIdentificationSearchCriteria2Choice
-import PartyIdentification272
-import CashAccountType2Choice
 import ActiveOrHistoricCurrencyCode
 import CashBalance14
+import PartyIdentification272
+import CashAccountType2Choice
+import AccountIdentificationSearchCriteria2Choice
+import BranchAndFinancialInstitutionIdentification8
 
 class CashAccountSearchCriteria8(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_AcctId", "_Bal", "_AcctSvcr", "_Tp", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_AcctSvcr", "_Ccy", "_AcctId", "_Bal", "_Tp"]
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -49,19 +75,6 @@ class CashAccountSearchCriteria8(base_types._BaseFieldType):
 		self._Bal = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -74,25 +87,12 @@ class CashAccountSearchCriteria8(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Bal', type=CashBalance14, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

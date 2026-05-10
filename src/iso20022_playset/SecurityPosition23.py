@@ -4,20 +4,7 @@ import EligiblePosition21
 
 class SecurityPosition23(base_types._BaseFieldType):
 
-	__slots__ = ["_Pos", "_FinInstrmId"]
-	@property
-	def Pos(self):
-		return self._Pos
-
-	@Pos.setter
-	def Pos(self, value):
-		self._Pos = value if type(value) != auto else self.make_default("Pos")
-
-	@Pos.deleter
-	def Pos(self):
-		del self._Pos
-		self._Pos = None
-
+	__slots__ = ["_FinInstrmId", "_Pos"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -31,8 +18,21 @@ class SecurityPosition23(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
+	@property
+	def Pos(self):
+		return self._Pos
+
+	@Pos.setter
+	def Pos(self, value):
+		self._Pos = value if type(value) != auto else self.make_default("Pos")
+
+	@Pos.deleter
+	def Pos(self):
+		del self._Pos
+		self._Pos = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pos', type=EligiblePosition21, min=0, max=1000, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pos', type=EligiblePosition21, min=0, max=1000, mutex_group=None, array=True),
 	))
 

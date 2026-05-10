@@ -1,14 +1,14 @@
 import base_types
-import Pagination1
-import Max35Text
+import Max4Text
 import ISODateTime
 import ISODate
-import Max4Text
+import Pagination1
+import Max35Text
 import PartyIdentification242Choice
 
 class NettingCutOffReportData2(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_NetSvcTp", "_RptTp", "_RptSvcr", "_MsgId", "_ActvtnDt", "_CreDtTm", "_NetSvcPtcptId"]
+	__slots__ = ["_MsgPgntn", "_MsgId", "_RptTp", "_RptSvcr", "_ActvtnDt", "_CreDtTm", "_NetSvcPtcptId", "_NetSvcTp"]
 	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
@@ -23,17 +23,17 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 		self._MsgPgntn = None
 
 	@property
-	def NetSvcTp(self):
-		return self._NetSvcTp
+	def MsgId(self):
+		return self._MsgId
 
-	@NetSvcTp.setter
-	def NetSvcTp(self, value):
-		self._NetSvcTp = value if type(value) != auto else self.make_default("NetSvcTp")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@NetSvcTp.deleter
-	def NetSvcTp(self):
-		del self._NetSvcTp
-		self._NetSvcTp = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def RptTp(self):
@@ -60,19 +60,6 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 	def RptSvcr(self):
 		del self._RptSvcr
 		self._RptSvcr = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
 
 	@property
 	def ActvtnDt(self):
@@ -113,14 +100,27 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 		del self._NetSvcPtcptId
 		self._NetSvcPtcptId = None
 
+	@property
+	def NetSvcTp(self):
+		return self._NetSvcTp
+
+	@NetSvcTp.setter
+	def NetSvcTp(self, value):
+		self._NetSvcTp = value if type(value) != auto else self.make_default("NetSvcTp")
+
+	@NetSvcTp.deleter
+	def NetSvcTp(self):
+		del self._NetSvcTp
+		self._NetSvcTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetSvcTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSvcr', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetSvcPtcptId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetSvcTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

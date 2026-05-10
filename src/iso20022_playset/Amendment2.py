@@ -1,25 +1,12 @@
 import base_types
+import UndertakingConfirmation1
+import UndertakingAmendmentMessage1
 import AdvisingPartyAdditionalInformation1
 import PartyAndSignature2
-import UndertakingAmendmentMessage1
-import UndertakingConfirmation1
 
 class Amendment2(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgAmdmntMsg", "_DgtlSgntr", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf"]
-	@property
-	def UdrtkgAmdmntMsg(self):
-		return self._UdrtkgAmdmntMsg
-
-	@UdrtkgAmdmntMsg.setter
-	def UdrtkgAmdmntMsg(self, value):
-		self._UdrtkgAmdmntMsg = value if type(value) != auto else self.make_default("UdrtkgAmdmntMsg")
-
-	@UdrtkgAmdmntMsg.deleter
-	def UdrtkgAmdmntMsg(self):
-		del self._UdrtkgAmdmntMsg
-		self._UdrtkgAmdmntMsg = None
-
+	__slots__ = ["_DgtlSgntr", "_UdrtkgAmdmntMsg", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -32,6 +19,19 @@ class Amendment2(base_types._BaseFieldType):
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
 		self._DgtlSgntr = None
+
+	@property
+	def UdrtkgAmdmntMsg(self):
+		return self._UdrtkgAmdmntMsg
+
+	@UdrtkgAmdmntMsg.setter
+	def UdrtkgAmdmntMsg(self, value):
+		self._UdrtkgAmdmntMsg = value if type(value) != auto else self.make_default("UdrtkgAmdmntMsg")
+
+	@UdrtkgAmdmntMsg.deleter
+	def UdrtkgAmdmntMsg(self):
+		del self._UdrtkgAmdmntMsg
+		self._UdrtkgAmdmntMsg = None
 
 	@property
 	def ConfDtls(self):
@@ -73,8 +73,8 @@ class Amendment2(base_types._BaseFieldType):
 		self._ScndAdvsgPtyAddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UdrtkgAmdmntMsg', type=UndertakingAmendmentMessage1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=3, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UdrtkgAmdmntMsg', type=UndertakingAmendmentMessage1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfDtls', type=UndertakingConfirmation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),

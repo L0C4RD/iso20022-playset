@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import MessageIdentification1
 import Max70Text
+import MessageIdentification1
+import Max35Text
 
 class References3(base_types._BaseFieldType):
 
-	__slots__ = ["_AttchdDocNm", "_ReqRsn", "_MsgId", "_PrcId", "_ReqToBeCmpltdId"]
+	__slots__ = ["_MsgId", "_ReqRsn", "_PrcId", "_AttchdDocNm", "_ReqToBeCmpltdId"]
 	@property
-	def AttchdDocNm(self):
-		return self._AttchdDocNm
+	def MsgId(self):
+		return self._MsgId
 
-	@AttchdDocNm.setter
-	def AttchdDocNm(self, value):
-		self._AttchdDocNm = value if type(value) != auto else self.make_default("AttchdDocNm")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@AttchdDocNm.deleter
-	def AttchdDocNm(self):
-		del self._AttchdDocNm
-		self._AttchdDocNm = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def ReqRsn(self):
@@ -33,19 +33,6 @@ class References3(base_types._BaseFieldType):
 		self._ReqRsn = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
 	def PrcId(self):
 		return self._PrcId
 
@@ -57,6 +44,19 @@ class References3(base_types._BaseFieldType):
 	def PrcId(self):
 		del self._PrcId
 		self._PrcId = None
+
+	@property
+	def AttchdDocNm(self):
+		return self._AttchdDocNm
+
+	@AttchdDocNm.setter
+	def AttchdDocNm(self, value):
+		self._AttchdDocNm = value if type(value) != auto else self.make_default("AttchdDocNm")
+
+	@AttchdDocNm.deleter
+	def AttchdDocNm(self):
+		del self._AttchdDocNm
+		self._AttchdDocNm = None
 
 	@property
 	def ReqToBeCmpltdId(self):
@@ -72,10 +72,10 @@ class References3(base_types._BaseFieldType):
 		self._ReqToBeCmpltdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqRsn', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRsn', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqToBeCmpltdId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ISO2ALanguageCode
 import RestrictedFINZMax2048Text
+import ISO2ALanguageCode
 
 class UpdatedURLlnformation7(base_types._BaseFieldType):
 

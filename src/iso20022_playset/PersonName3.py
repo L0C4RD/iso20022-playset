@@ -1,6 +1,6 @@
 import base_types
-import PostalAddress26
 import Max350Text
+import PostalAddress26
 import NamePrefix2Code
 
 class PersonName3(base_types._BaseFieldType):

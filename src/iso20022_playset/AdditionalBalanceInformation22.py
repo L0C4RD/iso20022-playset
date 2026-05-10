@@ -1,7 +1,7 @@
 import base_types
-import SubBalanceType12Choice
-import SubBalanceQuantity8Choice
 import Max140Text
+import SubBalanceQuantity8Choice
+import SubBalanceType12Choice
 
 class AdditionalBalanceInformation22(base_types._BaseFieldType):
 

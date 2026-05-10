@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import DateAndDateTimeChoice
+import Max35Text
 import Pagination
 
 class StatementReference1(base_types._BaseFieldType):

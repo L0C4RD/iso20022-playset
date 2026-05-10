@@ -1,23 +1,10 @@
 import base_types
-import RejectionReason53
 import Max15NumericText
+import RejectionReason53
 
 class DetailedTransactionStatistics13(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd", "_TxsRjctnsRsn", "_TtlNbOfTxs"]
-	@property
-	def TtlNbOfTxsAccptd(self):
-		return self._TtlNbOfTxsAccptd
-
-	@TtlNbOfTxsAccptd.setter
-	def TtlNbOfTxsAccptd(self, value):
-		self._TtlNbOfTxsAccptd = value if type(value) != auto else self.make_default("TtlNbOfTxsAccptd")
-
-	@TtlNbOfTxsAccptd.deleter
-	def TtlNbOfTxsAccptd(self):
-		del self._TtlNbOfTxsAccptd
-		self._TtlNbOfTxsAccptd = None
-
+	__slots__ = ["_TtlNbOfTxsRjctd", "_TtlNbOfTxsAccptd", "_TtlNbOfTxs", "_TxsRjctnsRsn"]
 	@property
 	def TtlNbOfTxsRjctd(self):
 		return self._TtlNbOfTxsRjctd
@@ -32,17 +19,17 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		self._TtlNbOfTxsRjctd = None
 
 	@property
-	def TxsRjctnsRsn(self):
-		return self._TxsRjctnsRsn
+	def TtlNbOfTxsAccptd(self):
+		return self._TtlNbOfTxsAccptd
 
-	@TxsRjctnsRsn.setter
-	def TxsRjctnsRsn(self, value):
-		self._TxsRjctnsRsn = value if type(value) != auto else self.make_default("TxsRjctnsRsn")
+	@TtlNbOfTxsAccptd.setter
+	def TtlNbOfTxsAccptd(self, value):
+		self._TtlNbOfTxsAccptd = value if type(value) != auto else self.make_default("TtlNbOfTxsAccptd")
 
-	@TxsRjctnsRsn.deleter
-	def TxsRjctnsRsn(self):
-		del self._TxsRjctnsRsn
-		self._TxsRjctnsRsn = None
+	@TtlNbOfTxsAccptd.deleter
+	def TtlNbOfTxsAccptd(self):
+		del self._TtlNbOfTxsAccptd
+		self._TtlNbOfTxsAccptd = None
 
 	@property
 	def TtlNbOfTxs(self):
@@ -57,10 +44,23 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		del self._TtlNbOfTxs
 		self._TtlNbOfTxs = None
 
+	@property
+	def TxsRjctnsRsn(self):
+		return self._TxsRjctnsRsn
+
+	@TxsRjctnsRsn.setter
+	def TxsRjctnsRsn(self, value):
+		self._TxsRjctnsRsn = value if type(value) != auto else self.make_default("TxsRjctnsRsn")
+
+	@TxsRjctnsRsn.deleter
+	def TxsRjctnsRsn(self):
+		del self._TxsRjctnsRsn
+		self._TxsRjctnsRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason53, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason53, min=0, max=None, mutex_group=None, array=True),
 	))
 

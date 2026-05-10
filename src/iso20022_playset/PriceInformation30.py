@@ -1,51 +1,25 @@
 import base_types
 import TypeOfPrice48Choice
-import MarketIdentification98
-import YieldedOrValueType1Choice
 import PriceRateOrAmountOrUnknown2Choice
 import DateAndDateTime2Choice
+import MarketIdentification98
+import YieldedOrValueType1Choice
 
 class PriceInformation30(base_types._BaseFieldType):
 
-	__slots__ = ["_SrcOfPric", "_Tp", "_ValTp", "_Val", "_QtnDt"]
+	__slots__ = ["_QtnDt", "_Val", "_SrcOfPric", "_ValTp", "_Tp"]
 	@property
-	def SrcOfPric(self):
-		return self._SrcOfPric
+	def QtnDt(self):
+		return self._QtnDt
 
-	@SrcOfPric.setter
-	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
 
-	@SrcOfPric.deleter
-	def SrcOfPric(self):
-		del self._SrcOfPric
-		self._SrcOfPric = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def ValTp(self):
-		return self._ValTp
-
-	@ValTp.setter
-	def ValTp(self, value):
-		self._ValTp = value if type(value) != auto else self.make_default("ValTp")
-
-	@ValTp.deleter
-	def ValTp(self):
-		del self._ValTp
-		self._ValTp = None
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
 
 	@property
 	def Val(self):
@@ -61,23 +35,49 @@ class PriceInformation30(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def QtnDt(self):
-		return self._QtnDt
+	def SrcOfPric(self):
+		return self._SrcOfPric
 
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+	@SrcOfPric.setter
+	def SrcOfPric(self, value):
+		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
 
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
+	@SrcOfPric.deleter
+	def SrcOfPric(self):
+		del self._SrcOfPric
+		self._SrcOfPric = None
+
+	@property
+	def ValTp(self):
+		return self._ValTp
+
+	@ValTp.setter
+	def ValTp(self, value):
+		self._ValTp = value if type(value) != auto else self.make_default("ValTp")
+
+	@ValTp.deleter
+	def ValTp(self):
+		del self._ValTp
+		self._ValTp = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification98, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeOfPrice48Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=PriceRateOrAmountOrUnknown2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceRateOrAmountOrUnknown2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification98, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfPrice48Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

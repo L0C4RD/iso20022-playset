@@ -1,23 +1,23 @@
 import base_types
-import LimitJournalEntry3
 import ISODate
+import LimitJournalEntry3
 import LimitAmount1
 
 class LimitJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_JrnlActvtyDt", "_JrnlNtry", "_Lmt"]
+	__slots__ = ["_Lmt", "_JrnlNtry", "_JrnlActvtyDt"]
 	@property
-	def JrnlActvtyDt(self):
-		return self._JrnlActvtyDt
+	def Lmt(self):
+		return self._Lmt
 
-	@JrnlActvtyDt.setter
-	def JrnlActvtyDt(self, value):
-		self._JrnlActvtyDt = value if type(value) != auto else self.make_default("JrnlActvtyDt")
+	@Lmt.setter
+	def Lmt(self, value):
+		self._Lmt = value if type(value) != auto else self.make_default("Lmt")
 
-	@JrnlActvtyDt.deleter
-	def JrnlActvtyDt(self):
-		del self._JrnlActvtyDt
-		self._JrnlActvtyDt = None
+	@Lmt.deleter
+	def Lmt(self):
+		del self._Lmt
+		self._Lmt = None
 
 	@property
 	def JrnlNtry(self):
@@ -33,21 +33,21 @@ class LimitJournal3(base_types._BaseFieldType):
 		self._JrnlNtry = None
 
 	@property
-	def Lmt(self):
-		return self._Lmt
+	def JrnlActvtyDt(self):
+		return self._JrnlActvtyDt
 
-	@Lmt.setter
-	def Lmt(self, value):
-		self._Lmt = value if type(value) != auto else self.make_default("Lmt")
+	@JrnlActvtyDt.setter
+	def JrnlActvtyDt(self, value):
+		self._JrnlActvtyDt = value if type(value) != auto else self.make_default("JrnlActvtyDt")
 
-	@Lmt.deleter
-	def Lmt(self):
-		del self._Lmt
-		self._Lmt = None
+	@JrnlActvtyDt.deleter
+	def JrnlActvtyDt(self):
+		del self._JrnlActvtyDt
+		self._JrnlActvtyDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='JrnlActvtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='JrnlNtry', type=LimitJournalEntry3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Lmt', type=LimitAmount1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='JrnlNtry', type=LimitJournalEntry3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='JrnlActvtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

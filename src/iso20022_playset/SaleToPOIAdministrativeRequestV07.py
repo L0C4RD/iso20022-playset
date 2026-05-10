@@ -1,7 +1,7 @@
 import base_types
-import ContentInformationType38
 import Header41
 import AdministrativeRequest8
+import ContentInformationType38
 
 class SaleToPOIAdministrativeRequestV07(base_types._BaseFieldType):
 

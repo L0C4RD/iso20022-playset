@@ -1,15 +1,28 @@
 import base_types
-import Max35Text
 import Max15NumericText
-import ExternalPaymentGroupStatus1Code
 import StatusReasonInformation14
 import DecimalNumber
+import ExternalPaymentGroupStatus1Code
+import Max35Text
 import NumberOfTransactionsPerStatus5
 import PaymentTransaction160
 
 class OriginalPaymentInstruction51(base_types._BaseFieldType):
 
-	__slots__ = ["_TxInfAndSts", "_PmtInfSts", "_OrgnlNbOfTxs", "_NbOfTxsPerSts", "_StsRsnInf", "_OrgnlCtrlSum", "_OrgnlPmtInfId"]
+	__slots__ = ["_OrgnlPmtInfId", "_TxInfAndSts", "_PmtInfSts", "_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_StsRsnInf", "_NbOfTxsPerSts"]
+	@property
+	def OrgnlPmtInfId(self):
+		return self._OrgnlPmtInfId
+
+	@OrgnlPmtInfId.setter
+	def OrgnlPmtInfId(self, value):
+		self._OrgnlPmtInfId = value if type(value) != auto else self.make_default("OrgnlPmtInfId")
+
+	@OrgnlPmtInfId.deleter
+	def OrgnlPmtInfId(self):
+		del self._OrgnlPmtInfId
+		self._OrgnlPmtInfId = None
+
 	@property
 	def TxInfAndSts(self):
 		return self._TxInfAndSts
@@ -50,17 +63,17 @@ class OriginalPaymentInstruction51(base_types._BaseFieldType):
 		self._OrgnlNbOfTxs = None
 
 	@property
-	def NbOfTxsPerSts(self):
-		return self._NbOfTxsPerSts
+	def OrgnlCtrlSum(self):
+		return self._OrgnlCtrlSum
 
-	@NbOfTxsPerSts.setter
-	def NbOfTxsPerSts(self, value):
-		self._NbOfTxsPerSts = value if type(value) != auto else self.make_default("NbOfTxsPerSts")
+	@OrgnlCtrlSum.setter
+	def OrgnlCtrlSum(self, value):
+		self._OrgnlCtrlSum = value if type(value) != auto else self.make_default("OrgnlCtrlSum")
 
-	@NbOfTxsPerSts.deleter
-	def NbOfTxsPerSts(self):
-		del self._NbOfTxsPerSts
-		self._NbOfTxsPerSts = None
+	@OrgnlCtrlSum.deleter
+	def OrgnlCtrlSum(self):
+		del self._OrgnlCtrlSum
+		self._OrgnlCtrlSum = None
 
 	@property
 	def StsRsnInf(self):
@@ -76,38 +89,25 @@ class OriginalPaymentInstruction51(base_types._BaseFieldType):
 		self._StsRsnInf = None
 
 	@property
-	def OrgnlCtrlSum(self):
-		return self._OrgnlCtrlSum
+	def NbOfTxsPerSts(self):
+		return self._NbOfTxsPerSts
 
-	@OrgnlCtrlSum.setter
-	def OrgnlCtrlSum(self, value):
-		self._OrgnlCtrlSum = value if type(value) != auto else self.make_default("OrgnlCtrlSum")
+	@NbOfTxsPerSts.setter
+	def NbOfTxsPerSts(self, value):
+		self._NbOfTxsPerSts = value if type(value) != auto else self.make_default("NbOfTxsPerSts")
 
-	@OrgnlCtrlSum.deleter
-	def OrgnlCtrlSum(self):
-		del self._OrgnlCtrlSum
-		self._OrgnlCtrlSum = None
-
-	@property
-	def OrgnlPmtInfId(self):
-		return self._OrgnlPmtInfId
-
-	@OrgnlPmtInfId.setter
-	def OrgnlPmtInfId(self, value):
-		self._OrgnlPmtInfId = value if type(value) != auto else self.make_default("OrgnlPmtInfId")
-
-	@OrgnlPmtInfId.deleter
-	def OrgnlPmtInfId(self):
-		del self._OrgnlPmtInfId
-		self._OrgnlPmtInfId = None
+	@NbOfTxsPerSts.deleter
+	def NbOfTxsPerSts(self):
+		del self._NbOfTxsPerSts
+		self._NbOfTxsPerSts = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlPmtInfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction160, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PmtInfSts', type=ExternalPaymentGroupStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTxsPerSts', type=NumberOfTransactionsPerStatus5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPmtInfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation14, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NbOfTxsPerSts', type=NumberOfTransactionsPerStatus5, min=0, max=None, mutex_group=None, array=True),
 	))
 

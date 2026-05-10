@@ -1,7 +1,7 @@
 import base_types
-import NoReasonCode
-import GenericIdentification175
 import UTIIdentifier
+import GenericIdentification175
+import NoReasonCode
 
 class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 

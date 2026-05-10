@@ -4,7 +4,20 @@ import UpdatedAdditionalInformation22
 
 class CorporateActionNarrative61(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnBrkdwn", "_InfConds", "_InfToCmplyWth", "_NrrtvVrsn", "_SctyRstrctn", "_AddtlTxt", "_TaxtnConds", "_Dsclmr"]
+	__slots__ = ["_NrrtvVrsn", "_CertfctnBrkdwn", "_Dsclmr", "_SctyRstrctn", "_AddtlTxt", "_TaxtnConds", "_InfToCmplyWth", "_InfConds"]
+	@property
+	def NrrtvVrsn(self):
+		return self._NrrtvVrsn
+
+	@NrrtvVrsn.setter
+	def NrrtvVrsn(self, value):
+		self._NrrtvVrsn = value if type(value) != auto else self.make_default("NrrtvVrsn")
+
+	@NrrtvVrsn.deleter
+	def NrrtvVrsn(self):
+		del self._NrrtvVrsn
+		self._NrrtvVrsn = None
+
 	@property
 	def CertfctnBrkdwn(self):
 		return self._CertfctnBrkdwn
@@ -19,43 +32,17 @@ class CorporateActionNarrative61(base_types._BaseFieldType):
 		self._CertfctnBrkdwn = None
 
 	@property
-	def InfConds(self):
-		return self._InfConds
+	def Dsclmr(self):
+		return self._Dsclmr
 
-	@InfConds.setter
-	def InfConds(self, value):
-		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
+	@Dsclmr.setter
+	def Dsclmr(self, value):
+		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
 
-	@InfConds.deleter
-	def InfConds(self):
-		del self._InfConds
-		self._InfConds = None
-
-	@property
-	def InfToCmplyWth(self):
-		return self._InfToCmplyWth
-
-	@InfToCmplyWth.setter
-	def InfToCmplyWth(self, value):
-		self._InfToCmplyWth = value if type(value) != auto else self.make_default("InfToCmplyWth")
-
-	@InfToCmplyWth.deleter
-	def InfToCmplyWth(self):
-		del self._InfToCmplyWth
-		self._InfToCmplyWth = None
-
-	@property
-	def NrrtvVrsn(self):
-		return self._NrrtvVrsn
-
-	@NrrtvVrsn.setter
-	def NrrtvVrsn(self, value):
-		self._NrrtvVrsn = value if type(value) != auto else self.make_default("NrrtvVrsn")
-
-	@NrrtvVrsn.deleter
-	def NrrtvVrsn(self):
-		del self._NrrtvVrsn
-		self._NrrtvVrsn = None
+	@Dsclmr.deleter
+	def Dsclmr(self):
+		del self._Dsclmr
+		self._Dsclmr = None
 
 	@property
 	def SctyRstrctn(self):
@@ -97,26 +84,39 @@ class CorporateActionNarrative61(base_types._BaseFieldType):
 		self._TaxtnConds = None
 
 	@property
-	def Dsclmr(self):
-		return self._Dsclmr
+	def InfToCmplyWth(self):
+		return self._InfToCmplyWth
 
-	@Dsclmr.setter
-	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
+	@InfToCmplyWth.setter
+	def InfToCmplyWth(self, value):
+		self._InfToCmplyWth = value if type(value) != auto else self.make_default("InfToCmplyWth")
 
-	@Dsclmr.deleter
-	def Dsclmr(self):
-		del self._Dsclmr
-		self._Dsclmr = None
+	@InfToCmplyWth.deleter
+	def InfToCmplyWth(self):
+		del self._InfToCmplyWth
+		self._InfToCmplyWth = None
+
+	@property
+	def InfConds(self):
+		return self._InfConds
+
+	@InfConds.setter
+	def InfConds(self, value):
+		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
+
+	@InfConds.deleter
+	def InfConds(self):
+		del self._InfConds
+		self._InfConds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CertfctnBrkdwn', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfToCmplyWth', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NrrtvVrsn', type=UpdatedAdditionalInformation22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnBrkdwn', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsclmr', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyRstrctn', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dsclmr', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfToCmplyWth', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation23, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,25 @@
 import base_types
-import ActiveOrHistoricCurrencyAndAmount
 import CashAccount40
+import ActiveOrHistoricCurrencyAndAmount
 import ISODate
 import CancellationReason33Choice
 import Max140Text
 
 class DebitAuthorisation3(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_Acct", "_AddtlCxlRsnInf", "_ValDtToDbt", "_AmtToDbt"]
+	__slots__ = ["_AddtlCxlRsnInf", "_Acct", "_ValDtToDbt", "_CxlRsn", "_AmtToDbt"]
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def AddtlCxlRsnInf(self):
+		return self._AddtlCxlRsnInf
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@AddtlCxlRsnInf.setter
+	def AddtlCxlRsnInf(self, value):
+		self._AddtlCxlRsnInf = value if type(value) != auto else self.make_default("AddtlCxlRsnInf")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
+	@AddtlCxlRsnInf.deleter
+	def AddtlCxlRsnInf(self):
+		del self._AddtlCxlRsnInf
+		self._AddtlCxlRsnInf = None
 
 	@property
 	def Acct(self):
@@ -35,19 +35,6 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
-	def AddtlCxlRsnInf(self):
-		return self._AddtlCxlRsnInf
-
-	@AddtlCxlRsnInf.setter
-	def AddtlCxlRsnInf(self, value):
-		self._AddtlCxlRsnInf = value if type(value) != auto else self.make_default("AddtlCxlRsnInf")
-
-	@AddtlCxlRsnInf.deleter
-	def AddtlCxlRsnInf(self):
-		del self._AddtlCxlRsnInf
-		self._AddtlCxlRsnInf = None
-
-	@property
 	def ValDtToDbt(self):
 		return self._ValDtToDbt
 
@@ -59,6 +46,19 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 	def ValDtToDbt(self):
 		del self._ValDtToDbt
 		self._ValDtToDbt = None
+
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	@property
 	def AmtToDbt(self):
@@ -74,10 +74,10 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 		self._AmtToDbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=CancellationReason33Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCxlRsnInf', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=CancellationReason33Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtToDbt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

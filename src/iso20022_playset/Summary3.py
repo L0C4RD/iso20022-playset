@@ -1,39 +1,26 @@
 import base_types
-import ExposureType13Code
-import ActiveCurrencyAndAmount
+import ISODateTime
 import ShortLong1Code
 import SummaryAmounts2
-import ISODateTime
 import ISODate
+import ActiveCurrencyAndAmount
+import ExposureType13Code
 
 class Summary3(base_types._BaseFieldType):
 
-	__slots__ = ["_XpsdAmtPtyB", "_NetXcssDfcitInd", "_ValtnDtTm", "_ReqdSttlmDt", "_XpsdAmtPtyA", "_NetXcssDfcit", "_XpsrTp", "_SummryDtls", "_TtlValOfColl"]
+	__slots__ = ["_NetXcssDfcit", "_ValtnDtTm", "_SummryDtls", "_XpsdAmtPtyB", "_XpsdAmtPtyA", "_XpsrTp", "_TtlValOfColl", "_ReqdSttlmDt", "_NetXcssDfcitInd"]
 	@property
-	def XpsdAmtPtyB(self):
-		return self._XpsdAmtPtyB
+	def NetXcssDfcit(self):
+		return self._NetXcssDfcit
 
-	@XpsdAmtPtyB.setter
-	def XpsdAmtPtyB(self, value):
-		self._XpsdAmtPtyB = value if type(value) != auto else self.make_default("XpsdAmtPtyB")
+	@NetXcssDfcit.setter
+	def NetXcssDfcit(self, value):
+		self._NetXcssDfcit = value if type(value) != auto else self.make_default("NetXcssDfcit")
 
-	@XpsdAmtPtyB.deleter
-	def XpsdAmtPtyB(self):
-		del self._XpsdAmtPtyB
-		self._XpsdAmtPtyB = None
-
-	@property
-	def NetXcssDfcitInd(self):
-		return self._NetXcssDfcitInd
-
-	@NetXcssDfcitInd.setter
-	def NetXcssDfcitInd(self, value):
-		self._NetXcssDfcitInd = value if type(value) != auto else self.make_default("NetXcssDfcitInd")
-
-	@NetXcssDfcitInd.deleter
-	def NetXcssDfcitInd(self):
-		del self._NetXcssDfcitInd
-		self._NetXcssDfcitInd = None
+	@NetXcssDfcit.deleter
+	def NetXcssDfcit(self):
+		del self._NetXcssDfcit
+		self._NetXcssDfcit = None
 
 	@property
 	def ValtnDtTm(self):
@@ -49,17 +36,30 @@ class Summary3(base_types._BaseFieldType):
 		self._ValtnDtTm = None
 
 	@property
-	def ReqdSttlmDt(self):
-		return self._ReqdSttlmDt
+	def SummryDtls(self):
+		return self._SummryDtls
 
-	@ReqdSttlmDt.setter
-	def ReqdSttlmDt(self, value):
-		self._ReqdSttlmDt = value if type(value) != auto else self.make_default("ReqdSttlmDt")
+	@SummryDtls.setter
+	def SummryDtls(self, value):
+		self._SummryDtls = value if type(value) != auto else self.make_default("SummryDtls")
 
-	@ReqdSttlmDt.deleter
-	def ReqdSttlmDt(self):
-		del self._ReqdSttlmDt
-		self._ReqdSttlmDt = None
+	@SummryDtls.deleter
+	def SummryDtls(self):
+		del self._SummryDtls
+		self._SummryDtls = None
+
+	@property
+	def XpsdAmtPtyB(self):
+		return self._XpsdAmtPtyB
+
+	@XpsdAmtPtyB.setter
+	def XpsdAmtPtyB(self, value):
+		self._XpsdAmtPtyB = value if type(value) != auto else self.make_default("XpsdAmtPtyB")
+
+	@XpsdAmtPtyB.deleter
+	def XpsdAmtPtyB(self):
+		del self._XpsdAmtPtyB
+		self._XpsdAmtPtyB = None
 
 	@property
 	def XpsdAmtPtyA(self):
@@ -75,19 +75,6 @@ class Summary3(base_types._BaseFieldType):
 		self._XpsdAmtPtyA = None
 
 	@property
-	def NetXcssDfcit(self):
-		return self._NetXcssDfcit
-
-	@NetXcssDfcit.setter
-	def NetXcssDfcit(self, value):
-		self._NetXcssDfcit = value if type(value) != auto else self.make_default("NetXcssDfcit")
-
-	@NetXcssDfcit.deleter
-	def NetXcssDfcit(self):
-		del self._NetXcssDfcit
-		self._NetXcssDfcit = None
-
-	@property
 	def XpsrTp(self):
 		return self._XpsrTp
 
@@ -99,19 +86,6 @@ class Summary3(base_types._BaseFieldType):
 	def XpsrTp(self):
 		del self._XpsrTp
 		self._XpsrTp = None
-
-	@property
-	def SummryDtls(self):
-		return self._SummryDtls
-
-	@SummryDtls.setter
-	def SummryDtls(self, value):
-		self._SummryDtls = value if type(value) != auto else self.make_default("SummryDtls")
-
-	@SummryDtls.deleter
-	def SummryDtls(self):
-		del self._SummryDtls
-		self._SummryDtls = None
 
 	@property
 	def TtlValOfColl(self):
@@ -126,15 +100,41 @@ class Summary3(base_types._BaseFieldType):
 		del self._TtlValOfColl
 		self._TtlValOfColl = None
 
+	@property
+	def ReqdSttlmDt(self):
+		return self._ReqdSttlmDt
+
+	@ReqdSttlmDt.setter
+	def ReqdSttlmDt(self, value):
+		self._ReqdSttlmDt = value if type(value) != auto else self.make_default("ReqdSttlmDt")
+
+	@ReqdSttlmDt.deleter
+	def ReqdSttlmDt(self):
+		del self._ReqdSttlmDt
+		self._ReqdSttlmDt = None
+
+	@property
+	def NetXcssDfcitInd(self):
+		return self._NetXcssDfcitInd
+
+	@NetXcssDfcitInd.setter
+	def NetXcssDfcitInd(self, value):
+		self._NetXcssDfcitInd = value if type(value) != auto else self.make_default("NetXcssDfcitInd")
+
+	@NetXcssDfcitInd.deleter
+	def NetXcssDfcitInd(self):
+		del self._NetXcssDfcitInd
+		self._NetXcssDfcitInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpsdAmtPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetXcssDfcitInd', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsdAmtPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXcssDfcit', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsrTp', type=ExposureType13Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SummryDtls', type=SummaryAmounts2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsdAmtPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsdAmtPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsrTp', type=ExposureType13Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlValOfColl', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetXcssDfcitInd', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

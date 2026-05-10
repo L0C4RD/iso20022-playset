@@ -1,40 +1,14 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import BalanceStatus1Code
-import Number
-import BalanceType9Choice
 import CreditDebitCode
+import ImpliedCurrencyAndAmount
 import DateAndDateTime2Choice
+import BalanceType9Choice
+import Number
+import BalanceStatus1Code
 
 class CashBalance11(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfPmts", "_ValDt", "_Tp", "_CdtDbtInd", "_Sts", "_Amt"]
-	@property
-	def NbOfPmts(self):
-		return self._NbOfPmts
-
-	@NbOfPmts.setter
-	def NbOfPmts(self, value):
-		self._NbOfPmts = value if type(value) != auto else self.make_default("NbOfPmts")
-
-	@NbOfPmts.deleter
-	def NbOfPmts(self):
-		del self._NbOfPmts
-		self._NbOfPmts = None
-
-	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
+	__slots__ = ["_Tp", "_CdtDbtInd", "_NbOfPmts", "_Amt", "_ValDt", "_Sts"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -62,17 +36,17 @@ class CashBalance11(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def NbOfPmts(self):
+		return self._NbOfPmts
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@NbOfPmts.setter
+	def NbOfPmts(self, value):
+		self._NbOfPmts = value if type(value) != auto else self.make_default("NbOfPmts")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@NbOfPmts.deleter
+	def NbOfPmts(self):
+		del self._NbOfPmts
+		self._NbOfPmts = None
 
 	@property
 	def Amt(self):
@@ -87,12 +61,38 @@ class CashBalance11(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=BalanceStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=BalanceStatus1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

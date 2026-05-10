@@ -3,7 +3,7 @@ import RestrictedFINXMax350Text
 
 class CorporateActionNarrative33(base_types._BaseFieldType):
 
-	__slots__ = ["_InfToCmplyWth", "_DlvryDtls", "_InstrAddtlInf", "_FXInstrsAddtlInf"]
+	__slots__ = ["_InfToCmplyWth", "_FXInstrsAddtlInf", "_InstrAddtlInf", "_DlvryDtls"]
 	@property
 	def InfToCmplyWth(self):
 		return self._InfToCmplyWth
@@ -18,17 +18,17 @@ class CorporateActionNarrative33(base_types._BaseFieldType):
 		self._InfToCmplyWth = None
 
 	@property
-	def DlvryDtls(self):
-		return self._DlvryDtls
+	def FXInstrsAddtlInf(self):
+		return self._FXInstrsAddtlInf
 
-	@DlvryDtls.setter
-	def DlvryDtls(self, value):
-		self._DlvryDtls = value if type(value) != auto else self.make_default("DlvryDtls")
+	@FXInstrsAddtlInf.setter
+	def FXInstrsAddtlInf(self, value):
+		self._FXInstrsAddtlInf = value if type(value) != auto else self.make_default("FXInstrsAddtlInf")
 
-	@DlvryDtls.deleter
-	def DlvryDtls(self):
-		del self._DlvryDtls
-		self._DlvryDtls = None
+	@FXInstrsAddtlInf.deleter
+	def FXInstrsAddtlInf(self):
+		del self._FXInstrsAddtlInf
+		self._FXInstrsAddtlInf = None
 
 	@property
 	def InstrAddtlInf(self):
@@ -44,22 +44,22 @@ class CorporateActionNarrative33(base_types._BaseFieldType):
 		self._InstrAddtlInf = None
 
 	@property
-	def FXInstrsAddtlInf(self):
-		return self._FXInstrsAddtlInf
+	def DlvryDtls(self):
+		return self._DlvryDtls
 
-	@FXInstrsAddtlInf.setter
-	def FXInstrsAddtlInf(self, value):
-		self._FXInstrsAddtlInf = value if type(value) != auto else self.make_default("FXInstrsAddtlInf")
+	@DlvryDtls.setter
+	def DlvryDtls(self, value):
+		self._DlvryDtls = value if type(value) != auto else self.make_default("DlvryDtls")
 
-	@FXInstrsAddtlInf.deleter
-	def FXInstrsAddtlInf(self):
-		del self._FXInstrsAddtlInf
-		self._FXInstrsAddtlInf = None
+	@DlvryDtls.deleter
+	def DlvryDtls(self):
+		del self._DlvryDtls
+		self._DlvryDtls = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InfToCmplyWth', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlvryDtls', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InstrAddtlInf', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FXInstrsAddtlInf', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InstrAddtlInf', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvryDtls', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

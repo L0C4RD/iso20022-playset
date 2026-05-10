@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import TaxReferenceType1Choice
+import Max35Text
 
 class TaxReference2(base_types._BaseFieldType):
 

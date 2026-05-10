@@ -1,38 +1,12 @@
 import base_types
 import Exact3NumericText
-import Max35Text
-import ActiveCurrencyCode
 import Number
+import ActiveCurrencyCode
+import Max35Text
 
 class CurrencyDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_NmrcCd", "_Dcml", "_Nm", "_AlphaCd"]
-	@property
-	def NmrcCd(self):
-		return self._NmrcCd
-
-	@NmrcCd.setter
-	def NmrcCd(self, value):
-		self._NmrcCd = value if type(value) != auto else self.make_default("NmrcCd")
-
-	@NmrcCd.deleter
-	def NmrcCd(self):
-		del self._NmrcCd
-		self._NmrcCd = None
-
-	@property
-	def Dcml(self):
-		return self._Dcml
-
-	@Dcml.setter
-	def Dcml(self, value):
-		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
-
-	@Dcml.deleter
-	def Dcml(self):
-		del self._Dcml
-		self._Dcml = None
-
+	__slots__ = ["_Nm", "_AlphaCd", "_Dcml", "_NmrcCd"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -59,10 +33,36 @@ class CurrencyDetails3(base_types._BaseFieldType):
 		del self._AlphaCd
 		self._AlphaCd = None
 
+	@property
+	def Dcml(self):
+		return self._Dcml
+
+	@Dcml.setter
+	def Dcml(self, value):
+		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
+
+	@Dcml.deleter
+	def Dcml(self):
+		del self._Dcml
+		self._Dcml = None
+
+	@property
+	def NmrcCd(self):
+		return self._NmrcCd
+
+	@NmrcCd.setter
+	def NmrcCd(self, value):
+		self._NmrcCd = value if type(value) != auto else self.make_default("NmrcCd")
+
+	@NmrcCd.deleter
+	def NmrcCd(self):
+		del self._NmrcCd
+		self._NmrcCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dcml', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AlphaCd', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dcml', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

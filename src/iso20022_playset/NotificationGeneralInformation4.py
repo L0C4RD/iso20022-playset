@@ -1,24 +1,24 @@
 import base_types
-import EventStatus1
 import NotificationType3Code
-import Max35Text
 import YesNoIndicator
+import EventStatus1
+import Max35Text
 
 class NotificationGeneralInformation4(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfOfHldgReqrd", "_ShrhldrRghtsDrctvInd", "_NtfctnTp", "_NtfctnSts", "_NtfctnId"]
+	__slots__ = ["_NtfctnId", "_ShrhldrRghtsDrctvInd", "_NtfctnTp", "_ConfOfHldgReqrd", "_NtfctnSts"]
 	@property
-	def ConfOfHldgReqrd(self):
-		return self._ConfOfHldgReqrd
+	def NtfctnId(self):
+		return self._NtfctnId
 
-	@ConfOfHldgReqrd.setter
-	def ConfOfHldgReqrd(self, value):
-		self._ConfOfHldgReqrd = value if type(value) != auto else self.make_default("ConfOfHldgReqrd")
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
 
-	@ConfOfHldgReqrd.deleter
-	def ConfOfHldgReqrd(self):
-		del self._ConfOfHldgReqrd
-		self._ConfOfHldgReqrd = None
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
 
 	@property
 	def ShrhldrRghtsDrctvInd(self):
@@ -47,6 +47,19 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 		self._NtfctnTp = None
 
 	@property
+	def ConfOfHldgReqrd(self):
+		return self._ConfOfHldgReqrd
+
+	@ConfOfHldgReqrd.setter
+	def ConfOfHldgReqrd(self, value):
+		self._ConfOfHldgReqrd = value if type(value) != auto else self.make_default("ConfOfHldgReqrd")
+
+	@ConfOfHldgReqrd.deleter
+	def ConfOfHldgReqrd(self):
+		del self._ConfOfHldgReqrd
+		self._ConfOfHldgReqrd = None
+
+	@property
 	def NtfctnSts(self):
 		return self._NtfctnSts
 
@@ -59,24 +72,11 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 		del self._NtfctnSts
 		self._NtfctnSts = None
 
-	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfOfHldgReqrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrhldrRghtsDrctvInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnTp', type=NotificationType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfOfHldgReqrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnSts', type=EventStatus1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

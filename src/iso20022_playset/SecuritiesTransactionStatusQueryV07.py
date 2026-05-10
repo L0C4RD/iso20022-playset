@@ -1,13 +1,13 @@
 import base_types
-import BlockChainAddressWallet3
-import PartyIdentification144
 import DocumentNumber20
-import SupplementaryData1
 import SecuritiesAccount22
+import PartyIdentification144
+import BlockChainAddressWallet3
+import SupplementaryData1
 
 class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_StsAdvcReqd", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AcctOwnr"]
+	__slots__ = ["_SplmtryData", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AcctOwnr", "_StsAdvcReqd"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def StsAdvcReqd(self):
-		return self._StsAdvcReqd
-
-	@StsAdvcReqd.setter
-	def StsAdvcReqd(self, value):
-		self._StsAdvcReqd = value if type(value) != auto else self.make_default("StsAdvcReqd")
-
-	@StsAdvcReqd.deleter
-	def StsAdvcReqd(self):
-		del self._StsAdvcReqd
-		self._StsAdvcReqd = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -73,11 +60,24 @@ class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 		del self._AcctOwnr
 		self._AcctOwnr = None
 
+	@property
+	def StsAdvcReqd(self):
+		return self._StsAdvcReqd
+
+	@StsAdvcReqd.setter
+	def StsAdvcReqd(self, value):
+		self._StsAdvcReqd = value if type(value) != auto else self.make_default("StsAdvcReqd")
+
+	@StsAdvcReqd.deleter
+	def StsAdvcReqd(self):
+		del self._StsAdvcReqd
+		self._StsAdvcReqd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsAdvcReqd', type=DocumentNumber20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsAdvcReqd', type=DocumentNumber20, min=1, max=1, mutex_group=None, array=False),
 	))
 

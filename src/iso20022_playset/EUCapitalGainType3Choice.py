@@ -1,6 +1,6 @@
 import base_types
-import EUCapitalGain2Code
 import GenericIdentification30
+import EUCapitalGain2Code
 
 class EUCapitalGainType3Choice(base_types._BaseFieldType):
 

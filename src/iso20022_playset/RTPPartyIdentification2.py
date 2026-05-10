@@ -1,38 +1,25 @@
 import base_types
-import Party53Choice
-import PostalAddress27
 import Contact13
-import CountryCode
+import PostalAddress27
 import Max140Text
+import CountryCode
+import Party53Choice
 
 class RTPPartyIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_Nm", "_CtryOfRes", "_Id", "_PstlAdr"]
+	__slots__ = ["_PstlAdr", "_CtryOfRes", "_CtctDtls", "_Id", "_Nm"]
 	@property
-	def CtctDtls(self):
-		return self._CtctDtls
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
 	def CtryOfRes(self):
@@ -48,6 +35,19 @@ class RTPPartyIdentification2(base_types._BaseFieldType):
 		self._CtryOfRes = None
 
 	@property
+	def CtctDtls(self):
+		return self._CtctDtls
+
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -61,23 +61,23 @@ class RTPPartyIdentification2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def Nm(self):
+		return self._Nm
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctDtls', type=Contact13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Party53Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=Contact13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Party53Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax30Text
 import Max4AlphaNumericText
+import RestrictedFINXMax30Text
 
 class GenericIdentification86(base_types._BaseFieldType):
 

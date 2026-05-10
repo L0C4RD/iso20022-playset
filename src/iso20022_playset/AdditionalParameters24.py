@@ -1,23 +1,23 @@
 import base_types
+import PreConfirmation1Code
 import PartialSettlement2Code
 import Max35Text
-import PreConfirmation1Code
 
 class AdditionalParameters24(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlSttlm", "_PreConf", "_PrvsPrtlConfId"]
+	__slots__ = ["_PrvsPrtlConfId", "_PreConf", "_PrtlSttlm"]
 	@property
-	def PrtlSttlm(self):
-		return self._PrtlSttlm
+	def PrvsPrtlConfId(self):
+		return self._PrvsPrtlConfId
 
-	@PrtlSttlm.setter
-	def PrtlSttlm(self, value):
-		self._PrtlSttlm = value if type(value) != auto else self.make_default("PrtlSttlm")
+	@PrvsPrtlConfId.setter
+	def PrvsPrtlConfId(self, value):
+		self._PrvsPrtlConfId = value if type(value) != auto else self.make_default("PrvsPrtlConfId")
 
-	@PrtlSttlm.deleter
-	def PrtlSttlm(self):
-		del self._PrtlSttlm
-		self._PrtlSttlm = None
+	@PrvsPrtlConfId.deleter
+	def PrvsPrtlConfId(self):
+		del self._PrvsPrtlConfId
+		self._PrvsPrtlConfId = None
 
 	@property
 	def PreConf(self):
@@ -33,21 +33,21 @@ class AdditionalParameters24(base_types._BaseFieldType):
 		self._PreConf = None
 
 	@property
-	def PrvsPrtlConfId(self):
-		return self._PrvsPrtlConfId
+	def PrtlSttlm(self):
+		return self._PrtlSttlm
 
-	@PrvsPrtlConfId.setter
-	def PrvsPrtlConfId(self, value):
-		self._PrvsPrtlConfId = value if type(value) != auto else self.make_default("PrvsPrtlConfId")
+	@PrtlSttlm.setter
+	def PrtlSttlm(self, value):
+		self._PrtlSttlm = value if type(value) != auto else self.make_default("PrtlSttlm")
 
-	@PrvsPrtlConfId.deleter
-	def PrvsPrtlConfId(self):
-		del self._PrvsPrtlConfId
-		self._PrvsPrtlConfId = None
+	@PrtlSttlm.deleter
+	def PrtlSttlm(self):
+		del self._PrtlSttlm
+		self._PrtlSttlm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsPrtlConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

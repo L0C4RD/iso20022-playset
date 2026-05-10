@@ -1,14 +1,14 @@
 import base_types
+import PersonName3
 import Max35Text
 import DateAndPlaceOfBirth2
+import CountryCode
 import NaturalPersonIdentification1
 import Max256Text
-import PersonName3
-import CountryCode
 
 class PartyIdentification250(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntlty", "_CpnyRegrShrhldrId", "_Id", "_DtAndPlcOfBirth", "_NmAndAdr", "_EmailAdr"]
+	__slots__ = ["_Ntlty", "_CpnyRegrShrhldrId", "_Id", "_NmAndAdr", "_DtAndPlcOfBirth", "_EmailAdr"]
 	@property
 	def Ntlty(self):
 		return self._Ntlty
@@ -49,19 +49,6 @@ class PartyIdentification250(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def DtAndPlcOfBirth(self):
-		return self._DtAndPlcOfBirth
-
-	@DtAndPlcOfBirth.setter
-	def DtAndPlcOfBirth(self, value):
-		self._DtAndPlcOfBirth = value if type(value) != auto else self.make_default("DtAndPlcOfBirth")
-
-	@DtAndPlcOfBirth.deleter
-	def DtAndPlcOfBirth(self):
-		del self._DtAndPlcOfBirth
-		self._DtAndPlcOfBirth = None
-
-	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
 
@@ -73,6 +60,19 @@ class PartyIdentification250(base_types._BaseFieldType):
 	def NmAndAdr(self):
 		del self._NmAndAdr
 		self._NmAndAdr = None
+
+	@property
+	def DtAndPlcOfBirth(self):
+		return self._DtAndPlcOfBirth
+
+	@DtAndPlcOfBirth.setter
+	def DtAndPlcOfBirth(self, value):
+		self._DtAndPlcOfBirth = value if type(value) != auto else self.make_default("DtAndPlcOfBirth")
+
+	@DtAndPlcOfBirth.deleter
+	def DtAndPlcOfBirth(self):
+		del self._DtAndPlcOfBirth
+		self._DtAndPlcOfBirth = None
 
 	@property
 	def EmailAdr(self):
@@ -91,8 +91,8 @@ class PartyIdentification250(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ntlty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpnyRegrShrhldrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=NaturalPersonIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=PersonName3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

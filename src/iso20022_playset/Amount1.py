@@ -1,11 +1,11 @@
 import base_types
-import ActiveCurrencyAndAmount
 import Max210Text
+import ActiveCurrencyAndAmount
 import Max35Text
 
 class Amount1(base_types._BaseFieldType):
 
-	__slots__ = ["_AgrdAmt", "_AddtlInf", "_MrgnCallReqId"]
+	__slots__ = ["_AgrdAmt", "_MrgnCallReqId", "_AddtlInf"]
 	@property
 	def AgrdAmt(self):
 		return self._AgrdAmt
@@ -20,19 +20,6 @@ class Amount1(base_types._BaseFieldType):
 		self._AgrdAmt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def MrgnCallReqId(self):
 		return self._MrgnCallReqId
 
@@ -45,9 +32,22 @@ class Amount1(base_types._BaseFieldType):
 		del self._MrgnCallReqId
 		self._MrgnCallReqId = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,53 +1,14 @@
 import base_types
-import RestrictedMonthExact2Number
-import Number
-import Max25Text
-import ISODate
-import ISINOct2015Identifier
 import ActiveOrHistoricCurrencyCode
+import Number
+import ISINOct2015Identifier
+import ISODate
+import RestrictedMonthExact2Number
+import Max25Text
 
 class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_UndrlygIndxId", "_RollMnth", "_NtnlCcy", "_NxtRollDt", "_UndrlygIndxNm", "_Srs"]
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
-	def UndrlygIndxId(self):
-		return self._UndrlygIndxId
-
-	@UndrlygIndxId.setter
-	def UndrlygIndxId(self, value):
-		self._UndrlygIndxId = value if type(value) != auto else self.make_default("UndrlygIndxId")
-
-	@UndrlygIndxId.deleter
-	def UndrlygIndxId(self):
-		del self._UndrlygIndxId
-		self._UndrlygIndxId = None
-
-	@property
-	def RollMnth(self):
-		return self._RollMnth
-
-	@RollMnth.setter
-	def RollMnth(self, value):
-		self._RollMnth = value if type(value) != auto else self.make_default("RollMnth")
-
-	@RollMnth.deleter
-	def RollMnth(self):
-		del self._RollMnth
-		self._RollMnth = None
-
+	__slots__ = ["_NtnlCcy", "_Srs", "_UndrlygIndxNm", "_NxtRollDt", "_Vrsn", "_RollMnth", "_UndrlygIndxId"]
 	@property
 	def NtnlCcy(self):
 		return self._NtnlCcy
@@ -62,17 +23,17 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 		self._NtnlCcy = None
 
 	@property
-	def NxtRollDt(self):
-		return self._NxtRollDt
+	def Srs(self):
+		return self._Srs
 
-	@NxtRollDt.setter
-	def NxtRollDt(self, value):
-		self._NxtRollDt = value if type(value) != auto else self.make_default("NxtRollDt")
+	@Srs.setter
+	def Srs(self, value):
+		self._Srs = value if type(value) != auto else self.make_default("Srs")
 
-	@NxtRollDt.deleter
-	def NxtRollDt(self):
-		del self._NxtRollDt
-		self._NxtRollDt = None
+	@Srs.deleter
+	def Srs(self):
+		del self._Srs
+		self._Srs = None
 
 	@property
 	def UndrlygIndxNm(self):
@@ -88,25 +49,64 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 		self._UndrlygIndxNm = None
 
 	@property
-	def Srs(self):
-		return self._Srs
+	def NxtRollDt(self):
+		return self._NxtRollDt
 
-	@Srs.setter
-	def Srs(self, value):
-		self._Srs = value if type(value) != auto else self.make_default("Srs")
+	@NxtRollDt.setter
+	def NxtRollDt(self, value):
+		self._NxtRollDt = value if type(value) != auto else self.make_default("NxtRollDt")
 
-	@Srs.deleter
-	def Srs(self):
-		del self._Srs
-		self._Srs = None
+	@NxtRollDt.deleter
+	def NxtRollDt(self):
+		del self._NxtRollDt
+		self._NxtRollDt = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def RollMnth(self):
+		return self._RollMnth
+
+	@RollMnth.setter
+	def RollMnth(self, value):
+		self._RollMnth = value if type(value) != auto else self.make_default("RollMnth")
+
+	@RollMnth.deleter
+	def RollMnth(self):
+		del self._RollMnth
+		self._RollMnth = None
+
+	@property
+	def UndrlygIndxId(self):
+		return self._UndrlygIndxId
+
+	@UndrlygIndxId.setter
+	def UndrlygIndxId(self, value):
+		self._UndrlygIndxId = value if type(value) != auto else self.make_default("UndrlygIndxId")
+
+	@UndrlygIndxId.deleter
+	def UndrlygIndxId(self):
+		del self._UndrlygIndxId
+		self._UndrlygIndxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygIndxId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RollMnth', type=RestrictedMonthExact2Number, min=0, max=12, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtRollDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygIndxNm', type=Max25Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Srs', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygIndxNm', type=Max25Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtRollDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RollMnth', type=RestrictedMonthExact2Number, min=0, max=12, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygIndxId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

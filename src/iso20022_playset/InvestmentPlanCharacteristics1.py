@@ -1,39 +1,26 @@
 import base_types
-import UnitsOrAmount1Choice
-import Number
 import Frequency20Choice
-import YesNoIndicator
+import Number
 import InvestmentFundPlanType1Choice
+import YesNoIndicator
 import AdditionalInformation15
+import UnitsOrAmount1Choice
 
 class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfInstlmts", "_AddtlSbcptFctn", "_PlanConttn", "_PlanTp", "_AddtlSbcpt", "_AddtlInf", "_Frqcy", "_Qty"]
+	__slots__ = ["_PlanTp", "_PlanConttn", "_AddtlInf", "_AddtlSbcptFctn", "_AddtlSbcpt", "_TtlNbOfInstlmts", "_Frqcy", "_Qty"]
 	@property
-	def TtlNbOfInstlmts(self):
-		return self._TtlNbOfInstlmts
+	def PlanTp(self):
+		return self._PlanTp
 
-	@TtlNbOfInstlmts.setter
-	def TtlNbOfInstlmts(self, value):
-		self._TtlNbOfInstlmts = value if type(value) != auto else self.make_default("TtlNbOfInstlmts")
+	@PlanTp.setter
+	def PlanTp(self, value):
+		self._PlanTp = value if type(value) != auto else self.make_default("PlanTp")
 
-	@TtlNbOfInstlmts.deleter
-	def TtlNbOfInstlmts(self):
-		del self._TtlNbOfInstlmts
-		self._TtlNbOfInstlmts = None
-
-	@property
-	def AddtlSbcptFctn(self):
-		return self._AddtlSbcptFctn
-
-	@AddtlSbcptFctn.setter
-	def AddtlSbcptFctn(self, value):
-		self._AddtlSbcptFctn = value if type(value) != auto else self.make_default("AddtlSbcptFctn")
-
-	@AddtlSbcptFctn.deleter
-	def AddtlSbcptFctn(self):
-		del self._AddtlSbcptFctn
-		self._AddtlSbcptFctn = None
+	@PlanTp.deleter
+	def PlanTp(self):
+		del self._PlanTp
+		self._PlanTp = None
 
 	@property
 	def PlanConttn(self):
@@ -49,17 +36,30 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 		self._PlanConttn = None
 
 	@property
-	def PlanTp(self):
-		return self._PlanTp
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@PlanTp.setter
-	def PlanTp(self, value):
-		self._PlanTp = value if type(value) != auto else self.make_default("PlanTp")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@PlanTp.deleter
-	def PlanTp(self):
-		del self._PlanTp
-		self._PlanTp = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def AddtlSbcptFctn(self):
+		return self._AddtlSbcptFctn
+
+	@AddtlSbcptFctn.setter
+	def AddtlSbcptFctn(self, value):
+		self._AddtlSbcptFctn = value if type(value) != auto else self.make_default("AddtlSbcptFctn")
+
+	@AddtlSbcptFctn.deleter
+	def AddtlSbcptFctn(self):
+		del self._AddtlSbcptFctn
+		self._AddtlSbcptFctn = None
 
 	@property
 	def AddtlSbcpt(self):
@@ -75,17 +75,17 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 		self._AddtlSbcpt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def TtlNbOfInstlmts(self):
+		return self._TtlNbOfInstlmts
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@TtlNbOfInstlmts.setter
+	def TtlNbOfInstlmts(self, value):
+		self._TtlNbOfInstlmts = value if type(value) != auto else self.make_default("TtlNbOfInstlmts")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@TtlNbOfInstlmts.deleter
+	def TtlNbOfInstlmts(self):
+		del self._TtlNbOfInstlmts
+		self._TtlNbOfInstlmts = None
 
 	@property
 	def Frqcy(self):
@@ -114,12 +114,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 		self._Qty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfInstlmts', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSbcptFctn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlanConttn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlanTp', type=InvestmentFundPlanType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSbcpt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlanConttn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlSbcptFctn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSbcpt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfInstlmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency20Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=UnitsOrAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 	))

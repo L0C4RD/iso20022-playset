@@ -1,24 +1,11 @@
 import base_types
-import Count1
 import MessageIdentification1
 import SimpleIdentificationInformation
+import Count1
 
 class AmendmentAcceptanceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdAmdmntNb", "_DltaRptRef", "_AccptncId", "_TxId", "_SubmitrTxRef"]
-	@property
-	def AccptdAmdmntNb(self):
-		return self._AccptdAmdmntNb
-
-	@AccptdAmdmntNb.setter
-	def AccptdAmdmntNb(self, value):
-		self._AccptdAmdmntNb = value if type(value) != auto else self.make_default("AccptdAmdmntNb")
-
-	@AccptdAmdmntNb.deleter
-	def AccptdAmdmntNb(self):
-		del self._AccptdAmdmntNb
-		self._AccptdAmdmntNb = None
-
+	__slots__ = ["_DltaRptRef", "_AccptncId", "_AccptdAmdmntNb", "_TxId", "_SubmitrTxRef"]
 	@property
 	def DltaRptRef(self):
 		return self._DltaRptRef
@@ -44,6 +31,19 @@ class AmendmentAcceptanceV02(base_types._BaseFieldType):
 	def AccptncId(self):
 		del self._AccptncId
 		self._AccptncId = None
+
+	@property
+	def AccptdAmdmntNb(self):
+		return self._AccptdAmdmntNb
+
+	@AccptdAmdmntNb.setter
+	def AccptdAmdmntNb(self, value):
+		self._AccptdAmdmntNb = value if type(value) != auto else self.make_default("AccptdAmdmntNb")
+
+	@AccptdAmdmntNb.deleter
+	def AccptdAmdmntNb(self):
+		del self._AccptdAmdmntNb
+		self._AccptdAmdmntNb = None
 
 	@property
 	def TxId(self):
@@ -72,9 +72,9 @@ class AmendmentAcceptanceV02(base_types._BaseFieldType):
 		self._SubmitrTxRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AccptdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AccptdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 	))

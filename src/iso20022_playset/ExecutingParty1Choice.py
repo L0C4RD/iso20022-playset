@@ -1,11 +1,11 @@
 import base_types
+import PersonIdentification12
 import NoReasonCode
 import Max50Text
-import PersonIdentification12
 
 class ExecutingParty1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Algo", "_Prsn", "_Clnt"]
+	__slots__ = ["_Algo", "_Clnt", "_Prsn"]
 	@property
 	def Algo(self):
 		return self._Algo
@@ -20,19 +20,6 @@ class ExecutingParty1Choice(base_types._BaseFieldType):
 		self._Algo = None
 
 	@property
-	def Prsn(self):
-		return self._Prsn
-
-	@Prsn.setter
-	def Prsn(self, value):
-		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
-
-	@Prsn.deleter
-	def Prsn(self):
-		del self._Prsn
-		self._Prsn = None
-
-	@property
 	def Clnt(self):
 		return self._Clnt
 
@@ -45,9 +32,22 @@ class ExecutingParty1Choice(base_types._BaseFieldType):
 		del self._Clnt
 		self._Clnt = None
 
+	@property
+	def Prsn(self):
+		return self._Prsn
+
+	@Prsn.setter
+	def Prsn(self, value):
+		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
+
+	@Prsn.deleter
+	def Prsn(self):
+		del self._Prsn
+		self._Prsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Algo', type=Max50Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prsn', type=PersonIdentification12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Clnt', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prsn', type=PersonIdentification12, min=0, max=1, mutex_group=1, array=False),
 	))
 

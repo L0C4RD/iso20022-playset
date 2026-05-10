@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import DecimalNumber
+import Max35Text
 
 class BPOApplicableRules1Choice(base_types._BaseFieldType):
 

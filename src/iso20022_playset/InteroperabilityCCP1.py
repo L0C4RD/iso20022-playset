@@ -1,13 +1,13 @@
 import base_types
+import AssetHolding3
+import ActiveCurrencyAnd24Amount
 import GenericIdentification168
 import ActiveCurrencyAndAmount
-import ActiveCurrencyAnd24Amount
 import NonNegativeNumber
-import AssetHolding3
 
 class InteroperabilityCCP1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TtlInitlMrgn", "_AsstHldg", "_GrssNtnlAmt", "_TrdsClrd"]
+	__slots__ = ["_Id", "_GrssNtnlAmt", "_TtlInitlMrgn", "_AsstHldg", "_TrdsClrd"]
 	@property
 	def Id(self):
 		return self._Id
@@ -20,6 +20,19 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def GrssNtnlAmt(self):
+		return self._GrssNtnlAmt
+
+	@GrssNtnlAmt.setter
+	def GrssNtnlAmt(self, value):
+		self._GrssNtnlAmt = value if type(value) != auto else self.make_default("GrssNtnlAmt")
+
+	@GrssNtnlAmt.deleter
+	def GrssNtnlAmt(self):
+		del self._GrssNtnlAmt
+		self._GrssNtnlAmt = None
 
 	@property
 	def TtlInitlMrgn(self):
@@ -48,19 +61,6 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 		self._AsstHldg = None
 
 	@property
-	def GrssNtnlAmt(self):
-		return self._GrssNtnlAmt
-
-	@GrssNtnlAmt.setter
-	def GrssNtnlAmt(self, value):
-		self._GrssNtnlAmt = value if type(value) != auto else self.make_default("GrssNtnlAmt")
-
-	@GrssNtnlAmt.deleter
-	def GrssNtnlAmt(self):
-		del self._GrssNtnlAmt
-		self._GrssNtnlAmt = None
-
-	@property
 	def TrdsClrd(self):
 		return self._TrdsClrd
 
@@ -75,9 +75,9 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssNtnlAmt', type=ActiveCurrencyAnd24Amount, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlInitlMrgn', type=ActiveCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AsstHldg', type=AssetHolding3, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrssNtnlAmt', type=ActiveCurrencyAnd24Amount, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrdsClrd', type=NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

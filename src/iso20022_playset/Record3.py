@@ -1,57 +1,31 @@
 import base_types
-import Max140Binary
-import ImpliedCurrencyAndAmount
-import ISO3NumericCurrencyCode
-import ISO3NumericCountryCode
-import CreditDebit3Code
-import ClearingMethod2Code
-import Max35Text
-import RecordMessage1Choice
-import OtherAmount5
-import Number
 import ISODate
+import OtherAmount5
+import ISO3NumericCountryCode
+import ClearingMethod2Code
+import RecordMessage1Choice
+import ImpliedCurrencyAndAmount
+import Number
+import CreditDebit3Code
+import Max140Binary
+import Max35Text
+import ISO3NumericCurrencyCode
 
 class Record3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgtrAssgnr", "_ClrDt", "_IntrchngFeeAmt", "_OthrAmt", "_ClrCdtDbt", "_ClrMtd", "_DstnAssgnr", "_AgtFeeAmt", "_ClrPrty", "_OrgtrShrtNm", "_DstnId", "_SeqCntr", "_ClrCcy", "_RcrdChcksmInptVal", "_DstnCtry", "_OthrClrMtd", "_IntrchngFeeCdtDbt", "_IntrchngFeeCcy", "_DstnShrtNm", "_OrgtrCtry", "_ClrAmt", "_AgtFeeCdtDbt", "_OrgtrId", "_AgtFeeCcy", "_RcrdMsg"]
+	__slots__ = ["_SeqCntr", "_OthrAmt", "_DstnCtry", "_AgtFeeCcy", "_DstnId", "_ClrDt", "_OrgtrAssgnr", "_ClrAmt", "_ClrCdtDbt", "_OrgtrId", "_RcrdChcksmInptVal", "_DstnShrtNm", "_IntrchngFeeAmt", "_ClrMtd", "_ClrCcy", "_RcrdMsg", "_IntrchngFeeCcy", "_ClrPrty", "_AgtFeeAmt", "_OthrClrMtd", "_IntrchngFeeCdtDbt", "_OrgtrCtry", "_AgtFeeCdtDbt", "_OrgtrShrtNm", "_DstnAssgnr"]
 	@property
-	def OrgtrAssgnr(self):
-		return self._OrgtrAssgnr
+	def SeqCntr(self):
+		return self._SeqCntr
 
-	@OrgtrAssgnr.setter
-	def OrgtrAssgnr(self, value):
-		self._OrgtrAssgnr = value if type(value) != auto else self.make_default("OrgtrAssgnr")
+	@SeqCntr.setter
+	def SeqCntr(self, value):
+		self._SeqCntr = value if type(value) != auto else self.make_default("SeqCntr")
 
-	@OrgtrAssgnr.deleter
-	def OrgtrAssgnr(self):
-		del self._OrgtrAssgnr
-		self._OrgtrAssgnr = None
-
-	@property
-	def ClrDt(self):
-		return self._ClrDt
-
-	@ClrDt.setter
-	def ClrDt(self, value):
-		self._ClrDt = value if type(value) != auto else self.make_default("ClrDt")
-
-	@ClrDt.deleter
-	def ClrDt(self):
-		del self._ClrDt
-		self._ClrDt = None
-
-	@property
-	def IntrchngFeeAmt(self):
-		return self._IntrchngFeeAmt
-
-	@IntrchngFeeAmt.setter
-	def IntrchngFeeAmt(self, value):
-		self._IntrchngFeeAmt = value if type(value) != auto else self.make_default("IntrchngFeeAmt")
-
-	@IntrchngFeeAmt.deleter
-	def IntrchngFeeAmt(self):
-		del self._IntrchngFeeAmt
-		self._IntrchngFeeAmt = None
+	@SeqCntr.deleter
+	def SeqCntr(self):
+		del self._SeqCntr
+		self._SeqCntr = None
 
 	@property
 	def OthrAmt(self):
@@ -67,82 +41,30 @@ class Record3(base_types._BaseFieldType):
 		self._OthrAmt = None
 
 	@property
-	def ClrCdtDbt(self):
-		return self._ClrCdtDbt
+	def DstnCtry(self):
+		return self._DstnCtry
 
-	@ClrCdtDbt.setter
-	def ClrCdtDbt(self, value):
-		self._ClrCdtDbt = value if type(value) != auto else self.make_default("ClrCdtDbt")
+	@DstnCtry.setter
+	def DstnCtry(self, value):
+		self._DstnCtry = value if type(value) != auto else self.make_default("DstnCtry")
 
-	@ClrCdtDbt.deleter
-	def ClrCdtDbt(self):
-		del self._ClrCdtDbt
-		self._ClrCdtDbt = None
-
-	@property
-	def ClrMtd(self):
-		return self._ClrMtd
-
-	@ClrMtd.setter
-	def ClrMtd(self, value):
-		self._ClrMtd = value if type(value) != auto else self.make_default("ClrMtd")
-
-	@ClrMtd.deleter
-	def ClrMtd(self):
-		del self._ClrMtd
-		self._ClrMtd = None
+	@DstnCtry.deleter
+	def DstnCtry(self):
+		del self._DstnCtry
+		self._DstnCtry = None
 
 	@property
-	def DstnAssgnr(self):
-		return self._DstnAssgnr
+	def AgtFeeCcy(self):
+		return self._AgtFeeCcy
 
-	@DstnAssgnr.setter
-	def DstnAssgnr(self, value):
-		self._DstnAssgnr = value if type(value) != auto else self.make_default("DstnAssgnr")
+	@AgtFeeCcy.setter
+	def AgtFeeCcy(self, value):
+		self._AgtFeeCcy = value if type(value) != auto else self.make_default("AgtFeeCcy")
 
-	@DstnAssgnr.deleter
-	def DstnAssgnr(self):
-		del self._DstnAssgnr
-		self._DstnAssgnr = None
-
-	@property
-	def AgtFeeAmt(self):
-		return self._AgtFeeAmt
-
-	@AgtFeeAmt.setter
-	def AgtFeeAmt(self, value):
-		self._AgtFeeAmt = value if type(value) != auto else self.make_default("AgtFeeAmt")
-
-	@AgtFeeAmt.deleter
-	def AgtFeeAmt(self):
-		del self._AgtFeeAmt
-		self._AgtFeeAmt = None
-
-	@property
-	def ClrPrty(self):
-		return self._ClrPrty
-
-	@ClrPrty.setter
-	def ClrPrty(self, value):
-		self._ClrPrty = value if type(value) != auto else self.make_default("ClrPrty")
-
-	@ClrPrty.deleter
-	def ClrPrty(self):
-		del self._ClrPrty
-		self._ClrPrty = None
-
-	@property
-	def OrgtrShrtNm(self):
-		return self._OrgtrShrtNm
-
-	@OrgtrShrtNm.setter
-	def OrgtrShrtNm(self, value):
-		self._OrgtrShrtNm = value if type(value) != auto else self.make_default("OrgtrShrtNm")
-
-	@OrgtrShrtNm.deleter
-	def OrgtrShrtNm(self):
-		del self._OrgtrShrtNm
-		self._OrgtrShrtNm = None
+	@AgtFeeCcy.deleter
+	def AgtFeeCcy(self):
+		del self._AgtFeeCcy
+		self._AgtFeeCcy = None
 
 	@property
 	def DstnId(self):
@@ -158,30 +80,69 @@ class Record3(base_types._BaseFieldType):
 		self._DstnId = None
 
 	@property
-	def SeqCntr(self):
-		return self._SeqCntr
+	def ClrDt(self):
+		return self._ClrDt
 
-	@SeqCntr.setter
-	def SeqCntr(self, value):
-		self._SeqCntr = value if type(value) != auto else self.make_default("SeqCntr")
+	@ClrDt.setter
+	def ClrDt(self, value):
+		self._ClrDt = value if type(value) != auto else self.make_default("ClrDt")
 
-	@SeqCntr.deleter
-	def SeqCntr(self):
-		del self._SeqCntr
-		self._SeqCntr = None
+	@ClrDt.deleter
+	def ClrDt(self):
+		del self._ClrDt
+		self._ClrDt = None
 
 	@property
-	def ClrCcy(self):
-		return self._ClrCcy
+	def OrgtrAssgnr(self):
+		return self._OrgtrAssgnr
 
-	@ClrCcy.setter
-	def ClrCcy(self, value):
-		self._ClrCcy = value if type(value) != auto else self.make_default("ClrCcy")
+	@OrgtrAssgnr.setter
+	def OrgtrAssgnr(self, value):
+		self._OrgtrAssgnr = value if type(value) != auto else self.make_default("OrgtrAssgnr")
 
-	@ClrCcy.deleter
-	def ClrCcy(self):
-		del self._ClrCcy
-		self._ClrCcy = None
+	@OrgtrAssgnr.deleter
+	def OrgtrAssgnr(self):
+		del self._OrgtrAssgnr
+		self._OrgtrAssgnr = None
+
+	@property
+	def ClrAmt(self):
+		return self._ClrAmt
+
+	@ClrAmt.setter
+	def ClrAmt(self, value):
+		self._ClrAmt = value if type(value) != auto else self.make_default("ClrAmt")
+
+	@ClrAmt.deleter
+	def ClrAmt(self):
+		del self._ClrAmt
+		self._ClrAmt = None
+
+	@property
+	def ClrCdtDbt(self):
+		return self._ClrCdtDbt
+
+	@ClrCdtDbt.setter
+	def ClrCdtDbt(self, value):
+		self._ClrCdtDbt = value if type(value) != auto else self.make_default("ClrCdtDbt")
+
+	@ClrCdtDbt.deleter
+	def ClrCdtDbt(self):
+		del self._ClrCdtDbt
+		self._ClrCdtDbt = None
+
+	@property
+	def OrgtrId(self):
+		return self._OrgtrId
+
+	@OrgtrId.setter
+	def OrgtrId(self, value):
+		self._OrgtrId = value if type(value) != auto else self.make_default("OrgtrId")
+
+	@OrgtrId.deleter
+	def OrgtrId(self):
+		del self._OrgtrId
+		self._OrgtrId = None
 
 	@property
 	def RcrdChcksmInptVal(self):
@@ -197,17 +158,108 @@ class Record3(base_types._BaseFieldType):
 		self._RcrdChcksmInptVal = None
 
 	@property
-	def DstnCtry(self):
-		return self._DstnCtry
+	def DstnShrtNm(self):
+		return self._DstnShrtNm
 
-	@DstnCtry.setter
-	def DstnCtry(self, value):
-		self._DstnCtry = value if type(value) != auto else self.make_default("DstnCtry")
+	@DstnShrtNm.setter
+	def DstnShrtNm(self, value):
+		self._DstnShrtNm = value if type(value) != auto else self.make_default("DstnShrtNm")
 
-	@DstnCtry.deleter
-	def DstnCtry(self):
-		del self._DstnCtry
-		self._DstnCtry = None
+	@DstnShrtNm.deleter
+	def DstnShrtNm(self):
+		del self._DstnShrtNm
+		self._DstnShrtNm = None
+
+	@property
+	def IntrchngFeeAmt(self):
+		return self._IntrchngFeeAmt
+
+	@IntrchngFeeAmt.setter
+	def IntrchngFeeAmt(self, value):
+		self._IntrchngFeeAmt = value if type(value) != auto else self.make_default("IntrchngFeeAmt")
+
+	@IntrchngFeeAmt.deleter
+	def IntrchngFeeAmt(self):
+		del self._IntrchngFeeAmt
+		self._IntrchngFeeAmt = None
+
+	@property
+	def ClrMtd(self):
+		return self._ClrMtd
+
+	@ClrMtd.setter
+	def ClrMtd(self, value):
+		self._ClrMtd = value if type(value) != auto else self.make_default("ClrMtd")
+
+	@ClrMtd.deleter
+	def ClrMtd(self):
+		del self._ClrMtd
+		self._ClrMtd = None
+
+	@property
+	def ClrCcy(self):
+		return self._ClrCcy
+
+	@ClrCcy.setter
+	def ClrCcy(self, value):
+		self._ClrCcy = value if type(value) != auto else self.make_default("ClrCcy")
+
+	@ClrCcy.deleter
+	def ClrCcy(self):
+		del self._ClrCcy
+		self._ClrCcy = None
+
+	@property
+	def RcrdMsg(self):
+		return self._RcrdMsg
+
+	@RcrdMsg.setter
+	def RcrdMsg(self, value):
+		self._RcrdMsg = value if type(value) != auto else self.make_default("RcrdMsg")
+
+	@RcrdMsg.deleter
+	def RcrdMsg(self):
+		del self._RcrdMsg
+		self._RcrdMsg = None
+
+	@property
+	def IntrchngFeeCcy(self):
+		return self._IntrchngFeeCcy
+
+	@IntrchngFeeCcy.setter
+	def IntrchngFeeCcy(self, value):
+		self._IntrchngFeeCcy = value if type(value) != auto else self.make_default("IntrchngFeeCcy")
+
+	@IntrchngFeeCcy.deleter
+	def IntrchngFeeCcy(self):
+		del self._IntrchngFeeCcy
+		self._IntrchngFeeCcy = None
+
+	@property
+	def ClrPrty(self):
+		return self._ClrPrty
+
+	@ClrPrty.setter
+	def ClrPrty(self, value):
+		self._ClrPrty = value if type(value) != auto else self.make_default("ClrPrty")
+
+	@ClrPrty.deleter
+	def ClrPrty(self):
+		del self._ClrPrty
+		self._ClrPrty = None
+
+	@property
+	def AgtFeeAmt(self):
+		return self._AgtFeeAmt
+
+	@AgtFeeAmt.setter
+	def AgtFeeAmt(self, value):
+		self._AgtFeeAmt = value if type(value) != auto else self.make_default("AgtFeeAmt")
+
+	@AgtFeeAmt.deleter
+	def AgtFeeAmt(self):
+		del self._AgtFeeAmt
+		self._AgtFeeAmt = None
 
 	@property
 	def OthrClrMtd(self):
@@ -236,32 +288,6 @@ class Record3(base_types._BaseFieldType):
 		self._IntrchngFeeCdtDbt = None
 
 	@property
-	def IntrchngFeeCcy(self):
-		return self._IntrchngFeeCcy
-
-	@IntrchngFeeCcy.setter
-	def IntrchngFeeCcy(self, value):
-		self._IntrchngFeeCcy = value if type(value) != auto else self.make_default("IntrchngFeeCcy")
-
-	@IntrchngFeeCcy.deleter
-	def IntrchngFeeCcy(self):
-		del self._IntrchngFeeCcy
-		self._IntrchngFeeCcy = None
-
-	@property
-	def DstnShrtNm(self):
-		return self._DstnShrtNm
-
-	@DstnShrtNm.setter
-	def DstnShrtNm(self, value):
-		self._DstnShrtNm = value if type(value) != auto else self.make_default("DstnShrtNm")
-
-	@DstnShrtNm.deleter
-	def DstnShrtNm(self):
-		del self._DstnShrtNm
-		self._DstnShrtNm = None
-
-	@property
 	def OrgtrCtry(self):
 		return self._OrgtrCtry
 
@@ -273,19 +299,6 @@ class Record3(base_types._BaseFieldType):
 	def OrgtrCtry(self):
 		del self._OrgtrCtry
 		self._OrgtrCtry = None
-
-	@property
-	def ClrAmt(self):
-		return self._ClrAmt
-
-	@ClrAmt.setter
-	def ClrAmt(self, value):
-		self._ClrAmt = value if type(value) != auto else self.make_default("ClrAmt")
-
-	@ClrAmt.deleter
-	def ClrAmt(self):
-		del self._ClrAmt
-		self._ClrAmt = None
 
 	@property
 	def AgtFeeCdtDbt(self):
@@ -301,69 +314,56 @@ class Record3(base_types._BaseFieldType):
 		self._AgtFeeCdtDbt = None
 
 	@property
-	def OrgtrId(self):
-		return self._OrgtrId
+	def OrgtrShrtNm(self):
+		return self._OrgtrShrtNm
 
-	@OrgtrId.setter
-	def OrgtrId(self, value):
-		self._OrgtrId = value if type(value) != auto else self.make_default("OrgtrId")
+	@OrgtrShrtNm.setter
+	def OrgtrShrtNm(self, value):
+		self._OrgtrShrtNm = value if type(value) != auto else self.make_default("OrgtrShrtNm")
 
-	@OrgtrId.deleter
-	def OrgtrId(self):
-		del self._OrgtrId
-		self._OrgtrId = None
-
-	@property
-	def AgtFeeCcy(self):
-		return self._AgtFeeCcy
-
-	@AgtFeeCcy.setter
-	def AgtFeeCcy(self, value):
-		self._AgtFeeCcy = value if type(value) != auto else self.make_default("AgtFeeCcy")
-
-	@AgtFeeCcy.deleter
-	def AgtFeeCcy(self):
-		del self._AgtFeeCcy
-		self._AgtFeeCcy = None
+	@OrgtrShrtNm.deleter
+	def OrgtrShrtNm(self):
+		del self._OrgtrShrtNm
+		self._OrgtrShrtNm = None
 
 	@property
-	def RcrdMsg(self):
-		return self._RcrdMsg
+	def DstnAssgnr(self):
+		return self._DstnAssgnr
 
-	@RcrdMsg.setter
-	def RcrdMsg(self, value):
-		self._RcrdMsg = value if type(value) != auto else self.make_default("RcrdMsg")
+	@DstnAssgnr.setter
+	def DstnAssgnr(self, value):
+		self._DstnAssgnr = value if type(value) != auto else self.make_default("DstnAssgnr")
 
-	@RcrdMsg.deleter
-	def RcrdMsg(self):
-		del self._RcrdMsg
-		self._RcrdMsg = None
+	@DstnAssgnr.deleter
+	def DstnAssgnr(self):
+		del self._DstnAssgnr
+		self._DstnAssgnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgtrAssgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrAmt', type=OtherAmount5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMtd', type=ClearingMethod2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnAssgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrPrty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgtrShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqCntr', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdChcksmInptVal', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAmt', type=OtherAmount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstnCtry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrAssgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdChcksmInptVal', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMtd', type=ClearingMethod2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdMsg', type=RecordMessage1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrPrty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrClrMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgtrCtry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgtrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdMsg', type=RecordMessage1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnAssgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

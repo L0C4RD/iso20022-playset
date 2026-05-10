@@ -1,13 +1,13 @@
 import base_types
-import Max35Text
 import OutputFormat2Code
+import ATMDevice1Code
+import Max35Text
 import Max20000Text
 import Max35Binary
-import ATMDevice1Code
 
 class ActionMessage4(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_MsgCnttSgntr", "_Dvc", "_Frmt", "_Msg"]
+	__slots__ = ["_Ref", "_Dvc", "_Frmt", "_MsgCnttSgntr", "_Msg"]
 	@property
 	def Ref(self):
 		return self._Ref
@@ -20,19 +20,6 @@ class ActionMessage4(base_types._BaseFieldType):
 	def Ref(self):
 		del self._Ref
 		self._Ref = None
-
-	@property
-	def MsgCnttSgntr(self):
-		return self._MsgCnttSgntr
-
-	@MsgCnttSgntr.setter
-	def MsgCnttSgntr(self, value):
-		self._MsgCnttSgntr = value if type(value) != auto else self.make_default("MsgCnttSgntr")
-
-	@MsgCnttSgntr.deleter
-	def MsgCnttSgntr(self):
-		del self._MsgCnttSgntr
-		self._MsgCnttSgntr = None
 
 	@property
 	def Dvc(self):
@@ -61,6 +48,19 @@ class ActionMessage4(base_types._BaseFieldType):
 		self._Frmt = None
 
 	@property
+	def MsgCnttSgntr(self):
+		return self._MsgCnttSgntr
+
+	@MsgCnttSgntr.setter
+	def MsgCnttSgntr(self, value):
+		self._MsgCnttSgntr = value if type(value) != auto else self.make_default("MsgCnttSgntr")
+
+	@MsgCnttSgntr.deleter
+	def MsgCnttSgntr(self):
+		del self._MsgCnttSgntr
+		self._MsgCnttSgntr = None
+
+	@property
 	def Msg(self):
 		return self._Msg
 
@@ -75,9 +75,9 @@ class ActionMessage4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dvc', type=ATMDevice1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Msg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

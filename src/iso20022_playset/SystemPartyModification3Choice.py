@@ -1,82 +1,30 @@
 import base_types
-import PartyName3
+import SystemParty2
 import Contact14
 import SystemRestriction1
+import SystemPartyIdentification10
+import PartyLockStatus1
+import TechnicalIdentification2Choice
+import PartyName3
+import PostalAddress28
 import MarketSpecificAttribute1
 import ResidenceType1Code
-import TechnicalIdentification2Choice
-import SystemPartyIdentification10
-import SystemParty2
-import PartyLockStatus1
-import PostalAddress28
 
 class SystemPartyModification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ResTp", "_LckSts", "_TechAdr", "_SysRstrctn", "_MktSpcfcAttr", "_PtyId", "_CtctDtls", "_PtyAdr", "_SysPtyDt", "_PtyNm"]
+	__slots__ = ["_SysPtyDt", "_PtyId", "_SysRstrctn", "_CtctDtls", "_PtyAdr", "_ResTp", "_MktSpcfcAttr", "_TechAdr", "_LckSts", "_PtyNm"]
 	@property
-	def ResTp(self):
-		return self._ResTp
+	def SysPtyDt(self):
+		return self._SysPtyDt
 
-	@ResTp.setter
-	def ResTp(self, value):
-		self._ResTp = value if type(value) != auto else self.make_default("ResTp")
+	@SysPtyDt.setter
+	def SysPtyDt(self, value):
+		self._SysPtyDt = value if type(value) != auto else self.make_default("SysPtyDt")
 
-	@ResTp.deleter
-	def ResTp(self):
-		del self._ResTp
-		self._ResTp = None
-
-	@property
-	def LckSts(self):
-		return self._LckSts
-
-	@LckSts.setter
-	def LckSts(self, value):
-		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
-
-	@LckSts.deleter
-	def LckSts(self):
-		del self._LckSts
-		self._LckSts = None
-
-	@property
-	def TechAdr(self):
-		return self._TechAdr
-
-	@TechAdr.setter
-	def TechAdr(self, value):
-		self._TechAdr = value if type(value) != auto else self.make_default("TechAdr")
-
-	@TechAdr.deleter
-	def TechAdr(self):
-		del self._TechAdr
-		self._TechAdr = None
-
-	@property
-	def SysRstrctn(self):
-		return self._SysRstrctn
-
-	@SysRstrctn.setter
-	def SysRstrctn(self, value):
-		self._SysRstrctn = value if type(value) != auto else self.make_default("SysRstrctn")
-
-	@SysRstrctn.deleter
-	def SysRstrctn(self):
-		del self._SysRstrctn
-		self._SysRstrctn = None
-
-	@property
-	def MktSpcfcAttr(self):
-		return self._MktSpcfcAttr
-
-	@MktSpcfcAttr.setter
-	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != auto else self.make_default("MktSpcfcAttr")
-
-	@MktSpcfcAttr.deleter
-	def MktSpcfcAttr(self):
-		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
+	@SysPtyDt.deleter
+	def SysPtyDt(self):
+		del self._SysPtyDt
+		self._SysPtyDt = None
 
 	@property
 	def PtyId(self):
@@ -90,6 +38,19 @@ class SystemPartyModification3Choice(base_types._BaseFieldType):
 	def PtyId(self):
 		del self._PtyId
 		self._PtyId = None
+
+	@property
+	def SysRstrctn(self):
+		return self._SysRstrctn
+
+	@SysRstrctn.setter
+	def SysRstrctn(self, value):
+		self._SysRstrctn = value if type(value) != auto else self.make_default("SysRstrctn")
+
+	@SysRstrctn.deleter
+	def SysRstrctn(self):
+		del self._SysRstrctn
+		self._SysRstrctn = None
 
 	@property
 	def CtctDtls(self):
@@ -118,17 +79,56 @@ class SystemPartyModification3Choice(base_types._BaseFieldType):
 		self._PtyAdr = None
 
 	@property
-	def SysPtyDt(self):
-		return self._SysPtyDt
+	def ResTp(self):
+		return self._ResTp
 
-	@SysPtyDt.setter
-	def SysPtyDt(self, value):
-		self._SysPtyDt = value if type(value) != auto else self.make_default("SysPtyDt")
+	@ResTp.setter
+	def ResTp(self, value):
+		self._ResTp = value if type(value) != auto else self.make_default("ResTp")
 
-	@SysPtyDt.deleter
-	def SysPtyDt(self):
-		del self._SysPtyDt
-		self._SysPtyDt = None
+	@ResTp.deleter
+	def ResTp(self):
+		del self._ResTp
+		self._ResTp = None
+
+	@property
+	def MktSpcfcAttr(self):
+		return self._MktSpcfcAttr
+
+	@MktSpcfcAttr.setter
+	def MktSpcfcAttr(self, value):
+		self._MktSpcfcAttr = value if type(value) != auto else self.make_default("MktSpcfcAttr")
+
+	@MktSpcfcAttr.deleter
+	def MktSpcfcAttr(self):
+		del self._MktSpcfcAttr
+		self._MktSpcfcAttr = None
+
+	@property
+	def TechAdr(self):
+		return self._TechAdr
+
+	@TechAdr.setter
+	def TechAdr(self, value):
+		self._TechAdr = value if type(value) != auto else self.make_default("TechAdr")
+
+	@TechAdr.deleter
+	def TechAdr(self):
+		del self._TechAdr
+		self._TechAdr = None
+
+	@property
+	def LckSts(self):
+		return self._LckSts
+
+	@LckSts.setter
+	def LckSts(self, value):
+		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
+
+	@LckSts.deleter
+	def LckSts(self):
+		del self._LckSts
+		self._LckSts = None
 
 	@property
 	def PtyNm(self):
@@ -144,15 +144,15 @@ class SystemPartyModification3Choice(base_types._BaseFieldType):
 		self._PtyNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ResTp', type=ResidenceType1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='LckSts', type=PartyLockStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TechAdr', type=TechnicalIdentification2Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SysRstrctn', type=SystemRestriction1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SysPtyDt', type=SystemParty2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification10, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SysRstrctn', type=SystemRestriction1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=Contact14, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtyAdr', type=PostalAddress28, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SysPtyDt', type=SystemParty2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ResTp', type=ResidenceType1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TechAdr', type=TechnicalIdentification2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LckSts', type=PartyLockStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtyNm', type=PartyName3, min=0, max=1, mutex_group=1, array=False),
 	))
 

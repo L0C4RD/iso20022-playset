@@ -1,7 +1,7 @@
 import base_types
 import ProprietaryStatusAndReason6
-import RejectionOrRepairStatus44Choice
 import AcknowledgedAcceptedStatus24Choice
+import RejectionOrRepairStatus44Choice
 
 class ProcessingStatus89Choice(base_types._BaseFieldType):
 

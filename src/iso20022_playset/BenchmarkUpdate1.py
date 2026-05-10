@@ -1,15 +1,28 @@
 import base_types
-import Max35Text
-import SecurityIdentification19
 import StatusDetail1
 import BenchmarkDetail1
-import PartyIdentification136
+import Max35Text
 import SupplementaryData1
+import SecurityIdentification19
+import PartyIdentification136
 import Period4Choice
 
 class BenchmarkUpdate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Id", "_TechVldtyPrd", "_SplmtryData", "_NdrsngPty", "_PrvsId", "_TechRcrdId", "_Sts", "_Admstr"]
+	__slots__ = ["_TechRcrdId", "_Othr", "_SplmtryData", "_PrvsId", "_Id", "_NdrsngPty", "_Sts", "_Admstr", "_TechVldtyPrd"]
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
 	@property
 	def Othr(self):
 		return self._Othr
@@ -22,32 +35,6 @@ class BenchmarkUpdate1(base_types._BaseFieldType):
 	def Othr(self):
 		del self._Othr
 		self._Othr = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def TechVldtyPrd(self):
-		return self._TechVldtyPrd
-
-	@TechVldtyPrd.setter
-	def TechVldtyPrd(self, value):
-		self._TechVldtyPrd = value if type(value) != auto else self.make_default("TechVldtyPrd")
-
-	@TechVldtyPrd.deleter
-	def TechVldtyPrd(self):
-		del self._TechVldtyPrd
-		self._TechVldtyPrd = None
 
 	@property
 	def SplmtryData(self):
@@ -63,19 +50,6 @@ class BenchmarkUpdate1(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def NdrsngPty(self):
-		return self._NdrsngPty
-
-	@NdrsngPty.setter
-	def NdrsngPty(self, value):
-		self._NdrsngPty = value if type(value) != auto else self.make_default("NdrsngPty")
-
-	@NdrsngPty.deleter
-	def NdrsngPty(self):
-		del self._NdrsngPty
-		self._NdrsngPty = None
-
-	@property
 	def PrvsId(self):
 		return self._PrvsId
 
@@ -89,17 +63,30 @@ class BenchmarkUpdate1(base_types._BaseFieldType):
 		self._PrvsId = None
 
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
+	def Id(self):
+		return self._Id
 
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def NdrsngPty(self):
+		return self._NdrsngPty
+
+	@NdrsngPty.setter
+	def NdrsngPty(self, value):
+		self._NdrsngPty = value if type(value) != auto else self.make_default("NdrsngPty")
+
+	@NdrsngPty.deleter
+	def NdrsngPty(self):
+		del self._NdrsngPty
+		self._NdrsngPty = None
 
 	@property
 	def Sts(self):
@@ -127,15 +114,28 @@ class BenchmarkUpdate1(base_types._BaseFieldType):
 		del self._Admstr
 		self._Admstr = None
 
+	@property
+	def TechVldtyPrd(self):
+		return self._TechVldtyPrd
+
+	@TechVldtyPrd.setter
+	def TechVldtyPrd(self, value):
+		self._TechVldtyPrd = value if type(value) != auto else self.make_default("TechVldtyPrd")
+
+	@TechVldtyPrd.deleter
+	def TechVldtyPrd(self):
+		del self._TechVldtyPrd
+		self._TechVldtyPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=BenchmarkDetail1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechVldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NdrsngPty', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=BenchmarkDetail1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NdrsngPty', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatusDetail1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Admstr', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechVldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

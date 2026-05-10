@@ -1,37 +1,24 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import UnitOfMeasure6Code
-import Max70Text
+import ImpliedCurrencyAndAmount
 import DecimalNumber
+import Max70Text
 
 class Product5(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtLmt", "_QtyLmt", "_AddtlPdctCd", "_PdctCd", "_UnitOfMeasr"]
+	__slots__ = ["_UnitOfMeasr", "_AddtlPdctCd", "_QtyLmt", "_AmtLmt", "_PdctCd"]
 	@property
-	def AmtLmt(self):
-		return self._AmtLmt
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
 
-	@AmtLmt.setter
-	def AmtLmt(self, value):
-		self._AmtLmt = value if type(value) != auto else self.make_default("AmtLmt")
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
 
-	@AmtLmt.deleter
-	def AmtLmt(self):
-		del self._AmtLmt
-		self._AmtLmt = None
-
-	@property
-	def QtyLmt(self):
-		return self._QtyLmt
-
-	@QtyLmt.setter
-	def QtyLmt(self, value):
-		self._QtyLmt = value if type(value) != auto else self.make_default("QtyLmt")
-
-	@QtyLmt.deleter
-	def QtyLmt(self):
-		del self._QtyLmt
-		self._QtyLmt = None
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
 
 	@property
 	def AddtlPdctCd(self):
@@ -47,6 +34,32 @@ class Product5(base_types._BaseFieldType):
 		self._AddtlPdctCd = None
 
 	@property
+	def QtyLmt(self):
+		return self._QtyLmt
+
+	@QtyLmt.setter
+	def QtyLmt(self, value):
+		self._QtyLmt = value if type(value) != auto else self.make_default("QtyLmt")
+
+	@QtyLmt.deleter
+	def QtyLmt(self):
+		del self._QtyLmt
+		self._QtyLmt = None
+
+	@property
+	def AmtLmt(self):
+		return self._AmtLmt
+
+	@AmtLmt.setter
+	def AmtLmt(self, value):
+		self._AmtLmt = value if type(value) != auto else self.make_default("AmtLmt")
+
+	@AmtLmt.deleter
+	def AmtLmt(self):
+		del self._AmtLmt
+		self._AmtLmt = None
+
+	@property
 	def PdctCd(self):
 		return self._PdctCd
 
@@ -59,24 +72,11 @@ class Product5(base_types._BaseFieldType):
 		del self._PdctCd
 		self._PdctCd = None
 
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtLmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtyLmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure6Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyLmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtLmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

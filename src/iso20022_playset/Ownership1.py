@@ -1,6 +1,6 @@
 import base_types
-import PercentageRate
 import OwnershipType3Choice
+import PercentageRate
 
 class Ownership1(base_types._BaseFieldType):
 

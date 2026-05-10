@@ -1,38 +1,12 @@
 import base_types
-import Max35Text
-import Gender1Code
 import ISODate
 import Max350Text
+import Gender1Code
+import Max35Text
 
 class IndividualPerson35(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_GvnNm", "_MddlNm", "_BirthDt", "_Gndr"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def GvnNm(self):
-		return self._GvnNm
-
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
-
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
-
+	__slots__ = ["_MddlNm", "_Nm", "_BirthDt", "_GvnNm", "_Gndr"]
 	@property
 	def MddlNm(self):
 		return self._MddlNm
@@ -45,6 +19,19 @@ class IndividualPerson35(base_types._BaseFieldType):
 	def MddlNm(self):
 		del self._MddlNm
 		self._MddlNm = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def BirthDt(self):
@@ -60,6 +47,19 @@ class IndividualPerson35(base_types._BaseFieldType):
 		self._BirthDt = None
 
 	@property
+	def GvnNm(self):
+		return self._GvnNm
+
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
+
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
+
+	@property
 	def Gndr(self):
 		return self._Gndr
 
@@ -73,10 +73,10 @@ class IndividualPerson35(base_types._BaseFieldType):
 		self._Gndr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Gndr', type=Gender1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,14 +1,27 @@
 import base_types
 import PartiallySettledStatus10
-import CancelledStatusReason16
-import SuspendedStatusReason4Choice
-import RejectedStatus9
-import OrderStatus4Code
 import ConditionallyAcceptedStatus3Choice
+import SuspendedStatusReason4Choice
+import OrderStatus4Code
+import CancelledStatusReason16
+import RejectedStatus9
 
 class OrderStatus3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Sspd", "_PrtlySttld", "_Canc", "_Rjctd", "_CondlyAccptd"]
+	__slots__ = ["_Rjctd", "_Sts", "_Sspd", "_PrtlySttld", "_Canc", "_CondlyAccptd"]
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
+
 	@property
 	def Sts(self):
 		return self._Sts
@@ -62,19 +75,6 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
-	@property
 	def CondlyAccptd(self):
 		return self._CondlyAccptd
 
@@ -88,11 +88,11 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 		self._CondlyAccptd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Rjctd', type=RejectedStatus9, min=1, max=10, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Sts', type=OrderStatus4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sspd', type=SuspendedStatusReason4Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtlySttld', type=PartiallySettledStatus10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancelledStatusReason16, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectedStatus9, min=1, max=10, mutex_group=1, array=True),
 		base_types.FieldEntry(name='CondlyAccptd', type=ConditionallyAcceptedStatus3Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

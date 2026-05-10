@@ -1,6 +1,6 @@
 import base_types
-import PriceSource2Code
 import PriceRateOrAmountChoice
+import PriceSource2Code
 import TypeOfPrice13Code
 
 class Price6(base_types._BaseFieldType):

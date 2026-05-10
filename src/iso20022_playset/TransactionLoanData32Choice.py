@@ -1,6 +1,6 @@
 import base_types
-import LoanData144
 import LoanData145
+import LoanData144
 import LoanData143
 
 class TransactionLoanData32Choice(base_types._BaseFieldType):

@@ -1,40 +1,14 @@
 import base_types
-import Max35Text
-import Max512Text
-import LocalAddress1
-import ISOMax3ALanguageCode
-import AdditionalData1
 import Max70Text
+import Max35Text
+import ISOMax3ALanguageCode
+import LocalAddress1
+import AdditionalData1
+import Max512Text
 
 class LocalData10(base_types._BaseFieldType):
 
-	__slots__ = ["_NcodgFrmt", "_Nm", "_AddtlData", "_Adr", "_AddtlCtct", "_Lang"]
-	@property
-	def NcodgFrmt(self):
-		return self._NcodgFrmt
-
-	@NcodgFrmt.setter
-	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != auto else self.make_default("NcodgFrmt")
-
-	@NcodgFrmt.deleter
-	def NcodgFrmt(self):
-		del self._NcodgFrmt
-		self._NcodgFrmt = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_AddtlData", "_Adr", "_Lang", "_AddtlCtct", "_NcodgFrmt", "_Nm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData
@@ -62,6 +36,19 @@ class LocalData10(base_types._BaseFieldType):
 		self._Adr = None
 
 	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
+	@property
 	def AddtlCtct(self):
 		return self._AddtlCtct
 
@@ -75,24 +62,37 @@ class LocalData10(base_types._BaseFieldType):
 		self._AddtlCtct = None
 
 	@property
-	def Lang(self):
-		return self._Lang
+	def NcodgFrmt(self):
+		return self._NcodgFrmt
 
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
+	@NcodgFrmt.setter
+	def NcodgFrmt(self, value):
+		self._NcodgFrmt = value if type(value) != auto else self.make_default("NcodgFrmt")
 
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
+	@NcodgFrmt.deleter
+	def NcodgFrmt(self):
+		del self._NcodgFrmt
+		self._NcodgFrmt = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Adr', type=LocalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlCtct', type=Max512Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlCtct', type=Max512Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

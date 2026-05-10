@@ -1,24 +1,11 @@
 import base_types
-import ContractModification9
 import TradeTransaction50
 import ContractType15
+import ContractModification9
 
 class CommonTradeDataReport72(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctMod", "_TxData", "_CtrctData"]
-	@property
-	def CtrctMod(self):
-		return self._CtrctMod
-
-	@CtrctMod.setter
-	def CtrctMod(self, value):
-		self._CtrctMod = value if type(value) != auto else self.make_default("CtrctMod")
-
-	@CtrctMod.deleter
-	def CtrctMod(self):
-		del self._CtrctMod
-		self._CtrctMod = None
-
+	__slots__ = ["_TxData", "_CtrctMod", "_CtrctData"]
 	@property
 	def TxData(self):
 		return self._TxData
@@ -31,6 +18,19 @@ class CommonTradeDataReport72(base_types._BaseFieldType):
 	def TxData(self):
 		del self._TxData
 		self._TxData = None
+
+	@property
+	def CtrctMod(self):
+		return self._CtrctMod
+
+	@CtrctMod.setter
+	def CtrctMod(self, value):
+		self._CtrctMod = value if type(value) != auto else self.make_default("CtrctMod")
+
+	@CtrctMod.deleter
+	def CtrctMod(self):
+		del self._CtrctMod
+		self._CtrctMod = None
 
 	@property
 	def CtrctData(self):
@@ -46,8 +46,8 @@ class CommonTradeDataReport72(base_types._BaseFieldType):
 		self._CtrctData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctMod', type=ContractModification9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxData', type=TradeTransaction50, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctMod', type=ContractModification9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctData', type=ContractType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

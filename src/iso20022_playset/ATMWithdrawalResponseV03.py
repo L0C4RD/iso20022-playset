@@ -6,20 +6,7 @@ import ContentInformationType10
 
 class ATMWithdrawalResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMWdrwlRspn", "_PrtctdATMWdrwlRspn", "_SctyTrlr", "_Hdr"]
-	@property
-	def ATMWdrwlRspn(self):
-		return self._ATMWdrwlRspn
-
-	@ATMWdrwlRspn.setter
-	def ATMWdrwlRspn(self, value):
-		self._ATMWdrwlRspn = value if type(value) != auto else self.make_default("ATMWdrwlRspn")
-
-	@ATMWdrwlRspn.deleter
-	def ATMWdrwlRspn(self):
-		del self._ATMWdrwlRspn
-		self._ATMWdrwlRspn = None
-
+	__slots__ = ["_PrtctdATMWdrwlRspn", "_Hdr", "_SctyTrlr", "_ATMWdrwlRspn"]
 	@property
 	def PrtctdATMWdrwlRspn(self):
 		return self._PrtctdATMWdrwlRspn
@@ -32,6 +19,19 @@ class ATMWithdrawalResponseV03(base_types._BaseFieldType):
 	def PrtctdATMWdrwlRspn(self):
 		del self._PrtctdATMWdrwlRspn
 		self._PrtctdATMWdrwlRspn = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -47,22 +47,22 @@ class ATMWithdrawalResponseV03(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def ATMWdrwlRspn(self):
+		return self._ATMWdrwlRspn
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@ATMWdrwlRspn.setter
+	def ATMWdrwlRspn(self, value):
+		self._ATMWdrwlRspn = value if type(value) != auto else self.make_default("ATMWdrwlRspn")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@ATMWdrwlRspn.deleter
+	def ATMWdrwlRspn(self):
+		del self._ATMWdrwlRspn
+		self._ATMWdrwlRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMWdrwlRspn', type=ATMWithdrawalResponse3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMWdrwlRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMWdrwlRspn', type=ATMWithdrawalResponse3, min=0, max=1, mutex_group=None, array=False),
 	))
 

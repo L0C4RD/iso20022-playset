@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import PartyIdentification125Choice
+import Max35Text
 
 class Account32(base_types._BaseFieldType):
 

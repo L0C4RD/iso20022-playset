@@ -1,23 +1,23 @@
 import base_types
 import SupplementaryData1
-import AccountQuery4
 import MessageHeader9
+import AccountQuery4
 
 class GetAccountV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_AcctQryDef"]
+	__slots__ = ["_AcctQryDef", "_SplmtryData", "_MsgHdr"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def AcctQryDef(self):
+		return self._AcctQryDef
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@AcctQryDef.setter
+	def AcctQryDef(self, value):
+		self._AcctQryDef = value if type(value) != auto else self.make_default("AcctQryDef")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@AcctQryDef.deleter
+	def AcctQryDef(self):
+		del self._AcctQryDef
+		self._AcctQryDef = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class GetAccountV08(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def AcctQryDef(self):
-		return self._AcctQryDef
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@AcctQryDef.setter
-	def AcctQryDef(self, value):
-		self._AcctQryDef = value if type(value) != auto else self.make_default("AcctQryDef")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@AcctQryDef.deleter
-	def AcctQryDef(self):
-		del self._AcctQryDef
-		self._AcctQryDef = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctQryDef', type=AccountQuery4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 	))
 

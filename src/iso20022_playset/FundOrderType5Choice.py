@@ -1,6 +1,6 @@
 import base_types
-import FundOrderType10Code
 import GenericIdentification36
+import FundOrderType10Code
 
 class FundOrderType5Choice(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
 import base_types
-import ContentInformationType38
 import CertificateManagementRequest3
 import TMSHeader1
+import ContentInformationType38
 
 class CertificateManagementRequestV07(base_types._BaseFieldType):
 

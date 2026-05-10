@@ -1,37 +1,24 @@
 import base_types
-import UndertakingDocumentType2Choice
-import DocumentFormat1Choice
 import Channel1Choice
 import YesNoIndicator
+import DocumentFormat1Choice
+import UndertakingDocumentType2Choice
 
 class Document10(base_types._BaseFieldType):
 
-	__slots__ = ["_CpyInd", "_DocFrmt", "_PresntnChanl", "_SgndInd", "_DocTp"]
+	__slots__ = ["_DocTp", "_PresntnChanl", "_SgndInd", "_CpyInd", "_DocFrmt"]
 	@property
-	def CpyInd(self):
-		return self._CpyInd
+	def DocTp(self):
+		return self._DocTp
 
-	@CpyInd.setter
-	def CpyInd(self, value):
-		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
+	@DocTp.setter
+	def DocTp(self, value):
+		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
 
-	@CpyInd.deleter
-	def CpyInd(self):
-		del self._CpyInd
-		self._CpyInd = None
-
-	@property
-	def DocFrmt(self):
-		return self._DocFrmt
-
-	@DocFrmt.setter
-	def DocFrmt(self, value):
-		self._DocFrmt = value if type(value) != auto else self.make_default("DocFrmt")
-
-	@DocFrmt.deleter
-	def DocFrmt(self):
-		del self._DocFrmt
-		self._DocFrmt = None
+	@DocTp.deleter
+	def DocTp(self):
+		del self._DocTp
+		self._DocTp = None
 
 	@property
 	def PresntnChanl(self):
@@ -60,23 +47,36 @@ class Document10(base_types._BaseFieldType):
 		self._SgndInd = None
 
 	@property
-	def DocTp(self):
-		return self._DocTp
+	def CpyInd(self):
+		return self._CpyInd
 
-	@DocTp.setter
-	def DocTp(self, value):
-		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
+	@CpyInd.setter
+	def CpyInd(self, value):
+		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
 
-	@DocTp.deleter
-	def DocTp(self):
-		del self._DocTp
-		self._DocTp = None
+	@CpyInd.deleter
+	def CpyInd(self):
+		del self._CpyInd
+		self._CpyInd = None
+
+	@property
+	def DocFrmt(self):
+		return self._DocFrmt
+
+	@DocFrmt.setter
+	def DocFrmt(self, value):
+		self._DocFrmt = value if type(value) != auto else self.make_default("DocFrmt")
+
+	@DocFrmt.deleter
+	def DocFrmt(self):
+		del self._DocFrmt
+		self._DocFrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocFrmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocTp', type=UndertakingDocumentType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PresntnChanl', type=Channel1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocTp', type=UndertakingDocumentType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocFrmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

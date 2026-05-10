@@ -3,20 +3,7 @@ import Max35Text
 
 class SecuritiesTransactionReferences1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_MktInfrstrctrTxId", "_PrcgId", "_AcctSvcrTxId"]
-	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
-
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
-
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
-
+	__slots__ = ["_MktInfrstrctrTxId", "_AcctOwnrTxId", "_AcctSvcrTxId", "_PrcgId"]
 	@property
 	def MktInfrstrctrTxId(self):
 		return self._MktInfrstrctrTxId
@@ -31,17 +18,17 @@ class SecuritiesTransactionReferences1(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -56,10 +43,23 @@ class SecuritiesTransactionReferences1(base_types._BaseFieldType):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
 
+	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

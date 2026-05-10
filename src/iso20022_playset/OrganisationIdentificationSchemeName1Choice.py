@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import ExternalOrganisationIdentification1Code
+import Max35Text
 
 class OrganisationIdentificationSchemeName1Choice(base_types._BaseFieldType):
 

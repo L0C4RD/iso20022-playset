@@ -5,19 +5,19 @@ import SubBalanceQuantity1Choice
 
 class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedSubBalTp", "_SubBalTp", "_Qty"]
+	__slots__ = ["_Qty", "_SubBalTp", "_XtndedSubBalTp"]
 	@property
-	def XtndedSubBalTp(self):
-		return self._XtndedSubBalTp
+	def Qty(self):
+		return self._Qty
 
-	@XtndedSubBalTp.setter
-	def XtndedSubBalTp(self, value):
-		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
 
-	@XtndedSubBalTp.deleter
-	def XtndedSubBalTp(self):
-		del self._XtndedSubBalTp
-		self._XtndedSubBalTp = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def SubBalTp(self):
@@ -33,21 +33,21 @@ class AdditionalBalanceInformation2(base_types._BaseFieldType):
 		self._SubBalTp = None
 
 	@property
-	def Qty(self):
-		return self._Qty
+	def XtndedSubBalTp(self):
+		return self._XtndedSubBalTp
 
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+	@XtndedSubBalTp.setter
+	def XtndedSubBalTp(self, value):
+		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
 
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@XtndedSubBalTp.deleter
+	def XtndedSubBalTp(self):
+		del self._XtndedSubBalTp
+		self._XtndedSubBalTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

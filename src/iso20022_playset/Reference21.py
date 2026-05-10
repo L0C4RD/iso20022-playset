@@ -1,22 +1,22 @@
 import base_types
-import Max35Text
 import Max52Text
+import Max35Text
 
 class Reference21(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvrCollCtrctId", "_RcvrCollTxId", "_SndrCollTxId", "_SndrCollCtrctId", "_CmonTxId"]
+	__slots__ = ["_SndrCollCtrctId", "_RcvrCollTxId", "_SndrCollTxId", "_RcvrCollCtrctId", "_CmonTxId"]
 	@property
-	def RcvrCollCtrctId(self):
-		return self._RcvrCollCtrctId
+	def SndrCollCtrctId(self):
+		return self._SndrCollCtrctId
 
-	@RcvrCollCtrctId.setter
-	def RcvrCollCtrctId(self, value):
-		self._RcvrCollCtrctId = value if type(value) != auto else self.make_default("RcvrCollCtrctId")
+	@SndrCollCtrctId.setter
+	def SndrCollCtrctId(self, value):
+		self._SndrCollCtrctId = value if type(value) != auto else self.make_default("SndrCollCtrctId")
 
-	@RcvrCollCtrctId.deleter
-	def RcvrCollCtrctId(self):
-		del self._RcvrCollCtrctId
-		self._RcvrCollCtrctId = None
+	@SndrCollCtrctId.deleter
+	def SndrCollCtrctId(self):
+		del self._SndrCollCtrctId
+		self._SndrCollCtrctId = None
 
 	@property
 	def RcvrCollTxId(self):
@@ -45,17 +45,17 @@ class Reference21(base_types._BaseFieldType):
 		self._SndrCollTxId = None
 
 	@property
-	def SndrCollCtrctId(self):
-		return self._SndrCollCtrctId
+	def RcvrCollCtrctId(self):
+		return self._RcvrCollCtrctId
 
-	@SndrCollCtrctId.setter
-	def SndrCollCtrctId(self, value):
-		self._SndrCollCtrctId = value if type(value) != auto else self.make_default("SndrCollCtrctId")
+	@RcvrCollCtrctId.setter
+	def RcvrCollCtrctId(self, value):
+		self._RcvrCollCtrctId = value if type(value) != auto else self.make_default("RcvrCollCtrctId")
 
-	@SndrCollCtrctId.deleter
-	def SndrCollCtrctId(self):
-		del self._SndrCollCtrctId
-		self._SndrCollCtrctId = None
+	@RcvrCollCtrctId.deleter
+	def RcvrCollCtrctId(self):
+		del self._RcvrCollCtrctId
+		self._RcvrCollCtrctId = None
 
 	@property
 	def CmonTxId(self):
@@ -71,10 +71,10 @@ class Reference21(base_types._BaseFieldType):
 		self._CmonTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcvrCollCtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndrCollCtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SndrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndrCollCtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvrCollCtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

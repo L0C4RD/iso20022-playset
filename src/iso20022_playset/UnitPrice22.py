@@ -1,11 +1,11 @@
 import base_types
+import TypeOfPrice46Choice
+import PriceValue1
 import Number
 import Max350Text
-import PriceMethod1Code
-import TypeOfPrice46Choice
 import TaxableIncomePerShareCalculated2Choice
+import PriceMethod1Code
 import ActiveCurrencyAnd13DecimalAmount
-import PriceValue1
 
 class UnitPrice22(base_types._BaseFieldType):
 

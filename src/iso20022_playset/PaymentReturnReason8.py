@@ -1,25 +1,12 @@
 import base_types
-import Max105Text
 import BankTransactionCodeStructure4
-import PartyIdentification272
+import Max105Text
 import ReturnReason5Choice
+import PartyIdentification272
 
 class PaymentReturnReason8(base_types._BaseFieldType):
 
-	__slots__ = ["_Orgtr", "_OrgnlBkTxCd", "_Rsn", "_AddtlInf"]
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
+	__slots__ = ["_OrgnlBkTxCd", "_Orgtr", "_AddtlInf", "_Rsn"]
 	@property
 	def OrgnlBkTxCd(self):
 		return self._OrgnlBkTxCd
@@ -34,17 +21,17 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 		self._OrgnlBkTxCd = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def Orgtr(self):
+		return self._Orgtr
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
 
 	@property
 	def AddtlInf(self):
@@ -59,10 +46,23 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBkTxCd', type=BankTransactionCodeStructure4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=ReturnReason5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rsn', type=ReturnReason5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

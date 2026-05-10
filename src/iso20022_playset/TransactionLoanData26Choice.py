@@ -3,32 +3,19 @@ import LoanData120
 
 class TransactionLoanData26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesLndg", "_MrgnLndg", "_RpTrad", "_BuySellBck"]
+	__slots__ = ["_BuySellBck", "_RpTrad", "_MrgnLndg", "_SctiesLndg"]
 	@property
-	def SctiesLndg(self):
-		return self._SctiesLndg
+	def BuySellBck(self):
+		return self._BuySellBck
 
-	@SctiesLndg.setter
-	def SctiesLndg(self, value):
-		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
+	@BuySellBck.setter
+	def BuySellBck(self, value):
+		self._BuySellBck = value if type(value) != auto else self.make_default("BuySellBck")
 
-	@SctiesLndg.deleter
-	def SctiesLndg(self):
-		del self._SctiesLndg
-		self._SctiesLndg = None
-
-	@property
-	def MrgnLndg(self):
-		return self._MrgnLndg
-
-	@MrgnLndg.setter
-	def MrgnLndg(self, value):
-		self._MrgnLndg = value if type(value) != auto else self.make_default("MrgnLndg")
-
-	@MrgnLndg.deleter
-	def MrgnLndg(self):
-		del self._MrgnLndg
-		self._MrgnLndg = None
+	@BuySellBck.deleter
+	def BuySellBck(self):
+		del self._BuySellBck
+		self._BuySellBck = None
 
 	@property
 	def RpTrad(self):
@@ -44,22 +31,35 @@ class TransactionLoanData26Choice(base_types._BaseFieldType):
 		self._RpTrad = None
 
 	@property
-	def BuySellBck(self):
-		return self._BuySellBck
+	def MrgnLndg(self):
+		return self._MrgnLndg
 
-	@BuySellBck.setter
-	def BuySellBck(self, value):
-		self._BuySellBck = value if type(value) != auto else self.make_default("BuySellBck")
+	@MrgnLndg.setter
+	def MrgnLndg(self, value):
+		self._MrgnLndg = value if type(value) != auto else self.make_default("MrgnLndg")
 
-	@BuySellBck.deleter
-	def BuySellBck(self):
-		del self._BuySellBck
-		self._BuySellBck = None
+	@MrgnLndg.deleter
+	def MrgnLndg(self):
+		del self._MrgnLndg
+		self._MrgnLndg = None
+
+	@property
+	def SctiesLndg(self):
+		return self._SctiesLndg
+
+	@SctiesLndg.setter
+	def SctiesLndg(self, value):
+		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
+
+	@SctiesLndg.deleter
+	def SctiesLndg(self):
+		del self._SctiesLndg
+		self._SctiesLndg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesLndg', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MrgnLndg', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RpTrad', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BuySellBck', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RpTrad', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MrgnLndg', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesLndg', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
 	))
 

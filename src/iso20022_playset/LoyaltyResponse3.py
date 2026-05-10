@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
-import TransactionIdentifier1
 import LoyaltyResult3
+import TransactionIdentifier1
+import Max35Text
 
 class LoyaltyResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_POIRcncltnId", "_SaleTxId", "_POITxId", "_Rslt"]
-	@property
-	def POIRcncltnId(self):
-		return self._POIRcncltnId
-
-	@POIRcncltnId.setter
-	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != auto else self.make_default("POIRcncltnId")
-
-	@POIRcncltnId.deleter
-	def POIRcncltnId(self):
-		del self._POIRcncltnId
-		self._POIRcncltnId = None
-
+	__slots__ = ["_SaleTxId", "_POITxId", "_POIRcncltnId", "_Rslt"]
 	@property
 	def SaleTxId(self):
 		return self._SaleTxId
@@ -46,6 +33,19 @@ class LoyaltyResponse3(base_types._BaseFieldType):
 		self._POITxId = None
 
 	@property
+	def POIRcncltnId(self):
+		return self._POIRcncltnId
+
+	@POIRcncltnId.setter
+	def POIRcncltnId(self, value):
+		self._POIRcncltnId = value if type(value) != auto else self.make_default("POIRcncltnId")
+
+	@POIRcncltnId.deleter
+	def POIRcncltnId(self):
+		del self._POIRcncltnId
+		self._POIRcncltnId = None
+
+	@property
 	def Rslt(self):
 		return self._Rslt
 
@@ -59,9 +59,9 @@ class LoyaltyResponse3(base_types._BaseFieldType):
 		self._Rslt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rslt', type=LoyaltyResult3, min=0, max=None, mutex_group=None, array=True),
 	))
 

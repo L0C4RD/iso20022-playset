@@ -1,23 +1,23 @@
 import base_types
-import CancellationIndividualStatus1Code
-import Max15NumericText
 import DecimalNumber
+import Max15NumericText
+import CancellationIndividualStatus1Code
 
 class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldNbOfTxs", "_DtldCtrlSum", "_DtldSts"]
+	__slots__ = ["_DtldSts", "_DtldCtrlSum", "_DtldNbOfTxs"]
 	@property
-	def DtldNbOfTxs(self):
-		return self._DtldNbOfTxs
+	def DtldSts(self):
+		return self._DtldSts
 
-	@DtldNbOfTxs.setter
-	def DtldNbOfTxs(self, value):
-		self._DtldNbOfTxs = value if type(value) != auto else self.make_default("DtldNbOfTxs")
+	@DtldSts.setter
+	def DtldSts(self, value):
+		self._DtldSts = value if type(value) != auto else self.make_default("DtldSts")
 
-	@DtldNbOfTxs.deleter
-	def DtldNbOfTxs(self):
-		del self._DtldNbOfTxs
-		self._DtldNbOfTxs = None
+	@DtldSts.deleter
+	def DtldSts(self):
+		del self._DtldSts
+		self._DtldSts = None
 
 	@property
 	def DtldCtrlSum(self):
@@ -33,21 +33,21 @@ class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 		self._DtldCtrlSum = None
 
 	@property
-	def DtldSts(self):
-		return self._DtldSts
+	def DtldNbOfTxs(self):
+		return self._DtldNbOfTxs
 
-	@DtldSts.setter
-	def DtldSts(self, value):
-		self._DtldSts = value if type(value) != auto else self.make_default("DtldSts")
+	@DtldNbOfTxs.setter
+	def DtldNbOfTxs(self, value):
+		self._DtldNbOfTxs = value if type(value) != auto else self.make_default("DtldNbOfTxs")
 
-	@DtldSts.deleter
-	def DtldSts(self):
-		del self._DtldSts
-		self._DtldSts = None
+	@DtldNbOfTxs.deleter
+	def DtldNbOfTxs(self):
+		del self._DtldNbOfTxs
+		self._DtldNbOfTxs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldSts', type=CancellationIndividualStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

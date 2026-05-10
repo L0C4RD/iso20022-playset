@@ -1,24 +1,76 @@
 import base_types
-import BreakdownByUserDefinedParameter3
-import YesNoIndicator
-import BreakdownByParty3
+import DateAndDateTimeChoice
+import FinancialInstrument9
 import PercentageRate
-import ForeignExchangeTerms19
+import BreakdownByCurrency2
+import YesNoIndicator
 import CurrencyDesignation1
+import UnitPrice19
+import ForeignExchangeTerms19
+import BreakdownByParty3
+import ActiveOrHistoricCurrencyCode
+import BreakdownByUserDefinedParameter3
 import ActiveOrHistoricCurrencyAndAmount
 import NetCashForecast4
-import DateAndDateTimeChoice
-import UnitPrice19
-import BreakdownByCountry2
 import Max35Text
-import BreakdownByCurrency2
 import FinancialInstrumentQuantity1
-import FinancialInstrument9
-import ActiveOrHistoricCurrencyCode
+import BreakdownByCountry2
 
 class FundCashForecast6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsTradDtTm", "_TradDtTm", "_BrkdwnByUsrDfndParam", "_NetCshFcstDtls", "_BrkdwnByPty", "_InvstmtCcy", "_Id", "_TtlUnitsNb", "_TtlNAVChngRate", "_BrkdwnByCtry", "_XcptnlNetCshFlowInd", "_PrvsTtlUnitsNb", "_PctgOfShrClssTtlNAV", "_FXRate", "_CcySts", "_TtlNAV", "_PrvsTtlNAV", "_BrkdwnByCcy", "_Pric", "_FinInstrmDtls"]
+	__slots__ = ["_Id", "_PrvsTtlUnitsNb", "_TtlNAV", "_BrkdwnByPty", "_PrvsTradDtTm", "_TradDtTm", "_FXRate", "_FinInstrmDtls", "_PctgOfShrClssTtlNAV", "_TtlUnitsNb", "_BrkdwnByUsrDfndParam", "_BrkdwnByCcy", "_NetCshFcstDtls", "_XcptnlNetCshFlowInd", "_Pric", "_CcySts", "_TtlNAVChngRate", "_InvstmtCcy", "_PrvsTtlNAV", "_BrkdwnByCtry"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def PrvsTtlUnitsNb(self):
+		return self._PrvsTtlUnitsNb
+
+	@PrvsTtlUnitsNb.setter
+	def PrvsTtlUnitsNb(self, value):
+		self._PrvsTtlUnitsNb = value if type(value) != auto else self.make_default("PrvsTtlUnitsNb")
+
+	@PrvsTtlUnitsNb.deleter
+	def PrvsTtlUnitsNb(self):
+		del self._PrvsTtlUnitsNb
+		self._PrvsTtlUnitsNb = None
+
+	@property
+	def TtlNAV(self):
+		return self._TtlNAV
+
+	@TtlNAV.setter
+	def TtlNAV(self, value):
+		self._TtlNAV = value if type(value) != auto else self.make_default("TtlNAV")
+
+	@TtlNAV.deleter
+	def TtlNAV(self):
+		del self._TtlNAV
+		self._TtlNAV = None
+
+	@property
+	def BrkdwnByPty(self):
+		return self._BrkdwnByPty
+
+	@BrkdwnByPty.setter
+	def BrkdwnByPty(self, value):
+		self._BrkdwnByPty = value if type(value) != auto else self.make_default("BrkdwnByPty")
+
+	@BrkdwnByPty.deleter
+	def BrkdwnByPty(self):
+		del self._BrkdwnByPty
+		self._BrkdwnByPty = None
+
 	@property
 	def PrvsTradDtTm(self):
 		return self._PrvsTradDtTm
@@ -46,134 +98,30 @@ class FundCashForecast6(base_types._BaseFieldType):
 		self._TradDtTm = None
 
 	@property
-	def BrkdwnByUsrDfndParam(self):
-		return self._BrkdwnByUsrDfndParam
+	def FXRate(self):
+		return self._FXRate
 
-	@BrkdwnByUsrDfndParam.setter
-	def BrkdwnByUsrDfndParam(self, value):
-		self._BrkdwnByUsrDfndParam = value if type(value) != auto else self.make_default("BrkdwnByUsrDfndParam")
+	@FXRate.setter
+	def FXRate(self, value):
+		self._FXRate = value if type(value) != auto else self.make_default("FXRate")
 
-	@BrkdwnByUsrDfndParam.deleter
-	def BrkdwnByUsrDfndParam(self):
-		del self._BrkdwnByUsrDfndParam
-		self._BrkdwnByUsrDfndParam = None
-
-	@property
-	def NetCshFcstDtls(self):
-		return self._NetCshFcstDtls
-
-	@NetCshFcstDtls.setter
-	def NetCshFcstDtls(self, value):
-		self._NetCshFcstDtls = value if type(value) != auto else self.make_default("NetCshFcstDtls")
-
-	@NetCshFcstDtls.deleter
-	def NetCshFcstDtls(self):
-		del self._NetCshFcstDtls
-		self._NetCshFcstDtls = None
+	@FXRate.deleter
+	def FXRate(self):
+		del self._FXRate
+		self._FXRate = None
 
 	@property
-	def BrkdwnByPty(self):
-		return self._BrkdwnByPty
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
 
-	@BrkdwnByPty.setter
-	def BrkdwnByPty(self, value):
-		self._BrkdwnByPty = value if type(value) != auto else self.make_default("BrkdwnByPty")
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
 
-	@BrkdwnByPty.deleter
-	def BrkdwnByPty(self):
-		del self._BrkdwnByPty
-		self._BrkdwnByPty = None
-
-	@property
-	def InvstmtCcy(self):
-		return self._InvstmtCcy
-
-	@InvstmtCcy.setter
-	def InvstmtCcy(self, value):
-		self._InvstmtCcy = value if type(value) != auto else self.make_default("InvstmtCcy")
-
-	@InvstmtCcy.deleter
-	def InvstmtCcy(self):
-		del self._InvstmtCcy
-		self._InvstmtCcy = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def TtlUnitsNb(self):
-		return self._TtlUnitsNb
-
-	@TtlUnitsNb.setter
-	def TtlUnitsNb(self, value):
-		self._TtlUnitsNb = value if type(value) != auto else self.make_default("TtlUnitsNb")
-
-	@TtlUnitsNb.deleter
-	def TtlUnitsNb(self):
-		del self._TtlUnitsNb
-		self._TtlUnitsNb = None
-
-	@property
-	def TtlNAVChngRate(self):
-		return self._TtlNAVChngRate
-
-	@TtlNAVChngRate.setter
-	def TtlNAVChngRate(self, value):
-		self._TtlNAVChngRate = value if type(value) != auto else self.make_default("TtlNAVChngRate")
-
-	@TtlNAVChngRate.deleter
-	def TtlNAVChngRate(self):
-		del self._TtlNAVChngRate
-		self._TtlNAVChngRate = None
-
-	@property
-	def BrkdwnByCtry(self):
-		return self._BrkdwnByCtry
-
-	@BrkdwnByCtry.setter
-	def BrkdwnByCtry(self, value):
-		self._BrkdwnByCtry = value if type(value) != auto else self.make_default("BrkdwnByCtry")
-
-	@BrkdwnByCtry.deleter
-	def BrkdwnByCtry(self):
-		del self._BrkdwnByCtry
-		self._BrkdwnByCtry = None
-
-	@property
-	def XcptnlNetCshFlowInd(self):
-		return self._XcptnlNetCshFlowInd
-
-	@XcptnlNetCshFlowInd.setter
-	def XcptnlNetCshFlowInd(self, value):
-		self._XcptnlNetCshFlowInd = value if type(value) != auto else self.make_default("XcptnlNetCshFlowInd")
-
-	@XcptnlNetCshFlowInd.deleter
-	def XcptnlNetCshFlowInd(self):
-		del self._XcptnlNetCshFlowInd
-		self._XcptnlNetCshFlowInd = None
-
-	@property
-	def PrvsTtlUnitsNb(self):
-		return self._PrvsTtlUnitsNb
-
-	@PrvsTtlUnitsNb.setter
-	def PrvsTtlUnitsNb(self, value):
-		self._PrvsTtlUnitsNb = value if type(value) != auto else self.make_default("PrvsTtlUnitsNb")
-
-	@PrvsTtlUnitsNb.deleter
-	def PrvsTtlUnitsNb(self):
-		del self._PrvsTtlUnitsNb
-		self._PrvsTtlUnitsNb = None
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
 
 	@property
 	def PctgOfShrClssTtlNAV(self):
@@ -189,56 +137,30 @@ class FundCashForecast6(base_types._BaseFieldType):
 		self._PctgOfShrClssTtlNAV = None
 
 	@property
-	def FXRate(self):
-		return self._FXRate
+	def TtlUnitsNb(self):
+		return self._TtlUnitsNb
 
-	@FXRate.setter
-	def FXRate(self, value):
-		self._FXRate = value if type(value) != auto else self.make_default("FXRate")
+	@TtlUnitsNb.setter
+	def TtlUnitsNb(self, value):
+		self._TtlUnitsNb = value if type(value) != auto else self.make_default("TtlUnitsNb")
 
-	@FXRate.deleter
-	def FXRate(self):
-		del self._FXRate
-		self._FXRate = None
-
-	@property
-	def CcySts(self):
-		return self._CcySts
-
-	@CcySts.setter
-	def CcySts(self, value):
-		self._CcySts = value if type(value) != auto else self.make_default("CcySts")
-
-	@CcySts.deleter
-	def CcySts(self):
-		del self._CcySts
-		self._CcySts = None
+	@TtlUnitsNb.deleter
+	def TtlUnitsNb(self):
+		del self._TtlUnitsNb
+		self._TtlUnitsNb = None
 
 	@property
-	def TtlNAV(self):
-		return self._TtlNAV
+	def BrkdwnByUsrDfndParam(self):
+		return self._BrkdwnByUsrDfndParam
 
-	@TtlNAV.setter
-	def TtlNAV(self, value):
-		self._TtlNAV = value if type(value) != auto else self.make_default("TtlNAV")
+	@BrkdwnByUsrDfndParam.setter
+	def BrkdwnByUsrDfndParam(self, value):
+		self._BrkdwnByUsrDfndParam = value if type(value) != auto else self.make_default("BrkdwnByUsrDfndParam")
 
-	@TtlNAV.deleter
-	def TtlNAV(self):
-		del self._TtlNAV
-		self._TtlNAV = None
-
-	@property
-	def PrvsTtlNAV(self):
-		return self._PrvsTtlNAV
-
-	@PrvsTtlNAV.setter
-	def PrvsTtlNAV(self, value):
-		self._PrvsTtlNAV = value if type(value) != auto else self.make_default("PrvsTtlNAV")
-
-	@PrvsTtlNAV.deleter
-	def PrvsTtlNAV(self):
-		del self._PrvsTtlNAV
-		self._PrvsTtlNAV = None
+	@BrkdwnByUsrDfndParam.deleter
+	def BrkdwnByUsrDfndParam(self):
+		del self._BrkdwnByUsrDfndParam
+		self._BrkdwnByUsrDfndParam = None
 
 	@property
 	def BrkdwnByCcy(self):
@@ -254,6 +176,32 @@ class FundCashForecast6(base_types._BaseFieldType):
 		self._BrkdwnByCcy = None
 
 	@property
+	def NetCshFcstDtls(self):
+		return self._NetCshFcstDtls
+
+	@NetCshFcstDtls.setter
+	def NetCshFcstDtls(self, value):
+		self._NetCshFcstDtls = value if type(value) != auto else self.make_default("NetCshFcstDtls")
+
+	@NetCshFcstDtls.deleter
+	def NetCshFcstDtls(self):
+		del self._NetCshFcstDtls
+		self._NetCshFcstDtls = None
+
+	@property
+	def XcptnlNetCshFlowInd(self):
+		return self._XcptnlNetCshFlowInd
+
+	@XcptnlNetCshFlowInd.setter
+	def XcptnlNetCshFlowInd(self, value):
+		self._XcptnlNetCshFlowInd = value if type(value) != auto else self.make_default("XcptnlNetCshFlowInd")
+
+	@XcptnlNetCshFlowInd.deleter
+	def XcptnlNetCshFlowInd(self):
+		del self._XcptnlNetCshFlowInd
+		self._XcptnlNetCshFlowInd = None
+
+	@property
 	def Pric(self):
 		return self._Pric
 
@@ -267,38 +215,90 @@ class FundCashForecast6(base_types._BaseFieldType):
 		self._Pric = None
 
 	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
+	def CcySts(self):
+		return self._CcySts
 
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+	@CcySts.setter
+	def CcySts(self, value):
+		self._CcySts = value if type(value) != auto else self.make_default("CcySts")
 
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+	@CcySts.deleter
+	def CcySts(self):
+		del self._CcySts
+		self._CcySts = None
+
+	@property
+	def TtlNAVChngRate(self):
+		return self._TtlNAVChngRate
+
+	@TtlNAVChngRate.setter
+	def TtlNAVChngRate(self, value):
+		self._TtlNAVChngRate = value if type(value) != auto else self.make_default("TtlNAVChngRate")
+
+	@TtlNAVChngRate.deleter
+	def TtlNAVChngRate(self):
+		del self._TtlNAVChngRate
+		self._TtlNAVChngRate = None
+
+	@property
+	def InvstmtCcy(self):
+		return self._InvstmtCcy
+
+	@InvstmtCcy.setter
+	def InvstmtCcy(self, value):
+		self._InvstmtCcy = value if type(value) != auto else self.make_default("InvstmtCcy")
+
+	@InvstmtCcy.deleter
+	def InvstmtCcy(self):
+		del self._InvstmtCcy
+		self._InvstmtCcy = None
+
+	@property
+	def PrvsTtlNAV(self):
+		return self._PrvsTtlNAV
+
+	@PrvsTtlNAV.setter
+	def PrvsTtlNAV(self, value):
+		self._PrvsTtlNAV = value if type(value) != auto else self.make_default("PrvsTtlNAV")
+
+	@PrvsTtlNAV.deleter
+	def PrvsTtlNAV(self):
+		del self._PrvsTtlNAV
+		self._PrvsTtlNAV = None
+
+	@property
+	def BrkdwnByCtry(self):
+		return self._BrkdwnByCtry
+
+	@BrkdwnByCtry.setter
+	def BrkdwnByCtry(self, value):
+		self._BrkdwnByCtry = value if type(value) != auto else self.make_default("BrkdwnByCtry")
+
+	@BrkdwnByCtry.deleter
+	def BrkdwnByCtry(self):
+		del self._BrkdwnByCtry
+		self._BrkdwnByCtry = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BrkdwnByPty', type=BreakdownByParty3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrvsTradDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrkdwnByUsrDfndParam', type=BreakdownByUserDefinedParameter3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NetCshFcstDtls', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BrkdwnByPty', type=BreakdownByParty3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InvstmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNAVChngRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrkdwnByCtry', type=BreakdownByCountry2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XcptnlNetCshFlowInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PctgOfShrClssTtlNAV', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXRate', type=ForeignExchangeTerms19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcySts', type=CurrencyDesignation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BrkdwnByCcy', type=BreakdownByCurrency2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pric', type=UnitPrice19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgOfShrClssTtlNAV', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrkdwnByUsrDfndParam', type=BreakdownByUserDefinedParameter3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BrkdwnByCcy', type=BreakdownByCurrency2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NetCshFcstDtls', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XcptnlNetCshFlowInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pric', type=UnitPrice19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcySts', type=CurrencyDesignation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNAVChngRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BrkdwnByCtry', type=BreakdownByCountry2, min=0, max=None, mutex_group=None, array=True),
 	))
 

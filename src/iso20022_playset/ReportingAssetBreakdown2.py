@@ -1,12 +1,12 @@
 import base_types
+import Max350Text
 import ActiveCurrencyAndAmount
 import ProductType6Code
-import Max350Text
 import DebtIssuerType1Code
 
 class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_RptgAsstTp", "_Amt", "_DebtIssrTp"]
+	__slots__ = ["_Id", "_RptgAsstTp", "_DebtIssrTp", "_Amt"]
 	@property
 	def Id(self):
 		return self._Id
@@ -34,19 +34,6 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 		self._RptgAsstTp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def DebtIssrTp(self):
 		return self._DebtIssrTp
 
@@ -59,10 +46,23 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 		del self._DebtIssrTp
 		self._DebtIssrTp = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgAsstTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtIssrTp', type=DebtIssuerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

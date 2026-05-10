@@ -1,13 +1,13 @@
 import base_types
-import InternalisationData1
+import SettlementInternaliserTransactionType1
 import SettlementInternaliserClientType1
 import SettlementInternaliserIdentification1
-import SettlementInternaliserTransactionType1
+import InternalisationData1
 import SettlementInternaliserFinancialInstrument1
 
 class SettlementInternaliser1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCshTrf", "_Id", "_OvrllTtl", "_FinInstrm", "_TxTp", "_ClntTp"]
+	__slots__ = ["_TtlCshTrf", "_FinInstrm", "_Id", "_ClntTp", "_TxTp", "_OvrllTtl"]
 	@property
 	def TtlCshTrf(self):
 		return self._TtlCshTrf
@@ -20,32 +20,6 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 	def TtlCshTrf(self):
 		del self._TtlCshTrf
 		self._TtlCshTrf = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def OvrllTtl(self):
-		return self._OvrllTtl
-
-	@OvrllTtl.setter
-	def OvrllTtl(self, value):
-		self._OvrllTtl = value if type(value) != auto else self.make_default("OvrllTtl")
-
-	@OvrllTtl.deleter
-	def OvrllTtl(self):
-		del self._OvrllTtl
-		self._OvrllTtl = None
 
 	@property
 	def FinInstrm(self):
@@ -61,17 +35,17 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 		self._FinInstrm = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def Id(self):
+		return self._Id
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def ClntTp(self):
@@ -86,12 +60,38 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 		del self._ClntTp
 		self._ClntTp = None
 
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
+	@property
+	def OvrllTtl(self):
+		return self._OvrllTtl
+
+	@OvrllTtl.setter
+	def OvrllTtl(self, value):
+		self._OvrllTtl = value if type(value) != auto else self.make_default("OvrllTtl")
+
+	@OvrllTtl.deleter
+	def OvrllTtl(self):
+		del self._OvrllTtl
+		self._OvrllTtl = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlCshTrf', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SettlementInternaliserIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrm', type=SettlementInternaliserFinancialInstrument1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=SettlementInternaliserTransactionType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SettlementInternaliserIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntTp', type=SettlementInternaliserClientType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=SettlementInternaliserTransactionType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

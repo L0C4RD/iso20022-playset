@@ -1,7 +1,7 @@
 import base_types
-import Max140Text
 import PartyIdentification125Choice
 import CommunicationMethod3Choice
+import Max140Text
 
 class DocumentToSend4(base_types._BaseFieldType):
 

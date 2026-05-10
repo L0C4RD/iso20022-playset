@@ -1,6 +1,6 @@
 import base_types
-import CorporateActionChangeType2Code
 import GenericIdentification30
+import CorporateActionChangeType2Code
 
 class CorporateActionChangeTypeFormat6Choice(base_types._BaseFieldType):
 

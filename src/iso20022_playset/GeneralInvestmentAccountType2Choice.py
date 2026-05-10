@@ -1,6 +1,6 @@
 import base_types
-import GeneralInvestmentAccountType2Code
 import GenericIdentification36
+import GeneralInvestmentAccountType2Code
 
 class GeneralInvestmentAccountType2Choice(base_types._BaseFieldType):
 

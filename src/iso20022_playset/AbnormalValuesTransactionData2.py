@@ -1,23 +1,23 @@
 import base_types
 import TradeTransactionIdentification24
-import NotionalQuantityLegs5
 import NotionalAmountLegs5
+import NotionalQuantityLegs5
 
 class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_NtnlQty", "_NtnlAmt"]
+	__slots__ = ["_NtnlAmt", "_NtnlQty", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def NtnlAmt(self):
+		return self._NtnlAmt
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@NtnlAmt.setter
+	def NtnlAmt(self, value):
+		self._NtnlAmt = value if type(value) != auto else self.make_default("NtnlAmt")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@NtnlAmt.deleter
+	def NtnlAmt(self):
+		del self._NtnlAmt
+		self._NtnlAmt = None
 
 	@property
 	def NtnlQty(self):
@@ -33,21 +33,21 @@ class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 		self._NtnlQty = None
 
 	@property
-	def NtnlAmt(self):
-		return self._NtnlAmt
+	def TxId(self):
+		return self._TxId
 
-	@NtnlAmt.setter
-	def NtnlAmt(self, value):
-		self._NtnlAmt = value if type(value) != auto else self.make_default("NtnlAmt")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@NtnlAmt.deleter
-	def NtnlAmt(self):
-		del self._NtnlAmt
-		self._NtnlAmt = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlQty', type=NotionalQuantityLegs5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtnlAmt', type=NotionalAmountLegs5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlQty', type=NotionalQuantityLegs5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
 	))
 

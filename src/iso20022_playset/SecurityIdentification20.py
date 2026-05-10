@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax140Text
 import OtherIdentification2
+import RestrictedFINXMax140Text
 import ISINOct2015Identifier
 
 class SecurityIdentification20(base_types._BaseFieldType):

@@ -1,25 +1,12 @@
 import base_types
 import SupplementaryData1
-import TransactionIdentification7
-import ResponseStatus8Choice
 import TransactionDetails157
+import ResponseStatus8Choice
+import TransactionIdentification7
 
 class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._BaseFieldType):
 
-	__slots__ = ["_TxDtls", "_RspnSts", "_SplmtryData", "_TxId"]
-	@property
-	def TxDtls(self):
-		return self._TxDtls
-
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
-
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
-
+	__slots__ = ["_RspnSts", "_SplmtryData", "_TxId", "_TxDtls"]
 	@property
 	def RspnSts(self):
 		return self._RspnSts
@@ -59,10 +46,23 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def TxDtls(self):
+		return self._TxDtls
+
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxDtls', type=TransactionDetails157, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnSts', type=ResponseStatus8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDtls', type=TransactionDetails157, min=0, max=1, mutex_group=None, array=False),
 	))
 

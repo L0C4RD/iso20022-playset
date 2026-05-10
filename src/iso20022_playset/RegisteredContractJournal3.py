@@ -1,25 +1,12 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
 import ISODate
-import DocumentIdentification28
 import ContractClosureReason1Choice
+import DocumentIdentification28
+import BranchAndFinancialInstitutionIdentification8
 
 class RegisteredContractJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrDt", "_ClsrRsn", "_UnqId", "_RegnAgt"]
-	@property
-	def ClsrDt(self):
-		return self._ClsrDt
-
-	@ClsrDt.setter
-	def ClsrDt(self, value):
-		self._ClsrDt = value if type(value) != auto else self.make_default("ClsrDt")
-
-	@ClsrDt.deleter
-	def ClsrDt(self):
-		del self._ClsrDt
-		self._ClsrDt = None
-
+	__slots__ = ["_ClsrRsn", "_UnqId", "_RegnAgt", "_ClsrDt"]
 	@property
 	def ClsrRsn(self):
 		return self._ClsrRsn
@@ -59,10 +46,23 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 		del self._RegnAgt
 		self._RegnAgt = None
 
+	@property
+	def ClsrDt(self):
+		return self._ClsrDt
+
+	@ClsrDt.setter
+	def ClsrDt(self, value):
+		self._ClsrDt = value if type(value) != auto else self.make_default("ClsrDt")
+
+	@ClsrDt.deleter
+	def ClsrDt(self):
+		del self._ClsrDt
+		self._ClsrDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,13 @@
 import base_types
+import Max70Text
 import Max35Text
 import ISO3NumericCurrencyCode
-import Max256Text
 import Address2
-import Max70Text
+import Max256Text
 
 class Location6(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_Nm", "_LclCcy", "_Desc", "_Cd", "_LclTmZone"]
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
+	__slots__ = ["_Nm", "_Adr", "_LclCcy", "_Cd", "_LclTmZone", "_Desc"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -35,6 +22,19 @@ class Location6(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
 	def LclCcy(self):
 		return self._LclCcy
 
@@ -46,19 +46,6 @@ class Location6(base_types._BaseFieldType):
 	def LclCcy(self):
 		del self._LclCcy
 		self._LclCcy = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
 
 	@property
 	def Cd(self):
@@ -86,12 +73,25 @@ class Location6(base_types._BaseFieldType):
 		del self._LclTmZone
 		self._LclTmZone = None
 
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclTmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

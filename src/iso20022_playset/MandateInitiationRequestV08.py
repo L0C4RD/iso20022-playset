@@ -1,7 +1,7 @@
 import base_types
 import SupplementaryData1
-import Mandate23
 import GroupHeader110
+import Mandate23
 
 class MandateInitiationRequestV08(base_types._BaseFieldType):
 

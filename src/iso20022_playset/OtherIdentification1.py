@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import IdentificationSource3Choice
 import Max16Text
+import IdentificationSource3Choice
+import Max35Text
 
 class OtherIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_Sfx"]
+	__slots__ = ["_Sfx", "_Tp", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def Sfx(self):
+		return self._Sfx
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Sfx.setter
+	def Sfx(self, value):
+		self._Sfx = value if type(value) != auto else self.make_default("Sfx")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Sfx.deleter
+	def Sfx(self):
+		del self._Sfx
+		self._Sfx = None
 
 	@property
 	def Tp(self):
@@ -33,21 +33,21 @@ class OtherIdentification1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Sfx(self):
-		return self._Sfx
+	def Id(self):
+		return self._Id
 
-	@Sfx.setter
-	def Sfx(self, value):
-		self._Sfx = value if type(value) != auto else self.make_default("Sfx")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Sfx.deleter
-	def Sfx(self):
-		del self._Sfx
-		self._Sfx = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=IdentificationSource3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sfx', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=IdentificationSource3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

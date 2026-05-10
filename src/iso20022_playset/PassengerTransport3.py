@@ -1,60 +1,34 @@
 import base_types
+import Max4Text
+import Max70Text
+import Customer9
 import CustomerReference1
 import AmountDetails3
 import Max4NumericText
-import DepartureOrArrival1
-import HiredVehicle3
-import TrueFalseIndicator
-import Max35Text
-import TripLeg3
 import AncillaryPurchase3
-import Customer9
+import DepartureOrArrival1
 import AdditionalData1
-import Max4Text
+import TripLeg3
+import HiredVehicle3
 import LoyaltyProgramme4
-import Max70Text
+import Max35Text
+import TrueFalseIndicator
 
 class PassengerTransport3(base_types._BaseFieldType):
 
-	__slots__ = ["_Insrnc", "_CstmrRef", "_Pssngr", "_RsvatnSys", "_Drtn", "_TtlAmt", "_RsvatnNb", "_DocNb", "_TripLeg", "_TrvlAuthstnCd", "_AncllryPurchs", "_TcktIssr", "_HirdVhclDtls", "_SummryCmmdtyId", "_OrgnlRsvatnSys", "_OpnTckt", "_OrgnlRsvatnNb", "_Dprture", "_AddtlData", "_LltyPrgrmm"]
+	__slots__ = ["_OpnTckt", "_RsvatnSys", "_HirdVhclDtls", "_TtlAmt", "_AddtlData", "_Pssngr", "_TripLeg", "_CstmrRef", "_SummryCmmdtyId", "_OrgnlRsvatnSys", "_Dprture", "_TrvlAuthstnCd", "_RsvatnNb", "_Drtn", "_DocNb", "_TcktIssr", "_OrgnlRsvatnNb", "_Insrnc", "_LltyPrgrmm", "_AncllryPurchs"]
 	@property
-	def Insrnc(self):
-		return self._Insrnc
+	def OpnTckt(self):
+		return self._OpnTckt
 
-	@Insrnc.setter
-	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
+	@OpnTckt.setter
+	def OpnTckt(self, value):
+		self._OpnTckt = value if type(value) != auto else self.make_default("OpnTckt")
 
-	@Insrnc.deleter
-	def Insrnc(self):
-		del self._Insrnc
-		self._Insrnc = None
-
-	@property
-	def CstmrRef(self):
-		return self._CstmrRef
-
-	@CstmrRef.setter
-	def CstmrRef(self, value):
-		self._CstmrRef = value if type(value) != auto else self.make_default("CstmrRef")
-
-	@CstmrRef.deleter
-	def CstmrRef(self):
-		del self._CstmrRef
-		self._CstmrRef = None
-
-	@property
-	def Pssngr(self):
-		return self._Pssngr
-
-	@Pssngr.setter
-	def Pssngr(self, value):
-		self._Pssngr = value if type(value) != auto else self.make_default("Pssngr")
-
-	@Pssngr.deleter
-	def Pssngr(self):
-		del self._Pssngr
-		self._Pssngr = None
+	@OpnTckt.deleter
+	def OpnTckt(self):
+		del self._OpnTckt
+		self._OpnTckt = None
 
 	@property
 	def RsvatnSys(self):
@@ -70,17 +44,17 @@ class PassengerTransport3(base_types._BaseFieldType):
 		self._RsvatnSys = None
 
 	@property
-	def Drtn(self):
-		return self._Drtn
+	def HirdVhclDtls(self):
+		return self._HirdVhclDtls
 
-	@Drtn.setter
-	def Drtn(self, value):
-		self._Drtn = value if type(value) != auto else self.make_default("Drtn")
+	@HirdVhclDtls.setter
+	def HirdVhclDtls(self, value):
+		self._HirdVhclDtls = value if type(value) != auto else self.make_default("HirdVhclDtls")
 
-	@Drtn.deleter
-	def Drtn(self):
-		del self._Drtn
-		self._Drtn = None
+	@HirdVhclDtls.deleter
+	def HirdVhclDtls(self):
+		del self._HirdVhclDtls
+		self._HirdVhclDtls = None
 
 	@property
 	def TtlAmt(self):
@@ -96,30 +70,30 @@ class PassengerTransport3(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
-	def RsvatnNb(self):
-		return self._RsvatnNb
+	def AddtlData(self):
+		return self._AddtlData
 
-	@RsvatnNb.setter
-	def RsvatnNb(self, value):
-		self._RsvatnNb = value if type(value) != auto else self.make_default("RsvatnNb")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
 
-	@RsvatnNb.deleter
-	def RsvatnNb(self):
-		del self._RsvatnNb
-		self._RsvatnNb = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
-	def DocNb(self):
-		return self._DocNb
+	def Pssngr(self):
+		return self._Pssngr
 
-	@DocNb.setter
-	def DocNb(self, value):
-		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
+	@Pssngr.setter
+	def Pssngr(self, value):
+		self._Pssngr = value if type(value) != auto else self.make_default("Pssngr")
 
-	@DocNb.deleter
-	def DocNb(self):
-		del self._DocNb
-		self._DocNb = None
+	@Pssngr.deleter
+	def Pssngr(self):
+		del self._Pssngr
+		self._Pssngr = None
 
 	@property
 	def TripLeg(self):
@@ -135,56 +109,17 @@ class PassengerTransport3(base_types._BaseFieldType):
 		self._TripLeg = None
 
 	@property
-	def TrvlAuthstnCd(self):
-		return self._TrvlAuthstnCd
+	def CstmrRef(self):
+		return self._CstmrRef
 
-	@TrvlAuthstnCd.setter
-	def TrvlAuthstnCd(self, value):
-		self._TrvlAuthstnCd = value if type(value) != auto else self.make_default("TrvlAuthstnCd")
+	@CstmrRef.setter
+	def CstmrRef(self, value):
+		self._CstmrRef = value if type(value) != auto else self.make_default("CstmrRef")
 
-	@TrvlAuthstnCd.deleter
-	def TrvlAuthstnCd(self):
-		del self._TrvlAuthstnCd
-		self._TrvlAuthstnCd = None
-
-	@property
-	def AncllryPurchs(self):
-		return self._AncllryPurchs
-
-	@AncllryPurchs.setter
-	def AncllryPurchs(self, value):
-		self._AncllryPurchs = value if type(value) != auto else self.make_default("AncllryPurchs")
-
-	@AncllryPurchs.deleter
-	def AncllryPurchs(self):
-		del self._AncllryPurchs
-		self._AncllryPurchs = None
-
-	@property
-	def TcktIssr(self):
-		return self._TcktIssr
-
-	@TcktIssr.setter
-	def TcktIssr(self, value):
-		self._TcktIssr = value if type(value) != auto else self.make_default("TcktIssr")
-
-	@TcktIssr.deleter
-	def TcktIssr(self):
-		del self._TcktIssr
-		self._TcktIssr = None
-
-	@property
-	def HirdVhclDtls(self):
-		return self._HirdVhclDtls
-
-	@HirdVhclDtls.setter
-	def HirdVhclDtls(self, value):
-		self._HirdVhclDtls = value if type(value) != auto else self.make_default("HirdVhclDtls")
-
-	@HirdVhclDtls.deleter
-	def HirdVhclDtls(self):
-		del self._HirdVhclDtls
-		self._HirdVhclDtls = None
+	@CstmrRef.deleter
+	def CstmrRef(self):
+		del self._CstmrRef
+		self._CstmrRef = None
 
 	@property
 	def SummryCmmdtyId(self):
@@ -213,17 +148,82 @@ class PassengerTransport3(base_types._BaseFieldType):
 		self._OrgnlRsvatnSys = None
 
 	@property
-	def OpnTckt(self):
-		return self._OpnTckt
+	def Dprture(self):
+		return self._Dprture
 
-	@OpnTckt.setter
-	def OpnTckt(self, value):
-		self._OpnTckt = value if type(value) != auto else self.make_default("OpnTckt")
+	@Dprture.setter
+	def Dprture(self, value):
+		self._Dprture = value if type(value) != auto else self.make_default("Dprture")
 
-	@OpnTckt.deleter
-	def OpnTckt(self):
-		del self._OpnTckt
-		self._OpnTckt = None
+	@Dprture.deleter
+	def Dprture(self):
+		del self._Dprture
+		self._Dprture = None
+
+	@property
+	def TrvlAuthstnCd(self):
+		return self._TrvlAuthstnCd
+
+	@TrvlAuthstnCd.setter
+	def TrvlAuthstnCd(self, value):
+		self._TrvlAuthstnCd = value if type(value) != auto else self.make_default("TrvlAuthstnCd")
+
+	@TrvlAuthstnCd.deleter
+	def TrvlAuthstnCd(self):
+		del self._TrvlAuthstnCd
+		self._TrvlAuthstnCd = None
+
+	@property
+	def RsvatnNb(self):
+		return self._RsvatnNb
+
+	@RsvatnNb.setter
+	def RsvatnNb(self, value):
+		self._RsvatnNb = value if type(value) != auto else self.make_default("RsvatnNb")
+
+	@RsvatnNb.deleter
+	def RsvatnNb(self):
+		del self._RsvatnNb
+		self._RsvatnNb = None
+
+	@property
+	def Drtn(self):
+		return self._Drtn
+
+	@Drtn.setter
+	def Drtn(self, value):
+		self._Drtn = value if type(value) != auto else self.make_default("Drtn")
+
+	@Drtn.deleter
+	def Drtn(self):
+		del self._Drtn
+		self._Drtn = None
+
+	@property
+	def DocNb(self):
+		return self._DocNb
+
+	@DocNb.setter
+	def DocNb(self, value):
+		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
+
+	@DocNb.deleter
+	def DocNb(self):
+		del self._DocNb
+		self._DocNb = None
+
+	@property
+	def TcktIssr(self):
+		return self._TcktIssr
+
+	@TcktIssr.setter
+	def TcktIssr(self, value):
+		self._TcktIssr = value if type(value) != auto else self.make_default("TcktIssr")
+
+	@TcktIssr.deleter
+	def TcktIssr(self):
+		del self._TcktIssr
+		self._TcktIssr = None
 
 	@property
 	def OrgnlRsvatnNb(self):
@@ -239,30 +239,17 @@ class PassengerTransport3(base_types._BaseFieldType):
 		self._OrgnlRsvatnNb = None
 
 	@property
-	def Dprture(self):
-		return self._Dprture
+	def Insrnc(self):
+		return self._Insrnc
 
-	@Dprture.setter
-	def Dprture(self, value):
-		self._Dprture = value if type(value) != auto else self.make_default("Dprture")
+	@Insrnc.setter
+	def Insrnc(self, value):
+		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
 
-	@Dprture.deleter
-	def Dprture(self):
-		del self._Dprture
-		self._Dprture = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@Insrnc.deleter
+	def Insrnc(self):
+		del self._Insrnc
+		self._Insrnc = None
 
 	@property
 	def LltyPrgrmm(self):
@@ -277,26 +264,39 @@ class PassengerTransport3(base_types._BaseFieldType):
 		del self._LltyPrgrmm
 		self._LltyPrgrmm = None
 
+	@property
+	def AncllryPurchs(self):
+		return self._AncllryPurchs
+
+	@AncllryPurchs.setter
+	def AncllryPurchs(self, value):
+		self._AncllryPurchs = value if type(value) != auto else self.make_default("AncllryPurchs")
+
+	@AncllryPurchs.deleter
+	def AncllryPurchs(self):
+		del self._AncllryPurchs
+		self._AncllryPurchs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrRef', type=CustomerReference1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pssngr', type=Customer9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OpnTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsvatnSys', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=AmountDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TripLeg', type=TripLeg3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrvlAuthstnCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AncllryPurchs', type=AncillaryPurchase3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TcktIssr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HirdVhclDtls', type=HiredVehicle3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlAmt', type=AmountDetails3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pssngr', type=Customer9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TripLeg', type=TripLeg3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CstmrRef', type=CustomerReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlRsvatnSys', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpnTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlRsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dprture', type=DepartureOrArrival1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrvlAuthstnCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TcktIssr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AncllryPurchs', type=AncillaryPurchase3, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,26 +1,26 @@
 import base_types
-import PriorityNumeric4Choice
-import SecuritiesSubBalanceTypeAndQuantityBreakdown5
-import Max350Text
-import FinancialInstrumentQuantity33Choice
-import GenericIdentification37
 import DateAndDateTime2Choice
+import SecuritiesSubBalanceTypeAndQuantityBreakdown5
+import GenericIdentification37
+import Max350Text
+import PriorityNumeric4Choice
+import FinancialInstrumentQuantity33Choice
 
 class IntraPositionDetails58(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTo", "_SctiesSubBalId", "_Prty", "_BalFr", "_InstrPrcgAddtlDtls", "_SttlmDt", "_SttlmQty"]
+	__slots__ = ["_BalFr", "_SctiesSubBalId", "_SttlmQty", "_Prty", "_SttlmDt", "_BalTo", "_InstrPrcgAddtlDtls"]
 	@property
-	def BalTo(self):
-		return self._BalTo
+	def BalFr(self):
+		return self._BalFr
 
-	@BalTo.setter
-	def BalTo(self, value):
-		self._BalTo = value if type(value) != auto else self.make_default("BalTo")
+	@BalFr.setter
+	def BalFr(self, value):
+		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
 
-	@BalTo.deleter
-	def BalTo(self):
-		del self._BalTo
-		self._BalTo = None
+	@BalFr.deleter
+	def BalFr(self):
+		del self._BalFr
+		self._BalFr = None
 
 	@property
 	def SctiesSubBalId(self):
@@ -36,6 +36,19 @@ class IntraPositionDetails58(base_types._BaseFieldType):
 		self._SctiesSubBalId = None
 
 	@property
+	def SttlmQty(self):
+		return self._SttlmQty
+
+	@SttlmQty.setter
+	def SttlmQty(self, value):
+		self._SttlmQty = value if type(value) != auto else self.make_default("SttlmQty")
+
+	@SttlmQty.deleter
+	def SttlmQty(self):
+		del self._SttlmQty
+		self._SttlmQty = None
+
+	@property
 	def Prty(self):
 		return self._Prty
 
@@ -47,32 +60,6 @@ class IntraPositionDetails58(base_types._BaseFieldType):
 	def Prty(self):
 		del self._Prty
 		self._Prty = None
-
-	@property
-	def BalFr(self):
-		return self._BalFr
-
-	@BalFr.setter
-	def BalFr(self, value):
-		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
-
-	@BalFr.deleter
-	def BalFr(self):
-		del self._BalFr
-		self._BalFr = None
-
-	@property
-	def InstrPrcgAddtlDtls(self):
-		return self._InstrPrcgAddtlDtls
-
-	@InstrPrcgAddtlDtls.setter
-	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("InstrPrcgAddtlDtls")
-
-	@InstrPrcgAddtlDtls.deleter
-	def InstrPrcgAddtlDtls(self):
-		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
 
 	@property
 	def SttlmDt(self):
@@ -88,25 +75,38 @@ class IntraPositionDetails58(base_types._BaseFieldType):
 		self._SttlmDt = None
 
 	@property
-	def SttlmQty(self):
-		return self._SttlmQty
+	def BalTo(self):
+		return self._BalTo
 
-	@SttlmQty.setter
-	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != auto else self.make_default("SttlmQty")
+	@BalTo.setter
+	def BalTo(self, value):
+		self._BalTo = value if type(value) != auto else self.make_default("BalTo")
 
-	@SttlmQty.deleter
-	def SttlmQty(self):
-		del self._SttlmQty
-		self._SttlmQty = None
+	@BalTo.deleter
+	def BalTo(self):
+		del self._BalTo
+		self._BalTo = None
+
+	@property
+	def InstrPrcgAddtlDtls(self):
+		return self._InstrPrcgAddtlDtls
+
+	@InstrPrcgAddtlDtls.setter
+	def InstrPrcgAddtlDtls(self, value):
+		self._InstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("InstrPrcgAddtlDtls")
+
+	@InstrPrcgAddtlDtls.deleter
+	def InstrPrcgAddtlDtls(self):
+		del self._InstrPrcgAddtlDtls
+		self._InstrPrcgAddtlDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalTo', type=SecuritiesSubBalanceTypeAndQuantityBreakdown5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalFr', type=SecuritiesSubBalanceTypeAndQuantityBreakdown5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTo', type=SecuritiesSubBalanceTypeAndQuantityBreakdown5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

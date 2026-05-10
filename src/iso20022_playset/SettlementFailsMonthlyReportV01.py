@@ -1,12 +1,25 @@
 import base_types
-import SettlementFailsDailyData3
 import SupplementaryData1
-import SettlementFailsReportHeader2
 import SettlementFailsData3
+import SettlementFailsReportHeader2
+import SettlementFailsDailyData3
 
 class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_DalyData", "_RptHdr", "_MnthlyAggt"]
+	__slots__ = ["_MnthlyAggt", "_SplmtryData", "_RptHdr", "_DalyData"]
+	@property
+	def MnthlyAggt(self):
+		return self._MnthlyAggt
+
+	@MnthlyAggt.setter
+	def MnthlyAggt(self, value):
+		self._MnthlyAggt = value if type(value) != auto else self.make_default("MnthlyAggt")
+
+	@MnthlyAggt.deleter
+	def MnthlyAggt(self):
+		del self._MnthlyAggt
+		self._MnthlyAggt = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -19,19 +32,6 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def DalyData(self):
-		return self._DalyData
-
-	@DalyData.setter
-	def DalyData(self, value):
-		self._DalyData = value if type(value) != auto else self.make_default("DalyData")
-
-	@DalyData.deleter
-	def DalyData(self):
-		del self._DalyData
-		self._DalyData = None
 
 	@property
 	def RptHdr(self):
@@ -47,22 +47,22 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 		self._RptHdr = None
 
 	@property
-	def MnthlyAggt(self):
-		return self._MnthlyAggt
+	def DalyData(self):
+		return self._DalyData
 
-	@MnthlyAggt.setter
-	def MnthlyAggt(self, value):
-		self._MnthlyAggt = value if type(value) != auto else self.make_default("MnthlyAggt")
+	@DalyData.setter
+	def DalyData(self, value):
+		self._DalyData = value if type(value) != auto else self.make_default("DalyData")
 
-	@MnthlyAggt.deleter
-	def MnthlyAggt(self):
-		del self._MnthlyAggt
-		self._MnthlyAggt = None
+	@DalyData.deleter
+	def DalyData(self):
+		del self._DalyData
+		self._DalyData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DalyData', type=SettlementFailsDailyData3, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptHdr', type=SettlementFailsReportHeader2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnthlyAggt', type=SettlementFailsData3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptHdr', type=SettlementFailsReportHeader2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DalyData', type=SettlementFailsDailyData3, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,11 @@
 import base_types
 import ConfirmationPartyDetails12
-import ConfirmationPartyDetails14
 import ConfirmationPartyDetails15
+import ConfirmationPartyDetails14
 
 class ConfirmationParties8(base_types._BaseFieldType):
 
-	__slots__ = ["_Lndr", "_Buyr", "_Brrwr", "_TradBnfcryPty", "_AffrmgPty", "_Sellr"]
-	@property
-	def Lndr(self):
-		return self._Lndr
-
-	@Lndr.setter
-	def Lndr(self, value):
-		self._Lndr = value if type(value) != auto else self.make_default("Lndr")
-
-	@Lndr.deleter
-	def Lndr(self):
-		del self._Lndr
-		self._Lndr = None
-
+	__slots__ = ["_Buyr", "_Brrwr", "_Lndr", "_AffrmgPty", "_Sellr", "_TradBnfcryPty"]
 	@property
 	def Buyr(self):
 		return self._Buyr
@@ -46,17 +33,17 @@ class ConfirmationParties8(base_types._BaseFieldType):
 		self._Brrwr = None
 
 	@property
-	def TradBnfcryPty(self):
-		return self._TradBnfcryPty
+	def Lndr(self):
+		return self._Lndr
 
-	@TradBnfcryPty.setter
-	def TradBnfcryPty(self, value):
-		self._TradBnfcryPty = value if type(value) != auto else self.make_default("TradBnfcryPty")
+	@Lndr.setter
+	def Lndr(self, value):
+		self._Lndr = value if type(value) != auto else self.make_default("Lndr")
 
-	@TradBnfcryPty.deleter
-	def TradBnfcryPty(self):
-		del self._TradBnfcryPty
-		self._TradBnfcryPty = None
+	@Lndr.deleter
+	def Lndr(self):
+		del self._Lndr
+		self._Lndr = None
 
 	@property
 	def AffrmgPty(self):
@@ -84,12 +71,25 @@ class ConfirmationParties8(base_types._BaseFieldType):
 		del self._Sellr
 		self._Sellr = None
 
+	@property
+	def TradBnfcryPty(self):
+		return self._TradBnfcryPty
+
+	@TradBnfcryPty.setter
+	def TradBnfcryPty(self, value):
+		self._TradBnfcryPty = value if type(value) != auto else self.make_default("TradBnfcryPty")
+
+	@TradBnfcryPty.deleter
+	def TradBnfcryPty(self):
+		del self._TradBnfcryPty
+		self._TradBnfcryPty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Lndr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brrwr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradBnfcryPty', type=ConfirmationPartyDetails14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lndr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AffrmgPty', type=ConfirmationPartyDetails15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sellr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradBnfcryPty', type=ConfirmationPartyDetails14, min=0, max=1, mutex_group=None, array=False),
 	))
 

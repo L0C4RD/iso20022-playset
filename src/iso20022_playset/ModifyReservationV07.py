@@ -1,38 +1,12 @@
 import base_types
 import SupplementaryData1
-import CurrentOrDefaultReservation4Choice
 import MessageHeader1
 import Reservation4
+import CurrentOrDefaultReservation4Choice
 
 class ModifyReservationV07(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_RsvatnId", "_SplmtryData", "_NewRsvatnValSet"]
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
-	@property
-	def RsvatnId(self):
-		return self._RsvatnId
-
-	@RsvatnId.setter
-	def RsvatnId(self, value):
-		self._RsvatnId = value if type(value) != auto else self.make_default("RsvatnId")
-
-	@RsvatnId.deleter
-	def RsvatnId(self):
-		del self._RsvatnId
-		self._RsvatnId = None
-
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_NewRsvatnValSet", "_RsvatnId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -47,6 +21,19 @@ class ModifyReservationV07(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
+	@property
 	def NewRsvatnValSet(self):
 		return self._NewRsvatnValSet
 
@@ -59,10 +46,23 @@ class ModifyReservationV07(base_types._BaseFieldType):
 		del self._NewRsvatnValSet
 		self._NewRsvatnValSet = None
 
+	@property
+	def RsvatnId(self):
+		return self._RsvatnId
+
+	@RsvatnId.setter
+	def RsvatnId(self, value):
+		self._RsvatnId = value if type(value) != auto else self.make_default("RsvatnId")
+
+	@RsvatnId.deleter
+	def RsvatnId(self):
+		del self._RsvatnId
+		self._RsvatnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsvatnId', type=CurrentOrDefaultReservation4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewRsvatnValSet', type=Reservation4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsvatnId', type=CurrentOrDefaultReservation4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

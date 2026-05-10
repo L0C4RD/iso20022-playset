@@ -1,6 +1,6 @@
 import base_types
-import SystemStatus3Choice
 import ISODate
+import SystemStatus3Choice
 
 class CalendarData1(base_types._BaseFieldType):
 

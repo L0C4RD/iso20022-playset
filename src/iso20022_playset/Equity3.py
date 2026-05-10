@@ -1,12 +1,25 @@
 import base_types
-import ActiveCurrencyAndAmount
 import PreferenceToIncome5Choice
 import ISODateTime
 import Number
+import ActiveCurrencyAndAmount
 
 class Equity3(base_types._BaseFieldType):
 
-	__slots__ = ["_PrefToIncm", "_MtrtyDt", "_ParVal", "_NonPdAmt", "_VtngRghtsPerShr"]
+	__slots__ = ["_VtngRghtsPerShr", "_PrefToIncm", "_NonPdAmt", "_ParVal", "_MtrtyDt"]
+	@property
+	def VtngRghtsPerShr(self):
+		return self._VtngRghtsPerShr
+
+	@VtngRghtsPerShr.setter
+	def VtngRghtsPerShr(self, value):
+		self._VtngRghtsPerShr = value if type(value) != auto else self.make_default("VtngRghtsPerShr")
+
+	@VtngRghtsPerShr.deleter
+	def VtngRghtsPerShr(self):
+		del self._VtngRghtsPerShr
+		self._VtngRghtsPerShr = None
+
 	@property
 	def PrefToIncm(self):
 		return self._PrefToIncm
@@ -19,32 +32,6 @@ class Equity3(base_types._BaseFieldType):
 	def PrefToIncm(self):
 		del self._PrefToIncm
 		self._PrefToIncm = None
-
-	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
-
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
-
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
-	@property
-	def ParVal(self):
-		return self._ParVal
-
-	@ParVal.setter
-	def ParVal(self, value):
-		self._ParVal = value if type(value) != auto else self.make_default("ParVal")
-
-	@ParVal.deleter
-	def ParVal(self):
-		del self._ParVal
-		self._ParVal = None
 
 	@property
 	def NonPdAmt(self):
@@ -60,23 +47,36 @@ class Equity3(base_types._BaseFieldType):
 		self._NonPdAmt = None
 
 	@property
-	def VtngRghtsPerShr(self):
-		return self._VtngRghtsPerShr
+	def ParVal(self):
+		return self._ParVal
 
-	@VtngRghtsPerShr.setter
-	def VtngRghtsPerShr(self, value):
-		self._VtngRghtsPerShr = value if type(value) != auto else self.make_default("VtngRghtsPerShr")
+	@ParVal.setter
+	def ParVal(self, value):
+		self._ParVal = value if type(value) != auto else self.make_default("ParVal")
 
-	@VtngRghtsPerShr.deleter
-	def VtngRghtsPerShr(self):
-		del self._VtngRghtsPerShr
-		self._VtngRghtsPerShr = None
+	@ParVal.deleter
+	def ParVal(self):
+		del self._ParVal
+		self._ParVal = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrefToIncm', type=PreferenceToIncome5Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ParVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonPdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VtngRghtsPerShr', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrefToIncm', type=PreferenceToIncome5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonPdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ParVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

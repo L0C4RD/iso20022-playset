@@ -1,14 +1,66 @@
 import base_types
-import Max35Text
-import TransferInstruction1
-import ActiveOrHistoricCurrencyAndAmount
-import PartyIdentification272
 import YesNoIndicator
+import PartyIdentification272
+import Max35Text
 import ISODate
+import ActiveOrHistoricCurrencyAndAmount
+import TransferInstruction1
 
 class DirectDebitInstructionDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDtls", "_AutomtdDrctDbtInstrInd", "_DrctDbtTrfblInd", "_LastColltnDt", "_Cdtr", "_MndtId", "_LastColltnCcyAmt"]
+	__slots__ = ["_LastColltnCcyAmt", "_MndtId", "_LastColltnDt", "_Cdtr", "_OthrDtls", "_AutomtdDrctDbtInstrInd", "_DrctDbtTrfblInd"]
+	@property
+	def LastColltnCcyAmt(self):
+		return self._LastColltnCcyAmt
+
+	@LastColltnCcyAmt.setter
+	def LastColltnCcyAmt(self, value):
+		self._LastColltnCcyAmt = value if type(value) != auto else self.make_default("LastColltnCcyAmt")
+
+	@LastColltnCcyAmt.deleter
+	def LastColltnCcyAmt(self):
+		del self._LastColltnCcyAmt
+		self._LastColltnCcyAmt = None
+
+	@property
+	def MndtId(self):
+		return self._MndtId
+
+	@MndtId.setter
+	def MndtId(self, value):
+		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
+
+	@MndtId.deleter
+	def MndtId(self):
+		del self._MndtId
+		self._MndtId = None
+
+	@property
+	def LastColltnDt(self):
+		return self._LastColltnDt
+
+	@LastColltnDt.setter
+	def LastColltnDt(self, value):
+		self._LastColltnDt = value if type(value) != auto else self.make_default("LastColltnDt")
+
+	@LastColltnDt.deleter
+	def LastColltnDt(self):
+		del self._LastColltnDt
+		self._LastColltnDt = None
+
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
 	@property
 	def OthrDtls(self):
 		return self._OthrDtls
@@ -48,65 +100,13 @@ class DirectDebitInstructionDetails3(base_types._BaseFieldType):
 		del self._DrctDbtTrfblInd
 		self._DrctDbtTrfblInd = None
 
-	@property
-	def LastColltnDt(self):
-		return self._LastColltnDt
-
-	@LastColltnDt.setter
-	def LastColltnDt(self, value):
-		self._LastColltnDt = value if type(value) != auto else self.make_default("LastColltnDt")
-
-	@LastColltnDt.deleter
-	def LastColltnDt(self):
-		del self._LastColltnDt
-		self._LastColltnDt = None
-
-	@property
-	def Cdtr(self):
-		return self._Cdtr
-
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
-
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
-
-	@property
-	def MndtId(self):
-		return self._MndtId
-
-	@MndtId.setter
-	def MndtId(self, value):
-		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
-
-	@MndtId.deleter
-	def MndtId(self):
-		del self._MndtId
-		self._MndtId = None
-
-	@property
-	def LastColltnCcyAmt(self):
-		return self._LastColltnCcyAmt
-
-	@LastColltnCcyAmt.setter
-	def LastColltnCcyAmt(self, value):
-		self._LastColltnCcyAmt = value if type(value) != auto else self.make_default("LastColltnCcyAmt")
-
-	@LastColltnCcyAmt.deleter
-	def LastColltnCcyAmt(self):
-		del self._LastColltnCcyAmt
-		self._LastColltnCcyAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LastColltnCcyAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrDtls', type=TransferInstruction1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AutomtdDrctDbtInstrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrctDbtTrfblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastColltnCcyAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAnd13DecimalAmount
 import AmountPriceType1Code
+import ActiveCurrencyAnd13DecimalAmount
 import FinancialInstrumentQuantity33Choice
 
 class AmountPricePerFinancialInstrumentQuantity10(base_types._BaseFieldType):

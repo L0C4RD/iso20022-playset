@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
 import RejectionReason21FormatChoice
-import Status4Code
 import Max140Text
+import Max35Text
+import Status4Code
 
 class InterestResponse1(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsn", "_RjctnRsnInf", "_RspnTp", "_IntrstPmtReqId"]
-	@property
-	def RjctnRsn(self):
-		return self._RjctnRsn
-
-	@RjctnRsn.setter
-	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
-
-	@RjctnRsn.deleter
-	def RjctnRsn(self):
-		del self._RjctnRsn
-		self._RjctnRsn = None
-
+	__slots__ = ["_RjctnRsnInf", "_RjctnRsn", "_RspnTp", "_IntrstPmtReqId"]
 	@property
 	def RjctnRsnInf(self):
 		return self._RjctnRsnInf
@@ -32,6 +19,19 @@ class InterestResponse1(base_types._BaseFieldType):
 	def RjctnRsnInf(self):
 		del self._RjctnRsnInf
 		self._RjctnRsnInf = None
+
+	@property
+	def RjctnRsn(self):
+		return self._RjctnRsn
+
+	@RjctnRsn.setter
+	def RjctnRsn(self, value):
+		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
+
+	@RjctnRsn.deleter
+	def RjctnRsn(self):
+		del self._RjctnRsn
+		self._RjctnRsn = None
 
 	@property
 	def RspnTp(self):
@@ -60,8 +60,8 @@ class InterestResponse1(base_types._BaseFieldType):
 		self._IntrstPmtReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason21FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason21FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstPmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))

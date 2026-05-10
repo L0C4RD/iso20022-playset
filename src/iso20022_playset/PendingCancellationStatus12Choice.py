@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import PendingCancellationStatusReason10
+import NoReasonCode
 
 class PendingCancellationStatus12Choice(base_types._BaseFieldType):
 

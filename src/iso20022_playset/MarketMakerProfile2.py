@@ -1,23 +1,23 @@
 import base_types
 import PercentageRate
-import DateTimePeriod2
 import YesNoIndicator
+import DateTimePeriod2
 
 class MarketMakerProfile2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctPrd", "_Cmplc", "_Dscnt", "_MaxSprd"]
+	__slots__ = ["_MaxSprd", "_Cmplc", "_CtrctPrd", "_Dscnt"]
 	@property
-	def CtrctPrd(self):
-		return self._CtrctPrd
+	def MaxSprd(self):
+		return self._MaxSprd
 
-	@CtrctPrd.setter
-	def CtrctPrd(self, value):
-		self._CtrctPrd = value if type(value) != auto else self.make_default("CtrctPrd")
+	@MaxSprd.setter
+	def MaxSprd(self, value):
+		self._MaxSprd = value if type(value) != auto else self.make_default("MaxSprd")
 
-	@CtrctPrd.deleter
-	def CtrctPrd(self):
-		del self._CtrctPrd
-		self._CtrctPrd = None
+	@MaxSprd.deleter
+	def MaxSprd(self):
+		del self._MaxSprd
+		self._MaxSprd = None
 
 	@property
 	def Cmplc(self):
@@ -33,6 +33,19 @@ class MarketMakerProfile2(base_types._BaseFieldType):
 		self._Cmplc = None
 
 	@property
+	def CtrctPrd(self):
+		return self._CtrctPrd
+
+	@CtrctPrd.setter
+	def CtrctPrd(self, value):
+		self._CtrctPrd = value if type(value) != auto else self.make_default("CtrctPrd")
+
+	@CtrctPrd.deleter
+	def CtrctPrd(self):
+		del self._CtrctPrd
+		self._CtrctPrd = None
+
+	@property
 	def Dscnt(self):
 		return self._Dscnt
 
@@ -45,23 +58,10 @@ class MarketMakerProfile2(base_types._BaseFieldType):
 		del self._Dscnt
 		self._Dscnt = None
 
-	@property
-	def MaxSprd(self):
-		return self._MaxSprd
-
-	@MaxSprd.setter
-	def MaxSprd(self, value):
-		self._MaxSprd = value if type(value) != auto else self.make_default("MaxSprd")
-
-	@MaxSprd.deleter
-	def MaxSprd(self):
-		del self._MaxSprd
-		self._MaxSprd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctPrd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmplc', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dscnt', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxSprd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmplc', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctPrd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dscnt', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

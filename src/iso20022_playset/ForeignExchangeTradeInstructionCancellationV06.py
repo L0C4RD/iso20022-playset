@@ -1,43 +1,30 @@
 import base_types
-import PostTradeEvent1
-import AgreedRate3
+import AmountsAndValueDate8
 import NonDeliverableForwardConditions1
+import AgreedRate3
+import RegulatoryReporting8
+import GeneralInformation9
+import PostTradeEvent1
 import SupplementaryData1
 import TradePartyIdentification8
-import AmountsAndValueDate8
-import GeneralInformation9
 import TradeAgreement15
-import RegulatoryReporting8
 import SettlementParties120
 
 class ForeignExchangeTradeInstructionCancellationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySdId", "_AgrdRate", "_PstTradEvt", "_TradgSdId", "_NDFConds", "_TradInf", "_TradgSdSttlmInstrs", "_TradAmts", "_SplmtryData", "_CtrPtySdSttlmInstrs", "_OptnlGnlInf", "_RgltryRptg"]
+	__slots__ = ["_SplmtryData", "_PstTradEvt", "_TradInf", "_TradgSdId", "_CtrPtySdId", "_CtrPtySdSttlmInstrs", "_TradAmts", "_AgrdRate", "_RgltryRptg", "_NDFConds", "_OptnlGnlInf", "_TradgSdSttlmInstrs"]
 	@property
-	def CtrPtySdId(self):
-		return self._CtrPtySdId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CtrPtySdId.setter
-	def CtrPtySdId(self, value):
-		self._CtrPtySdId = value if type(value) != auto else self.make_default("CtrPtySdId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@CtrPtySdId.deleter
-	def CtrPtySdId(self):
-		del self._CtrPtySdId
-		self._CtrPtySdId = None
-
-	@property
-	def AgrdRate(self):
-		return self._AgrdRate
-
-	@AgrdRate.setter
-	def AgrdRate(self, value):
-		self._AgrdRate = value if type(value) != auto else self.make_default("AgrdRate")
-
-	@AgrdRate.deleter
-	def AgrdRate(self):
-		del self._AgrdRate
-		self._AgrdRate = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def PstTradEvt(self):
@@ -53,32 +40,6 @@ class ForeignExchangeTradeInstructionCancellationV06(base_types._BaseFieldType):
 		self._PstTradEvt = None
 
 	@property
-	def TradgSdId(self):
-		return self._TradgSdId
-
-	@TradgSdId.setter
-	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
-
-	@TradgSdId.deleter
-	def TradgSdId(self):
-		del self._TradgSdId
-		self._TradgSdId = None
-
-	@property
-	def NDFConds(self):
-		return self._NDFConds
-
-	@NDFConds.setter
-	def NDFConds(self, value):
-		self._NDFConds = value if type(value) != auto else self.make_default("NDFConds")
-
-	@NDFConds.deleter
-	def NDFConds(self):
-		del self._NDFConds
-		self._NDFConds = None
-
-	@property
 	def TradInf(self):
 		return self._TradInf
 
@@ -92,43 +53,30 @@ class ForeignExchangeTradeInstructionCancellationV06(base_types._BaseFieldType):
 		self._TradInf = None
 
 	@property
-	def TradgSdSttlmInstrs(self):
-		return self._TradgSdSttlmInstrs
+	def TradgSdId(self):
+		return self._TradgSdId
 
-	@TradgSdSttlmInstrs.setter
-	def TradgSdSttlmInstrs(self, value):
-		self._TradgSdSttlmInstrs = value if type(value) != auto else self.make_default("TradgSdSttlmInstrs")
+	@TradgSdId.setter
+	def TradgSdId(self, value):
+		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
 
-	@TradgSdSttlmInstrs.deleter
-	def TradgSdSttlmInstrs(self):
-		del self._TradgSdSttlmInstrs
-		self._TradgSdSttlmInstrs = None
-
-	@property
-	def TradAmts(self):
-		return self._TradAmts
-
-	@TradAmts.setter
-	def TradAmts(self, value):
-		self._TradAmts = value if type(value) != auto else self.make_default("TradAmts")
-
-	@TradAmts.deleter
-	def TradAmts(self):
-		del self._TradAmts
-		self._TradAmts = None
+	@TradgSdId.deleter
+	def TradgSdId(self):
+		del self._TradgSdId
+		self._TradgSdId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CtrPtySdId(self):
+		return self._CtrPtySdId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@CtrPtySdId.setter
+	def CtrPtySdId(self, value):
+		self._CtrPtySdId = value if type(value) != auto else self.make_default("CtrPtySdId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CtrPtySdId.deleter
+	def CtrPtySdId(self):
+		del self._CtrPtySdId
+		self._CtrPtySdId = None
 
 	@property
 	def CtrPtySdSttlmInstrs(self):
@@ -144,17 +92,30 @@ class ForeignExchangeTradeInstructionCancellationV06(base_types._BaseFieldType):
 		self._CtrPtySdSttlmInstrs = None
 
 	@property
-	def OptnlGnlInf(self):
-		return self._OptnlGnlInf
+	def TradAmts(self):
+		return self._TradAmts
 
-	@OptnlGnlInf.setter
-	def OptnlGnlInf(self, value):
-		self._OptnlGnlInf = value if type(value) != auto else self.make_default("OptnlGnlInf")
+	@TradAmts.setter
+	def TradAmts(self, value):
+		self._TradAmts = value if type(value) != auto else self.make_default("TradAmts")
 
-	@OptnlGnlInf.deleter
-	def OptnlGnlInf(self):
-		del self._OptnlGnlInf
-		self._OptnlGnlInf = None
+	@TradAmts.deleter
+	def TradAmts(self):
+		del self._TradAmts
+		self._TradAmts = None
+
+	@property
+	def AgrdRate(self):
+		return self._AgrdRate
+
+	@AgrdRate.setter
+	def AgrdRate(self, value):
+		self._AgrdRate = value if type(value) != auto else self.make_default("AgrdRate")
+
+	@AgrdRate.deleter
+	def AgrdRate(self):
+		del self._AgrdRate
+		self._AgrdRate = None
 
 	@property
 	def RgltryRptg(self):
@@ -169,18 +130,57 @@ class ForeignExchangeTradeInstructionCancellationV06(base_types._BaseFieldType):
 		del self._RgltryRptg
 		self._RgltryRptg = None
 
+	@property
+	def NDFConds(self):
+		return self._NDFConds
+
+	@NDFConds.setter
+	def NDFConds(self, value):
+		self._NDFConds = value if type(value) != auto else self.make_default("NDFConds")
+
+	@NDFConds.deleter
+	def NDFConds(self):
+		del self._NDFConds
+		self._NDFConds = None
+
+	@property
+	def OptnlGnlInf(self):
+		return self._OptnlGnlInf
+
+	@OptnlGnlInf.setter
+	def OptnlGnlInf(self, value):
+		self._OptnlGnlInf = value if type(value) != auto else self.make_default("OptnlGnlInf")
+
+	@OptnlGnlInf.deleter
+	def OptnlGnlInf(self):
+		del self._OptnlGnlInf
+		self._OptnlGnlInf = None
+
+	@property
+	def TradgSdSttlmInstrs(self):
+		return self._TradgSdSttlmInstrs
+
+	@TradgSdSttlmInstrs.setter
+	def TradgSdSttlmInstrs(self, value):
+		self._TradgSdSttlmInstrs = value if type(value) != auto else self.make_default("TradgSdSttlmInstrs")
+
+	@TradgSdSttlmInstrs.deleter
+	def TradgSdSttlmInstrs(self):
+		del self._TradgSdSttlmInstrs
+		self._TradgSdSttlmInstrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtySdId', type=TradePartyIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrdRate', type=AgreedRate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstTradEvt', type=PostTradeEvent1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NDFConds', type=NonDeliverableForwardConditions1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradInf', type=TradeAgreement15, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSdSttlmInstrs', type=SettlementParties120, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradAmts', type=AmountsAndValueDate8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PstTradEvt', type=PostTradeEvent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradInf', type=TradeAgreement15, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySdId', type=TradePartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySdSttlmInstrs', type=SettlementParties120, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnlGnlInf', type=GeneralInformation9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradAmts', type=AmountsAndValueDate8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrdRate', type=AgreedRate3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RgltryRptg', type=RegulatoryReporting8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NDFConds', type=NonDeliverableForwardConditions1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnlGnlInf', type=GeneralInformation9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSdSttlmInstrs', type=SettlementParties120, min=0, max=1, mutex_group=None, array=False),
 	))
 

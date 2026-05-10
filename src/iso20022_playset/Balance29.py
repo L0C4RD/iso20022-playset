@@ -1,28 +1,15 @@
 import base_types
-import Max35Text
 import ImpliedCurrencyAndAmount
-import ISO3NumericCurrencyCode
-import TrueFalseIndicator
+import BalanceType15Code
 import CreditDebit3Code
 import ISODate
-import BalanceType15Code
+import Max35Text
+import ISO3NumericCurrencyCode
+import TrueFalseIndicator
 
 class Balance29(base_types._BaseFieldType):
 
-	__slots__ = ["_BalDt", "_CdtDbt", "_Tp", "_OthrTp", "_Amt", "_Ccy", "_CrdhldrCcy"]
-	@property
-	def BalDt(self):
-		return self._BalDt
-
-	@BalDt.setter
-	def BalDt(self, value):
-		self._BalDt = value if type(value) != auto else self.make_default("BalDt")
-
-	@BalDt.deleter
-	def BalDt(self):
-		del self._BalDt
-		self._BalDt = None
-
+	__slots__ = ["_CdtDbt", "_Tp", "_BalDt", "_Ccy", "_CrdhldrCcy", "_Amt", "_OthrTp"]
 	@property
 	def CdtDbt(self):
 		return self._CdtDbt
@@ -50,30 +37,17 @@ class Balance29(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def BalDt(self):
+		return self._BalDt
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+	@BalDt.setter
+	def BalDt(self, value):
+		self._BalDt = value if type(value) != auto else self.make_default("BalDt")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@BalDt.deleter
+	def BalDt(self):
+		del self._BalDt
+		self._BalDt = None
 
 	@property
 	def Ccy(self):
@@ -101,13 +75,39 @@ class Balance29(base_types._BaseFieldType):
 		del self._CrdhldrCcy
 		self._CrdhldrCcy = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType15Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrCcy', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

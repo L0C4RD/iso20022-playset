@@ -1,11 +1,11 @@
 import base_types
 import Algorithm26Code
-import AlgorithmIdentification34
 import EncryptionFormat2Code
+import AlgorithmIdentification34
 
 class Parameter17(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptnFrmt", "_DgstAlgo", "_MskGnrtrAlgo"]
+	__slots__ = ["_NcrptnFrmt", "_MskGnrtrAlgo", "_DgstAlgo"]
 	@property
 	def NcrptnFrmt(self):
 		return self._NcrptnFrmt
@@ -20,19 +20,6 @@ class Parameter17(base_types._BaseFieldType):
 		self._NcrptnFrmt = None
 
 	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
-
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
-
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
-
-	@property
 	def MskGnrtrAlgo(self):
 		return self._MskGnrtrAlgo
 
@@ -45,9 +32,22 @@ class Parameter17(base_types._BaseFieldType):
 		del self._MskGnrtrAlgo
 		self._MskGnrtrAlgo = None
 
+	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

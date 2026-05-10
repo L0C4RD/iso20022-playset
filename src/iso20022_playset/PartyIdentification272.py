@@ -1,13 +1,39 @@
 import base_types
-import Party52Choice
-import PostalAddress27
 import Contact13
-import CountryCode
+import PostalAddress27
+import Party52Choice
 import Max140Text
+import CountryCode
 
 class PartyIdentification272(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_Nm", "_CtryOfRes", "_PstlAdr", "_Id"]
+	__slots__ = ["_PstlAdr", "_CtryOfRes", "_CtctDtls", "_Nm", "_Id"]
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
+	@property
+	def CtryOfRes(self):
+		return self._CtryOfRes
+
+	@CtryOfRes.setter
+	def CtryOfRes(self, value):
+		self._CtryOfRes = value if type(value) != auto else self.make_default("CtryOfRes")
+
+	@CtryOfRes.deleter
+	def CtryOfRes(self):
+		del self._CtryOfRes
+		self._CtryOfRes = None
+
 	@property
 	def CtctDtls(self):
 		return self._CtctDtls
@@ -35,32 +61,6 @@ class PartyIdentification272(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def CtryOfRes(self):
-		return self._CtryOfRes
-
-	@CtryOfRes.setter
-	def CtryOfRes(self, value):
-		self._CtryOfRes = value if type(value) != auto else self.make_default("CtryOfRes")
-
-	@CtryOfRes.deleter
-	def CtryOfRes(self):
-		del self._CtryOfRes
-		self._CtryOfRes = None
-
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -74,10 +74,10 @@ class PartyIdentification272(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=Contact13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Party52Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import MarketIdentification87
 import ExternalMarketArea1Code
+import MarketIdentification87
 
 class MarketIdentificationOrCashPurpose1Choice(base_types._BaseFieldType):
 

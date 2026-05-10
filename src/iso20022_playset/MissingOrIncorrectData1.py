@@ -1,24 +1,11 @@
 import base_types
-import AMLIndicator
 import UnableToApplyIncorrect2
+import AMLIndicator
 import UnableToApplyMissing2
 
 class MissingOrIncorrectData1(base_types._BaseFieldType):
 
-	__slots__ = ["_MssngInf", "_IncrrctInf", "_AMLReq"]
-	@property
-	def MssngInf(self):
-		return self._MssngInf
-
-	@MssngInf.setter
-	def MssngInf(self, value):
-		self._MssngInf = value if type(value) != auto else self.make_default("MssngInf")
-
-	@MssngInf.deleter
-	def MssngInf(self):
-		del self._MssngInf
-		self._MssngInf = None
-
+	__slots__ = ["_IncrrctInf", "_MssngInf", "_AMLReq"]
 	@property
 	def IncrrctInf(self):
 		return self._IncrrctInf
@@ -31,6 +18,19 @@ class MissingOrIncorrectData1(base_types._BaseFieldType):
 	def IncrrctInf(self):
 		del self._IncrrctInf
 		self._IncrrctInf = None
+
+	@property
+	def MssngInf(self):
+		return self._MssngInf
+
+	@MssngInf.setter
+	def MssngInf(self, value):
+		self._MssngInf = value if type(value) != auto else self.make_default("MssngInf")
+
+	@MssngInf.deleter
+	def MssngInf(self):
+		del self._MssngInf
+		self._MssngInf = None
 
 	@property
 	def AMLReq(self):
@@ -46,8 +46,8 @@ class MissingOrIncorrectData1(base_types._BaseFieldType):
 		self._AMLReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MssngInf', type=UnableToApplyMissing2, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IncrrctInf', type=UnableToApplyIncorrect2, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MssngInf', type=UnableToApplyMissing2, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AMLReq', type=AMLIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

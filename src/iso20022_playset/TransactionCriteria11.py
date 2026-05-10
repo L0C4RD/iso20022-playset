@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
-import TransactionReturnCriteria5
-import TransactionSearchCriteria11
 import ReportIndicator1Code
+import TransactionSearchCriteria11
+import TransactionReturnCriteria5
+import Max35Text
 
 class TransactionCriteria11(base_types._BaseFieldType):
 
-	__slots__ = ["_NewQryNm", "_SchCrit", "_RtrCrit", "_StmtRpt"]
-	@property
-	def NewQryNm(self):
-		return self._NewQryNm
-
-	@NewQryNm.setter
-	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
-
-	@NewQryNm.deleter
-	def NewQryNm(self):
-		del self._NewQryNm
-		self._NewQryNm = None
-
+	__slots__ = ["_SchCrit", "_RtrCrit", "_StmtRpt", "_NewQryNm"]
 	@property
 	def SchCrit(self):
 		return self._SchCrit
@@ -59,10 +46,23 @@ class TransactionCriteria11(base_types._BaseFieldType):
 		del self._StmtRpt
 		self._StmtRpt = None
 
+	@property
+	def NewQryNm(self):
+		return self._NewQryNm
+
+	@NewQryNm.setter
+	def NewQryNm(self, value):
+		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
+
+	@NewQryNm.deleter
+	def NewQryNm(self):
+		del self._NewQryNm
+		self._NewQryNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=TransactionSearchCriteria11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RtrCrit', type=TransactionReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtRpt', type=ReportIndicator1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
+import ATMEnvironment19
 import ATMTransaction47
 import ATMContext13
-import ATMEnvironment19
 
 class ATMCompletionAdvice3(base_types._BaseFieldType):
 

@@ -1,25 +1,25 @@
 import base_types
-import EUDividendStatusType2Choice
 import Tax32
 import EUCapitalGain3Choice
-import ActiveCurrencyAndAmount
+import EUDividendStatusType2Choice
 import PercentageRate
+import ActiveCurrencyAndAmount
 
 class InformativeTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgOfDebtClm", "_EUCptlGn", "_EUDvddSts", "_IndvTax", "_TaxblIncmPerDvdd"]
+	__slots__ = ["_EUDvddSts", "_EUCptlGn", "_TaxblIncmPerDvdd", "_IndvTax", "_PctgOfDebtClm"]
 	@property
-	def PctgOfDebtClm(self):
-		return self._PctgOfDebtClm
+	def EUDvddSts(self):
+		return self._EUDvddSts
 
-	@PctgOfDebtClm.setter
-	def PctgOfDebtClm(self, value):
-		self._PctgOfDebtClm = value if type(value) != auto else self.make_default("PctgOfDebtClm")
+	@EUDvddSts.setter
+	def EUDvddSts(self, value):
+		self._EUDvddSts = value if type(value) != auto else self.make_default("EUDvddSts")
 
-	@PctgOfDebtClm.deleter
-	def PctgOfDebtClm(self):
-		del self._PctgOfDebtClm
-		self._PctgOfDebtClm = None
+	@EUDvddSts.deleter
+	def EUDvddSts(self):
+		del self._EUDvddSts
+		self._EUDvddSts = None
 
 	@property
 	def EUCptlGn(self):
@@ -35,17 +35,17 @@ class InformativeTax1(base_types._BaseFieldType):
 		self._EUCptlGn = None
 
 	@property
-	def EUDvddSts(self):
-		return self._EUDvddSts
+	def TaxblIncmPerDvdd(self):
+		return self._TaxblIncmPerDvdd
 
-	@EUDvddSts.setter
-	def EUDvddSts(self, value):
-		self._EUDvddSts = value if type(value) != auto else self.make_default("EUDvddSts")
+	@TaxblIncmPerDvdd.setter
+	def TaxblIncmPerDvdd(self, value):
+		self._TaxblIncmPerDvdd = value if type(value) != auto else self.make_default("TaxblIncmPerDvdd")
 
-	@EUDvddSts.deleter
-	def EUDvddSts(self):
-		del self._EUDvddSts
-		self._EUDvddSts = None
+	@TaxblIncmPerDvdd.deleter
+	def TaxblIncmPerDvdd(self):
+		del self._TaxblIncmPerDvdd
+		self._TaxblIncmPerDvdd = None
 
 	@property
 	def IndvTax(self):
@@ -61,23 +61,23 @@ class InformativeTax1(base_types._BaseFieldType):
 		self._IndvTax = None
 
 	@property
-	def TaxblIncmPerDvdd(self):
-		return self._TaxblIncmPerDvdd
+	def PctgOfDebtClm(self):
+		return self._PctgOfDebtClm
 
-	@TaxblIncmPerDvdd.setter
-	def TaxblIncmPerDvdd(self, value):
-		self._TaxblIncmPerDvdd = value if type(value) != auto else self.make_default("TaxblIncmPerDvdd")
+	@PctgOfDebtClm.setter
+	def PctgOfDebtClm(self, value):
+		self._PctgOfDebtClm = value if type(value) != auto else self.make_default("PctgOfDebtClm")
 
-	@TaxblIncmPerDvdd.deleter
-	def TaxblIncmPerDvdd(self):
-		del self._TaxblIncmPerDvdd
-		self._TaxblIncmPerDvdd = None
+	@PctgOfDebtClm.deleter
+	def PctgOfDebtClm(self):
+		del self._PctgOfDebtClm
+		self._PctgOfDebtClm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PctgOfDebtClm', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EUCptlGn', type=EUCapitalGain3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EUDvddSts', type=EUDividendStatusType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvTax', type=Tax32, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EUCptlGn', type=EUCapitalGain3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxblIncmPerDvdd', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvTax', type=Tax32, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PctgOfDebtClm', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

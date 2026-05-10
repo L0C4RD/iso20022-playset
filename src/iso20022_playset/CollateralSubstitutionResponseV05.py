@@ -1,13 +1,26 @@
 import base_types
 import Max35Text
 import Obligation9
-import Agreement4
 import SubstitutionResponse2
 import SupplementaryData1
+import Agreement4
 
 class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SplmtryData", "_SbstitnRspn", "_Agrmt", "_Oblgtn"]
+	__slots__ = ["_Oblgtn", "_TxId", "_SplmtryData", "_Agrmt", "_SbstitnRspn"]
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
+
 	@property
 	def TxId(self):
 		return self._TxId
@@ -35,19 +48,6 @@ class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def SbstitnRspn(self):
-		return self._SbstitnRspn
-
-	@SbstitnRspn.setter
-	def SbstitnRspn(self, value):
-		self._SbstitnRspn = value if type(value) != auto else self.make_default("SbstitnRspn")
-
-	@SbstitnRspn.deleter
-	def SbstitnRspn(self):
-		del self._SbstitnRspn
-		self._SbstitnRspn = None
-
-	@property
 	def Agrmt(self):
 		return self._Agrmt
 
@@ -61,23 +61,23 @@ class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 		self._Agrmt = None
 
 	@property
-	def Oblgtn(self):
-		return self._Oblgtn
+	def SbstitnRspn(self):
+		return self._SbstitnRspn
 
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+	@SbstitnRspn.setter
+	def SbstitnRspn(self, value):
+		self._SbstitnRspn = value if type(value) != auto else self.make_default("SbstitnRspn")
 
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
+	@SbstitnRspn.deleter
+	def SbstitnRspn(self):
+		del self._SbstitnRspn
+		self._SbstitnRspn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SbstitnRspn', type=SubstitutionResponse2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbstitnRspn', type=SubstitutionResponse2, min=1, max=1, mutex_group=None, array=False),
 	))
 

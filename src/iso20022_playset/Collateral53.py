@@ -1,25 +1,12 @@
 import base_types
 import Summary3
-import CollateralAccount3
 import BlockChainAddressWallet5
 import CollateralValuation13
+import CollateralAccount3
 
 class Collateral53(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSummry", "_CollValtn", "_AcctId", "_BlckChainAdrOrWllt"]
-	@property
-	def RptSummry(self):
-		return self._RptSummry
-
-	@RptSummry.setter
-	def RptSummry(self, value):
-		self._RptSummry = value if type(value) != auto else self.make_default("RptSummry")
-
-	@RptSummry.deleter
-	def RptSummry(self):
-		del self._RptSummry
-		self._RptSummry = None
-
+	__slots__ = ["_CollValtn", "_AcctId", "_BlckChainAdrOrWllt", "_RptSummry"]
 	@property
 	def CollValtn(self):
 		return self._CollValtn
@@ -59,10 +46,23 @@ class Collateral53(base_types._BaseFieldType):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
 
+	@property
+	def RptSummry(self):
+		return self._RptSummry
+
+	@RptSummry.setter
+	def RptSummry(self, value):
+		self._RptSummry = value if type(value) != auto else self.make_default("RptSummry")
+
+	@RptSummry.deleter
+	def RptSummry(self):
+		del self._RptSummry
+		self._RptSummry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptSummry', type=Summary3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollValtn', type=CollateralValuation13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSummry', type=Summary3, min=1, max=1, mutex_group=None, array=False),
 	))
 

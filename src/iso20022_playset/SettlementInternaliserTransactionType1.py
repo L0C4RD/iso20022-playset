@@ -3,19 +3,32 @@ import InternalisationData1
 
 class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTxs", "_CollMgmtOpr", "_RpAgrmt", "_SctiesLndgOrBrrwg", "_SctiesBuyOrSell"]
+	__slots__ = ["_SctiesLndgOrBrrwg", "_SctiesBuyOrSell", "_CollMgmtOpr", "_RpAgrmt", "_OthrTxs"]
 	@property
-	def OthrTxs(self):
-		return self._OthrTxs
+	def SctiesLndgOrBrrwg(self):
+		return self._SctiesLndgOrBrrwg
 
-	@OthrTxs.setter
-	def OthrTxs(self, value):
-		self._OthrTxs = value if type(value) != auto else self.make_default("OthrTxs")
+	@SctiesLndgOrBrrwg.setter
+	def SctiesLndgOrBrrwg(self, value):
+		self._SctiesLndgOrBrrwg = value if type(value) != auto else self.make_default("SctiesLndgOrBrrwg")
 
-	@OthrTxs.deleter
-	def OthrTxs(self):
-		del self._OthrTxs
-		self._OthrTxs = None
+	@SctiesLndgOrBrrwg.deleter
+	def SctiesLndgOrBrrwg(self):
+		del self._SctiesLndgOrBrrwg
+		self._SctiesLndgOrBrrwg = None
+
+	@property
+	def SctiesBuyOrSell(self):
+		return self._SctiesBuyOrSell
+
+	@SctiesBuyOrSell.setter
+	def SctiesBuyOrSell(self, value):
+		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
+
+	@SctiesBuyOrSell.deleter
+	def SctiesBuyOrSell(self):
+		del self._SctiesBuyOrSell
+		self._SctiesBuyOrSell = None
 
 	@property
 	def CollMgmtOpr(self):
@@ -44,36 +57,23 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 		self._RpAgrmt = None
 
 	@property
-	def SctiesLndgOrBrrwg(self):
-		return self._SctiesLndgOrBrrwg
+	def OthrTxs(self):
+		return self._OthrTxs
 
-	@SctiesLndgOrBrrwg.setter
-	def SctiesLndgOrBrrwg(self, value):
-		self._SctiesLndgOrBrrwg = value if type(value) != auto else self.make_default("SctiesLndgOrBrrwg")
+	@OthrTxs.setter
+	def OthrTxs(self, value):
+		self._OthrTxs = value if type(value) != auto else self.make_default("OthrTxs")
 
-	@SctiesLndgOrBrrwg.deleter
-	def SctiesLndgOrBrrwg(self):
-		del self._SctiesLndgOrBrrwg
-		self._SctiesLndgOrBrrwg = None
-
-	@property
-	def SctiesBuyOrSell(self):
-		return self._SctiesBuyOrSell
-
-	@SctiesBuyOrSell.setter
-	def SctiesBuyOrSell(self, value):
-		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
-
-	@SctiesBuyOrSell.deleter
-	def SctiesBuyOrSell(self):
-		del self._SctiesBuyOrSell
-		self._SctiesBuyOrSell = None
+	@OthrTxs.deleter
+	def OthrTxs(self):
+		del self._OthrTxs
+		self._OthrTxs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTxs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollMgmtOpr', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpAgrmt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyOrSell', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollMgmtOpr', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTxs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

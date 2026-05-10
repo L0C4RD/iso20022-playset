@@ -1,7 +1,7 @@
 import base_types
-import FundPaymentType1Choice
-import AdditionalInformation15
 import FundOrderType5Choice
+import AdditionalInformation15
+import FundPaymentType1Choice
 
 class PaymentInstrument16(base_types._BaseFieldType):
 

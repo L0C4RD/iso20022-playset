@@ -1,24 +1,24 @@
 import base_types
+import PaymentCard4
 import CashAccount40
 import PointOfInteraction1
 import CardAggregated2
-import PaymentCard4
 
 class CardEntry5(base_types._BaseFieldType):
 
-	__slots__ = ["_POI", "_PrePdAcct", "_AggtdNtry", "_Card"]
+	__slots__ = ["_AggtdNtry", "_PrePdAcct", "_POI", "_Card"]
 	@property
-	def POI(self):
-		return self._POI
+	def AggtdNtry(self):
+		return self._AggtdNtry
 
-	@POI.setter
-	def POI(self, value):
-		self._POI = value if type(value) != auto else self.make_default("POI")
+	@AggtdNtry.setter
+	def AggtdNtry(self, value):
+		self._AggtdNtry = value if type(value) != auto else self.make_default("AggtdNtry")
 
-	@POI.deleter
-	def POI(self):
-		del self._POI
-		self._POI = None
+	@AggtdNtry.deleter
+	def AggtdNtry(self):
+		del self._AggtdNtry
+		self._AggtdNtry = None
 
 	@property
 	def PrePdAcct(self):
@@ -34,17 +34,17 @@ class CardEntry5(base_types._BaseFieldType):
 		self._PrePdAcct = None
 
 	@property
-	def AggtdNtry(self):
-		return self._AggtdNtry
+	def POI(self):
+		return self._POI
 
-	@AggtdNtry.setter
-	def AggtdNtry(self, value):
-		self._AggtdNtry = value if type(value) != auto else self.make_default("AggtdNtry")
+	@POI.setter
+	def POI(self, value):
+		self._POI = value if type(value) != auto else self.make_default("POI")
 
-	@AggtdNtry.deleter
-	def AggtdNtry(self):
-		del self._AggtdNtry
-		self._AggtdNtry = None
+	@POI.deleter
+	def POI(self):
+		del self._POI
+		self._POI = None
 
 	@property
 	def Card(self):
@@ -60,9 +60,9 @@ class CardEntry5(base_types._BaseFieldType):
 		self._Card = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POI', type=PointOfInteraction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrePdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AggtdNtry', type=CardAggregated2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrePdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POI', type=PointOfInteraction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Card', type=PaymentCard4, min=0, max=1, mutex_group=None, array=False),
 	))
 

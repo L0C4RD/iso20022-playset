@@ -3,7 +3,7 @@ import Max35Text
 
 class ATMEquipment2(base_types._BaseFieldType):
 
-	__slots__ = ["_FrmwrId", "_SrlNb", "_FrmwrPrvdr", "_Vrsn", "_Mdl", "_FrmwrVrsn", "_Manfctr"]
+	__slots__ = ["_FrmwrId", "_FrmwrPrvdr", "_FrmwrVrsn", "_Manfctr", "_SrlNb", "_Mdl", "_Vrsn"]
 	@property
 	def FrmwrId(self):
 		return self._FrmwrId
@@ -18,19 +18,6 @@ class ATMEquipment2(base_types._BaseFieldType):
 		self._FrmwrId = None
 
 	@property
-	def SrlNb(self):
-		return self._SrlNb
-
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
-
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
-
-	@property
 	def FrmwrPrvdr(self):
 		return self._FrmwrPrvdr
 
@@ -42,32 +29,6 @@ class ATMEquipment2(base_types._BaseFieldType):
 	def FrmwrPrvdr(self):
 		del self._FrmwrPrvdr
 		self._FrmwrPrvdr = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
-	def Mdl(self):
-		return self._Mdl
-
-	@Mdl.setter
-	def Mdl(self, value):
-		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
-
-	@Mdl.deleter
-	def Mdl(self):
-		del self._Mdl
-		self._Mdl = None
 
 	@property
 	def FrmwrVrsn(self):
@@ -95,13 +56,52 @@ class ATMEquipment2(base_types._BaseFieldType):
 		del self._Manfctr
 		self._Manfctr = None
 
+	@property
+	def SrlNb(self):
+		return self._SrlNb
+
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
+
+	@property
+	def Mdl(self):
+		return self._Mdl
+
+	@Mdl.setter
+	def Mdl(self, value):
+		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
+
+	@Mdl.deleter
+	def Mdl(self):
+		del self._Mdl
+		self._Mdl = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrmwrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrmwrPrvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrmwrVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Manfctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

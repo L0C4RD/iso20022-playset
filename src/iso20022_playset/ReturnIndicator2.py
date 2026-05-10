@@ -1,24 +1,24 @@
 import base_types
 import DateOrDateTimePeriod1Choice
-import Max500Text
-import AuthorityRequestType1
 import InvestigationResult1Choice
+import AuthorityRequestType1
+import Max500Text
 
 class ReturnIndicator2(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthrtyReqTp", "_RspnPrd", "_AddtlInf", "_InvstgtnRslt"]
+	__slots__ = ["_InvstgtnRslt", "_RspnPrd", "_AuthrtyReqTp", "_AddtlInf"]
 	@property
-	def AuthrtyReqTp(self):
-		return self._AuthrtyReqTp
+	def InvstgtnRslt(self):
+		return self._InvstgtnRslt
 
-	@AuthrtyReqTp.setter
-	def AuthrtyReqTp(self, value):
-		self._AuthrtyReqTp = value if type(value) != auto else self.make_default("AuthrtyReqTp")
+	@InvstgtnRslt.setter
+	def InvstgtnRslt(self, value):
+		self._InvstgtnRslt = value if type(value) != auto else self.make_default("InvstgtnRslt")
 
-	@AuthrtyReqTp.deleter
-	def AuthrtyReqTp(self):
-		del self._AuthrtyReqTp
-		self._AuthrtyReqTp = None
+	@InvstgtnRslt.deleter
+	def InvstgtnRslt(self):
+		del self._InvstgtnRslt
+		self._InvstgtnRslt = None
 
 	@property
 	def RspnPrd(self):
@@ -34,6 +34,19 @@ class ReturnIndicator2(base_types._BaseFieldType):
 		self._RspnPrd = None
 
 	@property
+	def AuthrtyReqTp(self):
+		return self._AuthrtyReqTp
+
+	@AuthrtyReqTp.setter
+	def AuthrtyReqTp(self, value):
+		self._AuthrtyReqTp = value if type(value) != auto else self.make_default("AuthrtyReqTp")
+
+	@AuthrtyReqTp.deleter
+	def AuthrtyReqTp(self):
+		del self._AuthrtyReqTp
+		self._AuthrtyReqTp = None
+
+	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -46,23 +59,10 @@ class ReturnIndicator2(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
-	@property
-	def InvstgtnRslt(self):
-		return self._InvstgtnRslt
-
-	@InvstgtnRslt.setter
-	def InvstgtnRslt(self, value):
-		self._InvstgtnRslt = value if type(value) != auto else self.make_default("InvstgtnRslt")
-
-	@InvstgtnRslt.deleter
-	def InvstgtnRslt(self):
-		del self._InvstgtnRslt
-		self._InvstgtnRslt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AuthrtyReqTp', type=AuthorityRequestType1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnPrd', type=DateOrDateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstgtnRslt', type=InvestigationResult1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnPrd', type=DateOrDateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrtyReqTp', type=AuthorityRequestType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

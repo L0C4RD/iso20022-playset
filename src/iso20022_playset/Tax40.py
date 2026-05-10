@@ -1,16 +1,16 @@
 import base_types
-import YesNoIndicator
-import TaxCalculationInformation10
-import TaxType3Choice
 import PercentageRate
-import ExemptionReason1Choice
 import PartyIdentification139
+import TaxType3Choice
+import TaxCalculationInformation10
 import ActiveCurrencyAndAmount
+import YesNoIndicator
+import ExemptionReason1Choice
 import CountryCode
 
 class Tax40(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptId", "_Tp", "_TaxClctnDtls", "_Ctry", "_XmptnInd", "_InftvRate", "_InftvAmt", "_XmptnRsn"]
+	__slots__ = ["_RcptId", "_InftvRate", "_Tp", "_XmptnRsn", "_TaxClctnDtls", "_Ctry", "_InftvAmt", "_XmptnInd"]
 	@property
 	def RcptId(self):
 		return self._RcptId
@@ -25,6 +25,19 @@ class Tax40(base_types._BaseFieldType):
 		self._RcptId = None
 
 	@property
+	def InftvRate(self):
+		return self._InftvRate
+
+	@InftvRate.setter
+	def InftvRate(self, value):
+		self._InftvRate = value if type(value) != auto else self.make_default("InftvRate")
+
+	@InftvRate.deleter
+	def InftvRate(self):
+		del self._InftvRate
+		self._InftvRate = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -36,6 +49,19 @@ class Tax40(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def XmptnRsn(self):
+		return self._XmptnRsn
+
+	@XmptnRsn.setter
+	def XmptnRsn(self, value):
+		self._XmptnRsn = value if type(value) != auto else self.make_default("XmptnRsn")
+
+	@XmptnRsn.deleter
+	def XmptnRsn(self):
+		del self._XmptnRsn
+		self._XmptnRsn = None
 
 	@property
 	def TaxClctnDtls(self):
@@ -64,32 +90,6 @@ class Tax40(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def XmptnInd(self):
-		return self._XmptnInd
-
-	@XmptnInd.setter
-	def XmptnInd(self, value):
-		self._XmptnInd = value if type(value) != auto else self.make_default("XmptnInd")
-
-	@XmptnInd.deleter
-	def XmptnInd(self):
-		del self._XmptnInd
-		self._XmptnInd = None
-
-	@property
-	def InftvRate(self):
-		return self._InftvRate
-
-	@InftvRate.setter
-	def InftvRate(self, value):
-		self._InftvRate = value if type(value) != auto else self.make_default("InftvRate")
-
-	@InftvRate.deleter
-	def InftvRate(self):
-		del self._InftvRate
-		self._InftvRate = None
-
-	@property
 	def InftvAmt(self):
 		return self._InftvAmt
 
@@ -103,26 +103,26 @@ class Tax40(base_types._BaseFieldType):
 		self._InftvAmt = None
 
 	@property
-	def XmptnRsn(self):
-		return self._XmptnRsn
+	def XmptnInd(self):
+		return self._XmptnInd
 
-	@XmptnRsn.setter
-	def XmptnRsn(self, value):
-		self._XmptnRsn = value if type(value) != auto else self.make_default("XmptnRsn")
+	@XmptnInd.setter
+	def XmptnInd(self, value):
+		self._XmptnInd = value if type(value) != auto else self.make_default("XmptnInd")
 
-	@XmptnRsn.deleter
-	def XmptnRsn(self):
-		del self._XmptnRsn
-		self._XmptnRsn = None
+	@XmptnInd.deleter
+	def XmptnInd(self):
+		del self._XmptnInd
+		self._XmptnInd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcptId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InftvRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TaxType3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptnRsn', type=ExemptionReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InftvRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InftvAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptnRsn', type=ExemptionReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

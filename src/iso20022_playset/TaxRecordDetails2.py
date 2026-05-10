@@ -1,23 +1,10 @@
 import base_types
-import TaxPeriod2
 import ActiveOrHistoricCurrencyAndAmount
+import TaxPeriod2
 
 class TaxRecordDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_Amt"]
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
+	__slots__ = ["_Amt", "_Prd"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class TaxRecordDetails2(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prd', type=TaxPeriod2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=TaxPeriod2, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,25 @@
 import base_types
-import SecurityIdentification39
-import MessageHeader1
-import SupplementaryData1
 import UpdateType36Choice
+import SecurityIdentification39
+import SupplementaryData1
 import SecuritiesUpdateReason1Choice
+import MessageHeader1
 
 class SecurityMaintenanceRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_UpdRsn", "_UpdTp", "_FinInstrmId"]
+	__slots__ = ["_UpdTp", "_SplmtryData", "_MsgHdr", "_FinInstrmId", "_UpdRsn"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def UpdTp(self):
+		return self._UpdTp
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	@property
 	def SplmtryData(self):
@@ -35,30 +35,17 @@ class SecurityMaintenanceRequestV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def UpdRsn(self):
-		return self._UpdRsn
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@UpdRsn.setter
-	def UpdRsn(self, value):
-		self._UpdRsn = value if type(value) != auto else self.make_default("UpdRsn")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@UpdRsn.deleter
-	def UpdRsn(self):
-		del self._UpdRsn
-		self._UpdRsn = None
-
-	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	@property
 	def FinInstrmId(self):
@@ -73,11 +60,24 @@ class SecurityMaintenanceRequestV01(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
+	@property
+	def UpdRsn(self):
+		return self._UpdRsn
+
+	@UpdRsn.setter
+	def UpdRsn(self, value):
+		self._UpdRsn = value if type(value) != auto else self.make_default("UpdRsn")
+
+	@UpdRsn.deleter
+	def UpdRsn(self):
+		del self._UpdRsn
+		self._UpdRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UpdRsn', type=SecuritiesUpdateReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType36Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdRsn', type=SecuritiesUpdateReason1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

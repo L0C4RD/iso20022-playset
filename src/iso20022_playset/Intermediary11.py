@@ -1,12 +1,25 @@
 import base_types
-import Account7
-import Extended350Code
 import InvestmentFundRole2Code
+import Extended350Code
+import Account7
 import PartyIdentification2Choice
 
 class Intermediary11(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedRole", "_Id", "_Acct", "_Role"]
+	__slots__ = ["_Acct", "_XtndedRole", "_Id", "_Role"]
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
 	@property
 	def XtndedRole(self):
 		return self._XtndedRole
@@ -34,19 +47,6 @@ class Intermediary11(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
-	@property
 	def Role(self):
 		return self._Role
 
@@ -60,9 +60,9 @@ class Intermediary11(base_types._BaseFieldType):
 		self._Role = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Acct', type=Account7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedRole', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=Account7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

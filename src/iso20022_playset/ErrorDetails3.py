@@ -1,12 +1,12 @@
 import base_types
-import Max35Text
 import Max500Text
-import MessageError1Code
 import Max4000Text
+import MessageError1Code
+import Max35Text
 
 class ErrorDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Cd", "_DataElmtInErr", "_OthrTp", "_Tp"]
+	__slots__ = ["_Desc", "_DataElmtInErr", "_Tp", "_Cd", "_OthrTp"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -19,19 +19,6 @@ class ErrorDetails3(base_types._BaseFieldType):
 	def Desc(self):
 		del self._Desc
 		self._Desc = None
-
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
 
 	@property
 	def DataElmtInErr(self):
@@ -47,19 +34,6 @@ class ErrorDetails3(base_types._BaseFieldType):
 		self._DataElmtInErr = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -72,11 +46,37 @@ class ErrorDetails3(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DataElmtInErr', type=Max4000Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=MessageError1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 import base_types
-import Max35Text
 import DateAndDateTimeChoice
+import Max35Text
 import ActiveCurrencyAndAmount
 import CashAccount19
 
 class CorporateActionCashMovements2(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngId", "_PstngAmt", "_PstngDtTm", "_AcctDtls"]
+	__slots__ = ["_AcctDtls", "_PstngId", "_PstngAmt", "_PstngDtTm"]
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
 	@property
 	def PstngId(self):
 		return self._PstngId
@@ -46,23 +59,10 @@ class CorporateActionCashMovements2(base_types._BaseFieldType):
 		del self._PstngDtTm
 		self._PstngDtTm = None
 
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),
 	))
 

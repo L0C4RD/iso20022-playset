@@ -1,13 +1,13 @@
 import base_types
 import ImpliedCurrencyAndAmount
-import CardDataReading8Code
-import Max10000Binary
 import ISODateTime
+import CardDataReading8Code
 import Max140Text
+import Max10000Binary
 
 class DetailedAmount21(base_types._BaseFieldType):
 
-	__slots__ = ["_ICCRltdData", "_Labl", "_Amt", "_DtTm", "_CardDataNtryMd"]
+	__slots__ = ["_ICCRltdData", "_Labl", "_DtTm", "_CardDataNtryMd", "_Amt"]
 	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
@@ -35,19 +35,6 @@ class DetailedAmount21(base_types._BaseFieldType):
 		self._Labl = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def DtTm(self):
 		return self._DtTm
 
@@ -73,11 +60,24 @@ class DetailedAmount21(base_types._BaseFieldType):
 		del self._CardDataNtryMd
 		self._CardDataNtryMd = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Labl', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

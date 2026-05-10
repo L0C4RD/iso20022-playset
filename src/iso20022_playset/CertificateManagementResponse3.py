@@ -1,55 +1,16 @@
 import base_types
-import Max140Binary
+import ISODateTime
 import Max10KBinary
 import ResponseType6
-import ISODateTime
-import Max35Text
+import CardPaymentServiceType10Code
 import Max3000Binary
 import GenericIdentification176
-import CardPaymentServiceType10Code
+import Max140Binary
+import Max35Text
 
 class CertificateManagementResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_POIChllngVal", "_POIId", "_TMSDtTm", "_SvrCertPth", "_CertSvc", "_Rslt", "_TMId", "_SctyPrfl", "_ClntCertPth", "_ClntCert"]
-	@property
-	def POIChllngVal(self):
-		return self._POIChllngVal
-
-	@POIChllngVal.setter
-	def POIChllngVal(self, value):
-		self._POIChllngVal = value if type(value) != auto else self.make_default("POIChllngVal")
-
-	@POIChllngVal.deleter
-	def POIChllngVal(self):
-		del self._POIChllngVal
-		self._POIChllngVal = None
-
-	@property
-	def POIId(self):
-		return self._POIId
-
-	@POIId.setter
-	def POIId(self, value):
-		self._POIId = value if type(value) != auto else self.make_default("POIId")
-
-	@POIId.deleter
-	def POIId(self):
-		del self._POIId
-		self._POIId = None
-
-	@property
-	def TMSDtTm(self):
-		return self._TMSDtTm
-
-	@TMSDtTm.setter
-	def TMSDtTm(self, value):
-		self._TMSDtTm = value if type(value) != auto else self.make_default("TMSDtTm")
-
-	@TMSDtTm.deleter
-	def TMSDtTm(self):
-		del self._TMSDtTm
-		self._TMSDtTm = None
-
+	__slots__ = ["_SvrCertPth", "_Rslt", "_POIChllngVal", "_SctyPrfl", "_POIId", "_ClntCert", "_CertSvc", "_ClntCertPth", "_TMId", "_TMSDtTm"]
 	@property
 	def SvrCertPth(self):
 		return self._SvrCertPth
@@ -62,19 +23,6 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 	def SvrCertPth(self):
 		del self._SvrCertPth
 		self._SvrCertPth = None
-
-	@property
-	def CertSvc(self):
-		return self._CertSvc
-
-	@CertSvc.setter
-	def CertSvc(self, value):
-		self._CertSvc = value if type(value) != auto else self.make_default("CertSvc")
-
-	@CertSvc.deleter
-	def CertSvc(self):
-		del self._CertSvc
-		self._CertSvc = None
 
 	@property
 	def Rslt(self):
@@ -90,17 +38,17 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 		self._Rslt = None
 
 	@property
-	def TMId(self):
-		return self._TMId
+	def POIChllngVal(self):
+		return self._POIChllngVal
 
-	@TMId.setter
-	def TMId(self, value):
-		self._TMId = value if type(value) != auto else self.make_default("TMId")
+	@POIChllngVal.setter
+	def POIChllngVal(self, value):
+		self._POIChllngVal = value if type(value) != auto else self.make_default("POIChllngVal")
 
-	@TMId.deleter
-	def TMId(self):
-		del self._TMId
-		self._TMId = None
+	@POIChllngVal.deleter
+	def POIChllngVal(self):
+		del self._POIChllngVal
+		self._POIChllngVal = None
 
 	@property
 	def SctyPrfl(self):
@@ -116,17 +64,17 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 		self._SctyPrfl = None
 
 	@property
-	def ClntCertPth(self):
-		return self._ClntCertPth
+	def POIId(self):
+		return self._POIId
 
-	@ClntCertPth.setter
-	def ClntCertPth(self, value):
-		self._ClntCertPth = value if type(value) != auto else self.make_default("ClntCertPth")
+	@POIId.setter
+	def POIId(self, value):
+		self._POIId = value if type(value) != auto else self.make_default("POIId")
 
-	@ClntCertPth.deleter
-	def ClntCertPth(self):
-		del self._ClntCertPth
-		self._ClntCertPth = None
+	@POIId.deleter
+	def POIId(self):
+		del self._POIId
+		self._POIId = None
 
 	@property
 	def ClntCert(self):
@@ -141,16 +89,68 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 		del self._ClntCert
 		self._ClntCert = None
 
+	@property
+	def CertSvc(self):
+		return self._CertSvc
+
+	@CertSvc.setter
+	def CertSvc(self, value):
+		self._CertSvc = value if type(value) != auto else self.make_default("CertSvc")
+
+	@CertSvc.deleter
+	def CertSvc(self):
+		del self._CertSvc
+		self._CertSvc = None
+
+	@property
+	def ClntCertPth(self):
+		return self._ClntCertPth
+
+	@ClntCertPth.setter
+	def ClntCertPth(self, value):
+		self._ClntCertPth = value if type(value) != auto else self.make_default("ClntCertPth")
+
+	@ClntCertPth.deleter
+	def ClntCertPth(self):
+		del self._ClntCertPth
+		self._ClntCertPth = None
+
+	@property
+	def TMId(self):
+		return self._TMId
+
+	@TMId.setter
+	def TMId(self, value):
+		self._TMId = value if type(value) != auto else self.make_default("TMId")
+
+	@TMId.deleter
+	def TMId(self):
+		del self._TMId
+		self._TMId = None
+
+	@property
+	def TMSDtTm(self):
+		return self._TMSDtTm
+
+	@TMSDtTm.setter
+	def TMSDtTm(self, value):
+		self._TMSDtTm = value if type(value) != auto else self.make_default("TMSDtTm")
+
+	@TMSDtTm.deleter
+	def TMSDtTm(self):
+		del self._TMSDtTm
+		self._TMSDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POIChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMSDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvrCertPth', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertSvc', type=CardPaymentServiceType10Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rslt', type=ResponseType6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCertPth', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='POIId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntCert', type=Max3000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertSvc', type=CardPaymentServiceType10Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCertPth', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMSDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,23 @@
 import base_types
-import Max35Text
 import ISODateTime
+import Max35Text
 
 class OriginalGroupInformation29(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_OrgnlCreDtTm", "_OrgnlMsgId"]
+	__slots__ = ["_OrgnlMsgId", "_OrgnlMsgNmId", "_OrgnlCreDtTm"]
+	@property
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
+
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
+
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
+
 	@property
 	def OrgnlMsgNmId(self):
 		return self._OrgnlMsgNmId
@@ -31,22 +44,9 @@ class OriginalGroupInformation29(base_types._BaseFieldType):
 		del self._OrgnlCreDtTm
 		self._OrgnlCreDtTm = None
 
-	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
-
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
-
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

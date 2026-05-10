@@ -1,6 +1,6 @@
 import base_types
-import BorrowingReason1Code
 import GenericIdentification30
+import BorrowingReason1Code
 
 class BorrowingReason2Choice(base_types._BaseFieldType):
 

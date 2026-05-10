@@ -1,13 +1,26 @@
 import base_types
 import BillingMethod4
-import BillingTaxIdentification3
 import AmountAndDirection34
-import Max40Text
+import BillingTaxIdentification3
 import ISODate
+import Max40Text
 
 class BillingTaxRegion3(base_types._BaseFieldType):
 
-	__slots__ = ["_SndgFI", "_TaxDueToRgn", "_PtDt", "_InvcNb", "_SttlmAmt", "_CstmrTaxId", "_RgnNb", "_RgnNm", "_MtdC"]
+	__slots__ = ["_RgnNm", "_SndgFI", "_PtDt", "_SttlmAmt", "_InvcNb", "_CstmrTaxId", "_MtdC", "_RgnNb", "_TaxDueToRgn"]
+	@property
+	def RgnNm(self):
+		return self._RgnNm
+
+	@RgnNm.setter
+	def RgnNm(self, value):
+		self._RgnNm = value if type(value) != auto else self.make_default("RgnNm")
+
+	@RgnNm.deleter
+	def RgnNm(self):
+		del self._RgnNm
+		self._RgnNm = None
+
 	@property
 	def SndgFI(self):
 		return self._SndgFI
@@ -20,19 +33,6 @@ class BillingTaxRegion3(base_types._BaseFieldType):
 	def SndgFI(self):
 		del self._SndgFI
 		self._SndgFI = None
-
-	@property
-	def TaxDueToRgn(self):
-		return self._TaxDueToRgn
-
-	@TaxDueToRgn.setter
-	def TaxDueToRgn(self, value):
-		self._TaxDueToRgn = value if type(value) != auto else self.make_default("TaxDueToRgn")
-
-	@TaxDueToRgn.deleter
-	def TaxDueToRgn(self):
-		del self._TaxDueToRgn
-		self._TaxDueToRgn = None
 
 	@property
 	def PtDt(self):
@@ -48,19 +48,6 @@ class BillingTaxRegion3(base_types._BaseFieldType):
 		self._PtDt = None
 
 	@property
-	def InvcNb(self):
-		return self._InvcNb
-
-	@InvcNb.setter
-	def InvcNb(self, value):
-		self._InvcNb = value if type(value) != auto else self.make_default("InvcNb")
-
-	@InvcNb.deleter
-	def InvcNb(self):
-		del self._InvcNb
-		self._InvcNb = None
-
-	@property
 	def SttlmAmt(self):
 		return self._SttlmAmt
 
@@ -72,6 +59,19 @@ class BillingTaxRegion3(base_types._BaseFieldType):
 	def SttlmAmt(self):
 		del self._SttlmAmt
 		self._SttlmAmt = None
+
+	@property
+	def InvcNb(self):
+		return self._InvcNb
+
+	@InvcNb.setter
+	def InvcNb(self, value):
+		self._InvcNb = value if type(value) != auto else self.make_default("InvcNb")
+
+	@InvcNb.deleter
+	def InvcNb(self):
+		del self._InvcNb
+		self._InvcNb = None
 
 	@property
 	def CstmrTaxId(self):
@@ -87,6 +87,19 @@ class BillingTaxRegion3(base_types._BaseFieldType):
 		self._CstmrTaxId = None
 
 	@property
+	def MtdC(self):
+		return self._MtdC
+
+	@MtdC.setter
+	def MtdC(self, value):
+		self._MtdC = value if type(value) != auto else self.make_default("MtdC")
+
+	@MtdC.deleter
+	def MtdC(self):
+		del self._MtdC
+		self._MtdC = None
+
+	@property
 	def RgnNb(self):
 		return self._RgnNb
 
@@ -100,40 +113,27 @@ class BillingTaxRegion3(base_types._BaseFieldType):
 		self._RgnNb = None
 
 	@property
-	def RgnNm(self):
-		return self._RgnNm
+	def TaxDueToRgn(self):
+		return self._TaxDueToRgn
 
-	@RgnNm.setter
-	def RgnNm(self, value):
-		self._RgnNm = value if type(value) != auto else self.make_default("RgnNm")
+	@TaxDueToRgn.setter
+	def TaxDueToRgn(self, value):
+		self._TaxDueToRgn = value if type(value) != auto else self.make_default("TaxDueToRgn")
 
-	@RgnNm.deleter
-	def RgnNm(self):
-		del self._RgnNm
-		self._RgnNm = None
-
-	@property
-	def MtdC(self):
-		return self._MtdC
-
-	@MtdC.setter
-	def MtdC(self, value):
-		self._MtdC = value if type(value) != auto else self.make_default("MtdC")
-
-	@MtdC.deleter
-	def MtdC(self):
-		del self._MtdC
-		self._MtdC = None
+	@TaxDueToRgn.deleter
+	def TaxDueToRgn(self):
+		del self._TaxDueToRgn
+		self._TaxDueToRgn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SndgFI', type=BillingTaxIdentification3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxDueToRgn', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvcNb', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrTaxId', type=Max40Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RgnNb', type=Max40Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RgnNm', type=Max40Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndgFI', type=BillingTaxIdentification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcNb', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrTaxId', type=Max40Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtdC', type=BillingMethod4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RgnNb', type=Max40Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxDueToRgn', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

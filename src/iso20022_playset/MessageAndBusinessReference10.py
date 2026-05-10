@@ -1,24 +1,11 @@
 import base_types
 import References62Choice
-import InvestmentFundOrder8
 import AdditionalReference8
+import InvestmentFundOrder8
 
 class MessageAndBusinessReference10(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_OrdrRef", "_Ref"]
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
+	__slots__ = ["_OrdrRef", "_Ref", "_RltdRef"]
 	@property
 	def OrdrRef(self):
 		return self._OrdrRef
@@ -45,9 +32,22 @@ class MessageAndBusinessReference10(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=InvestmentFundOrder8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=References62Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 	))
 

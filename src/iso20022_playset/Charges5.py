@@ -1,12 +1,12 @@
 import base_types
-import Max35Text
 import PercentageRate
-import CurrencyAndAmount
 import BankRole1Code
+import CurrencyAndAmount
+import Max35Text
 
 class Charges5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Pctg", "_Amt", "_ChrgsPyer", "_ChrgsPyee"]
+	__slots__ = ["_Tp", "_ChrgsPyee", "_ChrgsPyer", "_Amt", "_Pctg"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -21,30 +21,17 @@ class Charges5(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def ChrgsPyee(self):
+		return self._ChrgsPyee
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@ChrgsPyee.setter
+	def ChrgsPyee(self, value):
+		self._ChrgsPyee = value if type(value) != auto else self.make_default("ChrgsPyee")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@ChrgsPyee.deleter
+	def ChrgsPyee(self):
+		del self._ChrgsPyee
+		self._ChrgsPyee = None
 
 	@property
 	def ChrgsPyer(self):
@@ -60,23 +47,36 @@ class Charges5(base_types._BaseFieldType):
 		self._ChrgsPyer = None
 
 	@property
-	def ChrgsPyee(self):
-		return self._ChrgsPyee
+	def Amt(self):
+		return self._Amt
 
-	@ChrgsPyee.setter
-	def ChrgsPyee(self, value):
-		self._ChrgsPyee = value if type(value) != auto else self.make_default("ChrgsPyee")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@ChrgsPyee.deleter
-	def ChrgsPyee(self):
-		del self._ChrgsPyee
-		self._ChrgsPyee = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsPyer', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsPyee', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsPyer', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

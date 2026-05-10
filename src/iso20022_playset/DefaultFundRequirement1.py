@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
 import ActiveCurrencyAndAmount
 import GenericIdentification165
+import Max35Text
 
 class DefaultFundRequirement1(base_types._BaseFieldType):
 

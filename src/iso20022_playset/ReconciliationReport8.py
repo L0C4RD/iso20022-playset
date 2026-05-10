@@ -1,12 +1,25 @@
 import base_types
-import TrueFalseIndicator
-import ReconciliationStatus8Choice
 import TradeTransactionIdentification19
+import TrueFalseIndicator
 import Max140Text
+import ReconciliationStatus8Choice
 
 class ReconciliationReport8(base_types._BaseFieldType):
 
-	__slots__ = ["_Modfd", "_TechRcrdId", "_TxId", "_RcncltnSts"]
+	__slots__ = ["_RcncltnSts", "_Modfd", "_TxId", "_TechRcrdId"]
+	@property
+	def RcncltnSts(self):
+		return self._RcncltnSts
+
+	@RcncltnSts.setter
+	def RcncltnSts(self, value):
+		self._RcncltnSts = value if type(value) != auto else self.make_default("RcncltnSts")
+
+	@RcncltnSts.deleter
+	def RcncltnSts(self):
+		del self._RcncltnSts
+		self._RcncltnSts = None
+
 	@property
 	def Modfd(self):
 		return self._Modfd
@@ -19,19 +32,6 @@ class ReconciliationReport8(base_types._BaseFieldType):
 	def Modfd(self):
 		del self._Modfd
 		self._Modfd = None
-
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
 
 	@property
 	def TxId(self):
@@ -47,22 +47,22 @@ class ReconciliationReport8(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def RcncltnSts(self):
-		return self._RcncltnSts
+	def TechRcrdId(self):
+		return self._TechRcrdId
 
-	@RcncltnSts.setter
-	def RcncltnSts(self, value):
-		self._RcncltnSts = value if type(value) != auto else self.make_default("RcncltnSts")
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
 
-	@RcncltnSts.deleter
-	def RcncltnSts(self):
-		del self._RcncltnSts
-		self._RcncltnSts = None
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Modfd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnSts', type=ReconciliationStatus8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Modfd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

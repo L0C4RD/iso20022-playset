@@ -1,6 +1,6 @@
 import base_types
-import Max2048Text
 import ProxyAccountType1Choice
+import Max2048Text
 
 class ProxyAccountIdentification1(base_types._BaseFieldType):
 

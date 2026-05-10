@@ -1,27 +1,14 @@
 import base_types
-import CreditorEnrolmentStatusReason3
-import ServiceStatus1Choice
 import OriginalBusinessInstruction1
-import SupplementaryData1
+import CreditorEnrolmentStatusReason3
 import DateAndDateTime2Choice
+import SupplementaryData1
+import ServiceStatus1Choice
 import OriginalEnrolment3Choice
 
 class EnrolmentStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvEnrlmntDt", "_SplmtryData", "_StsRsn", "_Sts", "_OrgnlEnrlmntRef", "_OrgnlBizInstr"]
-	@property
-	def FctvEnrlmntDt(self):
-		return self._FctvEnrlmntDt
-
-	@FctvEnrlmntDt.setter
-	def FctvEnrlmntDt(self, value):
-		self._FctvEnrlmntDt = value if type(value) != auto else self.make_default("FctvEnrlmntDt")
-
-	@FctvEnrlmntDt.deleter
-	def FctvEnrlmntDt(self):
-		del self._FctvEnrlmntDt
-		self._FctvEnrlmntDt = None
-
+	__slots__ = ["_SplmtryData", "_OrgnlBizInstr", "_OrgnlEnrlmntRef", "_Sts", "_FctvEnrlmntDt", "_StsRsn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -36,30 +23,17 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def StsRsn(self):
-		return self._StsRsn
+	def OrgnlBizInstr(self):
+		return self._OrgnlBizInstr
 
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
+	@OrgnlBizInstr.setter
+	def OrgnlBizInstr(self, value):
+		self._OrgnlBizInstr = value if type(value) != auto else self.make_default("OrgnlBizInstr")
 
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@OrgnlBizInstr.deleter
+	def OrgnlBizInstr(self):
+		del self._OrgnlBizInstr
+		self._OrgnlBizInstr = None
 
 	@property
 	def OrgnlEnrlmntRef(self):
@@ -75,24 +49,50 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 		self._OrgnlEnrlmntRef = None
 
 	@property
-	def OrgnlBizInstr(self):
-		return self._OrgnlBizInstr
+	def Sts(self):
+		return self._Sts
 
-	@OrgnlBizInstr.setter
-	def OrgnlBizInstr(self, value):
-		self._OrgnlBizInstr = value if type(value) != auto else self.make_default("OrgnlBizInstr")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@OrgnlBizInstr.deleter
-	def OrgnlBizInstr(self):
-		del self._OrgnlBizInstr
-		self._OrgnlBizInstr = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def FctvEnrlmntDt(self):
+		return self._FctvEnrlmntDt
+
+	@FctvEnrlmntDt.setter
+	def FctvEnrlmntDt(self, value):
+		self._FctvEnrlmntDt = value if type(value) != auto else self.make_default("FctvEnrlmntDt")
+
+	@FctvEnrlmntDt.deleter
+	def FctvEnrlmntDt(self):
+		del self._FctvEnrlmntDt
+		self._FctvEnrlmntDt = None
+
+	@property
+	def StsRsn(self):
+		return self._StsRsn
+
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
+
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FctvEnrlmntDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsRsn', type=CreditorEnrolmentStatusReason3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=ServiceStatus1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlEnrlmntRef', type=OriginalEnrolment3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlEnrlmntRef', type=OriginalEnrolment3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=ServiceStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvEnrlmntDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=CreditorEnrolmentStatusReason3, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
 import base_types
-import Max35Text
-import ActiveCurrencyCode
 import Max2000Text
 import GenericIdentification168
+import ActiveCurrencyCode
+import Max35Text
 
 class LiquidityStressScenarioDefinition1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_StrssCcy", "_Id", "_Desc"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def StrssCcy(self):
-		return self._StrssCcy
-
-	@StrssCcy.setter
-	def StrssCcy(self, value):
-		self._StrssCcy = value if type(value) != auto else self.make_default("StrssCcy")
-
-	@StrssCcy.deleter
-	def StrssCcy(self):
-		del self._StrssCcy
-		self._StrssCcy = None
-
+	__slots__ = ["_Id", "_Tp", "_Desc", "_StrssCcy"]
 	@property
 	def Id(self):
 		return self._Id
@@ -47,6 +21,19 @@ class LiquidityStressScenarioDefinition1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def Desc(self):
 		return self._Desc
 
@@ -59,10 +46,23 @@ class LiquidityStressScenarioDefinition1(base_types._BaseFieldType):
 		del self._Desc
 		self._Desc = None
 
+	@property
+	def StrssCcy(self):
+		return self._StrssCcy
+
+	@StrssCcy.setter
+	def StrssCcy(self, value):
+		self._StrssCcy = value if type(value) != auto else self.make_default("StrssCcy")
+
+	@StrssCcy.deleter
+	def StrssCcy(self):
+		del self._StrssCcy
+		self._StrssCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrssCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max2000Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrssCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

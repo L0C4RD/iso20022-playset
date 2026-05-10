@@ -1,7 +1,7 @@
 import base_types
+import TMSHeader1
 import ContentInformationType38
 import StatusReport14
-import TMSHeader1
 
 class StatusReportV14(base_types._BaseFieldType):
 

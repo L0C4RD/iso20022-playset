@@ -1,24 +1,24 @@
 import base_types
-import Max35Text
-import OnLinePIN5
 import TransactionIdentifier3
+import OnLinePIN5
+import Max35Text
 import Max10000Binary
 
 class ATMTransaction43(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnId", "_TxId", "_CrdhldrNewPIN", "_ICCRltdData"]
+	__slots__ = ["_ICCRltdData", "_TxId", "_CrdhldrNewPIN", "_RcncltnId"]
 	@property
-	def RcncltnId(self):
-		return self._RcncltnId
+	def ICCRltdData(self):
+		return self._ICCRltdData
 
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+	@ICCRltdData.setter
+	def ICCRltdData(self, value):
+		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
 
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
+	@ICCRltdData.deleter
+	def ICCRltdData(self):
+		del self._ICCRltdData
+		self._ICCRltdData = None
 
 	@property
 	def TxId(self):
@@ -47,22 +47,22 @@ class ATMTransaction43(base_types._BaseFieldType):
 		self._CrdhldrNewPIN = None
 
 	@property
-	def ICCRltdData(self):
-		return self._ICCRltdData
+	def RcncltnId(self):
+		return self._RcncltnId
 
-	@ICCRltdData.setter
-	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
 
-	@ICCRltdData.deleter
-	def ICCRltdData(self):
-		del self._ICCRltdData
-		self._ICCRltdData = None
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrNewPIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

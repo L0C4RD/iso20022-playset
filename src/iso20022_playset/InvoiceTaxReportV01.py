@@ -5,7 +5,7 @@ import TaxReportHeader1
 
 class InvoiceTaxReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_InvcTaxRptHdr", "_TaxRpt", "_SplmtryData"]
+	__slots__ = ["_InvcTaxRptHdr", "_SplmtryData", "_TaxRpt"]
 	@property
 	def InvcTaxRptHdr(self):
 		return self._InvcTaxRptHdr
@@ -20,19 +20,6 @@ class InvoiceTaxReportV01(base_types._BaseFieldType):
 		self._InvcTaxRptHdr = None
 
 	@property
-	def TaxRpt(self):
-		return self._TaxRpt
-
-	@TaxRpt.setter
-	def TaxRpt(self, value):
-		self._TaxRpt = value if type(value) != auto else self.make_default("TaxRpt")
-
-	@TaxRpt.deleter
-	def TaxRpt(self):
-		del self._TaxRpt
-		self._TaxRpt = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,9 +32,22 @@ class InvoiceTaxReportV01(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def TaxRpt(self):
+		return self._TaxRpt
+
+	@TaxRpt.setter
+	def TaxRpt(self, value):
+		self._TaxRpt = value if type(value) != auto else self.make_default("TaxRpt")
+
+	@TaxRpt.deleter
+	def TaxRpt(self):
+		del self._TaxRpt
+		self._TaxRpt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvcTaxRptHdr', type=TaxReportHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRpt', type=TaxReport1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxRpt', type=TaxReport1, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,11 +1,11 @@
 import base_types
-import Max35Text
-import UniqueTransactionIdentifier3
 import PartyIdentification242Choice
+import UniqueTransactionIdentifier3
+import Max35Text
 
 class TradingSideTransactionReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgJursdctn", "_TradgSdUnqTxIdr", "_RptgPty"]
+	__slots__ = ["_RptgJursdctn", "_RptgPty", "_TradgSdUnqTxIdr"]
 	@property
 	def RptgJursdctn(self):
 		return self._RptgJursdctn
@@ -20,19 +20,6 @@ class TradingSideTransactionReporting3(base_types._BaseFieldType):
 		self._RptgJursdctn = None
 
 	@property
-	def TradgSdUnqTxIdr(self):
-		return self._TradgSdUnqTxIdr
-
-	@TradgSdUnqTxIdr.setter
-	def TradgSdUnqTxIdr(self, value):
-		self._TradgSdUnqTxIdr = value if type(value) != auto else self.make_default("TradgSdUnqTxIdr")
-
-	@TradgSdUnqTxIdr.deleter
-	def TradgSdUnqTxIdr(self):
-		del self._TradgSdUnqTxIdr
-		self._TradgSdUnqTxIdr = None
-
-	@property
 	def RptgPty(self):
 		return self._RptgPty
 
@@ -45,9 +32,22 @@ class TradingSideTransactionReporting3(base_types._BaseFieldType):
 		del self._RptgPty
 		self._RptgPty = None
 
+	@property
+	def TradgSdUnqTxIdr(self):
+		return self._TradgSdUnqTxIdr
+
+	@TradgSdUnqTxIdr.setter
+	def TradgSdUnqTxIdr(self, value):
+		self._TradgSdUnqTxIdr = value if type(value) != auto else self.make_default("TradgSdUnqTxIdr")
+
+	@TradgSdUnqTxIdr.deleter
+	def TradgSdUnqTxIdr(self):
+		del self._TradgSdUnqTxIdr
+		self._TradgSdUnqTxIdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptgJursdctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSdUnqTxIdr', type=UniqueTransactionIdentifier3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgPty', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSdUnqTxIdr', type=UniqueTransactionIdentifier3, min=0, max=None, mutex_group=None, array=True),
 	))
 

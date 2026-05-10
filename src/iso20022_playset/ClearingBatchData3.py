@@ -1,66 +1,27 @@
 import base_types
-import Max35Text
 import ImpliedCurrencyAndAmount
-import ISO3NumericCurrencyCode
-import ClearingMethod2Code
 import CreditDebit3Code
 import Number
 import ISODate
+import Max35Text
+import ClearingMethod2Code
+import ISO3NumericCurrencyCode
 
 class ClearingBatchData3(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtd", "_Prty", "_Dt", "_TtlsCnt", "_TtlsAmt", "_IntrchngFeeAmt", "_IntrchngFeeCdtDbt", "_IntrchngFeeCcy", "_TtlsCcy", "_AgtFeeAmt", "_AgtFeeCdtDbt", "_TtlsCdtDbt", "_AgtFeeCcy", "_OthrMtd"]
+	__slots__ = ["_OthrMtd", "_TtlsAmt", "_Dt", "_IntrchngFeeAmt", "_AgtFeeCcy", "_TtlsCdtDbt", "_IntrchngFeeCcy", "_TtlsCcy", "_AgtFeeAmt", "_Prty", "_IntrchngFeeCdtDbt", "_TtlsCnt", "_Mtd", "_AgtFeeCdtDbt"]
 	@property
-	def Mtd(self):
-		return self._Mtd
+	def OthrMtd(self):
+		return self._OthrMtd
 
-	@Mtd.setter
-	def Mtd(self, value):
-		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
+	@OthrMtd.setter
+	def OthrMtd(self, value):
+		self._OthrMtd = value if type(value) != auto else self.make_default("OthrMtd")
 
-	@Mtd.deleter
-	def Mtd(self):
-		del self._Mtd
-		self._Mtd = None
-
-	@property
-	def Prty(self):
-		return self._Prty
-
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != auto else self.make_default("Prty")
-
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def TtlsCnt(self):
-		return self._TtlsCnt
-
-	@TtlsCnt.setter
-	def TtlsCnt(self, value):
-		self._TtlsCnt = value if type(value) != auto else self.make_default("TtlsCnt")
-
-	@TtlsCnt.deleter
-	def TtlsCnt(self):
-		del self._TtlsCnt
-		self._TtlsCnt = None
+	@OthrMtd.deleter
+	def OthrMtd(self):
+		del self._OthrMtd
+		self._OthrMtd = None
 
 	@property
 	def TtlsAmt(self):
@@ -76,6 +37,19 @@ class ClearingBatchData3(base_types._BaseFieldType):
 		self._TtlsAmt = None
 
 	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
+	@property
 	def IntrchngFeeAmt(self):
 		return self._IntrchngFeeAmt
 
@@ -89,17 +63,30 @@ class ClearingBatchData3(base_types._BaseFieldType):
 		self._IntrchngFeeAmt = None
 
 	@property
-	def IntrchngFeeCdtDbt(self):
-		return self._IntrchngFeeCdtDbt
+	def AgtFeeCcy(self):
+		return self._AgtFeeCcy
 
-	@IntrchngFeeCdtDbt.setter
-	def IntrchngFeeCdtDbt(self, value):
-		self._IntrchngFeeCdtDbt = value if type(value) != auto else self.make_default("IntrchngFeeCdtDbt")
+	@AgtFeeCcy.setter
+	def AgtFeeCcy(self, value):
+		self._AgtFeeCcy = value if type(value) != auto else self.make_default("AgtFeeCcy")
 
-	@IntrchngFeeCdtDbt.deleter
-	def IntrchngFeeCdtDbt(self):
-		del self._IntrchngFeeCdtDbt
-		self._IntrchngFeeCdtDbt = None
+	@AgtFeeCcy.deleter
+	def AgtFeeCcy(self):
+		del self._AgtFeeCcy
+		self._AgtFeeCcy = None
+
+	@property
+	def TtlsCdtDbt(self):
+		return self._TtlsCdtDbt
+
+	@TtlsCdtDbt.setter
+	def TtlsCdtDbt(self, value):
+		self._TtlsCdtDbt = value if type(value) != auto else self.make_default("TtlsCdtDbt")
+
+	@TtlsCdtDbt.deleter
+	def TtlsCdtDbt(self):
+		del self._TtlsCdtDbt
+		self._TtlsCdtDbt = None
 
 	@property
 	def IntrchngFeeCcy(self):
@@ -141,6 +128,58 @@ class ClearingBatchData3(base_types._BaseFieldType):
 		self._AgtFeeAmt = None
 
 	@property
+	def Prty(self):
+		return self._Prty
+
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != auto else self.make_default("Prty")
+
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
+	@property
+	def IntrchngFeeCdtDbt(self):
+		return self._IntrchngFeeCdtDbt
+
+	@IntrchngFeeCdtDbt.setter
+	def IntrchngFeeCdtDbt(self, value):
+		self._IntrchngFeeCdtDbt = value if type(value) != auto else self.make_default("IntrchngFeeCdtDbt")
+
+	@IntrchngFeeCdtDbt.deleter
+	def IntrchngFeeCdtDbt(self):
+		del self._IntrchngFeeCdtDbt
+		self._IntrchngFeeCdtDbt = None
+
+	@property
+	def TtlsCnt(self):
+		return self._TtlsCnt
+
+	@TtlsCnt.setter
+	def TtlsCnt(self, value):
+		self._TtlsCnt = value if type(value) != auto else self.make_default("TtlsCnt")
+
+	@TtlsCnt.deleter
+	def TtlsCnt(self):
+		del self._TtlsCnt
+		self._TtlsCnt = None
+
+	@property
+	def Mtd(self):
+		return self._Mtd
+
+	@Mtd.setter
+	def Mtd(self, value):
+		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
+
+	@Mtd.deleter
+	def Mtd(self):
+		del self._Mtd
+		self._Mtd = None
+
+	@property
 	def AgtFeeCdtDbt(self):
 		return self._AgtFeeCdtDbt
 
@@ -153,59 +192,20 @@ class ClearingBatchData3(base_types._BaseFieldType):
 		del self._AgtFeeCdtDbt
 		self._AgtFeeCdtDbt = None
 
-	@property
-	def TtlsCdtDbt(self):
-		return self._TtlsCdtDbt
-
-	@TtlsCdtDbt.setter
-	def TtlsCdtDbt(self, value):
-		self._TtlsCdtDbt = value if type(value) != auto else self.make_default("TtlsCdtDbt")
-
-	@TtlsCdtDbt.deleter
-	def TtlsCdtDbt(self):
-		del self._TtlsCdtDbt
-		self._TtlsCdtDbt = None
-
-	@property
-	def AgtFeeCcy(self):
-		return self._AgtFeeCcy
-
-	@AgtFeeCcy.setter
-	def AgtFeeCcy(self, value):
-		self._AgtFeeCcy = value if type(value) != auto else self.make_default("AgtFeeCcy")
-
-	@AgtFeeCcy.deleter
-	def AgtFeeCcy(self):
-		del self._AgtFeeCcy
-		self._AgtFeeCcy = None
-
-	@property
-	def OthrMtd(self):
-		return self._OthrMtd
-
-	@OthrMtd.setter
-	def OthrMtd(self, value):
-		self._OthrMtd = value if type(value) != auto else self.make_default("OthrMtd")
-
-	@OthrMtd.deleter
-	def OthrMtd(self):
-		del self._OthrMtd
-		self._OthrMtd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mtd', type=ClearingMethod2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlsCnt', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlsAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlsCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlsCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlsCnt', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=ClearingMethod2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlsCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

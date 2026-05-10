@@ -1,6 +1,6 @@
 import base_types
-import DeniedReason18Choice
 import RestrictedFINXMax210Text
+import DeniedReason18Choice
 
 class DeniedReason13(base_types._BaseFieldType):
 

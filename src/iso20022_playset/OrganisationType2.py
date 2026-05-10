@@ -1,10 +1,23 @@
 import base_types
-import GenericOrganisationType1
 import RequestedIndicator
+import GenericOrganisationType1
 
 class OrganisationType2(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_AnyBIC", "_EmailAdr", "_Othr"]
+	__slots__ = ["_EmailAdr", "_LEI", "_AnyBIC", "_Othr"]
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	@property
 	def LEI(self):
 		return self._LEI
@@ -32,19 +45,6 @@ class OrganisationType2(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
-	@property
 	def Othr(self):
 		return self._Othr
 
@@ -58,9 +58,9 @@ class OrganisationType2(base_types._BaseFieldType):
 		self._Othr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericOrganisationType1, min=0, max=None, mutex_group=None, array=True),
 	))
 

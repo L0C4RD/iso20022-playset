@@ -1,16 +1,29 @@
 import base_types
-import SimpleIdentificationInformation
-import ValidationResult3
-import Count1
 import TransactionStatus4
-import DocumentIdentification5
+import ValidationResult3
 import MessageIdentification1
 import DocumentIdentification3
+import DocumentIdentification5
 import PendingActivity2
+import Count1
+import SimpleIdentificationInformation
 
 class ErrorReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrTxRef", "_ReqForActn", "_NbOfErrs", "_EstblishdBaselnId", "_RptId", "_RjctdMsgRef", "_ErrDesc", "_TxId", "_TxSts"]
+	__slots__ = ["_ReqForActn", "_UsrTxRef", "_TxId", "_ErrDesc", "_RjctdMsgRef", "_NbOfErrs", "_EstblishdBaselnId", "_RptId", "_TxSts"]
+	@property
+	def ReqForActn(self):
+		return self._ReqForActn
+
+	@ReqForActn.setter
+	def ReqForActn(self, value):
+		self._ReqForActn = value if type(value) != auto else self.make_default("ReqForActn")
+
+	@ReqForActn.deleter
+	def ReqForActn(self):
+		del self._ReqForActn
+		self._ReqForActn = None
+
 	@property
 	def UsrTxRef(self):
 		return self._UsrTxRef
@@ -25,17 +38,43 @@ class ErrorReportV03(base_types._BaseFieldType):
 		self._UsrTxRef = None
 
 	@property
-	def ReqForActn(self):
-		return self._ReqForActn
+	def TxId(self):
+		return self._TxId
 
-	@ReqForActn.setter
-	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != auto else self.make_default("ReqForActn")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@ReqForActn.deleter
-	def ReqForActn(self):
-		del self._ReqForActn
-		self._ReqForActn = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def ErrDesc(self):
+		return self._ErrDesc
+
+	@ErrDesc.setter
+	def ErrDesc(self, value):
+		self._ErrDesc = value if type(value) != auto else self.make_default("ErrDesc")
+
+	@ErrDesc.deleter
+	def ErrDesc(self):
+		del self._ErrDesc
+		self._ErrDesc = None
+
+	@property
+	def RjctdMsgRef(self):
+		return self._RjctdMsgRef
+
+	@RjctdMsgRef.setter
+	def RjctdMsgRef(self, value):
+		self._RjctdMsgRef = value if type(value) != auto else self.make_default("RjctdMsgRef")
+
+	@RjctdMsgRef.deleter
+	def RjctdMsgRef(self):
+		del self._RjctdMsgRef
+		self._RjctdMsgRef = None
 
 	@property
 	def NbOfErrs(self):
@@ -77,45 +116,6 @@ class ErrorReportV03(base_types._BaseFieldType):
 		self._RptId = None
 
 	@property
-	def RjctdMsgRef(self):
-		return self._RjctdMsgRef
-
-	@RjctdMsgRef.setter
-	def RjctdMsgRef(self, value):
-		self._RjctdMsgRef = value if type(value) != auto else self.make_default("RjctdMsgRef")
-
-	@RjctdMsgRef.deleter
-	def RjctdMsgRef(self):
-		del self._RjctdMsgRef
-		self._RjctdMsgRef = None
-
-	@property
-	def ErrDesc(self):
-		return self._ErrDesc
-
-	@ErrDesc.setter
-	def ErrDesc(self, value):
-		self._ErrDesc = value if type(value) != auto else self.make_default("ErrDesc")
-
-	@ErrDesc.deleter
-	def ErrDesc(self):
-		del self._ErrDesc
-		self._ErrDesc = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def TxSts(self):
 		return self._TxSts
 
@@ -129,14 +129,14 @@ class ErrorReportV03(base_types._BaseFieldType):
 		self._TxSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ErrDesc', type=ValidationResult3, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RjctdMsgRef', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfErrs', type=Count1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctdMsgRef', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ErrDesc', type=ValidationResult3, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=0, max=1, mutex_group=None, array=False),
 	))
 

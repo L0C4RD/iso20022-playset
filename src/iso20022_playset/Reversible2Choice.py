@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import Reversible1Code
+import GenericIdentification30
 
 class Reversible2Choice(base_types._BaseFieldType):
 

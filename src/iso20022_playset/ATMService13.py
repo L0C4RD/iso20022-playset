@@ -1,11 +1,11 @@
 import base_types
+import ATMServiceType6Code
 import TrueFalseIndicator
 import Max35Text
-import ATMServiceType6Code
 
 class ATMService13(base_types._BaseFieldType):
 
-	__slots__ = ["_MultiAcct", "_SvcTp", "_SvcRef", "_ATMSvcCd", "_CshBck", "_HstSvcCd", "_PrtlDpst", "_SvcVarntId"]
+	__slots__ = ["_MultiAcct", "_SvcTp", "_SvcVarntId", "_PrtlDpst", "_SvcRef", "_ATMSvcCd", "_CshBck", "_HstSvcCd"]
 	@property
 	def MultiAcct(self):
 		return self._MultiAcct
@@ -31,6 +31,32 @@ class ATMService13(base_types._BaseFieldType):
 	def SvcTp(self):
 		del self._SvcTp
 		self._SvcTp = None
+
+	@property
+	def SvcVarntId(self):
+		return self._SvcVarntId
+
+	@SvcVarntId.setter
+	def SvcVarntId(self, value):
+		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
+
+	@SvcVarntId.deleter
+	def SvcVarntId(self):
+		del self._SvcVarntId
+		self._SvcVarntId = None
+
+	@property
+	def PrtlDpst(self):
+		return self._PrtlDpst
+
+	@PrtlDpst.setter
+	def PrtlDpst(self, value):
+		self._PrtlDpst = value if type(value) != auto else self.make_default("PrtlDpst")
+
+	@PrtlDpst.deleter
+	def PrtlDpst(self):
+		del self._PrtlDpst
+		self._PrtlDpst = None
 
 	@property
 	def SvcRef(self):
@@ -84,40 +110,14 @@ class ATMService13(base_types._BaseFieldType):
 		del self._HstSvcCd
 		self._HstSvcCd = None
 
-	@property
-	def PrtlDpst(self):
-		return self._PrtlDpst
-
-	@PrtlDpst.setter
-	def PrtlDpst(self, value):
-		self._PrtlDpst = value if type(value) != auto else self.make_default("PrtlDpst")
-
-	@PrtlDpst.deleter
-	def PrtlDpst(self):
-		del self._PrtlDpst
-		self._PrtlDpst = None
-
-	@property
-	def SvcVarntId(self):
-		return self._SvcVarntId
-
-	@SvcVarntId.setter
-	def SvcVarntId(self, value):
-		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
-
-	@SvcVarntId.deleter
-	def SvcVarntId(self):
-		del self._SvcVarntId
-		self._SvcVarntId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MultiAcct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcTp', type=ATMServiceType6Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtlDpst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshBck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtlDpst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
+import ActiveOrHistoricCurrencyCode
 import UnitsOrAmountOrPercentage1Choice
 import FinancialInstrument87
-import ActiveOrHistoricCurrencyCode
 
 class Repartition6(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrm", "_CcyOfPlan", "_Qty"]
+	__slots__ = ["_Qty", "_CcyOfPlan", "_FinInstrm"]
 	@property
-	def FinInstrm(self):
-		return self._FinInstrm
+	def Qty(self):
+		return self._Qty
 
-	@FinInstrm.setter
-	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
 
-	@FinInstrm.deleter
-	def FinInstrm(self):
-		del self._FinInstrm
-		self._FinInstrm = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def CcyOfPlan(self):
@@ -33,21 +33,21 @@ class Repartition6(base_types._BaseFieldType):
 		self._CcyOfPlan = None
 
 	@property
-	def Qty(self):
-		return self._Qty
+	def FinInstrm(self):
+		return self._FinInstrm
 
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+	@FinInstrm.setter
+	def FinInstrm(self, value):
+		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
 
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@FinInstrm.deleter
+	def FinInstrm(self):
+		del self._FinInstrm
+		self._FinInstrm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyOfPlan', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=UnitsOrAmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyOfPlan', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
 	))
 

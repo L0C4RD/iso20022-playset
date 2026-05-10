@@ -1,6 +1,6 @@
 import base_types
-import ShortLong1Code
 import OpeningBalance7Choice
+import ShortLong1Code
 
 class OpeningBalance6(base_types._BaseFieldType):
 

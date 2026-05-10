@@ -1,13 +1,13 @@
 import base_types
-import PartyIdentification136Choice
-import RestrictedFINXMax140Text
-import CorporateActionEventAndBalance27
 import SafekeepingPlaceFormat46Choice
 import RestrictedFINXMax35Text
+import PartyIdentification136Choice
+import CorporateActionEventAndBalance27
+import RestrictedFINXMax140Text
 
 class AccountIdentification74(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgPlc", "_CorpActnEvtAndBal"]
+	__slots__ = ["_SfkpgAcct", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_AcctOwnr", "_CorpActnEvtAndBal"]
 	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
@@ -22,17 +22,17 @@ class AccountIdentification74(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -48,17 +48,17 @@ class AccountIdentification74(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
 	def CorpActnEvtAndBal(self):
@@ -75,9 +75,9 @@ class AccountIdentification74(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat46Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtAndBal', type=CorporateActionEventAndBalance27, min=0, max=None, mutex_group=None, array=True),
 	))
 

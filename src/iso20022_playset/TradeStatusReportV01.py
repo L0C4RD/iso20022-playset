@@ -1,6 +1,6 @@
 import base_types
-import PartyAndSignature2
 import TradeStatusReport1
+import PartyAndSignature2
 
 class TradeStatusReportV01(base_types._BaseFieldType):
 

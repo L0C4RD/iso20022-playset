@@ -1,39 +1,13 @@
 import base_types
+import CompareUnitPrice6
+import CompareUnitOfMeasure3
+import CompareCommodityAssetClass3
 import CompareDecimalNumber3
 import CompareAmountAndDirection2
-import CompareUnitOfMeasure3
-import CompareUnitPrice6
-import CompareCommodityAssetClass3
 
 class Commodity42(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_Clssfctn", "_Qty", "_UnitPric", "_UnitOfMeasr"]
-	@property
-	def MktVal(self):
-		return self._MktVal
-
-	@MktVal.setter
-	def MktVal(self, value):
-		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
-
-	@MktVal.deleter
-	def MktVal(self):
-		del self._MktVal
-		self._MktVal = None
-
-	@property
-	def Clssfctn(self):
-		return self._Clssfctn
-
-	@Clssfctn.setter
-	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
-
-	@Clssfctn.deleter
-	def Clssfctn(self):
-		del self._Clssfctn
-		self._Clssfctn = None
-
+	__slots__ = ["_Qty", "_UnitPric", "_UnitOfMeasr", "_MktVal", "_Clssfctn"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -73,11 +47,37 @@ class Commodity42(base_types._BaseFieldType):
 		del self._UnitOfMeasr
 		self._UnitOfMeasr = None
 
+	@property
+	def MktVal(self):
+		return self._MktVal
+
+	@MktVal.setter
+	def MktVal(self, value):
+		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
+
+	@MktVal.deleter
+	def MktVal(self):
+		del self._MktVal
+		self._MktVal = None
+
+	@property
+	def Clssfctn(self):
+		return self._Clssfctn
+
+	@Clssfctn.setter
+	def Clssfctn(self, value):
+		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
+
+	@Clssfctn.deleter
+	def Clssfctn(self):
+		del self._Clssfctn
+		self._Clssfctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktVal', type=CompareAmountAndDirection2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Clssfctn', type=CompareCommodityAssetClass3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=CompareDecimalNumber3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=CompareUnitPrice6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=CompareUnitOfMeasure3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktVal', type=CompareAmountAndDirection2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clssfctn', type=CompareCommodityAssetClass3, min=0, max=1, mutex_group=None, array=False),
 	))
 

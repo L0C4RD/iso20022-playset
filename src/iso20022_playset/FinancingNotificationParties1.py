@@ -3,7 +3,20 @@ import xs:IDREF
 
 class FinancingNotificationParties1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtifngPty", "_NtfctnRcvr", "_AckRcvr"]
+	__slots__ = ["_AckRcvr", "_NtifngPty", "_NtfctnRcvr"]
+	@property
+	def AckRcvr(self):
+		return self._AckRcvr
+
+	@AckRcvr.setter
+	def AckRcvr(self, value):
+		self._AckRcvr = value if type(value) != auto else self.make_default("AckRcvr")
+
+	@AckRcvr.deleter
+	def AckRcvr(self):
+		del self._AckRcvr
+		self._AckRcvr = None
+
 	@property
 	def NtifngPty(self):
 		return self._NtifngPty
@@ -30,22 +43,9 @@ class FinancingNotificationParties1(base_types._BaseFieldType):
 		del self._NtfctnRcvr
 		self._NtfctnRcvr = None
 
-	@property
-	def AckRcvr(self):
-		return self._AckRcvr
-
-	@AckRcvr.setter
-	def AckRcvr(self, value):
-		self._AckRcvr = value if type(value) != auto else self.make_default("AckRcvr")
-
-	@AckRcvr.deleter
-	def AckRcvr(self):
-		del self._AckRcvr
-		self._AckRcvr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AckRcvr', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtifngPty', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcvr', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AckRcvr', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 	))
 

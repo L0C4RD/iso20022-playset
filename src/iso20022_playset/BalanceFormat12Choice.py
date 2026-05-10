@@ -1,6 +1,6 @@
 import base_types
-import SignedQuantityFormat10
 import SignedQuantityFormat11
+import SignedQuantityFormat10
 
 class BalanceFormat12Choice(base_types._BaseFieldType):
 

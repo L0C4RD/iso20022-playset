@@ -4,7 +4,7 @@ import SettlementDataRate2
 
 class SettlementTotalData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttld", "_Ttl", "_Faild", "_FaildRate"]
+	__slots__ = ["_Sttld", "_Faild", "_FaildRate", "_Ttl"]
 	@property
 	def Sttld(self):
 		return self._Sttld
@@ -17,19 +17,6 @@ class SettlementTotalData1(base_types._BaseFieldType):
 	def Sttld(self):
 		del self._Sttld
 		self._Sttld = None
-
-	@property
-	def Ttl(self):
-		return self._Ttl
-
-	@Ttl.setter
-	def Ttl(self, value):
-		self._Ttl = value if type(value) != auto else self.make_default("Ttl")
-
-	@Ttl.deleter
-	def Ttl(self):
-		del self._Ttl
-		self._Ttl = None
 
 	@property
 	def Faild(self):
@@ -57,10 +44,23 @@ class SettlementTotalData1(base_types._BaseFieldType):
 		del self._FaildRate
 		self._FaildRate = None
 
+	@property
+	def Ttl(self):
+		return self._Ttl
+
+	@Ttl.setter
+	def Ttl(self, value):
+		self._Ttl = value if type(value) != auto else self.make_default("Ttl")
+
+	@Ttl.deleter
+	def Ttl(self):
+		del self._Ttl
+		self._Ttl = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sttld', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ttl', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Faild', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaildRate', type=SettlementDataRate2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ttl', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
 	))
 

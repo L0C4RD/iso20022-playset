@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
 import Max40KText
 import ISOMax3ALanguageCode
+import Max35Text
 
 class LocalData17(base_types._BaseFieldType):
 
-	__slots__ = ["_NcodgFrmt", "_Lang", "_TxtMsg"]
-	@property
-	def NcodgFrmt(self):
-		return self._NcodgFrmt
-
-	@NcodgFrmt.setter
-	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != auto else self.make_default("NcodgFrmt")
-
-	@NcodgFrmt.deleter
-	def NcodgFrmt(self):
-		del self._NcodgFrmt
-		self._NcodgFrmt = None
-
+	__slots__ = ["_Lang", "_TxtMsg", "_NcodgFrmt"]
 	@property
 	def Lang(self):
 		return self._Lang
@@ -45,9 +32,22 @@ class LocalData17(base_types._BaseFieldType):
 		del self._TxtMsg
 		self._TxtMsg = None
 
+	@property
+	def NcodgFrmt(self):
+		return self._NcodgFrmt
+
+	@NcodgFrmt.setter
+	def NcodgFrmt(self, value):
+		self._NcodgFrmt = value if type(value) != auto else self.make_default("NcodgFrmt")
+
+	@NcodgFrmt.deleter
+	def NcodgFrmt(self):
+		del self._NcodgFrmt
+		self._NcodgFrmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxtMsg', type=Max40KText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

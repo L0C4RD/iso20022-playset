@@ -1,12 +1,12 @@
 import base_types
-import StandingOrderIdentification8
 import SupplementaryData1
+import StandingOrderIdentification8
 import MessageHeader1
 import StandingOrder10
 
 class ModifyStandingOrderV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_NewStgOrdrValSet", "_SplmtryData", "_StgOrdrId"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_NewStgOrdrValSet", "_StgOrdrId"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -21,19 +21,6 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def NewStgOrdrValSet(self):
-		return self._NewStgOrdrValSet
-
-	@NewStgOrdrValSet.setter
-	def NewStgOrdrValSet(self, value):
-		self._NewStgOrdrValSet = value if type(value) != auto else self.make_default("NewStgOrdrValSet")
-
-	@NewStgOrdrValSet.deleter
-	def NewStgOrdrValSet(self):
-		del self._NewStgOrdrValSet
-		self._NewStgOrdrValSet = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,6 +32,19 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def NewStgOrdrValSet(self):
+		return self._NewStgOrdrValSet
+
+	@NewStgOrdrValSet.setter
+	def NewStgOrdrValSet(self, value):
+		self._NewStgOrdrValSet = value if type(value) != auto else self.make_default("NewStgOrdrValSet")
+
+	@NewStgOrdrValSet.deleter
+	def NewStgOrdrValSet(self):
+		del self._NewStgOrdrValSet
+		self._NewStgOrdrValSet = None
 
 	@property
 	def StgOrdrId(self):
@@ -61,8 +61,8 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewStgOrdrValSet', type=StandingOrder10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NewStgOrdrValSet', type=StandingOrder10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

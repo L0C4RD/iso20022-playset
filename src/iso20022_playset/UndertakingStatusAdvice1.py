@@ -1,84 +1,19 @@
 import base_types
+import StatusReasonInformation8
+import ExternalUndertakingStatusCategory1Code
+import ReportedAmount1
+import Document9
+import UndertakingStatus3Code
+import Max2000Text
 import Undertaking8
 import Number
-import Document9
-import StatusReasonInformation8
-import ReportedAmount1
 import Max35Text
-import UndertakingStatus3Code
-import PartyIdentification43
 import OriginalMessage1
-import ExternalUndertakingStatusCategory1Code
-import Max2000Text
+import PartyIdentification43
 
 class UndertakingStatusAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_AdvsgPtyRefNb", "_Sts", "_RptdAmt", "_UdrtkgId", "_InitgPty", "_AmdmntSeqNb", "_AddtlInf", "_StsCtgy", "_OrgnlMsgDtls", "_StsRsn", "_CnfrmrRefNb", "_NclsdFile"]
-	@property
-	def AdvsgPtyRefNb(self):
-		return self._AdvsgPtyRefNb
-
-	@AdvsgPtyRefNb.setter
-	def AdvsgPtyRefNb(self, value):
-		self._AdvsgPtyRefNb = value if type(value) != auto else self.make_default("AdvsgPtyRefNb")
-
-	@AdvsgPtyRefNb.deleter
-	def AdvsgPtyRefNb(self):
-		del self._AdvsgPtyRefNb
-		self._AdvsgPtyRefNb = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
-	def RptdAmt(self):
-		return self._RptdAmt
-
-	@RptdAmt.setter
-	def RptdAmt(self, value):
-		self._RptdAmt = value if type(value) != auto else self.make_default("RptdAmt")
-
-	@RptdAmt.deleter
-	def RptdAmt(self):
-		del self._RptdAmt
-		self._RptdAmt = None
-
-	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
-
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
-
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
-
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
+	__slots__ = ["_AmdmntSeqNb", "_CnfrmrRefNb", "_OrgnlMsgDtls", "_InitgPty", "_Sts", "_AddtlInf", "_StsRsn", "_StsCtgy", "_RptdAmt", "_AdvsgPtyRefNb", "_UdrtkgId", "_NclsdFile"]
 	@property
 	def AmdmntSeqNb(self):
 		return self._AmdmntSeqNb
@@ -91,58 +26,6 @@ class UndertakingStatusAdvice1(base_types._BaseFieldType):
 	def AmdmntSeqNb(self):
 		del self._AmdmntSeqNb
 		self._AmdmntSeqNb = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def StsCtgy(self):
-		return self._StsCtgy
-
-	@StsCtgy.setter
-	def StsCtgy(self, value):
-		self._StsCtgy = value if type(value) != auto else self.make_default("StsCtgy")
-
-	@StsCtgy.deleter
-	def StsCtgy(self):
-		del self._StsCtgy
-		self._StsCtgy = None
-
-	@property
-	def OrgnlMsgDtls(self):
-		return self._OrgnlMsgDtls
-
-	@OrgnlMsgDtls.setter
-	def OrgnlMsgDtls(self, value):
-		self._OrgnlMsgDtls = value if type(value) != auto else self.make_default("OrgnlMsgDtls")
-
-	@OrgnlMsgDtls.deleter
-	def OrgnlMsgDtls(self):
-		del self._OrgnlMsgDtls
-		self._OrgnlMsgDtls = None
-
-	@property
-	def StsRsn(self):
-		return self._StsRsn
-
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
-
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
 
 	@property
 	def CnfrmrRefNb(self):
@@ -158,6 +41,123 @@ class UndertakingStatusAdvice1(base_types._BaseFieldType):
 		self._CnfrmrRefNb = None
 
 	@property
+	def OrgnlMsgDtls(self):
+		return self._OrgnlMsgDtls
+
+	@OrgnlMsgDtls.setter
+	def OrgnlMsgDtls(self, value):
+		self._OrgnlMsgDtls = value if type(value) != auto else self.make_default("OrgnlMsgDtls")
+
+	@OrgnlMsgDtls.deleter
+	def OrgnlMsgDtls(self):
+		del self._OrgnlMsgDtls
+		self._OrgnlMsgDtls = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def StsRsn(self):
+		return self._StsRsn
+
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
+
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
+
+	@property
+	def StsCtgy(self):
+		return self._StsCtgy
+
+	@StsCtgy.setter
+	def StsCtgy(self, value):
+		self._StsCtgy = value if type(value) != auto else self.make_default("StsCtgy")
+
+	@StsCtgy.deleter
+	def StsCtgy(self):
+		del self._StsCtgy
+		self._StsCtgy = None
+
+	@property
+	def RptdAmt(self):
+		return self._RptdAmt
+
+	@RptdAmt.setter
+	def RptdAmt(self, value):
+		self._RptdAmt = value if type(value) != auto else self.make_default("RptdAmt")
+
+	@RptdAmt.deleter
+	def RptdAmt(self):
+		del self._RptdAmt
+		self._RptdAmt = None
+
+	@property
+	def AdvsgPtyRefNb(self):
+		return self._AdvsgPtyRefNb
+
+	@AdvsgPtyRefNb.setter
+	def AdvsgPtyRefNb(self, value):
+		self._AdvsgPtyRefNb = value if type(value) != auto else self.make_default("AdvsgPtyRefNb")
+
+	@AdvsgPtyRefNb.deleter
+	def AdvsgPtyRefNb(self):
+		del self._AdvsgPtyRefNb
+		self._AdvsgPtyRefNb = None
+
+	@property
+	def UdrtkgId(self):
+		return self._UdrtkgId
+
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
+
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
+
+	@property
 	def NclsdFile(self):
 		return self._NclsdFile
 
@@ -171,17 +171,17 @@ class UndertakingStatusAdvice1(base_types._BaseFieldType):
 		self._NclsdFile = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=UndertakingStatus3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptdAmt', type=ReportedAmount1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsCtgy', type=ExternalUndertakingStatusCategory1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgDtls', type=OriginalMessage1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgDtls', type=OriginalMessage1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=UndertakingStatus3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsCtgy', type=ExternalUndertakingStatusCategory1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptdAmt', type=ReportedAmount1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
 	))
 

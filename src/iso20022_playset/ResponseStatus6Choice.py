@@ -1,11 +1,24 @@
 import base_types
+import PendingStatus20Choice
 import ConsentStatus4Choice
 import RejectionStatus20Choice
-import PendingStatus20Choice
 
 class ResponseStatus6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnsntd", "_Rjctd", "_Pdg"]
+	__slots__ = ["_Pdg", "_Cnsntd", "_Rjctd"]
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
+
 	@property
 	def Cnsntd(self):
 		return self._Cnsntd
@@ -32,22 +45,9 @@ class ResponseStatus6Choice(base_types._BaseFieldType):
 		del self._Rjctd
 		self._Rjctd = None
 
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pdg', type=PendingStatus20Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cnsntd', type=ConsentStatus4Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus20Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus20Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

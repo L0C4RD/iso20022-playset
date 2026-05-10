@@ -1,26 +1,13 @@
 import base_types
+import ISODateTime
 import Max35Text
+import ATMActionType1Code
 import ATMPropertyComponent1
 import ATMEnvironment7
-import ISODateTime
-import ATMActionType1Code
 
 class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnReqrd", "_CfgtnVrsn", "_ActvtnDt", "_Prprty", "_Envt"]
-	@property
-	def ActnReqrd(self):
-		return self._ActnReqrd
-
-	@ActnReqrd.setter
-	def ActnReqrd(self, value):
-		self._ActnReqrd = value if type(value) != auto else self.make_default("ActnReqrd")
-
-	@ActnReqrd.deleter
-	def ActnReqrd(self):
-		del self._ActnReqrd
-		self._ActnReqrd = None
-
+	__slots__ = ["_CfgtnVrsn", "_ActvtnDt", "_ActnReqrd", "_Envt", "_Prprty"]
 	@property
 	def CfgtnVrsn(self):
 		return self._CfgtnVrsn
@@ -48,17 +35,17 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 		self._ActvtnDt = None
 
 	@property
-	def Prprty(self):
-		return self._Prprty
+	def ActnReqrd(self):
+		return self._ActnReqrd
 
-	@Prprty.setter
-	def Prprty(self, value):
-		self._Prprty = value if type(value) != auto else self.make_default("Prprty")
+	@ActnReqrd.setter
+	def ActnReqrd(self, value):
+		self._ActnReqrd = value if type(value) != auto else self.make_default("ActnReqrd")
 
-	@Prprty.deleter
-	def Prprty(self):
-		del self._Prprty
-		self._Prprty = None
+	@ActnReqrd.deleter
+	def ActnReqrd(self):
+		del self._ActnReqrd
+		self._ActnReqrd = None
 
 	@property
 	def Envt(self):
@@ -73,11 +60,24 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 		del self._Envt
 		self._Envt = None
 
+	@property
+	def Prprty(self):
+		return self._Prprty
+
+	@Prprty.setter
+	def Prprty(self, value):
+		self._Prprty = value if type(value) != auto else self.make_default("Prprty")
+
+	@Prprty.deleter
+	def Prprty(self):
+		del self._Prprty
+		self._Prprty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActnReqrd', type=ATMActionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CfgtnVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prprty', type=ATMPropertyComponent1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ActnReqrd', type=ATMActionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prprty', type=ATMPropertyComponent1, min=0, max=None, mutex_group=None, array=True),
 	))
 

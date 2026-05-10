@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import AnyBICDec2014Identifier
 import AccountIdentificationAndName7
+import AnyBICDec2014Identifier
+import Max35Text
 
 class CashAccount206(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctTpDesc", "_Svcr", "_AcctId"]
+	__slots__ = ["_AcctId", "_Svcr", "_AcctTpDesc"]
 	@property
-	def AcctTpDesc(self):
-		return self._AcctTpDesc
+	def AcctId(self):
+		return self._AcctId
 
-	@AcctTpDesc.setter
-	def AcctTpDesc(self, value):
-		self._AcctTpDesc = value if type(value) != auto else self.make_default("AcctTpDesc")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@AcctTpDesc.deleter
-	def AcctTpDesc(self):
-		del self._AcctTpDesc
-		self._AcctTpDesc = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def Svcr(self):
@@ -33,21 +33,21 @@ class CashAccount206(base_types._BaseFieldType):
 		self._Svcr = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def AcctTpDesc(self):
+		return self._AcctTpDesc
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@AcctTpDesc.setter
+	def AcctTpDesc(self, value):
+		self._AcctTpDesc = value if type(value) != auto else self.make_default("AcctTpDesc")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@AcctTpDesc.deleter
+	def AcctTpDesc(self):
+		del self._AcctTpDesc
+		self._AcctTpDesc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctTpDesc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Svcr', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentificationAndName7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTpDesc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

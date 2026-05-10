@@ -5,7 +5,7 @@ import DateCodeAndTimeFormat4
 
 class DateFormat54Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCd", "_DtCdAndTm", "_Dt"]
+	__slots__ = ["_DtCd", "_Dt", "_DtCdAndTm"]
 	@property
 	def DtCd(self):
 		return self._DtCd
@@ -20,19 +20,6 @@ class DateFormat54Choice(base_types._BaseFieldType):
 		self._DtCd = None
 
 	@property
-	def DtCdAndTm(self):
-		return self._DtCdAndTm
-
-	@DtCdAndTm.setter
-	def DtCdAndTm(self, value):
-		self._DtCdAndTm = value if type(value) != auto else self.make_default("DtCdAndTm")
-
-	@DtCdAndTm.deleter
-	def DtCdAndTm(self):
-		del self._DtCdAndTm
-		self._DtCdAndTm = None
-
-	@property
 	def Dt(self):
 		return self._Dt
 
@@ -45,9 +32,22 @@ class DateFormat54Choice(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def DtCdAndTm(self):
+		return self._DtCdAndTm
+
+	@DtCdAndTm.setter
+	def DtCdAndTm(self, value):
+		self._DtCdAndTm = value if type(value) != auto else self.make_default("DtCdAndTm")
+
+	@DtCdAndTm.deleter
+	def DtCdAndTm(self):
+		del self._DtCdAndTm
+		self._DtCdAndTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtCd', type=DateCode22Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DtCdAndTm', type=DateCodeAndTimeFormat4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtCdAndTm', type=DateCodeAndTimeFormat4, min=0, max=1, mutex_group=1, array=False),
 	))
 

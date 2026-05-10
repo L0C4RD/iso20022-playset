@@ -1,6 +1,6 @@
 import base_types
-import AccountIdentification71
 import AccountIdentification10
+import AccountIdentification71
 
 class AccountIdentification72Choice(base_types._BaseFieldType):
 

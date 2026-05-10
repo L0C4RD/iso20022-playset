@@ -1,24 +1,24 @@
 import base_types
-import Max35Text
-import SettlementParties94
 import SettlementTransactionCondition30Choice
+import SettlementParties94
 import TradeTransactionCondition8Choice
+import Max35Text
 
 class FundSettlementParameters15(base_types._BaseFieldType):
 
-	__slots__ = ["_TradTxCond", "_SttlmTxCond", "_DlvrgSdDtls", "_SctiesSttlmSysId"]
+	__slots__ = ["_DlvrgSdDtls", "_SttlmTxCond", "_TradTxCond", "_SctiesSttlmSysId"]
 	@property
-	def TradTxCond(self):
-		return self._TradTxCond
+	def DlvrgSdDtls(self):
+		return self._DlvrgSdDtls
 
-	@TradTxCond.setter
-	def TradTxCond(self, value):
-		self._TradTxCond = value if type(value) != auto else self.make_default("TradTxCond")
+	@DlvrgSdDtls.setter
+	def DlvrgSdDtls(self, value):
+		self._DlvrgSdDtls = value if type(value) != auto else self.make_default("DlvrgSdDtls")
 
-	@TradTxCond.deleter
-	def TradTxCond(self):
-		del self._TradTxCond
-		self._TradTxCond = None
+	@DlvrgSdDtls.deleter
+	def DlvrgSdDtls(self):
+		del self._DlvrgSdDtls
+		self._DlvrgSdDtls = None
 
 	@property
 	def SttlmTxCond(self):
@@ -34,17 +34,17 @@ class FundSettlementParameters15(base_types._BaseFieldType):
 		self._SttlmTxCond = None
 
 	@property
-	def DlvrgSdDtls(self):
-		return self._DlvrgSdDtls
+	def TradTxCond(self):
+		return self._TradTxCond
 
-	@DlvrgSdDtls.setter
-	def DlvrgSdDtls(self, value):
-		self._DlvrgSdDtls = value if type(value) != auto else self.make_default("DlvrgSdDtls")
+	@TradTxCond.setter
+	def TradTxCond(self, value):
+		self._TradTxCond = value if type(value) != auto else self.make_default("TradTxCond")
 
-	@DlvrgSdDtls.deleter
-	def DlvrgSdDtls(self):
-		del self._DlvrgSdDtls
-		self._DlvrgSdDtls = None
+	@TradTxCond.deleter
+	def TradTxCond(self):
+		del self._TradTxCond
+		self._TradTxCond = None
 
 	@property
 	def SctiesSttlmSysId(self):
@@ -60,9 +60,9 @@ class FundSettlementParameters15(base_types._BaseFieldType):
 		self._SctiesSttlmSysId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition8Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition30Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlvrgSdDtls', type=SettlementParties94, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition30Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition8Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesSttlmSysId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

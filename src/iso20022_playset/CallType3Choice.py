@@ -1,6 +1,6 @@
 import base_types
-import CallType1Code
 import GenericIdentification30
+import CallType1Code
 
 class CallType3Choice(base_types._BaseFieldType):
 

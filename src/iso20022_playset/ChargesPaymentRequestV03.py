@@ -1,23 +1,23 @@
 import base_types
-import GroupHeader130
-import SupplementaryData1
 import Charges6Choice
+import SupplementaryData1
+import GroupHeader130
 
 class ChargesPaymentRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_Chrgs"]
+	__slots__ = ["_Chrgs", "_GrpHdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Chrgs(self):
+		return self._Chrgs
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
 
 	@property
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class ChargesPaymentRequestV03(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def Chrgs(self):
-		return self._Chrgs
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader130, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chrgs', type=Charges6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader130, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

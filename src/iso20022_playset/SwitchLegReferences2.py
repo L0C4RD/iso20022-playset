@@ -1,38 +1,25 @@
 import base_types
 import FinancialInstrument57
-import InvestmentAccount58
-import Max350Text
 import Fee3
+import Max350Text
+import InvestmentAccount58
 import LegIdentification1Choice
 
 class SwitchLegReferences2(base_types._BaseFieldType):
 
-	__slots__ = ["_LegId", "_LegRjctnRsn", "_InvstmtAcctDtls", "_RprdFee", "_FinInstrmDtls"]
+	__slots__ = ["_FinInstrmDtls", "_InvstmtAcctDtls", "_LegId", "_RprdFee", "_LegRjctnRsn"]
 	@property
-	def LegId(self):
-		return self._LegId
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
 
-	@LegId.setter
-	def LegId(self, value):
-		self._LegId = value if type(value) != auto else self.make_default("LegId")
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
 
-	@LegId.deleter
-	def LegId(self):
-		del self._LegId
-		self._LegId = None
-
-	@property
-	def LegRjctnRsn(self):
-		return self._LegRjctnRsn
-
-	@LegRjctnRsn.setter
-	def LegRjctnRsn(self, value):
-		self._LegRjctnRsn = value if type(value) != auto else self.make_default("LegRjctnRsn")
-
-	@LegRjctnRsn.deleter
-	def LegRjctnRsn(self):
-		del self._LegRjctnRsn
-		self._LegRjctnRsn = None
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -48,6 +35,19 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		self._InvstmtAcctDtls = None
 
 	@property
+	def LegId(self):
+		return self._LegId
+
+	@LegId.setter
+	def LegId(self, value):
+		self._LegId = value if type(value) != auto else self.make_default("LegId")
+
+	@LegId.deleter
+	def LegId(self):
+		del self._LegId
+		self._LegId = None
+
+	@property
 	def RprdFee(self):
 		return self._RprdFee
 
@@ -61,23 +61,23 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		self._RprdFee = None
 
 	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
+	def LegRjctnRsn(self):
+		return self._LegRjctnRsn
 
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+	@LegRjctnRsn.setter
+	def LegRjctnRsn(self, value):
+		self._LegRjctnRsn = value if type(value) != auto else self.make_default("LegRjctnRsn")
 
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+	@LegRjctnRsn.deleter
+	def LegRjctnRsn(self):
+		del self._LegRjctnRsn
+		self._LegRjctnRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LegId', type=LegIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegRjctnRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegId', type=LegIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LegRjctnRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

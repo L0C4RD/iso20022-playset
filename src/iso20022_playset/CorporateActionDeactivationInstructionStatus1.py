@@ -1,37 +1,24 @@
 import base_types
-import Exact3NumericText
-import CorporateActionDeactivationInstructionProcessingStatus1
-import CorporateActionDeactivationInstructionRejectionStatus1
 import CorporateActionOption1FormatChoice
+import CorporateActionDeactivationInstructionRejectionStatus1
+import CorporateActionDeactivationInstructionProcessingStatus1
+import Exact3NumericText
 
 class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnNb", "_PrcdSts", "_OptnTp", "_RjctdSts"]
+	__slots__ = ["_RjctdSts", "_OptnTp", "_PrcdSts", "_OptnNb"]
 	@property
-	def OptnNb(self):
-		return self._OptnNb
+	def RjctdSts(self):
+		return self._RjctdSts
 
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+	@RjctdSts.setter
+	def RjctdSts(self, value):
+		self._RjctdSts = value if type(value) != auto else self.make_default("RjctdSts")
 
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
-
-	@property
-	def PrcdSts(self):
-		return self._PrcdSts
-
-	@PrcdSts.setter
-	def PrcdSts(self, value):
-		self._PrcdSts = value if type(value) != auto else self.make_default("PrcdSts")
-
-	@PrcdSts.deleter
-	def PrcdSts(self):
-		del self._PrcdSts
-		self._PrcdSts = None
+	@RjctdSts.deleter
+	def RjctdSts(self):
+		del self._RjctdSts
+		self._RjctdSts = None
 
 	@property
 	def OptnTp(self):
@@ -47,22 +34,35 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 		self._OptnTp = None
 
 	@property
-	def RjctdSts(self):
-		return self._RjctdSts
+	def PrcdSts(self):
+		return self._PrcdSts
 
-	@RjctdSts.setter
-	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != auto else self.make_default("RjctdSts")
+	@PrcdSts.setter
+	def PrcdSts(self, value):
+		self._PrcdSts = value if type(value) != auto else self.make_default("PrcdSts")
 
-	@RjctdSts.deleter
-	def RjctdSts(self):
-		del self._RjctdSts
-		self._RjctdSts = None
+	@PrcdSts.deleter
+	def PrcdSts(self):
+		del self._PrcdSts
+		self._PrcdSts = None
+
+	@property
+	def OptnNb(self):
+		return self._OptnNb
+
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcdSts', type=CorporateActionDeactivationInstructionProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=CorporateActionDeactivationInstructionRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcdSts', type=CorporateActionDeactivationInstructionProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

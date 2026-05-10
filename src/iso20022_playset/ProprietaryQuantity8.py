@@ -1,24 +1,11 @@
 import base_types
+import DecimalNumber
 import Exact4AlphaNumericText
 import Max35Text
-import DecimalNumber
 
 class ProprietaryQuantity8(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyTp", "_Qty", "_SchmeNm", "_Issr"]
-	@property
-	def QtyTp(self):
-		return self._QtyTp
-
-	@QtyTp.setter
-	def QtyTp(self, value):
-		self._QtyTp = value if type(value) != auto else self.make_default("QtyTp")
-
-	@QtyTp.deleter
-	def QtyTp(self):
-		del self._QtyTp
-		self._QtyTp = None
-
+	__slots__ = ["_Qty", "_QtyTp", "_SchmeNm", "_Issr"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -31,6 +18,19 @@ class ProprietaryQuantity8(base_types._BaseFieldType):
 	def Qty(self):
 		del self._Qty
 		self._Qty = None
+
+	@property
+	def QtyTp(self):
+		return self._QtyTp
+
+	@QtyTp.setter
+	def QtyTp(self, value):
+		self._QtyTp = value if type(value) != auto else self.make_default("QtyTp")
+
+	@QtyTp.deleter
+	def QtyTp(self):
+		del self._QtyTp
+		self._QtyTp = None
 
 	@property
 	def SchmeNm(self):
@@ -59,8 +59,8 @@ class ProprietaryQuantity8(base_types._BaseFieldType):
 		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtyTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))

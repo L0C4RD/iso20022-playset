@@ -5,19 +5,19 @@ import DecimalNumber
 
 class NumberAndSumOfTransactions2(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Sum", "_NbOfNtries", "_TtlNetNtryAmt"]
+	__slots__ = ["_NbOfNtries", "_Sum", "_CdtDbtInd", "_TtlNetNtryAmt"]
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def NbOfNtries(self):
+		return self._NbOfNtries
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@NbOfNtries.setter
+	def NbOfNtries(self, value):
+		self._NbOfNtries = value if type(value) != auto else self.make_default("NbOfNtries")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@NbOfNtries.deleter
+	def NbOfNtries(self):
+		del self._NbOfNtries
+		self._NbOfNtries = None
 
 	@property
 	def Sum(self):
@@ -33,17 +33,17 @@ class NumberAndSumOfTransactions2(base_types._BaseFieldType):
 		self._Sum = None
 
 	@property
-	def NbOfNtries(self):
-		return self._NbOfNtries
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@NbOfNtries.setter
-	def NbOfNtries(self, value):
-		self._NbOfNtries = value if type(value) != auto else self.make_default("NbOfNtries")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
 
-	@NbOfNtries.deleter
-	def NbOfNtries(self):
-		del self._NbOfNtries
-		self._NbOfNtries = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def TtlNetNtryAmt(self):
@@ -59,9 +59,9 @@ class NumberAndSumOfTransactions2(base_types._BaseFieldType):
 		self._TtlNetNtryAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfNtries', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNetNtryAmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

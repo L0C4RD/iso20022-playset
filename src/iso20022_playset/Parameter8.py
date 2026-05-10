@@ -1,7 +1,7 @@
 import base_types
 import Algorithm11Code
-import AlgorithmIdentification12
 import Number
+import AlgorithmIdentification12
 
 class Parameter8(base_types._BaseFieldType):
 

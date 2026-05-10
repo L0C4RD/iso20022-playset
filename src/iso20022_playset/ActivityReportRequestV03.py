@@ -1,23 +1,23 @@
 import base_types
-import DateTimePeriodDetails1
 import MessageIdentification1
+import DateTimePeriodDetails1
 import BICIdentification1
 
 class ActivityReportRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RptPrd", "_NttiesToBeRptd", "_ReqId"]
+	__slots__ = ["_ReqId", "_NttiesToBeRptd", "_RptPrd"]
 	@property
-	def RptPrd(self):
-		return self._RptPrd
+	def ReqId(self):
+		return self._ReqId
 
-	@RptPrd.setter
-	def RptPrd(self, value):
-		self._RptPrd = value if type(value) != auto else self.make_default("RptPrd")
+	@ReqId.setter
+	def ReqId(self, value):
+		self._ReqId = value if type(value) != auto else self.make_default("ReqId")
 
-	@RptPrd.deleter
-	def RptPrd(self):
-		del self._RptPrd
-		self._RptPrd = None
+	@ReqId.deleter
+	def ReqId(self):
+		del self._ReqId
+		self._ReqId = None
 
 	@property
 	def NttiesToBeRptd(self):
@@ -33,21 +33,21 @@ class ActivityReportRequestV03(base_types._BaseFieldType):
 		self._NttiesToBeRptd = None
 
 	@property
-	def ReqId(self):
-		return self._ReqId
+	def RptPrd(self):
+		return self._RptPrd
 
-	@ReqId.setter
-	def ReqId(self, value):
-		self._ReqId = value if type(value) != auto else self.make_default("ReqId")
+	@RptPrd.setter
+	def RptPrd(self, value):
+		self._RptPrd = value if type(value) != auto else self.make_default("RptPrd")
 
-	@ReqId.deleter
-	def ReqId(self):
-		del self._ReqId
-		self._ReqId = None
+	@RptPrd.deleter
+	def RptPrd(self):
+		del self._RptPrd
+		self._RptPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptPrd', type=DateTimePeriodDetails1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NttiesToBeRptd', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NttiesToBeRptd', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptPrd', type=DateTimePeriodDetails1, min=1, max=1, mutex_group=None, array=False),
 	))
 

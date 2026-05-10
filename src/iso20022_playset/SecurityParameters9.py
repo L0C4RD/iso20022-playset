@@ -1,13 +1,13 @@
 import base_types
-import Max140Binary
-import Max35Text
-import ATMSignature2Choice
 import Max5000Binary
+import Max140Binary
+import ATMSignature2Choice
+import Max35Text
 import CryptographicKey12
 
 class SecurityParameters9(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_Key", "_ReqdKey", "_ATMChllng", "_SgntrChc"]
+	__slots__ = ["_Cert", "_ReqdKey", "_ATMChllng", "_Key", "_SgntrChc"]
 	@property
 	def Cert(self):
 		return self._Cert
@@ -20,19 +20,6 @@ class SecurityParameters9(base_types._BaseFieldType):
 	def Cert(self):
 		del self._Cert
 		self._Cert = None
-
-	@property
-	def Key(self):
-		return self._Key
-
-	@Key.setter
-	def Key(self, value):
-		self._Key = value if type(value) != auto else self.make_default("Key")
-
-	@Key.deleter
-	def Key(self):
-		del self._Key
-		self._Key = None
 
 	@property
 	def ReqdKey(self):
@@ -61,6 +48,19 @@ class SecurityParameters9(base_types._BaseFieldType):
 		self._ATMChllng = None
 
 	@property
+	def Key(self):
+		return self._Key
+
+	@Key.setter
+	def Key(self, value):
+		self._Key = value if type(value) != auto else self.make_default("Key")
+
+	@Key.deleter
+	def Key(self):
+		del self._Key
+		self._Key = None
+
+	@property
 	def SgntrChc(self):
 		return self._SgntrChc
 
@@ -75,9 +75,9 @@ class SecurityParameters9(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Key', type=CryptographicKey12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdKey', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Key', type=CryptographicKey12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

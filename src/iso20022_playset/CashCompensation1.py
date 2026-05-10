@@ -1,6 +1,6 @@
 import base_types
-import AmountAndDirection20
 import ISODate
+import AmountAndDirection20
 
 class CashCompensation1(base_types._BaseFieldType):
 

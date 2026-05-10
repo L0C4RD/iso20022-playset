@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
-import PartyType32Code
 import DisputeIdentification1
+import PartyType32Code
+import Max35Text
 
 class DisputeReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_DsptId", "_OthrAssgnrNtty", "_AssgnrNtty"]
+	__slots__ = ["_AssgnrNtty", "_DsptId", "_OthrAssgnrNtty"]
+	@property
+	def AssgnrNtty(self):
+		return self._AssgnrNtty
+
+	@AssgnrNtty.setter
+	def AssgnrNtty(self, value):
+		self._AssgnrNtty = value if type(value) != auto else self.make_default("AssgnrNtty")
+
+	@AssgnrNtty.deleter
+	def AssgnrNtty(self):
+		del self._AssgnrNtty
+		self._AssgnrNtty = None
+
 	@property
 	def DsptId(self):
 		return self._DsptId
@@ -32,22 +45,9 @@ class DisputeReference1(base_types._BaseFieldType):
 		del self._OthrAssgnrNtty
 		self._OthrAssgnrNtty = None
 
-	@property
-	def AssgnrNtty(self):
-		return self._AssgnrNtty
-
-	@AssgnrNtty.setter
-	def AssgnrNtty(self, value):
-		self._AssgnrNtty = value if type(value) != auto else self.make_default("AssgnrNtty")
-
-	@AssgnrNtty.deleter
-	def AssgnrNtty(self):
-		del self._AssgnrNtty
-		self._AssgnrNtty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsptId', type=DisputeIdentification1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrAssgnrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

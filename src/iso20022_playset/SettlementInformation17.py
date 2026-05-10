@@ -1,23 +1,23 @@
 import base_types
-import SettlementUnitType3Choice
 import FinancialInstrumentQuantity1Choice
+import SettlementUnitType3Choice
 import ISOYearMonth
 
 class SettlementInformation17(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctSttlmMnth", "_SctiesQtyTp", "_MinDnmtn", "_DevtgSttlmUnit", "_MinMltplQty"]
+	__slots__ = ["_DevtgSttlmUnit", "_SctiesQtyTp", "_MinDnmtn", "_CtrctSttlmMnth", "_MinMltplQty"]
 	@property
-	def CtrctSttlmMnth(self):
-		return self._CtrctSttlmMnth
+	def DevtgSttlmUnit(self):
+		return self._DevtgSttlmUnit
 
-	@CtrctSttlmMnth.setter
-	def CtrctSttlmMnth(self, value):
-		self._CtrctSttlmMnth = value if type(value) != auto else self.make_default("CtrctSttlmMnth")
+	@DevtgSttlmUnit.setter
+	def DevtgSttlmUnit(self, value):
+		self._DevtgSttlmUnit = value if type(value) != auto else self.make_default("DevtgSttlmUnit")
 
-	@CtrctSttlmMnth.deleter
-	def CtrctSttlmMnth(self):
-		del self._CtrctSttlmMnth
-		self._CtrctSttlmMnth = None
+	@DevtgSttlmUnit.deleter
+	def DevtgSttlmUnit(self):
+		del self._DevtgSttlmUnit
+		self._DevtgSttlmUnit = None
 
 	@property
 	def SctiesQtyTp(self):
@@ -46,17 +46,17 @@ class SettlementInformation17(base_types._BaseFieldType):
 		self._MinDnmtn = None
 
 	@property
-	def DevtgSttlmUnit(self):
-		return self._DevtgSttlmUnit
+	def CtrctSttlmMnth(self):
+		return self._CtrctSttlmMnth
 
-	@DevtgSttlmUnit.setter
-	def DevtgSttlmUnit(self, value):
-		self._DevtgSttlmUnit = value if type(value) != auto else self.make_default("DevtgSttlmUnit")
+	@CtrctSttlmMnth.setter
+	def CtrctSttlmMnth(self, value):
+		self._CtrctSttlmMnth = value if type(value) != auto else self.make_default("CtrctSttlmMnth")
 
-	@DevtgSttlmUnit.deleter
-	def DevtgSttlmUnit(self):
-		del self._DevtgSttlmUnit
-		self._DevtgSttlmUnit = None
+	@CtrctSttlmMnth.deleter
+	def CtrctSttlmMnth(self):
+		del self._CtrctSttlmMnth
+		self._CtrctSttlmMnth = None
 
 	@property
 	def MinMltplQty(self):
@@ -72,10 +72,10 @@ class SettlementInformation17(base_types._BaseFieldType):
 		self._MinMltplQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctSttlmMnth', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DevtgSttlmUnit', type=FinancialInstrumentQuantity1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesQtyTp', type=SettlementUnitType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinDnmtn', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DevtgSttlmUnit', type=FinancialInstrumentQuantity1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrctSttlmMnth', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinMltplQty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

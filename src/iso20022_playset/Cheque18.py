@@ -1,28 +1,28 @@
 import base_types
-import PartyIdentification272
-import CashAccount40
 import DateAndDateTime2Choice
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
-import ChequeCancellationStatus1
+import PartyIdentification272
 import ActiveCurrencyAndAmount
+import ChequeCancellationStatus1
+import CashAccount40
+import Max35Text
 import ISODate
+import BranchAndFinancialInstitutionIdentification8
 
 class Cheque18(base_types._BaseFieldType):
 
-	__slots__ = ["_StlDt", "_PyeeAcct", "_ChqNb", "_DrwrAgt", "_IsseDt", "_Amt", "_Pyee", "_InstrId", "_DrwrAgtAcct", "_FctvDt", "_ChqCxlOrStopSts", "_OrgnlInstrId"]
+	__slots__ = ["_ChqCxlOrStopSts", "_PyeeAcct", "_OrgnlInstrId", "_DrwrAgt", "_IsseDt", "_DrwrAgtAcct", "_Pyee", "_Amt", "_InstrId", "_FctvDt", "_StlDt", "_ChqNb"]
 	@property
-	def StlDt(self):
-		return self._StlDt
+	def ChqCxlOrStopSts(self):
+		return self._ChqCxlOrStopSts
 
-	@StlDt.setter
-	def StlDt(self, value):
-		self._StlDt = value if type(value) != auto else self.make_default("StlDt")
+	@ChqCxlOrStopSts.setter
+	def ChqCxlOrStopSts(self, value):
+		self._ChqCxlOrStopSts = value if type(value) != auto else self.make_default("ChqCxlOrStopSts")
 
-	@StlDt.deleter
-	def StlDt(self):
-		del self._StlDt
-		self._StlDt = None
+	@ChqCxlOrStopSts.deleter
+	def ChqCxlOrStopSts(self):
+		del self._ChqCxlOrStopSts
+		self._ChqCxlOrStopSts = None
 
 	@property
 	def PyeeAcct(self):
@@ -38,17 +38,17 @@ class Cheque18(base_types._BaseFieldType):
 		self._PyeeAcct = None
 
 	@property
-	def ChqNb(self):
-		return self._ChqNb
+	def OrgnlInstrId(self):
+		return self._OrgnlInstrId
 
-	@ChqNb.setter
-	def ChqNb(self, value):
-		self._ChqNb = value if type(value) != auto else self.make_default("ChqNb")
+	@OrgnlInstrId.setter
+	def OrgnlInstrId(self, value):
+		self._OrgnlInstrId = value if type(value) != auto else self.make_default("OrgnlInstrId")
 
-	@ChqNb.deleter
-	def ChqNb(self):
-		del self._ChqNb
-		self._ChqNb = None
+	@OrgnlInstrId.deleter
+	def OrgnlInstrId(self):
+		del self._OrgnlInstrId
+		self._OrgnlInstrId = None
 
 	@property
 	def DrwrAgt(self):
@@ -77,17 +77,17 @@ class Cheque18(base_types._BaseFieldType):
 		self._IsseDt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def DrwrAgtAcct(self):
+		return self._DrwrAgtAcct
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@DrwrAgtAcct.setter
+	def DrwrAgtAcct(self, value):
+		self._DrwrAgtAcct = value if type(value) != auto else self.make_default("DrwrAgtAcct")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@DrwrAgtAcct.deleter
+	def DrwrAgtAcct(self):
+		del self._DrwrAgtAcct
+		self._DrwrAgtAcct = None
 
 	@property
 	def Pyee(self):
@@ -103,6 +103,19 @@ class Cheque18(base_types._BaseFieldType):
 		self._Pyee = None
 
 	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
 	def InstrId(self):
 		return self._InstrId
 
@@ -114,19 +127,6 @@ class Cheque18(base_types._BaseFieldType):
 	def InstrId(self):
 		del self._InstrId
 		self._InstrId = None
-
-	@property
-	def DrwrAgtAcct(self):
-		return self._DrwrAgtAcct
-
-	@DrwrAgtAcct.setter
-	def DrwrAgtAcct(self, value):
-		self._DrwrAgtAcct = value if type(value) != auto else self.make_default("DrwrAgtAcct")
-
-	@DrwrAgtAcct.deleter
-	def DrwrAgtAcct(self):
-		del self._DrwrAgtAcct
-		self._DrwrAgtAcct = None
 
 	@property
 	def FctvDt(self):
@@ -142,43 +142,43 @@ class Cheque18(base_types._BaseFieldType):
 		self._FctvDt = None
 
 	@property
-	def ChqCxlOrStopSts(self):
-		return self._ChqCxlOrStopSts
+	def StlDt(self):
+		return self._StlDt
 
-	@ChqCxlOrStopSts.setter
-	def ChqCxlOrStopSts(self, value):
-		self._ChqCxlOrStopSts = value if type(value) != auto else self.make_default("ChqCxlOrStopSts")
+	@StlDt.setter
+	def StlDt(self, value):
+		self._StlDt = value if type(value) != auto else self.make_default("StlDt")
 
-	@ChqCxlOrStopSts.deleter
-	def ChqCxlOrStopSts(self):
-		del self._ChqCxlOrStopSts
-		self._ChqCxlOrStopSts = None
+	@StlDt.deleter
+	def StlDt(self):
+		del self._StlDt
+		self._StlDt = None
 
 	@property
-	def OrgnlInstrId(self):
-		return self._OrgnlInstrId
+	def ChqNb(self):
+		return self._ChqNb
 
-	@OrgnlInstrId.setter
-	def OrgnlInstrId(self, value):
-		self._OrgnlInstrId = value if type(value) != auto else self.make_default("OrgnlInstrId")
+	@ChqNb.setter
+	def ChqNb(self, value):
+		self._ChqNb = value if type(value) != auto else self.make_default("ChqNb")
 
-	@OrgnlInstrId.deleter
-	def OrgnlInstrId(self):
-		del self._OrgnlInstrId
-		self._OrgnlInstrId = None
+	@ChqNb.deleter
+	def ChqNb(self):
+		del self._ChqNb
+		self._ChqNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StlDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChqCxlOrStopSts', type=ChequeCancellationStatus1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyeeAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChqNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrwrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pyee', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrwrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pyee', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChqCxlOrStopSts', type=ChequeCancellationStatus1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StlDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChqNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

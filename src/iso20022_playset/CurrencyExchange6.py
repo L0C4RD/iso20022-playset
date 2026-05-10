@@ -1,52 +1,13 @@
 import base_types
-import ISODateTime
-import Max40Text
-import BaseOneRate
 import Max70Text
+import BaseOneRate
+import ISODateTime
 import ActiveOrHistoricCurrencyCode
+import Max40Text
 
 class CurrencyExchange6(base_types._BaseFieldType):
 
-	__slots__ = ["_SrcCcy", "_Desc", "_QtnDt", "_TrgtCcy", "_XchgRate", "_Cmnts", "_UnitCcy"]
-	@property
-	def SrcCcy(self):
-		return self._SrcCcy
-
-	@SrcCcy.setter
-	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != auto else self.make_default("SrcCcy")
-
-	@SrcCcy.deleter
-	def SrcCcy(self):
-		del self._SrcCcy
-		self._SrcCcy = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
-	def QtnDt(self):
-		return self._QtnDt
-
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
-
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
-
+	__slots__ = ["_TrgtCcy", "_Cmnts", "_UnitCcy", "_QtnDt", "_SrcCcy", "_XchgRate", "_Desc"]
 	@property
 	def TrgtCcy(self):
 		return self._TrgtCcy
@@ -59,19 +20,6 @@ class CurrencyExchange6(base_types._BaseFieldType):
 	def TrgtCcy(self):
 		del self._TrgtCcy
 		self._TrgtCcy = None
-
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
 
 	@property
 	def Cmnts(self):
@@ -99,13 +47,65 @@ class CurrencyExchange6(base_types._BaseFieldType):
 		del self._UnitCcy
 		self._UnitCcy = None
 
+	@property
+	def QtnDt(self):
+		return self._QtnDt
+
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
+
+	@property
+	def SrcCcy(self):
+		return self._SrcCcy
+
+	@SrcCcy.setter
+	def SrcCcy(self, value):
+		self._SrcCcy = value if type(value) != auto else self.make_default("SrcCcy")
+
+	@SrcCcy.deleter
+	def SrcCcy(self):
+		del self._SrcCcy
+		self._SrcCcy = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SrcCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrgtCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnts', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

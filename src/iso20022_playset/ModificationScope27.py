@@ -1,6 +1,6 @@
 import base_types
-import PartyProfileInformation5
 import DataModification2Code
+import PartyProfileInformation5
 
 class ModificationScope27(base_types._BaseFieldType):
 

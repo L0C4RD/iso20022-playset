@@ -1,24 +1,11 @@
 import base_types
+import ISODate
 import ActiveCurrencyAndAmount
 import Max35Text
-import ISODate
 
 class OriginalInvoiceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlInvcAmt", "_DocNb", "_IsseDt", "_PmtDueDt"]
-	@property
-	def TtlInvcAmt(self):
-		return self._TtlInvcAmt
-
-	@TtlInvcAmt.setter
-	def TtlInvcAmt(self, value):
-		self._TtlInvcAmt = value if type(value) != auto else self.make_default("TtlInvcAmt")
-
-	@TtlInvcAmt.deleter
-	def TtlInvcAmt(self):
-		del self._TtlInvcAmt
-		self._TtlInvcAmt = None
-
+	__slots__ = ["_DocNb", "_TtlInvcAmt", "_PmtDueDt", "_IsseDt"]
 	@property
 	def DocNb(self):
 		return self._DocNb
@@ -33,17 +20,17 @@ class OriginalInvoiceInformation1(base_types._BaseFieldType):
 		self._DocNb = None
 
 	@property
-	def IsseDt(self):
-		return self._IsseDt
+	def TtlInvcAmt(self):
+		return self._TtlInvcAmt
 
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+	@TtlInvcAmt.setter
+	def TtlInvcAmt(self, value):
+		self._TtlInvcAmt = value if type(value) != auto else self.make_default("TtlInvcAmt")
 
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
+	@TtlInvcAmt.deleter
+	def TtlInvcAmt(self):
+		del self._TtlInvcAmt
+		self._TtlInvcAmt = None
 
 	@property
 	def PmtDueDt(self):
@@ -58,10 +45,23 @@ class OriginalInvoiceInformation1(base_types._BaseFieldType):
 		del self._PmtDueDt
 		self._PmtDueDt = None
 
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlInvcAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlInvcAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

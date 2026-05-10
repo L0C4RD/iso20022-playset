@@ -1,23 +1,10 @@
 import base_types
-import Max35Text
 import BusinessInformationCriteria1
+import Max35Text
 
 class GeneralBusinessInformationCriteriaDefinition1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NewCrit", "_QryNm"]
-	@property
-	def NewCrit(self):
-		return self._NewCrit
-
-	@NewCrit.setter
-	def NewCrit(self, value):
-		self._NewCrit = value if type(value) != auto else self.make_default("NewCrit")
-
-	@NewCrit.deleter
-	def NewCrit(self):
-		del self._NewCrit
-		self._NewCrit = None
-
+	__slots__ = ["_QryNm", "_NewCrit"]
 	@property
 	def QryNm(self):
 		return self._QryNm
@@ -31,8 +18,21 @@ class GeneralBusinessInformationCriteriaDefinition1Choice(base_types._BaseFieldT
 		del self._QryNm
 		self._QryNm = None
 
+	@property
+	def NewCrit(self):
+		return self._NewCrit
+
+	@NewCrit.setter
+	def NewCrit(self, value):
+		self._NewCrit = value if type(value) != auto else self.make_default("NewCrit")
+
+	@NewCrit.deleter
+	def NewCrit(self):
+		del self._NewCrit
+		self._NewCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewCrit', type=BusinessInformationCriteria1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NewCrit', type=BusinessInformationCriteria1, min=0, max=1, mutex_group=1, array=False),
 	))
 

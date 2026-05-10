@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import GenericIdentification30
 import Max70Text
+import GenericIdentification30
+import Max35Text
 
 class SecuritiesAccount36(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_Tp", "_Dsgnt"]
+	__slots__ = ["_Dsgnt", "_Nm", "_Id", "_Tp"]
 	@property
-	def Id(self):
-		return self._Id
+	def Dsgnt(self):
+		return self._Dsgnt
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
 
 	@property
 	def Nm(self):
@@ -33,6 +33,19 @@ class SecuritiesAccount36(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -45,23 +58,10 @@ class SecuritiesAccount36(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def Dsgnt(self):
-		return self._Dsgnt
-
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
-
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
 

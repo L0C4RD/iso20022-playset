@@ -1,25 +1,12 @@
 import base_types
-import TrueFalseIndicator
-import LoanData134
-import CollateralData33
 import CounterpartyData86
+import LoanData134
+import TrueFalseIndicator
+import CollateralData33
 
 class PositionSetDimensions14(base_types._BaseFieldType):
 
-	__slots__ = ["_LnData", "_OtlrsIncl", "_CtrPtyData", "_CollData"]
-	@property
-	def LnData(self):
-		return self._LnData
-
-	@LnData.setter
-	def LnData(self, value):
-		self._LnData = value if type(value) != auto else self.make_default("LnData")
-
-	@LnData.deleter
-	def LnData(self):
-		del self._LnData
-		self._LnData = None
-
+	__slots__ = ["_OtlrsIncl", "_LnData", "_CtrPtyData", "_CollData"]
 	@property
 	def OtlrsIncl(self):
 		return self._OtlrsIncl
@@ -32,6 +19,19 @@ class PositionSetDimensions14(base_types._BaseFieldType):
 	def OtlrsIncl(self):
 		del self._OtlrsIncl
 		self._OtlrsIncl = None
+
+	@property
+	def LnData(self):
+		return self._LnData
+
+	@LnData.setter
+	def LnData(self, value):
+		self._LnData = value if type(value) != auto else self.make_default("LnData")
+
+	@LnData.deleter
+	def LnData(self):
+		del self._LnData
+		self._LnData = None
 
 	@property
 	def CtrPtyData(self):
@@ -60,8 +60,8 @@ class PositionSetDimensions14(base_types._BaseFieldType):
 		self._CollData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LnData', type=LoanData134, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LnData', type=LoanData134, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyData', type=CounterpartyData86, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollData', type=CollateralData33, min=0, max=1, mutex_group=None, array=False),
 	))

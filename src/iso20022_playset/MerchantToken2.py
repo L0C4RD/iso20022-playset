@@ -1,15 +1,15 @@
 import base_types
+import Max500Binary
+import PaymentTokenIdentifiers1
+import Max10Text
+import Max2NumericText
+import Number
 import Max35Text
 import TrueFalseIndicator
-import Max10Text
-import Number
-import Max2NumericText
-import PaymentTokenIdentifiers1
-import Max500Binary
 
 class MerchantToken2(base_types._BaseFieldType):
 
-	__slots__ = ["_TknAssrncMtd", "_TknChrtc", "_TknAssrncLvl", "_TknInittdInd", "_TknAssrncData", "_TknXpryDt", "_Tkn", "_TknRqstr"]
+	__slots__ = ["_TknAssrncMtd", "_TknInittdInd", "_Tkn", "_TknRqstr", "_TknXpryDt", "_TknAssrncData", "_TknAssrncLvl", "_TknChrtc"]
 	@property
 	def TknAssrncMtd(self):
 		return self._TknAssrncMtd
@@ -24,32 +24,6 @@ class MerchantToken2(base_types._BaseFieldType):
 		self._TknAssrncMtd = None
 
 	@property
-	def TknChrtc(self):
-		return self._TknChrtc
-
-	@TknChrtc.setter
-	def TknChrtc(self, value):
-		self._TknChrtc = value if type(value) != auto else self.make_default("TknChrtc")
-
-	@TknChrtc.deleter
-	def TknChrtc(self):
-		del self._TknChrtc
-		self._TknChrtc = None
-
-	@property
-	def TknAssrncLvl(self):
-		return self._TknAssrncLvl
-
-	@TknAssrncLvl.setter
-	def TknAssrncLvl(self, value):
-		self._TknAssrncLvl = value if type(value) != auto else self.make_default("TknAssrncLvl")
-
-	@TknAssrncLvl.deleter
-	def TknAssrncLvl(self):
-		del self._TknAssrncLvl
-		self._TknAssrncLvl = None
-
-	@property
 	def TknInittdInd(self):
 		return self._TknInittdInd
 
@@ -61,32 +35,6 @@ class MerchantToken2(base_types._BaseFieldType):
 	def TknInittdInd(self):
 		del self._TknInittdInd
 		self._TknInittdInd = None
-
-	@property
-	def TknAssrncData(self):
-		return self._TknAssrncData
-
-	@TknAssrncData.setter
-	def TknAssrncData(self, value):
-		self._TknAssrncData = value if type(value) != auto else self.make_default("TknAssrncData")
-
-	@TknAssrncData.deleter
-	def TknAssrncData(self):
-		del self._TknAssrncData
-		self._TknAssrncData = None
-
-	@property
-	def TknXpryDt(self):
-		return self._TknXpryDt
-
-	@TknXpryDt.setter
-	def TknXpryDt(self, value):
-		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
-
-	@TknXpryDt.deleter
-	def TknXpryDt(self):
-		del self._TknXpryDt
-		self._TknXpryDt = None
 
 	@property
 	def Tkn(self):
@@ -114,14 +62,66 @@ class MerchantToken2(base_types._BaseFieldType):
 		del self._TknRqstr
 		self._TknRqstr = None
 
+	@property
+	def TknXpryDt(self):
+		return self._TknXpryDt
+
+	@TknXpryDt.setter
+	def TknXpryDt(self, value):
+		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
+
+	@TknXpryDt.deleter
+	def TknXpryDt(self):
+		del self._TknXpryDt
+		self._TknXpryDt = None
+
+	@property
+	def TknAssrncData(self):
+		return self._TknAssrncData
+
+	@TknAssrncData.setter
+	def TknAssrncData(self, value):
+		self._TknAssrncData = value if type(value) != auto else self.make_default("TknAssrncData")
+
+	@TknAssrncData.deleter
+	def TknAssrncData(self):
+		del self._TknAssrncData
+		self._TknAssrncData = None
+
+	@property
+	def TknAssrncLvl(self):
+		return self._TknAssrncLvl
+
+	@TknAssrncLvl.setter
+	def TknAssrncLvl(self, value):
+		self._TknAssrncLvl = value if type(value) != auto else self.make_default("TknAssrncLvl")
+
+	@TknAssrncLvl.deleter
+	def TknAssrncLvl(self):
+		del self._TknAssrncLvl
+		self._TknAssrncLvl = None
+
+	@property
+	def TknChrtc(self):
+		return self._TknChrtc
+
+	@TknChrtc.setter
+	def TknChrtc(self, value):
+		self._TknChrtc = value if type(value) != auto else self.make_default("TknChrtc")
+
+	@TknChrtc.deleter
+	def TknChrtc(self):
+		del self._TknChrtc
+		self._TknChrtc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknChrtc', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TknAssrncLvl', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknInittdInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknAssrncData', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknXpryDt', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tkn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknRqstr', type=PaymentTokenIdentifiers1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknXpryDt', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncData', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncLvl', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknChrtc', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

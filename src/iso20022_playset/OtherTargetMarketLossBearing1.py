@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import AdditionalInformation15
 import TargetMarket1Choice
+import AdditionalInformation15
+import Max35Text
 
 class OtherTargetMarketLossBearing1(base_types._BaseFieldType):
 
-	__slots__ = ["_AbltyToBearLossesTp", "_Trgt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Trgt", "_AbltyToBearLossesTp"]
 	@property
-	def AbltyToBearLossesTp(self):
-		return self._AbltyToBearLossesTp
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@AbltyToBearLossesTp.setter
-	def AbltyToBearLossesTp(self, value):
-		self._AbltyToBearLossesTp = value if type(value) != auto else self.make_default("AbltyToBearLossesTp")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@AbltyToBearLossesTp.deleter
-	def AbltyToBearLossesTp(self):
-		del self._AbltyToBearLossesTp
-		self._AbltyToBearLossesTp = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Trgt(self):
@@ -33,21 +33,21 @@ class OtherTargetMarketLossBearing1(base_types._BaseFieldType):
 		self._Trgt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def AbltyToBearLossesTp(self):
+		return self._AbltyToBearLossesTp
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@AbltyToBearLossesTp.setter
+	def AbltyToBearLossesTp(self, value):
+		self._AbltyToBearLossesTp = value if type(value) != auto else self.make_default("AbltyToBearLossesTp")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@AbltyToBearLossesTp.deleter
+	def AbltyToBearLossesTp(self):
+		del self._AbltyToBearLossesTp
+		self._AbltyToBearLossesTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AbltyToBearLossesTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AbltyToBearLossesTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

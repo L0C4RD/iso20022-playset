@@ -1,11 +1,24 @@
 import base_types
+import CounterpartyTradeNature15Choice
 import TrueFalseIndicator
 import PartyIdentification248Choice
-import CounterpartyTradeNature15Choice
 
 class Counterparty46(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgOblgtn", "_Ntr", "_IdTp"]
+	__slots__ = ["_IdTp", "_RptgOblgtn", "_Ntr"]
+	@property
+	def IdTp(self):
+		return self._IdTp
+
+	@IdTp.setter
+	def IdTp(self, value):
+		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
+
+	@IdTp.deleter
+	def IdTp(self):
+		del self._IdTp
+		self._IdTp = None
+
 	@property
 	def RptgOblgtn(self):
 		return self._RptgOblgtn
@@ -32,22 +45,9 @@ class Counterparty46(base_types._BaseFieldType):
 		del self._Ntr
 		self._Ntr = None
 
-	@property
-	def IdTp(self):
-		return self._IdTp
-
-	@IdTp.setter
-	def IdTp(self, value):
-		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
-
-	@IdTp.deleter
-	def IdTp(self):
-		del self._IdTp
-		self._IdTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IdTp', type=PartyIdentification248Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgOblgtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntr', type=CounterpartyTradeNature15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IdTp', type=PartyIdentification248Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

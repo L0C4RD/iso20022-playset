@@ -1,12 +1,12 @@
 import base_types
-import ATMInquiryRequest3
 import Header31
 import ContentInformationType15
 import ContentInformationType10
+import ATMInquiryRequest3
 
 class ATMInquiryRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMNqryReq", "_SctyTrlr", "_ATMNqryReq", "_Hdr"]
+	__slots__ = ["_PrtctdATMNqryReq", "_Hdr", "_ATMNqryReq", "_SctyTrlr"]
 	@property
 	def PrtctdATMNqryReq(self):
 		return self._PrtctdATMNqryReq
@@ -21,17 +21,17 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 		self._PrtctdATMNqryReq = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def Hdr(self):
+		return self._Hdr
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def ATMNqryReq(self):
@@ -47,22 +47,22 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 		self._ATMNqryReq = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdATMNqryReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMNqryReq', type=ATMInquiryRequest3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMNqryReq', type=ATMInquiryRequest3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

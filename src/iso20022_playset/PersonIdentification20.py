@@ -5,7 +5,7 @@ import Max256Text
 
 class PersonIdentification20(base_types._BaseFieldType):
 
-	__slots__ = ["_DtAndPlcOfBirth", "_EmailAdr", "_Othr"]
+	__slots__ = ["_DtAndPlcOfBirth", "_Othr", "_EmailAdr"]
 	@property
 	def DtAndPlcOfBirth(self):
 		return self._DtAndPlcOfBirth
@@ -20,19 +20,6 @@ class PersonIdentification20(base_types._BaseFieldType):
 		self._DtAndPlcOfBirth = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
-	@property
 	def Othr(self):
 		return self._Othr
 
@@ -45,9 +32,22 @@ class PersonIdentification20(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

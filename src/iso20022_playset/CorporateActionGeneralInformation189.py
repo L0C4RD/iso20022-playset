@@ -5,7 +5,7 @@ import CorporateActionEventType119Choice
 
 class CorporateActionGeneralInformation189(base_types._BaseFieldType):
 
-	__slots__ = ["_OffclCorpActnEvtId", "_UndrlygScty", "_CorpActnEvtId", "_EvtTp"]
+	__slots__ = ["_OffclCorpActnEvtId", "_EvtTp", "_UndrlygScty", "_CorpActnEvtId"]
 	@property
 	def OffclCorpActnEvtId(self):
 		return self._OffclCorpActnEvtId
@@ -18,6 +18,19 @@ class CorporateActionGeneralInformation189(base_types._BaseFieldType):
 	def OffclCorpActnEvtId(self):
 		del self._OffclCorpActnEvtId
 		self._OffclCorpActnEvtId = None
+
+	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
 
 	@property
 	def UndrlygScty(self):
@@ -45,23 +58,10 @@ class CorporateActionGeneralInformation189(base_types._BaseFieldType):
 		del self._CorpActnEvtId
 		self._CorpActnEvtId = None
 
-	@property
-	def EvtTp(self):
-		return self._EvtTp
-
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
-
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType119Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes133, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType119Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

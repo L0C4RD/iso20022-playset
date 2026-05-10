@@ -1,23 +1,23 @@
 import base_types
-import AlternatePartyIdentification7
 import PartyIdentification120Choice
+import AlternatePartyIdentification7
 import LEIIdentifier
 
 class PartyIdentificationAndAccount193(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_Id", "_LEI"]
+	__slots__ = ["_LEI", "_Id", "_AltrnId"]
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def LEI(self):
+		return self._LEI
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def Id(self):
@@ -33,21 +33,21 @@ class PartyIdentificationAndAccount193(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def AltrnId(self):
+		return self._AltrnId
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))
 

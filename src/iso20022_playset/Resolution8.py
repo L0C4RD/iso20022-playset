@@ -1,31 +1,44 @@
 import base_types
-import VotingRightsThreshold2
-import Max2048Text
-import VoteInstruction5Code
+import ResolutionStatus1Code
+import VoteInstructionType1
+import ItemDescription2
+import ResolutionType2Code
 import VoteType1Code
 import YesNoIndicator
-import ResolutionType2Code
-import VoteInstructionType1
+import VotingRightsThreshold2
+import VoteInstruction5Code
+import Max2048Text
 import Max35Text
 import Entitlement1Choice
-import ResolutionStatus1Code
-import ItemDescription2
 
 class Resolution8(base_types._BaseFieldType):
 
-	__slots__ = ["_ListgGrpRsltnLabl", "_VoteInstrTp", "_Entitlmnt", "_ForInfOnly", "_VtngRghtsThrshldForApprvl", "_Sts", "_URLAdr", "_RghtToWdrwInd", "_NtifngPtyRcmmndtn", "_SubmittdBySctyHldr", "_IssrLabl", "_MgmtRcmmndtn", "_Tp", "_Desc", "_VoteTp"]
+	__slots__ = ["_MgmtRcmmndtn", "_NtifngPtyRcmmndtn", "_VoteInstrTp", "_Desc", "_VtngRghtsThrshldForApprvl", "_IssrLabl", "_ForInfOnly", "_Entitlmnt", "_Tp", "_URLAdr", "_RghtToWdrwInd", "_SubmittdBySctyHldr", "_Sts", "_VoteTp", "_ListgGrpRsltnLabl"]
 	@property
-	def ListgGrpRsltnLabl(self):
-		return self._ListgGrpRsltnLabl
+	def MgmtRcmmndtn(self):
+		return self._MgmtRcmmndtn
 
-	@ListgGrpRsltnLabl.setter
-	def ListgGrpRsltnLabl(self, value):
-		self._ListgGrpRsltnLabl = value if type(value) != auto else self.make_default("ListgGrpRsltnLabl")
+	@MgmtRcmmndtn.setter
+	def MgmtRcmmndtn(self, value):
+		self._MgmtRcmmndtn = value if type(value) != auto else self.make_default("MgmtRcmmndtn")
 
-	@ListgGrpRsltnLabl.deleter
-	def ListgGrpRsltnLabl(self):
-		del self._ListgGrpRsltnLabl
-		self._ListgGrpRsltnLabl = None
+	@MgmtRcmmndtn.deleter
+	def MgmtRcmmndtn(self):
+		del self._MgmtRcmmndtn
+		self._MgmtRcmmndtn = None
+
+	@property
+	def NtifngPtyRcmmndtn(self):
+		return self._NtifngPtyRcmmndtn
+
+	@NtifngPtyRcmmndtn.setter
+	def NtifngPtyRcmmndtn(self, value):
+		self._NtifngPtyRcmmndtn = value if type(value) != auto else self.make_default("NtifngPtyRcmmndtn")
+
+	@NtifngPtyRcmmndtn.deleter
+	def NtifngPtyRcmmndtn(self):
+		del self._NtifngPtyRcmmndtn
+		self._NtifngPtyRcmmndtn = None
 
 	@property
 	def VoteInstrTp(self):
@@ -41,30 +54,17 @@ class Resolution8(base_types._BaseFieldType):
 		self._VoteInstrTp = None
 
 	@property
-	def Entitlmnt(self):
-		return self._Entitlmnt
+	def Desc(self):
+		return self._Desc
 
-	@Entitlmnt.setter
-	def Entitlmnt(self, value):
-		self._Entitlmnt = value if type(value) != auto else self.make_default("Entitlmnt")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
 
-	@Entitlmnt.deleter
-	def Entitlmnt(self):
-		del self._Entitlmnt
-		self._Entitlmnt = None
-
-	@property
-	def ForInfOnly(self):
-		return self._ForInfOnly
-
-	@ForInfOnly.setter
-	def ForInfOnly(self, value):
-		self._ForInfOnly = value if type(value) != auto else self.make_default("ForInfOnly")
-
-	@ForInfOnly.deleter
-	def ForInfOnly(self):
-		del self._ForInfOnly
-		self._ForInfOnly = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def VtngRghtsThrshldForApprvl(self):
@@ -80,17 +80,56 @@ class Resolution8(base_types._BaseFieldType):
 		self._VtngRghtsThrshldForApprvl = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def IssrLabl(self):
+		return self._IssrLabl
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@IssrLabl.setter
+	def IssrLabl(self, value):
+		self._IssrLabl = value if type(value) != auto else self.make_default("IssrLabl")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@IssrLabl.deleter
+	def IssrLabl(self):
+		del self._IssrLabl
+		self._IssrLabl = None
+
+	@property
+	def ForInfOnly(self):
+		return self._ForInfOnly
+
+	@ForInfOnly.setter
+	def ForInfOnly(self, value):
+		self._ForInfOnly = value if type(value) != auto else self.make_default("ForInfOnly")
+
+	@ForInfOnly.deleter
+	def ForInfOnly(self):
+		del self._ForInfOnly
+		self._ForInfOnly = None
+
+	@property
+	def Entitlmnt(self):
+		return self._Entitlmnt
+
+	@Entitlmnt.setter
+	def Entitlmnt(self, value):
+		self._Entitlmnt = value if type(value) != auto else self.make_default("Entitlmnt")
+
+	@Entitlmnt.deleter
+	def Entitlmnt(self):
+		del self._Entitlmnt
+		self._Entitlmnt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def URLAdr(self):
@@ -119,19 +158,6 @@ class Resolution8(base_types._BaseFieldType):
 		self._RghtToWdrwInd = None
 
 	@property
-	def NtifngPtyRcmmndtn(self):
-		return self._NtifngPtyRcmmndtn
-
-	@NtifngPtyRcmmndtn.setter
-	def NtifngPtyRcmmndtn(self, value):
-		self._NtifngPtyRcmmndtn = value if type(value) != auto else self.make_default("NtifngPtyRcmmndtn")
-
-	@NtifngPtyRcmmndtn.deleter
-	def NtifngPtyRcmmndtn(self):
-		del self._NtifngPtyRcmmndtn
-		self._NtifngPtyRcmmndtn = None
-
-	@property
 	def SubmittdBySctyHldr(self):
 		return self._SubmittdBySctyHldr
 
@@ -145,56 +171,17 @@ class Resolution8(base_types._BaseFieldType):
 		self._SubmittdBySctyHldr = None
 
 	@property
-	def IssrLabl(self):
-		return self._IssrLabl
+	def Sts(self):
+		return self._Sts
 
-	@IssrLabl.setter
-	def IssrLabl(self, value):
-		self._IssrLabl = value if type(value) != auto else self.make_default("IssrLabl")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@IssrLabl.deleter
-	def IssrLabl(self):
-		del self._IssrLabl
-		self._IssrLabl = None
-
-	@property
-	def MgmtRcmmndtn(self):
-		return self._MgmtRcmmndtn
-
-	@MgmtRcmmndtn.setter
-	def MgmtRcmmndtn(self, value):
-		self._MgmtRcmmndtn = value if type(value) != auto else self.make_default("MgmtRcmmndtn")
-
-	@MgmtRcmmndtn.deleter
-	def MgmtRcmmndtn(self):
-		del self._MgmtRcmmndtn
-		self._MgmtRcmmndtn = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def VoteTp(self):
@@ -209,21 +196,34 @@ class Resolution8(base_types._BaseFieldType):
 		del self._VoteTp
 		self._VoteTp = None
 
+	@property
+	def ListgGrpRsltnLabl(self):
+		return self._ListgGrpRsltnLabl
+
+	@ListgGrpRsltnLabl.setter
+	def ListgGrpRsltnLabl(self, value):
+		self._ListgGrpRsltnLabl = value if type(value) != auto else self.make_default("ListgGrpRsltnLabl")
+
+	@ListgGrpRsltnLabl.deleter
+	def ListgGrpRsltnLabl(self):
+		del self._ListgGrpRsltnLabl
+		self._ListgGrpRsltnLabl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ListgGrpRsltnLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MgmtRcmmndtn', type=VoteInstruction5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtifngPtyRcmmndtn', type=VoteInstruction5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoteInstrTp', type=VoteInstructionType1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Entitlmnt', type=Entitlement1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ForInfOnly', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=ItemDescription2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VtngRghtsThrshldForApprvl', type=VotingRightsThreshold2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sts', type=ResolutionStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrLabl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ForInfOnly', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Entitlmnt', type=Entitlement1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ResolutionType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RghtToWdrwInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtifngPtyRcmmndtn', type=VoteInstruction5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmittdBySctyHldr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrLabl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MgmtRcmmndtn', type=VoteInstruction5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ResolutionType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=ItemDescription2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=ResolutionStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoteTp', type=VoteType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ListgGrpRsltnLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
 import base_types
 import Frequency1Code
-import Max35Text
-import DateAndDateTime2Choice
 import YesNoIndicator
+import DateAndDateTime2Choice
+import Max35Text
 
 class Statement85(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_StmtDtTm", "_Frqcy", "_StmtId"]
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
-	@property
-	def StmtDtTm(self):
-		return self._StmtDtTm
-
-	@StmtDtTm.setter
-	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
-
-	@StmtDtTm.deleter
-	def StmtDtTm(self):
-		del self._StmtDtTm
-		self._StmtDtTm = None
-
+	__slots__ = ["_Frqcy", "_ActvtyInd", "_StmtId", "_StmtDtTm"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -47,6 +21,19 @@ class Statement85(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
+	@property
 	def StmtId(self):
 		return self._StmtId
 
@@ -59,10 +46,23 @@ class Statement85(base_types._BaseFieldType):
 		del self._StmtId
 		self._StmtId = None
 
+	@property
+	def StmtDtTm(self):
+		return self._StmtDtTm
+
+	@StmtDtTm.setter
+	def StmtDtTm(self, value):
+		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
+
+	@StmtDtTm.deleter
+	def StmtDtTm(self):
+		del self._StmtDtTm
+		self._StmtDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

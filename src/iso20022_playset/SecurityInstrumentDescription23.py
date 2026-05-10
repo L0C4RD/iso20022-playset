@@ -1,26 +1,13 @@
 import base_types
-import OtherIdentification1
+import ActiveOrHistoricCurrencyCode
+import ISINOct2015Identifier
 import Max350Text
 import CFIOct2015Identifier
-import ISINOct2015Identifier
-import ActiveOrHistoricCurrencyCode
+import OtherIdentification1
 
 class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlCcy", "_Id", "_OthrId", "_ClssfctnTp", "_FullNm"]
-	@property
-	def NtnlCcy(self):
-		return self._NtnlCcy
-
-	@NtnlCcy.setter
-	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
-
-	@NtnlCcy.deleter
-	def NtnlCcy(self):
-		del self._NtnlCcy
-		self._NtnlCcy = None
-
+	__slots__ = ["_Id", "_ClssfctnTp", "_OthrId", "_FullNm", "_NtnlCcy"]
 	@property
 	def Id(self):
 		return self._Id
@@ -33,19 +20,6 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def OthrId(self):
-		return self._OthrId
-
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
-
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
 
 	@property
 	def ClssfctnTp(self):
@@ -61,6 +35,19 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	@property
+	def OthrId(self):
+		return self._OthrId
+
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
+
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
+
+	@property
 	def FullNm(self):
 		return self._FullNm
 
@@ -73,11 +60,24 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 		del self._FullNm
 		self._FullNm = None
 
+	@property
+	def NtnlCcy(self):
+		return self._NtnlCcy
+
+	@NtnlCcy.setter
+	def NtnlCcy(self, value):
+		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
+
+	@NtnlCcy.deleter
+	def NtnlCcy(self):
+		del self._NtnlCcy
+		self._NtnlCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrId', type=OtherIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=OtherIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

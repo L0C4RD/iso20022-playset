@@ -1,38 +1,12 @@
 import base_types
-import PartyIdentification232
 import BlockChainAddressWallet3
 import SecuritiesAccount19
 import PartyIdentification136
+import PartyIdentification232
 
 class CollateralParties11(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgt", "_ClntPtyB", "_BlckChainAdrOrWllt", "_CollAcct", "_PtyB"]
-	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
-
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
-
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
-
-	@property
-	def ClntPtyB(self):
-		return self._ClntPtyB
-
-	@ClntPtyB.setter
-	def ClntPtyB(self, value):
-		self._ClntPtyB = value if type(value) != auto else self.make_default("ClntPtyB")
-
-	@ClntPtyB.deleter
-	def ClntPtyB(self):
-		del self._ClntPtyB
-		self._ClntPtyB = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_CollAcct", "_PtyB", "_ClntPtyB", "_TrptyAgt"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -72,11 +46,37 @@ class CollateralParties11(base_types._BaseFieldType):
 		del self._PtyB
 		self._PtyB = None
 
+	@property
+	def ClntPtyB(self):
+		return self._ClntPtyB
+
+	@ClntPtyB.setter
+	def ClntPtyB(self, value):
+		self._ClntPtyB = value if type(value) != auto else self.make_default("ClntPtyB")
+
+	@ClntPtyB.deleter
+	def ClntPtyB(self):
+		del self._ClntPtyB
+		self._ClntPtyB = None
+
+	@property
+	def TrptyAgt(self):
+		return self._TrptyAgt
+
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
+
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyB', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 import base_types
 import CounterpartyData88
-import TransactionCollateralData18Choice
 import TransactionLoanData26Choice
 import SupplementaryData1
+import TransactionCollateralData18Choice
 import Max140Text
 
 class TradeTransactionCollateralUpdate8(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_LnData", "_CtrPtySpcfcData", "_TechRcrdId", "_CollData"]
+	__slots__ = ["_SplmtryData", "_CollData", "_LnData", "_CtrPtySpcfcData", "_TechRcrdId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,6 +20,19 @@ class TradeTransactionCollateralUpdate8(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def CollData(self):
+		return self._CollData
+
+	@CollData.setter
+	def CollData(self, value):
+		self._CollData = value if type(value) != auto else self.make_default("CollData")
+
+	@CollData.deleter
+	def CollData(self):
+		del self._CollData
+		self._CollData = None
 
 	@property
 	def LnData(self):
@@ -60,24 +73,11 @@ class TradeTransactionCollateralUpdate8(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def CollData(self):
-		return self._CollData
-
-	@CollData.setter
-	def CollData(self, value):
-		self._CollData = value if type(value) != auto else self.make_default("CollData")
-
-	@CollData.deleter
-	def CollData(self):
-		del self._CollData
-		self._CollData = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollData', type=TransactionCollateralData18Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnData', type=TransactionLoanData26Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollData', type=TransactionCollateralData18Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

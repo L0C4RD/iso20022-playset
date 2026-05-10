@@ -1,24 +1,11 @@
 import base_types
-import MarginType2Choice
 import Amount3
 import TrueFalseIndicator
+import MarginType2Choice
 
 class InitialMarginExposure1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_CoreInd"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Tp", "_CoreInd", "_Amt"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -45,9 +32,22 @@ class InitialMarginExposure1(base_types._BaseFieldType):
 		del self._CoreInd
 		self._CoreInd = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=Amount3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=MarginType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CoreInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount3, min=1, max=1, mutex_group=None, array=False),
 	))
 

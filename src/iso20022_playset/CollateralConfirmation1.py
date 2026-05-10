@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
 import CollateralSubstitutionConfirmation1Code
 import Max140Text
+import Max35Text
 
 class CollateralConfirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmnt", "_ConfTp", "_CollSbstitnReqId", "_CollSbstitnRspnId"]
+	__slots__ = ["_CollSbstitnRspnId", "_Cmnt", "_ConfTp", "_CollSbstitnReqId"]
+	@property
+	def CollSbstitnRspnId(self):
+		return self._CollSbstitnRspnId
+
+	@CollSbstitnRspnId.setter
+	def CollSbstitnRspnId(self, value):
+		self._CollSbstitnRspnId = value if type(value) != auto else self.make_default("CollSbstitnRspnId")
+
+	@CollSbstitnRspnId.deleter
+	def CollSbstitnRspnId(self):
+		del self._CollSbstitnRspnId
+		self._CollSbstitnRspnId = None
+
 	@property
 	def Cmnt(self):
 		return self._Cmnt
@@ -45,23 +58,10 @@ class CollateralConfirmation1(base_types._BaseFieldType):
 		del self._CollSbstitnReqId
 		self._CollSbstitnReqId = None
 
-	@property
-	def CollSbstitnRspnId(self):
-		return self._CollSbstitnRspnId
-
-	@CollSbstitnRspnId.setter
-	def CollSbstitnRspnId(self, value):
-		self._CollSbstitnRspnId = value if type(value) != auto else self.make_default("CollSbstitnRspnId")
-
-	@CollSbstitnRspnId.deleter
-	def CollSbstitnRspnId(self):
-		del self._CollSbstitnRspnId
-		self._CollSbstitnRspnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfTp', type=CollateralSubstitutionConfirmation1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

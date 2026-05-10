@@ -1,25 +1,25 @@
 import base_types
-import CashAccount7
-import Number
-import ActiveCurrencyAndAmount
-import PercentageRate
 import FinancingDateDetails1
+import Number
+import CashAccount7
+import PercentageRate
+import ActiveCurrencyAndAmount
 
 class FinancingAllowedSummary1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlAccptdItmsAmt", "_FincgAcct", "_CdtAcct", "_FincdItmNb", "_FincgDtDtls", "_ApldPctg", "_TtlFincdAmt"]
+	__slots__ = ["_ApldPctg", "_FincgAcct", "_TtlFincdAmt", "_FincgDtDtls", "_TtlAccptdItmsAmt", "_CdtAcct", "_FincdItmNb"]
 	@property
-	def TtlAccptdItmsAmt(self):
-		return self._TtlAccptdItmsAmt
+	def ApldPctg(self):
+		return self._ApldPctg
 
-	@TtlAccptdItmsAmt.setter
-	def TtlAccptdItmsAmt(self, value):
-		self._TtlAccptdItmsAmt = value if type(value) != auto else self.make_default("TtlAccptdItmsAmt")
+	@ApldPctg.setter
+	def ApldPctg(self, value):
+		self._ApldPctg = value if type(value) != auto else self.make_default("ApldPctg")
 
-	@TtlAccptdItmsAmt.deleter
-	def TtlAccptdItmsAmt(self):
-		del self._TtlAccptdItmsAmt
-		self._TtlAccptdItmsAmt = None
+	@ApldPctg.deleter
+	def ApldPctg(self):
+		del self._ApldPctg
+		self._ApldPctg = None
 
 	@property
 	def FincgAcct(self):
@@ -33,6 +33,45 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 	def FincgAcct(self):
 		del self._FincgAcct
 		self._FincgAcct = None
+
+	@property
+	def TtlFincdAmt(self):
+		return self._TtlFincdAmt
+
+	@TtlFincdAmt.setter
+	def TtlFincdAmt(self, value):
+		self._TtlFincdAmt = value if type(value) != auto else self.make_default("TtlFincdAmt")
+
+	@TtlFincdAmt.deleter
+	def TtlFincdAmt(self):
+		del self._TtlFincdAmt
+		self._TtlFincdAmt = None
+
+	@property
+	def FincgDtDtls(self):
+		return self._FincgDtDtls
+
+	@FincgDtDtls.setter
+	def FincgDtDtls(self, value):
+		self._FincgDtDtls = value if type(value) != auto else self.make_default("FincgDtDtls")
+
+	@FincgDtDtls.deleter
+	def FincgDtDtls(self):
+		del self._FincgDtDtls
+		self._FincgDtDtls = None
+
+	@property
+	def TtlAccptdItmsAmt(self):
+		return self._TtlAccptdItmsAmt
+
+	@TtlAccptdItmsAmt.setter
+	def TtlAccptdItmsAmt(self, value):
+		self._TtlAccptdItmsAmt = value if type(value) != auto else self.make_default("TtlAccptdItmsAmt")
+
+	@TtlAccptdItmsAmt.deleter
+	def TtlAccptdItmsAmt(self):
+		del self._TtlAccptdItmsAmt
+		self._TtlAccptdItmsAmt = None
 
 	@property
 	def CdtAcct(self):
@@ -60,52 +99,13 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 		del self._FincdItmNb
 		self._FincdItmNb = None
 
-	@property
-	def FincgDtDtls(self):
-		return self._FincgDtDtls
-
-	@FincgDtDtls.setter
-	def FincgDtDtls(self, value):
-		self._FincgDtDtls = value if type(value) != auto else self.make_default("FincgDtDtls")
-
-	@FincgDtDtls.deleter
-	def FincgDtDtls(self):
-		del self._FincgDtDtls
-		self._FincgDtDtls = None
-
-	@property
-	def ApldPctg(self):
-		return self._ApldPctg
-
-	@ApldPctg.setter
-	def ApldPctg(self, value):
-		self._ApldPctg = value if type(value) != auto else self.make_default("ApldPctg")
-
-	@ApldPctg.deleter
-	def ApldPctg(self):
-		del self._ApldPctg
-		self._ApldPctg = None
-
-	@property
-	def TtlFincdAmt(self):
-		return self._TtlFincdAmt
-
-	@TtlFincdAmt.setter
-	def TtlFincdAmt(self, value):
-		self._TtlFincdAmt = value if type(value) != auto else self.make_default("TtlFincdAmt")
-
-	@TtlFincdAmt.deleter
-	def TtlFincdAmt(self):
-		del self._TtlFincdAmt
-		self._TtlFincdAmt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlAccptdItmsAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApldPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlFincdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FincgDtDtls', type=FinancingDateDetails1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAccptdItmsAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincdItmNb', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FincgDtDtls', type=FinancingDateDetails1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApldPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlFincdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

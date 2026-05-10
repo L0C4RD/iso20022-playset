@@ -1,23 +1,23 @@
 import base_types
-import SecurityIdentification39
 import AuditTrailOrBusinessError6Choice
 import DatePeriodSearch1Choice
+import SecurityIdentification39
 
 class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAudtTrlOrErr", "_DtPrd", "_FinInstrmId"]
+	__slots__ = ["_FinInstrmId", "_DtPrd", "_SctiesAudtTrlOrErr"]
 	@property
-	def SctiesAudtTrlOrErr(self):
-		return self._SctiesAudtTrlOrErr
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@SctiesAudtTrlOrErr.setter
-	def SctiesAudtTrlOrErr(self, value):
-		self._SctiesAudtTrlOrErr = value if type(value) != auto else self.make_default("SctiesAudtTrlOrErr")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@SctiesAudtTrlOrErr.deleter
-	def SctiesAudtTrlOrErr(self):
-		del self._SctiesAudtTrlOrErr
-		self._SctiesAudtTrlOrErr = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
 	def DtPrd(self):
@@ -33,21 +33,21 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 		self._DtPrd = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
+	def SctiesAudtTrlOrErr(self):
+		return self._SctiesAudtTrlOrErr
 
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+	@SctiesAudtTrlOrErr.setter
+	def SctiesAudtTrlOrErr(self, value):
+		self._SctiesAudtTrlOrErr = value if type(value) != auto else self.make_default("SctiesAudtTrlOrErr")
 
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
+	@SctiesAudtTrlOrErr.deleter
+	def SctiesAudtTrlOrErr(self):
+		del self._SctiesAudtTrlOrErr
+		self._SctiesAudtTrlOrErr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,10 @@
 import base_types
-import Max35Text
 import MessageFunction11Code
+import Max35Text
 
 class ATMMessageFunction2(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSvcCd", "_HstSvcCd", "_Fctn"]
+	__slots__ = ["_ATMSvcCd", "_Fctn", "_HstSvcCd"]
 	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd
@@ -19,19 +19,6 @@ class ATMMessageFunction2(base_types._BaseFieldType):
 		self._ATMSvcCd = None
 
 	@property
-	def HstSvcCd(self):
-		return self._HstSvcCd
-
-	@HstSvcCd.setter
-	def HstSvcCd(self, value):
-		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
-
-	@HstSvcCd.deleter
-	def HstSvcCd(self):
-		del self._HstSvcCd
-		self._HstSvcCd = None
-
-	@property
 	def Fctn(self):
 		return self._Fctn
 
@@ -44,9 +31,22 @@ class ATMMessageFunction2(base_types._BaseFieldType):
 		del self._Fctn
 		self._Fctn = None
 
+	@property
+	def HstSvcCd(self):
+		return self._HstSvcCd
+
+	@HstSvcCd.setter
+	def HstSvcCd(self, value):
+		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
+
+	@HstSvcCd.deleter
+	def HstSvcCd(self):
+		del self._HstSvcCd
+		self._HstSvcCd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctn', type=MessageFunction11Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

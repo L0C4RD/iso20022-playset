@@ -1,13 +1,26 @@
 import base_types
+import Proposal6
 import Max35Text
 import Obligation9
 import Agreement4
-import Proposal6
 import SupplementaryData1
 
 class CollateralProposalV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SplmtryData", "_Agrmt", "_TpAndDtls", "_Oblgtn"]
+	__slots__ = ["_Oblgtn", "_TxId", "_SplmtryData", "_Agrmt", "_TpAndDtls"]
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
+
 	@property
 	def TxId(self):
 		return self._TxId
@@ -60,24 +73,11 @@ class CollateralProposalV06(base_types._BaseFieldType):
 		del self._TpAndDtls
 		self._TpAndDtls = None
 
-	@property
-	def Oblgtn(self):
-		return self._Oblgtn
-
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
-
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpAndDtls', type=Proposal6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 	))
 

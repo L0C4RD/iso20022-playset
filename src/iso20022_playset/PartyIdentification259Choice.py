@@ -1,25 +1,12 @@
 import base_types
 import GenericIdentification84
-import AnyBICDec2014Identifier
 import NameAndAddress12
+import AnyBICDec2014Identifier
 import AlternatePartyIdentification11
 
 class PartyIdentification259Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvOwnrId", "_NmAndAdr", "_AnyBIC", "_PrtryId"]
-	@property
-	def IndvOwnrId(self):
-		return self._IndvOwnrId
-
-	@IndvOwnrId.setter
-	def IndvOwnrId(self, value):
-		self._IndvOwnrId = value if type(value) != auto else self.make_default("IndvOwnrId")
-
-	@IndvOwnrId.deleter
-	def IndvOwnrId(self):
-		del self._IndvOwnrId
-		self._IndvOwnrId = None
-
+	__slots__ = ["_NmAndAdr", "_AnyBIC", "_PrtryId", "_IndvOwnrId"]
 	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
@@ -59,10 +46,23 @@ class PartyIdentification259Choice(base_types._BaseFieldType):
 		del self._PrtryId
 		self._PrtryId = None
 
+	@property
+	def IndvOwnrId(self):
+		return self._IndvOwnrId
+
+	@IndvOwnrId.setter
+	def IndvOwnrId(self, value):
+		self._IndvOwnrId = value if type(value) != auto else self.make_default("IndvOwnrId")
+
+	@IndvOwnrId.deleter
+	def IndvOwnrId(self):
+		del self._IndvOwnrId
+		self._IndvOwnrId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndvOwnrId', type=AlternatePartyIdentification11, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification84, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndvOwnrId', type=AlternatePartyIdentification11, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import SwapLegIdentification2
 import FinancialInstrumentIdentification7Choice
+import SwapLegIdentification2
 
 class UnderlyingIdentification2Choice(base_types._BaseFieldType):
 

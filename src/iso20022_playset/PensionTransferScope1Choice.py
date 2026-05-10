@@ -1,6 +1,6 @@
 import base_types
-import PensionTransferScope1Code
 import GenericIdentification36
+import PensionTransferScope1Code
 
 class PensionTransferScope1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import Max210Text
 import UnmatchedReason32Choice
+import Max210Text
 
 class UnmatchedReason23(base_types._BaseFieldType):
 

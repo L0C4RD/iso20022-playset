@@ -1,27 +1,27 @@
 import base_types
+import PartyIdentification177Choice
 import PostalAddress3
 import Max35Text
 import ISODate
-import PartyIdentification177Choice
 import CommunicationAddress3
-import CountryCode
 import Max140Text
+import CountryCode
 
 class Organisation38(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_PstlAdr", "_RegnDt", "_TaxtnCtry", "_PmryComAdr", "_ScndryComAdr", "_Purp", "_NtlRegnNb", "_TaxIdNb", "_RegnCtry", "_Nm"]
+	__slots__ = ["_RegnDt", "_PstlAdr", "_TaxtnCtry", "_Id", "_Nm", "_NtlRegnNb", "_PmryComAdr", "_TaxIdNb", "_RegnCtry", "_ScndryComAdr", "_Purp"]
 	@property
-	def Id(self):
-		return self._Id
+	def RegnDt(self):
+		return self._RegnDt
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@RegnDt.setter
+	def RegnDt(self, value):
+		self._RegnDt = value if type(value) != auto else self.make_default("RegnDt")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@RegnDt.deleter
+	def RegnDt(self):
+		del self._RegnDt
+		self._RegnDt = None
 
 	@property
 	def PstlAdr(self):
@@ -37,19 +37,6 @@ class Organisation38(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	@property
-	def RegnDt(self):
-		return self._RegnDt
-
-	@RegnDt.setter
-	def RegnDt(self, value):
-		self._RegnDt = value if type(value) != auto else self.make_default("RegnDt")
-
-	@RegnDt.deleter
-	def RegnDt(self):
-		del self._RegnDt
-		self._RegnDt = None
-
-	@property
 	def TaxtnCtry(self):
 		return self._TaxtnCtry
 
@@ -63,43 +50,30 @@ class Organisation38(base_types._BaseFieldType):
 		self._TaxtnCtry = None
 
 	@property
-	def PmryComAdr(self):
-		return self._PmryComAdr
+	def Id(self):
+		return self._Id
 
-	@PmryComAdr.setter
-	def PmryComAdr(self, value):
-		self._PmryComAdr = value if type(value) != auto else self.make_default("PmryComAdr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@PmryComAdr.deleter
-	def PmryComAdr(self):
-		del self._PmryComAdr
-		self._PmryComAdr = None
-
-	@property
-	def ScndryComAdr(self):
-		return self._ScndryComAdr
-
-	@ScndryComAdr.setter
-	def ScndryComAdr(self, value):
-		self._ScndryComAdr = value if type(value) != auto else self.make_default("ScndryComAdr")
-
-	@ScndryComAdr.deleter
-	def ScndryComAdr(self):
-		del self._ScndryComAdr
-		self._ScndryComAdr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
-	def Purp(self):
-		return self._Purp
+	def Nm(self):
+		return self._Nm
 
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def NtlRegnNb(self):
@@ -113,6 +87,19 @@ class Organisation38(base_types._BaseFieldType):
 	def NtlRegnNb(self):
 		del self._NtlRegnNb
 		self._NtlRegnNb = None
+
+	@property
+	def PmryComAdr(self):
+		return self._PmryComAdr
+
+	@PmryComAdr.setter
+	def PmryComAdr(self, value):
+		self._PmryComAdr = value if type(value) != auto else self.make_default("PmryComAdr")
+
+	@PmryComAdr.deleter
+	def PmryComAdr(self):
+		del self._PmryComAdr
+		self._PmryComAdr = None
 
 	@property
 	def TaxIdNb(self):
@@ -141,29 +128,42 @@ class Organisation38(base_types._BaseFieldType):
 		self._RegnCtry = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def ScndryComAdr(self):
+		return self._ScndryComAdr
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@ScndryComAdr.setter
+	def ScndryComAdr(self, value):
+		self._ScndryComAdr = value if type(value) != auto else self.make_default("ScndryComAdr")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@ScndryComAdr.deleter
+	def ScndryComAdr(self):
+		del self._ScndryComAdr
+		self._ScndryComAdr = None
+
+	@property
+	def Purp(self):
+		return self._Purp
+
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != auto else self.make_default("Purp")
+
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress3, min=1, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress3, min=1, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

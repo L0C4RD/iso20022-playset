@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import PartyType32Code
 import FeeCollectionIdentification1
+import PartyType32Code
+import Max35Text
 
 class FeeCollectionReference2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_OthrAssgnrNtty", "_AssgnrNtty"]
+	__slots__ = ["_AssgnrNtty", "_OthrAssgnrNtty", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def AssgnrNtty(self):
+		return self._AssgnrNtty
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AssgnrNtty.setter
+	def AssgnrNtty(self, value):
+		self._AssgnrNtty = value if type(value) != auto else self.make_default("AssgnrNtty")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AssgnrNtty.deleter
+	def AssgnrNtty(self):
+		del self._AssgnrNtty
+		self._AssgnrNtty = None
 
 	@property
 	def OthrAssgnrNtty(self):
@@ -33,21 +33,21 @@ class FeeCollectionReference2(base_types._BaseFieldType):
 		self._OthrAssgnrNtty = None
 
 	@property
-	def AssgnrNtty(self):
-		return self._AssgnrNtty
+	def Id(self):
+		return self._Id
 
-	@AssgnrNtty.setter
-	def AssgnrNtty(self, value):
-		self._AssgnrNtty = value if type(value) != auto else self.make_default("AssgnrNtty")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@AssgnrNtty.deleter
-	def AssgnrNtty(self):
-		del self._AssgnrNtty
-		self._AssgnrNtty = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=FeeCollectionIdentification1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrAssgnrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAssgnrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=FeeCollectionIdentification1, min=1, max=None, mutex_group=None, array=True),
 	))
 

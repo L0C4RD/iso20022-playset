@@ -1,411 +1,34 @@
 import base_types
-import TradeDate8Choice
-import SettlementDate19Choice
-import AmountAndDirection51
-import SecuritiesAccount19
-import DateAndDateTime2Choice
-import SecurityIdentification19
-import Quantity51Choice
-import SafeKeepingPlace5
-import Max350Text
-import PartyIdentification144
-import ReceiveDelivery1Code
-import RateOrName1Choice
-import TerminationDate6Choice
-import PartyIdentification149
-import UTIIdentifier
 import RateType35Choice
-import Max35Text
-import SettlementParties127
-import RateName1
-import PlaceOfTradeIdentification1
-import SettlementDetails170
-import SecuritiesFinancingTransactionType2Code
-import BlockChainAddressWallet3
+import TerminationDate6Choice
 import AmountAndDirection21
+import ReceiveDelivery1Code
 import DeliveryReceiptType2Code
+import PartyIdentification144
+import RateOrName1Choice
+import Quantity51Choice
+import UTIIdentifier
+import SettlementDetails170
+import DateAndDateTime2Choice
+import PlaceOfTradeIdentification1
 import Rate2
+import Max350Text
+import AmountAndDirection51
+import RateName1
+import SecuritiesFinancingTransactionType2Code
+import TradeDate8Choice
+import SecuritiesAccount19
+import SettlementDate19Choice
+import SettlementParties127
+import Max35Text
+import BlockChainAddressWallet3
+import SecurityIdentification19
+import SafeKeepingPlace5
+import PartyIdentification149
 
 class SecuritiesFinancingTransactionDetails57(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgTxTp", "_SttlmParams", "_XpctdSttlmDt", "_SfkpgPlc", "_ClsgLegId", "_SctiesFincgTradId", "_SctiesHrcut", "_SctiesFincgUnqTxIdr", "_VarblRateSpprt", "_TrptyAgtSvcPrvdrCollTxId", "_Sprd", "_OpngSttlmAmt", "_DlvrgSttlmPties", "_AcctOwnr", "_TermntnDt", "_RateChngDt", "_TradDt", "_BlckChainAdrOrWllt", "_TermntnTxAmt", "_XpctdValDt", "_RpRate", "_Invstr", "_OpngSttlmDt", "_PoolId", "_SttlmQty", "_RateTp", "_CorpActnEvtId", "_SctiesMvmntTp", "_StockLnMrgn", "_PlcOfTrad", "_Pmt", "_SttlmInstrPrcgAddtlDtls", "_SfkpgAcct", "_RcvgSttlmPties", "_LateDlvryDt", "_PricgRate", "_FinInstrmId", "_ClntTrptyCollTxId"]
-	@property
-	def SctiesFincgTxTp(self):
-		return self._SctiesFincgTxTp
-
-	@SctiesFincgTxTp.setter
-	def SctiesFincgTxTp(self, value):
-		self._SctiesFincgTxTp = value if type(value) != auto else self.make_default("SctiesFincgTxTp")
-
-	@SctiesFincgTxTp.deleter
-	def SctiesFincgTxTp(self):
-		del self._SctiesFincgTxTp
-		self._SctiesFincgTxTp = None
-
-	@property
-	def SttlmParams(self):
-		return self._SttlmParams
-
-	@SttlmParams.setter
-	def SttlmParams(self, value):
-		self._SttlmParams = value if type(value) != auto else self.make_default("SttlmParams")
-
-	@SttlmParams.deleter
-	def SttlmParams(self):
-		del self._SttlmParams
-		self._SttlmParams = None
-
-	@property
-	def XpctdSttlmDt(self):
-		return self._XpctdSttlmDt
-
-	@XpctdSttlmDt.setter
-	def XpctdSttlmDt(self, value):
-		self._XpctdSttlmDt = value if type(value) != auto else self.make_default("XpctdSttlmDt")
-
-	@XpctdSttlmDt.deleter
-	def XpctdSttlmDt(self):
-		del self._XpctdSttlmDt
-		self._XpctdSttlmDt = None
-
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
-	@property
-	def ClsgLegId(self):
-		return self._ClsgLegId
-
-	@ClsgLegId.setter
-	def ClsgLegId(self, value):
-		self._ClsgLegId = value if type(value) != auto else self.make_default("ClsgLegId")
-
-	@ClsgLegId.deleter
-	def ClsgLegId(self):
-		del self._ClsgLegId
-		self._ClsgLegId = None
-
-	@property
-	def SctiesFincgTradId(self):
-		return self._SctiesFincgTradId
-
-	@SctiesFincgTradId.setter
-	def SctiesFincgTradId(self, value):
-		self._SctiesFincgTradId = value if type(value) != auto else self.make_default("SctiesFincgTradId")
-
-	@SctiesFincgTradId.deleter
-	def SctiesFincgTradId(self):
-		del self._SctiesFincgTradId
-		self._SctiesFincgTradId = None
-
-	@property
-	def SctiesHrcut(self):
-		return self._SctiesHrcut
-
-	@SctiesHrcut.setter
-	def SctiesHrcut(self, value):
-		self._SctiesHrcut = value if type(value) != auto else self.make_default("SctiesHrcut")
-
-	@SctiesHrcut.deleter
-	def SctiesHrcut(self):
-		del self._SctiesHrcut
-		self._SctiesHrcut = None
-
-	@property
-	def SctiesFincgUnqTxIdr(self):
-		return self._SctiesFincgUnqTxIdr
-
-	@SctiesFincgUnqTxIdr.setter
-	def SctiesFincgUnqTxIdr(self, value):
-		self._SctiesFincgUnqTxIdr = value if type(value) != auto else self.make_default("SctiesFincgUnqTxIdr")
-
-	@SctiesFincgUnqTxIdr.deleter
-	def SctiesFincgUnqTxIdr(self):
-		del self._SctiesFincgUnqTxIdr
-		self._SctiesFincgUnqTxIdr = None
-
-	@property
-	def VarblRateSpprt(self):
-		return self._VarblRateSpprt
-
-	@VarblRateSpprt.setter
-	def VarblRateSpprt(self, value):
-		self._VarblRateSpprt = value if type(value) != auto else self.make_default("VarblRateSpprt")
-
-	@VarblRateSpprt.deleter
-	def VarblRateSpprt(self):
-		del self._VarblRateSpprt
-		self._VarblRateSpprt = None
-
-	@property
-	def TrptyAgtSvcPrvdrCollTxId(self):
-		return self._TrptyAgtSvcPrvdrCollTxId
-
-	@TrptyAgtSvcPrvdrCollTxId.setter
-	def TrptyAgtSvcPrvdrCollTxId(self, value):
-		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
-
-	@TrptyAgtSvcPrvdrCollTxId.deleter
-	def TrptyAgtSvcPrvdrCollTxId(self):
-		del self._TrptyAgtSvcPrvdrCollTxId
-		self._TrptyAgtSvcPrvdrCollTxId = None
-
-	@property
-	def Sprd(self):
-		return self._Sprd
-
-	@Sprd.setter
-	def Sprd(self, value):
-		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
-
-	@Sprd.deleter
-	def Sprd(self):
-		del self._Sprd
-		self._Sprd = None
-
-	@property
-	def OpngSttlmAmt(self):
-		return self._OpngSttlmAmt
-
-	@OpngSttlmAmt.setter
-	def OpngSttlmAmt(self, value):
-		self._OpngSttlmAmt = value if type(value) != auto else self.make_default("OpngSttlmAmt")
-
-	@OpngSttlmAmt.deleter
-	def OpngSttlmAmt(self):
-		del self._OpngSttlmAmt
-		self._OpngSttlmAmt = None
-
-	@property
-	def DlvrgSttlmPties(self):
-		return self._DlvrgSttlmPties
-
-	@DlvrgSttlmPties.setter
-	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
-
-	@DlvrgSttlmPties.deleter
-	def DlvrgSttlmPties(self):
-		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def TermntnDt(self):
-		return self._TermntnDt
-
-	@TermntnDt.setter
-	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
-
-	@TermntnDt.deleter
-	def TermntnDt(self):
-		del self._TermntnDt
-		self._TermntnDt = None
-
-	@property
-	def RateChngDt(self):
-		return self._RateChngDt
-
-	@RateChngDt.setter
-	def RateChngDt(self, value):
-		self._RateChngDt = value if type(value) != auto else self.make_default("RateChngDt")
-
-	@RateChngDt.deleter
-	def RateChngDt(self):
-		del self._RateChngDt
-		self._RateChngDt = None
-
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def TermntnTxAmt(self):
-		return self._TermntnTxAmt
-
-	@TermntnTxAmt.setter
-	def TermntnTxAmt(self, value):
-		self._TermntnTxAmt = value if type(value) != auto else self.make_default("TermntnTxAmt")
-
-	@TermntnTxAmt.deleter
-	def TermntnTxAmt(self):
-		del self._TermntnTxAmt
-		self._TermntnTxAmt = None
-
-	@property
-	def XpctdValDt(self):
-		return self._XpctdValDt
-
-	@XpctdValDt.setter
-	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
-
-	@XpctdValDt.deleter
-	def XpctdValDt(self):
-		del self._XpctdValDt
-		self._XpctdValDt = None
-
-	@property
-	def RpRate(self):
-		return self._RpRate
-
-	@RpRate.setter
-	def RpRate(self, value):
-		self._RpRate = value if type(value) != auto else self.make_default("RpRate")
-
-	@RpRate.deleter
-	def RpRate(self):
-		del self._RpRate
-		self._RpRate = None
-
-	@property
-	def Invstr(self):
-		return self._Invstr
-
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
-
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
-
-	@property
-	def OpngSttlmDt(self):
-		return self._OpngSttlmDt
-
-	@OpngSttlmDt.setter
-	def OpngSttlmDt(self, value):
-		self._OpngSttlmDt = value if type(value) != auto else self.make_default("OpngSttlmDt")
-
-	@OpngSttlmDt.deleter
-	def OpngSttlmDt(self):
-		del self._OpngSttlmDt
-		self._OpngSttlmDt = None
-
-	@property
-	def PoolId(self):
-		return self._PoolId
-
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
-
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
-
-	@property
-	def SttlmQty(self):
-		return self._SttlmQty
-
-	@SttlmQty.setter
-	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != auto else self.make_default("SttlmQty")
-
-	@SttlmQty.deleter
-	def SttlmQty(self):
-		del self._SttlmQty
-		self._SttlmQty = None
-
-	@property
-	def RateTp(self):
-		return self._RateTp
-
-	@RateTp.setter
-	def RateTp(self, value):
-		self._RateTp = value if type(value) != auto else self.make_default("RateTp")
-
-	@RateTp.deleter
-	def RateTp(self):
-		del self._RateTp
-		self._RateTp = None
-
-	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
-
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
-
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
-
-	@property
-	def StockLnMrgn(self):
-		return self._StockLnMrgn
-
-	@StockLnMrgn.setter
-	def StockLnMrgn(self, value):
-		self._StockLnMrgn = value if type(value) != auto else self.make_default("StockLnMrgn")
-
-	@StockLnMrgn.deleter
-	def StockLnMrgn(self):
-		del self._StockLnMrgn
-		self._StockLnMrgn = None
-
+	__slots__ = ["_PlcOfTrad", "_Pmt", "_SctiesMvmntTp", "_VarblRateSpprt", "_SttlmQty", "_TradDt", "_PricgRate", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_RcvgSttlmPties", "_LateDlvryDt", "_ClsgLegId", "_RateTp", "_OpngSttlmAmt", "_SfkpgAcct", "_RpRate", "_SctiesHrcut", "_SttlmInstrPrcgAddtlDtls", "_ClntTrptyCollTxId", "_TermntnTxAmt", "_DlvrgSttlmPties", "_AcctOwnr", "_OpngSttlmDt", "_RateChngDt", "_StockLnMrgn", "_XpctdValDt", "_TrptyAgtSvcPrvdrCollTxId", "_FinInstrmId", "_XpctdSttlmDt", "_Sprd", "_Invstr", "_SctiesFincgUnqTxIdr", "_SttlmParams", "_SctiesFincgTradId", "_CorpActnEvtId", "_SctiesFincgTxTp", "_TermntnDt", "_PoolId"]
 	@property
 	def PlcOfTrad(self):
 		return self._PlcOfTrad
@@ -433,30 +56,95 @@ class SecuritiesFinancingTransactionDetails57(base_types._BaseFieldType):
 		self._Pmt = None
 
 	@property
-	def SttlmInstrPrcgAddtlDtls(self):
-		return self._SttlmInstrPrcgAddtlDtls
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
 
-	@SttlmInstrPrcgAddtlDtls.setter
-	def SttlmInstrPrcgAddtlDtls(self, value):
-		self._SttlmInstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("SttlmInstrPrcgAddtlDtls")
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
 
-	@SttlmInstrPrcgAddtlDtls.deleter
-	def SttlmInstrPrcgAddtlDtls(self):
-		del self._SttlmInstrPrcgAddtlDtls
-		self._SttlmInstrPrcgAddtlDtls = None
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def VarblRateSpprt(self):
+		return self._VarblRateSpprt
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@VarblRateSpprt.setter
+	def VarblRateSpprt(self, value):
+		self._VarblRateSpprt = value if type(value) != auto else self.make_default("VarblRateSpprt")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@VarblRateSpprt.deleter
+	def VarblRateSpprt(self):
+		del self._VarblRateSpprt
+		self._VarblRateSpprt = None
+
+	@property
+	def SttlmQty(self):
+		return self._SttlmQty
+
+	@SttlmQty.setter
+	def SttlmQty(self, value):
+		self._SttlmQty = value if type(value) != auto else self.make_default("SttlmQty")
+
+	@SttlmQty.deleter
+	def SttlmQty(self):
+		del self._SttlmQty
+		self._SttlmQty = None
+
+	@property
+	def TradDt(self):
+		return self._TradDt
+
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
+
+	@property
+	def PricgRate(self):
+		return self._PricgRate
+
+	@PricgRate.setter
+	def PricgRate(self, value):
+		self._PricgRate = value if type(value) != auto else self.make_default("PricgRate")
+
+	@PricgRate.deleter
+	def PricgRate(self):
+		del self._PricgRate
+		self._PricgRate = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def RcvgSttlmPties(self):
@@ -485,17 +173,212 @@ class SecuritiesFinancingTransactionDetails57(base_types._BaseFieldType):
 		self._LateDlvryDt = None
 
 	@property
-	def PricgRate(self):
-		return self._PricgRate
+	def ClsgLegId(self):
+		return self._ClsgLegId
 
-	@PricgRate.setter
-	def PricgRate(self, value):
-		self._PricgRate = value if type(value) != auto else self.make_default("PricgRate")
+	@ClsgLegId.setter
+	def ClsgLegId(self, value):
+		self._ClsgLegId = value if type(value) != auto else self.make_default("ClsgLegId")
 
-	@PricgRate.deleter
-	def PricgRate(self):
-		del self._PricgRate
-		self._PricgRate = None
+	@ClsgLegId.deleter
+	def ClsgLegId(self):
+		del self._ClsgLegId
+		self._ClsgLegId = None
+
+	@property
+	def RateTp(self):
+		return self._RateTp
+
+	@RateTp.setter
+	def RateTp(self, value):
+		self._RateTp = value if type(value) != auto else self.make_default("RateTp")
+
+	@RateTp.deleter
+	def RateTp(self):
+		del self._RateTp
+		self._RateTp = None
+
+	@property
+	def OpngSttlmAmt(self):
+		return self._OpngSttlmAmt
+
+	@OpngSttlmAmt.setter
+	def OpngSttlmAmt(self, value):
+		self._OpngSttlmAmt = value if type(value) != auto else self.make_default("OpngSttlmAmt")
+
+	@OpngSttlmAmt.deleter
+	def OpngSttlmAmt(self):
+		del self._OpngSttlmAmt
+		self._OpngSttlmAmt = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
+	def RpRate(self):
+		return self._RpRate
+
+	@RpRate.setter
+	def RpRate(self, value):
+		self._RpRate = value if type(value) != auto else self.make_default("RpRate")
+
+	@RpRate.deleter
+	def RpRate(self):
+		del self._RpRate
+		self._RpRate = None
+
+	@property
+	def SctiesHrcut(self):
+		return self._SctiesHrcut
+
+	@SctiesHrcut.setter
+	def SctiesHrcut(self, value):
+		self._SctiesHrcut = value if type(value) != auto else self.make_default("SctiesHrcut")
+
+	@SctiesHrcut.deleter
+	def SctiesHrcut(self):
+		del self._SctiesHrcut
+		self._SctiesHrcut = None
+
+	@property
+	def SttlmInstrPrcgAddtlDtls(self):
+		return self._SttlmInstrPrcgAddtlDtls
+
+	@SttlmInstrPrcgAddtlDtls.setter
+	def SttlmInstrPrcgAddtlDtls(self, value):
+		self._SttlmInstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("SttlmInstrPrcgAddtlDtls")
+
+	@SttlmInstrPrcgAddtlDtls.deleter
+	def SttlmInstrPrcgAddtlDtls(self):
+		del self._SttlmInstrPrcgAddtlDtls
+		self._SttlmInstrPrcgAddtlDtls = None
+
+	@property
+	def ClntTrptyCollTxId(self):
+		return self._ClntTrptyCollTxId
+
+	@ClntTrptyCollTxId.setter
+	def ClntTrptyCollTxId(self, value):
+		self._ClntTrptyCollTxId = value if type(value) != auto else self.make_default("ClntTrptyCollTxId")
+
+	@ClntTrptyCollTxId.deleter
+	def ClntTrptyCollTxId(self):
+		del self._ClntTrptyCollTxId
+		self._ClntTrptyCollTxId = None
+
+	@property
+	def TermntnTxAmt(self):
+		return self._TermntnTxAmt
+
+	@TermntnTxAmt.setter
+	def TermntnTxAmt(self, value):
+		self._TermntnTxAmt = value if type(value) != auto else self.make_default("TermntnTxAmt")
+
+	@TermntnTxAmt.deleter
+	def TermntnTxAmt(self):
+		del self._TermntnTxAmt
+		self._TermntnTxAmt = None
+
+	@property
+	def DlvrgSttlmPties(self):
+		return self._DlvrgSttlmPties
+
+	@DlvrgSttlmPties.setter
+	def DlvrgSttlmPties(self, value):
+		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
+
+	@DlvrgSttlmPties.deleter
+	def DlvrgSttlmPties(self):
+		del self._DlvrgSttlmPties
+		self._DlvrgSttlmPties = None
+
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def OpngSttlmDt(self):
+		return self._OpngSttlmDt
+
+	@OpngSttlmDt.setter
+	def OpngSttlmDt(self, value):
+		self._OpngSttlmDt = value if type(value) != auto else self.make_default("OpngSttlmDt")
+
+	@OpngSttlmDt.deleter
+	def OpngSttlmDt(self):
+		del self._OpngSttlmDt
+		self._OpngSttlmDt = None
+
+	@property
+	def RateChngDt(self):
+		return self._RateChngDt
+
+	@RateChngDt.setter
+	def RateChngDt(self, value):
+		self._RateChngDt = value if type(value) != auto else self.make_default("RateChngDt")
+
+	@RateChngDt.deleter
+	def RateChngDt(self):
+		del self._RateChngDt
+		self._RateChngDt = None
+
+	@property
+	def StockLnMrgn(self):
+		return self._StockLnMrgn
+
+	@StockLnMrgn.setter
+	def StockLnMrgn(self, value):
+		self._StockLnMrgn = value if type(value) != auto else self.make_default("StockLnMrgn")
+
+	@StockLnMrgn.deleter
+	def StockLnMrgn(self):
+		del self._StockLnMrgn
+		self._StockLnMrgn = None
+
+	@property
+	def XpctdValDt(self):
+		return self._XpctdValDt
+
+	@XpctdValDt.setter
+	def XpctdValDt(self, value):
+		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
+
+	@XpctdValDt.deleter
+	def XpctdValDt(self):
+		del self._XpctdValDt
+		self._XpctdValDt = None
+
+	@property
+	def TrptyAgtSvcPrvdrCollTxId(self):
+		return self._TrptyAgtSvcPrvdrCollTxId
+
+	@TrptyAgtSvcPrvdrCollTxId.setter
+	def TrptyAgtSvcPrvdrCollTxId(self, value):
+		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
+
+	@TrptyAgtSvcPrvdrCollTxId.deleter
+	def TrptyAgtSvcPrvdrCollTxId(self):
+		del self._TrptyAgtSvcPrvdrCollTxId
+		self._TrptyAgtSvcPrvdrCollTxId = None
 
 	@property
 	def FinInstrmId(self):
@@ -511,56 +394,173 @@ class SecuritiesFinancingTransactionDetails57(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def ClntTrptyCollTxId(self):
-		return self._ClntTrptyCollTxId
+	def XpctdSttlmDt(self):
+		return self._XpctdSttlmDt
 
-	@ClntTrptyCollTxId.setter
-	def ClntTrptyCollTxId(self, value):
-		self._ClntTrptyCollTxId = value if type(value) != auto else self.make_default("ClntTrptyCollTxId")
+	@XpctdSttlmDt.setter
+	def XpctdSttlmDt(self, value):
+		self._XpctdSttlmDt = value if type(value) != auto else self.make_default("XpctdSttlmDt")
 
-	@ClntTrptyCollTxId.deleter
-	def ClntTrptyCollTxId(self):
-		del self._ClntTrptyCollTxId
-		self._ClntTrptyCollTxId = None
+	@XpctdSttlmDt.deleter
+	def XpctdSttlmDt(self):
+		del self._XpctdSttlmDt
+		self._XpctdSttlmDt = None
+
+	@property
+	def Sprd(self):
+		return self._Sprd
+
+	@Sprd.setter
+	def Sprd(self, value):
+		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
+
+	@Sprd.deleter
+	def Sprd(self):
+		del self._Sprd
+		self._Sprd = None
+
+	@property
+	def Invstr(self):
+		return self._Invstr
+
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
+
+	@property
+	def SctiesFincgUnqTxIdr(self):
+		return self._SctiesFincgUnqTxIdr
+
+	@SctiesFincgUnqTxIdr.setter
+	def SctiesFincgUnqTxIdr(self, value):
+		self._SctiesFincgUnqTxIdr = value if type(value) != auto else self.make_default("SctiesFincgUnqTxIdr")
+
+	@SctiesFincgUnqTxIdr.deleter
+	def SctiesFincgUnqTxIdr(self):
+		del self._SctiesFincgUnqTxIdr
+		self._SctiesFincgUnqTxIdr = None
+
+	@property
+	def SttlmParams(self):
+		return self._SttlmParams
+
+	@SttlmParams.setter
+	def SttlmParams(self, value):
+		self._SttlmParams = value if type(value) != auto else self.make_default("SttlmParams")
+
+	@SttlmParams.deleter
+	def SttlmParams(self):
+		del self._SttlmParams
+		self._SttlmParams = None
+
+	@property
+	def SctiesFincgTradId(self):
+		return self._SctiesFincgTradId
+
+	@SctiesFincgTradId.setter
+	def SctiesFincgTradId(self, value):
+		self._SctiesFincgTradId = value if type(value) != auto else self.make_default("SctiesFincgTradId")
+
+	@SctiesFincgTradId.deleter
+	def SctiesFincgTradId(self):
+		del self._SctiesFincgTradId
+		self._SctiesFincgTradId = None
+
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
+
+	@property
+	def SctiesFincgTxTp(self):
+		return self._SctiesFincgTxTp
+
+	@SctiesFincgTxTp.setter
+	def SctiesFincgTxTp(self, value):
+		self._SctiesFincgTxTp = value if type(value) != auto else self.make_default("SctiesFincgTxTp")
+
+	@SctiesFincgTxTp.deleter
+	def SctiesFincgTxTp(self):
+		del self._SctiesFincgTxTp
+		self._SctiesFincgTxTp = None
+
+	@property
+	def TermntnDt(self):
+		return self._TermntnDt
+
+	@TermntnDt.setter
+	def TermntnDt(self, value):
+		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
+
+	@TermntnDt.deleter
+	def TermntnDt(self):
+		del self._TermntnDt
+		self._TermntnDt = None
+
+	@property
+	def PoolId(self):
+		return self._PoolId
+
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
+
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmParams', type=SettlementDetails170, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgLegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesFincgTradId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesHrcut', type=Rate2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesFincgUnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VarblRateSpprt', type=RateName1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sprd', type=Rate2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngSttlmAmt', type=AmountAndDirection51, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties127, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermntnDt', type=TerminationDate6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateChngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=TradeDate8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermntnTxAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpRate', type=Rate2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngSttlmDt', type=SettlementDate19Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmQty', type=Quantity51Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateTp', type=RateType35Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StockLnMrgn', type=Rate2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfTrad', type=PlaceOfTradeIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmInstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VarblRateSpprt', type=RateName1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmQty', type=Quantity51Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=TradeDate8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricgRate', type=RateOrName1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties127, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LateDlvryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricgRate', type=RateOrName1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgLegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateTp', type=RateType35Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngSttlmAmt', type=AmountAndDirection51, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpRate', type=Rate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesHrcut', type=Rate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmInstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntTrptyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnTxAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties127, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngSttlmDt', type=SettlementDate19Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateChngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockLnMrgn', type=Rate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sprd', type=Rate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesFincgUnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmParams', type=SettlementDetails170, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesFincgTradId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnDt', type=TerminationDate6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

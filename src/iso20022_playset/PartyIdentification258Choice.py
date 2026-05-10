@@ -6,20 +6,7 @@ import NameAndAddress12
 
 class PartyIdentification258Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlLdgrId", "_Ctry", "_NmAndAdr", "_AnyBIC"]
-	@property
-	def DgtlLdgrId(self):
-		return self._DgtlLdgrId
-
-	@DgtlLdgrId.setter
-	def DgtlLdgrId(self, value):
-		self._DgtlLdgrId = value if type(value) != auto else self.make_default("DgtlLdgrId")
-
-	@DgtlLdgrId.deleter
-	def DgtlLdgrId(self):
-		del self._DgtlLdgrId
-		self._DgtlLdgrId = None
-
+	__slots__ = ["_Ctry", "_DgtlLdgrId", "_NmAndAdr", "_AnyBIC"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -32,6 +19,19 @@ class PartyIdentification258Choice(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def DgtlLdgrId(self):
+		return self._DgtlLdgrId
+
+	@DgtlLdgrId.setter
+	def DgtlLdgrId(self, value):
+		self._DgtlLdgrId = value if type(value) != auto else self.make_default("DgtlLdgrId")
+
+	@DgtlLdgrId.deleter
+	def DgtlLdgrId(self):
+		del self._DgtlLdgrId
+		self._DgtlLdgrId = None
 
 	@property
 	def NmAndAdr(self):
@@ -60,8 +60,8 @@ class PartyIdentification258Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))

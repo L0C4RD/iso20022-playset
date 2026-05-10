@@ -1,6 +1,6 @@
 import base_types
-import CollateralAccount4
 import SupplementaryData1
+import CollateralAccount4
 
 class CCPCollateralReportV01(base_types._BaseFieldType):
 

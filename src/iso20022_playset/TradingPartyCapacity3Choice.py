@@ -1,6 +1,6 @@
 import base_types
-import TradingCapacity6Code
 import GenericIdentification36
+import TradingCapacity6Code
 
 class TradingPartyCapacity3Choice(base_types._BaseFieldType):
 

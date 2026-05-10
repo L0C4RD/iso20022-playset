@@ -1,6 +1,6 @@
 import base_types
-import GenericPersonType1
 import RequestedIndicator
+import GenericPersonType1
 
 class PersonType2(base_types._BaseFieldType):
 

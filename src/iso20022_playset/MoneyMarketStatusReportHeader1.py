@@ -1,25 +1,12 @@
 import base_types
-import DateTimePeriod1
-import StatisticalReportingStatus1Code
 import GenericValidationRuleIdentification1
+import DateTimePeriod1
 import LEIIdentifier
+import StatisticalReportingStatus1Code
 
 class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSts", "_VldtnRule", "_RptgPrd", "_RptgAgt"]
-	@property
-	def RptSts(self):
-		return self._RptSts
-
-	@RptSts.setter
-	def RptSts(self, value):
-		self._RptSts = value if type(value) != auto else self.make_default("RptSts")
-
-	@RptSts.deleter
-	def RptSts(self):
-		del self._RptSts
-		self._RptSts = None
-
+	__slots__ = ["_VldtnRule", "_RptSts", "_RptgAgt", "_RptgPrd"]
 	@property
 	def VldtnRule(self):
 		return self._VldtnRule
@@ -34,17 +21,17 @@ class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 		self._VldtnRule = None
 
 	@property
-	def RptgPrd(self):
-		return self._RptgPrd
+	def RptSts(self):
+		return self._RptSts
 
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+	@RptSts.setter
+	def RptSts(self, value):
+		self._RptSts = value if type(value) != auto else self.make_default("RptSts")
 
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
+	@RptSts.deleter
+	def RptSts(self):
+		del self._RptSts
+		self._RptSts = None
 
 	@property
 	def RptgAgt(self):
@@ -59,10 +46,23 @@ class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 		del self._RptgAgt
 		self._RptgAgt = None
 
+	@property
+	def RptgPrd(self):
+		return self._RptgPrd
+
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptSts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptgPrd', type=DateTimePeriod1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgAgt', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=DateTimePeriod1, min=1, max=1, mutex_group=None, array=False),
 	))
 

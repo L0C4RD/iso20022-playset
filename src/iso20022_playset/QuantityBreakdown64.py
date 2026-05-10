@@ -1,6 +1,6 @@
 import base_types
-import FinancialInstrumentQuantity36Choice
 import GenericIdentification39
+import FinancialInstrumentQuantity36Choice
 
 class QuantityBreakdown64(base_types._BaseFieldType):
 

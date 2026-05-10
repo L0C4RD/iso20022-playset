@@ -1,11 +1,24 @@
 import base_types
-import PartyAndSignature2
 import Amendment1
 import Max2000Text
+import PartyAndSignature2
 
 class UndertakingAmendmentV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlSgntr", "_UdrtkgAmdmntDtls", "_BkToBkInf"]
+	__slots__ = ["_BkToBkInf", "_DgtlSgntr", "_UdrtkgAmdmntDtls"]
+	@property
+	def BkToBkInf(self):
+		return self._BkToBkInf
+
+	@BkToBkInf.setter
+	def BkToBkInf(self, value):
+		self._BkToBkInf = value if type(value) != auto else self.make_default("BkToBkInf")
+
+	@BkToBkInf.deleter
+	def BkToBkInf(self):
+		del self._BkToBkInf
+		self._BkToBkInf = None
+
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -32,22 +45,9 @@ class UndertakingAmendmentV01(base_types._BaseFieldType):
 		del self._UdrtkgAmdmntDtls
 		self._UdrtkgAmdmntDtls = None
 
-	@property
-	def BkToBkInf(self):
-		return self._BkToBkInf
-
-	@BkToBkInf.setter
-	def BkToBkInf(self, value):
-		self._BkToBkInf = value if type(value) != auto else self.make_default("BkToBkInf")
-
-	@BkToBkInf.deleter
-	def BkToBkInf(self):
-		del self._BkToBkInf
-		self._BkToBkInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UdrtkgAmdmntDtls', type=Amendment1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 	))
 

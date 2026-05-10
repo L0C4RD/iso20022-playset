@@ -1,12 +1,12 @@
 import base_types
-import Max35Text
 import AmountAndDirection34
 import Max40Text
 import DecimalNumber
+import Max35Text
 
 class BillingServicesTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Desc", "_Nb", "_PricgAmt", "_HstAmt"]
+	__slots__ = ["_Rate", "_Nb", "_Desc", "_PricgAmt", "_HstAmt"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -21,19 +21,6 @@ class BillingServicesTax1(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
 	def Nb(self):
 		return self._Nb
 
@@ -45,6 +32,19 @@ class BillingServicesTax1(base_types._BaseFieldType):
 	def Nb(self):
 		del self._Nb
 		self._Nb = None
+
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def PricgAmt(self):
@@ -74,8 +74,8 @@ class BillingServicesTax1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rate', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))

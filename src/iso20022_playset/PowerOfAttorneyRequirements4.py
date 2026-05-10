@@ -1,7 +1,7 @@
 import base_types
-import PowerOfAttorneyLegalisation1Code
 import DateFormat58Choice
 import Max350Text
+import PowerOfAttorneyLegalisation1Code
 
 class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 import base_types
+import ActiveOrHistoricCurrencyAnd13DecimalAmount
 import PriceValueAndRate4
 import TypeOfPrice27Choice
-import ActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class PriceInformation10(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CurPric", "_PrvsPric", "_AmtOfChng"]
+	__slots__ = ["_Tp", "_CurPric", "_AmtOfChng", "_PrvsPric"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -33,19 +33,6 @@ class PriceInformation10(base_types._BaseFieldType):
 		self._CurPric = None
 
 	@property
-	def PrvsPric(self):
-		return self._PrvsPric
-
-	@PrvsPric.setter
-	def PrvsPric(self, value):
-		self._PrvsPric = value if type(value) != auto else self.make_default("PrvsPric")
-
-	@PrvsPric.deleter
-	def PrvsPric(self):
-		del self._PrvsPric
-		self._PrvsPric = None
-
-	@property
 	def AmtOfChng(self):
 		return self._AmtOfChng
 
@@ -58,10 +45,23 @@ class PriceInformation10(base_types._BaseFieldType):
 		del self._AmtOfChng
 		self._AmtOfChng = None
 
+	@property
+	def PrvsPric(self):
+		return self._PrvsPric
+
+	@PrvsPric.setter
+	def PrvsPric(self, value):
+		self._PrvsPric = value if type(value) != auto else self.make_default("PrvsPric")
+
+	@PrvsPric.deleter
+	def PrvsPric(self):
+		del self._PrvsPric
+		self._PrvsPric = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=TypeOfPrice27Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurPric', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsPric', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtOfChng', type=PriceValueAndRate4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsPric', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

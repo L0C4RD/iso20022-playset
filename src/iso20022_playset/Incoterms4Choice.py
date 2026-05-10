@@ -1,6 +1,6 @@
 import base_types
-import ExternalIncoterms1Code
 import GenericIdentification13
+import ExternalIncoterms1Code
 
 class Incoterms4Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
-import DeliveryReceiptType2Code
 import RestrictedFINXMax16Text
+import DeliveryReceiptType2Code
 import DateAndDateTime2Choice
 
 class SettlementTypeAndIdentification26(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SttlmDt", "_Pmt"]
+	__slots__ = ["_Pmt", "_SttlmDt", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def Pmt(self):
+		return self._Pmt
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
 
 	@property
 	def SttlmDt(self):
@@ -33,21 +33,21 @@ class SettlementTypeAndIdentification26(base_types._BaseFieldType):
 		self._SttlmDt = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def TxId(self):
+		return self._TxId
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
-import ATMCassette3
 import TransactionIdentifier3
 import ATMOperation2Code
+import ATMCassette3
+import Max35Text
 
 class ATMTransaction30(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnId", "_Csstt", "_TpOfOpr", "_TxId"]
-	@property
-	def RcncltnId(self):
-		return self._RcncltnId
-
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
-
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
-
+	__slots__ = ["_Csstt", "_TxId", "_TpOfOpr", "_RcncltnId"]
 	@property
 	def Csstt(self):
 		return self._Csstt
@@ -32,6 +19,19 @@ class ATMTransaction30(base_types._BaseFieldType):
 	def Csstt(self):
 		del self._Csstt
 		self._Csstt = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def TpOfOpr(self):
@@ -47,22 +47,22 @@ class ATMTransaction30(base_types._BaseFieldType):
 		self._TpOfOpr = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def RcncltnId(self):
+		return self._RcncltnId
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Csstt', type=ATMCassette3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TpOfOpr', type=ATMOperation2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfOpr', type=ATMOperation2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

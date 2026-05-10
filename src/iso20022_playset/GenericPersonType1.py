@@ -1,23 +1,10 @@
 import base_types
-import PersonIdentificationSchemeName1Choice
 import RequestedIndicator
+import PersonIdentificationSchemeName1Choice
 
 class GenericPersonType1(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Reqd"]
-	@property
-	def SchmeNm(self):
-		return self._SchmeNm
-
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
-
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
-
+	__slots__ = ["_Reqd", "_SchmeNm"]
 	@property
 	def Reqd(self):
 		return self._Reqd
@@ -31,8 +18,21 @@ class GenericPersonType1(base_types._BaseFieldType):
 		del self._Reqd
 		self._Reqd = None
 
+	@property
+	def SchmeNm(self):
+		return self._SchmeNm
+
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchmeNm', type=PersonIdentificationSchemeName1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Reqd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=PersonIdentificationSchemeName1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

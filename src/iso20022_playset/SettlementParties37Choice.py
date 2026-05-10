@@ -1,6 +1,6 @@
 import base_types
-import DeliveringPartiesAndAccount21
 import ReceivingPartiesAndAccount21
+import DeliveringPartiesAndAccount21
 
 class SettlementParties37Choice(base_types._BaseFieldType):
 

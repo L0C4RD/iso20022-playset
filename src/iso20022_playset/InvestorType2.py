@@ -1,12 +1,12 @@
 import base_types
-import TargetMarket3Code
 import TargetMarket5Choice
 import TargetMarket1Code
+import TargetMarket3Code
 import OtherTargetMarketInvestor1
 
 class InvestorType2(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrTpElgblCtrPty", "_Othr", "_InvstrTpRtl", "_InvstrTpPrfssnl"]
+	__slots__ = ["_InvstrTpElgblCtrPty", "_InvstrTpPrfssnl", "_InvstrTpRtl", "_Othr"]
 	@property
 	def InvstrTpElgblCtrPty(self):
 		return self._InvstrTpElgblCtrPty
@@ -21,17 +21,17 @@ class InvestorType2(base_types._BaseFieldType):
 		self._InvstrTpElgblCtrPty = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def InvstrTpPrfssnl(self):
+		return self._InvstrTpPrfssnl
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@InvstrTpPrfssnl.setter
+	def InvstrTpPrfssnl(self, value):
+		self._InvstrTpPrfssnl = value if type(value) != auto else self.make_default("InvstrTpPrfssnl")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@InvstrTpPrfssnl.deleter
+	def InvstrTpPrfssnl(self):
+		del self._InvstrTpPrfssnl
+		self._InvstrTpPrfssnl = None
 
 	@property
 	def InvstrTpRtl(self):
@@ -47,22 +47,22 @@ class InvestorType2(base_types._BaseFieldType):
 		self._InvstrTpRtl = None
 
 	@property
-	def InvstrTpPrfssnl(self):
-		return self._InvstrTpPrfssnl
+	def Othr(self):
+		return self._Othr
 
-	@InvstrTpPrfssnl.setter
-	def InvstrTpPrfssnl(self, value):
-		self._InvstrTpPrfssnl = value if type(value) != auto else self.make_default("InvstrTpPrfssnl")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
 
-	@InvstrTpPrfssnl.deleter
-	def InvstrTpPrfssnl(self):
-		del self._InvstrTpPrfssnl
-		self._InvstrTpPrfssnl = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstrTpElgblCtrPty', type=TargetMarket3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InvstrTpRtl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrTpPrfssnl', type=TargetMarket5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrTpRtl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
 	))
 

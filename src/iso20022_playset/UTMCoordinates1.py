@@ -1,23 +1,10 @@
 import base_types
-import Number
 import Max16Text
+import Number
 
 class UTMCoordinates1(base_types._BaseFieldType):
 
-	__slots__ = ["_UTMZone", "_UTMEstwrd", "_UTMNrthwrd"]
-	@property
-	def UTMZone(self):
-		return self._UTMZone
-
-	@UTMZone.setter
-	def UTMZone(self, value):
-		self._UTMZone = value if type(value) != auto else self.make_default("UTMZone")
-
-	@UTMZone.deleter
-	def UTMZone(self):
-		del self._UTMZone
-		self._UTMZone = None
-
+	__slots__ = ["_UTMEstwrd", "_UTMZone", "_UTMNrthwrd"]
 	@property
 	def UTMEstwrd(self):
 		return self._UTMEstwrd
@@ -30,6 +17,19 @@ class UTMCoordinates1(base_types._BaseFieldType):
 	def UTMEstwrd(self):
 		del self._UTMEstwrd
 		self._UTMEstwrd = None
+
+	@property
+	def UTMZone(self):
+		return self._UTMZone
+
+	@UTMZone.setter
+	def UTMZone(self, value):
+		self._UTMZone = value if type(value) != auto else self.make_default("UTMZone")
+
+	@UTMZone.deleter
+	def UTMZone(self):
+		del self._UTMZone
+		self._UTMZone = None
 
 	@property
 	def UTMNrthwrd(self):
@@ -45,8 +45,8 @@ class UTMCoordinates1(base_types._BaseFieldType):
 		self._UTMNrthwrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UTMZone', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UTMEstwrd', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UTMZone', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UTMNrthwrd', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,178 +1,22 @@
 import base_types
-import DateFormat30Choice
 import DateFormat43Choice
+import DateFormat30Choice
 
 class CorporateActionDate83(base_types._BaseFieldType):
 
-	__slots__ = ["_MktClmTrckgEndDt", "_EarlyClsgDt", "_WhlyUcondlDt", "_ElctnToCtrPtyRspnDdln", "_SpclExDt", "_GrntedPrtcptnDt", "_TradgSspdDt", "_OffclAnncmntPblctnDt", "_LpsdDt", "_RsltsPblctnDt", "_FctvDt", "_DdlnForTaxBrkdwnInstr", "_RcrdDt", "_DdlnToSplt", "_FilgDt", "_UcondlDt", "_LtryDt", "_FxgDt", "_LeadPlntffDdln", "_MrgnFxgDt", "_PmtDt", "_EqulstnDt", "_AnncmntDt", "_RegnDdln", "_MtgDt", "_ElctnToCtrPtyMktDdln", "_NewMtrtyDt", "_PrratnDt", "_HrgDt", "_EarlyThrdPtyDdln", "_CertfctnDdln", "_FrthrDtldAnncmntDt", "_CrtApprvlDt", "_ThrdPtyDdln", "_ExDvddDt"]
+	__slots__ = ["_RegnDdln", "_DdlnToSplt", "_FilgDt", "_OffclAnncmntPblctnDt", "_LeadPlntffDdln", "_PrratnDt", "_ExDvddDt", "_ElctnToCtrPtyRspnDdln", "_TradgSspdDt", "_SpclExDt", "_MtgDt", "_GrntedPrtcptnDt", "_DdlnForTaxBrkdwnInstr", "_RsltsPblctnDt", "_EqulstnDt", "_UcondlDt", "_LtryDt", "_ElctnToCtrPtyMktDdln", "_CrtApprvlDt", "_FxgDt", "_HrgDt", "_PmtDt", "_AnncmntDt", "_LpsdDt", "_MrgnFxgDt", "_ThrdPtyDdln", "_FctvDt", "_EarlyThrdPtyDdln", "_FrthrDtldAnncmntDt", "_CertfctnDdln", "_MktClmTrckgEndDt", "_EarlyClsgDt", "_RcrdDt", "_NewMtrtyDt", "_WhlyUcondlDt"]
 	@property
-	def MktClmTrckgEndDt(self):
-		return self._MktClmTrckgEndDt
+	def RegnDdln(self):
+		return self._RegnDdln
 
-	@MktClmTrckgEndDt.setter
-	def MktClmTrckgEndDt(self, value):
-		self._MktClmTrckgEndDt = value if type(value) != auto else self.make_default("MktClmTrckgEndDt")
+	@RegnDdln.setter
+	def RegnDdln(self, value):
+		self._RegnDdln = value if type(value) != auto else self.make_default("RegnDdln")
 
-	@MktClmTrckgEndDt.deleter
-	def MktClmTrckgEndDt(self):
-		del self._MktClmTrckgEndDt
-		self._MktClmTrckgEndDt = None
-
-	@property
-	def EarlyClsgDt(self):
-		return self._EarlyClsgDt
-
-	@EarlyClsgDt.setter
-	def EarlyClsgDt(self, value):
-		self._EarlyClsgDt = value if type(value) != auto else self.make_default("EarlyClsgDt")
-
-	@EarlyClsgDt.deleter
-	def EarlyClsgDt(self):
-		del self._EarlyClsgDt
-		self._EarlyClsgDt = None
-
-	@property
-	def WhlyUcondlDt(self):
-		return self._WhlyUcondlDt
-
-	@WhlyUcondlDt.setter
-	def WhlyUcondlDt(self, value):
-		self._WhlyUcondlDt = value if type(value) != auto else self.make_default("WhlyUcondlDt")
-
-	@WhlyUcondlDt.deleter
-	def WhlyUcondlDt(self):
-		del self._WhlyUcondlDt
-		self._WhlyUcondlDt = None
-
-	@property
-	def ElctnToCtrPtyRspnDdln(self):
-		return self._ElctnToCtrPtyRspnDdln
-
-	@ElctnToCtrPtyRspnDdln.setter
-	def ElctnToCtrPtyRspnDdln(self, value):
-		self._ElctnToCtrPtyRspnDdln = value if type(value) != auto else self.make_default("ElctnToCtrPtyRspnDdln")
-
-	@ElctnToCtrPtyRspnDdln.deleter
-	def ElctnToCtrPtyRspnDdln(self):
-		del self._ElctnToCtrPtyRspnDdln
-		self._ElctnToCtrPtyRspnDdln = None
-
-	@property
-	def SpclExDt(self):
-		return self._SpclExDt
-
-	@SpclExDt.setter
-	def SpclExDt(self, value):
-		self._SpclExDt = value if type(value) != auto else self.make_default("SpclExDt")
-
-	@SpclExDt.deleter
-	def SpclExDt(self):
-		del self._SpclExDt
-		self._SpclExDt = None
-
-	@property
-	def GrntedPrtcptnDt(self):
-		return self._GrntedPrtcptnDt
-
-	@GrntedPrtcptnDt.setter
-	def GrntedPrtcptnDt(self, value):
-		self._GrntedPrtcptnDt = value if type(value) != auto else self.make_default("GrntedPrtcptnDt")
-
-	@GrntedPrtcptnDt.deleter
-	def GrntedPrtcptnDt(self):
-		del self._GrntedPrtcptnDt
-		self._GrntedPrtcptnDt = None
-
-	@property
-	def TradgSspdDt(self):
-		return self._TradgSspdDt
-
-	@TradgSspdDt.setter
-	def TradgSspdDt(self, value):
-		self._TradgSspdDt = value if type(value) != auto else self.make_default("TradgSspdDt")
-
-	@TradgSspdDt.deleter
-	def TradgSspdDt(self):
-		del self._TradgSspdDt
-		self._TradgSspdDt = None
-
-	@property
-	def OffclAnncmntPblctnDt(self):
-		return self._OffclAnncmntPblctnDt
-
-	@OffclAnncmntPblctnDt.setter
-	def OffclAnncmntPblctnDt(self, value):
-		self._OffclAnncmntPblctnDt = value if type(value) != auto else self.make_default("OffclAnncmntPblctnDt")
-
-	@OffclAnncmntPblctnDt.deleter
-	def OffclAnncmntPblctnDt(self):
-		del self._OffclAnncmntPblctnDt
-		self._OffclAnncmntPblctnDt = None
-
-	@property
-	def LpsdDt(self):
-		return self._LpsdDt
-
-	@LpsdDt.setter
-	def LpsdDt(self, value):
-		self._LpsdDt = value if type(value) != auto else self.make_default("LpsdDt")
-
-	@LpsdDt.deleter
-	def LpsdDt(self):
-		del self._LpsdDt
-		self._LpsdDt = None
-
-	@property
-	def RsltsPblctnDt(self):
-		return self._RsltsPblctnDt
-
-	@RsltsPblctnDt.setter
-	def RsltsPblctnDt(self, value):
-		self._RsltsPblctnDt = value if type(value) != auto else self.make_default("RsltsPblctnDt")
-
-	@RsltsPblctnDt.deleter
-	def RsltsPblctnDt(self):
-		del self._RsltsPblctnDt
-		self._RsltsPblctnDt = None
-
-	@property
-	def FctvDt(self):
-		return self._FctvDt
-
-	@FctvDt.setter
-	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
-
-	@FctvDt.deleter
-	def FctvDt(self):
-		del self._FctvDt
-		self._FctvDt = None
-
-	@property
-	def DdlnForTaxBrkdwnInstr(self):
-		return self._DdlnForTaxBrkdwnInstr
-
-	@DdlnForTaxBrkdwnInstr.setter
-	def DdlnForTaxBrkdwnInstr(self, value):
-		self._DdlnForTaxBrkdwnInstr = value if type(value) != auto else self.make_default("DdlnForTaxBrkdwnInstr")
-
-	@DdlnForTaxBrkdwnInstr.deleter
-	def DdlnForTaxBrkdwnInstr(self):
-		del self._DdlnForTaxBrkdwnInstr
-		self._DdlnForTaxBrkdwnInstr = None
-
-	@property
-	def RcrdDt(self):
-		return self._RcrdDt
-
-	@RcrdDt.setter
-	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != auto else self.make_default("RcrdDt")
-
-	@RcrdDt.deleter
-	def RcrdDt(self):
-		del self._RcrdDt
-		self._RcrdDt = None
+	@RegnDdln.deleter
+	def RegnDdln(self):
+		del self._RegnDdln
+		self._RegnDdln = None
 
 	@property
 	def DdlnToSplt(self):
@@ -201,6 +45,162 @@ class CorporateActionDate83(base_types._BaseFieldType):
 		self._FilgDt = None
 
 	@property
+	def OffclAnncmntPblctnDt(self):
+		return self._OffclAnncmntPblctnDt
+
+	@OffclAnncmntPblctnDt.setter
+	def OffclAnncmntPblctnDt(self, value):
+		self._OffclAnncmntPblctnDt = value if type(value) != auto else self.make_default("OffclAnncmntPblctnDt")
+
+	@OffclAnncmntPblctnDt.deleter
+	def OffclAnncmntPblctnDt(self):
+		del self._OffclAnncmntPblctnDt
+		self._OffclAnncmntPblctnDt = None
+
+	@property
+	def LeadPlntffDdln(self):
+		return self._LeadPlntffDdln
+
+	@LeadPlntffDdln.setter
+	def LeadPlntffDdln(self, value):
+		self._LeadPlntffDdln = value if type(value) != auto else self.make_default("LeadPlntffDdln")
+
+	@LeadPlntffDdln.deleter
+	def LeadPlntffDdln(self):
+		del self._LeadPlntffDdln
+		self._LeadPlntffDdln = None
+
+	@property
+	def PrratnDt(self):
+		return self._PrratnDt
+
+	@PrratnDt.setter
+	def PrratnDt(self, value):
+		self._PrratnDt = value if type(value) != auto else self.make_default("PrratnDt")
+
+	@PrratnDt.deleter
+	def PrratnDt(self):
+		del self._PrratnDt
+		self._PrratnDt = None
+
+	@property
+	def ExDvddDt(self):
+		return self._ExDvddDt
+
+	@ExDvddDt.setter
+	def ExDvddDt(self, value):
+		self._ExDvddDt = value if type(value) != auto else self.make_default("ExDvddDt")
+
+	@ExDvddDt.deleter
+	def ExDvddDt(self):
+		del self._ExDvddDt
+		self._ExDvddDt = None
+
+	@property
+	def ElctnToCtrPtyRspnDdln(self):
+		return self._ElctnToCtrPtyRspnDdln
+
+	@ElctnToCtrPtyRspnDdln.setter
+	def ElctnToCtrPtyRspnDdln(self, value):
+		self._ElctnToCtrPtyRspnDdln = value if type(value) != auto else self.make_default("ElctnToCtrPtyRspnDdln")
+
+	@ElctnToCtrPtyRspnDdln.deleter
+	def ElctnToCtrPtyRspnDdln(self):
+		del self._ElctnToCtrPtyRspnDdln
+		self._ElctnToCtrPtyRspnDdln = None
+
+	@property
+	def TradgSspdDt(self):
+		return self._TradgSspdDt
+
+	@TradgSspdDt.setter
+	def TradgSspdDt(self, value):
+		self._TradgSspdDt = value if type(value) != auto else self.make_default("TradgSspdDt")
+
+	@TradgSspdDt.deleter
+	def TradgSspdDt(self):
+		del self._TradgSspdDt
+		self._TradgSspdDt = None
+
+	@property
+	def SpclExDt(self):
+		return self._SpclExDt
+
+	@SpclExDt.setter
+	def SpclExDt(self, value):
+		self._SpclExDt = value if type(value) != auto else self.make_default("SpclExDt")
+
+	@SpclExDt.deleter
+	def SpclExDt(self):
+		del self._SpclExDt
+		self._SpclExDt = None
+
+	@property
+	def MtgDt(self):
+		return self._MtgDt
+
+	@MtgDt.setter
+	def MtgDt(self, value):
+		self._MtgDt = value if type(value) != auto else self.make_default("MtgDt")
+
+	@MtgDt.deleter
+	def MtgDt(self):
+		del self._MtgDt
+		self._MtgDt = None
+
+	@property
+	def GrntedPrtcptnDt(self):
+		return self._GrntedPrtcptnDt
+
+	@GrntedPrtcptnDt.setter
+	def GrntedPrtcptnDt(self, value):
+		self._GrntedPrtcptnDt = value if type(value) != auto else self.make_default("GrntedPrtcptnDt")
+
+	@GrntedPrtcptnDt.deleter
+	def GrntedPrtcptnDt(self):
+		del self._GrntedPrtcptnDt
+		self._GrntedPrtcptnDt = None
+
+	@property
+	def DdlnForTaxBrkdwnInstr(self):
+		return self._DdlnForTaxBrkdwnInstr
+
+	@DdlnForTaxBrkdwnInstr.setter
+	def DdlnForTaxBrkdwnInstr(self, value):
+		self._DdlnForTaxBrkdwnInstr = value if type(value) != auto else self.make_default("DdlnForTaxBrkdwnInstr")
+
+	@DdlnForTaxBrkdwnInstr.deleter
+	def DdlnForTaxBrkdwnInstr(self):
+		del self._DdlnForTaxBrkdwnInstr
+		self._DdlnForTaxBrkdwnInstr = None
+
+	@property
+	def RsltsPblctnDt(self):
+		return self._RsltsPblctnDt
+
+	@RsltsPblctnDt.setter
+	def RsltsPblctnDt(self, value):
+		self._RsltsPblctnDt = value if type(value) != auto else self.make_default("RsltsPblctnDt")
+
+	@RsltsPblctnDt.deleter
+	def RsltsPblctnDt(self):
+		del self._RsltsPblctnDt
+		self._RsltsPblctnDt = None
+
+	@property
+	def EqulstnDt(self):
+		return self._EqulstnDt
+
+	@EqulstnDt.setter
+	def EqulstnDt(self, value):
+		self._EqulstnDt = value if type(value) != auto else self.make_default("EqulstnDt")
+
+	@EqulstnDt.deleter
+	def EqulstnDt(self):
+		del self._EqulstnDt
+		self._EqulstnDt = None
+
+	@property
 	def UcondlDt(self):
 		return self._UcondlDt
 
@@ -227,110 +227,6 @@ class CorporateActionDate83(base_types._BaseFieldType):
 		self._LtryDt = None
 
 	@property
-	def FxgDt(self):
-		return self._FxgDt
-
-	@FxgDt.setter
-	def FxgDt(self, value):
-		self._FxgDt = value if type(value) != auto else self.make_default("FxgDt")
-
-	@FxgDt.deleter
-	def FxgDt(self):
-		del self._FxgDt
-		self._FxgDt = None
-
-	@property
-	def LeadPlntffDdln(self):
-		return self._LeadPlntffDdln
-
-	@LeadPlntffDdln.setter
-	def LeadPlntffDdln(self, value):
-		self._LeadPlntffDdln = value if type(value) != auto else self.make_default("LeadPlntffDdln")
-
-	@LeadPlntffDdln.deleter
-	def LeadPlntffDdln(self):
-		del self._LeadPlntffDdln
-		self._LeadPlntffDdln = None
-
-	@property
-	def MrgnFxgDt(self):
-		return self._MrgnFxgDt
-
-	@MrgnFxgDt.setter
-	def MrgnFxgDt(self, value):
-		self._MrgnFxgDt = value if type(value) != auto else self.make_default("MrgnFxgDt")
-
-	@MrgnFxgDt.deleter
-	def MrgnFxgDt(self):
-		del self._MrgnFxgDt
-		self._MrgnFxgDt = None
-
-	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
-	@property
-	def EqulstnDt(self):
-		return self._EqulstnDt
-
-	@EqulstnDt.setter
-	def EqulstnDt(self, value):
-		self._EqulstnDt = value if type(value) != auto else self.make_default("EqulstnDt")
-
-	@EqulstnDt.deleter
-	def EqulstnDt(self):
-		del self._EqulstnDt
-		self._EqulstnDt = None
-
-	@property
-	def AnncmntDt(self):
-		return self._AnncmntDt
-
-	@AnncmntDt.setter
-	def AnncmntDt(self, value):
-		self._AnncmntDt = value if type(value) != auto else self.make_default("AnncmntDt")
-
-	@AnncmntDt.deleter
-	def AnncmntDt(self):
-		del self._AnncmntDt
-		self._AnncmntDt = None
-
-	@property
-	def RegnDdln(self):
-		return self._RegnDdln
-
-	@RegnDdln.setter
-	def RegnDdln(self, value):
-		self._RegnDdln = value if type(value) != auto else self.make_default("RegnDdln")
-
-	@RegnDdln.deleter
-	def RegnDdln(self):
-		del self._RegnDdln
-		self._RegnDdln = None
-
-	@property
-	def MtgDt(self):
-		return self._MtgDt
-
-	@MtgDt.setter
-	def MtgDt(self, value):
-		self._MtgDt = value if type(value) != auto else self.make_default("MtgDt")
-
-	@MtgDt.deleter
-	def MtgDt(self):
-		del self._MtgDt
-		self._MtgDt = None
-
-	@property
 	def ElctnToCtrPtyMktDdln(self):
 		return self._ElctnToCtrPtyMktDdln
 
@@ -342,84 +238,6 @@ class CorporateActionDate83(base_types._BaseFieldType):
 	def ElctnToCtrPtyMktDdln(self):
 		del self._ElctnToCtrPtyMktDdln
 		self._ElctnToCtrPtyMktDdln = None
-
-	@property
-	def NewMtrtyDt(self):
-		return self._NewMtrtyDt
-
-	@NewMtrtyDt.setter
-	def NewMtrtyDt(self, value):
-		self._NewMtrtyDt = value if type(value) != auto else self.make_default("NewMtrtyDt")
-
-	@NewMtrtyDt.deleter
-	def NewMtrtyDt(self):
-		del self._NewMtrtyDt
-		self._NewMtrtyDt = None
-
-	@property
-	def PrratnDt(self):
-		return self._PrratnDt
-
-	@PrratnDt.setter
-	def PrratnDt(self, value):
-		self._PrratnDt = value if type(value) != auto else self.make_default("PrratnDt")
-
-	@PrratnDt.deleter
-	def PrratnDt(self):
-		del self._PrratnDt
-		self._PrratnDt = None
-
-	@property
-	def HrgDt(self):
-		return self._HrgDt
-
-	@HrgDt.setter
-	def HrgDt(self, value):
-		self._HrgDt = value if type(value) != auto else self.make_default("HrgDt")
-
-	@HrgDt.deleter
-	def HrgDt(self):
-		del self._HrgDt
-		self._HrgDt = None
-
-	@property
-	def EarlyThrdPtyDdln(self):
-		return self._EarlyThrdPtyDdln
-
-	@EarlyThrdPtyDdln.setter
-	def EarlyThrdPtyDdln(self, value):
-		self._EarlyThrdPtyDdln = value if type(value) != auto else self.make_default("EarlyThrdPtyDdln")
-
-	@EarlyThrdPtyDdln.deleter
-	def EarlyThrdPtyDdln(self):
-		del self._EarlyThrdPtyDdln
-		self._EarlyThrdPtyDdln = None
-
-	@property
-	def CertfctnDdln(self):
-		return self._CertfctnDdln
-
-	@CertfctnDdln.setter
-	def CertfctnDdln(self, value):
-		self._CertfctnDdln = value if type(value) != auto else self.make_default("CertfctnDdln")
-
-	@CertfctnDdln.deleter
-	def CertfctnDdln(self):
-		del self._CertfctnDdln
-		self._CertfctnDdln = None
-
-	@property
-	def FrthrDtldAnncmntDt(self):
-		return self._FrthrDtldAnncmntDt
-
-	@FrthrDtldAnncmntDt.setter
-	def FrthrDtldAnncmntDt(self, value):
-		self._FrthrDtldAnncmntDt = value if type(value) != auto else self.make_default("FrthrDtldAnncmntDt")
-
-	@FrthrDtldAnncmntDt.deleter
-	def FrthrDtldAnncmntDt(self):
-		del self._FrthrDtldAnncmntDt
-		self._FrthrDtldAnncmntDt = None
 
 	@property
 	def CrtApprvlDt(self):
@@ -435,6 +253,84 @@ class CorporateActionDate83(base_types._BaseFieldType):
 		self._CrtApprvlDt = None
 
 	@property
+	def FxgDt(self):
+		return self._FxgDt
+
+	@FxgDt.setter
+	def FxgDt(self, value):
+		self._FxgDt = value if type(value) != auto else self.make_default("FxgDt")
+
+	@FxgDt.deleter
+	def FxgDt(self):
+		del self._FxgDt
+		self._FxgDt = None
+
+	@property
+	def HrgDt(self):
+		return self._HrgDt
+
+	@HrgDt.setter
+	def HrgDt(self, value):
+		self._HrgDt = value if type(value) != auto else self.make_default("HrgDt")
+
+	@HrgDt.deleter
+	def HrgDt(self):
+		del self._HrgDt
+		self._HrgDt = None
+
+	@property
+	def PmtDt(self):
+		return self._PmtDt
+
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
+
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
+
+	@property
+	def AnncmntDt(self):
+		return self._AnncmntDt
+
+	@AnncmntDt.setter
+	def AnncmntDt(self, value):
+		self._AnncmntDt = value if type(value) != auto else self.make_default("AnncmntDt")
+
+	@AnncmntDt.deleter
+	def AnncmntDt(self):
+		del self._AnncmntDt
+		self._AnncmntDt = None
+
+	@property
+	def LpsdDt(self):
+		return self._LpsdDt
+
+	@LpsdDt.setter
+	def LpsdDt(self, value):
+		self._LpsdDt = value if type(value) != auto else self.make_default("LpsdDt")
+
+	@LpsdDt.deleter
+	def LpsdDt(self):
+		del self._LpsdDt
+		self._LpsdDt = None
+
+	@property
+	def MrgnFxgDt(self):
+		return self._MrgnFxgDt
+
+	@MrgnFxgDt.setter
+	def MrgnFxgDt(self, value):
+		self._MrgnFxgDt = value if type(value) != auto else self.make_default("MrgnFxgDt")
+
+	@MrgnFxgDt.deleter
+	def MrgnFxgDt(self):
+		del self._MrgnFxgDt
+		self._MrgnFxgDt = None
+
+	@property
 	def ThrdPtyDdln(self):
 		return self._ThrdPtyDdln
 
@@ -448,53 +344,157 @@ class CorporateActionDate83(base_types._BaseFieldType):
 		self._ThrdPtyDdln = None
 
 	@property
-	def ExDvddDt(self):
-		return self._ExDvddDt
+	def FctvDt(self):
+		return self._FctvDt
 
-	@ExDvddDt.setter
-	def ExDvddDt(self, value):
-		self._ExDvddDt = value if type(value) != auto else self.make_default("ExDvddDt")
+	@FctvDt.setter
+	def FctvDt(self, value):
+		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
 
-	@ExDvddDt.deleter
-	def ExDvddDt(self):
-		del self._ExDvddDt
-		self._ExDvddDt = None
+	@FctvDt.deleter
+	def FctvDt(self):
+		del self._FctvDt
+		self._FctvDt = None
+
+	@property
+	def EarlyThrdPtyDdln(self):
+		return self._EarlyThrdPtyDdln
+
+	@EarlyThrdPtyDdln.setter
+	def EarlyThrdPtyDdln(self, value):
+		self._EarlyThrdPtyDdln = value if type(value) != auto else self.make_default("EarlyThrdPtyDdln")
+
+	@EarlyThrdPtyDdln.deleter
+	def EarlyThrdPtyDdln(self):
+		del self._EarlyThrdPtyDdln
+		self._EarlyThrdPtyDdln = None
+
+	@property
+	def FrthrDtldAnncmntDt(self):
+		return self._FrthrDtldAnncmntDt
+
+	@FrthrDtldAnncmntDt.setter
+	def FrthrDtldAnncmntDt(self, value):
+		self._FrthrDtldAnncmntDt = value if type(value) != auto else self.make_default("FrthrDtldAnncmntDt")
+
+	@FrthrDtldAnncmntDt.deleter
+	def FrthrDtldAnncmntDt(self):
+		del self._FrthrDtldAnncmntDt
+		self._FrthrDtldAnncmntDt = None
+
+	@property
+	def CertfctnDdln(self):
+		return self._CertfctnDdln
+
+	@CertfctnDdln.setter
+	def CertfctnDdln(self, value):
+		self._CertfctnDdln = value if type(value) != auto else self.make_default("CertfctnDdln")
+
+	@CertfctnDdln.deleter
+	def CertfctnDdln(self):
+		del self._CertfctnDdln
+		self._CertfctnDdln = None
+
+	@property
+	def MktClmTrckgEndDt(self):
+		return self._MktClmTrckgEndDt
+
+	@MktClmTrckgEndDt.setter
+	def MktClmTrckgEndDt(self, value):
+		self._MktClmTrckgEndDt = value if type(value) != auto else self.make_default("MktClmTrckgEndDt")
+
+	@MktClmTrckgEndDt.deleter
+	def MktClmTrckgEndDt(self):
+		del self._MktClmTrckgEndDt
+		self._MktClmTrckgEndDt = None
+
+	@property
+	def EarlyClsgDt(self):
+		return self._EarlyClsgDt
+
+	@EarlyClsgDt.setter
+	def EarlyClsgDt(self, value):
+		self._EarlyClsgDt = value if type(value) != auto else self.make_default("EarlyClsgDt")
+
+	@EarlyClsgDt.deleter
+	def EarlyClsgDt(self):
+		del self._EarlyClsgDt
+		self._EarlyClsgDt = None
+
+	@property
+	def RcrdDt(self):
+		return self._RcrdDt
+
+	@RcrdDt.setter
+	def RcrdDt(self, value):
+		self._RcrdDt = value if type(value) != auto else self.make_default("RcrdDt")
+
+	@RcrdDt.deleter
+	def RcrdDt(self):
+		del self._RcrdDt
+		self._RcrdDt = None
+
+	@property
+	def NewMtrtyDt(self):
+		return self._NewMtrtyDt
+
+	@NewMtrtyDt.setter
+	def NewMtrtyDt(self, value):
+		self._NewMtrtyDt = value if type(value) != auto else self.make_default("NewMtrtyDt")
+
+	@NewMtrtyDt.deleter
+	def NewMtrtyDt(self):
+		del self._NewMtrtyDt
+		self._NewMtrtyDt = None
+
+	@property
+	def WhlyUcondlDt(self):
+		return self._WhlyUcondlDt
+
+	@WhlyUcondlDt.setter
+	def WhlyUcondlDt(self, value):
+		self._WhlyUcondlDt = value if type(value) != auto else self.make_default("WhlyUcondlDt")
+
+	@WhlyUcondlDt.deleter
+	def WhlyUcondlDt(self):
+		del self._WhlyUcondlDt
+		self._WhlyUcondlDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktClmTrckgEndDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyClsgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WhlyUcondlDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctnToCtrPtyRspnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpclExDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrntedPrtcptnDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSspdDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffclAnncmntPblctnDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LpsdDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsltsPblctnDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DdlnForTaxBrkdwnInstr', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DdlnToSplt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FilgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclAnncmntPblctnDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LeadPlntffDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrratnDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExDvddDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctnToCtrPtyRspnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSspdDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpclExDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrntedPrtcptnDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DdlnForTaxBrkdwnInstr', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsltsPblctnDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EqulstnDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UcondlDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FxgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LeadPlntffDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnFxgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EqulstnDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnncmntDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctnToCtrPtyMktDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewMtrtyDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrratnDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HrgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyThrdPtyDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrthrDtldAnncmntDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrtApprvlDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FxgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HrgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AnncmntDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LpsdDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnFxgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrdPtyDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExDvddDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyThrdPtyDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrthrDtldAnncmntDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClmTrckgEndDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyClsgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewMtrtyDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhlyUcondlDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

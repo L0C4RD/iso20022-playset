@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import Max20000Text
+import Max35Text
 
 class Discrepancy1(base_types._BaseFieldType):
 

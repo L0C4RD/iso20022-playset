@@ -1,11 +1,11 @@
 import base_types
-import TrueFalseIndicator
 import OrganisationIdentification15Choice
+import TrueFalseIndicator
 import CollateralData33
 
 class PositionSetDimensions12(base_types._BaseFieldType):
 
-	__slots__ = ["_OtlrsIncl", "_CollData", "_RptgCtrPty"]
+	__slots__ = ["_OtlrsIncl", "_RptgCtrPty", "_CollData"]
 	@property
 	def OtlrsIncl(self):
 		return self._OtlrsIncl
@@ -20,19 +20,6 @@ class PositionSetDimensions12(base_types._BaseFieldType):
 		self._OtlrsIncl = None
 
 	@property
-	def CollData(self):
-		return self._CollData
-
-	@CollData.setter
-	def CollData(self, value):
-		self._CollData = value if type(value) != auto else self.make_default("CollData")
-
-	@CollData.deleter
-	def CollData(self):
-		del self._CollData
-		self._CollData = None
-
-	@property
 	def RptgCtrPty(self):
 		return self._RptgCtrPty
 
@@ -45,9 +32,22 @@ class PositionSetDimensions12(base_types._BaseFieldType):
 		del self._RptgCtrPty
 		self._RptgCtrPty = None
 
+	@property
+	def CollData(self):
+		return self._CollData
+
+	@CollData.setter
+	def CollData(self, value):
+		self._CollData = value if type(value) != auto else self.make_default("CollData")
+
+	@CollData.deleter
+	def CollData(self):
+		del self._CollData
+		self._CollData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollData', type=CollateralData33, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollData', type=CollateralData33, min=0, max=1, mutex_group=None, array=False),
 	))
 

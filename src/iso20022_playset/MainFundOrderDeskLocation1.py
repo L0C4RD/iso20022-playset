@@ -1,6 +1,6 @@
 import base_types
-import CountryCode
 import UTCOffset1
+import CountryCode
 
 class MainFundOrderDeskLocation1(base_types._BaseFieldType):
 

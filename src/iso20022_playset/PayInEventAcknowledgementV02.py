@@ -1,24 +1,24 @@
 import base_types
-import Max35Text
 import SupplementaryData1
 import Exact4AlphaNumericText
 import AcknowledgementDetails1Choice
+import Max35Text
 
 class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgId", "_SttlmSsnIdr", "_AckDtls"]
+	__slots__ = ["_AckDtls", "_MsgId", "_SplmtryData", "_SttlmSsnIdr"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def AckDtls(self):
+		return self._AckDtls
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@AckDtls.setter
+	def AckDtls(self, value):
+		self._AckDtls = value if type(value) != auto else self.make_default("AckDtls")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@AckDtls.deleter
+	def AckDtls(self):
+		del self._AckDtls
+		self._AckDtls = None
 
 	@property
 	def MsgId(self):
@@ -34,6 +34,19 @@ class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def SttlmSsnIdr(self):
 		return self._SttlmSsnIdr
 
@@ -46,23 +59,10 @@ class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 		del self._SttlmSsnIdr
 		self._SttlmSsnIdr = None
 
-	@property
-	def AckDtls(self):
-		return self._AckDtls
-
-	@AckDtls.setter
-	def AckDtls(self, value):
-		self._AckDtls = value if type(value) != auto else self.make_default("AckDtls")
-
-	@AckDtls.deleter
-	def AckDtls(self):
-		del self._AckDtls
-		self._AckDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AckDtls', type=AcknowledgementDetails1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

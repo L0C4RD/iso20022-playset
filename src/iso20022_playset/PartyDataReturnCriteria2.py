@@ -3,58 +3,19 @@ import RequestedIndicator
 
 class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_RstrctdOnDt", "_RstrctnId", "_ClsgDt", "_OpngDt", "_Tp", "_Nm", "_Adr", "_MktSpcfcAttr", "_PtyId", "_LckSts", "_TechAdr", "_ShrtNm", "_ResTp", "_RspnsblPtyId"]
+	__slots__ = ["_Adr", "_OpngDt", "_ResTp", "_CtctDtls", "_RstrctnId", "_RspnsblPtyId", "_LckSts", "_RstrctdOnDt", "_PtyId", "_Nm", "_TechAdr", "_ShrtNm", "_ClsgDt", "_MktSpcfcAttr", "_Tp"]
 	@property
-	def CtctDtls(self):
-		return self._CtctDtls
+	def Adr(self):
+		return self._Adr
 
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
 
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
-
-	@property
-	def RstrctdOnDt(self):
-		return self._RstrctdOnDt
-
-	@RstrctdOnDt.setter
-	def RstrctdOnDt(self, value):
-		self._RstrctdOnDt = value if type(value) != auto else self.make_default("RstrctdOnDt")
-
-	@RstrctdOnDt.deleter
-	def RstrctdOnDt(self):
-		del self._RstrctdOnDt
-		self._RstrctdOnDt = None
-
-	@property
-	def RstrctnId(self):
-		return self._RstrctnId
-
-	@RstrctnId.setter
-	def RstrctnId(self, value):
-		self._RstrctnId = value if type(value) != auto else self.make_default("RstrctnId")
-
-	@RstrctnId.deleter
-	def RstrctnId(self):
-		del self._RstrctnId
-		self._RstrctnId = None
-
-	@property
-	def ClsgDt(self):
-		return self._ClsgDt
-
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
-
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
 
 	@property
 	def OpngDt(self):
@@ -70,56 +31,82 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 		self._OpngDt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def ResTp(self):
+		return self._ResTp
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@ResTp.setter
+	def ResTp(self, value):
+		self._ResTp = value if type(value) != auto else self.make_default("ResTp")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@ResTp.deleter
+	def ResTp(self):
+		del self._ResTp
+		self._ResTp = None
 
 	@property
-	def Adr(self):
-		return self._Adr
+	def CtctDtls(self):
+		return self._CtctDtls
 
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
 
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
 
 	@property
-	def MktSpcfcAttr(self):
-		return self._MktSpcfcAttr
+	def RstrctnId(self):
+		return self._RstrctnId
 
-	@MktSpcfcAttr.setter
-	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != auto else self.make_default("MktSpcfcAttr")
+	@RstrctnId.setter
+	def RstrctnId(self, value):
+		self._RstrctnId = value if type(value) != auto else self.make_default("RstrctnId")
 
-	@MktSpcfcAttr.deleter
-	def MktSpcfcAttr(self):
-		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
+	@RstrctnId.deleter
+	def RstrctnId(self):
+		del self._RstrctnId
+		self._RstrctnId = None
+
+	@property
+	def RspnsblPtyId(self):
+		return self._RspnsblPtyId
+
+	@RspnsblPtyId.setter
+	def RspnsblPtyId(self, value):
+		self._RspnsblPtyId = value if type(value) != auto else self.make_default("RspnsblPtyId")
+
+	@RspnsblPtyId.deleter
+	def RspnsblPtyId(self):
+		del self._RspnsblPtyId
+		self._RspnsblPtyId = None
+
+	@property
+	def LckSts(self):
+		return self._LckSts
+
+	@LckSts.setter
+	def LckSts(self, value):
+		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
+
+	@LckSts.deleter
+	def LckSts(self):
+		del self._LckSts
+		self._LckSts = None
+
+	@property
+	def RstrctdOnDt(self):
+		return self._RstrctdOnDt
+
+	@RstrctdOnDt.setter
+	def RstrctdOnDt(self, value):
+		self._RstrctdOnDt = value if type(value) != auto else self.make_default("RstrctdOnDt")
+
+	@RstrctdOnDt.deleter
+	def RstrctdOnDt(self):
+		del self._RstrctdOnDt
+		self._RstrctdOnDt = None
 
 	@property
 	def PtyId(self):
@@ -135,17 +122,17 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def LckSts(self):
-		return self._LckSts
+	def Nm(self):
+		return self._Nm
 
-	@LckSts.setter
-	def LckSts(self, value):
-		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@LckSts.deleter
-	def LckSts(self):
-		del self._LckSts
-		self._LckSts = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def TechAdr(self):
@@ -174,46 +161,59 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	@property
-	def ResTp(self):
-		return self._ResTp
+	def ClsgDt(self):
+		return self._ClsgDt
 
-	@ResTp.setter
-	def ResTp(self, value):
-		self._ResTp = value if type(value) != auto else self.make_default("ResTp")
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
 
-	@ResTp.deleter
-	def ResTp(self):
-		del self._ResTp
-		self._ResTp = None
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
 
 	@property
-	def RspnsblPtyId(self):
-		return self._RspnsblPtyId
+	def MktSpcfcAttr(self):
+		return self._MktSpcfcAttr
 
-	@RspnsblPtyId.setter
-	def RspnsblPtyId(self, value):
-		self._RspnsblPtyId = value if type(value) != auto else self.make_default("RspnsblPtyId")
+	@MktSpcfcAttr.setter
+	def MktSpcfcAttr(self, value):
+		self._MktSpcfcAttr = value if type(value) != auto else self.make_default("MktSpcfcAttr")
 
-	@RspnsblPtyId.deleter
-	def RspnsblPtyId(self):
-		del self._RspnsblPtyId
-		self._RspnsblPtyId = None
+	@MktSpcfcAttr.deleter
+	def MktSpcfcAttr(self):
+		del self._MktSpcfcAttr
+		self._MktSpcfcAttr = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctDtls', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctdOnDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctnId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktSpcfcAttr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ResTp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctnId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnsblPtyId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LckSts', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctdOnDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ResTp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnsblPtyId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktSpcfcAttr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

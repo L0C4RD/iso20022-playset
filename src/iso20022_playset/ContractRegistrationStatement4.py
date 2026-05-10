@@ -1,69 +1,30 @@
 import base_types
-import SupportingDocument4
+import TradeParty6
 import ReportingPeriod4
-import SupplementaryData1
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
-import RegisteredContract18
 import TransactionCertificate4
 import ActiveCurrencyAndAmount
+import SupportingDocument4
+import Max35Text
+import SupplementaryData1
+import BranchAndFinancialInstitutionIdentification8
+import RegisteredContract18
 import GenericValidationRuleIdentification1
-import TradeParty6
 
 class ContractRegistrationStatement4(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_SpprtgDocJrnl", "_TtlCtrctTrnvrSum", "_RgltryRuleVldtn", "_SplmtryData", "_RegdCtrct", "_StmtId", "_RegnAgt", "_TxJrnl", "_AddtlSpprtgDocJrnl", "_RptgPty"]
+	__slots__ = ["_RegnAgt", "_SplmtryData", "_TxJrnl", "_TtlCtrctTrnvrSum", "_RegdCtrct", "_RptgPty", "_SpprtgDocJrnl", "_RgltryRuleVldtn", "_StmtId", "_RptgPrd", "_AddtlSpprtgDocJrnl"]
 	@property
-	def RptgPrd(self):
-		return self._RptgPrd
+	def RegnAgt(self):
+		return self._RegnAgt
 
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+	@RegnAgt.setter
+	def RegnAgt(self, value):
+		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
 
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
-
-	@property
-	def SpprtgDocJrnl(self):
-		return self._SpprtgDocJrnl
-
-	@SpprtgDocJrnl.setter
-	def SpprtgDocJrnl(self, value):
-		self._SpprtgDocJrnl = value if type(value) != auto else self.make_default("SpprtgDocJrnl")
-
-	@SpprtgDocJrnl.deleter
-	def SpprtgDocJrnl(self):
-		del self._SpprtgDocJrnl
-		self._SpprtgDocJrnl = None
-
-	@property
-	def TtlCtrctTrnvrSum(self):
-		return self._TtlCtrctTrnvrSum
-
-	@TtlCtrctTrnvrSum.setter
-	def TtlCtrctTrnvrSum(self, value):
-		self._TtlCtrctTrnvrSum = value if type(value) != auto else self.make_default("TtlCtrctTrnvrSum")
-
-	@TtlCtrctTrnvrSum.deleter
-	def TtlCtrctTrnvrSum(self):
-		del self._TtlCtrctTrnvrSum
-		self._TtlCtrctTrnvrSum = None
-
-	@property
-	def RgltryRuleVldtn(self):
-		return self._RgltryRuleVldtn
-
-	@RgltryRuleVldtn.setter
-	def RgltryRuleVldtn(self, value):
-		self._RgltryRuleVldtn = value if type(value) != auto else self.make_default("RgltryRuleVldtn")
-
-	@RgltryRuleVldtn.deleter
-	def RgltryRuleVldtn(self):
-		del self._RgltryRuleVldtn
-		self._RgltryRuleVldtn = None
+	@RegnAgt.deleter
+	def RegnAgt(self):
+		del self._RegnAgt
+		self._RegnAgt = None
 
 	@property
 	def SplmtryData(self):
@@ -79,6 +40,32 @@ class ContractRegistrationStatement4(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def TxJrnl(self):
+		return self._TxJrnl
+
+	@TxJrnl.setter
+	def TxJrnl(self, value):
+		self._TxJrnl = value if type(value) != auto else self.make_default("TxJrnl")
+
+	@TxJrnl.deleter
+	def TxJrnl(self):
+		del self._TxJrnl
+		self._TxJrnl = None
+
+	@property
+	def TtlCtrctTrnvrSum(self):
+		return self._TtlCtrctTrnvrSum
+
+	@TtlCtrctTrnvrSum.setter
+	def TtlCtrctTrnvrSum(self, value):
+		self._TtlCtrctTrnvrSum = value if type(value) != auto else self.make_default("TtlCtrctTrnvrSum")
+
+	@TtlCtrctTrnvrSum.deleter
+	def TtlCtrctTrnvrSum(self):
+		del self._TtlCtrctTrnvrSum
+		self._TtlCtrctTrnvrSum = None
+
+	@property
 	def RegdCtrct(self):
 		return self._RegdCtrct
 
@@ -90,6 +77,45 @@ class ContractRegistrationStatement4(base_types._BaseFieldType):
 	def RegdCtrct(self):
 		del self._RegdCtrct
 		self._RegdCtrct = None
+
+	@property
+	def RptgPty(self):
+		return self._RptgPty
+
+	@RptgPty.setter
+	def RptgPty(self, value):
+		self._RptgPty = value if type(value) != auto else self.make_default("RptgPty")
+
+	@RptgPty.deleter
+	def RptgPty(self):
+		del self._RptgPty
+		self._RptgPty = None
+
+	@property
+	def SpprtgDocJrnl(self):
+		return self._SpprtgDocJrnl
+
+	@SpprtgDocJrnl.setter
+	def SpprtgDocJrnl(self, value):
+		self._SpprtgDocJrnl = value if type(value) != auto else self.make_default("SpprtgDocJrnl")
+
+	@SpprtgDocJrnl.deleter
+	def SpprtgDocJrnl(self):
+		del self._SpprtgDocJrnl
+		self._SpprtgDocJrnl = None
+
+	@property
+	def RgltryRuleVldtn(self):
+		return self._RgltryRuleVldtn
+
+	@RgltryRuleVldtn.setter
+	def RgltryRuleVldtn(self, value):
+		self._RgltryRuleVldtn = value if type(value) != auto else self.make_default("RgltryRuleVldtn")
+
+	@RgltryRuleVldtn.deleter
+	def RgltryRuleVldtn(self):
+		del self._RgltryRuleVldtn
+		self._RgltryRuleVldtn = None
 
 	@property
 	def StmtId(self):
@@ -105,30 +131,17 @@ class ContractRegistrationStatement4(base_types._BaseFieldType):
 		self._StmtId = None
 
 	@property
-	def RegnAgt(self):
-		return self._RegnAgt
+	def RptgPrd(self):
+		return self._RptgPrd
 
-	@RegnAgt.setter
-	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
 
-	@RegnAgt.deleter
-	def RegnAgt(self):
-		del self._RegnAgt
-		self._RegnAgt = None
-
-	@property
-	def TxJrnl(self):
-		return self._TxJrnl
-
-	@TxJrnl.setter
-	def TxJrnl(self, value):
-		self._TxJrnl = value if type(value) != auto else self.make_default("TxJrnl")
-
-	@TxJrnl.deleter
-	def TxJrnl(self):
-		del self._TxJrnl
-		self._TxJrnl = None
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def AddtlSpprtgDocJrnl(self):
@@ -143,30 +156,17 @@ class ContractRegistrationStatement4(base_types._BaseFieldType):
 		del self._AddtlSpprtgDocJrnl
 		self._AddtlSpprtgDocJrnl = None
 
-	@property
-	def RptgPty(self):
-		return self._RptgPty
-
-	@RptgPty.setter
-	def RptgPty(self, value):
-		self._RptgPty = value if type(value) != auto else self.make_default("RptgPty")
-
-	@RptgPty.deleter
-	def RptgPty(self):
-		del self._RptgPty
-		self._RptgPty = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpprtgDocJrnl', type=SupportingDocument4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlCtrctTrnvrSum', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RgltryRuleVldtn', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegdCtrct', type=RegisteredContract18, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxJrnl', type=TransactionCertificate4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=SupportingDocument4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlCtrctTrnvrSum', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdCtrct', type=RegisteredContract18, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtgDocJrnl', type=SupportingDocument4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RgltryRuleVldtn', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=SupportingDocument4, min=0, max=None, mutex_group=None, array=True),
 	))
 

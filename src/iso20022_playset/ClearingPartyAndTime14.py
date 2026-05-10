@@ -1,37 +1,11 @@
 import base_types
-import OrganisationIdentification15Choice
-import ISODateTime
 import Max52Text
+import ISODateTime
+import OrganisationIdentification15Choice
 
 class ClearingPartyAndTime14(base_types._BaseFieldType):
 
-	__slots__ = ["_RptTrckgNb", "_PrtflCd", "_CCP", "_ClrDtTm"]
-	@property
-	def RptTrckgNb(self):
-		return self._RptTrckgNb
-
-	@RptTrckgNb.setter
-	def RptTrckgNb(self, value):
-		self._RptTrckgNb = value if type(value) != auto else self.make_default("RptTrckgNb")
-
-	@RptTrckgNb.deleter
-	def RptTrckgNb(self):
-		del self._RptTrckgNb
-		self._RptTrckgNb = None
-
-	@property
-	def PrtflCd(self):
-		return self._PrtflCd
-
-	@PrtflCd.setter
-	def PrtflCd(self, value):
-		self._PrtflCd = value if type(value) != auto else self.make_default("PrtflCd")
-
-	@PrtflCd.deleter
-	def PrtflCd(self):
-		del self._PrtflCd
-		self._PrtflCd = None
-
+	__slots__ = ["_CCP", "_ClrDtTm", "_PrtflCd", "_RptTrckgNb"]
 	@property
 	def CCP(self):
 		return self._CCP
@@ -58,10 +32,36 @@ class ClearingPartyAndTime14(base_types._BaseFieldType):
 		del self._ClrDtTm
 		self._ClrDtTm = None
 
+	@property
+	def PrtflCd(self):
+		return self._PrtflCd
+
+	@PrtflCd.setter
+	def PrtflCd(self, value):
+		self._PrtflCd = value if type(value) != auto else self.make_default("PrtflCd")
+
+	@PrtflCd.deleter
+	def PrtflCd(self):
+		del self._PrtflCd
+		self._PrtflCd = None
+
+	@property
+	def RptTrckgNb(self):
+		return self._RptTrckgNb
+
+	@RptTrckgNb.setter
+	def RptTrckgNb(self, value):
+		self._RptTrckgNb = value if type(value) != auto else self.make_default("RptTrckgNb")
+
+	@RptTrckgNb.deleter
+	def RptTrckgNb(self):
+		del self._RptTrckgNb
+		self._RptTrckgNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptTrckgNb', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtflCd', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CCP', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtflCd', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptTrckgNb', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import Exact3NumericText
 import CorporateActionOption1FormatChoice
+import Exact3NumericText
 
 class CorporateActionOption2(base_types._BaseFieldType):
 

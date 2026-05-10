@@ -1,15 +1,15 @@
 import base_types
-import Max35Text
-import DocumentIdentification28
-import CashAccount40
 import TransactionCertificateRecord2
+import CashAccount40
+import Max35Text
 import SupplementaryData1
+import DocumentIdentification28
 import CountryCode
 import DocumentAmendment1
 
 class TransactionCertificate4(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_Cert", "_CertRcrd", "_SplmtryData", "_Acct", "_BkAcctDmcltnCtry", "_Amdmnt"]
+	__slots__ = ["_TxId", "_SplmtryData", "_Acct", "_BkAcctDmcltnCtry", "_Cert", "_Amdmnt", "_CertRcrd"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -22,32 +22,6 @@ class TransactionCertificate4(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
-
-	@property
-	def Cert(self):
-		return self._Cert
-
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != auto else self.make_default("Cert")
-
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
-
-	@property
-	def CertRcrd(self):
-		return self._CertRcrd
-
-	@CertRcrd.setter
-	def CertRcrd(self, value):
-		self._CertRcrd = value if type(value) != auto else self.make_default("CertRcrd")
-
-	@CertRcrd.deleter
-	def CertRcrd(self):
-		del self._CertRcrd
-		self._CertRcrd = None
 
 	@property
 	def SplmtryData(self):
@@ -89,6 +63,19 @@ class TransactionCertificate4(base_types._BaseFieldType):
 		self._BkAcctDmcltnCtry = None
 
 	@property
+	def Cert(self):
+		return self._Cert
+
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != auto else self.make_default("Cert")
+
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
+
+	@property
 	def Amdmnt(self):
 		return self._Amdmnt
 
@@ -101,13 +88,26 @@ class TransactionCertificate4(base_types._BaseFieldType):
 		del self._Amdmnt
 		self._Amdmnt = None
 
+	@property
+	def CertRcrd(self):
+		return self._CertRcrd
+
+	@CertRcrd.setter
+	def CertRcrd(self, value):
+		self._CertRcrd = value if type(value) != auto else self.make_default("CertRcrd")
+
+	@CertRcrd.deleter
+	def CertRcrd(self):
+		del self._CertRcrd
+		self._CertRcrd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertRcrd', type=TransactionCertificateRecord2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkAcctDmcltnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertRcrd', type=TransactionCertificateRecord2, min=1, max=None, mutex_group=None, array=True),
 	))
 

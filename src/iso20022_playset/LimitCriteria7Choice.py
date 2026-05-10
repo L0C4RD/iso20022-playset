@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import LimitCriteria7
+import Max35Text
 
 class LimitCriteria7Choice(base_types._BaseFieldType):
 

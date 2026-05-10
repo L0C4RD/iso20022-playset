@@ -1,39 +1,13 @@
 import base_types
 import TrueFalseIndicator
-import ISO18245MerchantCategoryCode
 import Max35Text
-import TransactionInitiator1Code
 import AdditionalData1
+import ISO18245MerchantCategoryCode
+import TransactionInitiator1Code
 
 class Context22(base_types._BaseFieldType):
 
-	__slots__ = ["_DelydChrgs", "_ReSubmissn", "_MrchntCtgySpcfcData", "_OthrMrchntCtgy", "_PrtlShipmnt", "_TxInitr", "_AddtlData", "_MrchntCtgyCd", "_Reauthstn", "_NoShow"]
-	@property
-	def DelydChrgs(self):
-		return self._DelydChrgs
-
-	@DelydChrgs.setter
-	def DelydChrgs(self, value):
-		self._DelydChrgs = value if type(value) != auto else self.make_default("DelydChrgs")
-
-	@DelydChrgs.deleter
-	def DelydChrgs(self):
-		del self._DelydChrgs
-		self._DelydChrgs = None
-
-	@property
-	def ReSubmissn(self):
-		return self._ReSubmissn
-
-	@ReSubmissn.setter
-	def ReSubmissn(self, value):
-		self._ReSubmissn = value if type(value) != auto else self.make_default("ReSubmissn")
-
-	@ReSubmissn.deleter
-	def ReSubmissn(self):
-		del self._ReSubmissn
-		self._ReSubmissn = None
-
+	__slots__ = ["_MrchntCtgySpcfcData", "_OthrMrchntCtgy", "_NoShow", "_PrtlShipmnt", "_Reauthstn", "_ReSubmissn", "_TxInitr", "_AddtlData", "_DelydChrgs", "_MrchntCtgyCd"]
 	@property
 	def MrchntCtgySpcfcData(self):
 		return self._MrchntCtgySpcfcData
@@ -61,6 +35,19 @@ class Context22(base_types._BaseFieldType):
 		self._OthrMrchntCtgy = None
 
 	@property
+	def NoShow(self):
+		return self._NoShow
+
+	@NoShow.setter
+	def NoShow(self, value):
+		self._NoShow = value if type(value) != auto else self.make_default("NoShow")
+
+	@NoShow.deleter
+	def NoShow(self):
+		del self._NoShow
+		self._NoShow = None
+
+	@property
 	def PrtlShipmnt(self):
 		return self._PrtlShipmnt
 
@@ -72,6 +59,32 @@ class Context22(base_types._BaseFieldType):
 	def PrtlShipmnt(self):
 		del self._PrtlShipmnt
 		self._PrtlShipmnt = None
+
+	@property
+	def Reauthstn(self):
+		return self._Reauthstn
+
+	@Reauthstn.setter
+	def Reauthstn(self, value):
+		self._Reauthstn = value if type(value) != auto else self.make_default("Reauthstn")
+
+	@Reauthstn.deleter
+	def Reauthstn(self):
+		del self._Reauthstn
+		self._Reauthstn = None
+
+	@property
+	def ReSubmissn(self):
+		return self._ReSubmissn
+
+	@ReSubmissn.setter
+	def ReSubmissn(self, value):
+		self._ReSubmissn = value if type(value) != auto else self.make_default("ReSubmissn")
+
+	@ReSubmissn.deleter
+	def ReSubmissn(self):
+		del self._ReSubmissn
+		self._ReSubmissn = None
 
 	@property
 	def TxInitr(self):
@@ -100,6 +113,19 @@ class Context22(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
+	def DelydChrgs(self):
+		return self._DelydChrgs
+
+	@DelydChrgs.setter
+	def DelydChrgs(self, value):
+		self._DelydChrgs = value if type(value) != auto else self.make_default("DelydChrgs")
+
+	@DelydChrgs.deleter
+	def DelydChrgs(self):
+		del self._DelydChrgs
+		self._DelydChrgs = None
+
+	@property
 	def MrchntCtgyCd(self):
 		return self._MrchntCtgyCd
 
@@ -112,42 +138,16 @@ class Context22(base_types._BaseFieldType):
 		del self._MrchntCtgyCd
 		self._MrchntCtgyCd = None
 
-	@property
-	def Reauthstn(self):
-		return self._Reauthstn
-
-	@Reauthstn.setter
-	def Reauthstn(self, value):
-		self._Reauthstn = value if type(value) != auto else self.make_default("Reauthstn")
-
-	@Reauthstn.deleter
-	def Reauthstn(self):
-		del self._Reauthstn
-		self._Reauthstn = None
-
-	@property
-	def NoShow(self):
-		return self._NoShow
-
-	@NoShow.setter
-	def NoShow(self, value):
-		self._NoShow = value if type(value) != auto else self.make_default("NoShow")
-
-	@NoShow.deleter
-	def NoShow(self):
-		del self._NoShow
-		self._NoShow = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DelydChrgs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReSubmissn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrchntCtgySpcfcData', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrMrchntCtgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlShipmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Reauthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReSubmissn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInitr', type=TransactionInitiator1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DelydChrgs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrchntCtgyCd', type=ISO18245MerchantCategoryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Reauthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

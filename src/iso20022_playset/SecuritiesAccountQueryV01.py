@@ -1,24 +1,24 @@
 import base_types
-import MessageHeader2
-import SupplementaryData1
 import SecuritiesAccountReturnCriteria1
 import SecuritiesAccountSearchCriteria2
+import SupplementaryData1
+import MessageHeader2
 
 class SecuritiesAccountQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_SplmtryData", "_RtrCrit", "_MsgHdr"]
+	__slots__ = ["_RtrCrit", "_SplmtryData", "_SchCrit", "_MsgHdr"]
 	@property
-	def SchCrit(self):
-		return self._SchCrit
+	def RtrCrit(self):
+		return self._RtrCrit
 
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
 
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
 
 	@property
 	def SplmtryData(self):
@@ -34,17 +34,17 @@ class SecuritiesAccountQueryV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RtrCrit(self):
-		return self._RtrCrit
+	def SchCrit(self):
+		return self._SchCrit
 
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
 
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
 
 	@property
 	def MsgHdr(self):
@@ -60,9 +60,9 @@ class SecuritiesAccountQueryV01(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchCrit', type=SecuritiesAccountSearchCriteria2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RtrCrit', type=SecuritiesAccountReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SchCrit', type=SecuritiesAccountSearchCriteria2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader2, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import Max3NumericText
+import ActiveCurrencyAndAmount
 
 class MaximumAmountByPeriod1(base_types._BaseFieldType):
 

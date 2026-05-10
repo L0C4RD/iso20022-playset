@@ -1,12 +1,12 @@
 import base_types
 import Max140Binary
 import ISODateTime
-import MaintenanceDelegation19
 import GenericIdentification176
+import MaintenanceDelegation19
 
 class MaintenanceDelegationRequest11(base_types._BaseFieldType):
 
-	__slots__ = ["_TMId", "_TMChllngVal", "_ReqdDlgtn", "_MstrTMId", "_TMDtTm"]
+	__slots__ = ["_TMId", "_MstrTMId", "_ReqdDlgtn", "_TMDtTm", "_TMChllngVal"]
 	@property
 	def TMId(self):
 		return self._TMId
@@ -19,32 +19,6 @@ class MaintenanceDelegationRequest11(base_types._BaseFieldType):
 	def TMId(self):
 		del self._TMId
 		self._TMId = None
-
-	@property
-	def TMChllngVal(self):
-		return self._TMChllngVal
-
-	@TMChllngVal.setter
-	def TMChllngVal(self, value):
-		self._TMChllngVal = value if type(value) != auto else self.make_default("TMChllngVal")
-
-	@TMChllngVal.deleter
-	def TMChllngVal(self):
-		del self._TMChllngVal
-		self._TMChllngVal = None
-
-	@property
-	def ReqdDlgtn(self):
-		return self._ReqdDlgtn
-
-	@ReqdDlgtn.setter
-	def ReqdDlgtn(self, value):
-		self._ReqdDlgtn = value if type(value) != auto else self.make_default("ReqdDlgtn")
-
-	@ReqdDlgtn.deleter
-	def ReqdDlgtn(self):
-		del self._ReqdDlgtn
-		self._ReqdDlgtn = None
 
 	@property
 	def MstrTMId(self):
@@ -60,6 +34,19 @@ class MaintenanceDelegationRequest11(base_types._BaseFieldType):
 		self._MstrTMId = None
 
 	@property
+	def ReqdDlgtn(self):
+		return self._ReqdDlgtn
+
+	@ReqdDlgtn.setter
+	def ReqdDlgtn(self, value):
+		self._ReqdDlgtn = value if type(value) != auto else self.make_default("ReqdDlgtn")
+
+	@ReqdDlgtn.deleter
+	def ReqdDlgtn(self):
+		del self._ReqdDlgtn
+		self._ReqdDlgtn = None
+
+	@property
 	def TMDtTm(self):
 		return self._TMDtTm
 
@@ -72,11 +59,24 @@ class MaintenanceDelegationRequest11(base_types._BaseFieldType):
 		del self._TMDtTm
 		self._TMDtTm = None
 
+	@property
+	def TMChllngVal(self):
+		return self._TMChllngVal
+
+	@TMChllngVal.setter
+	def TMChllngVal(self, value):
+		self._TMChllngVal = value if type(value) != auto else self.make_default("TMChllngVal")
+
+	@TMChllngVal.deleter
+	def TMChllngVal(self):
+		del self._TMChllngVal
+		self._TMChllngVal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdDlgtn', type=MaintenanceDelegation19, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MstrTMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdDlgtn', type=MaintenanceDelegation19, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TMDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
 	))
 

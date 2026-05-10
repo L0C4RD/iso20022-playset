@@ -1,23 +1,23 @@
 import base_types
-import BaseOne14Rate
 import ActiveCurrencyCode
+import BaseOne14Rate
 import RestrictedFINActiveCurrencyAndAmount
 
 class ForeignExchangeTerms43(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_RsltgAmt", "_QtdCcy", "_XchgRate"]
+	__slots__ = ["_XchgRate", "_RsltgAmt", "_UnitCcy", "_QtdCcy"]
 	@property
-	def UnitCcy(self):
-		return self._UnitCcy
+	def XchgRate(self):
+		return self._XchgRate
 
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
 
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	@property
 	def RsltgAmt(self):
@@ -33,6 +33,19 @@ class ForeignExchangeTerms43(base_types._BaseFieldType):
 		self._RsltgAmt = None
 
 	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
+
+	@property
 	def QtdCcy(self):
 		return self._QtdCcy
 
@@ -45,23 +58,10 @@ class ForeignExchangeTerms43(base_types._BaseFieldType):
 		del self._QtdCcy
 		self._QtdCcy = None
 
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsltgAmt', type=RestrictedFINActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOne14Rate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsltgAmt', type=RestrictedFINActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

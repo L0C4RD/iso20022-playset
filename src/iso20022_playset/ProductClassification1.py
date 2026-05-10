@@ -3,19 +3,19 @@ import Max35Text
 
 class ProductClassification1(base_types._BaseFieldType):
 
-	__slots__ = ["_AsstClss", "_SubPdct", "_BasePdct", "_SubCmmdty", "_TxTp"]
+	__slots__ = ["_BasePdct", "_SubPdct", "_SubCmmdty", "_AsstClss", "_TxTp"]
 	@property
-	def AsstClss(self):
-		return self._AsstClss
+	def BasePdct(self):
+		return self._BasePdct
 
-	@AsstClss.setter
-	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != auto else self.make_default("AsstClss")
+	@BasePdct.setter
+	def BasePdct(self, value):
+		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
 
-	@AsstClss.deleter
-	def AsstClss(self):
-		del self._AsstClss
-		self._AsstClss = None
+	@BasePdct.deleter
+	def BasePdct(self):
+		del self._BasePdct
+		self._BasePdct = None
 
 	@property
 	def SubPdct(self):
@@ -31,19 +31,6 @@ class ProductClassification1(base_types._BaseFieldType):
 		self._SubPdct = None
 
 	@property
-	def BasePdct(self):
-		return self._BasePdct
-
-	@BasePdct.setter
-	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
-
-	@BasePdct.deleter
-	def BasePdct(self):
-		del self._BasePdct
-		self._BasePdct = None
-
-	@property
 	def SubCmmdty(self):
 		return self._SubCmmdty
 
@@ -55,6 +42,19 @@ class ProductClassification1(base_types._BaseFieldType):
 	def SubCmmdty(self):
 		del self._SubCmmdty
 		self._SubCmmdty = None
+
+	@property
+	def AsstClss(self):
+		return self._AsstClss
+
+	@AsstClss.setter
+	def AsstClss(self, value):
+		self._AsstClss = value if type(value) != auto else self.make_default("AsstClss")
+
+	@AsstClss.deleter
+	def AsstClss(self):
+		del self._AsstClss
+		self._AsstClss = None
 
 	@property
 	def TxTp(self):
@@ -70,10 +70,10 @@ class ProductClassification1(base_types._BaseFieldType):
 		self._TxTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AsstClss', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubPdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BasePdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubPdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubCmmdty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstClss', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

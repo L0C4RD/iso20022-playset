@@ -1,29 +1,29 @@
 import base_types
-import Extension1
-import SubAccountIdentification3
-import AdditionalReference2
-import SafekeepingAccount2
-import AggregateBalanceInformation3
 import TotalValueInPageAndStatement
 import MessageIdentification1
-import Statement6
+import AdditionalReference2
+import AggregateBalanceInformation3
+import SubAccountIdentification3
+import SafekeepingAccount2
 import Pagination
+import Extension1
+import Statement6
 
 class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtGnlDtls", "_TtlVals", "_MsgId", "_MsgPgntn", "_Xtnsn", "_RltdRef", "_BalForAcct", "_PrvsRef", "_SubAcctDtls", "_AcctDtls"]
+	__slots__ = ["_MsgId", "_TtlVals", "_StmtGnlDtls", "_AcctDtls", "_PrvsRef", "_MsgPgntn", "_RltdRef", "_BalForAcct", "_Xtnsn", "_SubAcctDtls"]
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
+	def MsgId(self):
+		return self._MsgId
 
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def TtlVals(self):
@@ -39,17 +39,43 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 		self._TtlVals = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
+
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	@property
 	def MsgPgntn(self):
@@ -63,19 +89,6 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 	def MsgPgntn(self):
 		del self._MsgPgntn
 		self._MsgPgntn = None
-
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
 
 	@property
 	def RltdRef(self):
@@ -104,17 +117,17 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 		self._BalForAcct = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
 	def SubAcctDtls(self):
@@ -129,29 +142,16 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 		del self._SubAcctDtls
 		self._SubAcctDtls = None
 
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,26 @@
 import base_types
-import PartyIdentification253Choice
+import Statement86
 import SecuritiesAccount18
 import Pagination1
 import SupplementaryData1
-import Statement86
+import PartyIdentification253Choice
 import TradeLegStatement4
 
 class TradeLegStatementV04(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtDtls", "_SplmtryData", "_ClrMmb", "_StmtParams", "_Pgntn", "_ClrAcct"]
+	__slots__ = ["_StmtParams", "_SplmtryData", "_StmtDtls", "_ClrAcct", "_ClrMmb", "_Pgntn"]
 	@property
-	def StmtDtls(self):
-		return self._StmtDtls
+	def StmtParams(self):
+		return self._StmtParams
 
-	@StmtDtls.setter
-	def StmtDtls(self, value):
-		self._StmtDtls = value if type(value) != auto else self.make_default("StmtDtls")
+	@StmtParams.setter
+	def StmtParams(self, value):
+		self._StmtParams = value if type(value) != auto else self.make_default("StmtParams")
 
-	@StmtDtls.deleter
-	def StmtDtls(self):
-		del self._StmtDtls
-		self._StmtDtls = None
+	@StmtParams.deleter
+	def StmtParams(self):
+		del self._StmtParams
+		self._StmtParams = None
 
 	@property
 	def SplmtryData(self):
@@ -36,43 +36,17 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def ClrMmb(self):
-		return self._ClrMmb
+	def StmtDtls(self):
+		return self._StmtDtls
 
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+	@StmtDtls.setter
+	def StmtDtls(self, value):
+		self._StmtDtls = value if type(value) != auto else self.make_default("StmtDtls")
 
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
-
-	@property
-	def StmtParams(self):
-		return self._StmtParams
-
-	@StmtParams.setter
-	def StmtParams(self, value):
-		self._StmtParams = value if type(value) != auto else self.make_default("StmtParams")
-
-	@StmtParams.deleter
-	def StmtParams(self):
-		del self._StmtParams
-		self._StmtParams = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@StmtDtls.deleter
+	def StmtDtls(self):
+		del self._StmtDtls
+		self._StmtDtls = None
 
 	@property
 	def ClrAcct(self):
@@ -87,12 +61,38 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 		del self._ClrAcct
 		self._ClrAcct = None
 
+	@property
+	def ClrMmb(self):
+		return self._ClrMmb
+
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtDtls', type=TradeLegStatement4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtParams', type=Statement86, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtDtls', type=TradeLegStatement4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

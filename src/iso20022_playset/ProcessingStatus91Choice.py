@@ -1,39 +1,39 @@
 import base_types
-import AcknowledgedAcceptedStatus25Choice
+import ProprietaryStatusAndReason7
+import RejectionOrRepairStatus46Choice
 import PendingStatus46Choice
 import ProprietaryReason5
-import ProprietaryStatusAndReason7
 import DeniedStatus19Choice
-import RejectionOrRepairStatus46Choice
+import AcknowledgedAcceptedStatus25Choice
 
 class ProcessingStatus91Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_Dnd", "_Cmpltd", "_Pdg", "_AckdAccptd", "_Prtry"]
+	__slots__ = ["_Pdg", "_Prtry", "_Cmpltd", "_AckdAccptd", "_Dnd", "_Rjctd"]
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def Pdg(self):
+		return self._Pdg
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
 
 	@property
-	def Dnd(self):
-		return self._Dnd
+	def Prtry(self):
+		return self._Prtry
 
-	@Dnd.setter
-	def Dnd(self, value):
-		self._Dnd = value if type(value) != auto else self.make_default("Dnd")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@Dnd.deleter
-	def Dnd(self):
-		del self._Dnd
-		self._Dnd = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def Cmpltd(self):
@@ -49,19 +49,6 @@ class ProcessingStatus91Choice(base_types._BaseFieldType):
 		self._Cmpltd = None
 
 	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
-	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd
 
@@ -75,24 +62,37 @@ class ProcessingStatus91Choice(base_types._BaseFieldType):
 		self._AckdAccptd = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def Dnd(self):
+		return self._Dnd
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@Dnd.setter
+	def Dnd(self, value):
+		self._Dnd = value if type(value) != auto else self.make_default("Dnd")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@Dnd.deleter
+	def Dnd(self):
+		del self._Dnd
+		self._Dnd = None
+
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus46Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dnd', type=DeniedStatus19Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmpltd', type=ProprietaryReason5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=PendingStatus46Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus25Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmpltd', type=ProprietaryReason5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus25Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dnd', type=DeniedStatus19Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus46Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

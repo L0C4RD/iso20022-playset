@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
 import Max70Text
 import BillingSubServiceIdentification1
+import Max35Text
 
 class BillingServiceIdentification2(base_types._BaseFieldType):
 

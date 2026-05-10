@@ -3,33 +3,7 @@ import Max35Text
 
 class TotalFilter1(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleId", "_CshrId", "_ShftNb", "_TtlsGrpId", "_POIId"]
-	@property
-	def SaleId(self):
-		return self._SaleId
-
-	@SaleId.setter
-	def SaleId(self, value):
-		self._SaleId = value if type(value) != auto else self.make_default("SaleId")
-
-	@SaleId.deleter
-	def SaleId(self):
-		del self._SaleId
-		self._SaleId = None
-
-	@property
-	def CshrId(self):
-		return self._CshrId
-
-	@CshrId.setter
-	def CshrId(self, value):
-		self._CshrId = value if type(value) != auto else self.make_default("CshrId")
-
-	@CshrId.deleter
-	def CshrId(self):
-		del self._CshrId
-		self._CshrId = None
-
+	__slots__ = ["_ShftNb", "_TtlsGrpId", "_SaleId", "_CshrId", "_POIId"]
 	@property
 	def ShftNb(self):
 		return self._ShftNb
@@ -57,6 +31,32 @@ class TotalFilter1(base_types._BaseFieldType):
 		self._TtlsGrpId = None
 
 	@property
+	def SaleId(self):
+		return self._SaleId
+
+	@SaleId.setter
+	def SaleId(self, value):
+		self._SaleId = value if type(value) != auto else self.make_default("SaleId")
+
+	@SaleId.deleter
+	def SaleId(self):
+		del self._SaleId
+		self._SaleId = None
+
+	@property
+	def CshrId(self):
+		return self._CshrId
+
+	@CshrId.setter
+	def CshrId(self, value):
+		self._CshrId = value if type(value) != auto else self.make_default("CshrId")
+
+	@CshrId.deleter
+	def CshrId(self):
+		del self._CshrId
+		self._CshrId = None
+
+	@property
 	def POIId(self):
 		return self._POIId
 
@@ -70,10 +70,10 @@ class TotalFilter1(base_types._BaseFieldType):
 		self._POIId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShftNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

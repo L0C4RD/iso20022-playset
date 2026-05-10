@@ -1,6 +1,6 @@
 import base_types
-import InvestmentFundRole2Code
 import GenericIdentification36
+import InvestmentFundRole2Code
 
 class Role5Choice(base_types._BaseFieldType):
 

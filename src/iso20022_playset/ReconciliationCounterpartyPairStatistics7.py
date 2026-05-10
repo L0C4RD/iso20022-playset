@@ -1,23 +1,23 @@
 import base_types
 import ReconciliationReport15
-import CounterpartyData91
 import Number
+import CounterpartyData91
 
 class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyId", "_TtlNbOfTxs", "_RcncltnRpt"]
+	__slots__ = ["_RcncltnRpt", "_TtlNbOfTxs", "_CtrPtyId"]
 	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
+	def RcncltnRpt(self):
+		return self._RcncltnRpt
 
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+	@RcncltnRpt.setter
+	def RcncltnRpt(self, value):
+		self._RcncltnRpt = value if type(value) != auto else self.make_default("RcncltnRpt")
 
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
+	@RcncltnRpt.deleter
+	def RcncltnRpt(self):
+		del self._RcncltnRpt
+		self._RcncltnRpt = None
 
 	@property
 	def TtlNbOfTxs(self):
@@ -33,21 +33,21 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 		self._TtlNbOfTxs = None
 
 	@property
-	def RcncltnRpt(self):
-		return self._RcncltnRpt
+	def CtrPtyId(self):
+		return self._CtrPtyId
 
-	@RcncltnRpt.setter
-	def RcncltnRpt(self, value):
-		self._RcncltnRpt = value if type(value) != auto else self.make_default("RcncltnRpt")
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
 
-	@RcncltnRpt.deleter
-	def RcncltnRpt(self):
-		del self._RcncltnRpt
-		self._RcncltnRpt = None
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnRpt', type=ReconciliationReport15, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),
 	))
 

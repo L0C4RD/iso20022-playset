@@ -4,20 +4,7 @@ import ActiveOrHistoricCurrencyAndAmount
 
 class CashInOutForecast7(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CshSttlmDt"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_CshSttlmDt", "_Amt"]
 	@property
 	def CshSttlmDt(self):
 		return self._CshSttlmDt
@@ -31,8 +18,21 @@ class CashInOutForecast7(base_types._BaseFieldType):
 		del self._CshSttlmDt
 		self._CshSttlmDt = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

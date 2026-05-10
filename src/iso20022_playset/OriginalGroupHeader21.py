@@ -1,15 +1,41 @@
 import base_types
-import Max35Text
-import GroupCancellationIndicator
-import PaymentCancellationReason6
 import Max15NumericText
-import DecimalNumber
 import ISODateTime
+import DecimalNumber
+import PaymentCancellationReason6
+import Max35Text
 import Case6
+import GroupCancellationIndicator
 
 class OriginalGroupHeader21(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_GrpCxlId", "_CtrlSum", "_OrgnlCreDtTm", "_CxlRsnInf", "_OrgnlMsgId", "_Case", "_GrpCxl", "_NbOfTxs"]
+	__slots__ = ["_NbOfTxs", "_OrgnlMsgId", "_OrgnlMsgNmId", "_GrpCxlId", "_GrpCxl", "_CxlRsnInf", "_Case", "_CtrlSum", "_OrgnlCreDtTm"]
+	@property
+	def NbOfTxs(self):
+		return self._NbOfTxs
+
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
+
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
+
+	@property
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
+
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
+
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
+
 	@property
 	def OrgnlMsgNmId(self):
 		return self._OrgnlMsgNmId
@@ -37,6 +63,45 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 		self._GrpCxlId = None
 
 	@property
+	def GrpCxl(self):
+		return self._GrpCxl
+
+	@GrpCxl.setter
+	def GrpCxl(self, value):
+		self._GrpCxl = value if type(value) != auto else self.make_default("GrpCxl")
+
+	@GrpCxl.deleter
+	def GrpCxl(self):
+		del self._GrpCxl
+		self._GrpCxl = None
+
+	@property
+	def CxlRsnInf(self):
+		return self._CxlRsnInf
+
+	@CxlRsnInf.setter
+	def CxlRsnInf(self, value):
+		self._CxlRsnInf = value if type(value) != auto else self.make_default("CxlRsnInf")
+
+	@CxlRsnInf.deleter
+	def CxlRsnInf(self):
+		del self._CxlRsnInf
+		self._CxlRsnInf = None
+
+	@property
+	def Case(self):
+		return self._Case
+
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != auto else self.make_default("Case")
+
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
+
+	@property
 	def CtrlSum(self):
 		return self._CtrlSum
 
@@ -62,80 +127,15 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 		del self._OrgnlCreDtTm
 		self._OrgnlCreDtTm = None
 
-	@property
-	def CxlRsnInf(self):
-		return self._CxlRsnInf
-
-	@CxlRsnInf.setter
-	def CxlRsnInf(self, value):
-		self._CxlRsnInf = value if type(value) != auto else self.make_default("CxlRsnInf")
-
-	@CxlRsnInf.deleter
-	def CxlRsnInf(self):
-		del self._CxlRsnInf
-		self._CxlRsnInf = None
-
-	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
-
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
-
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
-
-	@property
-	def Case(self):
-		return self._Case
-
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
-
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
-
-	@property
-	def GrpCxl(self):
-		return self._GrpCxl
-
-	@GrpCxl.setter
-	def GrpCxl(self, value):
-		self._GrpCxl = value if type(value) != auto else self.make_default("GrpCxl")
-
-	@GrpCxl.deleter
-	def GrpCxl(self):
-		del self._GrpCxl
-		self._GrpCxl = None
-
-	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
-
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
-
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpCxlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrpCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsnInf', type=PaymentCancellationReason6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsnInf', type=PaymentCancellationReason6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

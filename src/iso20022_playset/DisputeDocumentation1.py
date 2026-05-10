@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
 import OutputFormat4Code
 import Max20KText
+import Max35Text
 
 class DisputeDocumentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val", "_OthrFrmt", "_Frmt"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Val", "_Tp", "_Frmt", "_OthrFrmt"]
 	@property
 	def Val(self):
 		return self._Val
@@ -33,17 +20,17 @@ class DisputeDocumentation1(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def OthrFrmt(self):
-		return self._OthrFrmt
+	def Tp(self):
+		return self._Tp
 
-	@OthrFrmt.setter
-	def OthrFrmt(self, value):
-		self._OthrFrmt = value if type(value) != auto else self.make_default("OthrFrmt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@OthrFrmt.deleter
-	def OthrFrmt(self):
-		del self._OthrFrmt
-		self._OthrFrmt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Frmt(self):
@@ -58,10 +45,23 @@ class DisputeDocumentation1(base_types._BaseFieldType):
 		del self._Frmt
 		self._Frmt = None
 
+	@property
+	def OthrFrmt(self):
+		return self._OthrFrmt
+
+	@OthrFrmt.setter
+	def OthrFrmt(self, value):
+		self._OthrFrmt = value if type(value) != auto else self.make_default("OthrFrmt")
+
+	@OthrFrmt.deleter
+	def OthrFrmt(self):
+		del self._OthrFrmt
+		self._OthrFrmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 import base_types
 import FinancialInstitutionIdentification10
-import Max35Text
 import PartyIdentification113
+import Max35Text
 
 class Cheque9(base_types._BaseFieldType):
 
-	__slots__ = ["_DrwrId", "_PyeeId", "_DrweeId", "_Nb"]
+	__slots__ = ["_Nb", "_DrwrId", "_PyeeId", "_DrweeId"]
+	@property
+	def Nb(self):
+		return self._Nb
+
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != auto else self.make_default("Nb")
+
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
+
 	@property
 	def DrwrId(self):
 		return self._DrwrId
@@ -45,23 +58,10 @@ class Cheque9(base_types._BaseFieldType):
 		del self._DrweeId
 		self._DrweeId = None
 
-	@property
-	def Nb(self):
-		return self._Nb
-
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
-
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrwrId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyeeId', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrweeId', type=FinancialInstitutionIdentification10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

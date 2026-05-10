@@ -1,24 +1,24 @@
 import base_types
-import CardPaymentEnvironment81
 import SupplementaryData1
-import PaymentContext30
+import CardPaymentEnvironment81
 import CardPaymentTransaction140
+import PaymentContext30
 
 class AcceptorCompletionAdvice14(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_SplmtryData", "_Cntxt", "_Envt"]
+	__slots__ = ["_Envt", "_SplmtryData", "_Cntxt", "_Tx"]
 	@property
-	def Tx(self):
-		return self._Tx
+	def Envt(self):
+		return self._Envt
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class AcceptorCompletionAdvice14(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def Envt(self):
-		return self._Envt
+	def Tx(self):
+		return self._Tx
 
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
 
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction140, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction140, min=1, max=1, mutex_group=None, array=False),
 	))
 

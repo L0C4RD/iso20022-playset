@@ -1,6 +1,6 @@
 import base_types
-import AssetClassProductType2Code
 import AssetClassSubProductType28Code
+import AssetClassProductType2Code
 
 class EnergyCommodityRenewableEnergy1(base_types._BaseFieldType):
 

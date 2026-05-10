@@ -1,6 +1,6 @@
 import base_types
-import DateCode22Choice
 import ISODate
+import DateCode22Choice
 
 class DateFormat41Choice(base_types._BaseFieldType):
 

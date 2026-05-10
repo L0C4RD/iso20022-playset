@@ -1,13 +1,26 @@
 import base_types
-import Extension1
 import AccountManagementStatusAndReason5
-import MessageIdentification1
-import AdditionalReference13
 import MarketPracticeVersion1
+import MessageIdentification1
+import Extension1
+import AdditionalReference13
 
 class AccountManagementStatusReportV07(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_StsRpt", "_MsgId", "_Xtnsn", "_MktPrctcVrsn"]
+	__slots__ = ["_MsgId", "_RltdRef", "_StsRpt", "_Xtnsn", "_MktPrctcVrsn"]
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	@property
 	def RltdRef(self):
 		return self._RltdRef
@@ -33,19 +46,6 @@ class AccountManagementStatusReportV07(base_types._BaseFieldType):
 	def StsRpt(self):
 		del self._StsRpt
 		self._StsRpt = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
 
 	@property
 	def Xtnsn(self):
@@ -74,9 +74,9 @@ class AccountManagementStatusReportV07(base_types._BaseFieldType):
 		self._MktPrctcVrsn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference13, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRpt', type=AccountManagementStatusAndReason5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 	))

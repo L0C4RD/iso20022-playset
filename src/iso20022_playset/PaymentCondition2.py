@@ -1,23 +1,36 @@
 import base_types
 import TrueFalseIndicator
-import AmountOrRate1Choice
 import Max140Text
+import AmountOrRate1Choice
 
 class PaymentCondition2(base_types._BaseFieldType):
 
-	__slots__ = ["_ImdtPmtRbt", "_EarlyPmtAllwd", "_AmtModAllwd", "_DelyPnlty", "_GrntedPmtReqd"]
+	__slots__ = ["_DelyPnlty", "_GrntedPmtReqd", "_EarlyPmtAllwd", "_AmtModAllwd", "_ImdtPmtRbt"]
 	@property
-	def ImdtPmtRbt(self):
-		return self._ImdtPmtRbt
+	def DelyPnlty(self):
+		return self._DelyPnlty
 
-	@ImdtPmtRbt.setter
-	def ImdtPmtRbt(self, value):
-		self._ImdtPmtRbt = value if type(value) != auto else self.make_default("ImdtPmtRbt")
+	@DelyPnlty.setter
+	def DelyPnlty(self, value):
+		self._DelyPnlty = value if type(value) != auto else self.make_default("DelyPnlty")
 
-	@ImdtPmtRbt.deleter
-	def ImdtPmtRbt(self):
-		del self._ImdtPmtRbt
-		self._ImdtPmtRbt = None
+	@DelyPnlty.deleter
+	def DelyPnlty(self):
+		del self._DelyPnlty
+		self._DelyPnlty = None
+
+	@property
+	def GrntedPmtReqd(self):
+		return self._GrntedPmtReqd
+
+	@GrntedPmtReqd.setter
+	def GrntedPmtReqd(self, value):
+		self._GrntedPmtReqd = value if type(value) != auto else self.make_default("GrntedPmtReqd")
+
+	@GrntedPmtReqd.deleter
+	def GrntedPmtReqd(self):
+		del self._GrntedPmtReqd
+		self._GrntedPmtReqd = None
 
 	@property
 	def EarlyPmtAllwd(self):
@@ -46,36 +59,23 @@ class PaymentCondition2(base_types._BaseFieldType):
 		self._AmtModAllwd = None
 
 	@property
-	def DelyPnlty(self):
-		return self._DelyPnlty
+	def ImdtPmtRbt(self):
+		return self._ImdtPmtRbt
 
-	@DelyPnlty.setter
-	def DelyPnlty(self, value):
-		self._DelyPnlty = value if type(value) != auto else self.make_default("DelyPnlty")
+	@ImdtPmtRbt.setter
+	def ImdtPmtRbt(self, value):
+		self._ImdtPmtRbt = value if type(value) != auto else self.make_default("ImdtPmtRbt")
 
-	@DelyPnlty.deleter
-	def DelyPnlty(self):
-		del self._DelyPnlty
-		self._DelyPnlty = None
-
-	@property
-	def GrntedPmtReqd(self):
-		return self._GrntedPmtReqd
-
-	@GrntedPmtReqd.setter
-	def GrntedPmtReqd(self, value):
-		self._GrntedPmtReqd = value if type(value) != auto else self.make_default("GrntedPmtReqd")
-
-	@GrntedPmtReqd.deleter
-	def GrntedPmtReqd(self):
-		del self._GrntedPmtReqd
-		self._GrntedPmtReqd = None
+	@ImdtPmtRbt.deleter
+	def ImdtPmtRbt(self):
+		del self._ImdtPmtRbt
+		self._ImdtPmtRbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ImdtPmtRbt', type=AmountOrRate1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyPmtAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtModAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DelyPnlty', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrntedPmtReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyPmtAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtModAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ImdtPmtRbt', type=AmountOrRate1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 import base_types
-import TradeTransactionIdentification17
-import TradeTransactionIdentification16
 import TradeTransactionIdentification20
+import TradeTransactionIdentification16
+import TradeTransactionIdentification17
 
 class TransactionIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_MrgnRptg", "_CollReuse"]
+	__slots__ = ["_CollReuse", "_Tx", "_MrgnRptg"]
+	@property
+	def CollReuse(self):
+		return self._CollReuse
+
+	@CollReuse.setter
+	def CollReuse(self, value):
+		self._CollReuse = value if type(value) != auto else self.make_default("CollReuse")
+
+	@CollReuse.deleter
+	def CollReuse(self):
+		del self._CollReuse
+		self._CollReuse = None
+
 	@property
 	def Tx(self):
 		return self._Tx
@@ -32,22 +45,9 @@ class TransactionIdentification3Choice(base_types._BaseFieldType):
 		del self._MrgnRptg
 		self._MrgnRptg = None
 
-	@property
-	def CollReuse(self):
-		return self._CollReuse
-
-	@CollReuse.setter
-	def CollReuse(self, value):
-		self._CollReuse = value if type(value) != auto else self.make_default("CollReuse")
-
-	@CollReuse.deleter
-	def CollReuse(self):
-		del self._CollReuse
-		self._CollReuse = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CollReuse', type=TradeTransactionIdentification17, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tx', type=TradeTransactionIdentification20, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MrgnRptg', type=TradeTransactionIdentification16, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollReuse', type=TradeTransactionIdentification17, min=0, max=1, mutex_group=1, array=False),
 	))
 

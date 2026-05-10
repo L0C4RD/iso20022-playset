@@ -4,20 +4,7 @@ import PolypropyleneCommodityPlastic2
 
 class AssetClassCommodityPolypropylene4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Plstc"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_Plstc", "_Othr"]
 	@property
 	def Plstc(self):
 		return self._Plstc
@@ -31,8 +18,21 @@ class AssetClassCommodityPolypropylene4Choice(base_types._BaseFieldType):
 		del self._Plstc
 		self._Plstc = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=PolypropyleneCommodityOther2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Plstc', type=PolypropyleneCommodityPlastic2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=PolypropyleneCommodityOther2, min=0, max=1, mutex_group=1, array=False),
 	))
 

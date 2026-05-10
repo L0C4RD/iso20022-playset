@@ -1,11 +1,24 @@
 import base_types
+import CollateralType21
 import TrueFalseIndicator
 import SecurityIdentification26Choice
-import CollateralType21
 
 class CollateralData35(base_types._BaseFieldType):
 
-	__slots__ = ["_NetXpsrCollstnInd", "_BsktIdr", "_AsstTp"]
+	__slots__ = ["_AsstTp", "_NetXpsrCollstnInd", "_BsktIdr"]
+	@property
+	def AsstTp(self):
+		return self._AsstTp
+
+	@AsstTp.setter
+	def AsstTp(self, value):
+		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
+
+	@AsstTp.deleter
+	def AsstTp(self):
+		del self._AsstTp
+		self._AsstTp = None
+
 	@property
 	def NetXpsrCollstnInd(self):
 		return self._NetXpsrCollstnInd
@@ -32,22 +45,9 @@ class CollateralData35(base_types._BaseFieldType):
 		del self._BsktIdr
 		self._BsktIdr = None
 
-	@property
-	def AsstTp(self):
-		return self._AsstTp
-
-	@AsstTp.setter
-	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
-
-	@AsstTp.deleter
-	def AsstTp(self):
-		del self._AsstTp
-		self._AsstTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsktIdr', type=SecurityIdentification26Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
 	))
 

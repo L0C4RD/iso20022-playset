@@ -1,24 +1,24 @@
 import base_types
-import PartyIdentification35Choice
 import SupplementaryData1
 import ReportParameters2
+import PartyIdentification35Choice
 import DefaultFundReport1
 
 class DefaultFundContributionReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_SplmtryData", "_RptParams", "_RptDtls"]
+	__slots__ = ["_RptDtls", "_SplmtryData", "_ClrMmb", "_RptParams"]
 	@property
-	def ClrMmb(self):
-		return self._ClrMmb
+	def RptDtls(self):
+		return self._RptDtls
 
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+	@RptDtls.setter
+	def RptDtls(self, value):
+		self._RptDtls = value if type(value) != auto else self.make_default("RptDtls")
 
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
+	@RptDtls.deleter
+	def RptDtls(self):
+		del self._RptDtls
+		self._RptDtls = None
 
 	@property
 	def SplmtryData(self):
@@ -34,6 +34,19 @@ class DefaultFundContributionReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def ClrMmb(self):
+		return self._ClrMmb
+
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
+	@property
 	def RptParams(self):
 		return self._RptParams
 
@@ -46,23 +59,10 @@ class DefaultFundContributionReportV02(base_types._BaseFieldType):
 		del self._RptParams
 		self._RptParams = None
 
-	@property
-	def RptDtls(self):
-		return self._RptDtls
-
-	@RptDtls.setter
-	def RptDtls(self, value):
-		self._RptDtls = value if type(value) != auto else self.make_default("RptDtls")
-
-	@RptDtls.deleter
-	def RptDtls(self):
-		del self._RptDtls
-		self._RptDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptParams', type=ReportParameters2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptDtls', type=DefaultFundReport1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptParams', type=ReportParameters2, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,70 +1,18 @@
 import base_types
-import Max99Text
-import Max35Text
-import SponsoredMerchant3
-import GeographicPointInDecimalDegrees
-import LocalData11
-import Max256Text
-import CorporateTaxType1Code
-import AdditionalData1
-import Address2
 import Max70Text
+import SponsoredMerchant3
+import AdditionalData1
+import Max256Text
+import Max99Text
+import Address2
+import CorporateTaxType1Code
+import Max35Text
+import LocalData11
+import GeographicPointInDecimalDegrees
 
 class PartyIdentification288(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_OwnrEthnctyTpPrvddBy", "_AddtlCtct", "_AddtlId", "_Id", "_SpnsrdMrchnt", "_AddtlAdr", "_GeogcLctn", "_ShrtNm", "_Email", "_Phne", "_CstmrSvc", "_OwnrTpPrvddBy", "_TaxRegnId", "_BizTpPrvddBy", "_CorpTaxIdTp", "_CertfctnTp", "_NmAndLctn", "_LglCorpNm", "_Assgnr", "_AddtlTxRefNb", "_CertfctnTpPrvddBy", "_OwnrEthnctyTp", "_URL", "_LclData", "_BizTp", "_OwnrTp", "_CorpTaxId", "_AddtlData"]
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
-	@property
-	def OwnrEthnctyTpPrvddBy(self):
-		return self._OwnrEthnctyTpPrvddBy
-
-	@OwnrEthnctyTpPrvddBy.setter
-	def OwnrEthnctyTpPrvddBy(self, value):
-		self._OwnrEthnctyTpPrvddBy = value if type(value) != auto else self.make_default("OwnrEthnctyTpPrvddBy")
-
-	@OwnrEthnctyTpPrvddBy.deleter
-	def OwnrEthnctyTpPrvddBy(self):
-		del self._OwnrEthnctyTpPrvddBy
-		self._OwnrEthnctyTpPrvddBy = None
-
-	@property
-	def AddtlCtct(self):
-		return self._AddtlCtct
-
-	@AddtlCtct.setter
-	def AddtlCtct(self, value):
-		self._AddtlCtct = value if type(value) != auto else self.make_default("AddtlCtct")
-
-	@AddtlCtct.deleter
-	def AddtlCtct(self):
-		del self._AddtlCtct
-		self._AddtlCtct = None
-
-	@property
-	def AddtlId(self):
-		return self._AddtlId
-
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
-
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
-
+	__slots__ = ["_Id", "_Phne", "_CertfctnTp", "_BizTpPrvddBy", "_AddtlAdr", "_OwnrTpPrvddBy", "_AddtlData", "_LglCorpNm", "_TaxRegnId", "_AddtlCtct", "_BizTp", "_OwnrEthnctyTp", "_NmAndLctn", "_CorpTaxIdTp", "_CstmrSvc", "_AddtlTxRefNb", "_CorpTaxId", "_CertfctnTpPrvddBy", "_ShrtNm", "_SpnsrdMrchnt", "_OwnrEthnctyTpPrvddBy", "_Adr", "_LclData", "_AddtlId", "_OwnrTp", "_Email", "_Assgnr", "_URL", "_GeogcLctn"]
 	@property
 	def Id(self):
 		return self._Id
@@ -77,71 +25,6 @@ class PartyIdentification288(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def SpnsrdMrchnt(self):
-		return self._SpnsrdMrchnt
-
-	@SpnsrdMrchnt.setter
-	def SpnsrdMrchnt(self, value):
-		self._SpnsrdMrchnt = value if type(value) != auto else self.make_default("SpnsrdMrchnt")
-
-	@SpnsrdMrchnt.deleter
-	def SpnsrdMrchnt(self):
-		del self._SpnsrdMrchnt
-		self._SpnsrdMrchnt = None
-
-	@property
-	def AddtlAdr(self):
-		return self._AddtlAdr
-
-	@AddtlAdr.setter
-	def AddtlAdr(self, value):
-		self._AddtlAdr = value if type(value) != auto else self.make_default("AddtlAdr")
-
-	@AddtlAdr.deleter
-	def AddtlAdr(self):
-		del self._AddtlAdr
-		self._AddtlAdr = None
-
-	@property
-	def GeogcLctn(self):
-		return self._GeogcLctn
-
-	@GeogcLctn.setter
-	def GeogcLctn(self, value):
-		self._GeogcLctn = value if type(value) != auto else self.make_default("GeogcLctn")
-
-	@GeogcLctn.deleter
-	def GeogcLctn(self):
-		del self._GeogcLctn
-		self._GeogcLctn = None
-
-	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
-
-	@property
-	def Email(self):
-		return self._Email
-
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != auto else self.make_default("Email")
-
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
 
 	@property
 	def Phne(self):
@@ -157,43 +40,17 @@ class PartyIdentification288(base_types._BaseFieldType):
 		self._Phne = None
 
 	@property
-	def CstmrSvc(self):
-		return self._CstmrSvc
+	def CertfctnTp(self):
+		return self._CertfctnTp
 
-	@CstmrSvc.setter
-	def CstmrSvc(self, value):
-		self._CstmrSvc = value if type(value) != auto else self.make_default("CstmrSvc")
+	@CertfctnTp.setter
+	def CertfctnTp(self, value):
+		self._CertfctnTp = value if type(value) != auto else self.make_default("CertfctnTp")
 
-	@CstmrSvc.deleter
-	def CstmrSvc(self):
-		del self._CstmrSvc
-		self._CstmrSvc = None
-
-	@property
-	def OwnrTpPrvddBy(self):
-		return self._OwnrTpPrvddBy
-
-	@OwnrTpPrvddBy.setter
-	def OwnrTpPrvddBy(self, value):
-		self._OwnrTpPrvddBy = value if type(value) != auto else self.make_default("OwnrTpPrvddBy")
-
-	@OwnrTpPrvddBy.deleter
-	def OwnrTpPrvddBy(self):
-		del self._OwnrTpPrvddBy
-		self._OwnrTpPrvddBy = None
-
-	@property
-	def TaxRegnId(self):
-		return self._TaxRegnId
-
-	@TaxRegnId.setter
-	def TaxRegnId(self, value):
-		self._TaxRegnId = value if type(value) != auto else self.make_default("TaxRegnId")
-
-	@TaxRegnId.deleter
-	def TaxRegnId(self):
-		del self._TaxRegnId
-		self._TaxRegnId = None
+	@CertfctnTp.deleter
+	def CertfctnTp(self):
+		del self._CertfctnTp
+		self._CertfctnTp = None
 
 	@property
 	def BizTpPrvddBy(self):
@@ -209,43 +66,43 @@ class PartyIdentification288(base_types._BaseFieldType):
 		self._BizTpPrvddBy = None
 
 	@property
-	def CorpTaxIdTp(self):
-		return self._CorpTaxIdTp
+	def AddtlAdr(self):
+		return self._AddtlAdr
 
-	@CorpTaxIdTp.setter
-	def CorpTaxIdTp(self, value):
-		self._CorpTaxIdTp = value if type(value) != auto else self.make_default("CorpTaxIdTp")
+	@AddtlAdr.setter
+	def AddtlAdr(self, value):
+		self._AddtlAdr = value if type(value) != auto else self.make_default("AddtlAdr")
 
-	@CorpTaxIdTp.deleter
-	def CorpTaxIdTp(self):
-		del self._CorpTaxIdTp
-		self._CorpTaxIdTp = None
-
-	@property
-	def CertfctnTp(self):
-		return self._CertfctnTp
-
-	@CertfctnTp.setter
-	def CertfctnTp(self, value):
-		self._CertfctnTp = value if type(value) != auto else self.make_default("CertfctnTp")
-
-	@CertfctnTp.deleter
-	def CertfctnTp(self):
-		del self._CertfctnTp
-		self._CertfctnTp = None
+	@AddtlAdr.deleter
+	def AddtlAdr(self):
+		del self._AddtlAdr
+		self._AddtlAdr = None
 
 	@property
-	def NmAndLctn(self):
-		return self._NmAndLctn
+	def OwnrTpPrvddBy(self):
+		return self._OwnrTpPrvddBy
 
-	@NmAndLctn.setter
-	def NmAndLctn(self, value):
-		self._NmAndLctn = value if type(value) != auto else self.make_default("NmAndLctn")
+	@OwnrTpPrvddBy.setter
+	def OwnrTpPrvddBy(self, value):
+		self._OwnrTpPrvddBy = value if type(value) != auto else self.make_default("OwnrTpPrvddBy")
 
-	@NmAndLctn.deleter
-	def NmAndLctn(self):
-		del self._NmAndLctn
-		self._NmAndLctn = None
+	@OwnrTpPrvddBy.deleter
+	def OwnrTpPrvddBy(self):
+		del self._OwnrTpPrvddBy
+		self._OwnrTpPrvddBy = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
 	def LglCorpNm(self):
@@ -261,82 +118,30 @@ class PartyIdentification288(base_types._BaseFieldType):
 		self._LglCorpNm = None
 
 	@property
-	def Assgnr(self):
-		return self._Assgnr
+	def TaxRegnId(self):
+		return self._TaxRegnId
 
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+	@TaxRegnId.setter
+	def TaxRegnId(self, value):
+		self._TaxRegnId = value if type(value) != auto else self.make_default("TaxRegnId")
 
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
-	@property
-	def AddtlTxRefNb(self):
-		return self._AddtlTxRefNb
-
-	@AddtlTxRefNb.setter
-	def AddtlTxRefNb(self, value):
-		self._AddtlTxRefNb = value if type(value) != auto else self.make_default("AddtlTxRefNb")
-
-	@AddtlTxRefNb.deleter
-	def AddtlTxRefNb(self):
-		del self._AddtlTxRefNb
-		self._AddtlTxRefNb = None
+	@TaxRegnId.deleter
+	def TaxRegnId(self):
+		del self._TaxRegnId
+		self._TaxRegnId = None
 
 	@property
-	def CertfctnTpPrvddBy(self):
-		return self._CertfctnTpPrvddBy
+	def AddtlCtct(self):
+		return self._AddtlCtct
 
-	@CertfctnTpPrvddBy.setter
-	def CertfctnTpPrvddBy(self, value):
-		self._CertfctnTpPrvddBy = value if type(value) != auto else self.make_default("CertfctnTpPrvddBy")
+	@AddtlCtct.setter
+	def AddtlCtct(self, value):
+		self._AddtlCtct = value if type(value) != auto else self.make_default("AddtlCtct")
 
-	@CertfctnTpPrvddBy.deleter
-	def CertfctnTpPrvddBy(self):
-		del self._CertfctnTpPrvddBy
-		self._CertfctnTpPrvddBy = None
-
-	@property
-	def OwnrEthnctyTp(self):
-		return self._OwnrEthnctyTp
-
-	@OwnrEthnctyTp.setter
-	def OwnrEthnctyTp(self, value):
-		self._OwnrEthnctyTp = value if type(value) != auto else self.make_default("OwnrEthnctyTp")
-
-	@OwnrEthnctyTp.deleter
-	def OwnrEthnctyTp(self):
-		del self._OwnrEthnctyTp
-		self._OwnrEthnctyTp = None
-
-	@property
-	def URL(self):
-		return self._URL
-
-	@URL.setter
-	def URL(self, value):
-		self._URL = value if type(value) != auto else self.make_default("URL")
-
-	@URL.deleter
-	def URL(self):
-		del self._URL
-		self._URL = None
-
-	@property
-	def LclData(self):
-		return self._LclData
-
-	@LclData.setter
-	def LclData(self, value):
-		self._LclData = value if type(value) != auto else self.make_default("LclData")
-
-	@LclData.deleter
-	def LclData(self):
-		del self._LclData
-		self._LclData = None
+	@AddtlCtct.deleter
+	def AddtlCtct(self):
+		del self._AddtlCtct
+		self._AddtlCtct = None
 
 	@property
 	def BizTp(self):
@@ -352,17 +157,69 @@ class PartyIdentification288(base_types._BaseFieldType):
 		self._BizTp = None
 
 	@property
-	def OwnrTp(self):
-		return self._OwnrTp
+	def OwnrEthnctyTp(self):
+		return self._OwnrEthnctyTp
 
-	@OwnrTp.setter
-	def OwnrTp(self, value):
-		self._OwnrTp = value if type(value) != auto else self.make_default("OwnrTp")
+	@OwnrEthnctyTp.setter
+	def OwnrEthnctyTp(self, value):
+		self._OwnrEthnctyTp = value if type(value) != auto else self.make_default("OwnrEthnctyTp")
 
-	@OwnrTp.deleter
-	def OwnrTp(self):
-		del self._OwnrTp
-		self._OwnrTp = None
+	@OwnrEthnctyTp.deleter
+	def OwnrEthnctyTp(self):
+		del self._OwnrEthnctyTp
+		self._OwnrEthnctyTp = None
+
+	@property
+	def NmAndLctn(self):
+		return self._NmAndLctn
+
+	@NmAndLctn.setter
+	def NmAndLctn(self, value):
+		self._NmAndLctn = value if type(value) != auto else self.make_default("NmAndLctn")
+
+	@NmAndLctn.deleter
+	def NmAndLctn(self):
+		del self._NmAndLctn
+		self._NmAndLctn = None
+
+	@property
+	def CorpTaxIdTp(self):
+		return self._CorpTaxIdTp
+
+	@CorpTaxIdTp.setter
+	def CorpTaxIdTp(self, value):
+		self._CorpTaxIdTp = value if type(value) != auto else self.make_default("CorpTaxIdTp")
+
+	@CorpTaxIdTp.deleter
+	def CorpTaxIdTp(self):
+		del self._CorpTaxIdTp
+		self._CorpTaxIdTp = None
+
+	@property
+	def CstmrSvc(self):
+		return self._CstmrSvc
+
+	@CstmrSvc.setter
+	def CstmrSvc(self, value):
+		self._CstmrSvc = value if type(value) != auto else self.make_default("CstmrSvc")
+
+	@CstmrSvc.deleter
+	def CstmrSvc(self):
+		del self._CstmrSvc
+		self._CstmrSvc = None
+
+	@property
+	def AddtlTxRefNb(self):
+		return self._AddtlTxRefNb
+
+	@AddtlTxRefNb.setter
+	def AddtlTxRefNb(self, value):
+		self._AddtlTxRefNb = value if type(value) != auto else self.make_default("AddtlTxRefNb")
+
+	@AddtlTxRefNb.deleter
+	def AddtlTxRefNb(self):
+		del self._AddtlTxRefNb
+		self._AddtlTxRefNb = None
 
 	@property
 	def CorpTaxId(self):
@@ -378,47 +235,190 @@ class PartyIdentification288(base_types._BaseFieldType):
 		self._CorpTaxId = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def CertfctnTpPrvddBy(self):
+		return self._CertfctnTpPrvddBy
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@CertfctnTpPrvddBy.setter
+	def CertfctnTpPrvddBy(self, value):
+		self._CertfctnTpPrvddBy = value if type(value) != auto else self.make_default("CertfctnTpPrvddBy")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@CertfctnTpPrvddBy.deleter
+	def CertfctnTpPrvddBy(self):
+		del self._CertfctnTpPrvddBy
+		self._CertfctnTpPrvddBy = None
+
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
+
+	@property
+	def SpnsrdMrchnt(self):
+		return self._SpnsrdMrchnt
+
+	@SpnsrdMrchnt.setter
+	def SpnsrdMrchnt(self, value):
+		self._SpnsrdMrchnt = value if type(value) != auto else self.make_default("SpnsrdMrchnt")
+
+	@SpnsrdMrchnt.deleter
+	def SpnsrdMrchnt(self):
+		del self._SpnsrdMrchnt
+		self._SpnsrdMrchnt = None
+
+	@property
+	def OwnrEthnctyTpPrvddBy(self):
+		return self._OwnrEthnctyTpPrvddBy
+
+	@OwnrEthnctyTpPrvddBy.setter
+	def OwnrEthnctyTpPrvddBy(self, value):
+		self._OwnrEthnctyTpPrvddBy = value if type(value) != auto else self.make_default("OwnrEthnctyTpPrvddBy")
+
+	@OwnrEthnctyTpPrvddBy.deleter
+	def OwnrEthnctyTpPrvddBy(self):
+		del self._OwnrEthnctyTpPrvddBy
+		self._OwnrEthnctyTpPrvddBy = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def LclData(self):
+		return self._LclData
+
+	@LclData.setter
+	def LclData(self, value):
+		self._LclData = value if type(value) != auto else self.make_default("LclData")
+
+	@LclData.deleter
+	def LclData(self):
+		del self._LclData
+		self._LclData = None
+
+	@property
+	def AddtlId(self):
+		return self._AddtlId
+
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
+
+	@property
+	def OwnrTp(self):
+		return self._OwnrTp
+
+	@OwnrTp.setter
+	def OwnrTp(self, value):
+		self._OwnrTp = value if type(value) != auto else self.make_default("OwnrTp")
+
+	@OwnrTp.deleter
+	def OwnrTp(self):
+		del self._OwnrTp
+		self._OwnrTp = None
+
+	@property
+	def Email(self):
+		return self._Email
+
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != auto else self.make_default("Email")
+
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
+
+	@property
+	def URL(self):
+		return self._URL
+
+	@URL.setter
+	def URL(self, value):
+		self._URL = value if type(value) != auto else self.make_default("URL")
+
+	@URL.deleter
+	def URL(self):
+		del self._URL
+		self._URL = None
+
+	@property
+	def GeogcLctn(self):
+		return self._GeogcLctn
+
+	@GeogcLctn.setter
+	def GeogcLctn(self, value):
+		self._GeogcLctn = value if type(value) != auto else self.make_default("GeogcLctn")
+
+	@GeogcLctn.deleter
+	def GeogcLctn(self):
+		del self._GeogcLctn
+		self._GeogcLctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrEthnctyTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlCtct', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpnsrdMrchnt', type=SponsoredMerchant3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GeogcLctn', type=GeographicPointInDecimalDegrees, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Phne', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrSvc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BizTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpTaxIdTp', type=CorporateTaxType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertfctnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmAndLctn', type=Max99Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlTxRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrEthnctyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclData', type=LocalData11, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BizTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpTaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlCtct', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrEthnctyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndLctn', type=Max99Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpTaxIdTp', type=CorporateTaxType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrSvc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlTxRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpTaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpnsrdMrchnt', type=SponsoredMerchant3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OwnrEthnctyTpPrvddBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclData', type=LocalData11, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OwnrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GeogcLctn', type=GeographicPointInDecimalDegrees, min=0, max=1, mutex_group=None, array=False),
 	))
 

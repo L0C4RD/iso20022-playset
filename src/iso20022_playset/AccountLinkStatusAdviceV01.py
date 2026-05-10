@@ -1,25 +1,12 @@
 import base_types
 import SupplementaryData1
+import MessageHeader12
 import AccountLinkStatus1
 import AccountLink8
-import MessageHeader12
 
 class AccountLinkStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_AcctLkSts", "_MsgHdr", "_AcctLkId"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_AcctLkSts", "_SplmtryData", "_MsgHdr", "_AcctLkId"]
 	@property
 	def AcctLkSts(self):
 		return self._AcctLkSts
@@ -32,6 +19,19 @@ class AccountLinkStatusAdviceV01(base_types._BaseFieldType):
 	def AcctLkSts(self):
 		del self._AcctLkSts
 		self._AcctLkSts = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgHdr(self):
@@ -60,8 +60,8 @@ class AccountLinkStatusAdviceV01(base_types._BaseFieldType):
 		self._AcctLkId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctLkSts', type=AccountLinkStatus1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctLkId', type=AccountLink8, min=0, max=1, mutex_group=None, array=False),
 	))

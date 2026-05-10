@@ -1,30 +1,30 @@
 import base_types
-import AmountAndDirection67
-import SettlementParties109
+import PartyIdentification170
 import BlockChainAddressWallet7
-import TradeDate9Choice
 import PartyIdentification156
+import SettlementDate32Choice
+import SecurityIdentification20
 import SecuritiesAccount30
 import Quantity54Choice
-import PartyIdentification170
-import SecurityIdentification20
-import SettlementDate32Choice
+import AmountAndDirection67
+import SettlementParties109
+import TradeDate9Choice
 
 class TransactionDetails162(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_SttlmAmt", "_DlvrgSttlmPties", "_RcvgSttlmPties", "_BlckChainAdrOrWllt", "_SttlmQty", "_TradDt", "_Invstr", "_SttlmDt", "_SfkpgAcct", "_AcctOwnr"]
+	__slots__ = ["_SfkpgAcct", "_SttlmAmt", "_DlvrgSttlmPties", "_AcctOwnr", "_RcvgSttlmPties", "_Invstr", "_BlckChainAdrOrWllt", "_SttlmQty", "_SttlmDt", "_TradDt", "_FinInstrmId"]
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
 
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def SttlmAmt(self):
@@ -53,6 +53,19 @@ class TransactionDetails162(base_types._BaseFieldType):
 		self._DlvrgSttlmPties = None
 
 	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
 	def RcvgSttlmPties(self):
 		return self._RcvgSttlmPties
 
@@ -64,6 +77,19 @@ class TransactionDetails162(base_types._BaseFieldType):
 	def RcvgSttlmPties(self):
 		del self._RcvgSttlmPties
 		self._RcvgSttlmPties = None
+
+	@property
+	def Invstr(self):
+		return self._Invstr
+
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -92,32 +118,6 @@ class TransactionDetails162(base_types._BaseFieldType):
 		self._SttlmQty = None
 
 	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
-
-	@property
-	def Invstr(self):
-		return self._Invstr
-
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
-
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
-
-	@property
 	def SttlmDt(self):
 		return self._SttlmDt
 
@@ -131,42 +131,42 @@ class TransactionDetails162(base_types._BaseFieldType):
 		self._SttlmDt = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def TradDt(self):
+		return self._TradDt
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection67, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties109, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties109, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Invstr', type=PartyIdentification170, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmQty', type=Quantity54Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=TradeDate9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Invstr', type=PartyIdentification170, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDt', type=SettlementDate32Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=TradeDate9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 	))
 

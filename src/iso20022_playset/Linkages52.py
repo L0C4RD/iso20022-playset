@@ -1,6 +1,6 @@
 import base_types
-import IdentificationReference8Choice
 import DocumentNumber17Choice
+import IdentificationReference8Choice
 
 class Linkages52(base_types._BaseFieldType):
 

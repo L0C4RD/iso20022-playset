@@ -1,7 +1,7 @@
 import base_types
-import TrueFalseIndicator
-import Cleared23Choice
 import ClearingObligationType1Code
+import Cleared23Choice
+import TrueFalseIndicator
 
 class TradeClearing11(base_types._BaseFieldType):
 

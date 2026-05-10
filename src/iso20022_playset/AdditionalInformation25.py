@@ -1,23 +1,23 @@
 import base_types
 import GenericIdentification36
-import RejectedReason33Choice
 import Max350Text
+import RejectedReason33Choice
 
 class AdditionalInformation25(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_RjctnRsn", "_QryRsn", "_Qry"]
+	__slots__ = ["_Qry", "_RjctnRsn", "_QryRsn", "_QryTp"]
 	@property
-	def QryTp(self):
-		return self._QryTp
+	def Qry(self):
+		return self._Qry
 
-	@QryTp.setter
-	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+	@Qry.setter
+	def Qry(self, value):
+		self._Qry = value if type(value) != auto else self.make_default("Qry")
 
-	@QryTp.deleter
-	def QryTp(self):
-		del self._QryTp
-		self._QryTp = None
+	@Qry.deleter
+	def Qry(self):
+		del self._Qry
+		self._Qry = None
 
 	@property
 	def RjctnRsn(self):
@@ -46,22 +46,22 @@ class AdditionalInformation25(base_types._BaseFieldType):
 		self._QryRsn = None
 
 	@property
-	def Qry(self):
-		return self._Qry
+	def QryTp(self):
+		return self._QryTp
 
-	@Qry.setter
-	def Qry(self, value):
-		self._Qry = value if type(value) != auto else self.make_default("Qry")
+	@QryTp.setter
+	def QryTp(self, value):
+		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
 
-	@Qry.deleter
-	def Qry(self):
-		del self._Qry
-		self._Qry = None
+	@QryTp.deleter
+	def QryTp(self):
+		del self._QryTp
+		self._QryTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QryTp', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qry', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectedReason33Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qry', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryTp', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
 	))
 

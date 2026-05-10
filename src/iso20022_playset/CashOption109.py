@@ -1,13 +1,39 @@
 import base_types
-import Account10Choice
-import ActiveCurrencyAndAmount
-import ISODate
 import CreditDebitCode
 import DateAndDateTime2Choice
+import Account10Choice
+import ISODate
+import ActiveCurrencyAndAmount
 
 class CashOption109(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngDt", "_OrgnlPstngDt", "_Acct", "_CdtDbtInd", "_PstngAmt", "_ValDt"]
+	__slots__ = ["_ValDt", "_PstngAmt", "_PstngDt", "_OrgnlPstngDt", "_CdtDbtInd", "_Acct"]
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
+	@property
+	def PstngAmt(self):
+		return self._PstngAmt
+
+	@PstngAmt.setter
+	def PstngAmt(self, value):
+		self._PstngAmt = value if type(value) != auto else self.make_default("PstngAmt")
+
+	@PstngAmt.deleter
+	def PstngAmt(self):
+		del self._PstngAmt
+		self._PstngAmt = None
+
 	@property
 	def PstngDt(self):
 		return self._PstngDt
@@ -35,19 +61,6 @@ class CashOption109(base_types._BaseFieldType):
 		self._OrgnlPstngDt = None
 
 	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
-	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
@@ -61,37 +74,24 @@ class CashOption109(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def PstngAmt(self):
-		return self._PstngAmt
+	def Acct(self):
+		return self._Acct
 
-	@PstngAmt.setter
-	def PstngAmt(self, value):
-		self._PstngAmt = value if type(value) != auto else self.make_default("PstngAmt")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@PstngAmt.deleter
-	def PstngAmt(self):
-		del self._PstngAmt
-		self._PstngAmt = None
-
-	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=Account10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=Account10Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

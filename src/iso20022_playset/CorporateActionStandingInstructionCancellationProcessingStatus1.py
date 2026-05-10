@@ -1,6 +1,6 @@
 import base_types
-import ProcessedStatus4FormatChoice
 import Max350Text
+import ProcessedStatus4FormatChoice
 
 class CorporateActionStandingInstructionCancellationProcessingStatus1(base_types._BaseFieldType):
 

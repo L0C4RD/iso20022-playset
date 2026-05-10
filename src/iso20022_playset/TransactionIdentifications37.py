@@ -3,20 +3,7 @@ import RestrictedFINXMax16Text
 
 class TransactionIdentifications37(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcrTxId", "_MktInfrstrctrTxId", "_AcctOwnrTxId", "_AcctSvcrTxId", "_OthrId"]
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
+	__slots__ = ["_MktInfrstrctrTxId", "_OthrId", "_AcctOwnrTxId", "_PrcrTxId", "_AcctSvcrTxId"]
 	@property
 	def MktInfrstrctrTxId(self):
 		return self._MktInfrstrctrTxId
@@ -29,6 +16,19 @@ class TransactionIdentifications37(base_types._BaseFieldType):
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
 		self._MktInfrstrctrTxId = None
+
+	@property
+	def OthrId(self):
+		return self._OthrId
+
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
+
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
 
 	@property
 	def AcctOwnrTxId(self):
@@ -44,6 +44,19 @@ class TransactionIdentifications37(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
+	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
 
@@ -56,24 +69,11 @@ class TransactionIdentifications37(base_types._BaseFieldType):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
 
-	@property
-	def OthrId(self):
-		return self._OthrId
-
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
-
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

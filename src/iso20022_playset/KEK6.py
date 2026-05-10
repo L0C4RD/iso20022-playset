@@ -1,37 +1,24 @@
 import base_types
-import AlgorithmIdentification28
 import Max500Binary
+import AlgorithmIdentification28
 import KEKIdentifier6
 import Number
 
 class KEK6(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_NcrptdKey", "_KEKId", "_KeyNcrptnAlgo"]
+	__slots__ = ["_KeyNcrptnAlgo", "_KEKId", "_NcrptdKey", "_Vrsn"]
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def KeyNcrptnAlgo(self):
+		return self._KeyNcrptnAlgo
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@KeyNcrptnAlgo.setter
+	def KeyNcrptnAlgo(self, value):
+		self._KeyNcrptnAlgo = value if type(value) != auto else self.make_default("KeyNcrptnAlgo")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
-	def NcrptdKey(self):
-		return self._NcrptdKey
-
-	@NcrptdKey.setter
-	def NcrptdKey(self, value):
-		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
-
-	@NcrptdKey.deleter
-	def NcrptdKey(self):
-		del self._NcrptdKey
-		self._NcrptdKey = None
+	@KeyNcrptnAlgo.deleter
+	def KeyNcrptnAlgo(self):
+		del self._KeyNcrptnAlgo
+		self._KeyNcrptnAlgo = None
 
 	@property
 	def KEKId(self):
@@ -47,22 +34,35 @@ class KEK6(base_types._BaseFieldType):
 		self._KEKId = None
 
 	@property
-	def KeyNcrptnAlgo(self):
-		return self._KeyNcrptnAlgo
+	def NcrptdKey(self):
+		return self._NcrptdKey
 
-	@KeyNcrptnAlgo.setter
-	def KeyNcrptnAlgo(self, value):
-		self._KeyNcrptnAlgo = value if type(value) != auto else self.make_default("KeyNcrptnAlgo")
+	@NcrptdKey.setter
+	def NcrptdKey(self, value):
+		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
 
-	@KeyNcrptnAlgo.deleter
-	def KeyNcrptnAlgo(self):
-		del self._KeyNcrptnAlgo
-		self._KeyNcrptnAlgo = None
+	@NcrptdKey.deleter
+	def NcrptdKey(self):
+		del self._NcrptdKey
+		self._NcrptdKey = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KEKId', type=KEKIdentifier6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KEKId', type=KEKIdentifier6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

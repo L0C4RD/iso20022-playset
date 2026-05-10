@@ -1,6 +1,6 @@
 import base_types
-import RestrictionType1Code
 import GenericIdentification30
+import RestrictionType1Code
 
 class SecurityRestrictionType2Choice(base_types._BaseFieldType):
 

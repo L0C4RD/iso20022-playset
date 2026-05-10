@@ -3,20 +3,7 @@ import Max350Text
 
 class CorporateActionNarrative32(base_types._BaseFieldType):
 
-	__slots__ = ["_FXInstrsAddtlInf", "_DlvryDtls", "_InfToCmplyWth", "_InstrAddtlInf"]
-	@property
-	def FXInstrsAddtlInf(self):
-		return self._FXInstrsAddtlInf
-
-	@FXInstrsAddtlInf.setter
-	def FXInstrsAddtlInf(self, value):
-		self._FXInstrsAddtlInf = value if type(value) != auto else self.make_default("FXInstrsAddtlInf")
-
-	@FXInstrsAddtlInf.deleter
-	def FXInstrsAddtlInf(self):
-		del self._FXInstrsAddtlInf
-		self._FXInstrsAddtlInf = None
-
+	__slots__ = ["_DlvryDtls", "_InfToCmplyWth", "_InstrAddtlInf", "_FXInstrsAddtlInf"]
 	@property
 	def DlvryDtls(self):
 		return self._DlvryDtls
@@ -56,10 +43,23 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 		del self._InstrAddtlInf
 		self._InstrAddtlInf = None
 
+	@property
+	def FXInstrsAddtlInf(self):
+		return self._FXInstrsAddtlInf
+
+	@FXInstrsAddtlInf.setter
+	def FXInstrsAddtlInf(self, value):
+		self._FXInstrsAddtlInf = value if type(value) != auto else self.make_default("FXInstrsAddtlInf")
+
+	@FXInstrsAddtlInf.deleter
+	def FXInstrsAddtlInf(self):
+		del self._FXInstrsAddtlInf
+		self._FXInstrsAddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FXInstrsAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlvryDtls', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstrAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FXInstrsAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

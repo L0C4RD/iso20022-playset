@@ -1,7 +1,7 @@
 import base_types
-import PartyIdentification239Choice
 import PartyIdentificationAndAccount201
 import PartyIdentificationAndAccount200
+import PartyIdentification239Choice
 
 class ReceivingPartiesAndAccount19(base_types._BaseFieldType):
 

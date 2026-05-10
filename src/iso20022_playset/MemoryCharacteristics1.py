@@ -1,37 +1,11 @@
 import base_types
-import Max35Text
 import MemoryUnit1Code
 import DecimalNumber
+import Max35Text
 
 class MemoryCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TtlSz", "_FreeSz", "_Unit"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def TtlSz(self):
-		return self._TtlSz
-
-	@TtlSz.setter
-	def TtlSz(self, value):
-		self._TtlSz = value if type(value) != auto else self.make_default("TtlSz")
-
-	@TtlSz.deleter
-	def TtlSz(self):
-		del self._TtlSz
-		self._TtlSz = None
-
+	__slots__ = ["_FreeSz", "_Unit", "_Id", "_TtlSz"]
 	@property
 	def FreeSz(self):
 		return self._FreeSz
@@ -58,10 +32,36 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 		del self._Unit
 		self._Unit = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def TtlSz(self):
+		return self._TtlSz
+
+	@TtlSz.setter
+	def TtlSz(self, value):
+		self._TtlSz = value if type(value) != auto else self.make_default("TtlSz")
+
+	@TtlSz.deleter
+	def TtlSz(self):
+		del self._TtlSz
+		self._TtlSz = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Unit', type=MemoryUnit1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
 

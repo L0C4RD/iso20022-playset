@@ -1,13 +1,39 @@
 import base_types
-import ContactPersonal1
+import Max70Text
 import Max2NumericText
 import Credentials3
+import ContactPersonal1
 import Address2
-import Max70Text
 
 class Customer9(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_Nm", "_Ctct", "_CstmrFileRefNb", "_Id", "_Age"]
+	__slots__ = ["_Ctct", "_Id", "_Adr", "_Nm", "_CstmrFileRefNb", "_Age"]
+	@property
+	def Ctct(self):
+		return self._Ctct
+
+	@Ctct.setter
+	def Ctct(self, value):
+		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
+
+	@Ctct.deleter
+	def Ctct(self):
+		del self._Ctct
+		self._Ctct = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def Adr(self):
 		return self._Adr
@@ -35,19 +61,6 @@ class Customer9(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Ctct(self):
-		return self._Ctct
-
-	@Ctct.setter
-	def Ctct(self, value):
-		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
-
-	@Ctct.deleter
-	def Ctct(self):
-		del self._Ctct
-		self._Ctct = None
-
-	@property
 	def CstmrFileRefNb(self):
 		return self._CstmrFileRefNb
 
@@ -59,19 +72,6 @@ class Customer9(base_types._BaseFieldType):
 	def CstmrFileRefNb(self):
 		del self._CstmrFileRefNb
 		self._CstmrFileRefNb = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def Age(self):
@@ -87,11 +87,11 @@ class Customer9(base_types._BaseFieldType):
 		self._Age = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Credentials3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrFileRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Credentials3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Age', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,31 +1,31 @@
 import base_types
-import SafekeepingPlaceFormat41Choice
-import FinancialInstrumentAttributes112
-import NumberCount1Choice
 import Linkages59
 import SupplementaryData1
+import SafekeepingPlaceFormat41Choice
+import IntraPositionDetails58
 import PartyIdentification127Choice
 import SecuritiesAccount19
 import Max35Text
-import SecurityIdentification19
 import BlockChainAddressWallet3
-import IntraPositionDetails58
+import SecurityIdentification19
+import NumberCount1Choice
+import FinancialInstrumentAttributes112
 
 class IntraPositionMovementInstructionV07(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_AcctOwnr", "_SfkpgPlc", "_Lnkgs", "_FinInstrmId", "_CorpActnEvtId", "_SplmtryData", "_FinInstrmAttrbts", "_BlckChainAdrOrWllt", "_IntraPosDtls", "_NbCounts", "_SfkpgAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_SplmtryData", "_Lnkgs", "_CorpActnEvtId", "_SfkpgPlc", "_NbCounts", "_TxId", "_FinInstrmId", "_SfkpgAcct", "_FinInstrmAttrbts", "_IntraPosDtls"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def AcctOwnr(self):
@@ -41,17 +41,17 @@ class IntraPositionMovementInstructionV07(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Lnkgs(self):
@@ -67,19 +67,6 @@ class IntraPositionMovementInstructionV07(base_types._BaseFieldType):
 		self._Lnkgs = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
 
@@ -93,56 +80,17 @@ class IntraPositionMovementInstructionV07(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def FinInstrmAttrbts(self):
-		return self._FinInstrmAttrbts
-
-	@FinInstrmAttrbts.setter
-	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
-
-	@FinInstrmAttrbts.deleter
-	def FinInstrmAttrbts(self):
-		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def IntraPosDtls(self):
-		return self._IntraPosDtls
-
-	@IntraPosDtls.setter
-	def IntraPosDtls(self, value):
-		self._IntraPosDtls = value if type(value) != auto else self.make_default("IntraPosDtls")
-
-	@IntraPosDtls.deleter
-	def IntraPosDtls(self):
-		del self._IntraPosDtls
-		self._IntraPosDtls = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	@property
 	def NbCounts(self):
@@ -158,6 +106,32 @@ class IntraPositionMovementInstructionV07(base_types._BaseFieldType):
 		self._NbCounts = None
 
 	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -170,18 +144,44 @@ class IntraPositionMovementInstructionV07(base_types._BaseFieldType):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
+	@property
+	def FinInstrmAttrbts(self):
+		return self._FinInstrmAttrbts
+
+	@FinInstrmAttrbts.setter
+	def FinInstrmAttrbts(self, value):
+		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
+
+	@FinInstrmAttrbts.deleter
+	def FinInstrmAttrbts(self):
+		del self._FinInstrmAttrbts
+		self._FinInstrmAttrbts = None
+
+	@property
+	def IntraPosDtls(self):
+		return self._IntraPosDtls
+
+	@IntraPosDtls.setter
+	def IntraPosDtls(self, value):
+		self._IntraPosDtls = value if type(value) != auto else self.make_default("IntraPosDtls")
+
+	@IntraPosDtls.deleter
+	def IntraPosDtls(self):
+		del self._IntraPosDtls
+		self._IntraPosDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lnkgs', type=Linkages59, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes112, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntraPosDtls', type=IntraPositionDetails58, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Lnkgs', type=Linkages59, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbCounts', type=NumberCount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes112, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntraPosDtls', type=IntraPositionDetails58, min=1, max=1, mutex_group=None, array=False),
 	))
 

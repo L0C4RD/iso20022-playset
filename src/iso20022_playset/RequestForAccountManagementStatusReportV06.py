@@ -1,6 +1,6 @@
 import base_types
-import AccountManagementMessageReference5
 import MessageIdentification1
+import AccountManagementMessageReference5
 
 class RequestForAccountManagementStatusReportV06(base_types._BaseFieldType):
 

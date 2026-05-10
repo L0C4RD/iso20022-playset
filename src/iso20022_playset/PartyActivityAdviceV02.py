@@ -5,19 +5,19 @@ import PartyStatement3
 
 class PartyActivityAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_PtyActvty"]
+	__slots__ = ["_PtyActvty", "_SplmtryData", "_MsgHdr"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def PtyActvty(self):
+		return self._PtyActvty
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@PtyActvty.setter
+	def PtyActvty(self, value):
+		self._PtyActvty = value if type(value) != auto else self.make_default("PtyActvty")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@PtyActvty.deleter
+	def PtyActvty(self):
+		del self._PtyActvty
+		self._PtyActvty = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class PartyActivityAdviceV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def PtyActvty(self):
-		return self._PtyActvty
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@PtyActvty.setter
-	def PtyActvty(self, value):
-		self._PtyActvty = value if type(value) != auto else self.make_default("PtyActvty")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@PtyActvty.deleter
-	def PtyActvty(self):
-		del self._PtyActvty
-		self._PtyActvty = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyActvty', type=PartyStatement3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import PaymentTime3Code
 import Number
+import PaymentTime3Code
 
 class PaymentPeriod3(base_types._BaseFieldType):
 

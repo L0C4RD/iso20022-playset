@@ -3,20 +3,7 @@ import Max350Text
 
 class AdditionalInformation24(base_types._BaseFieldType):
 
-	__slots__ = ["_CollInstr", "_Note"]
-	@property
-	def CollInstr(self):
-		return self._CollInstr
-
-	@CollInstr.setter
-	def CollInstr(self, value):
-		self._CollInstr = value if type(value) != auto else self.make_default("CollInstr")
-
-	@CollInstr.deleter
-	def CollInstr(self):
-		del self._CollInstr
-		self._CollInstr = None
-
+	__slots__ = ["_Note", "_CollInstr"]
 	@property
 	def Note(self):
 		return self._Note
@@ -30,8 +17,21 @@ class AdditionalInformation24(base_types._BaseFieldType):
 		del self._Note
 		self._Note = None
 
+	@property
+	def CollInstr(self):
+		return self._CollInstr
+
+	@CollInstr.setter
+	def CollInstr(self, value):
+		self._CollInstr = value if type(value) != auto else self.make_default("CollInstr")
+
+	@CollInstr.deleter
+	def CollInstr(self):
+		del self._CollInstr
+		self._CollInstr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollInstr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Note', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollInstr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

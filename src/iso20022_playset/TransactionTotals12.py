@@ -1,51 +1,25 @@
 import base_types
-import Max35Text
-import ImpliedCurrencyAndAmount
 import TypeTransactionTotals2Code
+import ImpliedCurrencyAndAmount
 import Number
 import ActiveCurrencyCode
+import Max35Text
 
 class TransactionTotals12(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_TtlNb", "_POIGrpId", "_CmltvAmt", "_CardBrnd", "_Tp", "_CardPdctPrfl"]
+	__slots__ = ["_CardPdctPrfl", "_CmltvAmt", "_CardBrnd", "_TtlNb", "_Ccy", "_Tp", "_POIGrpId"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def CardPdctPrfl(self):
+		return self._CardPdctPrfl
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@CardPdctPrfl.setter
+	def CardPdctPrfl(self, value):
+		self._CardPdctPrfl = value if type(value) != auto else self.make_default("CardPdctPrfl")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def TtlNb(self):
-		return self._TtlNb
-
-	@TtlNb.setter
-	def TtlNb(self, value):
-		self._TtlNb = value if type(value) != auto else self.make_default("TtlNb")
-
-	@TtlNb.deleter
-	def TtlNb(self):
-		del self._TtlNb
-		self._TtlNb = None
-
-	@property
-	def POIGrpId(self):
-		return self._POIGrpId
-
-	@POIGrpId.setter
-	def POIGrpId(self, value):
-		self._POIGrpId = value if type(value) != auto else self.make_default("POIGrpId")
-
-	@POIGrpId.deleter
-	def POIGrpId(self):
-		del self._POIGrpId
-		self._POIGrpId = None
+	@CardPdctPrfl.deleter
+	def CardPdctPrfl(self):
+		del self._CardPdctPrfl
+		self._CardPdctPrfl = None
 
 	@property
 	def CmltvAmt(self):
@@ -74,6 +48,32 @@ class TransactionTotals12(base_types._BaseFieldType):
 		self._CardBrnd = None
 
 	@property
+	def TtlNb(self):
+		return self._TtlNb
+
+	@TtlNb.setter
+	def TtlNb(self, value):
+		self._TtlNb = value if type(value) != auto else self.make_default("TtlNb")
+
+	@TtlNb.deleter
+	def TtlNb(self):
+		del self._TtlNb
+		self._TtlNb = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -87,25 +87,25 @@ class TransactionTotals12(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def CardPdctPrfl(self):
-		return self._CardPdctPrfl
+	def POIGrpId(self):
+		return self._POIGrpId
 
-	@CardPdctPrfl.setter
-	def CardPdctPrfl(self, value):
-		self._CardPdctPrfl = value if type(value) != auto else self.make_default("CardPdctPrfl")
+	@POIGrpId.setter
+	def POIGrpId(self, value):
+		self._POIGrpId = value if type(value) != auto else self.make_default("POIGrpId")
 
-	@CardPdctPrfl.deleter
-	def CardPdctPrfl(self):
-		del self._CardPdctPrfl
-		self._CardPdctPrfl = None
+	@POIGrpId.deleter
+	def POIGrpId(self):
+		del self._POIGrpId
+		self._POIGrpId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardBrnd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TypeTransactionTotals2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

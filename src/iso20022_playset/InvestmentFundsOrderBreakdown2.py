@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import OrderBreakdownType1Choice
+import ActiveCurrencyAndAmount
 
 class InvestmentFundsOrderBreakdown2(base_types._BaseFieldType):
 

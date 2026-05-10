@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import Party50Choice
+import Max35Text
 
 class ProprietaryParty6(base_types._BaseFieldType):
 

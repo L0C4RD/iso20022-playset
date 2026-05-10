@@ -1,6 +1,6 @@
 import base_types
-import TimeUnit1Code
 import Max9NumericText
+import TimeUnit1Code
 import Number
 
 class ProcessRetry3(base_types._BaseFieldType):

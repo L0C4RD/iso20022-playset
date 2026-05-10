@@ -1,24 +1,11 @@
 import base_types
-import GenericPersonIdentification1
 import ISODate
+import GenericPersonIdentification1
 import Max140Text
 
 class PersonIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstNm", "_Nm", "_Othr", "_BirthDt"]
-	@property
-	def FrstNm(self):
-		return self._FrstNm
-
-	@FrstNm.setter
-	def FrstNm(self, value):
-		self._FrstNm = value if type(value) != auto else self.make_default("FrstNm")
-
-	@FrstNm.deleter
-	def FrstNm(self):
-		del self._FrstNm
-		self._FrstNm = None
-
+	__slots__ = ["_Nm", "_BirthDt", "_Othr", "_FrstNm"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -31,6 +18,19 @@ class PersonIdentification10(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
+
+	@property
+	def BirthDt(self):
+		return self._BirthDt
+
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
+
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
 
 	@property
 	def Othr(self):
@@ -46,22 +46,22 @@ class PersonIdentification10(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def BirthDt(self):
-		return self._BirthDt
+	def FrstNm(self):
+		return self._FrstNm
 
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
+	@FrstNm.setter
+	def FrstNm(self, value):
+		self._FrstNm = value if type(value) != auto else self.make_default("FrstNm")
 
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
+	@FrstNm.deleter
+	def FrstNm(self):
+		del self._FrstNm
+		self._FrstNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrstNm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstNm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

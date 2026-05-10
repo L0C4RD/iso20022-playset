@@ -1,7 +1,7 @@
 import base_types
 import ISODateTime
-import CaseStatus2Code
 import Max140Text
+import CaseStatus2Code
 
 class CaseStatus2(base_types._BaseFieldType):
 

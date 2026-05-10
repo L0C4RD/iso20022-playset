@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification175
 import Max52Text
+import GenericIdentification175
 
 class UniqueProductIdentifier1Choice(base_types._BaseFieldType):
 

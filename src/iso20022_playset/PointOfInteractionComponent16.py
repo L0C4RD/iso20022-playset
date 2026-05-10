@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
 import Max70Text
 import POIComponentType5Code
+import Max35Text
 
 class PointOfInteractionComponent16(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_ItmNb", "_SrlNb", "_PrvdrId", "_Tp"]
+	__slots__ = ["_SrlNb", "_Id", "_Tp", "_PrvdrId", "_ItmNb"]
+	@property
+	def SrlNb(self):
+		return self._SrlNb
+
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -20,30 +33,17 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def ItmNb(self):
-		return self._ItmNb
+	def Tp(self):
+		return self._Tp
 
-	@ItmNb.setter
-	def ItmNb(self, value):
-		self._ItmNb = value if type(value) != auto else self.make_default("ItmNb")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@ItmNb.deleter
-	def ItmNb(self):
-		del self._ItmNb
-		self._ItmNb = None
-
-	@property
-	def SrlNb(self):
-		return self._SrlNb
-
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
-
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def PrvdrId(self):
@@ -59,23 +59,23 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 		self._PrvdrId = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def ItmNb(self):
+		return self._ItmNb
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@ItmNb.setter
+	def ItmNb(self, value):
+		self._ItmNb = value if type(value) != auto else self.make_default("ItmNb")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@ItmNb.deleter
+	def ItmNb(self):
+		del self._ItmNb
+		self._ItmNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrlNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=POIComponentType5Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

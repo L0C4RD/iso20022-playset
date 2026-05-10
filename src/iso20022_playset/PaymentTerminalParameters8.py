@@ -1,95 +1,17 @@
 import base_types
-import LocalDateTime1
-import Max35Text
-import Max256Text
-import Max10000Binary
-import TerminalManagementAction3Code
-import PositiveNumber
-import Max8Text
 import Max70Text
+import TerminalManagementAction3Code
 import ClockSynchronisation3
+import PositiveNumber
+import LocalDateTime1
+import Max256Text
+import Max35Text
+import Max8Text
+import Max10000Binary
 
 class PaymentTerminalParameters8(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_OthrParamsLngth", "_ClckSynctn", "_OthrParams", "_OffsetEnd", "_VndrId", "_OffsetStart", "_LclDtTm", "_ActnTp", "_TmZoneLine", "_ParamFrmtIdr"]
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
-	def OthrParamsLngth(self):
-		return self._OthrParamsLngth
-
-	@OthrParamsLngth.setter
-	def OthrParamsLngth(self, value):
-		self._OthrParamsLngth = value if type(value) != auto else self.make_default("OthrParamsLngth")
-
-	@OthrParamsLngth.deleter
-	def OthrParamsLngth(self):
-		del self._OthrParamsLngth
-		self._OthrParamsLngth = None
-
-	@property
-	def ClckSynctn(self):
-		return self._ClckSynctn
-
-	@ClckSynctn.setter
-	def ClckSynctn(self, value):
-		self._ClckSynctn = value if type(value) != auto else self.make_default("ClckSynctn")
-
-	@ClckSynctn.deleter
-	def ClckSynctn(self):
-		del self._ClckSynctn
-		self._ClckSynctn = None
-
-	@property
-	def OthrParams(self):
-		return self._OthrParams
-
-	@OthrParams.setter
-	def OthrParams(self, value):
-		self._OthrParams = value if type(value) != auto else self.make_default("OthrParams")
-
-	@OthrParams.deleter
-	def OthrParams(self):
-		del self._OthrParams
-		self._OthrParams = None
-
-	@property
-	def OffsetEnd(self):
-		return self._OffsetEnd
-
-	@OffsetEnd.setter
-	def OffsetEnd(self, value):
-		self._OffsetEnd = value if type(value) != auto else self.make_default("OffsetEnd")
-
-	@OffsetEnd.deleter
-	def OffsetEnd(self):
-		del self._OffsetEnd
-		self._OffsetEnd = None
-
-	@property
-	def VndrId(self):
-		return self._VndrId
-
-	@VndrId.setter
-	def VndrId(self, value):
-		self._VndrId = value if type(value) != auto else self.make_default("VndrId")
-
-	@VndrId.deleter
-	def VndrId(self):
-		del self._VndrId
-		self._VndrId = None
-
+	__slots__ = ["_OffsetStart", "_ActnTp", "_ParamFrmtIdr", "_OffsetEnd", "_OthrParams", "_VndrId", "_TmZoneLine", "_ClckSynctn", "_Vrsn", "_LclDtTm", "_OthrParamsLngth"]
 	@property
 	def OffsetStart(self):
 		return self._OffsetStart
@@ -102,19 +24,6 @@ class PaymentTerminalParameters8(base_types._BaseFieldType):
 	def OffsetStart(self):
 		del self._OffsetStart
 		self._OffsetStart = None
-
-	@property
-	def LclDtTm(self):
-		return self._LclDtTm
-
-	@LclDtTm.setter
-	def LclDtTm(self, value):
-		self._LclDtTm = value if type(value) != auto else self.make_default("LclDtTm")
-
-	@LclDtTm.deleter
-	def LclDtTm(self):
-		del self._LclDtTm
-		self._LclDtTm = None
 
 	@property
 	def ActnTp(self):
@@ -130,6 +39,58 @@ class PaymentTerminalParameters8(base_types._BaseFieldType):
 		self._ActnTp = None
 
 	@property
+	def ParamFrmtIdr(self):
+		return self._ParamFrmtIdr
+
+	@ParamFrmtIdr.setter
+	def ParamFrmtIdr(self, value):
+		self._ParamFrmtIdr = value if type(value) != auto else self.make_default("ParamFrmtIdr")
+
+	@ParamFrmtIdr.deleter
+	def ParamFrmtIdr(self):
+		del self._ParamFrmtIdr
+		self._ParamFrmtIdr = None
+
+	@property
+	def OffsetEnd(self):
+		return self._OffsetEnd
+
+	@OffsetEnd.setter
+	def OffsetEnd(self, value):
+		self._OffsetEnd = value if type(value) != auto else self.make_default("OffsetEnd")
+
+	@OffsetEnd.deleter
+	def OffsetEnd(self):
+		del self._OffsetEnd
+		self._OffsetEnd = None
+
+	@property
+	def OthrParams(self):
+		return self._OthrParams
+
+	@OthrParams.setter
+	def OthrParams(self, value):
+		self._OthrParams = value if type(value) != auto else self.make_default("OthrParams")
+
+	@OthrParams.deleter
+	def OthrParams(self):
+		del self._OthrParams
+		self._OthrParams = None
+
+	@property
+	def VndrId(self):
+		return self._VndrId
+
+	@VndrId.setter
+	def VndrId(self, value):
+		self._VndrId = value if type(value) != auto else self.make_default("VndrId")
+
+	@VndrId.deleter
+	def VndrId(self):
+		del self._VndrId
+		self._VndrId = None
+
+	@property
 	def TmZoneLine(self):
 		return self._TmZoneLine
 
@@ -143,29 +104,68 @@ class PaymentTerminalParameters8(base_types._BaseFieldType):
 		self._TmZoneLine = None
 
 	@property
-	def ParamFrmtIdr(self):
-		return self._ParamFrmtIdr
+	def ClckSynctn(self):
+		return self._ClckSynctn
 
-	@ParamFrmtIdr.setter
-	def ParamFrmtIdr(self, value):
-		self._ParamFrmtIdr = value if type(value) != auto else self.make_default("ParamFrmtIdr")
+	@ClckSynctn.setter
+	def ClckSynctn(self, value):
+		self._ClckSynctn = value if type(value) != auto else self.make_default("ClckSynctn")
 
-	@ParamFrmtIdr.deleter
-	def ParamFrmtIdr(self):
-		del self._ParamFrmtIdr
-		self._ParamFrmtIdr = None
+	@ClckSynctn.deleter
+	def ClckSynctn(self):
+		del self._ClckSynctn
+		self._ClckSynctn = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def LclDtTm(self):
+		return self._LclDtTm
+
+	@LclDtTm.setter
+	def LclDtTm(self, value):
+		self._LclDtTm = value if type(value) != auto else self.make_default("LclDtTm")
+
+	@LclDtTm.deleter
+	def LclDtTm(self):
+		del self._LclDtTm
+		self._LclDtTm = None
+
+	@property
+	def OthrParamsLngth(self):
+		return self._OthrParamsLngth
+
+	@OthrParamsLngth.setter
+	def OthrParamsLngth(self, value):
+		self._OthrParamsLngth = value if type(value) != auto else self.make_default("OthrParamsLngth")
+
+	@OthrParamsLngth.deleter
+	def OthrParamsLngth(self):
+		del self._OthrParamsLngth
+		self._OthrParamsLngth = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrParamsLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClckSynctn', type=ClockSynchronisation3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrParams', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VndrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclDtTm', type=LocalDateTime1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmZoneLine', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ParamFrmtIdr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrParams', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VndrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmZoneLine', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClckSynctn', type=ClockSynchronisation3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclDtTm', type=LocalDateTime1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrParamsLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

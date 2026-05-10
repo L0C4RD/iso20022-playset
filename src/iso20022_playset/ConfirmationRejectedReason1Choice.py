@@ -1,6 +1,6 @@
 import base_types
-import RejectedConfirmationStatusReason1Code
 import GenericIdentification1
+import RejectedConfirmationStatusReason1Code
 
 class ConfirmationRejectedReason1Choice(base_types._BaseFieldType):
 

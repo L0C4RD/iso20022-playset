@@ -4,20 +4,7 @@ import DigitalTokenAmount3
 
 class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlTknAmt", "_Amt"]
-	@property
-	def DgtlTknAmt(self):
-		return self._DgtlTknAmt
-
-	@DgtlTknAmt.setter
-	def DgtlTknAmt(self, value):
-		self._DgtlTknAmt = value if type(value) != auto else self.make_default("DgtlTknAmt")
-
-	@DgtlTknAmt.deleter
-	def DgtlTknAmt(self):
-		del self._DgtlTknAmt
-		self._DgtlTknAmt = None
-
+	__slots__ = ["_Amt", "_DgtlTknAmt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def DgtlTknAmt(self):
+		return self._DgtlTknAmt
+
+	@DgtlTknAmt.setter
+	def DgtlTknAmt(self, value):
+		self._DgtlTknAmt = value if type(value) != auto else self.make_default("DgtlTknAmt")
+
+	@DgtlTknAmt.deleter
+	def DgtlTknAmt(self):
+		del self._DgtlTknAmt
+		self._DgtlTknAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgtlTknAmt', type=DigitalTokenAmount3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DgtlTknAmt', type=DigitalTokenAmount3, min=0, max=1, mutex_group=1, array=False),
 	))
 

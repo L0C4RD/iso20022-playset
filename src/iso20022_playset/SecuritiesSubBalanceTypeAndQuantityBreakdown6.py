@@ -1,6 +1,6 @@
 import base_types
-import QuantityBreakdown65
 import SecuritiesBalanceType8Choice
+import QuantityBreakdown65
 
 class SecuritiesSubBalanceTypeAndQuantityBreakdown6(base_types._BaseFieldType):
 

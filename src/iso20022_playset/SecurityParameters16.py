@@ -6,7 +6,20 @@ import Max256Text
 
 class SecurityParameters16(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyElmt", "_POIChllng", "_Vrsn", "_TMChllng", "_ActnTp"]
+	__slots__ = ["_Vrsn", "_SctyElmt", "_ActnTp", "_POIChllng", "_TMChllng"]
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	@property
 	def SctyElmt(self):
 		return self._SctyElmt
@@ -19,6 +32,19 @@ class SecurityParameters16(base_types._BaseFieldType):
 	def SctyElmt(self):
 		del self._SctyElmt
 		self._SctyElmt = None
+
+	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
 
 	@property
 	def POIChllng(self):
@@ -34,19 +60,6 @@ class SecurityParameters16(base_types._BaseFieldType):
 		self._POIChllng = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
 	def TMChllng(self):
 		return self._TMChllng
 
@@ -59,24 +72,11 @@ class SecurityParameters16(base_types._BaseFieldType):
 		del self._TMChllng
 		self._TMChllng = None
 
-	@property
-	def ActnTp(self):
-		return self._ActnTp
-
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
-
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyElmt', type=CryptographicKey18, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POIChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyElmt', type=CryptographicKey18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

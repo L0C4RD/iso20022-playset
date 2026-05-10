@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification1
 import ExternalUndertakingType1Code
+import GenericIdentification1
 
 class UndertakingType1Choice(base_types._BaseFieldType):
 

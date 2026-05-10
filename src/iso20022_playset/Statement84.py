@@ -1,25 +1,25 @@
 import base_types
+import Frequency26Choice
+import StatementBasis9Choice
+import DateAndPeriod3Choice
 import UpdateType16Choice
 import StatementType6Choice
-import DateAndPeriod3Choice
-import StatementBasis9Choice
-import Frequency26Choice
 
 class Statement84(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtTp", "_StmtBsis", "_Frqcy", "_UpdTp", "_StmtDtOrPrd"]
+	__slots__ = ["_StmtDtOrPrd", "_StmtBsis", "_Frqcy", "_StmtTp", "_UpdTp"]
 	@property
-	def StmtTp(self):
-		return self._StmtTp
+	def StmtDtOrPrd(self):
+		return self._StmtDtOrPrd
 
-	@StmtTp.setter
-	def StmtTp(self, value):
-		self._StmtTp = value if type(value) != auto else self.make_default("StmtTp")
+	@StmtDtOrPrd.setter
+	def StmtDtOrPrd(self, value):
+		self._StmtDtOrPrd = value if type(value) != auto else self.make_default("StmtDtOrPrd")
 
-	@StmtTp.deleter
-	def StmtTp(self):
-		del self._StmtTp
-		self._StmtTp = None
+	@StmtDtOrPrd.deleter
+	def StmtDtOrPrd(self):
+		del self._StmtDtOrPrd
+		self._StmtDtOrPrd = None
 
 	@property
 	def StmtBsis(self):
@@ -48,6 +48,19 @@ class Statement84(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
+	def StmtTp(self):
+		return self._StmtTp
+
+	@StmtTp.setter
+	def StmtTp(self, value):
+		self._StmtTp = value if type(value) != auto else self.make_default("StmtTp")
+
+	@StmtTp.deleter
+	def StmtTp(self):
+		del self._StmtTp
+		self._StmtTp = None
+
+	@property
 	def UpdTp(self):
 		return self._UpdTp
 
@@ -60,24 +73,11 @@ class Statement84(base_types._BaseFieldType):
 		del self._UpdTp
 		self._UpdTp = None
 
-	@property
-	def StmtDtOrPrd(self):
-		return self._StmtDtOrPrd
-
-	@StmtDtOrPrd.setter
-	def StmtDtOrPrd(self, value):
-		self._StmtDtOrPrd = value if type(value) != auto else self.make_default("StmtDtOrPrd")
-
-	@StmtDtOrPrd.deleter
-	def StmtDtOrPrd(self):
-		del self._StmtDtOrPrd
-		self._StmtDtOrPrd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtTp', type=StatementType6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtTp', type=StatementType6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

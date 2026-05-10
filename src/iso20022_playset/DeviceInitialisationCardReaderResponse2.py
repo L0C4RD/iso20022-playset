@@ -1,24 +1,11 @@
 import base_types
-import CardDataReading8Code
 import ICCResetData1
+import CardDataReading8Code
 import Max10000Binary
 
 class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_CardNtryMd", "_AddtlInf", "_ICCRstData"]
-	@property
-	def CardNtryMd(self):
-		return self._CardNtryMd
-
-	@CardNtryMd.setter
-	def CardNtryMd(self, value):
-		self._CardNtryMd = value if type(value) != auto else self.make_default("CardNtryMd")
-
-	@CardNtryMd.deleter
-	def CardNtryMd(self):
-		del self._CardNtryMd
-		self._CardNtryMd = None
-
+	__slots__ = ["_AddtlInf", "_ICCRstData", "_CardNtryMd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -45,9 +32,22 @@ class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 		del self._ICCRstData
 		self._ICCRstData = None
 
+	@property
+	def CardNtryMd(self):
+		return self._CardNtryMd
+
+	@CardNtryMd.setter
+	def CardNtryMd(self, value):
+		self._CardNtryMd = value if type(value) != auto else self.make_default("CardNtryMd")
+
+	@CardNtryMd.deleter
+	def CardNtryMd(self):
+		del self._CardNtryMd
+		self._CardNtryMd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CardNtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRstData', type=ICCResetData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardNtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

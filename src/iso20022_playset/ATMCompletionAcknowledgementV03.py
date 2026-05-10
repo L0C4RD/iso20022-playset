@@ -6,7 +6,20 @@ import ContentInformationType10
 
 class ATMCompletionAcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMCmpltnAck", "_Hdr", "_SctyTrlr", "_ATMCmpltnAck"]
+	__slots__ = ["_ATMCmpltnAck", "_PrtctdATMCmpltnAck", "_Hdr", "_SctyTrlr"]
+	@property
+	def ATMCmpltnAck(self):
+		return self._ATMCmpltnAck
+
+	@ATMCmpltnAck.setter
+	def ATMCmpltnAck(self, value):
+		self._ATMCmpltnAck = value if type(value) != auto else self.make_default("ATMCmpltnAck")
+
+	@ATMCmpltnAck.deleter
+	def ATMCmpltnAck(self):
+		del self._ATMCmpltnAck
+		self._ATMCmpltnAck = None
+
 	@property
 	def PrtctdATMCmpltnAck(self):
 		return self._PrtctdATMCmpltnAck
@@ -46,23 +59,10 @@ class ATMCompletionAcknowledgementV03(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
-	@property
-	def ATMCmpltnAck(self):
-		return self._ATMCmpltnAck
-
-	@ATMCmpltnAck.setter
-	def ATMCmpltnAck(self, value):
-		self._ATMCmpltnAck = value if type(value) != auto else self.make_default("ATMCmpltnAck")
-
-	@ATMCmpltnAck.deleter
-	def ATMCmpltnAck(self):
-		del self._ATMCmpltnAck
-		self._ATMCmpltnAck = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ATMCmpltnAck', type=ATMCompletionAcknowledgement3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMCmpltnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMCmpltnAck', type=ATMCompletionAcknowledgement3, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,39 +1,13 @@
 import base_types
-import Max35Text
-import TransactionCertificate5
-import TransactionCertificateContract2
-import Exact1NumericText
 import DocumentGeneralInformation5
+import Max35Text
+import TransactionCertificateContract2
+import TransactionCertificate5
+import Exact1NumericText
 
 class TransactionCertificateRecord2(base_types._BaseFieldType):
 
-	__slots__ = ["_DocSubmitgPrcdr", "_CertRcrdId", "_Attchmnt", "_Ctrct", "_Tx"]
-	@property
-	def DocSubmitgPrcdr(self):
-		return self._DocSubmitgPrcdr
-
-	@DocSubmitgPrcdr.setter
-	def DocSubmitgPrcdr(self, value):
-		self._DocSubmitgPrcdr = value if type(value) != auto else self.make_default("DocSubmitgPrcdr")
-
-	@DocSubmitgPrcdr.deleter
-	def DocSubmitgPrcdr(self):
-		del self._DocSubmitgPrcdr
-		self._DocSubmitgPrcdr = None
-
-	@property
-	def CertRcrdId(self):
-		return self._CertRcrdId
-
-	@CertRcrdId.setter
-	def CertRcrdId(self, value):
-		self._CertRcrdId = value if type(value) != auto else self.make_default("CertRcrdId")
-
-	@CertRcrdId.deleter
-	def CertRcrdId(self):
-		del self._CertRcrdId
-		self._CertRcrdId = None
-
+	__slots__ = ["_Attchmnt", "_DocSubmitgPrcdr", "_Ctrct", "_Tx", "_CertRcrdId"]
 	@property
 	def Attchmnt(self):
 		return self._Attchmnt
@@ -46,6 +20,19 @@ class TransactionCertificateRecord2(base_types._BaseFieldType):
 	def Attchmnt(self):
 		del self._Attchmnt
 		self._Attchmnt = None
+
+	@property
+	def DocSubmitgPrcdr(self):
+		return self._DocSubmitgPrcdr
+
+	@DocSubmitgPrcdr.setter
+	def DocSubmitgPrcdr(self, value):
+		self._DocSubmitgPrcdr = value if type(value) != auto else self.make_default("DocSubmitgPrcdr")
+
+	@DocSubmitgPrcdr.deleter
+	def DocSubmitgPrcdr(self):
+		del self._DocSubmitgPrcdr
+		self._DocSubmitgPrcdr = None
 
 	@property
 	def Ctrct(self):
@@ -73,11 +60,24 @@ class TransactionCertificateRecord2(base_types._BaseFieldType):
 		del self._Tx
 		self._Tx = None
 
+	@property
+	def CertRcrdId(self):
+		return self._CertRcrdId
+
+	@CertRcrdId.setter
+	def CertRcrdId(self, value):
+		self._CertRcrdId = value if type(value) != auto else self.make_default("CertRcrdId")
+
+	@CertRcrdId.deleter
+	def CertRcrdId(self):
+		del self._CertRcrdId
+		self._CertRcrdId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DocSubmitgPrcdr', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertRcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DocSubmitgPrcdr', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctrct', type=TransactionCertificateContract2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=TransactionCertificate5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertRcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

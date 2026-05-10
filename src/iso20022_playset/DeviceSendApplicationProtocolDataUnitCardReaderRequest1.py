@@ -3,20 +3,7 @@ import Min1Max256Binary
 
 class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_Param2", "_Instr", "_Param1", "_XpctdLngth", "_Data", "_Clss"]
-	@property
-	def Param2(self):
-		return self._Param2
-
-	@Param2.setter
-	def Param2(self, value):
-		self._Param2 = value if type(value) != auto else self.make_default("Param2")
-
-	@Param2.deleter
-	def Param2(self):
-		del self._Param2
-		self._Param2 = None
-
+	__slots__ = ["_Instr", "_Data", "_Param1", "_Param2", "_XpctdLngth", "_Clss"]
 	@property
 	def Instr(self):
 		return self._Instr
@@ -29,32 +16,6 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 	def Instr(self):
 		del self._Instr
 		self._Instr = None
-
-	@property
-	def Param1(self):
-		return self._Param1
-
-	@Param1.setter
-	def Param1(self, value):
-		self._Param1 = value if type(value) != auto else self.make_default("Param1")
-
-	@Param1.deleter
-	def Param1(self):
-		del self._Param1
-		self._Param1 = None
-
-	@property
-	def XpctdLngth(self):
-		return self._XpctdLngth
-
-	@XpctdLngth.setter
-	def XpctdLngth(self, value):
-		self._XpctdLngth = value if type(value) != auto else self.make_default("XpctdLngth")
-
-	@XpctdLngth.deleter
-	def XpctdLngth(self):
-		del self._XpctdLngth
-		self._XpctdLngth = None
 
 	@property
 	def Data(self):
@@ -70,6 +31,45 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 		self._Data = None
 
 	@property
+	def Param1(self):
+		return self._Param1
+
+	@Param1.setter
+	def Param1(self, value):
+		self._Param1 = value if type(value) != auto else self.make_default("Param1")
+
+	@Param1.deleter
+	def Param1(self):
+		del self._Param1
+		self._Param1 = None
+
+	@property
+	def Param2(self):
+		return self._Param2
+
+	@Param2.setter
+	def Param2(self, value):
+		self._Param2 = value if type(value) != auto else self.make_default("Param2")
+
+	@Param2.deleter
+	def Param2(self):
+		del self._Param2
+		self._Param2 = None
+
+	@property
+	def XpctdLngth(self):
+		return self._XpctdLngth
+
+	@XpctdLngth.setter
+	def XpctdLngth(self, value):
+		self._XpctdLngth = value if type(value) != auto else self.make_default("XpctdLngth")
+
+	@XpctdLngth.deleter
+	def XpctdLngth(self):
+		del self._XpctdLngth
+		self._XpctdLngth = None
+
+	@property
 	def Clss(self):
 		return self._Clss
 
@@ -83,11 +83,11 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 		self._Clss = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Param2', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Instr', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Param1', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdLngth', type=Min1Max256Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Data', type=Min1Max256Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Param1', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Param2', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdLngth', type=Min1Max256Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Clss', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 import base_types
 import Quantity54Choice
 import CreditDebitCode
-import SecurityIdentification20
 import DateAndDateTime2Choice
+import SecurityIdentification20
 
 class SecuritiesOption86(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngDt", "_PstngQty", "_OrgnlPstngDt", "_CdtDbtInd", "_FinInstrmId"]
-	@property
-	def PstngDt(self):
-		return self._PstngDt
-
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
-
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
-
+	__slots__ = ["_PstngQty", "_PstngDt", "_OrgnlPstngDt", "_CdtDbtInd", "_FinInstrmId"]
 	@property
 	def PstngQty(self):
 		return self._PstngQty
@@ -32,6 +19,19 @@ class SecuritiesOption86(base_types._BaseFieldType):
 	def PstngQty(self):
 		del self._PstngQty
 		self._PstngQty = None
+
+	@property
+	def PstngDt(self):
+		return self._PstngDt
+
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
+
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
 
 	@property
 	def OrgnlPstngDt(self):
@@ -73,8 +73,8 @@ class SecuritiesOption86(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngQty', type=Quantity54Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),

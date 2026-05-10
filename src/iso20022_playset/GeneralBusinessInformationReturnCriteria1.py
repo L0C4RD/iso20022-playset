@@ -3,20 +3,7 @@ import RequestedIndicator
 
 class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_SbjtInd", "_QlfrInd", "_SbjtDtlsInd"]
-	@property
-	def SbjtInd(self):
-		return self._SbjtInd
-
-	@SbjtInd.setter
-	def SbjtInd(self, value):
-		self._SbjtInd = value if type(value) != auto else self.make_default("SbjtInd")
-
-	@SbjtInd.deleter
-	def SbjtInd(self):
-		del self._SbjtInd
-		self._SbjtInd = None
-
+	__slots__ = ["_QlfrInd", "_SbjtDtlsInd", "_SbjtInd"]
 	@property
 	def QlfrInd(self):
 		return self._QlfrInd
@@ -43,9 +30,22 @@ class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 		del self._SbjtDtlsInd
 		self._SbjtDtlsInd = None
 
+	@property
+	def SbjtInd(self):
+		return self._SbjtInd
+
+	@SbjtInd.setter
+	def SbjtInd(self, value):
+		self._SbjtInd = value if type(value) != auto else self.make_default("SbjtInd")
+
+	@SbjtInd.deleter
+	def SbjtInd(self):
+		del self._SbjtInd
+		self._SbjtInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SbjtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QlfrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbjtDtlsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbjtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

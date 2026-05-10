@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import InRepairStatusReason4
+import NoReasonCode
 
 class InRepairStatusReason4Choice(base_types._BaseFieldType):
 

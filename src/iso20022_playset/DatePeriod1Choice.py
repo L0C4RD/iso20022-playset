@@ -1,7 +1,7 @@
 import base_types
-import Period2
 import ISODate
 import ISOYearMonth
+import Period2
 
 class DatePeriod1Choice(base_types._BaseFieldType):
 

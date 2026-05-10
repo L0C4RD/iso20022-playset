@@ -1,7 +1,7 @@
 import base_types
-import PostalAddress1
 import PartyIdentification129Choice
 import ContactIdentification1
+import PostalAddress1
 
 class PartyIdentification289(base_types._BaseFieldType):
 

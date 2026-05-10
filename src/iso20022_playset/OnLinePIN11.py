@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
 import ContentInformationType40
 import PINFormat3Code
+import Max35Text
 
 class OnLinePIN11(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdPINBlck", "_PINFrmt", "_AddtlInpt"]
+	__slots__ = ["_AddtlInpt", "_PINFrmt", "_NcrptdPINBlck"]
 	@property
-	def NcrptdPINBlck(self):
-		return self._NcrptdPINBlck
+	def AddtlInpt(self):
+		return self._AddtlInpt
 
-	@NcrptdPINBlck.setter
-	def NcrptdPINBlck(self, value):
-		self._NcrptdPINBlck = value if type(value) != auto else self.make_default("NcrptdPINBlck")
+	@AddtlInpt.setter
+	def AddtlInpt(self, value):
+		self._AddtlInpt = value if type(value) != auto else self.make_default("AddtlInpt")
 
-	@NcrptdPINBlck.deleter
-	def NcrptdPINBlck(self):
-		del self._NcrptdPINBlck
-		self._NcrptdPINBlck = None
+	@AddtlInpt.deleter
+	def AddtlInpt(self):
+		del self._AddtlInpt
+		self._AddtlInpt = None
 
 	@property
 	def PINFrmt(self):
@@ -33,21 +33,21 @@ class OnLinePIN11(base_types._BaseFieldType):
 		self._PINFrmt = None
 
 	@property
-	def AddtlInpt(self):
-		return self._AddtlInpt
+	def NcrptdPINBlck(self):
+		return self._NcrptdPINBlck
 
-	@AddtlInpt.setter
-	def AddtlInpt(self, value):
-		self._AddtlInpt = value if type(value) != auto else self.make_default("AddtlInpt")
+	@NcrptdPINBlck.setter
+	def NcrptdPINBlck(self, value):
+		self._NcrptdPINBlck = value if type(value) != auto else self.make_default("NcrptdPINBlck")
 
-	@AddtlInpt.deleter
-	def AddtlInpt(self):
-		del self._AddtlInpt
-		self._AddtlInpt = None
+	@NcrptdPINBlck.deleter
+	def NcrptdPINBlck(self):
+		del self._NcrptdPINBlck
+		self._NcrptdPINBlck = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcrptdPINBlck', type=ContentInformationType40, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PINFrmt', type=PINFormat3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInpt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PINFrmt', type=PINFormat3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdPINBlck', type=ContentInformationType40, min=1, max=1, mutex_group=None, array=False),
 	))
 

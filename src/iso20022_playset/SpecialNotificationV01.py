@@ -1,42 +1,16 @@
 import base_types
-import Notification1
-import BICIdentification1
-import DocumentIdentification3
 import TransactionStatus4
-import DocumentIdentification5
+import BICIdentification1
 import MessageIdentification1
-import SimpleIdentificationInformation
+import DocumentIdentification3
+import DocumentIdentification5
 import PendingActivity2
+import SimpleIdentificationInformation
+import Notification1
 
 class SpecialNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Initr", "_UsrTxRef", "_ReqForActn", "_TxId", "_Ntfctn", "_NtfctnId", "_TxSts", "_EstblishdBaselnId"]
-	@property
-	def Initr(self):
-		return self._Initr
-
-	@Initr.setter
-	def Initr(self, value):
-		self._Initr = value if type(value) != auto else self.make_default("Initr")
-
-	@Initr.deleter
-	def Initr(self):
-		del self._Initr
-		self._Initr = None
-
-	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
+	__slots__ = ["_ReqForActn", "_EstblishdBaselnId", "_TxId", "_UsrTxRef", "_Ntfctn", "_NtfctnId", "_Initr", "_TxSts"]
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -51,6 +25,19 @@ class SpecialNotificationV01(base_types._BaseFieldType):
 		self._ReqForActn = None
 
 	@property
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
+
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
+
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
+
+	@property
 	def TxId(self):
 		return self._TxId
 
@@ -62,6 +49,19 @@ class SpecialNotificationV01(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
+
+	@property
+	def UsrTxRef(self):
+		return self._UsrTxRef
+
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	@property
 	def Ntfctn(self):
@@ -90,6 +90,19 @@ class SpecialNotificationV01(base_types._BaseFieldType):
 		self._NtfctnId = None
 
 	@property
+	def Initr(self):
+		return self._Initr
+
+	@Initr.setter
+	def Initr(self, value):
+		self._Initr = value if type(value) != auto else self.make_default("Initr")
+
+	@Initr.deleter
+	def Initr(self):
+		del self._Initr
+		self._Initr = None
+
+	@property
 	def TxSts(self):
 		return self._TxSts
 
@@ -102,27 +115,14 @@ class SpecialNotificationV01(base_types._BaseFieldType):
 		del self._TxSts
 		self._TxSts = None
 
-	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
-
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
-
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ntfctn', type=Notification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
 	))
 

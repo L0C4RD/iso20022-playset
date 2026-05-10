@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
 import FinancialInstrumentQuantity1Choice
-import Number
 import YesNoIndicator
+import Number
+import Max35Text
 
 class BuyIn3(base_types._BaseFieldType):
 
-	__slots__ = ["_CvrdQty", "_ReqForDelyInd", "_UcvrdQty", "_BuyInNtfctnId", "_NbOfDays", "_InitlQty"]
-	@property
-	def CvrdQty(self):
-		return self._CvrdQty
-
-	@CvrdQty.setter
-	def CvrdQty(self, value):
-		self._CvrdQty = value if type(value) != auto else self.make_default("CvrdQty")
-
-	@CvrdQty.deleter
-	def CvrdQty(self):
-		del self._CvrdQty
-		self._CvrdQty = None
-
+	__slots__ = ["_ReqForDelyInd", "_CvrdQty", "_BuyInNtfctnId", "_NbOfDays", "_UcvrdQty", "_InitlQty"]
 	@property
 	def ReqForDelyInd(self):
 		return self._ReqForDelyInd
@@ -34,17 +21,17 @@ class BuyIn3(base_types._BaseFieldType):
 		self._ReqForDelyInd = None
 
 	@property
-	def UcvrdQty(self):
-		return self._UcvrdQty
+	def CvrdQty(self):
+		return self._CvrdQty
 
-	@UcvrdQty.setter
-	def UcvrdQty(self, value):
-		self._UcvrdQty = value if type(value) != auto else self.make_default("UcvrdQty")
+	@CvrdQty.setter
+	def CvrdQty(self, value):
+		self._CvrdQty = value if type(value) != auto else self.make_default("CvrdQty")
 
-	@UcvrdQty.deleter
-	def UcvrdQty(self):
-		del self._UcvrdQty
-		self._UcvrdQty = None
+	@CvrdQty.deleter
+	def CvrdQty(self):
+		del self._CvrdQty
+		self._CvrdQty = None
 
 	@property
 	def BuyInNtfctnId(self):
@@ -73,6 +60,19 @@ class BuyIn3(base_types._BaseFieldType):
 		self._NbOfDays = None
 
 	@property
+	def UcvrdQty(self):
+		return self._UcvrdQty
+
+	@UcvrdQty.setter
+	def UcvrdQty(self, value):
+		self._UcvrdQty = value if type(value) != auto else self.make_default("UcvrdQty")
+
+	@UcvrdQty.deleter
+	def UcvrdQty(self):
+		del self._UcvrdQty
+		self._UcvrdQty = None
+
+	@property
 	def InitlQty(self):
 		return self._InitlQty
 
@@ -86,11 +86,11 @@ class BuyIn3(base_types._BaseFieldType):
 		self._InitlQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CvrdQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForDelyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UcvrdQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CvrdQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDays', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UcvrdQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

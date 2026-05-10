@@ -1,23 +1,23 @@
 import base_types
-import ImpliedCurrencyAmountRange1Choice
 import CreditDebitCode
 import ActiveOrHistoricCurrencyCode
+import ImpliedCurrencyAmountRange1Choice
 
 class ActiveOrHistoricCurrencyAndAmountRange2(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Amt", "_Ccy"]
+	__slots__ = ["_Ccy", "_Amt", "_CdtDbtInd"]
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def Ccy(self):
+		return self._Ccy
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Amt(self):
@@ -33,21 +33,21 @@ class ActiveOrHistoricCurrencyAndAmountRange2(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAmountRange1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAmountRange1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

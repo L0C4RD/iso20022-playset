@@ -1,11 +1,24 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
 import CashAccount40
+import BranchAndFinancialInstitutionIdentification8
 import PartyIdentification272
 
 class IdentificationInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_Agt", "_Acct"]
+	__slots__ = ["_Acct", "_Pty", "_Agt"]
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
 	@property
 	def Pty(self):
 		return self._Pty
@@ -32,22 +45,9 @@ class IdentificationInformation5(base_types._BaseFieldType):
 		del self._Agt
 		self._Agt = None
 
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

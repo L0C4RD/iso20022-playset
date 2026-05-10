@@ -1,26 +1,39 @@
 import base_types
-import Max35Text
-import CorrectiveGroupInformation1
-import ActiveOrHistoricCurrencyAndAmount
+import DateAndDateTime2Choice
 import UUIDv4Identifier
 import ISODate
-import DateAndDateTime2Choice
+import CorrectiveGroupInformation1
+import ActiveOrHistoricCurrencyAndAmount
+import Max35Text
 
 class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdColltnDt", "_UETR", "_EndToEndId", "_ReqdExctnDt", "_InstrId", "_PmtInfId", "_GrpHdr", "_InstdAmt"]
+	__slots__ = ["_ReqdExctnDt", "_PmtInfId", "_UETR", "_EndToEndId", "_GrpHdr", "_InstrId", "_ReqdColltnDt", "_InstdAmt"]
 	@property
-	def ReqdColltnDt(self):
-		return self._ReqdColltnDt
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
 
-	@ReqdColltnDt.setter
-	def ReqdColltnDt(self, value):
-		self._ReqdColltnDt = value if type(value) != auto else self.make_default("ReqdColltnDt")
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
 
-	@ReqdColltnDt.deleter
-	def ReqdColltnDt(self):
-		del self._ReqdColltnDt
-		self._ReqdColltnDt = None
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
+
+	@property
+	def PmtInfId(self):
+		return self._PmtInfId
+
+	@PmtInfId.setter
+	def PmtInfId(self, value):
+		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
+
+	@PmtInfId.deleter
+	def PmtInfId(self):
+		del self._PmtInfId
+		self._PmtInfId = None
 
 	@property
 	def UETR(self):
@@ -49,17 +62,17 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._EndToEndId = None
 
 	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
+	def GrpHdr(self):
+		return self._GrpHdr
 
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
 
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def InstrId(self):
@@ -75,30 +88,17 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._InstrId = None
 
 	@property
-	def PmtInfId(self):
-		return self._PmtInfId
+	def ReqdColltnDt(self):
+		return self._ReqdColltnDt
 
-	@PmtInfId.setter
-	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
+	@ReqdColltnDt.setter
+	def ReqdColltnDt(self, value):
+		self._ReqdColltnDt = value if type(value) != auto else self.make_default("ReqdColltnDt")
 
-	@PmtInfId.deleter
-	def PmtInfId(self):
-		del self._PmtInfId
-		self._PmtInfId = None
-
-	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@ReqdColltnDt.deleter
+	def ReqdColltnDt(self):
+		del self._ReqdColltnDt
+		self._ReqdColltnDt = None
 
 	@property
 	def InstdAmt(self):
@@ -114,13 +114,13 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._InstdAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqdColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpHdr', type=CorrectiveGroupInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

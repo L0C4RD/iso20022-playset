@@ -1,6 +1,6 @@
 import base_types
-import Vote15
 import Vote14
+import Vote15
 
 class Vote16Choice(base_types._BaseFieldType):
 

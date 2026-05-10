@@ -1,53 +1,27 @@
 import base_types
-import TrueFalseIndicator
-import Max35Text
+import DataSetIdentification11
 import NetworkParameters7
 import Max3000Binary
+import Max35Text
 import ProcessRetry3
+import TrueFalseIndicator
 import TMSAction13
-import DataSetIdentification11
 
 class MaintenanceDelegateAction10(base_types._BaseFieldType):
 
-	__slots__ = ["_PrdcActn", "_Actn", "_AddtlInf", "_TMRmotAccs", "_DataSetId", "_ReTry", "_TMSPrtcolVrsn", "_TMSPrtcol"]
+	__slots__ = ["_TMSPrtcolVrsn", "_TMRmotAccs", "_AddtlInf", "_Actn", "_ReTry", "_TMSPrtcol", "_DataSetId", "_PrdcActn"]
 	@property
-	def PrdcActn(self):
-		return self._PrdcActn
+	def TMSPrtcolVrsn(self):
+		return self._TMSPrtcolVrsn
 
-	@PrdcActn.setter
-	def PrdcActn(self, value):
-		self._PrdcActn = value if type(value) != auto else self.make_default("PrdcActn")
+	@TMSPrtcolVrsn.setter
+	def TMSPrtcolVrsn(self, value):
+		self._TMSPrtcolVrsn = value if type(value) != auto else self.make_default("TMSPrtcolVrsn")
 
-	@PrdcActn.deleter
-	def PrdcActn(self):
-		del self._PrdcActn
-		self._PrdcActn = None
-
-	@property
-	def Actn(self):
-		return self._Actn
-
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
-
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@TMSPrtcolVrsn.deleter
+	def TMSPrtcolVrsn(self):
+		del self._TMSPrtcolVrsn
+		self._TMSPrtcolVrsn = None
 
 	@property
 	def TMRmotAccs(self):
@@ -63,17 +37,30 @@ class MaintenanceDelegateAction10(base_types._BaseFieldType):
 		self._TMRmotAccs = None
 
 	@property
-	def DataSetId(self):
-		return self._DataSetId
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@DataSetId.setter
-	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@DataSetId.deleter
-	def DataSetId(self):
-		del self._DataSetId
-		self._DataSetId = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def Actn(self):
+		return self._Actn
+
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
+
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
 
 	@property
 	def ReTry(self):
@@ -89,19 +76,6 @@ class MaintenanceDelegateAction10(base_types._BaseFieldType):
 		self._ReTry = None
 
 	@property
-	def TMSPrtcolVrsn(self):
-		return self._TMSPrtcolVrsn
-
-	@TMSPrtcolVrsn.setter
-	def TMSPrtcolVrsn(self, value):
-		self._TMSPrtcolVrsn = value if type(value) != auto else self.make_default("TMSPrtcolVrsn")
-
-	@TMSPrtcolVrsn.deleter
-	def TMSPrtcolVrsn(self):
-		del self._TMSPrtcolVrsn
-		self._TMSPrtcolVrsn = None
-
-	@property
 	def TMSPrtcol(self):
 		return self._TMSPrtcol
 
@@ -114,14 +88,40 @@ class MaintenanceDelegateAction10(base_types._BaseFieldType):
 		del self._TMSPrtcol
 		self._TMSPrtcol = None
 
+	@property
+	def DataSetId(self):
+		return self._DataSetId
+
+	@DataSetId.setter
+	def DataSetId(self, value):
+		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
+
+	@DataSetId.deleter
+	def DataSetId(self):
+		del self._DataSetId
+		self._DataSetId = None
+
+	@property
+	def PrdcActn(self):
+		return self._PrdcActn
+
+	@PrdcActn.setter
+	def PrdcActn(self, value):
+		self._PrdcActn = value if type(value) != auto else self.make_default("PrdcActn")
+
+	@PrdcActn.deleter
+	def PrdcActn(self):
+		del self._PrdcActn
+		self._PrdcActn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrdcActn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Actn', type=TMSAction13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=Max3000Binary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TMRmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSPrtcolVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMRmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max3000Binary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Actn', type=TMSAction13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSPrtcol', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrdcActn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

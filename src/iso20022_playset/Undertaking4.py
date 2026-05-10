@@ -1,127 +1,36 @@
 import base_types
-import YesNoIndicator
-import PartyAndType1
-import UndertakingName1Code
-import ExternalTypeOfParty1Code
-import GovernanceRules1
-import UndertakingAmount1
-import Presentation1
-import CommunicationChannel1
-import UndertakingWording1
-import ExternalUndertakingType1Code
 import AutomaticVariation1
+import PartyAndType1
+import ExternalUndertakingType1Code
+import UndertakingName1Code
+import YesNoIndicator
 import PartyIdentification43
-import ExpiryDetails1
+import UndertakingWording1
+import GovernanceRules1
+import ExternalTypeOfParty1Code
 import UnderlyingTradeTransaction1
-import ISODate
+import Presentation1
+import UndertakingAmount1
 import Max2000Text
+import ISODate
+import ExpiryDetails1
+import CommunicationChannel1
 
 class Undertaking4(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfChrgsPyblBy", "_AdvsgPty", "_Tp", "_ScndAdvsgPty", "_UndrlygTx", "_XpryDtls", "_Bnfcry", "_DtOfIssnc", "_Nm", "_MltplDmndInd", "_ConfInd", "_PresntnDtls", "_AddtlInf", "_AutomtcAmtVartn", "_UdrtkgWrdg", "_Applcnt", "_GovncRulesAndLaw", "_DlvryChanl", "_TrfInd", "_AddtlPty", "_PrtlDmndInd", "_ConfChrgsPyblBy", "_LclUdrtkgAmt"]
+	__slots__ = ["_PresntnDtls", "_Nm", "_UdrtkgWrdg", "_LclUdrtkgAmt", "_XpryDtls", "_UndrlygTx", "_TrfChrgsPyblBy", "_ConfInd", "_PrtlDmndInd", "_GovncRulesAndLaw", "_Applcnt", "_ScndAdvsgPty", "_ConfChrgsPyblBy", "_MltplDmndInd", "_AutomtcAmtVartn", "_Tp", "_Bnfcry", "_AddtlInf", "_DlvryChanl", "_DtOfIssnc", "_AdvsgPty", "_AddtlPty", "_TrfInd"]
 	@property
-	def TrfChrgsPyblBy(self):
-		return self._TrfChrgsPyblBy
+	def PresntnDtls(self):
+		return self._PresntnDtls
 
-	@TrfChrgsPyblBy.setter
-	def TrfChrgsPyblBy(self, value):
-		self._TrfChrgsPyblBy = value if type(value) != auto else self.make_default("TrfChrgsPyblBy")
+	@PresntnDtls.setter
+	def PresntnDtls(self, value):
+		self._PresntnDtls = value if type(value) != auto else self.make_default("PresntnDtls")
 
-	@TrfChrgsPyblBy.deleter
-	def TrfChrgsPyblBy(self):
-		del self._TrfChrgsPyblBy
-		self._TrfChrgsPyblBy = None
-
-	@property
-	def AdvsgPty(self):
-		return self._AdvsgPty
-
-	@AdvsgPty.setter
-	def AdvsgPty(self, value):
-		self._AdvsgPty = value if type(value) != auto else self.make_default("AdvsgPty")
-
-	@AdvsgPty.deleter
-	def AdvsgPty(self):
-		del self._AdvsgPty
-		self._AdvsgPty = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def ScndAdvsgPty(self):
-		return self._ScndAdvsgPty
-
-	@ScndAdvsgPty.setter
-	def ScndAdvsgPty(self, value):
-		self._ScndAdvsgPty = value if type(value) != auto else self.make_default("ScndAdvsgPty")
-
-	@ScndAdvsgPty.deleter
-	def ScndAdvsgPty(self):
-		del self._ScndAdvsgPty
-		self._ScndAdvsgPty = None
-
-	@property
-	def UndrlygTx(self):
-		return self._UndrlygTx
-
-	@UndrlygTx.setter
-	def UndrlygTx(self, value):
-		self._UndrlygTx = value if type(value) != auto else self.make_default("UndrlygTx")
-
-	@UndrlygTx.deleter
-	def UndrlygTx(self):
-		del self._UndrlygTx
-		self._UndrlygTx = None
-
-	@property
-	def XpryDtls(self):
-		return self._XpryDtls
-
-	@XpryDtls.setter
-	def XpryDtls(self, value):
-		self._XpryDtls = value if type(value) != auto else self.make_default("XpryDtls")
-
-	@XpryDtls.deleter
-	def XpryDtls(self):
-		del self._XpryDtls
-		self._XpryDtls = None
-
-	@property
-	def Bnfcry(self):
-		return self._Bnfcry
-
-	@Bnfcry.setter
-	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != auto else self.make_default("Bnfcry")
-
-	@Bnfcry.deleter
-	def Bnfcry(self):
-		del self._Bnfcry
-		self._Bnfcry = None
-
-	@property
-	def DtOfIssnc(self):
-		return self._DtOfIssnc
-
-	@DtOfIssnc.setter
-	def DtOfIssnc(self, value):
-		self._DtOfIssnc = value if type(value) != auto else self.make_default("DtOfIssnc")
-
-	@DtOfIssnc.deleter
-	def DtOfIssnc(self):
-		del self._DtOfIssnc
-		self._DtOfIssnc = None
+	@PresntnDtls.deleter
+	def PresntnDtls(self):
+		del self._PresntnDtls
+		self._PresntnDtls = None
 
 	@property
 	def Nm(self):
@@ -137,17 +46,69 @@ class Undertaking4(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def MltplDmndInd(self):
-		return self._MltplDmndInd
+	def UdrtkgWrdg(self):
+		return self._UdrtkgWrdg
 
-	@MltplDmndInd.setter
-	def MltplDmndInd(self, value):
-		self._MltplDmndInd = value if type(value) != auto else self.make_default("MltplDmndInd")
+	@UdrtkgWrdg.setter
+	def UdrtkgWrdg(self, value):
+		self._UdrtkgWrdg = value if type(value) != auto else self.make_default("UdrtkgWrdg")
 
-	@MltplDmndInd.deleter
-	def MltplDmndInd(self):
-		del self._MltplDmndInd
-		self._MltplDmndInd = None
+	@UdrtkgWrdg.deleter
+	def UdrtkgWrdg(self):
+		del self._UdrtkgWrdg
+		self._UdrtkgWrdg = None
+
+	@property
+	def LclUdrtkgAmt(self):
+		return self._LclUdrtkgAmt
+
+	@LclUdrtkgAmt.setter
+	def LclUdrtkgAmt(self, value):
+		self._LclUdrtkgAmt = value if type(value) != auto else self.make_default("LclUdrtkgAmt")
+
+	@LclUdrtkgAmt.deleter
+	def LclUdrtkgAmt(self):
+		del self._LclUdrtkgAmt
+		self._LclUdrtkgAmt = None
+
+	@property
+	def XpryDtls(self):
+		return self._XpryDtls
+
+	@XpryDtls.setter
+	def XpryDtls(self, value):
+		self._XpryDtls = value if type(value) != auto else self.make_default("XpryDtls")
+
+	@XpryDtls.deleter
+	def XpryDtls(self):
+		del self._XpryDtls
+		self._XpryDtls = None
+
+	@property
+	def UndrlygTx(self):
+		return self._UndrlygTx
+
+	@UndrlygTx.setter
+	def UndrlygTx(self, value):
+		self._UndrlygTx = value if type(value) != auto else self.make_default("UndrlygTx")
+
+	@UndrlygTx.deleter
+	def UndrlygTx(self):
+		del self._UndrlygTx
+		self._UndrlygTx = None
+
+	@property
+	def TrfChrgsPyblBy(self):
+		return self._TrfChrgsPyblBy
+
+	@TrfChrgsPyblBy.setter
+	def TrfChrgsPyblBy(self, value):
+		self._TrfChrgsPyblBy = value if type(value) != auto else self.make_default("TrfChrgsPyblBy")
+
+	@TrfChrgsPyblBy.deleter
+	def TrfChrgsPyblBy(self):
+		del self._TrfChrgsPyblBy
+		self._TrfChrgsPyblBy = None
 
 	@property
 	def ConfInd(self):
@@ -163,69 +124,17 @@ class Undertaking4(base_types._BaseFieldType):
 		self._ConfInd = None
 
 	@property
-	def PresntnDtls(self):
-		return self._PresntnDtls
+	def PrtlDmndInd(self):
+		return self._PrtlDmndInd
 
-	@PresntnDtls.setter
-	def PresntnDtls(self, value):
-		self._PresntnDtls = value if type(value) != auto else self.make_default("PresntnDtls")
+	@PrtlDmndInd.setter
+	def PrtlDmndInd(self, value):
+		self._PrtlDmndInd = value if type(value) != auto else self.make_default("PrtlDmndInd")
 
-	@PresntnDtls.deleter
-	def PresntnDtls(self):
-		del self._PresntnDtls
-		self._PresntnDtls = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def AutomtcAmtVartn(self):
-		return self._AutomtcAmtVartn
-
-	@AutomtcAmtVartn.setter
-	def AutomtcAmtVartn(self, value):
-		self._AutomtcAmtVartn = value if type(value) != auto else self.make_default("AutomtcAmtVartn")
-
-	@AutomtcAmtVartn.deleter
-	def AutomtcAmtVartn(self):
-		del self._AutomtcAmtVartn
-		self._AutomtcAmtVartn = None
-
-	@property
-	def UdrtkgWrdg(self):
-		return self._UdrtkgWrdg
-
-	@UdrtkgWrdg.setter
-	def UdrtkgWrdg(self, value):
-		self._UdrtkgWrdg = value if type(value) != auto else self.make_default("UdrtkgWrdg")
-
-	@UdrtkgWrdg.deleter
-	def UdrtkgWrdg(self):
-		del self._UdrtkgWrdg
-		self._UdrtkgWrdg = None
-
-	@property
-	def Applcnt(self):
-		return self._Applcnt
-
-	@Applcnt.setter
-	def Applcnt(self, value):
-		self._Applcnt = value if type(value) != auto else self.make_default("Applcnt")
-
-	@Applcnt.deleter
-	def Applcnt(self):
-		del self._Applcnt
-		self._Applcnt = None
+	@PrtlDmndInd.deleter
+	def PrtlDmndInd(self):
+		del self._PrtlDmndInd
+		self._PrtlDmndInd = None
 
 	@property
 	def GovncRulesAndLaw(self):
@@ -241,56 +150,30 @@ class Undertaking4(base_types._BaseFieldType):
 		self._GovncRulesAndLaw = None
 
 	@property
-	def DlvryChanl(self):
-		return self._DlvryChanl
+	def Applcnt(self):
+		return self._Applcnt
 
-	@DlvryChanl.setter
-	def DlvryChanl(self, value):
-		self._DlvryChanl = value if type(value) != auto else self.make_default("DlvryChanl")
+	@Applcnt.setter
+	def Applcnt(self, value):
+		self._Applcnt = value if type(value) != auto else self.make_default("Applcnt")
 
-	@DlvryChanl.deleter
-	def DlvryChanl(self):
-		del self._DlvryChanl
-		self._DlvryChanl = None
-
-	@property
-	def TrfInd(self):
-		return self._TrfInd
-
-	@TrfInd.setter
-	def TrfInd(self, value):
-		self._TrfInd = value if type(value) != auto else self.make_default("TrfInd")
-
-	@TrfInd.deleter
-	def TrfInd(self):
-		del self._TrfInd
-		self._TrfInd = None
+	@Applcnt.deleter
+	def Applcnt(self):
+		del self._Applcnt
+		self._Applcnt = None
 
 	@property
-	def AddtlPty(self):
-		return self._AddtlPty
+	def ScndAdvsgPty(self):
+		return self._ScndAdvsgPty
 
-	@AddtlPty.setter
-	def AddtlPty(self, value):
-		self._AddtlPty = value if type(value) != auto else self.make_default("AddtlPty")
+	@ScndAdvsgPty.setter
+	def ScndAdvsgPty(self, value):
+		self._ScndAdvsgPty = value if type(value) != auto else self.make_default("ScndAdvsgPty")
 
-	@AddtlPty.deleter
-	def AddtlPty(self):
-		del self._AddtlPty
-		self._AddtlPty = None
-
-	@property
-	def PrtlDmndInd(self):
-		return self._PrtlDmndInd
-
-	@PrtlDmndInd.setter
-	def PrtlDmndInd(self, value):
-		self._PrtlDmndInd = value if type(value) != auto else self.make_default("PrtlDmndInd")
-
-	@PrtlDmndInd.deleter
-	def PrtlDmndInd(self):
-		del self._PrtlDmndInd
-		self._PrtlDmndInd = None
+	@ScndAdvsgPty.deleter
+	def ScndAdvsgPty(self):
+		del self._ScndAdvsgPty
+		self._ScndAdvsgPty = None
 
 	@property
 	def ConfChrgsPyblBy(self):
@@ -306,41 +189,158 @@ class Undertaking4(base_types._BaseFieldType):
 		self._ConfChrgsPyblBy = None
 
 	@property
-	def LclUdrtkgAmt(self):
-		return self._LclUdrtkgAmt
+	def MltplDmndInd(self):
+		return self._MltplDmndInd
 
-	@LclUdrtkgAmt.setter
-	def LclUdrtkgAmt(self, value):
-		self._LclUdrtkgAmt = value if type(value) != auto else self.make_default("LclUdrtkgAmt")
+	@MltplDmndInd.setter
+	def MltplDmndInd(self, value):
+		self._MltplDmndInd = value if type(value) != auto else self.make_default("MltplDmndInd")
 
-	@LclUdrtkgAmt.deleter
-	def LclUdrtkgAmt(self):
-		del self._LclUdrtkgAmt
-		self._LclUdrtkgAmt = None
+	@MltplDmndInd.deleter
+	def MltplDmndInd(self):
+		del self._MltplDmndInd
+		self._MltplDmndInd = None
+
+	@property
+	def AutomtcAmtVartn(self):
+		return self._AutomtcAmtVartn
+
+	@AutomtcAmtVartn.setter
+	def AutomtcAmtVartn(self, value):
+		self._AutomtcAmtVartn = value if type(value) != auto else self.make_default("AutomtcAmtVartn")
+
+	@AutomtcAmtVartn.deleter
+	def AutomtcAmtVartn(self):
+		del self._AutomtcAmtVartn
+		self._AutomtcAmtVartn = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Bnfcry(self):
+		return self._Bnfcry
+
+	@Bnfcry.setter
+	def Bnfcry(self, value):
+		self._Bnfcry = value if type(value) != auto else self.make_default("Bnfcry")
+
+	@Bnfcry.deleter
+	def Bnfcry(self):
+		del self._Bnfcry
+		self._Bnfcry = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def DlvryChanl(self):
+		return self._DlvryChanl
+
+	@DlvryChanl.setter
+	def DlvryChanl(self, value):
+		self._DlvryChanl = value if type(value) != auto else self.make_default("DlvryChanl")
+
+	@DlvryChanl.deleter
+	def DlvryChanl(self):
+		del self._DlvryChanl
+		self._DlvryChanl = None
+
+	@property
+	def DtOfIssnc(self):
+		return self._DtOfIssnc
+
+	@DtOfIssnc.setter
+	def DtOfIssnc(self, value):
+		self._DtOfIssnc = value if type(value) != auto else self.make_default("DtOfIssnc")
+
+	@DtOfIssnc.deleter
+	def DtOfIssnc(self):
+		del self._DtOfIssnc
+		self._DtOfIssnc = None
+
+	@property
+	def AdvsgPty(self):
+		return self._AdvsgPty
+
+	@AdvsgPty.setter
+	def AdvsgPty(self, value):
+		self._AdvsgPty = value if type(value) != auto else self.make_default("AdvsgPty")
+
+	@AdvsgPty.deleter
+	def AdvsgPty(self):
+		del self._AdvsgPty
+		self._AdvsgPty = None
+
+	@property
+	def AddtlPty(self):
+		return self._AddtlPty
+
+	@AddtlPty.setter
+	def AddtlPty(self, value):
+		self._AddtlPty = value if type(value) != auto else self.make_default("AddtlPty")
+
+	@AddtlPty.deleter
+	def AddtlPty(self):
+		del self._AddtlPty
+		self._AddtlPty = None
+
+	@property
+	def TrfInd(self):
+		return self._TrfInd
+
+	@TrfInd.setter
+	def TrfInd(self, value):
+		self._TrfInd = value if type(value) != auto else self.make_default("TrfInd")
+
+	@TrfInd.deleter
+	def TrfInd(self):
+		del self._TrfInd
+		self._TrfInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrfChrgsPyblBy', type=ExternalTypeOfParty1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ExternalUndertakingType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygTx', type=UnderlyingTradeTransaction1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XpryDtls', type=ExpiryDetails1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification43, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DtOfIssnc', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=UndertakingName1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MltplDmndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PresntnDtls', type=Presentation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AutomtcAmtVartn', type=AutomaticVariation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=UndertakingName1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgWrdg', type=UndertakingWording1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Applcnt', type=PartyIdentification43, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GovncRulesAndLaw', type=GovernanceRules1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryChanl', type=CommunicationChannel1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlPty', type=PartyAndType1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtlDmndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfChrgsPyblBy', type=ExternalTypeOfParty1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclUdrtkgAmt', type=UndertakingAmount1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDtls', type=ExpiryDetails1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygTx', type=UnderlyingTradeTransaction1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrfChrgsPyblBy', type=ExternalTypeOfParty1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlDmndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GovncRulesAndLaw', type=GovernanceRules1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Applcnt', type=PartyIdentification43, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfChrgsPyblBy', type=ExternalTypeOfParty1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MltplDmndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AutomtcAmtVartn', type=AutomaticVariation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=ExternalUndertakingType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification43, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvryChanl', type=CommunicationChannel1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfIssnc', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPty', type=PartyAndType1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrfInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

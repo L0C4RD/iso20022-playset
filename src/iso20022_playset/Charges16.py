@@ -1,6 +1,6 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
 import ChargeType3Choice
+import BranchAndFinancialInstitutionIdentification8
 import ActiveOrHistoricCurrencyAndAmount
 
 class Charges16(base_types._BaseFieldType):

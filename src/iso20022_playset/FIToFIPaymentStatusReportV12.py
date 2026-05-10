@@ -1,8 +1,8 @@
 import base_types
 import SupplementaryData1
 import PaymentTransaction130
-import OriginalGroupHeader17
 import GroupHeader101
+import OriginalGroupHeader17
 
 class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 

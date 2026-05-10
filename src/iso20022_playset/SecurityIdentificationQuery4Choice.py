@@ -1,14 +1,14 @@
 import base_types
+import Max52Text
+import NotAvailable1Code
+import ISINOct2015Identifier
+import NotReported1Code
 import SecurityIdentification20Choice
 import BasketQuery1
-import NotReported1Code
-import ISINOct2015Identifier
-import NotAvailable1Code
-import Max52Text
 
 class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_AltrntvInstrmId", "_UnqPdctIdr", "_ISIN", "_Bskt", "_NotRptd", "_NotAvlbl"]
+	__slots__ = ["_Indx", "_NotAvlbl", "_AltrntvInstrmId", "_UnqPdctIdr", "_NotRptd", "_ISIN", "_Bskt"]
 	@property
 	def Indx(self):
 		return self._Indx
@@ -21,6 +21,19 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 	def Indx(self):
 		del self._Indx
 		self._Indx = None
+
+	@property
+	def NotAvlbl(self):
+		return self._NotAvlbl
+
+	@NotAvlbl.setter
+	def NotAvlbl(self, value):
+		self._NotAvlbl = value if type(value) != auto else self.make_default("NotAvlbl")
+
+	@NotAvlbl.deleter
+	def NotAvlbl(self):
+		del self._NotAvlbl
+		self._NotAvlbl = None
 
 	@property
 	def AltrntvInstrmId(self):
@@ -49,6 +62,19 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 		self._UnqPdctIdr = None
 
 	@property
+	def NotRptd(self):
+		return self._NotRptd
+
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
+
+	@property
 	def ISIN(self):
 		return self._ISIN
 
@@ -74,39 +100,13 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 		del self._Bskt
 		self._Bskt = None
 
-	@property
-	def NotRptd(self):
-		return self._NotRptd
-
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
-
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
-
-	@property
-	def NotAvlbl(self):
-		return self._NotAvlbl
-
-	@NotAvlbl.setter
-	def NotAvlbl(self, value):
-		self._NotAvlbl = value if type(value) != auto else self.make_default("NotAvlbl")
-
-	@NotAvlbl.deleter
-	def NotAvlbl(self):
-		del self._NotAvlbl
-		self._NotAvlbl = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Indx', type=SecurityIdentification20Choice, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='NotAvlbl', type=NotAvailable1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='UnqPdctIdr', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Bskt', type=BasketQuery1, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotAvlbl', type=NotAvailable1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

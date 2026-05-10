@@ -1,21 +1,21 @@
 import base_types
+import Max70Text
+import Trade10
+import TradingModeType1Code
+import ISODate
+import AnyBICDec2014Identifier
 import DeliveryType4Code
 import ActiveCurrencyCode
-import AnyBICDec2014Identifier
-import ClearingMethod1Code
-import UnderlyingProductIdentifier1Code
-import TradingMethodType1Code
-import Max35Text
-import TradingModeType1Code
 import SecurityIdentification38Choice
-import Trade10
-import ISODate
 import InstrumentLeg7
-import Max70Text
+import UnderlyingProductIdentifier1Code
+import Max35Text
+import ClearingMethod1Code
+import TradingMethodType1Code
 
 class Trade8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMtd", "_SttlmCcy", "_FXTradPdct", "_Symb", "_PdctId", "_TradgMtd", "_SwpLeg", "_DlvryTp", "_PlcOfConf", "_FXDtls", "_TradId", "_TradDt", "_TradgCcy", "_AssoctdTradRef", "_TradgMd"]
+	__slots__ = ["_ClrMtd", "_SttlmCcy", "_Symb", "_TradDt", "_DlvryTp", "_TradId", "_TradgMtd", "_PdctId", "_TradgCcy", "_TradgMd", "_FXDtls", "_SwpLeg", "_AssoctdTradRef", "_FXTradPdct", "_PlcOfConf"]
 	@property
 	def ClrMtd(self):
 		return self._ClrMtd
@@ -43,19 +43,6 @@ class Trade8(base_types._BaseFieldType):
 		self._SttlmCcy = None
 
 	@property
-	def FXTradPdct(self):
-		return self._FXTradPdct
-
-	@FXTradPdct.setter
-	def FXTradPdct(self, value):
-		self._FXTradPdct = value if type(value) != auto else self.make_default("FXTradPdct")
-
-	@FXTradPdct.deleter
-	def FXTradPdct(self):
-		del self._FXTradPdct
-		self._FXTradPdct = None
-
-	@property
 	def Symb(self):
 		return self._Symb
 
@@ -67,97 +54,6 @@ class Trade8(base_types._BaseFieldType):
 	def Symb(self):
 		del self._Symb
 		self._Symb = None
-
-	@property
-	def PdctId(self):
-		return self._PdctId
-
-	@PdctId.setter
-	def PdctId(self, value):
-		self._PdctId = value if type(value) != auto else self.make_default("PdctId")
-
-	@PdctId.deleter
-	def PdctId(self):
-		del self._PdctId
-		self._PdctId = None
-
-	@property
-	def TradgMtd(self):
-		return self._TradgMtd
-
-	@TradgMtd.setter
-	def TradgMtd(self, value):
-		self._TradgMtd = value if type(value) != auto else self.make_default("TradgMtd")
-
-	@TradgMtd.deleter
-	def TradgMtd(self):
-		del self._TradgMtd
-		self._TradgMtd = None
-
-	@property
-	def SwpLeg(self):
-		return self._SwpLeg
-
-	@SwpLeg.setter
-	def SwpLeg(self, value):
-		self._SwpLeg = value if type(value) != auto else self.make_default("SwpLeg")
-
-	@SwpLeg.deleter
-	def SwpLeg(self):
-		del self._SwpLeg
-		self._SwpLeg = None
-
-	@property
-	def DlvryTp(self):
-		return self._DlvryTp
-
-	@DlvryTp.setter
-	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != auto else self.make_default("DlvryTp")
-
-	@DlvryTp.deleter
-	def DlvryTp(self):
-		del self._DlvryTp
-		self._DlvryTp = None
-
-	@property
-	def PlcOfConf(self):
-		return self._PlcOfConf
-
-	@PlcOfConf.setter
-	def PlcOfConf(self, value):
-		self._PlcOfConf = value if type(value) != auto else self.make_default("PlcOfConf")
-
-	@PlcOfConf.deleter
-	def PlcOfConf(self):
-		del self._PlcOfConf
-		self._PlcOfConf = None
-
-	@property
-	def FXDtls(self):
-		return self._FXDtls
-
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
-
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
-
-	@property
-	def TradId(self):
-		return self._TradId
-
-	@TradId.setter
-	def TradId(self, value):
-		self._TradId = value if type(value) != auto else self.make_default("TradId")
-
-	@TradId.deleter
-	def TradId(self):
-		del self._TradId
-		self._TradId = None
 
 	@property
 	def TradDt(self):
@@ -173,6 +69,58 @@ class Trade8(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
+	def DlvryTp(self):
+		return self._DlvryTp
+
+	@DlvryTp.setter
+	def DlvryTp(self, value):
+		self._DlvryTp = value if type(value) != auto else self.make_default("DlvryTp")
+
+	@DlvryTp.deleter
+	def DlvryTp(self):
+		del self._DlvryTp
+		self._DlvryTp = None
+
+	@property
+	def TradId(self):
+		return self._TradId
+
+	@TradId.setter
+	def TradId(self, value):
+		self._TradId = value if type(value) != auto else self.make_default("TradId")
+
+	@TradId.deleter
+	def TradId(self):
+		del self._TradId
+		self._TradId = None
+
+	@property
+	def TradgMtd(self):
+		return self._TradgMtd
+
+	@TradgMtd.setter
+	def TradgMtd(self, value):
+		self._TradgMtd = value if type(value) != auto else self.make_default("TradgMtd")
+
+	@TradgMtd.deleter
+	def TradgMtd(self):
+		del self._TradgMtd
+		self._TradgMtd = None
+
+	@property
+	def PdctId(self):
+		return self._PdctId
+
+	@PdctId.setter
+	def PdctId(self, value):
+		self._PdctId = value if type(value) != auto else self.make_default("PdctId")
+
+	@PdctId.deleter
+	def PdctId(self):
+		del self._PdctId
+		self._PdctId = None
+
+	@property
 	def TradgCcy(self):
 		return self._TradgCcy
 
@@ -184,6 +132,45 @@ class Trade8(base_types._BaseFieldType):
 	def TradgCcy(self):
 		del self._TradgCcy
 		self._TradgCcy = None
+
+	@property
+	def TradgMd(self):
+		return self._TradgMd
+
+	@TradgMd.setter
+	def TradgMd(self, value):
+		self._TradgMd = value if type(value) != auto else self.make_default("TradgMd")
+
+	@TradgMd.deleter
+	def TradgMd(self):
+		del self._TradgMd
+		self._TradgMd = None
+
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
+	@property
+	def SwpLeg(self):
+		return self._SwpLeg
+
+	@SwpLeg.setter
+	def SwpLeg(self, value):
+		self._SwpLeg = value if type(value) != auto else self.make_default("SwpLeg")
+
+	@SwpLeg.deleter
+	def SwpLeg(self):
+		del self._SwpLeg
+		self._SwpLeg = None
 
 	@property
 	def AssoctdTradRef(self):
@@ -199,33 +186,46 @@ class Trade8(base_types._BaseFieldType):
 		self._AssoctdTradRef = None
 
 	@property
-	def TradgMd(self):
-		return self._TradgMd
+	def FXTradPdct(self):
+		return self._FXTradPdct
 
-	@TradgMd.setter
-	def TradgMd(self, value):
-		self._TradgMd = value if type(value) != auto else self.make_default("TradgMd")
+	@FXTradPdct.setter
+	def FXTradPdct(self, value):
+		self._FXTradPdct = value if type(value) != auto else self.make_default("FXTradPdct")
 
-	@TradgMd.deleter
-	def TradgMd(self):
-		del self._TradgMd
-		self._TradgMd = None
+	@FXTradPdct.deleter
+	def FXTradPdct(self):
+		del self._FXTradPdct
+		self._FXTradPdct = None
+
+	@property
+	def PlcOfConf(self):
+		return self._PlcOfConf
+
+	@PlcOfConf.setter
+	def PlcOfConf(self, value):
+		self._PlcOfConf = value if type(value) != auto else self.make_default("PlcOfConf")
+
+	@PlcOfConf.deleter
+	def PlcOfConf(self):
+		del self._PlcOfConf
+		self._PlcOfConf = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrMtd', type=ClearingMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXTradPdct', type=UnderlyingProductIdentifier1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Symb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctId', type=SecurityIdentification38Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgMtd', type=TradingMethodType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SwpLeg', type=InstrumentLeg7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlvryTp', type=DeliveryType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfConf', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXDtls', type=Trade10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryTp', type=DeliveryType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgMtd', type=TradingMethodType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctId', type=SecurityIdentification38Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdTradRef', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TradgMd', type=TradingModeType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=Trade10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SwpLeg', type=InstrumentLeg7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AssoctdTradRef', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FXTradPdct', type=UnderlyingProductIdentifier1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfConf', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

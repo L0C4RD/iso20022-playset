@@ -1,6 +1,6 @@
 import base_types
-import InvestorType3Code
 import GenericIdentification47
+import InvestorType3Code
 
 class DistributionStrategy1Choice(base_types._BaseFieldType):
 

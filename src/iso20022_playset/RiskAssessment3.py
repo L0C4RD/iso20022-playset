@@ -1,28 +1,41 @@
 import base_types
-import ISO3NumericCountryCode
 import PartyType18Code
+import RecommendationAction1
+import ISO3NumericCountryCode
+import AdditionalData1
 import PartyType28Code
 import Max35Text
-import TrueFalseIndicator
-import AdditionalData1
 import AdditionalRiskData1
-import RecommendationAction1
+import TrueFalseIndicator
 
 class RiskAssessment3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrNttyTp", "_AddtlData", "_NttyTp", "_HghRskTx", "_Rcmmndtn", "_NttyAssgnr", "_NttyCtry", "_Tp", "_Rsn", "_NttyShrtNm", "_Cond", "_Rslt", "_NttyId"]
+	__slots__ = ["_Tp", "_NttyId", "_AddtlData", "_NttyCtry", "_Rcmmndtn", "_OthrNttyTp", "_HghRskTx", "_NttyAssgnr", "_Rsn", "_NttyTp", "_Rslt", "_Cond", "_NttyShrtNm"]
 	@property
-	def OthrNttyTp(self):
-		return self._OthrNttyTp
+	def Tp(self):
+		return self._Tp
 
-	@OthrNttyTp.setter
-	def OthrNttyTp(self, value):
-		self._OthrNttyTp = value if type(value) != auto else self.make_default("OthrNttyTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@OthrNttyTp.deleter
-	def OthrNttyTp(self):
-		del self._OthrNttyTp
-		self._OthrNttyTp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def NttyId(self):
+		return self._NttyId
+
+	@NttyId.setter
+	def NttyId(self, value):
+		self._NttyId = value if type(value) != auto else self.make_default("NttyId")
+
+	@NttyId.deleter
+	def NttyId(self):
+		del self._NttyId
+		self._NttyId = None
 
 	@property
 	def AddtlData(self):
@@ -38,30 +51,17 @@ class RiskAssessment3(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def NttyTp(self):
-		return self._NttyTp
+	def NttyCtry(self):
+		return self._NttyCtry
 
-	@NttyTp.setter
-	def NttyTp(self, value):
-		self._NttyTp = value if type(value) != auto else self.make_default("NttyTp")
+	@NttyCtry.setter
+	def NttyCtry(self, value):
+		self._NttyCtry = value if type(value) != auto else self.make_default("NttyCtry")
 
-	@NttyTp.deleter
-	def NttyTp(self):
-		del self._NttyTp
-		self._NttyTp = None
-
-	@property
-	def HghRskTx(self):
-		return self._HghRskTx
-
-	@HghRskTx.setter
-	def HghRskTx(self, value):
-		self._HghRskTx = value if type(value) != auto else self.make_default("HghRskTx")
-
-	@HghRskTx.deleter
-	def HghRskTx(self):
-		del self._HghRskTx
-		self._HghRskTx = None
+	@NttyCtry.deleter
+	def NttyCtry(self):
+		del self._NttyCtry
+		self._NttyCtry = None
 
 	@property
 	def Rcmmndtn(self):
@@ -77,6 +77,32 @@ class RiskAssessment3(base_types._BaseFieldType):
 		self._Rcmmndtn = None
 
 	@property
+	def OthrNttyTp(self):
+		return self._OthrNttyTp
+
+	@OthrNttyTp.setter
+	def OthrNttyTp(self, value):
+		self._OthrNttyTp = value if type(value) != auto else self.make_default("OthrNttyTp")
+
+	@OthrNttyTp.deleter
+	def OthrNttyTp(self):
+		del self._OthrNttyTp
+		self._OthrNttyTp = None
+
+	@property
+	def HghRskTx(self):
+		return self._HghRskTx
+
+	@HghRskTx.setter
+	def HghRskTx(self, value):
+		self._HghRskTx = value if type(value) != auto else self.make_default("HghRskTx")
+
+	@HghRskTx.deleter
+	def HghRskTx(self):
+		del self._HghRskTx
+		self._HghRskTx = None
+
+	@property
 	def NttyAssgnr(self):
 		return self._NttyAssgnr
 
@@ -88,32 +114,6 @@ class RiskAssessment3(base_types._BaseFieldType):
 	def NttyAssgnr(self):
 		del self._NttyAssgnr
 		self._NttyAssgnr = None
-
-	@property
-	def NttyCtry(self):
-		return self._NttyCtry
-
-	@NttyCtry.setter
-	def NttyCtry(self, value):
-		self._NttyCtry = value if type(value) != auto else self.make_default("NttyCtry")
-
-	@NttyCtry.deleter
-	def NttyCtry(self):
-		del self._NttyCtry
-		self._NttyCtry = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
 
 	@property
 	def Rsn(self):
@@ -129,30 +129,17 @@ class RiskAssessment3(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def NttyShrtNm(self):
-		return self._NttyShrtNm
+	def NttyTp(self):
+		return self._NttyTp
 
-	@NttyShrtNm.setter
-	def NttyShrtNm(self, value):
-		self._NttyShrtNm = value if type(value) != auto else self.make_default("NttyShrtNm")
+	@NttyTp.setter
+	def NttyTp(self, value):
+		self._NttyTp = value if type(value) != auto else self.make_default("NttyTp")
 
-	@NttyShrtNm.deleter
-	def NttyShrtNm(self):
-		del self._NttyShrtNm
-		self._NttyShrtNm = None
-
-	@property
-	def Cond(self):
-		return self._Cond
-
-	@Cond.setter
-	def Cond(self, value):
-		self._Cond = value if type(value) != auto else self.make_default("Cond")
-
-	@Cond.deleter
-	def Cond(self):
-		del self._Cond
-		self._Cond = None
+	@NttyTp.deleter
+	def NttyTp(self):
+		del self._NttyTp
+		self._NttyTp = None
 
 	@property
 	def Rslt(self):
@@ -168,31 +155,44 @@ class RiskAssessment3(base_types._BaseFieldType):
 		self._Rslt = None
 
 	@property
-	def NttyId(self):
-		return self._NttyId
+	def Cond(self):
+		return self._Cond
 
-	@NttyId.setter
-	def NttyId(self, value):
-		self._NttyId = value if type(value) != auto else self.make_default("NttyId")
+	@Cond.setter
+	def Cond(self, value):
+		self._Cond = value if type(value) != auto else self.make_default("Cond")
 
-	@NttyId.deleter
-	def NttyId(self):
-		del self._NttyId
-		self._NttyId = None
+	@Cond.deleter
+	def Cond(self):
+		del self._Cond
+		self._Cond = None
+
+	@property
+	def NttyShrtNm(self):
+		return self._NttyShrtNm
+
+	@NttyShrtNm.setter
+	def NttyShrtNm(self, value):
+		self._NttyShrtNm = value if type(value) != auto else self.make_default("NttyShrtNm")
+
+	@NttyShrtNm.deleter
+	def NttyShrtNm(self):
+		del self._NttyShrtNm
+		self._NttyShrtNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrNttyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalRiskData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NttyTp', type=PartyType28Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HghRskTx', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcmmndtn', type=RecommendationAction1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NttyAssgnr', type=PartyType18Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NttyCtry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NttyShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cond', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalRiskData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NttyCtry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcmmndtn', type=RecommendationAction1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrNttyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HghRskTx', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NttyAssgnr', type=PartyType18Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NttyTp', type=PartyType28Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cond', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NttyShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

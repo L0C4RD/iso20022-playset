@@ -1,18 +1,18 @@
 import base_types
-import ImpliedCurrencyAndAmount
+import ISODate
 import CardAccount20
-import RecurringTransaction3
-import TransactionIdentifier3
 import ContentInformationType10
+import DetailedAmount17
+import ImpliedCurrencyAndAmount
+import RecurringTransaction3
 import Max35Text
+import TransactionIdentifier3
 import TrueFalseIndicator
 import Max10000Binary
-import ISODate
-import DetailedAmount17
 
 class ATMTransaction38(base_types._BaseFieldType):
 
-	__slots__ = ["_ICCRltdData", "_CdtrLabl", "_AcctFr", "_ReqdExctnDt", "_RcrngTrf", "_PrtctdAcctTo", "_DtldReqdAmt", "_TtlReqdAmt", "_PrtctdAcctFr", "_InstntTrfPrgm", "_DbtrLabl", "_PmtRef", "_AcctTo", "_RcncltnId", "_TxId", "_ReqdRct"]
+	__slots__ = ["_ICCRltdData", "_RcrngTrf", "_RcncltnId", "_PrtctdAcctTo", "_TxId", "_DtldReqdAmt", "_AcctTo", "_PrtctdAcctFr", "_PmtRef", "_TtlReqdAmt", "_ReqdExctnDt", "_AcctFr", "_DbtrLabl", "_ReqdRct", "_InstntTrfPrgm", "_CdtrLabl"]
 	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
@@ -25,45 +25,6 @@ class ATMTransaction38(base_types._BaseFieldType):
 	def ICCRltdData(self):
 		del self._ICCRltdData
 		self._ICCRltdData = None
-
-	@property
-	def CdtrLabl(self):
-		return self._CdtrLabl
-
-	@CdtrLabl.setter
-	def CdtrLabl(self, value):
-		self._CdtrLabl = value if type(value) != auto else self.make_default("CdtrLabl")
-
-	@CdtrLabl.deleter
-	def CdtrLabl(self):
-		del self._CdtrLabl
-		self._CdtrLabl = None
-
-	@property
-	def AcctFr(self):
-		return self._AcctFr
-
-	@AcctFr.setter
-	def AcctFr(self, value):
-		self._AcctFr = value if type(value) != auto else self.make_default("AcctFr")
-
-	@AcctFr.deleter
-	def AcctFr(self):
-		del self._AcctFr
-		self._AcctFr = None
-
-	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
-
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
-
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
 
 	@property
 	def RcrngTrf(self):
@@ -79,110 +40,6 @@ class ATMTransaction38(base_types._BaseFieldType):
 		self._RcrngTrf = None
 
 	@property
-	def PrtctdAcctTo(self):
-		return self._PrtctdAcctTo
-
-	@PrtctdAcctTo.setter
-	def PrtctdAcctTo(self, value):
-		self._PrtctdAcctTo = value if type(value) != auto else self.make_default("PrtctdAcctTo")
-
-	@PrtctdAcctTo.deleter
-	def PrtctdAcctTo(self):
-		del self._PrtctdAcctTo
-		self._PrtctdAcctTo = None
-
-	@property
-	def DtldReqdAmt(self):
-		return self._DtldReqdAmt
-
-	@DtldReqdAmt.setter
-	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != auto else self.make_default("DtldReqdAmt")
-
-	@DtldReqdAmt.deleter
-	def DtldReqdAmt(self):
-		del self._DtldReqdAmt
-		self._DtldReqdAmt = None
-
-	@property
-	def TtlReqdAmt(self):
-		return self._TtlReqdAmt
-
-	@TtlReqdAmt.setter
-	def TtlReqdAmt(self, value):
-		self._TtlReqdAmt = value if type(value) != auto else self.make_default("TtlReqdAmt")
-
-	@TtlReqdAmt.deleter
-	def TtlReqdAmt(self):
-		del self._TtlReqdAmt
-		self._TtlReqdAmt = None
-
-	@property
-	def PrtctdAcctFr(self):
-		return self._PrtctdAcctFr
-
-	@PrtctdAcctFr.setter
-	def PrtctdAcctFr(self, value):
-		self._PrtctdAcctFr = value if type(value) != auto else self.make_default("PrtctdAcctFr")
-
-	@PrtctdAcctFr.deleter
-	def PrtctdAcctFr(self):
-		del self._PrtctdAcctFr
-		self._PrtctdAcctFr = None
-
-	@property
-	def InstntTrfPrgm(self):
-		return self._InstntTrfPrgm
-
-	@InstntTrfPrgm.setter
-	def InstntTrfPrgm(self, value):
-		self._InstntTrfPrgm = value if type(value) != auto else self.make_default("InstntTrfPrgm")
-
-	@InstntTrfPrgm.deleter
-	def InstntTrfPrgm(self):
-		del self._InstntTrfPrgm
-		self._InstntTrfPrgm = None
-
-	@property
-	def DbtrLabl(self):
-		return self._DbtrLabl
-
-	@DbtrLabl.setter
-	def DbtrLabl(self, value):
-		self._DbtrLabl = value if type(value) != auto else self.make_default("DbtrLabl")
-
-	@DbtrLabl.deleter
-	def DbtrLabl(self):
-		del self._DbtrLabl
-		self._DbtrLabl = None
-
-	@property
-	def PmtRef(self):
-		return self._PmtRef
-
-	@PmtRef.setter
-	def PmtRef(self, value):
-		self._PmtRef = value if type(value) != auto else self.make_default("PmtRef")
-
-	@PmtRef.deleter
-	def PmtRef(self):
-		del self._PmtRef
-		self._PmtRef = None
-
-	@property
-	def AcctTo(self):
-		return self._AcctTo
-
-	@AcctTo.setter
-	def AcctTo(self, value):
-		self._AcctTo = value if type(value) != auto else self.make_default("AcctTo")
-
-	@AcctTo.deleter
-	def AcctTo(self):
-		del self._AcctTo
-		self._AcctTo = None
-
-	@property
 	def RcncltnId(self):
 		return self._RcncltnId
 
@@ -194,6 +51,19 @@ class ATMTransaction38(base_types._BaseFieldType):
 	def RcncltnId(self):
 		del self._RcncltnId
 		self._RcncltnId = None
+
+	@property
+	def PrtctdAcctTo(self):
+		return self._PrtctdAcctTo
+
+	@PrtctdAcctTo.setter
+	def PrtctdAcctTo(self, value):
+		self._PrtctdAcctTo = value if type(value) != auto else self.make_default("PrtctdAcctTo")
+
+	@PrtctdAcctTo.deleter
+	def PrtctdAcctTo(self):
+		del self._PrtctdAcctTo
+		self._PrtctdAcctTo = None
 
 	@property
 	def TxId(self):
@@ -209,6 +79,110 @@ class ATMTransaction38(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
+	def DtldReqdAmt(self):
+		return self._DtldReqdAmt
+
+	@DtldReqdAmt.setter
+	def DtldReqdAmt(self, value):
+		self._DtldReqdAmt = value if type(value) != auto else self.make_default("DtldReqdAmt")
+
+	@DtldReqdAmt.deleter
+	def DtldReqdAmt(self):
+		del self._DtldReqdAmt
+		self._DtldReqdAmt = None
+
+	@property
+	def AcctTo(self):
+		return self._AcctTo
+
+	@AcctTo.setter
+	def AcctTo(self, value):
+		self._AcctTo = value if type(value) != auto else self.make_default("AcctTo")
+
+	@AcctTo.deleter
+	def AcctTo(self):
+		del self._AcctTo
+		self._AcctTo = None
+
+	@property
+	def PrtctdAcctFr(self):
+		return self._PrtctdAcctFr
+
+	@PrtctdAcctFr.setter
+	def PrtctdAcctFr(self, value):
+		self._PrtctdAcctFr = value if type(value) != auto else self.make_default("PrtctdAcctFr")
+
+	@PrtctdAcctFr.deleter
+	def PrtctdAcctFr(self):
+		del self._PrtctdAcctFr
+		self._PrtctdAcctFr = None
+
+	@property
+	def PmtRef(self):
+		return self._PmtRef
+
+	@PmtRef.setter
+	def PmtRef(self, value):
+		self._PmtRef = value if type(value) != auto else self.make_default("PmtRef")
+
+	@PmtRef.deleter
+	def PmtRef(self):
+		del self._PmtRef
+		self._PmtRef = None
+
+	@property
+	def TtlReqdAmt(self):
+		return self._TtlReqdAmt
+
+	@TtlReqdAmt.setter
+	def TtlReqdAmt(self, value):
+		self._TtlReqdAmt = value if type(value) != auto else self.make_default("TtlReqdAmt")
+
+	@TtlReqdAmt.deleter
+	def TtlReqdAmt(self):
+		del self._TtlReqdAmt
+		self._TtlReqdAmt = None
+
+	@property
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
+
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
+
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
+
+	@property
+	def AcctFr(self):
+		return self._AcctFr
+
+	@AcctFr.setter
+	def AcctFr(self, value):
+		self._AcctFr = value if type(value) != auto else self.make_default("AcctFr")
+
+	@AcctFr.deleter
+	def AcctFr(self):
+		del self._AcctFr
+		self._AcctFr = None
+
+	@property
+	def DbtrLabl(self):
+		return self._DbtrLabl
+
+	@DbtrLabl.setter
+	def DbtrLabl(self, value):
+		self._DbtrLabl = value if type(value) != auto else self.make_default("DbtrLabl")
+
+	@DbtrLabl.deleter
+	def DbtrLabl(self):
+		del self._DbtrLabl
+		self._DbtrLabl = None
+
+	@property
 	def ReqdRct(self):
 		return self._ReqdRct
 
@@ -221,22 +195,48 @@ class ATMTransaction38(base_types._BaseFieldType):
 		del self._ReqdRct
 		self._ReqdRct = None
 
+	@property
+	def InstntTrfPrgm(self):
+		return self._InstntTrfPrgm
+
+	@InstntTrfPrgm.setter
+	def InstntTrfPrgm(self, value):
+		self._InstntTrfPrgm = value if type(value) != auto else self.make_default("InstntTrfPrgm")
+
+	@InstntTrfPrgm.deleter
+	def InstntTrfPrgm(self):
+		del self._InstntTrfPrgm
+		self._InstntTrfPrgm = None
+
+	@property
+	def CdtrLabl(self):
+		return self._CdtrLabl
+
+	@CdtrLabl.setter
+	def CdtrLabl(self, value):
+		self._CdtrLabl = value if type(value) != auto else self.make_default("CdtrLabl")
+
+	@CdtrLabl.deleter
+	def CdtrLabl(self):
+		del self._CdtrLabl
+		self._CdtrLabl = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctFr', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrngTrf', type=RecurringTransaction3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdAcctTo', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlReqdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdAcctFr', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstntTrfPrgm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctTo', type=CardAccount20, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdAcctTo', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTo', type=CardAccount20, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtctdAcctFr', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlReqdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctFr', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdRct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstntTrfPrgm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

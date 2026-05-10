@@ -1,24 +1,24 @@
 import base_types
-import Max35Text
-import GenericIdentification1
-import AnyBICDec2014Identifier
 import NameAndAddress15
+import AnyBICDec2014Identifier
+import GenericIdentification1
+import Max35Text
 
 class PartyIdentification182Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NtlRegnNb", "_AnyBIC", "_TaxIdNb", "_NmAndAdr", "_PrtryId"]
+	__slots__ = ["_TaxIdNb", "_AnyBIC", "_NmAndAdr", "_NtlRegnNb", "_PrtryId"]
 	@property
-	def NtlRegnNb(self):
-		return self._NtlRegnNb
+	def TaxIdNb(self):
+		return self._TaxIdNb
 
-	@NtlRegnNb.setter
-	def NtlRegnNb(self, value):
-		self._NtlRegnNb = value if type(value) != auto else self.make_default("NtlRegnNb")
+	@TaxIdNb.setter
+	def TaxIdNb(self, value):
+		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
 
-	@NtlRegnNb.deleter
-	def NtlRegnNb(self):
-		del self._NtlRegnNb
-		self._NtlRegnNb = None
+	@TaxIdNb.deleter
+	def TaxIdNb(self):
+		del self._TaxIdNb
+		self._TaxIdNb = None
 
 	@property
 	def AnyBIC(self):
@@ -34,19 +34,6 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def TaxIdNb(self):
-		return self._TaxIdNb
-
-	@TaxIdNb.setter
-	def TaxIdNb(self, value):
-		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
-
-	@TaxIdNb.deleter
-	def TaxIdNb(self):
-		del self._TaxIdNb
-		self._TaxIdNb = None
-
-	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
 
@@ -58,6 +45,19 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 	def NmAndAdr(self):
 		del self._NmAndAdr
 		self._NmAndAdr = None
+
+	@property
+	def NtlRegnNb(self):
+		return self._NtlRegnNb
+
+	@NtlRegnNb.setter
+	def NtlRegnNb(self, value):
+		self._NtlRegnNb = value if type(value) != auto else self.make_default("NtlRegnNb")
+
+	@NtlRegnNb.deleter
+	def NtlRegnNb(self):
+		del self._NtlRegnNb
+		self._NtlRegnNb = None
 
 	@property
 	def PrtryId(self):
@@ -73,10 +73,10 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 		self._PrtryId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress15, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import AssetClassProductType8Code
 import AssetClassSubProductType38Code
+import AssetClassProductType8Code
 
 class PaperCommodityRecoveredPaper1(base_types._BaseFieldType):
 

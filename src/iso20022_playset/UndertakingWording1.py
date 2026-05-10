@@ -1,7 +1,7 @@
 import base_types
-import ModelFormIdentification1
-import ISO2ALanguageCode
 import Narrative1
+import ISO2ALanguageCode
+import ModelFormIdentification1
 
 class UndertakingWording1(base_types._BaseFieldType):
 

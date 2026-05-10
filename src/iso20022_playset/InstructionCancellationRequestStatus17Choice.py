@@ -1,25 +1,25 @@
 import base_types
+import ProprietaryStatusAndReason6
+import CancelledStatus11Choice
 import RejectedStatus53Choice
 import NoSpecifiedReason1
-import ProprietaryStatusAndReason6
 import PendingCancellationStatus13Choice
-import CancelledStatus11Choice
 
 class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Accptd", "_Rjctd", "_CxlCmpltd", "_PdgCxl", "_PrtrySts"]
+	__slots__ = ["_PrtrySts", "_Rjctd", "_Accptd", "_CxlCmpltd", "_PdgCxl"]
 	@property
-	def Accptd(self):
-		return self._Accptd
+	def PrtrySts(self):
+		return self._PrtrySts
 
-	@Accptd.setter
-	def Accptd(self, value):
-		self._Accptd = value if type(value) != auto else self.make_default("Accptd")
+	@PrtrySts.setter
+	def PrtrySts(self, value):
+		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
 
-	@Accptd.deleter
-	def Accptd(self):
-		del self._Accptd
-		self._Accptd = None
+	@PrtrySts.deleter
+	def PrtrySts(self):
+		del self._PrtrySts
+		self._PrtrySts = None
 
 	@property
 	def Rjctd(self):
@@ -33,6 +33,19 @@ class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 	def Rjctd(self):
 		del self._Rjctd
 		self._Rjctd = None
+
+	@property
+	def Accptd(self):
+		return self._Accptd
+
+	@Accptd.setter
+	def Accptd(self, value):
+		self._Accptd = value if type(value) != auto else self.make_default("Accptd")
+
+	@Accptd.deleter
+	def Accptd(self):
+		del self._Accptd
+		self._Accptd = None
 
 	@property
 	def CxlCmpltd(self):
@@ -60,24 +73,11 @@ class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 		del self._PdgCxl
 		self._PdgCxl = None
 
-	@property
-	def PrtrySts(self):
-		return self._PrtrySts
-
-	@PrtrySts.setter
-	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
-
-	@PrtrySts.deleter
-	def PrtrySts(self):
-		del self._PrtrySts
-		self._PrtrySts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus53Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlCmpltd', type=CancelledStatus11Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus13Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
 

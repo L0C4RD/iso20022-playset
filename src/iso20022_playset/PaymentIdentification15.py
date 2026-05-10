@@ -1,11 +1,11 @@
 import base_types
-import Max35Text
-import UUIDv4Identifier
 import BranchAndFinancialInstitutionIdentification8
+import UUIDv4Identifier
+import Max35Text
 
 class PaymentIdentification15(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_FrstAgt", "_EndToEndId", "_UETR", "_ClrSysRef", "_TxId"]
+	__slots__ = ["_InstrId", "_ClrSysRef", "_TxId", "_UETR", "_EndToEndId", "_FrstAgt"]
 	@property
 	def InstrId(self):
 		return self._InstrId
@@ -18,45 +18,6 @@ class PaymentIdentification15(base_types._BaseFieldType):
 	def InstrId(self):
 		del self._InstrId
 		self._InstrId = None
-
-	@property
-	def FrstAgt(self):
-		return self._FrstAgt
-
-	@FrstAgt.setter
-	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != auto else self.make_default("FrstAgt")
-
-	@FrstAgt.deleter
-	def FrstAgt(self):
-		del self._FrstAgt
-		self._FrstAgt = None
-
-	@property
-	def EndToEndId(self):
-		return self._EndToEndId
-
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
-
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
-
-	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
 
 	@property
 	def ClrSysRef(self):
@@ -84,12 +45,51 @@ class PaymentIdentification15(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
+	@property
+	def EndToEndId(self):
+		return self._EndToEndId
+
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
+
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
+
+	@property
+	def FrstAgt(self):
+		return self._FrstAgt
+
+	@FrstAgt.setter
+	def FrstAgt(self, value):
+		self._FrstAgt = value if type(value) != auto else self.make_default("FrstAgt")
+
+	@FrstAgt.deleter
+	def FrstAgt(self):
+		del self._FrstAgt
+		self._FrstAgt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

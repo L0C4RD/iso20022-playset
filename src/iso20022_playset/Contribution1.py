@@ -1,24 +1,11 @@
 import base_types
+import AccountIdentification4Choice
 import ActiveCurrencyAndAmount
 import PartyIdentificationAndAccount31
-import AccountIdentification4Choice
 
 class Contribution1(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqrdAmt", "_Acct", "_IncrCvrgAmt", "_NonClrMmb"]
-	@property
-	def ReqrdAmt(self):
-		return self._ReqrdAmt
-
-	@ReqrdAmt.setter
-	def ReqrdAmt(self, value):
-		self._ReqrdAmt = value if type(value) != auto else self.make_default("ReqrdAmt")
-
-	@ReqrdAmt.deleter
-	def ReqrdAmt(self):
-		del self._ReqrdAmt
-		self._ReqrdAmt = None
-
+	__slots__ = ["_Acct", "_IncrCvrgAmt", "_NonClrMmb", "_ReqrdAmt"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -58,10 +45,23 @@ class Contribution1(base_types._BaseFieldType):
 		del self._NonClrMmb
 		self._NonClrMmb = None
 
+	@property
+	def ReqrdAmt(self):
+		return self._ReqrdAmt
+
+	@ReqrdAmt.setter
+	def ReqrdAmt(self, value):
+		self._ReqrdAmt = value if type(value) != auto else self.make_default("ReqrdAmt")
+
+	@ReqrdAmt.deleter
+	def ReqrdAmt(self):
+		del self._ReqrdAmt
+		self._ReqrdAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqrdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IncrCvrgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

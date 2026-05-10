@@ -5,20 +5,7 @@ import PledgeeTypeAndText2
 
 class PledgeeFormat6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_TpAndId", "_Id"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_TpAndId", "_Prtry", "_Id"]
 	@property
 	def TpAndId(self):
 		return self._TpAndId
@@ -31,6 +18,19 @@ class PledgeeFormat6Choice(base_types._BaseFieldType):
 	def TpAndId(self):
 		del self._TpAndId
 		self._TpAndId = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def Id(self):
@@ -46,8 +46,8 @@ class PledgeeFormat6Choice(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification85, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=PledgeeTypeAndAnyBICIdentifier2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification85, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=PledgeeTypeAndText2, min=0, max=1, mutex_group=1, array=False),
 	))
 

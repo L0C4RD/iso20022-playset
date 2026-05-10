@@ -1,47 +1,21 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import UnitOfMeasure1Code
-import CreditDebit3Code
-import DecimalNumber
-import Max50Text
-import AdditionalData1
-import TrueFalseIndicator
-import Max35Text
-import Tax41
-import Max256Text
-import Max10Text
-import ISODate
 import Max70Text
+import Max10Text
+import DecimalNumber
+import AdditionalData1
+import Max256Text
+import UnitOfMeasure1Code
+import ImpliedCurrencyAndAmount
+import CreditDebit3Code
+import Max35Text
+import ISODate
+import TrueFalseIndicator
+import Tax41
+import Max50Text
 
 class InvoiceLineItem3(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctQty", "_Insrnc", "_ShppgDt", "_OthrUnitOfMeasr", "_TtlAmt", "_UnitPric", "_ZeroCostToCstmr", "_TpOfSpply", "_InsrncAmt", "_Desc", "_Rbllg", "_Tax", "_MdclSvcs", "_CtrctNb", "_UnitOfMeasr", "_CdtDbt", "_Dt", "_PdctQlfr", "_AdjstmntAmt", "_ShipToIndstryCd", "_AdjstmntCdtDbt", "_AdjstmntRsn", "_PdctCd", "_AddtlData", "_VATInvcRef", "_OrdrDt"]
-	@property
-	def PdctQty(self):
-		return self._PdctQty
-
-	@PdctQty.setter
-	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
-
-	@PdctQty.deleter
-	def PdctQty(self):
-		del self._PdctQty
-		self._PdctQty = None
-
-	@property
-	def Insrnc(self):
-		return self._Insrnc
-
-	@Insrnc.setter
-	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
-
-	@Insrnc.deleter
-	def Insrnc(self):
-		del self._Insrnc
-		self._Insrnc = None
-
+	__slots__ = ["_ShppgDt", "_OrdrDt", "_TtlAmt", "_Dt", "_AddtlData", "_PdctQlfr", "_MdclSvcs", "_Rbllg", "_Tax", "_Desc", "_CdtDbt", "_VATInvcRef", "_UnitOfMeasr", "_UnitPric", "_OthrUnitOfMeasr", "_InsrncAmt", "_ZeroCostToCstmr", "_ShipToIndstryCd", "_CtrctNb", "_PdctCd", "_PdctQty", "_Insrnc", "_AdjstmntAmt", "_TpOfSpply", "_AdjstmntRsn", "_AdjstmntCdtDbt"]
 	@property
 	def ShppgDt(self):
 		return self._ShppgDt
@@ -56,17 +30,17 @@ class InvoiceLineItem3(base_types._BaseFieldType):
 		self._ShppgDt = None
 
 	@property
-	def OthrUnitOfMeasr(self):
-		return self._OthrUnitOfMeasr
+	def OrdrDt(self):
+		return self._OrdrDt
 
-	@OthrUnitOfMeasr.setter
-	def OthrUnitOfMeasr(self, value):
-		self._OthrUnitOfMeasr = value if type(value) != auto else self.make_default("OthrUnitOfMeasr")
+	@OrdrDt.setter
+	def OrdrDt(self, value):
+		self._OrdrDt = value if type(value) != auto else self.make_default("OrdrDt")
 
-	@OthrUnitOfMeasr.deleter
-	def OthrUnitOfMeasr(self):
-		del self._OthrUnitOfMeasr
-		self._OthrUnitOfMeasr = None
+	@OrdrDt.deleter
+	def OrdrDt(self):
+		del self._OrdrDt
+		self._OrdrDt = None
 
 	@property
 	def TtlAmt(self):
@@ -82,69 +56,56 @@ class InvoiceLineItem3(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
-	def UnitPric(self):
-		return self._UnitPric
+	def Dt(self):
+		return self._Dt
 
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
 
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
-
-	@property
-	def ZeroCostToCstmr(self):
-		return self._ZeroCostToCstmr
-
-	@ZeroCostToCstmr.setter
-	def ZeroCostToCstmr(self, value):
-		self._ZeroCostToCstmr = value if type(value) != auto else self.make_default("ZeroCostToCstmr")
-
-	@ZeroCostToCstmr.deleter
-	def ZeroCostToCstmr(self):
-		del self._ZeroCostToCstmr
-		self._ZeroCostToCstmr = None
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
-	def TpOfSpply(self):
-		return self._TpOfSpply
+	def AddtlData(self):
+		return self._AddtlData
 
-	@TpOfSpply.setter
-	def TpOfSpply(self, value):
-		self._TpOfSpply = value if type(value) != auto else self.make_default("TpOfSpply")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
 
-	@TpOfSpply.deleter
-	def TpOfSpply(self):
-		del self._TpOfSpply
-		self._TpOfSpply = None
-
-	@property
-	def InsrncAmt(self):
-		return self._InsrncAmt
-
-	@InsrncAmt.setter
-	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
-
-	@InsrncAmt.deleter
-	def InsrncAmt(self):
-		del self._InsrncAmt
-		self._InsrncAmt = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
-	def Desc(self):
-		return self._Desc
+	def PdctQlfr(self):
+		return self._PdctQlfr
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@PdctQlfr.setter
+	def PdctQlfr(self, value):
+		self._PdctQlfr = value if type(value) != auto else self.make_default("PdctQlfr")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@PdctQlfr.deleter
+	def PdctQlfr(self):
+		del self._PdctQlfr
+		self._PdctQlfr = None
+
+	@property
+	def MdclSvcs(self):
+		return self._MdclSvcs
+
+	@MdclSvcs.setter
+	def MdclSvcs(self, value):
+		self._MdclSvcs = value if type(value) != auto else self.make_default("MdclSvcs")
+
+	@MdclSvcs.deleter
+	def MdclSvcs(self):
+		del self._MdclSvcs
+		self._MdclSvcs = None
 
 	@property
 	def Rbllg(self):
@@ -173,43 +134,17 @@ class InvoiceLineItem3(base_types._BaseFieldType):
 		self._Tax = None
 
 	@property
-	def MdclSvcs(self):
-		return self._MdclSvcs
+	def Desc(self):
+		return self._Desc
 
-	@MdclSvcs.setter
-	def MdclSvcs(self, value):
-		self._MdclSvcs = value if type(value) != auto else self.make_default("MdclSvcs")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
 
-	@MdclSvcs.deleter
-	def MdclSvcs(self):
-		del self._MdclSvcs
-		self._MdclSvcs = None
-
-	@property
-	def CtrctNb(self):
-		return self._CtrctNb
-
-	@CtrctNb.setter
-	def CtrctNb(self, value):
-		self._CtrctNb = value if type(value) != auto else self.make_default("CtrctNb")
-
-	@CtrctNb.deleter
-	def CtrctNb(self):
-		del self._CtrctNb
-		self._CtrctNb = None
-
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def CdtDbt(self):
@@ -225,43 +160,82 @@ class InvoiceLineItem3(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
-	def Dt(self):
-		return self._Dt
+	def VATInvcRef(self):
+		return self._VATInvcRef
 
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+	@VATInvcRef.setter
+	def VATInvcRef(self, value):
+		self._VATInvcRef = value if type(value) != auto else self.make_default("VATInvcRef")
 
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def PdctQlfr(self):
-		return self._PdctQlfr
-
-	@PdctQlfr.setter
-	def PdctQlfr(self, value):
-		self._PdctQlfr = value if type(value) != auto else self.make_default("PdctQlfr")
-
-	@PdctQlfr.deleter
-	def PdctQlfr(self):
-		del self._PdctQlfr
-		self._PdctQlfr = None
+	@VATInvcRef.deleter
+	def VATInvcRef(self):
+		del self._VATInvcRef
+		self._VATInvcRef = None
 
 	@property
-	def AdjstmntAmt(self):
-		return self._AdjstmntAmt
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
 
-	@AdjstmntAmt.setter
-	def AdjstmntAmt(self, value):
-		self._AdjstmntAmt = value if type(value) != auto else self.make_default("AdjstmntAmt")
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
 
-	@AdjstmntAmt.deleter
-	def AdjstmntAmt(self):
-		del self._AdjstmntAmt
-		self._AdjstmntAmt = None
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
+
+	@property
+	def UnitPric(self):
+		return self._UnitPric
+
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
+
+	@property
+	def OthrUnitOfMeasr(self):
+		return self._OthrUnitOfMeasr
+
+	@OthrUnitOfMeasr.setter
+	def OthrUnitOfMeasr(self, value):
+		self._OthrUnitOfMeasr = value if type(value) != auto else self.make_default("OthrUnitOfMeasr")
+
+	@OthrUnitOfMeasr.deleter
+	def OthrUnitOfMeasr(self):
+		del self._OthrUnitOfMeasr
+		self._OthrUnitOfMeasr = None
+
+	@property
+	def InsrncAmt(self):
+		return self._InsrncAmt
+
+	@InsrncAmt.setter
+	def InsrncAmt(self, value):
+		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
+
+	@InsrncAmt.deleter
+	def InsrncAmt(self):
+		del self._InsrncAmt
+		self._InsrncAmt = None
+
+	@property
+	def ZeroCostToCstmr(self):
+		return self._ZeroCostToCstmr
+
+	@ZeroCostToCstmr.setter
+	def ZeroCostToCstmr(self, value):
+		self._ZeroCostToCstmr = value if type(value) != auto else self.make_default("ZeroCostToCstmr")
+
+	@ZeroCostToCstmr.deleter
+	def ZeroCostToCstmr(self):
+		del self._ZeroCostToCstmr
+		self._ZeroCostToCstmr = None
 
 	@property
 	def ShipToIndstryCd(self):
@@ -277,30 +251,17 @@ class InvoiceLineItem3(base_types._BaseFieldType):
 		self._ShipToIndstryCd = None
 
 	@property
-	def AdjstmntCdtDbt(self):
-		return self._AdjstmntCdtDbt
+	def CtrctNb(self):
+		return self._CtrctNb
 
-	@AdjstmntCdtDbt.setter
-	def AdjstmntCdtDbt(self, value):
-		self._AdjstmntCdtDbt = value if type(value) != auto else self.make_default("AdjstmntCdtDbt")
+	@CtrctNb.setter
+	def CtrctNb(self, value):
+		self._CtrctNb = value if type(value) != auto else self.make_default("CtrctNb")
 
-	@AdjstmntCdtDbt.deleter
-	def AdjstmntCdtDbt(self):
-		del self._AdjstmntCdtDbt
-		self._AdjstmntCdtDbt = None
-
-	@property
-	def AdjstmntRsn(self):
-		return self._AdjstmntRsn
-
-	@AdjstmntRsn.setter
-	def AdjstmntRsn(self, value):
-		self._AdjstmntRsn = value if type(value) != auto else self.make_default("AdjstmntRsn")
-
-	@AdjstmntRsn.deleter
-	def AdjstmntRsn(self):
-		del self._AdjstmntRsn
-		self._AdjstmntRsn = None
+	@CtrctNb.deleter
+	def CtrctNb(self):
+		del self._CtrctNb
+		self._CtrctNb = None
 
 	@property
 	def PdctCd(self):
@@ -316,70 +277,109 @@ class InvoiceLineItem3(base_types._BaseFieldType):
 		self._PdctCd = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def PdctQty(self):
+		return self._PdctQty
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@PdctQty.setter
+	def PdctQty(self, value):
+		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def VATInvcRef(self):
-		return self._VATInvcRef
-
-	@VATInvcRef.setter
-	def VATInvcRef(self, value):
-		self._VATInvcRef = value if type(value) != auto else self.make_default("VATInvcRef")
-
-	@VATInvcRef.deleter
-	def VATInvcRef(self):
-		del self._VATInvcRef
-		self._VATInvcRef = None
+	@PdctQty.deleter
+	def PdctQty(self):
+		del self._PdctQty
+		self._PdctQty = None
 
 	@property
-	def OrdrDt(self):
-		return self._OrdrDt
+	def Insrnc(self):
+		return self._Insrnc
 
-	@OrdrDt.setter
-	def OrdrDt(self, value):
-		self._OrdrDt = value if type(value) != auto else self.make_default("OrdrDt")
+	@Insrnc.setter
+	def Insrnc(self, value):
+		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
 
-	@OrdrDt.deleter
-	def OrdrDt(self):
-		del self._OrdrDt
-		self._OrdrDt = None
+	@Insrnc.deleter
+	def Insrnc(self):
+		del self._Insrnc
+		self._Insrnc = None
+
+	@property
+	def AdjstmntAmt(self):
+		return self._AdjstmntAmt
+
+	@AdjstmntAmt.setter
+	def AdjstmntAmt(self, value):
+		self._AdjstmntAmt = value if type(value) != auto else self.make_default("AdjstmntAmt")
+
+	@AdjstmntAmt.deleter
+	def AdjstmntAmt(self):
+		del self._AdjstmntAmt
+		self._AdjstmntAmt = None
+
+	@property
+	def TpOfSpply(self):
+		return self._TpOfSpply
+
+	@TpOfSpply.setter
+	def TpOfSpply(self, value):
+		self._TpOfSpply = value if type(value) != auto else self.make_default("TpOfSpply")
+
+	@TpOfSpply.deleter
+	def TpOfSpply(self):
+		del self._TpOfSpply
+		self._TpOfSpply = None
+
+	@property
+	def AdjstmntRsn(self):
+		return self._AdjstmntRsn
+
+	@AdjstmntRsn.setter
+	def AdjstmntRsn(self, value):
+		self._AdjstmntRsn = value if type(value) != auto else self.make_default("AdjstmntRsn")
+
+	@AdjstmntRsn.deleter
+	def AdjstmntRsn(self):
+		del self._AdjstmntRsn
+		self._AdjstmntRsn = None
+
+	@property
+	def AdjstmntCdtDbt(self):
+		return self._AdjstmntCdtDbt
+
+	@AdjstmntCdtDbt.setter
+	def AdjstmntCdtDbt(self, value):
+		self._AdjstmntCdtDbt = value if type(value) != auto else self.make_default("AdjstmntCdtDbt")
+
+	@AdjstmntCdtDbt.deleter
+	def AdjstmntCdtDbt(self):
+		del self._AdjstmntCdtDbt
+		self._AdjstmntCdtDbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShppgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrUnitOfMeasr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ZeroCostToCstmr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpOfSpply', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdctQlfr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdclSvcs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rbllg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MdclSvcs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctQlfr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdjstmntAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShipToIndstryCd', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdjstmntCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdjstmntRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VATInvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrUnitOfMeasr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ZeroCostToCstmr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShipToIndstryCd', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdjstmntAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfSpply', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdjstmntRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdjstmntCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

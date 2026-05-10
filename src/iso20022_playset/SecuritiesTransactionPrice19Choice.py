@@ -1,14 +1,40 @@
 import base_types
-import PriceStatus1Code
-import LongFraction19DecimalNumber
-import AmountAndDirection107
-import PercentageRate
 import BaseOneRate
+import AmountAndDirection107
+import LongFraction19DecimalNumber
+import PercentageRate
 import SecuritiesTransactionPrice5
+import PriceStatus1Code
 
 class SecuritiesTransactionPrice19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgPric", "_MntryVal", "_Unit", "_Dcml", "_Yld", "_Othr", "_Pctg"]
+	__slots__ = ["_Pctg", "_Yld", "_PdgPric", "_MntryVal", "_Unit", "_Dcml", "_Othr"]
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
+	@property
+	def Yld(self):
+		return self._Yld
+
+	@Yld.setter
+	def Yld(self, value):
+		self._Yld = value if type(value) != auto else self.make_default("Yld")
+
+	@Yld.deleter
+	def Yld(self):
+		del self._Yld
+		self._Yld = None
+
 	@property
 	def PdgPric(self):
 		return self._PdgPric
@@ -62,19 +88,6 @@ class SecuritiesTransactionPrice19Choice(base_types._BaseFieldType):
 		self._Dcml = None
 
 	@property
-	def Yld(self):
-		return self._Yld
-
-	@Yld.setter
-	def Yld(self, value):
-		self._Yld = value if type(value) != auto else self.make_default("Yld")
-
-	@Yld.deleter
-	def Yld(self):
-		del self._Yld
-		self._Yld = None
-
-	@property
 	def Othr(self):
 		return self._Othr
 
@@ -87,26 +100,13 @@ class SecuritiesTransactionPrice19Choice(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
-	@property
-	def Pctg(self):
-		return self._Pctg
-
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
-
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgPric', type=PriceStatus1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection107, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=SecuritiesTransactionPrice5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

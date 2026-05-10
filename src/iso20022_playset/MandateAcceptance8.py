@@ -1,8 +1,8 @@
 import base_types
-import OriginalMessageInformation1
 import SupplementaryData1
-import OriginalMandate11Choice
 import AcceptanceResult6
+import OriginalMandate11Choice
+import OriginalMessageInformation1
 
 class MandateAcceptance8(base_types._BaseFieldType):
 

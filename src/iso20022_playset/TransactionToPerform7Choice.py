@@ -1,11 +1,24 @@
 import base_types
 import ReversalRequest7
-import LoyaltyRequest7
 import PaymentRequest7
+import LoyaltyRequest7
 
 class TransactionToPerform7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RvslReq", "_LltyReq", "_PmtReq"]
+	__slots__ = ["_PmtReq", "_RvslReq", "_LltyReq"]
+	@property
+	def PmtReq(self):
+		return self._PmtReq
+
+	@PmtReq.setter
+	def PmtReq(self, value):
+		self._PmtReq = value if type(value) != auto else self.make_default("PmtReq")
+
+	@PmtReq.deleter
+	def PmtReq(self):
+		del self._PmtReq
+		self._PmtReq = None
+
 	@property
 	def RvslReq(self):
 		return self._RvslReq
@@ -32,22 +45,9 @@ class TransactionToPerform7Choice(base_types._BaseFieldType):
 		del self._LltyReq
 		self._LltyReq = None
 
-	@property
-	def PmtReq(self):
-		return self._PmtReq
-
-	@PmtReq.setter
-	def PmtReq(self, value):
-		self._PmtReq = value if type(value) != auto else self.make_default("PmtReq")
-
-	@PmtReq.deleter
-	def PmtReq(self):
-		del self._PmtReq
-		self._PmtReq = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PmtReq', type=PaymentRequest7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RvslReq', type=ReversalRequest7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LltyReq', type=LoyaltyRequest7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PmtReq', type=PaymentRequest7, min=0, max=1, mutex_group=1, array=False),
 	))
 

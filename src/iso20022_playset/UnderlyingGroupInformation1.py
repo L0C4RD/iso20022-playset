@@ -1,22 +1,22 @@
 import base_types
-import Max35Text
 import ISODateTime
+import Max35Text
 
 class UnderlyingGroupInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_OrgnlMsgDlvryChanl", "_OrgnlCreDtTm", "_OrgnlMsgId"]
+	__slots__ = ["_OrgnlMsgId", "_OrgnlMsgDlvryChanl", "_OrgnlMsgNmId", "_OrgnlCreDtTm"]
 	@property
-	def OrgnlMsgNmId(self):
-		return self._OrgnlMsgNmId
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
 
-	@OrgnlMsgNmId.setter
-	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != auto else self.make_default("OrgnlMsgNmId")
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
 
-	@OrgnlMsgNmId.deleter
-	def OrgnlMsgNmId(self):
-		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
 
 	@property
 	def OrgnlMsgDlvryChanl(self):
@@ -32,6 +32,19 @@ class UnderlyingGroupInformation1(base_types._BaseFieldType):
 		self._OrgnlMsgDlvryChanl = None
 
 	@property
+	def OrgnlMsgNmId(self):
+		return self._OrgnlMsgNmId
+
+	@OrgnlMsgNmId.setter
+	def OrgnlMsgNmId(self, value):
+		self._OrgnlMsgNmId = value if type(value) != auto else self.make_default("OrgnlMsgNmId")
+
+	@OrgnlMsgNmId.deleter
+	def OrgnlMsgNmId(self):
+		del self._OrgnlMsgNmId
+		self._OrgnlMsgNmId = None
+
+	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm
 
@@ -44,23 +57,10 @@ class UnderlyingGroupInformation1(base_types._BaseFieldType):
 		del self._OrgnlCreDtTm
 		self._OrgnlCreDtTm = None
 
-	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
-
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
-
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgDlvryChanl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgDlvryChanl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

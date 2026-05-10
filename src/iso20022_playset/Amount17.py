@@ -1,6 +1,6 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import ISO3NumericCurrencyCode
+import ImpliedCurrencyAndAmount
 import CreditDebit3Code
 
 class Amount17(base_types._BaseFieldType):

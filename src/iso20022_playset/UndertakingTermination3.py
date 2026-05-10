@@ -1,11 +1,11 @@
 import base_types
 import ISODate
-import TerminationReason1Choice
 import Max2000Text
+import TerminationReason1Choice
 
 class UndertakingTermination3(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvDt", "_Rsn", "_AddtlInf"]
+	__slots__ = ["_FctvDt", "_AddtlInf", "_Rsn"]
 	@property
 	def FctvDt(self):
 		return self._FctvDt
@@ -20,19 +20,6 @@ class UndertakingTermination3(base_types._BaseFieldType):
 		self._FctvDt = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
-	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -45,9 +32,22 @@ class UndertakingTermination3(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FctvDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=TerminationReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rsn', type=TerminationReason1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

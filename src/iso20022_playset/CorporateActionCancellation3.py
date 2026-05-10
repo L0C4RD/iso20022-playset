@@ -1,24 +1,11 @@
 import base_types
-import CorporateActionEventStatus1
-import CorporateActionCancellationReason1Code
 import Max140Text
+import CorporateActionCancellationReason1Code
+import CorporateActionEventStatus1
 
 class CorporateActionCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsnCd", "_PrcgSts", "_CxlRsn"]
-	@property
-	def CxlRsnCd(self):
-		return self._CxlRsnCd
-
-	@CxlRsnCd.setter
-	def CxlRsnCd(self, value):
-		self._CxlRsnCd = value if type(value) != auto else self.make_default("CxlRsnCd")
-
-	@CxlRsnCd.deleter
-	def CxlRsnCd(self):
-		del self._CxlRsnCd
-		self._CxlRsnCd = None
-
+	__slots__ = ["_PrcgSts", "_CxlRsn", "_CxlRsnCd"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
@@ -45,9 +32,22 @@ class CorporateActionCancellation3(base_types._BaseFieldType):
 		del self._CxlRsn
 		self._CxlRsn = None
 
+	@property
+	def CxlRsnCd(self):
+		return self._CxlRsnCd
+
+	@CxlRsnCd.setter
+	def CxlRsnCd(self, value):
+		self._CxlRsnCd = value if type(value) != auto else self.make_default("CxlRsnCd")
+
+	@CxlRsnCd.deleter
+	def CxlRsnCd(self):
+		del self._CxlRsnCd
+		self._CxlRsnCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsnCd', type=CorporateActionCancellationReason1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CorporateActionEventStatus1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsnCd', type=CorporateActionCancellationReason1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

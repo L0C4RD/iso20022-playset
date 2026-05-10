@@ -1,26 +1,13 @@
 import base_types
-import Max35Text
 import DateAndDateTimeChoice
-import SecuritiesAccount9
 import UnitOrFaceAmount1Choice
+import SecuritiesAccount9
+import Max35Text
 import SecurityIdentification7
 
 class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngId", "_AcctDtls", "_SctyId", "_PstngDtTm", "_PstngQty"]
-	@property
-	def PstngId(self):
-		return self._PstngId
-
-	@PstngId.setter
-	def PstngId(self, value):
-		self._PstngId = value if type(value) != auto else self.make_default("PstngId")
-
-	@PstngId.deleter
-	def PstngId(self):
-		del self._PstngId
-		self._PstngId = None
-
+	__slots__ = ["_AcctDtls", "_PstngQty", "_SctyId", "_PstngId", "_PstngDtTm"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
@@ -33,6 +20,19 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 	def AcctDtls(self):
 		del self._AcctDtls
 		self._AcctDtls = None
+
+	@property
+	def PstngQty(self):
+		return self._PstngQty
+
+	@PstngQty.setter
+	def PstngQty(self, value):
+		self._PstngQty = value if type(value) != auto else self.make_default("PstngQty")
+
+	@PstngQty.deleter
+	def PstngQty(self):
+		del self._PstngQty
+		self._PstngQty = None
 
 	@property
 	def SctyId(self):
@@ -48,6 +48,19 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
+	def PstngId(self):
+		return self._PstngId
+
+	@PstngId.setter
+	def PstngId(self, value):
+		self._PstngId = value if type(value) != auto else self.make_default("PstngId")
+
+	@PstngId.deleter
+	def PstngId(self):
+		del self._PstngId
+		self._PstngId = None
+
+	@property
 	def PstngDtTm(self):
 		return self._PstngDtTm
 
@@ -60,24 +73,11 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 		del self._PstngDtTm
 		self._PstngDtTm = None
 
-	@property
-	def PstngQty(self):
-		return self._PstngQty
-
-	@PstngQty.setter
-	def PstngQty(self, value):
-		self._PstngQty = value if type(value) != auto else self.make_default("PstngQty")
-
-	@PstngQty.deleter
-	def PstngQty(self):
-		del self._PstngQty
-		self._PstngQty = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstngId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount9, min=1, max=2, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

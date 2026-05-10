@@ -1,13 +1,52 @@
 import base_types
-import Amount2Choice
-import Max350Text
-import GenericIdentification37
-import CashSubBalanceTypeAndQuantityBreakdown3
 import DateAndDateTime2Choice
+import GenericIdentification37
+import Max350Text
+import CashSubBalanceTypeAndQuantityBreakdown3
+import Amount2Choice
 
 class IntraBalance6(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTo", "_InstrPrcgAddtlDtls", "_SttldAmt", "_SttlmDt", "_RmngSttlmAmt", "_BalFr", "_PrevslySttldAmt", "_CshSubBalId"]
+	__slots__ = ["_PrevslySttldAmt", "_BalFr", "_RmngSttlmAmt", "_BalTo", "_SttldAmt", "_SttlmDt", "_CshSubBalId", "_InstrPrcgAddtlDtls"]
+	@property
+	def PrevslySttldAmt(self):
+		return self._PrevslySttldAmt
+
+	@PrevslySttldAmt.setter
+	def PrevslySttldAmt(self, value):
+		self._PrevslySttldAmt = value if type(value) != auto else self.make_default("PrevslySttldAmt")
+
+	@PrevslySttldAmt.deleter
+	def PrevslySttldAmt(self):
+		del self._PrevslySttldAmt
+		self._PrevslySttldAmt = None
+
+	@property
+	def BalFr(self):
+		return self._BalFr
+
+	@BalFr.setter
+	def BalFr(self, value):
+		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
+
+	@BalFr.deleter
+	def BalFr(self):
+		del self._BalFr
+		self._BalFr = None
+
+	@property
+	def RmngSttlmAmt(self):
+		return self._RmngSttlmAmt
+
+	@RmngSttlmAmt.setter
+	def RmngSttlmAmt(self, value):
+		self._RmngSttlmAmt = value if type(value) != auto else self.make_default("RmngSttlmAmt")
+
+	@RmngSttlmAmt.deleter
+	def RmngSttlmAmt(self):
+		del self._RmngSttlmAmt
+		self._RmngSttlmAmt = None
+
 	@property
 	def BalTo(self):
 		return self._BalTo
@@ -20,19 +59,6 @@ class IntraBalance6(base_types._BaseFieldType):
 	def BalTo(self):
 		del self._BalTo
 		self._BalTo = None
-
-	@property
-	def InstrPrcgAddtlDtls(self):
-		return self._InstrPrcgAddtlDtls
-
-	@InstrPrcgAddtlDtls.setter
-	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("InstrPrcgAddtlDtls")
-
-	@InstrPrcgAddtlDtls.deleter
-	def InstrPrcgAddtlDtls(self):
-		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
 
 	@property
 	def SttldAmt(self):
@@ -61,45 +87,6 @@ class IntraBalance6(base_types._BaseFieldType):
 		self._SttlmDt = None
 
 	@property
-	def RmngSttlmAmt(self):
-		return self._RmngSttlmAmt
-
-	@RmngSttlmAmt.setter
-	def RmngSttlmAmt(self, value):
-		self._RmngSttlmAmt = value if type(value) != auto else self.make_default("RmngSttlmAmt")
-
-	@RmngSttlmAmt.deleter
-	def RmngSttlmAmt(self):
-		del self._RmngSttlmAmt
-		self._RmngSttlmAmt = None
-
-	@property
-	def BalFr(self):
-		return self._BalFr
-
-	@BalFr.setter
-	def BalFr(self, value):
-		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
-
-	@BalFr.deleter
-	def BalFr(self):
-		del self._BalFr
-		self._BalFr = None
-
-	@property
-	def PrevslySttldAmt(self):
-		return self._PrevslySttldAmt
-
-	@PrevslySttldAmt.setter
-	def PrevslySttldAmt(self, value):
-		self._PrevslySttldAmt = value if type(value) != auto else self.make_default("PrevslySttldAmt")
-
-	@PrevslySttldAmt.deleter
-	def PrevslySttldAmt(self):
-		del self._PrevslySttldAmt
-		self._PrevslySttldAmt = None
-
-	@property
 	def CshSubBalId(self):
 		return self._CshSubBalId
 
@@ -112,14 +99,27 @@ class IntraBalance6(base_types._BaseFieldType):
 		del self._CshSubBalId
 		self._CshSubBalId = None
 
+	@property
+	def InstrPrcgAddtlDtls(self):
+		return self._InstrPrcgAddtlDtls
+
+	@InstrPrcgAddtlDtls.setter
+	def InstrPrcgAddtlDtls(self, value):
+		self._InstrPrcgAddtlDtls = value if type(value) != auto else self.make_default("InstrPrcgAddtlDtls")
+
+	@InstrPrcgAddtlDtls.deleter
+	def InstrPrcgAddtlDtls(self):
+		del self._InstrPrcgAddtlDtls
+		self._InstrPrcgAddtlDtls = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrevslySttldAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmngSttlmAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTo', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttldAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmngSttlmAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrevslySttldAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -5,19 +5,19 @@ import QuantityToQuantityRatio2
 
 class RatioFormat23Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_QtyToQty", "_AmtToAmt"]
+	__slots__ = ["_AmtToAmt", "_QtyToQty", "_NotSpcfdRate"]
 	@property
-	def NotSpcfdRate(self):
-		return self._NotSpcfdRate
+	def AmtToAmt(self):
+		return self._AmtToAmt
 
-	@NotSpcfdRate.setter
-	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+	@AmtToAmt.setter
+	def AmtToAmt(self, value):
+		self._AmtToAmt = value if type(value) != auto else self.make_default("AmtToAmt")
 
-	@NotSpcfdRate.deleter
-	def NotSpcfdRate(self):
-		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
+	@AmtToAmt.deleter
+	def AmtToAmt(self):
+		del self._AmtToAmt
+		self._AmtToAmt = None
 
 	@property
 	def QtyToQty(self):
@@ -33,21 +33,21 @@ class RatioFormat23Choice(base_types._BaseFieldType):
 		self._QtyToQty = None
 
 	@property
-	def AmtToAmt(self):
-		return self._AmtToAmt
+	def NotSpcfdRate(self):
+		return self._NotSpcfdRate
 
-	@AmtToAmt.setter
-	def AmtToAmt(self, value):
-		self._AmtToAmt = value if type(value) != auto else self.make_default("AmtToAmt")
+	@NotSpcfdRate.setter
+	def NotSpcfdRate(self, value):
+		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
 
-	@AmtToAmt.deleter
-	def AmtToAmt(self):
-		del self._AmtToAmt
-		self._AmtToAmt = None
+	@NotSpcfdRate.deleter
+	def NotSpcfdRate(self):
+		del self._NotSpcfdRate
+		self._NotSpcfdRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

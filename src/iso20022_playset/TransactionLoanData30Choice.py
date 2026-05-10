@@ -1,24 +1,24 @@
 import base_types
+import LoanData135
+import LoanData136
 import LoanData137
 import LoanData138
-import LoanData136
-import LoanData135
 
 class TransactionLoanData30Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BuySellBck", "_RpTrad", "_MrgnLndg", "_SctiesLndg"]
+	__slots__ = ["_SctiesLndg", "_RpTrad", "_BuySellBck", "_MrgnLndg"]
 	@property
-	def BuySellBck(self):
-		return self._BuySellBck
+	def SctiesLndg(self):
+		return self._SctiesLndg
 
-	@BuySellBck.setter
-	def BuySellBck(self, value):
-		self._BuySellBck = value if type(value) != auto else self.make_default("BuySellBck")
+	@SctiesLndg.setter
+	def SctiesLndg(self, value):
+		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
 
-	@BuySellBck.deleter
-	def BuySellBck(self):
-		del self._BuySellBck
-		self._BuySellBck = None
+	@SctiesLndg.deleter
+	def SctiesLndg(self):
+		del self._SctiesLndg
+		self._SctiesLndg = None
 
 	@property
 	def RpTrad(self):
@@ -34,6 +34,19 @@ class TransactionLoanData30Choice(base_types._BaseFieldType):
 		self._RpTrad = None
 
 	@property
+	def BuySellBck(self):
+		return self._BuySellBck
+
+	@BuySellBck.setter
+	def BuySellBck(self, value):
+		self._BuySellBck = value if type(value) != auto else self.make_default("BuySellBck")
+
+	@BuySellBck.deleter
+	def BuySellBck(self):
+		del self._BuySellBck
+		self._BuySellBck = None
+
+	@property
 	def MrgnLndg(self):
 		return self._MrgnLndg
 
@@ -46,23 +59,10 @@ class TransactionLoanData30Choice(base_types._BaseFieldType):
 		del self._MrgnLndg
 		self._MrgnLndg = None
 
-	@property
-	def SctiesLndg(self):
-		return self._SctiesLndg
-
-	@SctiesLndg.setter
-	def SctiesLndg(self, value):
-		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
-
-	@SctiesLndg.deleter
-	def SctiesLndg(self):
-		del self._SctiesLndg
-		self._SctiesLndg = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BuySellBck', type=LoanData136, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RpTrad', type=LoanData135, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MrgnLndg', type=LoanData138, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesLndg', type=LoanData137, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RpTrad', type=LoanData135, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BuySellBck', type=LoanData136, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MrgnLndg', type=LoanData138, min=0, max=1, mutex_group=1, array=False),
 	))
 

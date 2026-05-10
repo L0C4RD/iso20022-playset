@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import RejectedReason7Choice
+import NoReasonCode
 
 class RejectedReason8Choice(base_types._BaseFieldType):
 

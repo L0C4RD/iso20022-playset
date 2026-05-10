@@ -1,7 +1,7 @@
 import base_types
 import NumberAndSumOfTransactions4
-import NumberAndSumOfTransactions1
 import TotalsPerBankTransactionCode5
+import NumberAndSumOfTransactions1
 
 class TotalTransactions6(base_types._BaseFieldType):
 

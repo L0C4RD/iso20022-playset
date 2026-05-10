@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import PlanStatus1Code
+import GenericIdentification47
 
 class PlanStatus2Choice(base_types._BaseFieldType):
 

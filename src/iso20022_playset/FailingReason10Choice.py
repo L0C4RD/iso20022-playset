@@ -1,6 +1,6 @@
 import base_types
-import FailingReason3Code
 import GenericIdentification47
+import FailingReason3Code
 
 class FailingReason10Choice(base_types._BaseFieldType):
 

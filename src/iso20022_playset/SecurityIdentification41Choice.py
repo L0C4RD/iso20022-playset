@@ -1,15 +1,28 @@
 import base_types
-import CustomBasket4
-import UniqueProductIdentifier2Choice
-import GenericIdentification184
-import UnderlyingIdentification1Code
-import IndexIdentification1
-import ISINOct2015Identifier
 import Max52Text
+import UnderlyingIdentification1Code
+import UniqueProductIdentifier2Choice
+import ISINOct2015Identifier
+import IndexIdentification1
+import CustomBasket4
+import GenericIdentification184
 
 class SecurityIdentification41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrntvInstrmId", "_ISIN", "_UnqPdctIdr", "_Indx", "_Bskt", "_Othr", "_IdNotAvlbl"]
+	__slots__ = ["_Othr", "_AltrntvInstrmId", "_ISIN", "_UnqPdctIdr", "_IdNotAvlbl", "_Indx", "_Bskt"]
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	@property
 	def AltrntvInstrmId(self):
 		return self._AltrntvInstrmId
@@ -50,6 +63,19 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 		self._UnqPdctIdr = None
 
 	@property
+	def IdNotAvlbl(self):
+		return self._IdNotAvlbl
+
+	@IdNotAvlbl.setter
+	def IdNotAvlbl(self, value):
+		self._IdNotAvlbl = value if type(value) != auto else self.make_default("IdNotAvlbl")
+
+	@IdNotAvlbl.deleter
+	def IdNotAvlbl(self):
+		del self._IdNotAvlbl
+		self._IdNotAvlbl = None
+
+	@property
 	def Indx(self):
 		return self._Indx
 
@@ -75,39 +101,13 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 		del self._Bskt
 		self._Bskt = None
 
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
-	def IdNotAvlbl(self):
-		return self._IdNotAvlbl
-
-	@IdNotAvlbl.setter
-	def IdNotAvlbl(self, value):
-		self._IdNotAvlbl = value if type(value) != auto else self.make_default("IdNotAvlbl")
-
-	@IdNotAvlbl.deleter
-	def IdNotAvlbl(self):
-		del self._IdNotAvlbl
-		self._IdNotAvlbl = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Othr', type=GenericIdentification184, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IdNotAvlbl', type=UnderlyingIdentification1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Indx', type=IndexIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Bskt', type=CustomBasket4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=GenericIdentification184, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IdNotAvlbl', type=UnderlyingIdentification1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

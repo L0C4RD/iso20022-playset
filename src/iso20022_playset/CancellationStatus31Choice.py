@@ -4,20 +4,7 @@ import CancellationStatus32Choice
 
 class CancellationStatus31Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GblCxlSts", "_DtldCxlSts"]
-	@property
-	def GblCxlSts(self):
-		return self._GblCxlSts
-
-	@GblCxlSts.setter
-	def GblCxlSts(self, value):
-		self._GblCxlSts = value if type(value) != auto else self.make_default("GblCxlSts")
-
-	@GblCxlSts.deleter
-	def GblCxlSts(self):
-		del self._GblCxlSts
-		self._GblCxlSts = None
-
+	__slots__ = ["_DtldCxlSts", "_GblCxlSts"]
 	@property
 	def DtldCxlSts(self):
 		return self._DtldCxlSts
@@ -31,8 +18,21 @@ class CancellationStatus31Choice(base_types._BaseFieldType):
 		del self._DtldCxlSts
 		self._DtldCxlSts = None
 
+	@property
+	def GblCxlSts(self):
+		return self._GblCxlSts
+
+	@GblCxlSts.setter
+	def GblCxlSts(self, value):
+		self._GblCxlSts = value if type(value) != auto else self.make_default("GblCxlSts")
+
+	@GblCxlSts.deleter
+	def GblCxlSts(self):
+		del self._GblCxlSts
+		self._GblCxlSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GblCxlSts', type=CancellationStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtldCxlSts', type=DetailedInstructionCancellationStatus15, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='GblCxlSts', type=CancellationStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

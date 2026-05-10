@@ -1,46 +1,20 @@
 import base_types
-import StoredValueRequest8
-import PaymentContext30
-import LoyaltyRequest7
-import CardPaymentEnvironment81
-import SupplementaryData1
-import PaymentRequest7
-import ReversalRequest7
-import BatchRequest7
-import EnableServiceRequest6
-import CardAcquisitionRequest3
 import RetailerService2Code
+import CardPaymentEnvironment81
+import PaymentRequest7
+import PaymentContext30
+import EnableServiceRequest6
+import BatchRequest7
+import CardAcquisitionRequest3
+import StoredValueRequest8
+import ReversalRequest7
+import LoyaltyRequest7
 import BalanceInquiryRequest8
+import SupplementaryData1
 
 class ServiceRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_RvslReq", "_SvcCntt", "_Envt", "_StordValReq", "_Cntxt", "_SplmtryData", "_BtchReq", "_CardAcqstnReq", "_PmtReq", "_NblSvcReq", "_LltyReq", "_BalNqryReq"]
-	@property
-	def RvslReq(self):
-		return self._RvslReq
-
-	@RvslReq.setter
-	def RvslReq(self, value):
-		self._RvslReq = value if type(value) != auto else self.make_default("RvslReq")
-
-	@RvslReq.deleter
-	def RvslReq(self):
-		del self._RvslReq
-		self._RvslReq = None
-
-	@property
-	def SvcCntt(self):
-		return self._SvcCntt
-
-	@SvcCntt.setter
-	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != auto else self.make_default("SvcCntt")
-
-	@SvcCntt.deleter
-	def SvcCntt(self):
-		del self._SvcCntt
-		self._SvcCntt = None
-
+	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_RvslReq", "_BalNqryReq", "_NblSvcReq", "_SvcCntt", "_StordValReq", "_PmtReq", "_CardAcqstnReq", "_LltyReq", "_BtchReq"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -53,19 +27,6 @@ class ServiceRequest8(base_types._BaseFieldType):
 	def Envt(self):
 		del self._Envt
 		self._Envt = None
-
-	@property
-	def StordValReq(self):
-		return self._StordValReq
-
-	@StordValReq.setter
-	def StordValReq(self, value):
-		self._StordValReq = value if type(value) != auto else self.make_default("StordValReq")
-
-	@StordValReq.deleter
-	def StordValReq(self):
-		del self._StordValReq
-		self._StordValReq = None
 
 	@property
 	def Cntxt(self):
@@ -94,43 +55,30 @@ class ServiceRequest8(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def BtchReq(self):
-		return self._BtchReq
+	def RvslReq(self):
+		return self._RvslReq
 
-	@BtchReq.setter
-	def BtchReq(self, value):
-		self._BtchReq = value if type(value) != auto else self.make_default("BtchReq")
+	@RvslReq.setter
+	def RvslReq(self, value):
+		self._RvslReq = value if type(value) != auto else self.make_default("RvslReq")
 
-	@BtchReq.deleter
-	def BtchReq(self):
-		del self._BtchReq
-		self._BtchReq = None
-
-	@property
-	def CardAcqstnReq(self):
-		return self._CardAcqstnReq
-
-	@CardAcqstnReq.setter
-	def CardAcqstnReq(self, value):
-		self._CardAcqstnReq = value if type(value) != auto else self.make_default("CardAcqstnReq")
-
-	@CardAcqstnReq.deleter
-	def CardAcqstnReq(self):
-		del self._CardAcqstnReq
-		self._CardAcqstnReq = None
+	@RvslReq.deleter
+	def RvslReq(self):
+		del self._RvslReq
+		self._RvslReq = None
 
 	@property
-	def PmtReq(self):
-		return self._PmtReq
+	def BalNqryReq(self):
+		return self._BalNqryReq
 
-	@PmtReq.setter
-	def PmtReq(self, value):
-		self._PmtReq = value if type(value) != auto else self.make_default("PmtReq")
+	@BalNqryReq.setter
+	def BalNqryReq(self, value):
+		self._BalNqryReq = value if type(value) != auto else self.make_default("BalNqryReq")
 
-	@PmtReq.deleter
-	def PmtReq(self):
-		del self._PmtReq
-		self._PmtReq = None
+	@BalNqryReq.deleter
+	def BalNqryReq(self):
+		del self._BalNqryReq
+		self._BalNqryReq = None
 
 	@property
 	def NblSvcReq(self):
@@ -146,6 +94,58 @@ class ServiceRequest8(base_types._BaseFieldType):
 		self._NblSvcReq = None
 
 	@property
+	def SvcCntt(self):
+		return self._SvcCntt
+
+	@SvcCntt.setter
+	def SvcCntt(self, value):
+		self._SvcCntt = value if type(value) != auto else self.make_default("SvcCntt")
+
+	@SvcCntt.deleter
+	def SvcCntt(self):
+		del self._SvcCntt
+		self._SvcCntt = None
+
+	@property
+	def StordValReq(self):
+		return self._StordValReq
+
+	@StordValReq.setter
+	def StordValReq(self, value):
+		self._StordValReq = value if type(value) != auto else self.make_default("StordValReq")
+
+	@StordValReq.deleter
+	def StordValReq(self):
+		del self._StordValReq
+		self._StordValReq = None
+
+	@property
+	def PmtReq(self):
+		return self._PmtReq
+
+	@PmtReq.setter
+	def PmtReq(self, value):
+		self._PmtReq = value if type(value) != auto else self.make_default("PmtReq")
+
+	@PmtReq.deleter
+	def PmtReq(self):
+		del self._PmtReq
+		self._PmtReq = None
+
+	@property
+	def CardAcqstnReq(self):
+		return self._CardAcqstnReq
+
+	@CardAcqstnReq.setter
+	def CardAcqstnReq(self, value):
+		self._CardAcqstnReq = value if type(value) != auto else self.make_default("CardAcqstnReq")
+
+	@CardAcqstnReq.deleter
+	def CardAcqstnReq(self):
+		del self._CardAcqstnReq
+		self._CardAcqstnReq = None
+
+	@property
 	def LltyReq(self):
 		return self._LltyReq
 
@@ -159,30 +159,30 @@ class ServiceRequest8(base_types._BaseFieldType):
 		self._LltyReq = None
 
 	@property
-	def BalNqryReq(self):
-		return self._BalNqryReq
+	def BtchReq(self):
+		return self._BtchReq
 
-	@BalNqryReq.setter
-	def BalNqryReq(self, value):
-		self._BalNqryReq = value if type(value) != auto else self.make_default("BalNqryReq")
+	@BtchReq.setter
+	def BtchReq(self, value):
+		self._BtchReq = value if type(value) != auto else self.make_default("BtchReq")
 
-	@BalNqryReq.deleter
-	def BalNqryReq(self):
-		del self._BalNqryReq
-		self._BalNqryReq = None
+	@BtchReq.deleter
+	def BtchReq(self):
+		del self._BtchReq
+		self._BtchReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RvslReq', type=ReversalRequest7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcCntt', type=RetailerService2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StordValReq', type=StoredValueRequest8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BtchReq', type=BatchRequest7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardAcqstnReq', type=CardAcquisitionRequest3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtReq', type=PaymentRequest7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NblSvcReq', type=EnableServiceRequest6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyReq', type=LoyaltyRequest7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvslReq', type=ReversalRequest7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalNqryReq', type=BalanceInquiryRequest8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NblSvcReq', type=EnableServiceRequest6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcCntt', type=RetailerService2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StordValReq', type=StoredValueRequest8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtReq', type=PaymentRequest7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardAcqstnReq', type=CardAcquisitionRequest3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyReq', type=LoyaltyRequest7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BtchReq', type=BatchRequest7, min=0, max=1, mutex_group=None, array=False),
 	))
 

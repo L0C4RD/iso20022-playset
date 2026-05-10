@@ -1,7 +1,7 @@
 import base_types
-import ProprietaryStatusAndReason7
-import FailingStatus12Choice
 import PendingStatus50Choice
+import FailingStatus12Choice
+import ProprietaryStatusAndReason7
 
 class SettlementStatus22Choice(base_types._BaseFieldType):
 

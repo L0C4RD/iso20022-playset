@@ -1,25 +1,25 @@
 import base_types
-import ActiveCurrencyAndAmount
+import GenericIdentification36
 import YesNoIndicator
 import DateFormat42Choice
 import AdditionalInformation15
-import GenericIdentification36
+import ActiveCurrencyAndAmount
 
 class EmploymentDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTaxCdInd", "_CmltvTaxInd", "_StartDt", "_AddtlInf", "_TaxCd", "_EndDt", "_PrvsPay", "_PrvsTax"]
+	__slots__ = ["_EndDt", "_CmltvTaxInd", "_PrvsTax", "_OthrTaxCdInd", "_AddtlInf", "_StartDt", "_PrvsPay", "_TaxCd"]
 	@property
-	def OthrTaxCdInd(self):
-		return self._OthrTaxCdInd
+	def EndDt(self):
+		return self._EndDt
 
-	@OthrTaxCdInd.setter
-	def OthrTaxCdInd(self, value):
-		self._OthrTaxCdInd = value if type(value) != auto else self.make_default("OthrTaxCdInd")
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
 
-	@OthrTaxCdInd.deleter
-	def OthrTaxCdInd(self):
-		del self._OthrTaxCdInd
-		self._OthrTaxCdInd = None
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
 
 	@property
 	def CmltvTaxInd(self):
@@ -35,17 +35,30 @@ class EmploymentDetails1(base_types._BaseFieldType):
 		self._CmltvTaxInd = None
 
 	@property
-	def StartDt(self):
-		return self._StartDt
+	def PrvsTax(self):
+		return self._PrvsTax
 
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+	@PrvsTax.setter
+	def PrvsTax(self, value):
+		self._PrvsTax = value if type(value) != auto else self.make_default("PrvsTax")
 
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
+	@PrvsTax.deleter
+	def PrvsTax(self):
+		del self._PrvsTax
+		self._PrvsTax = None
+
+	@property
+	def OthrTaxCdInd(self):
+		return self._OthrTaxCdInd
+
+	@OthrTaxCdInd.setter
+	def OthrTaxCdInd(self, value):
+		self._OthrTaxCdInd = value if type(value) != auto else self.make_default("OthrTaxCdInd")
+
+	@OthrTaxCdInd.deleter
+	def OthrTaxCdInd(self):
+		del self._OthrTaxCdInd
+		self._OthrTaxCdInd = None
 
 	@property
 	def AddtlInf(self):
@@ -61,30 +74,17 @@ class EmploymentDetails1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def TaxCd(self):
-		return self._TaxCd
+	def StartDt(self):
+		return self._StartDt
 
-	@TaxCd.setter
-	def TaxCd(self, value):
-		self._TaxCd = value if type(value) != auto else self.make_default("TaxCd")
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
 
-	@TaxCd.deleter
-	def TaxCd(self):
-		del self._TaxCd
-		self._TaxCd = None
-
-	@property
-	def EndDt(self):
-		return self._EndDt
-
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
-
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
 
 	@property
 	def PrvsPay(self):
@@ -100,26 +100,26 @@ class EmploymentDetails1(base_types._BaseFieldType):
 		self._PrvsPay = None
 
 	@property
-	def PrvsTax(self):
-		return self._PrvsTax
+	def TaxCd(self):
+		return self._TaxCd
 
-	@PrvsTax.setter
-	def PrvsTax(self, value):
-		self._PrvsTax = value if type(value) != auto else self.make_default("PrvsTax")
+	@TaxCd.setter
+	def TaxCd(self, value):
+		self._TaxCd = value if type(value) != auto else self.make_default("TaxCd")
 
-	@PrvsTax.deleter
-	def PrvsTax(self):
-		del self._PrvsTax
-		self._PrvsTax = None
+	@TaxCd.deleter
+	def TaxCd(self):
+		del self._TaxCd
+		self._TaxCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTaxCdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmltvTaxInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=DateFormat42Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TaxCd', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=DateFormat42Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsPay', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmltvTaxInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsTax', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTaxCdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StartDt', type=DateFormat42Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsPay', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxCd', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import AssetClassProductType2Code
 import AssetClassSubProductType27Code
+import AssetClassProductType2Code
 
 class EnergyCommodityLightEnd1(base_types._BaseFieldType):
 

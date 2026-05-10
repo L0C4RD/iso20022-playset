@@ -1,6 +1,6 @@
 import base_types
-import MetalCommodityNonPrecious2
 import MetalCommodityPrecious2
+import MetalCommodityNonPrecious2
 
 class AssetClassCommodityMetal2Choice(base_types._BaseFieldType):
 

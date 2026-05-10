@@ -1,7 +1,7 @@
 import base_types
+import ExternallyDefinedData5
 import CardPaymentTransaction139
 import NonFinancialRequestType2Code
-import ExternallyDefinedData5
 
 class NonFinancialRequestContentComponent5(base_types._BaseFieldType):
 

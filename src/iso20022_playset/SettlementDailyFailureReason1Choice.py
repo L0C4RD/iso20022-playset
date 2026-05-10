@@ -1,6 +1,6 @@
 import base_types
-import ReportPeriodActivity1Code
 import SettlementDailyFailureReason3
+import ReportPeriodActivity1Code
 
 class SettlementDailyFailureReason1Choice(base_types._BaseFieldType):
 

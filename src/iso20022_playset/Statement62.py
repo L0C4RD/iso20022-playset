@@ -1,13 +1,13 @@
 import base_types
+import DateAndDateTime2Choice
+import YesNoIndicator
 import Max35Text
 import UpdateType15Choice
 import Number3Choice
-import YesNoIndicator
-import DateAndDateTime2Choice
 
 class Statement62(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_StmtId", "_UpdTp", "_RptNb", "_StmtDtTm", "_CtrPtyPrtflTrfNtfctnRef"]
+	__slots__ = ["_ActvtyInd", "_StmtId", "_CtrPtyPrtflTrfNtfctnRef", "_UpdTp", "_RptNb", "_StmtDtTm"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
@@ -33,6 +33,19 @@ class Statement62(base_types._BaseFieldType):
 	def StmtId(self):
 		del self._StmtId
 		self._StmtId = None
+
+	@property
+	def CtrPtyPrtflTrfNtfctnRef(self):
+		return self._CtrPtyPrtflTrfNtfctnRef
+
+	@CtrPtyPrtflTrfNtfctnRef.setter
+	def CtrPtyPrtflTrfNtfctnRef(self, value):
+		self._CtrPtyPrtflTrfNtfctnRef = value if type(value) != auto else self.make_default("CtrPtyPrtflTrfNtfctnRef")
+
+	@CtrPtyPrtflTrfNtfctnRef.deleter
+	def CtrPtyPrtflTrfNtfctnRef(self):
+		del self._CtrPtyPrtflTrfNtfctnRef
+		self._CtrPtyPrtflTrfNtfctnRef = None
 
 	@property
 	def UpdTp(self):
@@ -73,25 +86,12 @@ class Statement62(base_types._BaseFieldType):
 		del self._StmtDtTm
 		self._StmtDtTm = None
 
-	@property
-	def CtrPtyPrtflTrfNtfctnRef(self):
-		return self._CtrPtyPrtflTrfNtfctnRef
-
-	@CtrPtyPrtflTrfNtfctnRef.setter
-	def CtrPtyPrtflTrfNtfctnRef(self, value):
-		self._CtrPtyPrtflTrfNtfctnRef = value if type(value) != auto else self.make_default("CtrPtyPrtflTrfNtfctnRef")
-
-	@CtrPtyPrtflTrfNtfctnRef.deleter
-	def CtrPtyPrtflTrfNtfctnRef(self):
-		del self._CtrPtyPrtflTrfNtfctnRef
-		self._CtrPtyPrtflTrfNtfctnRef = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyPrtflTrfNtfctnRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyPrtflTrfNtfctnRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

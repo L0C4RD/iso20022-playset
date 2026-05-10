@@ -1,24 +1,37 @@
 import base_types
 import ImpliedCurrencyAndAmount
-import DetailedAmount13
-import ActiveCurrencyCode
 import Number
+import ActiveCurrencyCode
+import DetailedAmount13
 
 class DetailedAmount16(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Dontn", "_AcctSeqNb", "_CshBckAmt", "_Fees", "_AmtToDpst"]
+	__slots__ = ["_CshBckAmt", "_AmtToDpst", "_Dontn", "_Fees", "_Ccy", "_AcctSeqNb"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def CshBckAmt(self):
+		return self._CshBckAmt
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@CshBckAmt.setter
+	def CshBckAmt(self, value):
+		self._CshBckAmt = value if type(value) != auto else self.make_default("CshBckAmt")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@CshBckAmt.deleter
+	def CshBckAmt(self):
+		del self._CshBckAmt
+		self._CshBckAmt = None
+
+	@property
+	def AmtToDpst(self):
+		return self._AmtToDpst
+
+	@AmtToDpst.setter
+	def AmtToDpst(self, value):
+		self._AmtToDpst = value if type(value) != auto else self.make_default("AmtToDpst")
+
+	@AmtToDpst.deleter
+	def AmtToDpst(self):
+		del self._AmtToDpst
+		self._AmtToDpst = None
 
 	@property
 	def Dontn(self):
@@ -34,32 +47,6 @@ class DetailedAmount16(base_types._BaseFieldType):
 		self._Dontn = None
 
 	@property
-	def AcctSeqNb(self):
-		return self._AcctSeqNb
-
-	@AcctSeqNb.setter
-	def AcctSeqNb(self, value):
-		self._AcctSeqNb = value if type(value) != auto else self.make_default("AcctSeqNb")
-
-	@AcctSeqNb.deleter
-	def AcctSeqNb(self):
-		del self._AcctSeqNb
-		self._AcctSeqNb = None
-
-	@property
-	def CshBckAmt(self):
-		return self._CshBckAmt
-
-	@CshBckAmt.setter
-	def CshBckAmt(self, value):
-		self._CshBckAmt = value if type(value) != auto else self.make_default("CshBckAmt")
-
-	@CshBckAmt.deleter
-	def CshBckAmt(self):
-		del self._CshBckAmt
-		self._CshBckAmt = None
-
-	@property
 	def Fees(self):
 		return self._Fees
 
@@ -73,24 +60,37 @@ class DetailedAmount16(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
-	def AmtToDpst(self):
-		return self._AmtToDpst
+	def Ccy(self):
+		return self._Ccy
 
-	@AmtToDpst.setter
-	def AmtToDpst(self, value):
-		self._AmtToDpst = value if type(value) != auto else self.make_default("AmtToDpst")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@AmtToDpst.deleter
-	def AmtToDpst(self):
-		del self._AmtToDpst
-		self._AmtToDpst = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def AcctSeqNb(self):
+		return self._AcctSeqNb
+
+	@AcctSeqNb.setter
+	def AcctSeqNb(self, value):
+		self._AcctSeqNb = value if type(value) != auto else self.make_default("AcctSeqNb")
+
+	@AcctSeqNb.deleter
+	def AcctSeqNb(self):
+		del self._AcctSeqNb
+		self._AcctSeqNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dontn', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshBckAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fees', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AmtToDpst', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dontn', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Fees', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

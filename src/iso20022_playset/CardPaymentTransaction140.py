@@ -1,22 +1,22 @@
 import base_types
-import CardPaymentTransaction138
-import CardPaymentTransactionDetails53
+import Max70Text
 import CardPaymentServiceType12Code
 import Min3Max4Text
+import CardPaymentTransaction138
 import FailureReason3Code
+import CardPaymentServiceType15Code
+import Max140Text
+import CardPaymentServiceType9Code
+import AuthorisationResult18
+import CardPaymentTransactionDetails53
+import TransactionIdentifier1
 import Max35Text
 import TrueFalseIndicator
-import TransactionIdentifier1
-import AuthorisationResult18
-import CardPaymentServiceType15Code
-import CardPaymentServiceType9Code
 import CardAccount16
-import Max70Text
-import Max140Text
 
 class CardPaymentTransaction140(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctTo", "_AcctFr", "_InitrTxId", "_OrgnlTx", "_MrchntCITId", "_MrchntCtgyCd", "_TxCaptr", "_IntrchngData", "_AddtlTxData", "_MrchntRefData", "_CardPrgrmmPropsd", "_Rvsl", "_CardPrgrmmApld", "_SaleRefId", "_AuthstnRslt", "_RcncltnId", "_RcptTxId", "_SvcAttr", "_TxTp", "_FailrRsn", "_LastTxFlg", "_IssrCITId", "_AddtlSvc", "_TxId", "_TxSucss", "_CstmrCnsnt", "_MrchntOvrrd", "_TxDtls"]
+	__slots__ = ["_AcctTo", "_AddtlTxData", "_Rvsl", "_RcptTxId", "_InitrTxId", "_CardPrgrmmPropsd", "_CardPrgrmmApld", "_RcncltnId", "_CstmrCnsnt", "_MrchntRefData", "_SvcAttr", "_OrgnlTx", "_SaleRefId", "_AcctFr", "_TxId", "_TxDtls", "_IntrchngData", "_FailrRsn", "_TxTp", "_LastTxFlg", "_MrchntOvrrd", "_MrchntCITId", "_TxCaptr", "_IssrCITId", "_AddtlSvc", "_AuthstnRslt", "_TxSucss", "_MrchntCtgyCd"]
 	@property
 	def AcctTo(self):
 		return self._AcctTo
@@ -29,97 +29,6 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 	def AcctTo(self):
 		del self._AcctTo
 		self._AcctTo = None
-
-	@property
-	def AcctFr(self):
-		return self._AcctFr
-
-	@AcctFr.setter
-	def AcctFr(self, value):
-		self._AcctFr = value if type(value) != auto else self.make_default("AcctFr")
-
-	@AcctFr.deleter
-	def AcctFr(self):
-		del self._AcctFr
-		self._AcctFr = None
-
-	@property
-	def InitrTxId(self):
-		return self._InitrTxId
-
-	@InitrTxId.setter
-	def InitrTxId(self, value):
-		self._InitrTxId = value if type(value) != auto else self.make_default("InitrTxId")
-
-	@InitrTxId.deleter
-	def InitrTxId(self):
-		del self._InitrTxId
-		self._InitrTxId = None
-
-	@property
-	def OrgnlTx(self):
-		return self._OrgnlTx
-
-	@OrgnlTx.setter
-	def OrgnlTx(self, value):
-		self._OrgnlTx = value if type(value) != auto else self.make_default("OrgnlTx")
-
-	@OrgnlTx.deleter
-	def OrgnlTx(self):
-		del self._OrgnlTx
-		self._OrgnlTx = None
-
-	@property
-	def MrchntCITId(self):
-		return self._MrchntCITId
-
-	@MrchntCITId.setter
-	def MrchntCITId(self, value):
-		self._MrchntCITId = value if type(value) != auto else self.make_default("MrchntCITId")
-
-	@MrchntCITId.deleter
-	def MrchntCITId(self):
-		del self._MrchntCITId
-		self._MrchntCITId = None
-
-	@property
-	def MrchntCtgyCd(self):
-		return self._MrchntCtgyCd
-
-	@MrchntCtgyCd.setter
-	def MrchntCtgyCd(self, value):
-		self._MrchntCtgyCd = value if type(value) != auto else self.make_default("MrchntCtgyCd")
-
-	@MrchntCtgyCd.deleter
-	def MrchntCtgyCd(self):
-		del self._MrchntCtgyCd
-		self._MrchntCtgyCd = None
-
-	@property
-	def TxCaptr(self):
-		return self._TxCaptr
-
-	@TxCaptr.setter
-	def TxCaptr(self, value):
-		self._TxCaptr = value if type(value) != auto else self.make_default("TxCaptr")
-
-	@TxCaptr.deleter
-	def TxCaptr(self):
-		del self._TxCaptr
-		self._TxCaptr = None
-
-	@property
-	def IntrchngData(self):
-		return self._IntrchngData
-
-	@IntrchngData.setter
-	def IntrchngData(self, value):
-		self._IntrchngData = value if type(value) != auto else self.make_default("IntrchngData")
-
-	@IntrchngData.deleter
-	def IntrchngData(self):
-		del self._IntrchngData
-		self._IntrchngData = None
 
 	@property
 	def AddtlTxData(self):
@@ -135,32 +44,6 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 		self._AddtlTxData = None
 
 	@property
-	def MrchntRefData(self):
-		return self._MrchntRefData
-
-	@MrchntRefData.setter
-	def MrchntRefData(self, value):
-		self._MrchntRefData = value if type(value) != auto else self.make_default("MrchntRefData")
-
-	@MrchntRefData.deleter
-	def MrchntRefData(self):
-		del self._MrchntRefData
-		self._MrchntRefData = None
-
-	@property
-	def CardPrgrmmPropsd(self):
-		return self._CardPrgrmmPropsd
-
-	@CardPrgrmmPropsd.setter
-	def CardPrgrmmPropsd(self, value):
-		self._CardPrgrmmPropsd = value if type(value) != auto else self.make_default("CardPrgrmmPropsd")
-
-	@CardPrgrmmPropsd.deleter
-	def CardPrgrmmPropsd(self):
-		del self._CardPrgrmmPropsd
-		self._CardPrgrmmPropsd = None
-
-	@property
 	def Rvsl(self):
 		return self._Rvsl
 
@@ -172,58 +55,6 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 	def Rvsl(self):
 		del self._Rvsl
 		self._Rvsl = None
-
-	@property
-	def CardPrgrmmApld(self):
-		return self._CardPrgrmmApld
-
-	@CardPrgrmmApld.setter
-	def CardPrgrmmApld(self, value):
-		self._CardPrgrmmApld = value if type(value) != auto else self.make_default("CardPrgrmmApld")
-
-	@CardPrgrmmApld.deleter
-	def CardPrgrmmApld(self):
-		del self._CardPrgrmmApld
-		self._CardPrgrmmApld = None
-
-	@property
-	def SaleRefId(self):
-		return self._SaleRefId
-
-	@SaleRefId.setter
-	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
-
-	@SaleRefId.deleter
-	def SaleRefId(self):
-		del self._SaleRefId
-		self._SaleRefId = None
-
-	@property
-	def AuthstnRslt(self):
-		return self._AuthstnRslt
-
-	@AuthstnRslt.setter
-	def AuthstnRslt(self, value):
-		self._AuthstnRslt = value if type(value) != auto else self.make_default("AuthstnRslt")
-
-	@AuthstnRslt.deleter
-	def AuthstnRslt(self):
-		del self._AuthstnRslt
-		self._AuthstnRslt = None
-
-	@property
-	def RcncltnId(self):
-		return self._RcncltnId
-
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
-
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
 
 	@property
 	def RcptTxId(self):
@@ -239,6 +70,84 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 		self._RcptTxId = None
 
 	@property
+	def InitrTxId(self):
+		return self._InitrTxId
+
+	@InitrTxId.setter
+	def InitrTxId(self, value):
+		self._InitrTxId = value if type(value) != auto else self.make_default("InitrTxId")
+
+	@InitrTxId.deleter
+	def InitrTxId(self):
+		del self._InitrTxId
+		self._InitrTxId = None
+
+	@property
+	def CardPrgrmmPropsd(self):
+		return self._CardPrgrmmPropsd
+
+	@CardPrgrmmPropsd.setter
+	def CardPrgrmmPropsd(self, value):
+		self._CardPrgrmmPropsd = value if type(value) != auto else self.make_default("CardPrgrmmPropsd")
+
+	@CardPrgrmmPropsd.deleter
+	def CardPrgrmmPropsd(self):
+		del self._CardPrgrmmPropsd
+		self._CardPrgrmmPropsd = None
+
+	@property
+	def CardPrgrmmApld(self):
+		return self._CardPrgrmmApld
+
+	@CardPrgrmmApld.setter
+	def CardPrgrmmApld(self, value):
+		self._CardPrgrmmApld = value if type(value) != auto else self.make_default("CardPrgrmmApld")
+
+	@CardPrgrmmApld.deleter
+	def CardPrgrmmApld(self):
+		del self._CardPrgrmmApld
+		self._CardPrgrmmApld = None
+
+	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
+
+	@property
+	def CstmrCnsnt(self):
+		return self._CstmrCnsnt
+
+	@CstmrCnsnt.setter
+	def CstmrCnsnt(self, value):
+		self._CstmrCnsnt = value if type(value) != auto else self.make_default("CstmrCnsnt")
+
+	@CstmrCnsnt.deleter
+	def CstmrCnsnt(self):
+		del self._CstmrCnsnt
+		self._CstmrCnsnt = None
+
+	@property
+	def MrchntRefData(self):
+		return self._MrchntRefData
+
+	@MrchntRefData.setter
+	def MrchntRefData(self, value):
+		self._MrchntRefData = value if type(value) != auto else self.make_default("MrchntRefData")
+
+	@MrchntRefData.deleter
+	def MrchntRefData(self):
+		del self._MrchntRefData
+		self._MrchntRefData = None
+
+	@property
 	def SvcAttr(self):
 		return self._SvcAttr
 
@@ -252,17 +161,82 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 		self._SvcAttr = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def OrgnlTx(self):
+		return self._OrgnlTx
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+	@OrgnlTx.setter
+	def OrgnlTx(self, value):
+		self._OrgnlTx = value if type(value) != auto else self.make_default("OrgnlTx")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@OrgnlTx.deleter
+	def OrgnlTx(self):
+		del self._OrgnlTx
+		self._OrgnlTx = None
+
+	@property
+	def SaleRefId(self):
+		return self._SaleRefId
+
+	@SaleRefId.setter
+	def SaleRefId(self, value):
+		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+
+	@SaleRefId.deleter
+	def SaleRefId(self):
+		del self._SaleRefId
+		self._SaleRefId = None
+
+	@property
+	def AcctFr(self):
+		return self._AcctFr
+
+	@AcctFr.setter
+	def AcctFr(self, value):
+		self._AcctFr = value if type(value) != auto else self.make_default("AcctFr")
+
+	@AcctFr.deleter
+	def AcctFr(self):
+		del self._AcctFr
+		self._AcctFr = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def TxDtls(self):
+		return self._TxDtls
+
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
+
+	@property
+	def IntrchngData(self):
+		return self._IntrchngData
+
+	@IntrchngData.setter
+	def IntrchngData(self, value):
+		self._IntrchngData = value if type(value) != auto else self.make_default("IntrchngData")
+
+	@IntrchngData.deleter
+	def IntrchngData(self):
+		del self._IntrchngData
+		self._IntrchngData = None
 
 	@property
 	def FailrRsn(self):
@@ -278,6 +252,19 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 		self._FailrRsn = None
 
 	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
+	@property
 	def LastTxFlg(self):
 		return self._LastTxFlg
 
@@ -289,6 +276,45 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 	def LastTxFlg(self):
 		del self._LastTxFlg
 		self._LastTxFlg = None
+
+	@property
+	def MrchntOvrrd(self):
+		return self._MrchntOvrrd
+
+	@MrchntOvrrd.setter
+	def MrchntOvrrd(self, value):
+		self._MrchntOvrrd = value if type(value) != auto else self.make_default("MrchntOvrrd")
+
+	@MrchntOvrrd.deleter
+	def MrchntOvrrd(self):
+		del self._MrchntOvrrd
+		self._MrchntOvrrd = None
+
+	@property
+	def MrchntCITId(self):
+		return self._MrchntCITId
+
+	@MrchntCITId.setter
+	def MrchntCITId(self, value):
+		self._MrchntCITId = value if type(value) != auto else self.make_default("MrchntCITId")
+
+	@MrchntCITId.deleter
+	def MrchntCITId(self):
+		del self._MrchntCITId
+		self._MrchntCITId = None
+
+	@property
+	def TxCaptr(self):
+		return self._TxCaptr
+
+	@TxCaptr.setter
+	def TxCaptr(self, value):
+		self._TxCaptr = value if type(value) != auto else self.make_default("TxCaptr")
+
+	@TxCaptr.deleter
+	def TxCaptr(self):
+		del self._TxCaptr
+		self._TxCaptr = None
 
 	@property
 	def IssrCITId(self):
@@ -317,17 +343,17 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 		self._AddtlSvc = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def AuthstnRslt(self):
+		return self._AuthstnRslt
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@AuthstnRslt.setter
+	def AuthstnRslt(self, value):
+		self._AuthstnRslt = value if type(value) != auto else self.make_default("AuthstnRslt")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@AuthstnRslt.deleter
+	def AuthstnRslt(self):
+		del self._AuthstnRslt
+		self._AuthstnRslt = None
 
 	@property
 	def TxSucss(self):
@@ -343,72 +369,46 @@ class CardPaymentTransaction140(base_types._BaseFieldType):
 		self._TxSucss = None
 
 	@property
-	def CstmrCnsnt(self):
-		return self._CstmrCnsnt
+	def MrchntCtgyCd(self):
+		return self._MrchntCtgyCd
 
-	@CstmrCnsnt.setter
-	def CstmrCnsnt(self, value):
-		self._CstmrCnsnt = value if type(value) != auto else self.make_default("CstmrCnsnt")
+	@MrchntCtgyCd.setter
+	def MrchntCtgyCd(self, value):
+		self._MrchntCtgyCd = value if type(value) != auto else self.make_default("MrchntCtgyCd")
 
-	@CstmrCnsnt.deleter
-	def CstmrCnsnt(self):
-		del self._CstmrCnsnt
-		self._CstmrCnsnt = None
-
-	@property
-	def MrchntOvrrd(self):
-		return self._MrchntOvrrd
-
-	@MrchntOvrrd.setter
-	def MrchntOvrrd(self, value):
-		self._MrchntOvrrd = value if type(value) != auto else self.make_default("MrchntOvrrd")
-
-	@MrchntOvrrd.deleter
-	def MrchntOvrrd(self):
-		del self._MrchntOvrrd
-		self._MrchntOvrrd = None
-
-	@property
-	def TxDtls(self):
-		return self._TxDtls
-
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
-
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
+	@MrchntCtgyCd.deleter
+	def MrchntCtgyCd(self):
+		del self._MrchntCtgyCd
+		self._MrchntCtgyCd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctTo', type=CardAccount16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctFr', type=CardAccount16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTx', type=CardPaymentTransaction138, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntCITId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntCtgyCd', type=Min3Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxCaptr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTxData', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrchntRefData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardPrgrmmPropsd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rvsl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardPrgrmmApld', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthstnRslt', type=AuthorisationResult18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptTxId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardPrgrmmPropsd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CardPrgrmmApld', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrCnsnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntRefData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcAttr', type=CardPaymentServiceType15Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=CardPaymentServiceType12Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTx', type=CardPaymentTransaction138, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctFr', type=CardAccount16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDtls', type=CardPaymentTransactionDetails53, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FailrRsn', type=FailureReason3Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxTp', type=CardPaymentServiceType12Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastTxFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntOvrrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntCITId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxCaptr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrCITId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSvc', type=CardPaymentServiceType9Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnRslt', type=AuthorisationResult18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSucss', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrCnsnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntOvrrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtls', type=CardPaymentTransactionDetails53, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntCtgyCd', type=Min3Max4Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

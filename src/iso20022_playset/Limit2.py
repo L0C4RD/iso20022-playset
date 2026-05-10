@@ -1,6 +1,6 @@
 import base_types
-import ActiveOrHistoricCurrencyAndAmount
 import FloorLimitType1Code
+import ActiveOrHistoricCurrencyAndAmount
 
 class Limit2(base_types._BaseFieldType):
 

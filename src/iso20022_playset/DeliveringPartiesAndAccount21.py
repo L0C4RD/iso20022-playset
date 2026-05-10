@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
-import PartyIdentification255Choice
 import PartyIdentificationAndAccount228
+import PartyIdentification255Choice
+import Max35Text
 
 class DeliveringPartiesAndAccount21(base_types._BaseFieldType):
 

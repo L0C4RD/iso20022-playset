@@ -1,38 +1,25 @@
 import base_types
-import MarketIdentification91
 import PriceRateOrAmountOrUnknown3Choice
+import DateAndDateTime2Choice
+import MarketIdentification91
 import TypeOfPrice49Choice
 import YieldedOrValueType1Choice
-import DateAndDateTime2Choice
 
 class PriceInformation24(base_types._BaseFieldType):
 
-	__slots__ = ["_ValTp", "_SrcOfPric", "_QtnDt", "_Val", "_Tp"]
+	__slots__ = ["_Tp", "_QtnDt", "_Val", "_SrcOfPric", "_ValTp"]
 	@property
-	def ValTp(self):
-		return self._ValTp
+	def Tp(self):
+		return self._Tp
 
-	@ValTp.setter
-	def ValTp(self, value):
-		self._ValTp = value if type(value) != auto else self.make_default("ValTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@ValTp.deleter
-	def ValTp(self):
-		del self._ValTp
-		self._ValTp = None
-
-	@property
-	def SrcOfPric(self):
-		return self._SrcOfPric
-
-	@SrcOfPric.setter
-	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
-
-	@SrcOfPric.deleter
-	def SrcOfPric(self):
-		del self._SrcOfPric
-		self._SrcOfPric = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def QtnDt(self):
@@ -61,23 +48,36 @@ class PriceInformation24(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def SrcOfPric(self):
+		return self._SrcOfPric
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@SrcOfPric.setter
+	def SrcOfPric(self, value):
+		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@SrcOfPric.deleter
+	def SrcOfPric(self):
+		del self._SrcOfPric
+		self._SrcOfPric = None
+
+	@property
+	def ValTp(self):
+		return self._ValTp
+
+	@ValTp.setter
+	def ValTp(self, value):
+		self._ValTp = value if type(value) != auto else self.make_default("ValTp")
+
+	@ValTp.deleter
+	def ValTp(self):
+		del self._ValTp
+		self._ValTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification91, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfPrice49Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PriceRateOrAmountOrUnknown3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeOfPrice49Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification91, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

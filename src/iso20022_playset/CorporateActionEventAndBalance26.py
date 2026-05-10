@@ -1,12 +1,12 @@
 import base_types
-import EventInformation17
 import SupplementaryData1
 import SecurityIdentification19
 import CorporateActionBalance50
+import EventInformation17
 
 class CorporateActionEventAndBalance26(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GnlInf", "_Bal", "_UndrlygScty"]
+	__slots__ = ["_SplmtryData", "_Bal", "_GnlInf", "_UndrlygScty"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,19 +21,6 @@ class CorporateActionEventAndBalance26(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GnlInf(self):
-		return self._GnlInf
-
-	@GnlInf.setter
-	def GnlInf(self, value):
-		self._GnlInf = value if type(value) != auto else self.make_default("GnlInf")
-
-	@GnlInf.deleter
-	def GnlInf(self):
-		del self._GnlInf
-		self._GnlInf = None
-
-	@property
 	def Bal(self):
 		return self._Bal
 
@@ -45,6 +32,19 @@ class CorporateActionEventAndBalance26(base_types._BaseFieldType):
 	def Bal(self):
 		del self._Bal
 		self._Bal = None
+
+	@property
+	def GnlInf(self):
+		return self._GnlInf
+
+	@GnlInf.setter
+	def GnlInf(self, value):
+		self._GnlInf = value if type(value) != auto else self.make_default("GnlInf")
+
+	@GnlInf.deleter
+	def GnlInf(self):
+		del self._GnlInf
+		self._GnlInf = None
 
 	@property
 	def UndrlygScty(self):
@@ -61,8 +61,8 @@ class CorporateActionEventAndBalance26(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GnlInf', type=EventInformation17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=CorporateActionBalance50, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnlInf', type=EventInformation17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 	))
 

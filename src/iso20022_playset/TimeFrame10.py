@@ -1,12 +1,12 @@
 import base_types
-import ReferToFundOrderDesk1Code
 import Max350Text
+import ReferToFundOrderDesk1Code
 import BusinessDayConvention1Code
 import Number
 
 class TimeFrame10(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTmFrameDesc", "_RefrToOrdrDsk", "_TPlus", "_NonWorkgDayAdjstmnt"]
+	__slots__ = ["_OthrTmFrameDesc", "_TPlus", "_RefrToOrdrDsk", "_NonWorkgDayAdjstmnt"]
 	@property
 	def OthrTmFrameDesc(self):
 		return self._OthrTmFrameDesc
@@ -21,19 +21,6 @@ class TimeFrame10(base_types._BaseFieldType):
 		self._OthrTmFrameDesc = None
 
 	@property
-	def RefrToOrdrDsk(self):
-		return self._RefrToOrdrDsk
-
-	@RefrToOrdrDsk.setter
-	def RefrToOrdrDsk(self, value):
-		self._RefrToOrdrDsk = value if type(value) != auto else self.make_default("RefrToOrdrDsk")
-
-	@RefrToOrdrDsk.deleter
-	def RefrToOrdrDsk(self):
-		del self._RefrToOrdrDsk
-		self._RefrToOrdrDsk = None
-
-	@property
 	def TPlus(self):
 		return self._TPlus
 
@@ -45,6 +32,19 @@ class TimeFrame10(base_types._BaseFieldType):
 	def TPlus(self):
 		del self._TPlus
 		self._TPlus = None
+
+	@property
+	def RefrToOrdrDsk(self):
+		return self._RefrToOrdrDsk
+
+	@RefrToOrdrDsk.setter
+	def RefrToOrdrDsk(self, value):
+		self._RefrToOrdrDsk = value if type(value) != auto else self.make_default("RefrToOrdrDsk")
+
+	@RefrToOrdrDsk.deleter
+	def RefrToOrdrDsk(self):
+		del self._RefrToOrdrDsk
+		self._RefrToOrdrDsk = None
 
 	@property
 	def NonWorkgDayAdjstmnt(self):
@@ -61,8 +61,8 @@ class TimeFrame10(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TPlus', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

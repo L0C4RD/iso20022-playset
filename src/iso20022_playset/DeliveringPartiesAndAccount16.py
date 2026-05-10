@@ -3,20 +3,7 @@ import PartyIdentificationAndAccount147
 
 class DeliveringPartiesAndAccount16(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrgAgtDtls", "_DlvrrsIntrmy2Dtls", "_DlvrrsCtdnDtls", "_DlvrrsIntrmy1Dtls"]
-	@property
-	def DlvrgAgtDtls(self):
-		return self._DlvrgAgtDtls
-
-	@DlvrgAgtDtls.setter
-	def DlvrgAgtDtls(self, value):
-		self._DlvrgAgtDtls = value if type(value) != auto else self.make_default("DlvrgAgtDtls")
-
-	@DlvrgAgtDtls.deleter
-	def DlvrgAgtDtls(self):
-		del self._DlvrgAgtDtls
-		self._DlvrgAgtDtls = None
-
+	__slots__ = ["_DlvrrsIntrmy2Dtls", "_DlvrgAgtDtls", "_DlvrrsCtdnDtls", "_DlvrrsIntrmy1Dtls"]
 	@property
 	def DlvrrsIntrmy2Dtls(self):
 		return self._DlvrrsIntrmy2Dtls
@@ -29,6 +16,19 @@ class DeliveringPartiesAndAccount16(base_types._BaseFieldType):
 	def DlvrrsIntrmy2Dtls(self):
 		del self._DlvrrsIntrmy2Dtls
 		self._DlvrrsIntrmy2Dtls = None
+
+	@property
+	def DlvrgAgtDtls(self):
+		return self._DlvrgAgtDtls
+
+	@DlvrgAgtDtls.setter
+	def DlvrgAgtDtls(self, value):
+		self._DlvrgAgtDtls = value if type(value) != auto else self.make_default("DlvrgAgtDtls")
+
+	@DlvrgAgtDtls.deleter
+	def DlvrgAgtDtls(self):
+		del self._DlvrgAgtDtls
+		self._DlvrgAgtDtls = None
 
 	@property
 	def DlvrrsCtdnDtls(self):
@@ -57,8 +57,8 @@ class DeliveringPartiesAndAccount16(base_types._BaseFieldType):
 		self._DlvrrsIntrmy1Dtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvrgAgtDtls', type=PartyIdentificationAndAccount147, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrrsIntrmy2Dtls', type=PartyIdentificationAndAccount147, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrgAgtDtls', type=PartyIdentificationAndAccount147, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrrsCtdnDtls', type=PartyIdentificationAndAccount147, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrrsIntrmy1Dtls', type=PartyIdentificationAndAccount147, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,25 +1,12 @@
 import base_types
 import AdditionalBalanceInformation22
-import SubBalanceType11Choice
-import SubBalanceQuantity8Choice
 import Max140Text
+import SubBalanceQuantity8Choice
+import SubBalanceType11Choice
 
 class SubBalanceInformation22(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalTp", "_SubBalAddtlDtls", "_Qty", "_AddtlBalBrkdwnDtls"]
-	@property
-	def SubBalTp(self):
-		return self._SubBalTp
-
-	@SubBalTp.setter
-	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
-
-	@SubBalTp.deleter
-	def SubBalTp(self):
-		del self._SubBalTp
-		self._SubBalTp = None
-
+	__slots__ = ["_SubBalAddtlDtls", "_Qty", "_SubBalTp", "_AddtlBalBrkdwnDtls"]
 	@property
 	def SubBalAddtlDtls(self):
 		return self._SubBalAddtlDtls
@@ -47,6 +34,19 @@ class SubBalanceInformation22(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
+	def SubBalTp(self):
+		return self._SubBalTp
+
+	@SubBalTp.setter
+	def SubBalTp(self, value):
+		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
+
+	@SubBalTp.deleter
+	def SubBalTp(self):
+		del self._SubBalTp
+		self._SubBalTp = None
+
+	@property
 	def AddtlBalBrkdwnDtls(self):
 		return self._AddtlBalBrkdwnDtls
 
@@ -60,9 +60,9 @@ class SubBalanceInformation22(base_types._BaseFieldType):
 		self._AddtlBalBrkdwnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType11Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType11Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation22, min=0, max=None, mutex_group=None, array=True),
 	))
 

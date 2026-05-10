@@ -1,24 +1,11 @@
 import base_types
-import ISODateTime
 import Reconciliation3Code
+import ISODateTime
 import Max140Text
 
 class TechnicalAttributes5(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnFlg", "_RptRctTmStmp", "_TechRcrdId"]
-	@property
-	def RcncltnFlg(self):
-		return self._RcncltnFlg
-
-	@RcncltnFlg.setter
-	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
-
-	@RcncltnFlg.deleter
-	def RcncltnFlg(self):
-		del self._RcncltnFlg
-		self._RcncltnFlg = None
-
+	__slots__ = ["_RptRctTmStmp", "_RcncltnFlg", "_TechRcrdId"]
 	@property
 	def RptRctTmStmp(self):
 		return self._RptRctTmStmp
@@ -31,6 +18,19 @@ class TechnicalAttributes5(base_types._BaseFieldType):
 	def RptRctTmStmp(self):
 		del self._RptRctTmStmp
 		self._RptRctTmStmp = None
+
+	@property
+	def RcncltnFlg(self):
+		return self._RcncltnFlg
+
+	@RcncltnFlg.setter
+	def RcncltnFlg(self, value):
+		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
+
+	@RcncltnFlg.deleter
+	def RcncltnFlg(self):
+		del self._RcncltnFlg
+		self._RcncltnFlg = None
 
 	@property
 	def TechRcrdId(self):
@@ -46,8 +46,8 @@ class TechnicalAttributes5(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnFlg', type=Reconciliation3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptRctTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnFlg', type=Reconciliation3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

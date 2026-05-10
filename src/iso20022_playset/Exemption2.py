@@ -1,24 +1,11 @@
 import base_types
 import Max4Text
-import AttestationValue1Code
 import Exemption2Code
+import AttestationValue1Code
 
 class Exemption2(base_types._BaseFieldType):
 
-	__slots__ = ["_RsnNotHnrd", "_Tp", "_Val"]
-	@property
-	def RsnNotHnrd(self):
-		return self._RsnNotHnrd
-
-	@RsnNotHnrd.setter
-	def RsnNotHnrd(self, value):
-		self._RsnNotHnrd = value if type(value) != auto else self.make_default("RsnNotHnrd")
-
-	@RsnNotHnrd.deleter
-	def RsnNotHnrd(self):
-		del self._RsnNotHnrd
-		self._RsnNotHnrd = None
-
+	__slots__ = ["_Tp", "_Val", "_RsnNotHnrd"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -45,9 +32,22 @@ class Exemption2(base_types._BaseFieldType):
 		del self._Val
 		self._Val = None
 
+	@property
+	def RsnNotHnrd(self):
+		return self._RsnNotHnrd
+
+	@RsnNotHnrd.setter
+	def RsnNotHnrd(self, value):
+		self._RsnNotHnrd = value if type(value) != auto else self.make_default("RsnNotHnrd")
+
+	@RsnNotHnrd.deleter
+	def RsnNotHnrd(self):
+		del self._RsnNotHnrd
+		self._RsnNotHnrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RsnNotHnrd', type=Max4Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=Exemption2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=AttestationValue1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsnNotHnrd', type=Max4Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

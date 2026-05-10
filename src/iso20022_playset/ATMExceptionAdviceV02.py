@@ -1,12 +1,12 @@
 import base_types
-import Header32
-import ATMExceptionAdvice2
-import ContentInformationType15
 import ContentInformationType10
+import ContentInformationType15
+import ATMExceptionAdvice2
+import Header32
 
 class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_ATMXcptnAdvc", "_SctyTrlr", "_PrtctdATMXcptnAdvc"]
+	__slots__ = ["_Hdr", "_PrtctdATMXcptnAdvc", "_SctyTrlr", "_ATMXcptnAdvc"]
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -21,17 +21,17 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def ATMXcptnAdvc(self):
-		return self._ATMXcptnAdvc
+	def PrtctdATMXcptnAdvc(self):
+		return self._PrtctdATMXcptnAdvc
 
-	@ATMXcptnAdvc.setter
-	def ATMXcptnAdvc(self, value):
-		self._ATMXcptnAdvc = value if type(value) != auto else self.make_default("ATMXcptnAdvc")
+	@PrtctdATMXcptnAdvc.setter
+	def PrtctdATMXcptnAdvc(self, value):
+		self._PrtctdATMXcptnAdvc = value if type(value) != auto else self.make_default("PrtctdATMXcptnAdvc")
 
-	@ATMXcptnAdvc.deleter
-	def ATMXcptnAdvc(self):
-		del self._ATMXcptnAdvc
-		self._ATMXcptnAdvc = None
+	@PrtctdATMXcptnAdvc.deleter
+	def PrtctdATMXcptnAdvc(self):
+		del self._PrtctdATMXcptnAdvc
+		self._PrtctdATMXcptnAdvc = None
 
 	@property
 	def SctyTrlr(self):
@@ -47,22 +47,22 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def PrtctdATMXcptnAdvc(self):
-		return self._PrtctdATMXcptnAdvc
+	def ATMXcptnAdvc(self):
+		return self._ATMXcptnAdvc
 
-	@PrtctdATMXcptnAdvc.setter
-	def PrtctdATMXcptnAdvc(self, value):
-		self._PrtctdATMXcptnAdvc = value if type(value) != auto else self.make_default("PrtctdATMXcptnAdvc")
+	@ATMXcptnAdvc.setter
+	def ATMXcptnAdvc(self, value):
+		self._ATMXcptnAdvc = value if type(value) != auto else self.make_default("ATMXcptnAdvc")
 
-	@PrtctdATMXcptnAdvc.deleter
-	def PrtctdATMXcptnAdvc(self):
-		del self._PrtctdATMXcptnAdvc
-		self._PrtctdATMXcptnAdvc = None
+	@ATMXcptnAdvc.deleter
+	def ATMXcptnAdvc(self):
+		del self._ATMXcptnAdvc
+		self._ATMXcptnAdvc = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMXcptnAdvc', type=ATMExceptionAdvice2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMXcptnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMXcptnAdvc', type=ATMExceptionAdvice2, min=0, max=1, mutex_group=None, array=False),
 	))
 

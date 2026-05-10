@@ -3,7 +3,20 @@ import PriceFormat73Choice
 
 class CorporateActionPrice85(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxPric", "_LastBidIncrmtPric", "_FrstBidIncrmtPric", "_MinPric"]
+	__slots__ = ["_MinPric", "_MaxPric", "_FrstBidIncrmtPric", "_LastBidIncrmtPric"]
+	@property
+	def MinPric(self):
+		return self._MinPric
+
+	@MinPric.setter
+	def MinPric(self, value):
+		self._MinPric = value if type(value) != auto else self.make_default("MinPric")
+
+	@MinPric.deleter
+	def MinPric(self):
+		del self._MinPric
+		self._MinPric = None
+
 	@property
 	def MaxPric(self):
 		return self._MaxPric
@@ -16,19 +29,6 @@ class CorporateActionPrice85(base_types._BaseFieldType):
 	def MaxPric(self):
 		del self._MaxPric
 		self._MaxPric = None
-
-	@property
-	def LastBidIncrmtPric(self):
-		return self._LastBidIncrmtPric
-
-	@LastBidIncrmtPric.setter
-	def LastBidIncrmtPric(self, value):
-		self._LastBidIncrmtPric = value if type(value) != auto else self.make_default("LastBidIncrmtPric")
-
-	@LastBidIncrmtPric.deleter
-	def LastBidIncrmtPric(self):
-		del self._LastBidIncrmtPric
-		self._LastBidIncrmtPric = None
 
 	@property
 	def FrstBidIncrmtPric(self):
@@ -44,22 +44,22 @@ class CorporateActionPrice85(base_types._BaseFieldType):
 		self._FrstBidIncrmtPric = None
 
 	@property
-	def MinPric(self):
-		return self._MinPric
+	def LastBidIncrmtPric(self):
+		return self._LastBidIncrmtPric
 
-	@MinPric.setter
-	def MinPric(self, value):
-		self._MinPric = value if type(value) != auto else self.make_default("MinPric")
+	@LastBidIncrmtPric.setter
+	def LastBidIncrmtPric(self, value):
+		self._LastBidIncrmtPric = value if type(value) != auto else self.make_default("LastBidIncrmtPric")
 
-	@MinPric.deleter
-	def MinPric(self):
-		del self._MinPric
-		self._MinPric = None
+	@LastBidIncrmtPric.deleter
+	def LastBidIncrmtPric(self):
+		del self._LastBidIncrmtPric
+		self._LastBidIncrmtPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxPric', type=PriceFormat73Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastBidIncrmtPric', type=PriceFormat73Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstBidIncrmtPric', type=PriceFormat73Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinPric', type=PriceFormat73Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxPric', type=PriceFormat73Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstBidIncrmtPric', type=PriceFormat73Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastBidIncrmtPric', type=PriceFormat73Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

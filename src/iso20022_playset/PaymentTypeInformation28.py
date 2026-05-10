@@ -1,13 +1,13 @@
 import base_types
-import ServiceLevel8Choice
-import LocalInstrument2Choice
 import CategoryPurpose1Choice
-import Priority2Code
 import ClearingChannel2Code
+import LocalInstrument2Choice
+import ServiceLevel8Choice
+import Priority2Code
 
 class PaymentTypeInformation28(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrChanl", "_SvcLvl", "_InstrPrty", "_CtgyPurp", "_LclInstrm"]
+	__slots__ = ["_ClrChanl", "_LclInstrm", "_InstrPrty", "_CtgyPurp", "_SvcLvl"]
 	@property
 	def ClrChanl(self):
 		return self._ClrChanl
@@ -22,17 +22,17 @@ class PaymentTypeInformation28(base_types._BaseFieldType):
 		self._ClrChanl = None
 
 	@property
-	def SvcLvl(self):
-		return self._SvcLvl
+	def LclInstrm(self):
+		return self._LclInstrm
 
-	@SvcLvl.setter
-	def SvcLvl(self, value):
-		self._SvcLvl = value if type(value) != auto else self.make_default("SvcLvl")
+	@LclInstrm.setter
+	def LclInstrm(self, value):
+		self._LclInstrm = value if type(value) != auto else self.make_default("LclInstrm")
 
-	@SvcLvl.deleter
-	def SvcLvl(self):
-		del self._SvcLvl
-		self._SvcLvl = None
+	@LclInstrm.deleter
+	def LclInstrm(self):
+		del self._LclInstrm
+		self._LclInstrm = None
 
 	@property
 	def InstrPrty(self):
@@ -61,23 +61,23 @@ class PaymentTypeInformation28(base_types._BaseFieldType):
 		self._CtgyPurp = None
 
 	@property
-	def LclInstrm(self):
-		return self._LclInstrm
+	def SvcLvl(self):
+		return self._SvcLvl
 
-	@LclInstrm.setter
-	def LclInstrm(self, value):
-		self._LclInstrm = value if type(value) != auto else self.make_default("LclInstrm")
+	@SvcLvl.setter
+	def SvcLvl(self, value):
+		self._SvcLvl = value if type(value) != auto else self.make_default("SvcLvl")
 
-	@LclInstrm.deleter
-	def LclInstrm(self):
-		del self._LclInstrm
-		self._LclInstrm = None
+	@SvcLvl.deleter
+	def SvcLvl(self):
+		del self._SvcLvl
+		self._SvcLvl = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LclInstrm', type=LocalInstrument2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrPrty', type=Priority2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclInstrm', type=LocalInstrument2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

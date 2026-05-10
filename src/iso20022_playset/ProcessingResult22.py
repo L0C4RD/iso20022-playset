@@ -1,108 +1,30 @@
 import base_types
-import ISOMax3ACountryCode
-import ErrorDetails3
-import ISO8583ResponseCode
-import TrueFalseIndicator
-import PartyType9Code
-import Max35Text
 import Exact6AlphaNumericText
 import Action16
 import PartyType26Code
+import PartyType9Code
 import AdditionalData1
+import ISOMax3ACountryCode
+import ISO8583ResponseCode
+import Max35Text
+import TrueFalseIndicator
+import ErrorDetails3
 
 class ProcessingResult22(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnReqrd", "_ErrDtl", "_RspnSrcAssgnr", "_RspnCd", "_AddtlInf", "_ApprvlCd", "_TempScrCardDataReusePrtd", "_RspnSrcId", "_Actn", "_RspnSrcOthrTp", "_RspnSrcCtry", "_RspnSrcTp", "_RspnSrcShrtNm"]
+	__slots__ = ["_RspnSrcCtry", "_RspnSrcId", "_RspnSrcTp", "_RspnSrcOthrTp", "_ApprvlCd", "_ActnReqrd", "_Actn", "_ErrDtl", "_TempScrCardDataReusePrtd", "_RspnSrcAssgnr", "_AddtlInf", "_RspnSrcShrtNm", "_RspnCd"]
 	@property
-	def ActnReqrd(self):
-		return self._ActnReqrd
+	def RspnSrcCtry(self):
+		return self._RspnSrcCtry
 
-	@ActnReqrd.setter
-	def ActnReqrd(self, value):
-		self._ActnReqrd = value if type(value) != auto else self.make_default("ActnReqrd")
+	@RspnSrcCtry.setter
+	def RspnSrcCtry(self, value):
+		self._RspnSrcCtry = value if type(value) != auto else self.make_default("RspnSrcCtry")
 
-	@ActnReqrd.deleter
-	def ActnReqrd(self):
-		del self._ActnReqrd
-		self._ActnReqrd = None
-
-	@property
-	def ErrDtl(self):
-		return self._ErrDtl
-
-	@ErrDtl.setter
-	def ErrDtl(self, value):
-		self._ErrDtl = value if type(value) != auto else self.make_default("ErrDtl")
-
-	@ErrDtl.deleter
-	def ErrDtl(self):
-		del self._ErrDtl
-		self._ErrDtl = None
-
-	@property
-	def RspnSrcAssgnr(self):
-		return self._RspnSrcAssgnr
-
-	@RspnSrcAssgnr.setter
-	def RspnSrcAssgnr(self, value):
-		self._RspnSrcAssgnr = value if type(value) != auto else self.make_default("RspnSrcAssgnr")
-
-	@RspnSrcAssgnr.deleter
-	def RspnSrcAssgnr(self):
-		del self._RspnSrcAssgnr
-		self._RspnSrcAssgnr = None
-
-	@property
-	def RspnCd(self):
-		return self._RspnCd
-
-	@RspnCd.setter
-	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != auto else self.make_default("RspnCd")
-
-	@RspnCd.deleter
-	def RspnCd(self):
-		del self._RspnCd
-		self._RspnCd = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def ApprvlCd(self):
-		return self._ApprvlCd
-
-	@ApprvlCd.setter
-	def ApprvlCd(self, value):
-		self._ApprvlCd = value if type(value) != auto else self.make_default("ApprvlCd")
-
-	@ApprvlCd.deleter
-	def ApprvlCd(self):
-		del self._ApprvlCd
-		self._ApprvlCd = None
-
-	@property
-	def TempScrCardDataReusePrtd(self):
-		return self._TempScrCardDataReusePrtd
-
-	@TempScrCardDataReusePrtd.setter
-	def TempScrCardDataReusePrtd(self, value):
-		self._TempScrCardDataReusePrtd = value if type(value) != auto else self.make_default("TempScrCardDataReusePrtd")
-
-	@TempScrCardDataReusePrtd.deleter
-	def TempScrCardDataReusePrtd(self):
-		del self._TempScrCardDataReusePrtd
-		self._TempScrCardDataReusePrtd = None
+	@RspnSrcCtry.deleter
+	def RspnSrcCtry(self):
+		del self._RspnSrcCtry
+		self._RspnSrcCtry = None
 
 	@property
 	def RspnSrcId(self):
@@ -118,17 +40,17 @@ class ProcessingResult22(base_types._BaseFieldType):
 		self._RspnSrcId = None
 
 	@property
-	def Actn(self):
-		return self._Actn
+	def RspnSrcTp(self):
+		return self._RspnSrcTp
 
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
+	@RspnSrcTp.setter
+	def RspnSrcTp(self, value):
+		self._RspnSrcTp = value if type(value) != auto else self.make_default("RspnSrcTp")
 
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
+	@RspnSrcTp.deleter
+	def RspnSrcTp(self):
+		del self._RspnSrcTp
+		self._RspnSrcTp = None
 
 	@property
 	def RspnSrcOthrTp(self):
@@ -144,30 +66,95 @@ class ProcessingResult22(base_types._BaseFieldType):
 		self._RspnSrcOthrTp = None
 
 	@property
-	def RspnSrcCtry(self):
-		return self._RspnSrcCtry
+	def ApprvlCd(self):
+		return self._ApprvlCd
 
-	@RspnSrcCtry.setter
-	def RspnSrcCtry(self, value):
-		self._RspnSrcCtry = value if type(value) != auto else self.make_default("RspnSrcCtry")
+	@ApprvlCd.setter
+	def ApprvlCd(self, value):
+		self._ApprvlCd = value if type(value) != auto else self.make_default("ApprvlCd")
 
-	@RspnSrcCtry.deleter
-	def RspnSrcCtry(self):
-		del self._RspnSrcCtry
-		self._RspnSrcCtry = None
+	@ApprvlCd.deleter
+	def ApprvlCd(self):
+		del self._ApprvlCd
+		self._ApprvlCd = None
 
 	@property
-	def RspnSrcTp(self):
-		return self._RspnSrcTp
+	def ActnReqrd(self):
+		return self._ActnReqrd
 
-	@RspnSrcTp.setter
-	def RspnSrcTp(self, value):
-		self._RspnSrcTp = value if type(value) != auto else self.make_default("RspnSrcTp")
+	@ActnReqrd.setter
+	def ActnReqrd(self, value):
+		self._ActnReqrd = value if type(value) != auto else self.make_default("ActnReqrd")
 
-	@RspnSrcTp.deleter
-	def RspnSrcTp(self):
-		del self._RspnSrcTp
-		self._RspnSrcTp = None
+	@ActnReqrd.deleter
+	def ActnReqrd(self):
+		del self._ActnReqrd
+		self._ActnReqrd = None
+
+	@property
+	def Actn(self):
+		return self._Actn
+
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
+
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
+
+	@property
+	def ErrDtl(self):
+		return self._ErrDtl
+
+	@ErrDtl.setter
+	def ErrDtl(self, value):
+		self._ErrDtl = value if type(value) != auto else self.make_default("ErrDtl")
+
+	@ErrDtl.deleter
+	def ErrDtl(self):
+		del self._ErrDtl
+		self._ErrDtl = None
+
+	@property
+	def TempScrCardDataReusePrtd(self):
+		return self._TempScrCardDataReusePrtd
+
+	@TempScrCardDataReusePrtd.setter
+	def TempScrCardDataReusePrtd(self, value):
+		self._TempScrCardDataReusePrtd = value if type(value) != auto else self.make_default("TempScrCardDataReusePrtd")
+
+	@TempScrCardDataReusePrtd.deleter
+	def TempScrCardDataReusePrtd(self):
+		del self._TempScrCardDataReusePrtd
+		self._TempScrCardDataReusePrtd = None
+
+	@property
+	def RspnSrcAssgnr(self):
+		return self._RspnSrcAssgnr
+
+	@RspnSrcAssgnr.setter
+	def RspnSrcAssgnr(self, value):
+		self._RspnSrcAssgnr = value if type(value) != auto else self.make_default("RspnSrcAssgnr")
+
+	@RspnSrcAssgnr.deleter
+	def RspnSrcAssgnr(self):
+		del self._RspnSrcAssgnr
+		self._RspnSrcAssgnr = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def RspnSrcShrtNm(self):
@@ -182,19 +169,32 @@ class ProcessingResult22(base_types._BaseFieldType):
 		del self._RspnSrcShrtNm
 		self._RspnSrcShrtNm = None
 
+	@property
+	def RspnCd(self):
+		return self._RspnCd
+
+	@RspnCd.setter
+	def RspnCd(self, value):
+		self._RspnCd = value if type(value) != auto else self.make_default("RspnCd")
+
+	@RspnCd.deleter
+	def RspnCd(self):
+		del self._RspnCd
+		self._RspnCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActnReqrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ErrDtl', type=ErrorDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspnSrcAssgnr', type=PartyType9Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnCd', type=ISO8583ResponseCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ApprvlCd', type=Exact6AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TempScrCardDataReusePrtd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnSrcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Actn', type=Action16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspnSrcOthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnSrcCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSrcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnSrcTp', type=PartyType26Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSrcOthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvlCd', type=Exact6AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnReqrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actn', type=Action16, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ErrDtl', type=ErrorDetails3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TempScrCardDataReusePrtd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSrcAssgnr', type=PartyType9Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RspnSrcShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnCd', type=ISO8583ResponseCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

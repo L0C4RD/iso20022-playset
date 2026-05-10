@@ -1,22 +1,22 @@
 import base_types
-import NumberOfTransactionsPerValidationRule5
 import Max15NumericText
+import NumberOfTransactionsPerValidationRule5
 
 class DetailedReportStatistics5(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfRptsRjctd", "_TtlNbOfRptsAccptd", "_TtlNbOfRpts", "_NbOfRptsRjctdPerErr"]
+	__slots__ = ["_NbOfRptsRjctdPerErr", "_TtlNbOfRptsAccptd", "_TtlNbOfRptsRjctd", "_TtlNbOfRpts"]
 	@property
-	def TtlNbOfRptsRjctd(self):
-		return self._TtlNbOfRptsRjctd
+	def NbOfRptsRjctdPerErr(self):
+		return self._NbOfRptsRjctdPerErr
 
-	@TtlNbOfRptsRjctd.setter
-	def TtlNbOfRptsRjctd(self, value):
-		self._TtlNbOfRptsRjctd = value if type(value) != auto else self.make_default("TtlNbOfRptsRjctd")
+	@NbOfRptsRjctdPerErr.setter
+	def NbOfRptsRjctdPerErr(self, value):
+		self._NbOfRptsRjctdPerErr = value if type(value) != auto else self.make_default("NbOfRptsRjctdPerErr")
 
-	@TtlNbOfRptsRjctd.deleter
-	def TtlNbOfRptsRjctd(self):
-		del self._TtlNbOfRptsRjctd
-		self._TtlNbOfRptsRjctd = None
+	@NbOfRptsRjctdPerErr.deleter
+	def NbOfRptsRjctdPerErr(self):
+		del self._NbOfRptsRjctdPerErr
+		self._NbOfRptsRjctdPerErr = None
 
 	@property
 	def TtlNbOfRptsAccptd(self):
@@ -32,6 +32,19 @@ class DetailedReportStatistics5(base_types._BaseFieldType):
 		self._TtlNbOfRptsAccptd = None
 
 	@property
+	def TtlNbOfRptsRjctd(self):
+		return self._TtlNbOfRptsRjctd
+
+	@TtlNbOfRptsRjctd.setter
+	def TtlNbOfRptsRjctd(self, value):
+		self._TtlNbOfRptsRjctd = value if type(value) != auto else self.make_default("TtlNbOfRptsRjctd")
+
+	@TtlNbOfRptsRjctd.deleter
+	def TtlNbOfRptsRjctd(self):
+		del self._TtlNbOfRptsRjctd
+		self._TtlNbOfRptsRjctd = None
+
+	@property
 	def TtlNbOfRpts(self):
 		return self._TtlNbOfRpts
 
@@ -44,23 +57,10 @@ class DetailedReportStatistics5(base_types._BaseFieldType):
 		del self._TtlNbOfRpts
 		self._TtlNbOfRpts = None
 
-	@property
-	def NbOfRptsRjctdPerErr(self):
-		return self._NbOfRptsRjctdPerErr
-
-	@NbOfRptsRjctdPerErr.setter
-	def NbOfRptsRjctdPerErr(self, value):
-		self._NbOfRptsRjctdPerErr = value if type(value) != auto else self.make_default("NbOfRptsRjctdPerErr")
-
-	@NbOfRptsRjctdPerErr.deleter
-	def NbOfRptsRjctdPerErr(self):
-		del self._NbOfRptsRjctdPerErr
-		self._NbOfRptsRjctdPerErr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfRptsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfRptsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfRpts', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfRptsRjctdPerErr', type=NumberOfTransactionsPerValidationRule5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfRptsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfRptsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfRpts', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

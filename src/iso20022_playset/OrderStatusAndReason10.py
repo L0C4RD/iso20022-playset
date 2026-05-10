@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import OrderStatus3Choice
+import Max35Text
 import PartyIdentification113
 
 class OrderStatusAndReason10(base_types._BaseFieldType):

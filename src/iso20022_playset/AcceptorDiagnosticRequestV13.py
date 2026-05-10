@@ -1,23 +1,23 @@
 import base_types
-import Header70
 import ContentInformationType37
 import AcceptorDiagnosticRequest13
+import Header70
 
 class AcceptorDiagnosticRequestV13(base_types._BaseFieldType):
 
-	__slots__ = ["_DgnstcReq", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_DgnstcReq"]
 	@property
-	def DgnstcReq(self):
-		return self._DgnstcReq
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@DgnstcReq.setter
-	def DgnstcReq(self, value):
-		self._DgnstcReq = value if type(value) != auto else self.make_default("DgnstcReq")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@DgnstcReq.deleter
-	def DgnstcReq(self):
-		del self._DgnstcReq
-		self._DgnstcReq = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class AcceptorDiagnosticRequestV13(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def DgnstcReq(self):
+		return self._DgnstcReq
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@DgnstcReq.setter
+	def DgnstcReq(self, value):
+		self._DgnstcReq = value if type(value) != auto else self.make_default("DgnstcReq")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@DgnstcReq.deleter
+	def DgnstcReq(self):
+		del self._DgnstcReq
+		self._DgnstcReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgnstcReq', type=AcceptorDiagnosticRequest13, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgnstcReq', type=AcceptorDiagnosticRequest13, min=1, max=1, mutex_group=None, array=False),
 	))
 

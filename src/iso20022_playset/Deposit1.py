@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import ISODate
+import ActiveCurrencyAndAmount
 import LEIIdentifier
 
 class Deposit1(base_types._BaseFieldType):

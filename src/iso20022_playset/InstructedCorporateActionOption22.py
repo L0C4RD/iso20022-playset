@@ -1,28 +1,54 @@
 import base_types
-import Exact3NumericText
-import CorporateActionOption36Choice
-import DefaultProcessingOrStandingInstruction2Choice
 import SignedQuantityFormat16
-import BalanceFormat14Choice
-import OptionInstructionDetails12
-import SignedQuantityFormat13
+import CorporateActionOption36Choice
 import CorporateActionEventDeadlines4
+import BalanceFormat14Choice
+import SignedQuantityFormat13
+import Exact3NumericText
+import DefaultProcessingOrStandingInstruction2Choice
+import OptionInstructionDetails12
 
 class InstructedCorporateActionOption22(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdBal", "_DfltActn", "_OptnInstrDtls", "_OptnCancInstrBal", "_OptnTp", "_EvtDdlns", "_OptnAccptdInstdBal", "_OptnNb", "_OptnPdgInstrBal", "_OptnPrtctInstrBal", "_OptnRjctdInstrBal", "_OptnRtrdInstdBal"]
+	__slots__ = ["_OptnTp", "_OptnCancInstrBal", "_OptnPdgInstrBal", "_DfltActn", "_OptnInstrDtls", "_OptnAccptdInstdBal", "_OptnNb", "_OptnPrtctInstrBal", "_OptnRjctdInstrBal", "_InstdBal", "_OptnRtrdInstdBal", "_EvtDdlns"]
 	@property
-	def InstdBal(self):
-		return self._InstdBal
+	def OptnTp(self):
+		return self._OptnTp
 
-	@InstdBal.setter
-	def InstdBal(self, value):
-		self._InstdBal = value if type(value) != auto else self.make_default("InstdBal")
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
 
-	@InstdBal.deleter
-	def InstdBal(self):
-		del self._InstdBal
-		self._InstdBal = None
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
+
+	@property
+	def OptnCancInstrBal(self):
+		return self._OptnCancInstrBal
+
+	@OptnCancInstrBal.setter
+	def OptnCancInstrBal(self, value):
+		self._OptnCancInstrBal = value if type(value) != auto else self.make_default("OptnCancInstrBal")
+
+	@OptnCancInstrBal.deleter
+	def OptnCancInstrBal(self):
+		del self._OptnCancInstrBal
+		self._OptnCancInstrBal = None
+
+	@property
+	def OptnPdgInstrBal(self):
+		return self._OptnPdgInstrBal
+
+	@OptnPdgInstrBal.setter
+	def OptnPdgInstrBal(self, value):
+		self._OptnPdgInstrBal = value if type(value) != auto else self.make_default("OptnPdgInstrBal")
+
+	@OptnPdgInstrBal.deleter
+	def OptnPdgInstrBal(self):
+		del self._OptnPdgInstrBal
+		self._OptnPdgInstrBal = None
 
 	@property
 	def DfltActn(self):
@@ -51,45 +77,6 @@ class InstructedCorporateActionOption22(base_types._BaseFieldType):
 		self._OptnInstrDtls = None
 
 	@property
-	def OptnCancInstrBal(self):
-		return self._OptnCancInstrBal
-
-	@OptnCancInstrBal.setter
-	def OptnCancInstrBal(self, value):
-		self._OptnCancInstrBal = value if type(value) != auto else self.make_default("OptnCancInstrBal")
-
-	@OptnCancInstrBal.deleter
-	def OptnCancInstrBal(self):
-		del self._OptnCancInstrBal
-		self._OptnCancInstrBal = None
-
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
-
-	@property
-	def EvtDdlns(self):
-		return self._EvtDdlns
-
-	@EvtDdlns.setter
-	def EvtDdlns(self, value):
-		self._EvtDdlns = value if type(value) != auto else self.make_default("EvtDdlns")
-
-	@EvtDdlns.deleter
-	def EvtDdlns(self):
-		del self._EvtDdlns
-		self._EvtDdlns = None
-
-	@property
 	def OptnAccptdInstdBal(self):
 		return self._OptnAccptdInstdBal
 
@@ -114,19 +101,6 @@ class InstructedCorporateActionOption22(base_types._BaseFieldType):
 	def OptnNb(self):
 		del self._OptnNb
 		self._OptnNb = None
-
-	@property
-	def OptnPdgInstrBal(self):
-		return self._OptnPdgInstrBal
-
-	@OptnPdgInstrBal.setter
-	def OptnPdgInstrBal(self, value):
-		self._OptnPdgInstrBal = value if type(value) != auto else self.make_default("OptnPdgInstrBal")
-
-	@OptnPdgInstrBal.deleter
-	def OptnPdgInstrBal(self):
-		del self._OptnPdgInstrBal
-		self._OptnPdgInstrBal = None
 
 	@property
 	def OptnPrtctInstrBal(self):
@@ -155,6 +129,19 @@ class InstructedCorporateActionOption22(base_types._BaseFieldType):
 		self._OptnRjctdInstrBal = None
 
 	@property
+	def InstdBal(self):
+		return self._InstdBal
+
+	@InstdBal.setter
+	def InstdBal(self, value):
+		self._InstdBal = value if type(value) != auto else self.make_default("InstdBal")
+
+	@InstdBal.deleter
+	def InstdBal(self):
+		del self._InstdBal
+		self._InstdBal = None
+
+	@property
 	def OptnRtrdInstdBal(self):
 		return self._OptnRtrdInstdBal
 
@@ -167,18 +154,31 @@ class InstructedCorporateActionOption22(base_types._BaseFieldType):
 		del self._OptnRtrdInstdBal
 		self._OptnRtrdInstdBal = None
 
+	@property
+	def EvtDdlns(self):
+		return self._EvtDdlns
+
+	@EvtDdlns.setter
+	def EvtDdlns(self, value):
+		self._EvtDdlns = value if type(value) != auto else self.make_default("EvtDdlns")
+
+	@EvtDdlns.deleter
+	def EvtDdlns(self):
+		del self._EvtDdlns
+		self._EvtDdlns = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption36Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnCancInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnPdgInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DfltActn', type=DefaultProcessingOrStandingInstruction2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnInstrDtls', type=OptionInstructionDetails12, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnCancInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption36Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtDdlns', type=CorporateActionEventDeadlines4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnAccptdInstdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnPdgInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnPrtctInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnRjctdInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnRtrdInstdBal', type=SignedQuantityFormat16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtDdlns', type=CorporateActionEventDeadlines4, min=1, max=1, mutex_group=None, array=False),
 	))
 

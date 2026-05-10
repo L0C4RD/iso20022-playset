@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAnd24Amount
 import AssetHolding3Choice
+import ActiveCurrencyAnd24Amount
 import CollateralAccountType3Code
 
 class AssetHolding3(base_types._BaseFieldType):

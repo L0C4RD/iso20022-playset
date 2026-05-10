@@ -1,35 +1,74 @@
 import base_types
+import InterestRateDetails2
+import Frequency18Code
+import Max70Text
+import AdditionalData1
 import GracePeriodUnitType1Code
+import Max256Text
+import ISO3NumericCurrencyCode
 import ImpliedCurrencyAndAmount
 import InstalmentAmountDetails3
-import ISO3NumericCurrencyCode
-import Frequency18Code
-import ISODate
-import InterestRateDetails2
+import Number
 import Max35Text
+import ISODate
 import Max3NumericText
 import TrueFalseIndicator
 import PlanOwner1Code
-import Max256Text
-import Number
-import AdditionalData1
-import Max70Text
 
 class Plan3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfPmts", "_GracePrdUnitTp", "_OthrOwnr", "_NbOfGracePrdUnits", "_NrmlPmtAmt", "_OthrGracePrdUnitTp", "_GrdTtlAmt", "_PmtTp", "_Id", "_FrstAmt", "_Dfrrd", "_DfrrdPrds", "_IntrstRate", "_AmtDtls", "_CstmrSelctdGracePrd", "_OwnrNm", "_Ccy", "_PrdUnit", "_NbOfPrds", "_Ownr", "_AddtlData", "_FrstPmtDt", "_RegnSysId"]
+	__slots__ = ["_IntrstRate", "_DfrrdPrds", "_FrstAmt", "_OwnrNm", "_GracePrdUnitTp", "_AddtlData", "_CstmrSelctdGracePrd", "_FrstPmtDt", "_RegnSysId", "_NrmlPmtAmt", "_OthrGracePrdUnitTp", "_NbOfPrds", "_GrdTtlAmt", "_PmtTp", "_Ccy", "_PrdUnit", "_AmtDtls", "_Ownr", "_OthrOwnr", "_Dfrrd", "_Id", "_TtlNbOfPmts", "_NbOfGracePrdUnits"]
 	@property
-	def TtlNbOfPmts(self):
-		return self._TtlNbOfPmts
+	def IntrstRate(self):
+		return self._IntrstRate
 
-	@TtlNbOfPmts.setter
-	def TtlNbOfPmts(self, value):
-		self._TtlNbOfPmts = value if type(value) != auto else self.make_default("TtlNbOfPmts")
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
 
-	@TtlNbOfPmts.deleter
-	def TtlNbOfPmts(self):
-		del self._TtlNbOfPmts
-		self._TtlNbOfPmts = None
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
+	@property
+	def DfrrdPrds(self):
+		return self._DfrrdPrds
+
+	@DfrrdPrds.setter
+	def DfrrdPrds(self, value):
+		self._DfrrdPrds = value if type(value) != auto else self.make_default("DfrrdPrds")
+
+	@DfrrdPrds.deleter
+	def DfrrdPrds(self):
+		del self._DfrrdPrds
+		self._DfrrdPrds = None
+
+	@property
+	def FrstAmt(self):
+		return self._FrstAmt
+
+	@FrstAmt.setter
+	def FrstAmt(self, value):
+		self._FrstAmt = value if type(value) != auto else self.make_default("FrstAmt")
+
+	@FrstAmt.deleter
+	def FrstAmt(self):
+		del self._FrstAmt
+		self._FrstAmt = None
+
+	@property
+	def OwnrNm(self):
+		return self._OwnrNm
+
+	@OwnrNm.setter
+	def OwnrNm(self, value):
+		self._OwnrNm = value if type(value) != auto else self.make_default("OwnrNm")
+
+	@OwnrNm.deleter
+	def OwnrNm(self):
+		del self._OwnrNm
+		self._OwnrNm = None
 
 	@property
 	def GracePrdUnitTp(self):
@@ -45,30 +84,56 @@ class Plan3(base_types._BaseFieldType):
 		self._GracePrdUnitTp = None
 
 	@property
-	def OthrOwnr(self):
-		return self._OthrOwnr
+	def AddtlData(self):
+		return self._AddtlData
 
-	@OthrOwnr.setter
-	def OthrOwnr(self, value):
-		self._OthrOwnr = value if type(value) != auto else self.make_default("OthrOwnr")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
 
-	@OthrOwnr.deleter
-	def OthrOwnr(self):
-		del self._OthrOwnr
-		self._OthrOwnr = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
-	def NbOfGracePrdUnits(self):
-		return self._NbOfGracePrdUnits
+	def CstmrSelctdGracePrd(self):
+		return self._CstmrSelctdGracePrd
 
-	@NbOfGracePrdUnits.setter
-	def NbOfGracePrdUnits(self, value):
-		self._NbOfGracePrdUnits = value if type(value) != auto else self.make_default("NbOfGracePrdUnits")
+	@CstmrSelctdGracePrd.setter
+	def CstmrSelctdGracePrd(self, value):
+		self._CstmrSelctdGracePrd = value if type(value) != auto else self.make_default("CstmrSelctdGracePrd")
 
-	@NbOfGracePrdUnits.deleter
-	def NbOfGracePrdUnits(self):
-		del self._NbOfGracePrdUnits
-		self._NbOfGracePrdUnits = None
+	@CstmrSelctdGracePrd.deleter
+	def CstmrSelctdGracePrd(self):
+		del self._CstmrSelctdGracePrd
+		self._CstmrSelctdGracePrd = None
+
+	@property
+	def FrstPmtDt(self):
+		return self._FrstPmtDt
+
+	@FrstPmtDt.setter
+	def FrstPmtDt(self, value):
+		self._FrstPmtDt = value if type(value) != auto else self.make_default("FrstPmtDt")
+
+	@FrstPmtDt.deleter
+	def FrstPmtDt(self):
+		del self._FrstPmtDt
+		self._FrstPmtDt = None
+
+	@property
+	def RegnSysId(self):
+		return self._RegnSysId
+
+	@RegnSysId.setter
+	def RegnSysId(self, value):
+		self._RegnSysId = value if type(value) != auto else self.make_default("RegnSysId")
+
+	@RegnSysId.deleter
+	def RegnSysId(self):
+		del self._RegnSysId
+		self._RegnSysId = None
 
 	@property
 	def NrmlPmtAmt(self):
@@ -97,6 +162,19 @@ class Plan3(base_types._BaseFieldType):
 		self._OthrGracePrdUnitTp = None
 
 	@property
+	def NbOfPrds(self):
+		return self._NbOfPrds
+
+	@NbOfPrds.setter
+	def NbOfPrds(self, value):
+		self._NbOfPrds = value if type(value) != auto else self.make_default("NbOfPrds")
+
+	@NbOfPrds.deleter
+	def NbOfPrds(self):
+		del self._NbOfPrds
+		self._NbOfPrds = None
+
+	@property
 	def GrdTtlAmt(self):
 		return self._GrdTtlAmt
 
@@ -121,110 +199,6 @@ class Plan3(base_types._BaseFieldType):
 	def PmtTp(self):
 		del self._PmtTp
 		self._PmtTp = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def FrstAmt(self):
-		return self._FrstAmt
-
-	@FrstAmt.setter
-	def FrstAmt(self, value):
-		self._FrstAmt = value if type(value) != auto else self.make_default("FrstAmt")
-
-	@FrstAmt.deleter
-	def FrstAmt(self):
-		del self._FrstAmt
-		self._FrstAmt = None
-
-	@property
-	def Dfrrd(self):
-		return self._Dfrrd
-
-	@Dfrrd.setter
-	def Dfrrd(self, value):
-		self._Dfrrd = value if type(value) != auto else self.make_default("Dfrrd")
-
-	@Dfrrd.deleter
-	def Dfrrd(self):
-		del self._Dfrrd
-		self._Dfrrd = None
-
-	@property
-	def DfrrdPrds(self):
-		return self._DfrrdPrds
-
-	@DfrrdPrds.setter
-	def DfrrdPrds(self, value):
-		self._DfrrdPrds = value if type(value) != auto else self.make_default("DfrrdPrds")
-
-	@DfrrdPrds.deleter
-	def DfrrdPrds(self):
-		del self._DfrrdPrds
-		self._DfrrdPrds = None
-
-	@property
-	def IntrstRate(self):
-		return self._IntrstRate
-
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
-
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
-	@property
-	def AmtDtls(self):
-		return self._AmtDtls
-
-	@AmtDtls.setter
-	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != auto else self.make_default("AmtDtls")
-
-	@AmtDtls.deleter
-	def AmtDtls(self):
-		del self._AmtDtls
-		self._AmtDtls = None
-
-	@property
-	def CstmrSelctdGracePrd(self):
-		return self._CstmrSelctdGracePrd
-
-	@CstmrSelctdGracePrd.setter
-	def CstmrSelctdGracePrd(self, value):
-		self._CstmrSelctdGracePrd = value if type(value) != auto else self.make_default("CstmrSelctdGracePrd")
-
-	@CstmrSelctdGracePrd.deleter
-	def CstmrSelctdGracePrd(self):
-		del self._CstmrSelctdGracePrd
-		self._CstmrSelctdGracePrd = None
-
-	@property
-	def OwnrNm(self):
-		return self._OwnrNm
-
-	@OwnrNm.setter
-	def OwnrNm(self, value):
-		self._OwnrNm = value if type(value) != auto else self.make_default("OwnrNm")
-
-	@OwnrNm.deleter
-	def OwnrNm(self):
-		del self._OwnrNm
-		self._OwnrNm = None
 
 	@property
 	def Ccy(self):
@@ -253,17 +227,17 @@ class Plan3(base_types._BaseFieldType):
 		self._PrdUnit = None
 
 	@property
-	def NbOfPrds(self):
-		return self._NbOfPrds
+	def AmtDtls(self):
+		return self._AmtDtls
 
-	@NbOfPrds.setter
-	def NbOfPrds(self, value):
-		self._NbOfPrds = value if type(value) != auto else self.make_default("NbOfPrds")
+	@AmtDtls.setter
+	def AmtDtls(self, value):
+		self._AmtDtls = value if type(value) != auto else self.make_default("AmtDtls")
 
-	@NbOfPrds.deleter
-	def NbOfPrds(self):
-		del self._NbOfPrds
-		self._NbOfPrds = None
+	@AmtDtls.deleter
+	def AmtDtls(self):
+		del self._AmtDtls
+		self._AmtDtls = None
 
 	@property
 	def Ownr(self):
@@ -279,67 +253,93 @@ class Plan3(base_types._BaseFieldType):
 		self._Ownr = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def OthrOwnr(self):
+		return self._OthrOwnr
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@OthrOwnr.setter
+	def OthrOwnr(self, value):
+		self._OthrOwnr = value if type(value) != auto else self.make_default("OthrOwnr")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def FrstPmtDt(self):
-		return self._FrstPmtDt
-
-	@FrstPmtDt.setter
-	def FrstPmtDt(self, value):
-		self._FrstPmtDt = value if type(value) != auto else self.make_default("FrstPmtDt")
-
-	@FrstPmtDt.deleter
-	def FrstPmtDt(self):
-		del self._FrstPmtDt
-		self._FrstPmtDt = None
+	@OthrOwnr.deleter
+	def OthrOwnr(self):
+		del self._OthrOwnr
+		self._OthrOwnr = None
 
 	@property
-	def RegnSysId(self):
-		return self._RegnSysId
+	def Dfrrd(self):
+		return self._Dfrrd
 
-	@RegnSysId.setter
-	def RegnSysId(self, value):
-		self._RegnSysId = value if type(value) != auto else self.make_default("RegnSysId")
+	@Dfrrd.setter
+	def Dfrrd(self, value):
+		self._Dfrrd = value if type(value) != auto else self.make_default("Dfrrd")
 
-	@RegnSysId.deleter
-	def RegnSysId(self):
-		del self._RegnSysId
-		self._RegnSysId = None
+	@Dfrrd.deleter
+	def Dfrrd(self):
+		del self._Dfrrd
+		self._Dfrrd = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def TtlNbOfPmts(self):
+		return self._TtlNbOfPmts
+
+	@TtlNbOfPmts.setter
+	def TtlNbOfPmts(self, value):
+		self._TtlNbOfPmts = value if type(value) != auto else self.make_default("TtlNbOfPmts")
+
+	@TtlNbOfPmts.deleter
+	def TtlNbOfPmts(self):
+		del self._TtlNbOfPmts
+		self._TtlNbOfPmts = None
+
+	@property
+	def NbOfGracePrdUnits(self):
+		return self._NbOfGracePrdUnits
+
+	@NbOfGracePrdUnits.setter
+	def NbOfGracePrdUnits(self, value):
+		self._NbOfGracePrdUnits = value if type(value) != auto else self.make_default("NbOfGracePrdUnits")
+
+	@NbOfGracePrdUnits.deleter
+	def NbOfGracePrdUnits(self):
+		del self._NbOfGracePrdUnits
+		self._NbOfGracePrdUnits = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GracePrdUnitTp', type=GracePeriodUnitType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrOwnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfGracePrdUnits', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NrmlPmtAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrGracePrdUnitTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrdTtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dfrrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfrrdPrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=InterestRateDetails2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AmtDtls', type=InstalmentAmountDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CstmrSelctdGracePrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DfrrdPrds', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrNm', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrdUnit', type=Frequency18Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfPrds', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ownr', type=PlanOwner1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GracePrdUnitTp', type=GracePeriodUnitType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CstmrSelctdGracePrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnSysId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NrmlPmtAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrGracePrdUnitTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfPrds', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrdTtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrdUnit', type=Frequency18Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtDtls', type=InstalmentAmountDetails3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ownr', type=PlanOwner1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrOwnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dfrrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfGracePrdUnits', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

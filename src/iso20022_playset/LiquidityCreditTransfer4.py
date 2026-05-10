@@ -1,13 +1,39 @@
 import base_types
+import CashAccount40
+import PaymentIdentification8
+import ISODate
 import BranchAndFinancialInstitutionIdentification8
 import Amount2Choice
-import PaymentIdentification8
-import CashAccount40
-import ISODate
 
 class LiquidityCreditTransfer4(base_types._BaseFieldType):
 
-	__slots__ = ["_LqdtyTrfId", "_Dbtr", "_TrfdAmt", "_CdtrAcct", "_SttlmDt", "_DbtrAcct", "_Cdtr"]
+	__slots__ = ["_Cdtr", "_SttlmDt", "_LqdtyTrfId", "_Dbtr", "_DbtrAcct", "_CdtrAcct", "_TrfdAmt"]
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
 	@property
 	def LqdtyTrfId(self):
 		return self._LqdtyTrfId
@@ -35,17 +61,17 @@ class LiquidityCreditTransfer4(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
-	def TrfdAmt(self):
-		return self._TrfdAmt
+	def DbtrAcct(self):
+		return self._DbtrAcct
 
-	@TrfdAmt.setter
-	def TrfdAmt(self, value):
-		self._TrfdAmt = value if type(value) != auto else self.make_default("TrfdAmt")
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
 
-	@TrfdAmt.deleter
-	def TrfdAmt(self):
-		del self._TrfdAmt
-		self._TrfdAmt = None
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	@property
 	def CdtrAcct(self):
@@ -61,51 +87,25 @@ class LiquidityCreditTransfer4(base_types._BaseFieldType):
 		self._CdtrAcct = None
 
 	@property
-	def SttlmDt(self):
-		return self._SttlmDt
+	def TrfdAmt(self):
+		return self._TrfdAmt
 
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+	@TrfdAmt.setter
+	def TrfdAmt(self, value):
+		self._TrfdAmt = value if type(value) != auto else self.make_default("TrfdAmt")
 
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
-
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
-
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
-
-	@property
-	def Cdtr(self):
-		return self._Cdtr
-
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
-
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@TrfdAmt.deleter
+	def TrfdAmt(self):
+		del self._TrfdAmt
+		self._TrfdAmt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LqdtyTrfId', type=PaymentIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfdAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfdAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

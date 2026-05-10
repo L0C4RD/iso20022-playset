@@ -1,23 +1,23 @@
 import base_types
-import InterestRateFrequency3Choice
-import InterestComputationMethodFormat7
 import SecuritiesTransactionPrice14Choice
+import InterestComputationMethodFormat7
+import InterestRateFrequency3Choice
 
 class FixedRate10(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_DayCnt", "_PmtFrqcy"]
+	__slots__ = ["_PmtFrqcy", "_DayCnt", "_Rate"]
 	@property
-	def Rate(self):
-		return self._Rate
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
 
 	@property
 	def DayCnt(self):
@@ -33,21 +33,21 @@ class FixedRate10(base_types._BaseFieldType):
 		self._DayCnt = None
 
 	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
+	def Rate(self):
+		return self._Rate
 
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
 
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rate', type=SecuritiesTransactionPrice14Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DayCnt', type=InterestComputationMethodFormat7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFrqcy', type=InterestRateFrequency3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DayCnt', type=InterestComputationMethodFormat7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=SecuritiesTransactionPrice14Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import ExPostCostCalculationBasis1Code
+import GenericIdentification47
 
 class ExPostCostCalculationBasis1Choice(base_types._BaseFieldType):
 

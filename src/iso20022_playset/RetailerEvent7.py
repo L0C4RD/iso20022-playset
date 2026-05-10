@@ -1,12 +1,25 @@
 import base_types
+import EventToNotify2Code
+import ISODateTime
 import EventContext7
 import Max1025Text
-import ISODateTime
-import EventToNotify2Code
 
 class RetailerEvent7(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTmStmp", "_AddtlEvtInf", "_EvtCntxt", "_EvtToNtfy"]
+	__slots__ = ["_EvtToNtfy", "_EvtTmStmp", "_AddtlEvtInf", "_EvtCntxt"]
+	@property
+	def EvtToNtfy(self):
+		return self._EvtToNtfy
+
+	@EvtToNtfy.setter
+	def EvtToNtfy(self, value):
+		self._EvtToNtfy = value if type(value) != auto else self.make_default("EvtToNtfy")
+
+	@EvtToNtfy.deleter
+	def EvtToNtfy(self):
+		del self._EvtToNtfy
+		self._EvtToNtfy = None
+
 	@property
 	def EvtTmStmp(self):
 		return self._EvtTmStmp
@@ -46,23 +59,10 @@ class RetailerEvent7(base_types._BaseFieldType):
 		del self._EvtCntxt
 		self._EvtCntxt = None
 
-	@property
-	def EvtToNtfy(self):
-		return self._EvtToNtfy
-
-	@EvtToNtfy.setter
-	def EvtToNtfy(self, value):
-		self._EvtToNtfy = value if type(value) != auto else self.make_default("EvtToNtfy")
-
-	@EvtToNtfy.deleter
-	def EvtToNtfy(self):
-		del self._EvtToNtfy
-		self._EvtToNtfy = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EvtToNtfy', type=EventToNotify2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlEvtInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtCntxt', type=EventContext7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtToNtfy', type=EventToNotify2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,42 +1,29 @@
 import base_types
 import EnergyCommodityOil3
-import EnergyCommodityRenewableEnergy2
-import EnergyCommodityCoal2
-import EnergyCommodityLightEnd2
-import EnergyCommodityNaturalGas3
-import EnergyCommodityInterEnergy2
-import EnergyCommodityDistillates2
 import EnergyCommodityElectricity2
+import EnergyCommodityLightEnd2
+import EnergyCommodityCoal2
+import EnergyCommodityNaturalGas3
 import EnergyCommodityOther2
+import EnergyCommodityDistillates2
+import EnergyCommodityRenewableEnergy2
+import EnergyCommodityInterEnergy2
 
 class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dstllts", "_RnwblNrgy", "_Coal", "_IntrNrgy", "_Elctrcty", "_LghtEnd", "_Othr", "_Oil", "_NtrlGas"]
+	__slots__ = ["_IntrNrgy", "_Coal", "_RnwblNrgy", "_Elctrcty", "_Oil", "_LghtEnd", "_Othr", "_Dstllts", "_NtrlGas"]
 	@property
-	def Dstllts(self):
-		return self._Dstllts
+	def IntrNrgy(self):
+		return self._IntrNrgy
 
-	@Dstllts.setter
-	def Dstllts(self, value):
-		self._Dstllts = value if type(value) != auto else self.make_default("Dstllts")
+	@IntrNrgy.setter
+	def IntrNrgy(self, value):
+		self._IntrNrgy = value if type(value) != auto else self.make_default("IntrNrgy")
 
-	@Dstllts.deleter
-	def Dstllts(self):
-		del self._Dstllts
-		self._Dstllts = None
-
-	@property
-	def RnwblNrgy(self):
-		return self._RnwblNrgy
-
-	@RnwblNrgy.setter
-	def RnwblNrgy(self, value):
-		self._RnwblNrgy = value if type(value) != auto else self.make_default("RnwblNrgy")
-
-	@RnwblNrgy.deleter
-	def RnwblNrgy(self):
-		del self._RnwblNrgy
-		self._RnwblNrgy = None
+	@IntrNrgy.deleter
+	def IntrNrgy(self):
+		del self._IntrNrgy
+		self._IntrNrgy = None
 
 	@property
 	def Coal(self):
@@ -52,17 +39,17 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 		self._Coal = None
 
 	@property
-	def IntrNrgy(self):
-		return self._IntrNrgy
+	def RnwblNrgy(self):
+		return self._RnwblNrgy
 
-	@IntrNrgy.setter
-	def IntrNrgy(self, value):
-		self._IntrNrgy = value if type(value) != auto else self.make_default("IntrNrgy")
+	@RnwblNrgy.setter
+	def RnwblNrgy(self, value):
+		self._RnwblNrgy = value if type(value) != auto else self.make_default("RnwblNrgy")
 
-	@IntrNrgy.deleter
-	def IntrNrgy(self):
-		del self._IntrNrgy
-		self._IntrNrgy = None
+	@RnwblNrgy.deleter
+	def RnwblNrgy(self):
+		del self._RnwblNrgy
+		self._RnwblNrgy = None
 
 	@property
 	def Elctrcty(self):
@@ -76,6 +63,19 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 	def Elctrcty(self):
 		del self._Elctrcty
 		self._Elctrcty = None
+
+	@property
+	def Oil(self):
+		return self._Oil
+
+	@Oil.setter
+	def Oil(self, value):
+		self._Oil = value if type(value) != auto else self.make_default("Oil")
+
+	@Oil.deleter
+	def Oil(self):
+		del self._Oil
+		self._Oil = None
 
 	@property
 	def LghtEnd(self):
@@ -104,17 +104,17 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Oil(self):
-		return self._Oil
+	def Dstllts(self):
+		return self._Dstllts
 
-	@Oil.setter
-	def Oil(self, value):
-		self._Oil = value if type(value) != auto else self.make_default("Oil")
+	@Dstllts.setter
+	def Dstllts(self, value):
+		self._Dstllts = value if type(value) != auto else self.make_default("Dstllts")
 
-	@Oil.deleter
-	def Oil(self):
-		del self._Oil
-		self._Oil = None
+	@Dstllts.deleter
+	def Dstllts(self):
+		del self._Dstllts
+		self._Dstllts = None
 
 	@property
 	def NtrlGas(self):
@@ -130,14 +130,14 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 		self._NtrlGas = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dstllts', type=EnergyCommodityDistillates2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RnwblNrgy', type=EnergyCommodityRenewableEnergy2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Coal', type=EnergyCommodityCoal2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntrNrgy', type=EnergyCommodityInterEnergy2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Coal', type=EnergyCommodityCoal2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RnwblNrgy', type=EnergyCommodityRenewableEnergy2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Elctrcty', type=EnergyCommodityElectricity2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Oil', type=EnergyCommodityOil3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LghtEnd', type=EnergyCommodityLightEnd2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=EnergyCommodityOther2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Oil', type=EnergyCommodityOil3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dstllts', type=EnergyCommodityDistillates2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NtrlGas', type=EnergyCommodityNaturalGas3, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,11 +1,11 @@
 import base_types
-import PartialSettlement2Code
 import RestrictedFINXMax16Text
 import PreConfirmation1Code
+import PartialSettlement2Code
 
 class AdditionalParameters26(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsPrtlConfId", "_PrtlSttlm", "_PreConf"]
+	__slots__ = ["_PrvsPrtlConfId", "_PreConf", "_PrtlSttlm"]
 	@property
 	def PrvsPrtlConfId(self):
 		return self._PrvsPrtlConfId
@@ -20,19 +20,6 @@ class AdditionalParameters26(base_types._BaseFieldType):
 		self._PrvsPrtlConfId = None
 
 	@property
-	def PrtlSttlm(self):
-		return self._PrtlSttlm
-
-	@PrtlSttlm.setter
-	def PrtlSttlm(self, value):
-		self._PrtlSttlm = value if type(value) != auto else self.make_default("PrtlSttlm")
-
-	@PrtlSttlm.deleter
-	def PrtlSttlm(self):
-		del self._PrtlSttlm
-		self._PrtlSttlm = None
-
-	@property
 	def PreConf(self):
 		return self._PreConf
 
@@ -45,9 +32,22 @@ class AdditionalParameters26(base_types._BaseFieldType):
 		del self._PreConf
 		self._PreConf = None
 
+	@property
+	def PrtlSttlm(self):
+		return self._PrtlSttlm
+
+	@PrtlSttlm.setter
+	def PrtlSttlm(self, value):
+		self._PrtlSttlm = value if type(value) != auto else self.make_default("PrtlSttlm")
+
+	@PrtlSttlm.deleter
+	def PrtlSttlm(self):
+		del self._PrtlSttlm
+		self._PrtlSttlm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrvsPrtlConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

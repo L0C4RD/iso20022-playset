@@ -1,12 +1,12 @@
 import base_types
 import FundConfirmedCashForecastReport3
+import AdditionalReference3
 import MessageIdentification1
 import Pagination
-import AdditionalReference3
 
 class FundConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CshFcstRptToBeCanc", "_PrvsRef", "_MsgPgntn", "_PoolRef", "_RltdRef"]
+	__slots__ = ["_MsgId", "_MsgPgntn", "_RltdRef", "_CshFcstRptToBeCanc", "_PrvsRef", "_PoolRef"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -19,6 +19,32 @@ class FundConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
+	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def CshFcstRptToBeCanc(self):
@@ -47,19 +73,6 @@ class FundConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
-	@property
 	def PoolRef(self):
 		return self._PoolRef
 
@@ -72,25 +85,12 @@ class FundConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 		del self._PoolRef
 		self._PoolRef = None
 
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshFcstRptToBeCanc', type=FundConfirmedCashForecastReport3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
 	))
 

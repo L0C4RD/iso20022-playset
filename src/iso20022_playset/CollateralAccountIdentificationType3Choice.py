@@ -1,6 +1,6 @@
 import base_types
-import CollateralAccountType1Code
 import GenericIdentification36
+import CollateralAccountType1Code
 
 class CollateralAccountIdentificationType3Choice(base_types._BaseFieldType):
 

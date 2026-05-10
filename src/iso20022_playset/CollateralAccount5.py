@@ -1,23 +1,23 @@
 import base_types
-import TrueFalseIndicator
 import MarginAccount1
+import TrueFalseIndicator
 import PartyIdentification118Choice
 
 class CollateralAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_TitlTrfCollArrgmnt", "_RltdMrgnAcct", "_Id", "_CollSgrtnByVal"]
+	__slots__ = ["_Id", "_RltdMrgnAcct", "_TitlTrfCollArrgmnt", "_CollSgrtnByVal"]
 	@property
-	def TitlTrfCollArrgmnt(self):
-		return self._TitlTrfCollArrgmnt
+	def Id(self):
+		return self._Id
 
-	@TitlTrfCollArrgmnt.setter
-	def TitlTrfCollArrgmnt(self, value):
-		self._TitlTrfCollArrgmnt = value if type(value) != auto else self.make_default("TitlTrfCollArrgmnt")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@TitlTrfCollArrgmnt.deleter
-	def TitlTrfCollArrgmnt(self):
-		del self._TitlTrfCollArrgmnt
-		self._TitlTrfCollArrgmnt = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def RltdMrgnAcct(self):
@@ -33,17 +33,17 @@ class CollateralAccount5(base_types._BaseFieldType):
 		self._RltdMrgnAcct = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def TitlTrfCollArrgmnt(self):
+		return self._TitlTrfCollArrgmnt
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@TitlTrfCollArrgmnt.setter
+	def TitlTrfCollArrgmnt(self, value):
+		self._TitlTrfCollArrgmnt = value if type(value) != auto else self.make_default("TitlTrfCollArrgmnt")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@TitlTrfCollArrgmnt.deleter
+	def TitlTrfCollArrgmnt(self):
+		del self._TitlTrfCollArrgmnt
+		self._TitlTrfCollArrgmnt = None
 
 	@property
 	def CollSgrtnByVal(self):
@@ -59,9 +59,9 @@ class CollateralAccount5(base_types._BaseFieldType):
 		self._CollSgrtnByVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TitlTrfCollArrgmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdMrgnAcct', type=MarginAccount1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdMrgnAcct', type=MarginAccount1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TitlTrfCollArrgmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSgrtnByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

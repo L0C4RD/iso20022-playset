@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import AdditionalInformation15
 import TargetMarket1Choice
+import AdditionalInformation15
+import Max35Text
 
 class OtherInvestmentNeed1(base_types._BaseFieldType):
 
-	__slots__ = ["_Trgt", "_AddtlInf", "_ClntObjctvsAndNeedsTp"]
+	__slots__ = ["_ClntObjctvsAndNeedsTp", "_AddtlInf", "_Trgt"]
 	@property
-	def Trgt(self):
-		return self._Trgt
+	def ClntObjctvsAndNeedsTp(self):
+		return self._ClntObjctvsAndNeedsTp
 
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+	@ClntObjctvsAndNeedsTp.setter
+	def ClntObjctvsAndNeedsTp(self, value):
+		self._ClntObjctvsAndNeedsTp = value if type(value) != auto else self.make_default("ClntObjctvsAndNeedsTp")
 
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
+	@ClntObjctvsAndNeedsTp.deleter
+	def ClntObjctvsAndNeedsTp(self):
+		del self._ClntObjctvsAndNeedsTp
+		self._ClntObjctvsAndNeedsTp = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class OtherInvestmentNeed1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def ClntObjctvsAndNeedsTp(self):
-		return self._ClntObjctvsAndNeedsTp
+	def Trgt(self):
+		return self._Trgt
 
-	@ClntObjctvsAndNeedsTp.setter
-	def ClntObjctvsAndNeedsTp(self, value):
-		self._ClntObjctvsAndNeedsTp = value if type(value) != auto else self.make_default("ClntObjctvsAndNeedsTp")
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
 
-	@ClntObjctvsAndNeedsTp.deleter
-	def ClntObjctvsAndNeedsTp(self):
-		del self._ClntObjctvsAndNeedsTp
-		self._ClntObjctvsAndNeedsTp = None
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntObjctvsAndNeedsTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
 import SupplementaryData1
-import SecuritiesAccountStatus2
 import MessageHeader12
+import SecuritiesAccountStatus2
 
 class SecuritiesAccountStatusAdviceV01(base_types._BaseFieldType):
 

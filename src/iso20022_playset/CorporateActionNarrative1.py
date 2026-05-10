@@ -1,36 +1,23 @@
 import base_types
-import PartyIdentification2Choice
 import Max350Text
 import Max256Text
+import PartyIdentification2Choice
 
 class CorporateActionNarrative1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfConds", "_Offerr", "_TaxtnConds", "_AddtlTxt", "_URLAdr", "_InfToCmplyWth", "_NewCpnyNm"]
+	__slots__ = ["_InfToCmplyWth", "_TaxtnConds", "_AddtlTxt", "_NewCpnyNm", "_InfConds", "_URLAdr", "_Offerr"]
 	@property
-	def InfConds(self):
-		return self._InfConds
+	def InfToCmplyWth(self):
+		return self._InfToCmplyWth
 
-	@InfConds.setter
-	def InfConds(self, value):
-		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
+	@InfToCmplyWth.setter
+	def InfToCmplyWth(self, value):
+		self._InfToCmplyWth = value if type(value) != auto else self.make_default("InfToCmplyWth")
 
-	@InfConds.deleter
-	def InfConds(self):
-		del self._InfConds
-		self._InfConds = None
-
-	@property
-	def Offerr(self):
-		return self._Offerr
-
-	@Offerr.setter
-	def Offerr(self, value):
-		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
-
-	@Offerr.deleter
-	def Offerr(self):
-		del self._Offerr
-		self._Offerr = None
+	@InfToCmplyWth.deleter
+	def InfToCmplyWth(self):
+		del self._InfToCmplyWth
+		self._InfToCmplyWth = None
 
 	@property
 	def TaxtnConds(self):
@@ -59,6 +46,32 @@ class CorporateActionNarrative1(base_types._BaseFieldType):
 		self._AddtlTxt = None
 
 	@property
+	def NewCpnyNm(self):
+		return self._NewCpnyNm
+
+	@NewCpnyNm.setter
+	def NewCpnyNm(self, value):
+		self._NewCpnyNm = value if type(value) != auto else self.make_default("NewCpnyNm")
+
+	@NewCpnyNm.deleter
+	def NewCpnyNm(self):
+		del self._NewCpnyNm
+		self._NewCpnyNm = None
+
+	@property
+	def InfConds(self):
+		return self._InfConds
+
+	@InfConds.setter
+	def InfConds(self, value):
+		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
+
+	@InfConds.deleter
+	def InfConds(self):
+		del self._InfConds
+		self._InfConds = None
+
+	@property
 	def URLAdr(self):
 		return self._URLAdr
 
@@ -72,38 +85,25 @@ class CorporateActionNarrative1(base_types._BaseFieldType):
 		self._URLAdr = None
 
 	@property
-	def InfToCmplyWth(self):
-		return self._InfToCmplyWth
+	def Offerr(self):
+		return self._Offerr
 
-	@InfToCmplyWth.setter
-	def InfToCmplyWth(self, value):
-		self._InfToCmplyWth = value if type(value) != auto else self.make_default("InfToCmplyWth")
+	@Offerr.setter
+	def Offerr(self, value):
+		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
 
-	@InfToCmplyWth.deleter
-	def InfToCmplyWth(self):
-		del self._InfToCmplyWth
-		self._InfToCmplyWth = None
-
-	@property
-	def NewCpnyNm(self):
-		return self._NewCpnyNm
-
-	@NewCpnyNm.setter
-	def NewCpnyNm(self, value):
-		self._NewCpnyNm = value if type(value) != auto else self.make_default("NewCpnyNm")
-
-	@NewCpnyNm.deleter
-	def NewCpnyNm(self):
-		del self._NewCpnyNm
-		self._NewCpnyNm = None
+	@Offerr.deleter
+	def Offerr(self):
+		del self._Offerr
+		self._Offerr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InfConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Offerr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewCpnyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Offerr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import AdditionalInformation15
 import TargetMarket1Choice
+import AdditionalInformation15
+import Max35Text
 
 class OtherTargetMarketRiskTolerance1(base_types._BaseFieldType):
 
-	__slots__ = ["_RskTlrnceTp", "_Trgt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Trgt", "_RskTlrnceTp"]
 	@property
-	def RskTlrnceTp(self):
-		return self._RskTlrnceTp
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@RskTlrnceTp.setter
-	def RskTlrnceTp(self, value):
-		self._RskTlrnceTp = value if type(value) != auto else self.make_default("RskTlrnceTp")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@RskTlrnceTp.deleter
-	def RskTlrnceTp(self):
-		del self._RskTlrnceTp
-		self._RskTlrnceTp = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Trgt(self):
@@ -33,21 +33,21 @@ class OtherTargetMarketRiskTolerance1(base_types._BaseFieldType):
 		self._Trgt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def RskTlrnceTp(self):
+		return self._RskTlrnceTp
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@RskTlrnceTp.setter
+	def RskTlrnceTp(self, value):
+		self._RskTlrnceTp = value if type(value) != auto else self.make_default("RskTlrnceTp")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@RskTlrnceTp.deleter
+	def RskTlrnceTp(self):
+		del self._RskTlrnceTp
+		self._RskTlrnceTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RskTlrnceTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskTlrnceTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
-import ISODateTime
 import OriginalBusinessQuery1
+import ISODateTime
+import BranchAndFinancialInstitutionIdentification8
 import Max35Text
 
 class GroupHeader120(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlBizQry", "_CreDtTm", "_InstdAgt", "_MsgId", "_InstgAgt"]
+	__slots__ = ["_MsgId", "_CreDtTm", "_InstgAgt", "_InstdAgt", "_OrgnlBizQry"]
 	@property
-	def OrgnlBizQry(self):
-		return self._OrgnlBizQry
+	def MsgId(self):
+		return self._MsgId
 
-	@OrgnlBizQry.setter
-	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@OrgnlBizQry.deleter
-	def OrgnlBizQry(self):
-		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def CreDtTm(self):
@@ -34,6 +34,19 @@ class GroupHeader120(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
+
+	@property
 	def InstdAgt(self):
 		return self._InstdAgt
 
@@ -47,36 +60,23 @@ class GroupHeader120(base_types._BaseFieldType):
 		self._InstdAgt = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def OrgnlBizQry(self):
+		return self._OrgnlBizQry
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@OrgnlBizQry.setter
+	def OrgnlBizQry(self, value):
+		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def InstgAgt(self):
-		return self._InstgAgt
-
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
-
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
+	@OrgnlBizQry.deleter
+	def OrgnlBizQry(self):
+		del self._OrgnlBizQry
+		self._OrgnlBizQry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 	))
 

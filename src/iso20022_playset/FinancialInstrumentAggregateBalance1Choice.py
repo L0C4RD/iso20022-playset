@@ -1,23 +1,10 @@
 import base_types
-import FinancialInstrumentAggregateBalance2
 import YesNoIndicator
+import FinancialInstrumentAggregateBalance2
 
 class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgBal", "_HldgsInd"]
-	@property
-	def HldgBal(self):
-		return self._HldgBal
-
-	@HldgBal.setter
-	def HldgBal(self, value):
-		self._HldgBal = value if type(value) != auto else self.make_default("HldgBal")
-
-	@HldgBal.deleter
-	def HldgBal(self):
-		del self._HldgBal
-		self._HldgBal = None
-
+	__slots__ = ["_HldgsInd", "_HldgBal"]
 	@property
 	def HldgsInd(self):
 		return self._HldgsInd
@@ -31,8 +18,21 @@ class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 		del self._HldgsInd
 		self._HldgsInd = None
 
+	@property
+	def HldgBal(self):
+		return self._HldgBal
+
+	@HldgBal.setter
+	def HldgBal(self, value):
+		self._HldgBal = value if type(value) != auto else self.make_default("HldgBal")
+
+	@HldgBal.deleter
+	def HldgBal(self):
+		del self._HldgBal
+		self._HldgBal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HldgBal', type=FinancialInstrumentAggregateBalance2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='HldgsInd', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='HldgBal', type=FinancialInstrumentAggregateBalance2, min=0, max=1, mutex_group=1, array=False),
 	))
 

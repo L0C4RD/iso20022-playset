@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
 import IdentificationType42Choice
 import CountryCode
+import Max35Text
 
 class AlternatePartyIdentification10(base_types._BaseFieldType):
 

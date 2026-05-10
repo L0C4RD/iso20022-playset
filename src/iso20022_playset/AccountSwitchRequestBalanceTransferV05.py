@@ -1,25 +1,38 @@
 import base_types
-import AccountSwitchDetails1
-import CashAccount43
-import BalanceTransfer5
 import SupplementaryData1
+import CashAccount43
 import MessageIdentification1
+import AccountSwitchDetails1
+import BalanceTransfer5
 
 class AccountSwitchRequestBalanceTransferV05(base_types._BaseFieldType):
 
-	__slots__ = ["_NewAcct", "_SplmtryData", "_BalTrf", "_MsgId", "_AcctSwtchDtls", "_NmntdAcct"]
+	__slots__ = ["_MsgId", "_NmntdAcct", "_SplmtryData", "_AcctSwtchDtls", "_BalTrf", "_NewAcct"]
 	@property
-	def NewAcct(self):
-		return self._NewAcct
+	def MsgId(self):
+		return self._MsgId
 
-	@NewAcct.setter
-	def NewAcct(self, value):
-		self._NewAcct = value if type(value) != auto else self.make_default("NewAcct")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@NewAcct.deleter
-	def NewAcct(self):
-		del self._NewAcct
-		self._NewAcct = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def NmntdAcct(self):
+		return self._NmntdAcct
+
+	@NmntdAcct.setter
+	def NmntdAcct(self, value):
+		self._NmntdAcct = value if type(value) != auto else self.make_default("NmntdAcct")
+
+	@NmntdAcct.deleter
+	def NmntdAcct(self):
+		del self._NmntdAcct
+		self._NmntdAcct = None
 
 	@property
 	def SplmtryData(self):
@@ -35,32 +48,6 @@ class AccountSwitchRequestBalanceTransferV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def BalTrf(self):
-		return self._BalTrf
-
-	@BalTrf.setter
-	def BalTrf(self, value):
-		self._BalTrf = value if type(value) != auto else self.make_default("BalTrf")
-
-	@BalTrf.deleter
-	def BalTrf(self):
-		del self._BalTrf
-		self._BalTrf = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
 	def AcctSwtchDtls(self):
 		return self._AcctSwtchDtls
 
@@ -74,24 +61,37 @@ class AccountSwitchRequestBalanceTransferV05(base_types._BaseFieldType):
 		self._AcctSwtchDtls = None
 
 	@property
-	def NmntdAcct(self):
-		return self._NmntdAcct
+	def BalTrf(self):
+		return self._BalTrf
 
-	@NmntdAcct.setter
-	def NmntdAcct(self, value):
-		self._NmntdAcct = value if type(value) != auto else self.make_default("NmntdAcct")
+	@BalTrf.setter
+	def BalTrf(self, value):
+		self._BalTrf = value if type(value) != auto else self.make_default("BalTrf")
 
-	@NmntdAcct.deleter
-	def NmntdAcct(self):
-		del self._NmntdAcct
-		self._NmntdAcct = None
+	@BalTrf.deleter
+	def BalTrf(self):
+		del self._BalTrf
+		self._BalTrf = None
+
+	@property
+	def NewAcct(self):
+		return self._NewAcct
+
+	@NewAcct.setter
+	def NewAcct(self, value):
+		self._NewAcct = value if type(value) != auto else self.make_default("NewAcct")
+
+	@NewAcct.deleter
+	def NewAcct(self):
+		del self._NewAcct
+		self._NewAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BalTrf', type=BalanceTransfer5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmntdAcct', type=CashAccount43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTrf', type=BalanceTransfer5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NewAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,37 @@
 import base_types
-import Exact4AlphaNumericText
 import ISODate
 import TrueFalseIndicator
+import Exact4AlphaNumericText
 
 class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_EndInvstrFlg", "_HldInd", "_PricgSchme", "_ClsgDt", "_NegPos"]
+	__slots__ = ["_ClsgDt", "_NegPos", "_EndInvstrFlg", "_HldInd", "_PricgSchme"]
+	@property
+	def ClsgDt(self):
+		return self._ClsgDt
+
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
+
+	@property
+	def NegPos(self):
+		return self._NegPos
+
+	@NegPos.setter
+	def NegPos(self, value):
+		self._NegPos = value if type(value) != auto else self.make_default("NegPos")
+
+	@NegPos.deleter
+	def NegPos(self):
+		del self._NegPos
+		self._NegPos = None
+
 	@property
 	def EndInvstrFlg(self):
 		return self._EndInvstrFlg
@@ -45,37 +71,11 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 		del self._PricgSchme
 		self._PricgSchme = None
 
-	@property
-	def ClsgDt(self):
-		return self._ClsgDt
-
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
-
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
-
-	@property
-	def NegPos(self):
-		return self._NegPos
-
-	@NegPos.setter
-	def NegPos(self, value):
-		self._NegPos = value if type(value) != auto else self.make_default("NegPos")
-
-	@NegPos.deleter
-	def NegPos(self):
-		del self._NegPos
-		self._NegPos = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NegPos', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndInvstrFlg', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgSchme', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NegPos', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

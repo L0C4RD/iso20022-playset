@@ -1,6 +1,6 @@
 import base_types
-import GeneratedReason3Code
 import GenericIdentification30
+import GeneratedReason3Code
 
 class GeneratedReasons5Choice(base_types._BaseFieldType):
 

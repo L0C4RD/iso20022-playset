@@ -1,11 +1,11 @@
 import base_types
 import SupplementaryData1
-import MessageHeader1
 import LimitStructure5
+import MessageHeader1
 
 class ModifyLimitV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_LmtDtls", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_LmtDtls"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -20,19 +20,6 @@ class ModifyLimitV08(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def LmtDtls(self):
-		return self._LmtDtls
-
-	@LmtDtls.setter
-	def LmtDtls(self, value):
-		self._LmtDtls = value if type(value) != auto else self.make_default("LmtDtls")
-
-	@LmtDtls.deleter
-	def LmtDtls(self):
-		del self._LmtDtls
-		self._LmtDtls = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,9 +32,22 @@ class ModifyLimitV08(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def LmtDtls(self):
+		return self._LmtDtls
+
+	@LmtDtls.setter
+	def LmtDtls(self, value):
+		self._LmtDtls = value if type(value) != auto else self.make_default("LmtDtls")
+
+	@LmtDtls.deleter
+	def LmtDtls(self):
+		del self._LmtDtls
+		self._LmtDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtDtls', type=LimitStructure5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LmtDtls', type=LimitStructure5, min=0, max=None, mutex_group=None, array=True),
 	))
 

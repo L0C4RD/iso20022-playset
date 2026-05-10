@@ -1,10 +1,23 @@
 import base_types
-import Max35Text
 import InstructionStatus13Choice
+import Max35Text
 
 class DetailedInstructionStatus21(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglInstrId", "_InstrSts", "_AcctId", "_SubAcctId"]
+	__slots__ = ["_SubAcctId", "_SnglInstrId", "_InstrSts", "_AcctId"]
+	@property
+	def SubAcctId(self):
+		return self._SubAcctId
+
+	@SubAcctId.setter
+	def SubAcctId(self, value):
+		self._SubAcctId = value if type(value) != auto else self.make_default("SubAcctId")
+
+	@SubAcctId.deleter
+	def SubAcctId(self):
+		del self._SubAcctId
+		self._SubAcctId = None
+
 	@property
 	def SnglInstrId(self):
 		return self._SnglInstrId
@@ -44,23 +57,10 @@ class DetailedInstructionStatus21(base_types._BaseFieldType):
 		del self._AcctId
 		self._AcctId = None
 
-	@property
-	def SubAcctId(self):
-		return self._SubAcctId
-
-	@SubAcctId.setter
-	def SubAcctId(self, value):
-		self._SubAcctId = value if type(value) != auto else self.make_default("SubAcctId")
-
-	@SubAcctId.deleter
-	def SubAcctId(self):
-		del self._SubAcctId
-		self._SubAcctId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SnglInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrSts', type=InstructionStatus13Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

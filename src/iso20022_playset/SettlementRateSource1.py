@@ -1,12 +1,25 @@
 import base_types
-import Exact4NumericText
 import RateSourceText
-import CountryCode
 import Exact2AlphaNumericText
+import CountryCode
+import Exact4NumericText
 
 class SettlementRateSource1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tm", "_LctnCd", "_RateSrc", "_CtryCd"]
+	__slots__ = ["_CtryCd", "_Tm", "_RateSrc", "_LctnCd"]
+	@property
+	def CtryCd(self):
+		return self._CtryCd
+
+	@CtryCd.setter
+	def CtryCd(self, value):
+		self._CtryCd = value if type(value) != auto else self.make_default("CtryCd")
+
+	@CtryCd.deleter
+	def CtryCd(self):
+		del self._CtryCd
+		self._CtryCd = None
+
 	@property
 	def Tm(self):
 		return self._Tm
@@ -19,19 +32,6 @@ class SettlementRateSource1(base_types._BaseFieldType):
 	def Tm(self):
 		del self._Tm
 		self._Tm = None
-
-	@property
-	def LctnCd(self):
-		return self._LctnCd
-
-	@LctnCd.setter
-	def LctnCd(self, value):
-		self._LctnCd = value if type(value) != auto else self.make_default("LctnCd")
-
-	@LctnCd.deleter
-	def LctnCd(self):
-		del self._LctnCd
-		self._LctnCd = None
 
 	@property
 	def RateSrc(self):
@@ -47,22 +47,22 @@ class SettlementRateSource1(base_types._BaseFieldType):
 		self._RateSrc = None
 
 	@property
-	def CtryCd(self):
-		return self._CtryCd
+	def LctnCd(self):
+		return self._LctnCd
 
-	@CtryCd.setter
-	def CtryCd(self, value):
-		self._CtryCd = value if type(value) != auto else self.make_default("CtryCd")
+	@LctnCd.setter
+	def LctnCd(self, value):
+		self._LctnCd = value if type(value) != auto else self.make_default("LctnCd")
 
-	@CtryCd.deleter
-	def CtryCd(self):
-		del self._CtryCd
-		self._CtryCd = None
+	@LctnCd.deleter
+	def LctnCd(self):
+		del self._LctnCd
+		self._LctnCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tm', type=Exact4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LctnCd', type=Exact2AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateSrc', type=RateSourceText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryCd', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=Exact4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateSrc', type=RateSourceText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LctnCd', type=Exact2AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

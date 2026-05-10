@@ -1,12 +1,12 @@
 import base_types
-import Max35Text
+import MICIdentifier
 import CountryCode
 import AnyBICDec2014Identifier
-import MICIdentifier
+import Max35Text
 
 class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OverTheCntr", "_Ctry", "_Pty", "_Xchg"]
+	__slots__ = ["_OverTheCntr", "_Xchg", "_Pty", "_Ctry"]
 	@property
 	def OverTheCntr(self):
 		return self._OverTheCntr
@@ -21,17 +21,17 @@ class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 		self._OverTheCntr = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def Xchg(self):
+		return self._Xchg
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@Xchg.setter
+	def Xchg(self, value):
+		self._Xchg = value if type(value) != auto else self.make_default("Xchg")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@Xchg.deleter
+	def Xchg(self):
+		del self._Xchg
+		self._Xchg = None
 
 	@property
 	def Pty(self):
@@ -47,22 +47,22 @@ class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 		self._Pty = None
 
 	@property
-	def Xchg(self):
-		return self._Xchg
+	def Ctry(self):
+		return self._Ctry
 
-	@Xchg.setter
-	def Xchg(self, value):
-		self._Xchg = value if type(value) != auto else self.make_default("Xchg")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
 
-	@Xchg.deleter
-	def Xchg(self):
-		del self._Xchg
-		self._Xchg = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OverTheCntr', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pty', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Xchg', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pty', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,13 +1,26 @@
 import base_types
-import RejectedStatus54Choice
-import PendingCancellationStatus15Choice
-import NoSpecifiedReason1
 import ProprietaryStatusAndReason7
+import PendingCancellationStatus15Choice
 import CancelledStatus14Choice
+import NoSpecifiedReason1
+import RejectedStatus54Choice
 
 class InstructionCancellationRequestStatus18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgCxl", "_Accptd", "_PrtrySts", "_Rjctd", "_CxlCmpltd"]
+	__slots__ = ["_CxlCmpltd", "_PdgCxl", "_Rjctd", "_Accptd", "_PrtrySts"]
+	@property
+	def CxlCmpltd(self):
+		return self._CxlCmpltd
+
+	@CxlCmpltd.setter
+	def CxlCmpltd(self, value):
+		self._CxlCmpltd = value if type(value) != auto else self.make_default("CxlCmpltd")
+
+	@CxlCmpltd.deleter
+	def CxlCmpltd(self):
+		del self._CxlCmpltd
+		self._CxlCmpltd = None
+
 	@property
 	def PdgCxl(self):
 		return self._PdgCxl
@@ -20,6 +33,19 @@ class InstructionCancellationRequestStatus18Choice(base_types._BaseFieldType):
 	def PdgCxl(self):
 		del self._PdgCxl
 		self._PdgCxl = None
+
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	@property
 	def Accptd(self):
@@ -47,37 +73,11 @@ class InstructionCancellationRequestStatus18Choice(base_types._BaseFieldType):
 		del self._PrtrySts
 		self._PrtrySts = None
 
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
-	@property
-	def CxlCmpltd(self):
-		return self._CxlCmpltd
-
-	@CxlCmpltd.setter
-	def CxlCmpltd(self, value):
-		self._CxlCmpltd = value if type(value) != auto else self.make_default("CxlCmpltd")
-
-	@CxlCmpltd.deleter
-	def CxlCmpltd(self):
-		del self._CxlCmpltd
-		self._CxlCmpltd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlCmpltd', type=CancelledStatus14Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus15Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectedStatus54Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectedStatus54Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CxlCmpltd', type=CancelledStatus14Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

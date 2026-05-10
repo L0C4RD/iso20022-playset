@@ -1,39 +1,13 @@
 import base_types
-import AdditionalBusinessProcessFormat14Choice
 import CorporateActionEventStageFormat15Choice
-import CorporateActionDate89
-import IntermediateSecuritiesDistributionTypeFormat18Choice
 import LotteryTypeFormat5Choice
+import CorporateActionDate89
+import AdditionalBusinessProcessFormat14Choice
+import IntermediateSecuritiesDistributionTypeFormat18Choice
 
 class CorporateAction78(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlBizPrcInd", "_DtDtls", "_EvtStag", "_IntrmdtSctiesDstrbtnTp", "_LtryTp"]
-	@property
-	def AddtlBizPrcInd(self):
-		return self._AddtlBizPrcInd
-
-	@AddtlBizPrcInd.setter
-	def AddtlBizPrcInd(self, value):
-		self._AddtlBizPrcInd = value if type(value) != auto else self.make_default("AddtlBizPrcInd")
-
-	@AddtlBizPrcInd.deleter
-	def AddtlBizPrcInd(self):
-		del self._AddtlBizPrcInd
-		self._AddtlBizPrcInd = None
-
-	@property
-	def DtDtls(self):
-		return self._DtDtls
-
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
-
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
-
+	__slots__ = ["_EvtStag", "_AddtlBizPrcInd", "_IntrmdtSctiesDstrbtnTp", "_DtDtls", "_LtryTp"]
 	@property
 	def EvtStag(self):
 		return self._EvtStag
@@ -46,6 +20,19 @@ class CorporateAction78(base_types._BaseFieldType):
 	def EvtStag(self):
 		del self._EvtStag
 		self._EvtStag = None
+
+	@property
+	def AddtlBizPrcInd(self):
+		return self._AddtlBizPrcInd
+
+	@AddtlBizPrcInd.setter
+	def AddtlBizPrcInd(self, value):
+		self._AddtlBizPrcInd = value if type(value) != auto else self.make_default("AddtlBizPrcInd")
+
+	@AddtlBizPrcInd.deleter
+	def AddtlBizPrcInd(self):
+		del self._AddtlBizPrcInd
+		self._AddtlBizPrcInd = None
 
 	@property
 	def IntrmdtSctiesDstrbtnTp(self):
@@ -61,6 +48,19 @@ class CorporateAction78(base_types._BaseFieldType):
 		self._IntrmdtSctiesDstrbtnTp = None
 
 	@property
+	def DtDtls(self):
+		return self._DtDtls
+
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
+
+	@property
 	def LtryTp(self):
 		return self._LtryTp
 
@@ -74,10 +74,10 @@ class CorporateAction78(base_types._BaseFieldType):
 		self._LtryTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat14Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat14Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmdtSctiesDstrbtnTp', type=IntermediateSecuritiesDistributionTypeFormat18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

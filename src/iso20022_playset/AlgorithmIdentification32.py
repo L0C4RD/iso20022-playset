@@ -1,6 +1,6 @@
 import base_types
-import Parameter12
 import Algorithm28Code
+import Parameter12
 
 class AlgorithmIdentification32(base_types._BaseFieldType):
 

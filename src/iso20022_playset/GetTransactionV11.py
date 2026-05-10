@@ -5,19 +5,19 @@ import MessageHeader9
 
 class GetTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_TxQryDef"]
+	__slots__ = ["_TxQryDef", "_SplmtryData", "_MsgHdr"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def TxQryDef(self):
+		return self._TxQryDef
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@TxQryDef.setter
+	def TxQryDef(self, value):
+		self._TxQryDef = value if type(value) != auto else self.make_default("TxQryDef")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@TxQryDef.deleter
+	def TxQryDef(self):
+		del self._TxQryDef
+		self._TxQryDef = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class GetTransactionV11(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def TxQryDef(self):
-		return self._TxQryDef
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@TxQryDef.setter
-	def TxQryDef(self, value):
-		self._TxQryDef = value if type(value) != auto else self.make_default("TxQryDef")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@TxQryDef.deleter
-	def TxQryDef(self):
-		del self._TxQryDef
-		self._TxQryDef = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxQryDef', type=TransactionQuery8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 	))
 

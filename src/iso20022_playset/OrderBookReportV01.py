@@ -1,11 +1,24 @@
 import base_types
-import OrderReport2Choice
 import SupplementaryData1
 import SecuritiesMarketReportHeader3
+import OrderReport2Choice
 
 class OrderBookReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptHdr", "_OrdrRpt"]
+	__slots__ = ["_OrdrRpt", "_SplmtryData", "_RptHdr"]
+	@property
+	def OrdrRpt(self):
+		return self._OrdrRpt
+
+	@OrdrRpt.setter
+	def OrdrRpt(self, value):
+		self._OrdrRpt = value if type(value) != auto else self.make_default("OrdrRpt")
+
+	@OrdrRpt.deleter
+	def OrdrRpt(self):
+		del self._OrdrRpt
+		self._OrdrRpt = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class OrderBookReportV01(base_types._BaseFieldType):
 		del self._RptHdr
 		self._RptHdr = None
 
-	@property
-	def OrdrRpt(self):
-		return self._OrdrRpt
-
-	@OrdrRpt.setter
-	def OrdrRpt(self, value):
-		self._OrdrRpt = value if type(value) != auto else self.make_default("OrdrRpt")
-
-	@OrdrRpt.deleter
-	def OrdrRpt(self):
-		del self._OrdrRpt
-		self._OrdrRpt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrdrRpt', type=OrderReport2Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRpt', type=OrderReport2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

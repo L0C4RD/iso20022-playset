@@ -1,6 +1,6 @@
 import base_types
-import Reservation3
 import ErrorHandling5
+import Reservation3
 
 class ReservationOrError9Choice(base_types._BaseFieldType):
 

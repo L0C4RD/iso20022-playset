@@ -1,6 +1,6 @@
 import base_types
-import ClosurePendingStatusReason1Code
 import GenericIdentification36
+import ClosurePendingStatusReason1Code
 
 class ClosurePendingStatusReason2Choice(base_types._BaseFieldType):
 

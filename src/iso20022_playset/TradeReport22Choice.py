@@ -1,26 +1,52 @@
 import base_types
-import TradeTransactionCollateralUpdate8
-import TradeTransactionPositionComponent8
-import TradeTransactionCorrection13
-import TradeNewTransaction13
-import TradeError9
 import TradeValuationUpdate9
+import TradeTransactionPositionComponent8
+import TradeError9
+import TradeNewTransaction13
+import TradeTransactionCollateralUpdate8
+import TradeTransactionCorrection13
 
 class TradeReport22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CollUpd", "_EarlyTermntn", "_Err", "_PosCmpnt", "_New", "_ValtnUpd", "_Mod", "_Crrctn"]
+	__slots__ = ["_ValtnUpd", "_New", "_Mod", "_EarlyTermntn", "_Err", "_PosCmpnt", "_CollUpd", "_Crrctn"]
 	@property
-	def CollUpd(self):
-		return self._CollUpd
+	def ValtnUpd(self):
+		return self._ValtnUpd
 
-	@CollUpd.setter
-	def CollUpd(self, value):
-		self._CollUpd = value if type(value) != auto else self.make_default("CollUpd")
+	@ValtnUpd.setter
+	def ValtnUpd(self, value):
+		self._ValtnUpd = value if type(value) != auto else self.make_default("ValtnUpd")
 
-	@CollUpd.deleter
-	def CollUpd(self):
-		del self._CollUpd
-		self._CollUpd = None
+	@ValtnUpd.deleter
+	def ValtnUpd(self):
+		del self._ValtnUpd
+		self._ValtnUpd = None
+
+	@property
+	def New(self):
+		return self._New
+
+	@New.setter
+	def New(self, value):
+		self._New = value if type(value) != auto else self.make_default("New")
+
+	@New.deleter
+	def New(self):
+		del self._New
+		self._New = None
+
+	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	@property
 	def EarlyTermntn(self):
@@ -62,43 +88,17 @@ class TradeReport22Choice(base_types._BaseFieldType):
 		self._PosCmpnt = None
 
 	@property
-	def New(self):
-		return self._New
+	def CollUpd(self):
+		return self._CollUpd
 
-	@New.setter
-	def New(self, value):
-		self._New = value if type(value) != auto else self.make_default("New")
+	@CollUpd.setter
+	def CollUpd(self, value):
+		self._CollUpd = value if type(value) != auto else self.make_default("CollUpd")
 
-	@New.deleter
-	def New(self):
-		del self._New
-		self._New = None
-
-	@property
-	def ValtnUpd(self):
-		return self._ValtnUpd
-
-	@ValtnUpd.setter
-	def ValtnUpd(self, value):
-		self._ValtnUpd = value if type(value) != auto else self.make_default("ValtnUpd")
-
-	@ValtnUpd.deleter
-	def ValtnUpd(self):
-		del self._ValtnUpd
-		self._ValtnUpd = None
-
-	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
+	@CollUpd.deleter
+	def CollUpd(self):
+		del self._CollUpd
+		self._CollUpd = None
 
 	@property
 	def Crrctn(self):
@@ -114,13 +114,13 @@ class TradeReport22Choice(base_types._BaseFieldType):
 		self._Crrctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollUpd', type=TradeTransactionCollateralUpdate8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ValtnUpd', type=TradeValuationUpdate9, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='New', type=TradeNewTransaction13, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Mod', type=TradeTransactionCorrection13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='EarlyTermntn', type=TradeError9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Err', type=TradeError9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PosCmpnt', type=TradeTransactionPositionComponent8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='New', type=TradeNewTransaction13, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ValtnUpd', type=TradeValuationUpdate9, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Mod', type=TradeTransactionCorrection13, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollUpd', type=TradeTransactionCollateralUpdate8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Crrctn', type=TradeTransactionCorrection13, min=0, max=1, mutex_group=1, array=False),
 	))
 

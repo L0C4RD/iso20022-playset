@@ -1,21 +1,34 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import ISOTime
 import UnitOfMeasure10Code
-import Max4NumericText
 import TrueFalseIndicator
-import Max35Text
-import RentalRate1
-import Tax41
-import Max10NumericText
-import Amount21
-import ISODate
+import Max4NumericText
 import Address2
 import Max35NumericText
+import ImpliedCurrencyAndAmount
+import RentalRate1
+import ISOTime
+import Max35Text
+import ISODate
+import Max10NumericText
+import Amount21
+import Tax41
 
 class VehicleRentalInvoice3(base_types._BaseFieldType):
 
-	__slots__ = ["_OdmtrStart", "_Insrnc", "_ClssPrvdd", "_RegnNbInvcd", "_MdlInvcd", "_ChckOutDt", "_ChckOutTm", "_Drtn", "_Chrg", "_MakeInvcd", "_OdmtrRtr", "_RtrLctn", "_ClssInvcd", "_Tax", "_NoShow", "_DstncRate", "_SummryCmmdtyId", "_TtlDstnc", "_MakePrvdd", "_AddtlAmt", "_ChckInDt", "_RegnNbPrvdd", "_ChckInTm", "_MdlPrvdd", "_DstncUnit", "_Adjstd", "_FreeDstnc"]
+	__slots__ = ["_AddtlAmt", "_OdmtrStart", "_OdmtrRtr", "_DstncUnit", "_ClssPrvdd", "_RegnNbInvcd", "_Chrg", "_Tax", "_MdlPrvdd", "_ChckOutDt", "_MakePrvdd", "_ClssInvcd", "_SummryCmmdtyId", "_TtlDstnc", "_FreeDstnc", "_ChckInTm", "_RegnNbPrvdd", "_Adjstd", "_NoShow", "_DstncRate", "_RtrLctn", "_ChckOutTm", "_MakeInvcd", "_Drtn", "_Insrnc", "_MdlInvcd", "_ChckInDt"]
+	@property
+	def AddtlAmt(self):
+		return self._AddtlAmt
+
+	@AddtlAmt.setter
+	def AddtlAmt(self, value):
+		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
+
+	@AddtlAmt.deleter
+	def AddtlAmt(self):
+		del self._AddtlAmt
+		self._AddtlAmt = None
+
 	@property
 	def OdmtrStart(self):
 		return self._OdmtrStart
@@ -30,17 +43,30 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 		self._OdmtrStart = None
 
 	@property
-	def Insrnc(self):
-		return self._Insrnc
+	def OdmtrRtr(self):
+		return self._OdmtrRtr
 
-	@Insrnc.setter
-	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
+	@OdmtrRtr.setter
+	def OdmtrRtr(self, value):
+		self._OdmtrRtr = value if type(value) != auto else self.make_default("OdmtrRtr")
 
-	@Insrnc.deleter
-	def Insrnc(self):
-		del self._Insrnc
-		self._Insrnc = None
+	@OdmtrRtr.deleter
+	def OdmtrRtr(self):
+		del self._OdmtrRtr
+		self._OdmtrRtr = None
+
+	@property
+	def DstncUnit(self):
+		return self._DstncUnit
+
+	@DstncUnit.setter
+	def DstncUnit(self, value):
+		self._DstncUnit = value if type(value) != auto else self.make_default("DstncUnit")
+
+	@DstncUnit.deleter
+	def DstncUnit(self):
+		del self._DstncUnit
+		self._DstncUnit = None
 
 	@property
 	def ClssPrvdd(self):
@@ -69,58 +95,6 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 		self._RegnNbInvcd = None
 
 	@property
-	def MdlInvcd(self):
-		return self._MdlInvcd
-
-	@MdlInvcd.setter
-	def MdlInvcd(self, value):
-		self._MdlInvcd = value if type(value) != auto else self.make_default("MdlInvcd")
-
-	@MdlInvcd.deleter
-	def MdlInvcd(self):
-		del self._MdlInvcd
-		self._MdlInvcd = None
-
-	@property
-	def ChckOutDt(self):
-		return self._ChckOutDt
-
-	@ChckOutDt.setter
-	def ChckOutDt(self, value):
-		self._ChckOutDt = value if type(value) != auto else self.make_default("ChckOutDt")
-
-	@ChckOutDt.deleter
-	def ChckOutDt(self):
-		del self._ChckOutDt
-		self._ChckOutDt = None
-
-	@property
-	def ChckOutTm(self):
-		return self._ChckOutTm
-
-	@ChckOutTm.setter
-	def ChckOutTm(self, value):
-		self._ChckOutTm = value if type(value) != auto else self.make_default("ChckOutTm")
-
-	@ChckOutTm.deleter
-	def ChckOutTm(self):
-		del self._ChckOutTm
-		self._ChckOutTm = None
-
-	@property
-	def Drtn(self):
-		return self._Drtn
-
-	@Drtn.setter
-	def Drtn(self, value):
-		self._Drtn = value if type(value) != auto else self.make_default("Drtn")
-
-	@Drtn.deleter
-	def Drtn(self):
-		del self._Drtn
-		self._Drtn = None
-
-	@property
 	def Chrg(self):
 		return self._Chrg
 
@@ -132,58 +106,6 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 	def Chrg(self):
 		del self._Chrg
 		self._Chrg = None
-
-	@property
-	def MakeInvcd(self):
-		return self._MakeInvcd
-
-	@MakeInvcd.setter
-	def MakeInvcd(self, value):
-		self._MakeInvcd = value if type(value) != auto else self.make_default("MakeInvcd")
-
-	@MakeInvcd.deleter
-	def MakeInvcd(self):
-		del self._MakeInvcd
-		self._MakeInvcd = None
-
-	@property
-	def OdmtrRtr(self):
-		return self._OdmtrRtr
-
-	@OdmtrRtr.setter
-	def OdmtrRtr(self, value):
-		self._OdmtrRtr = value if type(value) != auto else self.make_default("OdmtrRtr")
-
-	@OdmtrRtr.deleter
-	def OdmtrRtr(self):
-		del self._OdmtrRtr
-		self._OdmtrRtr = None
-
-	@property
-	def RtrLctn(self):
-		return self._RtrLctn
-
-	@RtrLctn.setter
-	def RtrLctn(self, value):
-		self._RtrLctn = value if type(value) != auto else self.make_default("RtrLctn")
-
-	@RtrLctn.deleter
-	def RtrLctn(self):
-		del self._RtrLctn
-		self._RtrLctn = None
-
-	@property
-	def ClssInvcd(self):
-		return self._ClssInvcd
-
-	@ClssInvcd.setter
-	def ClssInvcd(self, value):
-		self._ClssInvcd = value if type(value) != auto else self.make_default("ClssInvcd")
-
-	@ClssInvcd.deleter
-	def ClssInvcd(self):
-		del self._ClssInvcd
-		self._ClssInvcd = None
 
 	@property
 	def Tax(self):
@@ -199,30 +121,56 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 		self._Tax = None
 
 	@property
-	def NoShow(self):
-		return self._NoShow
+	def MdlPrvdd(self):
+		return self._MdlPrvdd
 
-	@NoShow.setter
-	def NoShow(self, value):
-		self._NoShow = value if type(value) != auto else self.make_default("NoShow")
+	@MdlPrvdd.setter
+	def MdlPrvdd(self, value):
+		self._MdlPrvdd = value if type(value) != auto else self.make_default("MdlPrvdd")
 
-	@NoShow.deleter
-	def NoShow(self):
-		del self._NoShow
-		self._NoShow = None
+	@MdlPrvdd.deleter
+	def MdlPrvdd(self):
+		del self._MdlPrvdd
+		self._MdlPrvdd = None
 
 	@property
-	def DstncRate(self):
-		return self._DstncRate
+	def ChckOutDt(self):
+		return self._ChckOutDt
 
-	@DstncRate.setter
-	def DstncRate(self, value):
-		self._DstncRate = value if type(value) != auto else self.make_default("DstncRate")
+	@ChckOutDt.setter
+	def ChckOutDt(self, value):
+		self._ChckOutDt = value if type(value) != auto else self.make_default("ChckOutDt")
 
-	@DstncRate.deleter
-	def DstncRate(self):
-		del self._DstncRate
-		self._DstncRate = None
+	@ChckOutDt.deleter
+	def ChckOutDt(self):
+		del self._ChckOutDt
+		self._ChckOutDt = None
+
+	@property
+	def MakePrvdd(self):
+		return self._MakePrvdd
+
+	@MakePrvdd.setter
+	def MakePrvdd(self, value):
+		self._MakePrvdd = value if type(value) != auto else self.make_default("MakePrvdd")
+
+	@MakePrvdd.deleter
+	def MakePrvdd(self):
+		del self._MakePrvdd
+		self._MakePrvdd = None
+
+	@property
+	def ClssInvcd(self):
+		return self._ClssInvcd
+
+	@ClssInvcd.setter
+	def ClssInvcd(self, value):
+		self._ClssInvcd = value if type(value) != auto else self.make_default("ClssInvcd")
+
+	@ClssInvcd.deleter
+	def ClssInvcd(self):
+		del self._ClssInvcd
+		self._ClssInvcd = None
 
 	@property
 	def SummryCmmdtyId(self):
@@ -251,56 +199,17 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 		self._TtlDstnc = None
 
 	@property
-	def MakePrvdd(self):
-		return self._MakePrvdd
+	def FreeDstnc(self):
+		return self._FreeDstnc
 
-	@MakePrvdd.setter
-	def MakePrvdd(self, value):
-		self._MakePrvdd = value if type(value) != auto else self.make_default("MakePrvdd")
+	@FreeDstnc.setter
+	def FreeDstnc(self, value):
+		self._FreeDstnc = value if type(value) != auto else self.make_default("FreeDstnc")
 
-	@MakePrvdd.deleter
-	def MakePrvdd(self):
-		del self._MakePrvdd
-		self._MakePrvdd = None
-
-	@property
-	def AddtlAmt(self):
-		return self._AddtlAmt
-
-	@AddtlAmt.setter
-	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
-
-	@AddtlAmt.deleter
-	def AddtlAmt(self):
-		del self._AddtlAmt
-		self._AddtlAmt = None
-
-	@property
-	def ChckInDt(self):
-		return self._ChckInDt
-
-	@ChckInDt.setter
-	def ChckInDt(self, value):
-		self._ChckInDt = value if type(value) != auto else self.make_default("ChckInDt")
-
-	@ChckInDt.deleter
-	def ChckInDt(self):
-		del self._ChckInDt
-		self._ChckInDt = None
-
-	@property
-	def RegnNbPrvdd(self):
-		return self._RegnNbPrvdd
-
-	@RegnNbPrvdd.setter
-	def RegnNbPrvdd(self, value):
-		self._RegnNbPrvdd = value if type(value) != auto else self.make_default("RegnNbPrvdd")
-
-	@RegnNbPrvdd.deleter
-	def RegnNbPrvdd(self):
-		del self._RegnNbPrvdd
-		self._RegnNbPrvdd = None
+	@FreeDstnc.deleter
+	def FreeDstnc(self):
+		del self._FreeDstnc
+		self._FreeDstnc = None
 
 	@property
 	def ChckInTm(self):
@@ -316,30 +225,17 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 		self._ChckInTm = None
 
 	@property
-	def MdlPrvdd(self):
-		return self._MdlPrvdd
+	def RegnNbPrvdd(self):
+		return self._RegnNbPrvdd
 
-	@MdlPrvdd.setter
-	def MdlPrvdd(self, value):
-		self._MdlPrvdd = value if type(value) != auto else self.make_default("MdlPrvdd")
+	@RegnNbPrvdd.setter
+	def RegnNbPrvdd(self, value):
+		self._RegnNbPrvdd = value if type(value) != auto else self.make_default("RegnNbPrvdd")
 
-	@MdlPrvdd.deleter
-	def MdlPrvdd(self):
-		del self._MdlPrvdd
-		self._MdlPrvdd = None
-
-	@property
-	def DstncUnit(self):
-		return self._DstncUnit
-
-	@DstncUnit.setter
-	def DstncUnit(self, value):
-		self._DstncUnit = value if type(value) != auto else self.make_default("DstncUnit")
-
-	@DstncUnit.deleter
-	def DstncUnit(self):
-		del self._DstncUnit
-		self._DstncUnit = None
+	@RegnNbPrvdd.deleter
+	def RegnNbPrvdd(self):
+		del self._RegnNbPrvdd
+		self._RegnNbPrvdd = None
 
 	@property
 	def Adjstd(self):
@@ -355,45 +251,149 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 		self._Adjstd = None
 
 	@property
-	def FreeDstnc(self):
-		return self._FreeDstnc
+	def NoShow(self):
+		return self._NoShow
 
-	@FreeDstnc.setter
-	def FreeDstnc(self, value):
-		self._FreeDstnc = value if type(value) != auto else self.make_default("FreeDstnc")
+	@NoShow.setter
+	def NoShow(self, value):
+		self._NoShow = value if type(value) != auto else self.make_default("NoShow")
 
-	@FreeDstnc.deleter
-	def FreeDstnc(self):
-		del self._FreeDstnc
-		self._FreeDstnc = None
+	@NoShow.deleter
+	def NoShow(self):
+		del self._NoShow
+		self._NoShow = None
+
+	@property
+	def DstncRate(self):
+		return self._DstncRate
+
+	@DstncRate.setter
+	def DstncRate(self, value):
+		self._DstncRate = value if type(value) != auto else self.make_default("DstncRate")
+
+	@DstncRate.deleter
+	def DstncRate(self):
+		del self._DstncRate
+		self._DstncRate = None
+
+	@property
+	def RtrLctn(self):
+		return self._RtrLctn
+
+	@RtrLctn.setter
+	def RtrLctn(self, value):
+		self._RtrLctn = value if type(value) != auto else self.make_default("RtrLctn")
+
+	@RtrLctn.deleter
+	def RtrLctn(self):
+		del self._RtrLctn
+		self._RtrLctn = None
+
+	@property
+	def ChckOutTm(self):
+		return self._ChckOutTm
+
+	@ChckOutTm.setter
+	def ChckOutTm(self, value):
+		self._ChckOutTm = value if type(value) != auto else self.make_default("ChckOutTm")
+
+	@ChckOutTm.deleter
+	def ChckOutTm(self):
+		del self._ChckOutTm
+		self._ChckOutTm = None
+
+	@property
+	def MakeInvcd(self):
+		return self._MakeInvcd
+
+	@MakeInvcd.setter
+	def MakeInvcd(self, value):
+		self._MakeInvcd = value if type(value) != auto else self.make_default("MakeInvcd")
+
+	@MakeInvcd.deleter
+	def MakeInvcd(self):
+		del self._MakeInvcd
+		self._MakeInvcd = None
+
+	@property
+	def Drtn(self):
+		return self._Drtn
+
+	@Drtn.setter
+	def Drtn(self, value):
+		self._Drtn = value if type(value) != auto else self.make_default("Drtn")
+
+	@Drtn.deleter
+	def Drtn(self):
+		del self._Drtn
+		self._Drtn = None
+
+	@property
+	def Insrnc(self):
+		return self._Insrnc
+
+	@Insrnc.setter
+	def Insrnc(self, value):
+		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
+
+	@Insrnc.deleter
+	def Insrnc(self):
+		del self._Insrnc
+		self._Insrnc = None
+
+	@property
+	def MdlInvcd(self):
+		return self._MdlInvcd
+
+	@MdlInvcd.setter
+	def MdlInvcd(self, value):
+		self._MdlInvcd = value if type(value) != auto else self.make_default("MdlInvcd")
+
+	@MdlInvcd.deleter
+	def MdlInvcd(self):
+		del self._MdlInvcd
+		self._MdlInvcd = None
+
+	@property
+	def ChckInDt(self):
+		return self._ChckInDt
+
+	@ChckInDt.setter
+	def ChckInDt(self, value):
+		self._ChckInDt = value if type(value) != auto else self.make_default("ChckInDt")
+
+	@ChckInDt.deleter
+	def ChckInDt(self):
+		del self._ChckInDt
+		self._ChckInDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlAmt', type=Amount21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OdmtrStart', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OdmtrRtr', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstncUnit', type=UnitOfMeasure10Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssPrvdd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnNbInvcd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdlInvcd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckOutDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckOutTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chrg', type=RentalRate1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MakeInvcd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OdmtrRtr', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrLctn', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssInvcd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstncRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdlPrvdd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckOutDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MakePrvdd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssInvcd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MakePrvdd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlAmt', type=Amount21, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ChckInDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnNbPrvdd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckInTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdlPrvdd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstncUnit', type=UnitOfMeasure10Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adjstd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FreeDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckInTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnNbPrvdd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstncRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrLctn', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckOutTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MakeInvcd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdlInvcd', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckInDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

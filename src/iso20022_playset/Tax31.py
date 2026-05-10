@@ -1,26 +1,26 @@
 import base_types
 import PartyIdentification113
 import PercentageRate
-import ActiveCurrencyAndAmount
 import TaxCalculationInformation10
-import TaxType3Choice
 import CountryCode
+import TaxType3Choice
+import ActiveCurrencyAndAmount
 
 class Tax31(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_TaxClctnDtls", "_RcptId", "_ApldAmt", "_Ctry", "_ApldRate"]
+	__slots__ = ["_RcptId", "_TaxClctnDtls", "_Tp", "_Ctry", "_ApldAmt", "_ApldRate"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def RcptId(self):
+		return self._RcptId
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
 
 	@property
 	def TaxClctnDtls(self):
@@ -36,30 +36,17 @@ class Tax31(base_types._BaseFieldType):
 		self._TaxClctnDtls = None
 
 	@property
-	def RcptId(self):
-		return self._RcptId
+	def Tp(self):
+		return self._Tp
 
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
-
-	@property
-	def ApldAmt(self):
-		return self._ApldAmt
-
-	@ApldAmt.setter
-	def ApldAmt(self, value):
-		self._ApldAmt = value if type(value) != auto else self.make_default("ApldAmt")
-
-	@ApldAmt.deleter
-	def ApldAmt(self):
-		del self._ApldAmt
-		self._ApldAmt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Ctry(self):
@@ -75,6 +62,19 @@ class Tax31(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
+	def ApldAmt(self):
+		return self._ApldAmt
+
+	@ApldAmt.setter
+	def ApldAmt(self, value):
+		self._ApldAmt = value if type(value) != auto else self.make_default("ApldAmt")
+
+	@ApldAmt.deleter
+	def ApldAmt(self):
+		del self._ApldAmt
+		self._ApldAmt = None
+
+	@property
 	def ApldRate(self):
 		return self._ApldRate
 
@@ -88,11 +88,11 @@ class Tax31(base_types._BaseFieldType):
 		self._ApldRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TaxType3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TaxType3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApldRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

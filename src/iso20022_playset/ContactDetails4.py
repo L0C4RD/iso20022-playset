@@ -1,23 +1,23 @@
 import base_types
-import PhoneNumber
 import Max2048Text
 import Max140Text
+import PhoneNumber
 
 class ContactDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_Fctn", "_Nm", "_PhneNb"]
+	__slots__ = ["_Nm", "_Fctn", "_PhneNb", "_EmailAdr"]
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def Nm(self):
+		return self._Nm
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Fctn(self):
@@ -33,19 +33,6 @@ class ContactDetails4(base_types._BaseFieldType):
 		self._Fctn = None
 
 	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
 	def PhneNb(self):
 		return self._PhneNb
 
@@ -58,10 +45,23 @@ class ContactDetails4(base_types._BaseFieldType):
 		del self._PhneNb
 		self._PhneNb = None
 
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fctn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

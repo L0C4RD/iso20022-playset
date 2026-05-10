@@ -1,27 +1,66 @@
 import base_types
-import InvestorRequirements4
-import LossBearing2
-import ISODate
-import RiskTolerance1
 import OtherTargetMarket1
+import RiskTolerance1
+import LossBearing2
 import InvestorKnowledge1
+import ISODate
 import InvestorType2
+import InvestorRequirements4
 
 class TargetMarket4(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_KnwldgAndOrExprnc", "_InvstrTp", "_AbltyToBearLosses", "_ClntObjctvsAndNeeds", "_RefDt", "_RskTlrnce"]
+	__slots__ = ["_AbltyToBearLosses", "_RskTlrnce", "_RefDt", "_ClntObjctvsAndNeeds", "_KnwldgAndOrExprnc", "_InvstrTp", "_Othr"]
 	@property
-	def Othr(self):
-		return self._Othr
+	def AbltyToBearLosses(self):
+		return self._AbltyToBearLosses
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@AbltyToBearLosses.setter
+	def AbltyToBearLosses(self, value):
+		self._AbltyToBearLosses = value if type(value) != auto else self.make_default("AbltyToBearLosses")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@AbltyToBearLosses.deleter
+	def AbltyToBearLosses(self):
+		del self._AbltyToBearLosses
+		self._AbltyToBearLosses = None
+
+	@property
+	def RskTlrnce(self):
+		return self._RskTlrnce
+
+	@RskTlrnce.setter
+	def RskTlrnce(self, value):
+		self._RskTlrnce = value if type(value) != auto else self.make_default("RskTlrnce")
+
+	@RskTlrnce.deleter
+	def RskTlrnce(self):
+		del self._RskTlrnce
+		self._RskTlrnce = None
+
+	@property
+	def RefDt(self):
+		return self._RefDt
+
+	@RefDt.setter
+	def RefDt(self, value):
+		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+
+	@RefDt.deleter
+	def RefDt(self):
+		del self._RefDt
+		self._RefDt = None
+
+	@property
+	def ClntObjctvsAndNeeds(self):
+		return self._ClntObjctvsAndNeeds
+
+	@ClntObjctvsAndNeeds.setter
+	def ClntObjctvsAndNeeds(self, value):
+		self._ClntObjctvsAndNeeds = value if type(value) != auto else self.make_default("ClntObjctvsAndNeeds")
+
+	@ClntObjctvsAndNeeds.deleter
+	def ClntObjctvsAndNeeds(self):
+		del self._ClntObjctvsAndNeeds
+		self._ClntObjctvsAndNeeds = None
 
 	@property
 	def KnwldgAndOrExprnc(self):
@@ -50,64 +89,25 @@ class TargetMarket4(base_types._BaseFieldType):
 		self._InvstrTp = None
 
 	@property
-	def AbltyToBearLosses(self):
-		return self._AbltyToBearLosses
+	def Othr(self):
+		return self._Othr
 
-	@AbltyToBearLosses.setter
-	def AbltyToBearLosses(self, value):
-		self._AbltyToBearLosses = value if type(value) != auto else self.make_default("AbltyToBearLosses")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
 
-	@AbltyToBearLosses.deleter
-	def AbltyToBearLosses(self):
-		del self._AbltyToBearLosses
-		self._AbltyToBearLosses = None
-
-	@property
-	def ClntObjctvsAndNeeds(self):
-		return self._ClntObjctvsAndNeeds
-
-	@ClntObjctvsAndNeeds.setter
-	def ClntObjctvsAndNeeds(self, value):
-		self._ClntObjctvsAndNeeds = value if type(value) != auto else self.make_default("ClntObjctvsAndNeeds")
-
-	@ClntObjctvsAndNeeds.deleter
-	def ClntObjctvsAndNeeds(self):
-		del self._ClntObjctvsAndNeeds
-		self._ClntObjctvsAndNeeds = None
-
-	@property
-	def RefDt(self):
-		return self._RefDt
-
-	@RefDt.setter
-	def RefDt(self, value):
-		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
-
-	@RefDt.deleter
-	def RefDt(self):
-		del self._RefDt
-		self._RefDt = None
-
-	@property
-	def RskTlrnce(self):
-		return self._RskTlrnce
-
-	@RskTlrnce.setter
-	def RskTlrnce(self, value):
-		self._RskTlrnce = value if type(value) != auto else self.make_default("RskTlrnce")
-
-	@RskTlrnce.deleter
-	def RskTlrnce(self):
-		del self._RskTlrnce
-		self._RskTlrnce = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=OtherTargetMarket1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AbltyToBearLosses', type=LossBearing2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskTlrnce', type=RiskTolerance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntObjctvsAndNeeds', type=InvestorRequirements4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KnwldgAndOrExprnc', type=InvestorKnowledge1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrTp', type=InvestorType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AbltyToBearLosses', type=LossBearing2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntObjctvsAndNeeds', type=InvestorRequirements4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RskTlrnce', type=RiskTolerance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherTargetMarket1, min=0, max=None, mutex_group=None, array=True),
 	))
 

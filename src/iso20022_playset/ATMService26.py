@@ -1,10 +1,10 @@
 import base_types
-import Max35Text
 import ATMServiceType12Code
+import Max35Text
 
 class ATMService26(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSvcCd", "_SvcTp", "_HstSvcCd", "_SvcRef", "_SvcVarntId"]
+	__slots__ = ["_ATMSvcCd", "_HstSvcCd", "_SvcTp", "_SvcVarntId", "_SvcRef"]
 	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd
@@ -17,19 +17,6 @@ class ATMService26(base_types._BaseFieldType):
 	def ATMSvcCd(self):
 		del self._ATMSvcCd
 		self._ATMSvcCd = None
-
-	@property
-	def SvcTp(self):
-		return self._SvcTp
-
-	@SvcTp.setter
-	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
-
-	@SvcTp.deleter
-	def SvcTp(self):
-		del self._SvcTp
-		self._SvcTp = None
 
 	@property
 	def HstSvcCd(self):
@@ -45,17 +32,17 @@ class ATMService26(base_types._BaseFieldType):
 		self._HstSvcCd = None
 
 	@property
-	def SvcRef(self):
-		return self._SvcRef
+	def SvcTp(self):
+		return self._SvcTp
 
-	@SvcRef.setter
-	def SvcRef(self, value):
-		self._SvcRef = value if type(value) != auto else self.make_default("SvcRef")
+	@SvcTp.setter
+	def SvcTp(self, value):
+		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
 
-	@SvcRef.deleter
-	def SvcRef(self):
-		del self._SvcRef
-		self._SvcRef = None
+	@SvcTp.deleter
+	def SvcTp(self):
+		del self._SvcTp
+		self._SvcTp = None
 
 	@property
 	def SvcVarntId(self):
@@ -70,11 +57,24 @@ class ATMService26(base_types._BaseFieldType):
 		del self._SvcVarntId
 		self._SvcVarntId = None
 
+	@property
+	def SvcRef(self):
+		return self._SvcRef
+
+	@SvcRef.setter
+	def SvcRef(self, value):
+		self._SvcRef = value if type(value) != auto else self.make_default("SvcRef")
+
+	@SvcRef.deleter
+	def SvcRef(self):
+		del self._SvcRef
+		self._SvcRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcTp', type=ATMServiceType12Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=ATMServiceType12Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

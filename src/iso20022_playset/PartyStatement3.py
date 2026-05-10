@@ -1,6 +1,6 @@
 import base_types
-import PartyReferenceDataChange3
 import ISODate
+import PartyReferenceDataChange3
 
 class PartyStatement3(base_types._BaseFieldType):
 

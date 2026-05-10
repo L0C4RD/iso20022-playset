@@ -1,12 +1,12 @@
 import base_types
-import OriginalPaymentInformation10
-import Max35Text
 import StructuredRemittanceInformation18
+import OriginalPaymentInformation10
 import Max140Text
+import Max35Text
 
 class RemittanceInformation23(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPmtInf", "_Ustrd", "_Strd", "_RmtId"]
+	__slots__ = ["_OrgnlPmtInf", "_Strd", "_RmtId", "_Ustrd"]
 	@property
 	def OrgnlPmtInf(self):
 		return self._OrgnlPmtInf
@@ -19,19 +19,6 @@ class RemittanceInformation23(base_types._BaseFieldType):
 	def OrgnlPmtInf(self):
 		del self._OrgnlPmtInf
 		self._OrgnlPmtInf = None
-
-	@property
-	def Ustrd(self):
-		return self._Ustrd
-
-	@Ustrd.setter
-	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != auto else self.make_default("Ustrd")
-
-	@Ustrd.deleter
-	def Ustrd(self):
-		del self._Ustrd
-		self._Ustrd = None
 
 	@property
 	def Strd(self):
@@ -59,10 +46,23 @@ class RemittanceInformation23(base_types._BaseFieldType):
 		del self._RmtId
 		self._RmtId = None
 
+	@property
+	def Ustrd(self):
+		return self._Ustrd
+
+	@Ustrd.setter
+	def Ustrd(self, value):
+		self._Ustrd = value if type(value) != auto else self.make_default("Ustrd")
+
+	@Ustrd.deleter
+	def Ustrd(self):
+		del self._Ustrd
+		self._Ustrd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlPmtInf', type=OriginalPaymentInformation10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ustrd', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Strd', type=StructuredRemittanceInformation18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ustrd', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

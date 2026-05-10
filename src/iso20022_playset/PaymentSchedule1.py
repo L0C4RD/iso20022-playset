@@ -1,12 +1,25 @@
 import base_types
+import ISODate
+import Max35Text
 import ActiveCurrencyAndAmount
 import Max1025Text
-import Max35Text
-import ISODate
 
 class PaymentSchedule1(base_types._BaseFieldType):
 
-	__slots__ = ["_DueDt", "_Amt", "_AddtlInf", "_PmtSchdlId", "_XpctdDt"]
+	__slots__ = ["_AddtlInf", "_DueDt", "_Amt", "_PmtSchdlId", "_XpctdDt"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def DueDt(self):
 		return self._DueDt
@@ -32,19 +45,6 @@ class PaymentSchedule1(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
 
 	@property
 	def PmtSchdlId(self):
@@ -73,9 +73,9 @@ class PaymentSchedule1(base_types._BaseFieldType):
 		self._XpctdDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtSchdlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))

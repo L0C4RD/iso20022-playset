@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import ExternalAgreementType1Code
+import Max35Text
 
 class AgreementType1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import PartyReport1Choice
 import SupplementaryData1
+import PartyReport1Choice
 
 class FinancialSupervisedPartyIdentityReportV01(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
 import base_types
-import Max35Text
 import ISODateTime
 import Max15NumericText
 import DecimalNumber
+import Max35Text
 
 class GroupHeader103(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfChqs", "_CtrlSum", "_MsgId", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_CtrlSum", "_NbOfChqs", "_CreDtTm"]
 	@property
-	def NbOfChqs(self):
-		return self._NbOfChqs
+	def MsgId(self):
+		return self._MsgId
 
-	@NbOfChqs.setter
-	def NbOfChqs(self, value):
-		self._NbOfChqs = value if type(value) != auto else self.make_default("NbOfChqs")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@NbOfChqs.deleter
-	def NbOfChqs(self):
-		del self._NbOfChqs
-		self._NbOfChqs = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def CtrlSum(self):
@@ -34,17 +34,17 @@ class GroupHeader103(base_types._BaseFieldType):
 		self._CtrlSum = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def NbOfChqs(self):
+		return self._NbOfChqs
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@NbOfChqs.setter
+	def NbOfChqs(self, value):
+		self._NbOfChqs = value if type(value) != auto else self.make_default("NbOfChqs")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@NbOfChqs.deleter
+	def NbOfChqs(self):
+		del self._NbOfChqs
+		self._NbOfChqs = None
 
 	@property
 	def CreDtTm(self):
@@ -60,9 +60,9 @@ class GroupHeader103(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfChqs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfChqs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

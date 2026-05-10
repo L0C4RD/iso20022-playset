@@ -1,12 +1,25 @@
 import base_types
-import AlternatePartyIdentification9
-import PartyIdentification147Choice
 import RestrictedFINXMax16Text
+import AlternatePartyIdentification9
 import CashAccountIdentification12Choice
+import PartyIdentification147Choice
 
 class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AltrnId", "_CshAcct", "_PrcgId"]
+	__slots__ = ["_CshAcct", "_Id", "_AltrnId", "_PrcgId"]
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -34,19 +47,6 @@ class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
-	@property
 	def PrcgId(self):
 		return self._PrcgId
 
@@ -60,9 +60,9 @@ class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification12Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification147Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification12Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

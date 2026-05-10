@@ -1,22 +1,22 @@
 import base_types
-import Max35Text
 import Max140Text
+import Max35Text
 
 class PaymentInitiationSource1(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_Nm", "_Prvdr"]
+	__slots__ = ["_Prvdr", "_Nm", "_Vrsn"]
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def Prvdr(self):
+		return self._Prvdr
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != auto else self.make_default("Prvdr")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
 
 	@property
 	def Nm(self):
@@ -32,21 +32,21 @@ class PaymentInitiationSource1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Prvdr(self):
-		return self._Prvdr
+	def Vrsn(self):
+		return self._Vrsn
 
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != auto else self.make_default("Prvdr")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

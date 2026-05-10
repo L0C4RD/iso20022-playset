@@ -1,26 +1,26 @@
 import base_types
-import Max35Text
+import ActiveOrHistoricCurrencyCode
 import TrueFalseIndicator
+import ISINOct2015Identifier
+import Max35Text
 import Max350Text
 import CFIOct2015Identifier
-import ISINOct2015Identifier
-import ActiveOrHistoricCurrencyCode
 
 class SecurityInstrumentDescription17(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlCcy", "_Id", "_ClssfctnTp", "_FullNm", "_ShrtNm", "_CmmdtyDerivInd"]
+	__slots__ = ["_FullNm", "_Id", "_ShrtNm", "_CmmdtyDerivInd", "_ClssfctnTp", "_NtnlCcy"]
 	@property
-	def NtnlCcy(self):
-		return self._NtnlCcy
+	def FullNm(self):
+		return self._FullNm
 
-	@NtnlCcy.setter
-	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
+	@FullNm.setter
+	def FullNm(self, value):
+		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
 
-	@NtnlCcy.deleter
-	def NtnlCcy(self):
-		del self._NtnlCcy
-		self._NtnlCcy = None
+	@FullNm.deleter
+	def FullNm(self):
+		del self._FullNm
+		self._FullNm = None
 
 	@property
 	def Id(self):
@@ -34,32 +34,6 @@ class SecurityInstrumentDescription17(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
-
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
-
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
-
-	@property
-	def FullNm(self):
-		return self._FullNm
-
-	@FullNm.setter
-	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
-
-	@FullNm.deleter
-	def FullNm(self):
-		del self._FullNm
-		self._FullNm = None
 
 	@property
 	def ShrtNm(self):
@@ -87,12 +61,38 @@ class SecurityInstrumentDescription17(base_types._BaseFieldType):
 		del self._CmmdtyDerivInd
 		self._CmmdtyDerivInd = None
 
+	@property
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
+
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
+
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
+
+	@property
+	def NtnlCcy(self):
+		return self._NtnlCcy
+
+	@NtnlCcy.setter
+	def NtnlCcy(self, value):
+		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
+
+	@NtnlCcy.deleter
+	def NtnlCcy(self):
+		del self._NtnlCcy
+		self._NtnlCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmmdtyDerivInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

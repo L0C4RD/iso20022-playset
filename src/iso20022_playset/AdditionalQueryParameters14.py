@@ -1,6 +1,6 @@
 import base_types
-import Status22Choice
 import Reason20Choice
+import Status22Choice
 import SecurityIdentification20
 
 class AdditionalQueryParameters14(base_types._BaseFieldType):

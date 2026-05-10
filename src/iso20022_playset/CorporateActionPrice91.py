@@ -1,11 +1,24 @@
 import base_types
-import PriceFormat84Choice
-import IndicativeOrMarketPrice15Choice
 import PriceFormat83Choice
+import IndicativeOrMarketPrice15Choice
+import PriceFormat84Choice
 
 class CorporateActionPrice91(base_types._BaseFieldType):
 
-	__slots__ = ["_IndctvOrMktPric", "_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct", "_IssePric"]
+	__slots__ = ["_IssePric", "_IndctvOrMktPric", "_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct"]
+	@property
+	def IssePric(self):
+		return self._IssePric
+
+	@IssePric.setter
+	def IssePric(self, value):
+		self._IssePric = value if type(value) != auto else self.make_default("IssePric")
+
+	@IssePric.deleter
+	def IssePric(self):
+		del self._IssePric
+		self._IssePric = None
+
 	@property
 	def IndctvOrMktPric(self):
 		return self._IndctvOrMktPric
@@ -45,23 +58,10 @@ class CorporateActionPrice91(base_types._BaseFieldType):
 		del self._GncCshPricRcvdPerPdct
 		self._GncCshPricRcvdPerPdct = None
 
-	@property
-	def IssePric(self):
-		return self._IssePric
-
-	@IssePric.setter
-	def IssePric(self, value):
-		self._IssePric = value if type(value) != auto else self.make_default("IssePric")
-
-	@IssePric.deleter
-	def IssePric(self):
-		del self._IssePric
-		self._IssePric = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IssePric', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat84Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssePric', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

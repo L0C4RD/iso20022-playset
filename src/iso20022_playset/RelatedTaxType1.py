@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import TaxType3FormatChoice
+import ActiveCurrencyAndAmount
 
 class RelatedTaxType1(base_types._BaseFieldType):
 

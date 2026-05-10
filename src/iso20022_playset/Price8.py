@@ -1,24 +1,11 @@
 import base_types
-import PriceValueType3Code
 import TypeOfPrice1Code
+import PriceValueType3Code
 import PriceRateOrAmount3Choice
 
 class Price8(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_PricTp", "_ValTp"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_PricTp", "_ValTp", "_Val"]
 	@property
 	def PricTp(self):
 		return self._PricTp
@@ -45,9 +32,22 @@ class Price8(base_types._BaseFieldType):
 		del self._ValTp
 		self._ValTp = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=PriceRateOrAmount3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricTp', type=TypeOfPrice1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValTp', type=PriceValueType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceRateOrAmount3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

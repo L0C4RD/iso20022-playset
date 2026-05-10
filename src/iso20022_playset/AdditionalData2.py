@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import AdditionalData1
+import Max35Text
 
 class AdditionalData2(base_types._BaseFieldType):
 

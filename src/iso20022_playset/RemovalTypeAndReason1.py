@@ -1,11 +1,11 @@
 import base_types
 import GenericIdentification30
-import DateOrDateTimePeriod3Choice
 import Removal1Choice
+import DateOrDateTimePeriod3Choice
 
 class RemovalTypeAndReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_RmvlTp", "_Rsn", "_ExclsnPrd"]
+	__slots__ = ["_RmvlTp", "_ExclsnPrd", "_Rsn"]
 	@property
 	def RmvlTp(self):
 		return self._RmvlTp
@@ -20,19 +20,6 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 		self._RmvlTp = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
-	@property
 	def ExclsnPrd(self):
 		return self._ExclsnPrd
 
@@ -45,9 +32,22 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 		del self._ExclsnPrd
 		self._ExclsnPrd = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RmvlTp', type=Removal1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExclsnPrd', type=DateOrDateTimePeriod3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import PartyType4Code
 import PartyType3Code
+import PartyType4Code
+import Max35Text
 
 class GenericIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Id", "_ShrtNm", "_Tp"]
+	__slots__ = ["_ShrtNm", "_Id", "_Issr", "_Tp"]
 	@property
-	def Issr(self):
-		return self._Issr
+	def ShrtNm(self):
+		return self._ShrtNm
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
 
 	@property
 	def Id(self):
@@ -33,17 +33,17 @@ class GenericIdentification32(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def ShrtNm(self):
-		return self._ShrtNm
+	def Issr(self):
+		return self._Issr
 
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def Tp(self):
@@ -59,9 +59,9 @@ class GenericIdentification32(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=PartyType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyType4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PartyType3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

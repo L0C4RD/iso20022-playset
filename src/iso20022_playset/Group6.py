@@ -1,6 +1,6 @@
 import base_types
-import PartyAndCertificate6
 import Max4AlphaNumericText
+import PartyAndCertificate6
 
 class Group6(base_types._BaseFieldType):
 

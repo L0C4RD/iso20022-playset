@@ -1,24 +1,11 @@
 import base_types
-import FinancialInstrumentQuantity36Choice
 import GenericIdentification47
 import GenericIdentification39
+import FinancialInstrumentQuantity36Choice
 
 class QuantityBreakdown65(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSubBalTp", "_LotQty", "_LotNb"]
-	@property
-	def SctiesSubBalTp(self):
-		return self._SctiesSubBalTp
-
-	@SctiesSubBalTp.setter
-	def SctiesSubBalTp(self, value):
-		self._SctiesSubBalTp = value if type(value) != auto else self.make_default("SctiesSubBalTp")
-
-	@SctiesSubBalTp.deleter
-	def SctiesSubBalTp(self):
-		del self._SctiesSubBalTp
-		self._SctiesSubBalTp = None
-
+	__slots__ = ["_LotQty", "_SctiesSubBalTp", "_LotNb"]
 	@property
 	def LotQty(self):
 		return self._LotQty
@@ -31,6 +18,19 @@ class QuantityBreakdown65(base_types._BaseFieldType):
 	def LotQty(self):
 		del self._LotQty
 		self._LotQty = None
+
+	@property
+	def SctiesSubBalTp(self):
+		return self._SctiesSubBalTp
+
+	@SctiesSubBalTp.setter
+	def SctiesSubBalTp(self, value):
+		self._SctiesSubBalTp = value if type(value) != auto else self.make_default("SctiesSubBalTp")
+
+	@SctiesSubBalTp.deleter
+	def SctiesSubBalTp(self):
+		del self._SctiesSubBalTp
+		self._SctiesSubBalTp = None
 
 	@property
 	def LotNb(self):
@@ -46,8 +46,8 @@ class QuantityBreakdown65(base_types._BaseFieldType):
 		self._LotNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesSubBalTp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesSubBalTp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotNb', type=GenericIdentification39, min=0, max=1, mutex_group=None, array=False),
 	))
 

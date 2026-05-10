@@ -1,26 +1,26 @@
 import base_types
-import AdditionalBusinessProcessFormat21Choice
-import CorporateActionQuantity13
 import CorporateActionEventStageFormat15Choice
 import LotteryTypeFormat5Choice
-import IntermediateSecuritiesDistributionTypeFormat18Choice
+import CorporateActionQuantity13
 import CorporateActionDate93
+import IntermediateSecuritiesDistributionTypeFormat18Choice
+import AdditionalBusinessProcessFormat21Choice
 
 class CorporateAction77(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_SctiesQty", "_EvtStag", "_IntrmdtSctiesDstrbtnTp", "_AddtlBizPrcInd", "_LtryTp"]
+	__slots__ = ["_EvtStag", "_SctiesQty", "_IntrmdtSctiesDstrbtnTp", "_DtDtls", "_LtryTp", "_AddtlBizPrcInd"]
 	@property
-	def DtDtls(self):
-		return self._DtDtls
+	def EvtStag(self):
+		return self._EvtStag
 
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+	@EvtStag.setter
+	def EvtStag(self, value):
+		self._EvtStag = value if type(value) != auto else self.make_default("EvtStag")
 
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
+	@EvtStag.deleter
+	def EvtStag(self):
+		del self._EvtStag
+		self._EvtStag = None
 
 	@property
 	def SctiesQty(self):
@@ -36,19 +36,6 @@ class CorporateAction77(base_types._BaseFieldType):
 		self._SctiesQty = None
 
 	@property
-	def EvtStag(self):
-		return self._EvtStag
-
-	@EvtStag.setter
-	def EvtStag(self, value):
-		self._EvtStag = value if type(value) != auto else self.make_default("EvtStag")
-
-	@EvtStag.deleter
-	def EvtStag(self):
-		del self._EvtStag
-		self._EvtStag = None
-
-	@property
 	def IntrmdtSctiesDstrbtnTp(self):
 		return self._IntrmdtSctiesDstrbtnTp
 
@@ -62,17 +49,17 @@ class CorporateAction77(base_types._BaseFieldType):
 		self._IntrmdtSctiesDstrbtnTp = None
 
 	@property
-	def AddtlBizPrcInd(self):
-		return self._AddtlBizPrcInd
+	def DtDtls(self):
+		return self._DtDtls
 
-	@AddtlBizPrcInd.setter
-	def AddtlBizPrcInd(self, value):
-		self._AddtlBizPrcInd = value if type(value) != auto else self.make_default("AddtlBizPrcInd")
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
 
-	@AddtlBizPrcInd.deleter
-	def AddtlBizPrcInd(self):
-		del self._AddtlBizPrcInd
-		self._AddtlBizPrcInd = None
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
 
 	@property
 	def LtryTp(self):
@@ -87,12 +74,25 @@ class CorporateAction77(base_types._BaseFieldType):
 		del self._LtryTp
 		self._LtryTp = None
 
+	@property
+	def AddtlBizPrcInd(self):
+		return self._AddtlBizPrcInd
+
+	@AddtlBizPrcInd.setter
+	def AddtlBizPrcInd(self, value):
+		self._AddtlBizPrcInd = value if type(value) != auto else self.make_default("AddtlBizPrcInd")
+
+	@AddtlBizPrcInd.deleter
+	def AddtlBizPrcInd(self):
+		del self._AddtlBizPrcInd
+		self._AddtlBizPrcInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate93, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQty', type=CorporateActionQuantity13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQty', type=CorporateActionQuantity13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmdtSctiesDstrbtnTp', type=IntermediateSecuritiesDistributionTypeFormat18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat21Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate93, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat21Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

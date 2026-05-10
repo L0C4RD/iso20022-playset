@@ -4,19 +4,19 @@ import DecimalNumber
 
 class FinancialInstrumentQuantityChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_FaceAmt", "_AmtsdVal", "_Unit"]
+	__slots__ = ["_Unit", "_AmtsdVal", "_FaceAmt"]
 	@property
-	def FaceAmt(self):
-		return self._FaceAmt
+	def Unit(self):
+		return self._Unit
 
-	@FaceAmt.setter
-	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
 
-	@FaceAmt.deleter
-	def FaceAmt(self):
-		del self._FaceAmt
-		self._FaceAmt = None
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
 
 	@property
 	def AmtsdVal(self):
@@ -32,21 +32,21 @@ class FinancialInstrumentQuantityChoice(base_types._BaseFieldType):
 		self._AmtsdVal = None
 
 	@property
-	def Unit(self):
-		return self._Unit
+	def FaceAmt(self):
+		return self._FaceAmt
 
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+	@FaceAmt.setter
+	def FaceAmt(self, value):
+		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
 
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
+	@FaceAmt.deleter
+	def FaceAmt(self):
+		del self._FaceAmt
+		self._FaceAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

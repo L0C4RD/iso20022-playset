@@ -1,6 +1,6 @@
 import base_types
-import DateFormat3Choice
 import DateMode1Code
+import DateFormat3Choice
 
 class DateFormat1(base_types._BaseFieldType):
 

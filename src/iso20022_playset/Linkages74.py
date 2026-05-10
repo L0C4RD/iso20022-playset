@@ -1,8 +1,8 @@
 import base_types
-import References81Choice
 import ProcessingPosition8Choice
-import DocumentNumber5Choice
 import PartyIdentification127Choice
+import References81Choice
+import DocumentNumber5Choice
 
 class Linkages74(base_types._BaseFieldType):
 

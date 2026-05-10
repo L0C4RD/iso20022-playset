@@ -1,44 +1,18 @@
 import base_types
-import CryptographicKeyType3Code
-import ISODateTime
-import GenericInformation1
-import KeyUsage1Code
-import Max35Text
-import Max350Text
-import Max35Binary
-import Max256Text
 import GenericIdentification186
+import ISODateTime
+import CryptographicKeyType3Code
+import Max350Text
+import Max256Text
+import Max35Binary
+import KeyUsage1Code
+import GenericInformation1
 import ContentInformationType39
+import Max35Text
 
 class CryptographicKey18(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Tp", "_Vrsn", "_Fctn", "_AddtlMgmtInf", "_Id", "_KeyChckVal", "_SctyPrfl", "_ItmNb", "_CmpntWthAuthrsdAccs", "_KeyVal", "_AddtlId", "_PrtctdCmpntWthAuthrsdAccs", "_ActvtnDt", "_DeactvtnDt"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Vrsn", "_ActvtnDt", "_KeyVal", "_KeyChckVal", "_ItmNb", "_CmpntWthAuthrsdAccs", "_Nm", "_Id", "_SctyPrfl", "_Tp", "_PrtctdCmpntWthAuthrsdAccs", "_AddtlId", "_Fctn", "_AddtlMgmtInf", "_DeactvtnDt"]
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -53,43 +27,30 @@ class CryptographicKey18(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def Fctn(self):
-		return self._Fctn
+	def ActvtnDt(self):
+		return self._ActvtnDt
 
-	@Fctn.setter
-	def Fctn(self, value):
-		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
+	@ActvtnDt.setter
+	def ActvtnDt(self, value):
+		self._ActvtnDt = value if type(value) != auto else self.make_default("ActvtnDt")
 
-	@Fctn.deleter
-	def Fctn(self):
-		del self._Fctn
-		self._Fctn = None
-
-	@property
-	def AddtlMgmtInf(self):
-		return self._AddtlMgmtInf
-
-	@AddtlMgmtInf.setter
-	def AddtlMgmtInf(self, value):
-		self._AddtlMgmtInf = value if type(value) != auto else self.make_default("AddtlMgmtInf")
-
-	@AddtlMgmtInf.deleter
-	def AddtlMgmtInf(self):
-		del self._AddtlMgmtInf
-		self._AddtlMgmtInf = None
+	@ActvtnDt.deleter
+	def ActvtnDt(self):
+		del self._ActvtnDt
+		self._ActvtnDt = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def KeyVal(self):
+		return self._KeyVal
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@KeyVal.setter
+	def KeyVal(self, value):
+		self._KeyVal = value if type(value) != auto else self.make_default("KeyVal")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@KeyVal.deleter
+	def KeyVal(self):
+		del self._KeyVal
+		self._KeyVal = None
 
 	@property
 	def KeyChckVal(self):
@@ -103,19 +64,6 @@ class CryptographicKey18(base_types._BaseFieldType):
 	def KeyChckVal(self):
 		del self._KeyChckVal
 		self._KeyChckVal = None
-
-	@property
-	def SctyPrfl(self):
-		return self._SctyPrfl
-
-	@SctyPrfl.setter
-	def SctyPrfl(self, value):
-		self._SctyPrfl = value if type(value) != auto else self.make_default("SctyPrfl")
-
-	@SctyPrfl.deleter
-	def SctyPrfl(self):
-		del self._SctyPrfl
-		self._SctyPrfl = None
 
 	@property
 	def ItmNb(self):
@@ -144,30 +92,56 @@ class CryptographicKey18(base_types._BaseFieldType):
 		self._CmpntWthAuthrsdAccs = None
 
 	@property
-	def KeyVal(self):
-		return self._KeyVal
+	def Nm(self):
+		return self._Nm
 
-	@KeyVal.setter
-	def KeyVal(self, value):
-		self._KeyVal = value if type(value) != auto else self.make_default("KeyVal")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@KeyVal.deleter
-	def KeyVal(self):
-		del self._KeyVal
-		self._KeyVal = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
-	def AddtlId(self):
-		return self._AddtlId
+	def Id(self):
+		return self._Id
 
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def SctyPrfl(self):
+		return self._SctyPrfl
+
+	@SctyPrfl.setter
+	def SctyPrfl(self, value):
+		self._SctyPrfl = value if type(value) != auto else self.make_default("SctyPrfl")
+
+	@SctyPrfl.deleter
+	def SctyPrfl(self):
+		del self._SctyPrfl
+		self._SctyPrfl = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def PrtctdCmpntWthAuthrsdAccs(self):
@@ -183,17 +157,43 @@ class CryptographicKey18(base_types._BaseFieldType):
 		self._PrtctdCmpntWthAuthrsdAccs = None
 
 	@property
-	def ActvtnDt(self):
-		return self._ActvtnDt
+	def AddtlId(self):
+		return self._AddtlId
 
-	@ActvtnDt.setter
-	def ActvtnDt(self, value):
-		self._ActvtnDt = value if type(value) != auto else self.make_default("ActvtnDt")
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
 
-	@ActvtnDt.deleter
-	def ActvtnDt(self):
-		del self._ActvtnDt
-		self._ActvtnDt = None
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
+
+	@property
+	def Fctn(self):
+		return self._Fctn
+
+	@Fctn.setter
+	def Fctn(self, value):
+		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
+
+	@Fctn.deleter
+	def Fctn(self):
+		del self._Fctn
+		self._Fctn = None
+
+	@property
+	def AddtlMgmtInf(self):
+		return self._AddtlMgmtInf
+
+	@AddtlMgmtInf.setter
+	def AddtlMgmtInf(self, value):
+		self._AddtlMgmtInf = value if type(value) != auto else self.make_default("AddtlMgmtInf")
+
+	@AddtlMgmtInf.deleter
+	def AddtlMgmtInf(self):
+		del self._AddtlMgmtInf
+		self._AddtlMgmtInf = None
 
 	@property
 	def DeactvtnDt(self):
@@ -209,20 +209,20 @@ class CryptographicKey18(base_types._BaseFieldType):
 		self._DeactvtnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlMgmtInf', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyVal', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyChckVal', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpntWthAuthrsdAccs', type=GenericIdentification186, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='KeyVal', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdCmpntWthAuthrsdAccs', type=ContentInformationType39, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlMgmtInf', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DeactvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

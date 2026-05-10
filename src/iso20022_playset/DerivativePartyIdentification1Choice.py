@@ -1,6 +1,6 @@
 import base_types
-import CountryCode
 import CountrySubDivisionCode
+import CountryCode
 import LEIIdentifier
 
 class DerivativePartyIdentification1Choice(base_types._BaseFieldType):

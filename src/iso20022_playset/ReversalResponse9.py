@@ -1,26 +1,26 @@
 import base_types
-import Max35Text
 import ImpliedCurrencyAndAmount
 import TransactionIdentifier1
 import RetailerReversalResult7
 import PaymentReceipt6
 import Max140Text
+import Max35Text
 
 class ReversalResponse9(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrRefData", "_RvslTxRslt", "_Rct", "_RvsdAmt", "_POIRcncltnId", "_SaleTxId", "_POITxId", "_SaleRefId"]
+	__slots__ = ["_RvsdAmt", "_RvslTxRslt", "_SaleTxId", "_POIRcncltnId", "_IssrRefData", "_SaleRefId", "_POITxId", "_Rct"]
 	@property
-	def IssrRefData(self):
-		return self._IssrRefData
+	def RvsdAmt(self):
+		return self._RvsdAmt
 
-	@IssrRefData.setter
-	def IssrRefData(self, value):
-		self._IssrRefData = value if type(value) != auto else self.make_default("IssrRefData")
+	@RvsdAmt.setter
+	def RvsdAmt(self, value):
+		self._RvsdAmt = value if type(value) != auto else self.make_default("RvsdAmt")
 
-	@IssrRefData.deleter
-	def IssrRefData(self):
-		del self._IssrRefData
-		self._IssrRefData = None
+	@RvsdAmt.deleter
+	def RvsdAmt(self):
+		del self._RvsdAmt
+		self._RvsdAmt = None
 
 	@property
 	def RvslTxRslt(self):
@@ -36,30 +36,17 @@ class ReversalResponse9(base_types._BaseFieldType):
 		self._RvslTxRslt = None
 
 	@property
-	def Rct(self):
-		return self._Rct
+	def SaleTxId(self):
+		return self._SaleTxId
 
-	@Rct.setter
-	def Rct(self, value):
-		self._Rct = value if type(value) != auto else self.make_default("Rct")
+	@SaleTxId.setter
+	def SaleTxId(self, value):
+		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
 
-	@Rct.deleter
-	def Rct(self):
-		del self._Rct
-		self._Rct = None
-
-	@property
-	def RvsdAmt(self):
-		return self._RvsdAmt
-
-	@RvsdAmt.setter
-	def RvsdAmt(self, value):
-		self._RvsdAmt = value if type(value) != auto else self.make_default("RvsdAmt")
-
-	@RvsdAmt.deleter
-	def RvsdAmt(self):
-		del self._RvsdAmt
-		self._RvsdAmt = None
+	@SaleTxId.deleter
+	def SaleTxId(self):
+		del self._SaleTxId
+		self._SaleTxId = None
 
 	@property
 	def POIRcncltnId(self):
@@ -75,17 +62,30 @@ class ReversalResponse9(base_types._BaseFieldType):
 		self._POIRcncltnId = None
 
 	@property
-	def SaleTxId(self):
-		return self._SaleTxId
+	def IssrRefData(self):
+		return self._IssrRefData
 
-	@SaleTxId.setter
-	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
+	@IssrRefData.setter
+	def IssrRefData(self, value):
+		self._IssrRefData = value if type(value) != auto else self.make_default("IssrRefData")
 
-	@SaleTxId.deleter
-	def SaleTxId(self):
-		del self._SaleTxId
-		self._SaleTxId = None
+	@IssrRefData.deleter
+	def IssrRefData(self):
+		del self._IssrRefData
+		self._IssrRefData = None
+
+	@property
+	def SaleRefId(self):
+		return self._SaleRefId
+
+	@SaleRefId.setter
+	def SaleRefId(self, value):
+		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+
+	@SaleRefId.deleter
+	def SaleRefId(self):
+		del self._SaleRefId
+		self._SaleRefId = None
 
 	@property
 	def POITxId(self):
@@ -101,26 +101,26 @@ class ReversalResponse9(base_types._BaseFieldType):
 		self._POITxId = None
 
 	@property
-	def SaleRefId(self):
-		return self._SaleRefId
+	def Rct(self):
+		return self._Rct
 
-	@SaleRefId.setter
-	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+	@Rct.setter
+	def Rct(self, value):
+		self._Rct = value if type(value) != auto else self.make_default("Rct")
 
-	@SaleRefId.deleter
-	def SaleRefId(self):
-		del self._SaleRefId
-		self._SaleRefId = None
+	@Rct.deleter
+	def Rct(self):
+		del self._Rct
+		self._Rct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrRefData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvslTxRslt', type=RetailerReversalResult7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rct', type=PaymentReceipt6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RvsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvslTxRslt', type=RetailerReversalResult7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrRefData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rct', type=PaymentReceipt6, min=0, max=None, mutex_group=None, array=True),
 	))
 

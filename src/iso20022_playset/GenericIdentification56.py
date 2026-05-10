@@ -1,11 +1,24 @@
 import base_types
+import DecimalNumber
 import Exact4AlphaNumericText
 import Max35Text
-import DecimalNumber
 
 class GenericIdentification56(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SchmeNm", "_Bal", "_Issr"]
+	__slots__ = ["_Bal", "_Id", "_SchmeNm", "_Issr"]
+	@property
+	def Bal(self):
+		return self._Bal
+
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
+
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -33,19 +46,6 @@ class GenericIdentification56(base_types._BaseFieldType):
 		self._SchmeNm = None
 
 	@property
-	def Bal(self):
-		return self._Bal
-
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
-
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
-
-	@property
 	def Issr(self):
 		return self._Issr
 
@@ -59,9 +59,9 @@ class GenericIdentification56(base_types._BaseFieldType):
 		self._Issr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Bal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,30 +1,56 @@
 import base_types
+import Max70Text
 import DecimalNumber
-import AgreedRate3
 import ActiveCurrencyCode
-import SettlementDate8Code
+import AgreedRate3
 import SecurityIdentification18
-import TrueFalseIndicator
+import SettlementDate8Code
 import ActiveCurrencyAndAmount
 import ISODate
+import TrueFalseIndicator
 import ActiveCurrencyAnd13DecimalAmount
-import Max70Text
 
 class Trade10(base_types._BaseFieldType):
 
-	__slots__ = ["_ExctnPric", "_RskAmt", "_SctyId", "_LastQty", "_DltaInd", "_SttlmTp", "_AssoctdTradRef", "_FwdPts", "_ValDt", "_SttlmDt", "_ClctdCtrPtyCcyLastQty", "_FxgCcy", "_FxgDt", "_OptnInd", "_ValtnRate"]
+	__slots__ = ["_ValDt", "_SttlmDt", "_LastQty", "_RskAmt", "_SctyId", "_ClctdCtrPtyCcyLastQty", "_FwdPts", "_SttlmTp", "_OptnInd", "_DltaInd", "_AssoctdTradRef", "_FxgCcy", "_FxgDt", "_ValtnRate", "_ExctnPric"]
 	@property
-	def ExctnPric(self):
-		return self._ExctnPric
+	def ValDt(self):
+		return self._ValDt
 
-	@ExctnPric.setter
-	def ExctnPric(self, value):
-		self._ExctnPric = value if type(value) != auto else self.make_default("ExctnPric")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
 
-	@ExctnPric.deleter
-	def ExctnPric(self):
-		del self._ExctnPric
-		self._ExctnPric = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
+	def LastQty(self):
+		return self._LastQty
+
+	@LastQty.setter
+	def LastQty(self, value):
+		self._LastQty = value if type(value) != auto else self.make_default("LastQty")
+
+	@LastQty.deleter
+	def LastQty(self):
+		del self._LastQty
+		self._LastQty = None
 
 	@property
 	def RskAmt(self):
@@ -53,56 +79,17 @@ class Trade10(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
-	def LastQty(self):
-		return self._LastQty
+	def ClctdCtrPtyCcyLastQty(self):
+		return self._ClctdCtrPtyCcyLastQty
 
-	@LastQty.setter
-	def LastQty(self, value):
-		self._LastQty = value if type(value) != auto else self.make_default("LastQty")
+	@ClctdCtrPtyCcyLastQty.setter
+	def ClctdCtrPtyCcyLastQty(self, value):
+		self._ClctdCtrPtyCcyLastQty = value if type(value) != auto else self.make_default("ClctdCtrPtyCcyLastQty")
 
-	@LastQty.deleter
-	def LastQty(self):
-		del self._LastQty
-		self._LastQty = None
-
-	@property
-	def DltaInd(self):
-		return self._DltaInd
-
-	@DltaInd.setter
-	def DltaInd(self, value):
-		self._DltaInd = value if type(value) != auto else self.make_default("DltaInd")
-
-	@DltaInd.deleter
-	def DltaInd(self):
-		del self._DltaInd
-		self._DltaInd = None
-
-	@property
-	def SttlmTp(self):
-		return self._SttlmTp
-
-	@SttlmTp.setter
-	def SttlmTp(self, value):
-		self._SttlmTp = value if type(value) != auto else self.make_default("SttlmTp")
-
-	@SttlmTp.deleter
-	def SttlmTp(self):
-		del self._SttlmTp
-		self._SttlmTp = None
-
-	@property
-	def AssoctdTradRef(self):
-		return self._AssoctdTradRef
-
-	@AssoctdTradRef.setter
-	def AssoctdTradRef(self, value):
-		self._AssoctdTradRef = value if type(value) != auto else self.make_default("AssoctdTradRef")
-
-	@AssoctdTradRef.deleter
-	def AssoctdTradRef(self):
-		del self._AssoctdTradRef
-		self._AssoctdTradRef = None
+	@ClctdCtrPtyCcyLastQty.deleter
+	def ClctdCtrPtyCcyLastQty(self):
+		del self._ClctdCtrPtyCcyLastQty
+		self._ClctdCtrPtyCcyLastQty = None
 
 	@property
 	def FwdPts(self):
@@ -118,43 +105,56 @@ class Trade10(base_types._BaseFieldType):
 		self._FwdPts = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def SttlmTp(self):
+		return self._SttlmTp
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@SttlmTp.setter
+	def SttlmTp(self, value):
+		self._SttlmTp = value if type(value) != auto else self.make_default("SttlmTp")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
+	@SttlmTp.deleter
+	def SttlmTp(self):
+		del self._SttlmTp
+		self._SttlmTp = None
 
 	@property
-	def ClctdCtrPtyCcyLastQty(self):
-		return self._ClctdCtrPtyCcyLastQty
+	def OptnInd(self):
+		return self._OptnInd
 
-	@ClctdCtrPtyCcyLastQty.setter
-	def ClctdCtrPtyCcyLastQty(self, value):
-		self._ClctdCtrPtyCcyLastQty = value if type(value) != auto else self.make_default("ClctdCtrPtyCcyLastQty")
+	@OptnInd.setter
+	def OptnInd(self, value):
+		self._OptnInd = value if type(value) != auto else self.make_default("OptnInd")
 
-	@ClctdCtrPtyCcyLastQty.deleter
-	def ClctdCtrPtyCcyLastQty(self):
-		del self._ClctdCtrPtyCcyLastQty
-		self._ClctdCtrPtyCcyLastQty = None
+	@OptnInd.deleter
+	def OptnInd(self):
+		del self._OptnInd
+		self._OptnInd = None
+
+	@property
+	def DltaInd(self):
+		return self._DltaInd
+
+	@DltaInd.setter
+	def DltaInd(self, value):
+		self._DltaInd = value if type(value) != auto else self.make_default("DltaInd")
+
+	@DltaInd.deleter
+	def DltaInd(self):
+		del self._DltaInd
+		self._DltaInd = None
+
+	@property
+	def AssoctdTradRef(self):
+		return self._AssoctdTradRef
+
+	@AssoctdTradRef.setter
+	def AssoctdTradRef(self, value):
+		self._AssoctdTradRef = value if type(value) != auto else self.make_default("AssoctdTradRef")
+
+	@AssoctdTradRef.deleter
+	def AssoctdTradRef(self):
+		del self._AssoctdTradRef
+		self._AssoctdTradRef = None
 
 	@property
 	def FxgCcy(self):
@@ -183,19 +183,6 @@ class Trade10(base_types._BaseFieldType):
 		self._FxgDt = None
 
 	@property
-	def OptnInd(self):
-		return self._OptnInd
-
-	@OptnInd.setter
-	def OptnInd(self, value):
-		self._OptnInd = value if type(value) != auto else self.make_default("OptnInd")
-
-	@OptnInd.deleter
-	def OptnInd(self):
-		del self._OptnInd
-		self._OptnInd = None
-
-	@property
 	def ValtnRate(self):
 		return self._ValtnRate
 
@@ -208,21 +195,34 @@ class Trade10(base_types._BaseFieldType):
 		del self._ValtnRate
 		self._ValtnRate = None
 
+	@property
+	def ExctnPric(self):
+		return self._ExctnPric
+
+	@ExctnPric.setter
+	def ExctnPric(self, value):
+		self._ExctnPric = value if type(value) != auto else self.make_default("ExctnPric")
+
+	@ExctnPric.deleter
+	def ExctnPric(self):
+		del self._ExctnPric
+		self._ExctnPric = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExctnPric', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RskAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification18, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DltaInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTp', type=SettlementDate8Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdTradRef', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FwdPts', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification18, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClctdCtrPtyCcyLastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdPts', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTp', type=SettlementDate8Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DltaInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssoctdTradRef', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FxgCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FxgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnPric', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

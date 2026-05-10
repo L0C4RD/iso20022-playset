@@ -1,26 +1,26 @@
 import base_types
-import Max35Text
+import SecuritiesAccount20
+import ClearingSide1Code
 import AlternatePartyIdentification8
 import PartyTextInformation1
-import SecuritiesAccount20
+import Max35Text
 import PartyIdentification117Choice
-import ClearingSide1Code
 
 class PartyIdentificationAndAccount149(base_types._BaseFieldType):
 
-	__slots__ = ["_Sd", "_PrcgId", "_ClrAcct", "_AltrnId", "_AddtlInf", "_Id"]
+	__slots__ = ["_ClrAcct", "_PrcgId", "_AddtlInf", "_Sd", "_AltrnId", "_Id"]
 	@property
-	def Sd(self):
-		return self._Sd
+	def ClrAcct(self):
+		return self._ClrAcct
 
-	@Sd.setter
-	def Sd(self, value):
-		self._Sd = value if type(value) != auto else self.make_default("Sd")
+	@ClrAcct.setter
+	def ClrAcct(self, value):
+		self._ClrAcct = value if type(value) != auto else self.make_default("ClrAcct")
 
-	@Sd.deleter
-	def Sd(self):
-		del self._Sd
-		self._Sd = None
+	@ClrAcct.deleter
+	def ClrAcct(self):
+		del self._ClrAcct
+		self._ClrAcct = None
 
 	@property
 	def PrcgId(self):
@@ -36,17 +36,30 @@ class PartyIdentificationAndAccount149(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def ClrAcct(self):
-		return self._ClrAcct
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@ClrAcct.setter
-	def ClrAcct(self, value):
-		self._ClrAcct = value if type(value) != auto else self.make_default("ClrAcct")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@ClrAcct.deleter
-	def ClrAcct(self):
-		del self._ClrAcct
-		self._ClrAcct = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def Sd(self):
+		return self._Sd
+
+	@Sd.setter
+	def Sd(self, value):
+		self._Sd = value if type(value) != auto else self.make_default("Sd")
+
+	@Sd.deleter
+	def Sd(self):
+		del self._Sd
+		self._Sd = None
 
 	@property
 	def AltrnId(self):
@@ -62,19 +75,6 @@ class PartyIdentificationAndAccount149(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -88,11 +88,11 @@ class PartyIdentificationAndAccount149(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sd', type=ClearingSide1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sd', type=ClearingSide1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

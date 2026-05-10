@@ -1,6 +1,6 @@
 import base_types
-import MarketIdentification84
 import LEIIdentifier
+import MarketIdentification84
 
 class PlaceOfTradeIdentification1(base_types._BaseFieldType):
 

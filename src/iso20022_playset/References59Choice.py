@@ -1,11 +1,11 @@
 import base_types
-import GenericDocumentIdentification5
-import RestrictedFINXMax16Text
 import SettlementTypeAndIdentification22
+import RestrictedFINXMax16Text
+import GenericDocumentIdentification5
 
 class References59Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgTxId", "_OthrTxId", "_IntraPosMvmntId", "_SctiesSttlmTxId"]
+	__slots__ = ["_SctiesFincgTxId", "_SctiesSttlmTxId", "_IntraPosMvmntId", "_OthrTxId"]
 	@property
 	def SctiesFincgTxId(self):
 		return self._SctiesFincgTxId
@@ -20,17 +20,17 @@ class References59Choice(base_types._BaseFieldType):
 		self._SctiesFincgTxId = None
 
 	@property
-	def OthrTxId(self):
-		return self._OthrTxId
+	def SctiesSttlmTxId(self):
+		return self._SctiesSttlmTxId
 
-	@OthrTxId.setter
-	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
+	@SctiesSttlmTxId.setter
+	def SctiesSttlmTxId(self, value):
+		self._SctiesSttlmTxId = value if type(value) != auto else self.make_default("SctiesSttlmTxId")
 
-	@OthrTxId.deleter
-	def OthrTxId(self):
-		del self._OthrTxId
-		self._OthrTxId = None
+	@SctiesSttlmTxId.deleter
+	def SctiesSttlmTxId(self):
+		del self._SctiesSttlmTxId
+		self._SctiesSttlmTxId = None
 
 	@property
 	def IntraPosMvmntId(self):
@@ -46,22 +46,22 @@ class References59Choice(base_types._BaseFieldType):
 		self._IntraPosMvmntId = None
 
 	@property
-	def SctiesSttlmTxId(self):
-		return self._SctiesSttlmTxId
+	def OthrTxId(self):
+		return self._OthrTxId
 
-	@SctiesSttlmTxId.setter
-	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != auto else self.make_default("SctiesSttlmTxId")
+	@OthrTxId.setter
+	def OthrTxId(self, value):
+		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
 
-	@SctiesSttlmTxId.deleter
-	def SctiesSttlmTxId(self):
-		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
+	@OthrTxId.deleter
+	def OthrTxId(self):
+		del self._OthrTxId
+		self._OthrTxId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesFincgTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification5, min=0, max=1, mutex_group=1, array=False),
 	))
 

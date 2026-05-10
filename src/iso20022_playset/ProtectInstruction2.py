@@ -1,52 +1,26 @@
 import base_types
-import Max35Text
 import FinancialInstrumentQuantity18Choice
 import ProtectTransactionType2Code
-import Max15Text
+import Max35Text
 import ISODate
 import ProtectInstructionStatus3Code
+import Max15Text
 
 class ProtectInstruction2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctTxSts", "_UcvrdPrtctQty", "_TxTp", "_TxId", "_PrtctSfkpgAcct", "_PrtctDt"]
+	__slots__ = ["_PrtctDt", "_TxId", "_UcvrdPrtctQty", "_PrtctSfkpgAcct", "_TxTp", "_PrtctTxSts"]
 	@property
-	def PrtctTxSts(self):
-		return self._PrtctTxSts
+	def PrtctDt(self):
+		return self._PrtctDt
 
-	@PrtctTxSts.setter
-	def PrtctTxSts(self, value):
-		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
+	@PrtctDt.setter
+	def PrtctDt(self, value):
+		self._PrtctDt = value if type(value) != auto else self.make_default("PrtctDt")
 
-	@PrtctTxSts.deleter
-	def PrtctTxSts(self):
-		del self._PrtctTxSts
-		self._PrtctTxSts = None
-
-	@property
-	def UcvrdPrtctQty(self):
-		return self._UcvrdPrtctQty
-
-	@UcvrdPrtctQty.setter
-	def UcvrdPrtctQty(self, value):
-		self._UcvrdPrtctQty = value if type(value) != auto else self.make_default("UcvrdPrtctQty")
-
-	@UcvrdPrtctQty.deleter
-	def UcvrdPrtctQty(self):
-		del self._UcvrdPrtctQty
-		self._UcvrdPrtctQty = None
-
-	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@PrtctDt.deleter
+	def PrtctDt(self):
+		del self._PrtctDt
+		self._PrtctDt = None
 
 	@property
 	def TxId(self):
@@ -62,6 +36,19 @@ class ProtectInstruction2(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
+	def UcvrdPrtctQty(self):
+		return self._UcvrdPrtctQty
+
+	@UcvrdPrtctQty.setter
+	def UcvrdPrtctQty(self, value):
+		self._UcvrdPrtctQty = value if type(value) != auto else self.make_default("UcvrdPrtctQty")
+
+	@UcvrdPrtctQty.deleter
+	def UcvrdPrtctQty(self):
+		del self._UcvrdPrtctQty
+		self._UcvrdPrtctQty = None
+
+	@property
 	def PrtctSfkpgAcct(self):
 		return self._PrtctSfkpgAcct
 
@@ -75,24 +62,37 @@ class ProtectInstruction2(base_types._BaseFieldType):
 		self._PrtctSfkpgAcct = None
 
 	@property
-	def PrtctDt(self):
-		return self._PrtctDt
+	def TxTp(self):
+		return self._TxTp
 
-	@PrtctDt.setter
-	def PrtctDt(self, value):
-		self._PrtctDt = value if type(value) != auto else self.make_default("PrtctDt")
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
 
-	@PrtctDt.deleter
-	def PrtctDt(self):
-		del self._PrtctDt
-		self._PrtctDt = None
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
+	@property
+	def PrtctTxSts(self):
+		return self._PrtctTxSts
+
+	@PrtctTxSts.setter
+	def PrtctTxSts(self, value):
+		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
+
+	@PrtctTxSts.deleter
+	def PrtctTxSts(self):
+		del self._PrtctTxSts
+		self._PrtctTxSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UcvrdPrtctQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctSfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UcvrdPrtctQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctSfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

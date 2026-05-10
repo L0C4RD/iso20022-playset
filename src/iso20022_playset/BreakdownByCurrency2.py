@@ -1,8 +1,8 @@
 import base_types
+import CashInForecast5
+import ActiveOrHistoricCurrencyCode
 import NetCashForecast4
 import CashOutForecast5
-import ActiveOrHistoricCurrencyCode
-import CashInForecast5
 
 class BreakdownByCurrency2(base_types._BaseFieldType):
 

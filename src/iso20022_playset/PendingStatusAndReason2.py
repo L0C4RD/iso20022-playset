@@ -1,6 +1,6 @@
 import base_types
-import SettlementStatus16Choice
 import ProcessingStatus66Choice
+import SettlementStatus16Choice
 
 class PendingStatusAndReason2(base_types._BaseFieldType):
 

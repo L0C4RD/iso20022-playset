@@ -1,43 +1,43 @@
 import base_types
-import CollateralTransactionType1Choice
-import PartyIdentification178Choice
 import ClosingDate4Choice
-import DateAndDateTime2Choice
 import GenericIdentification30
+import DateAndDateTime2Choice
 import CollateralAccount3
-import ActiveOrHistoricCurrencyAndAmount
 import CollateralRole1Code
+import ActiveOrHistoricCurrencyAndAmount
+import PartyIdentification178Choice
 import ExposureType21Choice
+import CollateralTransactionType1Choice
 import BlockChainAddressWallet5
 
 class Obligation8(base_types._BaseFieldType):
 
-	__slots__ = ["_XpsrTp", "_ValtnDt", "_PtyA", "_CollTxTp", "_PtyB", "_SvcgPtyA", "_BlckChainAdrOrWllt", "_ClsgDt", "_ReqdExctnDt", "_XpsrAmt", "_SvcgPtyB", "_CollAcctId", "_SttlmPrc", "_CollSd"]
+	__slots__ = ["_ReqdExctnDt", "_SvcgPtyA", "_PtyA", "_XpsrTp", "_PtyB", "_BlckChainAdrOrWllt", "_ClsgDt", "_XpsrAmt", "_CollTxTp", "_CollSd", "_CollAcctId", "_SvcgPtyB", "_SttlmPrc", "_ValtnDt"]
 	@property
-	def XpsrTp(self):
-		return self._XpsrTp
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
 
-	@XpsrTp.setter
-	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
 
-	@XpsrTp.deleter
-	def XpsrTp(self):
-		del self._XpsrTp
-		self._XpsrTp = None
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
 
 	@property
-	def ValtnDt(self):
-		return self._ValtnDt
+	def SvcgPtyA(self):
+		return self._SvcgPtyA
 
-	@ValtnDt.setter
-	def ValtnDt(self, value):
-		self._ValtnDt = value if type(value) != auto else self.make_default("ValtnDt")
+	@SvcgPtyA.setter
+	def SvcgPtyA(self, value):
+		self._SvcgPtyA = value if type(value) != auto else self.make_default("SvcgPtyA")
 
-	@ValtnDt.deleter
-	def ValtnDt(self):
-		del self._ValtnDt
-		self._ValtnDt = None
+	@SvcgPtyA.deleter
+	def SvcgPtyA(self):
+		del self._SvcgPtyA
+		self._SvcgPtyA = None
 
 	@property
 	def PtyA(self):
@@ -53,17 +53,17 @@ class Obligation8(base_types._BaseFieldType):
 		self._PtyA = None
 
 	@property
-	def CollTxTp(self):
-		return self._CollTxTp
+	def XpsrTp(self):
+		return self._XpsrTp
 
-	@CollTxTp.setter
-	def CollTxTp(self, value):
-		self._CollTxTp = value if type(value) != auto else self.make_default("CollTxTp")
+	@XpsrTp.setter
+	def XpsrTp(self, value):
+		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
 
-	@CollTxTp.deleter
-	def CollTxTp(self):
-		del self._CollTxTp
-		self._CollTxTp = None
+	@XpsrTp.deleter
+	def XpsrTp(self):
+		del self._XpsrTp
+		self._XpsrTp = None
 
 	@property
 	def PtyB(self):
@@ -77,19 +77,6 @@ class Obligation8(base_types._BaseFieldType):
 	def PtyB(self):
 		del self._PtyB
 		self._PtyB = None
-
-	@property
-	def SvcgPtyA(self):
-		return self._SvcgPtyA
-
-	@SvcgPtyA.setter
-	def SvcgPtyA(self, value):
-		self._SvcgPtyA = value if type(value) != auto else self.make_default("SvcgPtyA")
-
-	@SvcgPtyA.deleter
-	def SvcgPtyA(self):
-		del self._SvcgPtyA
-		self._SvcgPtyA = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -118,19 +105,6 @@ class Obligation8(base_types._BaseFieldType):
 		self._ClsgDt = None
 
 	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
-
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
-
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
-
-	@property
 	def XpsrAmt(self):
 		return self._XpsrAmt
 
@@ -144,17 +118,30 @@ class Obligation8(base_types._BaseFieldType):
 		self._XpsrAmt = None
 
 	@property
-	def SvcgPtyB(self):
-		return self._SvcgPtyB
+	def CollTxTp(self):
+		return self._CollTxTp
 
-	@SvcgPtyB.setter
-	def SvcgPtyB(self, value):
-		self._SvcgPtyB = value if type(value) != auto else self.make_default("SvcgPtyB")
+	@CollTxTp.setter
+	def CollTxTp(self, value):
+		self._CollTxTp = value if type(value) != auto else self.make_default("CollTxTp")
 
-	@SvcgPtyB.deleter
-	def SvcgPtyB(self):
-		del self._SvcgPtyB
-		self._SvcgPtyB = None
+	@CollTxTp.deleter
+	def CollTxTp(self):
+		del self._CollTxTp
+		self._CollTxTp = None
+
+	@property
+	def CollSd(self):
+		return self._CollSd
+
+	@CollSd.setter
+	def CollSd(self, value):
+		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
+
+	@CollSd.deleter
+	def CollSd(self):
+		del self._CollSd
+		self._CollSd = None
 
 	@property
 	def CollAcctId(self):
@@ -170,6 +157,19 @@ class Obligation8(base_types._BaseFieldType):
 		self._CollAcctId = None
 
 	@property
+	def SvcgPtyB(self):
+		return self._SvcgPtyB
+
+	@SvcgPtyB.setter
+	def SvcgPtyB(self, value):
+		self._SvcgPtyB = value if type(value) != auto else self.make_default("SvcgPtyB")
+
+	@SvcgPtyB.deleter
+	def SvcgPtyB(self):
+		del self._SvcgPtyB
+		self._SvcgPtyB = None
+
+	@property
 	def SttlmPrc(self):
 		return self._SttlmPrc
 
@@ -183,32 +183,32 @@ class Obligation8(base_types._BaseFieldType):
 		self._SttlmPrc = None
 
 	@property
-	def CollSd(self):
-		return self._CollSd
+	def ValtnDt(self):
+		return self._ValtnDt
 
-	@CollSd.setter
-	def CollSd(self, value):
-		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
+	@ValtnDt.setter
+	def ValtnDt(self, value):
+		self._ValtnDt = value if type(value) != auto else self.make_default("ValtnDt")
 
-	@CollSd.deleter
-	def CollSd(self):
-		del self._CollSd
-		self._CollSd = None
+	@ValtnDt.deleter
+	def ValtnDt(self):
+		del self._ValtnDt
+		self._ValtnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpsrTp', type=ExposureType21Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyA', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollTxTp', type=CollateralTransactionType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyB', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcgPtyA', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyA', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsrTp', type=ExposureType21Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyB', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgDt', type=ClosingDate4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollTxTp', type=CollateralTransactionType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

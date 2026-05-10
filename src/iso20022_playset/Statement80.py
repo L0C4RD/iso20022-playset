@@ -1,27 +1,14 @@
 import base_types
-import Max35Text
-import UpdateType15Choice
-import Frequency25Choice
-import Number3Choice
 import Period7Choice
 import YesNoIndicator
+import Max35Text
+import Frequency25Choice
+import UpdateType15Choice
+import Number3Choice
 
 class Statement80(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_QryRef", "_StmtId", "_UpdTp", "_RptNb", "_Frqcy", "_StmtPrd"]
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
+	__slots__ = ["_QryRef", "_ActvtyInd", "_StmtId", "_UpdTp", "_StmtPrd", "_RptNb", "_Frqcy"]
 	@property
 	def QryRef(self):
 		return self._QryRef
@@ -34,6 +21,19 @@ class Statement80(base_types._BaseFieldType):
 	def QryRef(self):
 		del self._QryRef
 		self._QryRef = None
+
+	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def StmtId(self):
@@ -62,6 +62,19 @@ class Statement80(base_types._BaseFieldType):
 		self._UpdTp = None
 
 	@property
+	def StmtPrd(self):
+		return self._StmtPrd
+
+	@StmtPrd.setter
+	def StmtPrd(self, value):
+		self._StmtPrd = value if type(value) != auto else self.make_default("StmtPrd")
+
+	@StmtPrd.deleter
+	def StmtPrd(self):
+		del self._StmtPrd
+		self._StmtPrd = None
+
+	@property
 	def RptNb(self):
 		return self._RptNb
 
@@ -87,26 +100,13 @@ class Statement80(base_types._BaseFieldType):
 		del self._Frqcy
 		self._Frqcy = None
 
-	@property
-	def StmtPrd(self):
-		return self._StmtPrd
-
-	@StmtPrd.setter
-	def StmtPrd(self, value):
-		self._StmtPrd = value if type(value) != auto else self.make_default("StmtPrd")
-
-	@StmtPrd.deleter
-	def StmtPrd(self):
-		del self._StmtPrd
-		self._StmtPrd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtPrd', type=Period7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency25Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtPrd', type=Period7Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

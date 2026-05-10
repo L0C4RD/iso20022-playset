@@ -1,6 +1,6 @@
 import base_types
-import RateStatus1Code
 import ActiveCurrencyAnd13DecimalAmount
+import RateStatus1Code
 
 class AmountAndRateStatus1(base_types._BaseFieldType):
 

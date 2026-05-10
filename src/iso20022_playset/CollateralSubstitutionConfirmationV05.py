@@ -2,12 +2,25 @@ import base_types
 import Max35Text
 import Obligation9
 import Agreement4
-import CollateralConfirmation1
 import SupplementaryData1
+import CollateralConfirmation1
 
 class CollateralSubstitutionConfirmationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SplmtryData", "_Agrmt", "_Oblgtn", "_SbstitnConf"]
+	__slots__ = ["_Oblgtn", "_TxId", "_SplmtryData", "_Agrmt", "_SbstitnConf"]
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
+
 	@property
 	def TxId(self):
 		return self._TxId
@@ -48,19 +61,6 @@ class CollateralSubstitutionConfirmationV05(base_types._BaseFieldType):
 		self._Agrmt = None
 
 	@property
-	def Oblgtn(self):
-		return self._Oblgtn
-
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
-
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
-
-	@property
 	def SbstitnConf(self):
 		return self._SbstitnConf
 
@@ -74,10 +74,10 @@ class CollateralSubstitutionConfirmationV05(base_types._BaseFieldType):
 		self._SbstitnConf = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbstitnConf', type=CollateralConfirmation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

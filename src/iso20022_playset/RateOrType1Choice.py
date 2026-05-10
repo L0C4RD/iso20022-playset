@@ -4,20 +4,7 @@ import GenericIdentification1
 
 class RateOrType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Tp"]
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
+	__slots__ = ["_Tp", "_Rate"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,8 +18,21 @@ class RateOrType1Choice(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tp', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

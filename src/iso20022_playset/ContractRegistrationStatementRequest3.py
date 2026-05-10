@@ -1,39 +1,26 @@
 import base_types
 import BranchAndFinancialInstitutionIdentification8
-import Max35Text
+import TradeParty6
+import SupplementaryData1
 import ContractRegistrationStatementCriteria1
 import ReportingPeriod4
-import SupplementaryData1
-import TradeParty6
+import Max35Text
 
 class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptgPrd", "_RegnAgt", "_StmtReqId", "_RegdCtrctId", "_RtrCrit", "_RptgPty"]
+	__slots__ = ["_RegdCtrctId", "_RegnAgt", "_SplmtryData", "_StmtReqId", "_RptgPrd", "_RtrCrit", "_RptgPty"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def RegdCtrctId(self):
+		return self._RegdCtrctId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@RegdCtrctId.setter
+	def RegdCtrctId(self, value):
+		self._RegdCtrctId = value if type(value) != auto else self.make_default("RegdCtrctId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def RptgPrd(self):
-		return self._RptgPrd
-
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
-
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
+	@RegdCtrctId.deleter
+	def RegdCtrctId(self):
+		del self._RegdCtrctId
+		self._RegdCtrctId = None
 
 	@property
 	def RegnAgt(self):
@@ -49,6 +36,19 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 		self._RegnAgt = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def StmtReqId(self):
 		return self._StmtReqId
 
@@ -62,17 +62,17 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 		self._StmtReqId = None
 
 	@property
-	def RegdCtrctId(self):
-		return self._RegdCtrctId
+	def RptgPrd(self):
+		return self._RptgPrd
 
-	@RegdCtrctId.setter
-	def RegdCtrctId(self, value):
-		self._RegdCtrctId = value if type(value) != auto else self.make_default("RegdCtrctId")
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
 
-	@RegdCtrctId.deleter
-	def RegdCtrctId(self):
-		del self._RegdCtrctId
-		self._RegdCtrctId = None
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def RtrCrit(self):
@@ -101,11 +101,11 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 		self._RptgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegdCtrctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrCrit', type=ContractRegistrationStatementCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 	))

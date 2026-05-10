@@ -1,18 +1,18 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import ISOTime
-import LodgingService1Code
-import CreditDebit3Code
 import Max4NumericText
 import AdditionalData1
-import TrueFalseIndicator
+import ImpliedCurrencyAndAmount
+import LodgingService1Code
+import ISOTime
+import CreditDebit3Code
 import Max35Text
-import Tax41
 import ISODate
+import TrueFalseIndicator
+import Tax41
 
 class LodgingLineItem3(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbt", "_Dt", "_SubTtlAmt", "_PstChckOut", "_Tm", "_Drtn", "_UnitAmt", "_AddtlData", "_OthrTp", "_Tp", "_Tax"]
+	__slots__ = ["_CdtDbt", "_Tm", "_Dt", "_SubTtlAmt", "_OthrTp", "_Drtn", "_Tax", "_AddtlData", "_PstChckOut", "_Tp", "_UnitAmt"]
 	@property
 	def CdtDbt(self):
 		return self._CdtDbt
@@ -25,6 +25,19 @@ class LodgingLineItem3(base_types._BaseFieldType):
 	def CdtDbt(self):
 		del self._CdtDbt
 		self._CdtDbt = None
+
+	@property
+	def Tm(self):
+		return self._Tm
+
+	@Tm.setter
+	def Tm(self, value):
+		self._Tm = value if type(value) != auto else self.make_default("Tm")
+
+	@Tm.deleter
+	def Tm(self):
+		del self._Tm
+		self._Tm = None
 
 	@property
 	def Dt(self):
@@ -53,30 +66,17 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._SubTtlAmt = None
 
 	@property
-	def PstChckOut(self):
-		return self._PstChckOut
+	def OthrTp(self):
+		return self._OthrTp
 
-	@PstChckOut.setter
-	def PstChckOut(self, value):
-		self._PstChckOut = value if type(value) != auto else self.make_default("PstChckOut")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@PstChckOut.deleter
-	def PstChckOut(self):
-		del self._PstChckOut
-		self._PstChckOut = None
-
-	@property
-	def Tm(self):
-		return self._Tm
-
-	@Tm.setter
-	def Tm(self, value):
-		self._Tm = value if type(value) != auto else self.make_default("Tm")
-
-	@Tm.deleter
-	def Tm(self):
-		del self._Tm
-		self._Tm = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def Drtn(self):
@@ -92,17 +92,17 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._Drtn = None
 
 	@property
-	def UnitAmt(self):
-		return self._UnitAmt
+	def Tax(self):
+		return self._Tax
 
-	@UnitAmt.setter
-	def UnitAmt(self, value):
-		self._UnitAmt = value if type(value) != auto else self.make_default("UnitAmt")
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != auto else self.make_default("Tax")
 
-	@UnitAmt.deleter
-	def UnitAmt(self):
-		del self._UnitAmt
-		self._UnitAmt = None
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
 
 	@property
 	def AddtlData(self):
@@ -118,17 +118,17 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def PstChckOut(self):
+		return self._PstChckOut
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+	@PstChckOut.setter
+	def PstChckOut(self, value):
+		self._PstChckOut = value if type(value) != auto else self.make_default("PstChckOut")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
+	@PstChckOut.deleter
+	def PstChckOut(self):
+		del self._PstChckOut
+		self._PstChckOut = None
 
 	@property
 	def Tp(self):
@@ -144,29 +144,29 @@ class LodgingLineItem3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Tax(self):
-		return self._Tax
+	def UnitAmt(self):
+		return self._UnitAmt
 
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
+	@UnitAmt.setter
+	def UnitAmt(self, value):
+		self._UnitAmt = value if type(value) != auto else self.make_default("UnitAmt")
 
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
+	@UnitAmt.deleter
+	def UnitAmt(self):
+		del self._UnitAmt
+		self._UnitAmt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstChckOut', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=LodgingService1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PstChckOut', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=LodgingService1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

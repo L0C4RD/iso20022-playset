@@ -4,20 +4,7 @@ import PriceAndDirection1
 
 class PriceValueAndRate4(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Rate"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_Rate", "_Val"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -31,8 +18,21 @@ class PriceValueAndRate4(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=PriceAndDirection1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceAndDirection1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import DeemedRateType2Choice
 import RateStatus4Choice
+import DeemedRateType2Choice
 import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class RateTypeAndAmountAndStatus54(base_types._BaseFieldType):

@@ -1,6 +1,6 @@
 import base_types
-import ProprietaryReason4
 import GenericIdentification30
+import ProprietaryReason4
 
 class ProprietaryStatusAndReason6(base_types._BaseFieldType):
 

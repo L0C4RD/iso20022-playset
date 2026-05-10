@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import ActiveCurrencyAndAmount
+import Max35Text
 
 class Demand4(base_types._BaseFieldType):
 

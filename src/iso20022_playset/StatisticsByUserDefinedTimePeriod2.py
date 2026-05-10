@@ -1,12 +1,12 @@
 import base_types
-import PriceValueChange1
 import PercentageRate
-import DateOrDateTimePeriodChoice
 import PriceValue5
+import PriceValueChange1
+import DateOrDateTimePeriodChoice
 
 class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_PricChng", "_Prd", "_Yld", "_LwstPricVal", "_HghstPricVal"]
+	__slots__ = ["_PricChng", "_Yld", "_LwstPricVal", "_Prd", "_HghstPricVal"]
 	@property
 	def PricChng(self):
 		return self._PricChng
@@ -19,19 +19,6 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 	def PricChng(self):
 		del self._PricChng
 		self._PricChng = None
-
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
 
 	@property
 	def Yld(self):
@@ -60,6 +47,19 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 		self._LwstPricVal = None
 
 	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
+	@property
 	def HghstPricVal(self):
 		return self._HghstPricVal
 
@@ -74,9 +74,9 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=DateOrDateTimePeriodChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LwstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=DateOrDateTimePeriodChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
 	))
 

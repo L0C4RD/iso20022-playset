@@ -1,25 +1,25 @@
 import base_types
 import PostalAddress6
-import CountryCode
-import Party6Choice
 import ContactDetails2
 import Max140Text
+import CountryCode
+import Party6Choice
 
 class PartyIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_CtryOfRes", "_Id", "_CtctDtls", "_PstlAdr"]
+	__slots__ = ["_PstlAdr", "_CtryOfRes", "_Id", "_Nm", "_CtctDtls"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
 	def CtryOfRes(self):
@@ -48,6 +48,19 @@ class PartyIdentification32(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def CtctDtls(self):
 		return self._CtctDtls
 
@@ -60,24 +73,11 @@ class PartyIdentification32(base_types._BaseFieldType):
 		del self._CtctDtls
 		self._CtctDtls = None
 
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Party6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=ContactDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 	))
 

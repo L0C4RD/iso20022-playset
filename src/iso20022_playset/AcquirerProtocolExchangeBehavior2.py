@@ -1,25 +1,12 @@
 import base_types
+import FinancialCapture1Code
 import ExchangeConfiguration10
 import ExchangeConfiguration9
-import FinancialCapture1Code
 import CancellationProcess2Code
 
 class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
-	__slots__ = ["_CmpltnXchg", "_FinCaptr", "_BtchTrf", "_CxlXchg"]
-	@property
-	def CmpltnXchg(self):
-		return self._CmpltnXchg
-
-	@CmpltnXchg.setter
-	def CmpltnXchg(self, value):
-		self._CmpltnXchg = value if type(value) != auto else self.make_default("CmpltnXchg")
-
-	@CmpltnXchg.deleter
-	def CmpltnXchg(self):
-		del self._CmpltnXchg
-		self._CmpltnXchg = None
-
+	__slots__ = ["_FinCaptr", "_BtchTrf", "_CmpltnXchg", "_CxlXchg"]
 	@property
 	def FinCaptr(self):
 		return self._FinCaptr
@@ -47,6 +34,19 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 		self._BtchTrf = None
 
 	@property
+	def CmpltnXchg(self):
+		return self._CmpltnXchg
+
+	@CmpltnXchg.setter
+	def CmpltnXchg(self, value):
+		self._CmpltnXchg = value if type(value) != auto else self.make_default("CmpltnXchg")
+
+	@CmpltnXchg.deleter
+	def CmpltnXchg(self):
+		del self._CmpltnXchg
+		self._CmpltnXchg = None
+
+	@property
 	def CxlXchg(self):
 		return self._CxlXchg
 
@@ -60,9 +60,9 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 		self._CxlXchg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmpltnXchg', type=ExchangeConfiguration10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinCaptr', type=FinancialCapture1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrf', type=ExchangeConfiguration9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltnXchg', type=ExchangeConfiguration10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlXchg', type=CancellationProcess2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

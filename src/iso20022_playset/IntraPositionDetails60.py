@@ -1,30 +1,30 @@
 import base_types
-import FinancialInstrumentQuantity33Choice
-import ISODateTime
-import GenericIdentification37
-import PartyIdentification127Choice
 import DateAndDateTime2Choice
+import ISODateTime
+import SecuritiesBalanceType7Choice
+import FinancialInstrumentQuantity33Choice
+import PartyIdentification127Choice
+import GenericIdentification37
 import SecuritiesAccount19
 import Max35Text
-import SecurityIdentification19
-import SecuritiesBalanceType7Choice
 import BlockChainAddressWallet3
+import SecurityIdentification19
 
 class IntraPositionDetails60(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTo", "_AcctOwnr", "_LotNb", "_BalFr", "_PoolId", "_SttlmDt", "_FinInstrmId", "_SttlmQty", "_AckdStsTmStmp", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_LotNb", "_BalTo", "_SttlmQty", "_FinInstrmId", "_BalFr", "_SfkpgAcct", "_SttlmDt", "_PoolId", "_AckdStsTmStmp"]
 	@property
-	def BalTo(self):
-		return self._BalTo
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@BalTo.setter
-	def BalTo(self, value):
-		self._BalTo = value if type(value) != auto else self.make_default("BalTo")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@BalTo.deleter
-	def BalTo(self):
-		del self._BalTo
-		self._BalTo = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def AcctOwnr(self):
@@ -53,56 +53,17 @@ class IntraPositionDetails60(base_types._BaseFieldType):
 		self._LotNb = None
 
 	@property
-	def BalFr(self):
-		return self._BalFr
+	def BalTo(self):
+		return self._BalTo
 
-	@BalFr.setter
-	def BalFr(self, value):
-		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
+	@BalTo.setter
+	def BalTo(self, value):
+		self._BalTo = value if type(value) != auto else self.make_default("BalTo")
 
-	@BalFr.deleter
-	def BalFr(self):
-		del self._BalFr
-		self._BalFr = None
-
-	@property
-	def PoolId(self):
-		return self._PoolId
-
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
-
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
-
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
+	@BalTo.deleter
+	def BalTo(self):
+		del self._BalTo
+		self._BalTo = None
 
 	@property
 	def SttlmQty(self):
@@ -118,30 +79,30 @@ class IntraPositionDetails60(base_types._BaseFieldType):
 		self._SttlmQty = None
 
 	@property
-	def AckdStsTmStmp(self):
-		return self._AckdStsTmStmp
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@AckdStsTmStmp.setter
-	def AckdStsTmStmp(self, value):
-		self._AckdStsTmStmp = value if type(value) != auto else self.make_default("AckdStsTmStmp")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@AckdStsTmStmp.deleter
-	def AckdStsTmStmp(self):
-		del self._AckdStsTmStmp
-		self._AckdStsTmStmp = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def BalFr(self):
+		return self._BalFr
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@BalFr.setter
+	def BalFr(self, value):
+		self._BalFr = value if type(value) != auto else self.make_default("BalFr")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@BalFr.deleter
+	def BalFr(self):
+		del self._BalFr
+		self._BalFr = None
 
 	@property
 	def SfkpgAcct(self):
@@ -156,17 +117,56 @@ class IntraPositionDetails60(base_types._BaseFieldType):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
+	def PoolId(self):
+		return self._PoolId
+
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
+
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
+
+	@property
+	def AckdStsTmStmp(self):
+		return self._AckdStsTmStmp
+
+	@AckdStsTmStmp.setter
+	def AckdStsTmStmp(self, value):
+		self._AckdStsTmStmp = value if type(value) != auto else self.make_default("AckdStsTmStmp")
+
+	@AckdStsTmStmp.deleter
+	def AckdStsTmStmp(self):
+		del self._AckdStsTmStmp
+		self._AckdStsTmStmp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalTo', type=SecuritiesBalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotNb', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalFr', type=SecuritiesBalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTo', type=SecuritiesBalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AckdStsTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalFr', type=SecuritiesBalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AckdStsTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

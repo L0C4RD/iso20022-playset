@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
 import Party50Choice
 import YesNoIndicator
+import Max35Text
 
 class Case6(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Cretr", "_ReopCaseIndctn"]
+	__slots__ = ["_ReopCaseIndctn", "_Id", "_Cretr"]
+	@property
+	def ReopCaseIndctn(self):
+		return self._ReopCaseIndctn
+
+	@ReopCaseIndctn.setter
+	def ReopCaseIndctn(self, value):
+		self._ReopCaseIndctn = value if type(value) != auto else self.make_default("ReopCaseIndctn")
+
+	@ReopCaseIndctn.deleter
+	def ReopCaseIndctn(self):
+		del self._ReopCaseIndctn
+		self._ReopCaseIndctn = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -32,22 +45,9 @@ class Case6(base_types._BaseFieldType):
 		del self._Cretr
 		self._Cretr = None
 
-	@property
-	def ReopCaseIndctn(self):
-		return self._ReopCaseIndctn
-
-	@ReopCaseIndctn.setter
-	def ReopCaseIndctn(self, value):
-		self._ReopCaseIndctn = value if type(value) != auto else self.make_default("ReopCaseIndctn")
-
-	@ReopCaseIndctn.deleter
-	def ReopCaseIndctn(self):
-		del self._ReopCaseIndctn
-		self._ReopCaseIndctn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ReopCaseIndctn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReopCaseIndctn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

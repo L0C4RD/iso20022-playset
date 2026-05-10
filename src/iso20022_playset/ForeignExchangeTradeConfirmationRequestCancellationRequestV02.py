@@ -1,14 +1,14 @@
 import base_types
-import Max35Text
-import Header23
-import SupplementaryData1
-import MessageIdentification1
 import UnderlyingProductIdentifier1Code
+import SupplementaryData1
+import Max35Text
 import TradePartyIdentification9
+import MessageIdentification1
+import Header23
 
 class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TradId", "_CtrPtyRoleId", "_Hdr", "_CxlReqId", "_TradgSdId", "_UndrlygPdctTp"]
+	__slots__ = ["_SplmtryData", "_TradgSdId", "_CxlReqId", "_UndrlygPdctTp", "_TradId", "_CtrPtyRoleId", "_Hdr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,6 +21,45 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def TradgSdId(self):
+		return self._TradgSdId
+
+	@TradgSdId.setter
+	def TradgSdId(self, value):
+		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
+
+	@TradgSdId.deleter
+	def TradgSdId(self):
+		del self._TradgSdId
+		self._TradgSdId = None
+
+	@property
+	def CxlReqId(self):
+		return self._CxlReqId
+
+	@CxlReqId.setter
+	def CxlReqId(self, value):
+		self._CxlReqId = value if type(value) != auto else self.make_default("CxlReqId")
+
+	@CxlReqId.deleter
+	def CxlReqId(self):
+		del self._CxlReqId
+		self._CxlReqId = None
+
+	@property
+	def UndrlygPdctTp(self):
+		return self._UndrlygPdctTp
+
+	@UndrlygPdctTp.setter
+	def UndrlygPdctTp(self, value):
+		self._UndrlygPdctTp = value if type(value) != auto else self.make_default("UndrlygPdctTp")
+
+	@UndrlygPdctTp.deleter
+	def UndrlygPdctTp(self):
+		del self._UndrlygPdctTp
+		self._UndrlygPdctTp = None
 
 	@property
 	def TradId(self):
@@ -61,52 +100,13 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 		del self._Hdr
 		self._Hdr = None
 
-	@property
-	def CxlReqId(self):
-		return self._CxlReqId
-
-	@CxlReqId.setter
-	def CxlReqId(self, value):
-		self._CxlReqId = value if type(value) != auto else self.make_default("CxlReqId")
-
-	@CxlReqId.deleter
-	def CxlReqId(self):
-		del self._CxlReqId
-		self._CxlReqId = None
-
-	@property
-	def TradgSdId(self):
-		return self._TradgSdId
-
-	@TradgSdId.setter
-	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
-
-	@TradgSdId.deleter
-	def TradgSdId(self):
-		del self._TradgSdId
-		self._TradgSdId = None
-
-	@property
-	def UndrlygPdctTp(self):
-		return self._UndrlygPdctTp
-
-	@UndrlygPdctTp.setter
-	def UndrlygPdctTp(self, value):
-		self._UndrlygPdctTp = value if type(value) != auto else self.make_default("UndrlygPdctTp")
-
-	@UndrlygPdctTp.deleter
-	def UndrlygPdctTp(self):
-		del self._UndrlygPdctTp
-		self._UndrlygPdctTp = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlReqId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygPdctTp', type=UnderlyingProductIdentifier1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRoleId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlReqId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygPdctTp', type=UnderlyingProductIdentifier1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

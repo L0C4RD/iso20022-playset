@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import LimitType3Code
+import Max35Text
 
 class LimitType1Choice(base_types._BaseFieldType):
 

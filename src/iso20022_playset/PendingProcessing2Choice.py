@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import AwaitingAffirmationReason2
+import NoReasonCode
 
 class PendingProcessing2Choice(base_types._BaseFieldType):
 

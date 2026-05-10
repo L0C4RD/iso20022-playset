@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
+import Max35NumericText
 import ISOTime
 import ISODate
-import Max35NumericText
+import Max35Text
 
 class DepartureOrArrival2(base_types._BaseFieldType):
 
-	__slots__ = ["_RouteNb", "_Tm", "_CrrierCd", "_Dt"]
-	@property
-	def RouteNb(self):
-		return self._RouteNb
-
-	@RouteNb.setter
-	def RouteNb(self, value):
-		self._RouteNb = value if type(value) != auto else self.make_default("RouteNb")
-
-	@RouteNb.deleter
-	def RouteNb(self):
-		del self._RouteNb
-		self._RouteNb = None
-
+	__slots__ = ["_Tm", "_RouteNb", "_CrrierCd", "_Dt"]
 	@property
 	def Tm(self):
 		return self._Tm
@@ -32,6 +19,19 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 	def Tm(self):
 		del self._Tm
 		self._Tm = None
+
+	@property
+	def RouteNb(self):
+		return self._RouteNb
+
+	@RouteNb.setter
+	def RouteNb(self, value):
+		self._RouteNb = value if type(value) != auto else self.make_default("RouteNb")
+
+	@RouteNb.deleter
+	def RouteNb(self):
+		del self._RouteNb
+		self._RouteNb = None
 
 	@property
 	def CrrierCd(self):
@@ -60,8 +60,8 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 		self._Dt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RouteNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RouteNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,6 +1,6 @@
 import base_types
-import AmountPrice3
 import PercentagePrice2
+import AmountPrice3
 
 class PriceFormat77Choice(base_types._BaseFieldType):
 

@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
 import ActionType8Code
 import Max256Text
+import Max35Text
 
 class RecommendationAction1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dtls", "_OthrActn", "_Actn"]
+	__slots__ = ["_Actn", "_Dtls", "_OthrActn"]
+	@property
+	def Actn(self):
+		return self._Actn
+
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
+
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
+
 	@property
 	def Dtls(self):
 		return self._Dtls
@@ -32,22 +45,9 @@ class RecommendationAction1(base_types._BaseFieldType):
 		del self._OthrActn
 		self._OthrActn = None
 
-	@property
-	def Actn(self):
-		return self._Actn
-
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
-
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Actn', type=ActionType8Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dtls', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrActn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Actn', type=ActionType8Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

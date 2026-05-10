@@ -1,12 +1,12 @@
 import base_types
 import SupplementaryData1
 import DebtorActivation5
-import ElectronicInvoice1
 import ActivationHeader3
+import ElectronicInvoice1
 
 class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_DbtrActvtn", "_ElctrncInvcData", "_Hdr"]
+	__slots__ = ["_SplmtryData", "_ElctrncInvcData", "_Hdr", "_DbtrActvtn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -19,19 +19,6 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def DbtrActvtn(self):
-		return self._DbtrActvtn
-
-	@DbtrActvtn.setter
-	def DbtrActvtn(self, value):
-		self._DbtrActvtn = value if type(value) != auto else self.make_default("DbtrActvtn")
-
-	@DbtrActvtn.deleter
-	def DbtrActvtn(self):
-		del self._DbtrActvtn
-		self._DbtrActvtn = None
 
 	@property
 	def ElctrncInvcData(self):
@@ -59,10 +46,23 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def DbtrActvtn(self):
+		return self._DbtrActvtn
+
+	@DbtrActvtn.setter
+	def DbtrActvtn(self, value):
+		self._DbtrActvtn = value if type(value) != auto else self.make_default("DbtrActvtn")
+
+	@DbtrActvtn.deleter
+	def DbtrActvtn(self):
+		del self._DbtrActvtn
+		self._DbtrActvtn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DbtrActvtn', type=DebtorActivation5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ElctrncInvcData', type=ElectronicInvoice1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=ActivationHeader3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrActvtn', type=DebtorActivation5, min=1, max=None, mutex_group=None, array=True),
 	))
 

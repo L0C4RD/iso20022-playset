@@ -1,24 +1,11 @@
 import base_types
-import ContentInformationType38
 import TMSHeader1
+import ContentInformationType38
 import MaintenanceDelegationResponse8
 
 class MaintenanceDelegationResponseV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MntncDlgtnRspn", "_SctyTrlr", "_Hdr"]
-	@property
-	def MntncDlgtnRspn(self):
-		return self._MntncDlgtnRspn
-
-	@MntncDlgtnRspn.setter
-	def MntncDlgtnRspn(self, value):
-		self._MntncDlgtnRspn = value if type(value) != auto else self.make_default("MntncDlgtnRspn")
-
-	@MntncDlgtnRspn.deleter
-	def MntncDlgtnRspn(self):
-		del self._MntncDlgtnRspn
-		self._MntncDlgtnRspn = None
-
+	__slots__ = ["_SctyTrlr", "_MntncDlgtnRspn", "_Hdr"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -31,6 +18,19 @@ class MaintenanceDelegationResponseV08(base_types._BaseFieldType):
 	def SctyTrlr(self):
 		del self._SctyTrlr
 		self._SctyTrlr = None
+
+	@property
+	def MntncDlgtnRspn(self):
+		return self._MntncDlgtnRspn
+
+	@MntncDlgtnRspn.setter
+	def MntncDlgtnRspn(self, value):
+		self._MntncDlgtnRspn = value if type(value) != auto else self.make_default("MntncDlgtnRspn")
+
+	@MntncDlgtnRspn.deleter
+	def MntncDlgtnRspn(self):
+		del self._MntncDlgtnRspn
+		self._MntncDlgtnRspn = None
 
 	@property
 	def Hdr(self):
@@ -46,8 +46,8 @@ class MaintenanceDelegationResponseV08(base_types._BaseFieldType):
 		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MntncDlgtnRspn', type=MaintenanceDelegationResponse8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MntncDlgtnRspn', type=MaintenanceDelegationResponse8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

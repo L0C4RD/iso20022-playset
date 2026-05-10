@@ -1,25 +1,12 @@
 import base_types
-import ActiveCurrencyAndAmount
+import CollateralPool1Code
 import SNA2008SectorIdentifier
 import CFIOct2015Identifier
-import CollateralPool1Code
+import ActiveCurrencyAndAmount
 
 class CollateralValuation7(base_types._BaseFieldType):
 
-	__slots__ = ["_NmnlAmt", "_Tp", "_PoolSts", "_Sctr"]
-	@property
-	def NmnlAmt(self):
-		return self._NmnlAmt
-
-	@NmnlAmt.setter
-	def NmnlAmt(self, value):
-		self._NmnlAmt = value if type(value) != auto else self.make_default("NmnlAmt")
-
-	@NmnlAmt.deleter
-	def NmnlAmt(self):
-		del self._NmnlAmt
-		self._NmnlAmt = None
-
+	__slots__ = ["_Tp", "_PoolSts", "_NmnlAmt", "_Sctr"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -47,6 +34,19 @@ class CollateralValuation7(base_types._BaseFieldType):
 		self._PoolSts = None
 
 	@property
+	def NmnlAmt(self):
+		return self._NmnlAmt
+
+	@NmnlAmt.setter
+	def NmnlAmt(self, value):
+		self._NmnlAmt = value if type(value) != auto else self.make_default("NmnlAmt")
+
+	@NmnlAmt.deleter
+	def NmnlAmt(self):
+		del self._NmnlAmt
+		self._NmnlAmt = None
+
+	@property
 	def Sctr(self):
 		return self._Sctr
 
@@ -60,9 +60,9 @@ class CollateralValuation7(base_types._BaseFieldType):
 		self._Sctr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolSts', type=CollateralPool1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sctr', type=SNA2008SectorIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

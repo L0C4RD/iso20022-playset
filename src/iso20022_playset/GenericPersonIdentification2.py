@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
 import PersonIdentificationSchemeName1Choice
 import Max256Text
+import Max35Text
 
 class GenericPersonIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Id", "_SchmeNm"]
+	__slots__ = ["_SchmeNm", "_Id", "_Issr"]
 	@property
-	def Issr(self):
-		return self._Issr
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	@property
 	def Id(self):
@@ -33,21 +33,21 @@ class GenericPersonIdentification2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
+	def Issr(self):
+		return self._Issr
 
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=PersonIdentificationSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

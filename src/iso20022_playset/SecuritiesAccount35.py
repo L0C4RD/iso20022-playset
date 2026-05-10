@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
-import PurposeCode9Choice
 import Max70Text
+import PurposeCode9Choice
+import Max35Text
 
 class SecuritiesAccount35(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_Tp"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Nm", "_Id", "_Tp"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -31,6 +18,19 @@ class SecuritiesAccount35(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Tp(self):
@@ -46,8 +46,8 @@ class SecuritiesAccount35(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PurposeCode9Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

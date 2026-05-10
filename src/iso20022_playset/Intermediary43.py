@@ -1,12 +1,12 @@
 import base_types
-import ContactIdentification2
 import PartyIdentification139
 import Role4Choice
 import Account27
+import ContactIdentification2
 
 class Intermediary43(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Role", "_Acct", "_CtctPrsn"]
+	__slots__ = ["_Id", "_Acct", "_Role", "_CtctPrsn"]
 	@property
 	def Id(self):
 		return self._Id
@@ -21,19 +21,6 @@ class Intermediary43(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Role(self):
-		return self._Role
-
-	@Role.setter
-	def Role(self, value):
-		self._Role = value if type(value) != auto else self.make_default("Role")
-
-	@Role.deleter
-	def Role(self):
-		del self._Role
-		self._Role = None
-
-	@property
 	def Acct(self):
 		return self._Acct
 
@@ -45,6 +32,19 @@ class Intermediary43(base_types._BaseFieldType):
 	def Acct(self):
 		del self._Acct
 		self._Acct = None
+
+	@property
+	def Role(self):
+		return self._Role
+
+	@Role.setter
+	def Role(self, value):
+		self._Role = value if type(value) != auto else self.make_default("Role")
+
+	@Role.deleter
+	def Role(self):
+		del self._Role
+		self._Role = None
 
 	@property
 	def CtctPrsn(self):
@@ -61,8 +61,8 @@ class Intermediary43(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Role', type=Role4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Role', type=Role4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
 

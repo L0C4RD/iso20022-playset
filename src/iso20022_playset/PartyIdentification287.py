@@ -1,31 +1,31 @@
 import base_types
-import ISOMax3ACountryCode
-import Credentials3
-import AdditionalData1
-import Max35Text
-import CardholderName3
-import LocalData15
-import FinancialInstitution8
 import Max2NumericText
-import ISODate
+import CardholderName3
+import AdditionalData1
+import FinancialInstitution8
 import Address2
+import ISOMax3ACountryCode
+import LocalData15
+import Credentials3
+import Max35Text
+import ISODate
 import ContactPersonal1
 
 class PartyIdentification287(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_Id", "_Crdntls", "_Nm", "_Ntlty", "_Ctct", "_CtryOfBirth", "_DtOfBirth", "_Dsgnt", "_AddtlData", "_LclData", "_FI"]
+	__slots__ = ["_Ctct", "_Id", "_FI", "_Crdntls", "_LclData", "_Dsgnt", "_Ntlty", "_DtOfBirth", "_Adr", "_AddtlData", "_CtryOfBirth", "_Nm"]
 	@property
-	def Adr(self):
-		return self._Adr
+	def Ctct(self):
+		return self._Ctct
 
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
+	@Ctct.setter
+	def Ctct(self, value):
+		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
 
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
+	@Ctct.deleter
+	def Ctct(self):
+		del self._Ctct
+		self._Ctct = None
 
 	@property
 	def Id(self):
@@ -41,6 +41,19 @@ class PartyIdentification287(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def FI(self):
+		return self._FI
+
+	@FI.setter
+	def FI(self, value):
+		self._FI = value if type(value) != auto else self.make_default("FI")
+
+	@FI.deleter
+	def FI(self):
+		del self._FI
+		self._FI = None
+
+	@property
 	def Crdntls(self):
 		return self._Crdntls
 
@@ -52,97 +65,6 @@ class PartyIdentification287(base_types._BaseFieldType):
 	def Crdntls(self):
 		del self._Crdntls
 		self._Crdntls = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def Ntlty(self):
-		return self._Ntlty
-
-	@Ntlty.setter
-	def Ntlty(self, value):
-		self._Ntlty = value if type(value) != auto else self.make_default("Ntlty")
-
-	@Ntlty.deleter
-	def Ntlty(self):
-		del self._Ntlty
-		self._Ntlty = None
-
-	@property
-	def Ctct(self):
-		return self._Ctct
-
-	@Ctct.setter
-	def Ctct(self, value):
-		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
-
-	@Ctct.deleter
-	def Ctct(self):
-		del self._Ctct
-		self._Ctct = None
-
-	@property
-	def CtryOfBirth(self):
-		return self._CtryOfBirth
-
-	@CtryOfBirth.setter
-	def CtryOfBirth(self, value):
-		self._CtryOfBirth = value if type(value) != auto else self.make_default("CtryOfBirth")
-
-	@CtryOfBirth.deleter
-	def CtryOfBirth(self):
-		del self._CtryOfBirth
-		self._CtryOfBirth = None
-
-	@property
-	def DtOfBirth(self):
-		return self._DtOfBirth
-
-	@DtOfBirth.setter
-	def DtOfBirth(self, value):
-		self._DtOfBirth = value if type(value) != auto else self.make_default("DtOfBirth")
-
-	@DtOfBirth.deleter
-	def DtOfBirth(self):
-		del self._DtOfBirth
-		self._DtOfBirth = None
-
-	@property
-	def Dsgnt(self):
-		return self._Dsgnt
-
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
-
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
 
 	@property
 	def LclData(self):
@@ -158,30 +80,108 @@ class PartyIdentification287(base_types._BaseFieldType):
 		self._LclData = None
 
 	@property
-	def FI(self):
-		return self._FI
+	def Dsgnt(self):
+		return self._Dsgnt
 
-	@FI.setter
-	def FI(self, value):
-		self._FI = value if type(value) != auto else self.make_default("FI")
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
 
-	@FI.deleter
-	def FI(self):
-		del self._FI
-		self._FI = None
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
+
+	@property
+	def Ntlty(self):
+		return self._Ntlty
+
+	@Ntlty.setter
+	def Ntlty(self, value):
+		self._Ntlty = value if type(value) != auto else self.make_default("Ntlty")
+
+	@Ntlty.deleter
+	def Ntlty(self):
+		del self._Ntlty
+		self._Ntlty = None
+
+	@property
+	def DtOfBirth(self):
+		return self._DtOfBirth
+
+	@DtOfBirth.setter
+	def DtOfBirth(self, value):
+		self._DtOfBirth = value if type(value) != auto else self.make_default("DtOfBirth")
+
+	@DtOfBirth.deleter
+	def DtOfBirth(self):
+		del self._DtOfBirth
+		self._DtOfBirth = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def CtryOfBirth(self):
+		return self._CtryOfBirth
+
+	@CtryOfBirth.setter
+	def CtryOfBirth(self, value):
+		self._CtryOfBirth = value if type(value) != auto else self.make_default("CtryOfBirth")
+
+	@CtryOfBirth.deleter
+	def CtryOfBirth(self):
+		del self._CtryOfBirth
+		self._CtryOfBirth = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Crdntls', type=Credentials3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Nm', type=CardholderName3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ntlty', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfBirth', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtOfBirth', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dsgnt', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LclData', type=LocalData15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FI', type=FinancialInstitution8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Crdntls', type=Credentials3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LclData', type=LocalData15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsgnt', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntlty', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfBirth', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtryOfBirth', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=CardholderName3, min=0, max=1, mutex_group=None, array=False),
 	))
 

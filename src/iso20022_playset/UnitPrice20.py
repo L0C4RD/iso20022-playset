@@ -1,7 +1,7 @@
 import base_types
+import PriceValue1
 import UnitPriceType2Choice
 import PriceMethod1Code
-import PriceValue1
 
 class UnitPrice20(base_types._BaseFieldType):
 

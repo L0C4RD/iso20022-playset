@@ -1,23 +1,23 @@
 import base_types
+import DebtInstrument4
 import SecurityInstrumentDescription23
 import DerivativeInstrument6
-import DebtInstrument4
 
 class SecurityInstrumentDescription22(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivInstrmAttrbts", "_FinInstrmGnlAttrbts", "_DebtInstrmAttrbts"]
+	__slots__ = ["_DebtInstrmAttrbts", "_FinInstrmGnlAttrbts", "_DerivInstrmAttrbts"]
 	@property
-	def DerivInstrmAttrbts(self):
-		return self._DerivInstrmAttrbts
+	def DebtInstrmAttrbts(self):
+		return self._DebtInstrmAttrbts
 
-	@DerivInstrmAttrbts.setter
-	def DerivInstrmAttrbts(self, value):
-		self._DerivInstrmAttrbts = value if type(value) != auto else self.make_default("DerivInstrmAttrbts")
+	@DebtInstrmAttrbts.setter
+	def DebtInstrmAttrbts(self, value):
+		self._DebtInstrmAttrbts = value if type(value) != auto else self.make_default("DebtInstrmAttrbts")
 
-	@DerivInstrmAttrbts.deleter
-	def DerivInstrmAttrbts(self):
-		del self._DerivInstrmAttrbts
-		self._DerivInstrmAttrbts = None
+	@DebtInstrmAttrbts.deleter
+	def DebtInstrmAttrbts(self):
+		del self._DebtInstrmAttrbts
+		self._DebtInstrmAttrbts = None
 
 	@property
 	def FinInstrmGnlAttrbts(self):
@@ -33,21 +33,21 @@ class SecurityInstrumentDescription22(base_types._BaseFieldType):
 		self._FinInstrmGnlAttrbts = None
 
 	@property
-	def DebtInstrmAttrbts(self):
-		return self._DebtInstrmAttrbts
+	def DerivInstrmAttrbts(self):
+		return self._DerivInstrmAttrbts
 
-	@DebtInstrmAttrbts.setter
-	def DebtInstrmAttrbts(self, value):
-		self._DebtInstrmAttrbts = value if type(value) != auto else self.make_default("DebtInstrmAttrbts")
+	@DerivInstrmAttrbts.setter
+	def DerivInstrmAttrbts(self, value):
+		self._DerivInstrmAttrbts = value if type(value) != auto else self.make_default("DerivInstrmAttrbts")
 
-	@DebtInstrmAttrbts.deleter
-	def DebtInstrmAttrbts(self):
-		del self._DebtInstrmAttrbts
-		self._DebtInstrmAttrbts = None
+	@DerivInstrmAttrbts.deleter
+	def DerivInstrmAttrbts(self):
+		del self._DerivInstrmAttrbts
+		self._DerivInstrmAttrbts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription23, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument6, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import CountryCode
 import RateAndAmountFormat1Choice
+import CountryCode
 
 class SecurityWithHoldingTax1(base_types._BaseFieldType):
 

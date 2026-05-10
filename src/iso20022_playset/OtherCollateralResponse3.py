@@ -1,11 +1,11 @@
 import base_types
-import Max35Text
-import RejectionReason68Code
 import Status4Code
+import RejectionReason68Code
+import Max35Text
 
 class OtherCollateralResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsn", "_CollId", "_RjctnInf", "_RspnTp", "_AsstNb"]
+	__slots__ = ["_RjctnRsn", "_AsstNb", "_RjctnInf", "_CollId", "_RspnTp"]
 	@property
 	def RjctnRsn(self):
 		return self._RjctnRsn
@@ -20,17 +20,17 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
-	def CollId(self):
-		return self._CollId
+	def AsstNb(self):
+		return self._AsstNb
 
-	@CollId.setter
-	def CollId(self, value):
-		self._CollId = value if type(value) != auto else self.make_default("CollId")
+	@AsstNb.setter
+	def AsstNb(self, value):
+		self._AsstNb = value if type(value) != auto else self.make_default("AsstNb")
 
-	@CollId.deleter
-	def CollId(self):
-		del self._CollId
-		self._CollId = None
+	@AsstNb.deleter
+	def AsstNb(self):
+		del self._AsstNb
+		self._AsstNb = None
 
 	@property
 	def RjctnInf(self):
@@ -46,6 +46,19 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 		self._RjctnInf = None
 
 	@property
+	def CollId(self):
+		return self._CollId
+
+	@CollId.setter
+	def CollId(self, value):
+		self._CollId = value if type(value) != auto else self.make_default("CollId")
+
+	@CollId.deleter
+	def CollId(self):
+		del self._CollId
+		self._CollId = None
+
+	@property
 	def RspnTp(self):
 		return self._RspnTp
 
@@ -58,24 +71,11 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 		del self._RspnTp
 		self._RspnTp = None
 
-	@property
-	def AsstNb(self):
-		return self._AsstNb
-
-	@AsstNb.setter
-	def AsstNb(self, value):
-		self._AsstNb = value if type(value) != auto else self.make_default("AsstNb")
-
-	@AsstNb.deleter
-	def AsstNb(self):
-		del self._AsstNb
-		self._AsstNb = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason68Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

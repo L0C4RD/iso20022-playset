@@ -1,23 +1,23 @@
 import base_types
+import GenericIdentification36
 import NameAndAddress13
 import AnyBICDec2014Identifier
-import GenericIdentification36
 
 class PartyIdentification256Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_AnyBIC", "_PrtryId"]
+	__slots__ = ["_PrtryId", "_AnyBIC", "_NmAndAdr"]
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
+	def PrtryId(self):
+		return self._PrtryId
 
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
 
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def AnyBIC(self):
@@ -33,21 +33,21 @@ class PartyIdentification256Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def NmAndAdr(self):
+		return self._NmAndAdr
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress13, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress13, min=0, max=1, mutex_group=1, array=False),
 	))
 

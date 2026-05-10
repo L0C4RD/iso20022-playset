@@ -1,6 +1,6 @@
 import base_types
-import ReservationIdentification4
 import ReservationOrError9Choice
+import ReservationIdentification4
 
 class ReservationReport8(base_types._BaseFieldType):
 

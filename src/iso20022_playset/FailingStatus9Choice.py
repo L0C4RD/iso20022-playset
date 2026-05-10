@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import FailingReason7
+import NoReasonCode
 
 class FailingStatus9Choice(base_types._BaseFieldType):
 

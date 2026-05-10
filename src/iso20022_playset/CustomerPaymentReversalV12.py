@@ -1,12 +1,12 @@
 import base_types
-import OriginalGroupHeader20
-import SupplementaryData1
-import OriginalPaymentInstruction50
 import GroupHeader124
+import OriginalPaymentInstruction50
+import SupplementaryData1
+import OriginalGroupHeader20
 
 class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlGrpInf", "_GrpHdr", "_SplmtryData", "_OrgnlPmtInfAndRvsl"]
+	__slots__ = ["_OrgnlGrpInf", "_OrgnlPmtInfAndRvsl", "_GrpHdr", "_SplmtryData"]
 	@property
 	def OrgnlGrpInf(self):
 		return self._OrgnlGrpInf
@@ -19,6 +19,19 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
 		self._OrgnlGrpInf = None
+
+	@property
+	def OrgnlPmtInfAndRvsl(self):
+		return self._OrgnlPmtInfAndRvsl
+
+	@OrgnlPmtInfAndRvsl.setter
+	def OrgnlPmtInfAndRvsl(self, value):
+		self._OrgnlPmtInfAndRvsl = value if type(value) != auto else self.make_default("OrgnlPmtInfAndRvsl")
+
+	@OrgnlPmtInfAndRvsl.deleter
+	def OrgnlPmtInfAndRvsl(self):
+		del self._OrgnlPmtInfAndRvsl
+		self._OrgnlPmtInfAndRvsl = None
 
 	@property
 	def GrpHdr(self):
@@ -46,23 +59,10 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def OrgnlPmtInfAndRvsl(self):
-		return self._OrgnlPmtInfAndRvsl
-
-	@OrgnlPmtInfAndRvsl.setter
-	def OrgnlPmtInfAndRvsl(self, value):
-		self._OrgnlPmtInfAndRvsl = value if type(value) != auto else self.make_default("OrgnlPmtInfAndRvsl")
-
-	@OrgnlPmtInfAndRvsl.deleter
-	def OrgnlPmtInfAndRvsl(self):
-		del self._OrgnlPmtInfAndRvsl
-		self._OrgnlPmtInfAndRvsl = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPmtInfAndRvsl', type=OriginalPaymentInstruction50, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader124, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlPmtInfAndRvsl', type=OriginalPaymentInstruction50, min=0, max=None, mutex_group=None, array=True),
 	))
 

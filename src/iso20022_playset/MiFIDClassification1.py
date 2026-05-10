@@ -1,6 +1,6 @@
 import base_types
-import OrderOriginatorEligibility1Code
 import Max350Text
+import OrderOriginatorEligibility1Code
 
 class MiFIDClassification1(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
 import base_types
 import AssetClassDetailedSubProductType8Code
-import AssetClassSubProductType10Code
 import AssetClassProductType3Code
+import AssetClassSubProductType10Code
 
 class EnvironmentalCommodityEmission2(base_types._BaseFieldType):
 

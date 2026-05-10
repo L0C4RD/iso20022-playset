@@ -1,12 +1,25 @@
 import base_types
-import ISODateTime
 import ActionMessage11
+import ISODateTime
 import PointOfInteractionComponent17
 import PointOfInteractionCapabilities9
 
 class LoginResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_POICpblties", "_OutptDisp", "_POISftwr", "_POIDtTm"]
+	__slots__ = ["_POISftwr", "_POICpblties", "_OutptDisp", "_POIDtTm"]
+	@property
+	def POISftwr(self):
+		return self._POISftwr
+
+	@POISftwr.setter
+	def POISftwr(self, value):
+		self._POISftwr = value if type(value) != auto else self.make_default("POISftwr")
+
+	@POISftwr.deleter
+	def POISftwr(self):
+		del self._POISftwr
+		self._POISftwr = None
+
 	@property
 	def POICpblties(self):
 		return self._POICpblties
@@ -34,19 +47,6 @@ class LoginResponse7(base_types._BaseFieldType):
 		self._OutptDisp = None
 
 	@property
-	def POISftwr(self):
-		return self._POISftwr
-
-	@POISftwr.setter
-	def POISftwr(self, value):
-		self._POISftwr = value if type(value) != auto else self.make_default("POISftwr")
-
-	@POISftwr.deleter
-	def POISftwr(self):
-		del self._POISftwr
-		self._POISftwr = None
-
-	@property
 	def POIDtTm(self):
 		return self._POIDtTm
 
@@ -60,9 +60,9 @@ class LoginResponse7(base_types._BaseFieldType):
 		self._POIDtTm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='POISftwr', type=PointOfInteractionComponent17, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptDisp', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POISftwr', type=PointOfInteractionComponent17, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

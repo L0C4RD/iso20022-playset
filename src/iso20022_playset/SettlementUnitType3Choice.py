@@ -1,6 +1,6 @@
 import base_types
-import SettlementUnitType1Code
 import GenericIdentification30
+import SettlementUnitType1Code
 
 class SettlementUnitType3Choice(base_types._BaseFieldType):
 

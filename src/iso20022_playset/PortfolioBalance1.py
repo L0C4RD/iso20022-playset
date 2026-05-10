@@ -1,6 +1,6 @@
 import base_types
-import BalanceDetails6
 import BalanceDetails5
+import BalanceDetails6
 
 class PortfolioBalance1(base_types._BaseFieldType):
 

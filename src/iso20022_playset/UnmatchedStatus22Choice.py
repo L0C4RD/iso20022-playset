@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import UnmatchedReason21
+import NoReasonCode
 
 class UnmatchedStatus22Choice(base_types._BaseFieldType):
 

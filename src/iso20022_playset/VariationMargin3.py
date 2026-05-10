@@ -1,23 +1,23 @@
 import base_types
+import TotalVariationMargin1
 import SecurityIdentification14
 import Amount2
-import TotalVariationMargin1
 
 class VariationMargin3(base_types._BaseFieldType):
 
-	__slots__ = ["_FlsHrcut", "_FinInstrmId", "_TtlMrkToMkt", "_MrkToMktNetd", "_TtlVartnMrgn", "_MrkToMktGrss", "_MrkToMktFls"]
+	__slots__ = ["_MrkToMktFls", "_FinInstrmId", "_TtlVartnMrgn", "_MrkToMktNetd", "_TtlMrkToMkt", "_FlsHrcut", "_MrkToMktGrss"]
 	@property
-	def FlsHrcut(self):
-		return self._FlsHrcut
+	def MrkToMktFls(self):
+		return self._MrkToMktFls
 
-	@FlsHrcut.setter
-	def FlsHrcut(self, value):
-		self._FlsHrcut = value if type(value) != auto else self.make_default("FlsHrcut")
+	@MrkToMktFls.setter
+	def MrkToMktFls(self, value):
+		self._MrkToMktFls = value if type(value) != auto else self.make_default("MrkToMktFls")
 
-	@FlsHrcut.deleter
-	def FlsHrcut(self):
-		del self._FlsHrcut
-		self._FlsHrcut = None
+	@MrkToMktFls.deleter
+	def MrkToMktFls(self):
+		del self._MrkToMktFls
+		self._MrkToMktFls = None
 
 	@property
 	def FinInstrmId(self):
@@ -33,17 +33,17 @@ class VariationMargin3(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def TtlMrkToMkt(self):
-		return self._TtlMrkToMkt
+	def TtlVartnMrgn(self):
+		return self._TtlVartnMrgn
 
-	@TtlMrkToMkt.setter
-	def TtlMrkToMkt(self, value):
-		self._TtlMrkToMkt = value if type(value) != auto else self.make_default("TtlMrkToMkt")
+	@TtlVartnMrgn.setter
+	def TtlVartnMrgn(self, value):
+		self._TtlVartnMrgn = value if type(value) != auto else self.make_default("TtlVartnMrgn")
 
-	@TtlMrkToMkt.deleter
-	def TtlMrkToMkt(self):
-		del self._TtlMrkToMkt
-		self._TtlMrkToMkt = None
+	@TtlVartnMrgn.deleter
+	def TtlVartnMrgn(self):
+		del self._TtlVartnMrgn
+		self._TtlVartnMrgn = None
 
 	@property
 	def MrkToMktNetd(self):
@@ -59,17 +59,30 @@ class VariationMargin3(base_types._BaseFieldType):
 		self._MrkToMktNetd = None
 
 	@property
-	def TtlVartnMrgn(self):
-		return self._TtlVartnMrgn
+	def TtlMrkToMkt(self):
+		return self._TtlMrkToMkt
 
-	@TtlVartnMrgn.setter
-	def TtlVartnMrgn(self, value):
-		self._TtlVartnMrgn = value if type(value) != auto else self.make_default("TtlVartnMrgn")
+	@TtlMrkToMkt.setter
+	def TtlMrkToMkt(self, value):
+		self._TtlMrkToMkt = value if type(value) != auto else self.make_default("TtlMrkToMkt")
 
-	@TtlVartnMrgn.deleter
-	def TtlVartnMrgn(self):
-		del self._TtlVartnMrgn
-		self._TtlVartnMrgn = None
+	@TtlMrkToMkt.deleter
+	def TtlMrkToMkt(self):
+		del self._TtlMrkToMkt
+		self._TtlMrkToMkt = None
+
+	@property
+	def FlsHrcut(self):
+		return self._FlsHrcut
+
+	@FlsHrcut.setter
+	def FlsHrcut(self, value):
+		self._FlsHrcut = value if type(value) != auto else self.make_default("FlsHrcut")
+
+	@FlsHrcut.deleter
+	def FlsHrcut(self):
+		del self._FlsHrcut
+		self._FlsHrcut = None
 
 	@property
 	def MrkToMktGrss(self):
@@ -84,26 +97,13 @@ class VariationMargin3(base_types._BaseFieldType):
 		del self._MrkToMktGrss
 		self._MrkToMktGrss = None
 
-	@property
-	def MrkToMktFls(self):
-		return self._MrkToMktFls
-
-	@MrkToMktFls.setter
-	def MrkToMktFls(self, value):
-		self._MrkToMktFls = value if type(value) != auto else self.make_default("MrkToMktFls")
-
-	@MrkToMktFls.deleter
-	def MrkToMktFls(self):
-		del self._MrkToMktFls
-		self._MrkToMktFls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FlsHrcut', type=Amount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlMrkToMkt', type=Amount2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrkToMktNetd', type=Amount2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlVartnMrgn', type=TotalVariationMargin1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrkToMktGrss', type=Amount2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MrkToMktFls', type=Amount2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlVartnMrgn', type=TotalVariationMargin1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrkToMktNetd', type=Amount2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlMrkToMkt', type=Amount2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlsHrcut', type=Amount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrkToMktGrss', type=Amount2, min=0, max=None, mutex_group=None, array=True),
 	))
 

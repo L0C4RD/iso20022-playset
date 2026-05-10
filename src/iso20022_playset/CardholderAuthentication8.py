@@ -1,13 +1,13 @@
 import base_types
-import TrueFalseIndicator
-import AuthenticationMethod7Code
 import Max5000Binary
+import AuthenticationMethod7Code
+import TrueFalseIndicator
 import OnLinePIN5
 import ContentInformationType10
 
 class CardholderAuthentication8(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdAuthntcnVal", "_AuthntcnMtd", "_AuthntcnVal", "_TknReqd", "_CrdhldrOnLinePIN"]
+	__slots__ = ["_PrtctdAuthntcnVal", "_AuthntcnVal", "_AuthntcnMtd", "_CrdhldrOnLinePIN", "_TknReqd"]
 	@property
 	def PrtctdAuthntcnVal(self):
 		return self._PrtctdAuthntcnVal
@@ -20,19 +20,6 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 	def PrtctdAuthntcnVal(self):
 		del self._PrtctdAuthntcnVal
 		self._PrtctdAuthntcnVal = None
-
-	@property
-	def AuthntcnMtd(self):
-		return self._AuthntcnMtd
-
-	@AuthntcnMtd.setter
-	def AuthntcnMtd(self, value):
-		self._AuthntcnMtd = value if type(value) != auto else self.make_default("AuthntcnMtd")
-
-	@AuthntcnMtd.deleter
-	def AuthntcnMtd(self):
-		del self._AuthntcnMtd
-		self._AuthntcnMtd = None
 
 	@property
 	def AuthntcnVal(self):
@@ -48,17 +35,17 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 		self._AuthntcnVal = None
 
 	@property
-	def TknReqd(self):
-		return self._TknReqd
+	def AuthntcnMtd(self):
+		return self._AuthntcnMtd
 
-	@TknReqd.setter
-	def TknReqd(self, value):
-		self._TknReqd = value if type(value) != auto else self.make_default("TknReqd")
+	@AuthntcnMtd.setter
+	def AuthntcnMtd(self, value):
+		self._AuthntcnMtd = value if type(value) != auto else self.make_default("AuthntcnMtd")
 
-	@TknReqd.deleter
-	def TknReqd(self):
-		del self._TknReqd
-		self._TknReqd = None
+	@AuthntcnMtd.deleter
+	def AuthntcnMtd(self):
+		del self._AuthntcnMtd
+		self._AuthntcnMtd = None
 
 	@property
 	def CrdhldrOnLinePIN(self):
@@ -73,11 +60,24 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 		del self._CrdhldrOnLinePIN
 		self._CrdhldrOnLinePIN = None
 
+	@property
+	def TknReqd(self):
+		return self._TknReqd
+
+	@TknReqd.setter
+	def TknReqd(self, value):
+		self._TknReqd = value if type(value) != auto else self.make_default("TknReqd")
+
+	@TknReqd.deleter
+	def TknReqd(self):
+		del self._TknReqd
+		self._TknReqd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdAuthntcnVal', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcnVal', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrOnLinePIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

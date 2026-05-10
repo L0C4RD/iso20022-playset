@@ -1,49 +1,36 @@
 import base_types
-import Max4AlphaNumericText
-import AgreedRate3
-import OptionType1Code
-import PercentageRate
-import SettlementDate8Code
-import PremiumAmount3
-import ActiveCurrencyAndAmount
-import DerivativeExerciseStatus1Code
-import AmountsAndValueDate4
-import OptionStyle2Code
 import ISODateTime
 import SettlementType1Code
-import DataType1Code
-import Max35Text
-import OptionPayoutType1Code
+import AgreedRate3
+import PercentageRate
+import PremiumAmount3
 import Max140Text
+import Max4AlphaNumericText
+import AmountsAndValueDate4
+import DerivativeExerciseStatus1Code
+import OptionStyle2Code
+import OptionType1Code
+import ActiveCurrencyAndAmount
+import SettlementDate8Code
+import OptionPayoutType1Code
+import Max35Text
+import DataType1Code
 
 class Option16(base_types._BaseFieldType):
 
-	__slots__ = ["_RskAmt", "_SttlmTp", "_DerivOptnId", "_Prm", "_Data", "_OptnPyoutTp", "_ExrcSts", "_OptnAmts", "_XpryDtAndTm", "_SttlmAmtTp", "_ValtnRate", "_OptnTp", "_XpryLctn", "_AddtlOptnInf", "_ExrcStyle", "_VoltlyMrgn", "_StrkPric"]
+	__slots__ = ["_Data", "_DerivOptnId", "_SttlmAmtTp", "_StrkPric", "_RskAmt", "_VoltlyMrgn", "_Prm", "_SttlmTp", "_AddtlOptnInf", "_ExrcSts", "_OptnPyoutTp", "_XpryDtAndTm", "_ExrcStyle", "_OptnTp", "_XpryLctn", "_ValtnRate", "_OptnAmts"]
 	@property
-	def RskAmt(self):
-		return self._RskAmt
+	def Data(self):
+		return self._Data
 
-	@RskAmt.setter
-	def RskAmt(self, value):
-		self._RskAmt = value if type(value) != auto else self.make_default("RskAmt")
+	@Data.setter
+	def Data(self, value):
+		self._Data = value if type(value) != auto else self.make_default("Data")
 
-	@RskAmt.deleter
-	def RskAmt(self):
-		del self._RskAmt
-		self._RskAmt = None
-
-	@property
-	def SttlmTp(self):
-		return self._SttlmTp
-
-	@SttlmTp.setter
-	def SttlmTp(self, value):
-		self._SttlmTp = value if type(value) != auto else self.make_default("SttlmTp")
-
-	@SttlmTp.deleter
-	def SttlmTp(self):
-		del self._SttlmTp
-		self._SttlmTp = None
+	@Data.deleter
+	def Data(self):
+		del self._Data
+		self._Data = None
 
 	@property
 	def DerivOptnId(self):
@@ -59,6 +46,58 @@ class Option16(base_types._BaseFieldType):
 		self._DerivOptnId = None
 
 	@property
+	def SttlmAmtTp(self):
+		return self._SttlmAmtTp
+
+	@SttlmAmtTp.setter
+	def SttlmAmtTp(self, value):
+		self._SttlmAmtTp = value if type(value) != auto else self.make_default("SttlmAmtTp")
+
+	@SttlmAmtTp.deleter
+	def SttlmAmtTp(self):
+		del self._SttlmAmtTp
+		self._SttlmAmtTp = None
+
+	@property
+	def StrkPric(self):
+		return self._StrkPric
+
+	@StrkPric.setter
+	def StrkPric(self, value):
+		self._StrkPric = value if type(value) != auto else self.make_default("StrkPric")
+
+	@StrkPric.deleter
+	def StrkPric(self):
+		del self._StrkPric
+		self._StrkPric = None
+
+	@property
+	def RskAmt(self):
+		return self._RskAmt
+
+	@RskAmt.setter
+	def RskAmt(self, value):
+		self._RskAmt = value if type(value) != auto else self.make_default("RskAmt")
+
+	@RskAmt.deleter
+	def RskAmt(self):
+		del self._RskAmt
+		self._RskAmt = None
+
+	@property
+	def VoltlyMrgn(self):
+		return self._VoltlyMrgn
+
+	@VoltlyMrgn.setter
+	def VoltlyMrgn(self, value):
+		self._VoltlyMrgn = value if type(value) != auto else self.make_default("VoltlyMrgn")
+
+	@VoltlyMrgn.deleter
+	def VoltlyMrgn(self):
+		del self._VoltlyMrgn
+		self._VoltlyMrgn = None
+
+	@property
 	def Prm(self):
 		return self._Prm
 
@@ -72,30 +111,30 @@ class Option16(base_types._BaseFieldType):
 		self._Prm = None
 
 	@property
-	def Data(self):
-		return self._Data
+	def SttlmTp(self):
+		return self._SttlmTp
 
-	@Data.setter
-	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
+	@SttlmTp.setter
+	def SttlmTp(self, value):
+		self._SttlmTp = value if type(value) != auto else self.make_default("SttlmTp")
 
-	@Data.deleter
-	def Data(self):
-		del self._Data
-		self._Data = None
+	@SttlmTp.deleter
+	def SttlmTp(self):
+		del self._SttlmTp
+		self._SttlmTp = None
 
 	@property
-	def OptnPyoutTp(self):
-		return self._OptnPyoutTp
+	def AddtlOptnInf(self):
+		return self._AddtlOptnInf
 
-	@OptnPyoutTp.setter
-	def OptnPyoutTp(self, value):
-		self._OptnPyoutTp = value if type(value) != auto else self.make_default("OptnPyoutTp")
+	@AddtlOptnInf.setter
+	def AddtlOptnInf(self, value):
+		self._AddtlOptnInf = value if type(value) != auto else self.make_default("AddtlOptnInf")
 
-	@OptnPyoutTp.deleter
-	def OptnPyoutTp(self):
-		del self._OptnPyoutTp
-		self._OptnPyoutTp = None
+	@AddtlOptnInf.deleter
+	def AddtlOptnInf(self):
+		del self._AddtlOptnInf
+		self._AddtlOptnInf = None
 
 	@property
 	def ExrcSts(self):
@@ -111,17 +150,17 @@ class Option16(base_types._BaseFieldType):
 		self._ExrcSts = None
 
 	@property
-	def OptnAmts(self):
-		return self._OptnAmts
+	def OptnPyoutTp(self):
+		return self._OptnPyoutTp
 
-	@OptnAmts.setter
-	def OptnAmts(self, value):
-		self._OptnAmts = value if type(value) != auto else self.make_default("OptnAmts")
+	@OptnPyoutTp.setter
+	def OptnPyoutTp(self, value):
+		self._OptnPyoutTp = value if type(value) != auto else self.make_default("OptnPyoutTp")
 
-	@OptnAmts.deleter
-	def OptnAmts(self):
-		del self._OptnAmts
-		self._OptnAmts = None
+	@OptnPyoutTp.deleter
+	def OptnPyoutTp(self):
+		del self._OptnPyoutTp
+		self._OptnPyoutTp = None
 
 	@property
 	def XpryDtAndTm(self):
@@ -137,30 +176,17 @@ class Option16(base_types._BaseFieldType):
 		self._XpryDtAndTm = None
 
 	@property
-	def SttlmAmtTp(self):
-		return self._SttlmAmtTp
+	def ExrcStyle(self):
+		return self._ExrcStyle
 
-	@SttlmAmtTp.setter
-	def SttlmAmtTp(self, value):
-		self._SttlmAmtTp = value if type(value) != auto else self.make_default("SttlmAmtTp")
+	@ExrcStyle.setter
+	def ExrcStyle(self, value):
+		self._ExrcStyle = value if type(value) != auto else self.make_default("ExrcStyle")
 
-	@SttlmAmtTp.deleter
-	def SttlmAmtTp(self):
-		del self._SttlmAmtTp
-		self._SttlmAmtTp = None
-
-	@property
-	def ValtnRate(self):
-		return self._ValtnRate
-
-	@ValtnRate.setter
-	def ValtnRate(self, value):
-		self._ValtnRate = value if type(value) != auto else self.make_default("ValtnRate")
-
-	@ValtnRate.deleter
-	def ValtnRate(self):
-		del self._ValtnRate
-		self._ValtnRate = None
+	@ExrcStyle.deleter
+	def ExrcStyle(self):
+		del self._ExrcStyle
+		self._ExrcStyle = None
 
 	@property
 	def OptnTp(self):
@@ -189,74 +215,48 @@ class Option16(base_types._BaseFieldType):
 		self._XpryLctn = None
 
 	@property
-	def AddtlOptnInf(self):
-		return self._AddtlOptnInf
+	def ValtnRate(self):
+		return self._ValtnRate
 
-	@AddtlOptnInf.setter
-	def AddtlOptnInf(self, value):
-		self._AddtlOptnInf = value if type(value) != auto else self.make_default("AddtlOptnInf")
+	@ValtnRate.setter
+	def ValtnRate(self, value):
+		self._ValtnRate = value if type(value) != auto else self.make_default("ValtnRate")
 
-	@AddtlOptnInf.deleter
-	def AddtlOptnInf(self):
-		del self._AddtlOptnInf
-		self._AddtlOptnInf = None
-
-	@property
-	def ExrcStyle(self):
-		return self._ExrcStyle
-
-	@ExrcStyle.setter
-	def ExrcStyle(self, value):
-		self._ExrcStyle = value if type(value) != auto else self.make_default("ExrcStyle")
-
-	@ExrcStyle.deleter
-	def ExrcStyle(self):
-		del self._ExrcStyle
-		self._ExrcStyle = None
+	@ValtnRate.deleter
+	def ValtnRate(self):
+		del self._ValtnRate
+		self._ValtnRate = None
 
 	@property
-	def VoltlyMrgn(self):
-		return self._VoltlyMrgn
+	def OptnAmts(self):
+		return self._OptnAmts
 
-	@VoltlyMrgn.setter
-	def VoltlyMrgn(self, value):
-		self._VoltlyMrgn = value if type(value) != auto else self.make_default("VoltlyMrgn")
+	@OptnAmts.setter
+	def OptnAmts(self, value):
+		self._OptnAmts = value if type(value) != auto else self.make_default("OptnAmts")
 
-	@VoltlyMrgn.deleter
-	def VoltlyMrgn(self):
-		del self._VoltlyMrgn
-		self._VoltlyMrgn = None
-
-	@property
-	def StrkPric(self):
-		return self._StrkPric
-
-	@StrkPric.setter
-	def StrkPric(self, value):
-		self._StrkPric = value if type(value) != auto else self.make_default("StrkPric")
-
-	@StrkPric.deleter
-	def StrkPric(self):
-		del self._StrkPric
-		self._StrkPric = None
+	@OptnAmts.deleter
+	def OptnAmts(self):
+		del self._OptnAmts
+		self._OptnAmts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RskAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTp', type=SettlementDate8Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivOptnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prm', type=PremiumAmount3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Data', type=DataType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnPyoutTp', type=OptionPayoutType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExrcSts', type=DerivativeExerciseStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnAmts', type=AmountsAndValueDate4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivOptnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAmtTp', type=SettlementType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrkPric', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoltlyMrgn', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prm', type=PremiumAmount3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTp', type=SettlementDate8Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlOptnInf', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExrcSts', type=DerivativeExerciseStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnPyoutTp', type=OptionPayoutType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExrcStyle', type=OptionStyle2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=OptionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryLctn', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlOptnInf', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExrcStyle', type=OptionStyle2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoltlyMrgn', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrkPric', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnAmts', type=AmountsAndValueDate4, min=1, max=1, mutex_group=None, array=False),
 	))
 

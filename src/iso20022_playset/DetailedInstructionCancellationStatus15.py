@@ -4,7 +4,20 @@ import CancellationStatus32Choice
 
 class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
-	__slots__ = ["_SubAcctId", "_SnglInstrCxlId", "_AcctId", "_InstrCxlSts"]
+	__slots__ = ["_InstrCxlSts", "_SubAcctId", "_SnglInstrCxlId", "_AcctId"]
+	@property
+	def InstrCxlSts(self):
+		return self._InstrCxlSts
+
+	@InstrCxlSts.setter
+	def InstrCxlSts(self, value):
+		self._InstrCxlSts = value if type(value) != auto else self.make_default("InstrCxlSts")
+
+	@InstrCxlSts.deleter
+	def InstrCxlSts(self):
+		del self._InstrCxlSts
+		self._InstrCxlSts = None
+
 	@property
 	def SubAcctId(self):
 		return self._SubAcctId
@@ -44,23 +57,10 @@ class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 		del self._AcctId
 		self._AcctId = None
 
-	@property
-	def InstrCxlSts(self):
-		return self._InstrCxlSts
-
-	@InstrCxlSts.setter
-	def InstrCxlSts(self, value):
-		self._InstrCxlSts = value if type(value) != auto else self.make_default("InstrCxlSts")
-
-	@InstrCxlSts.deleter
-	def InstrCxlSts(self):
-		del self._InstrCxlSts
-		self._InstrCxlSts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InstrCxlSts', type=CancellationStatus32Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SnglInstrCxlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrCxlSts', type=CancellationStatus32Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

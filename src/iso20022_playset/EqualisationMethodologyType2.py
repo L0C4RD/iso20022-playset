@@ -1,6 +1,6 @@
 import base_types
-import EqualisationMethodologyType1Code
 import RelatedSubscription1
+import EqualisationMethodologyType1Code
 
 class EqualisationMethodologyType2(base_types._BaseFieldType):
 

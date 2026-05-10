@@ -3,20 +3,7 @@ import AmountAndDirection6
 
 class BalanceAmounts2(base_types._BaseFieldType):
 
-	__slots__ = ["_BookVal", "_HldgVal", "_UrlsdGnLoss"]
-	@property
-	def BookVal(self):
-		return self._BookVal
-
-	@BookVal.setter
-	def BookVal(self, value):
-		self._BookVal = value if type(value) != auto else self.make_default("BookVal")
-
-	@BookVal.deleter
-	def BookVal(self):
-		del self._BookVal
-		self._BookVal = None
-
+	__slots__ = ["_HldgVal", "_UrlsdGnLoss", "_BookVal"]
 	@property
 	def HldgVal(self):
 		return self._HldgVal
@@ -43,9 +30,22 @@ class BalanceAmounts2(base_types._BaseFieldType):
 		del self._UrlsdGnLoss
 		self._UrlsdGnLoss = None
 
+	@property
+	def BookVal(self):
+		return self._BookVal
+
+	@BookVal.setter
+	def BookVal(self, value):
+		self._BookVal = value if type(value) != auto else self.make_default("BookVal")
+
+	@BookVal.deleter
+	def BookVal(self):
+		del self._BookVal
+		self._BookVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BookVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
 	))
 

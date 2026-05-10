@@ -1,6 +1,6 @@
 import base_types
-import Number
 import PINFormat4Code
+import Number
 
 class ATMSecurityConfiguration5(base_types._BaseFieldType):
 

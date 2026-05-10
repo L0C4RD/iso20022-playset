@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
 import ISODate
 import ActiveCurrencyAnd13DecimalAmount
+import Max35Text
 
 class LetterIntent1(base_types._BaseFieldType):
 
-	__slots__ = ["_LttrInttRef", "_EndDt", "_StartDt", "_Amt"]
-	@property
-	def LttrInttRef(self):
-		return self._LttrInttRef
-
-	@LttrInttRef.setter
-	def LttrInttRef(self, value):
-		self._LttrInttRef = value if type(value) != auto else self.make_default("LttrInttRef")
-
-	@LttrInttRef.deleter
-	def LttrInttRef(self):
-		del self._LttrInttRef
-		self._LttrInttRef = None
-
+	__slots__ = ["_EndDt", "_LttrInttRef", "_StartDt", "_Amt"]
 	@property
 	def EndDt(self):
 		return self._EndDt
@@ -31,6 +18,19 @@ class LetterIntent1(base_types._BaseFieldType):
 	def EndDt(self):
 		del self._EndDt
 		self._EndDt = None
+
+	@property
+	def LttrInttRef(self):
+		return self._LttrInttRef
+
+	@LttrInttRef.setter
+	def LttrInttRef(self, value):
+		self._LttrInttRef = value if type(value) != auto else self.make_default("LttrInttRef")
+
+	@LttrInttRef.deleter
+	def LttrInttRef(self):
+		del self._LttrInttRef
+		self._LttrInttRef = None
 
 	@property
 	def StartDt(self):
@@ -59,8 +59,8 @@ class LetterIntent1(base_types._BaseFieldType):
 		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LttrInttRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LttrInttRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))

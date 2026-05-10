@@ -1,70 +1,18 @@
 import base_types
-import AgriculturalCommodityOliveOil2
 import AgriculturalCommodityOilSeed1
 import AgriculturalCommodityForestry1
-import AgriculturalCommodityDairy1
 import AgriculturalCommodityLiveStock1
-import AgriculturalCommoditySeafood1
 import AgriculturalCommodityGrain2
-import AgriculturalCommodityPotato1
-import AgriculturalCommodityOther1
 import AgriculturalCommoditySoft1
+import AgriculturalCommodityOliveOil2
+import AgriculturalCommoditySeafood1
+import AgriculturalCommodityPotato1
+import AgriculturalCommodityDairy1
+import AgriculturalCommodityOther1
 
 class AssetClassCommodityAgricultural5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sfd", "_OlvOil", "_Frstry", "_Othr", "_GrnOilSeed", "_Soft", "_Grn", "_Ptt", "_Dairy", "_LiveStock"]
-	@property
-	def Sfd(self):
-		return self._Sfd
-
-	@Sfd.setter
-	def Sfd(self, value):
-		self._Sfd = value if type(value) != auto else self.make_default("Sfd")
-
-	@Sfd.deleter
-	def Sfd(self):
-		del self._Sfd
-		self._Sfd = None
-
-	@property
-	def OlvOil(self):
-		return self._OlvOil
-
-	@OlvOil.setter
-	def OlvOil(self, value):
-		self._OlvOil = value if type(value) != auto else self.make_default("OlvOil")
-
-	@OlvOil.deleter
-	def OlvOil(self):
-		del self._OlvOil
-		self._OlvOil = None
-
-	@property
-	def Frstry(self):
-		return self._Frstry
-
-	@Frstry.setter
-	def Frstry(self, value):
-		self._Frstry = value if type(value) != auto else self.make_default("Frstry")
-
-	@Frstry.deleter
-	def Frstry(self):
-		del self._Frstry
-		self._Frstry = None
-
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_GrnOilSeed", "_Soft", "_Grn", "_Ptt", "_Sfd", "_Frstry", "_Othr", "_OlvOil", "_LiveStock", "_Dairy"]
 	@property
 	def GrnOilSeed(self):
 		return self._GrnOilSeed
@@ -118,17 +66,56 @@ class AssetClassCommodityAgricultural5Choice(base_types._BaseFieldType):
 		self._Ptt = None
 
 	@property
-	def Dairy(self):
-		return self._Dairy
+	def Sfd(self):
+		return self._Sfd
 
-	@Dairy.setter
-	def Dairy(self, value):
-		self._Dairy = value if type(value) != auto else self.make_default("Dairy")
+	@Sfd.setter
+	def Sfd(self, value):
+		self._Sfd = value if type(value) != auto else self.make_default("Sfd")
 
-	@Dairy.deleter
-	def Dairy(self):
-		del self._Dairy
-		self._Dairy = None
+	@Sfd.deleter
+	def Sfd(self):
+		del self._Sfd
+		self._Sfd = None
+
+	@property
+	def Frstry(self):
+		return self._Frstry
+
+	@Frstry.setter
+	def Frstry(self, value):
+		self._Frstry = value if type(value) != auto else self.make_default("Frstry")
+
+	@Frstry.deleter
+	def Frstry(self):
+		del self._Frstry
+		self._Frstry = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
+	def OlvOil(self):
+		return self._OlvOil
+
+	@OlvOil.setter
+	def OlvOil(self, value):
+		self._OlvOil = value if type(value) != auto else self.make_default("OlvOil")
+
+	@OlvOil.deleter
+	def OlvOil(self):
+		del self._OlvOil
+		self._OlvOil = None
 
 	@property
 	def LiveStock(self):
@@ -143,16 +130,29 @@ class AssetClassCommodityAgricultural5Choice(base_types._BaseFieldType):
 		del self._LiveStock
 		self._LiveStock = None
 
+	@property
+	def Dairy(self):
+		return self._Dairy
+
+	@Dairy.setter
+	def Dairy(self, value):
+		self._Dairy = value if type(value) != auto else self.make_default("Dairy")
+
+	@Dairy.deleter
+	def Dairy(self):
+		del self._Dairy
+		self._Dairy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sfd', type=AgriculturalCommoditySeafood1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OlvOil', type=AgriculturalCommodityOliveOil2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Frstry', type=AgriculturalCommodityForestry1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=AgriculturalCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='GrnOilSeed', type=AgriculturalCommodityOilSeed1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Soft', type=AgriculturalCommoditySoft1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Grn', type=AgriculturalCommodityGrain2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ptt', type=AgriculturalCommodityPotato1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dairy', type=AgriculturalCommodityDairy1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Sfd', type=AgriculturalCommoditySeafood1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Frstry', type=AgriculturalCommodityForestry1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=AgriculturalCommodityOther1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OlvOil', type=AgriculturalCommodityOliveOil2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LiveStock', type=AgriculturalCommodityLiveStock1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dairy', type=AgriculturalCommodityDairy1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,10 +1,23 @@
 import base_types
-import ActiveCurrencyAndAmount
 import BaseOneRate
+import ActiveCurrencyAndAmount
 
 class CapitalRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnBffr", "_CntrPtyRsk", "_OprlAndLglRsk", "_WndgDwnOrRstrgRsk", "_MktRsk", "_CdtRsk", "_BizRsk"]
+	__slots__ = ["_OprlAndLglRsk", "_NtfctnBffr", "_CntrPtyRsk", "_BizRsk", "_MktRsk", "_WndgDwnOrRstrgRsk", "_CdtRsk"]
+	@property
+	def OprlAndLglRsk(self):
+		return self._OprlAndLglRsk
+
+	@OprlAndLglRsk.setter
+	def OprlAndLglRsk(self, value):
+		self._OprlAndLglRsk = value if type(value) != auto else self.make_default("OprlAndLglRsk")
+
+	@OprlAndLglRsk.deleter
+	def OprlAndLglRsk(self):
+		del self._OprlAndLglRsk
+		self._OprlAndLglRsk = None
+
 	@property
 	def NtfctnBffr(self):
 		return self._NtfctnBffr
@@ -32,30 +45,17 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		self._CntrPtyRsk = None
 
 	@property
-	def OprlAndLglRsk(self):
-		return self._OprlAndLglRsk
+	def BizRsk(self):
+		return self._BizRsk
 
-	@OprlAndLglRsk.setter
-	def OprlAndLglRsk(self, value):
-		self._OprlAndLglRsk = value if type(value) != auto else self.make_default("OprlAndLglRsk")
+	@BizRsk.setter
+	def BizRsk(self, value):
+		self._BizRsk = value if type(value) != auto else self.make_default("BizRsk")
 
-	@OprlAndLglRsk.deleter
-	def OprlAndLglRsk(self):
-		del self._OprlAndLglRsk
-		self._OprlAndLglRsk = None
-
-	@property
-	def WndgDwnOrRstrgRsk(self):
-		return self._WndgDwnOrRstrgRsk
-
-	@WndgDwnOrRstrgRsk.setter
-	def WndgDwnOrRstrgRsk(self, value):
-		self._WndgDwnOrRstrgRsk = value if type(value) != auto else self.make_default("WndgDwnOrRstrgRsk")
-
-	@WndgDwnOrRstrgRsk.deleter
-	def WndgDwnOrRstrgRsk(self):
-		del self._WndgDwnOrRstrgRsk
-		self._WndgDwnOrRstrgRsk = None
+	@BizRsk.deleter
+	def BizRsk(self):
+		del self._BizRsk
+		self._BizRsk = None
 
 	@property
 	def MktRsk(self):
@@ -71,6 +71,19 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		self._MktRsk = None
 
 	@property
+	def WndgDwnOrRstrgRsk(self):
+		return self._WndgDwnOrRstrgRsk
+
+	@WndgDwnOrRstrgRsk.setter
+	def WndgDwnOrRstrgRsk(self, value):
+		self._WndgDwnOrRstrgRsk = value if type(value) != auto else self.make_default("WndgDwnOrRstrgRsk")
+
+	@WndgDwnOrRstrgRsk.deleter
+	def WndgDwnOrRstrgRsk(self):
+		del self._WndgDwnOrRstrgRsk
+		self._WndgDwnOrRstrgRsk = None
+
+	@property
 	def CdtRsk(self):
 		return self._CdtRsk
 
@@ -83,26 +96,13 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		del self._CdtRsk
 		self._CdtRsk = None
 
-	@property
-	def BizRsk(self):
-		return self._BizRsk
-
-	@BizRsk.setter
-	def BizRsk(self, value):
-		self._BizRsk = value if type(value) != auto else self.make_default("BizRsk")
-
-	@BizRsk.deleter
-	def BizRsk(self):
-		del self._BizRsk
-		self._BizRsk = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OprlAndLglRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnBffr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CntrPtyRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprlAndLglRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WndgDwnOrRstrgRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WndgDwnOrRstrgRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

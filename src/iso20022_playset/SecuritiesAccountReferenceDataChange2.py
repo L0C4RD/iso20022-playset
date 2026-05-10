@@ -1,38 +1,12 @@
 import base_types
-import Max35Text
-import ISODateTime
 import Max350Text
 import SecuritiesAccount19
+import ISODateTime
+import Max35Text
 
 class SecuritiesAccountReferenceDataChange2(base_types._BaseFieldType):
 
-	__slots__ = ["_NewFldVal", "_SctiesAcctId", "_OdFldVal", "_OprTmStmp", "_FldNm"]
-	@property
-	def NewFldVal(self):
-		return self._NewFldVal
-
-	@NewFldVal.setter
-	def NewFldVal(self, value):
-		self._NewFldVal = value if type(value) != auto else self.make_default("NewFldVal")
-
-	@NewFldVal.deleter
-	def NewFldVal(self):
-		del self._NewFldVal
-		self._NewFldVal = None
-
-	@property
-	def SctiesAcctId(self):
-		return self._SctiesAcctId
-
-	@SctiesAcctId.setter
-	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
-
-	@SctiesAcctId.deleter
-	def SctiesAcctId(self):
-		del self._SctiesAcctId
-		self._SctiesAcctId = None
-
+	__slots__ = ["_OdFldVal", "_NewFldVal", "_OprTmStmp", "_SctiesAcctId", "_FldNm"]
 	@property
 	def OdFldVal(self):
 		return self._OdFldVal
@@ -45,6 +19,19 @@ class SecuritiesAccountReferenceDataChange2(base_types._BaseFieldType):
 	def OdFldVal(self):
 		del self._OdFldVal
 		self._OdFldVal = None
+
+	@property
+	def NewFldVal(self):
+		return self._NewFldVal
+
+	@NewFldVal.setter
+	def NewFldVal(self, value):
+		self._NewFldVal = value if type(value) != auto else self.make_default("NewFldVal")
+
+	@NewFldVal.deleter
+	def NewFldVal(self):
+		del self._NewFldVal
+		self._NewFldVal = None
 
 	@property
 	def OprTmStmp(self):
@@ -60,6 +47,19 @@ class SecuritiesAccountReferenceDataChange2(base_types._BaseFieldType):
 		self._OprTmStmp = None
 
 	@property
+	def SctiesAcctId(self):
+		return self._SctiesAcctId
+
+	@SctiesAcctId.setter
+	def SctiesAcctId(self, value):
+		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
+
+	@SctiesAcctId.deleter
+	def SctiesAcctId(self):
+		del self._SctiesAcctId
+		self._SctiesAcctId = None
+
+	@property
 	def FldNm(self):
 		return self._FldNm
 
@@ -73,10 +73,10 @@ class SecuritiesAccountReferenceDataChange2(base_types._BaseFieldType):
 		self._FldNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

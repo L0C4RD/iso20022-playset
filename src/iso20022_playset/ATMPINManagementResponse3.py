@@ -1,7 +1,7 @@
 import base_types
+import ATMContext17
 import ATMTransaction37
 import ATMEnvironment21
-import ATMContext17
 
 class ATMPINManagementResponse3(base_types._BaseFieldType):
 

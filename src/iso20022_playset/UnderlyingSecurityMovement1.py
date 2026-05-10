@@ -1,24 +1,11 @@
 import base_types
-import SecurityIdentification7
-import SecuritiesAccount8
 import UnitOrFaceAmount1Choice
+import SecuritiesAccount8
+import SecurityIdentification7
 
 class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyId", "_AcctDtls", "_SctiesQty"]
-	@property
-	def SctyId(self):
-		return self._SctyId
-
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
-
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
-
+	__slots__ = ["_AcctDtls", "_SctyId", "_SctiesQty"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
@@ -31,6 +18,19 @@ class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 	def AcctDtls(self):
 		del self._AcctDtls
 		self._AcctDtls = None
+
+	@property
+	def SctyId(self):
+		return self._SctyId
+
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
+
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
 
 	@property
 	def SctiesQty(self):
@@ -46,8 +46,8 @@ class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 		self._SctiesQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount8, min=1, max=2, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

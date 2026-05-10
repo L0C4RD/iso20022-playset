@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
-import PostalAddress21
 import Max350Text
+import PostalAddress21
+import Max35Text
 
 class Organisation23(base_types._BaseFieldType):
 

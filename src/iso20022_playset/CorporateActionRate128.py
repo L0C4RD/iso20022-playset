@@ -1,15 +1,67 @@
 import base_types
 import Percentage14Rate
-import RateFormat26Choice
-import RateFormat24Choice
-import RateAndAmountFormat57Choice
-import RateAndAmountFormat60Choice
 import RatioFormat18Choice
+import RateFormat24Choice
+import RateFormat26Choice
+import RateAndAmountFormat57Choice
 import RatioFormat17Choice
+import RateAndAmountFormat60Choice
 
 class CorporateActionRate128(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlQtyForSbcbdRsltntScties", "_TrfrmatnRate", "_AddtlQtyForExstgScties", "_NewToOd", "_WhldgTaxRate", "_AplblRate", "_FinTxTaxRate", "_FsclStmp", "_ScndLvlTax", "_ChrgsFees", "_TaxCdtRate"]
+	__slots__ = ["_FsclStmp", "_TrfrmatnRate", "_AplblRate", "_FinTxTaxRate", "_AddtlQtyForSbcbdRsltntScties", "_TaxCdtRate", "_AddtlQtyForExstgScties", "_NewToOd", "_WhldgTaxRate", "_ChrgsFees", "_ScndLvlTax"]
+	@property
+	def FsclStmp(self):
+		return self._FsclStmp
+
+	@FsclStmp.setter
+	def FsclStmp(self, value):
+		self._FsclStmp = value if type(value) != auto else self.make_default("FsclStmp")
+
+	@FsclStmp.deleter
+	def FsclStmp(self):
+		del self._FsclStmp
+		self._FsclStmp = None
+
+	@property
+	def TrfrmatnRate(self):
+		return self._TrfrmatnRate
+
+	@TrfrmatnRate.setter
+	def TrfrmatnRate(self, value):
+		self._TrfrmatnRate = value if type(value) != auto else self.make_default("TrfrmatnRate")
+
+	@TrfrmatnRate.deleter
+	def TrfrmatnRate(self):
+		del self._TrfrmatnRate
+		self._TrfrmatnRate = None
+
+	@property
+	def AplblRate(self):
+		return self._AplblRate
+
+	@AplblRate.setter
+	def AplblRate(self, value):
+		self._AplblRate = value if type(value) != auto else self.make_default("AplblRate")
+
+	@AplblRate.deleter
+	def AplblRate(self):
+		del self._AplblRate
+		self._AplblRate = None
+
+	@property
+	def FinTxTaxRate(self):
+		return self._FinTxTaxRate
+
+	@FinTxTaxRate.setter
+	def FinTxTaxRate(self, value):
+		self._FinTxTaxRate = value if type(value) != auto else self.make_default("FinTxTaxRate")
+
+	@FinTxTaxRate.deleter
+	def FinTxTaxRate(self):
+		del self._FinTxTaxRate
+		self._FinTxTaxRate = None
+
 	@property
 	def AddtlQtyForSbcbdRsltntScties(self):
 		return self._AddtlQtyForSbcbdRsltntScties
@@ -24,17 +76,17 @@ class CorporateActionRate128(base_types._BaseFieldType):
 		self._AddtlQtyForSbcbdRsltntScties = None
 
 	@property
-	def TrfrmatnRate(self):
-		return self._TrfrmatnRate
+	def TaxCdtRate(self):
+		return self._TaxCdtRate
 
-	@TrfrmatnRate.setter
-	def TrfrmatnRate(self, value):
-		self._TrfrmatnRate = value if type(value) != auto else self.make_default("TrfrmatnRate")
+	@TaxCdtRate.setter
+	def TaxCdtRate(self, value):
+		self._TaxCdtRate = value if type(value) != auto else self.make_default("TaxCdtRate")
 
-	@TrfrmatnRate.deleter
-	def TrfrmatnRate(self):
-		del self._TrfrmatnRate
-		self._TrfrmatnRate = None
+	@TaxCdtRate.deleter
+	def TaxCdtRate(self):
+		del self._TaxCdtRate
+		self._TaxCdtRate = None
 
 	@property
 	def AddtlQtyForExstgScties(self):
@@ -76,43 +128,17 @@ class CorporateActionRate128(base_types._BaseFieldType):
 		self._WhldgTaxRate = None
 
 	@property
-	def AplblRate(self):
-		return self._AplblRate
+	def ChrgsFees(self):
+		return self._ChrgsFees
 
-	@AplblRate.setter
-	def AplblRate(self, value):
-		self._AplblRate = value if type(value) != auto else self.make_default("AplblRate")
+	@ChrgsFees.setter
+	def ChrgsFees(self, value):
+		self._ChrgsFees = value if type(value) != auto else self.make_default("ChrgsFees")
 
-	@AplblRate.deleter
-	def AplblRate(self):
-		del self._AplblRate
-		self._AplblRate = None
-
-	@property
-	def FinTxTaxRate(self):
-		return self._FinTxTaxRate
-
-	@FinTxTaxRate.setter
-	def FinTxTaxRate(self, value):
-		self._FinTxTaxRate = value if type(value) != auto else self.make_default("FinTxTaxRate")
-
-	@FinTxTaxRate.deleter
-	def FinTxTaxRate(self):
-		del self._FinTxTaxRate
-		self._FinTxTaxRate = None
-
-	@property
-	def FsclStmp(self):
-		return self._FsclStmp
-
-	@FsclStmp.setter
-	def FsclStmp(self, value):
-		self._FsclStmp = value if type(value) != auto else self.make_default("FsclStmp")
-
-	@FsclStmp.deleter
-	def FsclStmp(self):
-		del self._FsclStmp
-		self._FsclStmp = None
+	@ChrgsFees.deleter
+	def ChrgsFees(self):
+		del self._ChrgsFees
+		self._ChrgsFees = None
 
 	@property
 	def ScndLvlTax(self):
@@ -127,43 +153,17 @@ class CorporateActionRate128(base_types._BaseFieldType):
 		del self._ScndLvlTax
 		self._ScndLvlTax = None
 
-	@property
-	def ChrgsFees(self):
-		return self._ChrgsFees
-
-	@ChrgsFees.setter
-	def ChrgsFees(self, value):
-		self._ChrgsFees = value if type(value) != auto else self.make_default("ChrgsFees")
-
-	@ChrgsFees.deleter
-	def ChrgsFees(self):
-		del self._ChrgsFees
-		self._ChrgsFees = None
-
-	@property
-	def TaxCdtRate(self):
-		return self._TaxCdtRate
-
-	@TaxCdtRate.setter
-	def TaxCdtRate(self, value):
-		self._TaxCdtRate = value if type(value) != auto else self.make_default("TaxCdtRate")
-
-	@TaxCdtRate.deleter
-	def TaxCdtRate(self):
-		del self._TaxCdtRate
-		self._TaxCdtRate = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlQtyForSbcbdRsltntScties', type=RatioFormat17Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FsclStmp', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfrmatnRate', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AplblRate', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinTxTaxRate', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlQtyForSbcbdRsltntScties', type=RatioFormat17Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxCdtRate', type=RateFormat26Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlQtyForExstgScties', type=RatioFormat17Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewToOd', type=RatioFormat18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WhldgTaxRate', type=RateAndAmountFormat60Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AplblRate', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinTxTaxRate', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FsclStmp', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndLvlTax', type=RateAndAmountFormat60Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ChrgsFees', type=RateAndAmountFormat57Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxCdtRate', type=RateFormat26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndLvlTax', type=RateAndAmountFormat60Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

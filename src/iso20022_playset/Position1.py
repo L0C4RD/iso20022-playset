@@ -1,27 +1,27 @@
 import base_types
-import Fraction5DecimalNumber
-import EndOfDayRequirement1
 import NonNegativeFraction5DecimalNumber
-import ActiveCurrencyAndAmount
-import Max256Text
+import EndOfDayRequirement1
 import AmountAndDirection102
+import Fraction5DecimalNumber
 import ActiveCurrencyAnd24Amount
+import Max256Text
+import ActiveCurrencyAndAmount
 
 class Position1(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssNtnl", "_GrssMktVal", "_PdctId", "_GrssDltaEqvtVal", "_NetNtnl", "_GrssDltaEqvtQty", "_NetDltaEqvtQty", "_RskRqrmnt", "_NetDltaEqvtVal"]
+	__slots__ = ["_RskRqrmnt", "_GrssMktVal", "_NetDltaEqvtQty", "_PdctId", "_NetDltaEqvtVal", "_GrssDltaEqvtQty", "_GrssDltaEqvtVal", "_NetNtnl", "_GrssNtnl"]
 	@property
-	def GrssNtnl(self):
-		return self._GrssNtnl
+	def RskRqrmnt(self):
+		return self._RskRqrmnt
 
-	@GrssNtnl.setter
-	def GrssNtnl(self, value):
-		self._GrssNtnl = value if type(value) != auto else self.make_default("GrssNtnl")
+	@RskRqrmnt.setter
+	def RskRqrmnt(self, value):
+		self._RskRqrmnt = value if type(value) != auto else self.make_default("RskRqrmnt")
 
-	@GrssNtnl.deleter
-	def GrssNtnl(self):
-		del self._GrssNtnl
-		self._GrssNtnl = None
+	@RskRqrmnt.deleter
+	def RskRqrmnt(self):
+		del self._RskRqrmnt
+		self._RskRqrmnt = None
 
 	@property
 	def GrssMktVal(self):
@@ -37,6 +37,19 @@ class Position1(base_types._BaseFieldType):
 		self._GrssMktVal = None
 
 	@property
+	def NetDltaEqvtQty(self):
+		return self._NetDltaEqvtQty
+
+	@NetDltaEqvtQty.setter
+	def NetDltaEqvtQty(self, value):
+		self._NetDltaEqvtQty = value if type(value) != auto else self.make_default("NetDltaEqvtQty")
+
+	@NetDltaEqvtQty.deleter
+	def NetDltaEqvtQty(self):
+		del self._NetDltaEqvtQty
+		self._NetDltaEqvtQty = None
+
+	@property
 	def PdctId(self):
 		return self._PdctId
 
@@ -48,6 +61,32 @@ class Position1(base_types._BaseFieldType):
 	def PdctId(self):
 		del self._PdctId
 		self._PdctId = None
+
+	@property
+	def NetDltaEqvtVal(self):
+		return self._NetDltaEqvtVal
+
+	@NetDltaEqvtVal.setter
+	def NetDltaEqvtVal(self, value):
+		self._NetDltaEqvtVal = value if type(value) != auto else self.make_default("NetDltaEqvtVal")
+
+	@NetDltaEqvtVal.deleter
+	def NetDltaEqvtVal(self):
+		del self._NetDltaEqvtVal
+		self._NetDltaEqvtVal = None
+
+	@property
+	def GrssDltaEqvtQty(self):
+		return self._GrssDltaEqvtQty
+
+	@GrssDltaEqvtQty.setter
+	def GrssDltaEqvtQty(self, value):
+		self._GrssDltaEqvtQty = value if type(value) != auto else self.make_default("GrssDltaEqvtQty")
+
+	@GrssDltaEqvtQty.deleter
+	def GrssDltaEqvtQty(self):
+		del self._GrssDltaEqvtQty
+		self._GrssDltaEqvtQty = None
 
 	@property
 	def GrssDltaEqvtVal(self):
@@ -76,66 +115,27 @@ class Position1(base_types._BaseFieldType):
 		self._NetNtnl = None
 
 	@property
-	def GrssDltaEqvtQty(self):
-		return self._GrssDltaEqvtQty
+	def GrssNtnl(self):
+		return self._GrssNtnl
 
-	@GrssDltaEqvtQty.setter
-	def GrssDltaEqvtQty(self, value):
-		self._GrssDltaEqvtQty = value if type(value) != auto else self.make_default("GrssDltaEqvtQty")
+	@GrssNtnl.setter
+	def GrssNtnl(self, value):
+		self._GrssNtnl = value if type(value) != auto else self.make_default("GrssNtnl")
 
-	@GrssDltaEqvtQty.deleter
-	def GrssDltaEqvtQty(self):
-		del self._GrssDltaEqvtQty
-		self._GrssDltaEqvtQty = None
-
-	@property
-	def NetDltaEqvtQty(self):
-		return self._NetDltaEqvtQty
-
-	@NetDltaEqvtQty.setter
-	def NetDltaEqvtQty(self, value):
-		self._NetDltaEqvtQty = value if type(value) != auto else self.make_default("NetDltaEqvtQty")
-
-	@NetDltaEqvtQty.deleter
-	def NetDltaEqvtQty(self):
-		del self._NetDltaEqvtQty
-		self._NetDltaEqvtQty = None
-
-	@property
-	def RskRqrmnt(self):
-		return self._RskRqrmnt
-
-	@RskRqrmnt.setter
-	def RskRqrmnt(self, value):
-		self._RskRqrmnt = value if type(value) != auto else self.make_default("RskRqrmnt")
-
-	@RskRqrmnt.deleter
-	def RskRqrmnt(self):
-		del self._RskRqrmnt
-		self._RskRqrmnt = None
-
-	@property
-	def NetDltaEqvtVal(self):
-		return self._NetDltaEqvtVal
-
-	@NetDltaEqvtVal.setter
-	def NetDltaEqvtVal(self, value):
-		self._NetDltaEqvtVal = value if type(value) != auto else self.make_default("NetDltaEqvtVal")
-
-	@NetDltaEqvtVal.deleter
-	def NetDltaEqvtVal(self):
-		del self._NetDltaEqvtVal
-		self._NetDltaEqvtVal = None
+	@GrssNtnl.deleter
+	def GrssNtnl(self):
+		del self._GrssNtnl
+		self._GrssNtnl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrssNtnl', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskRqrmnt', type=EndOfDayRequirement1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrssMktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetDltaEqvtQty', type=Fraction5DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctId', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetDltaEqvtVal', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssDltaEqvtQty', type=NonNegativeFraction5DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrssDltaEqvtVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetNtnl', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssDltaEqvtQty', type=NonNegativeFraction5DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetDltaEqvtQty', type=Fraction5DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RskRqrmnt', type=EndOfDayRequirement1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetDltaEqvtVal', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssNtnl', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 	))
 

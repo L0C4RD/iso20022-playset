@@ -1,25 +1,12 @@
 import base_types
 import BlockChainAddressWallet3
-import CashAccount38
 import SecuritiesAccount19
 import DateAndDateTime2Choice
+import CashAccount38
 
 class AccountLink8(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_CshAcct", "_VldFr", "_SctiesAcct"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
+	__slots__ = ["_CshAcct", "_VldFr", "_BlckChainAdrOrWllt", "_SctiesAcct"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct
@@ -47,6 +34,19 @@ class AccountLink8(base_types._BaseFieldType):
 		self._VldFr = None
 
 	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
 	def SctiesAcct(self):
 		return self._SctiesAcct
 
@@ -60,9 +60,9 @@ class AccountLink8(base_types._BaseFieldType):
 		self._SctiesAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount38, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 	))
 

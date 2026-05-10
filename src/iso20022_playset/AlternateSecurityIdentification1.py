@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import CountryCode
+import Max35Text
 
 class AlternateSecurityIdentification1(base_types._BaseFieldType):
 

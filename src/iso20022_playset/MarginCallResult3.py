@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import MarginCallResult2Choice
+import ActiveCurrencyAndAmount
 
 class MarginCallResult3(base_types._BaseFieldType):
 

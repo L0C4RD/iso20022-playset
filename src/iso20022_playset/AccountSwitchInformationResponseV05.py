@@ -1,39 +1,26 @@
 import base_types
-import AccountSwitchDetails1
-import CashAccount43
-import DirectDebitInstructionDetails3
-import SupplementaryData1
-import MessageIdentification1
 import PaymentInstruction43
+import SupplementaryData1
+import CashAccount43
+import MessageIdentification1
+import AccountSwitchDetails1
+import DirectDebitInstructionDetails3
 
 class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctDbtInstr", "_SplmtryData", "_PmtInstr", "_MsgId", "_OdAcct", "_AcctSwtchDtls", "_NewAcct"]
+	__slots__ = ["_MsgId", "_PmtInstr", "_SplmtryData", "_NewAcct", "_AcctSwtchDtls", "_OdAcct", "_DrctDbtInstr"]
 	@property
-	def DrctDbtInstr(self):
-		return self._DrctDbtInstr
+	def MsgId(self):
+		return self._MsgId
 
-	@DrctDbtInstr.setter
-	def DrctDbtInstr(self, value):
-		self._DrctDbtInstr = value if type(value) != auto else self.make_default("DrctDbtInstr")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@DrctDbtInstr.deleter
-	def DrctDbtInstr(self):
-		del self._DrctDbtInstr
-		self._DrctDbtInstr = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def PmtInstr(self):
@@ -49,30 +36,30 @@ class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 		self._PmtInstr = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
-	def OdAcct(self):
-		return self._OdAcct
+	def NewAcct(self):
+		return self._NewAcct
 
-	@OdAcct.setter
-	def OdAcct(self, value):
-		self._OdAcct = value if type(value) != auto else self.make_default("OdAcct")
+	@NewAcct.setter
+	def NewAcct(self, value):
+		self._NewAcct = value if type(value) != auto else self.make_default("NewAcct")
 
-	@OdAcct.deleter
-	def OdAcct(self):
-		del self._OdAcct
-		self._OdAcct = None
+	@NewAcct.deleter
+	def NewAcct(self):
+		del self._NewAcct
+		self._NewAcct = None
 
 	@property
 	def AcctSwtchDtls(self):
@@ -88,25 +75,38 @@ class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 		self._AcctSwtchDtls = None
 
 	@property
-	def NewAcct(self):
-		return self._NewAcct
+	def OdAcct(self):
+		return self._OdAcct
 
-	@NewAcct.setter
-	def NewAcct(self, value):
-		self._NewAcct = value if type(value) != auto else self.make_default("NewAcct")
+	@OdAcct.setter
+	def OdAcct(self, value):
+		self._OdAcct = value if type(value) != auto else self.make_default("OdAcct")
 
-	@NewAcct.deleter
-	def NewAcct(self):
-		del self._NewAcct
-		self._NewAcct = None
+	@OdAcct.deleter
+	def OdAcct(self):
+		del self._OdAcct
+		self._OdAcct = None
+
+	@property
+	def DrctDbtInstr(self):
+		return self._DrctDbtInstr
+
+	@DrctDbtInstr.setter
+	def DrctDbtInstr(self, value):
+		self._DrctDbtInstr = value if type(value) != auto else self.make_default("DrctDbtInstr")
+
+	@DrctDbtInstr.deleter
+	def DrctDbtInstr(self):
+		del self._DrctDbtInstr
+		self._DrctDbtInstr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrctDbtInstr', type=DirectDebitInstructionDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtInstr', type=PaymentInstruction43, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstr', type=PaymentInstruction43, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctDbtInstr', type=DirectDebitInstructionDetails3, min=0, max=None, mutex_group=None, array=True),
 	))
 

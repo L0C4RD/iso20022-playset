@@ -1,24 +1,11 @@
 import base_types
+import DataModification2Code
 import PaymentInstrument17
 import CashAccount204
-import DataModification2Code
 
 class CashSettlement4(base_types._BaseFieldType):
 
-	__slots__ = ["_ModScpIndctn", "_OthrCshSttlmDtls", "_CshAcctDtls"]
-	@property
-	def ModScpIndctn(self):
-		return self._ModScpIndctn
-
-	@ModScpIndctn.setter
-	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
-
-	@ModScpIndctn.deleter
-	def ModScpIndctn(self):
-		del self._ModScpIndctn
-		self._ModScpIndctn = None
-
+	__slots__ = ["_OthrCshSttlmDtls", "_ModScpIndctn", "_CshAcctDtls"]
 	@property
 	def OthrCshSttlmDtls(self):
 		return self._OthrCshSttlmDtls
@@ -31,6 +18,19 @@ class CashSettlement4(base_types._BaseFieldType):
 	def OthrCshSttlmDtls(self):
 		del self._OthrCshSttlmDtls
 		self._OthrCshSttlmDtls = None
+
+	@property
+	def ModScpIndctn(self):
+		return self._ModScpIndctn
+
+	@ModScpIndctn.setter
+	def ModScpIndctn(self, value):
+		self._ModScpIndctn = value if type(value) != auto else self.make_default("ModScpIndctn")
+
+	@ModScpIndctn.deleter
+	def ModScpIndctn(self):
+		del self._ModScpIndctn
+		self._ModScpIndctn = None
 
 	@property
 	def CshAcctDtls(self):
@@ -46,8 +46,8 @@ class CashSettlement4(base_types._BaseFieldType):
 		self._CshAcctDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ModScpIndctn', type=DataModification2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCshSttlmDtls', type=PaymentInstrument17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModScpIndctn', type=DataModification2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctDtls', type=CashAccount204, min=0, max=None, mutex_group=None, array=True),
 	))
 

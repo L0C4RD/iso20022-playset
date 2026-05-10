@@ -1,6 +1,6 @@
 import base_types
-import PartyUpdate1
 import PartyCancellation1
+import PartyUpdate1
 
 class PartyReport1Choice(base_types._BaseFieldType):
 

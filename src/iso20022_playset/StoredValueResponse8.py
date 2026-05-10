@@ -1,7 +1,7 @@
 import base_types
-import PaymentReceipt6
-import TransactionIdentifier1
 import StoredValueData8
+import TransactionIdentifier1
+import PaymentReceipt6
 
 class StoredValueResponse8(base_types._BaseFieldType):
 

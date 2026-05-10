@@ -1,39 +1,13 @@
 import base_types
-import TradeCounterpartyRelationshipRecord1
 import Counterparty46
-import PartyIdentification248Choice
 import OrganisationIdentification15Choice
+import TradeCounterpartyRelationshipRecord1
+import PartyIdentification248Choice
 import Counterparty45
 
 class TradeCounterpartyReport20(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_RptgCtrPty", "_SubmitgAgt", "_Bnfcry", "_ExctnAgt", "_OthrCtrPty", "_Brkr", "_RltshRcrd", "_NttyRspnsblForRpt"]
-	@property
-	def ClrMmb(self):
-		return self._ClrMmb
-
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
-
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
-
-	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
-
+	__slots__ = ["_SubmitgAgt", "_Bnfcry", "_ClrMmb", "_RltshRcrd", "_ExctnAgt", "_NttyRspnsblForRpt", "_OthrCtrPty", "_Brkr", "_RptgCtrPty"]
 	@property
 	def SubmitgAgt(self):
 		return self._SubmitgAgt
@@ -61,6 +35,32 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 		self._Bnfcry = None
 
 	@property
+	def ClrMmb(self):
+		return self._ClrMmb
+
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
+	@property
+	def RltshRcrd(self):
+		return self._RltshRcrd
+
+	@RltshRcrd.setter
+	def RltshRcrd(self, value):
+		self._RltshRcrd = value if type(value) != auto else self.make_default("RltshRcrd")
+
+	@RltshRcrd.deleter
+	def RltshRcrd(self):
+		del self._RltshRcrd
+		self._RltshRcrd = None
+
+	@property
 	def ExctnAgt(self):
 		return self._ExctnAgt
 
@@ -72,6 +72,19 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 	def ExctnAgt(self):
 		del self._ExctnAgt
 		self._ExctnAgt = None
+
+	@property
+	def NttyRspnsblForRpt(self):
+		return self._NttyRspnsblForRpt
+
+	@NttyRspnsblForRpt.setter
+	def NttyRspnsblForRpt(self, value):
+		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
+
+	@NttyRspnsblForRpt.deleter
+	def NttyRspnsblForRpt(self):
+		del self._NttyRspnsblForRpt
+		self._NttyRspnsblForRpt = None
 
 	@property
 	def OthrCtrPty(self):
@@ -100,40 +113,27 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 		self._Brkr = None
 
 	@property
-	def RltshRcrd(self):
-		return self._RltshRcrd
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
 
-	@RltshRcrd.setter
-	def RltshRcrd(self, value):
-		self._RltshRcrd = value if type(value) != auto else self.make_default("RltshRcrd")
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
 
-	@RltshRcrd.deleter
-	def RltshRcrd(self):
-		del self._RltshRcrd
-		self._RltshRcrd = None
-
-	@property
-	def NttyRspnsblForRpt(self):
-		return self._NttyRspnsblForRpt
-
-	@NttyRspnsblForRpt.setter
-	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
-
-	@NttyRspnsblForRpt.deleter
-	def NttyRspnsblForRpt(self):
-		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification248Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgCtrPty', type=Counterparty45, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitgAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification248Choice, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification248Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltshRcrd', type=TradeCounterpartyRelationshipRecord1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ExctnAgt', type=OrganisationIdentification15Choice, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=Counterparty46, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brkr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltshRcrd', type=TradeCounterpartyRelationshipRecord1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=Counterparty45, min=1, max=1, mutex_group=None, array=False),
 	))
 

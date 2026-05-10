@@ -1,7 +1,7 @@
 import base_types
-import ActiveOrHistoricCurrencyAndAmount
-import CashAvailabilityDate1Choice
 import CreditDebitCode
+import CashAvailabilityDate1Choice
+import ActiveOrHistoricCurrencyAndAmount
 
 class CashAvailability1(base_types._BaseFieldType):
 

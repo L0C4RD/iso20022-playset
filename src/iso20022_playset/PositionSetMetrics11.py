@@ -4,20 +4,7 @@ import VolumeMetrics4
 
 class PositionSetMetrics11(base_types._BaseFieldType):
 
-	__slots__ = ["_CshRinvstmtRate", "_VolMtrcs"]
-	@property
-	def CshRinvstmtRate(self):
-		return self._CshRinvstmtRate
-
-	@CshRinvstmtRate.setter
-	def CshRinvstmtRate(self, value):
-		self._CshRinvstmtRate = value if type(value) != auto else self.make_default("CshRinvstmtRate")
-
-	@CshRinvstmtRate.deleter
-	def CshRinvstmtRate(self):
-		del self._CshRinvstmtRate
-		self._CshRinvstmtRate = None
-
+	__slots__ = ["_VolMtrcs", "_CshRinvstmtRate"]
 	@property
 	def VolMtrcs(self):
 		return self._VolMtrcs
@@ -31,8 +18,21 @@ class PositionSetMetrics11(base_types._BaseFieldType):
 		del self._VolMtrcs
 		self._VolMtrcs = None
 
+	@property
+	def CshRinvstmtRate(self):
+		return self._CshRinvstmtRate
+
+	@CshRinvstmtRate.setter
+	def CshRinvstmtRate(self, value):
+		self._CshRinvstmtRate = value if type(value) != auto else self.make_default("CshRinvstmtRate")
+
+	@CshRinvstmtRate.deleter
+	def CshRinvstmtRate(self):
+		del self._CshRinvstmtRate
+		self._CshRinvstmtRate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshRinvstmtRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VolMtrcs', type=VolumeMetrics4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshRinvstmtRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

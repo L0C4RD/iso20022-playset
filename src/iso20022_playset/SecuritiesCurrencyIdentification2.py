@@ -1,28 +1,15 @@
 import base_types
-import TrueFalseIndicator
-import Max1Number
-import CountryCodeAndName3
 import CurrencyCodeAndName1
 import Period4Choice
 import ISODate
+import TrueFalseIndicator
 import Modification1Code
+import Max1Number
+import CountryCodeAndName3
 
 class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_FrctnlDgt", "_CtryDtls", "_Ccy", "_Mod", "_VldtyPrd", "_PreEuro", "_LastUpdtd"]
-	@property
-	def FrctnlDgt(self):
-		return self._FrctnlDgt
-
-	@FrctnlDgt.setter
-	def FrctnlDgt(self, value):
-		self._FrctnlDgt = value if type(value) != auto else self.make_default("FrctnlDgt")
-
-	@FrctnlDgt.deleter
-	def FrctnlDgt(self):
-		del self._FrctnlDgt
-		self._FrctnlDgt = None
-
+	__slots__ = ["_CtryDtls", "_VldtyPrd", "_LastUpdtd", "_PreEuro", "_Ccy", "_FrctnlDgt", "_Mod"]
 	@property
 	def CtryDtls(self):
 		return self._CtryDtls
@@ -35,32 +22,6 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 	def CtryDtls(self):
 		del self._CtryDtls
 		self._CtryDtls = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
 
 	@property
 	def VldtyPrd(self):
@@ -76,6 +37,19 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	@property
+	def LastUpdtd(self):
+		return self._LastUpdtd
+
+	@LastUpdtd.setter
+	def LastUpdtd(self, value):
+		self._LastUpdtd = value if type(value) != auto else self.make_default("LastUpdtd")
+
+	@LastUpdtd.deleter
+	def LastUpdtd(self):
+		del self._LastUpdtd
+		self._LastUpdtd = None
+
+	@property
 	def PreEuro(self):
 		return self._PreEuro
 
@@ -89,25 +63,51 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 		self._PreEuro = None
 
 	@property
-	def LastUpdtd(self):
-		return self._LastUpdtd
+	def Ccy(self):
+		return self._Ccy
 
-	@LastUpdtd.setter
-	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != auto else self.make_default("LastUpdtd")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@LastUpdtd.deleter
-	def LastUpdtd(self):
-		del self._LastUpdtd
-		self._LastUpdtd = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def FrctnlDgt(self):
+		return self._FrctnlDgt
+
+	@FrctnlDgt.setter
+	def FrctnlDgt(self, value):
+		self._FrctnlDgt = value if type(value) != auto else self.make_default("FrctnlDgt")
+
+	@FrctnlDgt.deleter
+	def FrctnlDgt(self):
+		del self._FrctnlDgt
+		self._FrctnlDgt = None
+
+	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrctnlDgt', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryDtls', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=CurrencyCodeAndName1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreEuro', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreEuro', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=CurrencyCodeAndName1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrctnlDgt', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

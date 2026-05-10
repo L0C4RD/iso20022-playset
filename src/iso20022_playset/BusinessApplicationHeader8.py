@@ -1,43 +1,17 @@
 import base_types
-import YesNoIndicator
 import ISODateTime
-import Party51Choice
-import CopyDuplicate1Code
-import BusinessMessagePriorityCode
-import Max35Text
-import ImplementationSpecification1
 import UnicodeChartsCode
+import CopyDuplicate1Code
+import Party51Choice
+import ImplementationSpecification1
 import SignatureEnvelope
+import YesNoIndicator
+import Max35Text
+import BusinessMessagePriorityCode
 
 class BusinessApplicationHeader8(base_types._BaseFieldType):
 
-	__slots__ = ["_MktPrctc", "_Sgntr", "_CreDt", "_To", "_BizMsgIdr", "_Fr", "_CpyDplct", "_MsgDefIdr", "_PssblDplct", "_BizSvc", "_Prty", "_BizPrcgDt", "_CharSet"]
-	@property
-	def MktPrctc(self):
-		return self._MktPrctc
-
-	@MktPrctc.setter
-	def MktPrctc(self, value):
-		self._MktPrctc = value if type(value) != auto else self.make_default("MktPrctc")
-
-	@MktPrctc.deleter
-	def MktPrctc(self):
-		del self._MktPrctc
-		self._MktPrctc = None
-
-	@property
-	def Sgntr(self):
-		return self._Sgntr
-
-	@Sgntr.setter
-	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
-
-	@Sgntr.deleter
-	def Sgntr(self):
-		del self._Sgntr
-		self._Sgntr = None
-
+	__slots__ = ["_CreDt", "_CharSet", "_PssblDplct", "_CpyDplct", "_MsgDefIdr", "_Fr", "_To", "_BizSvc", "_MktPrctc", "_BizMsgIdr", "_Prty", "_BizPrcgDt", "_Sgntr"]
 	@property
 	def CreDt(self):
 		return self._CreDt
@@ -52,43 +26,30 @@ class BusinessApplicationHeader8(base_types._BaseFieldType):
 		self._CreDt = None
 
 	@property
-	def To(self):
-		return self._To
+	def CharSet(self):
+		return self._CharSet
 
-	@To.setter
-	def To(self, value):
-		self._To = value if type(value) != auto else self.make_default("To")
+	@CharSet.setter
+	def CharSet(self, value):
+		self._CharSet = value if type(value) != auto else self.make_default("CharSet")
 
-	@To.deleter
-	def To(self):
-		del self._To
-		self._To = None
-
-	@property
-	def BizMsgIdr(self):
-		return self._BizMsgIdr
-
-	@BizMsgIdr.setter
-	def BizMsgIdr(self, value):
-		self._BizMsgIdr = value if type(value) != auto else self.make_default("BizMsgIdr")
-
-	@BizMsgIdr.deleter
-	def BizMsgIdr(self):
-		del self._BizMsgIdr
-		self._BizMsgIdr = None
+	@CharSet.deleter
+	def CharSet(self):
+		del self._CharSet
+		self._CharSet = None
 
 	@property
-	def Fr(self):
-		return self._Fr
+	def PssblDplct(self):
+		return self._PssblDplct
 
-	@Fr.setter
-	def Fr(self, value):
-		self._Fr = value if type(value) != auto else self.make_default("Fr")
+	@PssblDplct.setter
+	def PssblDplct(self, value):
+		self._PssblDplct = value if type(value) != auto else self.make_default("PssblDplct")
 
-	@Fr.deleter
-	def Fr(self):
-		del self._Fr
-		self._Fr = None
+	@PssblDplct.deleter
+	def PssblDplct(self):
+		del self._PssblDplct
+		self._PssblDplct = None
 
 	@property
 	def CpyDplct(self):
@@ -117,17 +78,30 @@ class BusinessApplicationHeader8(base_types._BaseFieldType):
 		self._MsgDefIdr = None
 
 	@property
-	def PssblDplct(self):
-		return self._PssblDplct
+	def Fr(self):
+		return self._Fr
 
-	@PssblDplct.setter
-	def PssblDplct(self, value):
-		self._PssblDplct = value if type(value) != auto else self.make_default("PssblDplct")
+	@Fr.setter
+	def Fr(self, value):
+		self._Fr = value if type(value) != auto else self.make_default("Fr")
 
-	@PssblDplct.deleter
-	def PssblDplct(self):
-		del self._PssblDplct
-		self._PssblDplct = None
+	@Fr.deleter
+	def Fr(self):
+		del self._Fr
+		self._Fr = None
+
+	@property
+	def To(self):
+		return self._To
+
+	@To.setter
+	def To(self, value):
+		self._To = value if type(value) != auto else self.make_default("To")
+
+	@To.deleter
+	def To(self):
+		del self._To
+		self._To = None
 
 	@property
 	def BizSvc(self):
@@ -141,6 +115,32 @@ class BusinessApplicationHeader8(base_types._BaseFieldType):
 	def BizSvc(self):
 		del self._BizSvc
 		self._BizSvc = None
+
+	@property
+	def MktPrctc(self):
+		return self._MktPrctc
+
+	@MktPrctc.setter
+	def MktPrctc(self, value):
+		self._MktPrctc = value if type(value) != auto else self.make_default("MktPrctc")
+
+	@MktPrctc.deleter
+	def MktPrctc(self):
+		del self._MktPrctc
+		self._MktPrctc = None
+
+	@property
+	def BizMsgIdr(self):
+		return self._BizMsgIdr
+
+	@BizMsgIdr.setter
+	def BizMsgIdr(self, value):
+		self._BizMsgIdr = value if type(value) != auto else self.make_default("BizMsgIdr")
+
+	@BizMsgIdr.deleter
+	def BizMsgIdr(self):
+		del self._BizMsgIdr
+		self._BizMsgIdr = None
 
 	@property
 	def Prty(self):
@@ -169,31 +169,31 @@ class BusinessApplicationHeader8(base_types._BaseFieldType):
 		self._BizPrcgDt = None
 
 	@property
-	def CharSet(self):
-		return self._CharSet
+	def Sgntr(self):
+		return self._Sgntr
 
-	@CharSet.setter
-	def CharSet(self, value):
-		self._CharSet = value if type(value) != auto else self.make_default("CharSet")
+	@Sgntr.setter
+	def Sgntr(self, value):
+		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
 
-	@CharSet.deleter
-	def CharSet(self):
-		del self._CharSet
-		self._CharSet = None
+	@Sgntr.deleter
+	def Sgntr(self):
+		del self._Sgntr
+		self._Sgntr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktPrctc', type=ImplementationSpecification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='To', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BizMsgIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fr', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CharSet', type=UnicodeChartsCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PssblDplct', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgDefIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PssblDplct', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fr', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='To', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizSvc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPrctc', type=ImplementationSpecification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizMsgIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prty', type=BusinessMessagePriorityCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizPrcgDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CharSet', type=UnicodeChartsCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
 	))
 

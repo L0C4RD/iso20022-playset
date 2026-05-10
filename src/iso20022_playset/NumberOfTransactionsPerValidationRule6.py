@@ -1,6 +1,6 @@
 import base_types
-import RejectionReason70
 import Max15NumericText
+import RejectionReason70
 
 class NumberOfTransactionsPerValidationRule6(base_types._BaseFieldType):
 

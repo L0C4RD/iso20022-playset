@@ -1,6 +1,6 @@
 import base_types
-import Modification1Code
 import Max350Text
+import Modification1Code
 
 class FullLegalNameModification1(base_types._BaseFieldType):
 

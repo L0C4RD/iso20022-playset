@@ -1,8 +1,8 @@
 import base_types
-import Max35Text
 import AmountAndDirection34
 import Max40Text
 import DecimalNumber
+import Max35Text
 
 class BillingServicesTax2(base_types._BaseFieldType):
 

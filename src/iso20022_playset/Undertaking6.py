@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import PartyIdentification43
+import Max35Text
 
 class Undertaking6(base_types._BaseFieldType):
 

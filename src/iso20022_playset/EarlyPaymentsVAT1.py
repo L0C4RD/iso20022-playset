@@ -1,23 +1,23 @@
 import base_types
-import PercentageRate
 import Max4Text
+import PercentageRate
 import CurrencyAndAmount
 
 class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRate", "_DscntTaxAmt", "_DscntTaxTp"]
+	__slots__ = ["_DscntTaxTp", "_DscntTaxAmt", "_TaxRate"]
 	@property
-	def TaxRate(self):
-		return self._TaxRate
+	def DscntTaxTp(self):
+		return self._DscntTaxTp
 
-	@TaxRate.setter
-	def TaxRate(self, value):
-		self._TaxRate = value if type(value) != auto else self.make_default("TaxRate")
+	@DscntTaxTp.setter
+	def DscntTaxTp(self, value):
+		self._DscntTaxTp = value if type(value) != auto else self.make_default("DscntTaxTp")
 
-	@TaxRate.deleter
-	def TaxRate(self):
-		del self._TaxRate
-		self._TaxRate = None
+	@DscntTaxTp.deleter
+	def DscntTaxTp(self):
+		del self._DscntTaxTp
+		self._DscntTaxTp = None
 
 	@property
 	def DscntTaxAmt(self):
@@ -33,21 +33,21 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 		self._DscntTaxAmt = None
 
 	@property
-	def DscntTaxTp(self):
-		return self._DscntTaxTp
+	def TaxRate(self):
+		return self._TaxRate
 
-	@DscntTaxTp.setter
-	def DscntTaxTp(self, value):
-		self._DscntTaxTp = value if type(value) != auto else self.make_default("DscntTaxTp")
+	@TaxRate.setter
+	def TaxRate(self, value):
+		self._TaxRate = value if type(value) != auto else self.make_default("TaxRate")
 
-	@DscntTaxTp.deleter
-	def DscntTaxTp(self):
-		del self._DscntTaxTp
-		self._DscntTaxTp = None
+	@TaxRate.deleter
+	def TaxRate(self):
+		del self._TaxRate
+		self._TaxRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DscntTaxAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscntTaxTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntTaxAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

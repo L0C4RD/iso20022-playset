@@ -5,19 +5,19 @@ import LotteryTypeFormat4Choice
 
 class CorporateAction71(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_LtryTp", "_EvtStag"]
+	__slots__ = ["_EvtStag", "_LtryTp", "_DtDtls"]
 	@property
-	def DtDtls(self):
-		return self._DtDtls
+	def EvtStag(self):
+		return self._EvtStag
 
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+	@EvtStag.setter
+	def EvtStag(self, value):
+		self._EvtStag = value if type(value) != auto else self.make_default("EvtStag")
 
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
+	@EvtStag.deleter
+	def EvtStag(self):
+		del self._EvtStag
+		self._EvtStag = None
 
 	@property
 	def LtryTp(self):
@@ -33,21 +33,21 @@ class CorporateAction71(base_types._BaseFieldType):
 		self._LtryTp = None
 
 	@property
-	def EvtStag(self):
-		return self._EvtStag
+	def DtDtls(self):
+		return self._DtDtls
 
-	@EvtStag.setter
-	def EvtStag(self, value):
-		self._EvtStag = value if type(value) != auto else self.make_default("EvtStag")
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
 
-	@EvtStag.deleter
-	def EvtStag(self):
-		del self._EvtStag
-		self._EvtStag = None
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate86, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat14Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate86, min=0, max=1, mutex_group=None, array=False),
 	))
 

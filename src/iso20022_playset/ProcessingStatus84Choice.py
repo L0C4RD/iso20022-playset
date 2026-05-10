@@ -1,28 +1,15 @@
 import base_types
+import ProprietaryStatusAndReason6
 import PendingStatus39Choice
-import RejectionOrRepairStatus43Choice
-import DeniedStatus15Choice
-import AcknowledgedAcceptedStatus24Choice
 import CancellationStatus15Choice
 import RejectionOrRepairStatus42Choice
-import ProprietaryStatusAndReason6
+import AcknowledgedAcceptedStatus24Choice
+import RejectionOrRepairStatus43Choice
+import DeniedStatus15Choice
 
 class ProcessingStatus84Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_AckdAccptd", "_Rjctd", "_Rpr", "_Canc", "_Dnd", "_PdgCxl"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_AckdAccptd", "_Rjctd", "_Prtry", "_Rpr", "_Dnd", "_PdgCxl", "_Canc"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd
@@ -50,6 +37,19 @@ class ProcessingStatus84Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
+	@property
 	def Rpr(self):
 		return self._Rpr
 
@@ -61,19 +61,6 @@ class ProcessingStatus84Choice(base_types._BaseFieldType):
 	def Rpr(self):
 		del self._Rpr
 		self._Rpr = None
-
-	@property
-	def Canc(self):
-		return self._Canc
-
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
-
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
 
 	@property
 	def Dnd(self):
@@ -101,13 +88,26 @@ class ProcessingStatus84Choice(base_types._BaseFieldType):
 		del self._PdgCxl
 		self._PdgCxl = None
 
+	@property
+	def Canc(self):
+		return self._Canc
+
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != auto else self.make_default("Canc")
+
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus24Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus43Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus42Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancellationStatus15Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dnd', type=DeniedStatus15Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxl', type=PendingStatus39Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancellationStatus15Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

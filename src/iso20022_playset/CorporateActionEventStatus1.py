@@ -1,23 +1,10 @@
 import base_types
-import EventCompletenessStatus1Code
 import EventConfirmationStatus1Code
+import EventCompletenessStatus1Code
 
 class CorporateActionEventStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtConfSts", "_EvtCmpltnsSts"]
-	@property
-	def EvtConfSts(self):
-		return self._EvtConfSts
-
-	@EvtConfSts.setter
-	def EvtConfSts(self, value):
-		self._EvtConfSts = value if type(value) != auto else self.make_default("EvtConfSts")
-
-	@EvtConfSts.deleter
-	def EvtConfSts(self):
-		del self._EvtConfSts
-		self._EvtConfSts = None
-
+	__slots__ = ["_EvtCmpltnsSts", "_EvtConfSts"]
 	@property
 	def EvtCmpltnsSts(self):
 		return self._EvtCmpltnsSts
@@ -31,8 +18,21 @@ class CorporateActionEventStatus1(base_types._BaseFieldType):
 		del self._EvtCmpltnsSts
 		self._EvtCmpltnsSts = None
 
+	@property
+	def EvtConfSts(self):
+		return self._EvtConfSts
+
+	@EvtConfSts.setter
+	def EvtConfSts(self, value):
+		self._EvtConfSts = value if type(value) != auto else self.make_default("EvtConfSts")
+
+	@EvtConfSts.deleter
+	def EvtConfSts(self):
+		del self._EvtConfSts
+		self._EvtConfSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtConfSts', type=EventConfirmationStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtCmpltnsSts', type=EventCompletenessStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtConfSts', type=EventConfirmationStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

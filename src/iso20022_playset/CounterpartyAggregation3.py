@@ -1,28 +1,15 @@
 import base_types
-import BasketIdentificationAndEligibilitySetProfile1
 import CollateralStatus1Code
+import RepoTerminationOption1Code
+import BasketIdentificationAndEligibilitySetProfile1
+import OptionType6Choice
 import CollateralAmount16
 import CollateralParties11
 import PercentageRate
-import OptionType6Choice
-import RepoTerminationOption1Code
 
 class CounterpartyAggregation3(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnAmts", "_GblCtrPtySts", "_CollPties", "_BsktIdAndElgbltySetPrfl", "_OptnTp", "_MrgnRate", "_TermntnOptn"]
-	@property
-	def ValtnAmts(self):
-		return self._ValtnAmts
-
-	@ValtnAmts.setter
-	def ValtnAmts(self, value):
-		self._ValtnAmts = value if type(value) != auto else self.make_default("ValtnAmts")
-
-	@ValtnAmts.deleter
-	def ValtnAmts(self):
-		del self._ValtnAmts
-		self._ValtnAmts = None
-
+	__slots__ = ["_GblCtrPtySts", "_BsktIdAndElgbltySetPrfl", "_CollPties", "_OptnTp", "_ValtnAmts", "_MrgnRate", "_TermntnOptn"]
 	@property
 	def GblCtrPtySts(self):
 		return self._GblCtrPtySts
@@ -35,19 +22,6 @@ class CounterpartyAggregation3(base_types._BaseFieldType):
 	def GblCtrPtySts(self):
 		del self._GblCtrPtySts
 		self._GblCtrPtySts = None
-
-	@property
-	def CollPties(self):
-		return self._CollPties
-
-	@CollPties.setter
-	def CollPties(self, value):
-		self._CollPties = value if type(value) != auto else self.make_default("CollPties")
-
-	@CollPties.deleter
-	def CollPties(self):
-		del self._CollPties
-		self._CollPties = None
 
 	@property
 	def BsktIdAndElgbltySetPrfl(self):
@@ -63,6 +37,19 @@ class CounterpartyAggregation3(base_types._BaseFieldType):
 		self._BsktIdAndElgbltySetPrfl = None
 
 	@property
+	def CollPties(self):
+		return self._CollPties
+
+	@CollPties.setter
+	def CollPties(self, value):
+		self._CollPties = value if type(value) != auto else self.make_default("CollPties")
+
+	@CollPties.deleter
+	def CollPties(self):
+		del self._CollPties
+		self._CollPties = None
+
+	@property
 	def OptnTp(self):
 		return self._OptnTp
 
@@ -74,6 +61,19 @@ class CounterpartyAggregation3(base_types._BaseFieldType):
 	def OptnTp(self):
 		del self._OptnTp
 		self._OptnTp = None
+
+	@property
+	def ValtnAmts(self):
+		return self._ValtnAmts
+
+	@ValtnAmts.setter
+	def ValtnAmts(self, value):
+		self._ValtnAmts = value if type(value) != auto else self.make_default("ValtnAmts")
+
+	@ValtnAmts.deleter
+	def ValtnAmts(self):
+		del self._ValtnAmts
+		self._ValtnAmts = None
 
 	@property
 	def MrgnRate(self):
@@ -102,11 +102,11 @@ class CounterpartyAggregation3(base_types._BaseFieldType):
 		self._TermntnOptn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GblCtrPtySts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPties', type=CollateralParties11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsktIdAndElgbltySetPrfl', type=BasketIdentificationAndEligibilitySetProfile1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPties', type=CollateralParties11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=OptionType6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnOptn', type=RepoTerminationOption1Code, min=0, max=1, mutex_group=None, array=False),
 	))

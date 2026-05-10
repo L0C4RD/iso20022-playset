@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
 import ISODateTime
 import GroupCancellationIndicator
 import OriginalNotificationReference14
+import Max35Text
 
 class OriginalNotification16(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCreDtTm", "_OrgnlNtfctnId", "_OrgnlMsgId", "_OrgnlNtfctnRef", "_NtfctnCxl"]
-	@property
-	def OrgnlCreDtTm(self):
-		return self._OrgnlCreDtTm
-
-	@OrgnlCreDtTm.setter
-	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != auto else self.make_default("OrgnlCreDtTm")
-
-	@OrgnlCreDtTm.deleter
-	def OrgnlCreDtTm(self):
-		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
-
+	__slots__ = ["_OrgnlNtfctnId", "_NtfctnCxl", "_OrgnlMsgId", "_OrgnlNtfctnRef", "_OrgnlCreDtTm"]
 	@property
 	def OrgnlNtfctnId(self):
 		return self._OrgnlNtfctnId
@@ -32,6 +19,19 @@ class OriginalNotification16(base_types._BaseFieldType):
 	def OrgnlNtfctnId(self):
 		del self._OrgnlNtfctnId
 		self._OrgnlNtfctnId = None
+
+	@property
+	def NtfctnCxl(self):
+		return self._NtfctnCxl
+
+	@NtfctnCxl.setter
+	def NtfctnCxl(self, value):
+		self._NtfctnCxl = value if type(value) != auto else self.make_default("NtfctnCxl")
+
+	@NtfctnCxl.deleter
+	def NtfctnCxl(self):
+		del self._NtfctnCxl
+		self._NtfctnCxl = None
 
 	@property
 	def OrgnlMsgId(self):
@@ -60,23 +60,23 @@ class OriginalNotification16(base_types._BaseFieldType):
 		self._OrgnlNtfctnRef = None
 
 	@property
-	def NtfctnCxl(self):
-		return self._NtfctnCxl
+	def OrgnlCreDtTm(self):
+		return self._OrgnlCreDtTm
 
-	@NtfctnCxl.setter
-	def NtfctnCxl(self, value):
-		self._NtfctnCxl = value if type(value) != auto else self.make_default("NtfctnCxl")
+	@OrgnlCreDtTm.setter
+	def OrgnlCreDtTm(self, value):
+		self._OrgnlCreDtTm = value if type(value) != auto else self.make_default("OrgnlCreDtTm")
 
-	@NtfctnCxl.deleter
-	def NtfctnCxl(self):
-		del self._NtfctnCxl
-		self._NtfctnCxl = None
+	@OrgnlCreDtTm.deleter
+	def OrgnlCreDtTm(self):
+		del self._OrgnlCreDtTm
+		self._OrgnlCreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNtfctnRef', type=OriginalNotificationReference14, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtfctnCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

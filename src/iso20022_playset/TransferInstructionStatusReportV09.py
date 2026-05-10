@@ -1,26 +1,26 @@
 import base_types
-import Extension1
+import References64Choice
+import MarketPracticeVersion1
 import AdditionalReference10
 import TransferStatusAndReason8
-import References64Choice
 import MessageIdentification1
-import MarketPracticeVersion1
+import Extension1
 
 class TransferInstructionStatusReportV09(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_StsRpt", "_MsgId", "_Xtnsn", "_CtrPtyRef", "_MktPrctcVrsn"]
+	__slots__ = ["_MsgId", "_StsRpt", "_Ref", "_CtrPtyRef", "_Xtnsn", "_MktPrctcVrsn"]
 	@property
-	def Ref(self):
-		return self._Ref
+	def MsgId(self):
+		return self._MsgId
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def StsRpt(self):
@@ -36,30 +36,17 @@ class TransferInstructionStatusReportV09(base_types._BaseFieldType):
 		self._StsRpt = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def Ref(self):
+		return self._Ref
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def CtrPtyRef(self):
@@ -75,6 +62,19 @@ class TransferInstructionStatusReportV09(base_types._BaseFieldType):
 		self._CtrPtyRef = None
 
 	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
+
+	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn
 
@@ -88,11 +88,11 @@ class TransferInstructionStatusReportV09(base_types._BaseFieldType):
 		self._MktPrctcVrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=References64Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRpt', type=TransferStatusAndReason8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRpt', type=TransferStatusAndReason8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References64Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 	))
 

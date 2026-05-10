@@ -3,7 +3,7 @@ import Max35Text
 
 class RegulatoryInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Grp", "_Sctr", "_Brnch", "_Othr"]
+	__slots__ = ["_Grp", "_Brnch", "_Othr", "_Sctr"]
 	@property
 	def Grp(self):
 		return self._Grp
@@ -16,19 +16,6 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 	def Grp(self):
 		del self._Grp
 		self._Grp = None
-
-	@property
-	def Sctr(self):
-		return self._Sctr
-
-	@Sctr.setter
-	def Sctr(self, value):
-		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
-
-	@Sctr.deleter
-	def Sctr(self):
-		del self._Sctr
-		self._Sctr = None
 
 	@property
 	def Brnch(self):
@@ -56,10 +43,23 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
+	@property
+	def Sctr(self):
+		return self._Sctr
+
+	@Sctr.setter
+	def Sctr(self, value):
+		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
+
+	@Sctr.deleter
+	def Sctr(self):
+		del self._Sctr
+		self._Sctr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Grp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brnch', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

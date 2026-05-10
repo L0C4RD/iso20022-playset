@@ -1,6 +1,6 @@
 import base_types
-import AcknowledgedAcceptedStatus33Choice
 import RejectionOrRepairStatus31Choice
+import AcknowledgedAcceptedStatus33Choice
 
 class ProcessingStatus79Choice(base_types._BaseFieldType):
 

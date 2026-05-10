@@ -1,6 +1,6 @@
 import base_types
-import ContentInformationType38
 import Header41
+import ContentInformationType38
 import SessionManagementRequest8
 
 class SaleToPOISessionManagementRequestV07(base_types._BaseFieldType):

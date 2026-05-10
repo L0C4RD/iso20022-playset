@@ -1,23 +1,23 @@
 import base_types
-import StatusReasonInformation10
 import Status6Code
+import StatusReasonInformation10
 import SystemPartyIdentification8
 
 class PartyStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_StsRsn", "_SysPtyId"]
+	__slots__ = ["_SysPtyId", "_StsRsn", "_Sts"]
 	@property
-	def Sts(self):
-		return self._Sts
+	def SysPtyId(self):
+		return self._SysPtyId
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@SysPtyId.setter
+	def SysPtyId(self, value):
+		self._SysPtyId = value if type(value) != auto else self.make_default("SysPtyId")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@SysPtyId.deleter
+	def SysPtyId(self):
+		del self._SysPtyId
+		self._SysPtyId = None
 
 	@property
 	def StsRsn(self):
@@ -33,21 +33,21 @@ class PartyStatus2(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	@property
-	def SysPtyId(self):
-		return self._SysPtyId
+	def Sts(self):
+		return self._Sts
 
-	@SysPtyId.setter
-	def SysPtyId(self, value):
-		self._SysPtyId = value if type(value) != auto else self.make_default("SysPtyId")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@SysPtyId.deleter
-	def SysPtyId(self):
-		del self._SysPtyId
-		self._SysPtyId = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=Status6Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysPtyId', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=Status6Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

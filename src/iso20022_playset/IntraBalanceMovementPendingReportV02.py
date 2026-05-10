@@ -1,27 +1,27 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
+import IntraBalancePending5
+import CashAccount40
 import DocumentIdentification51
 import Pagination1
-import IntraBalanceReport6
-import CashAccount40
 import SystemPartyIdentification8
-import IntraBalancePending5
+import IntraBalanceReport6
+import BranchAndFinancialInstitutionIdentification8
 
 class IntraBalanceMovementPendingReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptGnlDtls", "_CshAcct", "_CshAcctSvcr", "_Id", "_CshAcctOwnr", "_Mvmnts", "_Pgntn"]
+	__slots__ = ["_CshAcctSvcr", "_CshAcct", "_Id", "_RptGnlDtls", "_Mvmnts", "_CshAcctOwnr", "_Pgntn"]
 	@property
-	def RptGnlDtls(self):
-		return self._RptGnlDtls
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
 
-	@RptGnlDtls.setter
-	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
 
-	@RptGnlDtls.deleter
-	def RptGnlDtls(self):
-		del self._RptGnlDtls
-		self._RptGnlDtls = None
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
 
 	@property
 	def CshAcct(self):
@@ -37,19 +37,6 @@ class IntraBalanceMovementPendingReportV02(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
-
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
-
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -63,17 +50,17 @@ class IntraBalanceMovementPendingReportV02(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
+	def RptGnlDtls(self):
+		return self._RptGnlDtls
 
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+	@RptGnlDtls.setter
+	def RptGnlDtls(self, value):
+		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
 
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+	@RptGnlDtls.deleter
+	def RptGnlDtls(self):
+		del self._RptGnlDtls
+		self._RptGnlDtls = None
 
 	@property
 	def Mvmnts(self):
@@ -89,6 +76,19 @@ class IntraBalanceMovementPendingReportV02(base_types._BaseFieldType):
 		self._Mvmnts = None
 
 	@property
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
+
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
+
+	@property
 	def Pgntn(self):
 		return self._Pgntn
 
@@ -102,12 +102,12 @@ class IntraBalanceMovementPendingReportV02(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mvmnts', type=IntraBalancePending5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

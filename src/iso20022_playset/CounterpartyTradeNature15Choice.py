@@ -1,23 +1,23 @@
 import base_types
-import NoReasonCode
 import NonFinancialInstitutionSector10
 import FinancialInstitutionSector1
+import NoReasonCode
 
 class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_NFI", "_FI", "_CntrlCntrPty"]
+	__slots__ = ["_FI", "_NFI", "_CntrlCntrPty", "_Othr"]
 	@property
-	def Othr(self):
-		return self._Othr
+	def FI(self):
+		return self._FI
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@FI.setter
+	def FI(self, value):
+		self._FI = value if type(value) != auto else self.make_default("FI")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@FI.deleter
+	def FI(self):
+		del self._FI
+		self._FI = None
 
 	@property
 	def NFI(self):
@@ -33,19 +33,6 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 		self._NFI = None
 
 	@property
-	def FI(self):
-		return self._FI
-
-	@FI.setter
-	def FI(self, value):
-		self._FI = value if type(value) != auto else self.make_default("FI")
-
-	@FI.deleter
-	def FI(self):
-		del self._FI
-		self._FI = None
-
-	@property
 	def CntrlCntrPty(self):
 		return self._CntrlCntrPty
 
@@ -58,10 +45,23 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 		del self._CntrlCntrPty
 		self._CntrlCntrPty = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NFI', type=NonFinancialInstitutionSector10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FI', type=FinancialInstitutionSector1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NFI', type=NonFinancialInstitutionSector10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CntrlCntrPty', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

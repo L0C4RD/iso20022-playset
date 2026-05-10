@@ -1,14 +1,27 @@
 import base_types
+import CreditDebitCode
 import RestrictedFINActiveOrHistoricCurrencyAndAmount
+import DateAndDateTime2Choice
 import YesNoIndicator
 import ForeignExchangeTerms27
-import CreditDebitCode
 import RestrictedFINActiveCurrencyAndAmount
-import DateAndDateTime2Choice
 
 class AmountAndDirection101(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_StmpDtyInd", "_RsrchFeeInd", "_OrgnlCcyAndOrdrdAmt", "_FXDtls", "_BrkrgAmtInd", "_ValDt", "_AcrdIntrstInd", "_Amt"]
+	__slots__ = ["_BrkrgAmtInd", "_CdtDbtInd", "_StmpDtyInd", "_RsrchFeeInd", "_Amt", "_FXDtls", "_ValDt", "_OrgnlCcyAndOrdrdAmt", "_AcrdIntrstInd"]
+	@property
+	def BrkrgAmtInd(self):
+		return self._BrkrgAmtInd
+
+	@BrkrgAmtInd.setter
+	def BrkrgAmtInd(self, value):
+		self._BrkrgAmtInd = value if type(value) != auto else self.make_default("BrkrgAmtInd")
+
+	@BrkrgAmtInd.deleter
+	def BrkrgAmtInd(self):
+		del self._BrkrgAmtInd
+		self._BrkrgAmtInd = None
+
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -49,17 +62,17 @@ class AmountAndDirection101(base_types._BaseFieldType):
 		self._RsrchFeeInd = None
 
 	@property
-	def OrgnlCcyAndOrdrdAmt(self):
-		return self._OrgnlCcyAndOrdrdAmt
+	def Amt(self):
+		return self._Amt
 
-	@OrgnlCcyAndOrdrdAmt.setter
-	def OrgnlCcyAndOrdrdAmt(self, value):
-		self._OrgnlCcyAndOrdrdAmt = value if type(value) != auto else self.make_default("OrgnlCcyAndOrdrdAmt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@OrgnlCcyAndOrdrdAmt.deleter
-	def OrgnlCcyAndOrdrdAmt(self):
-		del self._OrgnlCcyAndOrdrdAmt
-		self._OrgnlCcyAndOrdrdAmt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def FXDtls(self):
@@ -75,19 +88,6 @@ class AmountAndDirection101(base_types._BaseFieldType):
 		self._FXDtls = None
 
 	@property
-	def BrkrgAmtInd(self):
-		return self._BrkrgAmtInd
-
-	@BrkrgAmtInd.setter
-	def BrkrgAmtInd(self, value):
-		self._BrkrgAmtInd = value if type(value) != auto else self.make_default("BrkrgAmtInd")
-
-	@BrkrgAmtInd.deleter
-	def BrkrgAmtInd(self):
-		del self._BrkrgAmtInd
-		self._BrkrgAmtInd = None
-
-	@property
 	def ValDt(self):
 		return self._ValDt
 
@@ -99,6 +99,19 @@ class AmountAndDirection101(base_types._BaseFieldType):
 	def ValDt(self):
 		del self._ValDt
 		self._ValDt = None
+
+	@property
+	def OrgnlCcyAndOrdrdAmt(self):
+		return self._OrgnlCcyAndOrdrdAmt
+
+	@OrgnlCcyAndOrdrdAmt.setter
+	def OrgnlCcyAndOrdrdAmt(self, value):
+		self._OrgnlCcyAndOrdrdAmt = value if type(value) != auto else self.make_default("OrgnlCcyAndOrdrdAmt")
+
+	@OrgnlCcyAndOrdrdAmt.deleter
+	def OrgnlCcyAndOrdrdAmt(self):
+		del self._OrgnlCcyAndOrdrdAmt
+		self._OrgnlCcyAndOrdrdAmt = None
 
 	@property
 	def AcrdIntrstInd(self):
@@ -113,28 +126,15 @@ class AmountAndDirection101(base_types._BaseFieldType):
 		del self._AcrdIntrstInd
 		self._AcrdIntrstInd = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BrkrgAmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmpDtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsrchFeeInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=RestrictedFINActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms27, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrkrgAmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=RestrictedFINActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

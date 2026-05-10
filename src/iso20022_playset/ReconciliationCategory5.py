@@ -1,13 +1,13 @@
 import base_types
-import ReconciliationStatus2Code
 import PairingStatus1Code
 import YesNoIndicator
-import ReconciliationStatus1Code
+import ReconciliationStatus2Code
 import TradeRepositoryReportingType1Code
+import ReconciliationStatus1Code
 
 class ReconciliationCategory5(base_types._BaseFieldType):
 
-	__slots__ = ["_Rvvd", "_Pairg", "_RptgTp", "_ValtnRcncltn", "_FrthrMod", "_Rcncltn"]
+	__slots__ = ["_Rvvd", "_Pairg", "_Rcncltn", "_RptgTp", "_ValtnRcncltn", "_FrthrMod"]
 	@property
 	def Rvvd(self):
 		return self._Rvvd
@@ -33,6 +33,19 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 	def Pairg(self):
 		del self._Pairg
 		self._Pairg = None
+
+	@property
+	def Rcncltn(self):
+		return self._Rcncltn
+
+	@Rcncltn.setter
+	def Rcncltn(self, value):
+		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
+
+	@Rcncltn.deleter
+	def Rcncltn(self):
+		del self._Rcncltn
+		self._Rcncltn = None
 
 	@property
 	def RptgTp(self):
@@ -73,25 +86,12 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 		del self._FrthrMod
 		self._FrthrMod = None
 
-	@property
-	def Rcncltn(self):
-		return self._Rcncltn
-
-	@Rcncltn.setter
-	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
-
-	@Rcncltn.deleter
-	def Rcncltn(self):
-		del self._Rcncltn
-		self._Rcncltn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rvvd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pairg', type=PairingStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcncltn', type=ReconciliationStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgTp', type=TradeRepositoryReportingType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnRcncltn', type=ReconciliationStatus2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrthrMod', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcncltn', type=ReconciliationStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

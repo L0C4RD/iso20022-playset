@@ -1,24 +1,24 @@
 import base_types
+import SecuritiesOption76
 import Exact3NumericText
 import CashOption106
 import CorporateActionOption30Choice
-import SecuritiesOption76
 
 class CorporateActionOption234(base_types._BaseFieldType):
 
-	__slots__ = ["_CshMvmntDtls", "_SctiesMvmntDtls", "_OptnNb", "_OptnTp"]
+	__slots__ = ["_OptnTp", "_SctiesMvmntDtls", "_OptnNb", "_CshMvmntDtls"]
 	@property
-	def CshMvmntDtls(self):
-		return self._CshMvmntDtls
+	def OptnTp(self):
+		return self._OptnTp
 
-	@CshMvmntDtls.setter
-	def CshMvmntDtls(self, value):
-		self._CshMvmntDtls = value if type(value) != auto else self.make_default("CshMvmntDtls")
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
 
-	@CshMvmntDtls.deleter
-	def CshMvmntDtls(self):
-		del self._CshMvmntDtls
-		self._CshMvmntDtls = None
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
 
 	@property
 	def SctiesMvmntDtls(self):
@@ -47,22 +47,22 @@ class CorporateActionOption234(base_types._BaseFieldType):
 		self._OptnNb = None
 
 	@property
-	def OptnTp(self):
-		return self._OptnTp
+	def CshMvmntDtls(self):
+		return self._CshMvmntDtls
 
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+	@CshMvmntDtls.setter
+	def CshMvmntDtls(self, value):
+		self._CshMvmntDtls = value if type(value) != auto else self.make_default("CshMvmntDtls")
 
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
+	@CshMvmntDtls.deleter
+	def CshMvmntDtls(self):
+		del self._CshMvmntDtls
+		self._CshMvmntDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption106, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption30Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption76, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption30Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption106, min=0, max=None, mutex_group=None, array=True),
 	))
 

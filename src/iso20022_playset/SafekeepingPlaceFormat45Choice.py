@@ -1,13 +1,26 @@
 import base_types
-import SafekeepingPlaceTypeAndText9
-import GenericIdentification89
+import CountryCode
 import SafekeepingPlaceTypeAndIdentification1
 import DTI2024Identifier
-import CountryCode
+import GenericIdentification89
+import SafekeepingPlaceTypeAndText9
 
 class SafekeepingPlaceFormat45Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlLdgrId", "_Prtry", "_Id", "_TpAndId", "_Ctry"]
+	__slots__ = ["_TpAndId", "_DgtlLdgrId", "_Prtry", "_Id", "_Ctry"]
+	@property
+	def TpAndId(self):
+		return self._TpAndId
+
+	@TpAndId.setter
+	def TpAndId(self, value):
+		self._TpAndId = value if type(value) != auto else self.make_default("TpAndId")
+
+	@TpAndId.deleter
+	def TpAndId(self):
+		del self._TpAndId
+		self._TpAndId = None
+
 	@property
 	def DgtlLdgrId(self):
 		return self._DgtlLdgrId
@@ -48,19 +61,6 @@ class SafekeepingPlaceFormat45Choice(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def TpAndId(self):
-		return self._TpAndId
-
-	@TpAndId.setter
-	def TpAndId(self, value):
-		self._TpAndId = value if type(value) != auto else self.make_default("TpAndId")
-
-	@TpAndId.deleter
-	def TpAndId(self):
-		del self._TpAndId
-		self._TpAndId = None
-
-	@property
 	def Ctry(self):
 		return self._Ctry
 
@@ -74,10 +74,10 @@ class SafekeepingPlaceFormat45Choice(base_types._BaseFieldType):
 		self._Ctry = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification89, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText9, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,13 +1,13 @@
 import base_types
-import EndOfDayRequirement2
 import DefaultFundRequirement1
-import IntraDayRequirement1
-import IntraDayMarginCall1
 import SupplementaryData1
+import IntraDayMarginCall1
+import EndOfDayRequirement2
+import IntraDayRequirement1
 
 class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_IntraDayRqrmntAmt", "_IntraDayMrgnCall", "_DfltFndRqrmnt", "_EndOfDayRqrmnt"]
+	__slots__ = ["_SplmtryData", "_DfltFndRqrmnt", "_IntraDayRqrmntAmt", "_IntraDayMrgnCall", "_EndOfDayRqrmnt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,6 +20,19 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def DfltFndRqrmnt(self):
+		return self._DfltFndRqrmnt
+
+	@DfltFndRqrmnt.setter
+	def DfltFndRqrmnt(self, value):
+		self._DfltFndRqrmnt = value if type(value) != auto else self.make_default("DfltFndRqrmnt")
+
+	@DfltFndRqrmnt.deleter
+	def DfltFndRqrmnt(self):
+		del self._DfltFndRqrmnt
+		self._DfltFndRqrmnt = None
 
 	@property
 	def IntraDayRqrmntAmt(self):
@@ -48,19 +61,6 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 		self._IntraDayMrgnCall = None
 
 	@property
-	def DfltFndRqrmnt(self):
-		return self._DfltFndRqrmnt
-
-	@DfltFndRqrmnt.setter
-	def DfltFndRqrmnt(self, value):
-		self._DfltFndRqrmnt = value if type(value) != auto else self.make_default("DfltFndRqrmnt")
-
-	@DfltFndRqrmnt.deleter
-	def DfltFndRqrmnt(self):
-		del self._DfltFndRqrmnt
-		self._DfltFndRqrmnt = None
-
-	@property
 	def EndOfDayRqrmnt(self):
 		return self._EndOfDayRqrmnt
 
@@ -75,9 +75,9 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DfltFndRqrmnt', type=DefaultFundRequirement1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntraDayRqrmntAmt', type=IntraDayRequirement1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntraDayMrgnCall', type=IntraDayMarginCall1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DfltFndRqrmnt', type=DefaultFundRequirement1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EndOfDayRqrmnt', type=EndOfDayRequirement2, min=1, max=None, mutex_group=None, array=True),
 	))
 

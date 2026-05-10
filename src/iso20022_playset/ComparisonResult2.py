@@ -1,39 +1,26 @@
 import base_types
-import Max35Text
 import Max350Text
-import Replacement2
 import Number
+import Replacement2
 import Addition2
+import Max35Text
 import Deletion2
 
 class ComparisonResult2(base_types._BaseFieldType):
 
-	__slots__ = ["_ElmtPth", "_Addtn", "_Rplcmnt", "_Deltn", "_ElmtSeqNb", "_ElmtNm"]
+	__slots__ = ["_ElmtSeqNb", "_Rplcmnt", "_Deltn", "_ElmtNm", "_Addtn", "_ElmtPth"]
 	@property
-	def ElmtPth(self):
-		return self._ElmtPth
+	def ElmtSeqNb(self):
+		return self._ElmtSeqNb
 
-	@ElmtPth.setter
-	def ElmtPth(self, value):
-		self._ElmtPth = value if type(value) != auto else self.make_default("ElmtPth")
+	@ElmtSeqNb.setter
+	def ElmtSeqNb(self, value):
+		self._ElmtSeqNb = value if type(value) != auto else self.make_default("ElmtSeqNb")
 
-	@ElmtPth.deleter
-	def ElmtPth(self):
-		del self._ElmtPth
-		self._ElmtPth = None
-
-	@property
-	def Addtn(self):
-		return self._Addtn
-
-	@Addtn.setter
-	def Addtn(self, value):
-		self._Addtn = value if type(value) != auto else self.make_default("Addtn")
-
-	@Addtn.deleter
-	def Addtn(self):
-		del self._Addtn
-		self._Addtn = None
+	@ElmtSeqNb.deleter
+	def ElmtSeqNb(self):
+		del self._ElmtSeqNb
+		self._ElmtSeqNb = None
 
 	@property
 	def Rplcmnt(self):
@@ -62,19 +49,6 @@ class ComparisonResult2(base_types._BaseFieldType):
 		self._Deltn = None
 
 	@property
-	def ElmtSeqNb(self):
-		return self._ElmtSeqNb
-
-	@ElmtSeqNb.setter
-	def ElmtSeqNb(self, value):
-		self._ElmtSeqNb = value if type(value) != auto else self.make_default("ElmtSeqNb")
-
-	@ElmtSeqNb.deleter
-	def ElmtSeqNb(self):
-		del self._ElmtSeqNb
-		self._ElmtSeqNb = None
-
-	@property
 	def ElmtNm(self):
 		return self._ElmtNm
 
@@ -87,12 +61,38 @@ class ComparisonResult2(base_types._BaseFieldType):
 		del self._ElmtNm
 		self._ElmtNm = None
 
+	@property
+	def Addtn(self):
+		return self._Addtn
+
+	@Addtn.setter
+	def Addtn(self, value):
+		self._Addtn = value if type(value) != auto else self.make_default("Addtn")
+
+	@Addtn.deleter
+	def Addtn(self):
+		del self._Addtn
+		self._Addtn = None
+
+	@property
+	def ElmtPth(self):
+		return self._ElmtPth
+
+	@ElmtPth.setter
+	def ElmtPth(self, value):
+		self._ElmtPth = value if type(value) != auto else self.make_default("ElmtPth")
+
+	@ElmtPth.deleter
+	def ElmtPth(self):
+		del self._ElmtPth
+		self._ElmtPth = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElmtPth', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Addtn', type=Addition2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ElmtSeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rplcmnt', type=Replacement2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Deltn', type=Deletion2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ElmtSeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElmtNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Addtn', type=Addition2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ElmtPth', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

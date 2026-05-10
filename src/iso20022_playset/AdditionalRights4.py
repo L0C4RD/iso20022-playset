@@ -1,25 +1,12 @@
 import base_types
-import AdditionalRightThreshold2Choice
 import DateFormat58Choice
 import AdditionalRightCode1Choice
+import AdditionalRightThreshold2Choice
 import Max2048Text
 
 class AdditionalRights4(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRght", "_AddtlRghtDdln", "_AddtlRghtThrshld", "_AddtlRghtMktDdln", "_AddtlRghtInfURLAdr"]
-	@property
-	def AddtlRght(self):
-		return self._AddtlRght
-
-	@AddtlRght.setter
-	def AddtlRght(self, value):
-		self._AddtlRght = value if type(value) != auto else self.make_default("AddtlRght")
-
-	@AddtlRght.deleter
-	def AddtlRght(self):
-		del self._AddtlRght
-		self._AddtlRght = None
-
+	__slots__ = ["_AddtlRghtDdln", "_AddtlRghtInfURLAdr", "_AddtlRght", "_AddtlRghtThrshld", "_AddtlRghtMktDdln"]
 	@property
 	def AddtlRghtDdln(self):
 		return self._AddtlRghtDdln
@@ -32,6 +19,32 @@ class AdditionalRights4(base_types._BaseFieldType):
 	def AddtlRghtDdln(self):
 		del self._AddtlRghtDdln
 		self._AddtlRghtDdln = None
+
+	@property
+	def AddtlRghtInfURLAdr(self):
+		return self._AddtlRghtInfURLAdr
+
+	@AddtlRghtInfURLAdr.setter
+	def AddtlRghtInfURLAdr(self, value):
+		self._AddtlRghtInfURLAdr = value if type(value) != auto else self.make_default("AddtlRghtInfURLAdr")
+
+	@AddtlRghtInfURLAdr.deleter
+	def AddtlRghtInfURLAdr(self):
+		del self._AddtlRghtInfURLAdr
+		self._AddtlRghtInfURLAdr = None
+
+	@property
+	def AddtlRght(self):
+		return self._AddtlRght
+
+	@AddtlRght.setter
+	def AddtlRght(self, value):
+		self._AddtlRght = value if type(value) != auto else self.make_default("AddtlRght")
+
+	@AddtlRght.deleter
+	def AddtlRght(self):
+		del self._AddtlRght
+		self._AddtlRght = None
 
 	@property
 	def AddtlRghtThrshld(self):
@@ -59,24 +72,11 @@ class AdditionalRights4(base_types._BaseFieldType):
 		del self._AddtlRghtMktDdln
 		self._AddtlRghtMktDdln = None
 
-	@property
-	def AddtlRghtInfURLAdr(self):
-		return self._AddtlRghtInfURLAdr
-
-	@AddtlRghtInfURLAdr.setter
-	def AddtlRghtInfURLAdr(self, value):
-		self._AddtlRghtInfURLAdr = value if type(value) != auto else self.make_default("AddtlRghtInfURLAdr")
-
-	@AddtlRghtInfURLAdr.deleter
-	def AddtlRghtInfURLAdr(self):
-		del self._AddtlRghtInfURLAdr
-		self._AddtlRghtInfURLAdr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlRght', type=AdditionalRightCode1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRghtDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRghtInfURLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRght', type=AdditionalRightCode1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRghtThrshld', type=AdditionalRightThreshold2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRghtMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlRghtInfURLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

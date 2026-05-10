@@ -1,10 +1,23 @@
 import base_types
-import ActiveCurrencyAndAmount
 import DateAndDateTime2Choice
+import ActiveCurrencyAndAmount
 
 class TrackerData8(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrdConfdAmt", "_RtrdConfdDt", "_PrevslyConfdAmt", "_ConfdDt", "_ConfdAmt", "_RmngToBeConfdAmt", "_PrevslyConfdDt"]
+	__slots__ = ["_RmngToBeConfdAmt", "_RtrdConfdAmt", "_ConfdAmt", "_PrevslyConfdAmt", "_ConfdDt", "_RtrdConfdDt", "_PrevslyConfdDt"]
+	@property
+	def RmngToBeConfdAmt(self):
+		return self._RmngToBeConfdAmt
+
+	@RmngToBeConfdAmt.setter
+	def RmngToBeConfdAmt(self, value):
+		self._RmngToBeConfdAmt = value if type(value) != auto else self.make_default("RmngToBeConfdAmt")
+
+	@RmngToBeConfdAmt.deleter
+	def RmngToBeConfdAmt(self):
+		del self._RmngToBeConfdAmt
+		self._RmngToBeConfdAmt = None
+
 	@property
 	def RtrdConfdAmt(self):
 		return self._RtrdConfdAmt
@@ -19,17 +32,17 @@ class TrackerData8(base_types._BaseFieldType):
 		self._RtrdConfdAmt = None
 
 	@property
-	def RtrdConfdDt(self):
-		return self._RtrdConfdDt
+	def ConfdAmt(self):
+		return self._ConfdAmt
 
-	@RtrdConfdDt.setter
-	def RtrdConfdDt(self, value):
-		self._RtrdConfdDt = value if type(value) != auto else self.make_default("RtrdConfdDt")
+	@ConfdAmt.setter
+	def ConfdAmt(self, value):
+		self._ConfdAmt = value if type(value) != auto else self.make_default("ConfdAmt")
 
-	@RtrdConfdDt.deleter
-	def RtrdConfdDt(self):
-		del self._RtrdConfdDt
-		self._RtrdConfdDt = None
+	@ConfdAmt.deleter
+	def ConfdAmt(self):
+		del self._ConfdAmt
+		self._ConfdAmt = None
 
 	@property
 	def PrevslyConfdAmt(self):
@@ -58,30 +71,17 @@ class TrackerData8(base_types._BaseFieldType):
 		self._ConfdDt = None
 
 	@property
-	def ConfdAmt(self):
-		return self._ConfdAmt
+	def RtrdConfdDt(self):
+		return self._RtrdConfdDt
 
-	@ConfdAmt.setter
-	def ConfdAmt(self, value):
-		self._ConfdAmt = value if type(value) != auto else self.make_default("ConfdAmt")
+	@RtrdConfdDt.setter
+	def RtrdConfdDt(self, value):
+		self._RtrdConfdDt = value if type(value) != auto else self.make_default("RtrdConfdDt")
 
-	@ConfdAmt.deleter
-	def ConfdAmt(self):
-		del self._ConfdAmt
-		self._ConfdAmt = None
-
-	@property
-	def RmngToBeConfdAmt(self):
-		return self._RmngToBeConfdAmt
-
-	@RmngToBeConfdAmt.setter
-	def RmngToBeConfdAmt(self, value):
-		self._RmngToBeConfdAmt = value if type(value) != auto else self.make_default("RmngToBeConfdAmt")
-
-	@RmngToBeConfdAmt.deleter
-	def RmngToBeConfdAmt(self):
-		del self._RmngToBeConfdAmt
-		self._RmngToBeConfdAmt = None
+	@RtrdConfdDt.deleter
+	def RtrdConfdDt(self):
+		del self._RtrdConfdDt
+		self._RtrdConfdDt = None
 
 	@property
 	def PrevslyConfdDt(self):
@@ -97,12 +97,12 @@ class TrackerData8(base_types._BaseFieldType):
 		self._PrevslyConfdDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RmngToBeConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrdConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrdConfdDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrevslyConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfdDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmngToBeConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrdConfdDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrevslyConfdDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

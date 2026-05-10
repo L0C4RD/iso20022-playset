@@ -1,25 +1,12 @@
 import base_types
-import Header32
-import ATMDepositCompletionAcknowledgement2
 import ContentInformationType15
+import ATMDepositCompletionAcknowledgement2
 import ContentInformationType10
+import Header32
 
 class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_ATMDpstCmpltnAck", "_SctyTrlr", "_PrtctdATMDpstCmpltnAck"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_ATMDpstCmpltnAck", "_Hdr", "_SctyTrlr", "_PrtctdATMDpstCmpltnAck"]
 	@property
 	def ATMDpstCmpltnAck(self):
 		return self._ATMDpstCmpltnAck
@@ -32,6 +19,19 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 	def ATMDpstCmpltnAck(self):
 		del self._ATMDpstCmpltnAck
 		self._ATMDpstCmpltnAck = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -60,8 +60,8 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 		self._PrtctdATMDpstCmpltnAck = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMDpstCmpltnAck', type=ATMDepositCompletionAcknowledgement2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMDpstCmpltnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))

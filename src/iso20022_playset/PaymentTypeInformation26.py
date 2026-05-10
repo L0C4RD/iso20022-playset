@@ -1,12 +1,25 @@
 import base_types
 import CategoryPurpose1Choice
 import ServiceLevel8Choice
-import Priority2Code
 import LocalInstrument2Choice
+import Priority2Code
 
 class PaymentTypeInformation26(base_types._BaseFieldType):
 
-	__slots__ = ["_LclInstrm", "_SvcLvl", "_InstrPrty", "_CtgyPurp"]
+	__slots__ = ["_CtgyPurp", "_LclInstrm", "_SvcLvl", "_InstrPrty"]
+	@property
+	def CtgyPurp(self):
+		return self._CtgyPurp
+
+	@CtgyPurp.setter
+	def CtgyPurp(self, value):
+		self._CtgyPurp = value if type(value) != auto else self.make_default("CtgyPurp")
+
+	@CtgyPurp.deleter
+	def CtgyPurp(self):
+		del self._CtgyPurp
+		self._CtgyPurp = None
+
 	@property
 	def LclInstrm(self):
 		return self._LclInstrm
@@ -46,23 +59,10 @@ class PaymentTypeInformation26(base_types._BaseFieldType):
 		del self._InstrPrty
 		self._InstrPrty = None
 
-	@property
-	def CtgyPurp(self):
-		return self._CtgyPurp
-
-	@CtgyPurp.setter
-	def CtgyPurp(self, value):
-		self._CtgyPurp = value if type(value) != auto else self.make_default("CtgyPurp")
-
-	@CtgyPurp.deleter
-	def CtgyPurp(self):
-		del self._CtgyPurp
-		self._CtgyPurp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclInstrm', type=LocalInstrument2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstrPrty', type=Priority2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

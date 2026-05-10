@@ -1,6 +1,6 @@
 import base_types
-import RateName2
 import Rate2
+import RateName2
 
 class RateOrName2Choice(base_types._BaseFieldType):
 

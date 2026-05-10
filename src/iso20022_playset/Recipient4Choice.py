@@ -1,23 +1,23 @@
 import base_types
-import KEKIdentifier2
 import KEK4
 import KeyTransport4
+import KEKIdentifier2
 
 class Recipient4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyIdr", "_KEK", "_KeyTrnsprt"]
+	__slots__ = ["_KeyTrnsprt", "_KEK", "_KeyIdr"]
 	@property
-	def KeyIdr(self):
-		return self._KeyIdr
+	def KeyTrnsprt(self):
+		return self._KeyTrnsprt
 
-	@KeyIdr.setter
-	def KeyIdr(self, value):
-		self._KeyIdr = value if type(value) != auto else self.make_default("KeyIdr")
+	@KeyTrnsprt.setter
+	def KeyTrnsprt(self, value):
+		self._KeyTrnsprt = value if type(value) != auto else self.make_default("KeyTrnsprt")
 
-	@KeyIdr.deleter
-	def KeyIdr(self):
-		del self._KeyIdr
-		self._KeyIdr = None
+	@KeyTrnsprt.deleter
+	def KeyTrnsprt(self):
+		del self._KeyTrnsprt
+		self._KeyTrnsprt = None
 
 	@property
 	def KEK(self):
@@ -33,21 +33,21 @@ class Recipient4Choice(base_types._BaseFieldType):
 		self._KEK = None
 
 	@property
-	def KeyTrnsprt(self):
-		return self._KeyTrnsprt
+	def KeyIdr(self):
+		return self._KeyIdr
 
-	@KeyTrnsprt.setter
-	def KeyTrnsprt(self, value):
-		self._KeyTrnsprt = value if type(value) != auto else self.make_default("KeyTrnsprt")
+	@KeyIdr.setter
+	def KeyIdr(self, value):
+		self._KeyIdr = value if type(value) != auto else self.make_default("KeyIdr")
 
-	@KeyTrnsprt.deleter
-	def KeyTrnsprt(self):
-		del self._KeyTrnsprt
-		self._KeyTrnsprt = None
+	@KeyIdr.deleter
+	def KeyIdr(self):
+		del self._KeyIdr
+		self._KeyIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='KEK', type=KEK4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='KeyTrnsprt', type=KeyTransport4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='KEK', type=KEK4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier2, min=0, max=1, mutex_group=1, array=False),
 	))
 

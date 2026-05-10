@@ -1,11 +1,24 @@
 import base_types
+import TransactionReconciliation5
 import CardPaymentEnvironment81
 import ResponseType10
-import TransactionReconciliation5
 
 class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_TxRspn", "_Envt"]
+	__slots__ = ["_Envt", "_Tx", "_TxRspn"]
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
 	@property
 	def Tx(self):
 		return self._Tx
@@ -32,22 +45,9 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 		del self._TxRspn
 		self._TxRspn = None
 
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=TransactionReconciliation5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRspn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 	))
 

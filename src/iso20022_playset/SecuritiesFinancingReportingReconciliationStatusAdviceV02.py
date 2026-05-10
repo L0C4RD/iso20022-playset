@@ -1,6 +1,6 @@
 import base_types
-import TradeData34Choice
 import SupplementaryData1
+import TradeData34Choice
 
 class SecuritiesFinancingReportingReconciliationStatusAdviceV02(base_types._BaseFieldType):
 

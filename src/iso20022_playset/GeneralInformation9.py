@@ -1,44 +1,31 @@
 import base_types
-import YesNoIndicator
-import Max210Text
-import ContactInformation1
-import AgreementConditions1
 import Trading1MethodCode
-import PartyIdentification242Choice
-import Max35Text
+import ContactInformation1
 import ActiveCurrencyAndAmount
 import ISOYear
-import CountryCode
+import AgreementConditions1
+import YesNoIndicator
 import CalculationAgent1Choice
+import Max35Text
+import PartyIdentification242Choice
+import Max210Text
+import CountryCode
 
 class GeneralInformation9(base_types._BaseFieldType):
 
-	__slots__ = ["_BrkrsComssn", "_BrkrId", "_DealgBrnchTradgSd", "_DefsYr", "_CtctInf", "_RltdTradRef", "_ClctnAgt", "_BlckInd", "_DealgMtd", "_SndrToRcvrInf", "_BrkrsRef", "_CtrPtyRef", "_AgrmtDtls", "_PmtClrCentr", "_DealgBrnchCtrPtySd"]
+	__slots__ = ["_CtrPtyRef", "_DealgBrnchTradgSd", "_BrkrId", "_DefsYr", "_DealgBrnchCtrPtySd", "_BrkrsComssn", "_CtctInf", "_BlckInd", "_ClctnAgt", "_PmtClrCentr", "_BrkrsRef", "_AgrmtDtls", "_RltdTradRef", "_SndrToRcvrInf", "_DealgMtd"]
 	@property
-	def BrkrsComssn(self):
-		return self._BrkrsComssn
+	def CtrPtyRef(self):
+		return self._CtrPtyRef
 
-	@BrkrsComssn.setter
-	def BrkrsComssn(self, value):
-		self._BrkrsComssn = value if type(value) != auto else self.make_default("BrkrsComssn")
+	@CtrPtyRef.setter
+	def CtrPtyRef(self, value):
+		self._CtrPtyRef = value if type(value) != auto else self.make_default("CtrPtyRef")
 
-	@BrkrsComssn.deleter
-	def BrkrsComssn(self):
-		del self._BrkrsComssn
-		self._BrkrsComssn = None
-
-	@property
-	def BrkrId(self):
-		return self._BrkrId
-
-	@BrkrId.setter
-	def BrkrId(self, value):
-		self._BrkrId = value if type(value) != auto else self.make_default("BrkrId")
-
-	@BrkrId.deleter
-	def BrkrId(self):
-		del self._BrkrId
-		self._BrkrId = None
+	@CtrPtyRef.deleter
+	def CtrPtyRef(self):
+		del self._CtrPtyRef
+		self._CtrPtyRef = None
 
 	@property
 	def DealgBrnchTradgSd(self):
@@ -54,6 +41,19 @@ class GeneralInformation9(base_types._BaseFieldType):
 		self._DealgBrnchTradgSd = None
 
 	@property
+	def BrkrId(self):
+		return self._BrkrId
+
+	@BrkrId.setter
+	def BrkrId(self, value):
+		self._BrkrId = value if type(value) != auto else self.make_default("BrkrId")
+
+	@BrkrId.deleter
+	def BrkrId(self):
+		del self._BrkrId
+		self._BrkrId = None
+
+	@property
 	def DefsYr(self):
 		return self._DefsYr
 
@@ -65,6 +65,32 @@ class GeneralInformation9(base_types._BaseFieldType):
 	def DefsYr(self):
 		del self._DefsYr
 		self._DefsYr = None
+
+	@property
+	def DealgBrnchCtrPtySd(self):
+		return self._DealgBrnchCtrPtySd
+
+	@DealgBrnchCtrPtySd.setter
+	def DealgBrnchCtrPtySd(self, value):
+		self._DealgBrnchCtrPtySd = value if type(value) != auto else self.make_default("DealgBrnchCtrPtySd")
+
+	@DealgBrnchCtrPtySd.deleter
+	def DealgBrnchCtrPtySd(self):
+		del self._DealgBrnchCtrPtySd
+		self._DealgBrnchCtrPtySd = None
+
+	@property
+	def BrkrsComssn(self):
+		return self._BrkrsComssn
+
+	@BrkrsComssn.setter
+	def BrkrsComssn(self, value):
+		self._BrkrsComssn = value if type(value) != auto else self.make_default("BrkrsComssn")
+
+	@BrkrsComssn.deleter
+	def BrkrsComssn(self):
+		del self._BrkrsComssn
+		self._BrkrsComssn = None
 
 	@property
 	def CtctInf(self):
@@ -80,17 +106,17 @@ class GeneralInformation9(base_types._BaseFieldType):
 		self._CtctInf = None
 
 	@property
-	def RltdTradRef(self):
-		return self._RltdTradRef
+	def BlckInd(self):
+		return self._BlckInd
 
-	@RltdTradRef.setter
-	def RltdTradRef(self, value):
-		self._RltdTradRef = value if type(value) != auto else self.make_default("RltdTradRef")
+	@BlckInd.setter
+	def BlckInd(self, value):
+		self._BlckInd = value if type(value) != auto else self.make_default("BlckInd")
 
-	@RltdTradRef.deleter
-	def RltdTradRef(self):
-		del self._RltdTradRef
-		self._RltdTradRef = None
+	@BlckInd.deleter
+	def BlckInd(self):
+		del self._BlckInd
+		self._BlckInd = None
 
 	@property
 	def ClctnAgt(self):
@@ -106,43 +132,17 @@ class GeneralInformation9(base_types._BaseFieldType):
 		self._ClctnAgt = None
 
 	@property
-	def BlckInd(self):
-		return self._BlckInd
+	def PmtClrCentr(self):
+		return self._PmtClrCentr
 
-	@BlckInd.setter
-	def BlckInd(self, value):
-		self._BlckInd = value if type(value) != auto else self.make_default("BlckInd")
+	@PmtClrCentr.setter
+	def PmtClrCentr(self, value):
+		self._PmtClrCentr = value if type(value) != auto else self.make_default("PmtClrCentr")
 
-	@BlckInd.deleter
-	def BlckInd(self):
-		del self._BlckInd
-		self._BlckInd = None
-
-	@property
-	def DealgMtd(self):
-		return self._DealgMtd
-
-	@DealgMtd.setter
-	def DealgMtd(self, value):
-		self._DealgMtd = value if type(value) != auto else self.make_default("DealgMtd")
-
-	@DealgMtd.deleter
-	def DealgMtd(self):
-		del self._DealgMtd
-		self._DealgMtd = None
-
-	@property
-	def SndrToRcvrInf(self):
-		return self._SndrToRcvrInf
-
-	@SndrToRcvrInf.setter
-	def SndrToRcvrInf(self, value):
-		self._SndrToRcvrInf = value if type(value) != auto else self.make_default("SndrToRcvrInf")
-
-	@SndrToRcvrInf.deleter
-	def SndrToRcvrInf(self):
-		del self._SndrToRcvrInf
-		self._SndrToRcvrInf = None
+	@PmtClrCentr.deleter
+	def PmtClrCentr(self):
+		del self._PmtClrCentr
+		self._PmtClrCentr = None
 
 	@property
 	def BrkrsRef(self):
@@ -158,19 +158,6 @@ class GeneralInformation9(base_types._BaseFieldType):
 		self._BrkrsRef = None
 
 	@property
-	def CtrPtyRef(self):
-		return self._CtrPtyRef
-
-	@CtrPtyRef.setter
-	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != auto else self.make_default("CtrPtyRef")
-
-	@CtrPtyRef.deleter
-	def CtrPtyRef(self):
-		del self._CtrPtyRef
-		self._CtrPtyRef = None
-
-	@property
 	def AgrmtDtls(self):
 		return self._AgrmtDtls
 
@@ -184,46 +171,59 @@ class GeneralInformation9(base_types._BaseFieldType):
 		self._AgrmtDtls = None
 
 	@property
-	def PmtClrCentr(self):
-		return self._PmtClrCentr
+	def RltdTradRef(self):
+		return self._RltdTradRef
 
-	@PmtClrCentr.setter
-	def PmtClrCentr(self, value):
-		self._PmtClrCentr = value if type(value) != auto else self.make_default("PmtClrCentr")
+	@RltdTradRef.setter
+	def RltdTradRef(self, value):
+		self._RltdTradRef = value if type(value) != auto else self.make_default("RltdTradRef")
 
-	@PmtClrCentr.deleter
-	def PmtClrCentr(self):
-		del self._PmtClrCentr
-		self._PmtClrCentr = None
+	@RltdTradRef.deleter
+	def RltdTradRef(self):
+		del self._RltdTradRef
+		self._RltdTradRef = None
 
 	@property
-	def DealgBrnchCtrPtySd(self):
-		return self._DealgBrnchCtrPtySd
+	def SndrToRcvrInf(self):
+		return self._SndrToRcvrInf
 
-	@DealgBrnchCtrPtySd.setter
-	def DealgBrnchCtrPtySd(self, value):
-		self._DealgBrnchCtrPtySd = value if type(value) != auto else self.make_default("DealgBrnchCtrPtySd")
+	@SndrToRcvrInf.setter
+	def SndrToRcvrInf(self, value):
+		self._SndrToRcvrInf = value if type(value) != auto else self.make_default("SndrToRcvrInf")
 
-	@DealgBrnchCtrPtySd.deleter
-	def DealgBrnchCtrPtySd(self):
-		del self._DealgBrnchCtrPtySd
-		self._DealgBrnchCtrPtySd = None
+	@SndrToRcvrInf.deleter
+	def SndrToRcvrInf(self):
+		del self._SndrToRcvrInf
+		self._SndrToRcvrInf = None
+
+	@property
+	def DealgMtd(self):
+		return self._DealgMtd
+
+	@DealgMtd.setter
+	def DealgMtd(self, value):
+		self._DealgMtd = value if type(value) != auto else self.make_default("DealgMtd")
+
+	@DealgMtd.deleter
+	def DealgMtd(self):
+		del self._DealgMtd
+		self._DealgMtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BrkrsComssn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrkrId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealgBrnchTradgSd', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DefsYr', type=ISOYear, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtctInf', type=ContactInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdTradRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnAgt', type=CalculationAgent1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealgMtd', type=Trading1MethodCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndrToRcvrInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrkrsRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtDtls', type=AgreementConditions1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtClrCentr', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealgBrnchTradgSd', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrkrId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DefsYr', type=ISOYear, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealgBrnchCtrPtySd', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrkrsComssn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctInf', type=ContactInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnAgt', type=CalculationAgent1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtClrCentr', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrkrsRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtDtls', type=AgreementConditions1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdTradRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndrToRcvrInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealgMtd', type=Trading1MethodCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

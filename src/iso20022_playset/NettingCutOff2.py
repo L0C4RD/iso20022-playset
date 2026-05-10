@@ -1,6 +1,6 @@
 import base_types
-import CutOff1
 import NettingIdentification2Choice
+import CutOff1
 
 class NettingCutOff2(base_types._BaseFieldType):
 

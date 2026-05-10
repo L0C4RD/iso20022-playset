@@ -1,6 +1,6 @@
 import base_types
-import PriceStatus1Code
 import ActiveOrHistoricCurrencyCode
+import PriceStatus1Code
 
 class SecuritiesTransactionPrice1(base_types._BaseFieldType):
 

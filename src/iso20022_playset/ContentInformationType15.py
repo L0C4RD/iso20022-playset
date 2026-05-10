@@ -4,20 +4,7 @@ import AuthenticatedData4
 
 class ContentInformationType15(base_types._BaseFieldType):
 
-	__slots__ = ["_CnttTp", "_AuthntcdData"]
-	@property
-	def CnttTp(self):
-		return self._CnttTp
-
-	@CnttTp.setter
-	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
-
-	@CnttTp.deleter
-	def CnttTp(self):
-		del self._CnttTp
-		self._CnttTp = None
-
+	__slots__ = ["_AuthntcdData", "_CnttTp"]
 	@property
 	def AuthntcdData(self):
 		return self._AuthntcdData
@@ -31,8 +18,21 @@ class ContentInformationType15(base_types._BaseFieldType):
 		del self._AuthntcdData
 		self._AuthntcdData = None
 
+	@property
+	def CnttTp(self):
+		return self._CnttTp
+
+	@CnttTp.setter
+	def CnttTp(self, value):
+		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
+
+	@CnttTp.deleter
+	def CnttTp(self):
+		del self._CnttTp
+		self._CnttTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

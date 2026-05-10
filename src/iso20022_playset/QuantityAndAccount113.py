@@ -1,16 +1,16 @@
 import base_types
-import Max210Text
 import CashAccountIdentification9Choice
 import SecuritiesAccount19
-import Quantity51Choice
-import SafeKeepingPlace5
 import PartyIdentification144
 import QuantityBreakdown62
+import Max210Text
 import BlockChainAddressWallet3
+import SafeKeepingPlace5
+import Quantity51Choice
 
 class QuantityAndAccount113(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_AcctOwnr", "_SttlmQty", "_DnmtnChc", "_BlckChainAdrOrWllt", "_QtyBrkdwn", "_SfkpgAcct", "_CshAcct"]
+	__slots__ = ["_SfkpgPlc", "_BlckChainAdrOrWllt", "_AcctOwnr", "_SttlmQty", "_QtyBrkdwn", "_DnmtnChc", "_SfkpgAcct", "_CshAcct"]
 	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
@@ -23,6 +23,19 @@ class QuantityAndAccount113(base_types._BaseFieldType):
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def AcctOwnr(self):
@@ -51,32 +64,6 @@ class QuantityAndAccount113(base_types._BaseFieldType):
 		self._SttlmQty = None
 
 	@property
-	def DnmtnChc(self):
-		return self._DnmtnChc
-
-	@DnmtnChc.setter
-	def DnmtnChc(self, value):
-		self._DnmtnChc = value if type(value) != auto else self.make_default("DnmtnChc")
-
-	@DnmtnChc.deleter
-	def DnmtnChc(self):
-		del self._DnmtnChc
-		self._DnmtnChc = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
 	def QtyBrkdwn(self):
 		return self._QtyBrkdwn
 
@@ -88,6 +75,19 @@ class QuantityAndAccount113(base_types._BaseFieldType):
 	def QtyBrkdwn(self):
 		del self._QtyBrkdwn
 		self._QtyBrkdwn = None
+
+	@property
+	def DnmtnChc(self):
+		return self._DnmtnChc
+
+	@DnmtnChc.setter
+	def DnmtnChc(self, value):
+		self._DnmtnChc = value if type(value) != auto else self.make_default("DnmtnChc")
+
+	@DnmtnChc.deleter
+	def DnmtnChc(self):
+		del self._DnmtnChc
+		self._DnmtnChc = None
 
 	@property
 	def SfkpgAcct(self):
@@ -117,11 +117,11 @@ class QuantityAndAccount113(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DnmtnChc', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown62, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DnmtnChc', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import CurrencyFactors1
+import ActiveCurrencyAndAmount
 
 class PayInFactors1(base_types._BaseFieldType):
 

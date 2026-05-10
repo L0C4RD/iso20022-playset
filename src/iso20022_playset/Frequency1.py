@@ -1,13 +1,13 @@
 import base_types
-import Max3NumericText
-import ISODate
-import BusinessDayConvention1Code
 import EndPoint1Choice
+import ISODate
+import Max3NumericText
 import Frequency37Choice
+import BusinessDayConvention1Code
 
 class Frequency1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndPtChc", "_Seq", "_NonWorkgDayAdjstmnt", "_ReqdFrqcyPttrn", "_StartDt"]
+	__slots__ = ["_EndPtChc", "_ReqdFrqcyPttrn", "_Seq", "_StartDt", "_NonWorkgDayAdjstmnt"]
 	@property
 	def EndPtChc(self):
 		return self._EndPtChc
@@ -20,32 +20,6 @@ class Frequency1(base_types._BaseFieldType):
 	def EndPtChc(self):
 		del self._EndPtChc
 		self._EndPtChc = None
-
-	@property
-	def Seq(self):
-		return self._Seq
-
-	@Seq.setter
-	def Seq(self, value):
-		self._Seq = value if type(value) != auto else self.make_default("Seq")
-
-	@Seq.deleter
-	def Seq(self):
-		del self._Seq
-		self._Seq = None
-
-	@property
-	def NonWorkgDayAdjstmnt(self):
-		return self._NonWorkgDayAdjstmnt
-
-	@NonWorkgDayAdjstmnt.setter
-	def NonWorkgDayAdjstmnt(self, value):
-		self._NonWorkgDayAdjstmnt = value if type(value) != auto else self.make_default("NonWorkgDayAdjstmnt")
-
-	@NonWorkgDayAdjstmnt.deleter
-	def NonWorkgDayAdjstmnt(self):
-		del self._NonWorkgDayAdjstmnt
-		self._NonWorkgDayAdjstmnt = None
 
 	@property
 	def ReqdFrqcyPttrn(self):
@@ -61,6 +35,19 @@ class Frequency1(base_types._BaseFieldType):
 		self._ReqdFrqcyPttrn = None
 
 	@property
+	def Seq(self):
+		return self._Seq
+
+	@Seq.setter
+	def Seq(self, value):
+		self._Seq = value if type(value) != auto else self.make_default("Seq")
+
+	@Seq.deleter
+	def Seq(self):
+		del self._Seq
+		self._Seq = None
+
+	@property
 	def StartDt(self):
 		return self._StartDt
 
@@ -73,11 +60,24 @@ class Frequency1(base_types._BaseFieldType):
 		del self._StartDt
 		self._StartDt = None
 
+	@property
+	def NonWorkgDayAdjstmnt(self):
+		return self._NonWorkgDayAdjstmnt
+
+	@NonWorkgDayAdjstmnt.setter
+	def NonWorkgDayAdjstmnt(self, value):
+		self._NonWorkgDayAdjstmnt = value if type(value) != auto else self.make_default("NonWorkgDayAdjstmnt")
+
+	@NonWorkgDayAdjstmnt.deleter
+	def NonWorkgDayAdjstmnt(self):
+		del self._NonWorkgDayAdjstmnt
+		self._NonWorkgDayAdjstmnt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndPtChc', type=EndPoint1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Seq', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdFrqcyPttrn', type=Frequency37Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Seq', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

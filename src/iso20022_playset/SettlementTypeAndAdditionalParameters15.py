@@ -5,7 +5,20 @@ import DeliveryReceiptType2Code
 
 class SettlementTypeAndAdditionalParameters15(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmntTp", "_CmonId", "_Pmt"]
+	__slots__ = ["_Pmt", "_SctiesMvmntTp", "_CmonId"]
+	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
 	@property
 	def SctiesMvmntTp(self):
 		return self._SctiesMvmntTp
@@ -32,22 +45,9 @@ class SettlementTypeAndAdditionalParameters15(base_types._BaseFieldType):
 		del self._CmonId
 		self._CmonId = None
 
-	@property
-	def Pmt(self):
-		return self._Pmt
-
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
-
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

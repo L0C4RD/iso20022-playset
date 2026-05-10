@@ -1,6 +1,6 @@
 import base_types
-import AssignmentMethod1Code
 import GenericIdentification30
+import AssignmentMethod1Code
 
 class AssignmentMethod2Choice(base_types._BaseFieldType):
 

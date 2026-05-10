@@ -4,20 +4,7 @@ import UndertakingAmount4
 
 class AmountOrPercentage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DfndAmt", "_PctgAmt"]
-	@property
-	def DfndAmt(self):
-		return self._DfndAmt
-
-	@DfndAmt.setter
-	def DfndAmt(self, value):
-		self._DfndAmt = value if type(value) != auto else self.make_default("DfndAmt")
-
-	@DfndAmt.deleter
-	def DfndAmt(self):
-		del self._DfndAmt
-		self._DfndAmt = None
-
+	__slots__ = ["_PctgAmt", "_DfndAmt"]
 	@property
 	def PctgAmt(self):
 		return self._PctgAmt
@@ -31,8 +18,21 @@ class AmountOrPercentage1Choice(base_types._BaseFieldType):
 		del self._PctgAmt
 		self._PctgAmt = None
 
+	@property
+	def DfndAmt(self):
+		return self._DfndAmt
+
+	@DfndAmt.setter
+	def DfndAmt(self, value):
+		self._DfndAmt = value if type(value) != auto else self.make_default("DfndAmt")
+
+	@DfndAmt.deleter
+	def DfndAmt(self):
+		del self._DfndAmt
+		self._DfndAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DfndAmt', type=UndertakingAmount4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgAmt', type=Percentage1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DfndAmt', type=UndertakingAmount4, min=0, max=1, mutex_group=1, array=False),
 	))
 

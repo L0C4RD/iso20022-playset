@@ -1,27 +1,40 @@
 import base_types
-import LoginResponse7
-import ResponseType11
-import PaymentContext30
-import DiagnosisResponse7
 import CardPaymentEnvironment81
+import LoginResponse7
+import DiagnosisResponse7
+import PaymentContext30
 import SupplementaryData1
 import RetailerService5Code
+import ResponseType11
 
 class SessionManagementResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_DgnssRspn", "_SplmtryData", "_Envt", "_SvcCntt", "_Rspn", "_LgnRspn", "_Cntxt"]
+	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_LgnRspn", "_SvcCntt", "_Rspn", "_DgnssRspn"]
 	@property
-	def DgnssRspn(self):
-		return self._DgnssRspn
+	def Envt(self):
+		return self._Envt
 
-	@DgnssRspn.setter
-	def DgnssRspn(self, value):
-		self._DgnssRspn = value if type(value) != auto else self.make_default("DgnssRspn")
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
 
-	@DgnssRspn.deleter
-	def DgnssRspn(self):
-		del self._DgnssRspn
-		self._DgnssRspn = None
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	@property
 	def SplmtryData(self):
@@ -37,17 +50,17 @@ class SessionManagementResponse8(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Envt(self):
-		return self._Envt
+	def LgnRspn(self):
+		return self._LgnRspn
 
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+	@LgnRspn.setter
+	def LgnRspn(self, value):
+		self._LgnRspn = value if type(value) != auto else self.make_default("LgnRspn")
 
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@LgnRspn.deleter
+	def LgnRspn(self):
+		del self._LgnRspn
+		self._LgnRspn = None
 
 	@property
 	def SvcCntt(self):
@@ -76,38 +89,25 @@ class SessionManagementResponse8(base_types._BaseFieldType):
 		self._Rspn = None
 
 	@property
-	def LgnRspn(self):
-		return self._LgnRspn
+	def DgnssRspn(self):
+		return self._DgnssRspn
 
-	@LgnRspn.setter
-	def LgnRspn(self, value):
-		self._LgnRspn = value if type(value) != auto else self.make_default("LgnRspn")
+	@DgnssRspn.setter
+	def DgnssRspn(self, value):
+		self._DgnssRspn = value if type(value) != auto else self.make_default("DgnssRspn")
 
-	@LgnRspn.deleter
-	def LgnRspn(self):
-		del self._LgnRspn
-		self._LgnRspn = None
-
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@DgnssRspn.deleter
+	def DgnssRspn(self):
+		del self._DgnssRspn
+		self._DgnssRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgnssRspn', type=DiagnosisResponse7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LgnRspn', type=LoginResponse7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcCntt', type=RetailerService5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LgnRspn', type=LoginResponse7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgnssRspn', type=DiagnosisResponse7, min=0, max=1, mutex_group=None, array=False),
 	))
 

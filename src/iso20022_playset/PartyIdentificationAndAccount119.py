@@ -1,6 +1,6 @@
 import base_types
-import AccountIdentification30
 import PartyIdentification90
+import AccountIdentification30
 
 class PartyIdentificationAndAccount119(base_types._BaseFieldType):
 

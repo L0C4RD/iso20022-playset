@@ -1,7 +1,7 @@
 import base_types
-import CountryCode
-import CurrencyDesignation1Code
 import Max350Text
+import CurrencyDesignation1Code
+import CountryCode
 
 class CurrencyDesignation1(base_types._BaseFieldType):
 

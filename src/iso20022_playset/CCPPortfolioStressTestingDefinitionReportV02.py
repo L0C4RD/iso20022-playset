@@ -4,20 +4,7 @@ import ScenarioDefinition2
 
 class CCPPortfolioStressTestingDefinitionReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ScnroDef", "_SplmtryData"]
-	@property
-	def ScnroDef(self):
-		return self._ScnroDef
-
-	@ScnroDef.setter
-	def ScnroDef(self, value):
-		self._ScnroDef = value if type(value) != auto else self.make_default("ScnroDef")
-
-	@ScnroDef.deleter
-	def ScnroDef(self):
-		del self._ScnroDef
-		self._ScnroDef = None
-
+	__slots__ = ["_SplmtryData", "_ScnroDef"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,8 +18,21 @@ class CCPPortfolioStressTestingDefinitionReportV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def ScnroDef(self):
+		return self._ScnroDef
+
+	@ScnroDef.setter
+	def ScnroDef(self, value):
+		self._ScnroDef = value if type(value) != auto else self.make_default("ScnroDef")
+
+	@ScnroDef.deleter
+	def ScnroDef(self):
+		del self._ScnroDef
+		self._ScnroDef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScnroDef', type=ScenarioDefinition2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ScnroDef', type=ScenarioDefinition2, min=1, max=None, mutex_group=None, array=True),
 	))
 

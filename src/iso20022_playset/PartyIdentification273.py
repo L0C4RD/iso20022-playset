@@ -1,25 +1,38 @@
 import base_types
 import Party56Choice
-import PostalAddress27
 import Contact13
-import CountryCode
+import PostalAddress27
 import Max140Text
+import CountryCode
 
 class PartyIdentification273(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_CtryOfRes", "_PstlAdr", "_Nm", "_Id", "_LglNm"]
+	__slots__ = ["_PstlAdr", "_LglNm", "_CtryOfRes", "_CtctDtls", "_Nm", "_Id"]
 	@property
-	def CtctDtls(self):
-		return self._CtctDtls
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
+	@property
+	def LglNm(self):
+		return self._LglNm
+
+	@LglNm.setter
+	def LglNm(self, value):
+		self._LglNm = value if type(value) != auto else self.make_default("LglNm")
+
+	@LglNm.deleter
+	def LglNm(self):
+		del self._LglNm
+		self._LglNm = None
 
 	@property
 	def CtryOfRes(self):
@@ -35,17 +48,17 @@ class PartyIdentification273(base_types._BaseFieldType):
 		self._CtryOfRes = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def CtctDtls(self):
+		return self._CtctDtls
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
 
 	@property
 	def Nm(self):
@@ -73,25 +86,12 @@ class PartyIdentification273(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def LglNm(self):
-		return self._LglNm
-
-	@LglNm.setter
-	def LglNm(self, value):
-		self._LglNm = value if type(value) != auto else self.make_default("LglNm")
-
-	@LglNm.deleter
-	def LglNm(self):
-		del self._LglNm
-		self._LglNm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctDtls', type=Contact13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=Contact13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Party56Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import TradeQueryExecutionFrequency3
 import ISODate
+import TradeQueryExecutionFrequency3
 import Max1000Text
 
 class TradeRecurrentQuery7(base_types._BaseFieldType):

@@ -1,28 +1,15 @@
 import base_types
-import Max35Text
-import ISODate
-import ActiveOrHistoricCurrencyAndAmount
-import UUIDv4Identifier
 import Charges14
 import ClearingChannel2Code
+import UUIDv4Identifier
+import ISODate
+import ActiveOrHistoricCurrencyAndAmount
+import Max35Text
 import Compensation5
 
 class ResolutionData5(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrChanl", "_UETR", "_EndToEndId", "_IntrBkSttlmDt", "_ChrgsInf", "_IntrBkSttlmAmt", "_Compstn", "_TxId"]
-	@property
-	def ClrChanl(self):
-		return self._ClrChanl
-
-	@ClrChanl.setter
-	def ClrChanl(self, value):
-		self._ClrChanl = value if type(value) != auto else self.make_default("ClrChanl")
-
-	@ClrChanl.deleter
-	def ClrChanl(self):
-		del self._ClrChanl
-		self._ClrChanl = None
-
+	__slots__ = ["_UETR", "_EndToEndId", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_ClrChanl", "_TxId", "_ChrgsInf", "_Compstn"]
 	@property
 	def UETR(self):
 		return self._UETR
@@ -50,6 +37,19 @@ class ResolutionData5(base_types._BaseFieldType):
 		self._EndToEndId = None
 
 	@property
+	def IntrBkSttlmAmt(self):
+		return self._IntrBkSttlmAmt
+
+	@IntrBkSttlmAmt.setter
+	def IntrBkSttlmAmt(self, value):
+		self._IntrBkSttlmAmt = value if type(value) != auto else self.make_default("IntrBkSttlmAmt")
+
+	@IntrBkSttlmAmt.deleter
+	def IntrBkSttlmAmt(self):
+		del self._IntrBkSttlmAmt
+		self._IntrBkSttlmAmt = None
+
+	@property
 	def IntrBkSttlmDt(self):
 		return self._IntrBkSttlmDt
 
@@ -61,6 +61,32 @@ class ResolutionData5(base_types._BaseFieldType):
 	def IntrBkSttlmDt(self):
 		del self._IntrBkSttlmDt
 		self._IntrBkSttlmDt = None
+
+	@property
+	def ClrChanl(self):
+		return self._ClrChanl
+
+	@ClrChanl.setter
+	def ClrChanl(self, value):
+		self._ClrChanl = value if type(value) != auto else self.make_default("ClrChanl")
+
+	@ClrChanl.deleter
+	def ClrChanl(self):
+		del self._ClrChanl
+		self._ClrChanl = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def ChrgsInf(self):
@@ -76,19 +102,6 @@ class ResolutionData5(base_types._BaseFieldType):
 		self._ChrgsInf = None
 
 	@property
-	def IntrBkSttlmAmt(self):
-		return self._IntrBkSttlmAmt
-
-	@IntrBkSttlmAmt.setter
-	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != auto else self.make_default("IntrBkSttlmAmt")
-
-	@IntrBkSttlmAmt.deleter
-	def IntrBkSttlmAmt(self):
-		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
-
-	@property
 	def Compstn(self):
 		return self._Compstn
 
@@ -101,27 +114,14 @@ class ResolutionData5(base_types._BaseFieldType):
 		del self._Compstn
 		self._Compstn = None
 
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsInf', type=Charges14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntrBkSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Compstn', type=Compensation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsInf', type=Charges14, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Compstn', type=Compensation5, min=0, max=1, mutex_group=None, array=False),
 	))
 

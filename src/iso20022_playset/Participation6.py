@@ -1,25 +1,12 @@
 import base_types
 import FinancialInstrumentQuantity18Choice
+import Number
 import Percentage14Rate
 import ISODate
-import Number
 
 class Participation6(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgOfVtngRghts", "_TtlNbOfVtngRghts", "_ClctnDt", "_TtlNbOfSctiesOutsdng"]
-	@property
-	def PctgOfVtngRghts(self):
-		return self._PctgOfVtngRghts
-
-	@PctgOfVtngRghts.setter
-	def PctgOfVtngRghts(self, value):
-		self._PctgOfVtngRghts = value if type(value) != auto else self.make_default("PctgOfVtngRghts")
-
-	@PctgOfVtngRghts.deleter
-	def PctgOfVtngRghts(self):
-		del self._PctgOfVtngRghts
-		self._PctgOfVtngRghts = None
-
+	__slots__ = ["_TtlNbOfVtngRghts", "_TtlNbOfSctiesOutsdng", "_ClctnDt", "_PctgOfVtngRghts"]
 	@property
 	def TtlNbOfVtngRghts(self):
 		return self._TtlNbOfVtngRghts
@@ -32,6 +19,19 @@ class Participation6(base_types._BaseFieldType):
 	def TtlNbOfVtngRghts(self):
 		del self._TtlNbOfVtngRghts
 		self._TtlNbOfVtngRghts = None
+
+	@property
+	def TtlNbOfSctiesOutsdng(self):
+		return self._TtlNbOfSctiesOutsdng
+
+	@TtlNbOfSctiesOutsdng.setter
+	def TtlNbOfSctiesOutsdng(self, value):
+		self._TtlNbOfSctiesOutsdng = value if type(value) != auto else self.make_default("TtlNbOfSctiesOutsdng")
+
+	@TtlNbOfSctiesOutsdng.deleter
+	def TtlNbOfSctiesOutsdng(self):
+		del self._TtlNbOfSctiesOutsdng
+		self._TtlNbOfSctiesOutsdng = None
 
 	@property
 	def ClctnDt(self):
@@ -47,22 +47,22 @@ class Participation6(base_types._BaseFieldType):
 		self._ClctnDt = None
 
 	@property
-	def TtlNbOfSctiesOutsdng(self):
-		return self._TtlNbOfSctiesOutsdng
+	def PctgOfVtngRghts(self):
+		return self._PctgOfVtngRghts
 
-	@TtlNbOfSctiesOutsdng.setter
-	def TtlNbOfSctiesOutsdng(self, value):
-		self._TtlNbOfSctiesOutsdng = value if type(value) != auto else self.make_default("TtlNbOfSctiesOutsdng")
+	@PctgOfVtngRghts.setter
+	def PctgOfVtngRghts(self, value):
+		self._PctgOfVtngRghts = value if type(value) != auto else self.make_default("PctgOfVtngRghts")
 
-	@TtlNbOfSctiesOutsdng.deleter
-	def TtlNbOfSctiesOutsdng(self):
-		del self._TtlNbOfSctiesOutsdng
-		self._TtlNbOfSctiesOutsdng = None
+	@PctgOfVtngRghts.deleter
+	def PctgOfVtngRghts(self):
+		del self._PctgOfVtngRghts
+		self._PctgOfVtngRghts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PctgOfVtngRghts', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfVtngRghts', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfSctiesOutsdng', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgOfVtngRghts', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
 	))
 

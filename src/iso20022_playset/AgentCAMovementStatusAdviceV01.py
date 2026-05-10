@@ -1,24 +1,24 @@
 import base_types
-import CorporateActionInformation1
-import CorporateActionMovementStatus1Choice
 import DocumentIdentification8
+import CorporateActionMovementStatus1Choice
 import CorporateMovementStatus2
+import CorporateActionInformation1
 
 class AgentCAMovementStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AgtCAMvmntInstrId", "_MvmntCxlStsDtls", "_AgtCAMvmntCxlReqId", "_CorpActnGnlInf", "_AgtCAGblDstrbtnStsAdvcId", "_AgtCAElctnStsAdvcId", "_MvmntStsDtls"]
+	__slots__ = ["_AgtCAElctnStsAdvcId", "_AgtCAMvmntInstrId", "_AgtCAGblDstrbtnStsAdvcId", "_AgtCAMvmntCxlReqId", "_CorpActnGnlInf", "_MvmntStsDtls", "_Id", "_MvmntCxlStsDtls"]
 	@property
-	def Id(self):
-		return self._Id
+	def AgtCAElctnStsAdvcId(self):
+		return self._AgtCAElctnStsAdvcId
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AgtCAElctnStsAdvcId.setter
+	def AgtCAElctnStsAdvcId(self, value):
+		self._AgtCAElctnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnStsAdvcId")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AgtCAElctnStsAdvcId.deleter
+	def AgtCAElctnStsAdvcId(self):
+		del self._AgtCAElctnStsAdvcId
+		self._AgtCAElctnStsAdvcId = None
 
 	@property
 	def AgtCAMvmntInstrId(self):
@@ -34,17 +34,17 @@ class AgentCAMovementStatusAdviceV01(base_types._BaseFieldType):
 		self._AgtCAMvmntInstrId = None
 
 	@property
-	def MvmntCxlStsDtls(self):
-		return self._MvmntCxlStsDtls
+	def AgtCAGblDstrbtnStsAdvcId(self):
+		return self._AgtCAGblDstrbtnStsAdvcId
 
-	@MvmntCxlStsDtls.setter
-	def MvmntCxlStsDtls(self, value):
-		self._MvmntCxlStsDtls = value if type(value) != auto else self.make_default("MvmntCxlStsDtls")
+	@AgtCAGblDstrbtnStsAdvcId.setter
+	def AgtCAGblDstrbtnStsAdvcId(self, value):
+		self._AgtCAGblDstrbtnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAGblDstrbtnStsAdvcId")
 
-	@MvmntCxlStsDtls.deleter
-	def MvmntCxlStsDtls(self):
-		del self._MvmntCxlStsDtls
-		self._MvmntCxlStsDtls = None
+	@AgtCAGblDstrbtnStsAdvcId.deleter
+	def AgtCAGblDstrbtnStsAdvcId(self):
+		del self._AgtCAGblDstrbtnStsAdvcId
+		self._AgtCAGblDstrbtnStsAdvcId = None
 
 	@property
 	def AgtCAMvmntCxlReqId(self):
@@ -73,32 +73,6 @@ class AgentCAMovementStatusAdviceV01(base_types._BaseFieldType):
 		self._CorpActnGnlInf = None
 
 	@property
-	def AgtCAGblDstrbtnStsAdvcId(self):
-		return self._AgtCAGblDstrbtnStsAdvcId
-
-	@AgtCAGblDstrbtnStsAdvcId.setter
-	def AgtCAGblDstrbtnStsAdvcId(self, value):
-		self._AgtCAGblDstrbtnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAGblDstrbtnStsAdvcId")
-
-	@AgtCAGblDstrbtnStsAdvcId.deleter
-	def AgtCAGblDstrbtnStsAdvcId(self):
-		del self._AgtCAGblDstrbtnStsAdvcId
-		self._AgtCAGblDstrbtnStsAdvcId = None
-
-	@property
-	def AgtCAElctnStsAdvcId(self):
-		return self._AgtCAElctnStsAdvcId
-
-	@AgtCAElctnStsAdvcId.setter
-	def AgtCAElctnStsAdvcId(self, value):
-		self._AgtCAElctnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnStsAdvcId")
-
-	@AgtCAElctnStsAdvcId.deleter
-	def AgtCAElctnStsAdvcId(self):
-		del self._AgtCAElctnStsAdvcId
-		self._AgtCAElctnStsAdvcId = None
-
-	@property
 	def MvmntStsDtls(self):
 		return self._MvmntStsDtls
 
@@ -111,14 +85,40 @@ class AgentCAMovementStatusAdviceV01(base_types._BaseFieldType):
 		del self._MvmntStsDtls
 		self._MvmntStsDtls = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def MvmntCxlStsDtls(self):
+		return self._MvmntCxlStsDtls
+
+	@MvmntCxlStsDtls.setter
+	def MvmntCxlStsDtls(self, value):
+		self._MvmntCxlStsDtls = value if type(value) != auto else self.make_default("MvmntCxlStsDtls")
+
+	@MvmntCxlStsDtls.deleter
+	def MvmntCxlStsDtls(self):
+		del self._MvmntCxlStsDtls
+		self._MvmntCxlStsDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtCAElctnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AgtCAMvmntInstrId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MvmntCxlStsDtls', type=CorporateMovementStatus2, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='AgtCAGblDstrbtnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AgtCAMvmntCxlReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtCAGblDstrbtnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AgtCAElctnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MvmntStsDtls', type=CorporateActionMovementStatus1Choice, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntCxlStsDtls', type=CorporateMovementStatus2, min=0, max=1, mutex_group=2, array=False),
 	))
 

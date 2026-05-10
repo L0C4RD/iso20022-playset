@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
 import ISODate
 import CountryCode
+import Max35Text
 
 class DateAndPlaceOfBirth(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfBirth", "_CityOfBirth", "_BirthDt", "_PrvcOfBirth"]
-	@property
-	def CtryOfBirth(self):
-		return self._CtryOfBirth
-
-	@CtryOfBirth.setter
-	def CtryOfBirth(self, value):
-		self._CtryOfBirth = value if type(value) != auto else self.make_default("CtryOfBirth")
-
-	@CtryOfBirth.deleter
-	def CtryOfBirth(self):
-		del self._CtryOfBirth
-		self._CtryOfBirth = None
-
+	__slots__ = ["_CityOfBirth", "_BirthDt", "_PrvcOfBirth", "_CtryOfBirth"]
 	@property
 	def CityOfBirth(self):
 		return self._CityOfBirth
@@ -58,10 +45,23 @@ class DateAndPlaceOfBirth(base_types._BaseFieldType):
 		del self._PrvcOfBirth
 		self._PrvcOfBirth = None
 
+	@property
+	def CtryOfBirth(self):
+		return self._CtryOfBirth
+
+	@CtryOfBirth.setter
+	def CtryOfBirth(self, value):
+		self._CtryOfBirth = value if type(value) != auto else self.make_default("CtryOfBirth")
+
+	@CtryOfBirth.deleter
+	def CtryOfBirth(self):
+		del self._CtryOfBirth
+		self._CtryOfBirth = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryOfBirth', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CityOfBirth', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvcOfBirth', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfBirth', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

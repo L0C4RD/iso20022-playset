@@ -1,23 +1,23 @@
 import base_types
-import Exact3UpperCaseAlphaNumericText
 import GenericIdentification36
+import Exact3UpperCaseAlphaNumericText
 import Max30Text
 
 class IdentificationFormat3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LngId", "_PrtryId", "_ShrtId"]
+	__slots__ = ["_ShrtId", "_PrtryId", "_LngId"]
 	@property
-	def LngId(self):
-		return self._LngId
+	def ShrtId(self):
+		return self._ShrtId
 
-	@LngId.setter
-	def LngId(self, value):
-		self._LngId = value if type(value) != auto else self.make_default("LngId")
+	@ShrtId.setter
+	def ShrtId(self, value):
+		self._ShrtId = value if type(value) != auto else self.make_default("ShrtId")
 
-	@LngId.deleter
-	def LngId(self):
-		del self._LngId
-		self._LngId = None
+	@ShrtId.deleter
+	def ShrtId(self):
+		del self._ShrtId
+		self._ShrtId = None
 
 	@property
 	def PrtryId(self):
@@ -33,21 +33,21 @@ class IdentificationFormat3Choice(base_types._BaseFieldType):
 		self._PrtryId = None
 
 	@property
-	def ShrtId(self):
-		return self._ShrtId
+	def LngId(self):
+		return self._LngId
 
-	@ShrtId.setter
-	def ShrtId(self, value):
-		self._ShrtId = value if type(value) != auto else self.make_default("ShrtId")
+	@LngId.setter
+	def LngId(self, value):
+		self._LngId = value if type(value) != auto else self.make_default("LngId")
 
-	@ShrtId.deleter
-	def ShrtId(self):
-		del self._ShrtId
-		self._ShrtId = None
+	@LngId.deleter
+	def LngId(self):
+		del self._LngId
+		self._LngId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LngId', type=Max30Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ShrtId', type=Exact3UpperCaseAlphaNumericText, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LngId', type=Max30Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
-import ExternalPaymentTransactionStatus1Code
 import Max15NumericText
 import DecimalNumber
+import ExternalPaymentTransactionStatus1Code
 
 class NumberOfTransactionsPerStatus5(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldNbOfTxs", "_DtldSts", "_DtldCtrlSum"]
+	__slots__ = ["_DtldCtrlSum", "_DtldSts", "_DtldNbOfTxs"]
 	@property
-	def DtldNbOfTxs(self):
-		return self._DtldNbOfTxs
+	def DtldCtrlSum(self):
+		return self._DtldCtrlSum
 
-	@DtldNbOfTxs.setter
-	def DtldNbOfTxs(self, value):
-		self._DtldNbOfTxs = value if type(value) != auto else self.make_default("DtldNbOfTxs")
+	@DtldCtrlSum.setter
+	def DtldCtrlSum(self, value):
+		self._DtldCtrlSum = value if type(value) != auto else self.make_default("DtldCtrlSum")
 
-	@DtldNbOfTxs.deleter
-	def DtldNbOfTxs(self):
-		del self._DtldNbOfTxs
-		self._DtldNbOfTxs = None
+	@DtldCtrlSum.deleter
+	def DtldCtrlSum(self):
+		del self._DtldCtrlSum
+		self._DtldCtrlSum = None
 
 	@property
 	def DtldSts(self):
@@ -33,21 +33,21 @@ class NumberOfTransactionsPerStatus5(base_types._BaseFieldType):
 		self._DtldSts = None
 
 	@property
-	def DtldCtrlSum(self):
-		return self._DtldCtrlSum
+	def DtldNbOfTxs(self):
+		return self._DtldNbOfTxs
 
-	@DtldCtrlSum.setter
-	def DtldCtrlSum(self, value):
-		self._DtldCtrlSum = value if type(value) != auto else self.make_default("DtldCtrlSum")
+	@DtldNbOfTxs.setter
+	def DtldNbOfTxs(self, value):
+		self._DtldNbOfTxs = value if type(value) != auto else self.make_default("DtldNbOfTxs")
 
-	@DtldCtrlSum.deleter
-	def DtldCtrlSum(self):
-		del self._DtldCtrlSum
-		self._DtldCtrlSum = None
+	@DtldNbOfTxs.deleter
+	def DtldNbOfTxs(self):
+		del self._DtldNbOfTxs
+		self._DtldNbOfTxs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldSts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldSts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

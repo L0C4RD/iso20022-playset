@@ -1,12 +1,12 @@
 import base_types
-import Recipient5Choice
 import Max5000Binary
-import AlgorithmIdentification27
+import Recipient5Choice
 import Number
+import AlgorithmIdentification27
 
 class KeyTransport6(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptId", "_Vrsn", "_KeyNcrptnAlgo", "_NcrptdKey"]
+	__slots__ = ["_RcptId", "_NcrptdKey", "_KeyNcrptnAlgo", "_Vrsn"]
 	@property
 	def RcptId(self):
 		return self._RcptId
@@ -21,17 +21,17 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._RcptId = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def NcrptdKey(self):
+		return self._NcrptdKey
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@NcrptdKey.setter
+	def NcrptdKey(self, value):
+		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@NcrptdKey.deleter
+	def NcrptdKey(self):
+		del self._NcrptdKey
+		self._NcrptdKey = None
 
 	@property
 	def KeyNcrptnAlgo(self):
@@ -47,22 +47,22 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._KeyNcrptnAlgo = None
 
 	@property
-	def NcrptdKey(self):
-		return self._NcrptdKey
+	def Vrsn(self):
+		return self._Vrsn
 
-	@NcrptdKey.setter
-	def NcrptdKey(self, value):
-		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@NcrptdKey.deleter
-	def NcrptdKey(self):
-		del self._NcrptdKey
-		self._NcrptdKey = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max5000Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification27, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

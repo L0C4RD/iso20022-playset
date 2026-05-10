@@ -1,6 +1,6 @@
 import base_types
-import Max350Text
 import TransferStatus6Code
+import Max350Text
 
 class TransferInstructionStatus5(base_types._BaseFieldType):
 

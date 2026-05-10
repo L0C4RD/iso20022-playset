@@ -4,20 +4,7 @@ import MatchingCriteria17
 
 class ReconciliationReport15(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_MtchgCrit"]
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_MtchgCrit", "_TxId"]
 	@property
 	def MtchgCrit(self):
 		return self._MtchgCrit
@@ -31,8 +18,21 @@ class ReconciliationReport15(base_types._BaseFieldType):
 		del self._MtchgCrit
 		self._MtchgCrit = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgCrit', type=MatchingCriteria17, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,8 +1,8 @@
 import base_types
-import ActiveCurrencyCode
-import ISODate
 import AgreementFramework1Choice
 import Max140Text
+import ActiveCurrencyCode
+import ISODate
 
 class Agreement4(base_types._BaseFieldType):
 

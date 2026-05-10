@@ -1,6 +1,6 @@
 import base_types
-import TradeNonConfirmation1
 import TradeConfirmation4
+import TradeNonConfirmation1
 
 class TradeConfirmation3Choice(base_types._BaseFieldType):
 

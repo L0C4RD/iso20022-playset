@@ -1,6 +1,6 @@
 import base_types
-import ProcessedStatus2Code
 import GenericIdentification30
+import ProcessedStatus2Code
 
 class ProcessedStatus2Format1Choice(base_types._BaseFieldType):
 

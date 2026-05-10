@@ -1,25 +1,12 @@
 import base_types
-import SafekeepingPlaceTypeAndText8
-import CountryCode
-import GenericIdentification78
 import SafekeepingPlaceTypeAndIdentification1
+import SafekeepingPlaceTypeAndText8
+import GenericIdentification78
+import CountryCode
 
 class SafekeepingPlaceFormat29Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Ctry", "_Id", "_TpAndId"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_Ctry", "_Prtry", "_TpAndId", "_Id"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -34,17 +21,17 @@ class SafekeepingPlaceFormat29Choice(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Prtry(self):
+		return self._Prtry
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def TpAndId(self):
@@ -59,10 +46,23 @@ class SafekeepingPlaceFormat29Choice(base_types._BaseFieldType):
 		del self._TpAndId
 		self._TpAndId = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification78, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification78, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText8, min=0, max=1, mutex_group=1, array=False),
 	))
 

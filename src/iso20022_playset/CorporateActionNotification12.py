@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
 import CorporateActionNotificationType1Code
 import CorporateActionProcessingStatus7Choice
+import Max35Text
 
 class CorporateActionNotification12(base_types._BaseFieldType):
 

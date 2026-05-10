@@ -1,14 +1,14 @@
 import base_types
-import MissingCover6
 import InstructionForAssignee1
-import CaseAssignment6
-import UnderlyingTransaction8Choice
 import SupplementaryData1
 import Case6
+import CaseAssignment6
+import MissingCover6
+import UnderlyingTransaction8Choice
 
 class ClaimNonReceiptV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Undrlyg", "_Case", "_CoverDtls", "_InstrForAssgne", "_Assgnmt"]
+	__slots__ = ["_SplmtryData", "_InstrForAssgne", "_CoverDtls", "_Case", "_Assgnmt", "_Undrlyg"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,45 +21,6 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def Undrlyg(self):
-		return self._Undrlyg
-
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
-
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
-
-	@property
-	def Case(self):
-		return self._Case
-
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
-
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
-
-	@property
-	def CoverDtls(self):
-		return self._CoverDtls
-
-	@CoverDtls.setter
-	def CoverDtls(self, value):
-		self._CoverDtls = value if type(value) != auto else self.make_default("CoverDtls")
-
-	@CoverDtls.deleter
-	def CoverDtls(self):
-		del self._CoverDtls
-		self._CoverDtls = None
 
 	@property
 	def InstrForAssgne(self):
@@ -75,6 +36,32 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 		self._InstrForAssgne = None
 
 	@property
+	def CoverDtls(self):
+		return self._CoverDtls
+
+	@CoverDtls.setter
+	def CoverDtls(self, value):
+		self._CoverDtls = value if type(value) != auto else self.make_default("CoverDtls")
+
+	@CoverDtls.deleter
+	def CoverDtls(self):
+		del self._CoverDtls
+		self._CoverDtls = None
+
+	@property
+	def Case(self):
+		return self._Case
+
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != auto else self.make_default("Case")
+
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
+
+	@property
 	def Assgnmt(self):
 		return self._Assgnmt
 
@@ -87,12 +74,25 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 		del self._Assgnmt
 		self._Assgnmt = None
 
+	@property
+	def Undrlyg(self):
+		return self._Undrlyg
+
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
+
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CoverDtls', type=MissingCover6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrForAssgne', type=InstructionForAssignee1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CoverDtls', type=MissingCover6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

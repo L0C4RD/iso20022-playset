@@ -1,11 +1,37 @@
 import base_types
-import Max35Text
-import PaymentInstrument1Code
 import Max3NumericText
+import PaymentInstrument1Code
+import Max35Text
 
 class PaymentOrigin1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Instrm", "_Prtry", "_FINMT", "_XMLMsgNm"]
+	__slots__ = ["_XMLMsgNm", "_FINMT", "_Instrm", "_Prtry"]
+	@property
+	def XMLMsgNm(self):
+		return self._XMLMsgNm
+
+	@XMLMsgNm.setter
+	def XMLMsgNm(self, value):
+		self._XMLMsgNm = value if type(value) != auto else self.make_default("XMLMsgNm")
+
+	@XMLMsgNm.deleter
+	def XMLMsgNm(self):
+		del self._XMLMsgNm
+		self._XMLMsgNm = None
+
+	@property
+	def FINMT(self):
+		return self._FINMT
+
+	@FINMT.setter
+	def FINMT(self, value):
+		self._FINMT = value if type(value) != auto else self.make_default("FINMT")
+
+	@FINMT.deleter
+	def FINMT(self):
+		del self._FINMT
+		self._FINMT = None
+
 	@property
 	def Instrm(self):
 		return self._Instrm
@@ -32,36 +58,10 @@ class PaymentOrigin1Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
-	@property
-	def FINMT(self):
-		return self._FINMT
-
-	@FINMT.setter
-	def FINMT(self, value):
-		self._FINMT = value if type(value) != auto else self.make_default("FINMT")
-
-	@FINMT.deleter
-	def FINMT(self):
-		del self._FINMT
-		self._FINMT = None
-
-	@property
-	def XMLMsgNm(self):
-		return self._XMLMsgNm
-
-	@XMLMsgNm.setter
-	def XMLMsgNm(self, value):
-		self._XMLMsgNm = value if type(value) != auto else self.make_default("XMLMsgNm")
-
-	@XMLMsgNm.deleter
-	def XMLMsgNm(self):
-		del self._XMLMsgNm
-		self._XMLMsgNm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XMLMsgNm', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FINMT', type=Max3NumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Instrm', type=PaymentInstrument1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FINMT', type=Max3NumericText, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='XMLMsgNm', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

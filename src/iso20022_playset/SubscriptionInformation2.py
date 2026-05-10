@@ -4,7 +4,20 @@ import ActiveCurrencyAnd13DecimalAmount
 
 class SubscriptionInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOfFrstSbcpt", "_EqtyCmpnt", "_CshCmpnt", "_TtlAmtYrToDt"]
+	__slots__ = ["_CshCmpnt", "_DtOfFrstSbcpt", "_EqtyCmpnt", "_TtlAmtYrToDt"]
+	@property
+	def CshCmpnt(self):
+		return self._CshCmpnt
+
+	@CshCmpnt.setter
+	def CshCmpnt(self, value):
+		self._CshCmpnt = value if type(value) != auto else self.make_default("CshCmpnt")
+
+	@CshCmpnt.deleter
+	def CshCmpnt(self):
+		del self._CshCmpnt
+		self._CshCmpnt = None
+
 	@property
 	def DtOfFrstSbcpt(self):
 		return self._DtOfFrstSbcpt
@@ -32,19 +45,6 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 		self._EqtyCmpnt = None
 
 	@property
-	def CshCmpnt(self):
-		return self._CshCmpnt
-
-	@CshCmpnt.setter
-	def CshCmpnt(self, value):
-		self._CshCmpnt = value if type(value) != auto else self.make_default("CshCmpnt")
-
-	@CshCmpnt.deleter
-	def CshCmpnt(self):
-		del self._CshCmpnt
-		self._CshCmpnt = None
-
-	@property
 	def TtlAmtYrToDt(self):
 		return self._TtlAmtYrToDt
 
@@ -58,9 +58,9 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 		self._TtlAmtYrToDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CshCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtOfFrstSbcpt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EqtyCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmtYrToDt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

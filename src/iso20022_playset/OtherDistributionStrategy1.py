@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import AdditionalInformation15
 import DistributionStrategy1Choice
+import AdditionalInformation15
+import Max35Text
 
 class OtherDistributionStrategy1(base_types._BaseFieldType):
 
-	__slots__ = ["_Trgt", "_AddtlInf", "_DstrbtnStrtgyTp"]
+	__slots__ = ["_DstrbtnStrtgyTp", "_AddtlInf", "_Trgt"]
 	@property
-	def Trgt(self):
-		return self._Trgt
+	def DstrbtnStrtgyTp(self):
+		return self._DstrbtnStrtgyTp
 
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+	@DstrbtnStrtgyTp.setter
+	def DstrbtnStrtgyTp(self, value):
+		self._DstrbtnStrtgyTp = value if type(value) != auto else self.make_default("DstrbtnStrtgyTp")
 
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
+	@DstrbtnStrtgyTp.deleter
+	def DstrbtnStrtgyTp(self):
+		del self._DstrbtnStrtgyTp
+		self._DstrbtnStrtgyTp = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class OtherDistributionStrategy1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def DstrbtnStrtgyTp(self):
-		return self._DstrbtnStrtgyTp
+	def Trgt(self):
+		return self._Trgt
 
-	@DstrbtnStrtgyTp.setter
-	def DstrbtnStrtgyTp(self, value):
-		self._DstrbtnStrtgyTp = value if type(value) != auto else self.make_default("DstrbtnStrtgyTp")
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
 
-	@DstrbtnStrtgyTp.deleter
-	def DstrbtnStrtgyTp(self):
-		del self._DstrbtnStrtgyTp
-		self._DstrbtnStrtgyTp = None
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Trgt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstrbtnStrtgyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

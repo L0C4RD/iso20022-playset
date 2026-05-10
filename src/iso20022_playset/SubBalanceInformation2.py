@@ -1,25 +1,12 @@
 import base_types
 import SecuritiesBalanceType1Code
+import AdditionalBalanceInformation2
 import Extended350Code
 import SubBalanceQuantity1Choice
-import AdditionalBalanceInformation2
 
 class SubBalanceInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedSubBalTp", "_Qty", "_AddtlBalBrkdwnDtls", "_SubBalTp"]
-	@property
-	def XtndedSubBalTp(self):
-		return self._XtndedSubBalTp
-
-	@XtndedSubBalTp.setter
-	def XtndedSubBalTp(self, value):
-		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
-
-	@XtndedSubBalTp.deleter
-	def XtndedSubBalTp(self):
-		del self._XtndedSubBalTp
-		self._XtndedSubBalTp = None
-
+	__slots__ = ["_Qty", "_AddtlBalBrkdwnDtls", "_XtndedSubBalTp", "_SubBalTp"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -47,6 +34,19 @@ class SubBalanceInformation2(base_types._BaseFieldType):
 		self._AddtlBalBrkdwnDtls = None
 
 	@property
+	def XtndedSubBalTp(self):
+		return self._XtndedSubBalTp
+
+	@XtndedSubBalTp.setter
+	def XtndedSubBalTp(self, value):
+		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
+
+	@XtndedSubBalTp.deleter
+	def XtndedSubBalTp(self):
+		del self._XtndedSubBalTp
+		self._XtndedSubBalTp = None
+
+	@property
 	def SubBalTp(self):
 		return self._SubBalTp
 
@@ -60,9 +60,9 @@ class SubBalanceInformation2(base_types._BaseFieldType):
 		self._SubBalTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,11 +1,24 @@
 import base_types
-import ActiveCurrencyAndAmount
 import Collateral1
 import MarginCollateral1
+import ActiveCurrencyAndAmount
 
 class CollateralBalance1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CollDtls", "_TtlColl", "_SgrtdIndpdntAmt"]
+	__slots__ = ["_SgrtdIndpdntAmt", "_CollDtls", "_TtlColl"]
+	@property
+	def SgrtdIndpdntAmt(self):
+		return self._SgrtdIndpdntAmt
+
+	@SgrtdIndpdntAmt.setter
+	def SgrtdIndpdntAmt(self, value):
+		self._SgrtdIndpdntAmt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmt")
+
+	@SgrtdIndpdntAmt.deleter
+	def SgrtdIndpdntAmt(self):
+		del self._SgrtdIndpdntAmt
+		self._SgrtdIndpdntAmt = None
+
 	@property
 	def CollDtls(self):
 		return self._CollDtls
@@ -32,22 +45,9 @@ class CollateralBalance1Choice(base_types._BaseFieldType):
 		del self._TtlColl
 		self._TtlColl = None
 
-	@property
-	def SgrtdIndpdntAmt(self):
-		return self._SgrtdIndpdntAmt
-
-	@SgrtdIndpdntAmt.setter
-	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmt")
-
-	@SgrtdIndpdntAmt.deleter
-	def SgrtdIndpdntAmt(self):
-		del self._SgrtdIndpdntAmt
-		self._SgrtdIndpdntAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=MarginCollateral1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CollDtls', type=Collateral1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TtlColl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=MarginCollateral1, min=0, max=1, mutex_group=1, array=False),
 	))
 

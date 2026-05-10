@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification20
 import ExternalTradeMarket1Code
+import GenericIdentification20
 
 class TradeMarket1Choice(base_types._BaseFieldType):
 

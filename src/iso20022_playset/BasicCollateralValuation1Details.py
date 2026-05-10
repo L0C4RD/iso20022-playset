@@ -1,6 +1,6 @@
 import base_types
-import PartyIdentification15
 import PercentageRate
+import PartyIdentification15
 
 class BasicCollateralValuation1Details(base_types._BaseFieldType):
 

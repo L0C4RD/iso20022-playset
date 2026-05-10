@@ -5,7 +5,20 @@ import RegisteredContract20
 
 class ContractRegistrationConfirmationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_RegdCtrct"]
+	__slots__ = ["_RegdCtrct", "_SplmtryData", "_GrpHdr"]
+	@property
+	def RegdCtrct(self):
+		return self._RegdCtrct
+
+	@RegdCtrct.setter
+	def RegdCtrct(self, value):
+		self._RegdCtrct = value if type(value) != auto else self.make_default("RegdCtrct")
+
+	@RegdCtrct.deleter
+	def RegdCtrct(self):
+		del self._RegdCtrct
+		self._RegdCtrct = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class ContractRegistrationConfirmationV04(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
-	@property
-	def RegdCtrct(self):
-		return self._RegdCtrct
-
-	@RegdCtrct.setter
-	def RegdCtrct(self, value):
-		self._RegdCtrct = value if type(value) != auto else self.make_default("RegdCtrct")
-
-	@RegdCtrct.deleter
-	def RegdCtrct(self):
-		del self._RegdCtrct
-		self._RegdCtrct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RegdCtrct', type=RegisteredContract20, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdCtrct', type=RegisteredContract20, min=1, max=None, mutex_group=None, array=True),
 	))
 

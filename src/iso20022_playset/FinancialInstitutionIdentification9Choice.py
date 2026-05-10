@@ -1,25 +1,12 @@
 import base_types
 import BICFIIdentifier
-import Max35Text
 import ClearingSystemMemberIdentification4Choice
 import NameAndAddress5
+import Max35Text
 
 class FinancialInstitutionIdentification9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_BICFI", "_PrtryId", "_ClrSysMmbId"]
-	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
+	__slots__ = ["_BICFI", "_NmAndAdr", "_PrtryId", "_ClrSysMmbId"]
 	@property
 	def BICFI(self):
 		return self._BICFI
@@ -32,6 +19,19 @@ class FinancialInstitutionIdentification9Choice(base_types._BaseFieldType):
 	def BICFI(self):
 		del self._BICFI
 		self._BICFI = None
+
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	@property
 	def PrtryId(self):
@@ -60,8 +60,8 @@ class FinancialInstitutionIdentification9Choice(base_types._BaseFieldType):
 		self._ClrSysMmbId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BICFI', type=BICFIIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification4Choice, min=0, max=1, mutex_group=1, array=False),
 	))

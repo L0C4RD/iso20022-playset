@@ -1,25 +1,12 @@
 import base_types
-import MessageIdentification1
 import AdditionalReference2
+import MessageIdentification1
 import AccountingStatementOfHoldings2
 import Pagination
 
 class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_MsgId", "_MsgPgntn", "_StmtToBeCanc", "_PrvsRef"]
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
+	__slots__ = ["_MsgId", "_MsgPgntn", "_StmtToBeCanc", "_RltdRef", "_PrvsRef"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -60,6 +47,19 @@ class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._StmtToBeCanc = None
 
 	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
 	def PrvsRef(self):
 		return self._PrvsRef
 
@@ -73,10 +73,10 @@ class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtToBeCanc', type=AccountingStatementOfHoldings2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 	))
 

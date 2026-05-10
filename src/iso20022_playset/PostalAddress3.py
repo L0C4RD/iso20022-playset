@@ -5,20 +5,7 @@ import YesNoIndicator
 
 class PostalAddress3(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnAdrInd", "_AdrTp", "_MlngInd", "_NmAndAdr"]
-	@property
-	def RegnAdrInd(self):
-		return self._RegnAdrInd
-
-	@RegnAdrInd.setter
-	def RegnAdrInd(self, value):
-		self._RegnAdrInd = value if type(value) != auto else self.make_default("RegnAdrInd")
-
-	@RegnAdrInd.deleter
-	def RegnAdrInd(self):
-		del self._RegnAdrInd
-		self._RegnAdrInd = None
-
+	__slots__ = ["_AdrTp", "_RegnAdrInd", "_MlngInd", "_NmAndAdr"]
 	@property
 	def AdrTp(self):
 		return self._AdrTp
@@ -31,6 +18,19 @@ class PostalAddress3(base_types._BaseFieldType):
 	def AdrTp(self):
 		del self._AdrTp
 		self._AdrTp = None
+
+	@property
+	def RegnAdrInd(self):
+		return self._RegnAdrInd
+
+	@RegnAdrInd.setter
+	def RegnAdrInd(self, value):
+		self._RegnAdrInd = value if type(value) != auto else self.make_default("RegnAdrInd")
+
+	@RegnAdrInd.deleter
+	def RegnAdrInd(self):
+		del self._RegnAdrInd
+		self._RegnAdrInd = None
 
 	@property
 	def MlngInd(self):
@@ -59,8 +59,8 @@ class PostalAddress3(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnAdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdrTp', type=AddressType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MlngInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress4, min=1, max=1, mutex_group=None, array=False),
 	))

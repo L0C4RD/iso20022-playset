@@ -1,6 +1,6 @@
 import base_types
-import AmountToAmountRatio2
 import QuantityToQuantityRatio1
+import AmountToAmountRatio2
 
 class RatioFormat20Choice(base_types._BaseFieldType):
 

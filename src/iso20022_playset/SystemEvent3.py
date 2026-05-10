@@ -4,7 +4,7 @@ import SystemEventType4Choice
 
 class SystemEvent3(base_types._BaseFieldType):
 
-	__slots__ = ["_EndTm", "_Tp", "_StartTm", "_FctvTm", "_SchdldTm"]
+	__slots__ = ["_EndTm", "_Tp", "_SchdldTm", "_FctvTm", "_StartTm"]
 	@property
 	def EndTm(self):
 		return self._EndTm
@@ -32,17 +32,17 @@ class SystemEvent3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def StartTm(self):
-		return self._StartTm
+	def SchdldTm(self):
+		return self._SchdldTm
 
-	@StartTm.setter
-	def StartTm(self, value):
-		self._StartTm = value if type(value) != auto else self.make_default("StartTm")
+	@SchdldTm.setter
+	def SchdldTm(self, value):
+		self._SchdldTm = value if type(value) != auto else self.make_default("SchdldTm")
 
-	@StartTm.deleter
-	def StartTm(self):
-		del self._StartTm
-		self._StartTm = None
+	@SchdldTm.deleter
+	def SchdldTm(self):
+		del self._SchdldTm
+		self._SchdldTm = None
 
 	@property
 	def FctvTm(self):
@@ -58,23 +58,23 @@ class SystemEvent3(base_types._BaseFieldType):
 		self._FctvTm = None
 
 	@property
-	def SchdldTm(self):
-		return self._SchdldTm
+	def StartTm(self):
+		return self._StartTm
 
-	@SchdldTm.setter
-	def SchdldTm(self, value):
-		self._SchdldTm = value if type(value) != auto else self.make_default("SchdldTm")
+	@StartTm.setter
+	def StartTm(self, value):
+		self._StartTm = value if type(value) != auto else self.make_default("StartTm")
 
-	@SchdldTm.deleter
-	def SchdldTm(self):
-		del self._SchdldTm
-		self._SchdldTm = None
+	@StartTm.deleter
+	def StartTm(self):
+		del self._StartTm
+		self._StartTm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=SystemEventType4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchdldTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import CardPaymentEnvironment81
 import Max9NumericText
+import CardPaymentEnvironment81
 
 class TokenRequestComponent5(base_types._BaseFieldType):
 

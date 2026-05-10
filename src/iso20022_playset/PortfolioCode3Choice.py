@@ -1,6 +1,6 @@
 import base_types
-import NotApplicable1Code
 import Max52Text
+import NotApplicable1Code
 
 class PortfolioCode3Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import StatementFrequencyAndForm1
 import Modification1Code
+import StatementFrequencyAndForm1
 
 class StatementFrequencyAndFormModification1(base_types._BaseFieldType):
 

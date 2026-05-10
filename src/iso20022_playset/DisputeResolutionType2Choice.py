@@ -1,6 +1,6 @@
 import base_types
-import DisputeResolutionType2Code
 import GenericIdentification30
+import DisputeResolutionType2Code
 
 class DisputeResolutionType2Choice(base_types._BaseFieldType):
 

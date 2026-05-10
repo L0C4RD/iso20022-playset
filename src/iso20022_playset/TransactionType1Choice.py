@@ -1,23 +1,10 @@
 import base_types
-import TransactionType2Choice
 import CorporateAction1Choice
+import TransactionType2Choice
 
 class TransactionType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_CorpActnTp"]
-	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
+	__slots__ = ["_CorpActnTp", "_TxTp"]
 	@property
 	def CorpActnTp(self):
 		return self._CorpActnTp
@@ -31,8 +18,21 @@ class TransactionType1Choice(base_types._BaseFieldType):
 		del self._CorpActnTp
 		self._CorpActnTp = None
 
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTp', type=TransactionType2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnTp', type=CorporateAction1Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TxTp', type=TransactionType2Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

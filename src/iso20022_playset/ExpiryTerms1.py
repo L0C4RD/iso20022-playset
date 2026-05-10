@@ -1,25 +1,12 @@
 import base_types
-import DateAndDateTimeChoice
-import AutoExtension1
-import YesNoIndicator
 import Max2000Text
+import YesNoIndicator
+import AutoExtension1
+import DateAndDateTimeChoice
 
 class ExpiryTerms1(base_types._BaseFieldType):
 
-	__slots__ = ["_AutoXtnsn", "_Cond", "_OpnEnddInd", "_DtTm"]
-	@property
-	def AutoXtnsn(self):
-		return self._AutoXtnsn
-
-	@AutoXtnsn.setter
-	def AutoXtnsn(self, value):
-		self._AutoXtnsn = value if type(value) != auto else self.make_default("AutoXtnsn")
-
-	@AutoXtnsn.deleter
-	def AutoXtnsn(self):
-		del self._AutoXtnsn
-		self._AutoXtnsn = None
-
+	__slots__ = ["_Cond", "_OpnEnddInd", "_AutoXtnsn", "_DtTm"]
 	@property
 	def Cond(self):
 		return self._Cond
@@ -47,6 +34,19 @@ class ExpiryTerms1(base_types._BaseFieldType):
 		self._OpnEnddInd = None
 
 	@property
+	def AutoXtnsn(self):
+		return self._AutoXtnsn
+
+	@AutoXtnsn.setter
+	def AutoXtnsn(self, value):
+		self._AutoXtnsn = value if type(value) != auto else self.make_default("AutoXtnsn")
+
+	@AutoXtnsn.deleter
+	def AutoXtnsn(self):
+		del self._AutoXtnsn
+		self._AutoXtnsn = None
+
+	@property
 	def DtTm(self):
 		return self._DtTm
 
@@ -60,9 +60,9 @@ class ExpiryTerms1(base_types._BaseFieldType):
 		self._DtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AutoXtnsn', type=AutoExtension1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cond', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpnEnddInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AutoXtnsn', type=AutoExtension1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

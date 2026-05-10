@@ -1,38 +1,12 @@
 import base_types
+import NameAndAddress5
+import AnyBICDec2014Identifier
 import DTI2024Identifier
 import CountryCode
-import AnyBICDec2014Identifier
-import NameAndAddress5
 
 class PartyIdentification257Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_DgtlLdgrId", "_Ctry", "_AnyBIC"]
-	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
-	@property
-	def DgtlLdgrId(self):
-		return self._DgtlLdgrId
-
-	@DgtlLdgrId.setter
-	def DgtlLdgrId(self, value):
-		self._DgtlLdgrId = value if type(value) != auto else self.make_default("DgtlLdgrId")
-
-	@DgtlLdgrId.deleter
-	def DgtlLdgrId(self):
-		del self._DgtlLdgrId
-		self._DgtlLdgrId = None
-
+	__slots__ = ["_Ctry", "_NmAndAdr", "_AnyBIC", "_DgtlLdgrId"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -47,6 +21,19 @@ class PartyIdentification257Choice(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
+
+	@property
 	def AnyBIC(self):
 		return self._AnyBIC
 
@@ -59,10 +46,23 @@ class PartyIdentification257Choice(base_types._BaseFieldType):
 		del self._AnyBIC
 		self._AnyBIC = None
 
+	@property
+	def DgtlLdgrId(self):
+		return self._DgtlLdgrId
+
+	@DgtlLdgrId.setter
+	def DgtlLdgrId(self, value):
+		self._DgtlLdgrId = value if type(value) != auto else self.make_default("DgtlLdgrId")
+
+	@DgtlLdgrId.deleter
+	def DgtlLdgrId(self):
+		del self._DgtlLdgrId
+		self._DgtlLdgrId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

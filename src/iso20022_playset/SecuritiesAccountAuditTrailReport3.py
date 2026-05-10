@@ -5,7 +5,7 @@ import DatePeriodSearch1Choice
 
 class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctAudtTrlOrErr", "_DtPrd", "_SctiesAcctId"]
+	__slots__ = ["_SctiesAcctAudtTrlOrErr", "_SctiesAcctId", "_DtPrd"]
 	@property
 	def SctiesAcctAudtTrlOrErr(self):
 		return self._SctiesAcctAudtTrlOrErr
@@ -20,19 +20,6 @@ class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 		self._SctiesAcctAudtTrlOrErr = None
 
 	@property
-	def DtPrd(self):
-		return self._DtPrd
-
-	@DtPrd.setter
-	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
-
-	@DtPrd.deleter
-	def DtPrd(self):
-		del self._DtPrd
-		self._DtPrd = None
-
-	@property
 	def SctiesAcctId(self):
 		return self._SctiesAcctId
 
@@ -45,9 +32,22 @@ class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 		del self._SctiesAcctId
 		self._SctiesAcctId = None
 
+	@property
+	def DtPrd(self):
+		return self._DtPrd
+
+	@DtPrd.setter
+	def DtPrd(self, value):
+		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
+
+	@DtPrd.deleter
+	def DtPrd(self):
+		del self._DtPrd
+		self._DtPrd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesAcctAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

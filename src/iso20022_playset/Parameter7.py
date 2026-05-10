@@ -1,23 +1,10 @@
 import base_types
-import BytePadding1Code
 import Max500Binary
+import BytePadding1Code
 
 class Parameter7(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlstnVctr", "_BPddg"]
-	@property
-	def InitlstnVctr(self):
-		return self._InitlstnVctr
-
-	@InitlstnVctr.setter
-	def InitlstnVctr(self, value):
-		self._InitlstnVctr = value if type(value) != auto else self.make_default("InitlstnVctr")
-
-	@InitlstnVctr.deleter
-	def InitlstnVctr(self):
-		del self._InitlstnVctr
-		self._InitlstnVctr = None
-
+	__slots__ = ["_BPddg", "_InitlstnVctr"]
 	@property
 	def BPddg(self):
 		return self._BPddg
@@ -31,8 +18,21 @@ class Parameter7(base_types._BaseFieldType):
 		del self._BPddg
 		self._BPddg = None
 
+	@property
+	def InitlstnVctr(self):
+		return self._InitlstnVctr
+
+	@InitlstnVctr.setter
+	def InitlstnVctr(self, value):
+		self._InitlstnVctr = value if type(value) != auto else self.make_default("InitlstnVctr")
+
+	@InitlstnVctr.deleter
+	def InitlstnVctr(self):
+		del self._InitlstnVctr
+		self._InitlstnVctr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitlstnVctr', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BPddg', type=BytePadding1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlstnVctr', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

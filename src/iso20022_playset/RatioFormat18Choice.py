@@ -1,25 +1,12 @@
 import base_types
-import AmountToAmountRatio2
-import RateValueType7Code
 import QuantityToQuantityRatio1
+import RateValueType7Code
 import AmountAndQuantityRatio4
+import AmountToAmountRatio2
 
 class RatioFormat18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_AmtToAmt", "_QtyToQty", "_QtyToAmt", "_AmtToQty"]
-	@property
-	def NotSpcfdRate(self):
-		return self._NotSpcfdRate
-
-	@NotSpcfdRate.setter
-	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
-
-	@NotSpcfdRate.deleter
-	def NotSpcfdRate(self):
-		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
-
+	__slots__ = ["_AmtToAmt", "_AmtToQty", "_QtyToQty", "_NotSpcfdRate", "_QtyToAmt"]
 	@property
 	def AmtToAmt(self):
 		return self._AmtToAmt
@@ -32,6 +19,19 @@ class RatioFormat18Choice(base_types._BaseFieldType):
 	def AmtToAmt(self):
 		del self._AmtToAmt
 		self._AmtToAmt = None
+
+	@property
+	def AmtToQty(self):
+		return self._AmtToQty
+
+	@AmtToQty.setter
+	def AmtToQty(self, value):
+		self._AmtToQty = value if type(value) != auto else self.make_default("AmtToQty")
+
+	@AmtToQty.deleter
+	def AmtToQty(self):
+		del self._AmtToQty
+		self._AmtToQty = None
 
 	@property
 	def QtyToQty(self):
@@ -47,6 +47,19 @@ class RatioFormat18Choice(base_types._BaseFieldType):
 		self._QtyToQty = None
 
 	@property
+	def NotSpcfdRate(self):
+		return self._NotSpcfdRate
+
+	@NotSpcfdRate.setter
+	def NotSpcfdRate(self, value):
+		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+
+	@NotSpcfdRate.deleter
+	def NotSpcfdRate(self):
+		del self._NotSpcfdRate
+		self._NotSpcfdRate = None
+
+	@property
 	def QtyToAmt(self):
 		return self._QtyToAmt
 
@@ -59,24 +72,11 @@ class RatioFormat18Choice(base_types._BaseFieldType):
 		del self._QtyToAmt
 		self._QtyToAmt = None
 
-	@property
-	def AmtToQty(self):
-		return self._AmtToQty
-
-	@AmtToQty.setter
-	def AmtToQty(self, value):
-		self._AmtToQty = value if type(value) != auto else self.make_default("AmtToQty")
-
-	@AmtToQty.deleter
-	def AmtToQty(self):
-		del self._AmtToQty
-		self._AmtToQty = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
 	))
 

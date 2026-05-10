@@ -1,6 +1,6 @@
 import base_types
-import NotReported1Code
 import NACEDomainIdentifier
+import NotReported1Code
 import FinancialPartySectorType2Code
 
 class CorporateSectorCriteria5(base_types._BaseFieldType):

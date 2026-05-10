@@ -1,25 +1,12 @@
 import base_types
-import InternalPartyRole1Code
 import PersonIdentification10
-import LEIIdentifier
+import InternalPartyRole1Code
 import MICIdentifier
+import LEIIdentifier
 
 class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prsn", "_Intl", "_MIC", "_LEI"]
-	@property
-	def Prsn(self):
-		return self._Prsn
-
-	@Prsn.setter
-	def Prsn(self, value):
-		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
-
-	@Prsn.deleter
-	def Prsn(self):
-		del self._Prsn
-		self._Prsn = None
-
+	__slots__ = ["_Intl", "_LEI", "_MIC", "_Prsn"]
 	@property
 	def Intl(self):
 		return self._Intl
@@ -32,6 +19,19 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 	def Intl(self):
 		del self._Intl
 		self._Intl = None
+
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def MIC(self):
@@ -47,22 +47,22 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 		self._MIC = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def Prsn(self):
+		return self._Prsn
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+	@Prsn.setter
+	def Prsn(self, value):
+		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@Prsn.deleter
+	def Prsn(self):
+		del self._Prsn
+		self._Prsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prsn', type=PersonIdentification10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Intl', type=InternalPartyRole1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MIC', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MIC', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prsn', type=PersonIdentification10, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
-import CurrencyAndAmount
 import AdjustmentDirection1Code
 import AdjustmentType1Choice
+import CurrencyAndAmount
 
 class Adjustment6(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt", "_Drctn"]
+	__slots__ = ["_Drctn", "_Amt", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Drctn(self):
+		return self._Drctn
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Drctn.setter
+	def Drctn(self, value):
+		self._Drctn = value if type(value) != auto else self.make_default("Drctn")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Drctn.deleter
+	def Drctn(self):
+		del self._Drctn
+		self._Drctn = None
 
 	@property
 	def Amt(self):
@@ -33,21 +33,21 @@ class Adjustment6(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Drctn(self):
-		return self._Drctn
+	def Tp(self):
+		return self._Tp
 
-	@Drctn.setter
-	def Drctn(self, value):
-		self._Drctn = value if type(value) != auto else self.make_default("Drctn")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Drctn.deleter
-	def Drctn(self):
-		del self._Drctn
-		self._Drctn = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=AdjustmentType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Drctn', type=AdjustmentDirection1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=AdjustmentType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

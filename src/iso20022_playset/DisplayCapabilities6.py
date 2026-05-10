@@ -1,24 +1,37 @@
 import base_types
 import UserInterface1Code
-import LanguageCode
-import Number
 import OutputFormat1Code
+import Number
+import LanguageCode
 
 class DisplayCapabilities6(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblFrmt", "_Dstn", "_AvlblLang", "_NbOfLines", "_LineWidth"]
+	__slots__ = ["_NbOfLines", "_LineWidth", "_Dstn", "_AvlblLang", "_AvlblFrmt"]
 	@property
-	def AvlblFrmt(self):
-		return self._AvlblFrmt
+	def NbOfLines(self):
+		return self._NbOfLines
 
-	@AvlblFrmt.setter
-	def AvlblFrmt(self, value):
-		self._AvlblFrmt = value if type(value) != auto else self.make_default("AvlblFrmt")
+	@NbOfLines.setter
+	def NbOfLines(self, value):
+		self._NbOfLines = value if type(value) != auto else self.make_default("NbOfLines")
 
-	@AvlblFrmt.deleter
-	def AvlblFrmt(self):
-		del self._AvlblFrmt
-		self._AvlblFrmt = None
+	@NbOfLines.deleter
+	def NbOfLines(self):
+		del self._NbOfLines
+		self._NbOfLines = None
+
+	@property
+	def LineWidth(self):
+		return self._LineWidth
+
+	@LineWidth.setter
+	def LineWidth(self, value):
+		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
+
+	@LineWidth.deleter
+	def LineWidth(self):
+		del self._LineWidth
+		self._LineWidth = None
 
 	@property
 	def Dstn(self):
@@ -47,36 +60,23 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 		self._AvlblLang = None
 
 	@property
-	def NbOfLines(self):
-		return self._NbOfLines
+	def AvlblFrmt(self):
+		return self._AvlblFrmt
 
-	@NbOfLines.setter
-	def NbOfLines(self, value):
-		self._NbOfLines = value if type(value) != auto else self.make_default("NbOfLines")
+	@AvlblFrmt.setter
+	def AvlblFrmt(self, value):
+		self._AvlblFrmt = value if type(value) != auto else self.make_default("AvlblFrmt")
 
-	@NbOfLines.deleter
-	def NbOfLines(self):
-		del self._NbOfLines
-		self._NbOfLines = None
-
-	@property
-	def LineWidth(self):
-		return self._LineWidth
-
-	@LineWidth.setter
-	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
-
-	@LineWidth.deleter
-	def LineWidth(self):
-		del self._LineWidth
-		self._LineWidth = None
+	@AvlblFrmt.deleter
+	def AvlblFrmt(self):
+		del self._AvlblFrmt
+		self._AvlblFrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dstn', type=UserInterface1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfLines', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineWidth', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dstn', type=UserInterface1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

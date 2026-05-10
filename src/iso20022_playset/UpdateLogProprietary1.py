@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import Max350Text
+import Max35Text
 
 class UpdateLogProprietary1(base_types._BaseFieldType):
 

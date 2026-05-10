@@ -1,12 +1,25 @@
 import base_types
-import Max35Text
+import Charges1
 import CashAccount18
 import ActiveCurrencyAndAmount
-import Charges1
+import Max35Text
 
 class CashMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntId", "_Chrgs", "_TaxAmt", "_AcctDtls", "_Amt"]
+	__slots__ = ["_AcctDtls", "_MvmntId", "_TaxAmt", "_Chrgs", "_Amt"]
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
 	@property
 	def MvmntId(self):
 		return self._MvmntId
@@ -19,19 +32,6 @@ class CashMovement1(base_types._BaseFieldType):
 	def MvmntId(self):
 		del self._MvmntId
 		self._MvmntId = None
-
-	@property
-	def Chrgs(self):
-		return self._Chrgs
-
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
-
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
 
 	@property
 	def TaxAmt(self):
@@ -47,17 +47,17 @@ class CashMovement1(base_types._BaseFieldType):
 		self._TaxAmt = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def Chrgs(self):
+		return self._Chrgs
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
 
 	@property
 	def Amt(self):
@@ -73,10 +73,10 @@ class CashMovement1(base_types._BaseFieldType):
 		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chrgs', type=Charges1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=CashAccount18, min=1, max=2, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrgs', type=Charges1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

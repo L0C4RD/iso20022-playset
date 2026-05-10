@@ -1,24 +1,11 @@
 import base_types
-import ContentInformationType38
 import ServiceRequest8
 import Header41
+import ContentInformationType38
 
 class SaleToPOIServiceRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcReq", "_Hdr", "_SctyTrlr"]
-	@property
-	def SvcReq(self):
-		return self._SvcReq
-
-	@SvcReq.setter
-	def SvcReq(self, value):
-		self._SvcReq = value if type(value) != auto else self.make_default("SvcReq")
-
-	@SvcReq.deleter
-	def SvcReq(self):
-		del self._SvcReq
-		self._SvcReq = None
-
+	__slots__ = ["_Hdr", "_SvcReq", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -31,6 +18,19 @@ class SaleToPOIServiceRequestV07(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
+
+	@property
+	def SvcReq(self):
+		return self._SvcReq
+
+	@SvcReq.setter
+	def SvcReq(self, value):
+		self._SvcReq = value if type(value) != auto else self.make_default("SvcReq")
+
+	@SvcReq.deleter
+	def SvcReq(self):
+		del self._SvcReq
+		self._SvcReq = None
 
 	@property
 	def SctyTrlr(self):
@@ -46,8 +46,8 @@ class SaleToPOIServiceRequestV07(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcReq', type=ServiceRequest8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcReq', type=ServiceRequest8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

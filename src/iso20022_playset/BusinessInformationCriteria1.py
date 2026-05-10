@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
-import GeneralBusinessInformationReturnCriteria1
 import GeneralBusinessInformationSearchCriteria1
+import GeneralBusinessInformationReturnCriteria1
+import Max35Text
 
 class BusinessInformationCriteria1(base_types._BaseFieldType):
 

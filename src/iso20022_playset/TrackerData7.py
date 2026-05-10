@@ -1,24 +1,11 @@
 import base_types
-import ActiveCurrencyAndAmount
 import TrackerRecord5
 import DateAndDateTime2Choice
+import ActiveCurrencyAndAmount
 
 class TrackerData7(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfdAmt", "_ConfdDt", "_TrckrRcrd"]
-	@property
-	def ConfdAmt(self):
-		return self._ConfdAmt
-
-	@ConfdAmt.setter
-	def ConfdAmt(self, value):
-		self._ConfdAmt = value if type(value) != auto else self.make_default("ConfdAmt")
-
-	@ConfdAmt.deleter
-	def ConfdAmt(self):
-		del self._ConfdAmt
-		self._ConfdAmt = None
-
+	__slots__ = ["_ConfdDt", "_TrckrRcrd", "_ConfdAmt"]
 	@property
 	def ConfdDt(self):
 		return self._ConfdDt
@@ -45,9 +32,22 @@ class TrackerData7(base_types._BaseFieldType):
 		del self._TrckrRcrd
 		self._TrckrRcrd = None
 
+	@property
+	def ConfdAmt(self):
+		return self._ConfdAmt
+
+	@ConfdAmt.setter
+	def ConfdAmt(self, value):
+		self._ConfdAmt = value if type(value) != auto else self.make_default("ConfdAmt")
+
+	@ConfdAmt.deleter
+	def ConfdAmt(self):
+		del self._ConfdAmt
+		self._ConfdAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfdDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckrRcrd', type=TrackerRecord5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

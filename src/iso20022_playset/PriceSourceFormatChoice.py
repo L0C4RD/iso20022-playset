@@ -1,24 +1,11 @@
 import base_types
-import MICIdentifier
 import GenericIdentification5
+import MICIdentifier
 import PriceSource
 
 class PriceSourceFormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_NonLclMktPlc", "_LclMktPlc", "_PlcAsDSS"]
-	@property
-	def NonLclMktPlc(self):
-		return self._NonLclMktPlc
-
-	@NonLclMktPlc.setter
-	def NonLclMktPlc(self, value):
-		self._NonLclMktPlc = value if type(value) != auto else self.make_default("NonLclMktPlc")
-
-	@NonLclMktPlc.deleter
-	def NonLclMktPlc(self):
-		del self._NonLclMktPlc
-		self._NonLclMktPlc = None
-
+	__slots__ = ["_LclMktPlc", "_NonLclMktPlc", "_PlcAsDSS"]
 	@property
 	def LclMktPlc(self):
 		return self._LclMktPlc
@@ -31,6 +18,19 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 	def LclMktPlc(self):
 		del self._LclMktPlc
 		self._LclMktPlc = None
+
+	@property
+	def NonLclMktPlc(self):
+		return self._NonLclMktPlc
+
+	@NonLclMktPlc.setter
+	def NonLclMktPlc(self, value):
+		self._NonLclMktPlc = value if type(value) != auto else self.make_default("NonLclMktPlc")
+
+	@NonLclMktPlc.deleter
+	def NonLclMktPlc(self):
+		del self._NonLclMktPlc
+		self._NonLclMktPlc = None
 
 	@property
 	def PlcAsDSS(self):
@@ -46,8 +46,8 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 		self._PlcAsDSS = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonLclMktPlc', type=PriceSource, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LclMktPlc', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NonLclMktPlc', type=PriceSource, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PlcAsDSS', type=GenericIdentification5, min=0, max=1, mutex_group=1, array=False),
 	))
 

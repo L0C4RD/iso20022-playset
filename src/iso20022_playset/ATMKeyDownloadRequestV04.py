@@ -1,12 +1,12 @@
 import base_types
-import ContentInformationType13
 import Header31
-import ATMKeyDownloadRequest5
+import ContentInformationType13
 import ContentInformationType10
+import ATMKeyDownloadRequest5
 
 class ATMKeyDownloadRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMKeyDwnldReq", "_SctyTrlr", "_PrtctdATMKeyDwnldReq", "_Hdr"]
+	__slots__ = ["_ATMKeyDwnldReq", "_PrtctdATMKeyDwnldReq", "_Hdr", "_SctyTrlr"]
 	@property
 	def ATMKeyDwnldReq(self):
 		return self._ATMKeyDwnldReq
@@ -19,19 +19,6 @@ class ATMKeyDownloadRequestV04(base_types._BaseFieldType):
 	def ATMKeyDwnldReq(self):
 		del self._ATMKeyDwnldReq
 		self._ATMKeyDwnldReq = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
 
 	@property
 	def PrtctdATMKeyDwnldReq(self):
@@ -59,10 +46,23 @@ class ATMKeyDownloadRequestV04(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMKeyDwnldReq', type=ATMKeyDownloadRequest5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMKeyDwnldReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 	))
 

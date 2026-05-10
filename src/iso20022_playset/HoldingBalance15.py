@@ -1,7 +1,7 @@
 import base_types
 import SignedQuantityFormat15
-import SecuritiesEntryType2Code
 import SafekeepingPlaceFormat42Choice
+import SecuritiesEntryType2Code
 
 class HoldingBalance15(base_types._BaseFieldType):
 

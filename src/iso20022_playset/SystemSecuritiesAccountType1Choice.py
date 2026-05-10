@@ -1,6 +1,6 @@
 import base_types
-import SystemSecuritiesAccountType1Code
 import GenericIdentification30
+import SystemSecuritiesAccountType1Code
 
 class SystemSecuritiesAccountType1Choice(base_types._BaseFieldType):
 

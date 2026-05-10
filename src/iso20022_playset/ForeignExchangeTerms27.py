@@ -1,11 +1,11 @@
 import base_types
-import BaseOneRate
 import ActiveCurrencyCode
+import BaseOneRate
 import RestrictedFINActiveCurrencyAndAmount
 
 class ForeignExchangeTerms27(base_types._BaseFieldType):
 
-	__slots__ = ["_RsltgAmt", "_UnitCcy", "_QtdCcy", "_XchgRate"]
+	__slots__ = ["_RsltgAmt", "_XchgRate", "_UnitCcy", "_QtdCcy"]
 	@property
 	def RsltgAmt(self):
 		return self._RsltgAmt
@@ -18,6 +18,19 @@ class ForeignExchangeTerms27(base_types._BaseFieldType):
 	def RsltgAmt(self):
 		del self._RsltgAmt
 		self._RsltgAmt = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	@property
 	def UnitCcy(self):
@@ -45,23 +58,10 @@ class ForeignExchangeTerms27(base_types._BaseFieldType):
 		del self._QtdCcy
 		self._QtdCcy = None
 
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RsltgAmt', type=RestrictedFINActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

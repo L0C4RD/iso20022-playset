@@ -1,6 +1,6 @@
 import base_types
-import GenericOrganisationIdentification1
 import AnyBICIdentifier
+import GenericOrganisationIdentification1
 
 class OrganisationIdentification8(base_types._BaseFieldType):
 

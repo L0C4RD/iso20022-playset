@@ -1,6 +1,6 @@
 import base_types
-import ExchangeRateReportOrError3Choice
 import SupplementaryData1
+import ExchangeRateReportOrError3Choice
 import MessageHeader7
 
 class ReturnCurrencyExchangeRateV05(base_types._BaseFieldType):

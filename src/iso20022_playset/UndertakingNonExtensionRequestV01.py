@@ -1,6 +1,6 @@
 import base_types
-import PartyAndSignature2
 import UndertakingNonExtensionRequest1
+import PartyAndSignature2
 
 class UndertakingNonExtensionRequestV01(base_types._BaseFieldType):
 

@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
 import DeliveryReceiptType2Code
 import DateAndDateTime2Choice
+import Max35Text
 
 class SettlementTypeAndIdentification25(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SttlmDt", "_Pmt"]
+	__slots__ = ["_Pmt", "_TxId", "_SttlmDt"]
+	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
 	@property
 	def TxId(self):
 		return self._TxId
@@ -32,22 +45,9 @@ class SettlementTypeAndIdentification25(base_types._BaseFieldType):
 		del self._SttlmDt
 		self._SttlmDt = None
 
-	@property
-	def Pmt(self):
-		return self._Pmt
-
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
-
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

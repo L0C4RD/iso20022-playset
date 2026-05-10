@@ -1,11 +1,11 @@
 import base_types
-import Max35Text
-import CountryCode
 import Max70Text
+import CountryCode
+import Max35Text
 
 class TransportByRail5(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfDlvry", "_RailCrrierCtry", "_RailCrrierNm", "_CrrierAgtNm", "_CrrierAgtCtry", "_PlcOfRct"]
+	__slots__ = ["_PlcOfDlvry", "_CrrierAgtNm", "_PlcOfRct", "_RailCrrierCtry", "_CrrierAgtCtry", "_RailCrrierNm"]
 	@property
 	def PlcOfDlvry(self):
 		return self._PlcOfDlvry
@@ -18,32 +18,6 @@ class TransportByRail5(base_types._BaseFieldType):
 	def PlcOfDlvry(self):
 		del self._PlcOfDlvry
 		self._PlcOfDlvry = None
-
-	@property
-	def RailCrrierCtry(self):
-		return self._RailCrrierCtry
-
-	@RailCrrierCtry.setter
-	def RailCrrierCtry(self, value):
-		self._RailCrrierCtry = value if type(value) != auto else self.make_default("RailCrrierCtry")
-
-	@RailCrrierCtry.deleter
-	def RailCrrierCtry(self):
-		del self._RailCrrierCtry
-		self._RailCrrierCtry = None
-
-	@property
-	def RailCrrierNm(self):
-		return self._RailCrrierNm
-
-	@RailCrrierNm.setter
-	def RailCrrierNm(self, value):
-		self._RailCrrierNm = value if type(value) != auto else self.make_default("RailCrrierNm")
-
-	@RailCrrierNm.deleter
-	def RailCrrierNm(self):
-		del self._RailCrrierNm
-		self._RailCrrierNm = None
 
 	@property
 	def CrrierAgtNm(self):
@@ -59,6 +33,32 @@ class TransportByRail5(base_types._BaseFieldType):
 		self._CrrierAgtNm = None
 
 	@property
+	def PlcOfRct(self):
+		return self._PlcOfRct
+
+	@PlcOfRct.setter
+	def PlcOfRct(self, value):
+		self._PlcOfRct = value if type(value) != auto else self.make_default("PlcOfRct")
+
+	@PlcOfRct.deleter
+	def PlcOfRct(self):
+		del self._PlcOfRct
+		self._PlcOfRct = None
+
+	@property
+	def RailCrrierCtry(self):
+		return self._RailCrrierCtry
+
+	@RailCrrierCtry.setter
+	def RailCrrierCtry(self, value):
+		self._RailCrrierCtry = value if type(value) != auto else self.make_default("RailCrrierCtry")
+
+	@RailCrrierCtry.deleter
+	def RailCrrierCtry(self):
+		del self._RailCrrierCtry
+		self._RailCrrierCtry = None
+
+	@property
 	def CrrierAgtCtry(self):
 		return self._CrrierAgtCtry
 
@@ -72,24 +72,24 @@ class TransportByRail5(base_types._BaseFieldType):
 		self._CrrierAgtCtry = None
 
 	@property
-	def PlcOfRct(self):
-		return self._PlcOfRct
+	def RailCrrierNm(self):
+		return self._RailCrrierNm
 
-	@PlcOfRct.setter
-	def PlcOfRct(self, value):
-		self._PlcOfRct = value if type(value) != auto else self.make_default("PlcOfRct")
+	@RailCrrierNm.setter
+	def RailCrrierNm(self, value):
+		self._RailCrrierNm = value if type(value) != auto else self.make_default("RailCrrierNm")
 
-	@PlcOfRct.deleter
-	def PlcOfRct(self):
-		del self._PlcOfRct
-		self._PlcOfRct = None
+	@RailCrrierNm.deleter
+	def RailCrrierNm(self):
+		del self._RailCrrierNm
+		self._RailCrrierNm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RailCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RailCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RailCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RailCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

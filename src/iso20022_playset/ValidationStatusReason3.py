@@ -1,12 +1,25 @@
 import base_types
-import PartyIdentification272
 import GenericValidationRuleIdentification1
-import Max105Text
 import StatusReason6Choice
+import PartyIdentification272
+import Max105Text
 
 class ValidationStatusReason3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Orgtr", "_AddtlInf", "_VldtnRule"]
+	__slots__ = ["_VldtnRule", "_Rsn", "_Orgtr", "_AddtlInf"]
+	@property
+	def VldtnRule(self):
+		return self._VldtnRule
+
+	@VldtnRule.setter
+	def VldtnRule(self, value):
+		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
+
+	@VldtnRule.deleter
+	def VldtnRule(self):
+		del self._VldtnRule
+		self._VldtnRule = None
+
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -46,23 +59,10 @@ class ValidationStatusReason3(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
-	@property
-	def VldtnRule(self):
-		return self._VldtnRule
-
-	@VldtnRule.setter
-	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
-
-	@VldtnRule.deleter
-	def VldtnRule(self):
-		del self._VldtnRule
-		self._VldtnRule = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rsn', type=StatusReason6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,23 +1,10 @@
 import base_types
-import Max35Text
 import Max140Text
+import Max35Text
 
 class UserDefinedInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Labl", "_Inf"]
-	@property
-	def Labl(self):
-		return self._Labl
-
-	@Labl.setter
-	def Labl(self, value):
-		self._Labl = value if type(value) != auto else self.make_default("Labl")
-
-	@Labl.deleter
-	def Labl(self):
-		del self._Labl
-		self._Labl = None
-
+	__slots__ = ["_Inf", "_Labl"]
 	@property
 	def Inf(self):
 		return self._Inf
@@ -31,8 +18,21 @@ class UserDefinedInformation1(base_types._BaseFieldType):
 		del self._Inf
 		self._Inf = None
 
+	@property
+	def Labl(self):
+		return self._Labl
+
+	@Labl.setter
+	def Labl(self, value):
+		self._Labl = value if type(value) != auto else self.make_default("Labl")
+
+	@Labl.deleter
+	def Labl(self):
+		del self._Labl
+		self._Labl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Labl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Inf', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Labl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

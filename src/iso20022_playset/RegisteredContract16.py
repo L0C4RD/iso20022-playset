@@ -1,26 +1,13 @@
 import base_types
+import TradeParty6
+import SupplementaryData1
 import BranchAndFinancialInstitutionIdentification8
 import Max35Text
-import SupplementaryData1
 import RegisteredContract17
-import TradeParty6
 
 class RegisteredContract16(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RegnAgt", "_CtrctRegnAmdmntId", "_RegdCtrctAmdmnt", "_RptgPty"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_RegnAgt", "_SplmtryData", "_CtrctRegnAmdmntId", "_RegdCtrctAmdmnt", "_RptgPty"]
 	@property
 	def RegnAgt(self):
 		return self._RegnAgt
@@ -33,6 +20,19 @@ class RegisteredContract16(base_types._BaseFieldType):
 	def RegnAgt(self):
 		del self._RegnAgt
 		self._RegnAgt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def CtrctRegnAmdmntId(self):
@@ -74,8 +74,8 @@ class RegisteredContract16(base_types._BaseFieldType):
 		self._RptgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctRegnAmdmntId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegdCtrctAmdmnt', type=RegisteredContract17, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),

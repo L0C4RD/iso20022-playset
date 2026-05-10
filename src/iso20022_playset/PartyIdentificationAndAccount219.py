@@ -1,40 +1,14 @@
 import base_types
-import Max35Text
+import SecuritiesAccount20
+import ClearingSide1Code
 import PartyIdentification240Choice
 import AlternatePartyIdentification8
 import PartyTextInformation1
-import SecuritiesAccount20
-import ClearingSide1Code
+import Max35Text
 
 class PartyIdentificationAndAccount219(base_types._BaseFieldType):
 
-	__slots__ = ["_Sd", "_PrcgId", "_ClrAcct", "_Id", "_AddtlInf", "_AltrnId"]
-	@property
-	def Sd(self):
-		return self._Sd
-
-	@Sd.setter
-	def Sd(self, value):
-		self._Sd = value if type(value) != auto else self.make_default("Sd")
-
-	@Sd.deleter
-	def Sd(self):
-		del self._Sd
-		self._Sd = None
-
-	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
+	__slots__ = ["_ClrAcct", "_Id", "_AddtlInf", "_Sd", "_AltrnId", "_PrcgId"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct
@@ -75,6 +49,19 @@ class PartyIdentificationAndAccount219(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
+	def Sd(self):
+		return self._Sd
+
+	@Sd.setter
+	def Sd(self, value):
+		self._Sd = value if type(value) != auto else self.make_default("Sd")
+
+	@Sd.deleter
+	def Sd(self):
+		del self._Sd
+		self._Sd = None
+
+	@property
 	def AltrnId(self):
 		return self._AltrnId
 
@@ -87,12 +74,25 @@ class PartyIdentificationAndAccount219(base_types._BaseFieldType):
 		del self._AltrnId
 		self._AltrnId = None
 
+	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sd', type=ClearingSide1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification240Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sd', type=ClearingSide1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

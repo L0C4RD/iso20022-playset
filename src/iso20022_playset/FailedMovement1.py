@@ -1,24 +1,24 @@
 import base_types
-import SecurityIdentification7
-import ActiveCurrencyAndAmount
 import UnitOrFaceAmount1Choice
 import FailedSettlementReason1FormatChoice
+import ActiveCurrencyAndAmount
+import SecurityIdentification7
 
 class FailedMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_SctyId", "_SctiesQty", "_CshAmt"]
+	__slots__ = ["_SctiesQty", "_SctyId", "_Rsn", "_CshAmt"]
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def SctiesQty(self):
+		return self._SctiesQty
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@SctiesQty.setter
+	def SctiesQty(self, value):
+		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@SctiesQty.deleter
+	def SctiesQty(self):
+		del self._SctiesQty
+		self._SctiesQty = None
 
 	@property
 	def SctyId(self):
@@ -34,17 +34,17 @@ class FailedMovement1(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
-	def SctiesQty(self):
-		return self._SctiesQty
+	def Rsn(self):
+		return self._Rsn
 
-	@SctiesQty.setter
-	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@SctiesQty.deleter
-	def SctiesQty(self):
-		del self._SctiesQty
-		self._SctiesQty = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def CshAmt(self):
@@ -60,9 +60,9 @@ class FailedMovement1(base_types._BaseFieldType):
 		self._CshAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=FailedSettlementReason1FormatChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=FailedSettlementReason1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

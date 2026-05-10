@@ -1,15 +1,41 @@
 import base_types
-import Max35Text
-import CommunicationAddress10
 import CashAccount40
-import SystemMemberStatus1Choice
-import MemberIdentification3Choice
+import Max35Text
 import SystemMemberType1Choice
+import SystemMemberStatus1Choice
 import ContactIdentificationAndAddress2
+import CommunicationAddress10
+import MemberIdentification3Choice
 
 class Member7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CtctRef", "_Nm", "_RtrAdr", "_Sts", "_Acct", "_ComAdr"]
+	__slots__ = ["_Nm", "_Acct", "_Tp", "_CtctRef", "_RtrAdr", "_Sts", "_ComAdr"]
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -35,19 +61,6 @@ class Member7(base_types._BaseFieldType):
 	def CtctRef(self):
 		del self._CtctRef
 		self._CtctRef = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
 
 	@property
 	def RtrAdr(self):
@@ -76,19 +89,6 @@ class Member7(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
-	@property
 	def ComAdr(self):
 		return self._ComAdr
 
@@ -102,12 +102,12 @@ class Member7(base_types._BaseFieldType):
 		self._ComAdr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=SystemMemberType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctRef', type=ContactIdentificationAndAddress2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrAdr', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=SystemMemberStatus1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress10, min=0, max=1, mutex_group=None, array=False),
 	))
 

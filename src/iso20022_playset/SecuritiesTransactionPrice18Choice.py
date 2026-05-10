@@ -1,12 +1,12 @@
 import base_types
-import AmountAndDirection107
 import PercentageRate
 import BaseOneRate
+import AmountAndDirection107
 import DecimalNumber
 
 class SecuritiesTransactionPrice18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BsisPts", "_MntryVal", "_Dcml", "_Pctg"]
+	__slots__ = ["_BsisPts", "_Pctg", "_Dcml", "_MntryVal"]
 	@property
 	def BsisPts(self):
 		return self._BsisPts
@@ -21,17 +21,17 @@ class SecuritiesTransactionPrice18Choice(base_types._BaseFieldType):
 		self._BsisPts = None
 
 	@property
-	def MntryVal(self):
-		return self._MntryVal
+	def Pctg(self):
+		return self._Pctg
 
-	@MntryVal.setter
-	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
 
-	@MntryVal.deleter
-	def MntryVal(self):
-		del self._MntryVal
-		self._MntryVal = None
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
 
 	@property
 	def Dcml(self):
@@ -47,22 +47,22 @@ class SecuritiesTransactionPrice18Choice(base_types._BaseFieldType):
 		self._Dcml = None
 
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def MntryVal(self):
+		return self._MntryVal
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@MntryVal.setter
+	def MntryVal(self, value):
+		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
+	@MntryVal.deleter
+	def MntryVal(self):
+		del self._MntryVal
+		self._MntryVal = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BsisPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection107, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection107, min=0, max=1, mutex_group=1, array=False),
 	))
 

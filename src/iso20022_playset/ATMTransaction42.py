@@ -3,12 +3,12 @@ import DetailedAmount12
 import AmountAndCurrency1
 import Max10000Binary
 import CardAccount20
-import TransactionIdentifier3
 import ContentInformationType10
+import TransactionIdentifier3
 
 class ATMTransaction42(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlReqdAmt", "_ICCRltdData", "_AcctData", "_DtldReqdAmt", "_TxId", "_PrtctdAcctData"]
+	__slots__ = ["_TtlReqdAmt", "_ICCRltdData", "_TxId", "_PrtctdAcctData", "_DtldReqdAmt", "_AcctData"]
 	@property
 	def TtlReqdAmt(self):
 		return self._TtlReqdAmt
@@ -36,32 +36,6 @@ class ATMTransaction42(base_types._BaseFieldType):
 		self._ICCRltdData = None
 
 	@property
-	def AcctData(self):
-		return self._AcctData
-
-	@AcctData.setter
-	def AcctData(self, value):
-		self._AcctData = value if type(value) != auto else self.make_default("AcctData")
-
-	@AcctData.deleter
-	def AcctData(self):
-		del self._AcctData
-		self._AcctData = None
-
-	@property
-	def DtldReqdAmt(self):
-		return self._DtldReqdAmt
-
-	@DtldReqdAmt.setter
-	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != auto else self.make_default("DtldReqdAmt")
-
-	@DtldReqdAmt.deleter
-	def DtldReqdAmt(self):
-		del self._DtldReqdAmt
-		self._DtldReqdAmt = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -87,12 +61,38 @@ class ATMTransaction42(base_types._BaseFieldType):
 		del self._PrtctdAcctData
 		self._PrtctdAcctData = None
 
+	@property
+	def DtldReqdAmt(self):
+		return self._DtldReqdAmt
+
+	@DtldReqdAmt.setter
+	def DtldReqdAmt(self, value):
+		self._DtldReqdAmt = value if type(value) != auto else self.make_default("DtldReqdAmt")
+
+	@DtldReqdAmt.deleter
+	def DtldReqdAmt(self):
+		del self._DtldReqdAmt
+		self._DtldReqdAmt = None
+
+	@property
+	def AcctData(self):
+		return self._AcctData
+
+	@AcctData.setter
+	def AcctData(self, value):
+		self._AcctData = value if type(value) != auto else self.make_default("AcctData")
+
+	@AcctData.deleter
+	def AcctData(self):
+		del self._AcctData
+		self._AcctData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlReqdAmt', type=AmountAndCurrency1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctData', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctData', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),
 	))
 

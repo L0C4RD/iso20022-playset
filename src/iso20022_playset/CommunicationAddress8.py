@@ -1,24 +1,11 @@
 import base_types
-import PhoneNumber
 import LongPostalAddress1Choice
 import Max256Text
+import PhoneNumber
 
 class CommunicationAddress8(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_FaxNb", "_EmailAdr", "_PhneNb"]
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
+	__slots__ = ["_FaxNb", "_PstlAdr", "_EmailAdr", "_PhneNb"]
 	@property
 	def FaxNb(self):
 		return self._FaxNb
@@ -31,6 +18,19 @@ class CommunicationAddress8(base_types._BaseFieldType):
 	def FaxNb(self):
 		del self._FaxNb
 		self._FaxNb = None
+
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
 	def EmailAdr(self):
@@ -59,8 +59,8 @@ class CommunicationAddress8(base_types._BaseFieldType):
 		self._PhneNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=LongPostalAddress1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=LongPostalAddress1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=1, max=1, mutex_group=None, array=False),
 	))

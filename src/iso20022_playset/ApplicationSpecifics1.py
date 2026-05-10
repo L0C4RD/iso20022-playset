@@ -1,24 +1,11 @@
 import base_types
-import Number
 import SignatureEnvelope
 import Max140Text
+import Number
 
 class ApplicationSpecifics1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgntr", "_SysUsr", "_TtlNbOfDocs"]
-	@property
-	def Sgntr(self):
-		return self._Sgntr
-
-	@Sgntr.setter
-	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
-
-	@Sgntr.deleter
-	def Sgntr(self):
-		del self._Sgntr
-		self._Sgntr = None
-
+	__slots__ = ["_SysUsr", "_TtlNbOfDocs", "_Sgntr"]
 	@property
 	def SysUsr(self):
 		return self._SysUsr
@@ -45,9 +32,22 @@ class ApplicationSpecifics1(base_types._BaseFieldType):
 		del self._TtlNbOfDocs
 		self._TtlNbOfDocs = None
 
+	@property
+	def Sgntr(self):
+		return self._Sgntr
+
+	@Sgntr.setter
+	def Sgntr(self, value):
+		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
+
+	@Sgntr.deleter
+	def Sgntr(self):
+		del self._Sgntr
+		self._Sgntr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysUsr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfDocs', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
 	))
 

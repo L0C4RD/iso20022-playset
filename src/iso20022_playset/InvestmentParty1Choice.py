@@ -1,6 +1,6 @@
 import base_types
-import Max50Text
 import PersonIdentification12
+import Max50Text
 
 class InvestmentParty1Choice(base_types._BaseFieldType):
 

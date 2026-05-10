@@ -1,23 +1,10 @@
 import base_types
-import ISODate
 import DatePeriod2
+import ISODate
 
 class DatePeriodSearch1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EQDt", "_FrToDt", "_ToDt", "_NEQDt", "_FrDt"]
-	@property
-	def EQDt(self):
-		return self._EQDt
-
-	@EQDt.setter
-	def EQDt(self, value):
-		self._EQDt = value if type(value) != auto else self.make_default("EQDt")
-
-	@EQDt.deleter
-	def EQDt(self):
-		del self._EQDt
-		self._EQDt = None
-
+	__slots__ = ["_FrToDt", "_FrDt", "_EQDt", "_ToDt", "_NEQDt"]
 	@property
 	def FrToDt(self):
 		return self._FrToDt
@@ -30,6 +17,32 @@ class DatePeriodSearch1Choice(base_types._BaseFieldType):
 	def FrToDt(self):
 		del self._FrToDt
 		self._FrToDt = None
+
+	@property
+	def FrDt(self):
+		return self._FrDt
+
+	@FrDt.setter
+	def FrDt(self, value):
+		self._FrDt = value if type(value) != auto else self.make_default("FrDt")
+
+	@FrDt.deleter
+	def FrDt(self):
+		del self._FrDt
+		self._FrDt = None
+
+	@property
+	def EQDt(self):
+		return self._EQDt
+
+	@EQDt.setter
+	def EQDt(self, value):
+		self._EQDt = value if type(value) != auto else self.make_default("EQDt")
+
+	@EQDt.deleter
+	def EQDt(self):
+		del self._EQDt
+		self._EQDt = None
 
 	@property
 	def ToDt(self):
@@ -57,24 +70,11 @@ class DatePeriodSearch1Choice(base_types._BaseFieldType):
 		del self._NEQDt
 		self._NEQDt = None
 
-	@property
-	def FrDt(self):
-		return self._FrDt
-
-	@FrDt.setter
-	def FrDt(self, value):
-		self._FrDt = value if type(value) != auto else self.make_default("FrDt")
-
-	@FrDt.deleter
-	def FrDt(self):
-		del self._FrDt
-		self._FrDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EQDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrToDt', type=DatePeriod2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='EQDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ToDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NEQDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,36 +1,23 @@
 import base_types
-import CollateralTransactionAmountBreakdown2
-import ActiveOrHistoricCurrencyAndAmount
 import AmountAndDirection53
+import ActiveOrHistoricCurrencyAndAmount
+import CollateralTransactionAmountBreakdown2
 
 class CollateralAmount17(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCollReqrd", "_TtlXpsr", "_TtlPdgCollIn", "_TtlOfPrncpls", "_ValOfCollHeld", "_TtlPdgCollOut", "_TtlValOfReusdColl", "_TxAmtBrkdwn", "_Mrgn", "_TermntnTxAmt", "_TxAmt", "_TtlAcrdIntrst", "_TtlValOfOwnColl", "_TtlCshFaild"]
+	__slots__ = ["_TtlOfPrncpls", "_TtlPdgCollIn", "_ValOfCollHeld", "_Mrgn", "_TtlValOfOwnColl", "_TtlPdgCollOut", "_TermntnTxAmt", "_TxAmtBrkdwn", "_TtlCshFaild", "_TtlXpsr", "_TtlAcrdIntrst", "_TxAmt", "_TtlValOfReusdColl", "_TtlCollReqrd"]
 	@property
-	def TtlCollReqrd(self):
-		return self._TtlCollReqrd
+	def TtlOfPrncpls(self):
+		return self._TtlOfPrncpls
 
-	@TtlCollReqrd.setter
-	def TtlCollReqrd(self, value):
-		self._TtlCollReqrd = value if type(value) != auto else self.make_default("TtlCollReqrd")
+	@TtlOfPrncpls.setter
+	def TtlOfPrncpls(self, value):
+		self._TtlOfPrncpls = value if type(value) != auto else self.make_default("TtlOfPrncpls")
 
-	@TtlCollReqrd.deleter
-	def TtlCollReqrd(self):
-		del self._TtlCollReqrd
-		self._TtlCollReqrd = None
-
-	@property
-	def TtlXpsr(self):
-		return self._TtlXpsr
-
-	@TtlXpsr.setter
-	def TtlXpsr(self, value):
-		self._TtlXpsr = value if type(value) != auto else self.make_default("TtlXpsr")
-
-	@TtlXpsr.deleter
-	def TtlXpsr(self):
-		del self._TtlXpsr
-		self._TtlXpsr = None
+	@TtlOfPrncpls.deleter
+	def TtlOfPrncpls(self):
+		del self._TtlOfPrncpls
+		self._TtlOfPrncpls = None
 
 	@property
 	def TtlPdgCollIn(self):
@@ -46,19 +33,6 @@ class CollateralAmount17(base_types._BaseFieldType):
 		self._TtlPdgCollIn = None
 
 	@property
-	def TtlOfPrncpls(self):
-		return self._TtlOfPrncpls
-
-	@TtlOfPrncpls.setter
-	def TtlOfPrncpls(self, value):
-		self._TtlOfPrncpls = value if type(value) != auto else self.make_default("TtlOfPrncpls")
-
-	@TtlOfPrncpls.deleter
-	def TtlOfPrncpls(self):
-		del self._TtlOfPrncpls
-		self._TtlOfPrncpls = None
-
-	@property
 	def ValOfCollHeld(self):
 		return self._ValOfCollHeld
 
@@ -70,45 +44,6 @@ class CollateralAmount17(base_types._BaseFieldType):
 	def ValOfCollHeld(self):
 		del self._ValOfCollHeld
 		self._ValOfCollHeld = None
-
-	@property
-	def TtlPdgCollOut(self):
-		return self._TtlPdgCollOut
-
-	@TtlPdgCollOut.setter
-	def TtlPdgCollOut(self, value):
-		self._TtlPdgCollOut = value if type(value) != auto else self.make_default("TtlPdgCollOut")
-
-	@TtlPdgCollOut.deleter
-	def TtlPdgCollOut(self):
-		del self._TtlPdgCollOut
-		self._TtlPdgCollOut = None
-
-	@property
-	def TtlValOfReusdColl(self):
-		return self._TtlValOfReusdColl
-
-	@TtlValOfReusdColl.setter
-	def TtlValOfReusdColl(self, value):
-		self._TtlValOfReusdColl = value if type(value) != auto else self.make_default("TtlValOfReusdColl")
-
-	@TtlValOfReusdColl.deleter
-	def TtlValOfReusdColl(self):
-		del self._TtlValOfReusdColl
-		self._TtlValOfReusdColl = None
-
-	@property
-	def TxAmtBrkdwn(self):
-		return self._TxAmtBrkdwn
-
-	@TxAmtBrkdwn.setter
-	def TxAmtBrkdwn(self, value):
-		self._TxAmtBrkdwn = value if type(value) != auto else self.make_default("TxAmtBrkdwn")
-
-	@TxAmtBrkdwn.deleter
-	def TxAmtBrkdwn(self):
-		del self._TxAmtBrkdwn
-		self._TxAmtBrkdwn = None
 
 	@property
 	def Mrgn(self):
@@ -124,6 +59,32 @@ class CollateralAmount17(base_types._BaseFieldType):
 		self._Mrgn = None
 
 	@property
+	def TtlValOfOwnColl(self):
+		return self._TtlValOfOwnColl
+
+	@TtlValOfOwnColl.setter
+	def TtlValOfOwnColl(self, value):
+		self._TtlValOfOwnColl = value if type(value) != auto else self.make_default("TtlValOfOwnColl")
+
+	@TtlValOfOwnColl.deleter
+	def TtlValOfOwnColl(self):
+		del self._TtlValOfOwnColl
+		self._TtlValOfOwnColl = None
+
+	@property
+	def TtlPdgCollOut(self):
+		return self._TtlPdgCollOut
+
+	@TtlPdgCollOut.setter
+	def TtlPdgCollOut(self, value):
+		self._TtlPdgCollOut = value if type(value) != auto else self.make_default("TtlPdgCollOut")
+
+	@TtlPdgCollOut.deleter
+	def TtlPdgCollOut(self):
+		del self._TtlPdgCollOut
+		self._TtlPdgCollOut = None
+
+	@property
 	def TermntnTxAmt(self):
 		return self._TermntnTxAmt
 
@@ -137,17 +98,43 @@ class CollateralAmount17(base_types._BaseFieldType):
 		self._TermntnTxAmt = None
 
 	@property
-	def TxAmt(self):
-		return self._TxAmt
+	def TxAmtBrkdwn(self):
+		return self._TxAmtBrkdwn
 
-	@TxAmt.setter
-	def TxAmt(self, value):
-		self._TxAmt = value if type(value) != auto else self.make_default("TxAmt")
+	@TxAmtBrkdwn.setter
+	def TxAmtBrkdwn(self, value):
+		self._TxAmtBrkdwn = value if type(value) != auto else self.make_default("TxAmtBrkdwn")
 
-	@TxAmt.deleter
-	def TxAmt(self):
-		del self._TxAmt
-		self._TxAmt = None
+	@TxAmtBrkdwn.deleter
+	def TxAmtBrkdwn(self):
+		del self._TxAmtBrkdwn
+		self._TxAmtBrkdwn = None
+
+	@property
+	def TtlCshFaild(self):
+		return self._TtlCshFaild
+
+	@TtlCshFaild.setter
+	def TtlCshFaild(self, value):
+		self._TtlCshFaild = value if type(value) != auto else self.make_default("TtlCshFaild")
+
+	@TtlCshFaild.deleter
+	def TtlCshFaild(self):
+		del self._TtlCshFaild
+		self._TtlCshFaild = None
+
+	@property
+	def TtlXpsr(self):
+		return self._TtlXpsr
+
+	@TtlXpsr.setter
+	def TtlXpsr(self, value):
+		self._TtlXpsr = value if type(value) != auto else self.make_default("TtlXpsr")
+
+	@TtlXpsr.deleter
+	def TtlXpsr(self):
+		del self._TtlXpsr
+		self._TtlXpsr = None
 
 	@property
 	def TtlAcrdIntrst(self):
@@ -163,45 +150,58 @@ class CollateralAmount17(base_types._BaseFieldType):
 		self._TtlAcrdIntrst = None
 
 	@property
-	def TtlValOfOwnColl(self):
-		return self._TtlValOfOwnColl
+	def TxAmt(self):
+		return self._TxAmt
 
-	@TtlValOfOwnColl.setter
-	def TtlValOfOwnColl(self, value):
-		self._TtlValOfOwnColl = value if type(value) != auto else self.make_default("TtlValOfOwnColl")
+	@TxAmt.setter
+	def TxAmt(self, value):
+		self._TxAmt = value if type(value) != auto else self.make_default("TxAmt")
 
-	@TtlValOfOwnColl.deleter
-	def TtlValOfOwnColl(self):
-		del self._TtlValOfOwnColl
-		self._TtlValOfOwnColl = None
+	@TxAmt.deleter
+	def TxAmt(self):
+		del self._TxAmt
+		self._TxAmt = None
 
 	@property
-	def TtlCshFaild(self):
-		return self._TtlCshFaild
+	def TtlValOfReusdColl(self):
+		return self._TtlValOfReusdColl
 
-	@TtlCshFaild.setter
-	def TtlCshFaild(self, value):
-		self._TtlCshFaild = value if type(value) != auto else self.make_default("TtlCshFaild")
+	@TtlValOfReusdColl.setter
+	def TtlValOfReusdColl(self, value):
+		self._TtlValOfReusdColl = value if type(value) != auto else self.make_default("TtlValOfReusdColl")
 
-	@TtlCshFaild.deleter
-	def TtlCshFaild(self):
-		del self._TtlCshFaild
-		self._TtlCshFaild = None
+	@TtlValOfReusdColl.deleter
+	def TtlValOfReusdColl(self):
+		del self._TtlValOfReusdColl
+		self._TtlValOfReusdColl = None
+
+	@property
+	def TtlCollReqrd(self):
+		return self._TtlCollReqrd
+
+	@TtlCollReqrd.setter
+	def TtlCollReqrd(self, value):
+		self._TtlCollReqrd = value if type(value) != auto else self.make_default("TtlCollReqrd")
+
+	@TtlCollReqrd.deleter
+	def TtlCollReqrd(self):
+		del self._TtlCollReqrd
+		self._TtlCollReqrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlCollReqrd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlXpsr', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlPdgCollIn', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlOfPrncpls', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPdgCollIn', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValOfCollHeld', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlPdgCollOut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlValOfReusdColl', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxAmtBrkdwn', type=CollateralTransactionAmountBreakdown2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Mrgn', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermntnTxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAcrdIntrst', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlValOfOwnColl', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPdgCollOut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnTxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxAmtBrkdwn', type=CollateralTransactionAmountBreakdown2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlCshFaild', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlXpsr', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAcrdIntrst', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlValOfReusdColl', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCollReqrd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

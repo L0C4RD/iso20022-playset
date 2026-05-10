@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
-import InformationQualifierType1
 import CharacterSearch1Choice
+import InformationQualifierType1
+import Max35Text
 
 class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_Qlfr", "_Ref", "_Sbjt"]
-	@property
-	def Qlfr(self):
-		return self._Qlfr
-
-	@Qlfr.setter
-	def Qlfr(self, value):
-		self._Qlfr = value if type(value) != auto else self.make_default("Qlfr")
-
-	@Qlfr.deleter
-	def Qlfr(self):
-		del self._Qlfr
-		self._Qlfr = None
-
+	__slots__ = ["_Ref", "_Sbjt", "_Qlfr"]
 	@property
 	def Ref(self):
 		return self._Ref
@@ -45,9 +32,22 @@ class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 		del self._Sbjt
 		self._Sbjt = None
 
+	@property
+	def Qlfr(self):
+		return self._Qlfr
+
+	@Qlfr.setter
+	def Qlfr(self, value):
+		self._Qlfr = value if type(value) != auto else self.make_default("Qlfr")
+
+	@Qlfr.deleter
+	def Qlfr(self):
+		del self._Qlfr
+		self._Qlfr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Qlfr', type=InformationQualifierType1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sbjt', type=CharacterSearch1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Qlfr', type=InformationQualifierType1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
 import CashAccountIdentification1Choice
+import Max35Text
 import PartyIdentification2Choice
 
 class ProceedsDelivery1(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctId", "_SctiesAcctId", "_AcctSvcrId", "_AcctOwnrId"]
+	__slots__ = ["_AcctSvcrId", "_SctiesAcctId", "_CshAcctId", "_AcctOwnrId"]
 	@property
-	def CshAcctId(self):
-		return self._CshAcctId
+	def AcctSvcrId(self):
+		return self._AcctSvcrId
 
-	@CshAcctId.setter
-	def CshAcctId(self, value):
-		self._CshAcctId = value if type(value) != auto else self.make_default("CshAcctId")
+	@AcctSvcrId.setter
+	def AcctSvcrId(self, value):
+		self._AcctSvcrId = value if type(value) != auto else self.make_default("AcctSvcrId")
 
-	@CshAcctId.deleter
-	def CshAcctId(self):
-		del self._CshAcctId
-		self._CshAcctId = None
+	@AcctSvcrId.deleter
+	def AcctSvcrId(self):
+		del self._AcctSvcrId
+		self._AcctSvcrId = None
 
 	@property
 	def SctiesAcctId(self):
@@ -33,17 +33,17 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 		self._SctiesAcctId = None
 
 	@property
-	def AcctSvcrId(self):
-		return self._AcctSvcrId
+	def CshAcctId(self):
+		return self._CshAcctId
 
-	@AcctSvcrId.setter
-	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != auto else self.make_default("AcctSvcrId")
+	@CshAcctId.setter
+	def CshAcctId(self, value):
+		self._CshAcctId = value if type(value) != auto else self.make_default("CshAcctId")
 
-	@AcctSvcrId.deleter
-	def AcctSvcrId(self):
-		del self._AcctSvcrId
-		self._AcctSvcrId = None
+	@CshAcctId.deleter
+	def CshAcctId(self):
+		del self._CshAcctId
+		self._CshAcctId = None
 
 	@property
 	def AcctOwnrId(self):
@@ -59,9 +59,9 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAcctId', type=CashAccountIdentification1Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AcctSvcrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CshAcctId', type=CashAccountIdentification1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

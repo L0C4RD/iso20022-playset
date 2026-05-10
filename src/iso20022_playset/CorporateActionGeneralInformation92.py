@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import CorporateActionNarrative3Choice
+import Max35Text
 
 class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 

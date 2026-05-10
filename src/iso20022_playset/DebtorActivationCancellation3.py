@@ -1,24 +1,24 @@
 import base_types
 import SupplementaryData1
-import DebtorActivationCancellationReason3
-import OriginalActivation3Choice
 import OriginalBusinessInstruction1
+import OriginalActivation3Choice
+import DebtorActivationCancellationReason3
 
 class DebtorActivationCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_OrgnlBizInstr", "_SplmtryData", "_OrgnlActvtn"]
+	__slots__ = ["_SplmtryData", "_OrgnlBizInstr", "_CxlRsn", "_OrgnlActvtn"]
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def OrgnlBizInstr(self):
@@ -34,17 +34,17 @@ class DebtorActivationCancellation3(base_types._BaseFieldType):
 		self._OrgnlBizInstr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	@property
 	def OrgnlActvtn(self):
@@ -60,9 +60,9 @@ class DebtorActivationCancellation3(base_types._BaseFieldType):
 		self._OrgnlActvtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=DebtorActivationCancellationReason3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=DebtorActivationCancellationReason3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlActvtn', type=OriginalActivation3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

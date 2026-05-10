@@ -1,12 +1,12 @@
 import base_types
-import PayloadData2
 import ManifestData2
-import ApplicationSpecifics1
 import Max256Text
+import PayloadData2
+import ApplicationSpecifics1
 
 class PayloadDescription2(base_types._BaseFieldType):
 
-	__slots__ = ["_PyldData", "_ApplSpcfcs", "_PyldTp", "_MnfstData"]
+	__slots__ = ["_PyldData", "_MnfstData", "_PyldTp", "_ApplSpcfcs"]
 	@property
 	def PyldData(self):
 		return self._PyldData
@@ -21,17 +21,17 @@ class PayloadDescription2(base_types._BaseFieldType):
 		self._PyldData = None
 
 	@property
-	def ApplSpcfcs(self):
-		return self._ApplSpcfcs
+	def MnfstData(self):
+		return self._MnfstData
 
-	@ApplSpcfcs.setter
-	def ApplSpcfcs(self, value):
-		self._ApplSpcfcs = value if type(value) != auto else self.make_default("ApplSpcfcs")
+	@MnfstData.setter
+	def MnfstData(self, value):
+		self._MnfstData = value if type(value) != auto else self.make_default("MnfstData")
 
-	@ApplSpcfcs.deleter
-	def ApplSpcfcs(self):
-		del self._ApplSpcfcs
-		self._ApplSpcfcs = None
+	@MnfstData.deleter
+	def MnfstData(self):
+		del self._MnfstData
+		self._MnfstData = None
 
 	@property
 	def PyldTp(self):
@@ -47,22 +47,22 @@ class PayloadDescription2(base_types._BaseFieldType):
 		self._PyldTp = None
 
 	@property
-	def MnfstData(self):
-		return self._MnfstData
+	def ApplSpcfcs(self):
+		return self._ApplSpcfcs
 
-	@MnfstData.setter
-	def MnfstData(self, value):
-		self._MnfstData = value if type(value) != auto else self.make_default("MnfstData")
+	@ApplSpcfcs.setter
+	def ApplSpcfcs(self, value):
+		self._ApplSpcfcs = value if type(value) != auto else self.make_default("ApplSpcfcs")
 
-	@MnfstData.deleter
-	def MnfstData(self):
-		del self._MnfstData
-		self._MnfstData = None
+	@ApplSpcfcs.deleter
+	def ApplSpcfcs(self):
+		del self._ApplSpcfcs
+		self._ApplSpcfcs = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PyldData', type=PayloadData2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApplSpcfcs', type=ApplicationSpecifics1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PyldTp', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnfstData', type=ManifestData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PyldTp', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApplSpcfcs', type=ApplicationSpecifics1, min=0, max=1, mutex_group=None, array=False),
 	))
 

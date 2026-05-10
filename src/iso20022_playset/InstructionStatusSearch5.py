@@ -1,6 +1,6 @@
 import base_types
-import DateTimePeriod1Choice
 import Max4AlphaNumericText
+import DateTimePeriod1Choice
 import PaymentStatusCodeSearch2Choice
 
 class InstructionStatusSearch5(base_types._BaseFieldType):

@@ -1,23 +1,10 @@
 import base_types
-import Max35Text
 import PartyIdentification139
+import Max35Text
 
 class Account27(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcr", "_Id"]
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
+	__slots__ = ["_Id", "_AcctSvcr"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class Account27(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
 	))
 

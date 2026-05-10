@@ -1,25 +1,12 @@
 import base_types
+import AmountAndDirection109
 import ValuationType1Code
 import ISODateTime
-import AmountAndDirection109
 import LongFraction19DecimalNumber
 
 class ContractValuationData8(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctVal", "_Dlta", "_Tp", "_TmStmp"]
-	@property
-	def CtrctVal(self):
-		return self._CtrctVal
-
-	@CtrctVal.setter
-	def CtrctVal(self, value):
-		self._CtrctVal = value if type(value) != auto else self.make_default("CtrctVal")
-
-	@CtrctVal.deleter
-	def CtrctVal(self):
-		del self._CtrctVal
-		self._CtrctVal = None
-
+	__slots__ = ["_Dlta", "_CtrctVal", "_Tp", "_TmStmp"]
 	@property
 	def Dlta(self):
 		return self._Dlta
@@ -32,6 +19,19 @@ class ContractValuationData8(base_types._BaseFieldType):
 	def Dlta(self):
 		del self._Dlta
 		self._Dlta = None
+
+	@property
+	def CtrctVal(self):
+		return self._CtrctVal
+
+	@CtrctVal.setter
+	def CtrctVal(self, value):
+		self._CtrctVal = value if type(value) != auto else self.make_default("CtrctVal")
+
+	@CtrctVal.deleter
+	def CtrctVal(self):
+		del self._CtrctVal
+		self._CtrctVal = None
 
 	@property
 	def Tp(self):
@@ -60,8 +60,8 @@ class ContractValuationData8(base_types._BaseFieldType):
 		self._TmStmp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctVal', type=AmountAndDirection109, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dlta', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctVal', type=AmountAndDirection109, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ValuationType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))

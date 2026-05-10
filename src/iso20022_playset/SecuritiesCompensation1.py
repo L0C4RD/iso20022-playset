@@ -1,10 +1,10 @@
 import base_types
-import AmountAndDirection20
 import PartyIdentification34Choice
+import AmountAndDirection20
 
 class SecuritiesCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAmt", "_Fees", "_Dpstry"]
+	__slots__ = ["_SttlmAmt", "_Dpstry", "_Fees"]
 	@property
 	def SttlmAmt(self):
 		return self._SttlmAmt
@@ -19,19 +19,6 @@ class SecuritiesCompensation1(base_types._BaseFieldType):
 		self._SttlmAmt = None
 
 	@property
-	def Fees(self):
-		return self._Fees
-
-	@Fees.setter
-	def Fees(self, value):
-		self._Fees = value if type(value) != auto else self.make_default("Fees")
-
-	@Fees.deleter
-	def Fees(self):
-		del self._Fees
-		self._Fees = None
-
-	@property
 	def Dpstry(self):
 		return self._Dpstry
 
@@ -44,9 +31,22 @@ class SecuritiesCompensation1(base_types._BaseFieldType):
 		del self._Dpstry
 		self._Dpstry = None
 
+	@property
+	def Fees(self):
+		return self._Fees
+
+	@Fees.setter
+	def Fees(self, value):
+		self._Fees = value if type(value) != auto else self.make_default("Fees")
+
+	@Fees.deleter
+	def Fees(self):
+		del self._Fees
+		self._Fees = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification34Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
 	))
 

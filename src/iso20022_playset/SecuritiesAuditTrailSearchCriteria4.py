@@ -1,23 +1,10 @@
 import base_types
-import SecurityIdentification39
 import DatePeriodSearch1Choice
+import SecurityIdentification39
 
 class SecuritiesAuditTrailSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_DtPrd", "_FinInstrmId"]
-	@property
-	def DtPrd(self):
-		return self._DtPrd
-
-	@DtPrd.setter
-	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
-
-	@DtPrd.deleter
-	def DtPrd(self):
-		del self._DtPrd
-		self._DtPrd = None
-
+	__slots__ = ["_FinInstrmId", "_DtPrd"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -31,8 +18,21 @@ class SecuritiesAuditTrailSearchCriteria4(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
+	@property
+	def DtPrd(self):
+		return self._DtPrd
+
+	@DtPrd.setter
+	def DtPrd(self, value):
+		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
+
+	@DtPrd.deleter
+	def DtPrd(self):
+		del self._DtPrd
+		self._DtPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

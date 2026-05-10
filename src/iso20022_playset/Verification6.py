@@ -1,29 +1,16 @@
 import base_types
-import PINData1
-import ExternalAuthenticationMethod1Code
-import VerificationEntity2Code
-import VerificationValue1
-import Max35Text
-import Verification3Code
 import Max500Text
+import VerificationEntity2Code
+import ExternalAuthenticationMethod1Code
 import AdditionalData1
+import Max35Text
+import PINData1
+import VerificationValue1
+import Verification3Code
 
 class Verification6(base_types._BaseFieldType):
 
-	__slots__ = ["_PINData", "_Tp", "_RsltDtls", "_Rslt", "_Data", "_Ntty", "_OthrNtty", "_OthrRslt", "_OthrTp", "_SubTp"]
-	@property
-	def PINData(self):
-		return self._PINData
-
-	@PINData.setter
-	def PINData(self, value):
-		self._PINData = value if type(value) != auto else self.make_default("PINData")
-
-	@PINData.deleter
-	def PINData(self):
-		del self._PINData
-		self._PINData = None
-
+	__slots__ = ["_Tp", "_OthrNtty", "_OthrRslt", "_OthrTp", "_Rslt", "_PINData", "_Ntty", "_SubTp", "_RsltDtls", "_Data"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -36,58 +23,6 @@ class Verification6(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def RsltDtls(self):
-		return self._RsltDtls
-
-	@RsltDtls.setter
-	def RsltDtls(self, value):
-		self._RsltDtls = value if type(value) != auto else self.make_default("RsltDtls")
-
-	@RsltDtls.deleter
-	def RsltDtls(self):
-		del self._RsltDtls
-		self._RsltDtls = None
-
-	@property
-	def Rslt(self):
-		return self._Rslt
-
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
-
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
-
-	@property
-	def Data(self):
-		return self._Data
-
-	@Data.setter
-	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
-
-	@Data.deleter
-	def Data(self):
-		del self._Data
-		self._Data = None
-
-	@property
-	def Ntty(self):
-		return self._Ntty
-
-	@Ntty.setter
-	def Ntty(self, value):
-		self._Ntty = value if type(value) != auto else self.make_default("Ntty")
-
-	@Ntty.deleter
-	def Ntty(self):
-		del self._Ntty
-		self._Ntty = None
 
 	@property
 	def OthrNtty(self):
@@ -129,6 +64,45 @@ class Verification6(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
+	def Rslt(self):
+		return self._Rslt
+
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
+
+	@property
+	def PINData(self):
+		return self._PINData
+
+	@PINData.setter
+	def PINData(self, value):
+		self._PINData = value if type(value) != auto else self.make_default("PINData")
+
+	@PINData.deleter
+	def PINData(self):
+		del self._PINData
+		self._PINData = None
+
+	@property
+	def Ntty(self):
+		return self._Ntty
+
+	@Ntty.setter
+	def Ntty(self, value):
+		self._Ntty = value if type(value) != auto else self.make_default("Ntty")
+
+	@Ntty.deleter
+	def Ntty(self):
+		del self._Ntty
+		self._Ntty = None
+
+	@property
 	def SubTp(self):
 		return self._SubTp
 
@@ -141,16 +115,42 @@ class Verification6(base_types._BaseFieldType):
 		del self._SubTp
 		self._SubTp = None
 
+	@property
+	def RsltDtls(self):
+		return self._RsltDtls
+
+	@RsltDtls.setter
+	def RsltDtls(self, value):
+		self._RsltDtls = value if type(value) != auto else self.make_default("RsltDtls")
+
+	@RsltDtls.deleter
+	def RsltDtls(self):
+		del self._RsltDtls
+		self._RsltDtls = None
+
+	@property
+	def Data(self):
+		return self._Data
+
+	@Data.setter
+	def Data(self, value):
+		self._Data = value if type(value) != auto else self.make_default("Data")
+
+	@Data.deleter
+	def Data(self):
+		del self._Data
+		self._Data = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PINData', type=PINData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsltDtls', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rslt', type=Verification3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Data', type=VerificationValue1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ntty', type=VerificationEntity2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrRslt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=Verification3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PINData', type=PINData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntty', type=VerificationEntity2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsltDtls', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Data', type=VerificationValue1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,11 +1,11 @@
 import base_types
-import InvestigatedParties1Choice
 import Max500Text
 import AuthorityRequestType1
+import InvestigatedParties1Choice
 
 class AuthorityInvestigation2(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtdRoles", "_AddtlInvstgtdPties", "_Tp", "_AddtlInf"]
+	__slots__ = ["_InvstgtdRoles", "_Tp", "_AddtlInvstgtdPties", "_AddtlInf"]
 	@property
 	def InvstgtdRoles(self):
 		return self._InvstgtdRoles
@@ -20,19 +20,6 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 		self._InvstgtdRoles = None
 
 	@property
-	def AddtlInvstgtdPties(self):
-		return self._AddtlInvstgtdPties
-
-	@AddtlInvstgtdPties.setter
-	def AddtlInvstgtdPties(self, value):
-		self._AddtlInvstgtdPties = value if type(value) != auto else self.make_default("AddtlInvstgtdPties")
-
-	@AddtlInvstgtdPties.deleter
-	def AddtlInvstgtdPties(self):
-		del self._AddtlInvstgtdPties
-		self._AddtlInvstgtdPties = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -44,6 +31,19 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def AddtlInvstgtdPties(self):
+		return self._AddtlInvstgtdPties
+
+	@AddtlInvstgtdPties.setter
+	def AddtlInvstgtdPties(self, value):
+		self._AddtlInvstgtdPties = value if type(value) != auto else self.make_default("AddtlInvstgtdPties")
+
+	@AddtlInvstgtdPties.deleter
+	def AddtlInvstgtdPties(self):
+		del self._AddtlInvstgtdPties
+		self._AddtlInvstgtdPties = None
 
 	@property
 	def AddtlInf(self):
@@ -60,8 +60,8 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstgtdRoles', type=InvestigatedParties1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInvstgtdPties', type=InvestigatedParties1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AuthorityRequestType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInvstgtdPties', type=InvestigatedParties1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

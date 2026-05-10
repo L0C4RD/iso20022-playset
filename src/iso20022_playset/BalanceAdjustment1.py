@@ -1,13 +1,26 @@
 import base_types
-import Max105Text
-import ISODate
 import AmountAndDirection34
+import ISODate
 import DecimalNumber
 import BalanceAdjustmentType1Code
+import Max105Text
 
 class BalanceAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_BalAmt", "_Tp", "_EarngsAdjstmntAmt", "_ErrDt", "_PstngDt", "_Days", "_AvrgAmt", "_Desc"]
+	__slots__ = ["_Days", "_BalAmt", "_Desc", "_Tp", "_AvrgAmt", "_PstngDt", "_EarngsAdjstmntAmt", "_ErrDt"]
+	@property
+	def Days(self):
+		return self._Days
+
+	@Days.setter
+	def Days(self, value):
+		self._Days = value if type(value) != auto else self.make_default("Days")
+
+	@Days.deleter
+	def Days(self):
+		del self._Days
+		self._Days = None
+
 	@property
 	def BalAmt(self):
 		return self._BalAmt
@@ -22,6 +35,19 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 		self._BalAmt = None
 
 	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -33,6 +59,32 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def AvrgAmt(self):
+		return self._AvrgAmt
+
+	@AvrgAmt.setter
+	def AvrgAmt(self, value):
+		self._AvrgAmt = value if type(value) != auto else self.make_default("AvrgAmt")
+
+	@AvrgAmt.deleter
+	def AvrgAmt(self):
+		del self._AvrgAmt
+		self._AvrgAmt = None
+
+	@property
+	def PstngDt(self):
+		return self._PstngDt
+
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
+
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
 
 	@property
 	def EarngsAdjstmntAmt(self):
@@ -60,66 +112,14 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 		del self._ErrDt
 		self._ErrDt = None
 
-	@property
-	def PstngDt(self):
-		return self._PstngDt
-
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
-
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
-
-	@property
-	def Days(self):
-		return self._Days
-
-	@Days.setter
-	def Days(self, value):
-		self._Days = value if type(value) != auto else self.make_default("Days")
-
-	@Days.deleter
-	def Days(self):
-		del self._Days
-		self._Days = None
-
-	@property
-	def AvrgAmt(self):
-		return self._AvrgAmt
-
-	@AvrgAmt.setter
-	def AvrgAmt(self, value):
-		self._AvrgAmt = value if type(value) != auto else self.make_default("AvrgAmt")
-
-	@AvrgAmt.deleter
-	def AvrgAmt(self):
-		del self._AvrgAmt
-		self._AvrgAmt = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Days', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceAdjustmentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvrgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarngsAdjstmntAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ErrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Days', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvrgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

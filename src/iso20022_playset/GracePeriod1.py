@@ -1,23 +1,23 @@
 import base_types
+import Max3NumericText
 import GracePeriodUnitType1Code
 import Max35Text
-import Max3NumericText
 
 class GracePeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitTp", "_Tm", "_OthrUnitTp"]
+	__slots__ = ["_OthrUnitTp", "_Tm", "_UnitTp"]
 	@property
-	def UnitTp(self):
-		return self._UnitTp
+	def OthrUnitTp(self):
+		return self._OthrUnitTp
 
-	@UnitTp.setter
-	def UnitTp(self, value):
-		self._UnitTp = value if type(value) != auto else self.make_default("UnitTp")
+	@OthrUnitTp.setter
+	def OthrUnitTp(self, value):
+		self._OthrUnitTp = value if type(value) != auto else self.make_default("OthrUnitTp")
 
-	@UnitTp.deleter
-	def UnitTp(self):
-		del self._UnitTp
-		self._UnitTp = None
+	@OthrUnitTp.deleter
+	def OthrUnitTp(self):
+		del self._OthrUnitTp
+		self._OthrUnitTp = None
 
 	@property
 	def Tm(self):
@@ -33,21 +33,21 @@ class GracePeriod1(base_types._BaseFieldType):
 		self._Tm = None
 
 	@property
-	def OthrUnitTp(self):
-		return self._OthrUnitTp
+	def UnitTp(self):
+		return self._UnitTp
 
-	@OthrUnitTp.setter
-	def OthrUnitTp(self, value):
-		self._OthrUnitTp = value if type(value) != auto else self.make_default("OthrUnitTp")
+	@UnitTp.setter
+	def UnitTp(self, value):
+		self._UnitTp = value if type(value) != auto else self.make_default("UnitTp")
 
-	@OthrUnitTp.deleter
-	def OthrUnitTp(self):
-		del self._OthrUnitTp
-		self._OthrUnitTp = None
+	@UnitTp.deleter
+	def UnitTp(self):
+		del self._UnitTp
+		self._UnitTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitTp', type=GracePeriodUnitType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tm', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrUnitTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitTp', type=GracePeriodUnitType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

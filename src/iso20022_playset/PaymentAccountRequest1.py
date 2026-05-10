@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
-import CustomerOrder1
 import CardAccountType3Code
+import CustomerOrder1
+import Max35Text
 
 class PaymentAccountRequest1(base_types._BaseFieldType):
 

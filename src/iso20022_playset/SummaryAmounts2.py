@@ -1,36 +1,23 @@
 import base_types
-import ActiveCurrencyAndAmount
 import ReturnExcessCash1
 import ThresholdType1Code
+import ActiveCurrencyAndAmount
 
 class SummaryAmounts2(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrXcssCshAndCollCcy", "_CollReqrd", "_TtlPdgOutgngColl", "_ThrshldAmt", "_PreHrcutCollVal", "_ThrshldTp", "_TtlFees", "_TtlPdgIncmgColl", "_RndgAmt", "_PrvsCollVal", "_TtlAcrdIntrstAmt", "_PrvsXpsrVal", "_AdjstdXpsr", "_MinTrfAmt"]
+	__slots__ = ["_MinTrfAmt", "_TtlPdgOutgngColl", "_ThrshldAmt", "_TtlFees", "_PreHrcutCollVal", "_PrvsXpsrVal", "_ThrshldTp", "_RndgAmt", "_RtrXcssCshAndCollCcy", "_AdjstdXpsr", "_TtlPdgIncmgColl", "_TtlAcrdIntrstAmt", "_CollReqrd", "_PrvsCollVal"]
 	@property
-	def RtrXcssCshAndCollCcy(self):
-		return self._RtrXcssCshAndCollCcy
+	def MinTrfAmt(self):
+		return self._MinTrfAmt
 
-	@RtrXcssCshAndCollCcy.setter
-	def RtrXcssCshAndCollCcy(self, value):
-		self._RtrXcssCshAndCollCcy = value if type(value) != auto else self.make_default("RtrXcssCshAndCollCcy")
+	@MinTrfAmt.setter
+	def MinTrfAmt(self, value):
+		self._MinTrfAmt = value if type(value) != auto else self.make_default("MinTrfAmt")
 
-	@RtrXcssCshAndCollCcy.deleter
-	def RtrXcssCshAndCollCcy(self):
-		del self._RtrXcssCshAndCollCcy
-		self._RtrXcssCshAndCollCcy = None
-
-	@property
-	def CollReqrd(self):
-		return self._CollReqrd
-
-	@CollReqrd.setter
-	def CollReqrd(self, value):
-		self._CollReqrd = value if type(value) != auto else self.make_default("CollReqrd")
-
-	@CollReqrd.deleter
-	def CollReqrd(self):
-		del self._CollReqrd
-		self._CollReqrd = None
+	@MinTrfAmt.deleter
+	def MinTrfAmt(self):
+		del self._MinTrfAmt
+		self._MinTrfAmt = None
 
 	@property
 	def TtlPdgOutgngColl(self):
@@ -59,32 +46,6 @@ class SummaryAmounts2(base_types._BaseFieldType):
 		self._ThrshldAmt = None
 
 	@property
-	def PreHrcutCollVal(self):
-		return self._PreHrcutCollVal
-
-	@PreHrcutCollVal.setter
-	def PreHrcutCollVal(self, value):
-		self._PreHrcutCollVal = value if type(value) != auto else self.make_default("PreHrcutCollVal")
-
-	@PreHrcutCollVal.deleter
-	def PreHrcutCollVal(self):
-		del self._PreHrcutCollVal
-		self._PreHrcutCollVal = None
-
-	@property
-	def ThrshldTp(self):
-		return self._ThrshldTp
-
-	@ThrshldTp.setter
-	def ThrshldTp(self, value):
-		self._ThrshldTp = value if type(value) != auto else self.make_default("ThrshldTp")
-
-	@ThrshldTp.deleter
-	def ThrshldTp(self):
-		del self._ThrshldTp
-		self._ThrshldTp = None
-
-	@property
 	def TtlFees(self):
 		return self._TtlFees
 
@@ -98,56 +59,17 @@ class SummaryAmounts2(base_types._BaseFieldType):
 		self._TtlFees = None
 
 	@property
-	def TtlPdgIncmgColl(self):
-		return self._TtlPdgIncmgColl
+	def PreHrcutCollVal(self):
+		return self._PreHrcutCollVal
 
-	@TtlPdgIncmgColl.setter
-	def TtlPdgIncmgColl(self, value):
-		self._TtlPdgIncmgColl = value if type(value) != auto else self.make_default("TtlPdgIncmgColl")
+	@PreHrcutCollVal.setter
+	def PreHrcutCollVal(self, value):
+		self._PreHrcutCollVal = value if type(value) != auto else self.make_default("PreHrcutCollVal")
 
-	@TtlPdgIncmgColl.deleter
-	def TtlPdgIncmgColl(self):
-		del self._TtlPdgIncmgColl
-		self._TtlPdgIncmgColl = None
-
-	@property
-	def RndgAmt(self):
-		return self._RndgAmt
-
-	@RndgAmt.setter
-	def RndgAmt(self, value):
-		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
-
-	@RndgAmt.deleter
-	def RndgAmt(self):
-		del self._RndgAmt
-		self._RndgAmt = None
-
-	@property
-	def PrvsCollVal(self):
-		return self._PrvsCollVal
-
-	@PrvsCollVal.setter
-	def PrvsCollVal(self, value):
-		self._PrvsCollVal = value if type(value) != auto else self.make_default("PrvsCollVal")
-
-	@PrvsCollVal.deleter
-	def PrvsCollVal(self):
-		del self._PrvsCollVal
-		self._PrvsCollVal = None
-
-	@property
-	def TtlAcrdIntrstAmt(self):
-		return self._TtlAcrdIntrstAmt
-
-	@TtlAcrdIntrstAmt.setter
-	def TtlAcrdIntrstAmt(self, value):
-		self._TtlAcrdIntrstAmt = value if type(value) != auto else self.make_default("TtlAcrdIntrstAmt")
-
-	@TtlAcrdIntrstAmt.deleter
-	def TtlAcrdIntrstAmt(self):
-		del self._TtlAcrdIntrstAmt
-		self._TtlAcrdIntrstAmt = None
+	@PreHrcutCollVal.deleter
+	def PreHrcutCollVal(self):
+		del self._PreHrcutCollVal
+		self._PreHrcutCollVal = None
 
 	@property
 	def PrvsXpsrVal(self):
@@ -163,6 +85,45 @@ class SummaryAmounts2(base_types._BaseFieldType):
 		self._PrvsXpsrVal = None
 
 	@property
+	def ThrshldTp(self):
+		return self._ThrshldTp
+
+	@ThrshldTp.setter
+	def ThrshldTp(self, value):
+		self._ThrshldTp = value if type(value) != auto else self.make_default("ThrshldTp")
+
+	@ThrshldTp.deleter
+	def ThrshldTp(self):
+		del self._ThrshldTp
+		self._ThrshldTp = None
+
+	@property
+	def RndgAmt(self):
+		return self._RndgAmt
+
+	@RndgAmt.setter
+	def RndgAmt(self, value):
+		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
+
+	@RndgAmt.deleter
+	def RndgAmt(self):
+		del self._RndgAmt
+		self._RndgAmt = None
+
+	@property
+	def RtrXcssCshAndCollCcy(self):
+		return self._RtrXcssCshAndCollCcy
+
+	@RtrXcssCshAndCollCcy.setter
+	def RtrXcssCshAndCollCcy(self, value):
+		self._RtrXcssCshAndCollCcy = value if type(value) != auto else self.make_default("RtrXcssCshAndCollCcy")
+
+	@RtrXcssCshAndCollCcy.deleter
+	def RtrXcssCshAndCollCcy(self):
+		del self._RtrXcssCshAndCollCcy
+		self._RtrXcssCshAndCollCcy = None
+
+	@property
 	def AdjstdXpsr(self):
 		return self._AdjstdXpsr
 
@@ -176,32 +137,71 @@ class SummaryAmounts2(base_types._BaseFieldType):
 		self._AdjstdXpsr = None
 
 	@property
-	def MinTrfAmt(self):
-		return self._MinTrfAmt
+	def TtlPdgIncmgColl(self):
+		return self._TtlPdgIncmgColl
 
-	@MinTrfAmt.setter
-	def MinTrfAmt(self, value):
-		self._MinTrfAmt = value if type(value) != auto else self.make_default("MinTrfAmt")
+	@TtlPdgIncmgColl.setter
+	def TtlPdgIncmgColl(self, value):
+		self._TtlPdgIncmgColl = value if type(value) != auto else self.make_default("TtlPdgIncmgColl")
 
-	@MinTrfAmt.deleter
-	def MinTrfAmt(self):
-		del self._MinTrfAmt
-		self._MinTrfAmt = None
+	@TtlPdgIncmgColl.deleter
+	def TtlPdgIncmgColl(self):
+		del self._TtlPdgIncmgColl
+		self._TtlPdgIncmgColl = None
+
+	@property
+	def TtlAcrdIntrstAmt(self):
+		return self._TtlAcrdIntrstAmt
+
+	@TtlAcrdIntrstAmt.setter
+	def TtlAcrdIntrstAmt(self, value):
+		self._TtlAcrdIntrstAmt = value if type(value) != auto else self.make_default("TtlAcrdIntrstAmt")
+
+	@TtlAcrdIntrstAmt.deleter
+	def TtlAcrdIntrstAmt(self):
+		del self._TtlAcrdIntrstAmt
+		self._TtlAcrdIntrstAmt = None
+
+	@property
+	def CollReqrd(self):
+		return self._CollReqrd
+
+	@CollReqrd.setter
+	def CollReqrd(self, value):
+		self._CollReqrd = value if type(value) != auto else self.make_default("CollReqrd")
+
+	@CollReqrd.deleter
+	def CollReqrd(self):
+		del self._CollReqrd
+		self._CollReqrd = None
+
+	@property
+	def PrvsCollVal(self):
+		return self._PrvsCollVal
+
+	@PrvsCollVal.setter
+	def PrvsCollVal(self, value):
+		self._PrvsCollVal = value if type(value) != auto else self.make_default("PrvsCollVal")
+
+	@PrvsCollVal.deleter
+	def PrvsCollVal(self):
+		del self._PrvsCollVal
+		self._PrvsCollVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrXcssCshAndCollCcy', type=ReturnExcessCash1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollReqrd', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinTrfAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlPdgOutgngColl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrshldAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreHrcutCollVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThrshldTp', type=ThresholdType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlFees', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlPdgIncmgColl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsCollVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreHrcutCollVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsXpsrVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrshldTp', type=ThresholdType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrXcssCshAndCollCcy', type=ReturnExcessCash1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AdjstdXpsr', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinTrfAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPdgIncmgColl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollReqrd', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsCollVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

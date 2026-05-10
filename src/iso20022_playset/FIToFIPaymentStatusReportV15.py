@@ -1,25 +1,12 @@
 import base_types
-import OriginalGroupHeader22
 import SupplementaryData1
-import PaymentTransaction164
 import GroupHeader120
+import OriginalGroupHeader22
+import PaymentTransaction164
 
 class FIToFIPaymentStatusReportV15(base_types._BaseFieldType):
 
-	__slots__ = ["_TxInfAndSts", "_OrgnlGrpInfAndSts", "_SplmtryData", "_GrpHdr"]
-	@property
-	def TxInfAndSts(self):
-		return self._TxInfAndSts
-
-	@TxInfAndSts.setter
-	def TxInfAndSts(self, value):
-		self._TxInfAndSts = value if type(value) != auto else self.make_default("TxInfAndSts")
-
-	@TxInfAndSts.deleter
-	def TxInfAndSts(self):
-		del self._TxInfAndSts
-		self._TxInfAndSts = None
-
+	__slots__ = ["_OrgnlGrpInfAndSts", "_TxInfAndSts", "_GrpHdr", "_SplmtryData"]
 	@property
 	def OrgnlGrpInfAndSts(self):
 		return self._OrgnlGrpInfAndSts
@@ -34,17 +21,17 @@ class FIToFIPaymentStatusReportV15(base_types._BaseFieldType):
 		self._OrgnlGrpInfAndSts = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TxInfAndSts(self):
+		return self._TxInfAndSts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@TxInfAndSts.setter
+	def TxInfAndSts(self, value):
+		self._TxInfAndSts = value if type(value) != auto else self.make_default("TxInfAndSts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TxInfAndSts.deleter
+	def TxInfAndSts(self):
+		del self._TxInfAndSts
+		self._TxInfAndSts = None
 
 	@property
 	def GrpHdr(self):
@@ -59,10 +46,23 @@ class FIToFIPaymentStatusReportV15(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction164, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader22, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction164, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader120, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

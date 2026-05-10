@@ -1,14 +1,14 @@
 import base_types
-import Pagination1
-import Agreement4
-import Obligation11
 import Collateral53
+import Obligation11
+import Pagination1
 import SupplementaryData1
+import Agreement4
 import ReportParameters6
 
 class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Agrmt", "_CollRpt", "_Pgntn", "_Oblgtn", "_RptParams"]
+	__slots__ = ["_SplmtryData", "_RptParams", "_CollRpt", "_Agrmt", "_Oblgtn", "_Pgntn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -23,17 +23,17 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Agrmt(self):
-		return self._Agrmt
+	def RptParams(self):
+		return self._RptParams
 
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
+	@RptParams.setter
+	def RptParams(self, value):
+		self._RptParams = value if type(value) != auto else self.make_default("RptParams")
 
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
+	@RptParams.deleter
+	def RptParams(self):
+		del self._RptParams
+		self._RptParams = None
 
 	@property
 	def CollRpt(self):
@@ -49,17 +49,17 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 		self._CollRpt = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def Agrmt(self):
+		return self._Agrmt
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
 
 	@property
 	def Oblgtn(self):
@@ -75,24 +75,24 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 		self._Oblgtn = None
 
 	@property
-	def RptParams(self):
-		return self._RptParams
+	def Pgntn(self):
+		return self._Pgntn
 
-	@RptParams.setter
-	def RptParams(self, value):
-		self._RptParams = value if type(value) != auto else self.make_default("RptParams")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
 
-	@RptParams.deleter
-	def RptParams(self):
-		del self._RptParams
-		self._RptParams = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollRpt', type=Collateral53, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oblgtn', type=Obligation11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptParams', type=ReportParameters6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollRpt', type=Collateral53, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Oblgtn', type=Obligation11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

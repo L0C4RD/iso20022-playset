@@ -1,23 +1,10 @@
 import base_types
-import Exact4AlphaNumericText
 import Status27Choice
+import Exact4AlphaNumericText
 
 class StatusAndSubStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_StsCd", "_SubStsCd"]
-	@property
-	def StsCd(self):
-		return self._StsCd
-
-	@StsCd.setter
-	def StsCd(self, value):
-		self._StsCd = value if type(value) != auto else self.make_default("StsCd")
-
-	@StsCd.deleter
-	def StsCd(self):
-		del self._StsCd
-		self._StsCd = None
-
+	__slots__ = ["_SubStsCd", "_StsCd"]
 	@property
 	def SubStsCd(self):
 		return self._SubStsCd
@@ -31,8 +18,21 @@ class StatusAndSubStatus2(base_types._BaseFieldType):
 		del self._SubStsCd
 		self._SubStsCd = None
 
+	@property
+	def StsCd(self):
+		return self._StsCd
+
+	@StsCd.setter
+	def StsCd(self, value):
+		self._StsCd = value if type(value) != auto else self.make_default("StsCd")
+
+	@StsCd.deleter
+	def StsCd(self):
+		del self._StsCd
+		self._StsCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsCd', type=Status27Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubStsCd', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsCd', type=Status27Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

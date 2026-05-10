@@ -1,13 +1,13 @@
 import base_types
-import ExposureType23Choice
+import GenericIdentification30
 import CollateralStatus1Code
+import ExposureType23Choice
 import CollateralAmount16
 import PercentageRate
-import GenericIdentification30
 
 class ExposureTypeAggregation3(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmPrc", "_GblXpsrTpSts", "_ValtnAmts", "_XpsrTp", "_MrgnRate"]
+	__slots__ = ["_SttlmPrc", "_XpsrTp", "_ValtnAmts", "_GblXpsrTpSts", "_MrgnRate"]
 	@property
 	def SttlmPrc(self):
 		return self._SttlmPrc
@@ -22,17 +22,17 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 		self._SttlmPrc = None
 
 	@property
-	def GblXpsrTpSts(self):
-		return self._GblXpsrTpSts
+	def XpsrTp(self):
+		return self._XpsrTp
 
-	@GblXpsrTpSts.setter
-	def GblXpsrTpSts(self, value):
-		self._GblXpsrTpSts = value if type(value) != auto else self.make_default("GblXpsrTpSts")
+	@XpsrTp.setter
+	def XpsrTp(self, value):
+		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
 
-	@GblXpsrTpSts.deleter
-	def GblXpsrTpSts(self):
-		del self._GblXpsrTpSts
-		self._GblXpsrTpSts = None
+	@XpsrTp.deleter
+	def XpsrTp(self):
+		del self._XpsrTp
+		self._XpsrTp = None
 
 	@property
 	def ValtnAmts(self):
@@ -48,17 +48,17 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 		self._ValtnAmts = None
 
 	@property
-	def XpsrTp(self):
-		return self._XpsrTp
+	def GblXpsrTpSts(self):
+		return self._GblXpsrTpSts
 
-	@XpsrTp.setter
-	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+	@GblXpsrTpSts.setter
+	def GblXpsrTpSts(self, value):
+		self._GblXpsrTpSts = value if type(value) != auto else self.make_default("GblXpsrTpSts")
 
-	@XpsrTp.deleter
-	def XpsrTp(self):
-		del self._XpsrTp
-		self._XpsrTp = None
+	@GblXpsrTpSts.deleter
+	def GblXpsrTpSts(self):
+		del self._GblXpsrTpSts
+		self._GblXpsrTpSts = None
 
 	@property
 	def MrgnRate(self):
@@ -75,9 +75,9 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GblXpsrTpSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GblXpsrTpSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

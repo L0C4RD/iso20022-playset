@@ -1,24 +1,11 @@
 import base_types
-import PriceRate1
 import PriceValueType5FormatChoice
+import PriceRate1
 import AmountPrice1
 
 class PriceFormat2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfd", "_Amt", "_Rate"]
-	@property
-	def NotSpcfd(self):
-		return self._NotSpcfd
-
-	@NotSpcfd.setter
-	def NotSpcfd(self, value):
-		self._NotSpcfd = value if type(value) != auto else self.make_default("NotSpcfd")
-
-	@NotSpcfd.deleter
-	def NotSpcfd(self):
-		del self._NotSpcfd
-		self._NotSpcfd = None
-
+	__slots__ = ["_Amt", "_Rate", "_NotSpcfd"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -45,9 +32,22 @@ class PriceFormat2Choice(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def NotSpcfd(self):
+		return self._NotSpcfd
+
+	@NotSpcfd.setter
+	def NotSpcfd(self, value):
+		self._NotSpcfd = value if type(value) != auto else self.make_default("NotSpcfd")
+
+	@NotSpcfd.deleter
+	def NotSpcfd(self):
+		del self._NotSpcfd
+		self._NotSpcfd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfd', type=PriceValueType5FormatChoice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountPrice1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=PriceRate1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfd', type=PriceValueType5FormatChoice, min=0, max=1, mutex_group=1, array=False),
 	))
 

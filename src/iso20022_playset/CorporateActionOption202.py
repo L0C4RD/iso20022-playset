@@ -1,23 +1,23 @@
 import base_types
-import CorporateActionOption43Choice
 import OptionNumber1Choice
 import Quantity55Choice
+import CorporateActionOption43Choice
 
 class CorporateActionOption202(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnNb", "_OptnTp", "_InstdQty"]
+	__slots__ = ["_InstdQty", "_OptnTp", "_OptnNb"]
 	@property
-	def OptnNb(self):
-		return self._OptnNb
+	def InstdQty(self):
+		return self._InstdQty
 
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+	@InstdQty.setter
+	def InstdQty(self, value):
+		self._InstdQty = value if type(value) != auto else self.make_default("InstdQty")
 
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
+	@InstdQty.deleter
+	def InstdQty(self):
+		del self._InstdQty
+		self._InstdQty = None
 
 	@property
 	def OptnTp(self):
@@ -33,21 +33,21 @@ class CorporateActionOption202(base_types._BaseFieldType):
 		self._OptnTp = None
 
 	@property
-	def InstdQty(self):
-		return self._InstdQty
+	def OptnNb(self):
+		return self._OptnNb
 
-	@InstdQty.setter
-	def InstdQty(self, value):
-		self._InstdQty = value if type(value) != auto else self.make_default("InstdQty")
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
 
-	@InstdQty.deleter
-	def InstdQty(self):
-		del self._InstdQty
-		self._InstdQty = None
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption43Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdQty', type=Quantity55Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption43Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

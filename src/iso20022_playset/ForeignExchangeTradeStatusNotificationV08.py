@@ -1,11 +1,24 @@
 import base_types
-import TradeData15
 import SupplementaryData1
 import RegulatoryReporting8
+import TradeData15
 
 class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
-	__slots__ = ["_TradData", "_SplmtryData", "_RgltryRptg"]
+	__slots__ = ["_RgltryRptg", "_TradData", "_SplmtryData"]
+	@property
+	def RgltryRptg(self):
+		return self._RgltryRptg
+
+	@RgltryRptg.setter
+	def RgltryRptg(self, value):
+		self._RgltryRptg = value if type(value) != auto else self.make_default("RgltryRptg")
+
+	@RgltryRptg.deleter
+	def RgltryRptg(self):
+		del self._RgltryRptg
+		self._RgltryRptg = None
+
 	@property
 	def TradData(self):
 		return self._TradData
@@ -32,22 +45,9 @@ class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def RgltryRptg(self):
-		return self._RgltryRptg
-
-	@RgltryRptg.setter
-	def RgltryRptg(self, value):
-		self._RgltryRptg = value if type(value) != auto else self.make_default("RgltryRptg")
-
-	@RgltryRptg.deleter
-	def RgltryRptg(self):
-		del self._RgltryRptg
-		self._RgltryRptg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RgltryRptg', type=RegulatoryReporting8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradData', type=TradeData15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RgltryRptg', type=RegulatoryReporting8, min=0, max=1, mutex_group=None, array=False),
 	))
 

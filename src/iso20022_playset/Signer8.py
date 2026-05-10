@@ -1,39 +1,26 @@
 import base_types
-import AlgorithmIdentification33
-import Max3000Binary
-import AlgorithmIdentification36
-import Number
 import Recipient13Choice
+import Max3000Binary
 import GenericInformation1
+import AlgorithmIdentification36
+import AlgorithmIdentification33
+import Number
 
 class Signer8(base_types._BaseFieldType):
 
-	__slots__ = ["_DgstAlgo", "_Vrsn", "_SgndAttrbts", "_SgnrId", "_SgntrAlgo", "_Sgntr"]
+	__slots__ = ["_Sgntr", "_SgndAttrbts", "_SgntrAlgo", "_Vrsn", "_DgstAlgo", "_SgnrId"]
 	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
+	def Sgntr(self):
+		return self._Sgntr
 
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+	@Sgntr.setter
+	def Sgntr(self, value):
+		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
 
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@Sgntr.deleter
+	def Sgntr(self):
+		del self._Sgntr
+		self._Sgntr = None
 
 	@property
 	def SgndAttrbts(self):
@@ -49,19 +36,6 @@ class Signer8(base_types._BaseFieldType):
 		self._SgndAttrbts = None
 
 	@property
-	def SgnrId(self):
-		return self._SgnrId
-
-	@SgnrId.setter
-	def SgnrId(self, value):
-		self._SgnrId = value if type(value) != auto else self.make_default("SgnrId")
-
-	@SgnrId.deleter
-	def SgnrId(self):
-		del self._SgnrId
-		self._SgnrId = None
-
-	@property
 	def SgntrAlgo(self):
 		return self._SgntrAlgo
 
@@ -75,24 +49,50 @@ class Signer8(base_types._BaseFieldType):
 		self._SgntrAlgo = None
 
 	@property
-	def Sgntr(self):
-		return self._Sgntr
+	def Vrsn(self):
+		return self._Vrsn
 
-	@Sgntr.setter
-	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@Sgntr.deleter
-	def Sgntr(self):
-		del self._Sgntr
-		self._Sgntr = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
+
+	@property
+	def SgnrId(self):
+		return self._SgnrId
+
+	@SgnrId.setter
+	def SgnrId(self, value):
+		self._SgnrId = value if type(value) != auto else self.make_default("SgnrId")
+
+	@SgnrId.deleter
+	def SgnrId(self):
+		del self._SgnrId
+		self._SgnrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgndAttrbts', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SgnrId', type=Recipient13Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrAlgo', type=AlgorithmIdentification33, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgntr', type=Max3000Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgndAttrbts', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SgntrAlgo', type=AlgorithmIdentification33, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgnrId', type=Recipient13Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

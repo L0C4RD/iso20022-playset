@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import CountryCode
+import Max35Text
 
 class IssuerJurisdiction1Choice(base_types._BaseFieldType):
 

@@ -1,33 +1,33 @@
 import base_types
-import SettlementConditionModificationStatus4Choice
-import AffirmationStatus9Choice
-import InstructionProcessingStatus26Choice
-import SettlementStatus25Choice
+import ResponseStatus7Choice
 import CancellationProcessingStatus8Choice
+import InstructionProcessingStatus26Choice
+import RegistrationProcessingStatus4Choice
+import AllocationSatus4Choice
+import AffirmationStatus9Choice
+import SettlementStatus25Choice
+import SettlementConditionModificationStatus4Choice
+import CorporateActionEventProcessingStatus4Choice
 import CorporateActionEventStage4Choice
 import MatchingStatus28Choice
-import CorporateActionEventProcessingStatus4Choice
 import ReplacementProcessingStatus9Choice
 import RepoCallRequestStatus10Choice
-import AllocationSatus4Choice
-import ResponseStatus7Choice
-import RegistrationProcessingStatus4Choice
 
 class Status22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmCondModSts", "_RspnSts", "_RplcmntPrcgSts", "_RepoCallReqSts", "_IfrrdMtchgSts", "_SttlmSts", "_InstrPrcgSts", "_AllcnSts", "_RegnPrcgSts", "_CorpActnEvtStag", "_MtchgSts", "_CxlPrcgSts", "_AffirmSts", "_CorpActnEvtPrcgSts"]
+	__slots__ = ["_InstrPrcgSts", "_RspnSts", "_CorpActnEvtStag", "_SttlmSts", "_RepoCallReqSts", "_RegnPrcgSts", "_SttlmCondModSts", "_RplcmntPrcgSts", "_CorpActnEvtPrcgSts", "_CxlPrcgSts", "_AllcnSts", "_MtchgSts", "_IfrrdMtchgSts", "_AffirmSts"]
 	@property
-	def SttlmCondModSts(self):
-		return self._SttlmCondModSts
+	def InstrPrcgSts(self):
+		return self._InstrPrcgSts
 
-	@SttlmCondModSts.setter
-	def SttlmCondModSts(self, value):
-		self._SttlmCondModSts = value if type(value) != auto else self.make_default("SttlmCondModSts")
+	@InstrPrcgSts.setter
+	def InstrPrcgSts(self, value):
+		self._InstrPrcgSts = value if type(value) != auto else self.make_default("InstrPrcgSts")
 
-	@SttlmCondModSts.deleter
-	def SttlmCondModSts(self):
-		del self._SttlmCondModSts
-		self._SttlmCondModSts = None
+	@InstrPrcgSts.deleter
+	def InstrPrcgSts(self):
+		del self._InstrPrcgSts
+		self._InstrPrcgSts = None
 
 	@property
 	def RspnSts(self):
@@ -43,43 +43,17 @@ class Status22Choice(base_types._BaseFieldType):
 		self._RspnSts = None
 
 	@property
-	def RplcmntPrcgSts(self):
-		return self._RplcmntPrcgSts
+	def CorpActnEvtStag(self):
+		return self._CorpActnEvtStag
 
-	@RplcmntPrcgSts.setter
-	def RplcmntPrcgSts(self, value):
-		self._RplcmntPrcgSts = value if type(value) != auto else self.make_default("RplcmntPrcgSts")
+	@CorpActnEvtStag.setter
+	def CorpActnEvtStag(self, value):
+		self._CorpActnEvtStag = value if type(value) != auto else self.make_default("CorpActnEvtStag")
 
-	@RplcmntPrcgSts.deleter
-	def RplcmntPrcgSts(self):
-		del self._RplcmntPrcgSts
-		self._RplcmntPrcgSts = None
-
-	@property
-	def RepoCallReqSts(self):
-		return self._RepoCallReqSts
-
-	@RepoCallReqSts.setter
-	def RepoCallReqSts(self, value):
-		self._RepoCallReqSts = value if type(value) != auto else self.make_default("RepoCallReqSts")
-
-	@RepoCallReqSts.deleter
-	def RepoCallReqSts(self):
-		del self._RepoCallReqSts
-		self._RepoCallReqSts = None
-
-	@property
-	def IfrrdMtchgSts(self):
-		return self._IfrrdMtchgSts
-
-	@IfrrdMtchgSts.setter
-	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != auto else self.make_default("IfrrdMtchgSts")
-
-	@IfrrdMtchgSts.deleter
-	def IfrrdMtchgSts(self):
-		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
+	@CorpActnEvtStag.deleter
+	def CorpActnEvtStag(self):
+		del self._CorpActnEvtStag
+		self._CorpActnEvtStag = None
 
 	@property
 	def SttlmSts(self):
@@ -95,30 +69,17 @@ class Status22Choice(base_types._BaseFieldType):
 		self._SttlmSts = None
 
 	@property
-	def InstrPrcgSts(self):
-		return self._InstrPrcgSts
+	def RepoCallReqSts(self):
+		return self._RepoCallReqSts
 
-	@InstrPrcgSts.setter
-	def InstrPrcgSts(self, value):
-		self._InstrPrcgSts = value if type(value) != auto else self.make_default("InstrPrcgSts")
+	@RepoCallReqSts.setter
+	def RepoCallReqSts(self, value):
+		self._RepoCallReqSts = value if type(value) != auto else self.make_default("RepoCallReqSts")
 
-	@InstrPrcgSts.deleter
-	def InstrPrcgSts(self):
-		del self._InstrPrcgSts
-		self._InstrPrcgSts = None
-
-	@property
-	def AllcnSts(self):
-		return self._AllcnSts
-
-	@AllcnSts.setter
-	def AllcnSts(self, value):
-		self._AllcnSts = value if type(value) != auto else self.make_default("AllcnSts")
-
-	@AllcnSts.deleter
-	def AllcnSts(self):
-		del self._AllcnSts
-		self._AllcnSts = None
+	@RepoCallReqSts.deleter
+	def RepoCallReqSts(self):
+		del self._RepoCallReqSts
+		self._RepoCallReqSts = None
 
 	@property
 	def RegnPrcgSts(self):
@@ -134,30 +95,43 @@ class Status22Choice(base_types._BaseFieldType):
 		self._RegnPrcgSts = None
 
 	@property
-	def CorpActnEvtStag(self):
-		return self._CorpActnEvtStag
+	def SttlmCondModSts(self):
+		return self._SttlmCondModSts
 
-	@CorpActnEvtStag.setter
-	def CorpActnEvtStag(self, value):
-		self._CorpActnEvtStag = value if type(value) != auto else self.make_default("CorpActnEvtStag")
+	@SttlmCondModSts.setter
+	def SttlmCondModSts(self, value):
+		self._SttlmCondModSts = value if type(value) != auto else self.make_default("SttlmCondModSts")
 
-	@CorpActnEvtStag.deleter
-	def CorpActnEvtStag(self):
-		del self._CorpActnEvtStag
-		self._CorpActnEvtStag = None
+	@SttlmCondModSts.deleter
+	def SttlmCondModSts(self):
+		del self._SttlmCondModSts
+		self._SttlmCondModSts = None
 
 	@property
-	def MtchgSts(self):
-		return self._MtchgSts
+	def RplcmntPrcgSts(self):
+		return self._RplcmntPrcgSts
 
-	@MtchgSts.setter
-	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
+	@RplcmntPrcgSts.setter
+	def RplcmntPrcgSts(self, value):
+		self._RplcmntPrcgSts = value if type(value) != auto else self.make_default("RplcmntPrcgSts")
 
-	@MtchgSts.deleter
-	def MtchgSts(self):
-		del self._MtchgSts
-		self._MtchgSts = None
+	@RplcmntPrcgSts.deleter
+	def RplcmntPrcgSts(self):
+		del self._RplcmntPrcgSts
+		self._RplcmntPrcgSts = None
+
+	@property
+	def CorpActnEvtPrcgSts(self):
+		return self._CorpActnEvtPrcgSts
+
+	@CorpActnEvtPrcgSts.setter
+	def CorpActnEvtPrcgSts(self, value):
+		self._CorpActnEvtPrcgSts = value if type(value) != auto else self.make_default("CorpActnEvtPrcgSts")
+
+	@CorpActnEvtPrcgSts.deleter
+	def CorpActnEvtPrcgSts(self):
+		del self._CorpActnEvtPrcgSts
+		self._CorpActnEvtPrcgSts = None
 
 	@property
 	def CxlPrcgSts(self):
@@ -173,6 +147,45 @@ class Status22Choice(base_types._BaseFieldType):
 		self._CxlPrcgSts = None
 
 	@property
+	def AllcnSts(self):
+		return self._AllcnSts
+
+	@AllcnSts.setter
+	def AllcnSts(self, value):
+		self._AllcnSts = value if type(value) != auto else self.make_default("AllcnSts")
+
+	@AllcnSts.deleter
+	def AllcnSts(self):
+		del self._AllcnSts
+		self._AllcnSts = None
+
+	@property
+	def MtchgSts(self):
+		return self._MtchgSts
+
+	@MtchgSts.setter
+	def MtchgSts(self, value):
+		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
+
+	@MtchgSts.deleter
+	def MtchgSts(self):
+		del self._MtchgSts
+		self._MtchgSts = None
+
+	@property
+	def IfrrdMtchgSts(self):
+		return self._IfrrdMtchgSts
+
+	@IfrrdMtchgSts.setter
+	def IfrrdMtchgSts(self, value):
+		self._IfrrdMtchgSts = value if type(value) != auto else self.make_default("IfrrdMtchgSts")
+
+	@IfrrdMtchgSts.deleter
+	def IfrrdMtchgSts(self):
+		del self._IfrrdMtchgSts
+		self._IfrrdMtchgSts = None
+
+	@property
 	def AffirmSts(self):
 		return self._AffirmSts
 
@@ -185,33 +198,20 @@ class Status22Choice(base_types._BaseFieldType):
 		del self._AffirmSts
 		self._AffirmSts = None
 
-	@property
-	def CorpActnEvtPrcgSts(self):
-		return self._CorpActnEvtPrcgSts
-
-	@CorpActnEvtPrcgSts.setter
-	def CorpActnEvtPrcgSts(self, value):
-		self._CorpActnEvtPrcgSts = value if type(value) != auto else self.make_default("CorpActnEvtPrcgSts")
-
-	@CorpActnEvtPrcgSts.deleter
-	def CorpActnEvtPrcgSts(self):
-		del self._CorpActnEvtPrcgSts
-		self._CorpActnEvtPrcgSts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmCondModSts', type=SettlementConditionModificationStatus4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RspnSts', type=ResponseStatus7Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RplcmntPrcgSts', type=ReplacementProcessingStatus9Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RepoCallReqSts', type=RepoCallRequestStatus10Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus28Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus25Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='InstrPrcgSts', type=InstructionProcessingStatus26Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AllcnSts', type=AllocationSatus4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RegnPrcgSts', type=RegistrationProcessingStatus4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RspnSts', type=ResponseStatus7Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnEvtStag', type=CorporateActionEventStage4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus28Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CxlPrcgSts', type=CancellationProcessingStatus8Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus9Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus25Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RepoCallReqSts', type=RepoCallRequestStatus10Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RegnPrcgSts', type=RegistrationProcessingStatus4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SttlmCondModSts', type=SettlementConditionModificationStatus4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RplcmntPrcgSts', type=ReplacementProcessingStatus9Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnEvtPrcgSts', type=CorporateActionEventProcessingStatus4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlPrcgSts', type=CancellationProcessingStatus8Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AllcnSts', type=AllocationSatus4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus28Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus28Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus9Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

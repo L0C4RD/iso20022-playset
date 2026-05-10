@@ -1,13 +1,13 @@
 import base_types
-import Max35Text
+import ISODateTime
+import ValidationStatusReason3
 import StatisticalReportingStatus1Code
 import CurrencyControlRecordStatus3
-import ValidationStatusReason3
-import ISODateTime
+import Max35Text
 
 class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdSts", "_Sts", "_StsDtTm", "_StsRsn", "_PackgId"]
+	__slots__ = ["_RcrdSts", "_StsRsn", "_Sts", "_StsDtTm", "_PackgId"]
 	@property
 	def RcrdSts(self):
 		return self._RcrdSts
@@ -20,6 +20,19 @@ class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 	def RcrdSts(self):
 		del self._RcrdSts
 		self._RcrdSts = None
+
+	@property
+	def StsRsn(self):
+		return self._StsRsn
+
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
+
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	@property
 	def Sts(self):
@@ -48,19 +61,6 @@ class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 		self._StsDtTm = None
 
 	@property
-	def StsRsn(self):
-		return self._StsRsn
-
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
-
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
-
-	@property
 	def PackgId(self):
 		return self._PackgId
 
@@ -75,9 +75,9 @@ class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcrdSts', type=CurrencyControlRecordStatus3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PackgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

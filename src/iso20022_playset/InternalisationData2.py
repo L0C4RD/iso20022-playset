@@ -3,20 +3,7 @@ import InternalisationDataVolume1
 
 class InternalisationData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttld", "_Ttl", "_Faild"]
-	@property
-	def Sttld(self):
-		return self._Sttld
-
-	@Sttld.setter
-	def Sttld(self, value):
-		self._Sttld = value if type(value) != auto else self.make_default("Sttld")
-
-	@Sttld.deleter
-	def Sttld(self):
-		del self._Sttld
-		self._Sttld = None
-
+	__slots__ = ["_Ttl", "_Sttld", "_Faild"]
 	@property
 	def Ttl(self):
 		return self._Ttl
@@ -29,6 +16,19 @@ class InternalisationData2(base_types._BaseFieldType):
 	def Ttl(self):
 		del self._Ttl
 		self._Ttl = None
+
+	@property
+	def Sttld(self):
+		return self._Sttld
+
+	@Sttld.setter
+	def Sttld(self, value):
+		self._Sttld = value if type(value) != auto else self.make_default("Sttld")
+
+	@Sttld.deleter
+	def Sttld(self):
+		del self._Sttld
+		self._Sttld = None
 
 	@property
 	def Faild(self):
@@ -44,8 +44,8 @@ class InternalisationData2(base_types._BaseFieldType):
 		self._Faild = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sttld', type=InternalisationDataVolume1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ttl', type=InternalisationDataVolume1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sttld', type=InternalisationDataVolume1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Faild', type=InternalisationDataVolume1, min=1, max=1, mutex_group=None, array=False),
 	))
 

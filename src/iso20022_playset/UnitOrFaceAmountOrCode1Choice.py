@@ -1,7 +1,7 @@
 import base_types
 import Quantity1Code
-import ActiveCurrencyAndAmount
 import DecimalNumber
+import ActiveCurrencyAndAmount
 
 class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 

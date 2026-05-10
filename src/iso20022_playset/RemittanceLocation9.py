@@ -1,12 +1,12 @@
 import base_types
-import NameAndAddress18
 import RemittanceLocationMethod2Code
-import Max35Text
+import NameAndAddress18
 import Max2048Text
+import Max35Text
 
 class RemittanceLocation9(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtLctnElctrncAdr", "_RmtLctnPstlAdr", "_RmtId", "_RmtLctnMtd"]
+	__slots__ = ["_RmtLctnElctrncAdr", "_RmtId", "_RmtLctnMtd", "_RmtLctnPstlAdr"]
 	@property
 	def RmtLctnElctrncAdr(self):
 		return self._RmtLctnElctrncAdr
@@ -19,19 +19,6 @@ class RemittanceLocation9(base_types._BaseFieldType):
 	def RmtLctnElctrncAdr(self):
 		del self._RmtLctnElctrncAdr
 		self._RmtLctnElctrncAdr = None
-
-	@property
-	def RmtLctnPstlAdr(self):
-		return self._RmtLctnPstlAdr
-
-	@RmtLctnPstlAdr.setter
-	def RmtLctnPstlAdr(self, value):
-		self._RmtLctnPstlAdr = value if type(value) != auto else self.make_default("RmtLctnPstlAdr")
-
-	@RmtLctnPstlAdr.deleter
-	def RmtLctnPstlAdr(self):
-		del self._RmtLctnPstlAdr
-		self._RmtLctnPstlAdr = None
 
 	@property
 	def RmtId(self):
@@ -59,10 +46,23 @@ class RemittanceLocation9(base_types._BaseFieldType):
 		del self._RmtLctnMtd
 		self._RmtLctnMtd = None
 
+	@property
+	def RmtLctnPstlAdr(self):
+		return self._RmtLctnPstlAdr
+
+	@RmtLctnPstlAdr.setter
+	def RmtLctnPstlAdr(self, value):
+		self._RmtLctnPstlAdr = value if type(value) != auto else self.make_default("RmtLctnPstlAdr")
+
+	@RmtLctnPstlAdr.deleter
+	def RmtLctnPstlAdr(self):
+		del self._RmtLctnPstlAdr
+		self._RmtLctnPstlAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RmtLctnElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmtLctnPstlAdr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtLctnMtd', type=RemittanceLocationMethod2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtLctnPstlAdr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
 	))
 

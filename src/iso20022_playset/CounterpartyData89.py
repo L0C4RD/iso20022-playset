@@ -1,24 +1,24 @@
 import base_types
-import TransactionCounterpartyData11
-import OrganisationIdentification15Choice
 import CounterpartyIdentification11
+import OrganisationIdentification15Choice
 import CounterpartyIdentification12
+import TransactionCounterpartyData11
 
 class CounterpartyData89(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPty", "_OthrPtyData", "_NttyRspnsblForRpt", "_RptgCtrPty"]
+	__slots__ = ["_RptgCtrPty", "_OthrPtyData", "_OthrCtrPty", "_NttyRspnsblForRpt"]
 	@property
-	def OthrCtrPty(self):
-		return self._OthrCtrPty
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
 
-	@OthrCtrPty.setter
-	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
 
-	@OthrCtrPty.deleter
-	def OthrCtrPty(self):
-		del self._OthrCtrPty
-		self._OthrCtrPty = None
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
 
 	@property
 	def OthrPtyData(self):
@@ -34,6 +34,19 @@ class CounterpartyData89(base_types._BaseFieldType):
 		self._OthrPtyData = None
 
 	@property
+	def OthrCtrPty(self):
+		return self._OthrCtrPty
+
+	@OthrCtrPty.setter
+	def OthrCtrPty(self, value):
+		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
+
+	@OthrCtrPty.deleter
+	def OthrCtrPty(self):
+		del self._OthrCtrPty
+		self._OthrCtrPty = None
+
+	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt
 
@@ -46,23 +59,10 @@ class CounterpartyData89(base_types._BaseFieldType):
 		del self._NttyRspnsblForRpt
 		self._NttyRspnsblForRpt = None
 
-	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrCtrPty', type=CounterpartyIdentification12, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPtyData', type=TransactionCounterpartyData11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=CounterpartyIdentification11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPtyData', type=TransactionCounterpartyData11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=CounterpartyIdentification12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

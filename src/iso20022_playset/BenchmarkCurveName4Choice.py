@@ -1,23 +1,23 @@
 import base_types
+import BenchmarkCurveName2Code
 import Max25Text
 import ISINOct2015Identifier
-import BenchmarkCurveName2Code
 
 class BenchmarkCurveName4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_ISIN", "_Indx"]
+	__slots__ = ["_Indx", "_ISIN", "_Nm"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def Indx(self):
+		return self._Indx
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != auto else self.make_default("Indx")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
 
 	@property
 	def ISIN(self):
@@ -33,21 +33,21 @@ class BenchmarkCurveName4Choice(base_types._BaseFieldType):
 		self._ISIN = None
 
 	@property
-	def Indx(self):
-		return self._Indx
+	def Nm(self):
+		return self._Nm
 
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max25Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Nm', type=Max25Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

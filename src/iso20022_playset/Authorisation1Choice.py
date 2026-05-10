@@ -1,6 +1,6 @@
 import base_types
-import Max128Text
 import Authorisation1Code
+import Max128Text
 
 class Authorisation1Choice(base_types._BaseFieldType):
 

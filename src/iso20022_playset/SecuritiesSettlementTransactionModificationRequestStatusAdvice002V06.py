@@ -1,42 +1,16 @@
 import base_types
-import ModificationProcessingStatus11Choice
-import BlockChainAddressWallet7
-import RestrictedFINXMax16Text
 import TransactionDetails158
-import SupplementaryData1
-import PartyIdentification156
-import SecuritiesAccount30
 import TransactionIdentifications37
+import PartyIdentification156
+import BlockChainAddressWallet7
+import ModificationProcessingStatus11Choice
+import SecuritiesAccount30
+import SupplementaryData1
+import RestrictedFINXMax16Text
 
 class SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_TxId", "_SplmtryData", "_ModPrcgSts", "_SfkpgAcct", "_ModReqRef", "_AcctOwnr", "_TxDtls"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_SplmtryData", "_TxDtls", "_SfkpgAcct", "_ModPrcgSts", "_ModReqRef", "_AcctOwnr", "_TxId", "_BlckChainAdrOrWllt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -51,17 +25,17 @@ class SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06(base_
 		self._SplmtryData = None
 
 	@property
-	def ModPrcgSts(self):
-		return self._ModPrcgSts
+	def TxDtls(self):
+		return self._TxDtls
 
-	@ModPrcgSts.setter
-	def ModPrcgSts(self, value):
-		self._ModPrcgSts = value if type(value) != auto else self.make_default("ModPrcgSts")
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
 
-	@ModPrcgSts.deleter
-	def ModPrcgSts(self):
-		del self._ModPrcgSts
-		self._ModPrcgSts = None
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
 
 	@property
 	def SfkpgAcct(self):
@@ -75,6 +49,19 @@ class SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06(base_
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
+
+	@property
+	def ModPrcgSts(self):
+		return self._ModPrcgSts
+
+	@ModPrcgSts.setter
+	def ModPrcgSts(self, value):
+		self._ModPrcgSts = value if type(value) != auto else self.make_default("ModPrcgSts")
+
+	@ModPrcgSts.deleter
+	def ModPrcgSts(self):
+		del self._ModPrcgSts
+		self._ModPrcgSts = None
 
 	@property
 	def ModReqRef(self):
@@ -103,26 +90,39 @@ class SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06(base_
 		self._AcctOwnr = None
 
 	@property
-	def TxDtls(self):
-		return self._TxDtls
+	def TxId(self):
+		return self._TxId
 
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifications37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ModPrcgSts', type=ModificationProcessingStatus11Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDtls', type=TransactionDetails158, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModPrcgSts', type=ModificationProcessingStatus11Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModReqRef', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtls', type=TransactionDetails158, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifications37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 	))
 

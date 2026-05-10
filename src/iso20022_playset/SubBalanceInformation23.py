@@ -1,12 +1,12 @@
 import base_types
 import RestrictedFINXMax140Text
-import AdditionalBalanceInformation23
-import SubBalanceQuantity9Choice
 import SubBalanceType13Choice
+import SubBalanceQuantity9Choice
+import AdditionalBalanceInformation23
 
 class SubBalanceInformation23(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalAddtlDtls", "_AddtlBalBrkdwnDtls", "_SubBalTp", "_Qty"]
+	__slots__ = ["_SubBalAddtlDtls", "_Qty", "_SubBalTp", "_AddtlBalBrkdwnDtls"]
 	@property
 	def SubBalAddtlDtls(self):
 		return self._SubBalAddtlDtls
@@ -21,17 +21,17 @@ class SubBalanceInformation23(base_types._BaseFieldType):
 		self._SubBalAddtlDtls = None
 
 	@property
-	def AddtlBalBrkdwnDtls(self):
-		return self._AddtlBalBrkdwnDtls
+	def Qty(self):
+		return self._Qty
 
-	@AddtlBalBrkdwnDtls.setter
-	def AddtlBalBrkdwnDtls(self, value):
-		self._AddtlBalBrkdwnDtls = value if type(value) != auto else self.make_default("AddtlBalBrkdwnDtls")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
 
-	@AddtlBalBrkdwnDtls.deleter
-	def AddtlBalBrkdwnDtls(self):
-		del self._AddtlBalBrkdwnDtls
-		self._AddtlBalBrkdwnDtls = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def SubBalTp(self):
@@ -47,22 +47,22 @@ class SubBalanceInformation23(base_types._BaseFieldType):
 		self._SubBalTp = None
 
 	@property
-	def Qty(self):
-		return self._Qty
+	def AddtlBalBrkdwnDtls(self):
+		return self._AddtlBalBrkdwnDtls
 
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+	@AddtlBalBrkdwnDtls.setter
+	def AddtlBalBrkdwnDtls(self, value):
+		self._AddtlBalBrkdwnDtls = value if type(value) != auto else self.make_default("AddtlBalBrkdwnDtls")
 
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@AddtlBalBrkdwnDtls.deleter
+	def AddtlBalBrkdwnDtls(self):
+		del self._AddtlBalBrkdwnDtls
+		self._AddtlBalBrkdwnDtls = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation23, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType13Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity9Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType13Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation23, min=0, max=None, mutex_group=None, array=True),
 	))
 

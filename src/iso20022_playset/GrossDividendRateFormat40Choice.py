@@ -1,6 +1,6 @@
 import base_types
-import AmountAndRateStatus2
 import RateTypeAndAmountAndStatus61
+import AmountAndRateStatus2
 import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class GrossDividendRateFormat40Choice(base_types._BaseFieldType):

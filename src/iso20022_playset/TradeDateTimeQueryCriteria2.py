@@ -4,7 +4,7 @@ import DateOrBlankQuery2Choice
 
 class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_ExctnDtTm", "_TermntnDt", "_RptgDtTm", "_MtrtyDt"]
+	__slots__ = ["_ExctnDtTm", "_RptgDtTm", "_TermntnDt", "_MtrtyDt"]
 	@property
 	def ExctnDtTm(self):
 		return self._ExctnDtTm
@@ -19,19 +19,6 @@ class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 		self._ExctnDtTm = None
 
 	@property
-	def TermntnDt(self):
-		return self._TermntnDt
-
-	@TermntnDt.setter
-	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
-
-	@TermntnDt.deleter
-	def TermntnDt(self):
-		del self._TermntnDt
-		self._TermntnDt = None
-
-	@property
 	def RptgDtTm(self):
 		return self._RptgDtTm
 
@@ -43,6 +30,19 @@ class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 	def RptgDtTm(self):
 		del self._RptgDtTm
 		self._RptgDtTm = None
+
+	@property
+	def TermntnDt(self):
+		return self._TermntnDt
+
+	@TermntnDt.setter
+	def TermntnDt(self, value):
+		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
+
+	@TermntnDt.deleter
+	def TermntnDt(self):
+		del self._TermntnDt
+		self._TermntnDt = None
 
 	@property
 	def MtrtyDt(self):
@@ -59,8 +59,8 @@ class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ExctnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermntnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

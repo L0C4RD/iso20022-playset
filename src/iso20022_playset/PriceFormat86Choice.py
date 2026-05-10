@@ -1,7 +1,7 @@
 import base_types
-import RestrictedFINDecimalNumber
 import AmountPrice5
 import PercentagePrice2
+import RestrictedFINDecimalNumber
 
 class PriceFormat86Choice(base_types._BaseFieldType):
 

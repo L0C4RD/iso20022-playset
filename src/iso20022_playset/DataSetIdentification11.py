@@ -1,11 +1,24 @@
 import base_types
 import ISODateTime
-import Max256Text
 import DataSetCategory20Code
+import Max256Text
 
 class DataSetIdentification11(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Tp", "_Vrsn", "_CreDtTm"]
+	__slots__ = ["_Vrsn", "_Nm", "_Tp", "_CreDtTm"]
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	@property
 	def Nm(self):
 		return self._Nm
@@ -33,19 +46,6 @@ class DataSetIdentification11(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -59,9 +59,9 @@ class DataSetIdentification11(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DataSetCategory20Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

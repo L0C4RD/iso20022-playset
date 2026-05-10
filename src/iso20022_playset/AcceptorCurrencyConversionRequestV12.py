@@ -1,7 +1,7 @@
 import base_types
-import Header70
 import AcceptorCurrencyConversionRequest12
 import ContentInformationType37
+import Header70
 
 class AcceptorCurrencyConversionRequestV12(base_types._BaseFieldType):
 

@@ -4,20 +4,7 @@ import ISODateTime
 
 class DateTimeSearch2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToDtTm", "_FrDtTm", "_NEQDtTm", "_ToDtTm", "_EQDtTm"]
-	@property
-	def FrToDtTm(self):
-		return self._FrToDtTm
-
-	@FrToDtTm.setter
-	def FrToDtTm(self, value):
-		self._FrToDtTm = value if type(value) != auto else self.make_default("FrToDtTm")
-
-	@FrToDtTm.deleter
-	def FrToDtTm(self):
-		del self._FrToDtTm
-		self._FrToDtTm = None
-
+	__slots__ = ["_FrDtTm", "_EQDtTm", "_ToDtTm", "_NEQDtTm", "_FrToDtTm"]
 	@property
 	def FrDtTm(self):
 		return self._FrDtTm
@@ -32,17 +19,17 @@ class DateTimeSearch2Choice(base_types._BaseFieldType):
 		self._FrDtTm = None
 
 	@property
-	def NEQDtTm(self):
-		return self._NEQDtTm
+	def EQDtTm(self):
+		return self._EQDtTm
 
-	@NEQDtTm.setter
-	def NEQDtTm(self, value):
-		self._NEQDtTm = value if type(value) != auto else self.make_default("NEQDtTm")
+	@EQDtTm.setter
+	def EQDtTm(self, value):
+		self._EQDtTm = value if type(value) != auto else self.make_default("EQDtTm")
 
-	@NEQDtTm.deleter
-	def NEQDtTm(self):
-		del self._NEQDtTm
-		self._NEQDtTm = None
+	@EQDtTm.deleter
+	def EQDtTm(self):
+		del self._EQDtTm
+		self._EQDtTm = None
 
 	@property
 	def ToDtTm(self):
@@ -58,23 +45,36 @@ class DateTimeSearch2Choice(base_types._BaseFieldType):
 		self._ToDtTm = None
 
 	@property
-	def EQDtTm(self):
-		return self._EQDtTm
+	def NEQDtTm(self):
+		return self._NEQDtTm
 
-	@EQDtTm.setter
-	def EQDtTm(self, value):
-		self._EQDtTm = value if type(value) != auto else self.make_default("EQDtTm")
+	@NEQDtTm.setter
+	def NEQDtTm(self, value):
+		self._NEQDtTm = value if type(value) != auto else self.make_default("NEQDtTm")
 
-	@EQDtTm.deleter
-	def EQDtTm(self):
-		del self._EQDtTm
-		self._EQDtTm = None
+	@NEQDtTm.deleter
+	def NEQDtTm(self):
+		del self._NEQDtTm
+		self._NEQDtTm = None
+
+	@property
+	def FrToDtTm(self):
+		return self._FrToDtTm
+
+	@FrToDtTm.setter
+	def FrToDtTm(self, value):
+		self._FrToDtTm = value if type(value) != auto else self.make_default("FrToDtTm")
+
+	@FrToDtTm.deleter
+	def FrToDtTm(self):
+		del self._FrToDtTm
+		self._FrToDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrToDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NEQDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ToDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='EQDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ToDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NEQDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrToDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
 	))
 

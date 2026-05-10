@@ -1,12 +1,12 @@
 import base_types
+import CommunicationMethod2Choice
+import Max350Text
 import CommunicationFormat1Choice
 import Frequency7Code
-import Max350Text
-import CommunicationMethod2Choice
 
 class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_ComMtd", "_Frmt", "_DlvryAdr"]
+	__slots__ = ["_Frqcy", "_DlvryAdr", "_ComMtd", "_Frmt"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -19,6 +19,19 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 	def Frqcy(self):
 		del self._Frqcy
 		self._Frqcy = None
+
+	@property
+	def DlvryAdr(self):
+		return self._DlvryAdr
+
+	@DlvryAdr.setter
+	def DlvryAdr(self, value):
+		self._DlvryAdr = value if type(value) != auto else self.make_default("DlvryAdr")
+
+	@DlvryAdr.deleter
+	def DlvryAdr(self):
+		del self._DlvryAdr
+		self._DlvryAdr = None
 
 	@property
 	def ComMtd(self):
@@ -46,23 +59,10 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 		del self._Frmt
 		self._Frmt = None
 
-	@property
-	def DlvryAdr(self):
-		return self._DlvryAdr
-
-	@DlvryAdr.setter
-	def DlvryAdr(self, value):
-		self._DlvryAdr = value if type(value) != auto else self.make_default("DlvryAdr")
-
-	@DlvryAdr.deleter
-	def DlvryAdr(self):
-		del self._DlvryAdr
-		self._DlvryAdr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frqcy', type=Frequency7Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryAdr', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComMtd', type=CommunicationMethod2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=CommunicationFormat1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryAdr', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

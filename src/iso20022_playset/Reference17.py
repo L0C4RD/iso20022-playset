@@ -3,20 +3,7 @@ import Max35Text
 
 class Reference17(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSbstitnReqId", "_CollSbstitnRspnId"]
-	@property
-	def CollSbstitnReqId(self):
-		return self._CollSbstitnReqId
-
-	@CollSbstitnReqId.setter
-	def CollSbstitnReqId(self, value):
-		self._CollSbstitnReqId = value if type(value) != auto else self.make_default("CollSbstitnReqId")
-
-	@CollSbstitnReqId.deleter
-	def CollSbstitnReqId(self):
-		del self._CollSbstitnReqId
-		self._CollSbstitnReqId = None
-
+	__slots__ = ["_CollSbstitnRspnId", "_CollSbstitnReqId"]
 	@property
 	def CollSbstitnRspnId(self):
 		return self._CollSbstitnRspnId
@@ -30,8 +17,21 @@ class Reference17(base_types._BaseFieldType):
 		del self._CollSbstitnRspnId
 		self._CollSbstitnRspnId = None
 
+	@property
+	def CollSbstitnReqId(self):
+		return self._CollSbstitnReqId
+
+	@CollSbstitnReqId.setter
+	def CollSbstitnReqId(self, value):
+		self._CollSbstitnReqId = value if type(value) != auto else self.make_default("CollSbstitnReqId")
+
+	@CollSbstitnReqId.deleter
+	def CollSbstitnReqId(self):
+		del self._CollSbstitnReqId
+		self._CollSbstitnReqId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import IdentificationSource5Choice
+import Max35Text
 
 class OtherIdentification4(base_types._BaseFieldType):
 

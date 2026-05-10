@@ -1,22 +1,22 @@
 import base_types
-import DistributionStrategy1Choice
 import OtherDistributionStrategy1
+import DistributionStrategy1Choice
 
 class DistributionStrategy1(base_types._BaseFieldType):
 
-	__slots__ = ["_ExctnOnly", "_PrtflMgmt", "_ExctnWthApprprtnssTstOrNonAdvsdSvcs", "_Othr", "_InvstmtAdvc"]
+	__slots__ = ["_ExctnWthApprprtnssTstOrNonAdvsdSvcs", "_PrtflMgmt", "_InvstmtAdvc", "_ExctnOnly", "_Othr"]
 	@property
-	def ExctnOnly(self):
-		return self._ExctnOnly
+	def ExctnWthApprprtnssTstOrNonAdvsdSvcs(self):
+		return self._ExctnWthApprprtnssTstOrNonAdvsdSvcs
 
-	@ExctnOnly.setter
-	def ExctnOnly(self, value):
-		self._ExctnOnly = value if type(value) != auto else self.make_default("ExctnOnly")
+	@ExctnWthApprprtnssTstOrNonAdvsdSvcs.setter
+	def ExctnWthApprprtnssTstOrNonAdvsdSvcs(self, value):
+		self._ExctnWthApprprtnssTstOrNonAdvsdSvcs = value if type(value) != auto else self.make_default("ExctnWthApprprtnssTstOrNonAdvsdSvcs")
 
-	@ExctnOnly.deleter
-	def ExctnOnly(self):
-		del self._ExctnOnly
-		self._ExctnOnly = None
+	@ExctnWthApprprtnssTstOrNonAdvsdSvcs.deleter
+	def ExctnWthApprprtnssTstOrNonAdvsdSvcs(self):
+		del self._ExctnWthApprprtnssTstOrNonAdvsdSvcs
+		self._ExctnWthApprprtnssTstOrNonAdvsdSvcs = None
 
 	@property
 	def PrtflMgmt(self):
@@ -32,17 +32,30 @@ class DistributionStrategy1(base_types._BaseFieldType):
 		self._PrtflMgmt = None
 
 	@property
-	def ExctnWthApprprtnssTstOrNonAdvsdSvcs(self):
-		return self._ExctnWthApprprtnssTstOrNonAdvsdSvcs
+	def InvstmtAdvc(self):
+		return self._InvstmtAdvc
 
-	@ExctnWthApprprtnssTstOrNonAdvsdSvcs.setter
-	def ExctnWthApprprtnssTstOrNonAdvsdSvcs(self, value):
-		self._ExctnWthApprprtnssTstOrNonAdvsdSvcs = value if type(value) != auto else self.make_default("ExctnWthApprprtnssTstOrNonAdvsdSvcs")
+	@InvstmtAdvc.setter
+	def InvstmtAdvc(self, value):
+		self._InvstmtAdvc = value if type(value) != auto else self.make_default("InvstmtAdvc")
 
-	@ExctnWthApprprtnssTstOrNonAdvsdSvcs.deleter
-	def ExctnWthApprprtnssTstOrNonAdvsdSvcs(self):
-		del self._ExctnWthApprprtnssTstOrNonAdvsdSvcs
-		self._ExctnWthApprprtnssTstOrNonAdvsdSvcs = None
+	@InvstmtAdvc.deleter
+	def InvstmtAdvc(self):
+		del self._InvstmtAdvc
+		self._InvstmtAdvc = None
+
+	@property
+	def ExctnOnly(self):
+		return self._ExctnOnly
+
+	@ExctnOnly.setter
+	def ExctnOnly(self, value):
+		self._ExctnOnly = value if type(value) != auto else self.make_default("ExctnOnly")
+
+	@ExctnOnly.deleter
+	def ExctnOnly(self):
+		del self._ExctnOnly
+		self._ExctnOnly = None
 
 	@property
 	def Othr(self):
@@ -57,24 +70,11 @@ class DistributionStrategy1(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
-	@property
-	def InvstmtAdvc(self):
-		return self._InvstmtAdvc
-
-	@InvstmtAdvc.setter
-	def InvstmtAdvc(self, value):
-		self._InvstmtAdvc = value if type(value) != auto else self.make_default("InvstmtAdvc")
-
-	@InvstmtAdvc.deleter
-	def InvstmtAdvc(self):
-		del self._InvstmtAdvc
-		self._InvstmtAdvc = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExctnOnly', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtflMgmt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnWthApprprtnssTstOrNonAdvsdSvcs', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=OtherDistributionStrategy1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtflMgmt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAdvc', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnOnly', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherDistributionStrategy1, min=0, max=1, mutex_group=None, array=False),
 	))
 

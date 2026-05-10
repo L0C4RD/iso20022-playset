@@ -1,11 +1,11 @@
 import base_types
-import UnitOfMeasure8Choice
 import InstrumentIdentification6Choice
+import UnitOfMeasure8Choice
 import LongFraction19DecimalNumber
 
 class BasketConstituents3(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_InstrmId", "_UnitOfMeasr"]
+	__slots__ = ["_Qty", "_UnitOfMeasr", "_InstrmId"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -20,19 +20,6 @@ class BasketConstituents3(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def InstrmId(self):
-		return self._InstrmId
-
-	@InstrmId.setter
-	def InstrmId(self, value):
-		self._InstrmId = value if type(value) != auto else self.make_default("InstrmId")
-
-	@InstrmId.deleter
-	def InstrmId(self):
-		del self._InstrmId
-		self._InstrmId = None
-
-	@property
 	def UnitOfMeasr(self):
 		return self._UnitOfMeasr
 
@@ -45,9 +32,22 @@ class BasketConstituents3(base_types._BaseFieldType):
 		del self._UnitOfMeasr
 		self._UnitOfMeasr = None
 
+	@property
+	def InstrmId(self):
+		return self._InstrmId
+
+	@InstrmId.setter
+	def InstrmId(self, value):
+		self._InstrmId = value if type(value) != auto else self.make_default("InstrmId")
+
+	@InstrmId.deleter
+	def InstrmId(self):
+		del self._InstrmId
+		self._InstrmId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrmId', type=InstrumentIdentification6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrmId', type=InstrumentIdentification6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

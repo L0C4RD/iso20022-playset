@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import ExternalInvestigationAction1Code
+import Max35Text
 
 class InvestigationRequestAction1Choice(base_types._BaseFieldType):
 

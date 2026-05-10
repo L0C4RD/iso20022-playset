@@ -1,24 +1,50 @@
 import base_types
-import Max35Text
 import SubAccount5
 import PartyIdentification132
 import GenericIdentification30
+import Max35Text
 
 class Account33(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrId", "_AcctNm", "_Tp", "_SubAcctDtls", "_AcctDsgnt", "_Svcr", "_AcctId"]
+	__slots__ = ["_AcctDsgnt", "_Svcr", "_AcctId", "_AcctNm", "_Tp", "_SubAcctDtls", "_OwnrId"]
 	@property
-	def OwnrId(self):
-		return self._OwnrId
+	def AcctDsgnt(self):
+		return self._AcctDsgnt
 
-	@OwnrId.setter
-	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
+	@AcctDsgnt.setter
+	def AcctDsgnt(self, value):
+		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
 
-	@OwnrId.deleter
-	def OwnrId(self):
-		del self._OwnrId
-		self._OwnrId = None
+	@AcctDsgnt.deleter
+	def AcctDsgnt(self):
+		del self._AcctDsgnt
+		self._AcctDsgnt = None
+
+	@property
+	def Svcr(self):
+		return self._Svcr
+
+	@Svcr.setter
+	def Svcr(self, value):
+		self._Svcr = value if type(value) != auto else self.make_default("Svcr")
+
+	@Svcr.deleter
+	def Svcr(self):
+		del self._Svcr
+		self._Svcr = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def AcctNm(self):
@@ -60,51 +86,25 @@ class Account33(base_types._BaseFieldType):
 		self._SubAcctDtls = None
 
 	@property
-	def AcctDsgnt(self):
-		return self._AcctDsgnt
+	def OwnrId(self):
+		return self._OwnrId
 
-	@AcctDsgnt.setter
-	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
+	@OwnrId.setter
+	def OwnrId(self, value):
+		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
 
-	@AcctDsgnt.deleter
-	def AcctDsgnt(self):
-		del self._AcctDsgnt
-		self._AcctDsgnt = None
-
-	@property
-	def Svcr(self):
-		return self._Svcr
-
-	@Svcr.setter
-	def Svcr(self, value):
-		self._Svcr = value if type(value) != auto else self.make_default("Svcr")
-
-	@Svcr.deleter
-	def Svcr(self):
-		del self._Svcr
-		self._Svcr = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@OwnrId.deleter
+	def OwnrId(self):
+		del self._OwnrId
+		self._OwnrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OwnrId', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrId', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
 	))
 

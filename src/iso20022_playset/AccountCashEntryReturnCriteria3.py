@@ -3,19 +3,19 @@ import RequestedIndicator
 
 class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctCcyInd", "_NtryAmtInd", "_NtryDtInd", "_AcctSvcrInd", "_AcctTpInd", "_NtryRefInd", "_NtryStsInd", "_AcctOwnrInd"]
+	__slots__ = ["_AcctTpInd", "_NtryAmtInd", "_NtryDtInd", "_AcctCcyInd", "_NtryRefInd", "_AcctSvcrInd", "_NtryStsInd", "_AcctOwnrInd"]
 	@property
-	def AcctCcyInd(self):
-		return self._AcctCcyInd
+	def AcctTpInd(self):
+		return self._AcctTpInd
 
-	@AcctCcyInd.setter
-	def AcctCcyInd(self, value):
-		self._AcctCcyInd = value if type(value) != auto else self.make_default("AcctCcyInd")
+	@AcctTpInd.setter
+	def AcctTpInd(self, value):
+		self._AcctTpInd = value if type(value) != auto else self.make_default("AcctTpInd")
 
-	@AcctCcyInd.deleter
-	def AcctCcyInd(self):
-		del self._AcctCcyInd
-		self._AcctCcyInd = None
+	@AcctTpInd.deleter
+	def AcctTpInd(self):
+		del self._AcctTpInd
+		self._AcctTpInd = None
 
 	@property
 	def NtryAmtInd(self):
@@ -44,30 +44,17 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 		self._NtryDtInd = None
 
 	@property
-	def AcctSvcrInd(self):
-		return self._AcctSvcrInd
+	def AcctCcyInd(self):
+		return self._AcctCcyInd
 
-	@AcctSvcrInd.setter
-	def AcctSvcrInd(self, value):
-		self._AcctSvcrInd = value if type(value) != auto else self.make_default("AcctSvcrInd")
+	@AcctCcyInd.setter
+	def AcctCcyInd(self, value):
+		self._AcctCcyInd = value if type(value) != auto else self.make_default("AcctCcyInd")
 
-	@AcctSvcrInd.deleter
-	def AcctSvcrInd(self):
-		del self._AcctSvcrInd
-		self._AcctSvcrInd = None
-
-	@property
-	def AcctTpInd(self):
-		return self._AcctTpInd
-
-	@AcctTpInd.setter
-	def AcctTpInd(self, value):
-		self._AcctTpInd = value if type(value) != auto else self.make_default("AcctTpInd")
-
-	@AcctTpInd.deleter
-	def AcctTpInd(self):
-		del self._AcctTpInd
-		self._AcctTpInd = None
+	@AcctCcyInd.deleter
+	def AcctCcyInd(self):
+		del self._AcctCcyInd
+		self._AcctCcyInd = None
 
 	@property
 	def NtryRefInd(self):
@@ -81,6 +68,19 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 	def NtryRefInd(self):
 		del self._NtryRefInd
 		self._NtryRefInd = None
+
+	@property
+	def AcctSvcrInd(self):
+		return self._AcctSvcrInd
+
+	@AcctSvcrInd.setter
+	def AcctSvcrInd(self, value):
+		self._AcctSvcrInd = value if type(value) != auto else self.make_default("AcctSvcrInd")
+
+	@AcctSvcrInd.deleter
+	def AcctSvcrInd(self):
+		del self._AcctSvcrInd
+		self._AcctSvcrInd = None
 
 	@property
 	def NtryStsInd(self):
@@ -109,12 +109,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 		self._AcctOwnrInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryRefInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))

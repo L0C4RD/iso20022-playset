@@ -1,31 +1,44 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import StatementFrequencyAndForm1
-import AccountStatus3Code
-import AccountIdentification4Choice
-import ActiveCurrencyCode
 import Max70Text
-import Max5NumericText
-import ISODate
-import CashAccountType2Choice
 import Restriction1
+import CashAccountType2Choice
+import ActiveCurrencyCode
+import AccountIdentification4Choice
 import Max140Text
+import ImpliedCurrencyAndAmount
+import AccountStatus3Code
+import StatementFrequencyAndForm1
+import ISODate
+import Max5NumericText
 
 class CustomerAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_ClngNtfctnAmt", "_Id", "_MnthlyPmtVal", "_Rstrctn", "_ClsgDt", "_Tp", "_StmtFrqcyAndFrmt", "_Ccy", "_AvrgBal", "_MnthlyRcvdVal", "_FlrNtfctnAmt", "_MnthlyTxNb", "_Nm", "_AcctPurp", "_Sts"]
+	__slots__ = ["_Sts", "_FlrNtfctnAmt", "_Id", "_MnthlyPmtVal", "_AcctPurp", "_Tp", "_Ccy", "_StmtFrqcyAndFrmt", "_Rstrctn", "_MnthlyRcvdVal", "_ClsgDt", "_AvrgBal", "_ClngNtfctnAmt", "_MnthlyTxNb", "_Nm"]
 	@property
-	def ClngNtfctnAmt(self):
-		return self._ClngNtfctnAmt
+	def Sts(self):
+		return self._Sts
 
-	@ClngNtfctnAmt.setter
-	def ClngNtfctnAmt(self, value):
-		self._ClngNtfctnAmt = value if type(value) != auto else self.make_default("ClngNtfctnAmt")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@ClngNtfctnAmt.deleter
-	def ClngNtfctnAmt(self):
-		del self._ClngNtfctnAmt
-		self._ClngNtfctnAmt = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def FlrNtfctnAmt(self):
+		return self._FlrNtfctnAmt
+
+	@FlrNtfctnAmt.setter
+	def FlrNtfctnAmt(self, value):
+		self._FlrNtfctnAmt = value if type(value) != auto else self.make_default("FlrNtfctnAmt")
+
+	@FlrNtfctnAmt.deleter
+	def FlrNtfctnAmt(self):
+		del self._FlrNtfctnAmt
+		self._FlrNtfctnAmt = None
 
 	@property
 	def Id(self):
@@ -54,30 +67,17 @@ class CustomerAccount5(base_types._BaseFieldType):
 		self._MnthlyPmtVal = None
 
 	@property
-	def Rstrctn(self):
-		return self._Rstrctn
+	def AcctPurp(self):
+		return self._AcctPurp
 
-	@Rstrctn.setter
-	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != auto else self.make_default("Rstrctn")
+	@AcctPurp.setter
+	def AcctPurp(self, value):
+		self._AcctPurp = value if type(value) != auto else self.make_default("AcctPurp")
 
-	@Rstrctn.deleter
-	def Rstrctn(self):
-		del self._Rstrctn
-		self._Rstrctn = None
-
-	@property
-	def ClsgDt(self):
-		return self._ClsgDt
-
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
-
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
+	@AcctPurp.deleter
+	def AcctPurp(self):
+		del self._AcctPurp
+		self._AcctPurp = None
 
 	@property
 	def Tp(self):
@@ -93,19 +93,6 @@ class CustomerAccount5(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def StmtFrqcyAndFrmt(self):
-		return self._StmtFrqcyAndFrmt
-
-	@StmtFrqcyAndFrmt.setter
-	def StmtFrqcyAndFrmt(self, value):
-		self._StmtFrqcyAndFrmt = value if type(value) != auto else self.make_default("StmtFrqcyAndFrmt")
-
-	@StmtFrqcyAndFrmt.deleter
-	def StmtFrqcyAndFrmt(self):
-		del self._StmtFrqcyAndFrmt
-		self._StmtFrqcyAndFrmt = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -119,17 +106,30 @@ class CustomerAccount5(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def AvrgBal(self):
-		return self._AvrgBal
+	def StmtFrqcyAndFrmt(self):
+		return self._StmtFrqcyAndFrmt
 
-	@AvrgBal.setter
-	def AvrgBal(self, value):
-		self._AvrgBal = value if type(value) != auto else self.make_default("AvrgBal")
+	@StmtFrqcyAndFrmt.setter
+	def StmtFrqcyAndFrmt(self, value):
+		self._StmtFrqcyAndFrmt = value if type(value) != auto else self.make_default("StmtFrqcyAndFrmt")
 
-	@AvrgBal.deleter
-	def AvrgBal(self):
-		del self._AvrgBal
-		self._AvrgBal = None
+	@StmtFrqcyAndFrmt.deleter
+	def StmtFrqcyAndFrmt(self):
+		del self._StmtFrqcyAndFrmt
+		self._StmtFrqcyAndFrmt = None
+
+	@property
+	def Rstrctn(self):
+		return self._Rstrctn
+
+	@Rstrctn.setter
+	def Rstrctn(self, value):
+		self._Rstrctn = value if type(value) != auto else self.make_default("Rstrctn")
+
+	@Rstrctn.deleter
+	def Rstrctn(self):
+		del self._Rstrctn
+		self._Rstrctn = None
 
 	@property
 	def MnthlyRcvdVal(self):
@@ -145,17 +145,43 @@ class CustomerAccount5(base_types._BaseFieldType):
 		self._MnthlyRcvdVal = None
 
 	@property
-	def FlrNtfctnAmt(self):
-		return self._FlrNtfctnAmt
+	def ClsgDt(self):
+		return self._ClsgDt
 
-	@FlrNtfctnAmt.setter
-	def FlrNtfctnAmt(self, value):
-		self._FlrNtfctnAmt = value if type(value) != auto else self.make_default("FlrNtfctnAmt")
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
 
-	@FlrNtfctnAmt.deleter
-	def FlrNtfctnAmt(self):
-		del self._FlrNtfctnAmt
-		self._FlrNtfctnAmt = None
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
+
+	@property
+	def AvrgBal(self):
+		return self._AvrgBal
+
+	@AvrgBal.setter
+	def AvrgBal(self, value):
+		self._AvrgBal = value if type(value) != auto else self.make_default("AvrgBal")
+
+	@AvrgBal.deleter
+	def AvrgBal(self):
+		del self._AvrgBal
+		self._AvrgBal = None
+
+	@property
+	def ClngNtfctnAmt(self):
+		return self._ClngNtfctnAmt
+
+	@ClngNtfctnAmt.setter
+	def ClngNtfctnAmt(self, value):
+		self._ClngNtfctnAmt = value if type(value) != auto else self.make_default("ClngNtfctnAmt")
+
+	@ClngNtfctnAmt.deleter
+	def ClngNtfctnAmt(self):
+		del self._ClngNtfctnAmt
+		self._ClngNtfctnAmt = None
 
 	@property
 	def MnthlyTxNb(self):
@@ -183,47 +209,21 @@ class CustomerAccount5(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
-	@property
-	def AcctPurp(self):
-		return self._AcctPurp
-
-	@AcctPurp.setter
-	def AcctPurp(self, value):
-		self._AcctPurp = value if type(value) != auto else self.make_default("AcctPurp")
-
-	@AcctPurp.deleter
-	def AcctPurp(self):
-		del self._AcctPurp
-		self._AcctPurp = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClngNtfctnAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=AccountStatus3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlrNtfctnAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MnthlyPmtVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rstrctn', type=Restriction1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctPurp', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtFrqcyAndFrmt', type=StatementFrequencyAndForm1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvrgBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtFrqcyAndFrmt', type=StatementFrequencyAndForm1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rstrctn', type=Restriction1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MnthlyRcvdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FlrNtfctnAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvrgBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClngNtfctnAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnthlyTxNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctPurp', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=AccountStatus3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

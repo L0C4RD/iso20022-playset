@@ -1,7 +1,7 @@
 import base_types
-import AdditionalInformation15
 import ISODate
 import IndividualCostOrCharge2
+import AdditionalInformation15
 
 class CostsAndCharges2(base_types._BaseFieldType):
 

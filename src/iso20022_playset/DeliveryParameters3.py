@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import NameAndAddress4
+import Max35Text
 
 class DeliveryParameters3(base_types._BaseFieldType):
 

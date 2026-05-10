@@ -3,7 +3,7 @@ import Max35Text
 
 class TransportByRoad2(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfDlvry", "_PlcOfRct", "_RoadCrrierNm"]
+	__slots__ = ["_PlcOfDlvry", "_RoadCrrierNm", "_PlcOfRct"]
 	@property
 	def PlcOfDlvry(self):
 		return self._PlcOfDlvry
@@ -18,19 +18,6 @@ class TransportByRoad2(base_types._BaseFieldType):
 		self._PlcOfDlvry = None
 
 	@property
-	def PlcOfRct(self):
-		return self._PlcOfRct
-
-	@PlcOfRct.setter
-	def PlcOfRct(self, value):
-		self._PlcOfRct = value if type(value) != auto else self.make_default("PlcOfRct")
-
-	@PlcOfRct.deleter
-	def PlcOfRct(self):
-		del self._PlcOfRct
-		self._PlcOfRct = None
-
-	@property
 	def RoadCrrierNm(self):
 		return self._RoadCrrierNm
 
@@ -43,9 +30,22 @@ class TransportByRoad2(base_types._BaseFieldType):
 		del self._RoadCrrierNm
 		self._RoadCrrierNm = None
 
+	@property
+	def PlcOfRct(self):
+		return self._PlcOfRct
+
+	@PlcOfRct.setter
+	def PlcOfRct(self, value):
+		self._PlcOfRct = value if type(value) != auto else self.make_default("PlcOfRct")
+
+	@PlcOfRct.deleter
+	def PlcOfRct(self):
+		del self._PlcOfRct
+		self._PlcOfRct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RoadCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

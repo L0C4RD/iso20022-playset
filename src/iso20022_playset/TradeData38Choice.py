@@ -1,6 +1,6 @@
 import base_types
-import ReportPeriodActivity1Code
 import CollateralMarginNew10
+import ReportPeriodActivity1Code
 
 class TradeData38Choice(base_types._BaseFieldType):
 

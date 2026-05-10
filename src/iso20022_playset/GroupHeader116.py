@@ -1,27 +1,14 @@
 import base_types
-import Pagination1
-import Max35Text
-import PartyIdentification272
 import Max500Text
 import ISODateTime
+import PartyIdentification272
+import Pagination1
+import Max35Text
 import OriginalBusinessQuery1
 
 class GroupHeader116(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRcpt", "_MsgPgntn", "_OrgnlBizQry", "_CreDtTm", "_AddtlInf", "_MsgId"]
-	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
-
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
-
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
-
+	__slots__ = ["_MsgPgntn", "_MsgId", "_MsgRcpt", "_CreDtTm", "_AddtlInf", "_OrgnlBizQry"]
 	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
@@ -36,17 +23,30 @@ class GroupHeader116(base_types._BaseFieldType):
 		self._MsgPgntn = None
 
 	@property
-	def OrgnlBizQry(self):
-		return self._OrgnlBizQry
+	def MsgId(self):
+		return self._MsgId
 
-	@OrgnlBizQry.setter
-	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@OrgnlBizQry.deleter
-	def OrgnlBizQry(self):
-		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def MsgRcpt(self):
+		return self._MsgRcpt
+
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
+
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
 
 	@property
 	def CreDtTm(self):
@@ -75,24 +75,24 @@ class GroupHeader116(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def OrgnlBizQry(self):
+		return self._OrgnlBizQry
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@OrgnlBizQry.setter
+	def OrgnlBizQry(self, value):
+		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@OrgnlBizQry.deleter
+	def OrgnlBizQry(self):
+		del self._OrgnlBizQry
+		self._OrgnlBizQry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,38 @@
 import base_types
-import Max35Text
 import ISODate
-import ContentInformationType39
 import Max2MBBinary
+import ContentInformationType39
+import Max35Text
 
 class MandateRelatedInformation17(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdMndtImg", "_MndtId", "_DtOfSgntr", "_MndtImg"]
+	__slots__ = ["_MndtImg", "_DtOfSgntr", "_PrtctdMndtImg", "_MndtId"]
+	@property
+	def MndtImg(self):
+		return self._MndtImg
+
+	@MndtImg.setter
+	def MndtImg(self, value):
+		self._MndtImg = value if type(value) != auto else self.make_default("MndtImg")
+
+	@MndtImg.deleter
+	def MndtImg(self):
+		del self._MndtImg
+		self._MndtImg = None
+
+	@property
+	def DtOfSgntr(self):
+		return self._DtOfSgntr
+
+	@DtOfSgntr.setter
+	def DtOfSgntr(self, value):
+		self._DtOfSgntr = value if type(value) != auto else self.make_default("DtOfSgntr")
+
+	@DtOfSgntr.deleter
+	def DtOfSgntr(self):
+		del self._DtOfSgntr
+		self._DtOfSgntr = None
+
 	@property
 	def PrtctdMndtImg(self):
 		return self._PrtctdMndtImg
@@ -33,36 +59,10 @@ class MandateRelatedInformation17(base_types._BaseFieldType):
 		del self._MndtId
 		self._MndtId = None
 
-	@property
-	def DtOfSgntr(self):
-		return self._DtOfSgntr
-
-	@DtOfSgntr.setter
-	def DtOfSgntr(self, value):
-		self._DtOfSgntr = value if type(value) != auto else self.make_default("DtOfSgntr")
-
-	@DtOfSgntr.deleter
-	def DtOfSgntr(self):
-		del self._DtOfSgntr
-		self._DtOfSgntr = None
-
-	@property
-	def MndtImg(self):
-		return self._MndtImg
-
-	@MndtImg.setter
-	def MndtImg(self, value):
-		self._MndtImg = value if type(value) != auto else self.make_default("MndtImg")
-
-	@MndtImg.deleter
-	def MndtImg(self):
-		del self._MndtImg
-		self._MndtImg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MndtImg', type=Max2MBBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdMndtImg', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtImg', type=Max2MBBinary, min=0, max=1, mutex_group=None, array=False),
 	))
 

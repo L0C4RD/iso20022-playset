@@ -1,51 +1,12 @@
 import base_types
 import ImpliedCurrencyAndAmount
-import ActiveCurrencyCode
 import ATMMediaType4Code
 import Number
+import ActiveCurrencyCode
 
 class ATMTotals4(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_ATMBal", "_ATMCur", "_ATMBalNb", "_ATMCurNb", "_MdiaTp"]
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def ATMBal(self):
-		return self._ATMBal
-
-	@ATMBal.setter
-	def ATMBal(self, value):
-		self._ATMBal = value if type(value) != auto else self.make_default("ATMBal")
-
-	@ATMBal.deleter
-	def ATMBal(self):
-		del self._ATMBal
-		self._ATMBal = None
-
-	@property
-	def ATMCur(self):
-		return self._ATMCur
-
-	@ATMCur.setter
-	def ATMCur(self, value):
-		self._ATMCur = value if type(value) != auto else self.make_default("ATMCur")
-
-	@ATMCur.deleter
-	def ATMCur(self):
-		del self._ATMCur
-		self._ATMCur = None
-
+	__slots__ = ["_ATMBalNb", "_ATMCurNb", "_Ccy", "_ATMCur", "_MdiaTp", "_ATMBal"]
 	@property
 	def ATMBalNb(self):
 		return self._ATMBalNb
@@ -73,6 +34,32 @@ class ATMTotals4(base_types._BaseFieldType):
 		self._ATMCurNb = None
 
 	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def ATMCur(self):
+		return self._ATMCur
+
+	@ATMCur.setter
+	def ATMCur(self, value):
+		self._ATMCur = value if type(value) != auto else self.make_default("ATMCur")
+
+	@ATMCur.deleter
+	def ATMCur(self):
+		del self._ATMCur
+		self._ATMCur = None
+
+	@property
 	def MdiaTp(self):
 		return self._MdiaTp
 
@@ -85,12 +72,25 @@ class ATMTotals4(base_types._BaseFieldType):
 		del self._MdiaTp
 		self._MdiaTp = None
 
+	@property
+	def ATMBal(self):
+		return self._ATMBal
+
+	@ATMBal.setter
+	def ATMBal(self, value):
+		self._ATMBal = value if type(value) != auto else self.make_default("ATMBal")
+
+	@ATMBal.deleter
+	def ATMBal(self):
+		del self._ATMBal
+		self._ATMBal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMCur', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMBalNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMCurNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMCur', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

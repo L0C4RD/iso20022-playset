@@ -1,7 +1,7 @@
 import base_types
 import SupplementaryData1
-import MandateAcceptance8
 import GroupHeader110
+import MandateAcceptance8
 
 class MandateAcceptanceReportV08(base_types._BaseFieldType):
 

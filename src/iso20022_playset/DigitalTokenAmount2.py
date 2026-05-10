@@ -1,6 +1,6 @@
 import base_types
-import DTI2021Identifier
 import Max30DecimalNumber
+import DTI2021Identifier
 import Max30Text
 
 class DigitalTokenAmount2(base_types._BaseFieldType):

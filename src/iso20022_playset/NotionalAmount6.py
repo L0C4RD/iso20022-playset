@@ -1,23 +1,23 @@
 import base_types
 import AmountAndDirection106
-import Schedule11
 import ActiveOrHistoricCurrencyCode
+import Schedule11
 
 class NotionalAmount6(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_SchdlPrd", "_Ccy"]
+	__slots__ = ["_Ccy", "_SchdlPrd", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def Ccy(self):
+		return self._Ccy
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def SchdlPrd(self):
@@ -33,21 +33,21 @@ class NotionalAmount6(base_types._BaseFieldType):
 		self._SchdlPrd = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Amt(self):
+		return self._Amt
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchdlPrd', type=Schedule11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchdlPrd', type=Schedule11, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 	))
 

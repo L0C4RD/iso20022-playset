@@ -1,12 +1,12 @@
 import base_types
-import Max35Text
 import Max500Text
 import Max2MBBinary
 import Max140Text
+import Max35Text
 
 class CapturedSignature1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_ImgData", "_ImgFrmt", "_ImgRef"]
+	__slots__ = ["_AddtlInf", "_ImgRef", "_ImgFrmt", "_ImgData"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -21,17 +21,17 @@ class CapturedSignature1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def ImgData(self):
-		return self._ImgData
+	def ImgRef(self):
+		return self._ImgRef
 
-	@ImgData.setter
-	def ImgData(self, value):
-		self._ImgData = value if type(value) != auto else self.make_default("ImgData")
+	@ImgRef.setter
+	def ImgRef(self, value):
+		self._ImgRef = value if type(value) != auto else self.make_default("ImgRef")
 
-	@ImgData.deleter
-	def ImgData(self):
-		del self._ImgData
-		self._ImgData = None
+	@ImgRef.deleter
+	def ImgRef(self):
+		del self._ImgRef
+		self._ImgRef = None
 
 	@property
 	def ImgFrmt(self):
@@ -47,22 +47,22 @@ class CapturedSignature1(base_types._BaseFieldType):
 		self._ImgFrmt = None
 
 	@property
-	def ImgRef(self):
-		return self._ImgRef
+	def ImgData(self):
+		return self._ImgData
 
-	@ImgRef.setter
-	def ImgRef(self, value):
-		self._ImgRef = value if type(value) != auto else self.make_default("ImgRef")
+	@ImgData.setter
+	def ImgData(self, value):
+		self._ImgData = value if type(value) != auto else self.make_default("ImgData")
 
-	@ImgRef.deleter
-	def ImgRef(self):
-		del self._ImgRef
-		self._ImgRef = None
+	@ImgData.deleter
+	def ImgData(self):
+		del self._ImgData
+		self._ImgData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ImgData', type=Max2MBBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ImgFrmt', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ImgRef', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ImgFrmt', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ImgData', type=Max2MBBinary, min=0, max=1, mutex_group=None, array=False),
 	))
 

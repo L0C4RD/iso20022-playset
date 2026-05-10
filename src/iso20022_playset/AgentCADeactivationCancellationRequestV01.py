@@ -1,23 +1,23 @@
 import base_types
-import CorporateActionInformation1
 import DocumentIdentification8
 import CorporateActionDeactivationInstruction1
+import CorporateActionInformation1
 
 class AgentCADeactivationCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_Id", "_DeactvtnInstrDtls", "_AgtCADeactvtnInstrId"]
+	__slots__ = ["_AgtCADeactvtnInstrId", "_Id", "_CorpActnGnlInf", "_DeactvtnInstrDtls"]
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def AgtCADeactvtnInstrId(self):
+		return self._AgtCADeactvtnInstrId
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+	@AgtCADeactvtnInstrId.setter
+	def AgtCADeactvtnInstrId(self, value):
+		self._AgtCADeactvtnInstrId = value if type(value) != auto else self.make_default("AgtCADeactvtnInstrId")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+	@AgtCADeactvtnInstrId.deleter
+	def AgtCADeactvtnInstrId(self):
+		del self._AgtCADeactvtnInstrId
+		self._AgtCADeactvtnInstrId = None
 
 	@property
 	def Id(self):
@@ -33,6 +33,19 @@ class AgentCADeactivationCancellationRequestV01(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
 	def DeactvtnInstrDtls(self):
 		return self._DeactvtnInstrDtls
 
@@ -45,23 +58,10 @@ class AgentCADeactivationCancellationRequestV01(base_types._BaseFieldType):
 		del self._DeactvtnInstrDtls
 		self._DeactvtnInstrDtls = None
 
-	@property
-	def AgtCADeactvtnInstrId(self):
-		return self._AgtCADeactvtnInstrId
-
-	@AgtCADeactvtnInstrId.setter
-	def AgtCADeactvtnInstrId(self, value):
-		self._AgtCADeactvtnInstrId = value if type(value) != auto else self.make_default("AgtCADeactvtnInstrId")
-
-	@AgtCADeactvtnInstrId.deleter
-	def AgtCADeactvtnInstrId(self):
-		del self._AgtCADeactvtnInstrId
-		self._AgtCADeactvtnInstrId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DeactvtnInstrDtls', type=CorporateActionDeactivationInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCADeactvtnInstrId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DeactvtnInstrDtls', type=CorporateActionDeactivationInstruction1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import PartyIdentification242Choice
+import Max35Text
 
 class NettingIdentification2Choice(base_types._BaseFieldType):
 

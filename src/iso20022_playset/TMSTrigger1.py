@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
 import ISODateTime
 import TMSContactLevel1Code
+import Max35Text
 
 class TMSTrigger1(base_types._BaseFieldType):
 

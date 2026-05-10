@@ -1,23 +1,23 @@
 import base_types
-import Extension1
-import MessageIdentification1
 import MessageAndBusinessReference10
+import MessageIdentification1
+import Extension1
 
 class RequestForOrderStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqDtls", "_Xtnsn", "_MsgId"]
+	__slots__ = ["_MsgId", "_Xtnsn", "_ReqDtls"]
 	@property
-	def ReqDtls(self):
-		return self._ReqDtls
+	def MsgId(self):
+		return self._MsgId
 
-	@ReqDtls.setter
-	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@ReqDtls.deleter
-	def ReqDtls(self):
-		del self._ReqDtls
-		self._ReqDtls = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def Xtnsn(self):
@@ -33,21 +33,21 @@ class RequestForOrderStatusReportV04(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def ReqDtls(self):
+		return self._ReqDtls
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@ReqDtls.setter
+	def ReqDtls(self, value):
+		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@ReqDtls.deleter
+	def ReqDtls(self):
+		del self._ReqDtls
+		self._ReqDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference10, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference10, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,126 +1,48 @@
 import base_types
-import LineItem13
-import BICIdentification1
-import SettlementTerms3
-import YesNoIndicator
-import PaymentTerms5
-import PaymentObligation2
-import RequiredSubmission3
-import DocumentIdentification1
-import RequiredSubmission2
-import RequiredSubmission6
-import TradeFinanceService2Code
 import DocumentIdentification7
-import PartyIdentification26
-import ISODate
+import BICIdentification1
+import TradeFinanceService2Code
+import PaymentObligation2
+import RequiredSubmission6
 import RequiredSubmission4
+import PaymentTerms5
+import LineItem13
+import YesNoIndicator
+import DocumentIdentification1
+import SettlementTerms3
+import ISODate
+import RequiredSubmission2
+import RequiredSubmission3
+import PartyIdentification26
 
 class Baseline5(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCertDataSetReqrd", "_ShipTo", "_ComrclDataSetReqrd", "_PmtTerms", "_PurchsOrdrRef", "_SvcCd", "_Consgn", "_PmtOblgtn", "_SellrBk", "_SttlmTerms", "_Goods", "_SellrSdSubmitgBk", "_BllTo", "_CertDataSetReqrd", "_SubmitrBaselnId", "_InsrncDataSetReqrd", "_Buyr", "_BuyrBk", "_LatstMtchDt", "_TrnsprtDataSetReqrd", "_BuyrSdSubmitgBk", "_Sellr", "_InttToPayXpctd"]
+	__slots__ = ["_TrnsprtDataSetReqrd", "_LatstMtchDt", "_SellrBk", "_PurchsOrdrRef", "_ShipTo", "_SellrSdSubmitgBk", "_ComrclDataSetReqrd", "_OthrCertDataSetReqrd", "_Consgn", "_InsrncDataSetReqrd", "_CertDataSetReqrd", "_Sellr", "_BllTo", "_Goods", "_Buyr", "_BuyrBk", "_InttToPayXpctd", "_SttlmTerms", "_SubmitrBaselnId", "_BuyrSdSubmitgBk", "_PmtTerms", "_SvcCd", "_PmtOblgtn"]
 	@property
-	def OthrCertDataSetReqrd(self):
-		return self._OthrCertDataSetReqrd
+	def TrnsprtDataSetReqrd(self):
+		return self._TrnsprtDataSetReqrd
 
-	@OthrCertDataSetReqrd.setter
-	def OthrCertDataSetReqrd(self, value):
-		self._OthrCertDataSetReqrd = value if type(value) != auto else self.make_default("OthrCertDataSetReqrd")
+	@TrnsprtDataSetReqrd.setter
+	def TrnsprtDataSetReqrd(self, value):
+		self._TrnsprtDataSetReqrd = value if type(value) != auto else self.make_default("TrnsprtDataSetReqrd")
 
-	@OthrCertDataSetReqrd.deleter
-	def OthrCertDataSetReqrd(self):
-		del self._OthrCertDataSetReqrd
-		self._OthrCertDataSetReqrd = None
-
-	@property
-	def ShipTo(self):
-		return self._ShipTo
-
-	@ShipTo.setter
-	def ShipTo(self, value):
-		self._ShipTo = value if type(value) != auto else self.make_default("ShipTo")
-
-	@ShipTo.deleter
-	def ShipTo(self):
-		del self._ShipTo
-		self._ShipTo = None
+	@TrnsprtDataSetReqrd.deleter
+	def TrnsprtDataSetReqrd(self):
+		del self._TrnsprtDataSetReqrd
+		self._TrnsprtDataSetReqrd = None
 
 	@property
-	def ComrclDataSetReqrd(self):
-		return self._ComrclDataSetReqrd
+	def LatstMtchDt(self):
+		return self._LatstMtchDt
 
-	@ComrclDataSetReqrd.setter
-	def ComrclDataSetReqrd(self, value):
-		self._ComrclDataSetReqrd = value if type(value) != auto else self.make_default("ComrclDataSetReqrd")
+	@LatstMtchDt.setter
+	def LatstMtchDt(self, value):
+		self._LatstMtchDt = value if type(value) != auto else self.make_default("LatstMtchDt")
 
-	@ComrclDataSetReqrd.deleter
-	def ComrclDataSetReqrd(self):
-		del self._ComrclDataSetReqrd
-		self._ComrclDataSetReqrd = None
-
-	@property
-	def PmtTerms(self):
-		return self._PmtTerms
-
-	@PmtTerms.setter
-	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
-
-	@PmtTerms.deleter
-	def PmtTerms(self):
-		del self._PmtTerms
-		self._PmtTerms = None
-
-	@property
-	def PurchsOrdrRef(self):
-		return self._PurchsOrdrRef
-
-	@PurchsOrdrRef.setter
-	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != auto else self.make_default("PurchsOrdrRef")
-
-	@PurchsOrdrRef.deleter
-	def PurchsOrdrRef(self):
-		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
-
-	@property
-	def SvcCd(self):
-		return self._SvcCd
-
-	@SvcCd.setter
-	def SvcCd(self, value):
-		self._SvcCd = value if type(value) != auto else self.make_default("SvcCd")
-
-	@SvcCd.deleter
-	def SvcCd(self):
-		del self._SvcCd
-		self._SvcCd = None
-
-	@property
-	def Consgn(self):
-		return self._Consgn
-
-	@Consgn.setter
-	def Consgn(self, value):
-		self._Consgn = value if type(value) != auto else self.make_default("Consgn")
-
-	@Consgn.deleter
-	def Consgn(self):
-		del self._Consgn
-		self._Consgn = None
-
-	@property
-	def PmtOblgtn(self):
-		return self._PmtOblgtn
-
-	@PmtOblgtn.setter
-	def PmtOblgtn(self, value):
-		self._PmtOblgtn = value if type(value) != auto else self.make_default("PmtOblgtn")
-
-	@PmtOblgtn.deleter
-	def PmtOblgtn(self):
-		del self._PmtOblgtn
-		self._PmtOblgtn = None
+	@LatstMtchDt.deleter
+	def LatstMtchDt(self):
+		del self._LatstMtchDt
+		self._LatstMtchDt = None
 
 	@property
 	def SellrBk(self):
@@ -136,30 +58,30 @@ class Baseline5(base_types._BaseFieldType):
 		self._SellrBk = None
 
 	@property
-	def SttlmTerms(self):
-		return self._SttlmTerms
+	def PurchsOrdrRef(self):
+		return self._PurchsOrdrRef
 
-	@SttlmTerms.setter
-	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != auto else self.make_default("SttlmTerms")
+	@PurchsOrdrRef.setter
+	def PurchsOrdrRef(self, value):
+		self._PurchsOrdrRef = value if type(value) != auto else self.make_default("PurchsOrdrRef")
 
-	@SttlmTerms.deleter
-	def SttlmTerms(self):
-		del self._SttlmTerms
-		self._SttlmTerms = None
+	@PurchsOrdrRef.deleter
+	def PurchsOrdrRef(self):
+		del self._PurchsOrdrRef
+		self._PurchsOrdrRef = None
 
 	@property
-	def Goods(self):
-		return self._Goods
+	def ShipTo(self):
+		return self._ShipTo
 
-	@Goods.setter
-	def Goods(self, value):
-		self._Goods = value if type(value) != auto else self.make_default("Goods")
+	@ShipTo.setter
+	def ShipTo(self, value):
+		self._ShipTo = value if type(value) != auto else self.make_default("ShipTo")
 
-	@Goods.deleter
-	def Goods(self):
-		del self._Goods
-		self._Goods = None
+	@ShipTo.deleter
+	def ShipTo(self):
+		del self._ShipTo
+		self._ShipTo = None
 
 	@property
 	def SellrSdSubmitgBk(self):
@@ -175,17 +97,56 @@ class Baseline5(base_types._BaseFieldType):
 		self._SellrSdSubmitgBk = None
 
 	@property
-	def BllTo(self):
-		return self._BllTo
+	def ComrclDataSetReqrd(self):
+		return self._ComrclDataSetReqrd
 
-	@BllTo.setter
-	def BllTo(self, value):
-		self._BllTo = value if type(value) != auto else self.make_default("BllTo")
+	@ComrclDataSetReqrd.setter
+	def ComrclDataSetReqrd(self, value):
+		self._ComrclDataSetReqrd = value if type(value) != auto else self.make_default("ComrclDataSetReqrd")
 
-	@BllTo.deleter
-	def BllTo(self):
-		del self._BllTo
-		self._BllTo = None
+	@ComrclDataSetReqrd.deleter
+	def ComrclDataSetReqrd(self):
+		del self._ComrclDataSetReqrd
+		self._ComrclDataSetReqrd = None
+
+	@property
+	def OthrCertDataSetReqrd(self):
+		return self._OthrCertDataSetReqrd
+
+	@OthrCertDataSetReqrd.setter
+	def OthrCertDataSetReqrd(self, value):
+		self._OthrCertDataSetReqrd = value if type(value) != auto else self.make_default("OthrCertDataSetReqrd")
+
+	@OthrCertDataSetReqrd.deleter
+	def OthrCertDataSetReqrd(self):
+		del self._OthrCertDataSetReqrd
+		self._OthrCertDataSetReqrd = None
+
+	@property
+	def Consgn(self):
+		return self._Consgn
+
+	@Consgn.setter
+	def Consgn(self, value):
+		self._Consgn = value if type(value) != auto else self.make_default("Consgn")
+
+	@Consgn.deleter
+	def Consgn(self):
+		del self._Consgn
+		self._Consgn = None
+
+	@property
+	def InsrncDataSetReqrd(self):
+		return self._InsrncDataSetReqrd
+
+	@InsrncDataSetReqrd.setter
+	def InsrncDataSetReqrd(self, value):
+		self._InsrncDataSetReqrd = value if type(value) != auto else self.make_default("InsrncDataSetReqrd")
+
+	@InsrncDataSetReqrd.deleter
+	def InsrncDataSetReqrd(self):
+		del self._InsrncDataSetReqrd
+		self._InsrncDataSetReqrd = None
 
 	@property
 	def CertDataSetReqrd(self):
@@ -201,30 +162,43 @@ class Baseline5(base_types._BaseFieldType):
 		self._CertDataSetReqrd = None
 
 	@property
-	def SubmitrBaselnId(self):
-		return self._SubmitrBaselnId
+	def Sellr(self):
+		return self._Sellr
 
-	@SubmitrBaselnId.setter
-	def SubmitrBaselnId(self, value):
-		self._SubmitrBaselnId = value if type(value) != auto else self.make_default("SubmitrBaselnId")
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
 
-	@SubmitrBaselnId.deleter
-	def SubmitrBaselnId(self):
-		del self._SubmitrBaselnId
-		self._SubmitrBaselnId = None
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
 
 	@property
-	def InsrncDataSetReqrd(self):
-		return self._InsrncDataSetReqrd
+	def BllTo(self):
+		return self._BllTo
 
-	@InsrncDataSetReqrd.setter
-	def InsrncDataSetReqrd(self, value):
-		self._InsrncDataSetReqrd = value if type(value) != auto else self.make_default("InsrncDataSetReqrd")
+	@BllTo.setter
+	def BllTo(self, value):
+		self._BllTo = value if type(value) != auto else self.make_default("BllTo")
 
-	@InsrncDataSetReqrd.deleter
-	def InsrncDataSetReqrd(self):
-		del self._InsrncDataSetReqrd
-		self._InsrncDataSetReqrd = None
+	@BllTo.deleter
+	def BllTo(self):
+		del self._BllTo
+		self._BllTo = None
+
+	@property
+	def Goods(self):
+		return self._Goods
+
+	@Goods.setter
+	def Goods(self, value):
+		self._Goods = value if type(value) != auto else self.make_default("Goods")
+
+	@Goods.deleter
+	def Goods(self):
+		del self._Goods
+		self._Goods = None
 
 	@property
 	def Buyr(self):
@@ -253,30 +227,43 @@ class Baseline5(base_types._BaseFieldType):
 		self._BuyrBk = None
 
 	@property
-	def LatstMtchDt(self):
-		return self._LatstMtchDt
+	def InttToPayXpctd(self):
+		return self._InttToPayXpctd
 
-	@LatstMtchDt.setter
-	def LatstMtchDt(self, value):
-		self._LatstMtchDt = value if type(value) != auto else self.make_default("LatstMtchDt")
+	@InttToPayXpctd.setter
+	def InttToPayXpctd(self, value):
+		self._InttToPayXpctd = value if type(value) != auto else self.make_default("InttToPayXpctd")
 
-	@LatstMtchDt.deleter
-	def LatstMtchDt(self):
-		del self._LatstMtchDt
-		self._LatstMtchDt = None
+	@InttToPayXpctd.deleter
+	def InttToPayXpctd(self):
+		del self._InttToPayXpctd
+		self._InttToPayXpctd = None
 
 	@property
-	def TrnsprtDataSetReqrd(self):
-		return self._TrnsprtDataSetReqrd
+	def SttlmTerms(self):
+		return self._SttlmTerms
 
-	@TrnsprtDataSetReqrd.setter
-	def TrnsprtDataSetReqrd(self, value):
-		self._TrnsprtDataSetReqrd = value if type(value) != auto else self.make_default("TrnsprtDataSetReqrd")
+	@SttlmTerms.setter
+	def SttlmTerms(self, value):
+		self._SttlmTerms = value if type(value) != auto else self.make_default("SttlmTerms")
 
-	@TrnsprtDataSetReqrd.deleter
-	def TrnsprtDataSetReqrd(self):
-		del self._TrnsprtDataSetReqrd
-		self._TrnsprtDataSetReqrd = None
+	@SttlmTerms.deleter
+	def SttlmTerms(self):
+		del self._SttlmTerms
+		self._SttlmTerms = None
+
+	@property
+	def SubmitrBaselnId(self):
+		return self._SubmitrBaselnId
+
+	@SubmitrBaselnId.setter
+	def SubmitrBaselnId(self, value):
+		self._SubmitrBaselnId = value if type(value) != auto else self.make_default("SubmitrBaselnId")
+
+	@SubmitrBaselnId.deleter
+	def SubmitrBaselnId(self):
+		del self._SubmitrBaselnId
+		self._SubmitrBaselnId = None
 
 	@property
 	def BuyrSdSubmitgBk(self):
@@ -292,54 +279,67 @@ class Baseline5(base_types._BaseFieldType):
 		self._BuyrSdSubmitgBk = None
 
 	@property
-	def Sellr(self):
-		return self._Sellr
+	def PmtTerms(self):
+		return self._PmtTerms
 
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+	@PmtTerms.setter
+	def PmtTerms(self, value):
+		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
 
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
+	@PmtTerms.deleter
+	def PmtTerms(self):
+		del self._PmtTerms
+		self._PmtTerms = None
 
 	@property
-	def InttToPayXpctd(self):
-		return self._InttToPayXpctd
+	def SvcCd(self):
+		return self._SvcCd
 
-	@InttToPayXpctd.setter
-	def InttToPayXpctd(self, value):
-		self._InttToPayXpctd = value if type(value) != auto else self.make_default("InttToPayXpctd")
+	@SvcCd.setter
+	def SvcCd(self, value):
+		self._SvcCd = value if type(value) != auto else self.make_default("SvcCd")
 
-	@InttToPayXpctd.deleter
-	def InttToPayXpctd(self):
-		del self._InttToPayXpctd
-		self._InttToPayXpctd = None
+	@SvcCd.deleter
+	def SvcCd(self):
+		del self._SvcCd
+		self._SvcCd = None
+
+	@property
+	def PmtOblgtn(self):
+		return self._PmtOblgtn
+
+	@PmtOblgtn.setter
+	def PmtOblgtn(self, value):
+		self._PmtOblgtn = value if type(value) != auto else self.make_default("PmtOblgtn")
+
+	@PmtOblgtn.deleter
+	def PmtOblgtn(self):
+		del self._PmtOblgtn
+		self._PmtOblgtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrCertDataSetReqrd', type=RequiredSubmission6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ShipTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComrclDataSetReqrd', type=RequiredSubmission2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms5, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcCd', type=TradeFinanceService2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Consgn', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtOblgtn', type=PaymentObligation2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrnsprtDataSetReqrd', type=RequiredSubmission2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LatstMtchDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTerms', type=SettlementTerms3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Goods', type=LineItem13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShipTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrSdSubmitgBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BllTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertDataSetReqrd', type=RequiredSubmission4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubmitrBaselnId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComrclDataSetReqrd', type=RequiredSubmission2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCertDataSetReqrd', type=RequiredSubmission6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Consgn', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InsrncDataSetReqrd', type=RequiredSubmission3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertDataSetReqrd', type=RequiredSubmission4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BllTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Goods', type=LineItem13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LatstMtchDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsprtDataSetReqrd', type=RequiredSubmission2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrSdSubmitgBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InttToPayXpctd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTerms', type=SettlementTerms3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrBaselnId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrSdSubmitgBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SvcCd', type=TradeFinanceService2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtOblgtn', type=PaymentObligation2, min=0, max=None, mutex_group=None, array=True),
 	))
 

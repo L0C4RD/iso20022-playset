@@ -1,6 +1,6 @@
 import base_types
-import MatchingCriteria10
 import OrganisationIdentification15Choice
+import MatchingCriteria10
 
 class ReconciliationResult10(base_types._BaseFieldType):
 

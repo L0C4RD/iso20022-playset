@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import CardDataReading10Code
+import Max35Text
 
 class CardReadingCapabilities1(base_types._BaseFieldType):
 

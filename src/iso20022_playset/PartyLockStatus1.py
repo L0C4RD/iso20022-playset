@@ -1,11 +1,11 @@
 import base_types
-import Max35Text
-import LockStatus1Code
 import ISODate
+import LockStatus1Code
+import Max35Text
 
 class PartyLockStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_LckRsn", "_VldFr", "_Sts"]
+	__slots__ = ["_LckRsn", "_Sts", "_VldFr"]
 	@property
 	def LckRsn(self):
 		return self._LckRsn
@@ -20,19 +20,6 @@ class PartyLockStatus1(base_types._BaseFieldType):
 		self._LckRsn = None
 
 	@property
-	def VldFr(self):
-		return self._VldFr
-
-	@VldFr.setter
-	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
-
-	@VldFr.deleter
-	def VldFr(self):
-		del self._VldFr
-		self._VldFr = None
-
-	@property
 	def Sts(self):
 		return self._Sts
 
@@ -45,9 +32,22 @@ class PartyLockStatus1(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def VldFr(self):
+		return self._VldFr
+
+	@VldFr.setter
+	def VldFr(self, value):
+		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+
+	@VldFr.deleter
+	def VldFr(self):
+		del self._VldFr
+		self._VldFr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LckRsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=LockStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
 import StatusReportContent14
 import HostStatus1
+import Max35Text
 
 class DiagnosisResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_POISts", "_LggdSaleId", "_HstSts"]
-	@property
-	def POISts(self):
-		return self._POISts
-
-	@POISts.setter
-	def POISts(self, value):
-		self._POISts = value if type(value) != auto else self.make_default("POISts")
-
-	@POISts.deleter
-	def POISts(self):
-		del self._POISts
-		self._POISts = None
-
+	__slots__ = ["_LggdSaleId", "_POISts", "_HstSts"]
 	@property
 	def LggdSaleId(self):
 		return self._LggdSaleId
@@ -31,6 +18,19 @@ class DiagnosisResponse7(base_types._BaseFieldType):
 	def LggdSaleId(self):
 		del self._LggdSaleId
 		self._LggdSaleId = None
+
+	@property
+	def POISts(self):
+		return self._POISts
+
+	@POISts.setter
+	def POISts(self, value):
+		self._POISts = value if type(value) != auto else self.make_default("POISts")
+
+	@POISts.deleter
+	def POISts(self):
+		del self._POISts
+		self._POISts = None
 
 	@property
 	def HstSts(self):
@@ -46,8 +46,8 @@ class DiagnosisResponse7(base_types._BaseFieldType):
 		self._HstSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POISts', type=StatusReportContent14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LggdSaleId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='POISts', type=StatusReportContent14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstSts', type=HostStatus1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,11 @@
 import base_types
-import Max35Text
-import LimitSearchCriteria7
 import LimitReturnCriteria2
+import LimitSearchCriteria7
+import Max35Text
 
 class LimitCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_NewQryNm", "_SchCrit", "_RtrCrit"]
-	@property
-	def NewQryNm(self):
-		return self._NewQryNm
-
-	@NewQryNm.setter
-	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
-
-	@NewQryNm.deleter
-	def NewQryNm(self):
-		del self._NewQryNm
-		self._NewQryNm = None
-
+	__slots__ = ["_SchCrit", "_NewQryNm", "_RtrCrit"]
 	@property
 	def SchCrit(self):
 		return self._SchCrit
@@ -31,6 +18,19 @@ class LimitCriteria7(base_types._BaseFieldType):
 	def SchCrit(self):
 		del self._SchCrit
 		self._SchCrit = None
+
+	@property
+	def NewQryNm(self):
+		return self._NewQryNm
+
+	@NewQryNm.setter
+	def NewQryNm(self, value):
+		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
+
+	@NewQryNm.deleter
+	def NewQryNm(self):
+		del self._NewQryNm
+		self._NewQryNm = None
 
 	@property
 	def RtrCrit(self):
@@ -46,8 +46,8 @@ class LimitCriteria7(base_types._BaseFieldType):
 		self._RtrCrit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=LimitSearchCriteria7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrCrit', type=LimitReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 	))
 

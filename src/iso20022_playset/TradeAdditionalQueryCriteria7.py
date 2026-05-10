@@ -1,8 +1,8 @@
 import base_types
-import TransactionOperationType6Code
 import SecuritiesTradeVenueCriteria1Choice
-import PartyNatureType1Code
 import CorporateSectorCriteria5
+import TransactionOperationType6Code
+import PartyNatureType1Code
 
 class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 

@@ -1,65 +1,26 @@
 import base_types
-import Max35Text
-import GenericIdentification177
-import PointOfInteractionCapabilities9
-import PointOfInteractionComponent17
 import Max70Text
+import PointOfInteractionComponent17
+import PointOfInteractionCapabilities9
+import GenericIdentification177
 import LocationCategory3Code
+import Max35Text
 
 class PointOfInteraction15(base_types._BaseFieldType):
 
-	__slots__ = ["_TmZone", "_SysNm", "_GrpId", "_TermnlIntgtn", "_Id", "_Cpblties", "_Cmpnt"]
+	__slots__ = ["_Cmpnt", "_Id", "_Cpblties", "_TermnlIntgtn", "_SysNm", "_TmZone", "_GrpId"]
 	@property
-	def TmZone(self):
-		return self._TmZone
+	def Cmpnt(self):
+		return self._Cmpnt
 
-	@TmZone.setter
-	def TmZone(self, value):
-		self._TmZone = value if type(value) != auto else self.make_default("TmZone")
+	@Cmpnt.setter
+	def Cmpnt(self, value):
+		self._Cmpnt = value if type(value) != auto else self.make_default("Cmpnt")
 
-	@TmZone.deleter
-	def TmZone(self):
-		del self._TmZone
-		self._TmZone = None
-
-	@property
-	def SysNm(self):
-		return self._SysNm
-
-	@SysNm.setter
-	def SysNm(self, value):
-		self._SysNm = value if type(value) != auto else self.make_default("SysNm")
-
-	@SysNm.deleter
-	def SysNm(self):
-		del self._SysNm
-		self._SysNm = None
-
-	@property
-	def GrpId(self):
-		return self._GrpId
-
-	@GrpId.setter
-	def GrpId(self, value):
-		self._GrpId = value if type(value) != auto else self.make_default("GrpId")
-
-	@GrpId.deleter
-	def GrpId(self):
-		del self._GrpId
-		self._GrpId = None
-
-	@property
-	def TermnlIntgtn(self):
-		return self._TermnlIntgtn
-
-	@TermnlIntgtn.setter
-	def TermnlIntgtn(self, value):
-		self._TermnlIntgtn = value if type(value) != auto else self.make_default("TermnlIntgtn")
-
-	@TermnlIntgtn.deleter
-	def TermnlIntgtn(self):
-		del self._TermnlIntgtn
-		self._TermnlIntgtn = None
+	@Cmpnt.deleter
+	def Cmpnt(self):
+		del self._Cmpnt
+		self._Cmpnt = None
 
 	@property
 	def Id(self):
@@ -88,25 +49,64 @@ class PointOfInteraction15(base_types._BaseFieldType):
 		self._Cpblties = None
 
 	@property
-	def Cmpnt(self):
-		return self._Cmpnt
+	def TermnlIntgtn(self):
+		return self._TermnlIntgtn
 
-	@Cmpnt.setter
-	def Cmpnt(self, value):
-		self._Cmpnt = value if type(value) != auto else self.make_default("Cmpnt")
+	@TermnlIntgtn.setter
+	def TermnlIntgtn(self, value):
+		self._TermnlIntgtn = value if type(value) != auto else self.make_default("TermnlIntgtn")
 
-	@Cmpnt.deleter
-	def Cmpnt(self):
-		del self._Cmpnt
-		self._Cmpnt = None
+	@TermnlIntgtn.deleter
+	def TermnlIntgtn(self):
+		del self._TermnlIntgtn
+		self._TermnlIntgtn = None
+
+	@property
+	def SysNm(self):
+		return self._SysNm
+
+	@SysNm.setter
+	def SysNm(self, value):
+		self._SysNm = value if type(value) != auto else self.make_default("SysNm")
+
+	@SysNm.deleter
+	def SysNm(self):
+		del self._SysNm
+		self._SysNm = None
+
+	@property
+	def TmZone(self):
+		return self._TmZone
+
+	@TmZone.setter
+	def TmZone(self, value):
+		self._TmZone = value if type(value) != auto else self.make_default("TmZone")
+
+	@TmZone.deleter
+	def TmZone(self):
+		del self._TmZone
+		self._TmZone = None
+
+	@property
+	def GrpId(self):
+		return self._GrpId
+
+	@GrpId.setter
+	def GrpId(self, value):
+		self._GrpId = value if type(value) != auto else self.make_default("GrpId")
+
+	@GrpId.deleter
+	def GrpId(self):
+		del self._GrpId
+		self._GrpId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermnlIntgtn', type=LocationCategory3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmpnt', type=PointOfInteractionComponent17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmpnt', type=PointOfInteractionComponent17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TermnlIntgtn', type=LocationCategory3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

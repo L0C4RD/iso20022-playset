@@ -1,16 +1,16 @@
 import base_types
-import OtherCollateral9
 import SecuritiesCollateral12
-import Reference17
+import Max140Text
+import ActiveCurrencyAndAmount
 import CollateralSubstitutionSequence1Code
 import CashCollateral3
 import CollateralSubstitutionType1Code
-import ActiveCurrencyAndAmount
-import Max140Text
+import Reference17
+import OtherCollateral9
 
 class CollateralSubstitution8(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSbstitnSeq", "_SbstitnRqrmnt", "_CshColl", "_StdSttlmInstrs", "_OthrColl", "_LkdRefs", "_SctiesColl", "_CollSbstitnTp"]
+	__slots__ = ["_CollSbstitnSeq", "_StdSttlmInstrs", "_LkdRefs", "_SctiesColl", "_OthrColl", "_CshColl", "_CollSbstitnTp", "_SbstitnRqrmnt"]
 	@property
 	def CollSbstitnSeq(self):
 		return self._CollSbstitnSeq
@@ -25,32 +25,6 @@ class CollateralSubstitution8(base_types._BaseFieldType):
 		self._CollSbstitnSeq = None
 
 	@property
-	def SbstitnRqrmnt(self):
-		return self._SbstitnRqrmnt
-
-	@SbstitnRqrmnt.setter
-	def SbstitnRqrmnt(self, value):
-		self._SbstitnRqrmnt = value if type(value) != auto else self.make_default("SbstitnRqrmnt")
-
-	@SbstitnRqrmnt.deleter
-	def SbstitnRqrmnt(self):
-		del self._SbstitnRqrmnt
-		self._SbstitnRqrmnt = None
-
-	@property
-	def CshColl(self):
-		return self._CshColl
-
-	@CshColl.setter
-	def CshColl(self, value):
-		self._CshColl = value if type(value) != auto else self.make_default("CshColl")
-
-	@CshColl.deleter
-	def CshColl(self):
-		del self._CshColl
-		self._CshColl = None
-
-	@property
 	def StdSttlmInstrs(self):
 		return self._StdSttlmInstrs
 
@@ -62,19 +36,6 @@ class CollateralSubstitution8(base_types._BaseFieldType):
 	def StdSttlmInstrs(self):
 		del self._StdSttlmInstrs
 		self._StdSttlmInstrs = None
-
-	@property
-	def OthrColl(self):
-		return self._OthrColl
-
-	@OthrColl.setter
-	def OthrColl(self, value):
-		self._OthrColl = value if type(value) != auto else self.make_default("OthrColl")
-
-	@OthrColl.deleter
-	def OthrColl(self):
-		del self._OthrColl
-		self._OthrColl = None
 
 	@property
 	def LkdRefs(self):
@@ -103,6 +64,32 @@ class CollateralSubstitution8(base_types._BaseFieldType):
 		self._SctiesColl = None
 
 	@property
+	def OthrColl(self):
+		return self._OthrColl
+
+	@OthrColl.setter
+	def OthrColl(self, value):
+		self._OthrColl = value if type(value) != auto else self.make_default("OthrColl")
+
+	@OthrColl.deleter
+	def OthrColl(self):
+		del self._OthrColl
+		self._OthrColl = None
+
+	@property
+	def CshColl(self):
+		return self._CshColl
+
+	@CshColl.setter
+	def CshColl(self, value):
+		self._CshColl = value if type(value) != auto else self.make_default("CshColl")
+
+	@CshColl.deleter
+	def CshColl(self):
+		del self._CshColl
+		self._CshColl = None
+
+	@property
 	def CollSbstitnTp(self):
 		return self._CollSbstitnTp
 
@@ -115,14 +102,27 @@ class CollateralSubstitution8(base_types._BaseFieldType):
 		del self._CollSbstitnTp
 		self._CollSbstitnTp = None
 
+	@property
+	def SbstitnRqrmnt(self):
+		return self._SbstitnRqrmnt
+
+	@SbstitnRqrmnt.setter
+	def SbstitnRqrmnt(self, value):
+		self._SbstitnRqrmnt = value if type(value) != auto else self.make_default("SbstitnRqrmnt")
+
+	@SbstitnRqrmnt.deleter
+	def SbstitnRqrmnt(self):
+		del self._SbstitnRqrmnt
+		self._SbstitnRqrmnt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollSbstitnSeq', type=CollateralSubstitutionSequence1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbstitnRqrmnt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshColl', type=CashCollateral3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LkdRefs', type=Reference17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshColl', type=CashCollateral3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CollSbstitnTp', type=CollateralSubstitutionType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbstitnRqrmnt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

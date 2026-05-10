@@ -1,12 +1,12 @@
 import base_types
 import SupplementaryData1
-import RecordTechnicalData2
 import Max52Text
+import RecordTechnicalData2
 import LEIIdentifier
 
 class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_TechAttrbts", "_SplmtryData", "_TxId", "_SubmitgPty", "_ExctgPty"]
+	__slots__ = ["_TechAttrbts", "_SubmitgPty", "_SplmtryData", "_TxId", "_ExctgPty"]
 	@property
 	def TechAttrbts(self):
 		return self._TechAttrbts
@@ -19,6 +19,19 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 	def TechAttrbts(self):
 		del self._TechAttrbts
 		self._TechAttrbts = None
+
+	@property
+	def SubmitgPty(self):
+		return self._SubmitgPty
+
+	@SubmitgPty.setter
+	def SubmitgPty(self, value):
+		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
+
+	@SubmitgPty.deleter
+	def SubmitgPty(self):
+		del self._SubmitgPty
+		self._SubmitgPty = None
 
 	@property
 	def SplmtryData(self):
@@ -47,19 +60,6 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def SubmitgPty(self):
-		return self._SubmitgPty
-
-	@SubmitgPty.setter
-	def SubmitgPty(self, value):
-		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
-
-	@SubmitgPty.deleter
-	def SubmitgPty(self):
-		del self._SubmitgPty
-		self._SubmitgPty = None
-
-	@property
 	def ExctgPty(self):
 		return self._ExctgPty
 
@@ -74,9 +74,9 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

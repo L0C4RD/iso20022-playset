@@ -3,20 +3,7 @@ import TradeData43
 
 class TradeReport33Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Termntn", "_Othr", "_Mod", "_Err", "_PosCmpnt", "_ValtnUpd", "_Rvv", "_Cmprssn", "_Crrctn", "_New", "_PortOut"]
-	@property
-	def Termntn(self):
-		return self._Termntn
-
-	@Termntn.setter
-	def Termntn(self, value):
-		self._Termntn = value if type(value) != auto else self.make_default("Termntn")
-
-	@Termntn.deleter
-	def Termntn(self):
-		del self._Termntn
-		self._Termntn = None
-
+	__slots__ = ["_Othr", "_Err", "_Mod", "_PosCmpnt", "_Crrctn", "_Cmprssn", "_New", "_PortOut", "_ValtnUpd", "_Termntn", "_Rvv"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -29,19 +16,6 @@ class TradeReport33Choice(base_types._BaseFieldType):
 	def Othr(self):
 		del self._Othr
 		self._Othr = None
-
-	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
 
 	@property
 	def Err(self):
@@ -57,6 +31,19 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		self._Err = None
 
 	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
+
+	@property
 	def PosCmpnt(self):
 		return self._PosCmpnt
 
@@ -70,30 +57,17 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		self._PosCmpnt = None
 
 	@property
-	def ValtnUpd(self):
-		return self._ValtnUpd
+	def Crrctn(self):
+		return self._Crrctn
 
-	@ValtnUpd.setter
-	def ValtnUpd(self, value):
-		self._ValtnUpd = value if type(value) != auto else self.make_default("ValtnUpd")
+	@Crrctn.setter
+	def Crrctn(self, value):
+		self._Crrctn = value if type(value) != auto else self.make_default("Crrctn")
 
-	@ValtnUpd.deleter
-	def ValtnUpd(self):
-		del self._ValtnUpd
-		self._ValtnUpd = None
-
-	@property
-	def Rvv(self):
-		return self._Rvv
-
-	@Rvv.setter
-	def Rvv(self, value):
-		self._Rvv = value if type(value) != auto else self.make_default("Rvv")
-
-	@Rvv.deleter
-	def Rvv(self):
-		del self._Rvv
-		self._Rvv = None
+	@Crrctn.deleter
+	def Crrctn(self):
+		del self._Crrctn
+		self._Crrctn = None
 
 	@property
 	def Cmprssn(self):
@@ -107,19 +81,6 @@ class TradeReport33Choice(base_types._BaseFieldType):
 	def Cmprssn(self):
 		del self._Cmprssn
 		self._Cmprssn = None
-
-	@property
-	def Crrctn(self):
-		return self._Crrctn
-
-	@Crrctn.setter
-	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != auto else self.make_default("Crrctn")
-
-	@Crrctn.deleter
-	def Crrctn(self):
-		del self._Crrctn
-		self._Crrctn = None
 
 	@property
 	def New(self):
@@ -147,17 +108,56 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		del self._PortOut
 		self._PortOut = None
 
+	@property
+	def ValtnUpd(self):
+		return self._ValtnUpd
+
+	@ValtnUpd.setter
+	def ValtnUpd(self, value):
+		self._ValtnUpd = value if type(value) != auto else self.make_default("ValtnUpd")
+
+	@ValtnUpd.deleter
+	def ValtnUpd(self):
+		del self._ValtnUpd
+		self._ValtnUpd = None
+
+	@property
+	def Termntn(self):
+		return self._Termntn
+
+	@Termntn.setter
+	def Termntn(self, value):
+		self._Termntn = value if type(value) != auto else self.make_default("Termntn")
+
+	@Termntn.deleter
+	def Termntn(self):
+		del self._Termntn
+		self._Termntn = None
+
+	@property
+	def Rvv(self):
+		return self._Rvv
+
+	@Rvv.setter
+	def Rvv(self, value):
+		self._Rvv = value if type(value) != auto else self.make_default("Rvv")
+
+	@Rvv.deleter
+	def Rvv(self):
+		del self._Rvv
+		self._Rvv = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Termntn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Mod', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Err', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Mod', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PosCmpnt', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ValtnUpd', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rvv', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmprssn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Crrctn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmprssn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PortOut', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ValtnUpd', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Termntn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rvv', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 	))
 

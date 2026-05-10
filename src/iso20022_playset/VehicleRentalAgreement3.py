@@ -1,86 +1,99 @@
 import base_types
-import LoyaltyProgramme5
-import ISOTime
-import Max35NumericText
-import Max4NumericText
 import TrueFalseIndicator
-import Max35Text
-import Tax41
-import Distance1
-import RentalRate2
-import Amount21
-import ISODate
-import Address2
+import Max4NumericText
 import Discount3
+import RentalRate2
+import Address2
+import Max35NumericText
 import RentalDetails3
+import ISOTime
+import LoyaltyProgramme5
+import Max35Text
+import ISODate
+import Distance1
+import Amount21
+import Tax41
 
 class VehicleRentalAgreement3(base_types._BaseFieldType):
 
-	__slots__ = ["_RntlLctn", "_RntlRate", "_LltyPrgrmm", "_Insrnc", "_Nb", "_ChckInTm", "_RntlDtls", "_ChckOutDt", "_ChckOutTm", "_Drtn", "_EstmtdTax", "_Make", "_TrvlDstnc", "_RtrLctn", "_PckpLctn", "_Clss", "_AddtlAmt", "_ChckInDt", "_RegnNb", "_DscntPrgrmm", "_Mdl", "_Adjstd"]
+	__slots__ = ["_AddtlAmt", "_PckpLctn", "_TrvlDstnc", "_EstmtdTax", "_ChckOutDt", "_Mdl", "_ChckInTm", "_Adjstd", "_RntlLctn", "_RtrLctn", "_RntlDtls", "_Nb", "_ChckOutTm", "_Drtn", "_DscntPrgrmm", "_Clss", "_Make", "_Insrnc", "_LltyPrgrmm", "_RegnNb", "_RntlRate", "_ChckInDt"]
 	@property
-	def RntlLctn(self):
-		return self._RntlLctn
+	def AddtlAmt(self):
+		return self._AddtlAmt
 
-	@RntlLctn.setter
-	def RntlLctn(self, value):
-		self._RntlLctn = value if type(value) != auto else self.make_default("RntlLctn")
+	@AddtlAmt.setter
+	def AddtlAmt(self, value):
+		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
 
-	@RntlLctn.deleter
-	def RntlLctn(self):
-		del self._RntlLctn
-		self._RntlLctn = None
-
-	@property
-	def RntlRate(self):
-		return self._RntlRate
-
-	@RntlRate.setter
-	def RntlRate(self, value):
-		self._RntlRate = value if type(value) != auto else self.make_default("RntlRate")
-
-	@RntlRate.deleter
-	def RntlRate(self):
-		del self._RntlRate
-		self._RntlRate = None
+	@AddtlAmt.deleter
+	def AddtlAmt(self):
+		del self._AddtlAmt
+		self._AddtlAmt = None
 
 	@property
-	def LltyPrgrmm(self):
-		return self._LltyPrgrmm
+	def PckpLctn(self):
+		return self._PckpLctn
 
-	@LltyPrgrmm.setter
-	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
+	@PckpLctn.setter
+	def PckpLctn(self, value):
+		self._PckpLctn = value if type(value) != auto else self.make_default("PckpLctn")
 
-	@LltyPrgrmm.deleter
-	def LltyPrgrmm(self):
-		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
-
-	@property
-	def Insrnc(self):
-		return self._Insrnc
-
-	@Insrnc.setter
-	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
-
-	@Insrnc.deleter
-	def Insrnc(self):
-		del self._Insrnc
-		self._Insrnc = None
+	@PckpLctn.deleter
+	def PckpLctn(self):
+		del self._PckpLctn
+		self._PckpLctn = None
 
 	@property
-	def Nb(self):
-		return self._Nb
+	def TrvlDstnc(self):
+		return self._TrvlDstnc
 
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
+	@TrvlDstnc.setter
+	def TrvlDstnc(self, value):
+		self._TrvlDstnc = value if type(value) != auto else self.make_default("TrvlDstnc")
 
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
+	@TrvlDstnc.deleter
+	def TrvlDstnc(self):
+		del self._TrvlDstnc
+		self._TrvlDstnc = None
+
+	@property
+	def EstmtdTax(self):
+		return self._EstmtdTax
+
+	@EstmtdTax.setter
+	def EstmtdTax(self, value):
+		self._EstmtdTax = value if type(value) != auto else self.make_default("EstmtdTax")
+
+	@EstmtdTax.deleter
+	def EstmtdTax(self):
+		del self._EstmtdTax
+		self._EstmtdTax = None
+
+	@property
+	def ChckOutDt(self):
+		return self._ChckOutDt
+
+	@ChckOutDt.setter
+	def ChckOutDt(self, value):
+		self._ChckOutDt = value if type(value) != auto else self.make_default("ChckOutDt")
+
+	@ChckOutDt.deleter
+	def ChckOutDt(self):
+		del self._ChckOutDt
+		self._ChckOutDt = None
+
+	@property
+	def Mdl(self):
+		return self._Mdl
+
+	@Mdl.setter
+	def Mdl(self, value):
+		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
+
+	@Mdl.deleter
+	def Mdl(self):
+		del self._Mdl
+		self._Mdl = None
 
 	@property
 	def ChckInTm(self):
@@ -96,6 +109,45 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 		self._ChckInTm = None
 
 	@property
+	def Adjstd(self):
+		return self._Adjstd
+
+	@Adjstd.setter
+	def Adjstd(self, value):
+		self._Adjstd = value if type(value) != auto else self.make_default("Adjstd")
+
+	@Adjstd.deleter
+	def Adjstd(self):
+		del self._Adjstd
+		self._Adjstd = None
+
+	@property
+	def RntlLctn(self):
+		return self._RntlLctn
+
+	@RntlLctn.setter
+	def RntlLctn(self, value):
+		self._RntlLctn = value if type(value) != auto else self.make_default("RntlLctn")
+
+	@RntlLctn.deleter
+	def RntlLctn(self):
+		del self._RntlLctn
+		self._RntlLctn = None
+
+	@property
+	def RtrLctn(self):
+		return self._RtrLctn
+
+	@RtrLctn.setter
+	def RtrLctn(self, value):
+		self._RtrLctn = value if type(value) != auto else self.make_default("RtrLctn")
+
+	@RtrLctn.deleter
+	def RtrLctn(self):
+		del self._RtrLctn
+		self._RtrLctn = None
+
+	@property
 	def RntlDtls(self):
 		return self._RntlDtls
 
@@ -109,17 +161,17 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 		self._RntlDtls = None
 
 	@property
-	def ChckOutDt(self):
-		return self._ChckOutDt
+	def Nb(self):
+		return self._Nb
 
-	@ChckOutDt.setter
-	def ChckOutDt(self, value):
-		self._ChckOutDt = value if type(value) != auto else self.make_default("ChckOutDt")
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != auto else self.make_default("Nb")
 
-	@ChckOutDt.deleter
-	def ChckOutDt(self):
-		del self._ChckOutDt
-		self._ChckOutDt = None
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
 
 	@property
 	def ChckOutTm(self):
@@ -148,69 +200,17 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 		self._Drtn = None
 
 	@property
-	def EstmtdTax(self):
-		return self._EstmtdTax
+	def DscntPrgrmm(self):
+		return self._DscntPrgrmm
 
-	@EstmtdTax.setter
-	def EstmtdTax(self, value):
-		self._EstmtdTax = value if type(value) != auto else self.make_default("EstmtdTax")
+	@DscntPrgrmm.setter
+	def DscntPrgrmm(self, value):
+		self._DscntPrgrmm = value if type(value) != auto else self.make_default("DscntPrgrmm")
 
-	@EstmtdTax.deleter
-	def EstmtdTax(self):
-		del self._EstmtdTax
-		self._EstmtdTax = None
-
-	@property
-	def Make(self):
-		return self._Make
-
-	@Make.setter
-	def Make(self, value):
-		self._Make = value if type(value) != auto else self.make_default("Make")
-
-	@Make.deleter
-	def Make(self):
-		del self._Make
-		self._Make = None
-
-	@property
-	def TrvlDstnc(self):
-		return self._TrvlDstnc
-
-	@TrvlDstnc.setter
-	def TrvlDstnc(self, value):
-		self._TrvlDstnc = value if type(value) != auto else self.make_default("TrvlDstnc")
-
-	@TrvlDstnc.deleter
-	def TrvlDstnc(self):
-		del self._TrvlDstnc
-		self._TrvlDstnc = None
-
-	@property
-	def RtrLctn(self):
-		return self._RtrLctn
-
-	@RtrLctn.setter
-	def RtrLctn(self, value):
-		self._RtrLctn = value if type(value) != auto else self.make_default("RtrLctn")
-
-	@RtrLctn.deleter
-	def RtrLctn(self):
-		del self._RtrLctn
-		self._RtrLctn = None
-
-	@property
-	def PckpLctn(self):
-		return self._PckpLctn
-
-	@PckpLctn.setter
-	def PckpLctn(self, value):
-		self._PckpLctn = value if type(value) != auto else self.make_default("PckpLctn")
-
-	@PckpLctn.deleter
-	def PckpLctn(self):
-		del self._PckpLctn
-		self._PckpLctn = None
+	@DscntPrgrmm.deleter
+	def DscntPrgrmm(self):
+		del self._DscntPrgrmm
+		self._DscntPrgrmm = None
 
 	@property
 	def Clss(self):
@@ -226,30 +226,43 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 		self._Clss = None
 
 	@property
-	def AddtlAmt(self):
-		return self._AddtlAmt
+	def Make(self):
+		return self._Make
 
-	@AddtlAmt.setter
-	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
+	@Make.setter
+	def Make(self, value):
+		self._Make = value if type(value) != auto else self.make_default("Make")
 
-	@AddtlAmt.deleter
-	def AddtlAmt(self):
-		del self._AddtlAmt
-		self._AddtlAmt = None
+	@Make.deleter
+	def Make(self):
+		del self._Make
+		self._Make = None
 
 	@property
-	def ChckInDt(self):
-		return self._ChckInDt
+	def Insrnc(self):
+		return self._Insrnc
 
-	@ChckInDt.setter
-	def ChckInDt(self, value):
-		self._ChckInDt = value if type(value) != auto else self.make_default("ChckInDt")
+	@Insrnc.setter
+	def Insrnc(self, value):
+		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
 
-	@ChckInDt.deleter
-	def ChckInDt(self):
-		del self._ChckInDt
-		self._ChckInDt = None
+	@Insrnc.deleter
+	def Insrnc(self):
+		del self._Insrnc
+		self._Insrnc = None
+
+	@property
+	def LltyPrgrmm(self):
+		return self._LltyPrgrmm
+
+	@LltyPrgrmm.setter
+	def LltyPrgrmm(self, value):
+		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
+
+	@LltyPrgrmm.deleter
+	def LltyPrgrmm(self):
+		del self._LltyPrgrmm
+		self._LltyPrgrmm = None
 
 	@property
 	def RegnNb(self):
@@ -265,66 +278,53 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 		self._RegnNb = None
 
 	@property
-	def DscntPrgrmm(self):
-		return self._DscntPrgrmm
+	def RntlRate(self):
+		return self._RntlRate
 
-	@DscntPrgrmm.setter
-	def DscntPrgrmm(self, value):
-		self._DscntPrgrmm = value if type(value) != auto else self.make_default("DscntPrgrmm")
+	@RntlRate.setter
+	def RntlRate(self, value):
+		self._RntlRate = value if type(value) != auto else self.make_default("RntlRate")
 
-	@DscntPrgrmm.deleter
-	def DscntPrgrmm(self):
-		del self._DscntPrgrmm
-		self._DscntPrgrmm = None
-
-	@property
-	def Mdl(self):
-		return self._Mdl
-
-	@Mdl.setter
-	def Mdl(self, value):
-		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
-
-	@Mdl.deleter
-	def Mdl(self):
-		del self._Mdl
-		self._Mdl = None
+	@RntlRate.deleter
+	def RntlRate(self):
+		del self._RntlRate
+		self._RntlRate = None
 
 	@property
-	def Adjstd(self):
-		return self._Adjstd
+	def ChckInDt(self):
+		return self._ChckInDt
 
-	@Adjstd.setter
-	def Adjstd(self, value):
-		self._Adjstd = value if type(value) != auto else self.make_default("Adjstd")
+	@ChckInDt.setter
+	def ChckInDt(self, value):
+		self._ChckInDt = value if type(value) != auto else self.make_default("ChckInDt")
 
-	@Adjstd.deleter
-	def Adjstd(self):
-		del self._Adjstd
-		self._Adjstd = None
+	@ChckInDt.deleter
+	def ChckInDt(self):
+		del self._ChckInDt
+		self._ChckInDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RntlLctn', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RntlRate', type=RentalRate2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckInTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RntlDtls', type=RentalDetails3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlAmt', type=Amount21, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PckpLctn', type=Address2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrvlDstnc', type=Distance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdTax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ChckOutDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mdl', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckInTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntlLctn', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrLctn', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntlDtls', type=RentalDetails3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChckOutTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdTax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Make', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrvlDstnc', type=Distance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrLctn', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PckpLctn', type=Address2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Clss', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlAmt', type=Amount21, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ChckInDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscntPrgrmm', type=Discount3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Mdl', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adjstd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clss', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Make', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntlRate', type=RentalRate2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ChckInDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

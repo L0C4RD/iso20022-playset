@@ -1,25 +1,12 @@
 import base_types
-import ActiveCurrencyAndAmount
-import Max35Text
 import ISODate
 import ReferredDocumentType1
+import ActiveCurrencyAndAmount
+import Max35Text
 
 class ReferredDocumentInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdDt", "_DocAmt", "_Tp", "_DocNb"]
-	@property
-	def RltdDt(self):
-		return self._RltdDt
-
-	@RltdDt.setter
-	def RltdDt(self, value):
-		self._RltdDt = value if type(value) != auto else self.make_default("RltdDt")
-
-	@RltdDt.deleter
-	def RltdDt(self):
-		del self._RltdDt
-		self._RltdDt = None
-
+	__slots__ = ["_DocAmt", "_Tp", "_DocNb", "_RltdDt"]
 	@property
 	def DocAmt(self):
 		return self._DocAmt
@@ -59,10 +46,23 @@ class ReferredDocumentInformation2(base_types._BaseFieldType):
 		del self._DocNb
 		self._DocNb = None
 
+	@property
+	def RltdDt(self):
+		return self._RltdDt
+
+	@RltdDt.setter
+	def RltdDt(self, value):
+		self._RltdDt = value if type(value) != auto else self.make_default("RltdDt")
+
+	@RltdDt.deleter
+	def RltdDt(self):
+		del self._RltdDt
+		self._RltdDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReferredDocumentType1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

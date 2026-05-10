@@ -1,6 +1,6 @@
 import base_types
-import VoteInstruction6Code
 import GenericIdentification30
+import VoteInstruction6Code
 
 class VoteInstructionType1Choice(base_types._BaseFieldType):
 

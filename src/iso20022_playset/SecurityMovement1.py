@@ -1,25 +1,12 @@
 import base_types
-import SecurityIdentification7
-import Max35Text
-import SecuritiesAccount12
 import UnitOrFaceAmount1Choice
+import SecurityIdentification7
+import SecuritiesAccount12
+import Max35Text
 
 class SecurityMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyId", "_MvmntId", "_SctiesQty", "_AcctDtls"]
-	@property
-	def SctyId(self):
-		return self._SctyId
-
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
-
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
-
+	__slots__ = ["_MvmntId", "_AcctDtls", "_SctyId", "_SctiesQty"]
 	@property
 	def MvmntId(self):
 		return self._MvmntId
@@ -34,19 +21,6 @@ class SecurityMovement1(base_types._BaseFieldType):
 		self._MvmntId = None
 
 	@property
-	def SctiesQty(self):
-		return self._SctiesQty
-
-	@SctiesQty.setter
-	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
-
-	@SctiesQty.deleter
-	def SctiesQty(self):
-		del self._SctiesQty
-		self._SctiesQty = None
-
-	@property
 	def AcctDtls(self):
 		return self._AcctDtls
 
@@ -59,10 +33,36 @@ class SecurityMovement1(base_types._BaseFieldType):
 		del self._AcctDtls
 		self._AcctDtls = None
 
+	@property
+	def SctyId(self):
+		return self._SctyId
+
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
+
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
+
+	@property
+	def SctiesQty(self):
+		return self._SctiesQty
+
+	@SctiesQty.setter
+	def SctiesQty(self, value):
+		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+
+	@SctiesQty.deleter
+	def SctiesQty(self):
+		del self._SctiesQty
+		self._SctiesQty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount12, min=1, max=2, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

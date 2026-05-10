@@ -1,24 +1,24 @@
 import base_types
-import GenericIdentification165
-import ContractSize1
 import PhysicalTransferType4Code
+import ContractSize1
 import ActiveCurrencyCode
+import GenericIdentification165
 
 class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryTp", "_PricCcy", "_UndrlygId", "_CtrctSz"]
+	__slots__ = ["_CtrctSz", "_PricCcy", "_DlvryTp", "_UndrlygId"]
 	@property
-	def DlvryTp(self):
-		return self._DlvryTp
+	def CtrctSz(self):
+		return self._CtrctSz
 
-	@DlvryTp.setter
-	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != auto else self.make_default("DlvryTp")
+	@CtrctSz.setter
+	def CtrctSz(self, value):
+		self._CtrctSz = value if type(value) != auto else self.make_default("CtrctSz")
 
-	@DlvryTp.deleter
-	def DlvryTp(self):
-		del self._DlvryTp
-		self._DlvryTp = None
+	@CtrctSz.deleter
+	def CtrctSz(self):
+		del self._CtrctSz
+		self._CtrctSz = None
 
 	@property
 	def PricCcy(self):
@@ -34,6 +34,19 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 		self._PricCcy = None
 
 	@property
+	def DlvryTp(self):
+		return self._DlvryTp
+
+	@DlvryTp.setter
+	def DlvryTp(self, value):
+		self._DlvryTp = value if type(value) != auto else self.make_default("DlvryTp")
+
+	@DlvryTp.deleter
+	def DlvryTp(self):
+		del self._DlvryTp
+		self._DlvryTp = None
+
+	@property
 	def UndrlygId(self):
 		return self._UndrlygId
 
@@ -46,23 +59,10 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 		del self._UndrlygId
 		self._UndrlygId = None
 
-	@property
-	def CtrctSz(self):
-		return self._CtrctSz
-
-	@CtrctSz.setter
-	def CtrctSz(self, value):
-		self._CtrctSz = value if type(value) != auto else self.make_default("CtrctSz")
-
-	@CtrctSz.deleter
-	def CtrctSz(self):
-		del self._CtrctSz
-		self._CtrctSz = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctSz', type=ContractSize1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 	))
 

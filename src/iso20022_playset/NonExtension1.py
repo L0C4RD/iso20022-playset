@@ -1,39 +1,13 @@
 import base_types
-import PartyType1Choice
-import CommunicationMethod1Choice
-import Number
 import PostalAddress6
+import Number
+import CommunicationMethod1Choice
 import Max140Text
+import PartyType1Choice
 
 class NonExtension1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnPrd", "_NtfctnMtd", "_NtfctnRcptTp", "_NtfctnRcptNm", "_NtfctnRcptAdr"]
-	@property
-	def NtfctnPrd(self):
-		return self._NtfctnPrd
-
-	@NtfctnPrd.setter
-	def NtfctnPrd(self, value):
-		self._NtfctnPrd = value if type(value) != auto else self.make_default("NtfctnPrd")
-
-	@NtfctnPrd.deleter
-	def NtfctnPrd(self):
-		del self._NtfctnPrd
-		self._NtfctnPrd = None
-
-	@property
-	def NtfctnMtd(self):
-		return self._NtfctnMtd
-
-	@NtfctnMtd.setter
-	def NtfctnMtd(self, value):
-		self._NtfctnMtd = value if type(value) != auto else self.make_default("NtfctnMtd")
-
-	@NtfctnMtd.deleter
-	def NtfctnMtd(self):
-		del self._NtfctnMtd
-		self._NtfctnMtd = None
-
+	__slots__ = ["_NtfctnRcptTp", "_NtfctnRcptNm", "_NtfctnRcptAdr", "_NtfctnMtd", "_NtfctnPrd"]
 	@property
 	def NtfctnRcptTp(self):
 		return self._NtfctnRcptTp
@@ -73,11 +47,37 @@ class NonExtension1(base_types._BaseFieldType):
 		del self._NtfctnRcptAdr
 		self._NtfctnRcptAdr = None
 
+	@property
+	def NtfctnMtd(self):
+		return self._NtfctnMtd
+
+	@NtfctnMtd.setter
+	def NtfctnMtd(self, value):
+		self._NtfctnMtd = value if type(value) != auto else self.make_default("NtfctnMtd")
+
+	@NtfctnMtd.deleter
+	def NtfctnMtd(self):
+		del self._NtfctnMtd
+		self._NtfctnMtd = None
+
+	@property
+	def NtfctnPrd(self):
+		return self._NtfctnPrd
+
+	@NtfctnPrd.setter
+	def NtfctnPrd(self, value):
+		self._NtfctnPrd = value if type(value) != auto else self.make_default("NtfctnPrd")
+
+	@NtfctnPrd.deleter
+	def NtfctnPrd(self):
+		del self._NtfctnPrd
+		self._NtfctnPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnMtd', type=CommunicationMethod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcptTp', type=PartyType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcptNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcptAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnMtd', type=CommunicationMethod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

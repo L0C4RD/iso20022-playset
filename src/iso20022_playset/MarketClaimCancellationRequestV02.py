@@ -1,13 +1,26 @@
 import base_types
 import DocumentIdentification9
-import CorporateActionGeneralInformation181
 import AccountIdentification70
 import SupplementaryData1
 import References26
+import CorporateActionGeneralInformation181
 
 class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxRef", "_AcctDtls", "_MktClmCreId", "_CorpActnGnlInf"]
+	__slots__ = ["_TxRef", "_SplmtryData", "_CorpActnGnlInf", "_AcctDtls", "_MktClmCreId"]
+	@property
+	def TxRef(self):
+		return self._TxRef
+
+	@TxRef.setter
+	def TxRef(self, value):
+		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
+
+	@TxRef.deleter
+	def TxRef(self):
+		del self._TxRef
+		self._TxRef = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -22,17 +35,17 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def TxRef(self):
-		return self._TxRef
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@TxRef.setter
-	def TxRef(self, value):
-		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
 
-	@TxRef.deleter
-	def TxRef(self):
-		del self._TxRef
-		self._TxRef = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	@property
 	def AcctDtls(self):
@@ -60,24 +73,11 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 		del self._MktClmCreId
 		self._MktClmCreId = None
 
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmCreId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
 	))
 

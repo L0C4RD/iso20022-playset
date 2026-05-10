@@ -1,13 +1,13 @@
 import base_types
 import ActiveCurrencyCode
-import AccountIdentification4Choice
-import PartyIdentification136
-import LimitType4Code
 import SystemPartyIdentification8
+import AccountIdentification4Choice
+import LimitType4Code
+import PartyIdentification136
 
 class LimitIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_BilLmtCtrPtyId", "_LmtCcy", "_AcctOwnr", "_AcctId", "_Tp"]
+	__slots__ = ["_BilLmtCtrPtyId", "_AcctOwnr", "_LmtCcy", "_AcctId", "_Tp"]
 	@property
 	def BilLmtCtrPtyId(self):
 		return self._BilLmtCtrPtyId
@@ -22,19 +22,6 @@ class LimitIdentification7(base_types._BaseFieldType):
 		self._BilLmtCtrPtyId = None
 
 	@property
-	def LmtCcy(self):
-		return self._LmtCcy
-
-	@LmtCcy.setter
-	def LmtCcy(self, value):
-		self._LmtCcy = value if type(value) != auto else self.make_default("LmtCcy")
-
-	@LmtCcy.deleter
-	def LmtCcy(self):
-		del self._LmtCcy
-		self._LmtCcy = None
-
-	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
 
@@ -46,6 +33,19 @@ class LimitIdentification7(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
+
+	@property
+	def LmtCcy(self):
+		return self._LmtCcy
+
+	@LmtCcy.setter
+	def LmtCcy(self, value):
+		self._LmtCcy = value if type(value) != auto else self.make_default("LmtCcy")
+
+	@LmtCcy.deleter
+	def LmtCcy(self):
+		del self._LmtCcy
+		self._LmtCcy = None
 
 	@property
 	def AcctId(self):
@@ -75,8 +75,8 @@ class LimitIdentification7(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BilLmtCtrPtyId', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=LimitType4Code, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,8 +1,8 @@
 import base_types
-import Adjustment13
-import Max35Text
 import SaleItem4
+import Adjustment13
 import LoyaltyProgramme4
+import Max35Text
 
 class Sale3(base_types._BaseFieldType):
 

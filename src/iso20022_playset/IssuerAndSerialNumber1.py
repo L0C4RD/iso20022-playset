@@ -1,6 +1,6 @@
 import base_types
-import Max35Binary
 import CertificateIssuer1
+import Max35Binary
 
 class IssuerAndSerialNumber1(base_types._BaseFieldType):
 

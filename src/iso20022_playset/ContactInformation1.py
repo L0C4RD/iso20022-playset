@@ -1,23 +1,23 @@
 import base_types
-import PhoneNumber
 import Max350Text
 import Max256Text
+import PhoneNumber
 
 class ContactInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_TelNb", "_FaxNb", "_EmailAdr"]
+	__slots__ = ["_FaxNb", "_TelNb", "_EmailAdr", "_Nm"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def FaxNb(self):
+		return self._FaxNb
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@FaxNb.setter
+	def FaxNb(self, value):
+		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@FaxNb.deleter
+	def FaxNb(self):
+		del self._FaxNb
+		self._FaxNb = None
 
 	@property
 	def TelNb(self):
@@ -33,19 +33,6 @@ class ContactInformation1(base_types._BaseFieldType):
 		self._TelNb = None
 
 	@property
-	def FaxNb(self):
-		return self._FaxNb
-
-	@FaxNb.setter
-	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
-
-	@FaxNb.deleter
-	def FaxNb(self):
-		del self._FaxNb
-		self._FaxNb = None
-
-	@property
 	def EmailAdr(self):
 		return self._EmailAdr
 
@@ -58,10 +45,23 @@ class ContactInformation1(base_types._BaseFieldType):
 		del self._EmailAdr
 		self._EmailAdr = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TelNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TelNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

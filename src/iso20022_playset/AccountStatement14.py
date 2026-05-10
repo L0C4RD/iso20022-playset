@@ -1,114 +1,23 @@
 import base_types
-import DateTimePeriod1
-import ReportingSource1Choice
-import CashAccount40
-import ISODateTime
-import SequenceRange1Choice
-import CopyDuplicate1Code
-import TotalTransactions6
-import Max35Text
-import Pagination1
-import CashAccount43
-import CashBalance8
-import AccountInterest4
-import Number
 import Max500Text
+import ISODateTime
+import AccountInterest4
+import Pagination1
+import ReportingSource1Choice
+import CashBalance8
+import CopyDuplicate1Code
 import ReportEntry15
+import CashAccount40
+import SequenceRange1Choice
+import DateTimePeriod1
+import Number
+import Max35Text
+import CashAccount43
+import TotalTransactions6
 
 class AccountStatement14(base_types._BaseFieldType):
 
-	__slots__ = ["_CpyDplctInd", "_TxsSummry", "_RptgSrc", "_RptgSeq", "_AddtlStmtInf", "_LglSeqNb", "_Id", "_RltdAcct", "_Intrst", "_Bal", "_FrToDt", "_StmtPgntn", "_Acct", "_CreDtTm", "_ElctrncSeqNb", "_Ntry"]
-	@property
-	def CpyDplctInd(self):
-		return self._CpyDplctInd
-
-	@CpyDplctInd.setter
-	def CpyDplctInd(self, value):
-		self._CpyDplctInd = value if type(value) != auto else self.make_default("CpyDplctInd")
-
-	@CpyDplctInd.deleter
-	def CpyDplctInd(self):
-		del self._CpyDplctInd
-		self._CpyDplctInd = None
-
-	@property
-	def TxsSummry(self):
-		return self._TxsSummry
-
-	@TxsSummry.setter
-	def TxsSummry(self, value):
-		self._TxsSummry = value if type(value) != auto else self.make_default("TxsSummry")
-
-	@TxsSummry.deleter
-	def TxsSummry(self):
-		del self._TxsSummry
-		self._TxsSummry = None
-
-	@property
-	def RptgSrc(self):
-		return self._RptgSrc
-
-	@RptgSrc.setter
-	def RptgSrc(self, value):
-		self._RptgSrc = value if type(value) != auto else self.make_default("RptgSrc")
-
-	@RptgSrc.deleter
-	def RptgSrc(self):
-		del self._RptgSrc
-		self._RptgSrc = None
-
-	@property
-	def RptgSeq(self):
-		return self._RptgSeq
-
-	@RptgSeq.setter
-	def RptgSeq(self, value):
-		self._RptgSeq = value if type(value) != auto else self.make_default("RptgSeq")
-
-	@RptgSeq.deleter
-	def RptgSeq(self):
-		del self._RptgSeq
-		self._RptgSeq = None
-
-	@property
-	def AddtlStmtInf(self):
-		return self._AddtlStmtInf
-
-	@AddtlStmtInf.setter
-	def AddtlStmtInf(self, value):
-		self._AddtlStmtInf = value if type(value) != auto else self.make_default("AddtlStmtInf")
-
-	@AddtlStmtInf.deleter
-	def AddtlStmtInf(self):
-		del self._AddtlStmtInf
-		self._AddtlStmtInf = None
-
-	@property
-	def LglSeqNb(self):
-		return self._LglSeqNb
-
-	@LglSeqNb.setter
-	def LglSeqNb(self, value):
-		self._LglSeqNb = value if type(value) != auto else self.make_default("LglSeqNb")
-
-	@LglSeqNb.deleter
-	def LglSeqNb(self):
-		del self._LglSeqNb
-		self._LglSeqNb = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_RltdAcct", "_Intrst", "_Id", "_Ntry", "_Acct", "_CpyDplctInd", "_StmtPgntn", "_LglSeqNb", "_CreDtTm", "_TxsSummry", "_RptgSeq", "_ElctrncSeqNb", "_FrToDt", "_RptgSrc", "_Bal", "_AddtlStmtInf"]
 	@property
 	def RltdAcct(self):
 		return self._RltdAcct
@@ -136,43 +45,30 @@ class AccountStatement14(base_types._BaseFieldType):
 		self._Intrst = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def Id(self):
+		return self._Id
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
-
-	@property
-	def FrToDt(self):
-		return self._FrToDt
-
-	@FrToDt.setter
-	def FrToDt(self, value):
-		self._FrToDt = value if type(value) != auto else self.make_default("FrToDt")
-
-	@FrToDt.deleter
-	def FrToDt(self):
-		del self._FrToDt
-		self._FrToDt = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
-	def StmtPgntn(self):
-		return self._StmtPgntn
+	def Ntry(self):
+		return self._Ntry
 
-	@StmtPgntn.setter
-	def StmtPgntn(self, value):
-		self._StmtPgntn = value if type(value) != auto else self.make_default("StmtPgntn")
+	@Ntry.setter
+	def Ntry(self, value):
+		self._Ntry = value if type(value) != auto else self.make_default("Ntry")
 
-	@StmtPgntn.deleter
-	def StmtPgntn(self):
-		del self._StmtPgntn
-		self._StmtPgntn = None
+	@Ntry.deleter
+	def Ntry(self):
+		del self._Ntry
+		self._Ntry = None
 
 	@property
 	def Acct(self):
@@ -188,6 +84,45 @@ class AccountStatement14(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
+	def CpyDplctInd(self):
+		return self._CpyDplctInd
+
+	@CpyDplctInd.setter
+	def CpyDplctInd(self, value):
+		self._CpyDplctInd = value if type(value) != auto else self.make_default("CpyDplctInd")
+
+	@CpyDplctInd.deleter
+	def CpyDplctInd(self):
+		del self._CpyDplctInd
+		self._CpyDplctInd = None
+
+	@property
+	def StmtPgntn(self):
+		return self._StmtPgntn
+
+	@StmtPgntn.setter
+	def StmtPgntn(self, value):
+		self._StmtPgntn = value if type(value) != auto else self.make_default("StmtPgntn")
+
+	@StmtPgntn.deleter
+	def StmtPgntn(self):
+		del self._StmtPgntn
+		self._StmtPgntn = None
+
+	@property
+	def LglSeqNb(self):
+		return self._LglSeqNb
+
+	@LglSeqNb.setter
+	def LglSeqNb(self, value):
+		self._LglSeqNb = value if type(value) != auto else self.make_default("LglSeqNb")
+
+	@LglSeqNb.deleter
+	def LglSeqNb(self):
+		del self._LglSeqNb
+		self._LglSeqNb = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -199,6 +134,32 @@ class AccountStatement14(base_types._BaseFieldType):
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
+
+	@property
+	def TxsSummry(self):
+		return self._TxsSummry
+
+	@TxsSummry.setter
+	def TxsSummry(self, value):
+		self._TxsSummry = value if type(value) != auto else self.make_default("TxsSummry")
+
+	@TxsSummry.deleter
+	def TxsSummry(self):
+		del self._TxsSummry
+		self._TxsSummry = None
+
+	@property
+	def RptgSeq(self):
+		return self._RptgSeq
+
+	@RptgSeq.setter
+	def RptgSeq(self, value):
+		self._RptgSeq = value if type(value) != auto else self.make_default("RptgSeq")
+
+	@RptgSeq.deleter
+	def RptgSeq(self):
+		del self._RptgSeq
+		self._RptgSeq = None
 
 	@property
 	def ElctrncSeqNb(self):
@@ -214,34 +175,73 @@ class AccountStatement14(base_types._BaseFieldType):
 		self._ElctrncSeqNb = None
 
 	@property
-	def Ntry(self):
-		return self._Ntry
+	def FrToDt(self):
+		return self._FrToDt
 
-	@Ntry.setter
-	def Ntry(self, value):
-		self._Ntry = value if type(value) != auto else self.make_default("Ntry")
+	@FrToDt.setter
+	def FrToDt(self, value):
+		self._FrToDt = value if type(value) != auto else self.make_default("FrToDt")
 
-	@Ntry.deleter
-	def Ntry(self):
-		del self._Ntry
-		self._Ntry = None
+	@FrToDt.deleter
+	def FrToDt(self):
+		del self._FrToDt
+		self._FrToDt = None
+
+	@property
+	def RptgSrc(self):
+		return self._RptgSrc
+
+	@RptgSrc.setter
+	def RptgSrc(self, value):
+		self._RptgSrc = value if type(value) != auto else self.make_default("RptgSrc")
+
+	@RptgSrc.deleter
+	def RptgSrc(self):
+		del self._RptgSrc
+		self._RptgSrc = None
+
+	@property
+	def Bal(self):
+		return self._Bal
+
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
+
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
+
+	@property
+	def AddtlStmtInf(self):
+		return self._AddtlStmtInf
+
+	@AddtlStmtInf.setter
+	def AddtlStmtInf(self, value):
+		self._AddtlStmtInf = value if type(value) != auto else self.make_default("AddtlStmtInf")
+
+	@AddtlStmtInf.deleter
+	def AddtlStmtInf(self):
+		del self._AddtlStmtInf
+		self._AddtlStmtInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CpyDplctInd', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxsSummry', type=TotalTransactions6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgSrc', type=ReportingSource1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgSeq', type=SequenceRange1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlStmtInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrst', type=AccountInterest4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Bal', type=CashBalance8, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FrToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctrncSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntry', type=ReportEntry15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Acct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDplctInd', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxsSummry', type=TotalTransactions6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgSeq', type=SequenceRange1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctrncSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgSrc', type=ReportingSource1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=CashBalance8, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlStmtInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

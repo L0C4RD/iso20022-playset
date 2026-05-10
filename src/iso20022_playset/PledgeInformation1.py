@@ -1,25 +1,12 @@
 import base_types
-import ThirdPartyIdentification1
 import GenericIdentification36
 import PartyIdentification232Choice
 import YesNoIndicator
+import ThirdPartyIdentification1
 
 class PledgeInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Pldgr", "_RtrSctiesInd", "_PldgTp", "_ThrdPty"]
-	@property
-	def Pldgr(self):
-		return self._Pldgr
-
-	@Pldgr.setter
-	def Pldgr(self, value):
-		self._Pldgr = value if type(value) != auto else self.make_default("Pldgr")
-
-	@Pldgr.deleter
-	def Pldgr(self):
-		del self._Pldgr
-		self._Pldgr = None
-
+	__slots__ = ["_RtrSctiesInd", "_PldgTp", "_Pldgr", "_ThrdPty"]
 	@property
 	def RtrSctiesInd(self):
 		return self._RtrSctiesInd
@@ -47,6 +34,19 @@ class PledgeInformation1(base_types._BaseFieldType):
 		self._PldgTp = None
 
 	@property
+	def Pldgr(self):
+		return self._Pldgr
+
+	@Pldgr.setter
+	def Pldgr(self, value):
+		self._Pldgr = value if type(value) != auto else self.make_default("Pldgr")
+
+	@Pldgr.deleter
+	def Pldgr(self):
+		del self._Pldgr
+		self._Pldgr = None
+
+	@property
 	def ThrdPty(self):
 		return self._ThrdPty
 
@@ -60,9 +60,9 @@ class PledgeInformation1(base_types._BaseFieldType):
 		self._ThrdPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pldgr', type=PartyIdentification232Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrSctiesInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PldgTp', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pldgr', type=PartyIdentification232Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrdPty', type=ThirdPartyIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

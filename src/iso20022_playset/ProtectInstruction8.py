@@ -1,52 +1,13 @@
 import base_types
-import RestrictedFINMax15Text
-import ProtectInstructionStatus4Code
 import ProtectTransactionType3Code
 import FinancialInstrumentQuantity31Choice
 import ISODate
+import RestrictedFINMax15Text
+import ProtectInstructionStatus4Code
 
 class ProtectInstruction8(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctTxSts", "_TxTp", "_TxId", "_UcvrdPrtctQty", "_PrtctDt"]
-	@property
-	def PrtctTxSts(self):
-		return self._PrtctTxSts
-
-	@PrtctTxSts.setter
-	def PrtctTxSts(self, value):
-		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
-
-	@PrtctTxSts.deleter
-	def PrtctTxSts(self):
-		del self._PrtctTxSts
-		self._PrtctTxSts = None
-
-	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_UcvrdPrtctQty", "_PrtctDt", "_TxId", "_PrtctTxSts", "_TxTp"]
 	@property
 	def UcvrdPrtctQty(self):
 		return self._UcvrdPrtctQty
@@ -73,11 +34,50 @@ class ProtectInstruction8(base_types._BaseFieldType):
 		del self._PrtctDt
 		self._PrtctDt = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def PrtctTxSts(self):
+		return self._PrtctTxSts
+
+	@PrtctTxSts.setter
+	def PrtctTxSts(self, value):
+		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
+
+	@PrtctTxSts.deleter
+	def PrtctTxSts(self):
+		del self._PrtctTxSts
+		self._PrtctTxSts = None
+
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=RestrictedFINMax15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UcvrdPrtctQty', type=FinancialInstrumentQuantity31Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=RestrictedFINMax15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

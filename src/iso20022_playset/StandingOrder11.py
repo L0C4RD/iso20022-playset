@@ -1,73 +1,34 @@
 import base_types
-import Frequency2Code
-import Amount2Choice
-import AccountIdentification4Choice
-import DatePeriod3
-import CashAccount40
-import StandingOrderTotalAmount1
+import CreditDebitCode
 import ActiveCurrencyCode
+import StandingOrderTotalAmount1
+import AccountIdentification4Choice
+import StandingOrderType1Choice
+import Amount2Choice
+import CashAccount40
+import DatePeriod3
+import Number
 import ExecutionType1Choice
 import Max35Text
-import BranchAndFinancialInstitutionIdentification8
 import TrueFalseIndicator
-import StandingOrderType1Choice
-import Number
-import CreditDebitCode
+import BranchAndFinancialInstitutionIdentification8
+import Frequency2Code
 
 class StandingOrder11(base_types._BaseFieldType):
 
-	__slots__ = ["_LkSetId", "_AssoctdPoolAcct", "_VldtyPrd", "_Amt", "_ExctnTp", "_RspnsblPty", "_TtlsPerStgOrdr", "_Frqcy", "_Cdtr", "_LkSetOrdrId", "_ZeroSweepInd", "_CdtDbtInd", "_SysMmb", "_Tp", "_CdtrAcct", "_Ccy", "_LkSetOrdrSeq", "_Dbtr", "_DbtrAcct", "_Ref"]
+	__slots__ = ["_SysMmb", "_ExctnTp", "_ZeroSweepInd", "_Frqcy", "_DbtrAcct", "_Tp", "_LkSetId", "_VldtyPrd", "_Dbtr", "_Cdtr", "_CdtDbtInd", "_Amt", "_Ccy", "_CdtrAcct", "_RspnsblPty", "_LkSetOrdrSeq", "_LkSetOrdrId", "_TtlsPerStgOrdr", "_Ref", "_AssoctdPoolAcct"]
 	@property
-	def LkSetId(self):
-		return self._LkSetId
+	def SysMmb(self):
+		return self._SysMmb
 
-	@LkSetId.setter
-	def LkSetId(self, value):
-		self._LkSetId = value if type(value) != auto else self.make_default("LkSetId")
+	@SysMmb.setter
+	def SysMmb(self, value):
+		self._SysMmb = value if type(value) != auto else self.make_default("SysMmb")
 
-	@LkSetId.deleter
-	def LkSetId(self):
-		del self._LkSetId
-		self._LkSetId = None
-
-	@property
-	def AssoctdPoolAcct(self):
-		return self._AssoctdPoolAcct
-
-	@AssoctdPoolAcct.setter
-	def AssoctdPoolAcct(self, value):
-		self._AssoctdPoolAcct = value if type(value) != auto else self.make_default("AssoctdPoolAcct")
-
-	@AssoctdPoolAcct.deleter
-	def AssoctdPoolAcct(self):
-		del self._AssoctdPoolAcct
-		self._AssoctdPoolAcct = None
-
-	@property
-	def VldtyPrd(self):
-		return self._VldtyPrd
-
-	@VldtyPrd.setter
-	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != auto else self.make_default("VldtyPrd")
-
-	@VldtyPrd.deleter
-	def VldtyPrd(self):
-		del self._VldtyPrd
-		self._VldtyPrd = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@SysMmb.deleter
+	def SysMmb(self):
+		del self._SysMmb
+		self._SysMmb = None
 
 	@property
 	def ExctnTp(self):
@@ -83,30 +44,17 @@ class StandingOrder11(base_types._BaseFieldType):
 		self._ExctnTp = None
 
 	@property
-	def RspnsblPty(self):
-		return self._RspnsblPty
+	def ZeroSweepInd(self):
+		return self._ZeroSweepInd
 
-	@RspnsblPty.setter
-	def RspnsblPty(self, value):
-		self._RspnsblPty = value if type(value) != auto else self.make_default("RspnsblPty")
+	@ZeroSweepInd.setter
+	def ZeroSweepInd(self, value):
+		self._ZeroSweepInd = value if type(value) != auto else self.make_default("ZeroSweepInd")
 
-	@RspnsblPty.deleter
-	def RspnsblPty(self):
-		del self._RspnsblPty
-		self._RspnsblPty = None
-
-	@property
-	def TtlsPerStgOrdr(self):
-		return self._TtlsPerStgOrdr
-
-	@TtlsPerStgOrdr.setter
-	def TtlsPerStgOrdr(self, value):
-		self._TtlsPerStgOrdr = value if type(value) != auto else self.make_default("TtlsPerStgOrdr")
-
-	@TtlsPerStgOrdr.deleter
-	def TtlsPerStgOrdr(self):
-		del self._TtlsPerStgOrdr
-		self._TtlsPerStgOrdr = None
+	@ZeroSweepInd.deleter
+	def ZeroSweepInd(self):
+		del self._ZeroSweepInd
+		self._ZeroSweepInd = None
 
 	@property
 	def Frqcy(self):
@@ -122,69 +70,17 @@ class StandingOrder11(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def Cdtr(self):
-		return self._Cdtr
+	def DbtrAcct(self):
+		return self._DbtrAcct
 
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
 
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
-
-	@property
-	def LkSetOrdrId(self):
-		return self._LkSetOrdrId
-
-	@LkSetOrdrId.setter
-	def LkSetOrdrId(self, value):
-		self._LkSetOrdrId = value if type(value) != auto else self.make_default("LkSetOrdrId")
-
-	@LkSetOrdrId.deleter
-	def LkSetOrdrId(self):
-		del self._LkSetOrdrId
-		self._LkSetOrdrId = None
-
-	@property
-	def ZeroSweepInd(self):
-		return self._ZeroSweepInd
-
-	@ZeroSweepInd.setter
-	def ZeroSweepInd(self, value):
-		self._ZeroSweepInd = value if type(value) != auto else self.make_default("ZeroSweepInd")
-
-	@ZeroSweepInd.deleter
-	def ZeroSweepInd(self):
-		del self._ZeroSweepInd
-		self._ZeroSweepInd = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def SysMmb(self):
-		return self._SysMmb
-
-	@SysMmb.setter
-	def SysMmb(self, value):
-		self._SysMmb = value if type(value) != auto else self.make_default("SysMmb")
-
-	@SysMmb.deleter
-	def SysMmb(self):
-		del self._SysMmb
-		self._SysMmb = None
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	@property
 	def Tp(self):
@@ -200,43 +96,30 @@ class StandingOrder11(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def CdtrAcct(self):
-		return self._CdtrAcct
+	def LkSetId(self):
+		return self._LkSetId
 
-	@CdtrAcct.setter
-	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
+	@LkSetId.setter
+	def LkSetId(self, value):
+		self._LkSetId = value if type(value) != auto else self.make_default("LkSetId")
 
-	@CdtrAcct.deleter
-	def CdtrAcct(self):
-		del self._CdtrAcct
-		self._CdtrAcct = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@LkSetId.deleter
+	def LkSetId(self):
+		del self._LkSetId
+		self._LkSetId = None
 
 	@property
-	def LkSetOrdrSeq(self):
-		return self._LkSetOrdrSeq
+	def VldtyPrd(self):
+		return self._VldtyPrd
 
-	@LkSetOrdrSeq.setter
-	def LkSetOrdrSeq(self, value):
-		self._LkSetOrdrSeq = value if type(value) != auto else self.make_default("LkSetOrdrSeq")
+	@VldtyPrd.setter
+	def VldtyPrd(self, value):
+		self._VldtyPrd = value if type(value) != auto else self.make_default("VldtyPrd")
 
-	@LkSetOrdrSeq.deleter
-	def LkSetOrdrSeq(self):
-		del self._LkSetOrdrSeq
-		self._LkSetOrdrSeq = None
+	@VldtyPrd.deleter
+	def VldtyPrd(self):
+		del self._VldtyPrd
+		self._VldtyPrd = None
 
 	@property
 	def Dbtr(self):
@@ -252,17 +135,121 @@ class StandingOrder11(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
+	def Cdtr(self):
+		return self._Cdtr
 
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
 
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def CdtrAcct(self):
+		return self._CdtrAcct
+
+	@CdtrAcct.setter
+	def CdtrAcct(self, value):
+		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
+
+	@CdtrAcct.deleter
+	def CdtrAcct(self):
+		del self._CdtrAcct
+		self._CdtrAcct = None
+
+	@property
+	def RspnsblPty(self):
+		return self._RspnsblPty
+
+	@RspnsblPty.setter
+	def RspnsblPty(self, value):
+		self._RspnsblPty = value if type(value) != auto else self.make_default("RspnsblPty")
+
+	@RspnsblPty.deleter
+	def RspnsblPty(self):
+		del self._RspnsblPty
+		self._RspnsblPty = None
+
+	@property
+	def LkSetOrdrSeq(self):
+		return self._LkSetOrdrSeq
+
+	@LkSetOrdrSeq.setter
+	def LkSetOrdrSeq(self, value):
+		self._LkSetOrdrSeq = value if type(value) != auto else self.make_default("LkSetOrdrSeq")
+
+	@LkSetOrdrSeq.deleter
+	def LkSetOrdrSeq(self):
+		del self._LkSetOrdrSeq
+		self._LkSetOrdrSeq = None
+
+	@property
+	def LkSetOrdrId(self):
+		return self._LkSetOrdrId
+
+	@LkSetOrdrId.setter
+	def LkSetOrdrId(self, value):
+		self._LkSetOrdrId = value if type(value) != auto else self.make_default("LkSetOrdrId")
+
+	@LkSetOrdrId.deleter
+	def LkSetOrdrId(self):
+		del self._LkSetOrdrId
+		self._LkSetOrdrId = None
+
+	@property
+	def TtlsPerStgOrdr(self):
+		return self._TtlsPerStgOrdr
+
+	@TtlsPerStgOrdr.setter
+	def TtlsPerStgOrdr(self, value):
+		self._TtlsPerStgOrdr = value if type(value) != auto else self.make_default("TtlsPerStgOrdr")
+
+	@TtlsPerStgOrdr.deleter
+	def TtlsPerStgOrdr(self):
+		del self._TtlsPerStgOrdr
+		self._TtlsPerStgOrdr = None
 
 	@property
 	def Ref(self):
@@ -277,26 +264,39 @@ class StandingOrder11(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def AssoctdPoolAcct(self):
+		return self._AssoctdPoolAcct
+
+	@AssoctdPoolAcct.setter
+	def AssoctdPoolAcct(self, value):
+		self._AssoctdPoolAcct = value if type(value) != auto else self.make_default("AssoctdPoolAcct")
+
+	@AssoctdPoolAcct.deleter
+	def AssoctdPoolAcct(self):
+		del self._AssoctdPoolAcct
+		self._AssoctdPoolAcct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LkSetId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdPoolAcct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyPrd', type=DatePeriod3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnTp', type=ExecutionType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnsblPty', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlsPerStgOrdr', type=StandingOrderTotalAmount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LkSetOrdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ZeroSweepInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysMmb', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=StandingOrderType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LkSetOrdrSeq', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnTp', type=ExecutionType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ZeroSweepInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=StandingOrderType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkSetId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=DatePeriod3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnsblPty', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkSetOrdrSeq', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkSetOrdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlsPerStgOrdr', type=StandingOrderTotalAmount1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssoctdPoolAcct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

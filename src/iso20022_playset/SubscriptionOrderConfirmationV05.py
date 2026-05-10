@@ -1,26 +1,65 @@
 import base_types
-import Extension1
-import AdditionalReference10
 import SubscriptionMultipleExecution6
+import AdditionalReference11
+import AdditionalReference10
 import CopyInformation5
 import MessageIdentification1
-import AdditionalReference11
+import Extension1
 
 class SubscriptionOrderConfirmationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_RltdRef", "_CpyDtls", "_MsgId", "_MltplExctnDtls", "_PoolRef", "_PrvsRef"]
+	__slots__ = ["_PrvsRef", "_MsgId", "_PoolRef", "_MltplExctnDtls", "_RltdRef", "_CpyDtls", "_Xtnsn"]
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def PrvsRef(self):
+		return self._PrvsRef
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def MltplExctnDtls(self):
+		return self._MltplExctnDtls
+
+	@MltplExctnDtls.setter
+	def MltplExctnDtls(self, value):
+		self._MltplExctnDtls = value if type(value) != auto else self.make_default("MltplExctnDtls")
+
+	@MltplExctnDtls.deleter
+	def MltplExctnDtls(self):
+		del self._MltplExctnDtls
+		self._MltplExctnDtls = None
 
 	@property
 	def RltdRef(self):
@@ -49,64 +88,25 @@ class SubscriptionOrderConfirmationV05(base_types._BaseFieldType):
 		self._CpyDtls = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def MltplExctnDtls(self):
-		return self._MltplExctnDtls
-
-	@MltplExctnDtls.setter
-	def MltplExctnDtls(self, value):
-		self._MltplExctnDtls = value if type(value) != auto else self.make_default("MltplExctnDtls")
-
-	@MltplExctnDtls.deleter
-	def MltplExctnDtls(self):
-		del self._MltplExctnDtls
-		self._MltplExctnDtls = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
-	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MltplExctnDtls', type=SubscriptionMultipleExecution6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MltplExctnDtls', type=SubscriptionMultipleExecution6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

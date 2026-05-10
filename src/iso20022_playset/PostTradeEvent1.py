@@ -1,25 +1,25 @@
 import base_types
-import ProfitAndLossAmount2
 import Max35Text
+import ISODate
+import ProfitAndLossAmount2
 import ActiveOrHistoricCurrencyAndAmount
 import PostTradeEventType2Choice
-import ISODate
 
 class PostTradeEvent1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlRef", "_PrftOrLoss", "_UndrlygLbltyRef", "_Tp", "_PrftOrLossSttlmDt", "_OutsdngSttlmAmt"]
+	__slots__ = ["_UndrlygLbltyRef", "_PrftOrLoss", "_OrgnlRef", "_OutsdngSttlmAmt", "_Tp", "_PrftOrLossSttlmDt"]
 	@property
-	def OrgnlRef(self):
-		return self._OrgnlRef
+	def UndrlygLbltyRef(self):
+		return self._UndrlygLbltyRef
 
-	@OrgnlRef.setter
-	def OrgnlRef(self, value):
-		self._OrgnlRef = value if type(value) != auto else self.make_default("OrgnlRef")
+	@UndrlygLbltyRef.setter
+	def UndrlygLbltyRef(self, value):
+		self._UndrlygLbltyRef = value if type(value) != auto else self.make_default("UndrlygLbltyRef")
 
-	@OrgnlRef.deleter
-	def OrgnlRef(self):
-		del self._OrgnlRef
-		self._OrgnlRef = None
+	@UndrlygLbltyRef.deleter
+	def UndrlygLbltyRef(self):
+		del self._UndrlygLbltyRef
+		self._UndrlygLbltyRef = None
 
 	@property
 	def PrftOrLoss(self):
@@ -35,17 +35,30 @@ class PostTradeEvent1(base_types._BaseFieldType):
 		self._PrftOrLoss = None
 
 	@property
-	def UndrlygLbltyRef(self):
-		return self._UndrlygLbltyRef
+	def OrgnlRef(self):
+		return self._OrgnlRef
 
-	@UndrlygLbltyRef.setter
-	def UndrlygLbltyRef(self, value):
-		self._UndrlygLbltyRef = value if type(value) != auto else self.make_default("UndrlygLbltyRef")
+	@OrgnlRef.setter
+	def OrgnlRef(self, value):
+		self._OrgnlRef = value if type(value) != auto else self.make_default("OrgnlRef")
 
-	@UndrlygLbltyRef.deleter
-	def UndrlygLbltyRef(self):
-		del self._UndrlygLbltyRef
-		self._UndrlygLbltyRef = None
+	@OrgnlRef.deleter
+	def OrgnlRef(self):
+		del self._OrgnlRef
+		self._OrgnlRef = None
+
+	@property
+	def OutsdngSttlmAmt(self):
+		return self._OutsdngSttlmAmt
+
+	@OutsdngSttlmAmt.setter
+	def OutsdngSttlmAmt(self, value):
+		self._OutsdngSttlmAmt = value if type(value) != auto else self.make_default("OutsdngSttlmAmt")
+
+	@OutsdngSttlmAmt.deleter
+	def OutsdngSttlmAmt(self):
+		del self._OutsdngSttlmAmt
+		self._OutsdngSttlmAmt = None
 
 	@property
 	def Tp(self):
@@ -73,25 +86,12 @@ class PostTradeEvent1(base_types._BaseFieldType):
 		del self._PrftOrLossSttlmDt
 		self._PrftOrLossSttlmDt = None
 
-	@property
-	def OutsdngSttlmAmt(self):
-		return self._OutsdngSttlmAmt
-
-	@OutsdngSttlmAmt.setter
-	def OutsdngSttlmAmt(self, value):
-		self._OutsdngSttlmAmt = value if type(value) != auto else self.make_default("OutsdngSttlmAmt")
-
-	@OutsdngSttlmAmt.deleter
-	def OutsdngSttlmAmt(self):
-		del self._OutsdngSttlmAmt
-		self._OutsdngSttlmAmt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrftOrLoss', type=ProfitAndLossAmount2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygLbltyRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrftOrLoss', type=ProfitAndLossAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutsdngSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PostTradeEventType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrftOrLossSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OutsdngSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

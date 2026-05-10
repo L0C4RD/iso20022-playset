@@ -1,38 +1,12 @@
 import base_types
-import TrueFalseIndicator
-import Max2048Text
-import DateAndDateTime2Choice
 import Visibilty1
+import TrueFalseIndicator
+import DateAndDateTime2Choice
+import Max2048Text
 
 class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrSvcActvtnLk", "_EnrlmntEndDt", "_SvcActvtnAllwd", "_SvcDescLk", "_Vsblty", "_EnrlmntStartDt"]
-	@property
-	def CdtrSvcActvtnLk(self):
-		return self._CdtrSvcActvtnLk
-
-	@CdtrSvcActvtnLk.setter
-	def CdtrSvcActvtnLk(self, value):
-		self._CdtrSvcActvtnLk = value if type(value) != auto else self.make_default("CdtrSvcActvtnLk")
-
-	@CdtrSvcActvtnLk.deleter
-	def CdtrSvcActvtnLk(self):
-		del self._CdtrSvcActvtnLk
-		self._CdtrSvcActvtnLk = None
-
-	@property
-	def EnrlmntEndDt(self):
-		return self._EnrlmntEndDt
-
-	@EnrlmntEndDt.setter
-	def EnrlmntEndDt(self, value):
-		self._EnrlmntEndDt = value if type(value) != auto else self.make_default("EnrlmntEndDt")
-
-	@EnrlmntEndDt.deleter
-	def EnrlmntEndDt(self):
-		del self._EnrlmntEndDt
-		self._EnrlmntEndDt = None
-
+	__slots__ = ["_SvcActvtnAllwd", "_SvcDescLk", "_CdtrSvcActvtnLk", "_EnrlmntStartDt", "_Vsblty", "_EnrlmntEndDt"]
 	@property
 	def SvcActvtnAllwd(self):
 		return self._SvcActvtnAllwd
@@ -60,17 +34,17 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 		self._SvcDescLk = None
 
 	@property
-	def Vsblty(self):
-		return self._Vsblty
+	def CdtrSvcActvtnLk(self):
+		return self._CdtrSvcActvtnLk
 
-	@Vsblty.setter
-	def Vsblty(self, value):
-		self._Vsblty = value if type(value) != auto else self.make_default("Vsblty")
+	@CdtrSvcActvtnLk.setter
+	def CdtrSvcActvtnLk(self, value):
+		self._CdtrSvcActvtnLk = value if type(value) != auto else self.make_default("CdtrSvcActvtnLk")
 
-	@Vsblty.deleter
-	def Vsblty(self):
-		del self._Vsblty
-		self._Vsblty = None
+	@CdtrSvcActvtnLk.deleter
+	def CdtrSvcActvtnLk(self):
+		del self._CdtrSvcActvtnLk
+		self._CdtrSvcActvtnLk = None
 
 	@property
 	def EnrlmntStartDt(self):
@@ -85,12 +59,38 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 		del self._EnrlmntStartDt
 		self._EnrlmntStartDt = None
 
+	@property
+	def Vsblty(self):
+		return self._Vsblty
+
+	@Vsblty.setter
+	def Vsblty(self, value):
+		self._Vsblty = value if type(value) != auto else self.make_default("Vsblty")
+
+	@Vsblty.deleter
+	def Vsblty(self):
+		del self._Vsblty
+		self._Vsblty = None
+
+	@property
+	def EnrlmntEndDt(self):
+		return self._EnrlmntEndDt
+
+	@EnrlmntEndDt.setter
+	def EnrlmntEndDt(self, value):
+		self._EnrlmntEndDt = value if type(value) != auto else self.make_default("EnrlmntEndDt")
+
+	@EnrlmntEndDt.deleter
+	def EnrlmntEndDt(self):
+		del self._EnrlmntEndDt
+		self._EnrlmntEndDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrSvcActvtnLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EnrlmntEndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcActvtnAllwd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcDescLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vsblty', type=Visibilty1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrSvcActvtnLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EnrlmntStartDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vsblty', type=Visibilty1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EnrlmntEndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

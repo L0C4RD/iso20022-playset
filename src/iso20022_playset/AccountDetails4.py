@@ -4,19 +4,19 @@ import ISO8583AccountTypeCode
 
 class AccountDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nm", "_Id"]
+	__slots__ = ["_Id", "_Nm", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Id(self):
+		return self._Id
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Nm(self):
@@ -32,21 +32,21 @@ class AccountDetails4(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Tp(self):
+		return self._Tp
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=ISO8583AccountTypeCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ISO8583AccountTypeCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

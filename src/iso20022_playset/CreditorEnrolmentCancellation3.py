@@ -1,8 +1,8 @@
 import base_types
 import SupplementaryData1
-import CreditorEnrolmentCancellationReason3
 import OriginalBusinessInstruction1
 import OriginalEnrolment3Choice
+import CreditorEnrolmentCancellationReason3
 
 class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 

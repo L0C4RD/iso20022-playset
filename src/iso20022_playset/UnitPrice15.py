@@ -1,162 +1,32 @@
 import base_types
-import TypeOfPrice9Code
-import Charge15
-import PriceMethod1Code
-import YesNoIndicator
+import EUDividendStatus1Code
+import Tax17
 import PercentageRate
 import ActiveOrHistoricCurrencyAnd13DecimalAmount
-import EUDividendStatus1Code
-import TaxableIncomePerShareCalculated2Code
-import Number
-import Tax17
-import Extended350Code
 import PriceValue1
+import TypeOfPrice9Code
+import PriceMethod1Code
+import Charge15
+import YesNoIndicator
+import Number
+import TaxableIncomePerShareCalculated2Code
+import Extended350Code
 
 class UnitPrice15(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedTaxblIncmPerShrClctd", "_Tp", "_ValInAltrntvCcy", "_TaxblIncmPerDvdd", "_TaxRfndDtls", "_ChrgDtls", "_ValInInvstmtCcy", "_ForExctnInd", "_TaxLbltyDtls", "_XtndedEUDvddSts", "_EUDvddSts", "_XtndedTp", "_PricMtd", "_ClctnBsis", "_EstmtdPricInd", "_NbOfDaysAcrd", "_CumDvddInd", "_TaxblIncmPerShrClctd", "_TaxblIncmPerShr"]
+	__slots__ = ["_TaxblIncmPerShrClctd", "_XtndedTp", "_XtndedEUDvddSts", "_EstmtdPricInd", "_TaxblIncmPerDvdd", "_PricMtd", "_XtndedTaxblIncmPerShrClctd", "_ValInInvstmtCcy", "_TaxRfndDtls", "_CumDvddInd", "_TaxLbltyDtls", "_ValInAltrntvCcy", "_TaxblIncmPerShr", "_Tp", "_ForExctnInd", "_EUDvddSts", "_NbOfDaysAcrd", "_ChrgDtls", "_ClctnBsis"]
 	@property
-	def XtndedTaxblIncmPerShrClctd(self):
-		return self._XtndedTaxblIncmPerShrClctd
+	def TaxblIncmPerShrClctd(self):
+		return self._TaxblIncmPerShrClctd
 
-	@XtndedTaxblIncmPerShrClctd.setter
-	def XtndedTaxblIncmPerShrClctd(self, value):
-		self._XtndedTaxblIncmPerShrClctd = value if type(value) != auto else self.make_default("XtndedTaxblIncmPerShrClctd")
+	@TaxblIncmPerShrClctd.setter
+	def TaxblIncmPerShrClctd(self, value):
+		self._TaxblIncmPerShrClctd = value if type(value) != auto else self.make_default("TaxblIncmPerShrClctd")
 
-	@XtndedTaxblIncmPerShrClctd.deleter
-	def XtndedTaxblIncmPerShrClctd(self):
-		del self._XtndedTaxblIncmPerShrClctd
-		self._XtndedTaxblIncmPerShrClctd = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def ValInAltrntvCcy(self):
-		return self._ValInAltrntvCcy
-
-	@ValInAltrntvCcy.setter
-	def ValInAltrntvCcy(self, value):
-		self._ValInAltrntvCcy = value if type(value) != auto else self.make_default("ValInAltrntvCcy")
-
-	@ValInAltrntvCcy.deleter
-	def ValInAltrntvCcy(self):
-		del self._ValInAltrntvCcy
-		self._ValInAltrntvCcy = None
-
-	@property
-	def TaxblIncmPerDvdd(self):
-		return self._TaxblIncmPerDvdd
-
-	@TaxblIncmPerDvdd.setter
-	def TaxblIncmPerDvdd(self, value):
-		self._TaxblIncmPerDvdd = value if type(value) != auto else self.make_default("TaxblIncmPerDvdd")
-
-	@TaxblIncmPerDvdd.deleter
-	def TaxblIncmPerDvdd(self):
-		del self._TaxblIncmPerDvdd
-		self._TaxblIncmPerDvdd = None
-
-	@property
-	def TaxRfndDtls(self):
-		return self._TaxRfndDtls
-
-	@TaxRfndDtls.setter
-	def TaxRfndDtls(self, value):
-		self._TaxRfndDtls = value if type(value) != auto else self.make_default("TaxRfndDtls")
-
-	@TaxRfndDtls.deleter
-	def TaxRfndDtls(self):
-		del self._TaxRfndDtls
-		self._TaxRfndDtls = None
-
-	@property
-	def ChrgDtls(self):
-		return self._ChrgDtls
-
-	@ChrgDtls.setter
-	def ChrgDtls(self, value):
-		self._ChrgDtls = value if type(value) != auto else self.make_default("ChrgDtls")
-
-	@ChrgDtls.deleter
-	def ChrgDtls(self):
-		del self._ChrgDtls
-		self._ChrgDtls = None
-
-	@property
-	def ValInInvstmtCcy(self):
-		return self._ValInInvstmtCcy
-
-	@ValInInvstmtCcy.setter
-	def ValInInvstmtCcy(self, value):
-		self._ValInInvstmtCcy = value if type(value) != auto else self.make_default("ValInInvstmtCcy")
-
-	@ValInInvstmtCcy.deleter
-	def ValInInvstmtCcy(self):
-		del self._ValInInvstmtCcy
-		self._ValInInvstmtCcy = None
-
-	@property
-	def ForExctnInd(self):
-		return self._ForExctnInd
-
-	@ForExctnInd.setter
-	def ForExctnInd(self, value):
-		self._ForExctnInd = value if type(value) != auto else self.make_default("ForExctnInd")
-
-	@ForExctnInd.deleter
-	def ForExctnInd(self):
-		del self._ForExctnInd
-		self._ForExctnInd = None
-
-	@property
-	def TaxLbltyDtls(self):
-		return self._TaxLbltyDtls
-
-	@TaxLbltyDtls.setter
-	def TaxLbltyDtls(self, value):
-		self._TaxLbltyDtls = value if type(value) != auto else self.make_default("TaxLbltyDtls")
-
-	@TaxLbltyDtls.deleter
-	def TaxLbltyDtls(self):
-		del self._TaxLbltyDtls
-		self._TaxLbltyDtls = None
-
-	@property
-	def XtndedEUDvddSts(self):
-		return self._XtndedEUDvddSts
-
-	@XtndedEUDvddSts.setter
-	def XtndedEUDvddSts(self, value):
-		self._XtndedEUDvddSts = value if type(value) != auto else self.make_default("XtndedEUDvddSts")
-
-	@XtndedEUDvddSts.deleter
-	def XtndedEUDvddSts(self):
-		del self._XtndedEUDvddSts
-		self._XtndedEUDvddSts = None
-
-	@property
-	def EUDvddSts(self):
-		return self._EUDvddSts
-
-	@EUDvddSts.setter
-	def EUDvddSts(self, value):
-		self._EUDvddSts = value if type(value) != auto else self.make_default("EUDvddSts")
-
-	@EUDvddSts.deleter
-	def EUDvddSts(self):
-		del self._EUDvddSts
-		self._EUDvddSts = None
+	@TaxblIncmPerShrClctd.deleter
+	def TaxblIncmPerShrClctd(self):
+		del self._TaxblIncmPerShrClctd
+		self._TaxblIncmPerShrClctd = None
 
 	@property
 	def XtndedTp(self):
@@ -172,30 +42,17 @@ class UnitPrice15(base_types._BaseFieldType):
 		self._XtndedTp = None
 
 	@property
-	def PricMtd(self):
-		return self._PricMtd
+	def XtndedEUDvddSts(self):
+		return self._XtndedEUDvddSts
 
-	@PricMtd.setter
-	def PricMtd(self, value):
-		self._PricMtd = value if type(value) != auto else self.make_default("PricMtd")
+	@XtndedEUDvddSts.setter
+	def XtndedEUDvddSts(self, value):
+		self._XtndedEUDvddSts = value if type(value) != auto else self.make_default("XtndedEUDvddSts")
 
-	@PricMtd.deleter
-	def PricMtd(self):
-		del self._PricMtd
-		self._PricMtd = None
-
-	@property
-	def ClctnBsis(self):
-		return self._ClctnBsis
-
-	@ClctnBsis.setter
-	def ClctnBsis(self, value):
-		self._ClctnBsis = value if type(value) != auto else self.make_default("ClctnBsis")
-
-	@ClctnBsis.deleter
-	def ClctnBsis(self):
-		del self._ClctnBsis
-		self._ClctnBsis = None
+	@XtndedEUDvddSts.deleter
+	def XtndedEUDvddSts(self):
+		del self._XtndedEUDvddSts
+		self._XtndedEUDvddSts = None
 
 	@property
 	def EstmtdPricInd(self):
@@ -211,17 +68,69 @@ class UnitPrice15(base_types._BaseFieldType):
 		self._EstmtdPricInd = None
 
 	@property
-	def NbOfDaysAcrd(self):
-		return self._NbOfDaysAcrd
+	def TaxblIncmPerDvdd(self):
+		return self._TaxblIncmPerDvdd
 
-	@NbOfDaysAcrd.setter
-	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
+	@TaxblIncmPerDvdd.setter
+	def TaxblIncmPerDvdd(self, value):
+		self._TaxblIncmPerDvdd = value if type(value) != auto else self.make_default("TaxblIncmPerDvdd")
 
-	@NbOfDaysAcrd.deleter
-	def NbOfDaysAcrd(self):
-		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+	@TaxblIncmPerDvdd.deleter
+	def TaxblIncmPerDvdd(self):
+		del self._TaxblIncmPerDvdd
+		self._TaxblIncmPerDvdd = None
+
+	@property
+	def PricMtd(self):
+		return self._PricMtd
+
+	@PricMtd.setter
+	def PricMtd(self, value):
+		self._PricMtd = value if type(value) != auto else self.make_default("PricMtd")
+
+	@PricMtd.deleter
+	def PricMtd(self):
+		del self._PricMtd
+		self._PricMtd = None
+
+	@property
+	def XtndedTaxblIncmPerShrClctd(self):
+		return self._XtndedTaxblIncmPerShrClctd
+
+	@XtndedTaxblIncmPerShrClctd.setter
+	def XtndedTaxblIncmPerShrClctd(self, value):
+		self._XtndedTaxblIncmPerShrClctd = value if type(value) != auto else self.make_default("XtndedTaxblIncmPerShrClctd")
+
+	@XtndedTaxblIncmPerShrClctd.deleter
+	def XtndedTaxblIncmPerShrClctd(self):
+		del self._XtndedTaxblIncmPerShrClctd
+		self._XtndedTaxblIncmPerShrClctd = None
+
+	@property
+	def ValInInvstmtCcy(self):
+		return self._ValInInvstmtCcy
+
+	@ValInInvstmtCcy.setter
+	def ValInInvstmtCcy(self, value):
+		self._ValInInvstmtCcy = value if type(value) != auto else self.make_default("ValInInvstmtCcy")
+
+	@ValInInvstmtCcy.deleter
+	def ValInInvstmtCcy(self):
+		del self._ValInInvstmtCcy
+		self._ValInInvstmtCcy = None
+
+	@property
+	def TaxRfndDtls(self):
+		return self._TaxRfndDtls
+
+	@TaxRfndDtls.setter
+	def TaxRfndDtls(self, value):
+		self._TaxRfndDtls = value if type(value) != auto else self.make_default("TaxRfndDtls")
+
+	@TaxRfndDtls.deleter
+	def TaxRfndDtls(self):
+		del self._TaxRfndDtls
+		self._TaxRfndDtls = None
 
 	@property
 	def CumDvddInd(self):
@@ -237,17 +146,30 @@ class UnitPrice15(base_types._BaseFieldType):
 		self._CumDvddInd = None
 
 	@property
-	def TaxblIncmPerShrClctd(self):
-		return self._TaxblIncmPerShrClctd
+	def TaxLbltyDtls(self):
+		return self._TaxLbltyDtls
 
-	@TaxblIncmPerShrClctd.setter
-	def TaxblIncmPerShrClctd(self, value):
-		self._TaxblIncmPerShrClctd = value if type(value) != auto else self.make_default("TaxblIncmPerShrClctd")
+	@TaxLbltyDtls.setter
+	def TaxLbltyDtls(self, value):
+		self._TaxLbltyDtls = value if type(value) != auto else self.make_default("TaxLbltyDtls")
 
-	@TaxblIncmPerShrClctd.deleter
-	def TaxblIncmPerShrClctd(self):
-		del self._TaxblIncmPerShrClctd
-		self._TaxblIncmPerShrClctd = None
+	@TaxLbltyDtls.deleter
+	def TaxLbltyDtls(self):
+		del self._TaxLbltyDtls
+		self._TaxLbltyDtls = None
+
+	@property
+	def ValInAltrntvCcy(self):
+		return self._ValInAltrntvCcy
+
+	@ValInAltrntvCcy.setter
+	def ValInAltrntvCcy(self, value):
+		self._ValInAltrntvCcy = value if type(value) != auto else self.make_default("ValInAltrntvCcy")
+
+	@ValInAltrntvCcy.deleter
+	def ValInAltrntvCcy(self):
+		del self._ValInAltrntvCcy
+		self._ValInAltrntvCcy = None
 
 	@property
 	def TaxblIncmPerShr(self):
@@ -262,25 +184,103 @@ class UnitPrice15(base_types._BaseFieldType):
 		del self._TaxblIncmPerShr
 		self._TaxblIncmPerShr = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def ForExctnInd(self):
+		return self._ForExctnInd
+
+	@ForExctnInd.setter
+	def ForExctnInd(self, value):
+		self._ForExctnInd = value if type(value) != auto else self.make_default("ForExctnInd")
+
+	@ForExctnInd.deleter
+	def ForExctnInd(self):
+		del self._ForExctnInd
+		self._ForExctnInd = None
+
+	@property
+	def EUDvddSts(self):
+		return self._EUDvddSts
+
+	@EUDvddSts.setter
+	def EUDvddSts(self, value):
+		self._EUDvddSts = value if type(value) != auto else self.make_default("EUDvddSts")
+
+	@EUDvddSts.deleter
+	def EUDvddSts(self):
+		del self._EUDvddSts
+		self._EUDvddSts = None
+
+	@property
+	def NbOfDaysAcrd(self):
+		return self._NbOfDaysAcrd
+
+	@NbOfDaysAcrd.setter
+	def NbOfDaysAcrd(self, value):
+		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
+
+	@NbOfDaysAcrd.deleter
+	def NbOfDaysAcrd(self):
+		del self._NbOfDaysAcrd
+		self._NbOfDaysAcrd = None
+
+	@property
+	def ChrgDtls(self):
+		return self._ChrgDtls
+
+	@ChrgDtls.setter
+	def ChrgDtls(self, value):
+		self._ChrgDtls = value if type(value) != auto else self.make_default("ChrgDtls")
+
+	@ChrgDtls.deleter
+	def ChrgDtls(self):
+		del self._ChrgDtls
+		self._ChrgDtls = None
+
+	@property
+	def ClctnBsis(self):
+		return self._ClctnBsis
+
+	@ClctnBsis.setter
+	def ClctnBsis(self, value):
+		self._ClctnBsis = value if type(value) != auto else self.make_default("ClctnBsis")
+
+	@ClctnBsis.deleter
+	def ClctnBsis(self):
+		del self._ClctnBsis
+		self._ClctnBsis = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XtndedTaxblIncmPerShrClctd', type=Extended350Code, min=0, max=1, mutex_group=2, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeOfPrice9Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ValInAltrntvCcy', type=PriceValue1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TaxblIncmPerDvdd', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRfndDtls', type=Tax17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ChrgDtls', type=Charge15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ValInInvstmtCcy', type=PriceValue1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ForExctnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxLbltyDtls', type=Tax17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XtndedEUDvddSts', type=Extended350Code, min=0, max=1, mutex_group=3, array=False),
-		base_types.FieldEntry(name='EUDvddSts', type=EUDividendStatus1Code, min=0, max=1, mutex_group=3, array=False),
-		base_types.FieldEntry(name='XtndedTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnBsis', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdPricInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfDaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CumDvddInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxblIncmPerShrClctd', type=TaxableIncomePerShareCalculated2Code, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='XtndedTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XtndedEUDvddSts', type=Extended350Code, min=0, max=1, mutex_group=3, array=False),
+		base_types.FieldEntry(name='EstmtdPricInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerDvdd', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XtndedTaxblIncmPerShrClctd', type=Extended350Code, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='ValInInvstmtCcy', type=PriceValue1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxRfndDtls', type=Tax17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CumDvddInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxLbltyDtls', type=Tax17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ValInAltrntvCcy', type=PriceValue1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxblIncmPerShr', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfPrice9Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ForExctnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EUDvddSts', type=EUDividendStatus1Code, min=0, max=1, mutex_group=3, array=False),
+		base_types.FieldEntry(name='NbOfDaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgDtls', type=Charge15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClctnBsis', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

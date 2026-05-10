@@ -1,6 +1,6 @@
 import base_types
-import BidRangeType1Code
 import GenericIdentification30
+import BidRangeType1Code
 
 class BidRangeType1Choice(base_types._BaseFieldType):
 

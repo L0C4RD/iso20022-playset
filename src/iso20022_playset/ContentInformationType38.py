@@ -5,19 +5,19 @@ import AuthenticatedData10
 
 class ContentInformationType38(base_types._BaseFieldType):
 
-	__slots__ = ["_CnttTp", "_SgndData", "_AuthntcdData"]
+	__slots__ = ["_AuthntcdData", "_SgndData", "_CnttTp"]
 	@property
-	def CnttTp(self):
-		return self._CnttTp
+	def AuthntcdData(self):
+		return self._AuthntcdData
 
-	@CnttTp.setter
-	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
+	@AuthntcdData.setter
+	def AuthntcdData(self, value):
+		self._AuthntcdData = value if type(value) != auto else self.make_default("AuthntcdData")
 
-	@CnttTp.deleter
-	def CnttTp(self):
-		del self._CnttTp
-		self._CnttTp = None
+	@AuthntcdData.deleter
+	def AuthntcdData(self):
+		del self._AuthntcdData
+		self._AuthntcdData = None
 
 	@property
 	def SgndData(self):
@@ -33,21 +33,21 @@ class ContentInformationType38(base_types._BaseFieldType):
 		self._SgndData = None
 
 	@property
-	def AuthntcdData(self):
-		return self._AuthntcdData
+	def CnttTp(self):
+		return self._CnttTp
 
-	@AuthntcdData.setter
-	def AuthntcdData(self, value):
-		self._AuthntcdData = value if type(value) != auto else self.make_default("AuthntcdData")
+	@CnttTp.setter
+	def CnttTp(self, value):
+		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
 
-	@AuthntcdData.deleter
-	def AuthntcdData(self):
-		del self._AuthntcdData
-		self._AuthntcdData = None
+	@CnttTp.deleter
+	def CnttTp(self):
+		del self._CnttTp
+		self._CnttTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgndData', type=SignedData9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgndData', type=SignedData9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

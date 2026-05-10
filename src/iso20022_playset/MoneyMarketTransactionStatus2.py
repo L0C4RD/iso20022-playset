@@ -1,26 +1,13 @@
 import base_types
-import Max105Text
 import StatisticalReportingStatus2Code
+import LEIIdentifier
+import Max105Text
 import SupplementaryData1
 import GenericValidationRuleIdentification1
-import LEIIdentifier
 
 class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_BrnchId", "_VldtnRule", "_SplmtryData", "_UnqTxIdr", "_PrtryTxId", "_Sts"]
-	@property
-	def BrnchId(self):
-		return self._BrnchId
-
-	@BrnchId.setter
-	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
-
-	@BrnchId.deleter
-	def BrnchId(self):
-		del self._BrnchId
-		self._BrnchId = None
-
+	__slots__ = ["_VldtnRule", "_SplmtryData", "_UnqTxIdr", "_PrtryTxId", "_BrnchId", "_Sts"]
 	@property
 	def VldtnRule(self):
 		return self._VldtnRule
@@ -74,6 +61,19 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 		self._PrtryTxId = None
 
 	@property
+	def BrnchId(self):
+		return self._BrnchId
+
+	@BrnchId.setter
+	def BrnchId(self, value):
+		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
+
+	@BrnchId.deleter
+	def BrnchId(self):
+		del self._BrnchId
+		self._BrnchId = None
+
+	@property
 	def Sts(self):
 		return self._Sts
 
@@ -87,11 +87,11 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

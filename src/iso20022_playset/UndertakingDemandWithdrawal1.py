@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
-import Demand3
 import Undertaking6
+import Demand3
+import Max35Text
 
 class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
-	__slots__ = ["_CnfrmrRefNb", "_UdrtkgId", "_AdvsgPtyRefNb", "_DmndDtls"]
+	__slots__ = ["_AdvsgPtyRefNb", "_CnfrmrRefNb", "_UdrtkgId", "_DmndDtls"]
+	@property
+	def AdvsgPtyRefNb(self):
+		return self._AdvsgPtyRefNb
+
+	@AdvsgPtyRefNb.setter
+	def AdvsgPtyRefNb(self, value):
+		self._AdvsgPtyRefNb = value if type(value) != auto else self.make_default("AdvsgPtyRefNb")
+
+	@AdvsgPtyRefNb.deleter
+	def AdvsgPtyRefNb(self):
+		del self._AdvsgPtyRefNb
+		self._AdvsgPtyRefNb = None
+
 	@property
 	def CnfrmrRefNb(self):
 		return self._CnfrmrRefNb
@@ -33,19 +46,6 @@ class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 		self._UdrtkgId = None
 
 	@property
-	def AdvsgPtyRefNb(self):
-		return self._AdvsgPtyRefNb
-
-	@AdvsgPtyRefNb.setter
-	def AdvsgPtyRefNb(self, value):
-		self._AdvsgPtyRefNb = value if type(value) != auto else self.make_default("AdvsgPtyRefNb")
-
-	@AdvsgPtyRefNb.deleter
-	def AdvsgPtyRefNb(self):
-		del self._AdvsgPtyRefNb
-		self._AdvsgPtyRefNb = None
-
-	@property
 	def DmndDtls(self):
 		return self._DmndDtls
 
@@ -59,9 +59,9 @@ class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 		self._DmndDtls = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmndDtls', type=Demand3, min=1, max=1, mutex_group=None, array=False),
 	))
 

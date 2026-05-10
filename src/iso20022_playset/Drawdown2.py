@@ -1,83 +1,31 @@
 import base_types
+import TaxReference2
+import PercentageRate
+import Capped1
+import Max140Text
+import ActiveCurrencyAnd13DecimalAmount
+import YesNoIndicator
+import DrawdownType2Choice
+import AdditionalInformation15
+import ISODate
 import BeneficiaryDrawdown1
 import ApplicableRules1Choice
-import Capped1
-import YesNoIndicator
-import PercentageRate
-import AdditionalInformation15
-import DrawdownType2Choice
-import TaxReference2
-import ISODate
-import ActiveCurrencyAnd13DecimalAmount
-import Max140Text
 
 class Drawdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_PnsnCmcmntLumpSumRmng", "_AddtlInf", "_PctgOfTtlTrfVal", "_TtlAmtNetDrwdwn", "_PnsnCmcmntLumpSumDt", "_BnfcryDtls", "_CapdLmts", "_AddtlFndsDsgntd", "_TrchTp", "_LftmAllwnc", "_RcptOfDrwdwnInd", "_InvstrTaxRef", "_FlxblDrwdwnTrggrdDt", "_AplblRules", "_MltplPnsnCmcmntLumpSums"]
+	__slots__ = ["_RcptOfDrwdwnInd", "_PnsnCmcmntLumpSumDt", "_Id", "_AddtlFndsDsgntd", "_AplblRules", "_InvstrTaxRef", "_LftmAllwnc", "_FlxblDrwdwnTrggrdDt", "_MltplPnsnCmcmntLumpSums", "_AddtlInf", "_TrchTp", "_PnsnCmcmntLumpSumRmng", "_CapdLmts", "_TtlAmtNetDrwdwn", "_BnfcryDtls", "_PctgOfTtlTrfVal"]
 	@property
-	def Id(self):
-		return self._Id
+	def RcptOfDrwdwnInd(self):
+		return self._RcptOfDrwdwnInd
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@RcptOfDrwdwnInd.setter
+	def RcptOfDrwdwnInd(self, value):
+		self._RcptOfDrwdwnInd = value if type(value) != auto else self.make_default("RcptOfDrwdwnInd")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def PnsnCmcmntLumpSumRmng(self):
-		return self._PnsnCmcmntLumpSumRmng
-
-	@PnsnCmcmntLumpSumRmng.setter
-	def PnsnCmcmntLumpSumRmng(self, value):
-		self._PnsnCmcmntLumpSumRmng = value if type(value) != auto else self.make_default("PnsnCmcmntLumpSumRmng")
-
-	@PnsnCmcmntLumpSumRmng.deleter
-	def PnsnCmcmntLumpSumRmng(self):
-		del self._PnsnCmcmntLumpSumRmng
-		self._PnsnCmcmntLumpSumRmng = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def PctgOfTtlTrfVal(self):
-		return self._PctgOfTtlTrfVal
-
-	@PctgOfTtlTrfVal.setter
-	def PctgOfTtlTrfVal(self, value):
-		self._PctgOfTtlTrfVal = value if type(value) != auto else self.make_default("PctgOfTtlTrfVal")
-
-	@PctgOfTtlTrfVal.deleter
-	def PctgOfTtlTrfVal(self):
-		del self._PctgOfTtlTrfVal
-		self._PctgOfTtlTrfVal = None
-
-	@property
-	def TtlAmtNetDrwdwn(self):
-		return self._TtlAmtNetDrwdwn
-
-	@TtlAmtNetDrwdwn.setter
-	def TtlAmtNetDrwdwn(self, value):
-		self._TtlAmtNetDrwdwn = value if type(value) != auto else self.make_default("TtlAmtNetDrwdwn")
-
-	@TtlAmtNetDrwdwn.deleter
-	def TtlAmtNetDrwdwn(self):
-		del self._TtlAmtNetDrwdwn
-		self._TtlAmtNetDrwdwn = None
+	@RcptOfDrwdwnInd.deleter
+	def RcptOfDrwdwnInd(self):
+		del self._RcptOfDrwdwnInd
+		self._RcptOfDrwdwnInd = None
 
 	@property
 	def PnsnCmcmntLumpSumDt(self):
@@ -93,30 +41,17 @@ class Drawdown2(base_types._BaseFieldType):
 		self._PnsnCmcmntLumpSumDt = None
 
 	@property
-	def BnfcryDtls(self):
-		return self._BnfcryDtls
+	def Id(self):
+		return self._Id
 
-	@BnfcryDtls.setter
-	def BnfcryDtls(self, value):
-		self._BnfcryDtls = value if type(value) != auto else self.make_default("BnfcryDtls")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@BnfcryDtls.deleter
-	def BnfcryDtls(self):
-		del self._BnfcryDtls
-		self._BnfcryDtls = None
-
-	@property
-	def CapdLmts(self):
-		return self._CapdLmts
-
-	@CapdLmts.setter
-	def CapdLmts(self, value):
-		self._CapdLmts = value if type(value) != auto else self.make_default("CapdLmts")
-
-	@CapdLmts.deleter
-	def CapdLmts(self):
-		del self._CapdLmts
-		self._CapdLmts = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def AddtlFndsDsgntd(self):
@@ -132,43 +67,17 @@ class Drawdown2(base_types._BaseFieldType):
 		self._AddtlFndsDsgntd = None
 
 	@property
-	def TrchTp(self):
-		return self._TrchTp
+	def AplblRules(self):
+		return self._AplblRules
 
-	@TrchTp.setter
-	def TrchTp(self, value):
-		self._TrchTp = value if type(value) != auto else self.make_default("TrchTp")
+	@AplblRules.setter
+	def AplblRules(self, value):
+		self._AplblRules = value if type(value) != auto else self.make_default("AplblRules")
 
-	@TrchTp.deleter
-	def TrchTp(self):
-		del self._TrchTp
-		self._TrchTp = None
-
-	@property
-	def LftmAllwnc(self):
-		return self._LftmAllwnc
-
-	@LftmAllwnc.setter
-	def LftmAllwnc(self, value):
-		self._LftmAllwnc = value if type(value) != auto else self.make_default("LftmAllwnc")
-
-	@LftmAllwnc.deleter
-	def LftmAllwnc(self):
-		del self._LftmAllwnc
-		self._LftmAllwnc = None
-
-	@property
-	def RcptOfDrwdwnInd(self):
-		return self._RcptOfDrwdwnInd
-
-	@RcptOfDrwdwnInd.setter
-	def RcptOfDrwdwnInd(self, value):
-		self._RcptOfDrwdwnInd = value if type(value) != auto else self.make_default("RcptOfDrwdwnInd")
-
-	@RcptOfDrwdwnInd.deleter
-	def RcptOfDrwdwnInd(self):
-		del self._RcptOfDrwdwnInd
-		self._RcptOfDrwdwnInd = None
+	@AplblRules.deleter
+	def AplblRules(self):
+		del self._AplblRules
+		self._AplblRules = None
 
 	@property
 	def InvstrTaxRef(self):
@@ -184,6 +93,19 @@ class Drawdown2(base_types._BaseFieldType):
 		self._InvstrTaxRef = None
 
 	@property
+	def LftmAllwnc(self):
+		return self._LftmAllwnc
+
+	@LftmAllwnc.setter
+	def LftmAllwnc(self, value):
+		self._LftmAllwnc = value if type(value) != auto else self.make_default("LftmAllwnc")
+
+	@LftmAllwnc.deleter
+	def LftmAllwnc(self):
+		del self._LftmAllwnc
+		self._LftmAllwnc = None
+
+	@property
 	def FlxblDrwdwnTrggrdDt(self):
 		return self._FlxblDrwdwnTrggrdDt
 
@@ -195,19 +117,6 @@ class Drawdown2(base_types._BaseFieldType):
 	def FlxblDrwdwnTrggrdDt(self):
 		del self._FlxblDrwdwnTrggrdDt
 		self._FlxblDrwdwnTrggrdDt = None
-
-	@property
-	def AplblRules(self):
-		return self._AplblRules
-
-	@AplblRules.setter
-	def AplblRules(self, value):
-		self._AplblRules = value if type(value) != auto else self.make_default("AplblRules")
-
-	@AplblRules.deleter
-	def AplblRules(self):
-		del self._AplblRules
-		self._AplblRules = None
 
 	@property
 	def MltplPnsnCmcmntLumpSums(self):
@@ -222,22 +131,113 @@ class Drawdown2(base_types._BaseFieldType):
 		del self._MltplPnsnCmcmntLumpSums
 		self._MltplPnsnCmcmntLumpSums = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def TrchTp(self):
+		return self._TrchTp
+
+	@TrchTp.setter
+	def TrchTp(self, value):
+		self._TrchTp = value if type(value) != auto else self.make_default("TrchTp")
+
+	@TrchTp.deleter
+	def TrchTp(self):
+		del self._TrchTp
+		self._TrchTp = None
+
+	@property
+	def PnsnCmcmntLumpSumRmng(self):
+		return self._PnsnCmcmntLumpSumRmng
+
+	@PnsnCmcmntLumpSumRmng.setter
+	def PnsnCmcmntLumpSumRmng(self, value):
+		self._PnsnCmcmntLumpSumRmng = value if type(value) != auto else self.make_default("PnsnCmcmntLumpSumRmng")
+
+	@PnsnCmcmntLumpSumRmng.deleter
+	def PnsnCmcmntLumpSumRmng(self):
+		del self._PnsnCmcmntLumpSumRmng
+		self._PnsnCmcmntLumpSumRmng = None
+
+	@property
+	def CapdLmts(self):
+		return self._CapdLmts
+
+	@CapdLmts.setter
+	def CapdLmts(self, value):
+		self._CapdLmts = value if type(value) != auto else self.make_default("CapdLmts")
+
+	@CapdLmts.deleter
+	def CapdLmts(self):
+		del self._CapdLmts
+		self._CapdLmts = None
+
+	@property
+	def TtlAmtNetDrwdwn(self):
+		return self._TtlAmtNetDrwdwn
+
+	@TtlAmtNetDrwdwn.setter
+	def TtlAmtNetDrwdwn(self, value):
+		self._TtlAmtNetDrwdwn = value if type(value) != auto else self.make_default("TtlAmtNetDrwdwn")
+
+	@TtlAmtNetDrwdwn.deleter
+	def TtlAmtNetDrwdwn(self):
+		del self._TtlAmtNetDrwdwn
+		self._TtlAmtNetDrwdwn = None
+
+	@property
+	def BnfcryDtls(self):
+		return self._BnfcryDtls
+
+	@BnfcryDtls.setter
+	def BnfcryDtls(self, value):
+		self._BnfcryDtls = value if type(value) != auto else self.make_default("BnfcryDtls")
+
+	@BnfcryDtls.deleter
+	def BnfcryDtls(self):
+		del self._BnfcryDtls
+		self._BnfcryDtls = None
+
+	@property
+	def PctgOfTtlTrfVal(self):
+		return self._PctgOfTtlTrfVal
+
+	@PctgOfTtlTrfVal.setter
+	def PctgOfTtlTrfVal(self, value):
+		self._PctgOfTtlTrfVal = value if type(value) != auto else self.make_default("PctgOfTtlTrfVal")
+
+	@PctgOfTtlTrfVal.deleter
+	def PctgOfTtlTrfVal(self):
+		del self._PctgOfTtlTrfVal
+		self._PctgOfTtlTrfVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PnsnCmcmntLumpSumRmng', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PctgOfTtlTrfVal', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmtNetDrwdwn', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PnsnCmcmntLumpSumDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnfcryDtls', type=BeneficiaryDrawdown1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CapdLmts', type=Capped1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlFndsDsgntd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrchTp', type=DrawdownType2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LftmAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptOfDrwdwnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTaxRef', type=TaxReference2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FlxblDrwdwnTrggrdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PnsnCmcmntLumpSumDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlFndsDsgntd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AplblRules', type=ApplicableRules1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrTaxRef', type=TaxReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LftmAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlxblDrwdwnTrggrdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MltplPnsnCmcmntLumpSums', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrchTp', type=DrawdownType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PnsnCmcmntLumpSumRmng', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CapdLmts', type=Capped1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmtNetDrwdwn', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryDtls', type=BeneficiaryDrawdown1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgOfTtlTrfVal', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

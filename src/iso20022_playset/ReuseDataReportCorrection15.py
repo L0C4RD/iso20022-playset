@@ -1,42 +1,42 @@
 import base_types
-import ISODate
-import CollateralType19
-import SupplementaryData1
 import ISODateTime
-import FundingSource3
-import ReconciliationFlag2
-import ContractModification3
-import CounterpartyData87
+import ISODate
 import Max140Text
+import FundingSource3
+import ContractModification3
+import ReconciliationFlag2
+import SupplementaryData1
+import CollateralType19
+import CounterpartyData87
 
 class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnFlg", "_TechRcrdId", "_CollCmpnt", "_CtrctMod", "_CtrPty", "_SplmtryData", "_FndgSrc", "_RptgDtTm", "_EvtDay"]
+	__slots__ = ["_SplmtryData", "_FndgSrc", "_CollCmpnt", "_RcncltnFlg", "_CtrctMod", "_CtrPty", "_TechRcrdId", "_EvtDay", "_RptgDtTm"]
 	@property
-	def RcncltnFlg(self):
-		return self._RcncltnFlg
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@RcncltnFlg.setter
-	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@RcncltnFlg.deleter
-	def RcncltnFlg(self):
-		del self._RcncltnFlg
-		self._RcncltnFlg = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
+	def FndgSrc(self):
+		return self._FndgSrc
 
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+	@FndgSrc.setter
+	def FndgSrc(self, value):
+		self._FndgSrc = value if type(value) != auto else self.make_default("FndgSrc")
 
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
+	@FndgSrc.deleter
+	def FndgSrc(self):
+		del self._FndgSrc
+		self._FndgSrc = None
 
 	@property
 	def CollCmpnt(self):
@@ -50,6 +50,19 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 	def CollCmpnt(self):
 		del self._CollCmpnt
 		self._CollCmpnt = None
+
+	@property
+	def RcncltnFlg(self):
+		return self._RcncltnFlg
+
+	@RcncltnFlg.setter
+	def RcncltnFlg(self, value):
+		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
+
+	@RcncltnFlg.deleter
+	def RcncltnFlg(self):
+		del self._RcncltnFlg
+		self._RcncltnFlg = None
 
 	@property
 	def CtrctMod(self):
@@ -78,43 +91,17 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 		self._CtrPty = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TechRcrdId(self):
+		return self._TechRcrdId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def FndgSrc(self):
-		return self._FndgSrc
-
-	@FndgSrc.setter
-	def FndgSrc(self, value):
-		self._FndgSrc = value if type(value) != auto else self.make_default("FndgSrc")
-
-	@FndgSrc.deleter
-	def FndgSrc(self):
-		del self._FndgSrc
-		self._FndgSrc = None
-
-	@property
-	def RptgDtTm(self):
-		return self._RptgDtTm
-
-	@RptgDtTm.setter
-	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
-
-	@RptgDtTm.deleter
-	def RptgDtTm(self):
-		del self._RptgDtTm
-		self._RptgDtTm = None
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	@property
 	def EvtDay(self):
@@ -129,15 +116,28 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 		del self._EvtDay
 		self._EvtDay = None
 
+	@property
+	def RptgDtTm(self):
+		return self._RptgDtTm
+
+	@RptgDtTm.setter
+	def RptgDtTm(self, value):
+		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
+
+	@RptgDtTm.deleter
+	def RptgDtTm(self):
+		del self._RptgDtTm
+		self._RptgDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollCmpnt', type=CollateralType19, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrctMod', type=ContractModification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FndgSrc', type=FundingSource3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollCmpnt', type=CollateralType19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctMod', type=ContractModification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtDay', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

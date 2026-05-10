@@ -1,6 +1,6 @@
 import base_types
-import CollateralAmount14
 import ClosingDate4Choice
+import CollateralAmount14
 
 class DealTransactionDetails7(base_types._BaseFieldType):
 

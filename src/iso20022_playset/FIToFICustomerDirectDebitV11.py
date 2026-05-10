@@ -1,23 +1,23 @@
 import base_types
 import SupplementaryData1
-import DirectDebitTransactionInformation31
 import GroupHeader125
+import DirectDebitTransactionInformation31
 
 class FIToFICustomerDirectDebitV11(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctDbtTxInf", "_GrpHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_DrctDbtTxInf"]
 	@property
-	def DrctDbtTxInf(self):
-		return self._DrctDbtTxInf
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@DrctDbtTxInf.setter
-	def DrctDbtTxInf(self, value):
-		self._DrctDbtTxInf = value if type(value) != auto else self.make_default("DrctDbtTxInf")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@DrctDbtTxInf.deleter
-	def DrctDbtTxInf(self):
-		del self._DrctDbtTxInf
-		self._DrctDbtTxInf = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class FIToFICustomerDirectDebitV11(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def DrctDbtTxInf(self):
+		return self._DrctDbtTxInf
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@DrctDbtTxInf.setter
+	def DrctDbtTxInf(self, value):
+		self._DrctDbtTxInf = value if type(value) != auto else self.make_default("DrctDbtTxInf")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@DrctDbtTxInf.deleter
+	def DrctDbtTxInf(self):
+		del self._DrctDbtTxInf
+		self._DrctDbtTxInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrctDbtTxInf', type=DirectDebitTransactionInformation31, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader125, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader125, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctDbtTxInf', type=DirectDebitTransactionInformation31, min=1, max=None, mutex_group=None, array=True),
 	))
 

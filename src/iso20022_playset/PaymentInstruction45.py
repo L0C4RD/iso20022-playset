@@ -1,59 +1,33 @@
 import base_types
-import BatchBookingIndicator
-import PartyIdentification272
+import PaymentMethod2Code
+import DirectDebitTransactionInformation32
+import Max15NumericText
 import DecimalNumber
+import PartyIdentification272
+import AdviceType1
 import CashAccount40
 import PaymentTypeInformation29
-import BranchAndFinancialInstitutionIdentification8
-import PaymentMethod2Code
-import AdviceType1
-import Max35Text
-import Max15NumericText
-import ISODate
+import BatchBookingIndicator
 import ChargeBearerType1Code
-import DirectDebitTransactionInformation32
+import ISODate
+import BranchAndFinancialInstitutionIdentification8
+import Max35Text
 
 class PaymentInstruction45(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrSchmeId", "_PmtTpInf", "_UltmtCdtr", "_ChrgBr", "_ReqdColltnDt", "_ChrgsAcctAgt", "_PmtMtd", "_CdtrAcct", "_Cdtr", "_CdtrAgtAcct", "_CtrlSum", "_ReqdAdvcTp", "_ChrgsAcct", "_BtchBookg", "_CdtrAgt", "_DrctDbtTxInf", "_PmtInfId", "_NbOfTxs"]
+	__slots__ = ["_NbOfTxs", "_ChrgBr", "_PmtMtd", "_CdtrSchmeId", "_CdtrAgtAcct", "_PmtInfId", "_DrctDbtTxInf", "_ReqdColltnDt", "_ChrgsAcct", "_BtchBookg", "_CdtrAcct", "_ChrgsAcctAgt", "_CdtrAgt", "_CtrlSum", "_ReqdAdvcTp", "_PmtTpInf", "_Cdtr", "_UltmtCdtr"]
 	@property
-	def CdtrSchmeId(self):
-		return self._CdtrSchmeId
+	def NbOfTxs(self):
+		return self._NbOfTxs
 
-	@CdtrSchmeId.setter
-	def CdtrSchmeId(self, value):
-		self._CdtrSchmeId = value if type(value) != auto else self.make_default("CdtrSchmeId")
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
 
-	@CdtrSchmeId.deleter
-	def CdtrSchmeId(self):
-		del self._CdtrSchmeId
-		self._CdtrSchmeId = None
-
-	@property
-	def PmtTpInf(self):
-		return self._PmtTpInf
-
-	@PmtTpInf.setter
-	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != auto else self.make_default("PmtTpInf")
-
-	@PmtTpInf.deleter
-	def PmtTpInf(self):
-		del self._PmtTpInf
-		self._PmtTpInf = None
-
-	@property
-	def UltmtCdtr(self):
-		return self._UltmtCdtr
-
-	@UltmtCdtr.setter
-	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != auto else self.make_default("UltmtCdtr")
-
-	@UltmtCdtr.deleter
-	def UltmtCdtr(self):
-		del self._UltmtCdtr
-		self._UltmtCdtr = None
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
 
 	@property
 	def ChrgBr(self):
@@ -69,32 +43,6 @@ class PaymentInstruction45(base_types._BaseFieldType):
 		self._ChrgBr = None
 
 	@property
-	def ReqdColltnDt(self):
-		return self._ReqdColltnDt
-
-	@ReqdColltnDt.setter
-	def ReqdColltnDt(self, value):
-		self._ReqdColltnDt = value if type(value) != auto else self.make_default("ReqdColltnDt")
-
-	@ReqdColltnDt.deleter
-	def ReqdColltnDt(self):
-		del self._ReqdColltnDt
-		self._ReqdColltnDt = None
-
-	@property
-	def ChrgsAcctAgt(self):
-		return self._ChrgsAcctAgt
-
-	@ChrgsAcctAgt.setter
-	def ChrgsAcctAgt(self, value):
-		self._ChrgsAcctAgt = value if type(value) != auto else self.make_default("ChrgsAcctAgt")
-
-	@ChrgsAcctAgt.deleter
-	def ChrgsAcctAgt(self):
-		del self._ChrgsAcctAgt
-		self._ChrgsAcctAgt = None
-
-	@property
 	def PmtMtd(self):
 		return self._PmtMtd
 
@@ -108,30 +56,17 @@ class PaymentInstruction45(base_types._BaseFieldType):
 		self._PmtMtd = None
 
 	@property
-	def CdtrAcct(self):
-		return self._CdtrAcct
+	def CdtrSchmeId(self):
+		return self._CdtrSchmeId
 
-	@CdtrAcct.setter
-	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
+	@CdtrSchmeId.setter
+	def CdtrSchmeId(self, value):
+		self._CdtrSchmeId = value if type(value) != auto else self.make_default("CdtrSchmeId")
 
-	@CdtrAcct.deleter
-	def CdtrAcct(self):
-		del self._CdtrAcct
-		self._CdtrAcct = None
-
-	@property
-	def Cdtr(self):
-		return self._Cdtr
-
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
-
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@CdtrSchmeId.deleter
+	def CdtrSchmeId(self):
+		del self._CdtrSchmeId
+		self._CdtrSchmeId = None
 
 	@property
 	def CdtrAgtAcct(self):
@@ -147,30 +82,43 @@ class PaymentInstruction45(base_types._BaseFieldType):
 		self._CdtrAgtAcct = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def PmtInfId(self):
+		return self._PmtInfId
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
+	@PmtInfId.setter
+	def PmtInfId(self, value):
+		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
+	@PmtInfId.deleter
+	def PmtInfId(self):
+		del self._PmtInfId
+		self._PmtInfId = None
 
 	@property
-	def ReqdAdvcTp(self):
-		return self._ReqdAdvcTp
+	def DrctDbtTxInf(self):
+		return self._DrctDbtTxInf
 
-	@ReqdAdvcTp.setter
-	def ReqdAdvcTp(self, value):
-		self._ReqdAdvcTp = value if type(value) != auto else self.make_default("ReqdAdvcTp")
+	@DrctDbtTxInf.setter
+	def DrctDbtTxInf(self, value):
+		self._DrctDbtTxInf = value if type(value) != auto else self.make_default("DrctDbtTxInf")
 
-	@ReqdAdvcTp.deleter
-	def ReqdAdvcTp(self):
-		del self._ReqdAdvcTp
-		self._ReqdAdvcTp = None
+	@DrctDbtTxInf.deleter
+	def DrctDbtTxInf(self):
+		del self._DrctDbtTxInf
+		self._DrctDbtTxInf = None
+
+	@property
+	def ReqdColltnDt(self):
+		return self._ReqdColltnDt
+
+	@ReqdColltnDt.setter
+	def ReqdColltnDt(self, value):
+		self._ReqdColltnDt = value if type(value) != auto else self.make_default("ReqdColltnDt")
+
+	@ReqdColltnDt.deleter
+	def ReqdColltnDt(self):
+		del self._ReqdColltnDt
+		self._ReqdColltnDt = None
 
 	@property
 	def ChrgsAcct(self):
@@ -199,6 +147,32 @@ class PaymentInstruction45(base_types._BaseFieldType):
 		self._BtchBookg = None
 
 	@property
+	def CdtrAcct(self):
+		return self._CdtrAcct
+
+	@CdtrAcct.setter
+	def CdtrAcct(self, value):
+		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
+
+	@CdtrAcct.deleter
+	def CdtrAcct(self):
+		del self._CdtrAcct
+		self._CdtrAcct = None
+
+	@property
+	def ChrgsAcctAgt(self):
+		return self._ChrgsAcctAgt
+
+	@ChrgsAcctAgt.setter
+	def ChrgsAcctAgt(self, value):
+		self._ChrgsAcctAgt = value if type(value) != auto else self.make_default("ChrgsAcctAgt")
+
+	@ChrgsAcctAgt.deleter
+	def ChrgsAcctAgt(self):
+		del self._ChrgsAcctAgt
+		self._ChrgsAcctAgt = None
+
+	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt
 
@@ -212,62 +186,88 @@ class PaymentInstruction45(base_types._BaseFieldType):
 		self._CdtrAgt = None
 
 	@property
-	def DrctDbtTxInf(self):
-		return self._DrctDbtTxInf
+	def CtrlSum(self):
+		return self._CtrlSum
 
-	@DrctDbtTxInf.setter
-	def DrctDbtTxInf(self, value):
-		self._DrctDbtTxInf = value if type(value) != auto else self.make_default("DrctDbtTxInf")
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
 
-	@DrctDbtTxInf.deleter
-	def DrctDbtTxInf(self):
-		del self._DrctDbtTxInf
-		self._DrctDbtTxInf = None
-
-	@property
-	def PmtInfId(self):
-		return self._PmtInfId
-
-	@PmtInfId.setter
-	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
-
-	@PmtInfId.deleter
-	def PmtInfId(self):
-		del self._PmtInfId
-		self._PmtInfId = None
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
 
 	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
+	def ReqdAdvcTp(self):
+		return self._ReqdAdvcTp
 
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
+	@ReqdAdvcTp.setter
+	def ReqdAdvcTp(self, value):
+		self._ReqdAdvcTp = value if type(value) != auto else self.make_default("ReqdAdvcTp")
 
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
+	@ReqdAdvcTp.deleter
+	def ReqdAdvcTp(self):
+		del self._ReqdAdvcTp
+		self._ReqdAdvcTp = None
+
+	@property
+	def PmtTpInf(self):
+		return self._PmtTpInf
+
+	@PmtTpInf.setter
+	def PmtTpInf(self, value):
+		self._PmtTpInf = value if type(value) != auto else self.make_default("PmtTpInf")
+
+	@PmtTpInf.deleter
+	def PmtTpInf(self):
+		del self._PmtTpInf
+		self._PmtTpInf = None
+
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
+	@property
+	def UltmtCdtr(self):
+		return self._UltmtCdtr
+
+	@UltmtCdtr.setter
+	def UltmtCdtr(self, value):
+		self._UltmtCdtr = value if type(value) != auto else self.make_default("UltmtCdtr")
+
+	@UltmtCdtr.deleter
+	def UltmtCdtr(self):
+		del self._UltmtCdtr
+		self._UltmtCdtr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation29, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdColltnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsAcctAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMtd', type=PaymentMethod2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdAdvcTp', type=AdviceType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctDbtTxInf', type=DirectDebitTransactionInformation32, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqdColltnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchBookg', type=BatchBookingIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAcctAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrctDbtTxInf', type=DirectDebitTransactionInformation32, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdAdvcTp', type=AdviceType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

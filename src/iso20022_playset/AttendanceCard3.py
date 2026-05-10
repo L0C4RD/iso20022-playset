@@ -5,19 +5,19 @@ import NameAndAddress9
 
 class AttendanceCard3(base_types._BaseFieldType):
 
-	__slots__ = ["_AttndncCardLbllg", "_DlvryMtd", "_OthrAdr"]
+	__slots__ = ["_OthrAdr", "_DlvryMtd", "_AttndncCardLbllg"]
 	@property
-	def AttndncCardLbllg(self):
-		return self._AttndncCardLbllg
+	def OthrAdr(self):
+		return self._OthrAdr
 
-	@AttndncCardLbllg.setter
-	def AttndncCardLbllg(self, value):
-		self._AttndncCardLbllg = value if type(value) != auto else self.make_default("AttndncCardLbllg")
+	@OthrAdr.setter
+	def OthrAdr(self, value):
+		self._OthrAdr = value if type(value) != auto else self.make_default("OthrAdr")
 
-	@AttndncCardLbllg.deleter
-	def AttndncCardLbllg(self):
-		del self._AttndncCardLbllg
-		self._AttndncCardLbllg = None
+	@OthrAdr.deleter
+	def OthrAdr(self):
+		del self._OthrAdr
+		self._OthrAdr = None
 
 	@property
 	def DlvryMtd(self):
@@ -33,21 +33,21 @@ class AttendanceCard3(base_types._BaseFieldType):
 		self._DlvryMtd = None
 
 	@property
-	def OthrAdr(self):
-		return self._OthrAdr
+	def AttndncCardLbllg(self):
+		return self._AttndncCardLbllg
 
-	@OthrAdr.setter
-	def OthrAdr(self, value):
-		self._OthrAdr = value if type(value) != auto else self.make_default("OthrAdr")
+	@AttndncCardLbllg.setter
+	def AttndncCardLbllg(self, value):
+		self._AttndncCardLbllg = value if type(value) != auto else self.make_default("AttndncCardLbllg")
 
-	@OthrAdr.deleter
-	def OthrAdr(self):
-		del self._OthrAdr
-		self._OthrAdr = None
+	@AttndncCardLbllg.deleter
+	def AttndncCardLbllg(self):
+		del self._AttndncCardLbllg
+		self._AttndncCardLbllg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AttndncCardLbllg', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryMtd', type=DeliveryPlace3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrAdr', type=NameAndAddress9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryMtd', type=DeliveryPlace3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttndncCardLbllg', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

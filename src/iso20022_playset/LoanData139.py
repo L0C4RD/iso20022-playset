@@ -1,138 +1,21 @@
 import base_types
-import Cleared16Choice
-import PrincipalAmount3
-import InterestRate27Choice
+import TrueFalseIndicator
+import ISODate
 import ISODateTime
-import CollateralDeliveryMethod1Code
+import Max20PositiveNumber
 import MasterAgreement7
 import Max52Text
-import TrueFalseIndicator
 import ContractTerm7Choice
 import MICIdentifier
-import ISODate
+import Cleared16Choice
 import SpecialCollateral1Code
-import Max20PositiveNumber
+import InterestRate27Choice
+import PrincipalAmount3
+import CollateralDeliveryMethod1Code
 
 class LoanData139(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgVn", "_MstrAgrmt", "_ExctnDtTm", "_EvtDt", "_MinNtcePrd", "_DlvryByVal", "_CollDlvryMtd", "_PrncplAmt", "_EarlstCallBckDt", "_IntrstRate", "_ClrSts", "_Term", "_TermntnDt", "_UnqTradIdr", "_ValDt", "_GnlColl"]
-	@property
-	def TradgVn(self):
-		return self._TradgVn
-
-	@TradgVn.setter
-	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
-
-	@TradgVn.deleter
-	def TradgVn(self):
-		del self._TradgVn
-		self._TradgVn = None
-
-	@property
-	def MstrAgrmt(self):
-		return self._MstrAgrmt
-
-	@MstrAgrmt.setter
-	def MstrAgrmt(self, value):
-		self._MstrAgrmt = value if type(value) != auto else self.make_default("MstrAgrmt")
-
-	@MstrAgrmt.deleter
-	def MstrAgrmt(self):
-		del self._MstrAgrmt
-		self._MstrAgrmt = None
-
-	@property
-	def ExctnDtTm(self):
-		return self._ExctnDtTm
-
-	@ExctnDtTm.setter
-	def ExctnDtTm(self, value):
-		self._ExctnDtTm = value if type(value) != auto else self.make_default("ExctnDtTm")
-
-	@ExctnDtTm.deleter
-	def ExctnDtTm(self):
-		del self._ExctnDtTm
-		self._ExctnDtTm = None
-
-	@property
-	def EvtDt(self):
-		return self._EvtDt
-
-	@EvtDt.setter
-	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != auto else self.make_default("EvtDt")
-
-	@EvtDt.deleter
-	def EvtDt(self):
-		del self._EvtDt
-		self._EvtDt = None
-
-	@property
-	def MinNtcePrd(self):
-		return self._MinNtcePrd
-
-	@MinNtcePrd.setter
-	def MinNtcePrd(self, value):
-		self._MinNtcePrd = value if type(value) != auto else self.make_default("MinNtcePrd")
-
-	@MinNtcePrd.deleter
-	def MinNtcePrd(self):
-		del self._MinNtcePrd
-		self._MinNtcePrd = None
-
-	@property
-	def DlvryByVal(self):
-		return self._DlvryByVal
-
-	@DlvryByVal.setter
-	def DlvryByVal(self, value):
-		self._DlvryByVal = value if type(value) != auto else self.make_default("DlvryByVal")
-
-	@DlvryByVal.deleter
-	def DlvryByVal(self):
-		del self._DlvryByVal
-		self._DlvryByVal = None
-
-	@property
-	def CollDlvryMtd(self):
-		return self._CollDlvryMtd
-
-	@CollDlvryMtd.setter
-	def CollDlvryMtd(self, value):
-		self._CollDlvryMtd = value if type(value) != auto else self.make_default("CollDlvryMtd")
-
-	@CollDlvryMtd.deleter
-	def CollDlvryMtd(self):
-		del self._CollDlvryMtd
-		self._CollDlvryMtd = None
-
-	@property
-	def PrncplAmt(self):
-		return self._PrncplAmt
-
-	@PrncplAmt.setter
-	def PrncplAmt(self, value):
-		self._PrncplAmt = value if type(value) != auto else self.make_default("PrncplAmt")
-
-	@PrncplAmt.deleter
-	def PrncplAmt(self):
-		del self._PrncplAmt
-		self._PrncplAmt = None
-
-	@property
-	def EarlstCallBckDt(self):
-		return self._EarlstCallBckDt
-
-	@EarlstCallBckDt.setter
-	def EarlstCallBckDt(self, value):
-		self._EarlstCallBckDt = value if type(value) != auto else self.make_default("EarlstCallBckDt")
-
-	@EarlstCallBckDt.deleter
-	def EarlstCallBckDt(self):
-		del self._EarlstCallBckDt
-		self._EarlstCallBckDt = None
-
+	__slots__ = ["_IntrstRate", "_TradgVn", "_ClrSts", "_PrncplAmt", "_MstrAgrmt", "_DlvryByVal", "_GnlColl", "_EarlstCallBckDt", "_ExctnDtTm", "_ValDt", "_Term", "_EvtDt", "_TermntnDt", "_UnqTradIdr", "_MinNtcePrd", "_CollDlvryMtd"]
 	@property
 	def IntrstRate(self):
 		return self._IntrstRate
@@ -145,6 +28,19 @@ class LoanData139(base_types._BaseFieldType):
 	def IntrstRate(self):
 		del self._IntrstRate
 		self._IntrstRate = None
+
+	@property
+	def TradgVn(self):
+		return self._TradgVn
+
+	@TradgVn.setter
+	def TradgVn(self, value):
+		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+
+	@TradgVn.deleter
+	def TradgVn(self):
+		del self._TradgVn
+		self._TradgVn = None
 
 	@property
 	def ClrSts(self):
@@ -160,6 +56,97 @@ class LoanData139(base_types._BaseFieldType):
 		self._ClrSts = None
 
 	@property
+	def PrncplAmt(self):
+		return self._PrncplAmt
+
+	@PrncplAmt.setter
+	def PrncplAmt(self, value):
+		self._PrncplAmt = value if type(value) != auto else self.make_default("PrncplAmt")
+
+	@PrncplAmt.deleter
+	def PrncplAmt(self):
+		del self._PrncplAmt
+		self._PrncplAmt = None
+
+	@property
+	def MstrAgrmt(self):
+		return self._MstrAgrmt
+
+	@MstrAgrmt.setter
+	def MstrAgrmt(self, value):
+		self._MstrAgrmt = value if type(value) != auto else self.make_default("MstrAgrmt")
+
+	@MstrAgrmt.deleter
+	def MstrAgrmt(self):
+		del self._MstrAgrmt
+		self._MstrAgrmt = None
+
+	@property
+	def DlvryByVal(self):
+		return self._DlvryByVal
+
+	@DlvryByVal.setter
+	def DlvryByVal(self, value):
+		self._DlvryByVal = value if type(value) != auto else self.make_default("DlvryByVal")
+
+	@DlvryByVal.deleter
+	def DlvryByVal(self):
+		del self._DlvryByVal
+		self._DlvryByVal = None
+
+	@property
+	def GnlColl(self):
+		return self._GnlColl
+
+	@GnlColl.setter
+	def GnlColl(self, value):
+		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
+
+	@GnlColl.deleter
+	def GnlColl(self):
+		del self._GnlColl
+		self._GnlColl = None
+
+	@property
+	def EarlstCallBckDt(self):
+		return self._EarlstCallBckDt
+
+	@EarlstCallBckDt.setter
+	def EarlstCallBckDt(self, value):
+		self._EarlstCallBckDt = value if type(value) != auto else self.make_default("EarlstCallBckDt")
+
+	@EarlstCallBckDt.deleter
+	def EarlstCallBckDt(self):
+		del self._EarlstCallBckDt
+		self._EarlstCallBckDt = None
+
+	@property
+	def ExctnDtTm(self):
+		return self._ExctnDtTm
+
+	@ExctnDtTm.setter
+	def ExctnDtTm(self, value):
+		self._ExctnDtTm = value if type(value) != auto else self.make_default("ExctnDtTm")
+
+	@ExctnDtTm.deleter
+	def ExctnDtTm(self):
+		del self._ExctnDtTm
+		self._ExctnDtTm = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
+	@property
 	def Term(self):
 		return self._Term
 
@@ -171,6 +158,19 @@ class LoanData139(base_types._BaseFieldType):
 	def Term(self):
 		del self._Term
 		self._Term = None
+
+	@property
+	def EvtDt(self):
+		return self._EvtDt
+
+	@EvtDt.setter
+	def EvtDt(self, value):
+		self._EvtDt = value if type(value) != auto else self.make_default("EvtDt")
+
+	@EvtDt.deleter
+	def EvtDt(self):
+		del self._EvtDt
+		self._EvtDt = None
 
 	@property
 	def TermntnDt(self):
@@ -199,47 +199,47 @@ class LoanData139(base_types._BaseFieldType):
 		self._UnqTradIdr = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def MinNtcePrd(self):
+		return self._MinNtcePrd
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@MinNtcePrd.setter
+	def MinNtcePrd(self, value):
+		self._MinNtcePrd = value if type(value) != auto else self.make_default("MinNtcePrd")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@MinNtcePrd.deleter
+	def MinNtcePrd(self):
+		del self._MinNtcePrd
+		self._MinNtcePrd = None
 
 	@property
-	def GnlColl(self):
-		return self._GnlColl
+	def CollDlvryMtd(self):
+		return self._CollDlvryMtd
 
-	@GnlColl.setter
-	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
+	@CollDlvryMtd.setter
+	def CollDlvryMtd(self, value):
+		self._CollDlvryMtd = value if type(value) != auto else self.make_default("CollDlvryMtd")
 
-	@GnlColl.deleter
-	def GnlColl(self):
-		del self._GnlColl
-		self._GnlColl = None
+	@CollDlvryMtd.deleter
+	def CollDlvryMtd(self):
+		del self._CollDlvryMtd
+		self._CollDlvryMtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinNtcePrd', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollDlvryMtd', type=CollateralDeliveryMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlstCallBckDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=InterestRate27Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSts', type=Cleared16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlstCallBckDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Term', type=ContractTerm7Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinNtcePrd', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollDlvryMtd', type=CollateralDeliveryMethod1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

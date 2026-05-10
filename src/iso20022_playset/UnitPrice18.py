@@ -1,23 +1,23 @@
 import base_types
-import CurrencyAndAmount
-import Max15NumericText
 import UnitOfMeasure3Choice
+import Max15NumericText
+import CurrencyAndAmount
 
 class UnitPrice18(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Fctr", "_UnitPric"]
+	__slots__ = ["_UnitPric", "_Fctr", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def UnitPric(self):
+		return self._UnitPric
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
 
 	@property
 	def Fctr(self):
@@ -33,21 +33,21 @@ class UnitPrice18(base_types._BaseFieldType):
 		self._Fctr = None
 
 	@property
-	def UnitPric(self):
-		return self._UnitPric
+	def Amt(self):
+		return self._Amt
 
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fctr', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=UnitOfMeasure3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctr', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

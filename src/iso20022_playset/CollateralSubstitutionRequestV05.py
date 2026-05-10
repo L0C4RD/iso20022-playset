@@ -1,14 +1,27 @@
 import base_types
+import CollateralSubstitution8
+import CollateralSubstitution7
 import Max35Text
 import Obligation9
 import Agreement4
-import CollateralSubstitution8
-import CollateralSubstitution7
 import SupplementaryData1
 
 class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SplmtryData", "_Agrmt", "_CollSbstitnRtr", "_CollSbstitnDlvr", "_Oblgtn"]
+	__slots__ = ["_Oblgtn", "_TxId", "_SplmtryData", "_CollSbstitnDlvr", "_Agrmt", "_CollSbstitnRtr"]
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
+
 	@property
 	def TxId(self):
 		return self._TxId
@@ -36,6 +49,19 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def CollSbstitnDlvr(self):
+		return self._CollSbstitnDlvr
+
+	@CollSbstitnDlvr.setter
+	def CollSbstitnDlvr(self, value):
+		self._CollSbstitnDlvr = value if type(value) != auto else self.make_default("CollSbstitnDlvr")
+
+	@CollSbstitnDlvr.deleter
+	def CollSbstitnDlvr(self):
+		del self._CollSbstitnDlvr
+		self._CollSbstitnDlvr = None
+
+	@property
 	def Agrmt(self):
 		return self._Agrmt
 
@@ -61,38 +87,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 		del self._CollSbstitnRtr
 		self._CollSbstitnRtr = None
 
-	@property
-	def CollSbstitnDlvr(self):
-		return self._CollSbstitnDlvr
-
-	@CollSbstitnDlvr.setter
-	def CollSbstitnDlvr(self, value):
-		self._CollSbstitnDlvr = value if type(value) != auto else self.make_default("CollSbstitnDlvr")
-
-	@CollSbstitnDlvr.deleter
-	def CollSbstitnDlvr(self):
-		del self._CollSbstitnDlvr
-		self._CollSbstitnDlvr = None
-
-	@property
-	def Oblgtn(self):
-		return self._Oblgtn
-
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
-
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollSbstitnDlvr', type=CollateralSubstitution8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnRtr', type=CollateralSubstitution7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSbstitnDlvr', type=CollateralSubstitution8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 	))
 

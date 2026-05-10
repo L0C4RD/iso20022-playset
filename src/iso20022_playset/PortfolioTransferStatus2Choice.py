@@ -1,12 +1,12 @@
 import base_types
-import PendingProcessingStatus17Choice
 import ProprietaryStatusAndReason6
 import AcknowledgedAcceptedStatus32Choice
+import PendingProcessingStatus17Choice
 import RejectionStatus30Choice
 
 class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_PdgPrcg", "_Rjctd", "_AckdAccptd"]
+	__slots__ = ["_Prtry", "_AckdAccptd", "_Rjctd", "_PdgPrcg"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -21,17 +21,17 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def PdgPrcg(self):
-		return self._PdgPrcg
+	def AckdAccptd(self):
+		return self._AckdAccptd
 
-	@PdgPrcg.setter
-	def PdgPrcg(self, value):
-		self._PdgPrcg = value if type(value) != auto else self.make_default("PdgPrcg")
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
 
-	@PdgPrcg.deleter
-	def PdgPrcg(self):
-		del self._PdgPrcg
-		self._PdgPrcg = None
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
 
 	@property
 	def Rjctd(self):
@@ -47,22 +47,22 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
+	def PdgPrcg(self):
+		return self._PdgPrcg
 
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+	@PdgPrcg.setter
+	def PdgPrcg(self, value):
+		self._PdgPrcg = value if type(value) != auto else self.make_default("PdgPrcg")
 
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
+	@PdgPrcg.deleter
+	def PdgPrcg(self):
+		del self._PdgPrcg
+		self._PdgPrcg = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus17Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus32Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus17Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
-import ISOTime
-import NetworkParameters7
 import Max70Text
+import NetworkParameters7
+import ISOTime
 
 class ClockSynchronisation3(base_types._BaseFieldType):
 

@@ -1,11 +1,24 @@
 import base_types
+import TransactionReportOrError7Choice
 import SupplementaryData1
 import MessageHeader8
-import TransactionReportOrError7Choice
 
 class ReturnTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_RptOrErr"]
+	__slots__ = ["_RptOrErr", "_SplmtryData", "_MsgHdr"]
+	@property
+	def RptOrErr(self):
+		return self._RptOrErr
+
+	@RptOrErr.setter
+	def RptOrErr(self, value):
+		self._RptOrErr = value if type(value) != auto else self.make_default("RptOrErr")
+
+	@RptOrErr.deleter
+	def RptOrErr(self):
+		del self._RptOrErr
+		self._RptOrErr = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class ReturnTransactionV11(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
-	@property
-	def RptOrErr(self):
-		return self._RptOrErr
-
-	@RptOrErr.setter
-	def RptOrErr(self, value):
-		self._RptOrErr = value if type(value) != auto else self.make_default("RptOrErr")
-
-	@RptOrErr.deleter
-	def RptOrErr(self):
-		del self._RptOrErr
-		self._RptOrErr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RptOrErr', type=TransactionReportOrError7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptOrErr', type=TransactionReportOrError7Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

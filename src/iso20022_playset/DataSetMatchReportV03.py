@@ -1,32 +1,19 @@
 import base_types
-import BICIdentification1
-import ReportType3
-import DocumentIdentification3
-import TransactionStatus4
 import DocumentIdentification10
+import TransactionStatus4
+import BICIdentification1
+import MessageIdentification1
+import DocumentIdentification3
+import PendingActivity2
 import DocumentIdentification5
+import ReportType3
+import SimpleIdentificationInformation
 import MisMatchReport3
 import PartyIdentification26
-import MessageIdentification1
-import SimpleIdentificationInformation
-import PendingActivity2
 
 class DataSetMatchReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrTxRef", "_ReqForActn", "_SubmissnTp", "_Buyr", "_TxId", "_BuyrBk", "_RptId", "_Sellr", "_SellrBk", "_CmpardDocRef", "_Rpt", "_TxSts", "_EstblishdBaselnId"]
-	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
+	__slots__ = ["_ReqForActn", "_Sellr", "_EstblishdBaselnId", "_Buyr", "_BuyrBk", "_SellrBk", "_TxId", "_UsrTxRef", "_CmpardDocRef", "_Rpt", "_TxSts", "_RptId", "_SubmissnTp"]
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -39,71 +26,6 @@ class DataSetMatchReportV03(base_types._BaseFieldType):
 	def ReqForActn(self):
 		del self._ReqForActn
 		self._ReqForActn = None
-
-	@property
-	def SubmissnTp(self):
-		return self._SubmissnTp
-
-	@SubmissnTp.setter
-	def SubmissnTp(self, value):
-		self._SubmissnTp = value if type(value) != auto else self.make_default("SubmissnTp")
-
-	@SubmissnTp.deleter
-	def SubmissnTp(self):
-		del self._SubmissnTp
-		self._SubmissnTp = None
-
-	@property
-	def Buyr(self):
-		return self._Buyr
-
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
-
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def BuyrBk(self):
-		return self._BuyrBk
-
-	@BuyrBk.setter
-	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
-
-	@BuyrBk.deleter
-	def BuyrBk(self):
-		del self._BuyrBk
-		self._BuyrBk = None
-
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
 
 	@property
 	def Sellr(self):
@@ -119,6 +41,45 @@ class DataSetMatchReportV03(base_types._BaseFieldType):
 		self._Sellr = None
 
 	@property
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
+
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
+
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
+
+	@property
+	def Buyr(self):
+		return self._Buyr
+
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
+
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
+
+	@property
+	def BuyrBk(self):
+		return self._BuyrBk
+
+	@BuyrBk.setter
+	def BuyrBk(self, value):
+		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
+
+	@BuyrBk.deleter
+	def BuyrBk(self):
+		del self._BuyrBk
+		self._BuyrBk = None
+
+	@property
 	def SellrBk(self):
 		return self._SellrBk
 
@@ -130,6 +91,32 @@ class DataSetMatchReportV03(base_types._BaseFieldType):
 	def SellrBk(self):
 		del self._SellrBk
 		self._SellrBk = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def UsrTxRef(self):
+		return self._UsrTxRef
+
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	@property
 	def CmpardDocRef(self):
@@ -171,31 +158,44 @@ class DataSetMatchReportV03(base_types._BaseFieldType):
 		self._TxSts = None
 
 	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
+	def RptId(self):
+		return self._RptId
 
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != auto else self.make_default("RptId")
 
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
+	@property
+	def SubmissnTp(self):
+		return self._SubmissnTp
+
+	@SubmissnTp.setter
+	def SubmissnTp(self, value):
+		self._SubmissnTp = value if type(value) != auto else self.make_default("SubmissnTp")
+
+	@SubmissnTp.deleter
+	def SubmissnTp(self):
+		del self._SubmissnTp
+		self._SubmissnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmissnTp', type=ReportType3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CmpardDocRef', type=DocumentIdentification10, min=2, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rpt', type=MisMatchReport3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmissnTp', type=ReportType3, min=1, max=1, mutex_group=None, array=False),
 	))
 

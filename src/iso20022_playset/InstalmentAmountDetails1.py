@@ -1,25 +1,12 @@
 import base_types
-import Amount5
-import PercentageRate
-import Max35Text
 import InstalmentAmountDetailsType1Code
+import PercentageRate
+import Amount5
+import Max35Text
 
 class InstalmentAmountDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_Pctg", "_OthrTp", "_SubTp"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Tp", "_SubTp", "_Amt", "_OthrTp", "_Pctg"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -34,17 +21,30 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def SubTp(self):
+		return self._SubTp
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@SubTp.setter
+	def SubTp(self, value):
+		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
+	@SubTp.deleter
+	def SubTp(self):
+		del self._SubTp
+		self._SubTp = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def OthrTp(self):
@@ -60,23 +60,23 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def SubTp(self):
-		return self._SubTp
+	def Pctg(self):
+		return self._Pctg
 
-	@SubTp.setter
-	def SubTp(self, value):
-		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
 
-	@SubTp.deleter
-	def SubTp(self):
-		del self._SubTp
-		self._SubTp = None
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=Amount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=InstalmentAmountDetailsType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

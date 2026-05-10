@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax210Text
 import PendingCancellationReason6Choice
+import RestrictedFINXMax210Text
 
 class PendingCancellationStatusReason8(base_types._BaseFieldType):
 

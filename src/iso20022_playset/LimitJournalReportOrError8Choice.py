@@ -1,6 +1,6 @@
 import base_types
-import LimitJournal3
 import ErrorHandling5
+import LimitJournal3
 
 class LimitJournalReportOrError8Choice(base_types._BaseFieldType):
 

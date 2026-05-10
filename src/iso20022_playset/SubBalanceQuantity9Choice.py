@@ -1,6 +1,6 @@
 import base_types
-import FinancialInstrumentQuantity36Choice
 import QuantityAndAvailability4
+import FinancialInstrumentQuantity36Choice
 import GenericIdentification144
 
 class SubBalanceQuantity9Choice(base_types._BaseFieldType):

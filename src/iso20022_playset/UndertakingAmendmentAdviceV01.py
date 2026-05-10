@@ -1,13 +1,26 @@
 import base_types
+import Max2000Text
+import ISODate
 import Amendment2
 import PartyAndSignature2
-import ISODate
 import PartyIdentification43
-import Max2000Text
 
 class UndertakingAmendmentAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlSgntr", "_ScndAdvsgPty", "_AdvsgPty", "_BkToBkInf", "_UdrtkgAmdmntAdvcDtls", "_DtOfAdvc"]
+	__slots__ = ["_UdrtkgAmdmntAdvcDtls", "_DgtlSgntr", "_ScndAdvsgPty", "_DtOfAdvc", "_BkToBkInf", "_AdvsgPty"]
+	@property
+	def UdrtkgAmdmntAdvcDtls(self):
+		return self._UdrtkgAmdmntAdvcDtls
+
+	@UdrtkgAmdmntAdvcDtls.setter
+	def UdrtkgAmdmntAdvcDtls(self, value):
+		self._UdrtkgAmdmntAdvcDtls = value if type(value) != auto else self.make_default("UdrtkgAmdmntAdvcDtls")
+
+	@UdrtkgAmdmntAdvcDtls.deleter
+	def UdrtkgAmdmntAdvcDtls(self):
+		del self._UdrtkgAmdmntAdvcDtls
+		self._UdrtkgAmdmntAdvcDtls = None
+
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -35,17 +48,17 @@ class UndertakingAmendmentAdviceV01(base_types._BaseFieldType):
 		self._ScndAdvsgPty = None
 
 	@property
-	def AdvsgPty(self):
-		return self._AdvsgPty
+	def DtOfAdvc(self):
+		return self._DtOfAdvc
 
-	@AdvsgPty.setter
-	def AdvsgPty(self, value):
-		self._AdvsgPty = value if type(value) != auto else self.make_default("AdvsgPty")
+	@DtOfAdvc.setter
+	def DtOfAdvc(self, value):
+		self._DtOfAdvc = value if type(value) != auto else self.make_default("DtOfAdvc")
 
-	@AdvsgPty.deleter
-	def AdvsgPty(self):
-		del self._AdvsgPty
-		self._AdvsgPty = None
+	@DtOfAdvc.deleter
+	def DtOfAdvc(self):
+		del self._DtOfAdvc
+		self._DtOfAdvc = None
 
 	@property
 	def BkToBkInf(self):
@@ -61,37 +74,24 @@ class UndertakingAmendmentAdviceV01(base_types._BaseFieldType):
 		self._BkToBkInf = None
 
 	@property
-	def UdrtkgAmdmntAdvcDtls(self):
-		return self._UdrtkgAmdmntAdvcDtls
+	def AdvsgPty(self):
+		return self._AdvsgPty
 
-	@UdrtkgAmdmntAdvcDtls.setter
-	def UdrtkgAmdmntAdvcDtls(self, value):
-		self._UdrtkgAmdmntAdvcDtls = value if type(value) != auto else self.make_default("UdrtkgAmdmntAdvcDtls")
+	@AdvsgPty.setter
+	def AdvsgPty(self, value):
+		self._AdvsgPty = value if type(value) != auto else self.make_default("AdvsgPty")
 
-	@UdrtkgAmdmntAdvcDtls.deleter
-	def UdrtkgAmdmntAdvcDtls(self):
-		del self._UdrtkgAmdmntAdvcDtls
-		self._UdrtkgAmdmntAdvcDtls = None
-
-	@property
-	def DtOfAdvc(self):
-		return self._DtOfAdvc
-
-	@DtOfAdvc.setter
-	def DtOfAdvc(self, value):
-		self._DtOfAdvc = value if type(value) != auto else self.make_default("DtOfAdvc")
-
-	@DtOfAdvc.deleter
-	def DtOfAdvc(self):
-		del self._DtOfAdvc
-		self._DtOfAdvc = None
+	@AdvsgPty.deleter
+	def AdvsgPty(self):
+		del self._AdvsgPty
+		self._AdvsgPty = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='UdrtkgAmdmntAdvcDtls', type=Amendment2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UdrtkgAmdmntAdvcDtls', type=Amendment2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtOfAdvc', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 	))
 

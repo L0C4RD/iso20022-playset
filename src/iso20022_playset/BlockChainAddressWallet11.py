@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import Max70Text
+import GenericIdentification47
 import Max140Text
 
 class BlockChainAddressWallet11(base_types._BaseFieldType):

@@ -1,12 +1,12 @@
 import base_types
-import Max35Text
-import ImpliedCurrencyAndAmount
 import PeriodUnit4Code
+import ImpliedCurrencyAndAmount
 import Max4NumericText
+import Max35Text
 
 class RentalRate2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Prd", "_OthrPrd", "_PrdCnt"]
+	__slots__ = ["_Rate", "_PrdCnt", "_OthrPrd", "_Prd"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -21,17 +21,17 @@ class RentalRate2(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Prd(self):
-		return self._Prd
+	def PrdCnt(self):
+		return self._PrdCnt
 
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+	@PrdCnt.setter
+	def PrdCnt(self, value):
+		self._PrdCnt = value if type(value) != auto else self.make_default("PrdCnt")
 
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
+	@PrdCnt.deleter
+	def PrdCnt(self):
+		del self._PrdCnt
+		self._PrdCnt = None
 
 	@property
 	def OthrPrd(self):
@@ -47,22 +47,22 @@ class RentalRate2(base_types._BaseFieldType):
 		self._OthrPrd = None
 
 	@property
-	def PrdCnt(self):
-		return self._PrdCnt
+	def Prd(self):
+		return self._Prd
 
-	@PrdCnt.setter
-	def PrdCnt(self, value):
-		self._PrdCnt = value if type(value) != auto else self.make_default("PrdCnt")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
 
-	@PrdCnt.deleter
-	def PrdCnt(self):
-		del self._PrdCnt
-		self._PrdCnt = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=PeriodUnit4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPrd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrdCnt', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPrd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=PeriodUnit4Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -4,20 +4,7 @@ import YesNoIndicator
 
 class IssuanceAccount2(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncAcct", "_PmryAcctInd"]
-	@property
-	def IssncAcct(self):
-		return self._IssncAcct
-
-	@IssncAcct.setter
-	def IssncAcct(self, value):
-		self._IssncAcct = value if type(value) != auto else self.make_default("IssncAcct")
-
-	@IssncAcct.deleter
-	def IssncAcct(self):
-		del self._IssncAcct
-		self._IssncAcct = None
-
+	__slots__ = ["_PmryAcctInd", "_IssncAcct"]
 	@property
 	def PmryAcctInd(self):
 		return self._PmryAcctInd
@@ -31,8 +18,21 @@ class IssuanceAccount2(base_types._BaseFieldType):
 		del self._PmryAcctInd
 		self._PmryAcctInd = None
 
+	@property
+	def IssncAcct(self):
+		return self._IssncAcct
+
+	@IssncAcct.setter
+	def IssncAcct(self, value):
+		self._IssncAcct = value if type(value) != auto else self.make_default("IssncAcct")
+
+	@IssncAcct.deleter
+	def IssncAcct(self):
+		del self._IssncAcct
+		self._IssncAcct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssncAcct', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmryAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssncAcct', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 	))
 

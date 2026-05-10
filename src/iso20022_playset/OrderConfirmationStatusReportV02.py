@@ -1,24 +1,24 @@
 import base_types
-import Extension1
-import IndividualOrderConfirmationStatusAndReason2
 import MessageIdentification1
+import IndividualOrderConfirmationStatusAndReason2
+import Extension1
 import References61Choice
 
 class OrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_Ref", "_IndvOrdrConfDtlsRpt", "_MsgId"]
+	__slots__ = ["_MsgId", "_Ref", "_IndvOrdrConfDtlsRpt", "_Xtnsn"]
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def MsgId(self):
+		return self._MsgId
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def Ref(self):
@@ -47,22 +47,22 @@ class OrderConfirmationStatusReportV02(base_types._BaseFieldType):
 		self._IndvOrdrConfDtlsRpt = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndvOrdrConfDtlsRpt', type=IndividualOrderConfirmationStatusAndReason2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

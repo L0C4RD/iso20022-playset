@@ -1,12 +1,12 @@
 import base_types
-import HoldingAccountLevel1Code
 import ISODate
 import SecurityIdentification19
 import SecuritiesAccount19
+import HoldingAccountLevel1Code
 
 class ReportItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_AcctLvl", "_FinInstrmId", "_ItmDt"]
+	__slots__ = ["_AcctId", "_AcctLvl", "_ItmDt", "_FinInstrmId"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -34,19 +34,6 @@ class ReportItem1(base_types._BaseFieldType):
 		self._AcctLvl = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
 	def ItmDt(self):
 		return self._ItmDt
 
@@ -59,10 +46,23 @@ class ReportItem1(base_types._BaseFieldType):
 		del self._ItmDt
 		self._ItmDt = None
 
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctLvl', type=HoldingAccountLevel1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 	))
 

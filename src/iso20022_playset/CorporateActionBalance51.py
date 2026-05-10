@@ -1,64 +1,25 @@
 import base_types
+import BalanceFormat14Choice
+import SignedQuantityFormat13
 import PendingBalance8
 import Quantity80Choice
-import BalanceFormat14Choice
 import InstructedBalance21
-import SignedQuantityFormat13
 
 class CorporateActionBalance51(base_types._BaseFieldType):
 
-	__slots__ = ["_CollInBal", "_BrrwdBal", "_BlckdBal", "_TtlElgblBal", "_PdgDlvryBal", "_OblgtdBal", "_UinstdBal", "_PdgRctBal", "_TradDtPosBal", "_SttlmPosBal", "_RegdBal", "_InTrnsShipmntBal", "_OnLnBal", "_TtlInstdBalDtls", "_StrtPosBal", "_CollOutBal", "_OutForRegnBal"]
+	__slots__ = ["_CollOutBal", "_PdgDlvryBal", "_PdgRctBal", "_OblgtdBal", "_SttlmPosBal", "_OutForRegnBal", "_TtlElgblBal", "_BlckdBal", "_CollInBal", "_TradDtPosBal", "_UinstdBal", "_BrrwdBal", "_TtlInstdBalDtls", "_InTrnsShipmntBal", "_StrtPosBal", "_OnLnBal", "_RegdBal"]
 	@property
-	def CollInBal(self):
-		return self._CollInBal
+	def CollOutBal(self):
+		return self._CollOutBal
 
-	@CollInBal.setter
-	def CollInBal(self, value):
-		self._CollInBal = value if type(value) != auto else self.make_default("CollInBal")
+	@CollOutBal.setter
+	def CollOutBal(self, value):
+		self._CollOutBal = value if type(value) != auto else self.make_default("CollOutBal")
 
-	@CollInBal.deleter
-	def CollInBal(self):
-		del self._CollInBal
-		self._CollInBal = None
-
-	@property
-	def BrrwdBal(self):
-		return self._BrrwdBal
-
-	@BrrwdBal.setter
-	def BrrwdBal(self, value):
-		self._BrrwdBal = value if type(value) != auto else self.make_default("BrrwdBal")
-
-	@BrrwdBal.deleter
-	def BrrwdBal(self):
-		del self._BrrwdBal
-		self._BrrwdBal = None
-
-	@property
-	def BlckdBal(self):
-		return self._BlckdBal
-
-	@BlckdBal.setter
-	def BlckdBal(self, value):
-		self._BlckdBal = value if type(value) != auto else self.make_default("BlckdBal")
-
-	@BlckdBal.deleter
-	def BlckdBal(self):
-		del self._BlckdBal
-		self._BlckdBal = None
-
-	@property
-	def TtlElgblBal(self):
-		return self._TtlElgblBal
-
-	@TtlElgblBal.setter
-	def TtlElgblBal(self, value):
-		self._TtlElgblBal = value if type(value) != auto else self.make_default("TtlElgblBal")
-
-	@TtlElgblBal.deleter
-	def TtlElgblBal(self):
-		del self._TtlElgblBal
-		self._TtlElgblBal = None
+	@CollOutBal.deleter
+	def CollOutBal(self):
+		del self._CollOutBal
+		self._CollOutBal = None
 
 	@property
 	def PdgDlvryBal(self):
@@ -74,32 +35,6 @@ class CorporateActionBalance51(base_types._BaseFieldType):
 		self._PdgDlvryBal = None
 
 	@property
-	def OblgtdBal(self):
-		return self._OblgtdBal
-
-	@OblgtdBal.setter
-	def OblgtdBal(self, value):
-		self._OblgtdBal = value if type(value) != auto else self.make_default("OblgtdBal")
-
-	@OblgtdBal.deleter
-	def OblgtdBal(self):
-		del self._OblgtdBal
-		self._OblgtdBal = None
-
-	@property
-	def UinstdBal(self):
-		return self._UinstdBal
-
-	@UinstdBal.setter
-	def UinstdBal(self, value):
-		self._UinstdBal = value if type(value) != auto else self.make_default("UinstdBal")
-
-	@UinstdBal.deleter
-	def UinstdBal(self):
-		del self._UinstdBal
-		self._UinstdBal = None
-
-	@property
 	def PdgRctBal(self):
 		return self._PdgRctBal
 
@@ -113,17 +48,17 @@ class CorporateActionBalance51(base_types._BaseFieldType):
 		self._PdgRctBal = None
 
 	@property
-	def TradDtPosBal(self):
-		return self._TradDtPosBal
+	def OblgtdBal(self):
+		return self._OblgtdBal
 
-	@TradDtPosBal.setter
-	def TradDtPosBal(self, value):
-		self._TradDtPosBal = value if type(value) != auto else self.make_default("TradDtPosBal")
+	@OblgtdBal.setter
+	def OblgtdBal(self, value):
+		self._OblgtdBal = value if type(value) != auto else self.make_default("OblgtdBal")
 
-	@TradDtPosBal.deleter
-	def TradDtPosBal(self):
-		del self._TradDtPosBal
-		self._TradDtPosBal = None
+	@OblgtdBal.deleter
+	def OblgtdBal(self):
+		del self._OblgtdBal
+		self._OblgtdBal = None
 
 	@property
 	def SttlmPosBal(self):
@@ -139,43 +74,95 @@ class CorporateActionBalance51(base_types._BaseFieldType):
 		self._SttlmPosBal = None
 
 	@property
-	def RegdBal(self):
-		return self._RegdBal
+	def OutForRegnBal(self):
+		return self._OutForRegnBal
 
-	@RegdBal.setter
-	def RegdBal(self, value):
-		self._RegdBal = value if type(value) != auto else self.make_default("RegdBal")
+	@OutForRegnBal.setter
+	def OutForRegnBal(self, value):
+		self._OutForRegnBal = value if type(value) != auto else self.make_default("OutForRegnBal")
 
-	@RegdBal.deleter
-	def RegdBal(self):
-		del self._RegdBal
-		self._RegdBal = None
-
-	@property
-	def InTrnsShipmntBal(self):
-		return self._InTrnsShipmntBal
-
-	@InTrnsShipmntBal.setter
-	def InTrnsShipmntBal(self, value):
-		self._InTrnsShipmntBal = value if type(value) != auto else self.make_default("InTrnsShipmntBal")
-
-	@InTrnsShipmntBal.deleter
-	def InTrnsShipmntBal(self):
-		del self._InTrnsShipmntBal
-		self._InTrnsShipmntBal = None
+	@OutForRegnBal.deleter
+	def OutForRegnBal(self):
+		del self._OutForRegnBal
+		self._OutForRegnBal = None
 
 	@property
-	def OnLnBal(self):
-		return self._OnLnBal
+	def TtlElgblBal(self):
+		return self._TtlElgblBal
 
-	@OnLnBal.setter
-	def OnLnBal(self, value):
-		self._OnLnBal = value if type(value) != auto else self.make_default("OnLnBal")
+	@TtlElgblBal.setter
+	def TtlElgblBal(self, value):
+		self._TtlElgblBal = value if type(value) != auto else self.make_default("TtlElgblBal")
 
-	@OnLnBal.deleter
-	def OnLnBal(self):
-		del self._OnLnBal
-		self._OnLnBal = None
+	@TtlElgblBal.deleter
+	def TtlElgblBal(self):
+		del self._TtlElgblBal
+		self._TtlElgblBal = None
+
+	@property
+	def BlckdBal(self):
+		return self._BlckdBal
+
+	@BlckdBal.setter
+	def BlckdBal(self, value):
+		self._BlckdBal = value if type(value) != auto else self.make_default("BlckdBal")
+
+	@BlckdBal.deleter
+	def BlckdBal(self):
+		del self._BlckdBal
+		self._BlckdBal = None
+
+	@property
+	def CollInBal(self):
+		return self._CollInBal
+
+	@CollInBal.setter
+	def CollInBal(self, value):
+		self._CollInBal = value if type(value) != auto else self.make_default("CollInBal")
+
+	@CollInBal.deleter
+	def CollInBal(self):
+		del self._CollInBal
+		self._CollInBal = None
+
+	@property
+	def TradDtPosBal(self):
+		return self._TradDtPosBal
+
+	@TradDtPosBal.setter
+	def TradDtPosBal(self, value):
+		self._TradDtPosBal = value if type(value) != auto else self.make_default("TradDtPosBal")
+
+	@TradDtPosBal.deleter
+	def TradDtPosBal(self):
+		del self._TradDtPosBal
+		self._TradDtPosBal = None
+
+	@property
+	def UinstdBal(self):
+		return self._UinstdBal
+
+	@UinstdBal.setter
+	def UinstdBal(self, value):
+		self._UinstdBal = value if type(value) != auto else self.make_default("UinstdBal")
+
+	@UinstdBal.deleter
+	def UinstdBal(self):
+		del self._UinstdBal
+		self._UinstdBal = None
+
+	@property
+	def BrrwdBal(self):
+		return self._BrrwdBal
+
+	@BrrwdBal.setter
+	def BrrwdBal(self, value):
+		self._BrrwdBal = value if type(value) != auto else self.make_default("BrrwdBal")
+
+	@BrrwdBal.deleter
+	def BrrwdBal(self):
+		del self._BrrwdBal
+		self._BrrwdBal = None
 
 	@property
 	def TtlInstdBalDtls(self):
@@ -191,6 +178,19 @@ class CorporateActionBalance51(base_types._BaseFieldType):
 		self._TtlInstdBalDtls = None
 
 	@property
+	def InTrnsShipmntBal(self):
+		return self._InTrnsShipmntBal
+
+	@InTrnsShipmntBal.setter
+	def InTrnsShipmntBal(self, value):
+		self._InTrnsShipmntBal = value if type(value) != auto else self.make_default("InTrnsShipmntBal")
+
+	@InTrnsShipmntBal.deleter
+	def InTrnsShipmntBal(self):
+		del self._InTrnsShipmntBal
+		self._InTrnsShipmntBal = None
+
+	@property
 	def StrtPosBal(self):
 		return self._StrtPosBal
 
@@ -204,48 +204,48 @@ class CorporateActionBalance51(base_types._BaseFieldType):
 		self._StrtPosBal = None
 
 	@property
-	def CollOutBal(self):
-		return self._CollOutBal
+	def OnLnBal(self):
+		return self._OnLnBal
 
-	@CollOutBal.setter
-	def CollOutBal(self, value):
-		self._CollOutBal = value if type(value) != auto else self.make_default("CollOutBal")
+	@OnLnBal.setter
+	def OnLnBal(self, value):
+		self._OnLnBal = value if type(value) != auto else self.make_default("OnLnBal")
 
-	@CollOutBal.deleter
-	def CollOutBal(self):
-		del self._CollOutBal
-		self._CollOutBal = None
+	@OnLnBal.deleter
+	def OnLnBal(self):
+		del self._OnLnBal
+		self._OnLnBal = None
 
 	@property
-	def OutForRegnBal(self):
-		return self._OutForRegnBal
+	def RegdBal(self):
+		return self._RegdBal
 
-	@OutForRegnBal.setter
-	def OutForRegnBal(self, value):
-		self._OutForRegnBal = value if type(value) != auto else self.make_default("OutForRegnBal")
+	@RegdBal.setter
+	def RegdBal(self, value):
+		self._RegdBal = value if type(value) != auto else self.make_default("RegdBal")
 
-	@OutForRegnBal.deleter
-	def OutForRegnBal(self):
-		del self._OutForRegnBal
-		self._OutForRegnBal = None
+	@RegdBal.deleter
+	def RegdBal(self):
+		del self._RegdBal
+		self._RegdBal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollInBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrrwdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlElgblBal', type=Quantity80Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgDlvryBal', type=PendingBalance8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OblgtdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UinstdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgRctBal', type=PendingBalance8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradDtPosBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPosBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InTrnsShipmntBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OnLnBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlInstdBalDtls', type=InstructedBalance21, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrtPosBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollOutBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdgDlvryBal', type=PendingBalance8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdgRctBal', type=PendingBalance8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OblgtdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPosBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutForRegnBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlElgblBal', type=Quantity80Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollInBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDtPosBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UinstdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrrwdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlInstdBalDtls', type=InstructedBalance21, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InTrnsShipmntBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrtPosBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OnLnBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 	))
 

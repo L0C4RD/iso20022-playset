@@ -1,14 +1,27 @@
 import base_types
-import Max35Text
-import Document9
 import PresentationMedium1Code
-import PartyIdentification43
-import UndertakingIssuanceMessage
 import Max2000Text
+import UndertakingIssuanceMessage
+import Document9
+import Max35Text
+import PartyIdentification43
 
 class UndertakingAdvice2(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlIssdMdm", "_ApplcntRefNb", "_Oblgr", "_AddtlInf", "_UdrtkgIssncMsg", "_NclsdFile"]
+	__slots__ = ["_UdrtkgIssncMsg", "_OrgnlIssdMdm", "_Oblgr", "_ApplcntRefNb", "_AddtlInf", "_NclsdFile"]
+	@property
+	def UdrtkgIssncMsg(self):
+		return self._UdrtkgIssncMsg
+
+	@UdrtkgIssncMsg.setter
+	def UdrtkgIssncMsg(self, value):
+		self._UdrtkgIssncMsg = value if type(value) != auto else self.make_default("UdrtkgIssncMsg")
+
+	@UdrtkgIssncMsg.deleter
+	def UdrtkgIssncMsg(self):
+		del self._UdrtkgIssncMsg
+		self._UdrtkgIssncMsg = None
+
 	@property
 	def OrgnlIssdMdm(self):
 		return self._OrgnlIssdMdm
@@ -21,19 +34,6 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 	def OrgnlIssdMdm(self):
 		del self._OrgnlIssdMdm
 		self._OrgnlIssdMdm = None
-
-	@property
-	def ApplcntRefNb(self):
-		return self._ApplcntRefNb
-
-	@ApplcntRefNb.setter
-	def ApplcntRefNb(self, value):
-		self._ApplcntRefNb = value if type(value) != auto else self.make_default("ApplcntRefNb")
-
-	@ApplcntRefNb.deleter
-	def ApplcntRefNb(self):
-		del self._ApplcntRefNb
-		self._ApplcntRefNb = None
 
 	@property
 	def Oblgr(self):
@@ -49,6 +49,19 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 		self._Oblgr = None
 
 	@property
+	def ApplcntRefNb(self):
+		return self._ApplcntRefNb
+
+	@ApplcntRefNb.setter
+	def ApplcntRefNb(self, value):
+		self._ApplcntRefNb = value if type(value) != auto else self.make_default("ApplcntRefNb")
+
+	@ApplcntRefNb.deleter
+	def ApplcntRefNb(self):
+		del self._ApplcntRefNb
+		self._ApplcntRefNb = None
+
+	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -60,19 +73,6 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
-
-	@property
-	def UdrtkgIssncMsg(self):
-		return self._UdrtkgIssncMsg
-
-	@UdrtkgIssncMsg.setter
-	def UdrtkgIssncMsg(self, value):
-		self._UdrtkgIssncMsg = value if type(value) != auto else self.make_default("UdrtkgIssncMsg")
-
-	@UdrtkgIssncMsg.deleter
-	def UdrtkgIssncMsg(self):
-		del self._UdrtkgIssncMsg
-		self._UdrtkgIssncMsg = None
 
 	@property
 	def NclsdFile(self):
@@ -88,11 +88,11 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 		self._NclsdFile = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlIssdMdm', type=PresentationMedium1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApplcntRefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oblgr', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UdrtkgIssncMsg', type=UndertakingIssuanceMessage, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlIssdMdm', type=PresentationMedium1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Oblgr', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApplcntRefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
 	))
 

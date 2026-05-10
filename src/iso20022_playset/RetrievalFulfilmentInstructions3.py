@@ -1,66 +1,27 @@
 import base_types
-import Max35Text
 import OutputFormat4Code
-import PartyType19Code
 import Max20KText
+import Max35Text
 import ContactBusiness1
+import PartyType19Code
 import UserInterface8Code
 import Address2
 
 class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_EstblishdMtd", "_Val", "_Ctct", "_Rcpt", "_Tp", "_Frmt", "_ActlDlvryMtd", "_ReqdMtd", "_Trgt"]
+	__slots__ = ["_Tp", "_Rcpt", "_PstlAdr", "_ActlDlvryMtd", "_Ctct", "_Val", "_Trgt", "_ReqdMtd", "_Frmt", "_EstblishdMtd"]
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def Tp(self):
+		return self._Tp
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
-	@property
-	def EstblishdMtd(self):
-		return self._EstblishdMtd
-
-	@EstblishdMtd.setter
-	def EstblishdMtd(self, value):
-		self._EstblishdMtd = value if type(value) != auto else self.make_default("EstblishdMtd")
-
-	@EstblishdMtd.deleter
-	def EstblishdMtd(self):
-		del self._EstblishdMtd
-		self._EstblishdMtd = None
-
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
-	@property
-	def Ctct(self):
-		return self._Ctct
-
-	@Ctct.setter
-	def Ctct(self, value):
-		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
-
-	@Ctct.deleter
-	def Ctct(self):
-		del self._Ctct
-		self._Ctct = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Rcpt(self):
@@ -76,30 +37,17 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 		self._Rcpt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Frmt(self):
-		return self._Frmt
-
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
-
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
 	def ActlDlvryMtd(self):
@@ -115,17 +63,30 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 		self._ActlDlvryMtd = None
 
 	@property
-	def ReqdMtd(self):
-		return self._ReqdMtd
+	def Ctct(self):
+		return self._Ctct
 
-	@ReqdMtd.setter
-	def ReqdMtd(self, value):
-		self._ReqdMtd = value if type(value) != auto else self.make_default("ReqdMtd")
+	@Ctct.setter
+	def Ctct(self, value):
+		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
 
-	@ReqdMtd.deleter
-	def ReqdMtd(self):
-		del self._ReqdMtd
-		self._ReqdMtd = None
+	@Ctct.deleter
+	def Ctct(self):
+		del self._Ctct
+		self._Ctct = None
+
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def Trgt(self):
@@ -140,16 +101,55 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 		del self._Trgt
 		self._Trgt = None
 
+	@property
+	def ReqdMtd(self):
+		return self._ReqdMtd
+
+	@ReqdMtd.setter
+	def ReqdMtd(self, value):
+		self._ReqdMtd = value if type(value) != auto else self.make_default("ReqdMtd")
+
+	@ReqdMtd.deleter
+	def ReqdMtd(self):
+		del self._ReqdMtd
+		self._ReqdMtd = None
+
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
+	@property
+	def EstblishdMtd(self):
+		return self._EstblishdMtd
+
+	@EstblishdMtd.setter
+	def EstblishdMtd(self, value):
+		self._EstblishdMtd = value if type(value) != auto else self.make_default("EstblishdMtd")
+
+	@EstblishdMtd.deleter
+	def EstblishdMtd(self):
+		del self._EstblishdMtd
+		self._EstblishdMtd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdMtd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActlDlvryMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdMtd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqdMtd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdMtd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

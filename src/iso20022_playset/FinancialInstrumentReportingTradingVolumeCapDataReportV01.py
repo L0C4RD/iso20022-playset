@@ -1,23 +1,23 @@
 import base_types
-import VolumeCapReport1
 import SupplementaryData1
 import SecuritiesMarketReportHeader1
+import VolumeCapReport1
 
 class FinancialInstrumentReportingTradingVolumeCapDataReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_VolCapData", "_SplmtryData", "_RptHdr"]
+	__slots__ = ["_RptHdr", "_SplmtryData", "_VolCapData"]
 	@property
-	def VolCapData(self):
-		return self._VolCapData
+	def RptHdr(self):
+		return self._RptHdr
 
-	@VolCapData.setter
-	def VolCapData(self, value):
-		self._VolCapData = value if type(value) != auto else self.make_default("VolCapData")
+	@RptHdr.setter
+	def RptHdr(self, value):
+		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
 
-	@VolCapData.deleter
-	def VolCapData(self):
-		del self._VolCapData
-		self._VolCapData = None
+	@RptHdr.deleter
+	def RptHdr(self):
+		del self._RptHdr
+		self._RptHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentReportingTradingVolumeCapDataReportV01(base_types._Base
 		self._SplmtryData = None
 
 	@property
-	def RptHdr(self):
-		return self._RptHdr
+	def VolCapData(self):
+		return self._VolCapData
 
-	@RptHdr.setter
-	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+	@VolCapData.setter
+	def VolCapData(self, value):
+		self._VolCapData = value if type(value) != auto else self.make_default("VolCapData")
 
-	@RptHdr.deleter
-	def RptHdr(self):
-		del self._RptHdr
-		self._RptHdr = None
+	@VolCapData.deleter
+	def VolCapData(self):
+		del self._VolCapData
+		self._VolCapData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VolCapData', type=VolumeCapReport1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='VolCapData', type=VolumeCapReport1, min=1, max=None, mutex_group=None, array=True),
 	))
 

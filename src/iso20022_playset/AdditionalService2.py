@@ -1,25 +1,12 @@
 import base_types
+import AdditionalServiceType2Code
+import AdditionalData1
 import Max35Text
 import AdditionalServiceResult1Code
-import AdditionalData1
-import AdditionalServiceType2Code
 
 class AdditionalService2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_SvcDtl", "_OthrRslt", "_OthrTp", "_Tp"]
-	@property
-	def Rslt(self):
-		return self._Rslt
-
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
-
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
-
+	__slots__ = ["_SvcDtl", "_Rslt", "_Tp", "_OthrTp", "_OthrRslt"]
 	@property
 	def SvcDtl(self):
 		return self._SvcDtl
@@ -34,17 +21,30 @@ class AdditionalService2(base_types._BaseFieldType):
 		self._SvcDtl = None
 
 	@property
-	def OthrRslt(self):
-		return self._OthrRslt
+	def Rslt(self):
+		return self._Rslt
 
-	@OthrRslt.setter
-	def OthrRslt(self, value):
-		self._OthrRslt = value if type(value) != auto else self.make_default("OthrRslt")
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
 
-	@OthrRslt.deleter
-	def OthrRslt(self):
-		del self._OthrRslt
-		self._OthrRslt = None
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def OthrTp(self):
@@ -60,23 +60,23 @@ class AdditionalService2(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def OthrRslt(self):
+		return self._OthrRslt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@OthrRslt.setter
+	def OthrRslt(self, value):
+		self._OthrRslt = value if type(value) != auto else self.make_default("OthrRslt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@OthrRslt.deleter
+	def OthrRslt(self):
+		del self._OthrRslt
+		self._OthrRslt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rslt', type=AdditionalServiceResult1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcDtl', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrRslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=AdditionalServiceResult1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AdditionalServiceType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

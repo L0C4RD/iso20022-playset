@@ -5,20 +5,7 @@ import KeyTransport6
 
 class Recipient7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyIdr", "_KeyTrnsprt", "_KEK"]
-	@property
-	def KeyIdr(self):
-		return self._KeyIdr
-
-	@KeyIdr.setter
-	def KeyIdr(self, value):
-		self._KeyIdr = value if type(value) != auto else self.make_default("KeyIdr")
-
-	@KeyIdr.deleter
-	def KeyIdr(self):
-		del self._KeyIdr
-		self._KeyIdr = None
-
+	__slots__ = ["_KeyTrnsprt", "_KEK", "_KeyIdr"]
 	@property
 	def KeyTrnsprt(self):
 		return self._KeyTrnsprt
@@ -45,9 +32,22 @@ class Recipient7Choice(base_types._BaseFieldType):
 		del self._KEK
 		self._KEK = None
 
+	@property
+	def KeyIdr(self):
+		return self._KeyIdr
+
+	@KeyIdr.setter
+	def KeyIdr(self, value):
+		self._KeyIdr = value if type(value) != auto else self.make_default("KeyIdr")
+
+	@KeyIdr.deleter
+	def KeyIdr(self):
+		del self._KeyIdr
+		self._KeyIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='KeyTrnsprt', type=KeyTransport6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='KEK', type=KEK6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier6, min=0, max=1, mutex_group=1, array=False),
 	))
 

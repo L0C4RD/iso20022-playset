@@ -1,11 +1,11 @@
 import base_types
-import ActiveCurrencyAndAmount
 import Max350Text
+import ActiveCurrencyAndAmount
 import CashAccount19
 
 class CashProceeds1(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngAmt", "_RcncltnDtls", "_AcctDtls"]
+	__slots__ = ["_PstngAmt", "_AcctDtls", "_RcncltnDtls"]
 	@property
 	def PstngAmt(self):
 		return self._PstngAmt
@@ -20,19 +20,6 @@ class CashProceeds1(base_types._BaseFieldType):
 		self._PstngAmt = None
 
 	@property
-	def RcncltnDtls(self):
-		return self._RcncltnDtls
-
-	@RcncltnDtls.setter
-	def RcncltnDtls(self, value):
-		self._RcncltnDtls = value if type(value) != auto else self.make_default("RcncltnDtls")
-
-	@RcncltnDtls.deleter
-	def RcncltnDtls(self):
-		del self._RcncltnDtls
-		self._RcncltnDtls = None
-
-	@property
 	def AcctDtls(self):
 		return self._AcctDtls
 
@@ -45,9 +32,22 @@ class CashProceeds1(base_types._BaseFieldType):
 		del self._AcctDtls
 		self._AcctDtls = None
 
+	@property
+	def RcncltnDtls(self):
+		return self._RcncltnDtls
+
+	@RcncltnDtls.setter
+	def RcncltnDtls(self, value):
+		self._RcncltnDtls = value if type(value) != auto else self.make_default("RcncltnDtls")
+
+	@RcncltnDtls.deleter
+	def RcncltnDtls(self):
+		del self._RcncltnDtls
+		self._RcncltnDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

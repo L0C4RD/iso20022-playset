@@ -1,39 +1,13 @@
 import base_types
 import FinancialInstrumentQuantity18Choice
-import ProtectInstructionStatus4Code
 import ProtectTransactionType3Code
-import Max15Text
 import ISODate
+import ProtectInstructionStatus4Code
+import Max15Text
 
 class ProtectInstruction4(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctTxSts", "_TxTp", "_PrtctDt", "_TxId", "_UcvrdPrtctQty"]
-	@property
-	def PrtctTxSts(self):
-		return self._PrtctTxSts
-
-	@PrtctTxSts.setter
-	def PrtctTxSts(self, value):
-		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
-
-	@PrtctTxSts.deleter
-	def PrtctTxSts(self):
-		del self._PrtctTxSts
-		self._PrtctTxSts = None
-
-	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
+	__slots__ = ["_PrtctDt", "_TxId", "_UcvrdPrtctQty", "_PrtctTxSts", "_TxTp"]
 	@property
 	def PrtctDt(self):
 		return self._PrtctDt
@@ -73,11 +47,37 @@ class ProtectInstruction4(base_types._BaseFieldType):
 		del self._UcvrdPrtctQty
 		self._UcvrdPrtctQty = None
 
+	@property
+	def PrtctTxSts(self):
+		return self._PrtctTxSts
+
+	@PrtctTxSts.setter
+	def PrtctTxSts(self, value):
+		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
+
+	@PrtctTxSts.deleter
+	def PrtctTxSts(self):
+		del self._PrtctTxSts
+		self._PrtctTxSts = None
+
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UcvrdPrtctQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

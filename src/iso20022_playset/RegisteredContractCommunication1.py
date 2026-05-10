@@ -1,23 +1,10 @@
 import base_types
-import CommunicationMethod4Code
 import ISODate
+import CommunicationMethod4Code
 
 class RegisteredContractCommunication1(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtd", "_Dt"]
-	@property
-	def Mtd(self):
-		return self._Mtd
-
-	@Mtd.setter
-	def Mtd(self, value):
-		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
-
-	@Mtd.deleter
-	def Mtd(self):
-		del self._Mtd
-		self._Mtd = None
-
+	__slots__ = ["_Dt", "_Mtd"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -31,8 +18,21 @@ class RegisteredContractCommunication1(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def Mtd(self):
+		return self._Mtd
+
+	@Mtd.setter
+	def Mtd(self, value):
+		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
+
+	@Mtd.deleter
+	def Mtd(self):
+		del self._Mtd
+		self._Mtd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mtd', type=CommunicationMethod4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=CommunicationMethod4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

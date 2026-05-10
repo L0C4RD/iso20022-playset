@@ -5,20 +5,7 @@ import ReversalReason4Choice
 
 class PaymentReversalReason10(base_types._BaseFieldType):
 
-	__slots__ = ["_Orgtr", "_Rsn", "_AddtlInf"]
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
+	__slots__ = ["_Rsn", "_Orgtr", "_AddtlInf"]
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -31,6 +18,19 @@ class PaymentReversalReason10(base_types._BaseFieldType):
 	def Rsn(self):
 		del self._Rsn
 		self._Rsn = None
+
+	@property
+	def Orgtr(self):
+		return self._Orgtr
+
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
 
 	@property
 	def AddtlInf(self):
@@ -46,8 +46,8 @@ class PaymentReversalReason10(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=ReversalReason4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

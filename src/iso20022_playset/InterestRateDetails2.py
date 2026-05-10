@@ -1,8 +1,8 @@
 import base_types
-import Max35Text
-import InstalmentPeriod1Code
 import BaseOneRate
 import InterestRate1Code
+import InstalmentPeriod1Code
+import Max35Text
 
 class InterestRateDetails2(base_types._BaseFieldType):
 

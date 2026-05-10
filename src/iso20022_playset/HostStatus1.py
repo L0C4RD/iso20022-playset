@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import TrueFalseIndicator
+import Max35Text
 
 class HostStatus1(base_types._BaseFieldType):
 

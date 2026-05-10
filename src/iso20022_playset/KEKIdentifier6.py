@@ -5,19 +5,19 @@ import Max140Text
 
 class KEKIdentifier6(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyId", "_DerivtnId", "_SeqNb", "_KeyVrsn"]
+	__slots__ = ["_SeqNb", "_DerivtnId", "_KeyId", "_KeyVrsn"]
 	@property
-	def KeyId(self):
-		return self._KeyId
+	def SeqNb(self):
+		return self._SeqNb
 
-	@KeyId.setter
-	def KeyId(self, value):
-		self._KeyId = value if type(value) != auto else self.make_default("KeyId")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
 
-	@KeyId.deleter
-	def KeyId(self):
-		del self._KeyId
-		self._KeyId = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def DerivtnId(self):
@@ -33,17 +33,17 @@ class KEKIdentifier6(base_types._BaseFieldType):
 		self._DerivtnId = None
 
 	@property
-	def SeqNb(self):
-		return self._SeqNb
+	def KeyId(self):
+		return self._KeyId
 
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+	@KeyId.setter
+	def KeyId(self, value):
+		self._KeyId = value if type(value) != auto else self.make_default("KeyId")
 
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
+	@KeyId.deleter
+	def KeyId(self):
+		del self._KeyId
+		self._KeyId = None
 
 	@property
 	def KeyVrsn(self):
@@ -59,9 +59,9 @@ class KEKIdentifier6(base_types._BaseFieldType):
 		self._KeyVrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,26 @@
 import base_types
-import Max35Text
-import ATMMediaType4Code
 import ATMCassetteCounters6
+import ATMCassetteStatus1Code
 import ATMCassetteType1Code
 import ATMNoteType1Code
-import ATMCassetteStatus1Code
+import ATMMediaType4Code
+import Max35Text
 
 class ATMCassette3(base_types._BaseFieldType):
 
-	__slots__ = ["_LogclId", "_Tp", "_MdiaTp", "_SrlNb", "_PhysId", "_SubTp", "_CssttSts", "_MdiaCntrs"]
+	__slots__ = ["_CssttSts", "_Tp", "_SrlNb", "_MdiaTp", "_MdiaCntrs", "_LogclId", "_SubTp", "_PhysId"]
 	@property
-	def LogclId(self):
-		return self._LogclId
+	def CssttSts(self):
+		return self._CssttSts
 
-	@LogclId.setter
-	def LogclId(self, value):
-		self._LogclId = value if type(value) != auto else self.make_default("LogclId")
+	@CssttSts.setter
+	def CssttSts(self, value):
+		self._CssttSts = value if type(value) != auto else self.make_default("CssttSts")
 
-	@LogclId.deleter
-	def LogclId(self):
-		del self._LogclId
-		self._LogclId = None
+	@CssttSts.deleter
+	def CssttSts(self):
+		del self._CssttSts
+		self._CssttSts = None
 
 	@property
 	def Tp(self):
@@ -36,19 +36,6 @@ class ATMCassette3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def MdiaTp(self):
-		return self._MdiaTp
-
-	@MdiaTp.setter
-	def MdiaTp(self, value):
-		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
-
-	@MdiaTp.deleter
-	def MdiaTp(self):
-		del self._MdiaTp
-		self._MdiaTp = None
-
-	@property
 	def SrlNb(self):
 		return self._SrlNb
 
@@ -62,17 +49,43 @@ class ATMCassette3(base_types._BaseFieldType):
 		self._SrlNb = None
 
 	@property
-	def PhysId(self):
-		return self._PhysId
+	def MdiaTp(self):
+		return self._MdiaTp
 
-	@PhysId.setter
-	def PhysId(self, value):
-		self._PhysId = value if type(value) != auto else self.make_default("PhysId")
+	@MdiaTp.setter
+	def MdiaTp(self, value):
+		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
 
-	@PhysId.deleter
-	def PhysId(self):
-		del self._PhysId
-		self._PhysId = None
+	@MdiaTp.deleter
+	def MdiaTp(self):
+		del self._MdiaTp
+		self._MdiaTp = None
+
+	@property
+	def MdiaCntrs(self):
+		return self._MdiaCntrs
+
+	@MdiaCntrs.setter
+	def MdiaCntrs(self, value):
+		self._MdiaCntrs = value if type(value) != auto else self.make_default("MdiaCntrs")
+
+	@MdiaCntrs.deleter
+	def MdiaCntrs(self):
+		del self._MdiaCntrs
+		self._MdiaCntrs = None
+
+	@property
+	def LogclId(self):
+		return self._LogclId
+
+	@LogclId.setter
+	def LogclId(self, value):
+		self._LogclId = value if type(value) != auto else self.make_default("LogclId")
+
+	@LogclId.deleter
+	def LogclId(self):
+		del self._LogclId
+		self._LogclId = None
 
 	@property
 	def SubTp(self):
@@ -88,39 +101,26 @@ class ATMCassette3(base_types._BaseFieldType):
 		self._SubTp = None
 
 	@property
-	def CssttSts(self):
-		return self._CssttSts
+	def PhysId(self):
+		return self._PhysId
 
-	@CssttSts.setter
-	def CssttSts(self, value):
-		self._CssttSts = value if type(value) != auto else self.make_default("CssttSts")
+	@PhysId.setter
+	def PhysId(self, value):
+		self._PhysId = value if type(value) != auto else self.make_default("PhysId")
 
-	@CssttSts.deleter
-	def CssttSts(self):
-		del self._CssttSts
-		self._CssttSts = None
-
-	@property
-	def MdiaCntrs(self):
-		return self._MdiaCntrs
-
-	@MdiaCntrs.setter
-	def MdiaCntrs(self, value):
-		self._MdiaCntrs = value if type(value) != auto else self.make_default("MdiaCntrs")
-
-	@MdiaCntrs.deleter
-	def MdiaCntrs(self):
-		del self._MdiaCntrs
-		self._MdiaCntrs = None
+	@PhysId.deleter
+	def PhysId(self):
+		del self._PhysId
+		self._PhysId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LogclId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ATMCassetteType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PhysId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTp', type=ATMNoteType1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CssttSts', type=ATMCassetteStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ATMCassetteType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaCntrs', type=ATMCassetteCounters6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LogclId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTp', type=ATMNoteType1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PhysId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

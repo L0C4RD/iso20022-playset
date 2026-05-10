@@ -1,12 +1,12 @@
 import base_types
-import TransportBySea6
-import TransportByAir5
 import TransportByRail5
 import TransportByRoad5
+import TransportBySea6
+import TransportByAir5
 
 class SingleTransport7(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtBySea", "_TrnsprtByRoad", "_TrnsprtByAir", "_TrnsprtByRail"]
+	__slots__ = ["_TrnsprtBySea", "_TrnsprtByRail", "_TrnsprtByRoad", "_TrnsprtByAir"]
 	@property
 	def TrnsprtBySea(self):
 		return self._TrnsprtBySea
@@ -19,6 +19,19 @@ class SingleTransport7(base_types._BaseFieldType):
 	def TrnsprtBySea(self):
 		del self._TrnsprtBySea
 		self._TrnsprtBySea = None
+
+	@property
+	def TrnsprtByRail(self):
+		return self._TrnsprtByRail
+
+	@TrnsprtByRail.setter
+	def TrnsprtByRail(self, value):
+		self._TrnsprtByRail = value if type(value) != auto else self.make_default("TrnsprtByRail")
+
+	@TrnsprtByRail.deleter
+	def TrnsprtByRail(self):
+		del self._TrnsprtByRail
+		self._TrnsprtByRail = None
 
 	@property
 	def TrnsprtByRoad(self):
@@ -46,23 +59,10 @@ class SingleTransport7(base_types._BaseFieldType):
 		del self._TrnsprtByAir
 		self._TrnsprtByAir = None
 
-	@property
-	def TrnsprtByRail(self):
-		return self._TrnsprtByRail
-
-	@TrnsprtByRail.setter
-	def TrnsprtByRail(self, value):
-		self._TrnsprtByRail = value if type(value) != auto else self.make_default("TrnsprtByRail")
-
-	@TrnsprtByRail.deleter
-	def TrnsprtByRail(self):
-		del self._TrnsprtByRail
-		self._TrnsprtByRail = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrnsprtByRail', type=TransportByRail5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrnsprtByRail', type=TransportByRail5, min=0, max=None, mutex_group=None, array=True),
 	))
 

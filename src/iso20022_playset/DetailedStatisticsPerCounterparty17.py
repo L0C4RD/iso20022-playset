@@ -1,24 +1,24 @@
 import base_types
 import ISODate
 import DetailedMissingValuationsStatistics4Choice
-import DetailedMissingMarginInformationStatistics4Choice
 import DetailedAbnormalValuesStatistics4Choice
+import DetailedMissingMarginInformationStatistics4Choice
 
 class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 
-	__slots__ = ["_RefDt", "_MssngMrgnInf", "_MssngValtn", "_AbnrmlVals"]
+	__slots__ = ["_MssngValtn", "_MssngMrgnInf", "_AbnrmlVals", "_RefDt"]
 	@property
-	def RefDt(self):
-		return self._RefDt
+	def MssngValtn(self):
+		return self._MssngValtn
 
-	@RefDt.setter
-	def RefDt(self, value):
-		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+	@MssngValtn.setter
+	def MssngValtn(self, value):
+		self._MssngValtn = value if type(value) != auto else self.make_default("MssngValtn")
 
-	@RefDt.deleter
-	def RefDt(self):
-		del self._RefDt
-		self._RefDt = None
+	@MssngValtn.deleter
+	def MssngValtn(self):
+		del self._MssngValtn
+		self._MssngValtn = None
 
 	@property
 	def MssngMrgnInf(self):
@@ -34,19 +34,6 @@ class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 		self._MssngMrgnInf = None
 
 	@property
-	def MssngValtn(self):
-		return self._MssngValtn
-
-	@MssngValtn.setter
-	def MssngValtn(self, value):
-		self._MssngValtn = value if type(value) != auto else self.make_default("MssngValtn")
-
-	@MssngValtn.deleter
-	def MssngValtn(self):
-		del self._MssngValtn
-		self._MssngValtn = None
-
-	@property
 	def AbnrmlVals(self):
 		return self._AbnrmlVals
 
@@ -59,10 +46,23 @@ class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 		del self._AbnrmlVals
 		self._AbnrmlVals = None
 
+	@property
+	def RefDt(self):
+		return self._RefDt
+
+	@RefDt.setter
+	def RefDt(self, value):
+		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+
+	@RefDt.deleter
+	def RefDt(self):
+		del self._RefDt
+		self._RefDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MssngMrgnInf', type=DetailedMissingMarginInformationStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MssngValtn', type=DetailedMissingValuationsStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MssngMrgnInf', type=DetailedMissingMarginInformationStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AbnrmlVals', type=DetailedAbnormalValuesStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

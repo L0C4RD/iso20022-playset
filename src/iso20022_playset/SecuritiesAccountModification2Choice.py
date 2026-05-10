@@ -5,7 +5,20 @@ import SystemRestriction1
 
 class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SysSctiesAcct", "_SysRstrctn", "_MktSpcfcAttr"]
+	__slots__ = ["_MktSpcfcAttr", "_SysSctiesAcct", "_SysRstrctn"]
+	@property
+	def MktSpcfcAttr(self):
+		return self._MktSpcfcAttr
+
+	@MktSpcfcAttr.setter
+	def MktSpcfcAttr(self, value):
+		self._MktSpcfcAttr = value if type(value) != auto else self.make_default("MktSpcfcAttr")
+
+	@MktSpcfcAttr.deleter
+	def MktSpcfcAttr(self):
+		del self._MktSpcfcAttr
+		self._MktSpcfcAttr = None
+
 	@property
 	def SysSctiesAcct(self):
 		return self._SysSctiesAcct
@@ -32,22 +45,9 @@ class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 		del self._SysRstrctn
 		self._SysRstrctn = None
 
-	@property
-	def MktSpcfcAttr(self):
-		return self._MktSpcfcAttr
-
-	@MktSpcfcAttr.setter
-	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != auto else self.make_default("MktSpcfcAttr")
-
-	@MktSpcfcAttr.deleter
-	def MktSpcfcAttr(self):
-		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SysSctiesAcct', type=SystemSecuritiesAccount5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SysRstrctn', type=SystemRestriction1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
 	))
 

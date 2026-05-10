@@ -1,25 +1,25 @@
 import base_types
-import Account12Choice
-import ISODate
 import CreditDebitCode
-import RestrictedFINActiveCurrencyAndAmount
 import DateAndDateTime2Choice
+import ISODate
+import RestrictedFINActiveCurrencyAndAmount
+import Account12Choice
 
 class CashOption112(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngDt", "_Acct", "_OrgnlPstngDt", "_CdtDbtInd", "_ValDt", "_PstngAmt"]
+	__slots__ = ["_ValDt", "_Acct", "_OrgnlPstngDt", "_PstngDt", "_CdtDbtInd", "_PstngAmt"]
 	@property
-	def PstngDt(self):
-		return self._PstngDt
+	def ValDt(self):
+		return self._ValDt
 
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
 
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def Acct(self):
@@ -48,6 +48,19 @@ class CashOption112(base_types._BaseFieldType):
 		self._OrgnlPstngDt = None
 
 	@property
+	def PstngDt(self):
+		return self._PstngDt
+
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
+
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
+
+	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
@@ -59,19 +72,6 @@ class CashOption112(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
-
-	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
 
 	@property
 	def PstngAmt(self):
@@ -87,11 +87,11 @@ class CashOption112(base_types._BaseFieldType):
 		self._PstngAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account12Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngAmt', type=RestrictedFINActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

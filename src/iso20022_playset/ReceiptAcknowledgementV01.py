@@ -1,23 +1,23 @@
 import base_types
 import SupplementaryData1
-import ReceiptAcknowledgementReport2
 import MessageHeader10
+import ReceiptAcknowledgementReport2
 
 class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgId", "_Rpt"]
+	__slots__ = ["_Rpt", "_MsgId", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Rpt(self):
+		return self._Rpt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Rpt.setter
+	def Rpt(self, value):
+		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Rpt.deleter
+	def Rpt(self):
+		del self._Rpt
+		self._Rpt = None
 
 	@property
 	def MsgId(self):
@@ -33,21 +33,21 @@ class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def Rpt(self):
-		return self._Rpt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Rpt.setter
-	def Rpt(self, value):
-		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Rpt.deleter
-	def Rpt(self):
-		del self._Rpt
-		self._Rpt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=MessageHeader10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rpt', type=ReceiptAcknowledgementReport2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageHeader10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

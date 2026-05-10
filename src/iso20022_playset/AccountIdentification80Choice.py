@@ -1,14 +1,14 @@
 import base_types
-import BBANIdentifier
+import IBAN2007Identifier
+import SimpleIdentificationInformation4
+import Max16Text
 import Max256Text
 import UPICIdentifier
-import SimpleIdentificationInformation4
-import IBAN2007Identifier
-import Max16Text
+import BBANIdentifier
 
 class AccountIdentification80Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MSISDN", "_BBAN", "_DmstAcct", "_IBAN", "_UPIC", "_Email"]
+	__slots__ = ["_MSISDN", "_IBAN", "_BBAN", "_UPIC", "_Email", "_DmstAcct"]
 	@property
 	def MSISDN(self):
 		return self._MSISDN
@@ -23,32 +23,6 @@ class AccountIdentification80Choice(base_types._BaseFieldType):
 		self._MSISDN = None
 
 	@property
-	def BBAN(self):
-		return self._BBAN
-
-	@BBAN.setter
-	def BBAN(self, value):
-		self._BBAN = value if type(value) != auto else self.make_default("BBAN")
-
-	@BBAN.deleter
-	def BBAN(self):
-		del self._BBAN
-		self._BBAN = None
-
-	@property
-	def DmstAcct(self):
-		return self._DmstAcct
-
-	@DmstAcct.setter
-	def DmstAcct(self, value):
-		self._DmstAcct = value if type(value) != auto else self.make_default("DmstAcct")
-
-	@DmstAcct.deleter
-	def DmstAcct(self):
-		del self._DmstAcct
-		self._DmstAcct = None
-
-	@property
 	def IBAN(self):
 		return self._IBAN
 
@@ -60,6 +34,19 @@ class AccountIdentification80Choice(base_types._BaseFieldType):
 	def IBAN(self):
 		del self._IBAN
 		self._IBAN = None
+
+	@property
+	def BBAN(self):
+		return self._BBAN
+
+	@BBAN.setter
+	def BBAN(self, value):
+		self._BBAN = value if type(value) != auto else self.make_default("BBAN")
+
+	@BBAN.deleter
+	def BBAN(self):
+		del self._BBAN
+		self._BBAN = None
 
 	@property
 	def UPIC(self):
@@ -87,12 +74,25 @@ class AccountIdentification80Choice(base_types._BaseFieldType):
 		del self._Email
 		self._Email = None
 
+	@property
+	def DmstAcct(self):
+		return self._DmstAcct
+
+	@DmstAcct.setter
+	def DmstAcct(self, value):
+		self._DmstAcct = value if type(value) != auto else self.make_default("DmstAcct")
+
+	@DmstAcct.deleter
+	def DmstAcct(self):
+		del self._DmstAcct
+		self._DmstAcct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MSISDN', type=Max16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DmstAcct', type=SimpleIdentificationInformation4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DmstAcct', type=SimpleIdentificationInformation4, min=0, max=1, mutex_group=1, array=False),
 	))
 

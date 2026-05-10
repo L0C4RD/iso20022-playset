@@ -3,7 +3,7 @@ import ActiveCurrencyAndAmount
 
 class CollateralAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAmt", "_FeesAndComssns", "_MktValAmt", "_AcrdIntrstAmt", "_RptdCcyAndAmt"]
+	__slots__ = ["_CollAmt", "_MktValAmt", "_AcrdIntrstAmt", "_RptdCcyAndAmt", "_FeesAndComssns"]
 	@property
 	def CollAmt(self):
 		return self._CollAmt
@@ -16,19 +16,6 @@ class CollateralAmount1(base_types._BaseFieldType):
 	def CollAmt(self):
 		del self._CollAmt
 		self._CollAmt = None
-
-	@property
-	def FeesAndComssns(self):
-		return self._FeesAndComssns
-
-	@FeesAndComssns.setter
-	def FeesAndComssns(self, value):
-		self._FeesAndComssns = value if type(value) != auto else self.make_default("FeesAndComssns")
-
-	@FeesAndComssns.deleter
-	def FeesAndComssns(self):
-		del self._FeesAndComssns
-		self._FeesAndComssns = None
 
 	@property
 	def MktValAmt(self):
@@ -69,11 +56,24 @@ class CollateralAmount1(base_types._BaseFieldType):
 		del self._RptdCcyAndAmt
 		self._RptdCcyAndAmt = None
 
+	@property
+	def FeesAndComssns(self):
+		return self._FeesAndComssns
+
+	@FeesAndComssns.setter
+	def FeesAndComssns(self, value):
+		self._FeesAndComssns = value if type(value) != auto else self.make_default("FeesAndComssns")
+
+	@FeesAndComssns.deleter
+	def FeesAndComssns(self):
+		del self._FeesAndComssns
+		self._FeesAndComssns = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktValAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptdCcyAndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

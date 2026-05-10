@@ -1,13 +1,26 @@
 import base_types
-import Max35Text
 import ImpliedCurrencyAndAmount
 import Number
+import Max35Text
 import TypeOfAmount21Code
 import ReconciliationImpact1Code
 
 class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrTp", "_Amt", "_Impct", "_Cnt"]
+	__slots__ = ["_Impct", "_Tp", "_Cnt", "_Amt", "_OthrTp"]
+	@property
+	def Impct(self):
+		return self._Impct
+
+	@Impct.setter
+	def Impct(self, value):
+		self._Impct = value if type(value) != auto else self.make_default("Impct")
+
+	@Impct.deleter
+	def Impct(self):
+		del self._Impct
+		self._Impct = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -22,17 +35,17 @@ class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def Cnt(self):
+		return self._Cnt
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+	@Cnt.setter
+	def Cnt(self, value):
+		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
+	@Cnt.deleter
+	def Cnt(self):
+		del self._Cnt
+		self._Cnt = None
 
 	@property
 	def Amt(self):
@@ -48,36 +61,23 @@ class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Impct(self):
-		return self._Impct
+	def OthrTp(self):
+		return self._OthrTp
 
-	@Impct.setter
-	def Impct(self, value):
-		self._Impct = value if type(value) != auto else self.make_default("Impct")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@Impct.deleter
-	def Impct(self):
-		del self._Impct
-		self._Impct = None
-
-	@property
-	def Cnt(self):
-		return self._Cnt
-
-	@Cnt.setter
-	def Cnt(self, value):
-		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
-
-	@Cnt.deleter
-	def Cnt(self):
-		del self._Cnt
-		self._Cnt = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TypeOfAmount21Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Impct', type=ReconciliationImpact1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfAmount21Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

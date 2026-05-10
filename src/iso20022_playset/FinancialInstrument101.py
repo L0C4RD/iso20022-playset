@@ -1,41 +1,15 @@
 import base_types
-import FinancialInstrument61Choice
-import Max35Text
-import FundSettlementParameters18
 import YesNoIndicator
-import AdditionalReference10
 import AdditionalInformation15
+import Max35Text
 import Account28
+import FinancialInstrument61Choice
+import FundSettlementParameters18
+import AdditionalReference10
 
 class FinancialInstrument101(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntRef", "_TrfeeAcct", "_TrfRsltsInChngOfBnfclOwnr", "_AddtlInf", "_Trfr", "_LineId", "_AsstsHeldInOwnNm", "_Instrm", "_SttlmPtiesDtls", "_CtrPtyRef"]
-	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
-
-	@property
-	def TrfeeAcct(self):
-		return self._TrfeeAcct
-
-	@TrfeeAcct.setter
-	def TrfeeAcct(self, value):
-		self._TrfeeAcct = value if type(value) != auto else self.make_default("TrfeeAcct")
-
-	@TrfeeAcct.deleter
-	def TrfeeAcct(self):
-		del self._TrfeeAcct
-		self._TrfeeAcct = None
-
+	__slots__ = ["_TrfRsltsInChngOfBnfclOwnr", "_LineId", "_ClntRef", "_AddtlInf", "_AsstsHeldInOwnNm", "_SttlmPtiesDtls", "_TrfeeAcct", "_Trfr", "_Instrm", "_CtrPtyRef"]
 	@property
 	def TrfRsltsInChngOfBnfclOwnr(self):
 		return self._TrfRsltsInChngOfBnfclOwnr
@@ -48,32 +22,6 @@ class FinancialInstrument101(base_types._BaseFieldType):
 	def TrfRsltsInChngOfBnfclOwnr(self):
 		del self._TrfRsltsInChngOfBnfclOwnr
 		self._TrfRsltsInChngOfBnfclOwnr = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def Trfr(self):
-		return self._Trfr
-
-	@Trfr.setter
-	def Trfr(self, value):
-		self._Trfr = value if type(value) != auto else self.make_default("Trfr")
-
-	@Trfr.deleter
-	def Trfr(self):
-		del self._Trfr
-		self._Trfr = None
 
 	@property
 	def LineId(self):
@@ -89,6 +37,32 @@ class FinancialInstrument101(base_types._BaseFieldType):
 		self._LineId = None
 
 	@property
+	def ClntRef(self):
+		return self._ClntRef
+
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
 	def AsstsHeldInOwnNm(self):
 		return self._AsstsHeldInOwnNm
 
@@ -100,19 +74,6 @@ class FinancialInstrument101(base_types._BaseFieldType):
 	def AsstsHeldInOwnNm(self):
 		del self._AsstsHeldInOwnNm
 		self._AsstsHeldInOwnNm = None
-
-	@property
-	def Instrm(self):
-		return self._Instrm
-
-	@Instrm.setter
-	def Instrm(self, value):
-		self._Instrm = value if type(value) != auto else self.make_default("Instrm")
-
-	@Instrm.deleter
-	def Instrm(self):
-		del self._Instrm
-		self._Instrm = None
 
 	@property
 	def SttlmPtiesDtls(self):
@@ -128,6 +89,45 @@ class FinancialInstrument101(base_types._BaseFieldType):
 		self._SttlmPtiesDtls = None
 
 	@property
+	def TrfeeAcct(self):
+		return self._TrfeeAcct
+
+	@TrfeeAcct.setter
+	def TrfeeAcct(self, value):
+		self._TrfeeAcct = value if type(value) != auto else self.make_default("TrfeeAcct")
+
+	@TrfeeAcct.deleter
+	def TrfeeAcct(self):
+		del self._TrfeeAcct
+		self._TrfeeAcct = None
+
+	@property
+	def Trfr(self):
+		return self._Trfr
+
+	@Trfr.setter
+	def Trfr(self, value):
+		self._Trfr = value if type(value) != auto else self.make_default("Trfr")
+
+	@Trfr.deleter
+	def Trfr(self):
+		del self._Trfr
+		self._Trfr = None
+
+	@property
+	def Instrm(self):
+		return self._Instrm
+
+	@Instrm.setter
+	def Instrm(self, value):
+		self._Instrm = value if type(value) != auto else self.make_default("Instrm")
+
+	@Instrm.deleter
+	def Instrm(self):
+		del self._Instrm
+		self._Instrm = None
+
+	@property
 	def CtrPtyRef(self):
 		return self._CtrPtyRef
 
@@ -141,15 +141,15 @@ class FinancialInstrument101(base_types._BaseFieldType):
 		self._CtrPtyRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfeeAcct', type=Account28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfRsltsInChngOfBnfclOwnr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Trfr', type=Account28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AsstsHeldInOwnNm', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Instrm', type=FinancialInstrument61Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters18, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfeeAcct', type=Account28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trfr', type=Account28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Instrm', type=FinancialInstrument61Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 	))
 

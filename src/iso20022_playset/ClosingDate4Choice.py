@@ -4,20 +4,7 @@ import DateAndDateTime2Choice
 
 class ClosingDate4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Dt"]
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
+	__slots__ = ["_Dt", "_Cd"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -31,8 +18,21 @@ class ClosingDate4Choice(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=Date3Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=Date3Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

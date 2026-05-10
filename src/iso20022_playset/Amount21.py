@@ -1,13 +1,13 @@
 import base_types
-import Max35Text
 import ImpliedCurrencyAndAmount
-import TrueFalseIndicator
-import CarRentalServiceType2Code
 import CreditDebit3Code
+import CarRentalServiceType2Code
+import TrueFalseIndicator
+import Max35Text
 
 class Amount21(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbt", "_Amt", "_OthrTp", "_CstmrNtfd", "_Tp"]
+	__slots__ = ["_CdtDbt", "_Tp", "_Amt", "_OthrTp", "_CstmrNtfd"]
 	@property
 	def CdtDbt(self):
 		return self._CdtDbt
@@ -20,6 +20,19 @@ class Amount21(base_types._BaseFieldType):
 	def CdtDbt(self):
 		del self._CdtDbt
 		self._CdtDbt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Amt(self):
@@ -60,24 +73,11 @@ class Amount21(base_types._BaseFieldType):
 		del self._CstmrNtfd
 		self._CstmrNtfd = None
 
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CarRentalServiceType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrNtfd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CarRentalServiceType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

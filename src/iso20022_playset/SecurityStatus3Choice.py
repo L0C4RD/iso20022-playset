@@ -1,6 +1,6 @@
 import base_types
-import SecurityStatus2Code
 import GenericIdentification30
+import SecurityStatus2Code
 
 class SecurityStatus3Choice(base_types._BaseFieldType):
 

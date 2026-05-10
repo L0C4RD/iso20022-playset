@@ -1,6 +1,6 @@
 import base_types
-import LinkageType1Code
 import GenericIdentification47
+import LinkageType1Code
 
 class LinkageType4Choice(base_types._BaseFieldType):
 

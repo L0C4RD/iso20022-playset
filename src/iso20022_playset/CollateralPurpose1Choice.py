@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import CollateralPurpose1Code
+import GenericIdentification30
 
 class CollateralPurpose1Choice(base_types._BaseFieldType):
 

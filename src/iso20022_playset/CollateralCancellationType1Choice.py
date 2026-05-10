@@ -1,6 +1,6 @@
 import base_types
-import CollateralManagementCancellationReason1Code
 import GenericIdentification30
+import CollateralManagementCancellationReason1Code
 
 class CollateralCancellationType1Choice(base_types._BaseFieldType):
 

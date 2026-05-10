@@ -1,24 +1,24 @@
 import base_types
-import CounterpartyMatchingCriteria6
 import ContractMatchingCriteria3
+import CounterpartyMatchingCriteria6
 import ValuationMatchingCriteria1
 import TransactionMatchingCriteria7
 
 class MatchingCriteria17(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyMtchgCrit", "_CtrctMtchgCrit", "_TxMtchgCrit", "_ValtnMtchgCrit"]
+	__slots__ = ["_TxMtchgCrit", "_CtrctMtchgCrit", "_CtrPtyMtchgCrit", "_ValtnMtchgCrit"]
 	@property
-	def CtrPtyMtchgCrit(self):
-		return self._CtrPtyMtchgCrit
+	def TxMtchgCrit(self):
+		return self._TxMtchgCrit
 
-	@CtrPtyMtchgCrit.setter
-	def CtrPtyMtchgCrit(self, value):
-		self._CtrPtyMtchgCrit = value if type(value) != auto else self.make_default("CtrPtyMtchgCrit")
+	@TxMtchgCrit.setter
+	def TxMtchgCrit(self, value):
+		self._TxMtchgCrit = value if type(value) != auto else self.make_default("TxMtchgCrit")
 
-	@CtrPtyMtchgCrit.deleter
-	def CtrPtyMtchgCrit(self):
-		del self._CtrPtyMtchgCrit
-		self._CtrPtyMtchgCrit = None
+	@TxMtchgCrit.deleter
+	def TxMtchgCrit(self):
+		del self._TxMtchgCrit
+		self._TxMtchgCrit = None
 
 	@property
 	def CtrctMtchgCrit(self):
@@ -34,17 +34,17 @@ class MatchingCriteria17(base_types._BaseFieldType):
 		self._CtrctMtchgCrit = None
 
 	@property
-	def TxMtchgCrit(self):
-		return self._TxMtchgCrit
+	def CtrPtyMtchgCrit(self):
+		return self._CtrPtyMtchgCrit
 
-	@TxMtchgCrit.setter
-	def TxMtchgCrit(self, value):
-		self._TxMtchgCrit = value if type(value) != auto else self.make_default("TxMtchgCrit")
+	@CtrPtyMtchgCrit.setter
+	def CtrPtyMtchgCrit(self, value):
+		self._CtrPtyMtchgCrit = value if type(value) != auto else self.make_default("CtrPtyMtchgCrit")
 
-	@TxMtchgCrit.deleter
-	def TxMtchgCrit(self):
-		del self._TxMtchgCrit
-		self._TxMtchgCrit = None
+	@CtrPtyMtchgCrit.deleter
+	def CtrPtyMtchgCrit(self):
+		del self._CtrPtyMtchgCrit
+		self._CtrPtyMtchgCrit = None
 
 	@property
 	def ValtnMtchgCrit(self):
@@ -60,9 +60,9 @@ class MatchingCriteria17(base_types._BaseFieldType):
 		self._ValtnMtchgCrit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctMtchgCrit', type=ContractMatchingCriteria3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxMtchgCrit', type=TransactionMatchingCriteria7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctMtchgCrit', type=ContractMatchingCriteria3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnMtchgCrit', type=ValuationMatchingCriteria1, min=0, max=1, mutex_group=None, array=False),
 	))
 

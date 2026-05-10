@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyCode
 import AccountIdentification4Choice
+import ActiveCurrencyCode
 
 class AccountForAction1(base_types._BaseFieldType):
 

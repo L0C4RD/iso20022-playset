@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import PriceSource1Code
+import Max35Text
 
 class PriceSource(base_types._BaseFieldType):
 

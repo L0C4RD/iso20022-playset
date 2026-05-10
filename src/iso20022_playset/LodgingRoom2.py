@@ -1,37 +1,24 @@
 import base_types
-import Max3NumericText
 import ImpliedCurrencyAndAmount
-import Max35Text
+import Max3NumericText
 import Max70Text
+import Max35Text
 
 class LodgingRoom2(base_types._BaseFieldType):
 
-	__slots__ = ["_Adlts", "_Lctn", "_Chldrn", "_Tp", "_BedTp", "_Gsts", "_DalyRate"]
+	__slots__ = ["_Tp", "_Chldrn", "_Adlts", "_DalyRate", "_Lctn", "_BedTp", "_Gsts"]
 	@property
-	def Adlts(self):
-		return self._Adlts
+	def Tp(self):
+		return self._Tp
 
-	@Adlts.setter
-	def Adlts(self, value):
-		self._Adlts = value if type(value) != auto else self.make_default("Adlts")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Adlts.deleter
-	def Adlts(self):
-		del self._Adlts
-		self._Adlts = None
-
-	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Chldrn(self):
@@ -47,17 +34,43 @@ class LodgingRoom2(base_types._BaseFieldType):
 		self._Chldrn = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Adlts(self):
+		return self._Adlts
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Adlts.setter
+	def Adlts(self, value):
+		self._Adlts = value if type(value) != auto else self.make_default("Adlts")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Adlts.deleter
+	def Adlts(self):
+		del self._Adlts
+		self._Adlts = None
+
+	@property
+	def DalyRate(self):
+		return self._DalyRate
+
+	@DalyRate.setter
+	def DalyRate(self, value):
+		self._DalyRate = value if type(value) != auto else self.make_default("DalyRate")
+
+	@DalyRate.deleter
+	def DalyRate(self):
+		del self._DalyRate
+		self._DalyRate = None
+
+	@property
+	def Lctn(self):
+		return self._Lctn
+
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
 
 	@property
 	def BedTp(self):
@@ -85,26 +98,13 @@ class LodgingRoom2(base_types._BaseFieldType):
 		del self._Gsts
 		self._Gsts = None
 
-	@property
-	def DalyRate(self):
-		return self._DalyRate
-
-	@DalyRate.setter
-	def DalyRate(self, value):
-		self._DalyRate = value if type(value) != auto else self.make_default("DalyRate")
-
-	@DalyRate.deleter
-	def DalyRate(self):
-		del self._DalyRate
-		self._DalyRate = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adlts', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chldrn', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chldrn', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adlts', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DalyRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BedTp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Gsts', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DalyRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

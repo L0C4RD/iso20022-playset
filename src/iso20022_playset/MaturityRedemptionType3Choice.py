@@ -1,6 +1,6 @@
 import base_types
-import MaturityRedemptionType1Code
 import GenericIdentification30
+import MaturityRedemptionType1Code
 
 class MaturityRedemptionType3Choice(base_types._BaseFieldType):
 

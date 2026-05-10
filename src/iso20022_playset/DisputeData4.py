@@ -1,25 +1,25 @@
 import base_types
 import TrueFalseIndicator
-import Max35Text
-import DisputeReference1
-import AdditionalData1
 import Exact1NumericText
+import DisputeReference1
+import Max35Text
+import AdditionalData1
 
 class DisputeData4(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtl", "_ChrgbckElgblty", "_RjctRsn", "_Cond", "_Cycl", "_Ref", "_Sts", "_AddtlData", "_DcmnttnSts"]
+	__slots__ = ["_Sts", "_ChrgbckElgblty", "_Ref", "_Cond", "_Prtl", "_AddtlData", "_RjctRsn", "_DcmnttnSts", "_Cycl"]
 	@property
-	def Prtl(self):
-		return self._Prtl
+	def Sts(self):
+		return self._Sts
 
-	@Prtl.setter
-	def Prtl(self, value):
-		self._Prtl = value if type(value) != auto else self.make_default("Prtl")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@Prtl.deleter
-	def Prtl(self):
-		del self._Prtl
-		self._Prtl = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def ChrgbckElgblty(self):
@@ -35,17 +35,17 @@ class DisputeData4(base_types._BaseFieldType):
 		self._ChrgbckElgblty = None
 
 	@property
-	def RjctRsn(self):
-		return self._RjctRsn
+	def Ref(self):
+		return self._Ref
 
-	@RjctRsn.setter
-	def RjctRsn(self, value):
-		self._RjctRsn = value if type(value) != auto else self.make_default("RjctRsn")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@RjctRsn.deleter
-	def RjctRsn(self):
-		del self._RjctRsn
-		self._RjctRsn = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def Cond(self):
@@ -61,43 +61,17 @@ class DisputeData4(base_types._BaseFieldType):
 		self._Cond = None
 
 	@property
-	def Cycl(self):
-		return self._Cycl
+	def Prtl(self):
+		return self._Prtl
 
-	@Cycl.setter
-	def Cycl(self, value):
-		self._Cycl = value if type(value) != auto else self.make_default("Cycl")
+	@Prtl.setter
+	def Prtl(self, value):
+		self._Prtl = value if type(value) != auto else self.make_default("Prtl")
 
-	@Cycl.deleter
-	def Cycl(self):
-		del self._Cycl
-		self._Cycl = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@Prtl.deleter
+	def Prtl(self):
+		del self._Prtl
+		self._Prtl = None
 
 	@property
 	def AddtlData(self):
@@ -113,6 +87,19 @@ class DisputeData4(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
+	def RjctRsn(self):
+		return self._RjctRsn
+
+	@RjctRsn.setter
+	def RjctRsn(self, value):
+		self._RjctRsn = value if type(value) != auto else self.make_default("RjctRsn")
+
+	@RjctRsn.deleter
+	def RjctRsn(self):
+		del self._RjctRsn
+		self._RjctRsn = None
+
+	@property
 	def DcmnttnSts(self):
 		return self._DcmnttnSts
 
@@ -125,15 +112,28 @@ class DisputeData4(base_types._BaseFieldType):
 		del self._DcmnttnSts
 		self._DcmnttnSts = None
 
+	@property
+	def Cycl(self):
+		return self._Cycl
+
+	@Cycl.setter
+	def Cycl(self, value):
+		self._Cycl = value if type(value) != auto else self.make_default("Cycl")
+
+	@Cycl.deleter
+	def Cycl(self):
+		del self._Cycl
+		self._Cycl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgbckElgblty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctRsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Cond', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=DisputeReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgbckElgblty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=DisputeReference1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Cond', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RjctRsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DcmnttnSts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

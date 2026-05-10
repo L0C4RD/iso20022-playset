@@ -1,27 +1,14 @@
 import base_types
+import AdditionalReference8
+import CopyInformation4
+import InvestmentFundOrder9
 import Max35Text
 import AdditionalReference9
-import AdditionalReference8
 import MessageIdentification1
-import InvestmentFundOrder9
-import CopyInformation4
 
 class SubscriptionOrderCancellationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_PoolRef", "_MsgId", "_OrdrRefs", "_MstrRef", "_PrvsRef", "_CpyDtls"]
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
+	__slots__ = ["_MsgId", "_OrdrRefs", "_PoolRef", "_MstrRef", "_CpyDtls", "_PrvsRef"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -49,6 +36,19 @@ class SubscriptionOrderCancellationRequestV04(base_types._BaseFieldType):
 		self._OrdrRefs = None
 
 	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
 	def MstrRef(self):
 		return self._MstrRef
 
@@ -60,19 +60,6 @@ class SubscriptionOrderCancellationRequestV04(base_types._BaseFieldType):
 	def MstrRef(self):
 		del self._MstrRef
 		self._MstrRef = None
-
-	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
 
 	@property
 	def CpyDtls(self):
@@ -87,12 +74,25 @@ class SubscriptionOrderCancellationRequestV04(base_types._BaseFieldType):
 		del self._CpyDtls
 		self._CpyDtls = None
 
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRefs', type=InvestmentFundOrder9, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 	))
 

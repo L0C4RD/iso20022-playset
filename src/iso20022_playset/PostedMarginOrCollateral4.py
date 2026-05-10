@@ -3,20 +3,7 @@ import ActiveOrHistoricCurrencyAndAmount
 
 class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnPstd", "_XcssCollPstd", "_InitlMrgnPstd"]
-	@property
-	def VartnMrgnPstd(self):
-		return self._VartnMrgnPstd
-
-	@VartnMrgnPstd.setter
-	def VartnMrgnPstd(self, value):
-		self._VartnMrgnPstd = value if type(value) != auto else self.make_default("VartnMrgnPstd")
-
-	@VartnMrgnPstd.deleter
-	def VartnMrgnPstd(self):
-		del self._VartnMrgnPstd
-		self._VartnMrgnPstd = None
-
+	__slots__ = ["_XcssCollPstd", "_InitlMrgnPstd", "_VartnMrgnPstd"]
 	@property
 	def XcssCollPstd(self):
 		return self._XcssCollPstd
@@ -43,9 +30,22 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 		del self._InitlMrgnPstd
 		self._InitlMrgnPstd = None
 
+	@property
+	def VartnMrgnPstd(self):
+		return self._VartnMrgnPstd
+
+	@VartnMrgnPstd.setter
+	def VartnMrgnPstd(self, value):
+		self._VartnMrgnPstd = value if type(value) != auto else self.make_default("VartnMrgnPstd")
+
+	@VartnMrgnPstd.deleter
+	def VartnMrgnPstd(self):
+		del self._VartnMrgnPstd
+		self._VartnMrgnPstd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VartnMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

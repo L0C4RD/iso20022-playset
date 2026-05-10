@@ -1,11 +1,24 @@
 import base_types
-import Exact4AlphaNumericText
-import AccountIdentification1
 import Max8Text
+import AccountIdentification1
+import Exact4AlphaNumericText
 
 class AccountIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Id", "_Inf"]
+	__slots__ = ["_Inf", "_Issr", "_Id"]
+	@property
+	def Inf(self):
+		return self._Inf
+
+	@Inf.setter
+	def Inf(self, value):
+		self._Inf = value if type(value) != auto else self.make_default("Inf")
+
+	@Inf.deleter
+	def Inf(self):
+		del self._Inf
+		self._Inf = None
+
 	@property
 	def Issr(self):
 		return self._Issr
@@ -32,22 +45,9 @@ class AccountIdentification3(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def Inf(self):
-		return self._Inf
-
-	@Inf.setter
-	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
-
-	@Inf.deleter
-	def Inf(self):
-		del self._Inf
-		self._Inf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

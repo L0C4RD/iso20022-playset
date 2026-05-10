@@ -1,51 +1,38 @@
 import base_types
-import TrueFalseIndicator
-import Max1025Text
-import PartyIdentification272
 import CashAccount40
+import PartyIdentification272
 import ContentInformationType39
+import Max1025Text
+import TrueFalseIndicator
 
 class CreditTransferContext1(base_types._BaseFieldType):
 
-	__slots__ = ["_SysToNtfy", "_WaitForNtfctnBfrEndg", "_PrtctdDbtrAcct", "_CdtrAcct", "_AutomtcNtfctnOfCshMvmnt", "_Dbtr", "_PrtctdCdtrAcct", "_Cdtr", "_DbtrAcct"]
+	__slots__ = ["_AutomtcNtfctnOfCshMvmnt", "_DbtrAcct", "_CdtrAcct", "_PrtctdCdtrAcct", "_PrtctdDbtrAcct", "_Cdtr", "_WaitForNtfctnBfrEndg", "_Dbtr", "_SysToNtfy"]
 	@property
-	def SysToNtfy(self):
-		return self._SysToNtfy
+	def AutomtcNtfctnOfCshMvmnt(self):
+		return self._AutomtcNtfctnOfCshMvmnt
 
-	@SysToNtfy.setter
-	def SysToNtfy(self, value):
-		self._SysToNtfy = value if type(value) != auto else self.make_default("SysToNtfy")
+	@AutomtcNtfctnOfCshMvmnt.setter
+	def AutomtcNtfctnOfCshMvmnt(self, value):
+		self._AutomtcNtfctnOfCshMvmnt = value if type(value) != auto else self.make_default("AutomtcNtfctnOfCshMvmnt")
 
-	@SysToNtfy.deleter
-	def SysToNtfy(self):
-		del self._SysToNtfy
-		self._SysToNtfy = None
-
-	@property
-	def WaitForNtfctnBfrEndg(self):
-		return self._WaitForNtfctnBfrEndg
-
-	@WaitForNtfctnBfrEndg.setter
-	def WaitForNtfctnBfrEndg(self, value):
-		self._WaitForNtfctnBfrEndg = value if type(value) != auto else self.make_default("WaitForNtfctnBfrEndg")
-
-	@WaitForNtfctnBfrEndg.deleter
-	def WaitForNtfctnBfrEndg(self):
-		del self._WaitForNtfctnBfrEndg
-		self._WaitForNtfctnBfrEndg = None
+	@AutomtcNtfctnOfCshMvmnt.deleter
+	def AutomtcNtfctnOfCshMvmnt(self):
+		del self._AutomtcNtfctnOfCshMvmnt
+		self._AutomtcNtfctnOfCshMvmnt = None
 
 	@property
-	def PrtctdDbtrAcct(self):
-		return self._PrtctdDbtrAcct
+	def DbtrAcct(self):
+		return self._DbtrAcct
 
-	@PrtctdDbtrAcct.setter
-	def PrtctdDbtrAcct(self, value):
-		self._PrtctdDbtrAcct = value if type(value) != auto else self.make_default("PrtctdDbtrAcct")
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
 
-	@PrtctdDbtrAcct.deleter
-	def PrtctdDbtrAcct(self):
-		del self._PrtctdDbtrAcct
-		self._PrtctdDbtrAcct = None
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	@property
 	def CdtrAcct(self):
@@ -61,32 +48,6 @@ class CreditTransferContext1(base_types._BaseFieldType):
 		self._CdtrAcct = None
 
 	@property
-	def AutomtcNtfctnOfCshMvmnt(self):
-		return self._AutomtcNtfctnOfCshMvmnt
-
-	@AutomtcNtfctnOfCshMvmnt.setter
-	def AutomtcNtfctnOfCshMvmnt(self, value):
-		self._AutomtcNtfctnOfCshMvmnt = value if type(value) != auto else self.make_default("AutomtcNtfctnOfCshMvmnt")
-
-	@AutomtcNtfctnOfCshMvmnt.deleter
-	def AutomtcNtfctnOfCshMvmnt(self):
-		del self._AutomtcNtfctnOfCshMvmnt
-		self._AutomtcNtfctnOfCshMvmnt = None
-
-	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
 	def PrtctdCdtrAcct(self):
 		return self._PrtctdCdtrAcct
 
@@ -98,6 +59,19 @@ class CreditTransferContext1(base_types._BaseFieldType):
 	def PrtctdCdtrAcct(self):
 		del self._PrtctdCdtrAcct
 		self._PrtctdCdtrAcct = None
+
+	@property
+	def PrtctdDbtrAcct(self):
+		return self._PrtctdDbtrAcct
+
+	@PrtctdDbtrAcct.setter
+	def PrtctdDbtrAcct(self, value):
+		self._PrtctdDbtrAcct = value if type(value) != auto else self.make_default("PrtctdDbtrAcct")
+
+	@PrtctdDbtrAcct.deleter
+	def PrtctdDbtrAcct(self):
+		del self._PrtctdDbtrAcct
+		self._PrtctdDbtrAcct = None
 
 	@property
 	def Cdtr(self):
@@ -113,27 +87,53 @@ class CreditTransferContext1(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
+	def WaitForNtfctnBfrEndg(self):
+		return self._WaitForNtfctnBfrEndg
 
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
+	@WaitForNtfctnBfrEndg.setter
+	def WaitForNtfctnBfrEndg(self, value):
+		self._WaitForNtfctnBfrEndg = value if type(value) != auto else self.make_default("WaitForNtfctnBfrEndg")
 
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
+	@WaitForNtfctnBfrEndg.deleter
+	def WaitForNtfctnBfrEndg(self):
+		del self._WaitForNtfctnBfrEndg
+		self._WaitForNtfctnBfrEndg = None
+
+	@property
+	def Dbtr(self):
+		return self._Dbtr
+
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
+
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
+	def SysToNtfy(self):
+		return self._SysToNtfy
+
+	@SysToNtfy.setter
+	def SysToNtfy(self, value):
+		self._SysToNtfy = value if type(value) != auto else self.make_default("SysToNtfy")
+
+	@SysToNtfy.deleter
+	def SysToNtfy(self):
+		del self._SysToNtfy
+		self._SysToNtfy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysToNtfy', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WaitForNtfctnBfrEndg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdDbtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AutomtcNtfctnOfCshMvmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdCdtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdCdtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdDbtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WaitForNtfctnBfrEndg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysToNtfy', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

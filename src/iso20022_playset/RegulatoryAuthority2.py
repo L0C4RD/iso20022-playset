@@ -1,6 +1,6 @@
 import base_types
-import CountryCode
 import Max140Text
+import CountryCode
 
 class RegulatoryAuthority2(base_types._BaseFieldType):
 

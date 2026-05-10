@@ -1,25 +1,25 @@
 import base_types
-import Max35Text
-import CorporateActionBalanceDetails43
 import SafekeepingPlaceFormat42Choice
-import PartyIdentification127Choice
+import Max35Text
 import Max140Text
+import CorporateActionBalanceDetails43
+import PartyIdentification127Choice
 
 class AccountAndBalance59(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_AcctOwnr", "_Bal", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
+	__slots__ = ["_Bal", "_AcctOwnr", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def Bal(self):
+		return self._Bal
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	@property
 	def AcctOwnr(self):
@@ -35,17 +35,17 @@ class AccountAndBalance59(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -74,9 +74,9 @@ class AccountAndBalance59(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=CorporateActionBalanceDetails43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

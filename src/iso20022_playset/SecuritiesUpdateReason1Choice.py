@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import ExternalSecuritiesUpdateReason1Code
+import GenericIdentification30
 
 class SecuritiesUpdateReason1Choice(base_types._BaseFieldType):
 

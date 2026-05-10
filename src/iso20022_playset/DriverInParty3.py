@@ -1,31 +1,44 @@
 import base_types
-import ISOCountrySubDivisionCode
 import TravelDocument2
-import ISOMax3ACountryCode
-import PresentationMedium2Code
-import ContactPersonal1
+import Max70Text
 import LegalStructure1Code
 import Max2NumericText
-import ISODate
 import Address2
-import Max70Text
+import ISOMax3ACountryCode
+import PresentationMedium2Code
+import ISODate
 import Max16Text
+import ContactPersonal1
+import ISOCountrySubDivisionCode
 
 class DriverInParty3(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_LicCtrySubDvsnMnr", "_LicOthrAuthrty", "_LicXprtnDt", "_LicId", "_LicAssgnr", "_DtOfBirth", "_LicCtrySubDvsnMjr", "_LicIssncDt", "_LicForm", "_LicTp", "_DrvrCrdntl", "_Age", "_Ctct", "_Nm", "_LicCtry"]
+	__slots__ = ["_Ctct", "_DrvrCrdntl", "_LicCtrySubDvsnMnr", "_LicCtry", "_LicXprtnDt", "_LicOthrAuthrty", "_LicCtrySubDvsnMjr", "_LicIssncDt", "_LicTp", "_LicForm", "_DtOfBirth", "_Adr", "_LicAssgnr", "_LicId", "_Nm", "_Age"]
 	@property
-	def Adr(self):
-		return self._Adr
+	def Ctct(self):
+		return self._Ctct
 
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
+	@Ctct.setter
+	def Ctct(self, value):
+		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
 
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
+	@Ctct.deleter
+	def Ctct(self):
+		del self._Ctct
+		self._Ctct = None
+
+	@property
+	def DrvrCrdntl(self):
+		return self._DrvrCrdntl
+
+	@DrvrCrdntl.setter
+	def DrvrCrdntl(self, value):
+		self._DrvrCrdntl = value if type(value) != auto else self.make_default("DrvrCrdntl")
+
+	@DrvrCrdntl.deleter
+	def DrvrCrdntl(self):
+		del self._DrvrCrdntl
+		self._DrvrCrdntl = None
 
 	@property
 	def LicCtrySubDvsnMnr(self):
@@ -41,17 +54,17 @@ class DriverInParty3(base_types._BaseFieldType):
 		self._LicCtrySubDvsnMnr = None
 
 	@property
-	def LicOthrAuthrty(self):
-		return self._LicOthrAuthrty
+	def LicCtry(self):
+		return self._LicCtry
 
-	@LicOthrAuthrty.setter
-	def LicOthrAuthrty(self, value):
-		self._LicOthrAuthrty = value if type(value) != auto else self.make_default("LicOthrAuthrty")
+	@LicCtry.setter
+	def LicCtry(self, value):
+		self._LicCtry = value if type(value) != auto else self.make_default("LicCtry")
 
-	@LicOthrAuthrty.deleter
-	def LicOthrAuthrty(self):
-		del self._LicOthrAuthrty
-		self._LicOthrAuthrty = None
+	@LicCtry.deleter
+	def LicCtry(self):
+		del self._LicCtry
+		self._LicCtry = None
 
 	@property
 	def LicXprtnDt(self):
@@ -67,43 +80,17 @@ class DriverInParty3(base_types._BaseFieldType):
 		self._LicXprtnDt = None
 
 	@property
-	def LicId(self):
-		return self._LicId
+	def LicOthrAuthrty(self):
+		return self._LicOthrAuthrty
 
-	@LicId.setter
-	def LicId(self, value):
-		self._LicId = value if type(value) != auto else self.make_default("LicId")
+	@LicOthrAuthrty.setter
+	def LicOthrAuthrty(self, value):
+		self._LicOthrAuthrty = value if type(value) != auto else self.make_default("LicOthrAuthrty")
 
-	@LicId.deleter
-	def LicId(self):
-		del self._LicId
-		self._LicId = None
-
-	@property
-	def LicAssgnr(self):
-		return self._LicAssgnr
-
-	@LicAssgnr.setter
-	def LicAssgnr(self, value):
-		self._LicAssgnr = value if type(value) != auto else self.make_default("LicAssgnr")
-
-	@LicAssgnr.deleter
-	def LicAssgnr(self):
-		del self._LicAssgnr
-		self._LicAssgnr = None
-
-	@property
-	def DtOfBirth(self):
-		return self._DtOfBirth
-
-	@DtOfBirth.setter
-	def DtOfBirth(self, value):
-		self._DtOfBirth = value if type(value) != auto else self.make_default("DtOfBirth")
-
-	@DtOfBirth.deleter
-	def DtOfBirth(self):
-		del self._DtOfBirth
-		self._DtOfBirth = None
+	@LicOthrAuthrty.deleter
+	def LicOthrAuthrty(self):
+		del self._LicOthrAuthrty
+		self._LicOthrAuthrty = None
 
 	@property
 	def LicCtrySubDvsnMjr(self):
@@ -132,19 +119,6 @@ class DriverInParty3(base_types._BaseFieldType):
 		self._LicIssncDt = None
 
 	@property
-	def LicForm(self):
-		return self._LicForm
-
-	@LicForm.setter
-	def LicForm(self, value):
-		self._LicForm = value if type(value) != auto else self.make_default("LicForm")
-
-	@LicForm.deleter
-	def LicForm(self):
-		del self._LicForm
-		self._LicForm = None
-
-	@property
 	def LicTp(self):
 		return self._LicTp
 
@@ -158,43 +132,69 @@ class DriverInParty3(base_types._BaseFieldType):
 		self._LicTp = None
 
 	@property
-	def DrvrCrdntl(self):
-		return self._DrvrCrdntl
+	def LicForm(self):
+		return self._LicForm
 
-	@DrvrCrdntl.setter
-	def DrvrCrdntl(self, value):
-		self._DrvrCrdntl = value if type(value) != auto else self.make_default("DrvrCrdntl")
+	@LicForm.setter
+	def LicForm(self, value):
+		self._LicForm = value if type(value) != auto else self.make_default("LicForm")
 
-	@DrvrCrdntl.deleter
-	def DrvrCrdntl(self):
-		del self._DrvrCrdntl
-		self._DrvrCrdntl = None
-
-	@property
-	def Age(self):
-		return self._Age
-
-	@Age.setter
-	def Age(self, value):
-		self._Age = value if type(value) != auto else self.make_default("Age")
-
-	@Age.deleter
-	def Age(self):
-		del self._Age
-		self._Age = None
+	@LicForm.deleter
+	def LicForm(self):
+		del self._LicForm
+		self._LicForm = None
 
 	@property
-	def Ctct(self):
-		return self._Ctct
+	def DtOfBirth(self):
+		return self._DtOfBirth
 
-	@Ctct.setter
-	def Ctct(self, value):
-		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
+	@DtOfBirth.setter
+	def DtOfBirth(self, value):
+		self._DtOfBirth = value if type(value) != auto else self.make_default("DtOfBirth")
 
-	@Ctct.deleter
-	def Ctct(self):
-		del self._Ctct
-		self._Ctct = None
+	@DtOfBirth.deleter
+	def DtOfBirth(self):
+		del self._DtOfBirth
+		self._DtOfBirth = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def LicAssgnr(self):
+		return self._LicAssgnr
+
+	@LicAssgnr.setter
+	def LicAssgnr(self, value):
+		self._LicAssgnr = value if type(value) != auto else self.make_default("LicAssgnr")
+
+	@LicAssgnr.deleter
+	def LicAssgnr(self):
+		del self._LicAssgnr
+		self._LicAssgnr = None
+
+	@property
+	def LicId(self):
+		return self._LicId
+
+	@LicId.setter
+	def LicId(self, value):
+		self._LicId = value if type(value) != auto else self.make_default("LicId")
+
+	@LicId.deleter
+	def LicId(self):
+		del self._LicId
+		self._LicId = None
 
 	@property
 	def Nm(self):
@@ -210,34 +210,34 @@ class DriverInParty3(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def LicCtry(self):
-		return self._LicCtry
+	def Age(self):
+		return self._Age
 
-	@LicCtry.setter
-	def LicCtry(self, value):
-		self._LicCtry = value if type(value) != auto else self.make_default("LicCtry")
+	@Age.setter
+	def Age(self, value):
+		self._Age = value if type(value) != auto else self.make_default("Age")
 
-	@LicCtry.deleter
-	def LicCtry(self):
-		del self._LicCtry
-		self._LicCtry = None
+	@Age.deleter
+	def Age(self):
+		del self._Age
+		self._Age = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvrCrdntl', type=TravelDocument2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LicCtrySubDvsnMnr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LicOthrAuthrty', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LicCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LicXprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LicId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LicAssgnr', type=LegalStructure1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtOfBirth', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LicOthrAuthrty', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LicCtrySubDvsnMjr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LicIssncDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LicForm', type=PresentationMedium2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LicTp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvrCrdntl', type=TravelDocument2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Age', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LicForm', type=PresentationMedium2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfBirth', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LicAssgnr', type=LegalStructure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LicId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LicCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Age', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

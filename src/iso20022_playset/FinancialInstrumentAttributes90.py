@@ -1,25 +1,12 @@
 import base_types
+import GenericIdentification168
+import InterestComputationMethod2Code
 import ActiveCurrencyAndAmount
 import Max35Text
-import InterestComputationMethod2Code
-import GenericIdentification168
 
 class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntnl", "_IndxId", "_UnitVal", "_IndxUnit", "_IntrstRateTerms"]
-	@property
-	def Ntnl(self):
-		return self._Ntnl
-
-	@Ntnl.setter
-	def Ntnl(self, value):
-		self._Ntnl = value if type(value) != auto else self.make_default("Ntnl")
-
-	@Ntnl.deleter
-	def Ntnl(self):
-		del self._Ntnl
-		self._Ntnl = None
-
+	__slots__ = ["_IndxId", "_IndxUnit", "_UnitVal", "_IntrstRateTerms", "_Ntnl"]
 	@property
 	def IndxId(self):
 		return self._IndxId
@@ -32,19 +19,6 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 	def IndxId(self):
 		del self._IndxId
 		self._IndxId = None
-
-	@property
-	def UnitVal(self):
-		return self._UnitVal
-
-	@UnitVal.setter
-	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
-
-	@UnitVal.deleter
-	def UnitVal(self):
-		del self._UnitVal
-		self._UnitVal = None
 
 	@property
 	def IndxUnit(self):
@@ -60,6 +34,19 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 		self._IndxUnit = None
 
 	@property
+	def UnitVal(self):
+		return self._UnitVal
+
+	@UnitVal.setter
+	def UnitVal(self, value):
+		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
+
+	@UnitVal.deleter
+	def UnitVal(self):
+		del self._UnitVal
+		self._UnitVal = None
+
+	@property
 	def IntrstRateTerms(self):
 		return self._IntrstRateTerms
 
@@ -72,11 +59,24 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 		del self._IntrstRateTerms
 		self._IntrstRateTerms = None
 
+	@property
+	def Ntnl(self):
+		return self._Ntnl
+
+	@Ntnl.setter
+	def Ntnl(self, value):
+		self._Ntnl = value if type(value) != auto else self.make_default("Ntnl")
+
+	@Ntnl.deleter
+	def Ntnl(self):
+		del self._Ntnl
+		self._Ntnl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ntnl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndxId', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndxUnit', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRateTerms', type=InterestComputationMethod2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntnl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

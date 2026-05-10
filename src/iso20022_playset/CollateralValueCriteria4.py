@@ -1,7 +1,7 @@
 import base_types
+import CollateralValueSearchCriteria4
 import CollateralValueReturnCriteria1
 import Max35Text
-import CollateralValueSearchCriteria4
 
 class CollateralValueCriteria4(base_types._BaseFieldType):
 

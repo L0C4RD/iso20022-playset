@@ -1,26 +1,26 @@
 import base_types
-import Product6
 import ImpliedCurrencyAndAmount
-import PaymentTransaction165
+import LoyaltyTransactionType1Code
 import TransactionIdentifier1
 import ActiveCurrencyCode
-import LoyaltyTransactionType1Code
+import Product6
+import PaymentTransaction165
 
 class LoyaltyTransaction7(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_TtlAmt", "_SaleItm", "_SaleTxId", "_LltyTxTp", "_OrgnlPOITx"]
+	__slots__ = ["_SaleItm", "_TtlAmt", "_LltyTxTp", "_SaleTxId", "_Ccy", "_OrgnlPOITx"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def SaleItm(self):
+		return self._SaleItm
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@SaleItm.setter
+	def SaleItm(self, value):
+		self._SaleItm = value if type(value) != auto else self.make_default("SaleItm")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@SaleItm.deleter
+	def SaleItm(self):
+		del self._SaleItm
+		self._SaleItm = None
 
 	@property
 	def TtlAmt(self):
@@ -36,17 +36,17 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
-	def SaleItm(self):
-		return self._SaleItm
+	def LltyTxTp(self):
+		return self._LltyTxTp
 
-	@SaleItm.setter
-	def SaleItm(self, value):
-		self._SaleItm = value if type(value) != auto else self.make_default("SaleItm")
+	@LltyTxTp.setter
+	def LltyTxTp(self, value):
+		self._LltyTxTp = value if type(value) != auto else self.make_default("LltyTxTp")
 
-	@SaleItm.deleter
-	def SaleItm(self):
-		del self._SaleItm
-		self._SaleItm = None
+	@LltyTxTp.deleter
+	def LltyTxTp(self):
+		del self._LltyTxTp
+		self._LltyTxTp = None
 
 	@property
 	def SaleTxId(self):
@@ -62,17 +62,17 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 		self._SaleTxId = None
 
 	@property
-	def LltyTxTp(self):
-		return self._LltyTxTp
+	def Ccy(self):
+		return self._Ccy
 
-	@LltyTxTp.setter
-	def LltyTxTp(self, value):
-		self._LltyTxTp = value if type(value) != auto else self.make_default("LltyTxTp")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@LltyTxTp.deleter
-	def LltyTxTp(self):
-		del self._LltyTxTp
-		self._LltyTxTp = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def OrgnlPOITx(self):
@@ -88,11 +88,11 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 		self._OrgnlPOITx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleItm', type=Product6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyTxTp', type=LoyaltyTransactionType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPOITx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
 	))
 

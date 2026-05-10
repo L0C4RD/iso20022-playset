@@ -1,7 +1,7 @@
 import base_types
 import ProprietaryStatusAndReason6
-import AffirmationReason2Choice
 import ProprietaryReason4
+import AffirmationReason2Choice
 
 class AffirmationStatus11Choice(base_types._BaseFieldType):
 

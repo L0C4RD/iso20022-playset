@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax35Text
 import PartyIdentification192
+import RestrictedFINXMax35Text
 
 class AdditionalReference12(base_types._BaseFieldType):
 

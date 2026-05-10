@@ -1,7 +1,7 @@
 import base_types
 import TrueFalseIndicator
-import MissingOrIncorrectData1
 import YesNoIndicator
+import MissingOrIncorrectData1
 
 class UnableToApplyJustification4Choice(base_types._BaseFieldType):
 

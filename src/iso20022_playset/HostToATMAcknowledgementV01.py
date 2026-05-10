@@ -1,12 +1,12 @@
 import base_types
-import Header20
-import HostToATMAcknowledgement1
 import ContentInformationType15
+import HostToATMAcknowledgement1
+import Header20
 import ContentInformationType10
 
 class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdHstToATMAck", "_Hdr", "_HstToATMAck", "_SctyTrlr"]
+	__slots__ = ["_PrtctdHstToATMAck", "_SctyTrlr", "_Hdr", "_HstToATMAck"]
 	@property
 	def PrtctdHstToATMAck(self):
 		return self._PrtctdHstToATMAck
@@ -19,6 +19,19 @@ class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 	def PrtctdHstToATMAck(self):
 		del self._PrtctdHstToATMAck
 		self._PrtctdHstToATMAck = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -46,23 +59,10 @@ class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 		del self._HstToATMAck
 		self._HstToATMAck = None
 
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdHstToATMAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstToATMAck', type=HostToATMAcknowledgement1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

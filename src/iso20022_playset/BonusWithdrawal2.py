@@ -1,27 +1,14 @@
 import base_types
-import Max35Text
-import TypeOfAmount1Choice
 import YesNoIndicator
-import WithdrawalReason1Choice
 import AdditionalInformation15
+import Max35Text
 import ActiveOrHistoricCurrencyAnd13DecimalAmount
+import WithdrawalReason1Choice
+import TypeOfAmount1Choice
 
 class BonusWithdrawal2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_UclmdAmt", "_TpOfAmt", "_Outsdng", "_Rsn", "_AddtlInf", "_Ref"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_UclmdAmt", "_Amt", "_TpOfAmt", "_Rsn", "_Outsdng", "_AddtlInf", "_Ref"]
 	@property
 	def UclmdAmt(self):
 		return self._UclmdAmt
@@ -34,6 +21,19 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 	def UclmdAmt(self):
 		del self._UclmdAmt
 		self._UclmdAmt = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def TpOfAmt(self):
@@ -49,19 +49,6 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 		self._TpOfAmt = None
 
 	@property
-	def Outsdng(self):
-		return self._Outsdng
-
-	@Outsdng.setter
-	def Outsdng(self, value):
-		self._Outsdng = value if type(value) != auto else self.make_default("Outsdng")
-
-	@Outsdng.deleter
-	def Outsdng(self):
-		del self._Outsdng
-		self._Outsdng = None
-
-	@property
 	def Rsn(self):
 		return self._Rsn
 
@@ -73,6 +60,19 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 	def Rsn(self):
 		del self._Rsn
 		self._Rsn = None
+
+	@property
+	def Outsdng(self):
+		return self._Outsdng
+
+	@Outsdng.setter
+	def Outsdng(self, value):
+		self._Outsdng = value if type(value) != auto else self.make_default("Outsdng")
+
+	@Outsdng.deleter
+	def Outsdng(self):
+		del self._Outsdng
+		self._Outsdng = None
 
 	@property
 	def AddtlInf(self):
@@ -101,11 +101,11 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 		self._Ref = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UclmdAmt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpOfAmt', type=TypeOfAmount1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Outsdng', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=WithdrawalReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Outsdng', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

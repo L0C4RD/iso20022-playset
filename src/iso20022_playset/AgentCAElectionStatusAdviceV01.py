@@ -1,39 +1,13 @@
 import base_types
-import DocumentIdentification8
-import ElectionCancellationStatus1Choice
-import ElectionAdviceStatus1Choice
-import CorporateActionInformation1
 import ElectionAmendmentStatus1Choice
+import ElectionCancellationStatus1Choice
+import CorporateActionInformation1
+import DocumentIdentification8
+import ElectionAdviceStatus1Choice
 
 class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctnCxlReqSts", "_Id", "_AgtCAElctnCxlReqId", "_CorpActnGnlInf", "_AgtCAElctnAmdmntReqId", "_ElctnAmdmntReqSts", "_ElctnAdvcSts", "_AgtCAElctnAdvcId"]
-	@property
-	def ElctnCxlReqSts(self):
-		return self._ElctnCxlReqSts
-
-	@ElctnCxlReqSts.setter
-	def ElctnCxlReqSts(self, value):
-		self._ElctnCxlReqSts = value if type(value) != auto else self.make_default("ElctnCxlReqSts")
-
-	@ElctnCxlReqSts.deleter
-	def ElctnCxlReqSts(self):
-		del self._ElctnCxlReqSts
-		self._ElctnCxlReqSts = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_AgtCAElctnCxlReqId", "_CorpActnGnlInf", "_AgtCAElctnAdvcId", "_ElctnAdvcSts", "_AgtCAElctnAmdmntReqId", "_ElctnCxlReqSts", "_ElctnAmdmntReqSts", "_Id"]
 	@property
 	def AgtCAElctnCxlReqId(self):
 		return self._AgtCAElctnCxlReqId
@@ -61,30 +35,17 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 		self._CorpActnGnlInf = None
 
 	@property
-	def AgtCAElctnAmdmntReqId(self):
-		return self._AgtCAElctnAmdmntReqId
+	def AgtCAElctnAdvcId(self):
+		return self._AgtCAElctnAdvcId
 
-	@AgtCAElctnAmdmntReqId.setter
-	def AgtCAElctnAmdmntReqId(self, value):
-		self._AgtCAElctnAmdmntReqId = value if type(value) != auto else self.make_default("AgtCAElctnAmdmntReqId")
+	@AgtCAElctnAdvcId.setter
+	def AgtCAElctnAdvcId(self, value):
+		self._AgtCAElctnAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnAdvcId")
 
-	@AgtCAElctnAmdmntReqId.deleter
-	def AgtCAElctnAmdmntReqId(self):
-		del self._AgtCAElctnAmdmntReqId
-		self._AgtCAElctnAmdmntReqId = None
-
-	@property
-	def ElctnAmdmntReqSts(self):
-		return self._ElctnAmdmntReqSts
-
-	@ElctnAmdmntReqSts.setter
-	def ElctnAmdmntReqSts(self, value):
-		self._ElctnAmdmntReqSts = value if type(value) != auto else self.make_default("ElctnAmdmntReqSts")
-
-	@ElctnAmdmntReqSts.deleter
-	def ElctnAmdmntReqSts(self):
-		del self._ElctnAmdmntReqSts
-		self._ElctnAmdmntReqSts = None
+	@AgtCAElctnAdvcId.deleter
+	def AgtCAElctnAdvcId(self):
+		del self._AgtCAElctnAdvcId
+		self._AgtCAElctnAdvcId = None
 
 	@property
 	def ElctnAdvcSts(self):
@@ -100,26 +61,65 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 		self._ElctnAdvcSts = None
 
 	@property
-	def AgtCAElctnAdvcId(self):
-		return self._AgtCAElctnAdvcId
+	def AgtCAElctnAmdmntReqId(self):
+		return self._AgtCAElctnAmdmntReqId
 
-	@AgtCAElctnAdvcId.setter
-	def AgtCAElctnAdvcId(self, value):
-		self._AgtCAElctnAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnAdvcId")
+	@AgtCAElctnAmdmntReqId.setter
+	def AgtCAElctnAmdmntReqId(self, value):
+		self._AgtCAElctnAmdmntReqId = value if type(value) != auto else self.make_default("AgtCAElctnAmdmntReqId")
 
-	@AgtCAElctnAdvcId.deleter
-	def AgtCAElctnAdvcId(self):
-		del self._AgtCAElctnAdvcId
-		self._AgtCAElctnAdvcId = None
+	@AgtCAElctnAmdmntReqId.deleter
+	def AgtCAElctnAmdmntReqId(self):
+		del self._AgtCAElctnAmdmntReqId
+		self._AgtCAElctnAmdmntReqId = None
+
+	@property
+	def ElctnCxlReqSts(self):
+		return self._ElctnCxlReqSts
+
+	@ElctnCxlReqSts.setter
+	def ElctnCxlReqSts(self, value):
+		self._ElctnCxlReqSts = value if type(value) != auto else self.make_default("ElctnCxlReqSts")
+
+	@ElctnCxlReqSts.deleter
+	def ElctnCxlReqSts(self):
+		del self._ElctnCxlReqSts
+		self._ElctnCxlReqSts = None
+
+	@property
+	def ElctnAmdmntReqSts(self):
+		return self._ElctnAmdmntReqSts
+
+	@ElctnAmdmntReqSts.setter
+	def ElctnAmdmntReqSts(self, value):
+		self._ElctnAmdmntReqSts = value if type(value) != auto else self.make_default("ElctnAmdmntReqSts")
+
+	@ElctnAmdmntReqSts.deleter
+	def ElctnAmdmntReqSts(self):
+		del self._ElctnAmdmntReqSts
+		self._ElctnAmdmntReqSts = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElctnCxlReqSts', type=ElectionCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAElctnCxlReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtCAElctnAmdmntReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ElctnAmdmntReqSts', type=ElectionAmendmentStatus1Choice, min=0, max=1, mutex_group=2, array=False),
-		base_types.FieldEntry(name='ElctnAdvcSts', type=ElectionAdviceStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ElctnAdvcSts', type=ElectionAdviceStatus1Choice, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='AgtCAElctnAmdmntReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ElctnCxlReqSts', type=ElectionCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='ElctnAmdmntReqSts', type=ElectionAmendmentStatus1Choice, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

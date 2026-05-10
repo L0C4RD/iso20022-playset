@@ -1,6 +1,6 @@
 import base_types
-import StandingOrderCriteria5Choice
 import QueryType2Code
+import StandingOrderCriteria5Choice
 
 class StandingOrderQuery5(base_types._BaseFieldType):
 

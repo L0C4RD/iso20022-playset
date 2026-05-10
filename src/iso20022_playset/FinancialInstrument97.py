@@ -1,24 +1,24 @@
 import base_types
+import Warrant4
 import Derivative4
 import Equity3
-import Warrant4
 import Debt5
 
 class FinancialInstrument97(base_types._BaseFieldType):
 
-	__slots__ = ["_Debt", "_Deriv", "_Eqty", "_Warrt"]
+	__slots__ = ["_Eqty", "_Deriv", "_Debt", "_Warrt"]
 	@property
-	def Debt(self):
-		return self._Debt
+	def Eqty(self):
+		return self._Eqty
 
-	@Debt.setter
-	def Debt(self, value):
-		self._Debt = value if type(value) != auto else self.make_default("Debt")
+	@Eqty.setter
+	def Eqty(self, value):
+		self._Eqty = value if type(value) != auto else self.make_default("Eqty")
 
-	@Debt.deleter
-	def Debt(self):
-		del self._Debt
-		self._Debt = None
+	@Eqty.deleter
+	def Eqty(self):
+		del self._Eqty
+		self._Eqty = None
 
 	@property
 	def Deriv(self):
@@ -34,17 +34,17 @@ class FinancialInstrument97(base_types._BaseFieldType):
 		self._Deriv = None
 
 	@property
-	def Eqty(self):
-		return self._Eqty
+	def Debt(self):
+		return self._Debt
 
-	@Eqty.setter
-	def Eqty(self, value):
-		self._Eqty = value if type(value) != auto else self.make_default("Eqty")
+	@Debt.setter
+	def Debt(self, value):
+		self._Debt = value if type(value) != auto else self.make_default("Debt")
 
-	@Eqty.deleter
-	def Eqty(self):
-		del self._Eqty
-		self._Eqty = None
+	@Debt.deleter
+	def Debt(self):
+		del self._Debt
+		self._Debt = None
 
 	@property
 	def Warrt(self):
@@ -60,9 +60,9 @@ class FinancialInstrument97(base_types._BaseFieldType):
 		self._Warrt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Debt', type=Debt5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Deriv', type=Derivative4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Eqty', type=Equity3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Deriv', type=Derivative4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Debt', type=Debt5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Warrt', type=Warrant4, min=0, max=1, mutex_group=None, array=False),
 	))
 

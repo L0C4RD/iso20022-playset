@@ -1,16 +1,29 @@
 import base_types
 import PartyIdentification113
-import YesNoIndicator
-import TaxCalculationInformation10
-import TaxType3Choice
 import PercentageRate
-import ExemptionReason1Choice
+import TaxType3Choice
+import TaxCalculationInformation10
 import ActiveCurrencyAndAmount
+import YesNoIndicator
+import ExemptionReason1Choice
 import CountryCode
 
 class Tax32(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_TaxClctnDtls", "_RcptId", "_Ctry", "_XmptnInd", "_InftvRate", "_InftvAmt", "_XmptnRsn"]
+	__slots__ = ["_InftvRate", "_Tp", "_XmptnRsn", "_RcptId", "_TaxClctnDtls", "_Ctry", "_InftvAmt", "_XmptnInd"]
+	@property
+	def InftvRate(self):
+		return self._InftvRate
+
+	@InftvRate.setter
+	def InftvRate(self, value):
+		self._InftvRate = value if type(value) != auto else self.make_default("InftvRate")
+
+	@InftvRate.deleter
+	def InftvRate(self):
+		del self._InftvRate
+		self._InftvRate = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -25,17 +38,17 @@ class Tax32(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def TaxClctnDtls(self):
-		return self._TaxClctnDtls
+	def XmptnRsn(self):
+		return self._XmptnRsn
 
-	@TaxClctnDtls.setter
-	def TaxClctnDtls(self, value):
-		self._TaxClctnDtls = value if type(value) != auto else self.make_default("TaxClctnDtls")
+	@XmptnRsn.setter
+	def XmptnRsn(self, value):
+		self._XmptnRsn = value if type(value) != auto else self.make_default("XmptnRsn")
 
-	@TaxClctnDtls.deleter
-	def TaxClctnDtls(self):
-		del self._TaxClctnDtls
-		self._TaxClctnDtls = None
+	@XmptnRsn.deleter
+	def XmptnRsn(self):
+		del self._XmptnRsn
+		self._XmptnRsn = None
 
 	@property
 	def RcptId(self):
@@ -51,6 +64,19 @@ class Tax32(base_types._BaseFieldType):
 		self._RcptId = None
 
 	@property
+	def TaxClctnDtls(self):
+		return self._TaxClctnDtls
+
+	@TaxClctnDtls.setter
+	def TaxClctnDtls(self, value):
+		self._TaxClctnDtls = value if type(value) != auto else self.make_default("TaxClctnDtls")
+
+	@TaxClctnDtls.deleter
+	def TaxClctnDtls(self):
+		del self._TaxClctnDtls
+		self._TaxClctnDtls = None
+
+	@property
 	def Ctry(self):
 		return self._Ctry
 
@@ -62,32 +88,6 @@ class Tax32(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
-
-	@property
-	def XmptnInd(self):
-		return self._XmptnInd
-
-	@XmptnInd.setter
-	def XmptnInd(self, value):
-		self._XmptnInd = value if type(value) != auto else self.make_default("XmptnInd")
-
-	@XmptnInd.deleter
-	def XmptnInd(self):
-		del self._XmptnInd
-		self._XmptnInd = None
-
-	@property
-	def InftvRate(self):
-		return self._InftvRate
-
-	@InftvRate.setter
-	def InftvRate(self, value):
-		self._InftvRate = value if type(value) != auto else self.make_default("InftvRate")
-
-	@InftvRate.deleter
-	def InftvRate(self):
-		del self._InftvRate
-		self._InftvRate = None
 
 	@property
 	def InftvAmt(self):
@@ -103,26 +103,26 @@ class Tax32(base_types._BaseFieldType):
 		self._InftvAmt = None
 
 	@property
-	def XmptnRsn(self):
-		return self._XmptnRsn
+	def XmptnInd(self):
+		return self._XmptnInd
 
-	@XmptnRsn.setter
-	def XmptnRsn(self, value):
-		self._XmptnRsn = value if type(value) != auto else self.make_default("XmptnRsn")
+	@XmptnInd.setter
+	def XmptnInd(self, value):
+		self._XmptnInd = value if type(value) != auto else self.make_default("XmptnInd")
 
-	@XmptnRsn.deleter
-	def XmptnRsn(self):
-		del self._XmptnRsn
-		self._XmptnRsn = None
+	@XmptnInd.deleter
+	def XmptnInd(self):
+		del self._XmptnInd
+		self._XmptnInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TaxType3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InftvRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InftvAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TaxType3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XmptnRsn', type=ExemptionReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InftvAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

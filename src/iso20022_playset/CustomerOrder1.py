@@ -1,92 +1,27 @@
 import base_types
-import TrueFalseIndicator
 import ImpliedCurrencyAndAmount
-import Max1025Text
-import AmountUnit1Code
-import Max35Text
 import ISODateTime
 import ActiveCurrencyCode
+import Max35Text
+import Max1025Text
+import TrueFalseIndicator
+import AmountUnit1Code
 
 class CustomerOrder1(base_types._BaseFieldType):
 
-	__slots__ = ["_OpnOrdrStat", "_Unit", "_CurAmt", "_CstmrOrdrId", "_EndDt", "_StartDt", "_AccsdBy", "_Ccy", "_AddtlInf", "_FrcstdAmt", "_SaleRefId"]
+	__slots__ = ["_AddtlInf", "_AccsdBy", "_Ccy", "_OpnOrdrStat", "_SaleRefId", "_StartDt", "_CstmrOrdrId", "_EndDt", "_Unit", "_CurAmt", "_FrcstdAmt"]
 	@property
-	def OpnOrdrStat(self):
-		return self._OpnOrdrStat
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@OpnOrdrStat.setter
-	def OpnOrdrStat(self, value):
-		self._OpnOrdrStat = value if type(value) != auto else self.make_default("OpnOrdrStat")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@OpnOrdrStat.deleter
-	def OpnOrdrStat(self):
-		del self._OpnOrdrStat
-		self._OpnOrdrStat = None
-
-	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
-
-	@property
-	def CurAmt(self):
-		return self._CurAmt
-
-	@CurAmt.setter
-	def CurAmt(self, value):
-		self._CurAmt = value if type(value) != auto else self.make_default("CurAmt")
-
-	@CurAmt.deleter
-	def CurAmt(self):
-		del self._CurAmt
-		self._CurAmt = None
-
-	@property
-	def CstmrOrdrId(self):
-		return self._CstmrOrdrId
-
-	@CstmrOrdrId.setter
-	def CstmrOrdrId(self, value):
-		self._CstmrOrdrId = value if type(value) != auto else self.make_default("CstmrOrdrId")
-
-	@CstmrOrdrId.deleter
-	def CstmrOrdrId(self):
-		del self._CstmrOrdrId
-		self._CstmrOrdrId = None
-
-	@property
-	def EndDt(self):
-		return self._EndDt
-
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
-
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def AccsdBy(self):
@@ -115,30 +50,17 @@ class CustomerOrder1(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def OpnOrdrStat(self):
+		return self._OpnOrdrStat
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@OpnOrdrStat.setter
+	def OpnOrdrStat(self, value):
+		self._OpnOrdrStat = value if type(value) != auto else self.make_default("OpnOrdrStat")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def FrcstdAmt(self):
-		return self._FrcstdAmt
-
-	@FrcstdAmt.setter
-	def FrcstdAmt(self, value):
-		self._FrcstdAmt = value if type(value) != auto else self.make_default("FrcstdAmt")
-
-	@FrcstdAmt.deleter
-	def FrcstdAmt(self):
-		del self._FrcstdAmt
-		self._FrcstdAmt = None
+	@OpnOrdrStat.deleter
+	def OpnOrdrStat(self):
+		del self._OpnOrdrStat
+		self._OpnOrdrStat = None
 
 	@property
 	def SaleRefId(self):
@@ -153,17 +75,95 @@ class CustomerOrder1(base_types._BaseFieldType):
 		del self._SaleRefId
 		self._SaleRefId = None
 
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
+	def CstmrOrdrId(self):
+		return self._CstmrOrdrId
+
+	@CstmrOrdrId.setter
+	def CstmrOrdrId(self, value):
+		self._CstmrOrdrId = value if type(value) != auto else self.make_default("CstmrOrdrId")
+
+	@CstmrOrdrId.deleter
+	def CstmrOrdrId(self):
+		del self._CstmrOrdrId
+		self._CstmrOrdrId = None
+
+	@property
+	def EndDt(self):
+		return self._EndDt
+
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
+
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
+
+	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
+	@property
+	def CurAmt(self):
+		return self._CurAmt
+
+	@CurAmt.setter
+	def CurAmt(self, value):
+		self._CurAmt = value if type(value) != auto else self.make_default("CurAmt")
+
+	@CurAmt.deleter
+	def CurAmt(self):
+		del self._CurAmt
+		self._CurAmt = None
+
+	@property
+	def FrcstdAmt(self):
+		return self._FrcstdAmt
+
+	@FrcstdAmt.setter
+	def FrcstdAmt(self, value):
+		self._FrcstdAmt = value if type(value) != auto else self.make_default("FrcstdAmt")
+
+	@FrcstdAmt.deleter
+	def FrcstdAmt(self):
+		del self._FrcstdAmt
+		self._FrcstdAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OpnOrdrStat', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Unit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrOrdrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccsdBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrcstdAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpnOrdrStat', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrOrdrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Unit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrcstdAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

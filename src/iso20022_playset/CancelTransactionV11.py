@@ -1,13 +1,26 @@
 import base_types
+import CashAccount40
 import MessageHeader9
 import PaymentCancellationReason6
-import PaymentIdentification8Choice
-import CashAccount40
 import SupplementaryData1
+import PaymentIdentification8Choice
 
 class CancelTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CshAcct", "_CxlRsn", "_MsgHdr", "_PmtId"]
+	__slots__ = ["_CxlRsn", "_SplmtryData", "_CshAcct", "_PmtId", "_MsgHdr"]
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -35,17 +48,17 @@ class CancelTransactionV11(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def PmtId(self):
+		return self._PmtId
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@PmtId.setter
+	def PmtId(self, value):
+		self._PmtId = value if type(value) != auto else self.make_default("PmtId")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
+	@PmtId.deleter
+	def PmtId(self):
+		del self._PmtId
+		self._PmtId = None
 
 	@property
 	def MsgHdr(self):
@@ -60,24 +73,11 @@ class CancelTransactionV11(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
-	@property
-	def PmtId(self):
-		return self._PmtId
-
-	@PmtId.setter
-	def PmtId(self, value):
-		self._PmtId = value if type(value) != auto else self.make_default("PmtId")
-
-	@PmtId.deleter
-	def PmtId(self):
-		del self._PmtId
-		self._PmtId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlRsn', type=PaymentCancellationReason6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=PaymentCancellationReason6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtId', type=PaymentIdentification8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import IncorrectData1Choice
 import Max140Text
+import IncorrectData1Choice
 
 class UnableToApplyIncorrect2(base_types._BaseFieldType):
 

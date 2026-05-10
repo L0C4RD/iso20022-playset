@@ -1,24 +1,24 @@
 import base_types
-import Header32
-import ATMCompletionAdvice3
 import ContentInformationType15
+import ATMCompletionAdvice3
 import ContentInformationType10
+import Header32
 
 class ATMCompletionAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMCmpltnAdvc", "_Hdr", "_ATMCmpltnAdvc", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_ATMCmpltnAdvc", "_PrtctdATMCmpltnAdvc"]
 	@property
-	def PrtctdATMCmpltnAdvc(self):
-		return self._PrtctdATMCmpltnAdvc
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@PrtctdATMCmpltnAdvc.setter
-	def PrtctdATMCmpltnAdvc(self, value):
-		self._PrtctdATMCmpltnAdvc = value if type(value) != auto else self.make_default("PrtctdATMCmpltnAdvc")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@PrtctdATMCmpltnAdvc.deleter
-	def PrtctdATMCmpltnAdvc(self):
-		del self._PrtctdATMCmpltnAdvc
-		self._PrtctdATMCmpltnAdvc = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -47,22 +47,22 @@ class ATMCompletionAdviceV03(base_types._BaseFieldType):
 		self._ATMCmpltnAdvc = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def PrtctdATMCmpltnAdvc(self):
+		return self._PrtctdATMCmpltnAdvc
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@PrtctdATMCmpltnAdvc.setter
+	def PrtctdATMCmpltnAdvc(self, value):
+		self._PrtctdATMCmpltnAdvc = value if type(value) != auto else self.make_default("PrtctdATMCmpltnAdvc")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@PrtctdATMCmpltnAdvc.deleter
+	def PrtctdATMCmpltnAdvc(self):
+		del self._PrtctdATMCmpltnAdvc
+		self._PrtctdATMCmpltnAdvc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMCmpltnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMCmpltnAdvc', type=ATMCompletionAdvice3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMCmpltnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,37 +1,11 @@
 import base_types
+import SystemReturnCriteria2
 import PaymentReturnCriteria4
 import AccountCashEntryReturnCriteria3
-import SystemReturnCriteria2
 
 class TransactionReturnCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtRtrCrit", "_PmtToRtrCrit", "_PmtFrRtrCrit", "_AcctCshNtryRtrCrit"]
-	@property
-	def PmtRtrCrit(self):
-		return self._PmtRtrCrit
-
-	@PmtRtrCrit.setter
-	def PmtRtrCrit(self, value):
-		self._PmtRtrCrit = value if type(value) != auto else self.make_default("PmtRtrCrit")
-
-	@PmtRtrCrit.deleter
-	def PmtRtrCrit(self):
-		del self._PmtRtrCrit
-		self._PmtRtrCrit = None
-
-	@property
-	def PmtToRtrCrit(self):
-		return self._PmtToRtrCrit
-
-	@PmtToRtrCrit.setter
-	def PmtToRtrCrit(self, value):
-		self._PmtToRtrCrit = value if type(value) != auto else self.make_default("PmtToRtrCrit")
-
-	@PmtToRtrCrit.deleter
-	def PmtToRtrCrit(self):
-		del self._PmtToRtrCrit
-		self._PmtToRtrCrit = None
-
+	__slots__ = ["_PmtFrRtrCrit", "_PmtRtrCrit", "_AcctCshNtryRtrCrit", "_PmtToRtrCrit"]
 	@property
 	def PmtFrRtrCrit(self):
 		return self._PmtFrRtrCrit
@@ -46,6 +20,19 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 		self._PmtFrRtrCrit = None
 
 	@property
+	def PmtRtrCrit(self):
+		return self._PmtRtrCrit
+
+	@PmtRtrCrit.setter
+	def PmtRtrCrit(self, value):
+		self._PmtRtrCrit = value if type(value) != auto else self.make_default("PmtRtrCrit")
+
+	@PmtRtrCrit.deleter
+	def PmtRtrCrit(self):
+		del self._PmtRtrCrit
+		self._PmtRtrCrit = None
+
+	@property
 	def AcctCshNtryRtrCrit(self):
 		return self._AcctCshNtryRtrCrit
 
@@ -58,10 +45,23 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 		del self._AcctCshNtryRtrCrit
 		self._AcctCshNtryRtrCrit = None
 
+	@property
+	def PmtToRtrCrit(self):
+		return self._PmtToRtrCrit
+
+	@PmtToRtrCrit.setter
+	def PmtToRtrCrit(self, value):
+		self._PmtToRtrCrit = value if type(value) != auto else self.make_default("PmtToRtrCrit")
+
+	@PmtToRtrCrit.deleter
+	def PmtToRtrCrit(self):
+		del self._PmtToRtrCrit
+		self._PmtToRtrCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtRtrCrit', type=PaymentReturnCriteria4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtToRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFrRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtRtrCrit', type=PaymentReturnCriteria4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctCshNtryRtrCrit', type=AccountCashEntryReturnCriteria3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtToRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
+import NameAndAddress5
 import BICFIIdentifier
 import GenericIdentification1
-import NameAndAddress5
 
 class PartyIdentification62(base_types._BaseFieldType):
 

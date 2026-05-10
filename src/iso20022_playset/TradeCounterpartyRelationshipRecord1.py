@@ -1,24 +1,11 @@
 import base_types
-import TradeCounterpartyRelationship1Choice
 import TradeCounterpartyType1Code
 import Max1000Text
+import TradeCounterpartyRelationship1Choice
 
 class TradeCounterpartyRelationshipRecord1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltshTp", "_StartRltshPty", "_Desc", "_EndRltshPty"]
-	@property
-	def RltshTp(self):
-		return self._RltshTp
-
-	@RltshTp.setter
-	def RltshTp(self, value):
-		self._RltshTp = value if type(value) != auto else self.make_default("RltshTp")
-
-	@RltshTp.deleter
-	def RltshTp(self):
-		del self._RltshTp
-		self._RltshTp = None
-
+	__slots__ = ["_StartRltshPty", "_Desc", "_RltshTp", "_EndRltshPty"]
 	@property
 	def StartRltshPty(self):
 		return self._StartRltshPty
@@ -46,6 +33,19 @@ class TradeCounterpartyRelationshipRecord1(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
+	def RltshTp(self):
+		return self._RltshTp
+
+	@RltshTp.setter
+	def RltshTp(self, value):
+		self._RltshTp = value if type(value) != auto else self.make_default("RltshTp")
+
+	@RltshTp.deleter
+	def RltshTp(self):
+		del self._RltshTp
+		self._RltshTp = None
+
+	@property
 	def EndRltshPty(self):
 		return self._EndRltshPty
 
@@ -59,9 +59,9 @@ class TradeCounterpartyRelationshipRecord1(base_types._BaseFieldType):
 		self._EndRltshPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltshTp', type=TradeCounterpartyRelationship1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartRltshPty', type=TradeCounterpartyType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltshTp', type=TradeCounterpartyRelationship1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndRltshPty', type=TradeCounterpartyType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

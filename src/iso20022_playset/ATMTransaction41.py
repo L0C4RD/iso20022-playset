@@ -1,24 +1,11 @@
 import base_types
-import Response2Code
 import TransactionIdentifier3
+import Response2Code
 import ATMCommand7
 
 class ATMTransaction41(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmd", "_Rspn", "_TxId"]
-	@property
-	def Cmd(self):
-		return self._Cmd
-
-	@Cmd.setter
-	def Cmd(self, value):
-		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
-
-	@Cmd.deleter
-	def Cmd(self):
-		del self._Cmd
-		self._Cmd = None
-
+	__slots__ = ["_Rspn", "_TxId", "_Cmd"]
 	@property
 	def Rspn(self):
 		return self._Rspn
@@ -45,9 +32,22 @@ class ATMTransaction41(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def Cmd(self):
+		return self._Cmd
+
+	@Cmd.setter
+	def Cmd(self, value):
+		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
+
+	@Cmd.deleter
+	def Cmd(self):
+		del self._Cmd
+		self._Cmd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rspn', type=Response2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
 	))
 

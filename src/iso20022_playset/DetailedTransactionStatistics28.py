@@ -1,6 +1,6 @@
 import base_types
-import AbnormalValuesData4
 import Number
+import AbnormalValuesData4
 
 class DetailedTransactionStatistics28(base_types._BaseFieldType):
 

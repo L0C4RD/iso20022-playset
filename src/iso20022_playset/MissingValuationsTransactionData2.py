@@ -1,23 +1,23 @@
 import base_types
-import AmountAndDirection106
 import TradeTransactionIdentification24
+import AmountAndDirection106
 import DateAndDateTime2Choice
 
 class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_ValtnTmStmp", "_ValtnAmt"]
+	__slots__ = ["_ValtnAmt", "_ValtnTmStmp", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def ValtnAmt(self):
+		return self._ValtnAmt
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@ValtnAmt.setter
+	def ValtnAmt(self, value):
+		self._ValtnAmt = value if type(value) != auto else self.make_default("ValtnAmt")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@ValtnAmt.deleter
+	def ValtnAmt(self):
+		del self._ValtnAmt
+		self._ValtnAmt = None
 
 	@property
 	def ValtnTmStmp(self):
@@ -33,21 +33,21 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 		self._ValtnTmStmp = None
 
 	@property
-	def ValtnAmt(self):
-		return self._ValtnAmt
+	def TxId(self):
+		return self._TxId
 
-	@ValtnAmt.setter
-	def ValtnAmt(self, value):
-		self._ValtnAmt = value if type(value) != auto else self.make_default("ValtnAmt")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@ValtnAmt.deleter
-	def ValtnAmt(self):
-		del self._ValtnAmt
-		self._ValtnAmt = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
 	))
 

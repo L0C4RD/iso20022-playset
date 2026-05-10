@@ -1,7 +1,7 @@
 import base_types
-import PartyIdentification272
 import Max105Text
 import StatusReason6Choice
+import PartyIdentification272
 
 class StatusReasonInformation14(base_types._BaseFieldType):
 

@@ -4,20 +4,7 @@ import YesNoIndicator
 
 class RevaluationIndicator4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ind", "_Prtry"]
-	@property
-	def Ind(self):
-		return self._Ind
-
-	@Ind.setter
-	def Ind(self, value):
-		self._Ind = value if type(value) != auto else self.make_default("Ind")
-
-	@Ind.deleter
-	def Ind(self):
-		del self._Ind
-		self._Ind = None
-
+	__slots__ = ["_Prtry", "_Ind"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -31,8 +18,21 @@ class RevaluationIndicator4Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Ind(self):
+		return self._Ind
+
+	@Ind.setter
+	def Ind(self, value):
+		self._Ind = value if type(value) != auto else self.make_default("Ind")
+
+	@Ind.deleter
+	def Ind(self):
+		del self._Ind
+		self._Ind = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ind', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ind', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
 

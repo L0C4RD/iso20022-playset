@@ -1,7 +1,7 @@
 import base_types
+import Max140Text
 import Exact4AlphaNumericText
 import BICIdentification1
-import Max140Text
 
 class RequiredSubmission6(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import ActionMessage11
+import Max35Text
 
 class DeviceInputNotification6(base_types._BaseFieldType):
 

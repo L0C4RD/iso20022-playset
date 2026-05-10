@@ -1,24 +1,24 @@
 import base_types
-import Max35Text
-import Max15Text
 import ISODate
 import ProtectTransactionType2Code
+import Max15Text
+import Max35Text
 
 class ProtectInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_PrtctDt", "_PrtctSfkpgAcct", "_TxId"]
+	__slots__ = ["_PrtctSfkpgAcct", "_PrtctDt", "_TxId", "_TxTp"]
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def PrtctSfkpgAcct(self):
+		return self._PrtctSfkpgAcct
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+	@PrtctSfkpgAcct.setter
+	def PrtctSfkpgAcct(self, value):
+		self._PrtctSfkpgAcct = value if type(value) != auto else self.make_default("PrtctSfkpgAcct")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@PrtctSfkpgAcct.deleter
+	def PrtctSfkpgAcct(self):
+		del self._PrtctSfkpgAcct
+		self._PrtctSfkpgAcct = None
 
 	@property
 	def PrtctDt(self):
@@ -34,19 +34,6 @@ class ProtectInstruction1(base_types._BaseFieldType):
 		self._PrtctDt = None
 
 	@property
-	def PrtctSfkpgAcct(self):
-		return self._PrtctSfkpgAcct
-
-	@PrtctSfkpgAcct.setter
-	def PrtctSfkpgAcct(self, value):
-		self._PrtctSfkpgAcct = value if type(value) != auto else self.make_default("PrtctSfkpgAcct")
-
-	@PrtctSfkpgAcct.deleter
-	def PrtctSfkpgAcct(self):
-		del self._PrtctSfkpgAcct
-		self._PrtctSfkpgAcct = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -59,10 +46,23 @@ class ProtectInstruction1(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctSfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

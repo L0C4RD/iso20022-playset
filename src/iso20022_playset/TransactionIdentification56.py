@@ -1,43 +1,17 @@
 import base_types
-import Exact12Text
-import Max12NumericText
-import Exact15Text
+import Max70Text
 import ISODateTime
+import Exact15Text
 import PurchaseIdentifierType2Code
 import Max99Text
-import TrueFalseIndicator
+import Exact12Text
 import Max35Text
-import Max70Text
+import Max12NumericText
+import TrueFalseIndicator
 
 class TransactionIdentification56(base_types._BaseFieldType):
 
-	__slots__ = ["_PurchsIdr", "_AssoctdData", "_AssoctdDataDstn", "_PurchsIdrTp", "_OthrPurchsIdrTp", "_RtrvlRefNb", "_AssoctdDataRef", "_LifeCyclId", "_TrnsmssnDtTm", "_SysTracAudtNb"]
-	@property
-	def PurchsIdr(self):
-		return self._PurchsIdr
-
-	@PurchsIdr.setter
-	def PurchsIdr(self, value):
-		self._PurchsIdr = value if type(value) != auto else self.make_default("PurchsIdr")
-
-	@PurchsIdr.deleter
-	def PurchsIdr(self):
-		del self._PurchsIdr
-		self._PurchsIdr = None
-
-	@property
-	def AssoctdData(self):
-		return self._AssoctdData
-
-	@AssoctdData.setter
-	def AssoctdData(self, value):
-		self._AssoctdData = value if type(value) != auto else self.make_default("AssoctdData")
-
-	@AssoctdData.deleter
-	def AssoctdData(self):
-		del self._AssoctdData
-		self._AssoctdData = None
-
+	__slots__ = ["_AssoctdDataDstn", "_AssoctdDataRef", "_OthrPurchsIdrTp", "_PurchsIdrTp", "_SysTracAudtNb", "_LifeCyclId", "_RtrvlRefNb", "_AssoctdData", "_PurchsIdr", "_TrnsmssnDtTm"]
 	@property
 	def AssoctdDataDstn(self):
 		return self._AssoctdDataDstn
@@ -50,45 +24,6 @@ class TransactionIdentification56(base_types._BaseFieldType):
 	def AssoctdDataDstn(self):
 		del self._AssoctdDataDstn
 		self._AssoctdDataDstn = None
-
-	@property
-	def PurchsIdrTp(self):
-		return self._PurchsIdrTp
-
-	@PurchsIdrTp.setter
-	def PurchsIdrTp(self, value):
-		self._PurchsIdrTp = value if type(value) != auto else self.make_default("PurchsIdrTp")
-
-	@PurchsIdrTp.deleter
-	def PurchsIdrTp(self):
-		del self._PurchsIdrTp
-		self._PurchsIdrTp = None
-
-	@property
-	def OthrPurchsIdrTp(self):
-		return self._OthrPurchsIdrTp
-
-	@OthrPurchsIdrTp.setter
-	def OthrPurchsIdrTp(self, value):
-		self._OthrPurchsIdrTp = value if type(value) != auto else self.make_default("OthrPurchsIdrTp")
-
-	@OthrPurchsIdrTp.deleter
-	def OthrPurchsIdrTp(self):
-		del self._OthrPurchsIdrTp
-		self._OthrPurchsIdrTp = None
-
-	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
-
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
-
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
 
 	@property
 	def AssoctdDataRef(self):
@@ -104,30 +39,30 @@ class TransactionIdentification56(base_types._BaseFieldType):
 		self._AssoctdDataRef = None
 
 	@property
-	def LifeCyclId(self):
-		return self._LifeCyclId
+	def OthrPurchsIdrTp(self):
+		return self._OthrPurchsIdrTp
 
-	@LifeCyclId.setter
-	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
+	@OthrPurchsIdrTp.setter
+	def OthrPurchsIdrTp(self, value):
+		self._OthrPurchsIdrTp = value if type(value) != auto else self.make_default("OthrPurchsIdrTp")
 
-	@LifeCyclId.deleter
-	def LifeCyclId(self):
-		del self._LifeCyclId
-		self._LifeCyclId = None
+	@OthrPurchsIdrTp.deleter
+	def OthrPurchsIdrTp(self):
+		del self._OthrPurchsIdrTp
+		self._OthrPurchsIdrTp = None
 
 	@property
-	def TrnsmssnDtTm(self):
-		return self._TrnsmssnDtTm
+	def PurchsIdrTp(self):
+		return self._PurchsIdrTp
 
-	@TrnsmssnDtTm.setter
-	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
+	@PurchsIdrTp.setter
+	def PurchsIdrTp(self, value):
+		self._PurchsIdrTp = value if type(value) != auto else self.make_default("PurchsIdrTp")
 
-	@TrnsmssnDtTm.deleter
-	def TrnsmssnDtTm(self):
-		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
+	@PurchsIdrTp.deleter
+	def PurchsIdrTp(self):
+		del self._PurchsIdrTp
+		self._PurchsIdrTp = None
 
 	@property
 	def SysTracAudtNb(self):
@@ -142,16 +77,81 @@ class TransactionIdentification56(base_types._BaseFieldType):
 		del self._SysTracAudtNb
 		self._SysTracAudtNb = None
 
+	@property
+	def LifeCyclId(self):
+		return self._LifeCyclId
+
+	@LifeCyclId.setter
+	def LifeCyclId(self, value):
+		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
+
+	@LifeCyclId.deleter
+	def LifeCyclId(self):
+		del self._LifeCyclId
+		self._LifeCyclId = None
+
+	@property
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
+
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
+
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
+
+	@property
+	def AssoctdData(self):
+		return self._AssoctdData
+
+	@AssoctdData.setter
+	def AssoctdData(self, value):
+		self._AssoctdData = value if type(value) != auto else self.make_default("AssoctdData")
+
+	@AssoctdData.deleter
+	def AssoctdData(self):
+		del self._AssoctdData
+		self._AssoctdData = None
+
+	@property
+	def PurchsIdr(self):
+		return self._PurchsIdr
+
+	@PurchsIdr.setter
+	def PurchsIdr(self, value):
+		self._PurchsIdr = value if type(value) != auto else self.make_default("PurchsIdr")
+
+	@PurchsIdr.deleter
+	def PurchsIdr(self):
+		del self._PurchsIdr
+		self._PurchsIdr = None
+
+	@property
+	def TrnsmssnDtTm(self):
+		return self._TrnsmssnDtTm
+
+	@TrnsmssnDtTm.setter
+	def TrnsmssnDtTm(self, value):
+		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
+
+	@TrnsmssnDtTm.deleter
+	def TrnsmssnDtTm(self):
+		del self._TrnsmssnDtTm
+		self._TrnsmssnDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PurchsIdr', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdData', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssoctdDataDstn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PurchsIdrTp', type=PurchaseIdentifierType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPurchsIdrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssoctdDataRef', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPurchsIdrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsIdrTp', type=PurchaseIdentifierType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssoctdData', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsIdr', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

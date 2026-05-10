@@ -1,13 +1,26 @@
 import base_types
+import RestrictionStatus1Choice
 import Max35Text
 import Max350Text
-import DateTimePeriod2
-import RestrictionStatus1Choice
 import PartyIdentification125Choice
+import DateTimePeriod2
 
 class AdditiononalInformation13(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Sts", "_AcctVldtn", "_Lmttn", "_Prd", "_AddtlInf", "_Rgltr"]
+	__slots__ = ["_AcctVldtn", "_Tp", "_Rgltr", "_Lmttn", "_AddtlInf", "_Sts", "_Prd"]
+	@property
+	def AcctVldtn(self):
+		return self._AcctVldtn
+
+	@AcctVldtn.setter
+	def AcctVldtn(self, value):
+		self._AcctVldtn = value if type(value) != auto else self.make_default("AcctVldtn")
+
+	@AcctVldtn.deleter
+	def AcctVldtn(self):
+		del self._AcctVldtn
+		self._AcctVldtn = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -22,30 +35,17 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def Rgltr(self):
+		return self._Rgltr
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@Rgltr.setter
+	def Rgltr(self, value):
+		self._Rgltr = value if type(value) != auto else self.make_default("Rgltr")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
-	def AcctVldtn(self):
-		return self._AcctVldtn
-
-	@AcctVldtn.setter
-	def AcctVldtn(self, value):
-		self._AcctVldtn = value if type(value) != auto else self.make_default("AcctVldtn")
-
-	@AcctVldtn.deleter
-	def AcctVldtn(self):
-		del self._AcctVldtn
-		self._AcctVldtn = None
+	@Rgltr.deleter
+	def Rgltr(self):
+		del self._Rgltr
+		self._Rgltr = None
 
 	@property
 	def Lmttn(self):
@@ -61,19 +61,6 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 		self._Lmttn = None
 
 	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -87,25 +74,38 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Rgltr(self):
-		return self._Rgltr
+	def Sts(self):
+		return self._Sts
 
-	@Rgltr.setter
-	def Rgltr(self, value):
-		self._Rgltr = value if type(value) != auto else self.make_default("Rgltr")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@Rgltr.deleter
-	def Rgltr(self):
-		del self._Rgltr
-		self._Rgltr = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=RestrictionStatus1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctVldtn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lmttn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rgltr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lmttn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=RestrictionStatus1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
 	))
 

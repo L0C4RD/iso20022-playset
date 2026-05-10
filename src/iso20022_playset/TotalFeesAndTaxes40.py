@@ -1,25 +1,12 @@
 import base_types
-import ActiveCurrencyAndAmount
-import Fee2
-import Max35Text
 import Tax31
+import Fee2
+import ActiveCurrencyAndAmount
+import Max35Text
 
 class TotalFeesAndTaxes40(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlOvrhdApld", "_TtlFees", "_IndvFee", "_ComrclAgrmtRef", "_IndvTax", "_TtlTaxs"]
-	@property
-	def TtlOvrhdApld(self):
-		return self._TtlOvrhdApld
-
-	@TtlOvrhdApld.setter
-	def TtlOvrhdApld(self, value):
-		self._TtlOvrhdApld = value if type(value) != auto else self.make_default("TtlOvrhdApld")
-
-	@TtlOvrhdApld.deleter
-	def TtlOvrhdApld(self):
-		del self._TtlOvrhdApld
-		self._TtlOvrhdApld = None
-
+	__slots__ = ["_TtlFees", "_ComrclAgrmtRef", "_TtlOvrhdApld", "_IndvFee", "_IndvTax", "_TtlTaxs"]
 	@property
 	def TtlFees(self):
 		return self._TtlFees
@@ -34,19 +21,6 @@ class TotalFeesAndTaxes40(base_types._BaseFieldType):
 		self._TtlFees = None
 
 	@property
-	def IndvFee(self):
-		return self._IndvFee
-
-	@IndvFee.setter
-	def IndvFee(self, value):
-		self._IndvFee = value if type(value) != auto else self.make_default("IndvFee")
-
-	@IndvFee.deleter
-	def IndvFee(self):
-		del self._IndvFee
-		self._IndvFee = None
-
-	@property
 	def ComrclAgrmtRef(self):
 		return self._ComrclAgrmtRef
 
@@ -58,6 +32,32 @@ class TotalFeesAndTaxes40(base_types._BaseFieldType):
 	def ComrclAgrmtRef(self):
 		del self._ComrclAgrmtRef
 		self._ComrclAgrmtRef = None
+
+	@property
+	def TtlOvrhdApld(self):
+		return self._TtlOvrhdApld
+
+	@TtlOvrhdApld.setter
+	def TtlOvrhdApld(self, value):
+		self._TtlOvrhdApld = value if type(value) != auto else self.make_default("TtlOvrhdApld")
+
+	@TtlOvrhdApld.deleter
+	def TtlOvrhdApld(self):
+		del self._TtlOvrhdApld
+		self._TtlOvrhdApld = None
+
+	@property
+	def IndvFee(self):
+		return self._IndvFee
+
+	@IndvFee.setter
+	def IndvFee(self, value):
+		self._IndvFee = value if type(value) != auto else self.make_default("IndvFee")
+
+	@IndvFee.deleter
+	def IndvFee(self):
+		del self._IndvFee
+		self._IndvFee = None
 
 	@property
 	def IndvTax(self):
@@ -86,10 +86,10 @@ class TotalFeesAndTaxes40(base_types._BaseFieldType):
 		self._TtlTaxs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlOvrhdApld', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlFees', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvFee', type=Fee2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlOvrhdApld', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvFee', type=Fee2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IndvTax', type=Tax31, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlTaxs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))

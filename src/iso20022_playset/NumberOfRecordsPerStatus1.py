@@ -1,23 +1,10 @@
 import base_types
-import Max15NumericText
 import ReportingRecordStatus1Code
+import Max15NumericText
 
 class NumberOfRecordsPerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldSts", "_DtldNbOfRcrds"]
-	@property
-	def DtldSts(self):
-		return self._DtldSts
-
-	@DtldSts.setter
-	def DtldSts(self, value):
-		self._DtldSts = value if type(value) != auto else self.make_default("DtldSts")
-
-	@DtldSts.deleter
-	def DtldSts(self):
-		del self._DtldSts
-		self._DtldSts = None
-
+	__slots__ = ["_DtldNbOfRcrds", "_DtldSts"]
 	@property
 	def DtldNbOfRcrds(self):
 		return self._DtldNbOfRcrds
@@ -31,8 +18,21 @@ class NumberOfRecordsPerStatus1(base_types._BaseFieldType):
 		del self._DtldNbOfRcrds
 		self._DtldNbOfRcrds = None
 
+	@property
+	def DtldSts(self):
+		return self._DtldSts
+
+	@DtldSts.setter
+	def DtldSts(self, value):
+		self._DtldSts = value if type(value) != auto else self.make_default("DtldSts")
+
+	@DtldSts.deleter
+	def DtldSts(self):
+		del self._DtldSts
+		self._DtldSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldSts', type=ReportingRecordStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldNbOfRcrds', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldSts', type=ReportingRecordStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

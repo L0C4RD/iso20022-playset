@@ -1,6 +1,6 @@
 import base_types
-import Operation1Code
 import Term1
+import Operation1Code
 
 class AmountOrPercentageRange1(base_types._BaseFieldType):
 

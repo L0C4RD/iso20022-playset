@@ -1,37 +1,24 @@
 import base_types
-import Max35Text
 import Max70Text
 import Address2
 import Max99Text
+import Max35Text
 
 class HiredVehicle3(base_types._BaseFieldType):
 
-	__slots__ = ["_DrvrTaxId", "_DstnNmAndLctn", "_CpnyNm", "_CpnyTp", "_TpOfVhcl", "_DstnAdr", "_DrvrId", "_VhclId"]
+	__slots__ = ["_CpnyTp", "_CpnyNm", "_TpOfVhcl", "_DrvrId", "_DrvrTaxId", "_VhclId", "_DstnNmAndLctn", "_DstnAdr"]
 	@property
-	def DrvrTaxId(self):
-		return self._DrvrTaxId
+	def CpnyTp(self):
+		return self._CpnyTp
 
-	@DrvrTaxId.setter
-	def DrvrTaxId(self, value):
-		self._DrvrTaxId = value if type(value) != auto else self.make_default("DrvrTaxId")
+	@CpnyTp.setter
+	def CpnyTp(self, value):
+		self._CpnyTp = value if type(value) != auto else self.make_default("CpnyTp")
 
-	@DrvrTaxId.deleter
-	def DrvrTaxId(self):
-		del self._DrvrTaxId
-		self._DrvrTaxId = None
-
-	@property
-	def DstnNmAndLctn(self):
-		return self._DstnNmAndLctn
-
-	@DstnNmAndLctn.setter
-	def DstnNmAndLctn(self, value):
-		self._DstnNmAndLctn = value if type(value) != auto else self.make_default("DstnNmAndLctn")
-
-	@DstnNmAndLctn.deleter
-	def DstnNmAndLctn(self):
-		del self._DstnNmAndLctn
-		self._DstnNmAndLctn = None
+	@CpnyTp.deleter
+	def CpnyTp(self):
+		del self._CpnyTp
+		self._CpnyTp = None
 
 	@property
 	def CpnyNm(self):
@@ -47,19 +34,6 @@ class HiredVehicle3(base_types._BaseFieldType):
 		self._CpnyNm = None
 
 	@property
-	def CpnyTp(self):
-		return self._CpnyTp
-
-	@CpnyTp.setter
-	def CpnyTp(self, value):
-		self._CpnyTp = value if type(value) != auto else self.make_default("CpnyTp")
-
-	@CpnyTp.deleter
-	def CpnyTp(self):
-		del self._CpnyTp
-		self._CpnyTp = None
-
-	@property
 	def TpOfVhcl(self):
 		return self._TpOfVhcl
 
@@ -71,19 +45,6 @@ class HiredVehicle3(base_types._BaseFieldType):
 	def TpOfVhcl(self):
 		del self._TpOfVhcl
 		self._TpOfVhcl = None
-
-	@property
-	def DstnAdr(self):
-		return self._DstnAdr
-
-	@DstnAdr.setter
-	def DstnAdr(self, value):
-		self._DstnAdr = value if type(value) != auto else self.make_default("DstnAdr")
-
-	@DstnAdr.deleter
-	def DstnAdr(self):
-		del self._DstnAdr
-		self._DstnAdr = None
 
 	@property
 	def DrvrId(self):
@@ -99,6 +60,19 @@ class HiredVehicle3(base_types._BaseFieldType):
 		self._DrvrId = None
 
 	@property
+	def DrvrTaxId(self):
+		return self._DrvrTaxId
+
+	@DrvrTaxId.setter
+	def DrvrTaxId(self, value):
+		self._DrvrTaxId = value if type(value) != auto else self.make_default("DrvrTaxId")
+
+	@DrvrTaxId.deleter
+	def DrvrTaxId(self):
+		del self._DrvrTaxId
+		self._DrvrTaxId = None
+
+	@property
 	def VhclId(self):
 		return self._VhclId
 
@@ -111,14 +85,40 @@ class HiredVehicle3(base_types._BaseFieldType):
 		del self._VhclId
 		self._VhclId = None
 
+	@property
+	def DstnNmAndLctn(self):
+		return self._DstnNmAndLctn
+
+	@DstnNmAndLctn.setter
+	def DstnNmAndLctn(self, value):
+		self._DstnNmAndLctn = value if type(value) != auto else self.make_default("DstnNmAndLctn")
+
+	@DstnNmAndLctn.deleter
+	def DstnNmAndLctn(self):
+		del self._DstnNmAndLctn
+		self._DstnNmAndLctn = None
+
+	@property
+	def DstnAdr(self):
+		return self._DstnAdr
+
+	@DstnAdr.setter
+	def DstnAdr(self, value):
+		self._DstnAdr = value if type(value) != auto else self.make_default("DstnAdr")
+
+	@DstnAdr.deleter
+	def DstnAdr(self):
+		del self._DstnAdr
+		self._DstnAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrvrTaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnNmAndLctn', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpnyNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpnyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpnyNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpOfVhcl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrvrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvrTaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VhclId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnNmAndLctn', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 	))
 

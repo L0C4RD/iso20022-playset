@@ -1,6 +1,6 @@
 import base_types
-import MovementResponseType1Code
 import IntraBalanceQueryCriteria12
+import MovementResponseType1Code
 
 class IntraBalanceQueryDefinition12(base_types._BaseFieldType):
 

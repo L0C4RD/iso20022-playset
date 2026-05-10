@@ -1,6 +1,6 @@
 import base_types
-import CreditorEnrolmentStatusReason2Choice
 import Max105Text
+import CreditorEnrolmentStatusReason2Choice
 import RTPPartyIdentification2
 
 class CreditorEnrolmentStatusReason3(base_types._BaseFieldType):

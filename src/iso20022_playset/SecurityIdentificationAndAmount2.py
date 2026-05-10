@@ -1,38 +1,12 @@
 import base_types
+import ISINOct2015Identifier
 import ActiveCurrencyAnd24Amount
 import ProductType6Code
-import ISINOct2015Identifier
 import DebtIssuerType1Code
 
 class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_FinInstrmTp", "_MktVal", "_DebtIssrTp"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def FinInstrmTp(self):
-		return self._FinInstrmTp
-
-	@FinInstrmTp.setter
-	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
-
-	@FinInstrmTp.deleter
-	def FinInstrmTp(self):
-		del self._FinInstrmTp
-		self._FinInstrmTp = None
-
+	__slots__ = ["_MktVal", "_DebtIssrTp", "_Id", "_FinInstrmTp"]
 	@property
 	def MktVal(self):
 		return self._MktVal
@@ -59,10 +33,36 @@ class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 		del self._DebtIssrTp
 		self._DebtIssrTp = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def FinInstrmTp(self):
+		return self._FinInstrmTp
+
+	@FinInstrmTp.setter
+	def FinInstrmTp(self, value):
+		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
+
+	@FinInstrmTp.deleter
+	def FinInstrmTp(self):
+		del self._FinInstrmTp
+		self._FinInstrmTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtIssrTp', type=DebtIssuerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

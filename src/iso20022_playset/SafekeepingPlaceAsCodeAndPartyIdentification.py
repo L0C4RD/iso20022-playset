@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
-import PartyIdentification3
 import SafekeepingPlace1Code
+import PartyIdentification3
+import Max35Text
 
 class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 

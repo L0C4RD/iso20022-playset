@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
 import SupplementaryData1
 import PartyIdentification136
+import Max35Text
 
 class PartyCancellation1(base_types._BaseFieldType):
 

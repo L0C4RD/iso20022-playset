@@ -7,7 +7,20 @@ import FailureReason5Code
 
 class ATMSecurityDevice2(base_types._BaseFieldType):
 
-	__slots__ = ["_DvcPrprty", "_Incdnt", "_SpprtdCfgtn", "_BndgStat", "_CurSts", "_CurCfgtn"]
+	__slots__ = ["_CurCfgtn", "_DvcPrprty", "_Incdnt", "_CurSts", "_BndgStat", "_SpprtdCfgtn"]
+	@property
+	def CurCfgtn(self):
+		return self._CurCfgtn
+
+	@CurCfgtn.setter
+	def CurCfgtn(self, value):
+		self._CurCfgtn = value if type(value) != auto else self.make_default("CurCfgtn")
+
+	@CurCfgtn.deleter
+	def CurCfgtn(self):
+		del self._CurCfgtn
+		self._CurCfgtn = None
+
 	@property
 	def DvcPrprty(self):
 		return self._DvcPrprty
@@ -35,17 +48,17 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 		self._Incdnt = None
 
 	@property
-	def SpprtdCfgtn(self):
-		return self._SpprtdCfgtn
+	def CurSts(self):
+		return self._CurSts
 
-	@SpprtdCfgtn.setter
-	def SpprtdCfgtn(self, value):
-		self._SpprtdCfgtn = value if type(value) != auto else self.make_default("SpprtdCfgtn")
+	@CurSts.setter
+	def CurSts(self, value):
+		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
 
-	@SpprtdCfgtn.deleter
-	def SpprtdCfgtn(self):
-		del self._SpprtdCfgtn
-		self._SpprtdCfgtn = None
+	@CurSts.deleter
+	def CurSts(self):
+		del self._CurSts
+		self._CurSts = None
 
 	@property
 	def BndgStat(self):
@@ -61,37 +74,24 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 		self._BndgStat = None
 
 	@property
-	def CurSts(self):
-		return self._CurSts
+	def SpprtdCfgtn(self):
+		return self._SpprtdCfgtn
 
-	@CurSts.setter
-	def CurSts(self, value):
-		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
+	@SpprtdCfgtn.setter
+	def SpprtdCfgtn(self, value):
+		self._SpprtdCfgtn = value if type(value) != auto else self.make_default("SpprtdCfgtn")
 
-	@CurSts.deleter
-	def CurSts(self):
-		del self._CurSts
-		self._CurSts = None
-
-	@property
-	def CurCfgtn(self):
-		return self._CurCfgtn
-
-	@CurCfgtn.setter
-	def CurCfgtn(self, value):
-		self._CurCfgtn = value if type(value) != auto else self.make_default("CurCfgtn")
-
-	@CurCfgtn.deleter
-	def CurCfgtn(self):
-		del self._CurCfgtn
-		self._CurCfgtn = None
+	@SpprtdCfgtn.deleter
+	def SpprtdCfgtn(self):
+		del self._SpprtdCfgtn
+		self._SpprtdCfgtn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvcPrprty', type=ATMEquipment2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Incdnt', type=FailureReason5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpprtdCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BndgStat', type=TR34Status1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurSts', type=ATMStatus2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BndgStat', type=TR34Status1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtdCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
 	))
 

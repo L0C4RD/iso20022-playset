@@ -1,24 +1,11 @@
 import base_types
-import Period4Choice
 import GenericIdentification178
 import ActiveOrHistoricCurrencyAndAmount
+import Period4Choice
 
 class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_LotNb", "_TxAmt", "_Prd"]
-	@property
-	def LotNb(self):
-		return self._LotNb
-
-	@LotNb.setter
-	def LotNb(self, value):
-		self._LotNb = value if type(value) != auto else self.make_default("LotNb")
-
-	@LotNb.deleter
-	def LotNb(self):
-		del self._LotNb
-		self._LotNb = None
-
+	__slots__ = ["_TxAmt", "_LotNb", "_Prd"]
 	@property
 	def TxAmt(self):
 		return self._TxAmt
@@ -31,6 +18,19 @@ class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 	def TxAmt(self):
 		del self._TxAmt
 		self._TxAmt = None
+
+	@property
+	def LotNb(self):
+		return self._LotNb
+
+	@LotNb.setter
+	def LotNb(self, value):
+		self._LotNb = value if type(value) != auto else self.make_default("LotNb")
+
+	@LotNb.deleter
+	def LotNb(self):
+		del self._LotNb
+		self._LotNb = None
 
 	@property
 	def Prd(self):
@@ -46,8 +46,8 @@ class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 		self._Prd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LotNb', type=GenericIdentification178, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotNb', type=GenericIdentification178, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

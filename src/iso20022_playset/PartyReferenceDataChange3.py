@@ -1,7 +1,7 @@
 import base_types
 import ISODateTime
-import SystemPartyIdentification8
 import UpdateLogPartyRecord2Choice
+import SystemPartyIdentification8
 
 class PartyReferenceDataChange3(base_types._BaseFieldType):
 

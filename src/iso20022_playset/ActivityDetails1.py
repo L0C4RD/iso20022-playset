@@ -1,11 +1,11 @@
 import base_types
-import BICIdentification1
-import Activity1
 import ISODateTime
+import Activity1
+import BICIdentification1
 
 class ActivityDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Initr", "_Actvty", "_DtTm"]
+	__slots__ = ["_Initr", "_DtTm", "_Actvty"]
 	@property
 	def Initr(self):
 		return self._Initr
@@ -20,19 +20,6 @@ class ActivityDetails1(base_types._BaseFieldType):
 		self._Initr = None
 
 	@property
-	def Actvty(self):
-		return self._Actvty
-
-	@Actvty.setter
-	def Actvty(self, value):
-		self._Actvty = value if type(value) != auto else self.make_default("Actvty")
-
-	@Actvty.deleter
-	def Actvty(self):
-		del self._Actvty
-		self._Actvty = None
-
-	@property
 	def DtTm(self):
 		return self._DtTm
 
@@ -45,9 +32,22 @@ class ActivityDetails1(base_types._BaseFieldType):
 		del self._DtTm
 		self._DtTm = None
 
+	@property
+	def Actvty(self):
+		return self._Actvty
+
+	@Actvty.setter
+	def Actvty(self, value):
+		self._Actvty = value if type(value) != auto else self.make_default("Actvty")
+
+	@Actvty.deleter
+	def Actvty(self):
+		del self._Actvty
+		self._Actvty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Actvty', type=Activity1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actvty', type=Activity1, min=1, max=1, mutex_group=None, array=False),
 	))
 

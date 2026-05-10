@@ -1,6 +1,6 @@
 import base_types
-import ClaimNonReceiptRejectReason1Choice
 import ClaimNonReceipt3
+import ClaimNonReceiptRejectReason1Choice
 
 class ClaimNonReceipt3Choice(base_types._BaseFieldType):
 

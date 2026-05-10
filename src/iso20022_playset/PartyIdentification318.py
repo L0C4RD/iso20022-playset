@@ -1,24 +1,11 @@
 import base_types
+import RestrictedFINXMax16Text
 import AlternatePartyIdentification9
 import PartyIdentification258Choice
-import RestrictedFINXMax16Text
 
 class PartyIdentification318(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_PrcgId", "_Id"]
-	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
+	__slots__ = ["_PrcgId", "_Id", "_AltrnId"]
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -45,9 +32,22 @@ class PartyIdentification318(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def AltrnId(self):
+		return self._AltrnId
+
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification258Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import AssetClassSubProductType49Code
 import AssetClassProductType3Code
+import AssetClassSubProductType49Code
 
 class EnvironmentCommodityOther2(base_types._BaseFieldType):
 

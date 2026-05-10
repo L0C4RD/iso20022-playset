@@ -1,25 +1,38 @@
 import base_types
-import TrueFalseIndicator
-import CountryCodeAndName3
 import Period4Choice
 import ISODate
+import TrueFalseIndicator
 import Modification1Code
+import CountryCodeAndName3
 
 class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_EEACtry", "_VldtyPrd", "_Ctry", "_LastUpdtd"]
+	__slots__ = ["_LastUpdtd", "_Ctry", "_EEACtry", "_VldtyPrd", "_Mod"]
 	@property
-	def Mod(self):
-		return self._Mod
+	def LastUpdtd(self):
+		return self._LastUpdtd
 
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
+	@LastUpdtd.setter
+	def LastUpdtd(self, value):
+		self._LastUpdtd = value if type(value) != auto else self.make_default("LastUpdtd")
 
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
+	@LastUpdtd.deleter
+	def LastUpdtd(self):
+		del self._LastUpdtd
+		self._LastUpdtd = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def EEACtry(self):
@@ -48,36 +61,23 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def Mod(self):
+		return self._Mod
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
-	def LastUpdtd(self):
-		return self._LastUpdtd
-
-	@LastUpdtd.setter
-	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != auto else self.make_default("LastUpdtd")
-
-	@LastUpdtd.deleter
-	def LastUpdtd(self):
-		del self._LastUpdtd
-		self._LastUpdtd = None
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EEACtry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

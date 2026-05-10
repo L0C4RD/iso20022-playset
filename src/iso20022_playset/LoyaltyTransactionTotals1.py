@@ -1,54 +1,15 @@
 import base_types
-import Max35Text
-import ImpliedCurrencyAndAmount
-import AmountUnit1Code
-import Number
-import DetailedAmount15
-import ActiveCurrencyCode
 import LoyaltyTypeTransactionTotals1Code
+import ImpliedCurrencyAndAmount
+import DetailedAmount15
+import Number
+import ActiveCurrencyCode
+import Max35Text
+import AmountUnit1Code
 
 class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 
-	__slots__ = ["_CmltvAmt", "_DtldAmt", "_CardPdctPrfl", "_LltyUnit", "_Ccy", "_TtlNb", "_TxTp", "_POIGrpId"]
-	@property
-	def CmltvAmt(self):
-		return self._CmltvAmt
-
-	@CmltvAmt.setter
-	def CmltvAmt(self, value):
-		self._CmltvAmt = value if type(value) != auto else self.make_default("CmltvAmt")
-
-	@CmltvAmt.deleter
-	def CmltvAmt(self):
-		del self._CmltvAmt
-		self._CmltvAmt = None
-
-	@property
-	def DtldAmt(self):
-		return self._DtldAmt
-
-	@DtldAmt.setter
-	def DtldAmt(self, value):
-		self._DtldAmt = value if type(value) != auto else self.make_default("DtldAmt")
-
-	@DtldAmt.deleter
-	def DtldAmt(self):
-		del self._DtldAmt
-		self._DtldAmt = None
-
-	@property
-	def CardPdctPrfl(self):
-		return self._CardPdctPrfl
-
-	@CardPdctPrfl.setter
-	def CardPdctPrfl(self, value):
-		self._CardPdctPrfl = value if type(value) != auto else self.make_default("CardPdctPrfl")
-
-	@CardPdctPrfl.deleter
-	def CardPdctPrfl(self):
-		del self._CardPdctPrfl
-		self._CardPdctPrfl = None
-
+	__slots__ = ["_LltyUnit", "_TtlNb", "_Ccy", "_CardPdctPrfl", "_CmltvAmt", "_TxTp", "_DtldAmt", "_POIGrpId"]
 	@property
 	def LltyUnit(self):
 		return self._LltyUnit
@@ -61,19 +22,6 @@ class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 	def LltyUnit(self):
 		del self._LltyUnit
 		self._LltyUnit = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
 
 	@property
 	def TtlNb(self):
@@ -89,6 +37,45 @@ class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 		self._TtlNb = None
 
 	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def CardPdctPrfl(self):
+		return self._CardPdctPrfl
+
+	@CardPdctPrfl.setter
+	def CardPdctPrfl(self, value):
+		self._CardPdctPrfl = value if type(value) != auto else self.make_default("CardPdctPrfl")
+
+	@CardPdctPrfl.deleter
+	def CardPdctPrfl(self):
+		del self._CardPdctPrfl
+		self._CardPdctPrfl = None
+
+	@property
+	def CmltvAmt(self):
+		return self._CmltvAmt
+
+	@CmltvAmt.setter
+	def CmltvAmt(self, value):
+		self._CmltvAmt = value if type(value) != auto else self.make_default("CmltvAmt")
+
+	@CmltvAmt.deleter
+	def CmltvAmt(self):
+		del self._CmltvAmt
+		self._CmltvAmt = None
+
+	@property
 	def TxTp(self):
 		return self._TxTp
 
@@ -100,6 +87,19 @@ class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 	def TxTp(self):
 		del self._TxTp
 		self._TxTp = None
+
+	@property
+	def DtldAmt(self):
+		return self._DtldAmt
+
+	@DtldAmt.setter
+	def DtldAmt(self, value):
+		self._DtldAmt = value if type(value) != auto else self.make_default("DtldAmt")
+
+	@DtldAmt.deleter
+	def DtldAmt(self):
+		del self._DtldAmt
+		self._DtldAmt = None
 
 	@property
 	def POIGrpId(self):
@@ -115,13 +115,13 @@ class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 		self._POIGrpId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldAmt', type=DetailedAmount15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyUnit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=LoyaltyTypeTransactionTotals1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldAmt', type=DetailedAmount15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

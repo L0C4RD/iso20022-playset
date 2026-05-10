@@ -1,12 +1,12 @@
 import base_types
+import BusinessApplicationHeader1
+import xs:ID
 import YesNoIndicator
 import StrictPayload
-import xs:ID
-import BusinessApplicationHeader1
 
 class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_Msg", "_Hdr", "_Prfx", "_Prtl"]
+	__slots__ = ["_Msg", "_Hdr", "_Prtl", "_Prfx"]
 	@property
 	def Msg(self):
 		return self._Msg
@@ -34,19 +34,6 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def Prfx(self):
-		return self._Prfx
-
-	@Prfx.setter
-	def Prfx(self, value):
-		self._Prfx = value if type(value) != auto else self.make_default("Prfx")
-
-	@Prfx.deleter
-	def Prfx(self):
-		del self._Prfx
-		self._Prfx = None
-
-	@property
 	def Prtl(self):
 		return self._Prtl
 
@@ -59,10 +46,23 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 		del self._Prtl
 		self._Prtl = None
 
+	@property
+	def Prfx(self):
+		return self._Prfx
+
+	@Prfx.setter
+	def Prfx(self, value):
+		self._Prfx = value if type(value) != auto else self.make_default("Prfx")
+
+	@Prfx.deleter
+	def Prfx(self):
+		del self._Prfx
+		self._Prfx = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Msg', type=StrictPayload, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=BusinessApplicationHeader1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prfx', type=XS_ID, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prfx', type=XS_ID, min=0, max=1, mutex_group=None, array=False),
 	))
 

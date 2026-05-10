@@ -1,26 +1,13 @@
 import base_types
-import Max35Text
-import Max3NumericText
-import BICIdentification1
 import DataSetType2Code
 import Number
+import BICIdentification1
+import Max3NumericText
+import Max35Text
 
 class DocumentIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DocIndx", "_Vrsn", "_Submitr", "_Tp"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_DocIndx", "_Submitr", "_Id", "_Tp", "_Vrsn"]
 	@property
 	def DocIndx(self):
 		return self._DocIndx
@@ -33,19 +20,6 @@ class DocumentIdentification10(base_types._BaseFieldType):
 	def DocIndx(self):
 		del self._DocIndx
 		self._DocIndx = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
 
 	@property
 	def Submitr(self):
@@ -61,6 +35,19 @@ class DocumentIdentification10(base_types._BaseFieldType):
 		self._Submitr = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -73,11 +60,24 @@ class DocumentIdentification10(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocIndx', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DataSetType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

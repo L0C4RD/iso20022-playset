@@ -1,12 +1,25 @@
 import base_types
-import ActiveCurrencyAndAmount
-import ISODateTime
-import SecuritiesAccount19
 import SecurityCharacteristics3
+import SecuritiesAccount19
+import ISODateTime
+import ActiveCurrencyAndAmount
 
 class CollateralValuePosition3(base_types._BaseFieldType):
 
-	__slots__ = ["_DataAccsTm", "_SctiesAcct", "_Scties", "_TtlCollValtn"]
+	__slots__ = ["_TtlCollValtn", "_DataAccsTm", "_Scties", "_SctiesAcct"]
+	@property
+	def TtlCollValtn(self):
+		return self._TtlCollValtn
+
+	@TtlCollValtn.setter
+	def TtlCollValtn(self, value):
+		self._TtlCollValtn = value if type(value) != auto else self.make_default("TtlCollValtn")
+
+	@TtlCollValtn.deleter
+	def TtlCollValtn(self):
+		del self._TtlCollValtn
+		self._TtlCollValtn = None
+
 	@property
 	def DataAccsTm(self):
 		return self._DataAccsTm
@@ -19,19 +32,6 @@ class CollateralValuePosition3(base_types._BaseFieldType):
 	def DataAccsTm(self):
 		del self._DataAccsTm
 		self._DataAccsTm = None
-
-	@property
-	def SctiesAcct(self):
-		return self._SctiesAcct
-
-	@SctiesAcct.setter
-	def SctiesAcct(self, value):
-		self._SctiesAcct = value if type(value) != auto else self.make_default("SctiesAcct")
-
-	@SctiesAcct.deleter
-	def SctiesAcct(self):
-		del self._SctiesAcct
-		self._SctiesAcct = None
 
 	@property
 	def Scties(self):
@@ -47,22 +47,22 @@ class CollateralValuePosition3(base_types._BaseFieldType):
 		self._Scties = None
 
 	@property
-	def TtlCollValtn(self):
-		return self._TtlCollValtn
+	def SctiesAcct(self):
+		return self._SctiesAcct
 
-	@TtlCollValtn.setter
-	def TtlCollValtn(self, value):
-		self._TtlCollValtn = value if type(value) != auto else self.make_default("TtlCollValtn")
+	@SctiesAcct.setter
+	def SctiesAcct(self, value):
+		self._SctiesAcct = value if type(value) != auto else self.make_default("SctiesAcct")
 
-	@TtlCollValtn.deleter
-	def TtlCollValtn(self):
-		del self._TtlCollValtn
-		self._TtlCollValtn = None
+	@SctiesAcct.deleter
+	def SctiesAcct(self):
+		del self._SctiesAcct
+		self._SctiesAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DataAccsTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Scties', type=SecurityCharacteristics3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlCollValtn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataAccsTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Scties', type=SecurityCharacteristics3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 	))
 

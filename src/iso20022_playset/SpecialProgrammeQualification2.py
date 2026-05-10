@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import SpecialProgrammeDetails2
+import Max35Text
 
 class SpecialProgrammeQualification2(base_types._BaseFieldType):
 

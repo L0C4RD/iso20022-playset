@@ -1,24 +1,24 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import ATMTransactionAmounts7
-import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
 import ATMTransactionAmounts10
+import ActiveCurrencyCode
 
 class ATMTransactionAmounts11(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlAmt", "_Ccy", "_MaxPssblAmt", "_DpstLmts", "_MinPssblAmt"]
+	__slots__ = ["_MinPssblAmt", "_Ccy", "_AddtlAmt", "_DpstLmts", "_MaxPssblAmt"]
 	@property
-	def AddtlAmt(self):
-		return self._AddtlAmt
+	def MinPssblAmt(self):
+		return self._MinPssblAmt
 
-	@AddtlAmt.setter
-	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
+	@MinPssblAmt.setter
+	def MinPssblAmt(self, value):
+		self._MinPssblAmt = value if type(value) != auto else self.make_default("MinPssblAmt")
 
-	@AddtlAmt.deleter
-	def AddtlAmt(self):
-		del self._AddtlAmt
-		self._AddtlAmt = None
+	@MinPssblAmt.deleter
+	def MinPssblAmt(self):
+		del self._MinPssblAmt
+		self._MinPssblAmt = None
 
 	@property
 	def Ccy(self):
@@ -34,17 +34,17 @@ class ATMTransactionAmounts11(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def MaxPssblAmt(self):
-		return self._MaxPssblAmt
+	def AddtlAmt(self):
+		return self._AddtlAmt
 
-	@MaxPssblAmt.setter
-	def MaxPssblAmt(self, value):
-		self._MaxPssblAmt = value if type(value) != auto else self.make_default("MaxPssblAmt")
+	@AddtlAmt.setter
+	def AddtlAmt(self, value):
+		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
 
-	@MaxPssblAmt.deleter
-	def MaxPssblAmt(self):
-		del self._MaxPssblAmt
-		self._MaxPssblAmt = None
+	@AddtlAmt.deleter
+	def AddtlAmt(self):
+		del self._AddtlAmt
+		self._AddtlAmt = None
 
 	@property
 	def DpstLmts(self):
@@ -60,23 +60,23 @@ class ATMTransactionAmounts11(base_types._BaseFieldType):
 		self._DpstLmts = None
 
 	@property
-	def MinPssblAmt(self):
-		return self._MinPssblAmt
+	def MaxPssblAmt(self):
+		return self._MaxPssblAmt
 
-	@MinPssblAmt.setter
-	def MinPssblAmt(self, value):
-		self._MinPssblAmt = value if type(value) != auto else self.make_default("MinPssblAmt")
+	@MaxPssblAmt.setter
+	def MaxPssblAmt(self, value):
+		self._MaxPssblAmt = value if type(value) != auto else self.make_default("MaxPssblAmt")
 
-	@MinPssblAmt.deleter
-	def MinPssblAmt(self):
-		del self._MinPssblAmt
-		self._MinPssblAmt = None
+	@MaxPssblAmt.deleter
+	def MaxPssblAmt(self):
+		del self._MaxPssblAmt
+		self._MaxPssblAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlAmt', type=ATMTransactionAmounts7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DpstLmts', type=ATMTransactionAmounts10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MinPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlAmt', type=ATMTransactionAmounts7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DpstLmts', type=ATMTransactionAmounts10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

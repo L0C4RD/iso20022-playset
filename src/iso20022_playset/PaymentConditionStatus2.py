@@ -1,23 +1,10 @@
 import base_types
-import ActiveCurrencyAndAmount
 import TrueFalseIndicator
+import ActiveCurrencyAndAmount
 
 class PaymentConditionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdAmt", "_GrntedPmt", "_EarlyPmt"]
-	@property
-	def AccptdAmt(self):
-		return self._AccptdAmt
-
-	@AccptdAmt.setter
-	def AccptdAmt(self, value):
-		self._AccptdAmt = value if type(value) != auto else self.make_default("AccptdAmt")
-
-	@AccptdAmt.deleter
-	def AccptdAmt(self):
-		del self._AccptdAmt
-		self._AccptdAmt = None
-
+	__slots__ = ["_GrntedPmt", "_EarlyPmt", "_AccptdAmt"]
 	@property
 	def GrntedPmt(self):
 		return self._GrntedPmt
@@ -44,9 +31,22 @@ class PaymentConditionStatus2(base_types._BaseFieldType):
 		del self._EarlyPmt
 		self._EarlyPmt = None
 
+	@property
+	def AccptdAmt(self):
+		return self._AccptdAmt
+
+	@AccptdAmt.setter
+	def AccptdAmt(self, value):
+		self._AccptdAmt = value if type(value) != auto else self.make_default("AccptdAmt")
+
+	@AccptdAmt.deleter
+	def AccptdAmt(self):
+		del self._AccptdAmt
+		self._AccptdAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AccptdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrntedPmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlyPmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AccptdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

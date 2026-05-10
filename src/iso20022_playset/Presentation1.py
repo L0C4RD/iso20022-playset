@@ -1,24 +1,24 @@
 import base_types
+import PresentationMedium1Choice
 import Max2000Text
 import Document8
 import PlaceOrUnderConfirmationChoice1
-import PresentationMedium1Choice
 
 class Presentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Doc", "_PlcOfPresntnOrUdrConfChc", "_Mdm", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_PlcOfPresntnOrUdrConfChc", "_Mdm", "_Doc"]
 	@property
-	def Doc(self):
-		return self._Doc
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Doc.setter
-	def Doc(self, value):
-		self._Doc = value if type(value) != auto else self.make_default("Doc")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Doc.deleter
-	def Doc(self):
-		del self._Doc
-		self._Doc = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def PlcOfPresntnOrUdrConfChc(self):
@@ -47,22 +47,22 @@ class Presentation1(base_types._BaseFieldType):
 		self._Mdm = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Doc(self):
+		return self._Doc
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@Doc.setter
+	def Doc(self, value):
+		self._Doc = value if type(value) != auto else self.make_default("Doc")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Doc.deleter
+	def Doc(self):
+		del self._Doc
+		self._Doc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Doc', type=Document8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PlcOfPresntnOrUdrConfChc', type=PlaceOrUnderConfirmationChoice1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mdm', type=PresentationMedium1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Doc', type=Document8, min=0, max=None, mutex_group=None, array=True),
 	))
 

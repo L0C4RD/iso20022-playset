@@ -1,8 +1,8 @@
 import base_types
-import Max35Text
 import CommunicationAddress12
 import VoteThroughNetwork1Choice
 import MailAddress1
+import Max35Text
 
 class VoteMethods5(base_types._BaseFieldType):
 

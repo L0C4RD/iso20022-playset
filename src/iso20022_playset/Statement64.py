@@ -1,15 +1,15 @@
 import base_types
-import Max35Text
-import UpdateType15Choice
-import Frequency25Choice
-import Number3Choice
-import StatementStructure1Code
-import YesNoIndicator
 import DateAndDateTime2Choice
+import YesNoIndicator
+import Max35Text
+import Frequency25Choice
+import StatementStructure1Code
+import UpdateType15Choice
+import Number3Choice
 
 class Statement64(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_QryRef", "_RptNb", "_Frqcy", "_StmtId", "_UpdTp", "_StmtDtTm", "_StmtStr"]
+	__slots__ = ["_ActvtyInd", "_UpdTp", "_StmtStr", "_Frqcy", "_StmtId", "_QryRef", "_RptNb", "_StmtDtTm"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
@@ -24,30 +24,30 @@ class Statement64(base_types._BaseFieldType):
 		self._ActvtyInd = None
 
 	@property
-	def QryRef(self):
-		return self._QryRef
+	def UpdTp(self):
+		return self._UpdTp
 
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
 
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	@property
-	def RptNb(self):
-		return self._RptNb
+	def StmtStr(self):
+		return self._StmtStr
 
-	@RptNb.setter
-	def RptNb(self, value):
-		self._RptNb = value if type(value) != auto else self.make_default("RptNb")
+	@StmtStr.setter
+	def StmtStr(self, value):
+		self._StmtStr = value if type(value) != auto else self.make_default("StmtStr")
 
-	@RptNb.deleter
-	def RptNb(self):
-		del self._RptNb
-		self._RptNb = None
+	@StmtStr.deleter
+	def StmtStr(self):
+		del self._StmtStr
+		self._StmtStr = None
 
 	@property
 	def Frqcy(self):
@@ -76,17 +76,30 @@ class Statement64(base_types._BaseFieldType):
 		self._StmtId = None
 
 	@property
-	def UpdTp(self):
-		return self._UpdTp
+	def QryRef(self):
+		return self._QryRef
 
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
 
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
+
+	@property
+	def RptNb(self):
+		return self._RptNb
+
+	@RptNb.setter
+	def RptNb(self, value):
+		self._RptNb = value if type(value) != auto else self.make_default("RptNb")
+
+	@RptNb.deleter
+	def RptNb(self):
+		del self._RptNb
+		self._RptNb = None
 
 	@property
 	def StmtDtTm(self):
@@ -101,27 +114,14 @@ class Statement64(base_types._BaseFieldType):
 		del self._StmtDtTm
 		self._StmtDtTm = None
 
-	@property
-	def StmtStr(self):
-		return self._StmtStr
-
-	@StmtStr.setter
-	def StmtStr(self, value):
-		self._StmtStr = value if type(value) != auto else self.make_default("StmtStr")
-
-	@StmtStr.deleter
-	def StmtStr(self):
-		del self._StmtStr
-		self._StmtStr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtStr', type=StatementStructure1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtStr', type=StatementStructure1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

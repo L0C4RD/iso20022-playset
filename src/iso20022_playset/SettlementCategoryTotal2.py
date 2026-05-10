@@ -4,7 +4,7 @@ import Number
 
 class SettlementCategoryTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgFee", "_Amt", "_Cnt", "_IntrchngFee"]
+	__slots__ = ["_PrcgFee", "_IntrchngFee", "_Amt", "_Cnt"]
 	@property
 	def PrcgFee(self):
 		return self._PrcgFee
@@ -17,6 +17,19 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 	def PrcgFee(self):
 		del self._PrcgFee
 		self._PrcgFee = None
+
+	@property
+	def IntrchngFee(self):
+		return self._IntrchngFee
+
+	@IntrchngFee.setter
+	def IntrchngFee(self, value):
+		self._IntrchngFee = value if type(value) != auto else self.make_default("IntrchngFee")
+
+	@IntrchngFee.deleter
+	def IntrchngFee(self):
+		del self._IntrchngFee
+		self._IntrchngFee = None
 
 	@property
 	def Amt(self):
@@ -44,23 +57,10 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 		del self._Cnt
 		self._Cnt = None
 
-	@property
-	def IntrchngFee(self):
-		return self._IntrchngFee
-
-	@IntrchngFee.setter
-	def IntrchngFee(self, value):
-		self._IntrchngFee = value if type(value) != auto else self.make_default("IntrchngFee")
-
-	@IntrchngFee.deleter
-	def IntrchngFee(self):
-		del self._IntrchngFee
-		self._IntrchngFee = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcgFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 	))
 

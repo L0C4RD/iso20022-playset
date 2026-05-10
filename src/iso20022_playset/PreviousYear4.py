@@ -1,6 +1,6 @@
 import base_types
-import PreviousYear1Choice
 import YesNoIndicator
+import PreviousYear1Choice
 
 class PreviousYear4(base_types._BaseFieldType):
 

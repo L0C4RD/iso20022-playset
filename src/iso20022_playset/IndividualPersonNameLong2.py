@@ -1,13 +1,13 @@
 import base_types
-import Max35Text
-import Max350Text
-import Max6Text
-import ISODate
 import NamePrefix2Code
+import ISODate
+import Max350Text
+import Max35Text
+import Max6Text
 
 class IndividualPersonNameLong2(base_types._BaseFieldType):
 
-	__slots__ = ["_EndDt", "_StartDt", "_GvnNm", "_NmPrfx", "_Nm", "_NmSfx", "_Initls", "_Srnm", "_MddlNm"]
+	__slots__ = ["_EndDt", "_NmPrfx", "_Srnm", "_StartDt", "_MddlNm", "_Nm", "_NmSfx", "_Initls", "_GvnNm"]
 	@property
 	def EndDt(self):
 		return self._EndDt
@@ -20,6 +20,32 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 	def EndDt(self):
 		del self._EndDt
 		self._EndDt = None
+
+	@property
+	def NmPrfx(self):
+		return self._NmPrfx
+
+	@NmPrfx.setter
+	def NmPrfx(self, value):
+		self._NmPrfx = value if type(value) != auto else self.make_default("NmPrfx")
+
+	@NmPrfx.deleter
+	def NmPrfx(self):
+		del self._NmPrfx
+		self._NmPrfx = None
+
+	@property
+	def Srnm(self):
+		return self._Srnm
+
+	@Srnm.setter
+	def Srnm(self, value):
+		self._Srnm = value if type(value) != auto else self.make_default("Srnm")
+
+	@Srnm.deleter
+	def Srnm(self):
+		del self._Srnm
+		self._Srnm = None
 
 	@property
 	def StartDt(self):
@@ -35,30 +61,17 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
-	def GvnNm(self):
-		return self._GvnNm
+	def MddlNm(self):
+		return self._MddlNm
 
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
+	@MddlNm.setter
+	def MddlNm(self, value):
+		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
 
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
-
-	@property
-	def NmPrfx(self):
-		return self._NmPrfx
-
-	@NmPrfx.setter
-	def NmPrfx(self, value):
-		self._NmPrfx = value if type(value) != auto else self.make_default("NmPrfx")
-
-	@NmPrfx.deleter
-	def NmPrfx(self):
-		del self._NmPrfx
-		self._NmPrfx = None
+	@MddlNm.deleter
+	def MddlNm(self):
+		del self._MddlNm
+		self._MddlNm = None
 
 	@property
 	def Nm(self):
@@ -100,40 +113,27 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 		self._Initls = None
 
 	@property
-	def Srnm(self):
-		return self._Srnm
+	def GvnNm(self):
+		return self._GvnNm
 
-	@Srnm.setter
-	def Srnm(self, value):
-		self._Srnm = value if type(value) != auto else self.make_default("Srnm")
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
 
-	@Srnm.deleter
-	def Srnm(self):
-		del self._Srnm
-		self._Srnm = None
-
-	@property
-	def MddlNm(self):
-		return self._MddlNm
-
-	@MddlNm.setter
-	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
-
-	@MddlNm.deleter
-	def MddlNm(self):
-		del self._MddlNm
-		self._MddlNm = None
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Srnm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmSfx', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Initls', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Srnm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,27 +1,14 @@
 import base_types
-import Max35Text
-import Exact4AlphaNumericText
 import Max4Text
 import YesNoIndicator
+import Exact4AlphaNumericText
+import Max35Text
 import ISODate
 import MatchingSystemReference1Choice
 
 class TradeAgreement15(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdOrCclRsn", "_OrgtrRef", "_CmonRef", "_SttlmSsnIdr", "_TradDt", "_OprTp", "_OprScp", "_MtchgSysRef", "_PmtVrssPmtInd", "_PdctTp"]
-	@property
-	def AmdOrCclRsn(self):
-		return self._AmdOrCclRsn
-
-	@AmdOrCclRsn.setter
-	def AmdOrCclRsn(self, value):
-		self._AmdOrCclRsn = value if type(value) != auto else self.make_default("AmdOrCclRsn")
-
-	@AmdOrCclRsn.deleter
-	def AmdOrCclRsn(self):
-		del self._AmdOrCclRsn
-		self._AmdOrCclRsn = None
-
+	__slots__ = ["_OrgtrRef", "_AmdOrCclRsn", "_TradDt", "_PmtVrssPmtInd", "_CmonRef", "_OprScp", "_PdctTp", "_SttlmSsnIdr", "_OprTp", "_MtchgSysRef"]
 	@property
 	def OrgtrRef(self):
 		return self._OrgtrRef
@@ -36,30 +23,17 @@ class TradeAgreement15(base_types._BaseFieldType):
 		self._OrgtrRef = None
 
 	@property
-	def CmonRef(self):
-		return self._CmonRef
+	def AmdOrCclRsn(self):
+		return self._AmdOrCclRsn
 
-	@CmonRef.setter
-	def CmonRef(self, value):
-		self._CmonRef = value if type(value) != auto else self.make_default("CmonRef")
+	@AmdOrCclRsn.setter
+	def AmdOrCclRsn(self, value):
+		self._AmdOrCclRsn = value if type(value) != auto else self.make_default("AmdOrCclRsn")
 
-	@CmonRef.deleter
-	def CmonRef(self):
-		del self._CmonRef
-		self._CmonRef = None
-
-	@property
-	def SttlmSsnIdr(self):
-		return self._SttlmSsnIdr
-
-	@SttlmSsnIdr.setter
-	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != auto else self.make_default("SttlmSsnIdr")
-
-	@SttlmSsnIdr.deleter
-	def SttlmSsnIdr(self):
-		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+	@AmdOrCclRsn.deleter
+	def AmdOrCclRsn(self):
+		del self._AmdOrCclRsn
+		self._AmdOrCclRsn = None
 
 	@property
 	def TradDt(self):
@@ -75,17 +49,30 @@ class TradeAgreement15(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
-	def OprTp(self):
-		return self._OprTp
+	def PmtVrssPmtInd(self):
+		return self._PmtVrssPmtInd
 
-	@OprTp.setter
-	def OprTp(self, value):
-		self._OprTp = value if type(value) != auto else self.make_default("OprTp")
+	@PmtVrssPmtInd.setter
+	def PmtVrssPmtInd(self, value):
+		self._PmtVrssPmtInd = value if type(value) != auto else self.make_default("PmtVrssPmtInd")
 
-	@OprTp.deleter
-	def OprTp(self):
-		del self._OprTp
-		self._OprTp = None
+	@PmtVrssPmtInd.deleter
+	def PmtVrssPmtInd(self):
+		del self._PmtVrssPmtInd
+		self._PmtVrssPmtInd = None
+
+	@property
+	def CmonRef(self):
+		return self._CmonRef
+
+	@CmonRef.setter
+	def CmonRef(self, value):
+		self._CmonRef = value if type(value) != auto else self.make_default("CmonRef")
+
+	@CmonRef.deleter
+	def CmonRef(self):
+		del self._CmonRef
+		self._CmonRef = None
 
 	@property
 	def OprScp(self):
@@ -101,32 +88,6 @@ class TradeAgreement15(base_types._BaseFieldType):
 		self._OprScp = None
 
 	@property
-	def MtchgSysRef(self):
-		return self._MtchgSysRef
-
-	@MtchgSysRef.setter
-	def MtchgSysRef(self, value):
-		self._MtchgSysRef = value if type(value) != auto else self.make_default("MtchgSysRef")
-
-	@MtchgSysRef.deleter
-	def MtchgSysRef(self):
-		del self._MtchgSysRef
-		self._MtchgSysRef = None
-
-	@property
-	def PmtVrssPmtInd(self):
-		return self._PmtVrssPmtInd
-
-	@PmtVrssPmtInd.setter
-	def PmtVrssPmtInd(self, value):
-		self._PmtVrssPmtInd = value if type(value) != auto else self.make_default("PmtVrssPmtInd")
-
-	@PmtVrssPmtInd.deleter
-	def PmtVrssPmtInd(self):
-		del self._PmtVrssPmtInd
-		self._PmtVrssPmtInd = None
-
-	@property
 	def PdctTp(self):
 		return self._PdctTp
 
@@ -139,16 +100,55 @@ class TradeAgreement15(base_types._BaseFieldType):
 		del self._PdctTp
 		self._PdctTp = None
 
+	@property
+	def SttlmSsnIdr(self):
+		return self._SttlmSsnIdr
+
+	@SttlmSsnIdr.setter
+	def SttlmSsnIdr(self, value):
+		self._SttlmSsnIdr = value if type(value) != auto else self.make_default("SttlmSsnIdr")
+
+	@SttlmSsnIdr.deleter
+	def SttlmSsnIdr(self):
+		del self._SttlmSsnIdr
+		self._SttlmSsnIdr = None
+
+	@property
+	def OprTp(self):
+		return self._OprTp
+
+	@OprTp.setter
+	def OprTp(self, value):
+		self._OprTp = value if type(value) != auto else self.make_default("OprTp")
+
+	@OprTp.deleter
+	def OprTp(self):
+		del self._OprTp
+		self._OprTp = None
+
+	@property
+	def MtchgSysRef(self):
+		return self._MtchgSysRef
+
+	@MtchgSysRef.setter
+	def MtchgSysRef(self, value):
+		self._MtchgSysRef = value if type(value) != auto else self.make_default("MtchgSysRef")
+
+	@MtchgSysRef.deleter
+	def MtchgSysRef(self):
+		del self._MtchgSysRef
+		self._MtchgSysRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmdOrCclRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdOrCclRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprTp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprScp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchgSysRef', type=MatchingSystemReference1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtVrssPmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprScp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprTp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgSysRef', type=MatchingSystemReference1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

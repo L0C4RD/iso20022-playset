@@ -1,17 +1,17 @@
 import base_types
-import Cleared16Choice
-import PrincipalAmount3
-import SecuritiesTransactionPrice19Choice
 import ISODateTime
-import MasterAgreement7
+import SpecialCollateral1Code
+import SecuritiesTransactionPrice19Choice
 import Max52Text
 import MICIdentifier
+import Cleared16Choice
 import ISODate
-import SpecialCollateral1Code
+import MasterAgreement7
+import PrincipalAmount3
 
 class LoanData140(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgVn", "_MtrtyDt", "_MstrAgrmt", "_ExctnDtTm", "_PrncplAmt", "_ClrSts", "_UnitPric", "_EvtDt", "_TermntnDt", "_UnqTradIdr", "_ValDt", "_GnlColl"]
+	__slots__ = ["_TradgVn", "_ClrSts", "_PrncplAmt", "_MtrtyDt", "_MstrAgrmt", "_EvtDt", "_GnlColl", "_TermntnDt", "_UnqTradIdr", "_ExctnDtTm", "_ValDt", "_UnitPric"]
 	@property
 	def TradgVn(self):
 		return self._TradgVn
@@ -24,6 +24,32 @@ class LoanData140(base_types._BaseFieldType):
 	def TradgVn(self):
 		del self._TradgVn
 		self._TradgVn = None
+
+	@property
+	def ClrSts(self):
+		return self._ClrSts
+
+	@ClrSts.setter
+	def ClrSts(self, value):
+		self._ClrSts = value if type(value) != auto else self.make_default("ClrSts")
+
+	@ClrSts.deleter
+	def ClrSts(self):
+		del self._ClrSts
+		self._ClrSts = None
+
+	@property
+	def PrncplAmt(self):
+		return self._PrncplAmt
+
+	@PrncplAmt.setter
+	def PrncplAmt(self, value):
+		self._PrncplAmt = value if type(value) != auto else self.make_default("PrncplAmt")
+
+	@PrncplAmt.deleter
+	def PrncplAmt(self):
+		del self._PrncplAmt
+		self._PrncplAmt = None
 
 	@property
 	def MtrtyDt(self):
@@ -52,58 +78,6 @@ class LoanData140(base_types._BaseFieldType):
 		self._MstrAgrmt = None
 
 	@property
-	def ExctnDtTm(self):
-		return self._ExctnDtTm
-
-	@ExctnDtTm.setter
-	def ExctnDtTm(self, value):
-		self._ExctnDtTm = value if type(value) != auto else self.make_default("ExctnDtTm")
-
-	@ExctnDtTm.deleter
-	def ExctnDtTm(self):
-		del self._ExctnDtTm
-		self._ExctnDtTm = None
-
-	@property
-	def PrncplAmt(self):
-		return self._PrncplAmt
-
-	@PrncplAmt.setter
-	def PrncplAmt(self, value):
-		self._PrncplAmt = value if type(value) != auto else self.make_default("PrncplAmt")
-
-	@PrncplAmt.deleter
-	def PrncplAmt(self):
-		del self._PrncplAmt
-		self._PrncplAmt = None
-
-	@property
-	def ClrSts(self):
-		return self._ClrSts
-
-	@ClrSts.setter
-	def ClrSts(self, value):
-		self._ClrSts = value if type(value) != auto else self.make_default("ClrSts")
-
-	@ClrSts.deleter
-	def ClrSts(self):
-		del self._ClrSts
-		self._ClrSts = None
-
-	@property
-	def UnitPric(self):
-		return self._UnitPric
-
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
-
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
-
-	@property
 	def EvtDt(self):
 		return self._EvtDt
 
@@ -115,6 +89,19 @@ class LoanData140(base_types._BaseFieldType):
 	def EvtDt(self):
 		del self._EvtDt
 		self._EvtDt = None
+
+	@property
+	def GnlColl(self):
+		return self._GnlColl
+
+	@GnlColl.setter
+	def GnlColl(self, value):
+		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
+
+	@GnlColl.deleter
+	def GnlColl(self):
+		del self._GnlColl
+		self._GnlColl = None
 
 	@property
 	def TermntnDt(self):
@@ -143,6 +130,19 @@ class LoanData140(base_types._BaseFieldType):
 		self._UnqTradIdr = None
 
 	@property
+	def ExctnDtTm(self):
+		return self._ExctnDtTm
+
+	@ExctnDtTm.setter
+	def ExctnDtTm(self, value):
+		self._ExctnDtTm = value if type(value) != auto else self.make_default("ExctnDtTm")
+
+	@ExctnDtTm.deleter
+	def ExctnDtTm(self):
+		del self._ExctnDtTm
+		self._ExctnDtTm = None
+
+	@property
 	def ValDt(self):
 		return self._ValDt
 
@@ -156,30 +156,30 @@ class LoanData140(base_types._BaseFieldType):
 		self._ValDt = None
 
 	@property
-	def GnlColl(self):
-		return self._GnlColl
+	def UnitPric(self):
+		return self._UnitPric
 
-	@GnlColl.setter
-	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
 
-	@GnlColl.deleter
-	def GnlColl(self):
-		del self._GnlColl
-		self._GnlColl = None
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSts', type=Cleared16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSts', type=Cleared16Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=SecuritiesTransactionPrice19Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=SecuritiesTransactionPrice19Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 import base_types
-import TradeRecurrentQuery7
 import TradeQueryCriteria14
+import TradeRecurrentQuery7
 
 class TradeReportQuery18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AdHocQry", "_RcrntQry"]
-	@property
-	def AdHocQry(self):
-		return self._AdHocQry
-
-	@AdHocQry.setter
-	def AdHocQry(self, value):
-		self._AdHocQry = value if type(value) != auto else self.make_default("AdHocQry")
-
-	@AdHocQry.deleter
-	def AdHocQry(self):
-		del self._AdHocQry
-		self._AdHocQry = None
-
+	__slots__ = ["_RcrntQry", "_AdHocQry"]
 	@property
 	def RcrntQry(self):
 		return self._RcrntQry
@@ -31,8 +18,21 @@ class TradeReportQuery18Choice(base_types._BaseFieldType):
 		del self._RcrntQry
 		self._RcrntQry = None
 
+	@property
+	def AdHocQry(self):
+		return self._AdHocQry
+
+	@AdHocQry.setter
+	def AdHocQry(self, value):
+		self._AdHocQry = value if type(value) != auto else self.make_default("AdHocQry")
+
+	@AdHocQry.deleter
+	def AdHocQry(self):
+		del self._AdHocQry
+		self._AdHocQry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AdHocQry', type=TradeQueryCriteria14, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcrntQry', type=TradeRecurrentQuery7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AdHocQry', type=TradeQueryCriteria14, min=0, max=1, mutex_group=1, array=False),
 	))
 

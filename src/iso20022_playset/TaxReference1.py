@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
 import TaxReferenceType1Choice
 import TaxReferenceParty1Choice
+import Max35Text
 
 class TaxReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_HldrTp", "_TaxTp"]
+	__slots__ = ["_TaxTp", "_HldrTp", "_Ref"]
 	@property
-	def Ref(self):
-		return self._Ref
+	def TaxTp(self):
+		return self._TaxTp
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@TaxTp.setter
+	def TaxTp(self, value):
+		self._TaxTp = value if type(value) != auto else self.make_default("TaxTp")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@TaxTp.deleter
+	def TaxTp(self):
+		del self._TaxTp
+		self._TaxTp = None
 
 	@property
 	def HldrTp(self):
@@ -33,21 +33,21 @@ class TaxReference1(base_types._BaseFieldType):
 		self._HldrTp = None
 
 	@property
-	def TaxTp(self):
-		return self._TaxTp
+	def Ref(self):
+		return self._Ref
 
-	@TaxTp.setter
-	def TaxTp(self, value):
-		self._TaxTp = value if type(value) != auto else self.make_default("TaxTp")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@TaxTp.deleter
-	def TaxTp(self):
-		del self._TaxTp
-		self._TaxTp = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HldrTp', type=TaxReferenceParty1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxTp', type=TaxReferenceType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldrTp', type=TaxReferenceParty1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

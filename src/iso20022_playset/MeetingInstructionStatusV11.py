@@ -1,93 +1,28 @@
 import base_types
 import EligiblePosition17
-import SupplementaryData1
 import PartyIdentification226Choice
 import PartyIdentification246Choice
-import InstructionTypeStatus7Choice
-import SecurityIdentification19
 import InstructionType2Choice
+import SecurityIdentification19
+import SupplementaryData1
+import InstructionTypeStatus7Choice
 import MeetingReference10
 
 class MeetingInstructionStatusV11(base_types._BaseFieldType):
 
-	__slots__ = ["_CnfrmgPty", "_Pos", "_MtgRef", "_FinInstrmId", "_InstrTpSts", "_InstrTp", "_SplmtryData", "_RghtsHldr", "_VoteCstgPty"]
+	__slots__ = ["_RghtsHldr", "_SplmtryData", "_InstrTp", "_Pos", "_CnfrmgPty", "_InstrTpSts", "_VoteCstgPty", "_FinInstrmId", "_MtgRef"]
 	@property
-	def CnfrmgPty(self):
-		return self._CnfrmgPty
+	def RghtsHldr(self):
+		return self._RghtsHldr
 
-	@CnfrmgPty.setter
-	def CnfrmgPty(self, value):
-		self._CnfrmgPty = value if type(value) != auto else self.make_default("CnfrmgPty")
+	@RghtsHldr.setter
+	def RghtsHldr(self, value):
+		self._RghtsHldr = value if type(value) != auto else self.make_default("RghtsHldr")
 
-	@CnfrmgPty.deleter
-	def CnfrmgPty(self):
-		del self._CnfrmgPty
-		self._CnfrmgPty = None
-
-	@property
-	def Pos(self):
-		return self._Pos
-
-	@Pos.setter
-	def Pos(self, value):
-		self._Pos = value if type(value) != auto else self.make_default("Pos")
-
-	@Pos.deleter
-	def Pos(self):
-		del self._Pos
-		self._Pos = None
-
-	@property
-	def MtgRef(self):
-		return self._MtgRef
-
-	@MtgRef.setter
-	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != auto else self.make_default("MtgRef")
-
-	@MtgRef.deleter
-	def MtgRef(self):
-		del self._MtgRef
-		self._MtgRef = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
-	def InstrTpSts(self):
-		return self._InstrTpSts
-
-	@InstrTpSts.setter
-	def InstrTpSts(self, value):
-		self._InstrTpSts = value if type(value) != auto else self.make_default("InstrTpSts")
-
-	@InstrTpSts.deleter
-	def InstrTpSts(self):
-		del self._InstrTpSts
-		self._InstrTpSts = None
-
-	@property
-	def InstrTp(self):
-		return self._InstrTp
-
-	@InstrTp.setter
-	def InstrTp(self, value):
-		self._InstrTp = value if type(value) != auto else self.make_default("InstrTp")
-
-	@InstrTp.deleter
-	def InstrTp(self):
-		del self._InstrTp
-		self._InstrTp = None
+	@RghtsHldr.deleter
+	def RghtsHldr(self):
+		del self._RghtsHldr
+		self._RghtsHldr = None
 
 	@property
 	def SplmtryData(self):
@@ -103,17 +38,56 @@ class MeetingInstructionStatusV11(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RghtsHldr(self):
-		return self._RghtsHldr
+	def InstrTp(self):
+		return self._InstrTp
 
-	@RghtsHldr.setter
-	def RghtsHldr(self, value):
-		self._RghtsHldr = value if type(value) != auto else self.make_default("RghtsHldr")
+	@InstrTp.setter
+	def InstrTp(self, value):
+		self._InstrTp = value if type(value) != auto else self.make_default("InstrTp")
 
-	@RghtsHldr.deleter
-	def RghtsHldr(self):
-		del self._RghtsHldr
-		self._RghtsHldr = None
+	@InstrTp.deleter
+	def InstrTp(self):
+		del self._InstrTp
+		self._InstrTp = None
+
+	@property
+	def Pos(self):
+		return self._Pos
+
+	@Pos.setter
+	def Pos(self, value):
+		self._Pos = value if type(value) != auto else self.make_default("Pos")
+
+	@Pos.deleter
+	def Pos(self):
+		del self._Pos
+		self._Pos = None
+
+	@property
+	def CnfrmgPty(self):
+		return self._CnfrmgPty
+
+	@CnfrmgPty.setter
+	def CnfrmgPty(self, value):
+		self._CnfrmgPty = value if type(value) != auto else self.make_default("CnfrmgPty")
+
+	@CnfrmgPty.deleter
+	def CnfrmgPty(self):
+		del self._CnfrmgPty
+		self._CnfrmgPty = None
+
+	@property
+	def InstrTpSts(self):
+		return self._InstrTpSts
+
+	@InstrTpSts.setter
+	def InstrTpSts(self, value):
+		self._InstrTpSts = value if type(value) != auto else self.make_default("InstrTpSts")
+
+	@InstrTpSts.deleter
+	def InstrTpSts(self):
+		del self._InstrTpSts
+		self._InstrTpSts = None
 
 	@property
 	def VoteCstgPty(self):
@@ -128,15 +102,41 @@ class MeetingInstructionStatusV11(base_types._BaseFieldType):
 		del self._VoteCstgPty
 		self._VoteCstgPty = None
 
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def MtgRef(self):
+		return self._MtgRef
+
+	@MtgRef.setter
+	def MtgRef(self, value):
+		self._MtgRef = value if type(value) != auto else self.make_default("MtgRef")
+
+	@MtgRef.deleter
+	def MtgRef(self):
+		del self._MtgRef
+		self._MtgRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CnfrmgPty', type=PartyIdentification226Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pos', type=EligiblePosition17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrTpSts', type=InstructionTypeStatus7Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrTp', type=InstructionType2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification246Choice, min=0, max=250, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InstrTp', type=InstructionType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pos', type=EligiblePosition17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnfrmgPty', type=PartyIdentification226Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrTpSts', type=InstructionTypeStatus7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoteCstgPty', type=PartyIdentification226Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
 	))
 

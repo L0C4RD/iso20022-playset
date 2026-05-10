@@ -1,41 +1,15 @@
 import base_types
-import TrueFalseIndicator
+import UnitOfMeasure1Code
 import ImpliedCurrencyAndAmount
-import Max35Text
 import DecimalNumber
 import FleetServiceType1Code
+import TrueFalseIndicator
+import Max35Text
 import Max15Text
-import UnitOfMeasure1Code
 
 class FleetLineItem6(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_TtlAmtExclgTax", "_AllwdItm", "_PdctQty", "_Fuel", "_TtlAmtInclgTax", "_SvcTp", "_PdctCtgy", "_PdctCd"]
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
-
-	@property
-	def TtlAmtExclgTax(self):
-		return self._TtlAmtExclgTax
-
-	@TtlAmtExclgTax.setter
-	def TtlAmtExclgTax(self, value):
-		self._TtlAmtExclgTax = value if type(value) != auto else self.make_default("TtlAmtExclgTax")
-
-	@TtlAmtExclgTax.deleter
-	def TtlAmtExclgTax(self):
-		del self._TtlAmtExclgTax
-		self._TtlAmtExclgTax = None
-
+	__slots__ = ["_AllwdItm", "_UnitOfMeasr", "_PdctCtgy", "_TtlAmtInclgTax", "_SvcTp", "_TtlAmtExclgTax", "_PdctQty", "_Fuel", "_PdctCd"]
 	@property
 	def AllwdItm(self):
 		return self._AllwdItm
@@ -50,30 +24,30 @@ class FleetLineItem6(base_types._BaseFieldType):
 		self._AllwdItm = None
 
 	@property
-	def PdctQty(self):
-		return self._PdctQty
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
 
-	@PdctQty.setter
-	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
 
-	@PdctQty.deleter
-	def PdctQty(self):
-		del self._PdctQty
-		self._PdctQty = None
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
 
 	@property
-	def Fuel(self):
-		return self._Fuel
+	def PdctCtgy(self):
+		return self._PdctCtgy
 
-	@Fuel.setter
-	def Fuel(self, value):
-		self._Fuel = value if type(value) != auto else self.make_default("Fuel")
+	@PdctCtgy.setter
+	def PdctCtgy(self, value):
+		self._PdctCtgy = value if type(value) != auto else self.make_default("PdctCtgy")
 
-	@Fuel.deleter
-	def Fuel(self):
-		del self._Fuel
-		self._Fuel = None
+	@PdctCtgy.deleter
+	def PdctCtgy(self):
+		del self._PdctCtgy
+		self._PdctCtgy = None
 
 	@property
 	def TtlAmtInclgTax(self):
@@ -102,17 +76,43 @@ class FleetLineItem6(base_types._BaseFieldType):
 		self._SvcTp = None
 
 	@property
-	def PdctCtgy(self):
-		return self._PdctCtgy
+	def TtlAmtExclgTax(self):
+		return self._TtlAmtExclgTax
 
-	@PdctCtgy.setter
-	def PdctCtgy(self, value):
-		self._PdctCtgy = value if type(value) != auto else self.make_default("PdctCtgy")
+	@TtlAmtExclgTax.setter
+	def TtlAmtExclgTax(self, value):
+		self._TtlAmtExclgTax = value if type(value) != auto else self.make_default("TtlAmtExclgTax")
 
-	@PdctCtgy.deleter
-	def PdctCtgy(self):
-		del self._PdctCtgy
-		self._PdctCtgy = None
+	@TtlAmtExclgTax.deleter
+	def TtlAmtExclgTax(self):
+		del self._TtlAmtExclgTax
+		self._TtlAmtExclgTax = None
+
+	@property
+	def PdctQty(self):
+		return self._PdctQty
+
+	@PdctQty.setter
+	def PdctQty(self, value):
+		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
+
+	@PdctQty.deleter
+	def PdctQty(self):
+		del self._PdctQty
+		self._PdctQty = None
+
+	@property
+	def Fuel(self):
+		return self._Fuel
+
+	@Fuel.setter
+	def Fuel(self, value):
+		self._Fuel = value if type(value) != auto else self.make_default("Fuel")
+
+	@Fuel.deleter
+	def Fuel(self):
+		del self._Fuel
+		self._Fuel = None
 
 	@property
 	def PdctCd(self):
@@ -128,14 +128,14 @@ class FleetLineItem6(base_types._BaseFieldType):
 		self._PdctCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmtExclgTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdItm', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fuel', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCtgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmtInclgTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcTp', type=FleetServiceType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCtgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmtExclgTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fuel', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctCd', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

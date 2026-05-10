@@ -1,22 +1,22 @@
 import base_types
-import Max35Text
 import Max140Text
+import Max35Text
 
 class ATMCommandIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prcr", "_Orgn", "_Ref"]
+	__slots__ = ["_Ref", "_Orgn", "_Prcr"]
 	@property
-	def Prcr(self):
-		return self._Prcr
+	def Ref(self):
+		return self._Ref
 
-	@Prcr.setter
-	def Prcr(self, value):
-		self._Prcr = value if type(value) != auto else self.make_default("Prcr")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@Prcr.deleter
-	def Prcr(self):
-		del self._Prcr
-		self._Prcr = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def Orgn(self):
@@ -32,21 +32,21 @@ class ATMCommandIdentification1(base_types._BaseFieldType):
 		self._Orgn = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def Prcr(self):
+		return self._Prcr
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@Prcr.setter
+	def Prcr(self, value):
+		self._Prcr = value if type(value) != auto else self.make_default("Prcr")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@Prcr.deleter
+	def Prcr(self):
+		del self._Prcr
+		self._Prcr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prcr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Orgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Orgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prcr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,39 +1,13 @@
 import base_types
 import ImpliedCurrencyAndAmount
+import Number
 import ExchangePolicy2Code
 import ProcessRetry3
-import Number
 import ProcessTiming6
 
 class ExchangeConfiguration9(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxNb", "_XchgPlcy", "_MaxAmt", "_ReTry", "_TmCond"]
-	@property
-	def MaxNb(self):
-		return self._MaxNb
-
-	@MaxNb.setter
-	def MaxNb(self, value):
-		self._MaxNb = value if type(value) != auto else self.make_default("MaxNb")
-
-	@MaxNb.deleter
-	def MaxNb(self):
-		del self._MaxNb
-		self._MaxNb = None
-
-	@property
-	def XchgPlcy(self):
-		return self._XchgPlcy
-
-	@XchgPlcy.setter
-	def XchgPlcy(self, value):
-		self._XchgPlcy = value if type(value) != auto else self.make_default("XchgPlcy")
-
-	@XchgPlcy.deleter
-	def XchgPlcy(self):
-		del self._XchgPlcy
-		self._XchgPlcy = None
-
+	__slots__ = ["_MaxAmt", "_ReTry", "_MaxNb", "_XchgPlcy", "_TmCond"]
 	@property
 	def MaxAmt(self):
 		return self._MaxAmt
@@ -61,6 +35,32 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 		self._ReTry = None
 
 	@property
+	def MaxNb(self):
+		return self._MaxNb
+
+	@MaxNb.setter
+	def MaxNb(self, value):
+		self._MaxNb = value if type(value) != auto else self.make_default("MaxNb")
+
+	@MaxNb.deleter
+	def MaxNb(self):
+		del self._MaxNb
+		self._MaxNb = None
+
+	@property
+	def XchgPlcy(self):
+		return self._XchgPlcy
+
+	@XchgPlcy.setter
+	def XchgPlcy(self, value):
+		self._XchgPlcy = value if type(value) != auto else self.make_default("XchgPlcy")
+
+	@XchgPlcy.deleter
+	def XchgPlcy(self):
+		del self._XchgPlcy
+		self._XchgPlcy = None
+
+	@property
 	def TmCond(self):
 		return self._TmCond
 
@@ -74,10 +74,10 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 		self._TmCond = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgPlcy', type=ExchangePolicy2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MaxAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgPlcy', type=ExchangePolicy2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
 	))
 

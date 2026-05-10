@@ -1,11 +1,11 @@
 import base_types
-import ParticipationMethod3Choice
 import DateFormat58Choice
 import YesNoIndicator
+import ParticipationMethod3Choice
 
 class ParticipationMethod2(base_types._BaseFieldType):
 
-	__slots__ = ["_SpprtdByAcctSvcr", "_IssrDdlnForVtng", "_RspnDdlnForVtng", "_PrtcptnMtd"]
+	__slots__ = ["_SpprtdByAcctSvcr", "_RspnDdlnForVtng", "_PrtcptnMtd", "_IssrDdlnForVtng"]
 	@property
 	def SpprtdByAcctSvcr(self):
 		return self._SpprtdByAcctSvcr
@@ -18,19 +18,6 @@ class ParticipationMethod2(base_types._BaseFieldType):
 	def SpprtdByAcctSvcr(self):
 		del self._SpprtdByAcctSvcr
 		self._SpprtdByAcctSvcr = None
-
-	@property
-	def IssrDdlnForVtng(self):
-		return self._IssrDdlnForVtng
-
-	@IssrDdlnForVtng.setter
-	def IssrDdlnForVtng(self, value):
-		self._IssrDdlnForVtng = value if type(value) != auto else self.make_default("IssrDdlnForVtng")
-
-	@IssrDdlnForVtng.deleter
-	def IssrDdlnForVtng(self):
-		del self._IssrDdlnForVtng
-		self._IssrDdlnForVtng = None
 
 	@property
 	def RspnDdlnForVtng(self):
@@ -58,10 +45,23 @@ class ParticipationMethod2(base_types._BaseFieldType):
 		del self._PrtcptnMtd
 		self._PrtcptnMtd = None
 
+	@property
+	def IssrDdlnForVtng(self):
+		return self._IssrDdlnForVtng
+
+	@IssrDdlnForVtng.setter
+	def IssrDdlnForVtng(self, value):
+		self._IssrDdlnForVtng = value if type(value) != auto else self.make_default("IssrDdlnForVtng")
+
+	@IssrDdlnForVtng.deleter
+	def IssrDdlnForVtng(self):
+		del self._IssrDdlnForVtng
+		self._IssrDdlnForVtng = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SpprtdByAcctSvcr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrDdlnForVtng', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnDdlnForVtng', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtcptnMtd', type=ParticipationMethod3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrDdlnForVtng', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

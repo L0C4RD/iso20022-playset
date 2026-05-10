@@ -1,13 +1,13 @@
 import base_types
+import DocumentFormat1Choice
 import UndertakingDocumentType1Choice
 import Max35Text
-import DocumentFormat1Choice
 import Max2MBBinary
 import PartyAndSignature2
 
 class Document9(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlSgntr", "_Id", "_Frmt", "_Tp", "_Nclsr"]
+	__slots__ = ["_DgtlSgntr", "_Id", "_Nclsr", "_Frmt", "_Tp"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -35,6 +35,19 @@ class Document9(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def Nclsr(self):
+		return self._Nclsr
+
+	@Nclsr.setter
+	def Nclsr(self, value):
+		self._Nclsr = value if type(value) != auto else self.make_default("Nclsr")
+
+	@Nclsr.deleter
+	def Nclsr(self):
+		del self._Nclsr
+		self._Nclsr = None
+
+	@property
 	def Frmt(self):
 		return self._Frmt
 
@@ -60,24 +73,11 @@ class Document9(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def Nclsr(self):
-		return self._Nclsr
-
-	@Nclsr.setter
-	def Nclsr(self, value):
-		self._Nclsr = value if type(value) != auto else self.make_default("Nclsr")
-
-	@Nclsr.deleter
-	def Nclsr(self):
-		del self._Nclsr
-		self._Nclsr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nclsr', type=Max2MBBinary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=UndertakingDocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nclsr', type=Max2MBBinary, min=1, max=1, mutex_group=None, array=False),
 	))
 

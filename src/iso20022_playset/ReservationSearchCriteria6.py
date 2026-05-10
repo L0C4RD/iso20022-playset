@@ -1,38 +1,38 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
-import SystemIdentification2Choice
-import AccountIdentification4Choice
 import ReservationType2Choice
+import AccountIdentification4Choice
+import SystemIdentification2Choice
+import BranchAndFinancialInstitutionIdentification8
 import DateTimeSearch2Choice
 
 class ReservationSearchCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_DfltRsvatnTp", "_AcctId", "_DtTm", "_AcctOwnr", "_SysId", "_CurRsvatnTp"]
+	__slots__ = ["_CurRsvatnTp", "_SysId", "_DtTm", "_AcctOwnr", "_DfltRsvatnTp", "_AcctId"]
 	@property
-	def DfltRsvatnTp(self):
-		return self._DfltRsvatnTp
+	def CurRsvatnTp(self):
+		return self._CurRsvatnTp
 
-	@DfltRsvatnTp.setter
-	def DfltRsvatnTp(self, value):
-		self._DfltRsvatnTp = value if type(value) != auto else self.make_default("DfltRsvatnTp")
+	@CurRsvatnTp.setter
+	def CurRsvatnTp(self, value):
+		self._CurRsvatnTp = value if type(value) != auto else self.make_default("CurRsvatnTp")
 
-	@DfltRsvatnTp.deleter
-	def DfltRsvatnTp(self):
-		del self._DfltRsvatnTp
-		self._DfltRsvatnTp = None
+	@CurRsvatnTp.deleter
+	def CurRsvatnTp(self):
+		del self._CurRsvatnTp
+		self._CurRsvatnTp = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def SysId(self):
+		return self._SysId
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@SysId.setter
+	def SysId(self, value):
+		self._SysId = value if type(value) != auto else self.make_default("SysId")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@SysId.deleter
+	def SysId(self):
+		del self._SysId
+		self._SysId = None
 
 	@property
 	def DtTm(self):
@@ -61,37 +61,37 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def SysId(self):
-		return self._SysId
+	def DfltRsvatnTp(self):
+		return self._DfltRsvatnTp
 
-	@SysId.setter
-	def SysId(self, value):
-		self._SysId = value if type(value) != auto else self.make_default("SysId")
+	@DfltRsvatnTp.setter
+	def DfltRsvatnTp(self, value):
+		self._DfltRsvatnTp = value if type(value) != auto else self.make_default("DfltRsvatnTp")
 
-	@SysId.deleter
-	def SysId(self):
-		del self._SysId
-		self._SysId = None
+	@DfltRsvatnTp.deleter
+	def DfltRsvatnTp(self):
+		del self._DfltRsvatnTp
+		self._DfltRsvatnTp = None
 
 	@property
-	def CurRsvatnTp(self):
-		return self._CurRsvatnTp
+	def AcctId(self):
+		return self._AcctId
 
-	@CurRsvatnTp.setter
-	def CurRsvatnTp(self, value):
-		self._CurRsvatnTp = value if type(value) != auto else self.make_default("CurRsvatnTp")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@CurRsvatnTp.deleter
-	def CurRsvatnTp(self):
-		del self._CurRsvatnTp
-		self._CurRsvatnTp = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DfltRsvatnTp', type=ReservationType2Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurRsvatnTp', type=ReservationType2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=DateTimeSearch2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurRsvatnTp', type=ReservationType2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DfltRsvatnTp', type=ReservationType2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

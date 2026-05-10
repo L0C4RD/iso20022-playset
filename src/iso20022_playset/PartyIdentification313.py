@@ -1,28 +1,28 @@
 import base_types
-import PartyIdentification229Choice
-import FinancialInstrumentQuantity33Choice
-import RateAndAmountFormat57Choice
 import BeneficiaryCertificationType10Choice
 import LEIIdentifier
-import AlternatePartyIdentification7
 import Max350Text
+import FinancialInstrumentQuantity33Choice
+import PartyIdentification229Choice
+import RateAndAmountFormat57Choice
 import CountryCode
+import AlternatePartyIdentification7
 
 class PartyIdentification313(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_CertfctnBrkdwn", "_NonDmclCtry", "_OwndSctiesQty", "_DmclCtry", "_CertfctnTp", "_OwnrId", "_LEIId", "_WhldgTaxRate"]
+	__slots__ = ["_DmclCtry", "_CertfctnBrkdwn", "_OwnrId", "_OwndSctiesQty", "_CertfctnTp", "_NonDmclCtry", "_AltrnId", "_WhldgTaxRate", "_LEIId"]
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def DmclCtry(self):
+		return self._DmclCtry
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@DmclCtry.setter
+	def DmclCtry(self, value):
+		self._DmclCtry = value if type(value) != auto else self.make_default("DmclCtry")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@DmclCtry.deleter
+	def DmclCtry(self):
+		del self._DmclCtry
+		self._DmclCtry = None
 
 	@property
 	def CertfctnBrkdwn(self):
@@ -38,17 +38,17 @@ class PartyIdentification313(base_types._BaseFieldType):
 		self._CertfctnBrkdwn = None
 
 	@property
-	def NonDmclCtry(self):
-		return self._NonDmclCtry
+	def OwnrId(self):
+		return self._OwnrId
 
-	@NonDmclCtry.setter
-	def NonDmclCtry(self, value):
-		self._NonDmclCtry = value if type(value) != auto else self.make_default("NonDmclCtry")
+	@OwnrId.setter
+	def OwnrId(self, value):
+		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
 
-	@NonDmclCtry.deleter
-	def NonDmclCtry(self):
-		del self._NonDmclCtry
-		self._NonDmclCtry = None
+	@OwnrId.deleter
+	def OwnrId(self):
+		del self._OwnrId
+		self._OwnrId = None
 
 	@property
 	def OwndSctiesQty(self):
@@ -64,19 +64,6 @@ class PartyIdentification313(base_types._BaseFieldType):
 		self._OwndSctiesQty = None
 
 	@property
-	def DmclCtry(self):
-		return self._DmclCtry
-
-	@DmclCtry.setter
-	def DmclCtry(self, value):
-		self._DmclCtry = value if type(value) != auto else self.make_default("DmclCtry")
-
-	@DmclCtry.deleter
-	def DmclCtry(self):
-		del self._DmclCtry
-		self._DmclCtry = None
-
-	@property
 	def CertfctnTp(self):
 		return self._CertfctnTp
 
@@ -90,30 +77,30 @@ class PartyIdentification313(base_types._BaseFieldType):
 		self._CertfctnTp = None
 
 	@property
-	def OwnrId(self):
-		return self._OwnrId
+	def NonDmclCtry(self):
+		return self._NonDmclCtry
 
-	@OwnrId.setter
-	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
+	@NonDmclCtry.setter
+	def NonDmclCtry(self, value):
+		self._NonDmclCtry = value if type(value) != auto else self.make_default("NonDmclCtry")
 
-	@OwnrId.deleter
-	def OwnrId(self):
-		del self._OwnrId
-		self._OwnrId = None
+	@NonDmclCtry.deleter
+	def NonDmclCtry(self):
+		del self._NonDmclCtry
+		self._NonDmclCtry = None
 
 	@property
-	def LEIId(self):
-		return self._LEIId
+	def AltrnId(self):
+		return self._AltrnId
 
-	@LEIId.setter
-	def LEIId(self, value):
-		self._LEIId = value if type(value) != auto else self.make_default("LEIId")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
 
-	@LEIId.deleter
-	def LEIId(self):
-		del self._LEIId
-		self._LEIId = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	@property
 	def WhldgTaxRate(self):
@@ -128,15 +115,28 @@ class PartyIdentification313(base_types._BaseFieldType):
 		del self._WhldgTaxRate
 		self._WhldgTaxRate = None
 
+	@property
+	def LEIId(self):
+		return self._LEIId
+
+	@LEIId.setter
+	def LEIId(self, value):
+		self._LEIId = value if type(value) != auto else self.make_default("LEIId")
+
+	@LEIId.deleter
+	def LEIId(self):
+		del self._LEIId
+		self._LEIId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertfctnBrkdwn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NonDmclCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OwndSctiesQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmclCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnTp', type=BeneficiaryCertificationType10Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CertfctnBrkdwn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OwnrId', type=PartyIdentification229Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEIId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwndSctiesQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnTp', type=BeneficiaryCertificationType10Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NonDmclCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='WhldgTaxRate', type=RateAndAmountFormat57Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEIId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

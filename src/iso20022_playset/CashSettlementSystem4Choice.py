@@ -1,6 +1,6 @@
 import base_types
-import CashSettlementSystem2Code
 import GenericIdentification30
+import CashSettlementSystem2Code
 
 class CashSettlementSystem4Choice(base_types._BaseFieldType):
 

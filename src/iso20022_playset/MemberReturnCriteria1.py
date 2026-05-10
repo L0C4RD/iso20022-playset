@@ -3,45 +3,19 @@ import RequestedIndicator
 
 class MemberReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctRefInd", "_StsInd", "_AcctInd", "_NmInd", "_MmbRtrAdrInd", "_TpInd", "_ComAdrInd"]
+	__slots__ = ["_MmbRtrAdrInd", "_NmInd", "_StsInd", "_CtctRefInd", "_ComAdrInd", "_TpInd", "_AcctInd"]
 	@property
-	def CtctRefInd(self):
-		return self._CtctRefInd
+	def MmbRtrAdrInd(self):
+		return self._MmbRtrAdrInd
 
-	@CtctRefInd.setter
-	def CtctRefInd(self, value):
-		self._CtctRefInd = value if type(value) != auto else self.make_default("CtctRefInd")
+	@MmbRtrAdrInd.setter
+	def MmbRtrAdrInd(self, value):
+		self._MmbRtrAdrInd = value if type(value) != auto else self.make_default("MmbRtrAdrInd")
 
-	@CtctRefInd.deleter
-	def CtctRefInd(self):
-		del self._CtctRefInd
-		self._CtctRefInd = None
-
-	@property
-	def StsInd(self):
-		return self._StsInd
-
-	@StsInd.setter
-	def StsInd(self, value):
-		self._StsInd = value if type(value) != auto else self.make_default("StsInd")
-
-	@StsInd.deleter
-	def StsInd(self):
-		del self._StsInd
-		self._StsInd = None
-
-	@property
-	def AcctInd(self):
-		return self._AcctInd
-
-	@AcctInd.setter
-	def AcctInd(self, value):
-		self._AcctInd = value if type(value) != auto else self.make_default("AcctInd")
-
-	@AcctInd.deleter
-	def AcctInd(self):
-		del self._AcctInd
-		self._AcctInd = None
+	@MmbRtrAdrInd.deleter
+	def MmbRtrAdrInd(self):
+		del self._MmbRtrAdrInd
+		self._MmbRtrAdrInd = None
 
 	@property
 	def NmInd(self):
@@ -57,17 +31,43 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 		self._NmInd = None
 
 	@property
-	def MmbRtrAdrInd(self):
-		return self._MmbRtrAdrInd
+	def StsInd(self):
+		return self._StsInd
 
-	@MmbRtrAdrInd.setter
-	def MmbRtrAdrInd(self, value):
-		self._MmbRtrAdrInd = value if type(value) != auto else self.make_default("MmbRtrAdrInd")
+	@StsInd.setter
+	def StsInd(self, value):
+		self._StsInd = value if type(value) != auto else self.make_default("StsInd")
 
-	@MmbRtrAdrInd.deleter
-	def MmbRtrAdrInd(self):
-		del self._MmbRtrAdrInd
-		self._MmbRtrAdrInd = None
+	@StsInd.deleter
+	def StsInd(self):
+		del self._StsInd
+		self._StsInd = None
+
+	@property
+	def CtctRefInd(self):
+		return self._CtctRefInd
+
+	@CtctRefInd.setter
+	def CtctRefInd(self, value):
+		self._CtctRefInd = value if type(value) != auto else self.make_default("CtctRefInd")
+
+	@CtctRefInd.deleter
+	def CtctRefInd(self):
+		del self._CtctRefInd
+		self._CtctRefInd = None
+
+	@property
+	def ComAdrInd(self):
+		return self._ComAdrInd
+
+	@ComAdrInd.setter
+	def ComAdrInd(self, value):
+		self._ComAdrInd = value if type(value) != auto else self.make_default("ComAdrInd")
+
+	@ComAdrInd.deleter
+	def ComAdrInd(self):
+		del self._ComAdrInd
+		self._ComAdrInd = None
 
 	@property
 	def TpInd(self):
@@ -83,25 +83,25 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 		self._TpInd = None
 
 	@property
-	def ComAdrInd(self):
-		return self._ComAdrInd
+	def AcctInd(self):
+		return self._AcctInd
 
-	@ComAdrInd.setter
-	def ComAdrInd(self, value):
-		self._ComAdrInd = value if type(value) != auto else self.make_default("ComAdrInd")
+	@AcctInd.setter
+	def AcctInd(self, value):
+		self._AcctInd = value if type(value) != auto else self.make_default("AcctInd")
 
-	@ComAdrInd.deleter
-	def ComAdrInd(self):
-		del self._ComAdrInd
-		self._ComAdrInd = None
+	@AcctInd.deleter
+	def AcctInd(self):
+		del self._AcctInd
+		self._AcctInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctRefInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbRtrAdrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctRefInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComAdrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

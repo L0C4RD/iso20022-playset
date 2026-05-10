@@ -1,6 +1,6 @@
 import base_types
-import PartyAndSignature2
 import Amendment7
+import PartyAndSignature2
 
 class UndertakingAmendmentResponseV01(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
-import DateFormat15Choice
 import ISODate
 import YesNoIndicator
+import DateFormat15Choice
 
 class BuyIn4(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyInRvrsnDt", "_XpctdBuyInDt", "_CxlLmtDt", "_WrngInd"]
+	__slots__ = ["_WrngInd", "_XpctdBuyInDt", "_CxlLmtDt", "_BuyInRvrsnDt"]
 	@property
-	def BuyInRvrsnDt(self):
-		return self._BuyInRvrsnDt
+	def WrngInd(self):
+		return self._WrngInd
 
-	@BuyInRvrsnDt.setter
-	def BuyInRvrsnDt(self, value):
-		self._BuyInRvrsnDt = value if type(value) != auto else self.make_default("BuyInRvrsnDt")
+	@WrngInd.setter
+	def WrngInd(self, value):
+		self._WrngInd = value if type(value) != auto else self.make_default("WrngInd")
 
-	@BuyInRvrsnDt.deleter
-	def BuyInRvrsnDt(self):
-		del self._BuyInRvrsnDt
-		self._BuyInRvrsnDt = None
+	@WrngInd.deleter
+	def WrngInd(self):
+		del self._WrngInd
+		self._WrngInd = None
 
 	@property
 	def XpctdBuyInDt(self):
@@ -46,22 +46,22 @@ class BuyIn4(base_types._BaseFieldType):
 		self._CxlLmtDt = None
 
 	@property
-	def WrngInd(self):
-		return self._WrngInd
+	def BuyInRvrsnDt(self):
+		return self._BuyInRvrsnDt
 
-	@WrngInd.setter
-	def WrngInd(self, value):
-		self._WrngInd = value if type(value) != auto else self.make_default("WrngInd")
+	@BuyInRvrsnDt.setter
+	def BuyInRvrsnDt(self, value):
+		self._BuyInRvrsnDt = value if type(value) != auto else self.make_default("BuyInRvrsnDt")
 
-	@WrngInd.deleter
-	def WrngInd(self):
-		del self._WrngInd
-		self._WrngInd = None
+	@BuyInRvrsnDt.deleter
+	def BuyInRvrsnDt(self):
+		del self._BuyInRvrsnDt
+		self._BuyInRvrsnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BuyInRvrsnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WrngInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdBuyInDt', type=DateFormat15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlLmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WrngInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInRvrsnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 import base_types
-import Period4Choice
 import ISODate
-import Modification1Code
 import CFIOct2015Identifier
+import Modification1Code
+import Period4Choice
 
 class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_VldtyPrd", "_Idr", "_LastUpdtd"]
+	__slots__ = ["_Idr", "_VldtyPrd", "_Mod", "_LastUpdtd"]
 	@property
-	def Mod(self):
-		return self._Mod
+	def Idr(self):
+		return self._Idr
 
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
+	@Idr.setter
+	def Idr(self, value):
+		self._Idr = value if type(value) != auto else self.make_default("Idr")
 
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
+	@Idr.deleter
+	def Idr(self):
+		del self._Idr
+		self._Idr = None
 
 	@property
 	def VldtyPrd(self):
@@ -34,17 +34,17 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	@property
-	def Idr(self):
-		return self._Idr
+	def Mod(self):
+		return self._Mod
 
-	@Idr.setter
-	def Idr(self, value):
-		self._Idr = value if type(value) != auto else self.make_default("Idr")
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
 
-	@Idr.deleter
-	def Idr(self):
-		del self._Idr
-		self._Idr = None
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	@property
 	def LastUpdtd(self):
@@ -60,9 +60,9 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 		self._LastUpdtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Idr', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

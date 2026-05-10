@@ -3,7 +3,33 @@ import RequestedIndicator
 
 class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_PricgSchme", "_PtyTp", "_OpngDt", "_ClsgDt", "_AcctId", "_PtyId", "_AcctSvcr", "_EndInvstrFlg", "_AcctTp"]
+	__slots__ = ["_OpngDt", "_EndInvstrFlg", "_PricgSchme", "_PtyTp", "_PtyId", "_AcctSvcr", "_ClsgDt", "_AcctId", "_AcctTp"]
+	@property
+	def OpngDt(self):
+		return self._OpngDt
+
+	@OpngDt.setter
+	def OpngDt(self, value):
+		self._OpngDt = value if type(value) != auto else self.make_default("OpngDt")
+
+	@OpngDt.deleter
+	def OpngDt(self):
+		del self._OpngDt
+		self._OpngDt = None
+
+	@property
+	def EndInvstrFlg(self):
+		return self._EndInvstrFlg
+
+	@EndInvstrFlg.setter
+	def EndInvstrFlg(self, value):
+		self._EndInvstrFlg = value if type(value) != auto else self.make_default("EndInvstrFlg")
+
+	@EndInvstrFlg.deleter
+	def EndInvstrFlg(self):
+		del self._EndInvstrFlg
+		self._EndInvstrFlg = None
+
 	@property
 	def PricgSchme(self):
 		return self._PricgSchme
@@ -29,45 +55,6 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 	def PtyTp(self):
 		del self._PtyTp
 		self._PtyTp = None
-
-	@property
-	def OpngDt(self):
-		return self._OpngDt
-
-	@OpngDt.setter
-	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != auto else self.make_default("OpngDt")
-
-	@OpngDt.deleter
-	def OpngDt(self):
-		del self._OpngDt
-		self._OpngDt = None
-
-	@property
-	def ClsgDt(self):
-		return self._ClsgDt
-
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
-
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def PtyId(self):
@@ -96,17 +83,30 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def EndInvstrFlg(self):
-		return self._EndInvstrFlg
+	def ClsgDt(self):
+		return self._ClsgDt
 
-	@EndInvstrFlg.setter
-	def EndInvstrFlg(self, value):
-		self._EndInvstrFlg = value if type(value) != auto else self.make_default("EndInvstrFlg")
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
 
-	@EndInvstrFlg.deleter
-	def EndInvstrFlg(self):
-		del self._EndInvstrFlg
-		self._EndInvstrFlg = None
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def AcctTp(self):
@@ -122,14 +122,14 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 		self._AcctTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OpngDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndInvstrFlg', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgSchme', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyTp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndInvstrFlg', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctTp', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

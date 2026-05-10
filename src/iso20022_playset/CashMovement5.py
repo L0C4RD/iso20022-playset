@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
 import ActiveCurrencyAndAmount
-import CollateralEntryType1Code
 import YesNoIndicator
+import CollateralEntryType1Code
+import Max35Text
 
 class CashMovement5(base_types._BaseFieldType):
 
-	__slots__ = ["_CshMvmnt", "_TrptyAgtSvcPrvdrCshMvmntId", "_CshAmt", "_ClntCshMvmntId", "_CollMvmnt"]
-	@property
-	def CshMvmnt(self):
-		return self._CshMvmnt
-
-	@CshMvmnt.setter
-	def CshMvmnt(self, value):
-		self._CshMvmnt = value if type(value) != auto else self.make_default("CshMvmnt")
-
-	@CshMvmnt.deleter
-	def CshMvmnt(self):
-		del self._CshMvmnt
-		self._CshMvmnt = None
-
+	__slots__ = ["_TrptyAgtSvcPrvdrCshMvmntId", "_CshMvmnt", "_CollMvmnt", "_ClntCshMvmntId", "_CshAmt"]
 	@property
 	def TrptyAgtSvcPrvdrCshMvmntId(self):
 		return self._TrptyAgtSvcPrvdrCshMvmntId
@@ -34,17 +21,30 @@ class CashMovement5(base_types._BaseFieldType):
 		self._TrptyAgtSvcPrvdrCshMvmntId = None
 
 	@property
-	def CshAmt(self):
-		return self._CshAmt
+	def CshMvmnt(self):
+		return self._CshMvmnt
 
-	@CshAmt.setter
-	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
+	@CshMvmnt.setter
+	def CshMvmnt(self, value):
+		self._CshMvmnt = value if type(value) != auto else self.make_default("CshMvmnt")
 
-	@CshAmt.deleter
-	def CshAmt(self):
-		del self._CshAmt
-		self._CshAmt = None
+	@CshMvmnt.deleter
+	def CshMvmnt(self):
+		del self._CshMvmnt
+		self._CshMvmnt = None
+
+	@property
+	def CollMvmnt(self):
+		return self._CollMvmnt
+
+	@CollMvmnt.setter
+	def CollMvmnt(self, value):
+		self._CollMvmnt = value if type(value) != auto else self.make_default("CollMvmnt")
+
+	@CollMvmnt.deleter
+	def CollMvmnt(self):
+		del self._CollMvmnt
+		self._CollMvmnt = None
 
 	@property
 	def ClntCshMvmntId(self):
@@ -60,23 +60,23 @@ class CashMovement5(base_types._BaseFieldType):
 		self._ClntCshMvmntId = None
 
 	@property
-	def CollMvmnt(self):
-		return self._CollMvmnt
+	def CshAmt(self):
+		return self._CshAmt
 
-	@CollMvmnt.setter
-	def CollMvmnt(self, value):
-		self._CollMvmnt = value if type(value) != auto else self.make_default("CollMvmnt")
+	@CshAmt.setter
+	def CshAmt(self, value):
+		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
 
-	@CollMvmnt.deleter
-	def CollMvmnt(self):
-		del self._CollMvmnt
-		self._CollMvmnt = None
+	@CshAmt.deleter
+	def CshAmt(self):
+		del self._CshAmt
+		self._CshAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshMvmnt', type=CollateralEntryType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshMvmnt', type=CollateralEntryType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

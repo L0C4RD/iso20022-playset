@@ -1,54 +1,28 @@
 import base_types
-import PaymentContext30
 import CardPaymentEnvironment81
-import Min3Max4Text
-import ActiveCurrencyCode
-import Max35Text
-import CardPaymentServiceType9Code
-import CardPaymentServiceType15Code
 import CardPaymentServiceType12Code
+import PaymentContext30
+import ActiveCurrencyCode
+import Min3Max4Text
+import CardPaymentServiceType15Code
+import CardPaymentServiceType9Code
+import Max35Text
 
 class CommonData14(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnId", "_MrchntCtgyCd", "_SvcAttr", "_TxTp", "_Ccy", "_AddtlSvc", "_Envt", "_Cntxt"]
+	__slots__ = ["_Envt", "_TxTp", "_Ccy", "_RcncltnId", "_SvcAttr", "_Cntxt", "_AddtlSvc", "_MrchntCtgyCd"]
 	@property
-	def RcncltnId(self):
-		return self._RcncltnId
+	def Envt(self):
+		return self._Envt
 
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
 
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
-
-	@property
-	def MrchntCtgyCd(self):
-		return self._MrchntCtgyCd
-
-	@MrchntCtgyCd.setter
-	def MrchntCtgyCd(self, value):
-		self._MrchntCtgyCd = value if type(value) != auto else self.make_default("MrchntCtgyCd")
-
-	@MrchntCtgyCd.deleter
-	def MrchntCtgyCd(self):
-		del self._MrchntCtgyCd
-		self._MrchntCtgyCd = None
-
-	@property
-	def SvcAttr(self):
-		return self._SvcAttr
-
-	@SvcAttr.setter
-	def SvcAttr(self, value):
-		self._SvcAttr = value if type(value) != auto else self.make_default("SvcAttr")
-
-	@SvcAttr.deleter
-	def SvcAttr(self):
-		del self._SvcAttr
-		self._SvcAttr = None
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def TxTp(self):
@@ -77,30 +51,30 @@ class CommonData14(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def AddtlSvc(self):
-		return self._AddtlSvc
+	def RcncltnId(self):
+		return self._RcncltnId
 
-	@AddtlSvc.setter
-	def AddtlSvc(self, value):
-		self._AddtlSvc = value if type(value) != auto else self.make_default("AddtlSvc")
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
 
-	@AddtlSvc.deleter
-	def AddtlSvc(self):
-		del self._AddtlSvc
-		self._AddtlSvc = None
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
 
 	@property
-	def Envt(self):
-		return self._Envt
+	def SvcAttr(self):
+		return self._SvcAttr
 
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+	@SvcAttr.setter
+	def SvcAttr(self, value):
+		self._SvcAttr = value if type(value) != auto else self.make_default("SvcAttr")
 
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@SvcAttr.deleter
+	def SvcAttr(self):
+		del self._SvcAttr
+		self._SvcAttr = None
 
 	@property
 	def Cntxt(self):
@@ -115,14 +89,40 @@ class CommonData14(base_types._BaseFieldType):
 		del self._Cntxt
 		self._Cntxt = None
 
+	@property
+	def AddtlSvc(self):
+		return self._AddtlSvc
+
+	@AddtlSvc.setter
+	def AddtlSvc(self, value):
+		self._AddtlSvc = value if type(value) != auto else self.make_default("AddtlSvc")
+
+	@AddtlSvc.deleter
+	def AddtlSvc(self):
+		del self._AddtlSvc
+		self._AddtlSvc = None
+
+	@property
+	def MrchntCtgyCd(self):
+		return self._MrchntCtgyCd
+
+	@MrchntCtgyCd.setter
+	def MrchntCtgyCd(self, value):
+		self._MrchntCtgyCd = value if type(value) != auto else self.make_default("MrchntCtgyCd")
+
+	@MrchntCtgyCd.deleter
+	def MrchntCtgyCd(self):
+		del self._MrchntCtgyCd
+		self._MrchntCtgyCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntCtgyCd', type=Min3Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcAttr', type=CardPaymentServiceType15Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=CardPaymentServiceType12Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSvc', type=CardPaymentServiceType9Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcAttr', type=CardPaymentServiceType15Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSvc', type=CardPaymentServiceType9Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrchntCtgyCd', type=Min3Max4Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

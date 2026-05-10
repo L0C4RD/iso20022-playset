@@ -1,6 +1,6 @@
 import base_types
-import FATCAStatus2Choice
 import FATCASource1Choice
+import FATCAStatus2Choice
 
 class FATCAStatus2(base_types._BaseFieldType):
 

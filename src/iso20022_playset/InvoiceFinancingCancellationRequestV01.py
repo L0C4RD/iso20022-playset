@@ -1,23 +1,10 @@
 import base_types
-import MessageIdentification1
 import CancellationRequestInformation1
+import MessageIdentification1
 
 class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlReqId", "_CxlReqInf"]
-	@property
-	def CxlReqId(self):
-		return self._CxlReqId
-
-	@CxlReqId.setter
-	def CxlReqId(self, value):
-		self._CxlReqId = value if type(value) != auto else self.make_default("CxlReqId")
-
-	@CxlReqId.deleter
-	def CxlReqId(self):
-		del self._CxlReqId
-		self._CxlReqId = None
-
+	__slots__ = ["_CxlReqInf", "_CxlReqId"]
 	@property
 	def CxlReqInf(self):
 		return self._CxlReqInf
@@ -31,8 +18,21 @@ class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 		del self._CxlReqInf
 		self._CxlReqInf = None
 
+	@property
+	def CxlReqId(self):
+		return self._CxlReqId
+
+	@CxlReqId.setter
+	def CxlReqId(self, value):
+		self._CxlReqId = value if type(value) != auto else self.make_default("CxlReqId")
+
+	@CxlReqId.deleter
+	def CxlReqId(self):
+		del self._CxlReqId
+		self._CxlReqId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlReqInf', type=CancellationRequestInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

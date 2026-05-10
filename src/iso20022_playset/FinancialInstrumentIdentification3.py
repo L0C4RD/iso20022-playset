@@ -1,40 +1,14 @@
 import base_types
+import SecurityIdentification25Choice
+import YesNoIndicator
 import Max35Text
 import Max350Text
-import YesNoIndicator
 import ClassificationType32Choice
 import FinancialInstrumentIdentification4
-import SecurityIdentification25Choice
 
 class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_RstrctdInd", "_ClssfctnTp", "_Id", "_Nm", "_ShrtNm", "_AltrnScty"]
-	@property
-	def RstrctdInd(self):
-		return self._RstrctdInd
-
-	@RstrctdInd.setter
-	def RstrctdInd(self, value):
-		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
-
-	@RstrctdInd.deleter
-	def RstrctdInd(self):
-		del self._RstrctdInd
-		self._RstrctdInd = None
-
-	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
-
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
-
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
-
+	__slots__ = ["_Id", "_AltrnScty", "_RstrctdInd", "_ShrtNm", "_Nm", "_ClssfctnTp"]
 	@property
 	def Id(self):
 		return self._Id
@@ -49,17 +23,30 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def AltrnScty(self):
+		return self._AltrnScty
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@AltrnScty.setter
+	def AltrnScty(self, value):
+		self._AltrnScty = value if type(value) != auto else self.make_default("AltrnScty")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@AltrnScty.deleter
+	def AltrnScty(self):
+		del self._AltrnScty
+		self._AltrnScty = None
+
+	@property
+	def RstrctdInd(self):
+		return self._RstrctdInd
+
+	@RstrctdInd.setter
+	def RstrctdInd(self, value):
+		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
+
+	@RstrctdInd.deleter
+	def RstrctdInd(self):
+		del self._RstrctdInd
+		self._RstrctdInd = None
 
 	@property
 	def ShrtNm(self):
@@ -75,24 +62,37 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	@property
-	def AltrnScty(self):
-		return self._AltrnScty
+	def Nm(self):
+		return self._Nm
 
-	@AltrnScty.setter
-	def AltrnScty(self, value):
-		self._AltrnScty = value if type(value) != auto else self.make_default("AltrnScty")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@AltrnScty.deleter
-	def AltrnScty(self):
-		del self._AltrnScty
-		self._AltrnScty = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
+
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
+
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnScty', type=FinancialInstrumentIdentification4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

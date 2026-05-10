@@ -1,24 +1,11 @@
 import base_types
-import TaxVoucher1
 import SecuritiesProceeds1
 import CashProceeds1
+import TaxVoucher1
 
 class ProceedsMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesPrcdsMvmntDtls", "_CshPrcdsMvmntDtls", "_TaxDtls"]
-	@property
-	def SctiesPrcdsMvmntDtls(self):
-		return self._SctiesPrcdsMvmntDtls
-
-	@SctiesPrcdsMvmntDtls.setter
-	def SctiesPrcdsMvmntDtls(self, value):
-		self._SctiesPrcdsMvmntDtls = value if type(value) != auto else self.make_default("SctiesPrcdsMvmntDtls")
-
-	@SctiesPrcdsMvmntDtls.deleter
-	def SctiesPrcdsMvmntDtls(self):
-		del self._SctiesPrcdsMvmntDtls
-		self._SctiesPrcdsMvmntDtls = None
-
+	__slots__ = ["_CshPrcdsMvmntDtls", "_TaxDtls", "_SctiesPrcdsMvmntDtls"]
 	@property
 	def CshPrcdsMvmntDtls(self):
 		return self._CshPrcdsMvmntDtls
@@ -45,9 +32,22 @@ class ProceedsMovement1(base_types._BaseFieldType):
 		del self._TaxDtls
 		self._TaxDtls = None
 
+	@property
+	def SctiesPrcdsMvmntDtls(self):
+		return self._SctiesPrcdsMvmntDtls
+
+	@SctiesPrcdsMvmntDtls.setter
+	def SctiesPrcdsMvmntDtls(self, value):
+		self._SctiesPrcdsMvmntDtls = value if type(value) != auto else self.make_default("SctiesPrcdsMvmntDtls")
+
+	@SctiesPrcdsMvmntDtls.deleter
+	def SctiesPrcdsMvmntDtls(self):
+		del self._SctiesPrcdsMvmntDtls
+		self._SctiesPrcdsMvmntDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesPrcdsMvmntDtls', type=SecuritiesProceeds1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshPrcdsMvmntDtls', type=CashProceeds1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxDtls', type=TaxVoucher1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesPrcdsMvmntDtls', type=SecuritiesProceeds1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import PairedReconciled3Code
 import Max15NumericText
+import PairedReconciled3Code
 
 class NumberOfReportsPerStatus4(base_types._BaseFieldType):
 

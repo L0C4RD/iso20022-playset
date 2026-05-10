@@ -1,7 +1,7 @@
 import base_types
-import Max500Text
 import Max105Text
 import GenericIdentification175
+import Max500Text
 
 class NaturalPersonIdentification2(base_types._BaseFieldType):
 

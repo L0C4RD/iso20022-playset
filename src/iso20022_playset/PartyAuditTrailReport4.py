@@ -1,7 +1,7 @@
 import base_types
-import SystemPartyIdentification8
-import PartyAuditTrailOrError4Choice
 import DatePeriod3Choice
+import PartyAuditTrailOrError4Choice
+import SystemPartyIdentification8
 
 class PartyAuditTrailReport4(base_types._BaseFieldType):
 

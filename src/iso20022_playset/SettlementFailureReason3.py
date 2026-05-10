@@ -1,6 +1,6 @@
 import base_types
-import SettlementFailureReason2
 import Max2Fraction1NonNegativeNumber
+import SettlementFailureReason2
 
 class SettlementFailureReason3(base_types._BaseFieldType):
 

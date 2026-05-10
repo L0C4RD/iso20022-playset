@@ -1,23 +1,10 @@
 import base_types
-import AnyBICDec2014Identifier
 import GenericOrganisationIdentification2
+import AnyBICDec2014Identifier
 
 class OrganisationIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_Othr"]
-	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
+	__slots__ = ["_Othr", "_AnyBIC"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -31,8 +18,21 @@ class OrganisationIdentification32(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericOrganisationIdentification2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

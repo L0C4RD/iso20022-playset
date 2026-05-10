@@ -1,23 +1,23 @@
 import base_types
 import StressedProduct1
-import RiskFactor1
 import Strategy1
+import RiskFactor1
 
 class StressItem1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdct", "_RskFctr", "_Strtgy"]
+	__slots__ = ["_Strtgy", "_RskFctr", "_Pdct"]
 	@property
-	def Pdct(self):
-		return self._Pdct
+	def Strtgy(self):
+		return self._Strtgy
 
-	@Pdct.setter
-	def Pdct(self, value):
-		self._Pdct = value if type(value) != auto else self.make_default("Pdct")
+	@Strtgy.setter
+	def Strtgy(self, value):
+		self._Strtgy = value if type(value) != auto else self.make_default("Strtgy")
 
-	@Pdct.deleter
-	def Pdct(self):
-		del self._Pdct
-		self._Pdct = None
+	@Strtgy.deleter
+	def Strtgy(self):
+		del self._Strtgy
+		self._Strtgy = None
 
 	@property
 	def RskFctr(self):
@@ -33,21 +33,21 @@ class StressItem1Choice(base_types._BaseFieldType):
 		self._RskFctr = None
 
 	@property
-	def Strtgy(self):
-		return self._Strtgy
+	def Pdct(self):
+		return self._Pdct
 
-	@Strtgy.setter
-	def Strtgy(self, value):
-		self._Strtgy = value if type(value) != auto else self.make_default("Strtgy")
+	@Pdct.setter
+	def Pdct(self, value):
+		self._Pdct = value if type(value) != auto else self.make_default("Pdct")
 
-	@Strtgy.deleter
-	def Strtgy(self):
-		del self._Strtgy
-		self._Strtgy = None
+	@Pdct.deleter
+	def Pdct(self):
+		del self._Pdct
+		self._Pdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdct', type=StressedProduct1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RskFctr', type=RiskFactor1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Strtgy', type=Strategy1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RskFctr', type=RiskFactor1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdct', type=StressedProduct1, min=0, max=1, mutex_group=1, array=False),
 	))
 

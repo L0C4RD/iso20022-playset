@@ -1,13 +1,13 @@
 import base_types
-import Statement8
-import InvestmentAccount43
-import Extension1
-import InvestmentFundTransactionsByFund3
 import SubAccountIdentification36
+import InvestmentFundTransactionsByFund3
+import Statement8
+import Extension1
+import InvestmentAccount43
 
 class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxOnAcct", "_StmtGnlDtls", "_Xtnsn", "_SubAcctDtls", "_InvstmtAcctDtls"]
+	__slots__ = ["_TxOnAcct", "_SubAcctDtls", "_Xtnsn", "_StmtGnlDtls", "_InvstmtAcctDtls"]
 	@property
 	def TxOnAcct(self):
 		return self._TxOnAcct
@@ -22,17 +22,17 @@ class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 		self._TxOnAcct = None
 
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
 
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
 
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
 
 	@property
 	def Xtnsn(self):
@@ -48,17 +48,17 @@ class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
 
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
 
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -75,9 +75,9 @@ class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxOnAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification36, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount43, min=0, max=1, mutex_group=None, array=False),
 	))
 

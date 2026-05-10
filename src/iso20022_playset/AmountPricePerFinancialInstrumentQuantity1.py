@@ -1,7 +1,7 @@
 import base_types
 import UnitOrFaceAmount1Choice
-import AmountPriceType1FormatChoice
 import ActiveCurrencyAnd13DecimalAmount
+import AmountPriceType1FormatChoice
 
 class AmountPricePerFinancialInstrumentQuantity1(base_types._BaseFieldType):
 

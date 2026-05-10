@@ -1,40 +1,14 @@
 import base_types
 import PortfolioBalance1
-import SecuritiesAccount21
 import Report4
-import SupplementaryData1
-import TotalPortfolioValuation1
 import Pagination
+import SupplementaryData1
+import SecuritiesAccount21
+import TotalPortfolioValuation1
 
 class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RptGnlDtls", "_AcctDtls", "_SplmtryData", "_Bal", "_Pgntn", "_TtlPrtflValtn"]
-	@property
-	def RptGnlDtls(self):
-		return self._RptGnlDtls
-
-	@RptGnlDtls.setter
-	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
-
-	@RptGnlDtls.deleter
-	def RptGnlDtls(self):
-		del self._RptGnlDtls
-		self._RptGnlDtls = None
-
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
+	__slots__ = ["_SplmtryData", "_TtlPrtflValtn", "_Pgntn", "_RptGnlDtls", "_Bal", "_AcctDtls"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -49,17 +23,17 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def TtlPrtflValtn(self):
+		return self._TtlPrtflValtn
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@TtlPrtflValtn.setter
+	def TtlPrtflValtn(self, value):
+		self._TtlPrtflValtn = value if type(value) != auto else self.make_default("TtlPrtflValtn")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@TtlPrtflValtn.deleter
+	def TtlPrtflValtn(self):
+		del self._TtlPrtflValtn
+		self._TtlPrtflValtn = None
 
 	@property
 	def Pgntn(self):
@@ -75,24 +49,50 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	@property
-	def TtlPrtflValtn(self):
-		return self._TtlPrtflValtn
+	def RptGnlDtls(self):
+		return self._RptGnlDtls
 
-	@TtlPrtflValtn.setter
-	def TtlPrtflValtn(self, value):
-		self._TtlPrtflValtn = value if type(value) != auto else self.make_default("TtlPrtflValtn")
+	@RptGnlDtls.setter
+	def RptGnlDtls(self, value):
+		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
 
-	@TtlPrtflValtn.deleter
-	def TtlPrtflValtn(self):
-		del self._TtlPrtflValtn
-		self._TtlPrtflValtn = None
+	@RptGnlDtls.deleter
+	def RptGnlDtls(self):
+		del self._RptGnlDtls
+		self._RptGnlDtls = None
+
+	@property
+	def Bal(self):
+		return self._Bal
+
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
+
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
+
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptGnlDtls', type=Report4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount21, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bal', type=PortfolioBalance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlPrtflValtn', type=TotalPortfolioValuation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptGnlDtls', type=Report4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=PortfolioBalance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount21, min=1, max=1, mutex_group=None, array=False),
 	))
 

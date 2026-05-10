@@ -1,23 +1,10 @@
 import base_types
-import Max35Text
 import ISODate
+import Max35Text
 
 class InvoiceIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_IsseDt", "_InvcNb"]
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
+	__slots__ = ["_InvcNb", "_IsseDt"]
 	@property
 	def InvcNb(self):
 		return self._InvcNb
@@ -31,8 +18,21 @@ class InvoiceIdentification1(base_types._BaseFieldType):
 		del self._InvcNb
 		self._InvcNb = None
 
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvcNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

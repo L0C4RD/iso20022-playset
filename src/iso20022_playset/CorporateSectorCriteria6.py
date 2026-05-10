@@ -5,7 +5,7 @@ import FinancialPartySectorType2Code
 
 class CorporateSectorCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_FISctr", "_NotRptd", "_NFISctr"]
+	__slots__ = ["_FISctr", "_NFISctr", "_NotRptd"]
 	@property
 	def FISctr(self):
 		return self._FISctr
@@ -20,19 +20,6 @@ class CorporateSectorCriteria6(base_types._BaseFieldType):
 		self._FISctr = None
 
 	@property
-	def NotRptd(self):
-		return self._NotRptd
-
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
-
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
-
-	@property
 	def NFISctr(self):
 		return self._NFISctr
 
@@ -45,9 +32,22 @@ class CorporateSectorCriteria6(base_types._BaseFieldType):
 		del self._NFISctr
 		self._NFISctr = None
 
+	@property
+	def NotRptd(self):
+		return self._NotRptd
+
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FISctr', type=FinancialPartySectorType2Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NFISctr', type=NonFinancialPartySector1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

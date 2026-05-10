@@ -4,19 +4,19 @@ import LongFraction19DecimalNumber
 
 class NotionalAmount7(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_AmtInFct", "_WghtdAvrgDlta"]
+	__slots__ = ["_WghtdAvrgDlta", "_AmtInFct", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def WghtdAvrgDlta(self):
+		return self._WghtdAvrgDlta
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@WghtdAvrgDlta.setter
+	def WghtdAvrgDlta(self, value):
+		self._WghtdAvrgDlta = value if type(value) != auto else self.make_default("WghtdAvrgDlta")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@WghtdAvrgDlta.deleter
+	def WghtdAvrgDlta(self):
+		del self._WghtdAvrgDlta
+		self._WghtdAvrgDlta = None
 
 	@property
 	def AmtInFct(self):
@@ -32,21 +32,21 @@ class NotionalAmount7(base_types._BaseFieldType):
 		self._AmtInFct = None
 
 	@property
-	def WghtdAvrgDlta(self):
-		return self._WghtdAvrgDlta
+	def Amt(self):
+		return self._Amt
 
-	@WghtdAvrgDlta.setter
-	def WghtdAvrgDlta(self, value):
-		self._WghtdAvrgDlta = value if type(value) != auto else self.make_default("WghtdAvrgDlta")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@WghtdAvrgDlta.deleter
-	def WghtdAvrgDlta(self):
-		del self._WghtdAvrgDlta
-		self._WghtdAvrgDlta = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtInFct', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='WghtdAvrgDlta', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtInFct', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

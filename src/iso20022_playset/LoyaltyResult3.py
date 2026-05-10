@@ -1,12 +1,12 @@
 import base_types
+import LoyaltyServerData1
 import LoyaltyRebates1
 import LoyaltyAccount3
 import LoyaltyAmount1
-import LoyaltyServerData1
 
 class LoyaltyResult3(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_SvrData", "_Amt", "_Rbts"]
+	__slots__ = ["_Acct", "_Amt", "_Rbts", "_SvrData"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -19,19 +19,6 @@ class LoyaltyResult3(base_types._BaseFieldType):
 	def Acct(self):
 		del self._Acct
 		self._Acct = None
-
-	@property
-	def SvrData(self):
-		return self._SvrData
-
-	@SvrData.setter
-	def SvrData(self, value):
-		self._SvrData = value if type(value) != auto else self.make_default("SvrData")
-
-	@SvrData.deleter
-	def SvrData(self):
-		del self._SvrData
-		self._SvrData = None
 
 	@property
 	def Amt(self):
@@ -59,10 +46,23 @@ class LoyaltyResult3(base_types._BaseFieldType):
 		del self._Rbts
 		self._Rbts = None
 
+	@property
+	def SvrData(self):
+		return self._SvrData
+
+	@SvrData.setter
+	def SvrData(self, value):
+		self._SvrData = value if type(value) != auto else self.make_default("SvrData")
+
+	@SvrData.deleter
+	def SvrData(self):
+		del self._SvrData
+		self._SvrData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=LoyaltyAccount3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvrData', type=LoyaltyServerData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=LoyaltyAmount1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rbts', type=LoyaltyRebates1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvrData', type=LoyaltyServerData1, min=0, max=1, mutex_group=None, array=False),
 	))
 

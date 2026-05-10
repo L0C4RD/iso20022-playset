@@ -1,23 +1,23 @@
 import base_types
-import Max35Text
-import UndertakingAmendmentMessage1
 import Max2000Text
+import UndertakingAmendmentMessage1
+import Max35Text
 
 class Amendment6(base_types._BaseFieldType):
 
-	__slots__ = ["_ApplcntRefNb", "_UdrtkgAmdmntMsg", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_UdrtkgAmdmntMsg", "_ApplcntRefNb"]
 	@property
-	def ApplcntRefNb(self):
-		return self._ApplcntRefNb
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@ApplcntRefNb.setter
-	def ApplcntRefNb(self, value):
-		self._ApplcntRefNb = value if type(value) != auto else self.make_default("ApplcntRefNb")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@ApplcntRefNb.deleter
-	def ApplcntRefNb(self):
-		del self._ApplcntRefNb
-		self._ApplcntRefNb = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def UdrtkgAmdmntMsg(self):
@@ -33,21 +33,21 @@ class Amendment6(base_types._BaseFieldType):
 		self._UdrtkgAmdmntMsg = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def ApplcntRefNb(self):
+		return self._ApplcntRefNb
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@ApplcntRefNb.setter
+	def ApplcntRefNb(self, value):
+		self._ApplcntRefNb = value if type(value) != auto else self.make_default("ApplcntRefNb")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@ApplcntRefNb.deleter
+	def ApplcntRefNb(self):
+		del self._ApplcntRefNb
+		self._ApplcntRefNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ApplcntRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UdrtkgAmdmntMsg', type=UndertakingAmendmentMessage1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UdrtkgAmdmntMsg', type=UndertakingAmendmentMessage1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApplcntRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import CollateralResponse3
+import Max35Text
 import CollateralProposalResponse1Code
 
 class CollateralProposalResponseType4(base_types._BaseFieldType):

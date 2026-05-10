@@ -1,7 +1,7 @@
 import base_types
 import NameAndLocation1
-import LEIIdentifier
 import SectorAndLocation1
+import LEIIdentifier
 
 class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 

@@ -1,11 +1,24 @@
 import base_types
-import Max1025Text
-import Max8000Text
 import ISO2ALanguageCode
+import Max8000Text
+import Max1025Text
 
 class ItemDescription2(base_types._BaseFieldType):
 
-	__slots__ = ["_Titl", "_Desc", "_Lang"]
+	__slots__ = ["_Lang", "_Titl", "_Desc"]
+	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
 	@property
 	def Titl(self):
 		return self._Titl
@@ -32,22 +45,9 @@ class ItemDescription2(base_types._BaseFieldType):
 		del self._Desc
 		self._Desc = None
 
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Lang', type=ISO2ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Titl', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max8000Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Lang', type=ISO2ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 import base_types
-import TrueFalseIndicator
 import OrganisationIdentification15Choice
 import Max52Text
+import TrueFalseIndicator
 
 class PositionSetDimensions15(base_types._BaseFieldType):
 
-	__slots__ = ["_CollPrtflId", "_OtlrsIncl", "_OthrCtrPty", "_RptgCtrPty"]
-	@property
-	def CollPrtflId(self):
-		return self._CollPrtflId
-
-	@CollPrtflId.setter
-	def CollPrtflId(self, value):
-		self._CollPrtflId = value if type(value) != auto else self.make_default("CollPrtflId")
-
-	@CollPrtflId.deleter
-	def CollPrtflId(self):
-		del self._CollPrtflId
-		self._CollPrtflId = None
-
+	__slots__ = ["_OtlrsIncl", "_OthrCtrPty", "_RptgCtrPty", "_CollPrtflId"]
 	@property
 	def OtlrsIncl(self):
 		return self._OtlrsIncl
@@ -58,10 +45,23 @@ class PositionSetDimensions15(base_types._BaseFieldType):
 		del self._RptgCtrPty
 		self._RptgCtrPty = None
 
+	@property
+	def CollPrtflId(self):
+		return self._CollPrtflId
+
+	@CollPrtflId.setter
+	def CollPrtflId(self, value):
+		self._CollPrtflId = value if type(value) != auto else self.make_default("CollPrtflId")
+
+	@CollPrtflId.deleter
+	def CollPrtflId(self):
+		del self._CollPrtflId
+		self._CollPrtflId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

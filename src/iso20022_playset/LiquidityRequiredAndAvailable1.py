@@ -1,24 +1,11 @@
 import base_types
-import LiquidResources1
 import SettlementDate6Code
 import StressLiquidResourceRequirement1
+import LiquidResources1
 
 class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
-	__slots__ = ["_StrssLqdRsrcRqrmnt", "_LqdRsrcs", "_LqdtyHrzn"]
-	@property
-	def StrssLqdRsrcRqrmnt(self):
-		return self._StrssLqdRsrcRqrmnt
-
-	@StrssLqdRsrcRqrmnt.setter
-	def StrssLqdRsrcRqrmnt(self, value):
-		self._StrssLqdRsrcRqrmnt = value if type(value) != auto else self.make_default("StrssLqdRsrcRqrmnt")
-
-	@StrssLqdRsrcRqrmnt.deleter
-	def StrssLqdRsrcRqrmnt(self):
-		del self._StrssLqdRsrcRqrmnt
-		self._StrssLqdRsrcRqrmnt = None
-
+	__slots__ = ["_LqdRsrcs", "_LqdtyHrzn", "_StrssLqdRsrcRqrmnt"]
 	@property
 	def LqdRsrcs(self):
 		return self._LqdRsrcs
@@ -45,9 +32,22 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 		del self._LqdtyHrzn
 		self._LqdtyHrzn = None
 
+	@property
+	def StrssLqdRsrcRqrmnt(self):
+		return self._StrssLqdRsrcRqrmnt
+
+	@StrssLqdRsrcRqrmnt.setter
+	def StrssLqdRsrcRqrmnt(self, value):
+		self._StrssLqdRsrcRqrmnt = value if type(value) != auto else self.make_default("StrssLqdRsrcRqrmnt")
+
+	@StrssLqdRsrcRqrmnt.deleter
+	def StrssLqdRsrcRqrmnt(self):
+		del self._StrssLqdRsrcRqrmnt
+		self._StrssLqdRsrcRqrmnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StrssLqdRsrcRqrmnt', type=StressLiquidResourceRequirement1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LqdRsrcs', type=LiquidResources1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LqdtyHrzn', type=SettlementDate6Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrssLqdRsrcRqrmnt', type=StressLiquidResourceRequirement1, min=1, max=1, mutex_group=None, array=False),
 	))
 

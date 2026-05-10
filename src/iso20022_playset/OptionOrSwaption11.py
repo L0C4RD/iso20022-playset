@@ -1,29 +1,68 @@
 import base_types
-import Schedule4
-import OptionType2Code
-import OptionStyle6Code
-import SecuritiesTransactionPrice17Choice
 import OptionBarrierLevel1Choice
-import ExerciseDate1Choice
 import ActiveOrHistoricCurrencyAnd19DecimalAmount
-import EmbeddedType1Code
+import OptionType2Code
+import ExerciseDate1Choice
 import ISODate
+import OptionStyle6Code
+import EmbeddedType1Code
+import Schedule4
+import SecuritiesTransactionPrice17Choice
 
 class OptionOrSwaption11(base_types._BaseFieldType):
 
-	__slots__ = ["_StrkPricSchdl", "_Tp", "_CallAmt", "_MtrtyDtOfUndrlyg", "_BrrrLvls", "_PutAmt", "_PrmAmt", "_ExrcStyle", "_MbddTp", "_PrmPmtDt", "_StrkPric", "_ExrcDt"]
+	__slots__ = ["_ExrcStyle", "_MbddTp", "_PutAmt", "_PrmAmt", "_Tp", "_ExrcDt", "_CallAmt", "_MtrtyDtOfUndrlyg", "_BrrrLvls", "_StrkPric", "_StrkPricSchdl", "_PrmPmtDt"]
 	@property
-	def StrkPricSchdl(self):
-		return self._StrkPricSchdl
+	def ExrcStyle(self):
+		return self._ExrcStyle
 
-	@StrkPricSchdl.setter
-	def StrkPricSchdl(self, value):
-		self._StrkPricSchdl = value if type(value) != auto else self.make_default("StrkPricSchdl")
+	@ExrcStyle.setter
+	def ExrcStyle(self, value):
+		self._ExrcStyle = value if type(value) != auto else self.make_default("ExrcStyle")
 
-	@StrkPricSchdl.deleter
-	def StrkPricSchdl(self):
-		del self._StrkPricSchdl
-		self._StrkPricSchdl = None
+	@ExrcStyle.deleter
+	def ExrcStyle(self):
+		del self._ExrcStyle
+		self._ExrcStyle = None
+
+	@property
+	def MbddTp(self):
+		return self._MbddTp
+
+	@MbddTp.setter
+	def MbddTp(self, value):
+		self._MbddTp = value if type(value) != auto else self.make_default("MbddTp")
+
+	@MbddTp.deleter
+	def MbddTp(self):
+		del self._MbddTp
+		self._MbddTp = None
+
+	@property
+	def PutAmt(self):
+		return self._PutAmt
+
+	@PutAmt.setter
+	def PutAmt(self, value):
+		self._PutAmt = value if type(value) != auto else self.make_default("PutAmt")
+
+	@PutAmt.deleter
+	def PutAmt(self):
+		del self._PutAmt
+		self._PutAmt = None
+
+	@property
+	def PrmAmt(self):
+		return self._PrmAmt
+
+	@PrmAmt.setter
+	def PrmAmt(self, value):
+		self._PrmAmt = value if type(value) != auto else self.make_default("PrmAmt")
+
+	@PrmAmt.deleter
+	def PrmAmt(self):
+		del self._PrmAmt
+		self._PrmAmt = None
 
 	@property
 	def Tp(self):
@@ -37,6 +76,19 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def ExrcDt(self):
+		return self._ExrcDt
+
+	@ExrcDt.setter
+	def ExrcDt(self, value):
+		self._ExrcDt = value if type(value) != auto else self.make_default("ExrcDt")
+
+	@ExrcDt.deleter
+	def ExrcDt(self):
+		del self._ExrcDt
+		self._ExrcDt = None
 
 	@property
 	def CallAmt(self):
@@ -78,56 +130,30 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 		self._BrrrLvls = None
 
 	@property
-	def PutAmt(self):
-		return self._PutAmt
+	def StrkPric(self):
+		return self._StrkPric
 
-	@PutAmt.setter
-	def PutAmt(self, value):
-		self._PutAmt = value if type(value) != auto else self.make_default("PutAmt")
+	@StrkPric.setter
+	def StrkPric(self, value):
+		self._StrkPric = value if type(value) != auto else self.make_default("StrkPric")
 
-	@PutAmt.deleter
-	def PutAmt(self):
-		del self._PutAmt
-		self._PutAmt = None
-
-	@property
-	def PrmAmt(self):
-		return self._PrmAmt
-
-	@PrmAmt.setter
-	def PrmAmt(self, value):
-		self._PrmAmt = value if type(value) != auto else self.make_default("PrmAmt")
-
-	@PrmAmt.deleter
-	def PrmAmt(self):
-		del self._PrmAmt
-		self._PrmAmt = None
+	@StrkPric.deleter
+	def StrkPric(self):
+		del self._StrkPric
+		self._StrkPric = None
 
 	@property
-	def ExrcStyle(self):
-		return self._ExrcStyle
+	def StrkPricSchdl(self):
+		return self._StrkPricSchdl
 
-	@ExrcStyle.setter
-	def ExrcStyle(self, value):
-		self._ExrcStyle = value if type(value) != auto else self.make_default("ExrcStyle")
+	@StrkPricSchdl.setter
+	def StrkPricSchdl(self, value):
+		self._StrkPricSchdl = value if type(value) != auto else self.make_default("StrkPricSchdl")
 
-	@ExrcStyle.deleter
-	def ExrcStyle(self):
-		del self._ExrcStyle
-		self._ExrcStyle = None
-
-	@property
-	def MbddTp(self):
-		return self._MbddTp
-
-	@MbddTp.setter
-	def MbddTp(self, value):
-		self._MbddTp = value if type(value) != auto else self.make_default("MbddTp")
-
-	@MbddTp.deleter
-	def MbddTp(self):
-		del self._MbddTp
-		self._MbddTp = None
+	@StrkPricSchdl.deleter
+	def StrkPricSchdl(self):
+		del self._StrkPricSchdl
+		self._StrkPricSchdl = None
 
 	@property
 	def PrmPmtDt(self):
@@ -142,44 +168,18 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 		del self._PrmPmtDt
 		self._PrmPmtDt = None
 
-	@property
-	def StrkPric(self):
-		return self._StrkPric
-
-	@StrkPric.setter
-	def StrkPric(self, value):
-		self._StrkPric = value if type(value) != auto else self.make_default("StrkPric")
-
-	@StrkPric.deleter
-	def StrkPric(self):
-		del self._StrkPric
-		self._StrkPric = None
-
-	@property
-	def ExrcDt(self):
-		return self._ExrcDt
-
-	@ExrcDt.setter
-	def ExrcDt(self, value):
-		self._ExrcDt = value if type(value) != auto else self.make_default("ExrcDt")
-
-	@ExrcDt.deleter
-	def ExrcDt(self):
-		del self._ExrcDt
-		self._ExrcDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StrkPricSchdl', type=Schedule4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ExrcStyle', type=OptionStyle6Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MbddTp', type=EmbeddedType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PutAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=OptionType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExrcDt', type=ExerciseDate1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CallAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDtOfUndrlyg', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrrrLvls', type=OptionBarrierLevel1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PutAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExrcStyle', type=OptionStyle6Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MbddTp', type=EmbeddedType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrkPric', type=SecuritiesTransactionPrice17Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExrcDt', type=ExerciseDate1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrkPricSchdl', type=Schedule4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrmPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

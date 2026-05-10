@@ -1,6 +1,6 @@
 import base_types
-import FormOfSecurity1Code
 import GenericIdentification30
+import FormOfSecurity1Code
 
 class FormOfSecurity8Choice(base_types._BaseFieldType):
 

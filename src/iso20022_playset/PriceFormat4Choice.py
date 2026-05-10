@@ -1,25 +1,12 @@
 import base_types
-import PriceRate1
 import PriceValueType5FormatChoice
-import AmountPrice1
+import PriceRate1
 import DecimalNumber
+import AmountPrice1
 
 class PriceFormat4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxPts", "_Amt", "_Rate", "_NotSpcfd"]
-	@property
-	def IndxPts(self):
-		return self._IndxPts
-
-	@IndxPts.setter
-	def IndxPts(self, value):
-		self._IndxPts = value if type(value) != auto else self.make_default("IndxPts")
-
-	@IndxPts.deleter
-	def IndxPts(self):
-		del self._IndxPts
-		self._IndxPts = None
-
+	__slots__ = ["_Amt", "_IndxPts", "_Rate", "_NotSpcfd"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -32,6 +19,19 @@ class PriceFormat4Choice(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def IndxPts(self):
+		return self._IndxPts
+
+	@IndxPts.setter
+	def IndxPts(self, value):
+		self._IndxPts = value if type(value) != auto else self.make_default("IndxPts")
+
+	@IndxPts.deleter
+	def IndxPts(self):
+		del self._IndxPts
+		self._IndxPts = None
 
 	@property
 	def Rate(self):
@@ -60,8 +60,8 @@ class PriceFormat4Choice(base_types._BaseFieldType):
 		self._NotSpcfd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountPrice1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=PriceRate1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfd', type=PriceValueType5FormatChoice, min=0, max=1, mutex_group=1, array=False),
 	))

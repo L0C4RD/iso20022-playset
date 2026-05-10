@@ -1,12 +1,25 @@
 import base_types
-import FinancialInstrumentQuantity36Choice
 import CorporateActionEventType123Choice
 import RestrictedFINXMax16Text
 import SecurityIdentification20
+import FinancialInstrumentQuantity36Choice
 
 class CorporateActionGeneralInformation193(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssActnNb", "_EvtTp", "_OffclCorpActnEvtId", "_FinInstrmId", "_CorpActnEvtId", "_FrctnlQty"]
+	__slots__ = ["_FrctnlQty", "_ClssActnNb", "_OffclCorpActnEvtId", "_EvtTp", "_FinInstrmId", "_CorpActnEvtId"]
+	@property
+	def FrctnlQty(self):
+		return self._FrctnlQty
+
+	@FrctnlQty.setter
+	def FrctnlQty(self, value):
+		self._FrctnlQty = value if type(value) != auto else self.make_default("FrctnlQty")
+
+	@FrctnlQty.deleter
+	def FrctnlQty(self):
+		del self._FrctnlQty
+		self._FrctnlQty = None
+
 	@property
 	def ClssActnNb(self):
 		return self._ClssActnNb
@@ -21,19 +34,6 @@ class CorporateActionGeneralInformation193(base_types._BaseFieldType):
 		self._ClssActnNb = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
-
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
-
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
-
-	@property
 	def OffclCorpActnEvtId(self):
 		return self._OffclCorpActnEvtId
 
@@ -45,6 +45,19 @@ class CorporateActionGeneralInformation193(base_types._BaseFieldType):
 	def OffclCorpActnEvtId(self):
 		del self._OffclCorpActnEvtId
 		self._OffclCorpActnEvtId = None
+
+	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
 
 	@property
 	def FinInstrmId(self):
@@ -72,25 +85,12 @@ class CorporateActionGeneralInformation193(base_types._BaseFieldType):
 		del self._CorpActnEvtId
 		self._CorpActnEvtId = None
 
-	@property
-	def FrctnlQty(self):
-		return self._FrctnlQty
-
-	@FrctnlQty.setter
-	def FrctnlQty(self, value):
-		self._FrctnlQty = value if type(value) != auto else self.make_default("FrctnlQty")
-
-	@FrctnlQty.deleter
-	def FrctnlQty(self):
-		del self._FrctnlQty
-		self._FrctnlQty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FrctnlQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssActnNb', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType123Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType123Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrctnlQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

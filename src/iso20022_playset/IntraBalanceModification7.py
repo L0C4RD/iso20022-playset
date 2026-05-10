@@ -1,26 +1,13 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification8
-import ProcessingStatus71Choice
 import CashAccount40
 import IntraBalanceModification8
+import ProcessingStatus71Choice
 import SystemPartyIdentification8
+import BranchAndFinancialInstitutionIdentification8
 
 class IntraBalanceModification7(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_CshAcctSvcr", "_CshAcctOwnr", "_CshAcct", "_PrcgSts"]
-	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
-
+	__slots__ = ["_CshAcctSvcr", "_PrcgSts", "_CshAcct", "_CshAcctOwnr", "_Mod"]
 	@property
 	def CshAcctSvcr(self):
 		return self._CshAcctSvcr
@@ -35,17 +22,17 @@ class IntraBalanceModification7(base_types._BaseFieldType):
 		self._CshAcctSvcr = None
 
 	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
 
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def CshAcct(self):
@@ -61,23 +48,36 @@ class IntraBalanceModification7(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
+
+	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mod', type=IntraBalanceModification8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus71Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=IntraBalanceModification8, min=1, max=None, mutex_group=None, array=True),
 	))
 

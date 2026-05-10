@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import AnyBICIdentifier
+import Max35Text
 
 class PartyIdentification44(base_types._BaseFieldType):
 

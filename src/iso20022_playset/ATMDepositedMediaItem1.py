@@ -1,16 +1,81 @@
 import base_types
+import Max70Text
+import ATMMediaStatus1Code
+import ActiveCurrencyCode
+import PercentageRate
 import CheckCodeLine1Code
 import ImpliedCurrencyAndAmount
-import PercentageRate
-import ActiveCurrencyCode
-import GenericInformation1
 import Number
-import ATMMediaStatus1Code
-import Max70Text
+import GenericInformation1
 
 class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdRsn", "_MdiaSts", "_CdLine", "_Ref", "_UnitVal", "_Ccy", "_ScnndVal", "_MdiaId", "_Cnt", "_CnfdncLvl", "_AddtlData", "_CdLineFrmt"]
+	__slots__ = ["_CdLineFrmt", "_CdLine", "_Ccy", "_UnitVal", "_Ref", "_RjctdRsn", "_MdiaSts", "_ScnndVal", "_MdiaId", "_CnfdncLvl", "_Cnt", "_AddtlData"]
+	@property
+	def CdLineFrmt(self):
+		return self._CdLineFrmt
+
+	@CdLineFrmt.setter
+	def CdLineFrmt(self, value):
+		self._CdLineFrmt = value if type(value) != auto else self.make_default("CdLineFrmt")
+
+	@CdLineFrmt.deleter
+	def CdLineFrmt(self):
+		del self._CdLineFrmt
+		self._CdLineFrmt = None
+
+	@property
+	def CdLine(self):
+		return self._CdLine
+
+	@CdLine.setter
+	def CdLine(self, value):
+		self._CdLine = value if type(value) != auto else self.make_default("CdLine")
+
+	@CdLine.deleter
+	def CdLine(self):
+		del self._CdLine
+		self._CdLine = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def UnitVal(self):
+		return self._UnitVal
+
+	@UnitVal.setter
+	def UnitVal(self, value):
+		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
+
+	@UnitVal.deleter
+	def UnitVal(self):
+		del self._UnitVal
+		self._UnitVal = None
+
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	@property
 	def RjctdRsn(self):
 		return self._RjctdRsn
@@ -36,58 +101,6 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 	def MdiaSts(self):
 		del self._MdiaSts
 		self._MdiaSts = None
-
-	@property
-	def CdLine(self):
-		return self._CdLine
-
-	@CdLine.setter
-	def CdLine(self, value):
-		self._CdLine = value if type(value) != auto else self.make_default("CdLine")
-
-	@CdLine.deleter
-	def CdLine(self):
-		del self._CdLine
-		self._CdLine = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
-	def UnitVal(self):
-		return self._UnitVal
-
-	@UnitVal.setter
-	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
-
-	@UnitVal.deleter
-	def UnitVal(self):
-		del self._UnitVal
-		self._UnitVal = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
 
 	@property
 	def ScnndVal(self):
@@ -116,19 +129,6 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 		self._MdiaId = None
 
 	@property
-	def Cnt(self):
-		return self._Cnt
-
-	@Cnt.setter
-	def Cnt(self, value):
-		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
-
-	@Cnt.deleter
-	def Cnt(self):
-		del self._Cnt
-		self._Cnt = None
-
-	@property
 	def CnfdncLvl(self):
 		return self._CnfdncLvl
 
@@ -140,6 +140,19 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 	def CnfdncLvl(self):
 		del self._CnfdncLvl
 		self._CnfdncLvl = None
+
+	@property
+	def Cnt(self):
+		return self._Cnt
+
+	@Cnt.setter
+	def Cnt(self, value):
+		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
+
+	@Cnt.deleter
+	def Cnt(self):
+		del self._Cnt
+		self._Cnt = None
 
 	@property
 	def AddtlData(self):
@@ -154,31 +167,18 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 		del self._AddtlData
 		self._AddtlData = None
 
-	@property
-	def CdLineFrmt(self):
-		return self._CdLineFrmt
-
-	@CdLineFrmt.setter
-	def CdLineFrmt(self, value):
-		self._CdLineFrmt = value if type(value) != auto else self.make_default("CdLineFrmt")
-
-	@CdLineFrmt.deleter
-	def CdLineFrmt(self):
-		del self._CdLineFrmt
-		self._CdLineFrmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CdLineFrmt', type=CheckCodeLine1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdLine', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctdRsn', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaSts', type=ATMMediaStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdLine', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScnndVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnfdncLvl', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CdLineFrmt', type=CheckCodeLine1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

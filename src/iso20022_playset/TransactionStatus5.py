@@ -1,24 +1,11 @@
 import base_types
-import ISODateTime
 import BaselineStatus3Code
+import ISODateTime
 import Max140Text
 
 class TransactionStatus5(base_types._BaseFieldType):
 
-	__slots__ = ["_ChngDtTm", "_Sts", "_Desc"]
-	@property
-	def ChngDtTm(self):
-		return self._ChngDtTm
-
-	@ChngDtTm.setter
-	def ChngDtTm(self, value):
-		self._ChngDtTm = value if type(value) != auto else self.make_default("ChngDtTm")
-
-	@ChngDtTm.deleter
-	def ChngDtTm(self):
-		del self._ChngDtTm
-		self._ChngDtTm = None
-
+	__slots__ = ["_Sts", "_Desc", "_ChngDtTm"]
 	@property
 	def Sts(self):
 		return self._Sts
@@ -45,9 +32,22 @@ class TransactionStatus5(base_types._BaseFieldType):
 		del self._Desc
 		self._Desc = None
 
+	@property
+	def ChngDtTm(self):
+		return self._ChngDtTm
+
+	@ChngDtTm.setter
+	def ChngDtTm(self, value):
+		self._ChngDtTm = value if type(value) != auto else self.make_default("ChngDtTm")
+
+	@ChngDtTm.deleter
+	def ChngDtTm(self):
+		del self._ChngDtTm
+		self._ChngDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ChngDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChngDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

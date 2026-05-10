@@ -1,25 +1,12 @@
 import base_types
-import BusinessLetter1
 import EventDescription1
+import BusinessLetter1
 import Max15NumericText
 import EncapsulatedBusinessMessage1
 
 class PartyEventAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtNtce", "_AttchdMsg", "_EvtCnt", "_Hdr"]
-	@property
-	def EvtNtce(self):
-		return self._EvtNtce
-
-	@EvtNtce.setter
-	def EvtNtce(self, value):
-		self._EvtNtce = value if type(value) != auto else self.make_default("EvtNtce")
-
-	@EvtNtce.deleter
-	def EvtNtce(self):
-		del self._EvtNtce
-		self._EvtNtce = None
-
+	__slots__ = ["_AttchdMsg", "_EvtCnt", "_Hdr", "_EvtNtce"]
 	@property
 	def AttchdMsg(self):
 		return self._AttchdMsg
@@ -59,10 +46,23 @@ class PartyEventAdviceV01(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def EvtNtce(self):
+		return self._EvtNtce
+
+	@EvtNtce.setter
+	def EvtNtce(self, value):
+		self._EvtNtce = value if type(value) != auto else self.make_default("EvtNtce")
+
+	@EvtNtce.deleter
+	def EvtNtce(self):
+		del self._EvtNtce
+		self._EvtNtce = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtNtce', type=EventDescription1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EvtCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtNtce', type=EventDescription1, min=1, max=None, mutex_group=None, array=True),
 	))
 

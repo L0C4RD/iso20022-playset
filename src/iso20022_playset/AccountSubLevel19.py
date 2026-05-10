@@ -1,13 +1,26 @@
 import base_types
-import SupplementaryData1
-import BeneficialOwner2
 import SecuritiesAccount19
+import BeneficialOwner2
 import PartyIdentification100
+import SupplementaryData1
 import AggregateHoldingBalance3
 
 class AccountSubLevel19(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_BnfclOwnr", "_BalDtls", "_AcctId", "_AcctOwnr", "_AcctSvcr"]
+	__slots__ = ["_AcctId", "_SplmtryData", "_BnfclOwnr", "_BalDtls", "_AcctOwnr", "_AcctSvcr"]
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -48,19 +61,6 @@ class AccountSubLevel19(base_types._BaseFieldType):
 		self._BalDtls = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
 
@@ -87,10 +87,10 @@ class AccountSubLevel19(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BnfclOwnr', type=BeneficialOwner2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BalDtls', type=AggregateHoldingBalance3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 	))

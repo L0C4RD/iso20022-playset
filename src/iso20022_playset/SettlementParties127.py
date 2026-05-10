@@ -4,19 +4,19 @@ import PartyIdentificationAndAccount199
 
 class SettlementParties127(base_types._BaseFieldType):
 
-	__slots__ = ["_Dpstry", "_Pty4", "_Pty3", "_Pty5", "_Pty2", "_Pty1"]
+	__slots__ = ["_Pty3", "_Pty4", "_Pty1", "_Pty2", "_Pty5", "_Dpstry"]
 	@property
-	def Dpstry(self):
-		return self._Dpstry
+	def Pty3(self):
+		return self._Pty3
 
-	@Dpstry.setter
-	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
+	@Pty3.setter
+	def Pty3(self, value):
+		self._Pty3 = value if type(value) != auto else self.make_default("Pty3")
 
-	@Dpstry.deleter
-	def Dpstry(self):
-		del self._Dpstry
-		self._Dpstry = None
+	@Pty3.deleter
+	def Pty3(self):
+		del self._Pty3
+		self._Pty3 = None
 
 	@property
 	def Pty4(self):
@@ -32,30 +32,17 @@ class SettlementParties127(base_types._BaseFieldType):
 		self._Pty4 = None
 
 	@property
-	def Pty3(self):
-		return self._Pty3
+	def Pty1(self):
+		return self._Pty1
 
-	@Pty3.setter
-	def Pty3(self, value):
-		self._Pty3 = value if type(value) != auto else self.make_default("Pty3")
+	@Pty1.setter
+	def Pty1(self, value):
+		self._Pty1 = value if type(value) != auto else self.make_default("Pty1")
 
-	@Pty3.deleter
-	def Pty3(self):
-		del self._Pty3
-		self._Pty3 = None
-
-	@property
-	def Pty5(self):
-		return self._Pty5
-
-	@Pty5.setter
-	def Pty5(self, value):
-		self._Pty5 = value if type(value) != auto else self.make_default("Pty5")
-
-	@Pty5.deleter
-	def Pty5(self):
-		del self._Pty5
-		self._Pty5 = None
+	@Pty1.deleter
+	def Pty1(self):
+		del self._Pty1
+		self._Pty1 = None
 
 	@property
 	def Pty2(self):
@@ -71,24 +58,37 @@ class SettlementParties127(base_types._BaseFieldType):
 		self._Pty2 = None
 
 	@property
-	def Pty1(self):
-		return self._Pty1
+	def Pty5(self):
+		return self._Pty5
 
-	@Pty1.setter
-	def Pty1(self, value):
-		self._Pty1 = value if type(value) != auto else self.make_default("Pty1")
+	@Pty5.setter
+	def Pty5(self, value):
+		self._Pty5 = value if type(value) != auto else self.make_default("Pty5")
 
-	@Pty1.deleter
-	def Pty1(self):
-		del self._Pty1
-		self._Pty1 = None
+	@Pty5.deleter
+	def Pty5(self):
+		del self._Pty5
+		self._Pty5 = None
+
+	@property
+	def Dpstry(self):
+		return self._Dpstry
+
+	@Dpstry.setter
+	def Dpstry(self, value):
+		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
+
+	@Dpstry.deleter
+	def Dpstry(self):
+		del self._Dpstry
+		self._Dpstry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dpstry', type=PartyIdentification315, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty4', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty3', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty5', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty4', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty5', type=PartyIdentificationAndAccount199, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dpstry', type=PartyIdentification315, min=0, max=1, mutex_group=None, array=False),
 	))
 

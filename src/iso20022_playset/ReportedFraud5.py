@@ -1,50 +1,24 @@
 import base_types
-import Max35Text
 import PartyType26Code
-import FraudType1Code
 import FraudReportingAction1Code
+import FraudType1Code
+import Max35Text
 
 class ReportedFraud5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Actn", "_SubmitrCaseRef", "_CaseRef", "_RptgNtty", "_OthrRptgNtty", "_OthrTp", "_OthrActn"]
+	__slots__ = ["_OthrActn", "_CaseRef", "_OthrTp", "_OthrRptgNtty", "_Actn", "_Tp", "_RptgNtty", "_SubmitrCaseRef"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def OthrActn(self):
+		return self._OthrActn
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@OthrActn.setter
+	def OthrActn(self, value):
+		self._OthrActn = value if type(value) != auto else self.make_default("OthrActn")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Actn(self):
-		return self._Actn
-
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
-
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
-
-	@property
-	def SubmitrCaseRef(self):
-		return self._SubmitrCaseRef
-
-	@SubmitrCaseRef.setter
-	def SubmitrCaseRef(self, value):
-		self._SubmitrCaseRef = value if type(value) != auto else self.make_default("SubmitrCaseRef")
-
-	@SubmitrCaseRef.deleter
-	def SubmitrCaseRef(self):
-		del self._SubmitrCaseRef
-		self._SubmitrCaseRef = None
+	@OthrActn.deleter
+	def OthrActn(self):
+		del self._OthrActn
+		self._OthrActn = None
 
 	@property
 	def CaseRef(self):
@@ -60,17 +34,17 @@ class ReportedFraud5(base_types._BaseFieldType):
 		self._CaseRef = None
 
 	@property
-	def RptgNtty(self):
-		return self._RptgNtty
+	def OthrTp(self):
+		return self._OthrTp
 
-	@RptgNtty.setter
-	def RptgNtty(self, value):
-		self._RptgNtty = value if type(value) != auto else self.make_default("RptgNtty")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@RptgNtty.deleter
-	def RptgNtty(self):
-		del self._RptgNtty
-		self._RptgNtty = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def OthrRptgNtty(self):
@@ -86,39 +60,65 @@ class ReportedFraud5(base_types._BaseFieldType):
 		self._OthrRptgNtty = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def Actn(self):
+		return self._Actn
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
 
 	@property
-	def OthrActn(self):
-		return self._OthrActn
+	def Tp(self):
+		return self._Tp
 
-	@OthrActn.setter
-	def OthrActn(self, value):
-		self._OthrActn = value if type(value) != auto else self.make_default("OthrActn")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@OthrActn.deleter
-	def OthrActn(self):
-		del self._OthrActn
-		self._OthrActn = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def RptgNtty(self):
+		return self._RptgNtty
+
+	@RptgNtty.setter
+	def RptgNtty(self, value):
+		self._RptgNtty = value if type(value) != auto else self.make_default("RptgNtty")
+
+	@RptgNtty.deleter
+	def RptgNtty(self):
+		del self._RptgNtty
+		self._RptgNtty = None
+
+	@property
+	def SubmitrCaseRef(self):
+		return self._SubmitrCaseRef
+
+	@SubmitrCaseRef.setter
+	def SubmitrCaseRef(self, value):
+		self._SubmitrCaseRef = value if type(value) != auto else self.make_default("SubmitrCaseRef")
+
+	@SubmitrCaseRef.deleter
+	def SubmitrCaseRef(self):
+		del self._SubmitrCaseRef
+		self._SubmitrCaseRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=FraudType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Actn', type=FraudReportingAction1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitrCaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgNtty', type=PartyType26Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRptgNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrActn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRptgNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actn', type=FraudReportingAction1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=FraudType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgNtty', type=PartyType26Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrCaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

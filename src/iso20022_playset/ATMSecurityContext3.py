@@ -1,11 +1,24 @@
 import base_types
+import ATMEquipment3
 import ATMSecurityConfiguration1
 import ATMSecurityScheme3Code
-import ATMEquipment3
 
 class ATMSecurityContext3(base_types._BaseFieldType):
 
-	__slots__ = ["_CurCfgtn", "_CurSctySchme", "_DvcPrprty"]
+	__slots__ = ["_DvcPrprty", "_CurCfgtn", "_CurSctySchme"]
+	@property
+	def DvcPrprty(self):
+		return self._DvcPrprty
+
+	@DvcPrprty.setter
+	def DvcPrprty(self, value):
+		self._DvcPrprty = value if type(value) != auto else self.make_default("DvcPrprty")
+
+	@DvcPrprty.deleter
+	def DvcPrprty(self):
+		del self._DvcPrprty
+		self._DvcPrprty = None
+
 	@property
 	def CurCfgtn(self):
 		return self._CurCfgtn
@@ -32,22 +45,9 @@ class ATMSecurityContext3(base_types._BaseFieldType):
 		del self._CurSctySchme
 		self._CurSctySchme = None
 
-	@property
-	def DvcPrprty(self):
-		return self._DvcPrprty
-
-	@DvcPrprty.setter
-	def DvcPrprty(self, value):
-		self._DvcPrprty = value if type(value) != auto else self.make_default("DvcPrprty")
-
-	@DvcPrprty.deleter
-	def DvcPrprty(self):
-		del self._DvcPrprty
-		self._DvcPrprty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DvcPrprty', type=ATMEquipment3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurSctySchme', type=ATMSecurityScheme3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvcPrprty', type=ATMEquipment3, min=0, max=1, mutex_group=None, array=False),
 	))
 

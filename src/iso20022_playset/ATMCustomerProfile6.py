@@ -1,24 +1,11 @@
 import base_types
+import ATMCustomerProfile1Code
 import LanguageCode
 import Max35Text
-import ATMCustomerProfile1Code
 
 class ATMCustomerProfile6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrefrdLang", "_CstmrId", "_PrflRef", "_RtrvlMd"]
-	@property
-	def PrefrdLang(self):
-		return self._PrefrdLang
-
-	@PrefrdLang.setter
-	def PrefrdLang(self, value):
-		self._PrefrdLang = value if type(value) != auto else self.make_default("PrefrdLang")
-
-	@PrefrdLang.deleter
-	def PrefrdLang(self):
-		del self._PrefrdLang
-		self._PrefrdLang = None
-
+	__slots__ = ["_CstmrId", "_RtrvlMd", "_PrefrdLang", "_PrflRef"]
 	@property
 	def CstmrId(self):
 		return self._CstmrId
@@ -33,19 +20,6 @@ class ATMCustomerProfile6(base_types._BaseFieldType):
 		self._CstmrId = None
 
 	@property
-	def PrflRef(self):
-		return self._PrflRef
-
-	@PrflRef.setter
-	def PrflRef(self, value):
-		self._PrflRef = value if type(value) != auto else self.make_default("PrflRef")
-
-	@PrflRef.deleter
-	def PrflRef(self):
-		del self._PrflRef
-		self._PrflRef = None
-
-	@property
 	def RtrvlMd(self):
 		return self._RtrvlMd
 
@@ -58,10 +32,36 @@ class ATMCustomerProfile6(base_types._BaseFieldType):
 		del self._RtrvlMd
 		self._RtrvlMd = None
 
+	@property
+	def PrefrdLang(self):
+		return self._PrefrdLang
+
+	@PrefrdLang.setter
+	def PrefrdLang(self, value):
+		self._PrefrdLang = value if type(value) != auto else self.make_default("PrefrdLang")
+
+	@PrefrdLang.deleter
+	def PrefrdLang(self):
+		del self._PrefrdLang
+		self._PrefrdLang = None
+
+	@property
+	def PrflRef(self):
+		return self._PrflRef
+
+	@PrflRef.setter
+	def PrflRef(self, value):
+		self._PrflRef = value if type(value) != auto else self.make_default("PrflRef")
+
+	@PrflRef.deleter
+	def PrflRef(self):
+		del self._PrflRef
+		self._PrflRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrefrdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrflRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrvlMd', type=ATMCustomerProfile1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrefrdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrflRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

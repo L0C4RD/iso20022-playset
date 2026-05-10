@@ -4,7 +4,7 @@ import DecimalNumber
 
 class PerformanceFactors1(base_types._BaseFieldType):
 
-	__slots__ = ["_NrmlPrfrmnc", "_AcmltnPrd", "_CmltvCorpActnFctr", "_CorpActnFctr"]
+	__slots__ = ["_NrmlPrfrmnc", "_CmltvCorpActnFctr", "_AcmltnPrd", "_CorpActnFctr"]
 	@property
 	def NrmlPrfrmnc(self):
 		return self._NrmlPrfrmnc
@@ -19,19 +19,6 @@ class PerformanceFactors1(base_types._BaseFieldType):
 		self._NrmlPrfrmnc = None
 
 	@property
-	def AcmltnPrd(self):
-		return self._AcmltnPrd
-
-	@AcmltnPrd.setter
-	def AcmltnPrd(self, value):
-		self._AcmltnPrd = value if type(value) != auto else self.make_default("AcmltnPrd")
-
-	@AcmltnPrd.deleter
-	def AcmltnPrd(self):
-		del self._AcmltnPrd
-		self._AcmltnPrd = None
-
-	@property
 	def CmltvCorpActnFctr(self):
 		return self._CmltvCorpActnFctr
 
@@ -43,6 +30,19 @@ class PerformanceFactors1(base_types._BaseFieldType):
 	def CmltvCorpActnFctr(self):
 		del self._CmltvCorpActnFctr
 		self._CmltvCorpActnFctr = None
+
+	@property
+	def AcmltnPrd(self):
+		return self._AcmltnPrd
+
+	@AcmltnPrd.setter
+	def AcmltnPrd(self, value):
+		self._AcmltnPrd = value if type(value) != auto else self.make_default("AcmltnPrd")
+
+	@AcmltnPrd.deleter
+	def AcmltnPrd(self):
+		del self._AcmltnPrd
+		self._AcmltnPrd = None
 
 	@property
 	def CorpActnFctr(self):
@@ -59,8 +59,8 @@ class PerformanceFactors1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NrmlPrfrmnc', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcmltnPrd', type=DatePeriodDetails, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmltvCorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcmltnPrd', type=DatePeriodDetails, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

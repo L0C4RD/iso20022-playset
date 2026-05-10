@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import CreditorReferenceType3
+import Max35Text
 
 class CreditorReferenceInformation3(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
-import DateFormat58Choice
-import Max350Text
 import Proxy11
+import Max350Text
+import DateFormat58Choice
 
 class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_Ddln", "_MktDdln", "_AuthrsdPrxy", "_RegnMtd"]
+	__slots__ = ["_RegnMtd", "_MktDdln", "_AuthrsdPrxy", "_Ddln"]
 	@property
-	def Ddln(self):
-		return self._Ddln
+	def RegnMtd(self):
+		return self._RegnMtd
 
-	@Ddln.setter
-	def Ddln(self, value):
-		self._Ddln = value if type(value) != auto else self.make_default("Ddln")
+	@RegnMtd.setter
+	def RegnMtd(self, value):
+		self._RegnMtd = value if type(value) != auto else self.make_default("RegnMtd")
 
-	@Ddln.deleter
-	def Ddln(self):
-		del self._Ddln
-		self._Ddln = None
+	@RegnMtd.deleter
+	def RegnMtd(self):
+		del self._RegnMtd
+		self._RegnMtd = None
 
 	@property
 	def MktDdln(self):
@@ -46,22 +46,22 @@ class ProxyAppointmentInformation6(base_types._BaseFieldType):
 		self._AuthrsdPrxy = None
 
 	@property
-	def RegnMtd(self):
-		return self._RegnMtd
+	def Ddln(self):
+		return self._Ddln
 
-	@RegnMtd.setter
-	def RegnMtd(self, value):
-		self._RegnMtd = value if type(value) != auto else self.make_default("RegnMtd")
+	@Ddln.setter
+	def Ddln(self, value):
+		self._Ddln = value if type(value) != auto else self.make_default("Ddln")
 
-	@RegnMtd.deleter
-	def RegnMtd(self):
-		del self._RegnMtd
-		self._RegnMtd = None
+	@Ddln.deleter
+	def Ddln(self):
+		del self._Ddln
+		self._Ddln = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ddln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnMtd', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthrsdPrxy', type=Proxy11, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegnMtd', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ddln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

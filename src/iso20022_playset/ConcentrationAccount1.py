@@ -1,12 +1,25 @@
 import base_types
 import ActiveCurrencyAndAmount
-import Flows1
-import AmountAndDirection102
 import Max10NumericText
+import AmountAndDirection102
+import Flows1
 
 class ConcentrationAccount1(base_types._BaseFieldType):
 
-	__slots__ = ["_PeakDbt", "_LatePmtConf", "_EndOfDay", "_OutFlow", "_PeakCdt", "_InFlow"]
+	__slots__ = ["_OutFlow", "_PeakDbt", "_LatePmtConf", "_EndOfDay", "_InFlow", "_PeakCdt"]
+	@property
+	def OutFlow(self):
+		return self._OutFlow
+
+	@OutFlow.setter
+	def OutFlow(self, value):
+		self._OutFlow = value if type(value) != auto else self.make_default("OutFlow")
+
+	@OutFlow.deleter
+	def OutFlow(self):
+		del self._OutFlow
+		self._OutFlow = None
+
 	@property
 	def PeakDbt(self):
 		return self._PeakDbt
@@ -47,17 +60,17 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 		self._EndOfDay = None
 
 	@property
-	def OutFlow(self):
-		return self._OutFlow
+	def InFlow(self):
+		return self._InFlow
 
-	@OutFlow.setter
-	def OutFlow(self, value):
-		self._OutFlow = value if type(value) != auto else self.make_default("OutFlow")
+	@InFlow.setter
+	def InFlow(self, value):
+		self._InFlow = value if type(value) != auto else self.make_default("InFlow")
 
-	@OutFlow.deleter
-	def OutFlow(self):
-		del self._OutFlow
-		self._OutFlow = None
+	@InFlow.deleter
+	def InFlow(self):
+		del self._InFlow
+		self._InFlow = None
 
 	@property
 	def PeakCdt(self):
@@ -72,25 +85,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 		del self._PeakCdt
 		self._PeakCdt = None
 
-	@property
-	def InFlow(self):
-		return self._InFlow
-
-	@InFlow.setter
-	def InFlow(self, value):
-		self._InFlow = value if type(value) != auto else self.make_default("InFlow")
-
-	@InFlow.deleter
-	def InFlow(self):
-		del self._InFlow
-		self._InFlow = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OutFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PeakDbt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndOfDay', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OutFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PeakCdt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PeakCdt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

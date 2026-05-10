@@ -2,13 +2,26 @@ import base_types
 import Max35Text
 import Obligation9
 import Agreement4
-import InterestAmount3
 import SupplementaryData1
+import InterestAmount3
 import InterestResponse1
 
 class InterestPaymentResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_IntrstDueToB", "_SplmtryData", "_Oblgtn", "_Agrmt", "_IntrstDueToA", "_IntrstRspn"]
+	__slots__ = ["_Oblgtn", "_TxId", "_SplmtryData", "_IntrstDueToA", "_IntrstDueToB", "_Agrmt", "_IntrstRspn"]
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
+
 	@property
 	def TxId(self):
 		return self._TxId
@@ -21,19 +34,6 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
-
-	@property
-	def IntrstDueToB(self):
-		return self._IntrstDueToB
-
-	@IntrstDueToB.setter
-	def IntrstDueToB(self, value):
-		self._IntrstDueToB = value if type(value) != auto else self.make_default("IntrstDueToB")
-
-	@IntrstDueToB.deleter
-	def IntrstDueToB(self):
-		del self._IntrstDueToB
-		self._IntrstDueToB = None
 
 	@property
 	def SplmtryData(self):
@@ -49,17 +49,30 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Oblgtn(self):
-		return self._Oblgtn
+	def IntrstDueToA(self):
+		return self._IntrstDueToA
 
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+	@IntrstDueToA.setter
+	def IntrstDueToA(self, value):
+		self._IntrstDueToA = value if type(value) != auto else self.make_default("IntrstDueToA")
 
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
+	@IntrstDueToA.deleter
+	def IntrstDueToA(self):
+		del self._IntrstDueToA
+		self._IntrstDueToA = None
+
+	@property
+	def IntrstDueToB(self):
+		return self._IntrstDueToB
+
+	@IntrstDueToB.setter
+	def IntrstDueToB(self, value):
+		self._IntrstDueToB = value if type(value) != auto else self.make_default("IntrstDueToB")
+
+	@IntrstDueToB.deleter
+	def IntrstDueToB(self):
+		del self._IntrstDueToB
+		self._IntrstDueToB = None
 
 	@property
 	def Agrmt(self):
@@ -75,19 +88,6 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 		self._Agrmt = None
 
 	@property
-	def IntrstDueToA(self):
-		return self._IntrstDueToA
-
-	@IntrstDueToA.setter
-	def IntrstDueToA(self, value):
-		self._IntrstDueToA = value if type(value) != auto else self.make_default("IntrstDueToA")
-
-	@IntrstDueToA.deleter
-	def IntrstDueToA(self):
-		del self._IntrstDueToA
-		self._IntrstDueToA = None
-
-	@property
 	def IntrstRspn(self):
 		return self._IntrstRspn
 
@@ -101,12 +101,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 		self._IntrstRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstDueToB', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntrstDueToA', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstDueToB', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRspn', type=InterestResponse1, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import RejectionReason8Code
 import GenericIdentification13
+import RejectionReason8Code
 
 class RejectionReason8FormatChoice(base_types._BaseFieldType):
 

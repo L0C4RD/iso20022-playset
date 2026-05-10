@@ -1,27 +1,27 @@
 import base_types
-import Max35Text
-import BlockChainAddressWallet3
-import PartyIdentification144
-import SupplementaryData1
 import SecuritiesAccount19
-import ProcessingStatus85Choice
+import PartyIdentification144
 import RequestDetails32
+import Max35Text
+import SupplementaryData1
+import ProcessingStatus85Choice
+import BlockChainAddressWallet3
 
 class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_BlckChainAdrOrWllt", "_ReqRef", "_PrcgSts", "_ReqDtls", "_SfkpgAcct", "_AcctOwnr"]
+	__slots__ = ["_ReqDtls", "_BlckChainAdrOrWllt", "_SplmtryData", "_PrcgSts", "_SfkpgAcct", "_ReqRef", "_AcctOwnr"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def ReqDtls(self):
+		return self._ReqDtls
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@ReqDtls.setter
+	def ReqDtls(self, value):
+		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ReqDtls.deleter
+	def ReqDtls(self):
+		del self._ReqDtls
+		self._ReqDtls = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -37,17 +37,17 @@ class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseF
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def ReqRef(self):
-		return self._ReqRef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@ReqRef.setter
-	def ReqRef(self, value):
-		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@ReqRef.deleter
-	def ReqRef(self):
-		del self._ReqRef
-		self._ReqRef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def PrcgSts(self):
@@ -63,19 +63,6 @@ class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseF
 		self._PrcgSts = None
 
 	@property
-	def ReqDtls(self):
-		return self._ReqDtls
-
-	@ReqDtls.setter
-	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
-
-	@ReqDtls.deleter
-	def ReqDtls(self):
-		del self._ReqDtls
-		self._ReqDtls = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -87,6 +74,19 @@ class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseF
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
+
+	@property
+	def ReqRef(self):
+		return self._ReqRef
+
+	@ReqRef.setter
+	def ReqRef(self, value):
+		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
+
+	@ReqRef.deleter
+	def ReqRef(self):
+		del self._ReqRef
+		self._ReqRef = None
 
 	@property
 	def AcctOwnr(self):
@@ -102,12 +102,12 @@ class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseF
 		self._AcctOwnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus85Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqDtls', type=RequestDetails32, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus85Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 	))
 

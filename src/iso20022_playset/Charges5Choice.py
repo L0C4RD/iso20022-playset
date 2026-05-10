@@ -1,24 +1,11 @@
 import base_types
-import ChargesRecord11
 import ChargesPerTransaction5
 import ChargesPerType5
+import ChargesRecord11
 
 class Charges5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PerTx", "_PerTp", "_Sngl"]
-	@property
-	def PerTx(self):
-		return self._PerTx
-
-	@PerTx.setter
-	def PerTx(self, value):
-		self._PerTx = value if type(value) != auto else self.make_default("PerTx")
-
-	@PerTx.deleter
-	def PerTx(self):
-		del self._PerTx
-		self._PerTx = None
-
+	__slots__ = ["_PerTp", "_PerTx", "_Sngl"]
 	@property
 	def PerTp(self):
 		return self._PerTp
@@ -31,6 +18,19 @@ class Charges5Choice(base_types._BaseFieldType):
 	def PerTp(self):
 		del self._PerTp
 		self._PerTp = None
+
+	@property
+	def PerTx(self):
+		return self._PerTx
+
+	@PerTx.setter
+	def PerTx(self, value):
+		self._PerTx = value if type(value) != auto else self.make_default("PerTx")
+
+	@PerTx.deleter
+	def PerTx(self):
+		del self._PerTx
+		self._PerTx = None
 
 	@property
 	def Sngl(self):
@@ -46,8 +46,8 @@ class Charges5Choice(base_types._BaseFieldType):
 		self._Sngl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PerTx', type=ChargesPerTransaction5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PerTp', type=ChargesPerType5, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='PerTx', type=ChargesPerTransaction5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sngl', type=ChargesRecord11, min=0, max=1, mutex_group=1, array=False),
 	))
 

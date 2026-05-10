@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
 import Max350Text
 import DateAndDateTime2Choice
+import Max35Text
 
 class FinancialInstrumentName2(base_types._BaseFieldType):
 
-	__slots__ = ["_ISOLngNm", "_ISOShrtNm", "_VldFr"]
+	__slots__ = ["_VldFr", "_ISOLngNm", "_ISOShrtNm"]
+	@property
+	def VldFr(self):
+		return self._VldFr
+
+	@VldFr.setter
+	def VldFr(self, value):
+		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+
+	@VldFr.deleter
+	def VldFr(self):
+		del self._VldFr
+		self._VldFr = None
+
 	@property
 	def ISOLngNm(self):
 		return self._ISOLngNm
@@ -32,22 +45,9 @@ class FinancialInstrumentName2(base_types._BaseFieldType):
 		del self._ISOShrtNm
 		self._ISOShrtNm = None
 
-	@property
-	def VldFr(self):
-		return self._VldFr
-
-	@VldFr.setter
-	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
-
-	@VldFr.deleter
-	def VldFr(self):
-		del self._VldFr
-		self._VldFr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISOLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISOShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

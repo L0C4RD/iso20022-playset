@@ -1,24 +1,24 @@
 import base_types
-import UniqueProductIdentifier2Choice
 import Max105Text
 import ISINOct2015Identifier
 import Max1000Text
+import UniqueProductIdentifier2Choice
 
 class SecurityIdentification46(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctDesc", "_UnqPdctIdr", "_AltrntvInstrmId", "_ISIN"]
+	__slots__ = ["_AltrntvInstrmId", "_UnqPdctIdr", "_PdctDesc", "_ISIN"]
 	@property
-	def PdctDesc(self):
-		return self._PdctDesc
+	def AltrntvInstrmId(self):
+		return self._AltrntvInstrmId
 
-	@PdctDesc.setter
-	def PdctDesc(self, value):
-		self._PdctDesc = value if type(value) != auto else self.make_default("PdctDesc")
+	@AltrntvInstrmId.setter
+	def AltrntvInstrmId(self, value):
+		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
 
-	@PdctDesc.deleter
-	def PdctDesc(self):
-		del self._PdctDesc
-		self._PdctDesc = None
+	@AltrntvInstrmId.deleter
+	def AltrntvInstrmId(self):
+		del self._AltrntvInstrmId
+		self._AltrntvInstrmId = None
 
 	@property
 	def UnqPdctIdr(self):
@@ -34,17 +34,17 @@ class SecurityIdentification46(base_types._BaseFieldType):
 		self._UnqPdctIdr = None
 
 	@property
-	def AltrntvInstrmId(self):
-		return self._AltrntvInstrmId
+	def PdctDesc(self):
+		return self._PdctDesc
 
-	@AltrntvInstrmId.setter
-	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
+	@PdctDesc.setter
+	def PdctDesc(self, value):
+		self._PdctDesc = value if type(value) != auto else self.make_default("PdctDesc")
 
-	@AltrntvInstrmId.deleter
-	def AltrntvInstrmId(self):
-		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+	@PdctDesc.deleter
+	def PdctDesc(self):
+		del self._PdctDesc
+		self._PdctDesc = None
 
 	@property
 	def ISIN(self):
@@ -60,9 +60,9 @@ class SecurityIdentification46(base_types._BaseFieldType):
 		self._ISIN = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdctDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

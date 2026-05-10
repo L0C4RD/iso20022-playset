@@ -1,6 +1,6 @@
 import base_types
-import ExternalPartyRelationshipType1Code
 import Max100Text
+import ExternalPartyRelationshipType1Code
 
 class TradeCounterpartyRelationship1Choice(base_types._BaseFieldType):
 

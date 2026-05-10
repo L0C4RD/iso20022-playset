@@ -5,7 +5,7 @@ import TradeReportQuery18Choice
 
 class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RqstngAuthrty", "_TradQryData"]
+	__slots__ = ["_SplmtryData", "_TradQryData", "_RqstngAuthrty"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RqstngAuthrty(self):
-		return self._RqstngAuthrty
-
-	@RqstngAuthrty.setter
-	def RqstngAuthrty(self, value):
-		self._RqstngAuthrty = value if type(value) != auto else self.make_default("RqstngAuthrty")
-
-	@RqstngAuthrty.deleter
-	def RqstngAuthrty(self):
-		del self._RqstngAuthrty
-		self._RqstngAuthrty = None
-
-	@property
 	def TradQryData(self):
 		return self._TradQryData
 
@@ -45,9 +32,22 @@ class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 		del self._TradQryData
 		self._TradQryData = None
 
+	@property
+	def RqstngAuthrty(self):
+		return self._RqstngAuthrty
+
+	@RqstngAuthrty.setter
+	def RqstngAuthrty(self, value):
+		self._RqstngAuthrty = value if type(value) != auto else self.make_default("RqstngAuthrty")
+
+	@RqstngAuthrty.deleter
+	def RqstngAuthrty(self):
+		del self._RqstngAuthrty
+		self._RqstngAuthrty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RqstngAuthrty', type=PartyIdentification121Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradQryData', type=TradeReportQuery18Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RqstngAuthrty', type=PartyIdentification121Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

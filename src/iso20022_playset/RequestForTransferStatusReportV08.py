@@ -1,12 +1,12 @@
 import base_types
-import Extension1
 import MessageAndBusinessReference13
 import MessageIdentification1
+import Extension1
 import MarketPracticeVersion1
 
 class RequestForTransferStatusReportV08(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqDtls", "_Xtnsn", "_MsgId", "_MktPrctcVrsn"]
+	__slots__ = ["_ReqDtls", "_MsgId", "_Xtnsn", "_MktPrctcVrsn"]
 	@property
 	def ReqDtls(self):
 		return self._ReqDtls
@@ -21,19 +21,6 @@ class RequestForTransferStatusReportV08(base_types._BaseFieldType):
 		self._ReqDtls = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
 	def MsgId(self):
 		return self._MsgId
 
@@ -45,6 +32,19 @@ class RequestForTransferStatusReportV08(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
 	def MktPrctcVrsn(self):
@@ -61,8 +61,8 @@ class RequestForTransferStatusReportV08(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference13, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 	))
 

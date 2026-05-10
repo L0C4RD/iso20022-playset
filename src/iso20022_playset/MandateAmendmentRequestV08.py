@@ -1,7 +1,7 @@
 import base_types
 import SupplementaryData1
-import MandateAmendment8
 import GroupHeader110
+import MandateAmendment8
 
 class MandateAmendmentRequestV08(base_types._BaseFieldType):
 

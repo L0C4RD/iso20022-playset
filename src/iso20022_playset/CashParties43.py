@@ -1,22 +1,22 @@
 import base_types
-import PartyIdentificationAndAccount225
 import PartyIdentificationAndAccount226
+import PartyIdentificationAndAccount225
 
 class CashParties43(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_MktClmCtrPty", "_Cdtr"]
+	__slots__ = ["_Cdtr", "_MktClmCtrPty", "_CdtrAgt"]
 	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
+	def Cdtr(self):
+		return self._Cdtr
 
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
 
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
 
 	@property
 	def MktClmCtrPty(self):
@@ -32,21 +32,21 @@ class CashParties43(base_types._BaseFieldType):
 		self._MktClmCtrPty = None
 
 	@property
-	def Cdtr(self):
-		return self._Cdtr
+	def CdtrAgt(self):
+		return self._CdtrAgt
 
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
 
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount226, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktClmCtrPty', type=PartyIdentificationAndAccount225, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount225, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClmCtrPty', type=PartyIdentificationAndAccount225, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount226, min=0, max=1, mutex_group=None, array=False),
 	))
 

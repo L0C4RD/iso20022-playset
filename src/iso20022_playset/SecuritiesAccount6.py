@@ -1,25 +1,12 @@
 import base_types
+import Max350Text
 import Max35Text
 import SecurityIdentification7
 import PartyIdentification2Choice
-import Max350Text
 
 class SecuritiesAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctId", "_RegnDtls", "_AcctOwnrId", "_SctyId", "_SfkpgPlc"]
-	@property
-	def SctiesAcctId(self):
-		return self._SctiesAcctId
-
-	@SctiesAcctId.setter
-	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
-
-	@SctiesAcctId.deleter
-	def SctiesAcctId(self):
-		del self._SctiesAcctId
-		self._SctiesAcctId = None
-
+	__slots__ = ["_RegnDtls", "_AcctOwnrId", "_SctyId", "_SctiesAcctId", "_SfkpgPlc"]
 	@property
 	def RegnDtls(self):
 		return self._RegnDtls
@@ -60,6 +47,19 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
+	def SctiesAcctId(self):
+		return self._SctiesAcctId
+
+	@SctiesAcctId.setter
+	def SctiesAcctId(self, value):
+		self._SctiesAcctId = value if type(value) != auto else self.make_default("SctiesAcctId")
+
+	@SctiesAcctId.deleter
+	def SctiesAcctId(self):
+		del self._SctiesAcctId
+		self._SctiesAcctId = None
+
+	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
 
@@ -73,10 +73,10 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
-import MessageIdentification1
 import RejectionReason23
 import AdditionalReference3
+import MessageIdentification1
 
 class SecuritiesMessageRejectionV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_Rsn", "_MsgId"]
+	__slots__ = ["_MsgId", "_Rsn", "_RltdRef"]
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def MsgId(self):
+		return self._MsgId
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def Rsn(self):
@@ -33,21 +33,21 @@ class SecuritiesMessageRejectionV03(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def RltdRef(self):
+		return self._RltdRef
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=RejectionReason23, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=RejectionReason23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=1, max=1, mutex_group=None, array=False),
 	))
 

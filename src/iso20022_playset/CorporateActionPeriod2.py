@@ -3,7 +3,7 @@ import Period1
 
 class CorporateActionPeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvlgSspnsnPrd", "_ActnPrd", "_RvcbltyPrd", "_SellThruIssrPrd", "_ParllTradgPrd", "_PricClctnPrd", "_AssntdLinePrd"]
+	__slots__ = ["_PrvlgSspnsnPrd", "_RvcbltyPrd", "_ParllTradgPrd", "_AssntdLinePrd", "_PricClctnPrd", "_SellThruIssrPrd", "_ActnPrd"]
 	@property
 	def PrvlgSspnsnPrd(self):
 		return self._PrvlgSspnsnPrd
@@ -16,19 +16,6 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 	def PrvlgSspnsnPrd(self):
 		del self._PrvlgSspnsnPrd
 		self._PrvlgSspnsnPrd = None
-
-	@property
-	def ActnPrd(self):
-		return self._ActnPrd
-
-	@ActnPrd.setter
-	def ActnPrd(self, value):
-		self._ActnPrd = value if type(value) != auto else self.make_default("ActnPrd")
-
-	@ActnPrd.deleter
-	def ActnPrd(self):
-		del self._ActnPrd
-		self._ActnPrd = None
 
 	@property
 	def RvcbltyPrd(self):
@@ -44,19 +31,6 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 		self._RvcbltyPrd = None
 
 	@property
-	def SellThruIssrPrd(self):
-		return self._SellThruIssrPrd
-
-	@SellThruIssrPrd.setter
-	def SellThruIssrPrd(self, value):
-		self._SellThruIssrPrd = value if type(value) != auto else self.make_default("SellThruIssrPrd")
-
-	@SellThruIssrPrd.deleter
-	def SellThruIssrPrd(self):
-		del self._SellThruIssrPrd
-		self._SellThruIssrPrd = None
-
-	@property
 	def ParllTradgPrd(self):
 		return self._ParllTradgPrd
 
@@ -68,6 +42,19 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 	def ParllTradgPrd(self):
 		del self._ParllTradgPrd
 		self._ParllTradgPrd = None
+
+	@property
+	def AssntdLinePrd(self):
+		return self._AssntdLinePrd
+
+	@AssntdLinePrd.setter
+	def AssntdLinePrd(self, value):
+		self._AssntdLinePrd = value if type(value) != auto else self.make_default("AssntdLinePrd")
+
+	@AssntdLinePrd.deleter
+	def AssntdLinePrd(self):
+		del self._AssntdLinePrd
+		self._AssntdLinePrd = None
 
 	@property
 	def PricClctnPrd(self):
@@ -83,25 +70,38 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 		self._PricClctnPrd = None
 
 	@property
-	def AssntdLinePrd(self):
-		return self._AssntdLinePrd
+	def SellThruIssrPrd(self):
+		return self._SellThruIssrPrd
 
-	@AssntdLinePrd.setter
-	def AssntdLinePrd(self, value):
-		self._AssntdLinePrd = value if type(value) != auto else self.make_default("AssntdLinePrd")
+	@SellThruIssrPrd.setter
+	def SellThruIssrPrd(self, value):
+		self._SellThruIssrPrd = value if type(value) != auto else self.make_default("SellThruIssrPrd")
 
-	@AssntdLinePrd.deleter
-	def AssntdLinePrd(self):
-		del self._AssntdLinePrd
-		self._AssntdLinePrd = None
+	@SellThruIssrPrd.deleter
+	def SellThruIssrPrd(self):
+		del self._SellThruIssrPrd
+		self._SellThruIssrPrd = None
+
+	@property
+	def ActnPrd(self):
+		return self._ActnPrd
+
+	@ActnPrd.setter
+	def ActnPrd(self, value):
+		self._ActnPrd = value if type(value) != auto else self.make_default("ActnPrd")
+
+	@ActnPrd.deleter
+	def ActnPrd(self):
+		del self._ActnPrd
+		self._ActnPrd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrvlgSspnsnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RvcbltyPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellThruIssrPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ParllTradgPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricClctnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssntdLinePrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricClctnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellThruIssrPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 	))
 

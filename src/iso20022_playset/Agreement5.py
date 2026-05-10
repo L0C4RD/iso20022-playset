@@ -1,14 +1,53 @@
 import base_types
-import Max350Text
-import ClosingType1Code
-import PercentageRate
+import DeliveryType2Code
 import ISODateTime
 import ActiveCurrencyCode
-import DeliveryType2Code
+import ClosingType1Code
+import PercentageRate
+import Max350Text
 
 class Agreement5(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Desc", "_MrgnRatio", "_ClsgTp", "_StartDt", "_DlvryTp", "_Dt"]
+	__slots__ = ["_DlvryTp", "_StartDt", "_Dt", "_Ccy", "_Desc", "_MrgnRatio", "_ClsgTp"]
+	@property
+	def DlvryTp(self):
+		return self._DlvryTp
+
+	@DlvryTp.setter
+	def DlvryTp(self, value):
+		self._DlvryTp = value if type(value) != auto else self.make_default("DlvryTp")
+
+	@DlvryTp.deleter
+	def DlvryTp(self):
+		del self._DlvryTp
+		self._DlvryTp = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -61,52 +100,13 @@ class Agreement5(base_types._BaseFieldType):
 		del self._ClsgTp
 		self._ClsgTp = None
 
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
-	@property
-	def DlvryTp(self):
-		return self._DlvryTp
-
-	@DlvryTp.setter
-	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != auto else self.make_default("DlvryTp")
-
-	@DlvryTp.deleter
-	def DlvryTp(self):
-		del self._DlvryTp
-		self._DlvryTp = None
-
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DlvryTp', type=DeliveryType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnRatio', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgTp', type=ClosingType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryTp', type=DeliveryType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

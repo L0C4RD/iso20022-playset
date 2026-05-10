@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import ExternalBalanceType1Code
+import Max35Text
 
 class BalanceType10Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import ConfirmationRejectedReason1Choice
 import Max350Text
+import ConfirmationRejectedReason1Choice
 
 class ConfirmationRejectedStatus2(base_types._BaseFieldType):
 

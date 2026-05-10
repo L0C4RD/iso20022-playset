@@ -1,79 +1,27 @@
 import base_types
-import Max32HexBinaryText
-import Max5NumericText
 import Max9999HexBinaryText
-import Exact1HexBinaryText
-import Max8NumericText
 import Max2NumericText
 import Max4NumericText
+import Exact1HexBinaryText
+import Max32HexBinaryText
+import Max5NumericText
+import Max8NumericText
 
 class KeyExchangeData1(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyIndx", "_DrvdInf", "_KeyChcksmVal", "_KeySetIdr", "_KeyLngth", "_KeyPrtcn", "_Algo", "_Ctrl", "_NcrptdData"]
+	__slots__ = ["_Algo", "_KeyPrtcn", "_KeySetIdr", "_KeyIndx", "_Ctrl", "_NcrptdData", "_DrvdInf", "_KeyLngth", "_KeyChcksmVal"]
 	@property
-	def KeyIndx(self):
-		return self._KeyIndx
+	def Algo(self):
+		return self._Algo
 
-	@KeyIndx.setter
-	def KeyIndx(self, value):
-		self._KeyIndx = value if type(value) != auto else self.make_default("KeyIndx")
+	@Algo.setter
+	def Algo(self, value):
+		self._Algo = value if type(value) != auto else self.make_default("Algo")
 
-	@KeyIndx.deleter
-	def KeyIndx(self):
-		del self._KeyIndx
-		self._KeyIndx = None
-
-	@property
-	def DrvdInf(self):
-		return self._DrvdInf
-
-	@DrvdInf.setter
-	def DrvdInf(self, value):
-		self._DrvdInf = value if type(value) != auto else self.make_default("DrvdInf")
-
-	@DrvdInf.deleter
-	def DrvdInf(self):
-		del self._DrvdInf
-		self._DrvdInf = None
-
-	@property
-	def KeyChcksmVal(self):
-		return self._KeyChcksmVal
-
-	@KeyChcksmVal.setter
-	def KeyChcksmVal(self, value):
-		self._KeyChcksmVal = value if type(value) != auto else self.make_default("KeyChcksmVal")
-
-	@KeyChcksmVal.deleter
-	def KeyChcksmVal(self):
-		del self._KeyChcksmVal
-		self._KeyChcksmVal = None
-
-	@property
-	def KeySetIdr(self):
-		return self._KeySetIdr
-
-	@KeySetIdr.setter
-	def KeySetIdr(self, value):
-		self._KeySetIdr = value if type(value) != auto else self.make_default("KeySetIdr")
-
-	@KeySetIdr.deleter
-	def KeySetIdr(self):
-		del self._KeySetIdr
-		self._KeySetIdr = None
-
-	@property
-	def KeyLngth(self):
-		return self._KeyLngth
-
-	@KeyLngth.setter
-	def KeyLngth(self, value):
-		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
-
-	@KeyLngth.deleter
-	def KeyLngth(self):
-		del self._KeyLngth
-		self._KeyLngth = None
+	@Algo.deleter
+	def Algo(self):
+		del self._Algo
+		self._Algo = None
 
 	@property
 	def KeyPrtcn(self):
@@ -89,17 +37,30 @@ class KeyExchangeData1(base_types._BaseFieldType):
 		self._KeyPrtcn = None
 
 	@property
-	def Algo(self):
-		return self._Algo
+	def KeySetIdr(self):
+		return self._KeySetIdr
 
-	@Algo.setter
-	def Algo(self, value):
-		self._Algo = value if type(value) != auto else self.make_default("Algo")
+	@KeySetIdr.setter
+	def KeySetIdr(self, value):
+		self._KeySetIdr = value if type(value) != auto else self.make_default("KeySetIdr")
 
-	@Algo.deleter
-	def Algo(self):
-		del self._Algo
-		self._Algo = None
+	@KeySetIdr.deleter
+	def KeySetIdr(self):
+		del self._KeySetIdr
+		self._KeySetIdr = None
+
+	@property
+	def KeyIndx(self):
+		return self._KeyIndx
+
+	@KeyIndx.setter
+	def KeyIndx(self, value):
+		self._KeyIndx = value if type(value) != auto else self.make_default("KeyIndx")
+
+	@KeyIndx.deleter
+	def KeyIndx(self):
+		del self._KeyIndx
+		self._KeyIndx = None
 
 	@property
 	def Ctrl(self):
@@ -127,15 +88,54 @@ class KeyExchangeData1(base_types._BaseFieldType):
 		del self._NcrptdData
 		self._NcrptdData = None
 
+	@property
+	def DrvdInf(self):
+		return self._DrvdInf
+
+	@DrvdInf.setter
+	def DrvdInf(self, value):
+		self._DrvdInf = value if type(value) != auto else self.make_default("DrvdInf")
+
+	@DrvdInf.deleter
+	def DrvdInf(self):
+		del self._DrvdInf
+		self._DrvdInf = None
+
+	@property
+	def KeyLngth(self):
+		return self._KeyLngth
+
+	@KeyLngth.setter
+	def KeyLngth(self, value):
+		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
+
+	@KeyLngth.deleter
+	def KeyLngth(self):
+		del self._KeyLngth
+		self._KeyLngth = None
+
+	@property
+	def KeyChcksmVal(self):
+		return self._KeyChcksmVal
+
+	@KeyChcksmVal.setter
+	def KeyChcksmVal(self, value):
+		self._KeyChcksmVal = value if type(value) != auto else self.make_default("KeyChcksmVal")
+
+	@KeyChcksmVal.deleter
+	def KeyChcksmVal(self):
+		del self._KeyChcksmVal
+		self._KeyChcksmVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyIndx', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvdInf', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyChcksmVal', type=Max9999HexBinaryText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeySetIdr', type=Max8NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeySetIdr', type=Max8NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyIndx', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctrl', type=Exact1HexBinaryText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdData', type=Max9999HexBinaryText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvdInf', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyChcksmVal', type=Max9999HexBinaryText, min=0, max=1, mutex_group=None, array=False),
 	))
 

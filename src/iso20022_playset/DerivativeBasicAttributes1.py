@@ -1,6 +1,6 @@
 import base_types
-import ActiveOrHistoricCurrencyAndAmount
 import YesNoIndicator
+import ActiveOrHistoricCurrencyAndAmount
 
 class DerivativeBasicAttributes1(base_types._BaseFieldType):
 

@@ -1,49 +1,23 @@
 import base_types
+import Number
 import MissingMarginTransactionData2
 import CounterpartyData92
-import Number
 
 class MissingMarginData2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyId", "_TxDtls", "_NbOfOutsdngDerivsWthNoMrgnInf", "_NbOfOutsdngDerivsWthOutdtdMrgnInf", "_NbOfOutsdngDerivs"]
+	__slots__ = ["_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthOutdtdMrgnInf", "_NbOfOutsdngDerivsWthNoMrgnInf", "_TxDtls", "_CtrPtyId"]
 	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
+	def NbOfOutsdngDerivs(self):
+		return self._NbOfOutsdngDerivs
 
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+	@NbOfOutsdngDerivs.setter
+	def NbOfOutsdngDerivs(self, value):
+		self._NbOfOutsdngDerivs = value if type(value) != auto else self.make_default("NbOfOutsdngDerivs")
 
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
-	@property
-	def TxDtls(self):
-		return self._TxDtls
-
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
-
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
-
-	@property
-	def NbOfOutsdngDerivsWthNoMrgnInf(self):
-		return self._NbOfOutsdngDerivsWthNoMrgnInf
-
-	@NbOfOutsdngDerivsWthNoMrgnInf.setter
-	def NbOfOutsdngDerivsWthNoMrgnInf(self, value):
-		self._NbOfOutsdngDerivsWthNoMrgnInf = value if type(value) != auto else self.make_default("NbOfOutsdngDerivsWthNoMrgnInf")
-
-	@NbOfOutsdngDerivsWthNoMrgnInf.deleter
-	def NbOfOutsdngDerivsWthNoMrgnInf(self):
-		del self._NbOfOutsdngDerivsWthNoMrgnInf
-		self._NbOfOutsdngDerivsWthNoMrgnInf = None
+	@NbOfOutsdngDerivs.deleter
+	def NbOfOutsdngDerivs(self):
+		del self._NbOfOutsdngDerivs
+		self._NbOfOutsdngDerivs = None
 
 	@property
 	def NbOfOutsdngDerivsWthOutdtdMrgnInf(self):
@@ -59,23 +33,49 @@ class MissingMarginData2(base_types._BaseFieldType):
 		self._NbOfOutsdngDerivsWthOutdtdMrgnInf = None
 
 	@property
-	def NbOfOutsdngDerivs(self):
-		return self._NbOfOutsdngDerivs
+	def NbOfOutsdngDerivsWthNoMrgnInf(self):
+		return self._NbOfOutsdngDerivsWthNoMrgnInf
 
-	@NbOfOutsdngDerivs.setter
-	def NbOfOutsdngDerivs(self, value):
-		self._NbOfOutsdngDerivs = value if type(value) != auto else self.make_default("NbOfOutsdngDerivs")
+	@NbOfOutsdngDerivsWthNoMrgnInf.setter
+	def NbOfOutsdngDerivsWthNoMrgnInf(self, value):
+		self._NbOfOutsdngDerivsWthNoMrgnInf = value if type(value) != auto else self.make_default("NbOfOutsdngDerivsWthNoMrgnInf")
 
-	@NbOfOutsdngDerivs.deleter
-	def NbOfOutsdngDerivs(self):
-		del self._NbOfOutsdngDerivs
-		self._NbOfOutsdngDerivs = None
+	@NbOfOutsdngDerivsWthNoMrgnInf.deleter
+	def NbOfOutsdngDerivsWthNoMrgnInf(self):
+		del self._NbOfOutsdngDerivsWthNoMrgnInf
+		self._NbOfOutsdngDerivsWthNoMrgnInf = None
+
+	@property
+	def TxDtls(self):
+		return self._TxDtls
+
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
+
+	@property
+	def CtrPtyId(self):
+		return self._CtrPtyId
+
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData92, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtls', type=MissingMarginTransactionData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfOutsdngDerivsWthNoMrgnInf', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfOutsdngDerivsWthOutdtdMrgnInf', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfOutsdngDerivs', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfOutsdngDerivsWthOutdtdMrgnInf', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfOutsdngDerivsWthNoMrgnInf', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDtls', type=MissingMarginTransactionData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData92, min=1, max=1, mutex_group=None, array=False),
 	))
 

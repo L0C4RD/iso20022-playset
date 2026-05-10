@@ -1,12 +1,25 @@
 import base_types
 import Max35Text
-import ActionTaken1Code
 import Max256Text
+import ActionTaken1Code
 import AdditionalInformation30
 
 class FraudDispositionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_ErrData", "_AddtlInf", "_ActnTaken", "_WrngData", "_OthrActnTaken"]
+	__slots__ = ["_ActnTaken", "_ErrData", "_AddtlInf", "_OthrActnTaken", "_WrngData"]
+	@property
+	def ActnTaken(self):
+		return self._ActnTaken
+
+	@ActnTaken.setter
+	def ActnTaken(self, value):
+		self._ActnTaken = value if type(value) != auto else self.make_default("ActnTaken")
+
+	@ActnTaken.deleter
+	def ActnTaken(self):
+		del self._ActnTaken
+		self._ActnTaken = None
+
 	@property
 	def ErrData(self):
 		return self._ErrData
@@ -34,17 +47,17 @@ class FraudDispositionStatus2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def ActnTaken(self):
-		return self._ActnTaken
+	def OthrActnTaken(self):
+		return self._OthrActnTaken
 
-	@ActnTaken.setter
-	def ActnTaken(self, value):
-		self._ActnTaken = value if type(value) != auto else self.make_default("ActnTaken")
+	@OthrActnTaken.setter
+	def OthrActnTaken(self, value):
+		self._OthrActnTaken = value if type(value) != auto else self.make_default("OthrActnTaken")
 
-	@ActnTaken.deleter
-	def ActnTaken(self):
-		del self._ActnTaken
-		self._ActnTaken = None
+	@OthrActnTaken.deleter
+	def OthrActnTaken(self):
+		del self._OthrActnTaken
+		self._OthrActnTaken = None
 
 	@property
 	def WrngData(self):
@@ -59,24 +72,11 @@ class FraudDispositionStatus2(base_types._BaseFieldType):
 		del self._WrngData
 		self._WrngData = None
 
-	@property
-	def OthrActnTaken(self):
-		return self._OthrActnTaken
-
-	@OthrActnTaken.setter
-	def OthrActnTaken(self, value):
-		self._OthrActnTaken = value if type(value) != auto else self.make_default("OthrActnTaken")
-
-	@OthrActnTaken.deleter
-	def OthrActnTaken(self):
-		del self._OthrActnTaken
-		self._OthrActnTaken = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ActnTaken', type=ActionTaken1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ErrData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation30, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ActnTaken', type=ActionTaken1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WrngData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrActnTaken', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WrngData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

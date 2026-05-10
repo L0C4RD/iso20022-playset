@@ -1,8 +1,8 @@
 import base_types
-import PaymentType4Choice
-import DateTimePeriod1Choice
 import Instruction1Code
 import Priority1Choice
+import DateTimePeriod1Choice
+import PaymentType4Choice
 
 class PaymentInstruction33(base_types._BaseFieldType):
 

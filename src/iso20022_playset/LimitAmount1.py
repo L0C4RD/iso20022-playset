@@ -3,7 +3,20 @@ import CreditDebitAmount1
 
 class LimitAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_AvlblAmt", "_UtlstnAmt"]
+	__slots__ = ["_UtlstnAmt", "_Amt", "_AvlblAmt"]
+	@property
+	def UtlstnAmt(self):
+		return self._UtlstnAmt
+
+	@UtlstnAmt.setter
+	def UtlstnAmt(self, value):
+		self._UtlstnAmt = value if type(value) != auto else self.make_default("UtlstnAmt")
+
+	@UtlstnAmt.deleter
+	def UtlstnAmt(self):
+		del self._UtlstnAmt
+		self._UtlstnAmt = None
+
 	@property
 	def Amt(self):
 		return self._Amt
@@ -30,22 +43,9 @@ class LimitAmount1(base_types._BaseFieldType):
 		del self._AvlblAmt
 		self._AvlblAmt = None
 
-	@property
-	def UtlstnAmt(self):
-		return self._UtlstnAmt
-
-	@UtlstnAmt.setter
-	def UtlstnAmt(self, value):
-		self._UtlstnAmt = value if type(value) != auto else self.make_default("UtlstnAmt")
-
-	@UtlstnAmt.deleter
-	def UtlstnAmt(self):
-		del self._UtlstnAmt
-		self._UtlstnAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='UtlstnAmt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblAmt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UtlstnAmt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
 	))
 

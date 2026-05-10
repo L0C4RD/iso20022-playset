@@ -1,6 +1,6 @@
 import base_types
-import ShortLong1Code
 import ImpliedCurrencyAndAmount
+import ShortLong1Code
 
 class OriginalAndCurrentQuantities6(base_types._BaseFieldType):
 

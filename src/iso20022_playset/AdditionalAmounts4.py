@@ -1,14 +1,40 @@
 import base_types
-import Max35Text
-import ImpliedCurrencyAndAmount
-import ISO3NumericCurrencyCode
-import CreditDebit3Code
-import ISO8583AmountTypeCode
 import Max70Text
+import ImpliedCurrencyAndAmount
+import CreditDebit3Code
+import Max35Text
+import ISO3NumericCurrencyCode
+import ISO8583AmountTypeCode
 
 class AdditionalAmounts4(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Tp", "_CdtDbt", "_OthrTp", "_Amt", "_Ccy"]
+	__slots__ = ["_CdtDbt", "_Ccy", "_Desc", "_Tp", "_Amt", "_OthrTp"]
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	@property
 	def Desc(self):
 		return self._Desc
@@ -36,17 +62,17 @@ class AdditionalAmounts4(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def CdtDbt(self):
-		return self._CdtDbt
+	def Amt(self):
+		return self._Amt
 
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def OthrTp(self):
@@ -61,38 +87,12 @@ class AdditionalAmounts4(base_types._BaseFieldType):
 		del self._OthrTp
 		self._OthrTp = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ISO8583AmountTypeCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

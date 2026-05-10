@@ -1,7 +1,7 @@
 import base_types
 import Response12Code
-import ResultDetail5Code
 import Max140Text
+import ResultDetail5Code
 
 class ResponseType12(base_types._BaseFieldType):
 

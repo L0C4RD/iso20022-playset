@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import Max2048Text
+import Max35Text
 
 class ECommerceData1(base_types._BaseFieldType):
 

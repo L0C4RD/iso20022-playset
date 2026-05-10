@@ -1,12 +1,12 @@
 import base_types
-import TrueFalseIndicator
 import SearchCriteria1
 import PositiveNumber
+import TrueFalseIndicator
 import SearchOutputOrder1
 
 class ReportTransactionRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckStart", "_DscndgOrdr", "_SchOutptOrdr", "_SchCrit", "_BlckStop"]
+	__slots__ = ["_BlckStart", "_SchOutptOrdr", "_DscndgOrdr", "_SchCrit", "_BlckStop"]
 	@property
 	def BlckStart(self):
 		return self._BlckStart
@@ -21,19 +21,6 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 		self._BlckStart = None
 
 	@property
-	def DscndgOrdr(self):
-		return self._DscndgOrdr
-
-	@DscndgOrdr.setter
-	def DscndgOrdr(self, value):
-		self._DscndgOrdr = value if type(value) != auto else self.make_default("DscndgOrdr")
-
-	@DscndgOrdr.deleter
-	def DscndgOrdr(self):
-		del self._DscndgOrdr
-		self._DscndgOrdr = None
-
-	@property
 	def SchOutptOrdr(self):
 		return self._SchOutptOrdr
 
@@ -45,6 +32,19 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 	def SchOutptOrdr(self):
 		del self._SchOutptOrdr
 		self._SchOutptOrdr = None
+
+	@property
+	def DscndgOrdr(self):
+		return self._DscndgOrdr
+
+	@DscndgOrdr.setter
+	def DscndgOrdr(self, value):
+		self._DscndgOrdr = value if type(value) != auto else self.make_default("DscndgOrdr")
+
+	@DscndgOrdr.deleter
+	def DscndgOrdr(self):
+		del self._DscndgOrdr
+		self._DscndgOrdr = None
 
 	@property
 	def SchCrit(self):
@@ -74,8 +74,8 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DscndgOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchOutptOrdr', type=SearchOutputOrder1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscndgOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=SearchCriteria1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,28 +1,15 @@
 import base_types
-import PercentageRate
+import IntendedOrActual2Code
 import AdditionalInformation15
+import PercentageRate
 import Period15
 import ActiveCurrencyAnd13DecimalAmount
-import IntendedOrActual2Code
 import ChargeType8Choice
 import PlusOrMinusIndicator
 
 class IndividualCostOrCharge2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate", "_RefPrd", "_CostTp", "_ExAnteOrExPst", "_Sgn", "_AddtlInf"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Rate", "_RefPrd", "_CostTp", "_ExAnteOrExPst", "_Amt", "_AddtlInf", "_Sgn"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -76,17 +63,17 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 		self._ExAnteOrExPst = None
 
 	@property
-	def Sgn(self):
-		return self._Sgn
+	def Amt(self):
+		return self._Amt
 
-	@Sgn.setter
-	def Sgn(self, value):
-		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Sgn.deleter
-	def Sgn(self):
-		del self._Sgn
-		self._Sgn = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def AddtlInf(self):
@@ -101,13 +88,26 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def Sgn(self):
+		return self._Sgn
+
+	@Sgn.setter
+	def Sgn(self, value):
+		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+
+	@Sgn.deleter
+	def Sgn(self):
+		del self._Sgn
+		self._Sgn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefPrd', type=Period15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CostTp', type=ChargeType8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExAnteOrExPst', type=IntendedOrActual2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

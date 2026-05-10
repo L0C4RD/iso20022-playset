@@ -1,6 +1,6 @@
 import base_types
-import Document10
 import FixedOrRecurrentDate1Choice
+import Document10
 
 class Trigger1(base_types._BaseFieldType):
 

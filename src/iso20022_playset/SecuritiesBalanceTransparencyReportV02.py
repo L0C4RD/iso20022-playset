@@ -1,27 +1,14 @@
 import base_types
 import Statement59
-import SafekeepingAccount7
+import Pagination
+import PartyIdentification100
 import SupplementaryData1
 import MessageIdentification1
-import PartyIdentification100
-import Pagination
+import SafekeepingAccount7
 
 class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_SndrId", "_StmtGnlDtls", "_RcvrId", "_MsgId", "_Pgntn", "_SfkpgAcctAndHldgs"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_SndrId", "_MsgId", "_RcvrId", "_StmtGnlDtls", "_SplmtryData", "_Pgntn", "_SfkpgAcctAndHldgs"]
 	@property
 	def SndrId(self):
 		return self._SndrId
@@ -36,17 +23,17 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 		self._SndrId = None
 
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
+	def MsgId(self):
+		return self._MsgId
 
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def RcvrId(self):
@@ -62,17 +49,30 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 		self._RcvrId = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Pgntn(self):
@@ -101,11 +101,11 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 		self._SfkpgAcctAndHldgs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SndrId', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement59, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvrId', type=PartyIdentification100, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvrId', type=PartyIdentification100, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement59, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcctAndHldgs', type=SafekeepingAccount7, min=0, max=None, mutex_group=None, array=True),
 	))

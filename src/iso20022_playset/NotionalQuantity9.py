@@ -5,7 +5,7 @@ import LongFraction19DecimalNumber
 
 class NotionalQuantity9(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_Dtls", "_TtlQty"]
+	__slots__ = ["_UnitOfMeasr", "_TtlQty", "_Dtls"]
 	@property
 	def UnitOfMeasr(self):
 		return self._UnitOfMeasr
@@ -20,19 +20,6 @@ class NotionalQuantity9(base_types._BaseFieldType):
 		self._UnitOfMeasr = None
 
 	@property
-	def Dtls(self):
-		return self._Dtls
-
-	@Dtls.setter
-	def Dtls(self, value):
-		self._Dtls = value if type(value) != auto else self.make_default("Dtls")
-
-	@Dtls.deleter
-	def Dtls(self):
-		del self._Dtls
-		self._Dtls = None
-
-	@property
 	def TtlQty(self):
 		return self._TtlQty
 
@@ -45,9 +32,22 @@ class NotionalQuantity9(base_types._BaseFieldType):
 		del self._TtlQty
 		self._TtlQty = None
 
+	@property
+	def Dtls(self):
+		return self._Dtls
+
+	@Dtls.setter
+	def Dtls(self, value):
+		self._Dtls = value if type(value) != auto else self.make_default("Dtls")
+
+	@Dtls.deleter
+	def Dtls(self):
+		del self._Dtls
+		self._Dtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dtls', type=QuantityOrTerm1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlQty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dtls', type=QuantityOrTerm1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

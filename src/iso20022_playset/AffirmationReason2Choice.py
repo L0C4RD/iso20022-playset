@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import AffirmationReason2
+import NoReasonCode
 
 class AffirmationReason2Choice(base_types._BaseFieldType):
 

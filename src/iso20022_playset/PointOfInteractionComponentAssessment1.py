@@ -1,11 +1,24 @@
 import base_types
-import Max35Text
 import ISODateTime
 import POIComponentAssessment1Code
+import Max35Text
 
 class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nb", "_DlvryDt", "_Assgnr", "_XprtnDt"]
+	__slots__ = ["_XprtnDt", "_Tp", "_Nb", "_Assgnr", "_DlvryDt"]
+	@property
+	def XprtnDt(self):
+		return self._XprtnDt
+
+	@XprtnDt.setter
+	def XprtnDt(self, value):
+		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
+
+	@XprtnDt.deleter
+	def XprtnDt(self):
+		del self._XprtnDt
+		self._XprtnDt = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -33,19 +46,6 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 		self._Nb = None
 
 	@property
-	def DlvryDt(self):
-		return self._DlvryDt
-
-	@DlvryDt.setter
-	def DlvryDt(self, value):
-		self._DlvryDt = value if type(value) != auto else self.make_default("DlvryDt")
-
-	@DlvryDt.deleter
-	def DlvryDt(self):
-		del self._DlvryDt
-		self._DlvryDt = None
-
-	@property
 	def Assgnr(self):
 		return self._Assgnr
 
@@ -59,23 +59,23 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 		self._Assgnr = None
 
 	@property
-	def XprtnDt(self):
-		return self._XprtnDt
+	def DlvryDt(self):
+		return self._DlvryDt
 
-	@XprtnDt.setter
-	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
+	@DlvryDt.setter
+	def DlvryDt(self, value):
+		self._DlvryDt = value if type(value) != auto else self.make_default("DlvryDt")
 
-	@XprtnDt.deleter
-	def XprtnDt(self):
-		del self._XprtnDt
-		self._XprtnDt = None
+	@DlvryDt.deleter
+	def DlvryDt(self):
+		del self._DlvryDt
+		self._DlvryDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=POIComponentAssessment1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

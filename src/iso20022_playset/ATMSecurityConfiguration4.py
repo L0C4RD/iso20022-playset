@@ -4,19 +4,19 @@ import Number
 
 class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxSgntrs", "_MaxCerts", "_DgtlSgntrAlgo"]
+	__slots__ = ["_DgtlSgntrAlgo", "_MaxCerts", "_MaxSgntrs"]
 	@property
-	def MaxSgntrs(self):
-		return self._MaxSgntrs
+	def DgtlSgntrAlgo(self):
+		return self._DgtlSgntrAlgo
 
-	@MaxSgntrs.setter
-	def MaxSgntrs(self, value):
-		self._MaxSgntrs = value if type(value) != auto else self.make_default("MaxSgntrs")
+	@DgtlSgntrAlgo.setter
+	def DgtlSgntrAlgo(self, value):
+		self._DgtlSgntrAlgo = value if type(value) != auto else self.make_default("DgtlSgntrAlgo")
 
-	@MaxSgntrs.deleter
-	def MaxSgntrs(self):
-		del self._MaxSgntrs
-		self._MaxSgntrs = None
+	@DgtlSgntrAlgo.deleter
+	def DgtlSgntrAlgo(self):
+		del self._DgtlSgntrAlgo
+		self._DgtlSgntrAlgo = None
 
 	@property
 	def MaxCerts(self):
@@ -32,21 +32,21 @@ class ATMSecurityConfiguration4(base_types._BaseFieldType):
 		self._MaxCerts = None
 
 	@property
-	def DgtlSgntrAlgo(self):
-		return self._DgtlSgntrAlgo
+	def MaxSgntrs(self):
+		return self._MaxSgntrs
 
-	@DgtlSgntrAlgo.setter
-	def DgtlSgntrAlgo(self, value):
-		self._DgtlSgntrAlgo = value if type(value) != auto else self.make_default("DgtlSgntrAlgo")
+	@MaxSgntrs.setter
+	def MaxSgntrs(self, value):
+		self._MaxSgntrs = value if type(value) != auto else self.make_default("MaxSgntrs")
 
-	@DgtlSgntrAlgo.deleter
-	def DgtlSgntrAlgo(self):
-		del self._DgtlSgntrAlgo
-		self._DgtlSgntrAlgo = None
+	@MaxSgntrs.deleter
+	def MaxSgntrs(self):
+		del self._MaxSgntrs
+		self._MaxSgntrs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxSgntrs', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxCerts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntrAlgo', type=Algorithm14Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MaxCerts', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxSgntrs', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

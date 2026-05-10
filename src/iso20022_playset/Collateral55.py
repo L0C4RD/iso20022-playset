@@ -1,13 +1,13 @@
 import base_types
 import Max35Text
 import CashCollateral3
-import OtherCollateral9
-import SecuritiesCollateral10
 import Max140Text
+import SecuritiesCollateral10
+import OtherCollateral9
 
 class Collateral55(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesColl", "_OthrColl", "_CollPrpslRspnId", "_MrgnCallReqId", "_CshColl", "_MrgnCallRspnId", "_StdSttlmInstrs"]
+	__slots__ = ["_SctiesColl", "_CollPrpslRspnId", "_MrgnCallReqId", "_CshColl", "_MrgnCallRspnId", "_OthrColl", "_StdSttlmInstrs"]
 	@property
 	def SctiesColl(self):
 		return self._SctiesColl
@@ -20,19 +20,6 @@ class Collateral55(base_types._BaseFieldType):
 	def SctiesColl(self):
 		del self._SctiesColl
 		self._SctiesColl = None
-
-	@property
-	def OthrColl(self):
-		return self._OthrColl
-
-	@OthrColl.setter
-	def OthrColl(self, value):
-		self._OthrColl = value if type(value) != auto else self.make_default("OthrColl")
-
-	@OthrColl.deleter
-	def OthrColl(self):
-		del self._OthrColl
-		self._OthrColl = None
 
 	@property
 	def CollPrpslRspnId(self):
@@ -87,6 +74,19 @@ class Collateral55(base_types._BaseFieldType):
 		self._MrgnCallRspnId = None
 
 	@property
+	def OthrColl(self):
+		return self._OthrColl
+
+	@OthrColl.setter
+	def OthrColl(self, value):
+		self._OthrColl = value if type(value) != auto else self.make_default("OthrColl")
+
+	@OthrColl.deleter
+	def OthrColl(self):
+		del self._OthrColl
+		self._OthrColl = None
+
+	@property
 	def StdSttlmInstrs(self):
 		return self._StdSttlmInstrs
 
@@ -101,11 +101,11 @@ class Collateral55(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral10, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CollPrpslRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshColl', type=CashCollateral3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MrgnCallRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

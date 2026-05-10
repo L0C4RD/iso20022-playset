@@ -1,74 +1,48 @@
 import base_types
-import WertpapierIdentifier
-import Bloomberg2Identifier
 import BelgianIdentifier
-import ConsolidatedTapeAssociationIdentifier
-import CUSIPIdentifier
-import EuroclearClearstreamIdentifier
 import ValorenIdentifier
-import SEDOLIdentifier
-import SicovamIdentifier
-import TickerIdentifier
-import RICIdentifier
 import AlternateSecurityIdentification7
+import WertpapierIdentifier
+import CUSIPIdentifier
+import RICIdentifier
+import SicovamIdentifier
+import SEDOLIdentifier
+import Bloomberg2Identifier
+import TickerIdentifier
+import ConsolidatedTapeAssociationIdentifier
 import ISINOct2015Identifier
 import DutchIdentifier
 import QUICKIdentifier
+import EuroclearClearstreamIdentifier
 
 class SecurityIdentification25Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Blmbrg", "_Wrtppr", "_CTA", "_ISIN", "_Cmon", "_QUICK", "_RIC", "_SEDOL", "_SCVM", "_OthrPrtryId", "_TckrSymb", "_Dtch", "_Belgn", "_Vlrn", "_CUSIP"]
+	__slots__ = ["_RIC", "_Vlrn", "_Cmon", "_CUSIP", "_TckrSymb", "_SCVM", "_OthrPrtryId", "_Belgn", "_SEDOL", "_Blmbrg", "_Wrtppr", "_ISIN", "_Dtch", "_CTA", "_QUICK"]
 	@property
-	def Blmbrg(self):
-		return self._Blmbrg
+	def RIC(self):
+		return self._RIC
 
-	@Blmbrg.setter
-	def Blmbrg(self, value):
-		self._Blmbrg = value if type(value) != auto else self.make_default("Blmbrg")
+	@RIC.setter
+	def RIC(self, value):
+		self._RIC = value if type(value) != auto else self.make_default("RIC")
 
-	@Blmbrg.deleter
-	def Blmbrg(self):
-		del self._Blmbrg
-		self._Blmbrg = None
-
-	@property
-	def Wrtppr(self):
-		return self._Wrtppr
-
-	@Wrtppr.setter
-	def Wrtppr(self, value):
-		self._Wrtppr = value if type(value) != auto else self.make_default("Wrtppr")
-
-	@Wrtppr.deleter
-	def Wrtppr(self):
-		del self._Wrtppr
-		self._Wrtppr = None
+	@RIC.deleter
+	def RIC(self):
+		del self._RIC
+		self._RIC = None
 
 	@property
-	def CTA(self):
-		return self._CTA
+	def Vlrn(self):
+		return self._Vlrn
 
-	@CTA.setter
-	def CTA(self, value):
-		self._CTA = value if type(value) != auto else self.make_default("CTA")
+	@Vlrn.setter
+	def Vlrn(self, value):
+		self._Vlrn = value if type(value) != auto else self.make_default("Vlrn")
 
-	@CTA.deleter
-	def CTA(self):
-		del self._CTA
-		self._CTA = None
-
-	@property
-	def ISIN(self):
-		return self._ISIN
-
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
-
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
+	@Vlrn.deleter
+	def Vlrn(self):
+		del self._Vlrn
+		self._Vlrn = None
 
 	@property
 	def Cmon(self):
@@ -84,43 +58,30 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 		self._Cmon = None
 
 	@property
-	def QUICK(self):
-		return self._QUICK
+	def CUSIP(self):
+		return self._CUSIP
 
-	@QUICK.setter
-	def QUICK(self, value):
-		self._QUICK = value if type(value) != auto else self.make_default("QUICK")
+	@CUSIP.setter
+	def CUSIP(self, value):
+		self._CUSIP = value if type(value) != auto else self.make_default("CUSIP")
 
-	@QUICK.deleter
-	def QUICK(self):
-		del self._QUICK
-		self._QUICK = None
-
-	@property
-	def RIC(self):
-		return self._RIC
-
-	@RIC.setter
-	def RIC(self, value):
-		self._RIC = value if type(value) != auto else self.make_default("RIC")
-
-	@RIC.deleter
-	def RIC(self):
-		del self._RIC
-		self._RIC = None
+	@CUSIP.deleter
+	def CUSIP(self):
+		del self._CUSIP
+		self._CUSIP = None
 
 	@property
-	def SEDOL(self):
-		return self._SEDOL
+	def TckrSymb(self):
+		return self._TckrSymb
 
-	@SEDOL.setter
-	def SEDOL(self, value):
-		self._SEDOL = value if type(value) != auto else self.make_default("SEDOL")
+	@TckrSymb.setter
+	def TckrSymb(self, value):
+		self._TckrSymb = value if type(value) != auto else self.make_default("TckrSymb")
 
-	@SEDOL.deleter
-	def SEDOL(self):
-		del self._SEDOL
-		self._SEDOL = None
+	@TckrSymb.deleter
+	def TckrSymb(self):
+		del self._TckrSymb
+		self._TckrSymb = None
 
 	@property
 	def SCVM(self):
@@ -149,17 +110,69 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 		self._OthrPrtryId = None
 
 	@property
-	def TckrSymb(self):
-		return self._TckrSymb
+	def Belgn(self):
+		return self._Belgn
 
-	@TckrSymb.setter
-	def TckrSymb(self, value):
-		self._TckrSymb = value if type(value) != auto else self.make_default("TckrSymb")
+	@Belgn.setter
+	def Belgn(self, value):
+		self._Belgn = value if type(value) != auto else self.make_default("Belgn")
 
-	@TckrSymb.deleter
-	def TckrSymb(self):
-		del self._TckrSymb
-		self._TckrSymb = None
+	@Belgn.deleter
+	def Belgn(self):
+		del self._Belgn
+		self._Belgn = None
+
+	@property
+	def SEDOL(self):
+		return self._SEDOL
+
+	@SEDOL.setter
+	def SEDOL(self, value):
+		self._SEDOL = value if type(value) != auto else self.make_default("SEDOL")
+
+	@SEDOL.deleter
+	def SEDOL(self):
+		del self._SEDOL
+		self._SEDOL = None
+
+	@property
+	def Blmbrg(self):
+		return self._Blmbrg
+
+	@Blmbrg.setter
+	def Blmbrg(self, value):
+		self._Blmbrg = value if type(value) != auto else self.make_default("Blmbrg")
+
+	@Blmbrg.deleter
+	def Blmbrg(self):
+		del self._Blmbrg
+		self._Blmbrg = None
+
+	@property
+	def Wrtppr(self):
+		return self._Wrtppr
+
+	@Wrtppr.setter
+	def Wrtppr(self, value):
+		self._Wrtppr = value if type(value) != auto else self.make_default("Wrtppr")
+
+	@Wrtppr.deleter
+	def Wrtppr(self):
+		del self._Wrtppr
+		self._Wrtppr = None
+
+	@property
+	def ISIN(self):
+		return self._ISIN
+
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
 
 	@property
 	def Dtch(self):
@@ -175,59 +188,46 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 		self._Dtch = None
 
 	@property
-	def Belgn(self):
-		return self._Belgn
+	def CTA(self):
+		return self._CTA
 
-	@Belgn.setter
-	def Belgn(self, value):
-		self._Belgn = value if type(value) != auto else self.make_default("Belgn")
+	@CTA.setter
+	def CTA(self, value):
+		self._CTA = value if type(value) != auto else self.make_default("CTA")
 
-	@Belgn.deleter
-	def Belgn(self):
-		del self._Belgn
-		self._Belgn = None
-
-	@property
-	def Vlrn(self):
-		return self._Vlrn
-
-	@Vlrn.setter
-	def Vlrn(self, value):
-		self._Vlrn = value if type(value) != auto else self.make_default("Vlrn")
-
-	@Vlrn.deleter
-	def Vlrn(self):
-		del self._Vlrn
-		self._Vlrn = None
+	@CTA.deleter
+	def CTA(self):
+		del self._CTA
+		self._CTA = None
 
 	@property
-	def CUSIP(self):
-		return self._CUSIP
+	def QUICK(self):
+		return self._QUICK
 
-	@CUSIP.setter
-	def CUSIP(self, value):
-		self._CUSIP = value if type(value) != auto else self.make_default("CUSIP")
+	@QUICK.setter
+	def QUICK(self, value):
+		self._QUICK = value if type(value) != auto else self.make_default("QUICK")
 
-	@CUSIP.deleter
-	def CUSIP(self):
-		del self._CUSIP
-		self._CUSIP = None
+	@QUICK.deleter
+	def QUICK(self):
+		del self._QUICK
+		self._QUICK = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Blmbrg', type=Bloomberg2Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Wrtppr', type=WertpapierIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CTA', type=ConsolidatedTapeAssociationIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmon', type=EuroclearClearstreamIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QUICK', type=QUICKIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RIC', type=RICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SEDOL', type=SEDOLIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Vlrn', type=ValorenIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmon', type=EuroclearClearstreamIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CUSIP', type=CUSIPIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TckrSymb', type=TickerIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SCVM', type=SicovamIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrPrtryId', type=AlternateSecurityIdentification7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TckrSymb', type=TickerIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dtch', type=DutchIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Belgn', type=BelgianIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Vlrn', type=ValorenIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CUSIP', type=CUSIPIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SEDOL', type=SEDOLIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Blmbrg', type=Bloomberg2Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Wrtppr', type=WertpapierIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dtch', type=DutchIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CTA', type=ConsolidatedTapeAssociationIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='QUICK', type=QUICKIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

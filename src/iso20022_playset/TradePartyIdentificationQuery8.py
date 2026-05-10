@@ -1,12 +1,12 @@
 import base_types
-import Max50Text
+import LEIIdentifier
 import AnyBICDec2014Identifier
 import NotReported1Code
-import LEIIdentifier
+import Max50Text
 
 class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntId", "_AnyBIC", "_LEI", "_NotRptd"]
+	__slots__ = ["_ClntId", "_NotRptd", "_AnyBIC", "_LEI"]
 	@property
 	def ClntId(self):
 		return self._ClntId
@@ -19,6 +19,19 @@ class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 	def ClntId(self):
 		del self._ClntId
 		self._ClntId = None
+
+	@property
+	def NotRptd(self):
+		return self._NotRptd
+
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
 
 	@property
 	def AnyBIC(self):
@@ -46,23 +59,10 @@ class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 		del self._LEI
 		self._LEI = None
 
-	@property
-	def NotRptd(self):
-		return self._NotRptd
-
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
-
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntId', type=Max50Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

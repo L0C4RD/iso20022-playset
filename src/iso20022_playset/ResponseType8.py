@@ -3,32 +3,19 @@ import Max35Text
 
 class ResponseType8(base_types._BaseFieldType):
 
-	__slots__ = ["_RspndrId", "_Cdfctn", "_AddtlRspnInf", "_Rspn", "_RspnRsn"]
+	__slots__ = ["_RspnRsn", "_AddtlRspnInf", "_Cdfctn", "_RspndrId", "_Rspn"]
 	@property
-	def RspndrId(self):
-		return self._RspndrId
+	def RspnRsn(self):
+		return self._RspnRsn
 
-	@RspndrId.setter
-	def RspndrId(self, value):
-		self._RspndrId = value if type(value) != auto else self.make_default("RspndrId")
+	@RspnRsn.setter
+	def RspnRsn(self, value):
+		self._RspnRsn = value if type(value) != auto else self.make_default("RspnRsn")
 
-	@RspndrId.deleter
-	def RspndrId(self):
-		del self._RspndrId
-		self._RspndrId = None
-
-	@property
-	def Cdfctn(self):
-		return self._Cdfctn
-
-	@Cdfctn.setter
-	def Cdfctn(self, value):
-		self._Cdfctn = value if type(value) != auto else self.make_default("Cdfctn")
-
-	@Cdfctn.deleter
-	def Cdfctn(self):
-		del self._Cdfctn
-		self._Cdfctn = None
+	@RspnRsn.deleter
+	def RspnRsn(self):
+		del self._RspnRsn
+		self._RspnRsn = None
 
 	@property
 	def AddtlRspnInf(self):
@@ -44,6 +31,32 @@ class ResponseType8(base_types._BaseFieldType):
 		self._AddtlRspnInf = None
 
 	@property
+	def Cdfctn(self):
+		return self._Cdfctn
+
+	@Cdfctn.setter
+	def Cdfctn(self, value):
+		self._Cdfctn = value if type(value) != auto else self.make_default("Cdfctn")
+
+	@Cdfctn.deleter
+	def Cdfctn(self):
+		del self._Cdfctn
+		self._Cdfctn = None
+
+	@property
+	def RspndrId(self):
+		return self._RspndrId
+
+	@RspndrId.setter
+	def RspndrId(self, value):
+		self._RspndrId = value if type(value) != auto else self.make_default("RspndrId")
+
+	@RspndrId.deleter
+	def RspndrId(self):
+		del self._RspndrId
+		self._RspndrId = None
+
+	@property
 	def Rspn(self):
 		return self._Rspn
 
@@ -56,24 +69,11 @@ class ResponseType8(base_types._BaseFieldType):
 		del self._Rspn
 		self._Rspn = None
 
-	@property
-	def RspnRsn(self):
-		return self._RspnRsn
-
-	@RspnRsn.setter
-	def RspnRsn(self, value):
-		self._RspnRsn = value if type(value) != auto else self.make_default("RspnRsn")
-
-	@RspnRsn.deleter
-	def RspnRsn(self):
-		del self._RspnRsn
-		self._RspnRsn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspndrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdfctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlRspnInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRspnInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdfctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspndrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rspn', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

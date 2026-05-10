@@ -4,20 +4,7 @@ import FinancialInstrumentQuantity1
 
 class FundBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlUnitsFrUnitOrdrs", "_TtlCshFrCshOrdrs", "_TtlUnitsFrCshOrdrs", "_TtlCshFrUnitOrdrs"]
-	@property
-	def TtlUnitsFrUnitOrdrs(self):
-		return self._TtlUnitsFrUnitOrdrs
-
-	@TtlUnitsFrUnitOrdrs.setter
-	def TtlUnitsFrUnitOrdrs(self, value):
-		self._TtlUnitsFrUnitOrdrs = value if type(value) != auto else self.make_default("TtlUnitsFrUnitOrdrs")
-
-	@TtlUnitsFrUnitOrdrs.deleter
-	def TtlUnitsFrUnitOrdrs(self):
-		del self._TtlUnitsFrUnitOrdrs
-		self._TtlUnitsFrUnitOrdrs = None
-
+	__slots__ = ["_TtlCshFrCshOrdrs", "_TtlUnitsFrCshOrdrs", "_TtlCshFrUnitOrdrs", "_TtlUnitsFrUnitOrdrs"]
 	@property
 	def TtlCshFrCshOrdrs(self):
 		return self._TtlCshFrCshOrdrs
@@ -57,10 +44,23 @@ class FundBalance1(base_types._BaseFieldType):
 		del self._TtlCshFrUnitOrdrs
 		self._TtlCshFrUnitOrdrs = None
 
+	@property
+	def TtlUnitsFrUnitOrdrs(self):
+		return self._TtlUnitsFrUnitOrdrs
+
+	@TtlUnitsFrUnitOrdrs.setter
+	def TtlUnitsFrUnitOrdrs(self, value):
+		self._TtlUnitsFrUnitOrdrs = value if type(value) != auto else self.make_default("TtlUnitsFrUnitOrdrs")
+
+	@TtlUnitsFrUnitOrdrs.deleter
+	def TtlUnitsFrUnitOrdrs(self):
+		del self._TtlUnitsFrUnitOrdrs
+		self._TtlUnitsFrUnitOrdrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlUnitsFrUnitOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlCshFrCshOrdrs', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlUnitsFrCshOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlCshFrUnitOrdrs', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlUnitsFrUnitOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 	))
 

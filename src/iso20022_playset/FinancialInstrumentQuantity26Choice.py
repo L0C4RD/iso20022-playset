@@ -5,20 +5,7 @@ import DecimalNumber
 
 class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgOfTtlRedAmt", "_UnitsNb", "_GrssAmt", "_NetAmt"]
-	@property
-	def PctgOfTtlRedAmt(self):
-		return self._PctgOfTtlRedAmt
-
-	@PctgOfTtlRedAmt.setter
-	def PctgOfTtlRedAmt(self, value):
-		self._PctgOfTtlRedAmt = value if type(value) != auto else self.make_default("PctgOfTtlRedAmt")
-
-	@PctgOfTtlRedAmt.deleter
-	def PctgOfTtlRedAmt(self):
-		del self._PctgOfTtlRedAmt
-		self._PctgOfTtlRedAmt = None
-
+	__slots__ = ["_UnitsNb", "_GrssAmt", "_NetAmt", "_PctgOfTtlRedAmt"]
 	@property
 	def UnitsNb(self):
 		return self._UnitsNb
@@ -58,10 +45,23 @@ class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 		del self._NetAmt
 		self._NetAmt = None
 
+	@property
+	def PctgOfTtlRedAmt(self):
+		return self._PctgOfTtlRedAmt
+
+	@PctgOfTtlRedAmt.setter
+	def PctgOfTtlRedAmt(self, value):
+		self._PctgOfTtlRedAmt = value if type(value) != auto else self.make_default("PctgOfTtlRedAmt")
+
+	@PctgOfTtlRedAmt.deleter
+	def PctgOfTtlRedAmt(self):
+		del self._PctgOfTtlRedAmt
+		self._PctgOfTtlRedAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PctgOfTtlRedAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PctgOfTtlRedAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

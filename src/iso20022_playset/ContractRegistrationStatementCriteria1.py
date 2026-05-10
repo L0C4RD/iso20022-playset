@@ -3,7 +3,20 @@ import TrueFalseIndicator
 
 class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_RgltryRuleVldtn", "_AddtlSpprtgDocJrnl", "_SpprtgDocJrnl", "_TxJrnl"]
+	__slots__ = ["_SpprtgDocJrnl", "_RgltryRuleVldtn", "_AddtlSpprtgDocJrnl", "_TxJrnl"]
+	@property
+	def SpprtgDocJrnl(self):
+		return self._SpprtgDocJrnl
+
+	@SpprtgDocJrnl.setter
+	def SpprtgDocJrnl(self, value):
+		self._SpprtgDocJrnl = value if type(value) != auto else self.make_default("SpprtgDocJrnl")
+
+	@SpprtgDocJrnl.deleter
+	def SpprtgDocJrnl(self):
+		del self._SpprtgDocJrnl
+		self._SpprtgDocJrnl = None
+
 	@property
 	def RgltryRuleVldtn(self):
 		return self._RgltryRuleVldtn
@@ -31,19 +44,6 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._AddtlSpprtgDocJrnl = None
 
 	@property
-	def SpprtgDocJrnl(self):
-		return self._SpprtgDocJrnl
-
-	@SpprtgDocJrnl.setter
-	def SpprtgDocJrnl(self, value):
-		self._SpprtgDocJrnl = value if type(value) != auto else self.make_default("SpprtgDocJrnl")
-
-	@SpprtgDocJrnl.deleter
-	def SpprtgDocJrnl(self):
-		del self._SpprtgDocJrnl
-		self._SpprtgDocJrnl = None
-
-	@property
 	def TxJrnl(self):
 		return self._TxJrnl
 
@@ -57,9 +57,9 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._TxJrnl = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RgltryRuleVldtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

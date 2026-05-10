@@ -5,19 +5,19 @@ import AuthenticatedData4
 
 class ContentInformationType13(base_types._BaseFieldType):
 
-	__slots__ = ["_CnttTp", "_AuthntcdData", "_SgndData"]
+	__slots__ = ["_SgndData", "_AuthntcdData", "_CnttTp"]
 	@property
-	def CnttTp(self):
-		return self._CnttTp
+	def SgndData(self):
+		return self._SgndData
 
-	@CnttTp.setter
-	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
+	@SgndData.setter
+	def SgndData(self, value):
+		self._SgndData = value if type(value) != auto else self.make_default("SgndData")
 
-	@CnttTp.deleter
-	def CnttTp(self):
-		del self._CnttTp
-		self._CnttTp = None
+	@SgndData.deleter
+	def SgndData(self):
+		del self._SgndData
+		self._SgndData = None
 
 	@property
 	def AuthntcdData(self):
@@ -33,21 +33,21 @@ class ContentInformationType13(base_types._BaseFieldType):
 		self._AuthntcdData = None
 
 	@property
-	def SgndData(self):
-		return self._SgndData
+	def CnttTp(self):
+		return self._CnttTp
 
-	@SgndData.setter
-	def SgndData(self, value):
-		self._SgndData = value if type(value) != auto else self.make_default("SgndData")
+	@CnttTp.setter
+	def CnttTp(self, value):
+		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
 
-	@SgndData.deleter
-	def SgndData(self):
-		del self._SgndData
-		self._SgndData = None
+	@CnttTp.deleter
+	def CnttTp(self):
+		del self._CnttTp
+		self._CnttTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgndData', type=SignedData4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

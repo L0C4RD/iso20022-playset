@@ -1,29 +1,16 @@
 import base_types
-import IndividualPerson41
-import YesNoIndicator
-import SpecificInstructionRequest4
 import ISODateTime
-import Proxy12
+import IndividualPerson41
 import SafekeepingAccount19
-import Max35Text
 import VoteDetails6
+import SpecificInstructionRequest4
+import Proxy12
+import YesNoIndicator
+import Max35Text
 
 class Instruction8(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglInstrId", "_ReqdExctnDt", "_MtgAttndee", "_VoteExctnConf", "_VoteDtls", "_SpcfcInstrReq", "_Prxy", "_AcctDtls"]
-	@property
-	def SnglInstrId(self):
-		return self._SnglInstrId
-
-	@SnglInstrId.setter
-	def SnglInstrId(self, value):
-		self._SnglInstrId = value if type(value) != auto else self.make_default("SnglInstrId")
-
-	@SnglInstrId.deleter
-	def SnglInstrId(self):
-		del self._SnglInstrId
-		self._SnglInstrId = None
-
+	__slots__ = ["_ReqdExctnDt", "_AcctDtls", "_VoteDtls", "_SnglInstrId", "_VoteExctnConf", "_SpcfcInstrReq", "_Prxy", "_MtgAttndee"]
 	@property
 	def ReqdExctnDt(self):
 		return self._ReqdExctnDt
@@ -38,30 +25,17 @@ class Instruction8(base_types._BaseFieldType):
 		self._ReqdExctnDt = None
 
 	@property
-	def MtgAttndee(self):
-		return self._MtgAttndee
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@MtgAttndee.setter
-	def MtgAttndee(self, value):
-		self._MtgAttndee = value if type(value) != auto else self.make_default("MtgAttndee")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@MtgAttndee.deleter
-	def MtgAttndee(self):
-		del self._MtgAttndee
-		self._MtgAttndee = None
-
-	@property
-	def VoteExctnConf(self):
-		return self._VoteExctnConf
-
-	@VoteExctnConf.setter
-	def VoteExctnConf(self, value):
-		self._VoteExctnConf = value if type(value) != auto else self.make_default("VoteExctnConf")
-
-	@VoteExctnConf.deleter
-	def VoteExctnConf(self):
-		del self._VoteExctnConf
-		self._VoteExctnConf = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def VoteDtls(self):
@@ -75,6 +49,32 @@ class Instruction8(base_types._BaseFieldType):
 	def VoteDtls(self):
 		del self._VoteDtls
 		self._VoteDtls = None
+
+	@property
+	def SnglInstrId(self):
+		return self._SnglInstrId
+
+	@SnglInstrId.setter
+	def SnglInstrId(self, value):
+		self._SnglInstrId = value if type(value) != auto else self.make_default("SnglInstrId")
+
+	@SnglInstrId.deleter
+	def SnglInstrId(self):
+		del self._SnglInstrId
+		self._SnglInstrId = None
+
+	@property
+	def VoteExctnConf(self):
+		return self._VoteExctnConf
+
+	@VoteExctnConf.setter
+	def VoteExctnConf(self, value):
+		self._VoteExctnConf = value if type(value) != auto else self.make_default("VoteExctnConf")
+
+	@VoteExctnConf.deleter
+	def VoteExctnConf(self):
+		del self._VoteExctnConf
+		self._VoteExctnConf = None
 
 	@property
 	def SpcfcInstrReq(self):
@@ -103,26 +103,26 @@ class Instruction8(base_types._BaseFieldType):
 		self._Prxy = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def MtgAttndee(self):
+		return self._MtgAttndee
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@MtgAttndee.setter
+	def MtgAttndee(self, value):
+		self._MtgAttndee = value if type(value) != auto else self.make_default("MtgAttndee")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@MtgAttndee.deleter
+	def MtgAttndee(self):
+		del self._MtgAttndee
+		self._MtgAttndee = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SnglInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdExctnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtgAttndee', type=IndividualPerson41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VoteExctnConf', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoteDtls', type=VoteDetails6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SnglInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteExctnConf', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpcfcInstrReq', type=SpecificInstructionRequest4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prxy', type=Proxy12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgAttndee', type=IndividualPerson41, min=0, max=None, mutex_group=None, array=True),
 	))
 

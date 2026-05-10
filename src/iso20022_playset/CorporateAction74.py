@@ -1,12 +1,12 @@
 import base_types
 import CorporateActionEventStageFormat15Choice
 import CorporateActionDate89
-import LotteryTypeFormat5Choice
 import AdditionalBusinessProcessFormat16Choice
+import LotteryTypeFormat5Choice
 
 class CorporateAction74(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtStag", "_AddtlBizPrcInd", "_DtDtls", "_LtryTp"]
+	__slots__ = ["_EvtStag", "_DtDtls", "_LtryTp", "_AddtlBizPrcInd"]
 	@property
 	def EvtStag(self):
 		return self._EvtStag
@@ -19,19 +19,6 @@ class CorporateAction74(base_types._BaseFieldType):
 	def EvtStag(self):
 		del self._EvtStag
 		self._EvtStag = None
-
-	@property
-	def AddtlBizPrcInd(self):
-		return self._AddtlBizPrcInd
-
-	@AddtlBizPrcInd.setter
-	def AddtlBizPrcInd(self, value):
-		self._AddtlBizPrcInd = value if type(value) != auto else self.make_default("AddtlBizPrcInd")
-
-	@AddtlBizPrcInd.deleter
-	def AddtlBizPrcInd(self):
-		del self._AddtlBizPrcInd
-		self._AddtlBizPrcInd = None
 
 	@property
 	def DtDtls(self):
@@ -59,10 +46,23 @@ class CorporateAction74(base_types._BaseFieldType):
 		del self._LtryTp
 		self._LtryTp = None
 
+	@property
+	def AddtlBizPrcInd(self):
+		return self._AddtlBizPrcInd
+
+	@AddtlBizPrcInd.setter
+	def AddtlBizPrcInd(self, value):
+		self._AddtlBizPrcInd = value if type(value) != auto else self.make_default("AddtlBizPrcInd")
+
+	@AddtlBizPrcInd.deleter
+	def AddtlBizPrcInd(self):
+		del self._AddtlBizPrcInd
+		self._AddtlBizPrcInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat16Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat16Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ActiveOrHistoricCurrencyAndAmount
 import ActiveOrHistoricCurrencyCode
+import ActiveOrHistoricCurrencyAndAmount
 
 class EquivalentAmount2(base_types._BaseFieldType):
 

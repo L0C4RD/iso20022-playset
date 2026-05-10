@@ -5,7 +5,20 @@ import LEIIdentifier
 
 class IssuerCSDIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_FrstTwoCharsInstrmId", "_LEI"]
+	__slots__ = ["_LEI", "_Ctry", "_FrstTwoCharsInstrmId"]
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -32,22 +45,9 @@ class IssuerCSDIdentification1(base_types._BaseFieldType):
 		del self._FrstTwoCharsInstrmId
 		self._FrstTwoCharsInstrmId = None
 
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstTwoCharsInstrmId', type=Exact2UpperCaseAlphaText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

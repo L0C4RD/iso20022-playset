@@ -1,27 +1,27 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import BalanceStatus1Code
-import BalanceType11Choice
-import Number
 import CreditDebitCode
+import BalanceType11Choice
+import ImpliedCurrencyAndAmount
 import DateAndDateTime2Choice
 import BalanceRestrictionType1
+import Number
+import BalanceStatus1Code
 
 class CashBalance13(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfPmts", "_CdtDbtInd", "_Sts", "_Amt", "_ValDt", "_Tp", "_RstrctnTp", "_PrcgDt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_PrcgDt", "_ValDt", "_Tp", "_RstrctnTp", "_NbOfPmts", "_Sts"]
 	@property
-	def NbOfPmts(self):
-		return self._NbOfPmts
+	def Amt(self):
+		return self._Amt
 
-	@NbOfPmts.setter
-	def NbOfPmts(self, value):
-		self._NbOfPmts = value if type(value) != auto else self.make_default("NbOfPmts")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@NbOfPmts.deleter
-	def NbOfPmts(self):
-		del self._NbOfPmts
-		self._NbOfPmts = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def CdtDbtInd(self):
@@ -37,30 +37,17 @@ class CashBalance13(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def PrcgDt(self):
+		return self._PrcgDt
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@PrcgDt.setter
+	def PrcgDt(self, value):
+		self._PrcgDt = value if type(value) != auto else self.make_default("PrcgDt")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@PrcgDt.deleter
+	def PrcgDt(self):
+		del self._PrcgDt
+		self._PrcgDt = None
 
 	@property
 	def ValDt(self):
@@ -102,26 +89,39 @@ class CashBalance13(base_types._BaseFieldType):
 		self._RstrctnTp = None
 
 	@property
-	def PrcgDt(self):
-		return self._PrcgDt
+	def NbOfPmts(self):
+		return self._NbOfPmts
 
-	@PrcgDt.setter
-	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != auto else self.make_default("PrcgDt")
+	@NbOfPmts.setter
+	def NbOfPmts(self, value):
+		self._NbOfPmts = value if type(value) != auto else self.make_default("NbOfPmts")
 
-	@PrcgDt.deleter
-	def PrcgDt(self):
-		del self._PrcgDt
-		self._PrcgDt = None
+	@NbOfPmts.deleter
+	def NbOfPmts(self):
+		del self._NbOfPmts
+		self._NbOfPmts = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=BalanceStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RstrctnTp', type=BalanceRestrictionType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=BalanceStatus1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

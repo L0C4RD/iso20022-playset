@@ -4,20 +4,7 @@ import Max35Text
 
 class ATMMessageFunction1(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctn", "_ATMSvcCd", "_HstSvcCd"]
-	@property
-	def Fctn(self):
-		return self._Fctn
-
-	@Fctn.setter
-	def Fctn(self, value):
-		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
-
-	@Fctn.deleter
-	def Fctn(self):
-		del self._Fctn
-		self._Fctn = None
-
+	__slots__ = ["_ATMSvcCd", "_HstSvcCd", "_Fctn"]
 	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd
@@ -44,9 +31,22 @@ class ATMMessageFunction1(base_types._BaseFieldType):
 		del self._HstSvcCd
 		self._HstSvcCd = None
 
+	@property
+	def Fctn(self):
+		return self._Fctn
+
+	@Fctn.setter
+	def Fctn(self, value):
+		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
+
+	@Fctn.deleter
+	def Fctn(self):
+		del self._Fctn
+		self._Fctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Fctn', type=MessageFunction7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=MessageFunction7Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

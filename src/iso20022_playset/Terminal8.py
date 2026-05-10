@@ -1,6 +1,6 @@
 import base_types
-import AdditionalData1
 import Max16Text
+import AdditionalData1
 
 class Terminal8(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
 import SupplementaryData1
-import MessageHeader9
 import BusinessDayQuery2
+import MessageHeader9
 
 class GetBusinessDayInformationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_BizDayInfQryDef"]
+	__slots__ = ["_BizDayInfQryDef", "_SplmtryData", "_MsgHdr"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def BizDayInfQryDef(self):
+		return self._BizDayInfQryDef
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@BizDayInfQryDef.setter
+	def BizDayInfQryDef(self, value):
+		self._BizDayInfQryDef = value if type(value) != auto else self.make_default("BizDayInfQryDef")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@BizDayInfQryDef.deleter
+	def BizDayInfQryDef(self):
+		del self._BizDayInfQryDef
+		self._BizDayInfQryDef = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class GetBusinessDayInformationV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def BizDayInfQryDef(self):
-		return self._BizDayInfQryDef
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@BizDayInfQryDef.setter
-	def BizDayInfQryDef(self, value):
-		self._BizDayInfQryDef = value if type(value) != auto else self.make_default("BizDayInfQryDef")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@BizDayInfQryDef.deleter
-	def BizDayInfQryDef(self):
-		del self._BizDayInfQryDef
-		self._BizDayInfQryDef = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BizDayInfQryDef', type=BusinessDayQuery2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 	))
 

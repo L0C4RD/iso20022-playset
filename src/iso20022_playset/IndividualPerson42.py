@@ -1,11 +1,24 @@
 import base_types
-import AttendanceCard3
 import PartyIdentification129Choice
 import PartyIdentification232Choice
+import AttendanceCard3
 
 class IndividualPerson42(base_types._BaseFieldType):
 
-	__slots__ = ["_PrssgndPrxy", "_AttndncCardDtls", "_EmplngPty"]
+	__slots__ = ["_EmplngPty", "_PrssgndPrxy", "_AttndncCardDtls"]
+	@property
+	def EmplngPty(self):
+		return self._EmplngPty
+
+	@EmplngPty.setter
+	def EmplngPty(self, value):
+		self._EmplngPty = value if type(value) != auto else self.make_default("EmplngPty")
+
+	@EmplngPty.deleter
+	def EmplngPty(self):
+		del self._EmplngPty
+		self._EmplngPty = None
+
 	@property
 	def PrssgndPrxy(self):
 		return self._PrssgndPrxy
@@ -32,22 +45,9 @@ class IndividualPerson42(base_types._BaseFieldType):
 		del self._AttndncCardDtls
 		self._AttndncCardDtls = None
 
-	@property
-	def EmplngPty(self):
-		return self._EmplngPty
-
-	@EmplngPty.setter
-	def EmplngPty(self, value):
-		self._EmplngPty = value if type(value) != auto else self.make_default("EmplngPty")
-
-	@EmplngPty.deleter
-	def EmplngPty(self):
-		del self._EmplngPty
-		self._EmplngPty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EmplngPty', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrssgndPrxy', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttndncCardDtls', type=AttendanceCard3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmplngPty', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

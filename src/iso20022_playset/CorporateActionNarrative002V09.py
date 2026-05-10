@@ -1,13 +1,26 @@
 import base_types
-import AccountIdentification77Choice
 import RestrictedFINZMax8000Text
-import SupplementaryData1
-import SecurityIdentification20
 import CorporateActionGeneralInformation102
+import SupplementaryData1
+import AccountIdentification77Choice
+import SecurityIdentification20
 
 class CorporateActionNarrative002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CorpActnGnlInf", "_UndrlygScty", "_AcctDtls", "_AddtlInf"]
+	__slots__ = ["_AcctDtls", "_SplmtryData", "_AddtlInf", "_CorpActnGnlInf", "_UndrlygScty"]
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,6 +33,19 @@ class CorporateActionNarrative002V09(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def CorpActnGnlInf(self):
@@ -47,37 +73,11 @@ class CorporateActionNarrative002V09(base_types._BaseFieldType):
 		del self._UndrlygScty
 		self._UndrlygScty = None
 
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification77Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=RestrictedFINZMax8000Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification77Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=RestrictedFINZMax8000Text, min=1, max=None, mutex_group=None, array=True),
 	))
 

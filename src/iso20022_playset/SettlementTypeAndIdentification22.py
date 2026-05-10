@@ -1,7 +1,7 @@
 import base_types
 import RestrictedFINXMax16Text
-import ReceiveDelivery1Code
 import DeliveryReceiptType2Code
+import ReceiveDelivery1Code
 
 class SettlementTypeAndIdentification22(base_types._BaseFieldType):
 

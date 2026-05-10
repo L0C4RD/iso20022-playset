@@ -1,24 +1,11 @@
 import base_types
-import UnsecuredMarketReport4Choice
 import SupplementaryData1
+import UnsecuredMarketReport4Choice
 import MoneyMarketReportHeader1
 
 class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_UscrdMktRpt", "_SplmtryData", "_RptHdr"]
-	@property
-	def UscrdMktRpt(self):
-		return self._UscrdMktRpt
-
-	@UscrdMktRpt.setter
-	def UscrdMktRpt(self, value):
-		self._UscrdMktRpt = value if type(value) != auto else self.make_default("UscrdMktRpt")
-
-	@UscrdMktRpt.deleter
-	def UscrdMktRpt(self):
-		del self._UscrdMktRpt
-		self._UscrdMktRpt = None
-
+	__slots__ = ["_SplmtryData", "_UscrdMktRpt", "_RptHdr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,6 +18,19 @@ class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def UscrdMktRpt(self):
+		return self._UscrdMktRpt
+
+	@UscrdMktRpt.setter
+	def UscrdMktRpt(self, value):
+		self._UscrdMktRpt = value if type(value) != auto else self.make_default("UscrdMktRpt")
+
+	@UscrdMktRpt.deleter
+	def UscrdMktRpt(self):
+		del self._UscrdMktRpt
+		self._UscrdMktRpt = None
 
 	@property
 	def RptHdr(self):
@@ -46,8 +46,8 @@ class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 		self._RptHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UscrdMktRpt', type=UnsecuredMarketReport4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UscrdMktRpt', type=UnsecuredMarketReport4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

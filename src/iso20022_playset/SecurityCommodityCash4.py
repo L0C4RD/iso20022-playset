@@ -1,11 +1,24 @@
 import base_types
-import CashCompare3
 import Commodity42
+import CashCompare3
 import Security48
 
 class SecurityCommodityCash4(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmmdty", "_Scty", "_Csh"]
+	__slots__ = ["_Csh", "_Cmmdty", "_Scty"]
+	@property
+	def Csh(self):
+		return self._Csh
+
+	@Csh.setter
+	def Csh(self, value):
+		self._Csh = value if type(value) != auto else self.make_default("Csh")
+
+	@Csh.deleter
+	def Csh(self):
+		del self._Csh
+		self._Csh = None
+
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty
@@ -32,22 +45,9 @@ class SecurityCommodityCash4(base_types._BaseFieldType):
 		del self._Scty
 		self._Scty = None
 
-	@property
-	def Csh(self):
-		return self._Csh
-
-	@Csh.setter
-	def Csh(self, value):
-		self._Csh = value if type(value) != auto else self.make_default("Csh")
-
-	@Csh.deleter
-	def Csh(self):
-		del self._Csh
-		self._Csh = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Csh', type=CashCompare3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cmmdty', type=Commodity42, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Scty', type=Security48, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Csh', type=CashCompare3, min=0, max=None, mutex_group=None, array=True),
 	))
 

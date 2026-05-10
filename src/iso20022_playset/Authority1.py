@@ -1,24 +1,11 @@
 import base_types
 import ISO3NumericCountryCode
-import Max50Text
 import ISOCountrySubDivisionCode
+import Max50Text
 
 class Authority1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrySubDvsnMjrNm", "_Nm", "_Ctry", "_CtrySubDvsnMjr", "_CtrySubDvsnMnrNm", "_CtrySubDvsnMnr"]
-	@property
-	def CtrySubDvsnMjrNm(self):
-		return self._CtrySubDvsnMjrNm
-
-	@CtrySubDvsnMjrNm.setter
-	def CtrySubDvsnMjrNm(self, value):
-		self._CtrySubDvsnMjrNm = value if type(value) != auto else self.make_default("CtrySubDvsnMjrNm")
-
-	@CtrySubDvsnMjrNm.deleter
-	def CtrySubDvsnMjrNm(self):
-		del self._CtrySubDvsnMjrNm
-		self._CtrySubDvsnMjrNm = None
-
+	__slots__ = ["_Nm", "_Ctry", "_CtrySubDvsnMjrNm", "_CtrySubDvsnMjr", "_CtrySubDvsnMnrNm", "_CtrySubDvsnMnr"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -44,6 +31,19 @@ class Authority1(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def CtrySubDvsnMjrNm(self):
+		return self._CtrySubDvsnMjrNm
+
+	@CtrySubDvsnMjrNm.setter
+	def CtrySubDvsnMjrNm(self, value):
+		self._CtrySubDvsnMjrNm = value if type(value) != auto else self.make_default("CtrySubDvsnMjrNm")
+
+	@CtrySubDvsnMjrNm.deleter
+	def CtrySubDvsnMjrNm(self):
+		del self._CtrySubDvsnMjrNm
+		self._CtrySubDvsnMjrNm = None
 
 	@property
 	def CtrySubDvsnMjr(self):
@@ -85,9 +85,9 @@ class Authority1(base_types._BaseFieldType):
 		self._CtrySubDvsnMnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMjr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMnrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMnr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),

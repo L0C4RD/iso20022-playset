@@ -1,6 +1,6 @@
 import base_types
-import GeneratedReasons6Choice
 import RestrictedFINXMax210Text
+import GeneratedReasons6Choice
 
 class GeneratedReason6(base_types._BaseFieldType):
 

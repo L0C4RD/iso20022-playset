@@ -1,7 +1,7 @@
 import base_types
-import Max35Text
 import Max500Text
 import TransactionRequestType1Code
+import Max35Text
 
 class RequestType1(base_types._BaseFieldType):
 

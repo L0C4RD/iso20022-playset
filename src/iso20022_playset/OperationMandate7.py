@@ -1,15 +1,15 @@
 import base_types
-import Max35Text
-import PartyAndAuthorisation7
 import Channel2Choice
-import BankTransactionCodeStructure4
 import YesNoIndicator
 import ISODate
+import Max35Text
+import BankTransactionCodeStructure4
+import PartyAndAuthorisation7
 import Max15PlusSignedNumericText
 
 class OperationMandate7(base_types._BaseFieldType):
 
-	__slots__ = ["_EndDt", "_StartDt", "_MndtHldr", "_ReqrdSgntrNb", "_BkOpr", "_Id", "_SgntrOrdrInd", "_AplblChanl"]
+	__slots__ = ["_EndDt", "_Id", "_SgntrOrdrInd", "_BkOpr", "_MndtHldr", "_ReqrdSgntrNb", "_StartDt", "_AplblChanl"]
 	@property
 	def EndDt(self):
 		return self._EndDt
@@ -22,58 +22,6 @@ class OperationMandate7(base_types._BaseFieldType):
 	def EndDt(self):
 		del self._EndDt
 		self._EndDt = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
-	@property
-	def MndtHldr(self):
-		return self._MndtHldr
-
-	@MndtHldr.setter
-	def MndtHldr(self, value):
-		self._MndtHldr = value if type(value) != auto else self.make_default("MndtHldr")
-
-	@MndtHldr.deleter
-	def MndtHldr(self):
-		del self._MndtHldr
-		self._MndtHldr = None
-
-	@property
-	def ReqrdSgntrNb(self):
-		return self._ReqrdSgntrNb
-
-	@ReqrdSgntrNb.setter
-	def ReqrdSgntrNb(self, value):
-		self._ReqrdSgntrNb = value if type(value) != auto else self.make_default("ReqrdSgntrNb")
-
-	@ReqrdSgntrNb.deleter
-	def ReqrdSgntrNb(self):
-		del self._ReqrdSgntrNb
-		self._ReqrdSgntrNb = None
-
-	@property
-	def BkOpr(self):
-		return self._BkOpr
-
-	@BkOpr.setter
-	def BkOpr(self, value):
-		self._BkOpr = value if type(value) != auto else self.make_default("BkOpr")
-
-	@BkOpr.deleter
-	def BkOpr(self):
-		del self._BkOpr
-		self._BkOpr = None
 
 	@property
 	def Id(self):
@@ -102,6 +50,58 @@ class OperationMandate7(base_types._BaseFieldType):
 		self._SgntrOrdrInd = None
 
 	@property
+	def BkOpr(self):
+		return self._BkOpr
+
+	@BkOpr.setter
+	def BkOpr(self, value):
+		self._BkOpr = value if type(value) != auto else self.make_default("BkOpr")
+
+	@BkOpr.deleter
+	def BkOpr(self):
+		del self._BkOpr
+		self._BkOpr = None
+
+	@property
+	def MndtHldr(self):
+		return self._MndtHldr
+
+	@MndtHldr.setter
+	def MndtHldr(self, value):
+		self._MndtHldr = value if type(value) != auto else self.make_default("MndtHldr")
+
+	@MndtHldr.deleter
+	def MndtHldr(self):
+		del self._MndtHldr
+		self._MndtHldr = None
+
+	@property
+	def ReqrdSgntrNb(self):
+		return self._ReqrdSgntrNb
+
+	@ReqrdSgntrNb.setter
+	def ReqrdSgntrNb(self, value):
+		self._ReqrdSgntrNb = value if type(value) != auto else self.make_default("ReqrdSgntrNb")
+
+	@ReqrdSgntrNb.deleter
+	def ReqrdSgntrNb(self):
+		del self._ReqrdSgntrNb
+		self._ReqrdSgntrNb = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
 	def AplblChanl(self):
 		return self._AplblChanl
 
@@ -116,12 +116,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtHldr', type=PartyAndAuthorisation7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqrdSgntrNb', type=Max15PlusSignedNumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkOpr', type=BankTransactionCodeStructure4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgntrOrdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkOpr', type=BankTransactionCodeStructure4, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MndtHldr', type=PartyAndAuthorisation7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqrdSgntrNb', type=Max15PlusSignedNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AplblChanl', type=Channel2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

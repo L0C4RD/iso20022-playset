@@ -1,25 +1,25 @@
 import base_types
-import SecuritiesTransactionReferences1
-import System3
-import CashAccountAndEntry5
 import CreditDebitCode
+import CashAccountAndEntry5
+import System3
+import SecuritiesTransactionReferences1
 import PaymentInstruction47
 
 class Transaction159(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_PmtFr", "_AcctNtry", "_SctiesTxRefs", "_PmtTo", "_Pmt"]
+	__slots__ = ["_PmtTo", "_PmtFr", "_CdtDbtInd", "_SctiesTxRefs", "_Pmt", "_AcctNtry"]
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def PmtTo(self):
+		return self._PmtTo
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@PmtTo.setter
+	def PmtTo(self, value):
+		self._PmtTo = value if type(value) != auto else self.make_default("PmtTo")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@PmtTo.deleter
+	def PmtTo(self):
+		del self._PmtTo
+		self._PmtTo = None
 
 	@property
 	def PmtFr(self):
@@ -35,17 +35,17 @@ class Transaction159(base_types._BaseFieldType):
 		self._PmtFr = None
 
 	@property
-	def AcctNtry(self):
-		return self._AcctNtry
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@AcctNtry.setter
-	def AcctNtry(self, value):
-		self._AcctNtry = value if type(value) != auto else self.make_default("AcctNtry")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
 
-	@AcctNtry.deleter
-	def AcctNtry(self):
-		del self._AcctNtry
-		self._AcctNtry = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def SctiesTxRefs(self):
@@ -61,19 +61,6 @@ class Transaction159(base_types._BaseFieldType):
 		self._SctiesTxRefs = None
 
 	@property
-	def PmtTo(self):
-		return self._PmtTo
-
-	@PmtTo.setter
-	def PmtTo(self, value):
-		self._PmtTo = value if type(value) != auto else self.make_default("PmtTo")
-
-	@PmtTo.deleter
-	def PmtTo(self):
-		del self._PmtTo
-		self._PmtTo = None
-
-	@property
 	def Pmt(self):
 		return self._Pmt
 
@@ -86,12 +73,25 @@ class Transaction159(base_types._BaseFieldType):
 		del self._Pmt
 		self._Pmt = None
 
+	@property
+	def AcctNtry(self):
+		return self._AcctNtry
+
+	@AcctNtry.setter
+	def AcctNtry(self, value):
+		self._AcctNtry = value if type(value) != auto else self.make_default("AcctNtry")
+
+	@AcctNtry.deleter
+	def AcctNtry(self):
+		del self._AcctNtry
+		self._AcctNtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFr', type=System3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNtry', type=CashAccountAndEntry5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesTxRefs', type=SecuritiesTransactionReferences1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTo', type=System3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFr', type=System3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesTxRefs', type=SecuritiesTransactionReferences1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=PaymentInstruction47, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNtry', type=CashAccountAndEntry5, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,14 +1,27 @@
 import base_types
-import BenchmarkCurveName7Choice
-import Max256Text
-import DecimalNumber
-import SecurityIdentification39
 import Price8
 import ActiveOrHistoricCurrencyCode
+import DecimalNumber
+import SecurityIdentification39
+import Max256Text
+import BenchmarkCurveName7Choice
 
 class BenchmarkCurve6(base_types._BaseFieldType):
 
-	__slots__ = ["_BchmkCrvNm", "_BchmkPric", "_BchmkCrvPt", "_BchmkCrvCcy", "_Sprd", "_BchmkId"]
+	__slots__ = ["_BchmkId", "_BchmkCrvNm", "_BchmkPric", "_BchmkCrvPt", "_Sprd", "_BchmkCrvCcy"]
+	@property
+	def BchmkId(self):
+		return self._BchmkId
+
+	@BchmkId.setter
+	def BchmkId(self, value):
+		self._BchmkId = value if type(value) != auto else self.make_default("BchmkId")
+
+	@BchmkId.deleter
+	def BchmkId(self):
+		del self._BchmkId
+		self._BchmkId = None
+
 	@property
 	def BchmkCrvNm(self):
 		return self._BchmkCrvNm
@@ -49,19 +62,6 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 		self._BchmkCrvPt = None
 
 	@property
-	def BchmkCrvCcy(self):
-		return self._BchmkCrvCcy
-
-	@BchmkCrvCcy.setter
-	def BchmkCrvCcy(self, value):
-		self._BchmkCrvCcy = value if type(value) != auto else self.make_default("BchmkCrvCcy")
-
-	@BchmkCrvCcy.deleter
-	def BchmkCrvCcy(self):
-		del self._BchmkCrvCcy
-		self._BchmkCrvCcy = None
-
-	@property
 	def Sprd(self):
 		return self._Sprd
 
@@ -75,24 +75,24 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 		self._Sprd = None
 
 	@property
-	def BchmkId(self):
-		return self._BchmkId
+	def BchmkCrvCcy(self):
+		return self._BchmkCrvCcy
 
-	@BchmkId.setter
-	def BchmkId(self, value):
-		self._BchmkId = value if type(value) != auto else self.make_default("BchmkId")
+	@BchmkCrvCcy.setter
+	def BchmkCrvCcy(self, value):
+		self._BchmkCrvCcy = value if type(value) != auto else self.make_default("BchmkCrvCcy")
 
-	@BchmkId.deleter
-	def BchmkId(self):
-		del self._BchmkId
-		self._BchmkId = None
+	@BchmkCrvCcy.deleter
+	def BchmkCrvCcy(self):
+		del self._BchmkCrvCcy
+		self._BchmkCrvCcy = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BchmkId', type=SecurityIdentification39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BchmkCrvNm', type=BenchmarkCurveName7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BchmkPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BchmkCrvPt', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BchmkCrvCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BchmkId', type=SecurityIdentification39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BchmkCrvCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

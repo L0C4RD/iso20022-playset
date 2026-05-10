@@ -1,26 +1,13 @@
 import base_types
-import ActionType15Code
 import NetworkParameters7
+import ActionType15Code
 import ProcessRetry3
-import ActionMessage11
 import ProcessTiming6
+import ActionMessage11
 
 class Action17(base_types._BaseFieldType):
 
-	__slots__ = ["_Rtry", "_ActnTp", "_RmotAccs", "_MsgToPres", "_TmCond"]
-	@property
-	def Rtry(self):
-		return self._Rtry
-
-	@Rtry.setter
-	def Rtry(self, value):
-		self._Rtry = value if type(value) != auto else self.make_default("Rtry")
-
-	@Rtry.deleter
-	def Rtry(self):
-		del self._Rtry
-		self._Rtry = None
-
+	__slots__ = ["_ActnTp", "_RmotAccs", "_Rtry", "_MsgToPres", "_TmCond"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp
@@ -46,6 +33,19 @@ class Action17(base_types._BaseFieldType):
 	def RmotAccs(self):
 		del self._RmotAccs
 		self._RmotAccs = None
+
+	@property
+	def Rtry(self):
+		return self._Rtry
+
+	@Rtry.setter
+	def Rtry(self, value):
+		self._Rtry = value if type(value) != auto else self.make_default("Rtry")
+
+	@Rtry.deleter
+	def Rtry(self):
+		del self._Rtry
+		self._Rtry = None
 
 	@property
 	def MsgToPres(self):
@@ -74,9 +74,9 @@ class Action17(base_types._BaseFieldType):
 		self._TmCond = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rtry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActnTp', type=ActionType15Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rtry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgToPres', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
 	))

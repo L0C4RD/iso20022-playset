@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import ExternalInvestigationReasonSubType1Code
+import Max35Text
 
 class InvestigationReasonSubType1Choice(base_types._BaseFieldType):
 

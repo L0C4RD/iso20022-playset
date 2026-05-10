@@ -1,24 +1,11 @@
 import base_types
+import Max256Text
 import PhoneNumber
 import PostalAddress22
-import Max256Text
 
 class CommunicationAddress9(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_CstmrSvc", "_URLAdr", "_AddtlCtctInf", "_Email", "_Phne"]
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
+	__slots__ = ["_CstmrSvc", "_Phne", "_AddtlCtctInf", "_PstlAdr", "_URLAdr", "_Email"]
 	@property
 	def CstmrSvc(self):
 		return self._CstmrSvc
@@ -33,17 +20,17 @@ class CommunicationAddress9(base_types._BaseFieldType):
 		self._CstmrSvc = None
 
 	@property
-	def URLAdr(self):
-		return self._URLAdr
+	def Phne(self):
+		return self._Phne
 
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != auto else self.make_default("URLAdr")
+	@Phne.setter
+	def Phne(self, value):
+		self._Phne = value if type(value) != auto else self.make_default("Phne")
 
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
+	@Phne.deleter
+	def Phne(self):
+		del self._Phne
+		self._Phne = None
 
 	@property
 	def AddtlCtctInf(self):
@@ -59,6 +46,32 @@ class CommunicationAddress9(base_types._BaseFieldType):
 		self._AddtlCtctInf = None
 
 	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
+	@property
+	def URLAdr(self):
+		return self._URLAdr
+
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != auto else self.make_default("URLAdr")
+
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
+
+	@property
 	def Email(self):
 		return self._Email
 
@@ -71,25 +84,12 @@ class CommunicationAddress9(base_types._BaseFieldType):
 		del self._Email
 		self._Email = None
 
-	@property
-	def Phne(self):
-		return self._Phne
-
-	@Phne.setter
-	def Phne(self, value):
-		self._Phne = value if type(value) != auto else self.make_default("Phne")
-
-	@Phne.deleter
-	def Phne(self):
-		del self._Phne
-		self._Phne = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrSvc', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlCtctInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlCtctInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,10 @@
 import base_types
-import InstructionStatusReturnCriteria1
 import RequestedIndicator
+import InstructionStatusReturnCriteria1
 
 class PaymentReturnCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_TxIdInd", "_CdtrAgtInd", "_PurpInd", "_DbtrInd", "_ReqdExctnDtInd", "_EndToEndIdInd", "_CdtrInd", "_InstrInd", "_InstdAmtInd", "_InstrCpyInd", "_DbtrAgtInd", "_PmtMtdInd", "_IntrBkSttlmAmtInd", "_PmtTpInd", "_MsgIdInd", "_InstdRmbrsmntAgtInd", "_IntrBkSttlmDtInd", "_PrcgVldtyTmInd", "_PrtyInd", "_InstrStsRtrCrit", "_PmtMTInd", "_InstgRmbrsmntAgtInd", "_IntrmyInd"]
+	__slots__ = ["_CdtDbtInd", "_PurpInd", "_CdtrAgtInd", "_IntrBkSttlmDtInd", "_TxIdInd", "_InstrCpyInd", "_InstdAmtInd", "_EndToEndIdInd", "_InstrInd", "_PmtTpInd", "_MsgIdInd", "_InstdRmbrsmntAgtInd", "_PrtyInd", "_IntrBkSttlmAmtInd", "_PrcgVldtyTmInd", "_PmtMtdInd", "_InstrStsRtrCrit", "_PmtMTInd", "_DbtrAgtInd", "_IntrmyInd", "_InstgRmbrsmntAgtInd", "_ReqdExctnDtInd", "_DbtrInd", "_CdtrInd"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -17,32 +17,6 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
-
-	@property
-	def TxIdInd(self):
-		return self._TxIdInd
-
-	@TxIdInd.setter
-	def TxIdInd(self, value):
-		self._TxIdInd = value if type(value) != auto else self.make_default("TxIdInd")
-
-	@TxIdInd.deleter
-	def TxIdInd(self):
-		del self._TxIdInd
-		self._TxIdInd = None
-
-	@property
-	def CdtrAgtInd(self):
-		return self._CdtrAgtInd
-
-	@CdtrAgtInd.setter
-	def CdtrAgtInd(self, value):
-		self._CdtrAgtInd = value if type(value) != auto else self.make_default("CdtrAgtInd")
-
-	@CdtrAgtInd.deleter
-	def CdtrAgtInd(self):
-		del self._CdtrAgtInd
-		self._CdtrAgtInd = None
 
 	@property
 	def PurpInd(self):
@@ -58,82 +32,43 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 		self._PurpInd = None
 
 	@property
-	def DbtrInd(self):
-		return self._DbtrInd
+	def CdtrAgtInd(self):
+		return self._CdtrAgtInd
 
-	@DbtrInd.setter
-	def DbtrInd(self, value):
-		self._DbtrInd = value if type(value) != auto else self.make_default("DbtrInd")
+	@CdtrAgtInd.setter
+	def CdtrAgtInd(self, value):
+		self._CdtrAgtInd = value if type(value) != auto else self.make_default("CdtrAgtInd")
 
-	@DbtrInd.deleter
-	def DbtrInd(self):
-		del self._DbtrInd
-		self._DbtrInd = None
-
-	@property
-	def ReqdExctnDtInd(self):
-		return self._ReqdExctnDtInd
-
-	@ReqdExctnDtInd.setter
-	def ReqdExctnDtInd(self, value):
-		self._ReqdExctnDtInd = value if type(value) != auto else self.make_default("ReqdExctnDtInd")
-
-	@ReqdExctnDtInd.deleter
-	def ReqdExctnDtInd(self):
-		del self._ReqdExctnDtInd
-		self._ReqdExctnDtInd = None
+	@CdtrAgtInd.deleter
+	def CdtrAgtInd(self):
+		del self._CdtrAgtInd
+		self._CdtrAgtInd = None
 
 	@property
-	def EndToEndIdInd(self):
-		return self._EndToEndIdInd
+	def IntrBkSttlmDtInd(self):
+		return self._IntrBkSttlmDtInd
 
-	@EndToEndIdInd.setter
-	def EndToEndIdInd(self, value):
-		self._EndToEndIdInd = value if type(value) != auto else self.make_default("EndToEndIdInd")
+	@IntrBkSttlmDtInd.setter
+	def IntrBkSttlmDtInd(self, value):
+		self._IntrBkSttlmDtInd = value if type(value) != auto else self.make_default("IntrBkSttlmDtInd")
 
-	@EndToEndIdInd.deleter
-	def EndToEndIdInd(self):
-		del self._EndToEndIdInd
-		self._EndToEndIdInd = None
-
-	@property
-	def CdtrInd(self):
-		return self._CdtrInd
-
-	@CdtrInd.setter
-	def CdtrInd(self, value):
-		self._CdtrInd = value if type(value) != auto else self.make_default("CdtrInd")
-
-	@CdtrInd.deleter
-	def CdtrInd(self):
-		del self._CdtrInd
-		self._CdtrInd = None
+	@IntrBkSttlmDtInd.deleter
+	def IntrBkSttlmDtInd(self):
+		del self._IntrBkSttlmDtInd
+		self._IntrBkSttlmDtInd = None
 
 	@property
-	def InstrInd(self):
-		return self._InstrInd
+	def TxIdInd(self):
+		return self._TxIdInd
 
-	@InstrInd.setter
-	def InstrInd(self, value):
-		self._InstrInd = value if type(value) != auto else self.make_default("InstrInd")
+	@TxIdInd.setter
+	def TxIdInd(self, value):
+		self._TxIdInd = value if type(value) != auto else self.make_default("TxIdInd")
 
-	@InstrInd.deleter
-	def InstrInd(self):
-		del self._InstrInd
-		self._InstrInd = None
-
-	@property
-	def InstdAmtInd(self):
-		return self._InstdAmtInd
-
-	@InstdAmtInd.setter
-	def InstdAmtInd(self, value):
-		self._InstdAmtInd = value if type(value) != auto else self.make_default("InstdAmtInd")
-
-	@InstdAmtInd.deleter
-	def InstdAmtInd(self):
-		del self._InstdAmtInd
-		self._InstdAmtInd = None
+	@TxIdInd.deleter
+	def TxIdInd(self):
+		del self._TxIdInd
+		self._TxIdInd = None
 
 	@property
 	def InstrCpyInd(self):
@@ -149,43 +84,43 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 		self._InstrCpyInd = None
 
 	@property
-	def DbtrAgtInd(self):
-		return self._DbtrAgtInd
+	def InstdAmtInd(self):
+		return self._InstdAmtInd
 
-	@DbtrAgtInd.setter
-	def DbtrAgtInd(self, value):
-		self._DbtrAgtInd = value if type(value) != auto else self.make_default("DbtrAgtInd")
+	@InstdAmtInd.setter
+	def InstdAmtInd(self, value):
+		self._InstdAmtInd = value if type(value) != auto else self.make_default("InstdAmtInd")
 
-	@DbtrAgtInd.deleter
-	def DbtrAgtInd(self):
-		del self._DbtrAgtInd
-		self._DbtrAgtInd = None
-
-	@property
-	def PmtMtdInd(self):
-		return self._PmtMtdInd
-
-	@PmtMtdInd.setter
-	def PmtMtdInd(self, value):
-		self._PmtMtdInd = value if type(value) != auto else self.make_default("PmtMtdInd")
-
-	@PmtMtdInd.deleter
-	def PmtMtdInd(self):
-		del self._PmtMtdInd
-		self._PmtMtdInd = None
+	@InstdAmtInd.deleter
+	def InstdAmtInd(self):
+		del self._InstdAmtInd
+		self._InstdAmtInd = None
 
 	@property
-	def IntrBkSttlmAmtInd(self):
-		return self._IntrBkSttlmAmtInd
+	def EndToEndIdInd(self):
+		return self._EndToEndIdInd
 
-	@IntrBkSttlmAmtInd.setter
-	def IntrBkSttlmAmtInd(self, value):
-		self._IntrBkSttlmAmtInd = value if type(value) != auto else self.make_default("IntrBkSttlmAmtInd")
+	@EndToEndIdInd.setter
+	def EndToEndIdInd(self, value):
+		self._EndToEndIdInd = value if type(value) != auto else self.make_default("EndToEndIdInd")
 
-	@IntrBkSttlmAmtInd.deleter
-	def IntrBkSttlmAmtInd(self):
-		del self._IntrBkSttlmAmtInd
-		self._IntrBkSttlmAmtInd = None
+	@EndToEndIdInd.deleter
+	def EndToEndIdInd(self):
+		del self._EndToEndIdInd
+		self._EndToEndIdInd = None
+
+	@property
+	def InstrInd(self):
+		return self._InstrInd
+
+	@InstrInd.setter
+	def InstrInd(self, value):
+		self._InstrInd = value if type(value) != auto else self.make_default("InstrInd")
+
+	@InstrInd.deleter
+	def InstrInd(self):
+		del self._InstrInd
+		self._InstrInd = None
 
 	@property
 	def PmtTpInd(self):
@@ -227,17 +162,30 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 		self._InstdRmbrsmntAgtInd = None
 
 	@property
-	def IntrBkSttlmDtInd(self):
-		return self._IntrBkSttlmDtInd
+	def PrtyInd(self):
+		return self._PrtyInd
 
-	@IntrBkSttlmDtInd.setter
-	def IntrBkSttlmDtInd(self, value):
-		self._IntrBkSttlmDtInd = value if type(value) != auto else self.make_default("IntrBkSttlmDtInd")
+	@PrtyInd.setter
+	def PrtyInd(self, value):
+		self._PrtyInd = value if type(value) != auto else self.make_default("PrtyInd")
 
-	@IntrBkSttlmDtInd.deleter
-	def IntrBkSttlmDtInd(self):
-		del self._IntrBkSttlmDtInd
-		self._IntrBkSttlmDtInd = None
+	@PrtyInd.deleter
+	def PrtyInd(self):
+		del self._PrtyInd
+		self._PrtyInd = None
+
+	@property
+	def IntrBkSttlmAmtInd(self):
+		return self._IntrBkSttlmAmtInd
+
+	@IntrBkSttlmAmtInd.setter
+	def IntrBkSttlmAmtInd(self, value):
+		self._IntrBkSttlmAmtInd = value if type(value) != auto else self.make_default("IntrBkSttlmAmtInd")
+
+	@IntrBkSttlmAmtInd.deleter
+	def IntrBkSttlmAmtInd(self):
+		del self._IntrBkSttlmAmtInd
+		self._IntrBkSttlmAmtInd = None
 
 	@property
 	def PrcgVldtyTmInd(self):
@@ -253,17 +201,17 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 		self._PrcgVldtyTmInd = None
 
 	@property
-	def PrtyInd(self):
-		return self._PrtyInd
+	def PmtMtdInd(self):
+		return self._PmtMtdInd
 
-	@PrtyInd.setter
-	def PrtyInd(self, value):
-		self._PrtyInd = value if type(value) != auto else self.make_default("PrtyInd")
+	@PmtMtdInd.setter
+	def PmtMtdInd(self, value):
+		self._PmtMtdInd = value if type(value) != auto else self.make_default("PmtMtdInd")
 
-	@PrtyInd.deleter
-	def PrtyInd(self):
-		del self._PrtyInd
-		self._PrtyInd = None
+	@PmtMtdInd.deleter
+	def PmtMtdInd(self):
+		del self._PmtMtdInd
+		self._PmtMtdInd = None
 
 	@property
 	def InstrStsRtrCrit(self):
@@ -292,17 +240,17 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 		self._PmtMTInd = None
 
 	@property
-	def InstgRmbrsmntAgtInd(self):
-		return self._InstgRmbrsmntAgtInd
+	def DbtrAgtInd(self):
+		return self._DbtrAgtInd
 
-	@InstgRmbrsmntAgtInd.setter
-	def InstgRmbrsmntAgtInd(self, value):
-		self._InstgRmbrsmntAgtInd = value if type(value) != auto else self.make_default("InstgRmbrsmntAgtInd")
+	@DbtrAgtInd.setter
+	def DbtrAgtInd(self, value):
+		self._DbtrAgtInd = value if type(value) != auto else self.make_default("DbtrAgtInd")
 
-	@InstgRmbrsmntAgtInd.deleter
-	def InstgRmbrsmntAgtInd(self):
-		del self._InstgRmbrsmntAgtInd
-		self._InstgRmbrsmntAgtInd = None
+	@DbtrAgtInd.deleter
+	def DbtrAgtInd(self):
+		del self._DbtrAgtInd
+		self._DbtrAgtInd = None
 
 	@property
 	def IntrmyInd(self):
@@ -317,30 +265,82 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 		del self._IntrmyInd
 		self._IntrmyInd = None
 
+	@property
+	def InstgRmbrsmntAgtInd(self):
+		return self._InstgRmbrsmntAgtInd
+
+	@InstgRmbrsmntAgtInd.setter
+	def InstgRmbrsmntAgtInd(self, value):
+		self._InstgRmbrsmntAgtInd = value if type(value) != auto else self.make_default("InstgRmbrsmntAgtInd")
+
+	@InstgRmbrsmntAgtInd.deleter
+	def InstgRmbrsmntAgtInd(self):
+		del self._InstgRmbrsmntAgtInd
+		self._InstgRmbrsmntAgtInd = None
+
+	@property
+	def ReqdExctnDtInd(self):
+		return self._ReqdExctnDtInd
+
+	@ReqdExctnDtInd.setter
+	def ReqdExctnDtInd(self, value):
+		self._ReqdExctnDtInd = value if type(value) != auto else self.make_default("ReqdExctnDtInd")
+
+	@ReqdExctnDtInd.deleter
+	def ReqdExctnDtInd(self):
+		del self._ReqdExctnDtInd
+		self._ReqdExctnDtInd = None
+
+	@property
+	def DbtrInd(self):
+		return self._DbtrInd
+
+	@DbtrInd.setter
+	def DbtrInd(self, value):
+		self._DbtrInd = value if type(value) != auto else self.make_default("DbtrInd")
+
+	@DbtrInd.deleter
+	def DbtrInd(self):
+		del self._DbtrInd
+		self._DbtrInd = None
+
+	@property
+	def CdtrInd(self):
+		return self._CdtrInd
+
+	@CdtrInd.setter
+	def CdtrInd(self, value):
+		self._CdtrInd = value if type(value) != auto else self.make_default("CdtrInd")
+
+	@CdtrInd.deleter
+	def CdtrInd(self):
+		del self._CdtrInd
+		self._CdtrInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrCpyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtMtdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdRmbrsmntAgtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgVldtyTmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgVldtyTmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtMtdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrStsRtrCrit', type=InstructionStatusReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMTInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgRmbrsmntAgtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgRmbrsmntAgtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

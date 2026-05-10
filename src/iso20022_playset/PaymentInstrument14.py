@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import CreditTransfer9
+import Max35Text
 
 class PaymentInstrument14(base_types._BaseFieldType):
 

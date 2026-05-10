@@ -1,7 +1,7 @@
 import base_types
-import ATMTransaction45
-import AutomatedTellerMachine3
 import ATMContext12
+import AutomatedTellerMachine3
+import ATMTransaction45
 
 class ATMDepositCompletionAcknowledgement2(base_types._BaseFieldType):
 

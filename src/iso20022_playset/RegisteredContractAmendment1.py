@@ -1,37 +1,24 @@
 import base_types
-import Max35Text
-import Max1025Text
 import ISODate
 import DocumentIdentification28
+import Max35Text
+import Max1025Text
 
 class RegisteredContractAmendment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Doc", "_AmdmntDt", "_StartDt", "_AddtlInf", "_AmdmntRsn"]
+	__slots__ = ["_AddtlInf", "_StartDt", "_AmdmntRsn", "_AmdmntDt", "_Doc"]
 	@property
-	def Doc(self):
-		return self._Doc
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Doc.setter
-	def Doc(self, value):
-		self._Doc = value if type(value) != auto else self.make_default("Doc")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Doc.deleter
-	def Doc(self):
-		del self._Doc
-		self._Doc = None
-
-	@property
-	def AmdmntDt(self):
-		return self._AmdmntDt
-
-	@AmdmntDt.setter
-	def AmdmntDt(self, value):
-		self._AmdmntDt = value if type(value) != auto else self.make_default("AmdmntDt")
-
-	@AmdmntDt.deleter
-	def AmdmntDt(self):
-		del self._AmdmntDt
-		self._AmdmntDt = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def StartDt(self):
@@ -47,19 +34,6 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def AmdmntRsn(self):
 		return self._AmdmntRsn
 
@@ -72,11 +46,37 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 		del self._AmdmntRsn
 		self._AmdmntRsn = None
 
+	@property
+	def AmdmntDt(self):
+		return self._AmdmntDt
+
+	@AmdmntDt.setter
+	def AmdmntDt(self, value):
+		self._AmdmntDt = value if type(value) != auto else self.make_default("AmdmntDt")
+
+	@AmdmntDt.deleter
+	def AmdmntDt(self):
+		del self._AmdmntDt
+		self._AmdmntDt = None
+
+	@property
+	def Doc(self):
+		return self._Doc
+
+	@Doc.setter
+	def Doc(self, value):
+		self._Doc = value if type(value) != auto else self.make_default("Doc")
+
+	@Doc.deleter
+	def Doc(self):
+		del self._Doc
+		self._Doc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Doc', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Doc', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
 	))
 

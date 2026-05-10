@@ -5,20 +5,7 @@ import Max256Text
 
 class PartyAuditTrail2(base_types._BaseFieldType):
 
-	__slots__ = ["_ApprvgUsr", "_InstgUsr", "_OprTmStmp", "_Rcrd"]
-	@property
-	def ApprvgUsr(self):
-		return self._ApprvgUsr
-
-	@ApprvgUsr.setter
-	def ApprvgUsr(self, value):
-		self._ApprvgUsr = value if type(value) != auto else self.make_default("ApprvgUsr")
-
-	@ApprvgUsr.deleter
-	def ApprvgUsr(self):
-		del self._ApprvgUsr
-		self._ApprvgUsr = None
-
+	__slots__ = ["_InstgUsr", "_ApprvgUsr", "_OprTmStmp", "_Rcrd"]
 	@property
 	def InstgUsr(self):
 		return self._InstgUsr
@@ -31,6 +18,19 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 	def InstgUsr(self):
 		del self._InstgUsr
 		self._InstgUsr = None
+
+	@property
+	def ApprvgUsr(self):
+		return self._ApprvgUsr
+
+	@ApprvgUsr.setter
+	def ApprvgUsr(self, value):
+		self._ApprvgUsr = value if type(value) != auto else self.make_default("ApprvgUsr")
+
+	@ApprvgUsr.deleter
+	def ApprvgUsr(self):
+		del self._ApprvgUsr
+		self._ApprvgUsr = None
 
 	@property
 	def OprTmStmp(self):
@@ -59,8 +59,8 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 		self._Rcrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ApprvgUsr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgUsr', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvgUsr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 	))

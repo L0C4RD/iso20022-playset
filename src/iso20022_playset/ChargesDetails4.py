@@ -1,6 +1,6 @@
 import base_types
-import ChargesType1Choice
 import CurrencyAndAmount
+import ChargesType1Choice
 
 class ChargesDetails4(base_types._BaseFieldType):
 

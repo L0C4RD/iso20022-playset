@@ -1,12 +1,38 @@
 import base_types
 import Max52Text
 import OrganisationIdentification15Choice
-import PartyIdentification236Choice
 import Max140Text
+import PartyIdentification236Choice
 
 class TradeTransactionIdentification16(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPty", "_CollPrtflId", "_RptgCtrPty", "_TechRcrdId", "_NttyRspnsblForRpt"]
+	__slots__ = ["_NttyRspnsblForRpt", "_RptgCtrPty", "_OthrCtrPty", "_CollPrtflId", "_TechRcrdId"]
+	@property
+	def NttyRspnsblForRpt(self):
+		return self._NttyRspnsblForRpt
+
+	@NttyRspnsblForRpt.setter
+	def NttyRspnsblForRpt(self, value):
+		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
+
+	@NttyRspnsblForRpt.deleter
+	def NttyRspnsblForRpt(self):
+		del self._NttyRspnsblForRpt
+		self._NttyRspnsblForRpt = None
+
+	@property
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
+
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
+
 	@property
 	def OthrCtrPty(self):
 		return self._OthrCtrPty
@@ -34,19 +60,6 @@ class TradeTransactionIdentification16(base_types._BaseFieldType):
 		self._CollPrtflId = None
 
 	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
-
-	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -59,24 +72,11 @@ class TradeTransactionIdentification16(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def NttyRspnsblForRpt(self):
-		return self._NttyRspnsblForRpt
-
-	@NttyRspnsblForRpt.setter
-	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
-
-	@NttyRspnsblForRpt.deleter
-	def NttyRspnsblForRpt(self):
-		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

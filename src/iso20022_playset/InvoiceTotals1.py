@@ -1,37 +1,11 @@
 import base_types
-import ActiveCurrencyAndAmount
 import ISODate
 import Adjustment5
+import ActiveCurrencyAndAmount
 
 class InvoiceTotals1(base_types._BaseFieldType):
 
-	__slots__ = ["_Adjstmnt", "_PmtDueDt", "_TtlTaxAmt", "_TtlInvcAmt", "_TtlTaxblAmt"]
-	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
-
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
-
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
-
-	@property
-	def PmtDueDt(self):
-		return self._PmtDueDt
-
-	@PmtDueDt.setter
-	def PmtDueDt(self, value):
-		self._PmtDueDt = value if type(value) != auto else self.make_default("PmtDueDt")
-
-	@PmtDueDt.deleter
-	def PmtDueDt(self):
-		del self._PmtDueDt
-		self._PmtDueDt = None
-
+	__slots__ = ["_TtlTaxAmt", "_TtlInvcAmt", "_TtlTaxblAmt", "_PmtDueDt", "_Adjstmnt"]
 	@property
 	def TtlTaxAmt(self):
 		return self._TtlTaxAmt
@@ -71,11 +45,37 @@ class InvoiceTotals1(base_types._BaseFieldType):
 		del self._TtlTaxblAmt
 		self._TtlTaxblAmt = None
 
+	@property
+	def PmtDueDt(self):
+		return self._PmtDueDt
+
+	@PmtDueDt.setter
+	def PmtDueDt(self, value):
+		self._PmtDueDt = value if type(value) != auto else self.make_default("PmtDueDt")
+
+	@PmtDueDt.deleter
+	def PmtDueDt(self):
+		del self._PmtDueDt
+		self._PmtDueDt = None
+
+	@property
+	def Adjstmnt(self):
+		return self._Adjstmnt
+
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
+
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adjstmnt', type=Adjustment5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlTaxAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlInvcAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlTaxblAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstmnt', type=Adjustment5, min=0, max=1, mutex_group=None, array=False),
 	))
 

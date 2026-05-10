@@ -1,181 +1,51 @@
 import base_types
-import DateFormat60Choice
-import Proxy5Choice
-import MeetingContactPerson3
-import Max2048Text
-import DateFormat58Choice
-import PostalAddress1
-import YesNoIndicator
-import DateAndDateTime2Choice
-import MeetingTypeClassification2Choice
-import MeetingType4Code
-import Attendance2
 import FinancialInstrumentQuantity18Choice
-import ParticipationMethod2
-import Max35Text
-import DateFormat1
 import AdditionalRights4
-import Number
+import PostalAddress1
+import DateFormat60Choice
+import MeetingContactPerson3
+import Attendance2
+import MeetingType4Code
+import YesNoIndicator
+import Max35Text
+import MeetingTypeClassification2Choice
+import DateAndDateTime2Choice
+import DateFormat1
 import DateFormat3Choice
+import Proxy5Choice
+import DateFormat58Choice
+import Number
+import ParticipationMethod2
+import Max2048Text
 
 class MeetingNotice9(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnSctiesMktDdln", "_Attndnc", "_EvtPrcgWebSiteAdr", "_PrxyChc", "_AddtlPrcdrDtls", "_RegnSctiesDdln", "_EntitlmntFxgDt", "_Clssfctn", "_OneManOneVoteInd", "_RsltPblctnDt", "_AnncmntDt", "_EnrlmntMktDdln", "_Tp", "_CtctPrsnDtls", "_IssrMtgId", "_MtgId", "_PrxyAppntmntNtfctnAdr", "_EnrlmntDdln", "_SctiesBlckgPrdEndDt", "_TtlNbOfSctiesOutsdng", "_Prtcptn", "_TtlNbOfVtngRghts", "_AddtlDcmnttnURLAdr"]
+	__slots__ = ["_AddtlDcmnttnURLAdr", "_SctiesBlckgPrdEndDt", "_Tp", "_EvtPrcgWebSiteAdr", "_IssrMtgId", "_Prtcptn", "_RsltPblctnDt", "_PrxyChc", "_EnrlmntMktDdln", "_PrxyAppntmntNtfctnAdr", "_EnrlmntDdln", "_RegnSctiesMktDdln", "_TtlNbOfVtngRghts", "_AnncmntDt", "_OneManOneVoteInd", "_EntitlmntFxgDt", "_MtgId", "_Clssfctn", "_RegnSctiesDdln", "_AddtlPrcdrDtls", "_TtlNbOfSctiesOutsdng", "_Attndnc", "_CtctPrsnDtls"]
 	@property
-	def RegnSctiesMktDdln(self):
-		return self._RegnSctiesMktDdln
+	def AddtlDcmnttnURLAdr(self):
+		return self._AddtlDcmnttnURLAdr
 
-	@RegnSctiesMktDdln.setter
-	def RegnSctiesMktDdln(self, value):
-		self._RegnSctiesMktDdln = value if type(value) != auto else self.make_default("RegnSctiesMktDdln")
+	@AddtlDcmnttnURLAdr.setter
+	def AddtlDcmnttnURLAdr(self, value):
+		self._AddtlDcmnttnURLAdr = value if type(value) != auto else self.make_default("AddtlDcmnttnURLAdr")
 
-	@RegnSctiesMktDdln.deleter
-	def RegnSctiesMktDdln(self):
-		del self._RegnSctiesMktDdln
-		self._RegnSctiesMktDdln = None
-
-	@property
-	def Attndnc(self):
-		return self._Attndnc
-
-	@Attndnc.setter
-	def Attndnc(self, value):
-		self._Attndnc = value if type(value) != auto else self.make_default("Attndnc")
-
-	@Attndnc.deleter
-	def Attndnc(self):
-		del self._Attndnc
-		self._Attndnc = None
+	@AddtlDcmnttnURLAdr.deleter
+	def AddtlDcmnttnURLAdr(self):
+		del self._AddtlDcmnttnURLAdr
+		self._AddtlDcmnttnURLAdr = None
 
 	@property
-	def EvtPrcgWebSiteAdr(self):
-		return self._EvtPrcgWebSiteAdr
+	def SctiesBlckgPrdEndDt(self):
+		return self._SctiesBlckgPrdEndDt
 
-	@EvtPrcgWebSiteAdr.setter
-	def EvtPrcgWebSiteAdr(self, value):
-		self._EvtPrcgWebSiteAdr = value if type(value) != auto else self.make_default("EvtPrcgWebSiteAdr")
+	@SctiesBlckgPrdEndDt.setter
+	def SctiesBlckgPrdEndDt(self, value):
+		self._SctiesBlckgPrdEndDt = value if type(value) != auto else self.make_default("SctiesBlckgPrdEndDt")
 
-	@EvtPrcgWebSiteAdr.deleter
-	def EvtPrcgWebSiteAdr(self):
-		del self._EvtPrcgWebSiteAdr
-		self._EvtPrcgWebSiteAdr = None
-
-	@property
-	def PrxyChc(self):
-		return self._PrxyChc
-
-	@PrxyChc.setter
-	def PrxyChc(self, value):
-		self._PrxyChc = value if type(value) != auto else self.make_default("PrxyChc")
-
-	@PrxyChc.deleter
-	def PrxyChc(self):
-		del self._PrxyChc
-		self._PrxyChc = None
-
-	@property
-	def AddtlPrcdrDtls(self):
-		return self._AddtlPrcdrDtls
-
-	@AddtlPrcdrDtls.setter
-	def AddtlPrcdrDtls(self, value):
-		self._AddtlPrcdrDtls = value if type(value) != auto else self.make_default("AddtlPrcdrDtls")
-
-	@AddtlPrcdrDtls.deleter
-	def AddtlPrcdrDtls(self):
-		del self._AddtlPrcdrDtls
-		self._AddtlPrcdrDtls = None
-
-	@property
-	def RegnSctiesDdln(self):
-		return self._RegnSctiesDdln
-
-	@RegnSctiesDdln.setter
-	def RegnSctiesDdln(self, value):
-		self._RegnSctiesDdln = value if type(value) != auto else self.make_default("RegnSctiesDdln")
-
-	@RegnSctiesDdln.deleter
-	def RegnSctiesDdln(self):
-		del self._RegnSctiesDdln
-		self._RegnSctiesDdln = None
-
-	@property
-	def EntitlmntFxgDt(self):
-		return self._EntitlmntFxgDt
-
-	@EntitlmntFxgDt.setter
-	def EntitlmntFxgDt(self, value):
-		self._EntitlmntFxgDt = value if type(value) != auto else self.make_default("EntitlmntFxgDt")
-
-	@EntitlmntFxgDt.deleter
-	def EntitlmntFxgDt(self):
-		del self._EntitlmntFxgDt
-		self._EntitlmntFxgDt = None
-
-	@property
-	def Clssfctn(self):
-		return self._Clssfctn
-
-	@Clssfctn.setter
-	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
-
-	@Clssfctn.deleter
-	def Clssfctn(self):
-		del self._Clssfctn
-		self._Clssfctn = None
-
-	@property
-	def OneManOneVoteInd(self):
-		return self._OneManOneVoteInd
-
-	@OneManOneVoteInd.setter
-	def OneManOneVoteInd(self, value):
-		self._OneManOneVoteInd = value if type(value) != auto else self.make_default("OneManOneVoteInd")
-
-	@OneManOneVoteInd.deleter
-	def OneManOneVoteInd(self):
-		del self._OneManOneVoteInd
-		self._OneManOneVoteInd = None
-
-	@property
-	def RsltPblctnDt(self):
-		return self._RsltPblctnDt
-
-	@RsltPblctnDt.setter
-	def RsltPblctnDt(self, value):
-		self._RsltPblctnDt = value if type(value) != auto else self.make_default("RsltPblctnDt")
-
-	@RsltPblctnDt.deleter
-	def RsltPblctnDt(self):
-		del self._RsltPblctnDt
-		self._RsltPblctnDt = None
-
-	@property
-	def AnncmntDt(self):
-		return self._AnncmntDt
-
-	@AnncmntDt.setter
-	def AnncmntDt(self, value):
-		self._AnncmntDt = value if type(value) != auto else self.make_default("AnncmntDt")
-
-	@AnncmntDt.deleter
-	def AnncmntDt(self):
-		del self._AnncmntDt
-		self._AnncmntDt = None
-
-	@property
-	def EnrlmntMktDdln(self):
-		return self._EnrlmntMktDdln
-
-	@EnrlmntMktDdln.setter
-	def EnrlmntMktDdln(self, value):
-		self._EnrlmntMktDdln = value if type(value) != auto else self.make_default("EnrlmntMktDdln")
-
-	@EnrlmntMktDdln.deleter
-	def EnrlmntMktDdln(self):
-		del self._EnrlmntMktDdln
-		self._EnrlmntMktDdln = None
+	@SctiesBlckgPrdEndDt.deleter
+	def SctiesBlckgPrdEndDt(self):
+		del self._SctiesBlckgPrdEndDt
+		self._SctiesBlckgPrdEndDt = None
 
 	@property
 	def Tp(self):
@@ -191,17 +61,17 @@ class MeetingNotice9(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def CtctPrsnDtls(self):
-		return self._CtctPrsnDtls
+	def EvtPrcgWebSiteAdr(self):
+		return self._EvtPrcgWebSiteAdr
 
-	@CtctPrsnDtls.setter
-	def CtctPrsnDtls(self, value):
-		self._CtctPrsnDtls = value if type(value) != auto else self.make_default("CtctPrsnDtls")
+	@EvtPrcgWebSiteAdr.setter
+	def EvtPrcgWebSiteAdr(self, value):
+		self._EvtPrcgWebSiteAdr = value if type(value) != auto else self.make_default("EvtPrcgWebSiteAdr")
 
-	@CtctPrsnDtls.deleter
-	def CtctPrsnDtls(self):
-		del self._CtctPrsnDtls
-		self._CtctPrsnDtls = None
+	@EvtPrcgWebSiteAdr.deleter
+	def EvtPrcgWebSiteAdr(self):
+		del self._EvtPrcgWebSiteAdr
+		self._EvtPrcgWebSiteAdr = None
 
 	@property
 	def IssrMtgId(self):
@@ -217,17 +87,56 @@ class MeetingNotice9(base_types._BaseFieldType):
 		self._IssrMtgId = None
 
 	@property
-	def MtgId(self):
-		return self._MtgId
+	def Prtcptn(self):
+		return self._Prtcptn
 
-	@MtgId.setter
-	def MtgId(self, value):
-		self._MtgId = value if type(value) != auto else self.make_default("MtgId")
+	@Prtcptn.setter
+	def Prtcptn(self, value):
+		self._Prtcptn = value if type(value) != auto else self.make_default("Prtcptn")
 
-	@MtgId.deleter
-	def MtgId(self):
-		del self._MtgId
-		self._MtgId = None
+	@Prtcptn.deleter
+	def Prtcptn(self):
+		del self._Prtcptn
+		self._Prtcptn = None
+
+	@property
+	def RsltPblctnDt(self):
+		return self._RsltPblctnDt
+
+	@RsltPblctnDt.setter
+	def RsltPblctnDt(self, value):
+		self._RsltPblctnDt = value if type(value) != auto else self.make_default("RsltPblctnDt")
+
+	@RsltPblctnDt.deleter
+	def RsltPblctnDt(self):
+		del self._RsltPblctnDt
+		self._RsltPblctnDt = None
+
+	@property
+	def PrxyChc(self):
+		return self._PrxyChc
+
+	@PrxyChc.setter
+	def PrxyChc(self, value):
+		self._PrxyChc = value if type(value) != auto else self.make_default("PrxyChc")
+
+	@PrxyChc.deleter
+	def PrxyChc(self):
+		del self._PrxyChc
+		self._PrxyChc = None
+
+	@property
+	def EnrlmntMktDdln(self):
+		return self._EnrlmntMktDdln
+
+	@EnrlmntMktDdln.setter
+	def EnrlmntMktDdln(self, value):
+		self._EnrlmntMktDdln = value if type(value) != auto else self.make_default("EnrlmntMktDdln")
+
+	@EnrlmntMktDdln.deleter
+	def EnrlmntMktDdln(self):
+		del self._EnrlmntMktDdln
+		self._EnrlmntMktDdln = None
 
 	@property
 	def PrxyAppntmntNtfctnAdr(self):
@@ -256,43 +165,17 @@ class MeetingNotice9(base_types._BaseFieldType):
 		self._EnrlmntDdln = None
 
 	@property
-	def SctiesBlckgPrdEndDt(self):
-		return self._SctiesBlckgPrdEndDt
+	def RegnSctiesMktDdln(self):
+		return self._RegnSctiesMktDdln
 
-	@SctiesBlckgPrdEndDt.setter
-	def SctiesBlckgPrdEndDt(self, value):
-		self._SctiesBlckgPrdEndDt = value if type(value) != auto else self.make_default("SctiesBlckgPrdEndDt")
+	@RegnSctiesMktDdln.setter
+	def RegnSctiesMktDdln(self, value):
+		self._RegnSctiesMktDdln = value if type(value) != auto else self.make_default("RegnSctiesMktDdln")
 
-	@SctiesBlckgPrdEndDt.deleter
-	def SctiesBlckgPrdEndDt(self):
-		del self._SctiesBlckgPrdEndDt
-		self._SctiesBlckgPrdEndDt = None
-
-	@property
-	def TtlNbOfSctiesOutsdng(self):
-		return self._TtlNbOfSctiesOutsdng
-
-	@TtlNbOfSctiesOutsdng.setter
-	def TtlNbOfSctiesOutsdng(self, value):
-		self._TtlNbOfSctiesOutsdng = value if type(value) != auto else self.make_default("TtlNbOfSctiesOutsdng")
-
-	@TtlNbOfSctiesOutsdng.deleter
-	def TtlNbOfSctiesOutsdng(self):
-		del self._TtlNbOfSctiesOutsdng
-		self._TtlNbOfSctiesOutsdng = None
-
-	@property
-	def Prtcptn(self):
-		return self._Prtcptn
-
-	@Prtcptn.setter
-	def Prtcptn(self, value):
-		self._Prtcptn = value if type(value) != auto else self.make_default("Prtcptn")
-
-	@Prtcptn.deleter
-	def Prtcptn(self):
-		del self._Prtcptn
-		self._Prtcptn = None
+	@RegnSctiesMktDdln.deleter
+	def RegnSctiesMktDdln(self):
+		del self._RegnSctiesMktDdln
+		self._RegnSctiesMktDdln = None
 
 	@property
 	def TtlNbOfVtngRghts(self):
@@ -308,41 +191,158 @@ class MeetingNotice9(base_types._BaseFieldType):
 		self._TtlNbOfVtngRghts = None
 
 	@property
-	def AddtlDcmnttnURLAdr(self):
-		return self._AddtlDcmnttnURLAdr
+	def AnncmntDt(self):
+		return self._AnncmntDt
 
-	@AddtlDcmnttnURLAdr.setter
-	def AddtlDcmnttnURLAdr(self, value):
-		self._AddtlDcmnttnURLAdr = value if type(value) != auto else self.make_default("AddtlDcmnttnURLAdr")
+	@AnncmntDt.setter
+	def AnncmntDt(self, value):
+		self._AnncmntDt = value if type(value) != auto else self.make_default("AnncmntDt")
 
-	@AddtlDcmnttnURLAdr.deleter
-	def AddtlDcmnttnURLAdr(self):
-		del self._AddtlDcmnttnURLAdr
-		self._AddtlDcmnttnURLAdr = None
+	@AnncmntDt.deleter
+	def AnncmntDt(self):
+		del self._AnncmntDt
+		self._AnncmntDt = None
+
+	@property
+	def OneManOneVoteInd(self):
+		return self._OneManOneVoteInd
+
+	@OneManOneVoteInd.setter
+	def OneManOneVoteInd(self, value):
+		self._OneManOneVoteInd = value if type(value) != auto else self.make_default("OneManOneVoteInd")
+
+	@OneManOneVoteInd.deleter
+	def OneManOneVoteInd(self):
+		del self._OneManOneVoteInd
+		self._OneManOneVoteInd = None
+
+	@property
+	def EntitlmntFxgDt(self):
+		return self._EntitlmntFxgDt
+
+	@EntitlmntFxgDt.setter
+	def EntitlmntFxgDt(self, value):
+		self._EntitlmntFxgDt = value if type(value) != auto else self.make_default("EntitlmntFxgDt")
+
+	@EntitlmntFxgDt.deleter
+	def EntitlmntFxgDt(self):
+		del self._EntitlmntFxgDt
+		self._EntitlmntFxgDt = None
+
+	@property
+	def MtgId(self):
+		return self._MtgId
+
+	@MtgId.setter
+	def MtgId(self, value):
+		self._MtgId = value if type(value) != auto else self.make_default("MtgId")
+
+	@MtgId.deleter
+	def MtgId(self):
+		del self._MtgId
+		self._MtgId = None
+
+	@property
+	def Clssfctn(self):
+		return self._Clssfctn
+
+	@Clssfctn.setter
+	def Clssfctn(self, value):
+		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
+
+	@Clssfctn.deleter
+	def Clssfctn(self):
+		del self._Clssfctn
+		self._Clssfctn = None
+
+	@property
+	def RegnSctiesDdln(self):
+		return self._RegnSctiesDdln
+
+	@RegnSctiesDdln.setter
+	def RegnSctiesDdln(self, value):
+		self._RegnSctiesDdln = value if type(value) != auto else self.make_default("RegnSctiesDdln")
+
+	@RegnSctiesDdln.deleter
+	def RegnSctiesDdln(self):
+		del self._RegnSctiesDdln
+		self._RegnSctiesDdln = None
+
+	@property
+	def AddtlPrcdrDtls(self):
+		return self._AddtlPrcdrDtls
+
+	@AddtlPrcdrDtls.setter
+	def AddtlPrcdrDtls(self, value):
+		self._AddtlPrcdrDtls = value if type(value) != auto else self.make_default("AddtlPrcdrDtls")
+
+	@AddtlPrcdrDtls.deleter
+	def AddtlPrcdrDtls(self):
+		del self._AddtlPrcdrDtls
+		self._AddtlPrcdrDtls = None
+
+	@property
+	def TtlNbOfSctiesOutsdng(self):
+		return self._TtlNbOfSctiesOutsdng
+
+	@TtlNbOfSctiesOutsdng.setter
+	def TtlNbOfSctiesOutsdng(self, value):
+		self._TtlNbOfSctiesOutsdng = value if type(value) != auto else self.make_default("TtlNbOfSctiesOutsdng")
+
+	@TtlNbOfSctiesOutsdng.deleter
+	def TtlNbOfSctiesOutsdng(self):
+		del self._TtlNbOfSctiesOutsdng
+		self._TtlNbOfSctiesOutsdng = None
+
+	@property
+	def Attndnc(self):
+		return self._Attndnc
+
+	@Attndnc.setter
+	def Attndnc(self, value):
+		self._Attndnc = value if type(value) != auto else self.make_default("Attndnc")
+
+	@Attndnc.deleter
+	def Attndnc(self):
+		del self._Attndnc
+		self._Attndnc = None
+
+	@property
+	def CtctPrsnDtls(self):
+		return self._CtctPrsnDtls
+
+	@CtctPrsnDtls.setter
+	def CtctPrsnDtls(self, value):
+		self._CtctPrsnDtls = value if type(value) != auto else self.make_default("CtctPrsnDtls")
+
+	@CtctPrsnDtls.deleter
+	def CtctPrsnDtls(self):
+		del self._CtctPrsnDtls
+		self._CtctPrsnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnSctiesMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Attndnc', type=Attendance2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrxyChc', type=Proxy5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlPrcdrDtls', type=AdditionalRights4, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegnSctiesDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EntitlmntFxgDt', type=DateFormat1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Clssfctn', type=MeetingTypeClassification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OneManOneVoteInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsltPblctnDt', type=DateFormat3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnncmntDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EnrlmntMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlDcmnttnURLAdr', type=Max2048Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctiesBlckgPrdEndDt', type=DateFormat60Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=MeetingType4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtctPrsnDtls', type=MeetingContactPerson3, min=0, max=12, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrMtgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtcptn', type=ParticipationMethod2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RsltPblctnDt', type=DateFormat3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrxyChc', type=Proxy5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EnrlmntMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrxyAppntmntNtfctnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EnrlmntDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesBlckgPrdEndDt', type=DateFormat60Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfSctiesOutsdng', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtcptn', type=ParticipationMethod2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegnSctiesMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfVtngRghts', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlDcmnttnURLAdr', type=Max2048Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AnncmntDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OneManOneVoteInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EntitlmntFxgDt', type=DateFormat1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clssfctn', type=MeetingTypeClassification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnSctiesDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPrcdrDtls', type=AdditionalRights4, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfSctiesOutsdng', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Attndnc', type=Attendance2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctPrsnDtls', type=MeetingContactPerson3, min=0, max=12, mutex_group=None, array=True),
 	))
 

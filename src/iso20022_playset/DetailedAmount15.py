@@ -4,19 +4,58 @@ import DetailedAmount4
 
 class DetailedAmount15(base_types._BaseFieldType):
 
-	__slots__ = ["_CshBck", "_AmtGoodsAndSvcs", "_ValAddedTax", "_Grtty", "_Rbt", "_Srchrg", "_Fees"]
+	__slots__ = ["_Srchrg", "_Rbt", "_Fees", "_Grtty", "_AmtGoodsAndSvcs", "_ValAddedTax", "_CshBck"]
 	@property
-	def CshBck(self):
-		return self._CshBck
+	def Srchrg(self):
+		return self._Srchrg
 
-	@CshBck.setter
-	def CshBck(self, value):
-		self._CshBck = value if type(value) != auto else self.make_default("CshBck")
+	@Srchrg.setter
+	def Srchrg(self, value):
+		self._Srchrg = value if type(value) != auto else self.make_default("Srchrg")
 
-	@CshBck.deleter
-	def CshBck(self):
-		del self._CshBck
-		self._CshBck = None
+	@Srchrg.deleter
+	def Srchrg(self):
+		del self._Srchrg
+		self._Srchrg = None
+
+	@property
+	def Rbt(self):
+		return self._Rbt
+
+	@Rbt.setter
+	def Rbt(self, value):
+		self._Rbt = value if type(value) != auto else self.make_default("Rbt")
+
+	@Rbt.deleter
+	def Rbt(self):
+		del self._Rbt
+		self._Rbt = None
+
+	@property
+	def Fees(self):
+		return self._Fees
+
+	@Fees.setter
+	def Fees(self, value):
+		self._Fees = value if type(value) != auto else self.make_default("Fees")
+
+	@Fees.deleter
+	def Fees(self):
+		del self._Fees
+		self._Fees = None
+
+	@property
+	def Grtty(self):
+		return self._Grtty
+
+	@Grtty.setter
+	def Grtty(self, value):
+		self._Grtty = value if type(value) != auto else self.make_default("Grtty")
+
+	@Grtty.deleter
+	def Grtty(self):
+		del self._Grtty
+		self._Grtty = None
 
 	@property
 	def AmtGoodsAndSvcs(self):
@@ -45,64 +84,25 @@ class DetailedAmount15(base_types._BaseFieldType):
 		self._ValAddedTax = None
 
 	@property
-	def Grtty(self):
-		return self._Grtty
+	def CshBck(self):
+		return self._CshBck
 
-	@Grtty.setter
-	def Grtty(self, value):
-		self._Grtty = value if type(value) != auto else self.make_default("Grtty")
+	@CshBck.setter
+	def CshBck(self, value):
+		self._CshBck = value if type(value) != auto else self.make_default("CshBck")
 
-	@Grtty.deleter
-	def Grtty(self):
-		del self._Grtty
-		self._Grtty = None
-
-	@property
-	def Rbt(self):
-		return self._Rbt
-
-	@Rbt.setter
-	def Rbt(self, value):
-		self._Rbt = value if type(value) != auto else self.make_default("Rbt")
-
-	@Rbt.deleter
-	def Rbt(self):
-		del self._Rbt
-		self._Rbt = None
-
-	@property
-	def Srchrg(self):
-		return self._Srchrg
-
-	@Srchrg.setter
-	def Srchrg(self, value):
-		self._Srchrg = value if type(value) != auto else self.make_default("Srchrg")
-
-	@Srchrg.deleter
-	def Srchrg(self):
-		del self._Srchrg
-		self._Srchrg = None
-
-	@property
-	def Fees(self):
-		return self._Fees
-
-	@Fees.setter
-	def Fees(self, value):
-		self._Fees = value if type(value) != auto else self.make_default("Fees")
-
-	@Fees.deleter
-	def Fees(self):
-		del self._Fees
-		self._Fees = None
+	@CshBck.deleter
+	def CshBck(self):
+		del self._CshBck
+		self._CshBck = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshBck', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Srchrg', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rbt', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Fees', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Grtty', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtGoodsAndSvcs', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValAddedTax', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Grtty', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rbt', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Srchrg', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Fees', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshBck', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 import base_types
 import ImpliedCurrencyAndAmount
-import ActiveCurrencyCode
-import Max10NumericText
 import AmountAndDirection86
+import Max10NumericText
+import ActiveCurrencyCode
 
 class PaymentAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_NetPmt", "_GrssDbts", "_LatePmtConf", "_Ccy", "_GrssCdts"]
-	@property
-	def NetPmt(self):
-		return self._NetPmt
-
-	@NetPmt.setter
-	def NetPmt(self, value):
-		self._NetPmt = value if type(value) != auto else self.make_default("NetPmt")
-
-	@NetPmt.deleter
-	def NetPmt(self):
-		del self._NetPmt
-		self._NetPmt = None
-
+	__slots__ = ["_GrssDbts", "_LatePmtConf", "_NetPmt", "_Ccy", "_GrssCdts"]
 	@property
 	def GrssDbts(self):
 		return self._GrssDbts
@@ -45,6 +32,19 @@ class PaymentAccount4(base_types._BaseFieldType):
 	def LatePmtConf(self):
 		del self._LatePmtConf
 		self._LatePmtConf = None
+
+	@property
+	def NetPmt(self):
+		return self._NetPmt
+
+	@NetPmt.setter
+	def NetPmt(self, value):
+		self._NetPmt = value if type(value) != auto else self.make_default("NetPmt")
+
+	@NetPmt.deleter
+	def NetPmt(self):
+		del self._NetPmt
+		self._NetPmt = None
 
 	@property
 	def Ccy(self):
@@ -73,9 +73,9 @@ class PaymentAccount4(base_types._BaseFieldType):
 		self._GrssCdts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetPmt', type=AmountAndDirection86, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrssDbts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetPmt', type=AmountAndDirection86, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrssCdts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))

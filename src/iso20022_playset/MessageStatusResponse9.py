@@ -1,25 +1,38 @@
 import base_types
-import ResponseType11
-import PaymentContext30
 import CardPaymentEnvironment81
-import SupplementaryData1
+import PaymentContext30
 import MessageStatusResponseData9
+import SupplementaryData1
+import ResponseType11
 
 class MessageStatusResponse9(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgStsRspnData", "_Envt", "_Rspn", "_Cntxt"]
+	__slots__ = ["_Envt", "_Cntxt", "_MsgStsRspnData", "_SplmtryData", "_Rspn"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Envt(self):
+		return self._Envt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	@property
 	def MsgStsRspnData(self):
@@ -35,17 +48,17 @@ class MessageStatusResponse9(base_types._BaseFieldType):
 		self._MsgStsRspnData = None
 
 	@property
-	def Envt(self):
-		return self._Envt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Rspn(self):
@@ -60,24 +73,11 @@ class MessageStatusResponse9(base_types._BaseFieldType):
 		del self._Rspn
 		self._Rspn = None
 
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgStsRspnData', type=MessageStatusResponseData9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgStsRspnData', type=MessageStatusResponseData9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 import base_types
-import TrueFalseIndicator
-import DataSetIdentification11
-import ManagementPlanContent13
 import Max9NumericText
+import DataSetIdentification11
+import TrueFalseIndicator
+import ManagementPlanContent13
 
 class TerminalManagementDataSet34(base_types._BaseFieldType):
 
-	__slots__ = ["_LastSeq", "_SeqCntr", "_Id", "_Cntt"]
-	@property
-	def LastSeq(self):
-		return self._LastSeq
-
-	@LastSeq.setter
-	def LastSeq(self, value):
-		self._LastSeq = value if type(value) != auto else self.make_default("LastSeq")
-
-	@LastSeq.deleter
-	def LastSeq(self):
-		del self._LastSeq
-		self._LastSeq = None
-
+	__slots__ = ["_SeqCntr", "_Cntt", "_Id", "_LastSeq"]
 	@property
 	def SeqCntr(self):
 		return self._SeqCntr
@@ -32,6 +19,19 @@ class TerminalManagementDataSet34(base_types._BaseFieldType):
 	def SeqCntr(self):
 		del self._SeqCntr
 		self._SeqCntr = None
+
+	@property
+	def Cntt(self):
+		return self._Cntt
+
+	@Cntt.setter
+	def Cntt(self, value):
+		self._Cntt = value if type(value) != auto else self.make_default("Cntt")
+
+	@Cntt.deleter
+	def Cntt(self):
+		del self._Cntt
+		self._Cntt = None
 
 	@property
 	def Id(self):
@@ -47,22 +47,22 @@ class TerminalManagementDataSet34(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Cntt(self):
-		return self._Cntt
+	def LastSeq(self):
+		return self._LastSeq
 
-	@Cntt.setter
-	def Cntt(self, value):
-		self._Cntt = value if type(value) != auto else self.make_default("Cntt")
+	@LastSeq.setter
+	def LastSeq(self, value):
+		self._LastSeq = value if type(value) != auto else self.make_default("LastSeq")
 
-	@Cntt.deleter
-	def Cntt(self):
-		del self._Cntt
-		self._Cntt = None
+	@LastSeq.deleter
+	def LastSeq(self):
+		del self._LastSeq
+		self._LastSeq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LastSeq', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqCntr', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntt', type=ManagementPlanContent13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastSeq', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

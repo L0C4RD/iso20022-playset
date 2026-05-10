@@ -1,6 +1,6 @@
 import base_types
-import ReportPeriodActivity1Code
 import NamedPosition3
+import ReportPeriodActivity1Code
 
 class PositionSetReport3Choice(base_types._BaseFieldType):
 

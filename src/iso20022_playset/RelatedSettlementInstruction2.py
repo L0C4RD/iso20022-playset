@@ -1,25 +1,12 @@
 import base_types
-import Max35Text
 import FinancialInstrumentQuantity18Choice
 import TransferOfProceedsType1Code
 import ProceedsQuantityBreakdown1
+import Max35Text
 
 class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdSttlmQty", "_PrcdsQtyBrkdwn", "_RltdSttlmInstrId", "_TrfOfPrcdsTpInd"]
-	@property
-	def RltdSttlmQty(self):
-		return self._RltdSttlmQty
-
-	@RltdSttlmQty.setter
-	def RltdSttlmQty(self, value):
-		self._RltdSttlmQty = value if type(value) != auto else self.make_default("RltdSttlmQty")
-
-	@RltdSttlmQty.deleter
-	def RltdSttlmQty(self):
-		del self._RltdSttlmQty
-		self._RltdSttlmQty = None
-
+	__slots__ = ["_PrcdsQtyBrkdwn", "_RltdSttlmInstrId", "_RltdSttlmQty", "_TrfOfPrcdsTpInd"]
 	@property
 	def PrcdsQtyBrkdwn(self):
 		return self._PrcdsQtyBrkdwn
@@ -47,6 +34,19 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 		self._RltdSttlmInstrId = None
 
 	@property
+	def RltdSttlmQty(self):
+		return self._RltdSttlmQty
+
+	@RltdSttlmQty.setter
+	def RltdSttlmQty(self, value):
+		self._RltdSttlmQty = value if type(value) != auto else self.make_default("RltdSttlmQty")
+
+	@RltdSttlmQty.deleter
+	def RltdSttlmQty(self):
+		del self._RltdSttlmQty
+		self._RltdSttlmQty = None
+
+	@property
 	def TrfOfPrcdsTpInd(self):
 		return self._TrfOfPrcdsTpInd
 
@@ -60,9 +60,9 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 		self._TrfOfPrcdsTpInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdSttlmQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcdsQtyBrkdwn', type=ProceedsQuantityBreakdown1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdSttlmInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdSttlmQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfOfPrcdsTpInd', type=TransferOfProceedsType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

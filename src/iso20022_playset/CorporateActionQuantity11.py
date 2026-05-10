@@ -4,7 +4,20 @@ import FinancialInstrumentQuantity34Choice
 
 class CorporateActionQuantity11(base_types._BaseFieldType):
 
-	__slots__ = ["_MinQtySght", "_NewBrdLotQty", "_MaxQty", "_IncrmtlDnmtn", "_NewDnmtnQty", "_BaseDnmtn"]
+	__slots__ = ["_MaxQty", "_MinQtySght", "_BaseDnmtn", "_NewBrdLotQty", "_IncrmtlDnmtn", "_NewDnmtnQty"]
+	@property
+	def MaxQty(self):
+		return self._MaxQty
+
+	@MaxQty.setter
+	def MaxQty(self, value):
+		self._MaxQty = value if type(value) != auto else self.make_default("MaxQty")
+
+	@MaxQty.deleter
+	def MaxQty(self):
+		del self._MaxQty
+		self._MaxQty = None
+
 	@property
 	def MinQtySght(self):
 		return self._MinQtySght
@@ -19,6 +32,19 @@ class CorporateActionQuantity11(base_types._BaseFieldType):
 		self._MinQtySght = None
 
 	@property
+	def BaseDnmtn(self):
+		return self._BaseDnmtn
+
+	@BaseDnmtn.setter
+	def BaseDnmtn(self, value):
+		self._BaseDnmtn = value if type(value) != auto else self.make_default("BaseDnmtn")
+
+	@BaseDnmtn.deleter
+	def BaseDnmtn(self):
+		del self._BaseDnmtn
+		self._BaseDnmtn = None
+
+	@property
 	def NewBrdLotQty(self):
 		return self._NewBrdLotQty
 
@@ -30,19 +56,6 @@ class CorporateActionQuantity11(base_types._BaseFieldType):
 	def NewBrdLotQty(self):
 		del self._NewBrdLotQty
 		self._NewBrdLotQty = None
-
-	@property
-	def MaxQty(self):
-		return self._MaxQty
-
-	@MaxQty.setter
-	def MaxQty(self, value):
-		self._MaxQty = value if type(value) != auto else self.make_default("MaxQty")
-
-	@MaxQty.deleter
-	def MaxQty(self):
-		del self._MaxQty
-		self._MaxQty = None
 
 	@property
 	def IncrmtlDnmtn(self):
@@ -70,25 +83,12 @@ class CorporateActionQuantity11(base_types._BaseFieldType):
 		del self._NewDnmtnQty
 		self._NewDnmtnQty = None
 
-	@property
-	def BaseDnmtn(self):
-		return self._BaseDnmtn
-
-	@BaseDnmtn.setter
-	def BaseDnmtn(self, value):
-		self._BaseDnmtn = value if type(value) != auto else self.make_default("BaseDnmtn")
-
-	@BaseDnmtn.deleter
-	def BaseDnmtn(self):
-		del self._BaseDnmtn
-		self._BaseDnmtn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinQtySght', type=FinancialInstrumentQuantity34Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewBrdLotQty', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxQty', type=FinancialInstrumentQuantity34Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinQtySght', type=FinancialInstrumentQuantity34Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseDnmtn', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewBrdLotQty', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IncrmtlDnmtn', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewDnmtnQty', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseDnmtn', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

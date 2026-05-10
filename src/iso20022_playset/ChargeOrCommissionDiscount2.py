@@ -1,23 +1,23 @@
 import base_types
-import ActiveCurrencyAndAmount
-import WaivingInstruction2Choice
 import PercentageRate
+import WaivingInstruction2Choice
+import ActiveCurrencyAndAmount
 
 class ChargeOrCommissionDiscount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Bsis", "_Rate"]
+	__slots__ = ["_Rate", "_Bsis", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def Rate(self):
+		return self._Rate
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	@property
 	def Bsis(self):
@@ -33,21 +33,21 @@ class ChargeOrCommissionDiscount2(base_types._BaseFieldType):
 		self._Bsis = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def Amt(self):
+		return self._Amt
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bsis', type=WaivingInstruction2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bsis', type=WaivingInstruction2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

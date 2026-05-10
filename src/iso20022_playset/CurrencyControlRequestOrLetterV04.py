@@ -1,7 +1,7 @@
 import base_types
+import SupplementaryData1
 import CurrencyControlHeader9
 import SupportingDocumentRequestOrLetter4
-import SupplementaryData1
 
 class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 

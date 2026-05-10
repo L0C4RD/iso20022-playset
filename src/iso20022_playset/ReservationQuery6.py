@@ -1,6 +1,6 @@
 import base_types
-import QueryType2Code
 import ReservationCriteria6Choice
+import QueryType2Code
 
 class ReservationQuery6(base_types._BaseFieldType):
 

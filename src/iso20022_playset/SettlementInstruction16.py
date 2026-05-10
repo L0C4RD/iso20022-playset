@@ -4,20 +4,7 @@ import BranchAndFinancialInstitutionIdentification8
 
 class SettlementInstruction16(base_types._BaseFieldType):
 
-	__slots__ = ["_InstgRmbrsmntAgtAcct", "_InstgRmbrsmntAgt", "_InstdRmbrsmntAgt", "_InstdRmbrsmntAgtAcct"]
-	@property
-	def InstgRmbrsmntAgtAcct(self):
-		return self._InstgRmbrsmntAgtAcct
-
-	@InstgRmbrsmntAgtAcct.setter
-	def InstgRmbrsmntAgtAcct(self, value):
-		self._InstgRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("InstgRmbrsmntAgtAcct")
-
-	@InstgRmbrsmntAgtAcct.deleter
-	def InstgRmbrsmntAgtAcct(self):
-		del self._InstgRmbrsmntAgtAcct
-		self._InstgRmbrsmntAgtAcct = None
-
+	__slots__ = ["_InstgRmbrsmntAgt", "_InstdRmbrsmntAgt", "_InstgRmbrsmntAgtAcct", "_InstdRmbrsmntAgtAcct"]
 	@property
 	def InstgRmbrsmntAgt(self):
 		return self._InstgRmbrsmntAgt
@@ -45,6 +32,19 @@ class SettlementInstruction16(base_types._BaseFieldType):
 		self._InstdRmbrsmntAgt = None
 
 	@property
+	def InstgRmbrsmntAgtAcct(self):
+		return self._InstgRmbrsmntAgtAcct
+
+	@InstgRmbrsmntAgtAcct.setter
+	def InstgRmbrsmntAgtAcct(self, value):
+		self._InstgRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("InstgRmbrsmntAgtAcct")
+
+	@InstgRmbrsmntAgtAcct.deleter
+	def InstgRmbrsmntAgtAcct(self):
+		del self._InstgRmbrsmntAgtAcct
+		self._InstgRmbrsmntAgtAcct = None
+
+	@property
 	def InstdRmbrsmntAgtAcct(self):
 		return self._InstdRmbrsmntAgtAcct
 
@@ -58,9 +58,9 @@ class SettlementInstruction16(base_types._BaseFieldType):
 		self._InstdRmbrsmntAgtAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstgRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

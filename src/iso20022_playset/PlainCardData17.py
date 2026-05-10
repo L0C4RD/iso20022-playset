@@ -1,14 +1,14 @@
 import base_types
-import Max35Text
-import Max104Text
 import Max37Text
 import CardDataReading5Code
+import Max104Text
 import Max76Text
+import Max35Text
 import Min8Max28NumericText
 
 class PlainCardData17(base_types._BaseFieldType):
 
-	__slots__ = ["_Trck1", "_PAN", "_Trck2", "_NtryMd", "_AddtlCardData", "_Trck3"]
+	__slots__ = ["_Trck1", "_Trck3", "_PAN", "_Trck2", "_AddtlCardData", "_NtryMd"]
 	@property
 	def Trck1(self):
 		return self._Trck1
@@ -21,6 +21,19 @@ class PlainCardData17(base_types._BaseFieldType):
 	def Trck1(self):
 		del self._Trck1
 		self._Trck1 = None
+
+	@property
+	def Trck3(self):
+		return self._Trck3
+
+	@Trck3.setter
+	def Trck3(self, value):
+		self._Trck3 = value if type(value) != auto else self.make_default("Trck3")
+
+	@Trck3.deleter
+	def Trck3(self):
+		del self._Trck3
+		self._Trck3 = None
 
 	@property
 	def PAN(self):
@@ -49,19 +62,6 @@ class PlainCardData17(base_types._BaseFieldType):
 		self._Trck2 = None
 
 	@property
-	def NtryMd(self):
-		return self._NtryMd
-
-	@NtryMd.setter
-	def NtryMd(self, value):
-		self._NtryMd = value if type(value) != auto else self.make_default("NtryMd")
-
-	@NtryMd.deleter
-	def NtryMd(self):
-		del self._NtryMd
-		self._NtryMd = None
-
-	@property
 	def AddtlCardData(self):
 		return self._AddtlCardData
 
@@ -75,24 +75,24 @@ class PlainCardData17(base_types._BaseFieldType):
 		self._AddtlCardData = None
 
 	@property
-	def Trck3(self):
-		return self._Trck3
+	def NtryMd(self):
+		return self._NtryMd
 
-	@Trck3.setter
-	def Trck3(self, value):
-		self._Trck3 = value if type(value) != auto else self.make_default("Trck3")
+	@NtryMd.setter
+	def NtryMd(self, value):
+		self._NtryMd = value if type(value) != auto else self.make_default("NtryMd")
 
-	@Trck3.deleter
-	def Trck3(self):
-		del self._Trck3
-		self._Trck3 = None
+	@NtryMd.deleter
+	def NtryMd(self):
+		del self._NtryMd
+		self._NtryMd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Trck1', type=Max76Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trck3', type=Max104Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PAN', type=Min8Max28NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trck2', type=Max37Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCardData', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Trck3', type=Max104Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

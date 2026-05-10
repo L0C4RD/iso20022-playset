@@ -3,20 +3,7 @@ import RequestedIndicator
 
 class SystemReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctIdInd", "_SysIdInd", "_CtryIdInd", "_MmbIdInd"]
-	@property
-	def AcctIdInd(self):
-		return self._AcctIdInd
-
-	@AcctIdInd.setter
-	def AcctIdInd(self, value):
-		self._AcctIdInd = value if type(value) != auto else self.make_default("AcctIdInd")
-
-	@AcctIdInd.deleter
-	def AcctIdInd(self):
-		del self._AcctIdInd
-		self._AcctIdInd = None
-
+	__slots__ = ["_SysIdInd", "_AcctIdInd", "_CtryIdInd", "_MmbIdInd"]
 	@property
 	def SysIdInd(self):
 		return self._SysIdInd
@@ -29,6 +16,19 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 	def SysIdInd(self):
 		del self._SysIdInd
 		self._SysIdInd = None
+
+	@property
+	def AcctIdInd(self):
+		return self._AcctIdInd
+
+	@AcctIdInd.setter
+	def AcctIdInd(self, value):
+		self._AcctIdInd = value if type(value) != auto else self.make_default("AcctIdInd")
+
+	@AcctIdInd.deleter
+	def AcctIdInd(self):
+		del self._AcctIdInd
+		self._AcctIdInd = None
 
 	@property
 	def CtryIdInd(self):
@@ -57,8 +57,8 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 		self._MmbIdInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))

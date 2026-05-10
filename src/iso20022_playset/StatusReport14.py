@@ -1,11 +1,11 @@
 import base_types
 import TriggerInformation2
-import StatusReportDataSetRequest6
 import GenericIdentification176
+import StatusReportDataSetRequest6
 
 class StatusReport14(base_types._BaseFieldType):
 
-	__slots__ = ["_POIId", "_DataSet", "_TermnlMgrId", "_InitgTrggr"]
+	__slots__ = ["_POIId", "_TermnlMgrId", "_InitgTrggr", "_DataSet"]
 	@property
 	def POIId(self):
 		return self._POIId
@@ -18,19 +18,6 @@ class StatusReport14(base_types._BaseFieldType):
 	def POIId(self):
 		del self._POIId
 		self._POIId = None
-
-	@property
-	def DataSet(self):
-		return self._DataSet
-
-	@DataSet.setter
-	def DataSet(self, value):
-		self._DataSet = value if type(value) != auto else self.make_default("DataSet")
-
-	@DataSet.deleter
-	def DataSet(self):
-		del self._DataSet
-		self._DataSet = None
 
 	@property
 	def TermnlMgrId(self):
@@ -58,10 +45,23 @@ class StatusReport14(base_types._BaseFieldType):
 		del self._InitgTrggr
 		self._InitgTrggr = None
 
+	@property
+	def DataSet(self):
+		return self._DataSet
+
+	@DataSet.setter
+	def DataSet(self, value):
+		self._DataSet = value if type(value) != auto else self.make_default("DataSet")
+
+	@DataSet.deleter
+	def DataSet(self):
+		del self._DataSet
+		self._DataSet = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='POIId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSet', type=StatusReportDataSetRequest6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermnlMgrId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgTrggr', type=TriggerInformation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataSet', type=StatusReportDataSetRequest6, min=1, max=1, mutex_group=None, array=False),
 	))
 

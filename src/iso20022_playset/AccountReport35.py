@@ -1,6 +1,6 @@
 import base_types
-import AccountIdentification4Choice
 import AccountOrBusinessError6Choice
+import AccountIdentification4Choice
 
 class AccountReport35(base_types._BaseFieldType):
 

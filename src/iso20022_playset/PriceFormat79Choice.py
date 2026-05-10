@@ -1,26 +1,39 @@
 import base_types
+import PercentagePrice3
 import AmountPrice3
 import DecimalNumber
-import PriceValueType8Code
-import PercentagePrice3
-import AmountPricePerAmount2
 import AmountPricePerFinancialInstrumentQuantity10
+import AmountPricePerAmount2
+import PriceValueType8Code
 
 class PriceFormat79Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPricPerAmt", "_AmtPricPerFinInstrmQty", "_NotSpcfdPric", "_IndxPts", "_AmtPric", "_PctgPric"]
+	__slots__ = ["_NotSpcfdPric", "_PctgPric", "_AmtPricPerFinInstrmQty", "_AmtPricPerAmt", "_IndxPts", "_AmtPric"]
 	@property
-	def AmtPricPerAmt(self):
-		return self._AmtPricPerAmt
+	def NotSpcfdPric(self):
+		return self._NotSpcfdPric
 
-	@AmtPricPerAmt.setter
-	def AmtPricPerAmt(self, value):
-		self._AmtPricPerAmt = value if type(value) != auto else self.make_default("AmtPricPerAmt")
+	@NotSpcfdPric.setter
+	def NotSpcfdPric(self, value):
+		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
 
-	@AmtPricPerAmt.deleter
-	def AmtPricPerAmt(self):
-		del self._AmtPricPerAmt
-		self._AmtPricPerAmt = None
+	@NotSpcfdPric.deleter
+	def NotSpcfdPric(self):
+		del self._NotSpcfdPric
+		self._NotSpcfdPric = None
+
+	@property
+	def PctgPric(self):
+		return self._PctgPric
+
+	@PctgPric.setter
+	def PctgPric(self, value):
+		self._PctgPric = value if type(value) != auto else self.make_default("PctgPric")
+
+	@PctgPric.deleter
+	def PctgPric(self):
+		del self._PctgPric
+		self._PctgPric = None
 
 	@property
 	def AmtPricPerFinInstrmQty(self):
@@ -36,17 +49,17 @@ class PriceFormat79Choice(base_types._BaseFieldType):
 		self._AmtPricPerFinInstrmQty = None
 
 	@property
-	def NotSpcfdPric(self):
-		return self._NotSpcfdPric
+	def AmtPricPerAmt(self):
+		return self._AmtPricPerAmt
 
-	@NotSpcfdPric.setter
-	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
+	@AmtPricPerAmt.setter
+	def AmtPricPerAmt(self, value):
+		self._AmtPricPerAmt = value if type(value) != auto else self.make_default("AmtPricPerAmt")
 
-	@NotSpcfdPric.deleter
-	def NotSpcfdPric(self):
-		del self._NotSpcfdPric
-		self._NotSpcfdPric = None
+	@AmtPricPerAmt.deleter
+	def AmtPricPerAmt(self):
+		del self._AmtPricPerAmt
+		self._AmtPricPerAmt = None
 
 	@property
 	def IndxPts(self):
@@ -74,25 +87,12 @@ class PriceFormat79Choice(base_types._BaseFieldType):
 		del self._AmtPric
 		self._AmtPric = None
 
-	@property
-	def PctgPric(self):
-		return self._PctgPric
-
-	@PctgPric.setter
-	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != auto else self.make_default("PctgPric")
-
-	@PctgPric.deleter
-	def PctgPric(self):
-		del self._PctgPric
-		self._PctgPric = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtPricPerAmt', type=AmountPricePerAmount2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtPricPerFinInstrmQty', type=AmountPricePerFinancialInstrumentQuantity10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType8Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PctgPric', type=PercentagePrice3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPricPerFinInstrmQty', type=AmountPricePerFinancialInstrumentQuantity10, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPricPerAmt', type=AmountPricePerAmount2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PctgPric', type=PercentagePrice3, min=0, max=1, mutex_group=1, array=False),
 	))
 

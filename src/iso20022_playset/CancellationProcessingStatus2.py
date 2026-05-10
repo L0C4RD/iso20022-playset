@@ -1,6 +1,6 @@
 import base_types
-import Max350Text
 import CancellationStatus6Code
+import Max350Text
 
 class CancellationProcessingStatus2(base_types._BaseFieldType):
 

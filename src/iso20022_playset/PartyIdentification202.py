@@ -4,20 +4,7 @@ import PersonName1
 
 class PartyIdentification202(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_Id"]
-	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
+	__slots__ = ["_Id", "_NmAndAdr"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class PartyIdentification202(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=PersonName1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=NaturalPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=PersonName1, min=1, max=1, mutex_group=None, array=False),
 	))
 

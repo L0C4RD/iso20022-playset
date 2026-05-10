@@ -1,11 +1,11 @@
 import base_types
-import ATMPropertyType1Code
 import Max70Text
 import Max2000Text
+import ATMPropertyType1Code
 
 class ATMPropertyComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrprtyNm", "_PrprtyTp", "_PrprtyVal"]
+	__slots__ = ["_PrprtyNm", "_PrprtyVal", "_PrprtyTp"]
 	@property
 	def PrprtyNm(self):
 		return self._PrprtyNm
@@ -20,19 +20,6 @@ class ATMPropertyComponent1(base_types._BaseFieldType):
 		self._PrprtyNm = None
 
 	@property
-	def PrprtyTp(self):
-		return self._PrprtyTp
-
-	@PrprtyTp.setter
-	def PrprtyTp(self, value):
-		self._PrprtyTp = value if type(value) != auto else self.make_default("PrprtyTp")
-
-	@PrprtyTp.deleter
-	def PrprtyTp(self):
-		del self._PrprtyTp
-		self._PrprtyTp = None
-
-	@property
 	def PrprtyVal(self):
 		return self._PrprtyVal
 
@@ -45,9 +32,22 @@ class ATMPropertyComponent1(base_types._BaseFieldType):
 		del self._PrprtyVal
 		self._PrprtyVal = None
 
+	@property
+	def PrprtyTp(self):
+		return self._PrprtyTp
+
+	@PrprtyTp.setter
+	def PrprtyTp(self, value):
+		self._PrprtyTp = value if type(value) != auto else self.make_default("PrprtyTp")
+
+	@PrprtyTp.deleter
+	def PrprtyTp(self):
+		del self._PrprtyTp
+		self._PrprtyTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrprtyNm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrprtyTp', type=ATMPropertyType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrprtyVal', type=Max2000Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrprtyTp', type=ATMPropertyType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

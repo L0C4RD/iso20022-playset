@@ -1,6 +1,6 @@
 import base_types
-import Eligibility1Code
 import GenericIdentification30
+import Eligibility1Code
 
 class InvestorCapacity4Choice(base_types._BaseFieldType):
 

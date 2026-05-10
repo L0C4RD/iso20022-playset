@@ -1,6 +1,6 @@
 import base_types
-import PostalAddress6
 import NameAndAddress10
+import PostalAddress6
 
 class AddressOrParty1Choice(base_types._BaseFieldType):
 

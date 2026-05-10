@@ -1,6 +1,6 @@
 import base_types
-import ActionMessage11
 import Number
+import ActionMessage11
 
 class DevicePoweroffCardReaderRequest6(base_types._BaseFieldType):
 

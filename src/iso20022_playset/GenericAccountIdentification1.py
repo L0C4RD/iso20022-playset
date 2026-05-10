@@ -1,7 +1,7 @@
 import base_types
+import Max34Text
 import Max35Text
 import AccountSchemeName1Choice
-import Max34Text
 
 class GenericAccountIdentification1(base_types._BaseFieldType):
 

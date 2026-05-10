@@ -1,16 +1,16 @@
 import base_types
+import CreditDebitCode
+import PartyIdentification2Choice
 import FormOfSecurity1Code
 import SecuritiesBalanceType10FormatChoice
+import CorporateActionOption1FormatChoice
 import Exact3NumericText
 import StampDutyType1FormatChoice
 import Max35Text
-import PartyIdentification2Choice
-import CorporateActionOption1FormatChoice
-import CreditDebitCode
 
 class SecuritiesAccount8(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_CdtDbtInd", "_AcctOwnrId", "_AcctId", "_SctyHldgForm", "_StmpDty", "_OptnNb", "_BalTp"]
+	__slots__ = ["_OptnTp", "_CdtDbtInd", "_SctyHldgForm", "_StmpDty", "_AcctId", "_OptnNb", "_AcctOwnrId", "_BalTp"]
 	@property
 	def OptnTp(self):
 		return self._OptnTp
@@ -36,32 +36,6 @@ class SecuritiesAccount8(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
-
-	@property
-	def AcctOwnrId(self):
-		return self._AcctOwnrId
-
-	@AcctOwnrId.setter
-	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
-
-	@AcctOwnrId.deleter
-	def AcctOwnrId(self):
-		del self._AcctOwnrId
-		self._AcctOwnrId = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def SctyHldgForm(self):
@@ -90,6 +64,19 @@ class SecuritiesAccount8(base_types._BaseFieldType):
 		self._StmpDty = None
 
 	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
 	def OptnNb(self):
 		return self._OptnNb
 
@@ -101,6 +88,19 @@ class SecuritiesAccount8(base_types._BaseFieldType):
 	def OptnNb(self):
 		del self._OptnNb
 		self._OptnNb = None
+
+	@property
+	def AcctOwnrId(self):
+		return self._AcctOwnrId
+
+	@AcctOwnrId.setter
+	def AcctOwnrId(self, value):
+		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+
+	@AcctOwnrId.deleter
+	def AcctOwnrId(self):
+		del self._AcctOwnrId
+		self._AcctOwnrId = None
 
 	@property
 	def BalTp(self):
@@ -118,11 +118,11 @@ class SecuritiesAccount8(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmpDty', type=StampDutyType1FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType10FormatChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

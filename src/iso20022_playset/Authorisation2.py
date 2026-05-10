@@ -4,19 +4,19 @@ import MaximumAmountByPeriod1
 
 class Authorisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxAmtByBlkSubmissn", "_MaxAmtByPrd", "_MaxAmtByTx"]
+	__slots__ = ["_MaxAmtByTx", "_MaxAmtByPrd", "_MaxAmtByBlkSubmissn"]
 	@property
-	def MaxAmtByBlkSubmissn(self):
-		return self._MaxAmtByBlkSubmissn
+	def MaxAmtByTx(self):
+		return self._MaxAmtByTx
 
-	@MaxAmtByBlkSubmissn.setter
-	def MaxAmtByBlkSubmissn(self, value):
-		self._MaxAmtByBlkSubmissn = value if type(value) != auto else self.make_default("MaxAmtByBlkSubmissn")
+	@MaxAmtByTx.setter
+	def MaxAmtByTx(self, value):
+		self._MaxAmtByTx = value if type(value) != auto else self.make_default("MaxAmtByTx")
 
-	@MaxAmtByBlkSubmissn.deleter
-	def MaxAmtByBlkSubmissn(self):
-		del self._MaxAmtByBlkSubmissn
-		self._MaxAmtByBlkSubmissn = None
+	@MaxAmtByTx.deleter
+	def MaxAmtByTx(self):
+		del self._MaxAmtByTx
+		self._MaxAmtByTx = None
 
 	@property
 	def MaxAmtByPrd(self):
@@ -32,21 +32,21 @@ class Authorisation2(base_types._BaseFieldType):
 		self._MaxAmtByPrd = None
 
 	@property
-	def MaxAmtByTx(self):
-		return self._MaxAmtByTx
+	def MaxAmtByBlkSubmissn(self):
+		return self._MaxAmtByBlkSubmissn
 
-	@MaxAmtByTx.setter
-	def MaxAmtByTx(self, value):
-		self._MaxAmtByTx = value if type(value) != auto else self.make_default("MaxAmtByTx")
+	@MaxAmtByBlkSubmissn.setter
+	def MaxAmtByBlkSubmissn(self, value):
+		self._MaxAmtByBlkSubmissn = value if type(value) != auto else self.make_default("MaxAmtByBlkSubmissn")
 
-	@MaxAmtByTx.deleter
-	def MaxAmtByTx(self):
-		del self._MaxAmtByTx
-		self._MaxAmtByTx = None
+	@MaxAmtByBlkSubmissn.deleter
+	def MaxAmtByBlkSubmissn(self):
+		del self._MaxAmtByBlkSubmissn
+		self._MaxAmtByBlkSubmissn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxAmtByBlkSubmissn', type=FixedAmountOrUnlimited1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxAmtByPrd', type=MaximumAmountByPeriod1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MaxAmtByTx', type=FixedAmountOrUnlimited1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxAmtByPrd', type=MaximumAmountByPeriod1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MaxAmtByBlkSubmissn', type=FixedAmountOrUnlimited1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import CashAccount204
 import PaymentInstrument17
+import CashAccount204
 
 class CashSettlement3(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 import base_types
-import PaymentTransaction158
 import SupplementaryData1
+import PaymentTransaction158
 import GroupHeader109
 import OriginalGroupInformation27
 
 class FIToFIPaymentStatusRequestV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TxInf", "_GrpHdr", "_SplmtryData", "_OrgnlGrpInf"]
+	__slots__ = ["_TxInf", "_OrgnlGrpInf", "_SplmtryData", "_GrpHdr"]
 	@property
 	def TxInf(self):
 		return self._TxInf
@@ -21,17 +21,17 @@ class FIToFIPaymentStatusRequestV06(base_types._BaseFieldType):
 		self._TxInf = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def OrgnlGrpInf(self):
+		return self._OrgnlGrpInf
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+	@OrgnlGrpInf.setter
+	def OrgnlGrpInf(self, value):
+		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@OrgnlGrpInf.deleter
+	def OrgnlGrpInf(self):
+		del self._OrgnlGrpInf
+		self._OrgnlGrpInf = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class FIToFIPaymentStatusRequestV06(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def OrgnlGrpInf(self):
-		return self._OrgnlGrpInf
+	def GrpHdr(self):
+		return self._GrpHdr
 
-	@OrgnlGrpInf.setter
-	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
 
-	@OrgnlGrpInf.deleter
-	def OrgnlGrpInf(self):
-		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxInf', type=PaymentTransaction158, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader109, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation27, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader109, min=1, max=1, mutex_group=None, array=False),
 	))
 

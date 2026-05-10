@@ -1,6 +1,6 @@
 import base_types
-import Max35Text
 import Max256Text
+import Max35Text
 
 class SpecialProgrammeDetails2(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
 import base_types
 import UnitOrFaceAmount1Choice
-import Exact3NumericText
 import CorporateActionOption1FormatChoice
+import Exact3NumericText
 
 class CorporateActionElection1(base_types._BaseFieldType):
 

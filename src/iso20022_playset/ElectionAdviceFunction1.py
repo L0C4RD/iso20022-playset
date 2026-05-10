@@ -1,6 +1,6 @@
 import base_types
-import ElectionType1Code
 import DocumentIdentification8
+import ElectionType1Code
 
 class ElectionAdviceFunction1(base_types._BaseFieldType):
 

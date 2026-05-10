@@ -1,24 +1,24 @@
 import base_types
+import Max256Text
 import NamePrefix1Code
 import PhoneNumber
 import Max35Text
-import Max256Text
 
 class ContactIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_PhneNb", "_NmPrfx", "_GvnNm", "_FaxNb", "_Nm", "_EmailAdr", "_MobNb"]
+	__slots__ = ["_FaxNb", "_NmPrfx", "_MobNb", "_PhneNb", "_Nm", "_GvnNm", "_EmailAdr"]
 	@property
-	def PhneNb(self):
-		return self._PhneNb
+	def FaxNb(self):
+		return self._FaxNb
 
-	@PhneNb.setter
-	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
+	@FaxNb.setter
+	def FaxNb(self, value):
+		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
 
-	@PhneNb.deleter
-	def PhneNb(self):
-		del self._PhneNb
-		self._PhneNb = None
+	@FaxNb.deleter
+	def FaxNb(self):
+		del self._FaxNb
+		self._FaxNb = None
 
 	@property
 	def NmPrfx(self):
@@ -34,30 +34,30 @@ class ContactIdentification2(base_types._BaseFieldType):
 		self._NmPrfx = None
 
 	@property
-	def GvnNm(self):
-		return self._GvnNm
+	def MobNb(self):
+		return self._MobNb
 
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
+	@MobNb.setter
+	def MobNb(self, value):
+		self._MobNb = value if type(value) != auto else self.make_default("MobNb")
 
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
+	@MobNb.deleter
+	def MobNb(self):
+		del self._MobNb
+		self._MobNb = None
 
 	@property
-	def FaxNb(self):
-		return self._FaxNb
+	def PhneNb(self):
+		return self._PhneNb
 
-	@FaxNb.setter
-	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
+	@PhneNb.setter
+	def PhneNb(self, value):
+		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
 
-	@FaxNb.deleter
-	def FaxNb(self):
-		del self._FaxNb
-		self._FaxNb = None
+	@PhneNb.deleter
+	def PhneNb(self):
+		del self._PhneNb
+		self._PhneNb = None
 
 	@property
 	def Nm(self):
@@ -73,6 +73,19 @@ class ContactIdentification2(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
+	def GvnNm(self):
+		return self._GvnNm
+
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
+
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
+
+	@property
 	def EmailAdr(self):
 		return self._EmailAdr
 
@@ -85,26 +98,13 @@ class ContactIdentification2(base_types._BaseFieldType):
 		del self._EmailAdr
 		self._EmailAdr = None
 
-	@property
-	def MobNb(self):
-		return self._MobNb
-
-	@MobNb.setter
-	def MobNb(self, value):
-		self._MobNb = value if type(value) != auto else self.make_default("MobNb")
-
-	@MobNb.deleter
-	def MobNb(self):
-		del self._MobNb
-		self._MobNb = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

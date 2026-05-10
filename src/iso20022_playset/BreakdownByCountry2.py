@@ -1,12 +1,25 @@
 import base_types
+import CashInForecast5
 import NetCashForecast4
 import CountryCode
-import CashInForecast5
 import CashOutForecast5
 
 class BreakdownByCountry2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_CshOutFcst", "_CshInFcst", "_NetCshFcst"]
+	__slots__ = ["_CshInFcst", "_Ctry", "_CshOutFcst", "_NetCshFcst"]
+	@property
+	def CshInFcst(self):
+		return self._CshInFcst
+
+	@CshInFcst.setter
+	def CshInFcst(self, value):
+		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
+
+	@CshInFcst.deleter
+	def CshInFcst(self):
+		del self._CshInFcst
+		self._CshInFcst = None
+
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -34,19 +47,6 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 		self._CshOutFcst = None
 
 	@property
-	def CshInFcst(self):
-		return self._CshInFcst
-
-	@CshInFcst.setter
-	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
-
-	@CshInFcst.deleter
-	def CshInFcst(self):
-		del self._CshInFcst
-		self._CshInFcst = None
-
-	@property
 	def NetCshFcst(self):
 		return self._NetCshFcst
 
@@ -60,9 +60,9 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 		self._NetCshFcst = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -5,19 +5,19 @@ import LoyaltyAmount1
 
 class LoyaltyRequestData3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CstmrOrdr", "_Acct"]
+	__slots__ = ["_Acct", "_CstmrOrdr", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def Acct(self):
+		return self._Acct
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def CstmrOrdr(self):
@@ -33,21 +33,21 @@ class LoyaltyRequestData3(base_types._BaseFieldType):
 		self._CstmrOrdr = None
 
 	@property
-	def Acct(self):
-		return self._Acct
+	def Amt(self):
+		return self._Amt
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=LoyaltyAmount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=LoyaltyAccount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=LoyaltyAmount1, min=0, max=1, mutex_group=None, array=False),
 	))
 

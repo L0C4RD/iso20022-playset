@@ -1,7 +1,7 @@
 import base_types
+import ATMTransaction49
 import ATMContext9
 import ATMEnvironment21
-import ATMTransaction49
 
 class ATMWithdrawalResponse3(base_types._BaseFieldType):
 

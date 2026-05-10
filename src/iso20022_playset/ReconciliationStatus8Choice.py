@@ -1,6 +1,6 @@
 import base_types
-import NoReasonCode
 import ReconciliationMatchedStatus9Choice
+import NoReasonCode
 
 class ReconciliationStatus8Choice(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 import base_types
-import UnderlyingEquityType5Code
 import UnderlyingEquityType4Code
-import UnderlyingEquityType3Code
+import UnderlyingEquityType5Code
 import UnderlyingEquityType6Code
+import UnderlyingEquityType3Code
 
 class EquityDerivative3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Bskt", "_Indx", "_SnglNm"]
+	__slots__ = ["_Othr", "_SnglNm", "_Indx", "_Bskt"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -21,17 +21,17 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Bskt(self):
-		return self._Bskt
+	def SnglNm(self):
+		return self._SnglNm
 
-	@Bskt.setter
-	def Bskt(self, value):
-		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
+	@SnglNm.setter
+	def SnglNm(self, value):
+		self._SnglNm = value if type(value) != auto else self.make_default("SnglNm")
 
-	@Bskt.deleter
-	def Bskt(self):
-		del self._Bskt
-		self._Bskt = None
+	@SnglNm.deleter
+	def SnglNm(self):
+		del self._SnglNm
+		self._SnglNm = None
 
 	@property
 	def Indx(self):
@@ -47,22 +47,22 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 		self._Indx = None
 
 	@property
-	def SnglNm(self):
-		return self._SnglNm
+	def Bskt(self):
+		return self._Bskt
 
-	@SnglNm.setter
-	def SnglNm(self, value):
-		self._SnglNm = value if type(value) != auto else self.make_default("SnglNm")
+	@Bskt.setter
+	def Bskt(self, value):
+		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
 
-	@SnglNm.deleter
-	def SnglNm(self):
-		del self._SnglNm
-		self._SnglNm = None
+	@Bskt.deleter
+	def Bskt(self):
+		del self._Bskt
+		self._Bskt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Othr', type=UnderlyingEquityType6Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Bskt', type=UnderlyingEquityType3Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Indx', type=UnderlyingEquityType4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SnglNm', type=UnderlyingEquityType5Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Indx', type=UnderlyingEquityType4Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Bskt', type=UnderlyingEquityType3Code, min=0, max=1, mutex_group=1, array=False),
 	))
 
