@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35NumericText import Max35NumericText
 from ._Max350Text import Max350Text
+from ._Max35NumericText import Max35NumericText
 
 class AdditionalInformation31(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlData", "_AlphaNmrc", "_Nmrc"]
+	__slots__ = ["_AlphaNmrc", "_Nmrc", "_AddtlData"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

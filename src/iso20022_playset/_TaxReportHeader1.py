@@ -1,7 +1,7 @@
 from . import base_types
-from ._TaxOrganisationIdentification1 import TaxOrganisationIdentification1
-from ._Number import Number
 from ._MessageIdentification1 import MessageIdentification1
+from ._Number import Number
+from ._TaxOrganisationIdentification1 import TaxOrganisationIdentification1
 
 class TaxReportHeader1(base_types._BaseFieldType):
 

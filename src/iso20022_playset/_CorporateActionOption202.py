@@ -1,11 +1,24 @@
 from . import base_types
-from ._CorporateActionOption43Choice import CorporateActionOption43Choice
-from ._Quantity55Choice import Quantity55Choice
 from ._OptionNumber1Choice import OptionNumber1Choice
+from ._Quantity55Choice import Quantity55Choice
+from ._CorporateActionOption43Choice import CorporateActionOption43Choice
 
 class CorporateActionOption202(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnNb", "_OptnTp", "_InstdQty"]
+	__slots__ = ["_InstdQty", "_OptnNb", "_OptnTp"]
+	@property
+	def InstdQty(self):
+		return self._InstdQty
+
+	@InstdQty.setter
+	def InstdQty(self, value):
+		self._InstdQty = value if type(value) != base_types.auto else self.make_default("InstdQty")
+
+	@InstdQty.deleter
+	def InstdQty(self):
+		del self._InstdQty
+		self._InstdQty = None
+
 	@property
 	def OptnNb(self):
 		return self._OptnNb
@@ -32,22 +45,9 @@ class CorporateActionOption202(base_types._BaseFieldType):
 		del self._OptnTp
 		self._OptnTp = None
 
-	@property
-	def InstdQty(self):
-		return self._InstdQty
-
-	@InstdQty.setter
-	def InstdQty(self, value):
-		self._InstdQty = value if type(value) != base_types.auto else self.make_default("InstdQty")
-
-	@InstdQty.deleter
-	def InstdQty(self):
-		del self._InstdQty
-		self._InstdQty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InstdQty', type=Quantity55Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption43Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdQty', type=Quantity55Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

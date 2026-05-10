@@ -1,12 +1,12 @@
 from . import base_types
-from ._TransportByRail2 import TransportByRail2
-from ._TransportByAir2 import TransportByAir2
 from ._TransportByRoad2 import TransportByRoad2
+from ._TransportByRail2 import TransportByRail2
 from ._TransportBySea4 import TransportBySea4
+from ._TransportByAir2 import TransportByAir2
 
 class SingleTransport3(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtByAir", "_TrnsprtBySea", "_TrnsprtByRail", "_TrnsprtByRoad"]
+	__slots__ = ["_TrnsprtByAir", "_TrnsprtByRoad", "_TrnsprtBySea", "_TrnsprtByRail"]
 	@property
 	def TrnsprtByAir(self):
 		return self._TrnsprtByAir
@@ -19,19 +19,6 @@ class SingleTransport3(base_types._BaseFieldType):
 	def TrnsprtByAir(self):
 		del self._TrnsprtByAir
 		self._TrnsprtByAir = None
-
-	@property
-	def TrnsprtBySea(self):
-		return self._TrnsprtBySea
-
-	@TrnsprtBySea.setter
-	def TrnsprtBySea(self, value):
-		self._TrnsprtBySea = value if type(value) != base_types.auto else self.make_default("TrnsprtBySea")
-
-	@TrnsprtBySea.deleter
-	def TrnsprtBySea(self):
-		del self._TrnsprtBySea
-		self._TrnsprtBySea = None
 
 	@property
 	def TrnsprtByRail(self):
@@ -59,10 +46,23 @@ class SingleTransport3(base_types._BaseFieldType):
 		del self._TrnsprtByRoad
 		self._TrnsprtByRoad = None
 
+	@property
+	def TrnsprtBySea(self):
+		return self._TrnsprtBySea
+
+	@TrnsprtBySea.setter
+	def TrnsprtBySea(self, value):
+		self._TrnsprtBySea = value if type(value) != base_types.auto else self.make_default("TrnsprtBySea")
+
+	@TrnsprtBySea.deleter
+	def TrnsprtBySea(self):
+		del self._TrnsprtBySea
+		self._TrnsprtBySea = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsprtByRail', type=TransportByRail2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea4, min=0, max=1, mutex_group=None, array=False),
 	))
 

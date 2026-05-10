@@ -1,24 +1,24 @@
 from . import base_types
+from ._CurrencyCode import CurrencyCode
 from ._AccountIdentification3Choice import AccountIdentification3Choice
 from ._CashAccountType2 import CashAccountType2
 from ._Max70Text import Max70Text
-from ._CurrencyCode import CurrencyCode
 
 class CashAccount7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Nm", "_Ccy"]
+	__slots__ = ["_Ccy", "_Nm", "_Tp", "_Id"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Ccy(self):
+		return self._Ccy
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Id(self):
@@ -47,22 +47,22 @@ class CashAccount7(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Tp(self):
+		return self._Tp
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -4,7 +4,7 @@ from ._ErrorHandling5 import ErrorHandling5
 
 class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cxls", "_OprlErr"]
+	__slots__ = ["_OprlErr", "_Cxls"]
 	@property
 	def Cxls(self):
 		return self._Cxls

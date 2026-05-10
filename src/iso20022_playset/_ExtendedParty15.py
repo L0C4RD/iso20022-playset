@@ -4,7 +4,7 @@ from ._Extended350Code import Extended350Code
 
 class ExtendedParty15(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPtyDtls", "_XtndedPtyRole"]
+	__slots__ = ["_XtndedPtyRole", "_OthrPtyDtls"]
 	@property
 	def OthrPtyDtls(self):
 		return self._OthrPtyDtls

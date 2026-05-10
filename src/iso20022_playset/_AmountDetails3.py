@@ -1,13 +1,13 @@
 from . import base_types
-from ._TypeTypeOfAmount23Code import TypeTypeOfAmount23Code
 from ._Tax41 import Tax41
 from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._TypeTypeOfAmount23Code import TypeTypeOfAmount23Code
 
 class AmountDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CdtDbt", "_Tax", "_OthrTp", "_Tp"]
+	__slots__ = ["_Amt", "_Tax", "_Tp", "_CdtDbt", "_OthrTp"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -35,19 +35,6 @@ class AmountDetails3(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
-
-	@property
 	def OthrTp(self):
 		return self._OthrTp
 
@@ -59,6 +46,19 @@ class AmountDetails3(base_types._BaseFieldType):
 	def OthrTp(self):
 		del self._OthrTp
 		self._OthrTp = None
+
+	@property
+	def Tax(self):
+		return self._Tax
+
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
 
 	@property
 	def Tp(self):
@@ -76,8 +76,8 @@ class AmountDetails3(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=TypeTypeOfAmount23Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

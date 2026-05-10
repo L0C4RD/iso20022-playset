@@ -1,23 +1,23 @@
 from . import base_types
-from ._ModificationScope43 import ModificationScope43
-from ._AccountParties18 import AccountParties18
-from ._MessageIdentification1 import MessageIdentification1
-from ._ModificationScope41 import ModificationScope41
-from ._AccountSelection3Choice import AccountSelection3Choice
 from ._ModificationScope40 import ModificationScope40
-from ._InvestmentAccount75 import InvestmentAccount75
-from ._ModificationScope21 import ModificationScope21
-from ._ModificationScope44 import ModificationScope44
+from ._ModificationScope43 import ModificationScope43
 from ._ModificationScope45 import ModificationScope45
-from ._InvestmentAccountModification4 import InvestmentAccountModification4
+from ._ModificationScope44 import ModificationScope44
 from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._CashSettlement4 import CashSettlement4
-from ._Extension1 import Extension1
+from ._AccountSelection3Choice import AccountSelection3Choice
+from ._ModificationScope21 import ModificationScope21
+from ._InvestmentAccount75 import InvestmentAccount75
+from ._InvestmentAccountModification4 import InvestmentAccountModification4
+from ._ModificationScope41 import ModificationScope41
+from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference13 import AdditionalReference13
+from ._Extension1 import Extension1
+from ._AccountParties18 import AccountParties18
 
 class AccountModificationInstructionV08(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrDtls", "_ModfdIntrmies", "_MsgId", "_ModfdPlcmnt", "_ModfdIsseAllcn", "_ModfdWdrwlInvstmtPlan", "_ModfdAcctPties", "_ModfdAddtlInf", "_MktPrctcVrsn", "_Xtnsn", "_ModfdInvstmtAcct", "_InvstmtAcctSelctn", "_ModfdCshSttlm", "_ModfdSvgsInvstmtPlan", "_PrvsRef", "_ModfdSvcLvlAgrmt"]
+	__slots__ = ["_InstrDtls", "_ModfdSvcLvlAgrmt", "_ModfdAcctPties", "_MktPrctcVrsn", "_ModfdIntrmies", "_ModfdInvstmtAcct", "_MsgId", "_ModfdPlcmnt", "_ModfdWdrwlInvstmtPlan", "_ModfdAddtlInf", "_PrvsRef", "_InvstmtAcctSelctn", "_ModfdIsseAllcn", "_ModfdSvgsInvstmtPlan", "_ModfdCshSttlm", "_Xtnsn"]
 	@property
 	def InstrDtls(self):
 		return self._InstrDtls
@@ -32,69 +32,30 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 		self._InstrDtls = None
 
 	@property
-	def ModfdIntrmies(self):
-		return self._ModfdIntrmies
+	def InvstmtAcctSelctn(self):
+		return self._InvstmtAcctSelctn
 
-	@ModfdIntrmies.setter
-	def ModfdIntrmies(self, value):
-		self._ModfdIntrmies = value if type(value) != base_types.auto else self.make_default("ModfdIntrmies")
+	@InvstmtAcctSelctn.setter
+	def InvstmtAcctSelctn(self, value):
+		self._InvstmtAcctSelctn = value if type(value) != base_types.auto else self.make_default("InvstmtAcctSelctn")
 
-	@ModfdIntrmies.deleter
-	def ModfdIntrmies(self):
-		del self._ModfdIntrmies
-		self._ModfdIntrmies = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@InvstmtAcctSelctn.deleter
+	def InvstmtAcctSelctn(self):
+		del self._InvstmtAcctSelctn
+		self._InvstmtAcctSelctn = None
 
 	@property
-	def ModfdPlcmnt(self):
-		return self._ModfdPlcmnt
+	def MktPrctcVrsn(self):
+		return self._MktPrctcVrsn
 
-	@ModfdPlcmnt.setter
-	def ModfdPlcmnt(self, value):
-		self._ModfdPlcmnt = value if type(value) != base_types.auto else self.make_default("ModfdPlcmnt")
+	@MktPrctcVrsn.setter
+	def MktPrctcVrsn(self, value):
+		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
 
-	@ModfdPlcmnt.deleter
-	def ModfdPlcmnt(self):
-		del self._ModfdPlcmnt
-		self._ModfdPlcmnt = None
-
-	@property
-	def ModfdIsseAllcn(self):
-		return self._ModfdIsseAllcn
-
-	@ModfdIsseAllcn.setter
-	def ModfdIsseAllcn(self, value):
-		self._ModfdIsseAllcn = value if type(value) != base_types.auto else self.make_default("ModfdIsseAllcn")
-
-	@ModfdIsseAllcn.deleter
-	def ModfdIsseAllcn(self):
-		del self._ModfdIsseAllcn
-		self._ModfdIsseAllcn = None
-
-	@property
-	def ModfdWdrwlInvstmtPlan(self):
-		return self._ModfdWdrwlInvstmtPlan
-
-	@ModfdWdrwlInvstmtPlan.setter
-	def ModfdWdrwlInvstmtPlan(self, value):
-		self._ModfdWdrwlInvstmtPlan = value if type(value) != base_types.auto else self.make_default("ModfdWdrwlInvstmtPlan")
-
-	@ModfdWdrwlInvstmtPlan.deleter
-	def ModfdWdrwlInvstmtPlan(self):
-		del self._ModfdWdrwlInvstmtPlan
-		self._ModfdWdrwlInvstmtPlan = None
+	@MktPrctcVrsn.deleter
+	def MktPrctcVrsn(self):
+		del self._MktPrctcVrsn
+		self._MktPrctcVrsn = None
 
 	@property
 	def ModfdAcctPties(self):
@@ -123,30 +84,30 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 		self._ModfdAddtlInf = None
 
 	@property
-	def MktPrctcVrsn(self):
-		return self._MktPrctcVrsn
+	def ModfdCshSttlm(self):
+		return self._ModfdCshSttlm
 
-	@MktPrctcVrsn.setter
-	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+	@ModfdCshSttlm.setter
+	def ModfdCshSttlm(self, value):
+		self._ModfdCshSttlm = value if type(value) != base_types.auto else self.make_default("ModfdCshSttlm")
 
-	@MktPrctcVrsn.deleter
-	def MktPrctcVrsn(self):
-		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+	@ModfdCshSttlm.deleter
+	def ModfdCshSttlm(self):
+		del self._ModfdCshSttlm
+		self._ModfdCshSttlm = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def ModfdIntrmies(self):
+		return self._ModfdIntrmies
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+	@ModfdIntrmies.setter
+	def ModfdIntrmies(self, value):
+		self._ModfdIntrmies = value if type(value) != base_types.auto else self.make_default("ModfdIntrmies")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@ModfdIntrmies.deleter
+	def ModfdIntrmies(self):
+		del self._ModfdIntrmies
+		self._ModfdIntrmies = None
 
 	@property
 	def ModfdInvstmtAcct(self):
@@ -162,30 +123,43 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 		self._ModfdInvstmtAcct = None
 
 	@property
-	def InvstmtAcctSelctn(self):
-		return self._InvstmtAcctSelctn
+	def ModfdIsseAllcn(self):
+		return self._ModfdIsseAllcn
 
-	@InvstmtAcctSelctn.setter
-	def InvstmtAcctSelctn(self, value):
-		self._InvstmtAcctSelctn = value if type(value) != base_types.auto else self.make_default("InvstmtAcctSelctn")
+	@ModfdIsseAllcn.setter
+	def ModfdIsseAllcn(self, value):
+		self._ModfdIsseAllcn = value if type(value) != base_types.auto else self.make_default("ModfdIsseAllcn")
 
-	@InvstmtAcctSelctn.deleter
-	def InvstmtAcctSelctn(self):
-		del self._InvstmtAcctSelctn
-		self._InvstmtAcctSelctn = None
+	@ModfdIsseAllcn.deleter
+	def ModfdIsseAllcn(self):
+		del self._ModfdIsseAllcn
+		self._ModfdIsseAllcn = None
 
 	@property
-	def ModfdCshSttlm(self):
-		return self._ModfdCshSttlm
+	def ModfdPlcmnt(self):
+		return self._ModfdPlcmnt
 
-	@ModfdCshSttlm.setter
-	def ModfdCshSttlm(self, value):
-		self._ModfdCshSttlm = value if type(value) != base_types.auto else self.make_default("ModfdCshSttlm")
+	@ModfdPlcmnt.setter
+	def ModfdPlcmnt(self, value):
+		self._ModfdPlcmnt = value if type(value) != base_types.auto else self.make_default("ModfdPlcmnt")
 
-	@ModfdCshSttlm.deleter
-	def ModfdCshSttlm(self):
-		del self._ModfdCshSttlm
-		self._ModfdCshSttlm = None
+	@ModfdPlcmnt.deleter
+	def ModfdPlcmnt(self):
+		del self._ModfdPlcmnt
+		self._ModfdPlcmnt = None
+
+	@property
+	def ModfdSvcLvlAgrmt(self):
+		return self._ModfdSvcLvlAgrmt
+
+	@ModfdSvcLvlAgrmt.setter
+	def ModfdSvcLvlAgrmt(self, value):
+		self._ModfdSvcLvlAgrmt = value if type(value) != base_types.auto else self.make_default("ModfdSvcLvlAgrmt")
+
+	@ModfdSvcLvlAgrmt.deleter
+	def ModfdSvcLvlAgrmt(self):
+		del self._ModfdSvcLvlAgrmt
+		self._ModfdSvcLvlAgrmt = None
 
 	@property
 	def ModfdSvgsInvstmtPlan(self):
@@ -201,6 +175,32 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 		self._ModfdSvgsInvstmtPlan = None
 
 	@property
+	def ModfdWdrwlInvstmtPlan(self):
+		return self._ModfdWdrwlInvstmtPlan
+
+	@ModfdWdrwlInvstmtPlan.setter
+	def ModfdWdrwlInvstmtPlan(self, value):
+		self._ModfdWdrwlInvstmtPlan = value if type(value) != base_types.auto else self.make_default("ModfdWdrwlInvstmtPlan")
+
+	@ModfdWdrwlInvstmtPlan.deleter
+	def ModfdWdrwlInvstmtPlan(self):
+		del self._ModfdWdrwlInvstmtPlan
+		self._ModfdWdrwlInvstmtPlan = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
 	def PrvsRef(self):
 		return self._PrvsRef
 
@@ -214,34 +214,34 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def ModfdSvcLvlAgrmt(self):
-		return self._ModfdSvcLvlAgrmt
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@ModfdSvcLvlAgrmt.setter
-	def ModfdSvcLvlAgrmt(self, value):
-		self._ModfdSvcLvlAgrmt = value if type(value) != base_types.auto else self.make_default("ModfdSvcLvlAgrmt")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
 
-	@ModfdSvcLvlAgrmt.deleter
-	def ModfdSvcLvlAgrmt(self):
-		del self._ModfdSvcLvlAgrmt
-		self._ModfdSvcLvlAgrmt = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrDtls', type=InvestmentAccountModification4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModfdIntrmies', type=ModificationScope40, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModfdPlcmnt', type=ModificationScope43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModfdIsseAllcn', type=ModificationScope21, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModfdWdrwlInvstmtPlan', type=ModificationScope41, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstmtAcctSelctn', type=AccountSelection3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModfdAcctPties', type=AccountParties18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ModfdAddtlInf', type=ModificationScope45, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ModfdInvstmtAcct', type=InvestmentAccount75, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctSelctn', type=AccountSelection3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModfdCshSttlm', type=CashSettlement4, min=0, max=8, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ModfdSvgsInvstmtPlan', type=ModificationScope41, min=0, max=50, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModfdIntrmies', type=ModificationScope40, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModfdInvstmtAcct', type=InvestmentAccount75, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModfdIsseAllcn', type=ModificationScope21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModfdPlcmnt', type=ModificationScope43, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModfdSvcLvlAgrmt', type=ModificationScope44, min=0, max=30, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModfdSvgsInvstmtPlan', type=ModificationScope41, min=0, max=50, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModfdWdrwlInvstmtPlan', type=ModificationScope41, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

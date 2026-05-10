@@ -1,23 +1,10 @@
 from . import base_types
-from ._PartyIdentificationAndAccount225 import PartyIdentificationAndAccount225
 from ._PartyIdentificationAndAccount226 import PartyIdentificationAndAccount226
+from ._PartyIdentificationAndAccount225 import PartyIdentificationAndAccount225
 
 class CashParties43(base_types._BaseFieldType):
 
 	__slots__ = ["_CdtrAgt", "_Cdtr", "_MktClmCtrPty"]
-	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
-
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
-
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
-
 	@property
 	def Cdtr(self):
 		return self._Cdtr
@@ -30,6 +17,19 @@ class CashParties43(base_types._BaseFieldType):
 	def Cdtr(self):
 		del self._Cdtr
 		self._Cdtr = None
+
+	@property
+	def CdtrAgt(self):
+		return self._CdtrAgt
+
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	@property
 	def MktClmCtrPty(self):
@@ -45,8 +45,8 @@ class CashParties43(base_types._BaseFieldType):
 		self._MktClmCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount226, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount225, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount226, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmCtrPty', type=PartyIdentificationAndAccount225, min=0, max=1, mutex_group=None, array=False),
 	))
 

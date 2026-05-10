@@ -4,7 +4,7 @@ from ._PartyIdentification125Choice import PartyIdentification125Choice
 
 class ReferredAgent3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rfrd", "_RfrdPlcmntAgt"]
+	__slots__ = ["_RfrdPlcmntAgt", "_Rfrd"]
 	@property
 	def Rfrd(self):
 		return self._Rfrd

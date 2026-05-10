@@ -3,7 +3,7 @@ from ._ExpectedCollateralMovement2 import ExpectedCollateralMovement2
 
 class ExpectedCollateral2(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmt", "_VartnMrgn"]
+	__slots__ = ["_VartnMrgn", "_SgrtdIndpdntAmt"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt

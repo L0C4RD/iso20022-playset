@@ -1,25 +1,25 @@
 from . import base_types
+from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 from ._NonNegativeNumber import NonNegativeNumber
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GenericIdentification168 import GenericIdentification168
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 from ._AssetHolding3 import AssetHolding3
+from ._GenericIdentification168 import GenericIdentification168
 
 class InteroperabilityCCP1(base_types._BaseFieldType):
 
-	__slots__ = ["_TrdsClrd", "_GrssNtnlAmt", "_TtlInitlMrgn", "_Id", "_AsstHldg"]
+	__slots__ = ["_GrssNtnlAmt", "_Id", "_TtlInitlMrgn", "_AsstHldg", "_TrdsClrd"]
 	@property
-	def TrdsClrd(self):
-		return self._TrdsClrd
+	def AsstHldg(self):
+		return self._AsstHldg
 
-	@TrdsClrd.setter
-	def TrdsClrd(self, value):
-		self._TrdsClrd = value if type(value) != base_types.auto else self.make_default("TrdsClrd")
+	@AsstHldg.setter
+	def AsstHldg(self, value):
+		self._AsstHldg = value if type(value) != base_types.auto else self.make_default("AsstHldg")
 
-	@TrdsClrd.deleter
-	def TrdsClrd(self):
-		del self._TrdsClrd
-		self._TrdsClrd = None
+	@AsstHldg.deleter
+	def AsstHldg(self):
+		del self._AsstHldg
+		self._AsstHldg = None
 
 	@property
 	def GrssNtnlAmt(self):
@@ -35,19 +35,6 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 		self._GrssNtnlAmt = None
 
 	@property
-	def TtlInitlMrgn(self):
-		return self._TtlInitlMrgn
-
-	@TtlInitlMrgn.setter
-	def TtlInitlMrgn(self, value):
-		self._TtlInitlMrgn = value if type(value) != base_types.auto else self.make_default("TtlInitlMrgn")
-
-	@TtlInitlMrgn.deleter
-	def TtlInitlMrgn(self):
-		del self._TtlInitlMrgn
-		self._TtlInitlMrgn = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -61,23 +48,36 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AsstHldg(self):
-		return self._AsstHldg
+	def TrdsClrd(self):
+		return self._TrdsClrd
 
-	@AsstHldg.setter
-	def AsstHldg(self, value):
-		self._AsstHldg = value if type(value) != base_types.auto else self.make_default("AsstHldg")
+	@TrdsClrd.setter
+	def TrdsClrd(self, value):
+		self._TrdsClrd = value if type(value) != base_types.auto else self.make_default("TrdsClrd")
 
-	@AsstHldg.deleter
-	def AsstHldg(self):
-		del self._AsstHldg
-		self._AsstHldg = None
+	@TrdsClrd.deleter
+	def TrdsClrd(self):
+		del self._TrdsClrd
+		self._TrdsClrd = None
+
+	@property
+	def TtlInitlMrgn(self):
+		return self._TtlInitlMrgn
+
+	@TtlInitlMrgn.setter
+	def TtlInitlMrgn(self, value):
+		self._TtlInitlMrgn = value if type(value) != base_types.auto else self.make_default("TtlInitlMrgn")
+
+	@TtlInitlMrgn.deleter
+	def TtlInitlMrgn(self):
+		del self._TtlInitlMrgn
+		self._TtlInitlMrgn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrdsClrd', type=NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssNtnlAmt', type=ActiveCurrencyAnd24Amount, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlInitlMrgn', type=ActiveCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstHldg', type=AssetHolding3, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrssNtnlAmt', type=ActiveCurrencyAnd24Amount, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrdsClrd', type=NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlInitlMrgn', type=ActiveCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
 	))
 

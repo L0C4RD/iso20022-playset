@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 from ._QuantityBreakdown61 import QuantityBreakdown61
+from ._SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 
 class SecuritiesSubBalanceTypeAndQuantityBreakdown5(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyBrkdwn", "_Tp"]
+	__slots__ = ["_Tp", "_QtyBrkdwn"]
 	@property
 	def QtyBrkdwn(self):
 		return self._QtyBrkdwn

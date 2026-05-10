@@ -1,68 +1,16 @@
 from . import base_types
-from ._StoredValueAccount2 import StoredValueAccount2
-from ._Max35NumericText import Max35NumericText
-from ._PaymentTransaction165 import PaymentTransaction165
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._Max35NumericText import Max35NumericText
+from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._StoredValueAccount2 import StoredValueAccount2
+from ._PaymentTransaction165 import PaymentTransaction165
+from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._StoredValueTransactionType3Code import StoredValueTransactionType3Code
-from ._Max35Text import Max35Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class StoredValueData8(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctCd", "_EANUPC", "_ItmAmt", "_Prvdr", "_AcctId", "_HstTxId", "_Ccy", "_TxTp", "_OrgnlPOITx"]
-	@property
-	def PdctCd(self):
-		return self._PdctCd
-
-	@PdctCd.setter
-	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
-
-	@PdctCd.deleter
-	def PdctCd(self):
-		del self._PdctCd
-		self._PdctCd = None
-
-	@property
-	def EANUPC(self):
-		return self._EANUPC
-
-	@EANUPC.setter
-	def EANUPC(self, value):
-		self._EANUPC = value if type(value) != base_types.auto else self.make_default("EANUPC")
-
-	@EANUPC.deleter
-	def EANUPC(self):
-		del self._EANUPC
-		self._EANUPC = None
-
-	@property
-	def ItmAmt(self):
-		return self._ItmAmt
-
-	@ItmAmt.setter
-	def ItmAmt(self, value):
-		self._ItmAmt = value if type(value) != base_types.auto else self.make_default("ItmAmt")
-
-	@ItmAmt.deleter
-	def ItmAmt(self):
-		del self._ItmAmt
-		self._ItmAmt = None
-
-	@property
-	def Prvdr(self):
-		return self._Prvdr
-
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
-
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
-
+	__slots__ = ["_OrgnlPOITx", "_Prvdr", "_TxTp", "_PdctCd", "_HstTxId", "_ItmAmt", "_EANUPC", "_Ccy", "_AcctId"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -75,19 +23,6 @@ class StoredValueData8(base_types._BaseFieldType):
 	def AcctId(self):
 		del self._AcctId
 		self._AcctId = None
-
-	@property
-	def HstTxId(self):
-		return self._HstTxId
-
-	@HstTxId.setter
-	def HstTxId(self, value):
-		self._HstTxId = value if type(value) != base_types.auto else self.make_default("HstTxId")
-
-	@HstTxId.deleter
-	def HstTxId(self):
-		del self._HstTxId
-		self._HstTxId = None
 
 	@property
 	def Ccy(self):
@@ -103,17 +38,43 @@ class StoredValueData8(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def EANUPC(self):
+		return self._EANUPC
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+	@EANUPC.setter
+	def EANUPC(self, value):
+		self._EANUPC = value if type(value) != base_types.auto else self.make_default("EANUPC")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@EANUPC.deleter
+	def EANUPC(self):
+		del self._EANUPC
+		self._EANUPC = None
+
+	@property
+	def HstTxId(self):
+		return self._HstTxId
+
+	@HstTxId.setter
+	def HstTxId(self, value):
+		self._HstTxId = value if type(value) != base_types.auto else self.make_default("HstTxId")
+
+	@HstTxId.deleter
+	def HstTxId(self):
+		del self._HstTxId
+		self._HstTxId = None
+
+	@property
+	def ItmAmt(self):
+		return self._ItmAmt
+
+	@ItmAmt.setter
+	def ItmAmt(self, value):
+		self._ItmAmt = value if type(value) != base_types.auto else self.make_default("ItmAmt")
+
+	@ItmAmt.deleter
+	def ItmAmt(self):
+		del self._ItmAmt
+		self._ItmAmt = None
 
 	@property
 	def OrgnlPOITx(self):
@@ -128,15 +89,54 @@ class StoredValueData8(base_types._BaseFieldType):
 		del self._OrgnlPOITx
 		self._OrgnlPOITx = None
 
+	@property
+	def PdctCd(self):
+		return self._PdctCd
+
+	@PdctCd.setter
+	def PdctCd(self, value):
+		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
+
+	@PdctCd.deleter
+	def PdctCd(self):
+		del self._PdctCd
+		self._PdctCd = None
+
+	@property
+	def Prvdr(self):
+		return self._Prvdr
+
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
+
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdctCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EANUPC', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=StoredValueAccount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=StoredValueTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EANUPC', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPOITx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=StoredValueTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

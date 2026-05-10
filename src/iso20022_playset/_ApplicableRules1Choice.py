@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._ApplicableRules1Code import ApplicableRules1Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class ApplicableRules1Choice(base_types._BaseFieldType):
 

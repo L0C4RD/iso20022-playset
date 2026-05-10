@@ -1,12 +1,12 @@
 from . import base_types
+from ._CorporateActionEventType117Choice import CorporateActionEventType117Choice
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._NotificationIdentification6 import NotificationIdentification6
 from ._CorporateActionMandatoryVoluntary4Choice import CorporateActionMandatoryVoluntary4Choice
-from ._CorporateActionEventType117Choice import CorporateActionEventType117Choice
 
 class EventInformation18(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_MndtryVlntryEvtTp", "_LastNtfctnId", "_OffclCorpActnEvtId"]
+	__slots__ = ["_EvtTp", "_MndtryVlntryEvtTp", "_LastNtfctnId", "_OffclCorpActnEvtId", "_CorpActnEvtId"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
@@ -34,19 +34,6 @@ class EventInformation18(base_types._BaseFieldType):
 		self._EvtTp = None
 
 	@property
-	def MndtryVlntryEvtTp(self):
-		return self._MndtryVlntryEvtTp
-
-	@MndtryVlntryEvtTp.setter
-	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
-
-	@MndtryVlntryEvtTp.deleter
-	def MndtryVlntryEvtTp(self):
-		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
-
-	@property
 	def LastNtfctnId(self):
 		return self._LastNtfctnId
 
@@ -58,6 +45,19 @@ class EventInformation18(base_types._BaseFieldType):
 	def LastNtfctnId(self):
 		del self._LastNtfctnId
 		self._LastNtfctnId = None
+
+	@property
+	def MndtryVlntryEvtTp(self):
+		return self._MndtryVlntryEvtTp
+
+	@MndtryVlntryEvtTp.setter
+	def MndtryVlntryEvtTp(self, value):
+		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
+
+	@MndtryVlntryEvtTp.deleter
+	def MndtryVlntryEvtTp(self):
+		del self._MndtryVlntryEvtTp
+		self._MndtryVlntryEvtTp = None
 
 	@property
 	def OffclCorpActnEvtId(self):
@@ -75,8 +75,8 @@ class EventInformation18(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType117Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastNtfctnId', type=NotificationIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

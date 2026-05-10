@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CreditorReferenceType3 import CreditorReferenceType3
+from ._Max35Text import Max35Text
 
 class CreditorReferenceInformation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_Tp"]
+	__slots__ = ["_Tp", "_Ref"]
 	@property
 	def Ref(self):
 		return self._Ref

@@ -5,7 +5,7 @@ from ._GroupHeader110 import GroupHeader110
 
 class MandateAcceptanceReportV08(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_UndrlygAccptncDtls", "_SplmtryData"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_UndrlygAccptncDtls"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -20,19 +20,6 @@ class MandateAcceptanceReportV08(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def UndrlygAccptncDtls(self):
-		return self._UndrlygAccptncDtls
-
-	@UndrlygAccptncDtls.setter
-	def UndrlygAccptncDtls(self, value):
-		self._UndrlygAccptncDtls = value if type(value) != base_types.auto else self.make_default("UndrlygAccptncDtls")
-
-	@UndrlygAccptncDtls.deleter
-	def UndrlygAccptncDtls(self):
-		del self._UndrlygAccptncDtls
-		self._UndrlygAccptncDtls = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,9 +32,22 @@ class MandateAcceptanceReportV08(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def UndrlygAccptncDtls(self):
+		return self._UndrlygAccptncDtls
+
+	@UndrlygAccptncDtls.setter
+	def UndrlygAccptncDtls(self, value):
+		self._UndrlygAccptncDtls = value if type(value) != base_types.auto else self.make_default("UndrlygAccptncDtls")
+
+	@UndrlygAccptncDtls.deleter
+	def UndrlygAccptncDtls(self):
+		del self._UndrlygAccptncDtls
+		self._UndrlygAccptncDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygAccptncDtls', type=MandateAcceptance8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygAccptncDtls', type=MandateAcceptance8, min=1, max=None, mutex_group=None, array=True),
 	))
 

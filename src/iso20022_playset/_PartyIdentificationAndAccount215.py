@@ -1,26 +1,13 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._PartyIdentification137Choice import PartyIdentification137Choice
-from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._SecuritiesAccount30 import SecuritiesAccount30
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 
 class PartyIdentificationAndAccount215(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_BlckChainAdrOrWllt", "_Id", "_LEI", "_SfkpgAcct"]
-	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
+	__slots__ = ["_LEI", "_BlckChainAdrOrWllt", "_Id", "_SfkpgAcct", "_PrcgId"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -61,6 +48,19 @@ class PartyIdentificationAndAccount215(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
+
+	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -74,10 +74,10 @@ class PartyIdentificationAndAccount215(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 	))
 

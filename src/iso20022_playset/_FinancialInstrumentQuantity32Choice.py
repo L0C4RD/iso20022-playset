@@ -4,7 +4,7 @@ from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrenc
 
 class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MntryVal", "_NmnlVal", "_Unit"]
+	__slots__ = ["_NmnlVal", "_MntryVal", "_Unit"]
 	@property
 	def MntryVal(self):
 		return self._MntryVal

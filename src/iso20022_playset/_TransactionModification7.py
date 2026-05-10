@@ -1,10 +1,10 @@
 from . import base_types
-from ._PaymentInstruction33 import PaymentInstruction33
 from ._PaymentIdentification8Choice import PaymentIdentification8Choice
+from ._PaymentInstruction33 import PaymentInstruction33
 
 class TransactionModification7(base_types._BaseFieldType):
 
-	__slots__ = ["_NewPmtValSet", "_PmtId"]
+	__slots__ = ["_PmtId", "_NewPmtValSet"]
 	@property
 	def NewPmtValSet(self):
 		return self._NewPmtValSet

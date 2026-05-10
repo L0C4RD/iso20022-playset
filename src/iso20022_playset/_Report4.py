@@ -1,68 +1,29 @@
 from . import base_types
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._Frequency8Choice import Frequency8Choice
-from ._Max5NumericText import Max5NumericText
 from ._StatementSource1Choice import StatementSource1Choice
-from ._UpdateType4Choice import UpdateType4Choice
-from ._Max35Text import Max35Text
-from ._StatementBasis6Choice import StatementBasis6Choice
 from ._YesNoIndicator import YesNoIndicator
+from ._StatementBasis6Choice import StatementBasis6Choice
+from ._Frequency8Choice import Frequency8Choice
 from ._DatePeriodDetails import DatePeriodDetails
+from ._Max5NumericText import Max5NumericText
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._Max35Text import Max35Text
+from ._UpdateType4Choice import UpdateType4Choice
 
 class Report4(base_types._BaseFieldType):
 
-	__slots__ = ["_RptBsis", "_UpdTp", "_QryRef", "_RptNb", "_AudtdInd", "_RptSrc", "_RptId", "_RptDtTm", "_Frqcy", "_PrvsRptDtTm", "_ActvtyInd", "_RptPrd", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_UpdTp", "_RptPrd", "_PrvsRptDtTm", "_RptSrc", "_RptNb", "_Frqcy", "_QryRef", "_RptId", "_AudtdInd", "_RptBsis", "_RptDtTm", "_ActvtyInd"]
 	@property
-	def RptBsis(self):
-		return self._RptBsis
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@RptBsis.setter
-	def RptBsis(self, value):
-		self._RptBsis = value if type(value) != base_types.auto else self.make_default("RptBsis")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
-	@RptBsis.deleter
-	def RptBsis(self):
-		del self._RptBsis
-		self._RptBsis = None
-
-	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
-
-	@property
-	def QryRef(self):
-		return self._QryRef
-
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
-
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
-
-	@property
-	def RptNb(self):
-		return self._RptNb
-
-	@RptNb.setter
-	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
-
-	@RptNb.deleter
-	def RptNb(self):
-		del self._RptNb
-		self._RptNb = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def AudtdInd(self):
@@ -78,43 +39,17 @@ class Report4(base_types._BaseFieldType):
 		self._AudtdInd = None
 
 	@property
-	def RptSrc(self):
-		return self._RptSrc
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@RptSrc.setter
-	def RptSrc(self, value):
-		self._RptSrc = value if type(value) != base_types.auto else self.make_default("RptSrc")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
-	@RptSrc.deleter
-	def RptSrc(self):
-		del self._RptSrc
-		self._RptSrc = None
-
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
-
-	@property
-	def RptDtTm(self):
-		return self._RptDtTm
-
-	@RptDtTm.setter
-	def RptDtTm(self, value):
-		self._RptDtTm = value if type(value) != base_types.auto else self.make_default("RptDtTm")
-
-	@RptDtTm.deleter
-	def RptDtTm(self):
-		del self._RptDtTm
-		self._RptDtTm = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def Frqcy(self):
@@ -143,17 +78,69 @@ class Report4(base_types._BaseFieldType):
 		self._PrvsRptDtTm = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def QryRef(self):
+		return self._QryRef
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
+
+	@property
+	def RptBsis(self):
+		return self._RptBsis
+
+	@RptBsis.setter
+	def RptBsis(self, value):
+		self._RptBsis = value if type(value) != base_types.auto else self.make_default("RptBsis")
+
+	@RptBsis.deleter
+	def RptBsis(self):
+		del self._RptBsis
+		self._RptBsis = None
+
+	@property
+	def RptDtTm(self):
+		return self._RptDtTm
+
+	@RptDtTm.setter
+	def RptDtTm(self, value):
+		self._RptDtTm = value if type(value) != base_types.auto else self.make_default("RptDtTm")
+
+	@RptDtTm.deleter
+	def RptDtTm(self):
+		del self._RptDtTm
+		self._RptDtTm = None
+
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
+	@property
+	def RptNb(self):
+		return self._RptNb
+
+	@RptNb.setter
+	def RptNb(self, value):
+		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+
+	@RptNb.deleter
+	def RptNb(self):
+		del self._RptNb
+		self._RptNb = None
 
 	@property
 	def RptPrd(self):
@@ -169,31 +156,44 @@ class Report4(base_types._BaseFieldType):
 		self._RptPrd = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def RptSrc(self):
+		return self._RptSrc
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+	@RptSrc.setter
+	def RptSrc(self, value):
+		self._RptSrc = value if type(value) != base_types.auto else self.make_default("RptSrc")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@RptSrc.deleter
+	def RptSrc(self):
+		del self._RptSrc
+		self._RptSrc = None
+
+	@property
+	def UpdTp(self):
+		return self._UpdTp
+
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptBsis', type=StatementBasis6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AudtdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptSrc', type=StatementSource1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRptDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptBsis', type=StatementBasis6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptPrd', type=DatePeriodDetails, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSrc', type=StatementSource1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

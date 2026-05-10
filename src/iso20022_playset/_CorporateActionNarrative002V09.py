@@ -1,39 +1,13 @@
 from . import base_types
-from ._RestrictedFINZMax8000Text import RestrictedFINZMax8000Text
 from ._SupplementaryData1 import SupplementaryData1
 from ._AccountIdentification77Choice import AccountIdentification77Choice
-from ._SecurityIdentification20 import SecurityIdentification20
 from ._CorporateActionGeneralInformation102 import CorporateActionGeneralInformation102
+from ._RestrictedFINZMax8000Text import RestrictedFINZMax8000Text
+from ._SecurityIdentification20 import SecurityIdentification20
 
 class CorporateActionNarrative002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygScty", "_CorpActnGnlInf", "_AcctDtls", "_AddtlInf", "_SplmtryData"]
-	@property
-	def UndrlygScty(self):
-		return self._UndrlygScty
-
-	@UndrlygScty.setter
-	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
-
-	@UndrlygScty.deleter
-	def UndrlygScty(self):
-		del self._UndrlygScty
-		self._UndrlygScty = None
-
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
+	__slots__ = ["_UndrlygScty", "_CorpActnGnlInf", "_AcctDtls", "_SplmtryData", "_AddtlInf"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
@@ -61,6 +35,19 @@ class CorporateActionNarrative002V09(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -73,11 +60,24 @@ class CorporateActionNarrative002V09(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def UndrlygScty(self):
+		return self._UndrlygScty
+
+	@UndrlygScty.setter
+	def UndrlygScty(self, value):
+		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+
+	@UndrlygScty.deleter
+	def UndrlygScty(self):
+		del self._UndrlygScty
+		self._UndrlygScty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification77Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=RestrictedFINZMax8000Text, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification20, min=0, max=1, mutex_group=None, array=False),
 	))
 

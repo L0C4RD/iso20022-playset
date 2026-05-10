@@ -1,24 +1,24 @@
 from . import base_types
 from ._Pagination import Pagination
 from ._MessageIdentification1 import MessageIdentification1
-from ._StatementOfInvestmentFundTransactions3 import StatementOfInvestmentFundTransactions3
 from ._AdditionalReference2 import AdditionalReference2
+from ._StatementOfInvestmentFundTransactions3 import StatementOfInvestmentFundTransactions3
 
 class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsRef", "_MsgPgntn", "_RltdRef", "_StmtToBeCanc", "_MsgId"]
+	__slots__ = ["_PrvsRef", "_MsgId", "_MsgPgntn", "_StmtToBeCanc", "_RltdRef"]
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def MsgId(self):
+		return self._MsgId
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def MsgPgntn(self):
@@ -32,6 +32,19 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 	def MsgPgntn(self):
 		del self._MsgPgntn
 		self._MsgPgntn = None
+
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	@property
 	def RltdRef(self):
@@ -59,24 +72,11 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 		del self._StmtToBeCanc
 		self._StmtToBeCanc = None
 
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtToBeCanc', type=StatementOfInvestmentFundTransactions3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

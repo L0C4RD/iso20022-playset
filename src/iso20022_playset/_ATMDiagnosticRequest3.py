@@ -4,7 +4,7 @@ from ._ATMEnvironment9 import ATMEnvironment9
 
 class ATMDiagnosticRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMGblSts", "_Envt"]
+	__slots__ = ["_Envt", "_ATMGblSts"]
 	@property
 	def ATMGblSts(self):
 		return self._ATMGblSts

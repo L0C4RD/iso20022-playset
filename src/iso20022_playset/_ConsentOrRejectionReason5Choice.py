@@ -4,7 +4,7 @@ from ._CounterpartyResponseStatusReason1Code import CounterpartyResponseStatusRe
 
 class ConsentOrRejectionReason5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

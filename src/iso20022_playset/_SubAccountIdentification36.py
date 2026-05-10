@@ -20,19 +20,6 @@ class SubAccountIdentification36(base_types._BaseFieldType):
 		self._ActvtyInd = None
 
 	@property
-	def TxOnSubAcct(self):
-		return self._TxOnSubAcct
-
-	@TxOnSubAcct.setter
-	def TxOnSubAcct(self, value):
-		self._TxOnSubAcct = value if type(value) != base_types.auto else self.make_default("TxOnSubAcct")
-
-	@TxOnSubAcct.deleter
-	def TxOnSubAcct(self):
-		del self._TxOnSubAcct
-		self._TxOnSubAcct = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -45,9 +32,22 @@ class SubAccountIdentification36(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def TxOnSubAcct(self):
+		return self._TxOnSubAcct
+
+	@TxOnSubAcct.setter
+	def TxOnSubAcct(self, value):
+		self._TxOnSubAcct = value if type(value) != base_types.auto else self.make_default("TxOnSubAcct")
+
+	@TxOnSubAcct.deleter
+	def TxOnSubAcct(self):
+		del self._TxOnSubAcct
+		self._TxOnSubAcct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxOnSubAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxOnSubAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
 	))
 

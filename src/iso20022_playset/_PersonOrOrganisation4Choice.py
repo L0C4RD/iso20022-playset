@@ -5,7 +5,7 @@ from ._PartyExceptionType1Code import PartyExceptionType1Code
 
 class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Prsn", "_XcptnId"]
+	__slots__ = ["_XcptnId", "_Prsn", "_LEI"]
 	@property
 	def LEI(self):
 		return self._LEI

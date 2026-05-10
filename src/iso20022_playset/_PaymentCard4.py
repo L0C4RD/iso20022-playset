@@ -1,25 +1,12 @@
 from . import base_types
+from ._Exact3NumericText import Exact3NumericText
 from ._PlainCardData1 import PlainCardData1
 from ._GenericIdentification1 import GenericIdentification1
-from ._Exact3NumericText import Exact3NumericText
 from ._Max70Text import Max70Text
 
 class PaymentCard4(base_types._BaseFieldType):
 
-	__slots__ = ["_PlainCardData", "_AddtlCardData", "_CardBrnd", "_CardCtryCd"]
-	@property
-	def PlainCardData(self):
-		return self._PlainCardData
-
-	@PlainCardData.setter
-	def PlainCardData(self, value):
-		self._PlainCardData = value if type(value) != base_types.auto else self.make_default("PlainCardData")
-
-	@PlainCardData.deleter
-	def PlainCardData(self):
-		del self._PlainCardData
-		self._PlainCardData = None
-
+	__slots__ = ["_AddtlCardData", "_CardBrnd", "_PlainCardData", "_CardCtryCd"]
 	@property
 	def AddtlCardData(self):
 		return self._AddtlCardData
@@ -59,10 +46,23 @@ class PaymentCard4(base_types._BaseFieldType):
 		del self._CardCtryCd
 		self._CardCtryCd = None
 
+	@property
+	def PlainCardData(self):
+		return self._PlainCardData
+
+	@PlainCardData.setter
+	def PlainCardData(self, value):
+		self._PlainCardData = value if type(value) != base_types.auto else self.make_default("PlainCardData")
+
+	@PlainCardData.deleter
+	def PlainCardData(self):
+		del self._PlainCardData
+		self._PlainCardData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlainCardData', type=PlainCardData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCardData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardBrnd', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardCtryCd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlainCardData', type=PlainCardData1, min=0, max=1, mutex_group=None, array=False),
 	))
 

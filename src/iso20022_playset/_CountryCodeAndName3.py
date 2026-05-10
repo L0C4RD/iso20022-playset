@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._CountryCode import CountryCode
+from ._Max70Text import Max70Text
 
 class CountryCodeAndName3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Nm"]
+	__slots__ = ["_Nm", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

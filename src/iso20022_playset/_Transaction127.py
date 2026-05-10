@@ -1,11 +1,24 @@
 from . import base_types
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
 from ._TransactionDetails164 import TransactionDetails164
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
 
 class Transaction127(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrTxId", "_PrcrTxId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_TrptyAgtSvcPrvdrCollInstrId", "_PoolId", "_CorpActnEvtId", "_ClntTrptyCollTxId", "_TradId", "_CmonId", "_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_TxDtls", "_AcctOwnrTxId"]
+	__slots__ = ["_TradId", "_TrptyAgtSvcPrvdrCollTxId", "_TxDtls", "_PoolId", "_CtrPtyMktInfrstrctrTxId", "_CorpActnEvtId", "_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollInstrId", "_MktInfrstrctrTxId", "_AcctOwnrTxId", "_PrcrTxId", "_CmonId", "_AcctSvcrTxId", "_ClntTrptyCollTxId"]
+	@property
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
+
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
+
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
@@ -20,17 +33,56 @@ class Transaction127(base_types._BaseFieldType):
 		self._AcctSvcrTxId = None
 
 	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
+	def ClntCollInstrId(self):
+		return self._ClntCollInstrId
 
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+	@ClntCollInstrId.setter
+	def ClntCollInstrId(self, value):
+		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
 
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
+	@ClntCollInstrId.deleter
+	def ClntCollInstrId(self):
+		del self._ClntCollInstrId
+		self._ClntCollInstrId = None
+
+	@property
+	def ClntTrptyCollTxId(self):
+		return self._ClntTrptyCollTxId
+
+	@ClntTrptyCollTxId.setter
+	def ClntTrptyCollTxId(self, value):
+		self._ClntTrptyCollTxId = value if type(value) != base_types.auto else self.make_default("ClntTrptyCollTxId")
+
+	@ClntTrptyCollTxId.deleter
+	def ClntTrptyCollTxId(self):
+		del self._ClntTrptyCollTxId
+		self._ClntTrptyCollTxId = None
+
+	@property
+	def CmonId(self):
+		return self._CmonId
+
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
+
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
@@ -59,19 +111,6 @@ class Transaction127(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		return self._TrptyAgtSvcPrvdrCollInstrId
-
-	@TrptyAgtSvcPrvdrCollInstrId.setter
-	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
-
-	@TrptyAgtSvcPrvdrCollInstrId.deleter
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
-
-	@property
 	def PoolId(self):
 		return self._PoolId
 
@@ -85,30 +124,17 @@ class Transaction127(base_types._BaseFieldType):
 		self._PoolId = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
+	def PrcrTxId(self):
+		return self._PrcrTxId
 
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
 
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
-	def ClntTrptyCollTxId(self):
-		return self._ClntTrptyCollTxId
-
-	@ClntTrptyCollTxId.setter
-	def ClntTrptyCollTxId(self, value):
-		self._ClntTrptyCollTxId = value if type(value) != base_types.auto else self.make_default("ClntTrptyCollTxId")
-
-	@ClntTrptyCollTxId.deleter
-	def ClntTrptyCollTxId(self):
-		del self._ClntTrptyCollTxId
-		self._ClntTrptyCollTxId = None
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
 
 	@property
 	def TradId(self):
@@ -124,30 +150,17 @@ class Transaction127(base_types._BaseFieldType):
 		self._TradId = None
 
 	@property
-	def CmonId(self):
-		return self._CmonId
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		return self._TrptyAgtSvcPrvdrCollInstrId
 
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+	@TrptyAgtSvcPrvdrCollInstrId.setter
+	def TrptyAgtSvcPrvdrCollInstrId(self, value):
+		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
 
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
-
-	@property
-	def ClntCollInstrId(self):
-		return self._ClntCollInstrId
-
-	@ClntCollInstrId.setter
-	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
-
-	@ClntCollInstrId.deleter
-	def ClntCollInstrId(self):
-		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
+	@TrptyAgtSvcPrvdrCollInstrId.deleter
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		del self._TrptyAgtSvcPrvdrCollInstrId
+		self._TrptyAgtSvcPrvdrCollInstrId = None
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -175,33 +188,20 @@ class Transaction127(base_types._BaseFieldType):
 		del self._TxDtls
 		self._TxDtls = None
 
-	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
-
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
-
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntTrptyCollTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntTrptyCollTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradId', type=RestrictedFINXMax52Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails164, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

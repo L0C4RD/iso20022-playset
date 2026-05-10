@@ -4,7 +4,7 @@ from ._Collateral54 import Collateral54
 
 class CollateralMovement13(base_types._BaseFieldType):
 
-	__slots__ = ["_Dlvr", "_Rtr"]
+	__slots__ = ["_Rtr", "_Dlvr"]
 	@property
 	def Dlvr(self):
 		return self._Dlvr

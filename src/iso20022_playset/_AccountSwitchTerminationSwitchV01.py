@@ -5,7 +5,20 @@ from ._AccountSwitchDetails1 import AccountSwitchDetails1
 
 class AccountSwitchTerminationSwitchV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_SplmtryData", "_AcctSwtchDtls"]
+	__slots__ = ["_AcctSwtchDtls", "_MsgId", "_SplmtryData"]
+	@property
+	def AcctSwtchDtls(self):
+		return self._AcctSwtchDtls
+
+	@AcctSwtchDtls.setter
+	def AcctSwtchDtls(self, value):
+		self._AcctSwtchDtls = value if type(value) != base_types.auto else self.make_default("AcctSwtchDtls")
+
+	@AcctSwtchDtls.deleter
+	def AcctSwtchDtls(self):
+		del self._AcctSwtchDtls
+		self._AcctSwtchDtls = None
+
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -32,22 +45,9 @@ class AccountSwitchTerminationSwitchV01(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def AcctSwtchDtls(self):
-		return self._AcctSwtchDtls
-
-	@AcctSwtchDtls.setter
-	def AcctSwtchDtls(self, value):
-		self._AcctSwtchDtls = value if type(value) != base_types.auto else self.make_default("AcctSwtchDtls")
-
-	@AcctSwtchDtls.deleter
-	def AcctSwtchDtls(self):
-		del self._AcctSwtchDtls
-		self._AcctSwtchDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
 	))
 

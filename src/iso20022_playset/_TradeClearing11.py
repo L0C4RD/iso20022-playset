@@ -1,24 +1,11 @@
 from . import base_types
-from ._ClearingObligationType1Code import ClearingObligationType1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._Cleared23Choice import Cleared23Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ClearingObligationType1Code import ClearingObligationType1Code
 
 class TradeClearing11(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraGrp", "_ClrOblgtn", "_ClrSts"]
-	@property
-	def IntraGrp(self):
-		return self._IntraGrp
-
-	@IntraGrp.setter
-	def IntraGrp(self, value):
-		self._IntraGrp = value if type(value) != base_types.auto else self.make_default("IntraGrp")
-
-	@IntraGrp.deleter
-	def IntraGrp(self):
-		del self._IntraGrp
-		self._IntraGrp = None
-
+	__slots__ = ["_ClrSts", "_IntraGrp", "_ClrOblgtn"]
 	@property
 	def ClrOblgtn(self):
 		return self._ClrOblgtn
@@ -45,9 +32,22 @@ class TradeClearing11(base_types._BaseFieldType):
 		del self._ClrSts
 		self._ClrSts = None
 
+	@property
+	def IntraGrp(self):
+		return self._IntraGrp
+
+	@IntraGrp.setter
+	def IntraGrp(self, value):
+		self._IntraGrp = value if type(value) != base_types.auto else self.make_default("IntraGrp")
+
+	@IntraGrp.deleter
+	def IntraGrp(self):
+		del self._IntraGrp
+		self._IntraGrp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrOblgtn', type=ClearingObligationType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSts', type=Cleared23Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

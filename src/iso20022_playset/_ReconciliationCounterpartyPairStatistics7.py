@@ -1,7 +1,7 @@
 from . import base_types
 from ._ReconciliationReport15 import ReconciliationReport15
-from ._CounterpartyData91 import CounterpartyData91
 from ._Number import Number
+from ._CounterpartyData91 import CounterpartyData91
 
 class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
@@ -20,19 +20,6 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 		self._CtrPtyId = None
 
 	@property
-	def TtlNbOfTxs(self):
-		return self._TtlNbOfTxs
-
-	@TtlNbOfTxs.setter
-	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
-
-	@TtlNbOfTxs.deleter
-	def TtlNbOfTxs(self):
-		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
-
-	@property
 	def RcncltnRpt(self):
 		return self._RcncltnRpt
 
@@ -45,9 +32,22 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 		del self._RcncltnRpt
 		self._RcncltnRpt = None
 
+	@property
+	def TtlNbOfTxs(self):
+		return self._TtlNbOfTxs
+
+	@TtlNbOfTxs.setter
+	def TtlNbOfTxs(self, value):
+		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
+
+	@TtlNbOfTxs.deleter
+	def TtlNbOfTxs(self):
+		del self._TtlNbOfTxs
+		self._TtlNbOfTxs = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnRpt', type=ReconciliationReport15, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

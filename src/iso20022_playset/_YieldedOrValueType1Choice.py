@@ -1,10 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._PriceValueType1Code import PriceValueType1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class YieldedOrValueType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ValTp", "_Yldd"]
+	__slots__ = ["_Yldd", "_ValTp"]
 	@property
 	def ValTp(self):
 		return self._ValTp

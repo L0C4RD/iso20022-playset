@@ -1,13 +1,26 @@
 from . import base_types
+from ._ATMCommand7 import ATMCommand7
 from ._RejectReason1Code import RejectReason1Code
-from ._Max100KBinary import Max100KBinary
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
-from ._ATMCommand7 import ATMCommand7
+from ._Max100KBinary import Max100KBinary
 
 class ATMReject2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmd", "_RjctInitrId", "_RjctRsn", "_AddtlInf", "_MsgInErr"]
+	__slots__ = ["_Cmd", "_RjctRsn", "_RjctInitrId", "_MsgInErr", "_AddtlInf"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def Cmd(self):
 		return self._Cmd
@@ -20,6 +33,19 @@ class ATMReject2(base_types._BaseFieldType):
 	def Cmd(self):
 		del self._Cmd
 		self._Cmd = None
+
+	@property
+	def MsgInErr(self):
+		return self._MsgInErr
+
+	@MsgInErr.setter
+	def MsgInErr(self, value):
+		self._MsgInErr = value if type(value) != base_types.auto else self.make_default("MsgInErr")
+
+	@MsgInErr.deleter
+	def MsgInErr(self):
+		del self._MsgInErr
+		self._MsgInErr = None
 
 	@property
 	def RjctInitrId(self):
@@ -47,37 +73,11 @@ class ATMReject2(base_types._BaseFieldType):
 		del self._RjctRsn
 		self._RjctRsn = None
 
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def MsgInErr(self):
-		return self._MsgInErr
-
-	@MsgInErr.setter
-	def MsgInErr(self, value):
-		self._MsgInErr = value if type(value) != base_types.auto else self.make_default("MsgInErr")
-
-	@MsgInErr.deleter
-	def MsgInErr(self):
-		del self._MsgInErr
-		self._MsgInErr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgInErr', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctInitrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctRsn', type=RejectReason1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgInErr', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 	))
 

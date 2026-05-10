@@ -1,6 +1,6 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
 from ._Frequency6Code import Frequency6Code
+from ._DecimalNumber import DecimalNumber
 
 class FrequencyPeriod1(base_types._BaseFieldType):
 

@@ -1,25 +1,12 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._TransactionType5Choice import TransactionType5Choice
-from ._BlockedReason2Choice import BlockedReason2Choice
 from ._Max350Text import Max350Text
+from ._TransactionType5Choice import TransactionType5Choice
+from ._YesNoIndicator import YesNoIndicator
+from ._BlockedReason2Choice import BlockedReason2Choice
 
 class BlockedStatusReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_AddtlInf", "_Blckd", "_Rsn"]
-	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
+	__slots__ = ["_Rsn", "_Blckd", "_TxTp", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -59,10 +46,23 @@ class BlockedStatusReason2(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTp', type=TransactionType5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Blckd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=BlockedReason2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxTp', type=TransactionType5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

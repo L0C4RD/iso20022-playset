@@ -1,23 +1,23 @@
 from . import base_types
 from ._ReversalRequest7 import ReversalRequest7
-from ._PaymentRequest7 import PaymentRequest7
 from ._LoyaltyRequest7 import LoyaltyRequest7
+from ._PaymentRequest7 import PaymentRequest7
 
 class TransactionToPerform7Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_RvslReq", "_PmtReq", "_LltyReq"]
 	@property
-	def RvslReq(self):
-		return self._RvslReq
+	def LltyReq(self):
+		return self._LltyReq
 
-	@RvslReq.setter
-	def RvslReq(self, value):
-		self._RvslReq = value if type(value) != base_types.auto else self.make_default("RvslReq")
+	@LltyReq.setter
+	def LltyReq(self, value):
+		self._LltyReq = value if type(value) != base_types.auto else self.make_default("LltyReq")
 
-	@RvslReq.deleter
-	def RvslReq(self):
-		del self._RvslReq
-		self._RvslReq = None
+	@LltyReq.deleter
+	def LltyReq(self):
+		del self._LltyReq
+		self._LltyReq = None
 
 	@property
 	def PmtReq(self):
@@ -33,21 +33,21 @@ class TransactionToPerform7Choice(base_types._BaseFieldType):
 		self._PmtReq = None
 
 	@property
-	def LltyReq(self):
-		return self._LltyReq
+	def RvslReq(self):
+		return self._RvslReq
 
-	@LltyReq.setter
-	def LltyReq(self, value):
-		self._LltyReq = value if type(value) != base_types.auto else self.make_default("LltyReq")
+	@RvslReq.setter
+	def RvslReq(self, value):
+		self._RvslReq = value if type(value) != base_types.auto else self.make_default("RvslReq")
 
-	@LltyReq.deleter
-	def LltyReq(self):
-		del self._LltyReq
-		self._LltyReq = None
+	@RvslReq.deleter
+	def RvslReq(self):
+		del self._RvslReq
+		self._RvslReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RvslReq', type=ReversalRequest7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PmtReq', type=PaymentRequest7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LltyReq', type=LoyaltyRequest7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PmtReq', type=PaymentRequest7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RvslReq', type=ReversalRequest7, min=0, max=1, mutex_group=1, array=False),
 	))
 

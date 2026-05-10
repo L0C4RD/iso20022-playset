@@ -1,10 +1,10 @@
 from . import base_types
-from ._SuspendedStatusReason3Code import SuspendedStatusReason3Code
 from ._GenericIdentification1 import GenericIdentification1
+from ._SuspendedStatusReason3Code import SuspendedStatusReason3Code
 
 class SuspendedStatusReason5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

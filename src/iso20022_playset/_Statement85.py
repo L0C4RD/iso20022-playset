@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Frequency1Code import Frequency1Code
-from ._YesNoIndicator import YesNoIndicator
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
 
 class Statement85(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_Frqcy", "_StmtDtTm", "_StmtId"]
+	__slots__ = ["_StmtId", "_ActvtyInd", "_Frqcy", "_StmtDtTm"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

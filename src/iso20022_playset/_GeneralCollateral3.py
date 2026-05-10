@@ -1,23 +1,10 @@
 from . import base_types
-from ._FinancialInstrument59 import FinancialInstrument59
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._FinancialInstrument59 import FinancialInstrument59
 
 class GeneralCollateral3(base_types._BaseFieldType):
 
 	__slots__ = ["_FinInstrmId", "_ElgblFinInstrmId"]
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
 	@property
 	def ElgblFinInstrmId(self):
 		return self._ElgblFinInstrmId
@@ -31,8 +18,21 @@ class GeneralCollateral3(base_types._BaseFieldType):
 		del self._ElgblFinInstrmId
 		self._ElgblFinInstrmId = None
 
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmId', type=FinancialInstrument59, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ElgblFinInstrmId', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmId', type=FinancialInstrument59, min=0, max=None, mutex_group=None, array=True),
 	))
 

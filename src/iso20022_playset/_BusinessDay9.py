@@ -1,11 +1,11 @@
 from . import base_types
-from ._SystemAvailabilityAndEvents3 import SystemAvailabilityAndEvents3
-from ._SystemStatus3 import SystemStatus3
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._SystemStatus3 import SystemStatus3
+from ._SystemAvailabilityAndEvents3 import SystemAvailabilityAndEvents3
 
 class BusinessDay9(base_types._BaseFieldType):
 
-	__slots__ = ["_SysDt", "_SysInfPerCcy", "_SysSts"]
+	__slots__ = ["_SysInfPerCcy", "_SysSts", "_SysDt"]
 	@property
 	def SysDt(self):
 		return self._SysDt

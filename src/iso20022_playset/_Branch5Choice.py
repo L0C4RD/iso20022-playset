@@ -4,7 +4,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class Branch5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Id"]
+	__slots__ = ["_Id", "_Ctry"]
 	@property
 	def Ctry(self):
 		return self._Ctry

@@ -1,26 +1,26 @@
 from . import base_types
-from ._BillingServiceCommonIdentification1 import BillingServiceCommonIdentification1
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._Max12Text import Max12Text
 from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
+from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
+from ._BillingServiceCommonIdentification1 import BillingServiceCommonIdentification1
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._Max12Text import Max12Text
 
 class BillingServiceIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_SubSvc", "_CmonCd", "_Desc", "_Id", "_BkTxCd", "_SvcTp"]
+	__slots__ = ["_Desc", "_SvcTp", "_BkTxCd", "_CmonCd", "_Id", "_SubSvc"]
 	@property
-	def SubSvc(self):
-		return self._SubSvc
+	def BkTxCd(self):
+		return self._BkTxCd
 
-	@SubSvc.setter
-	def SubSvc(self, value):
-		self._SubSvc = value if type(value) != base_types.auto else self.make_default("SubSvc")
+	@BkTxCd.setter
+	def BkTxCd(self, value):
+		self._BkTxCd = value if type(value) != base_types.auto else self.make_default("BkTxCd")
 
-	@SubSvc.deleter
-	def SubSvc(self):
-		del self._SubSvc
-		self._SubSvc = None
+	@BkTxCd.deleter
+	def BkTxCd(self):
+		del self._BkTxCd
+		self._BkTxCd = None
 
 	@property
 	def CmonCd(self):
@@ -62,17 +62,17 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def BkTxCd(self):
-		return self._BkTxCd
+	def SubSvc(self):
+		return self._SubSvc
 
-	@BkTxCd.setter
-	def BkTxCd(self, value):
-		self._BkTxCd = value if type(value) != base_types.auto else self.make_default("BkTxCd")
+	@SubSvc.setter
+	def SubSvc(self, value):
+		self._SubSvc = value if type(value) != base_types.auto else self.make_default("SubSvc")
 
-	@BkTxCd.deleter
-	def BkTxCd(self):
-		del self._BkTxCd
-		self._BkTxCd = None
+	@SubSvc.deleter
+	def SubSvc(self):
+		del self._SubSvc
+		self._SubSvc = None
 
 	@property
 	def SvcTp(self):
@@ -88,11 +88,11 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 		self._SvcTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubSvc', type=BillingSubServiceIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonCd', type=BillingServiceCommonIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubSvc', type=BillingSubServiceIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcTp', type=Max12Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

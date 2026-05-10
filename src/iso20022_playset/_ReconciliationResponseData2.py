@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ReconciliationType1Code import ReconciliationType1Code
 from ._TransactionTotalsSet2 import TransactionTotalsSet2
+from ._ReconciliationType1Code import ReconciliationType1Code
+from ._Max35Text import Max35Text
 
 class ReconciliationResponseData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTtls", "_RcncltnTp", "_POIRcncltnId"]
+	__slots__ = ["_POIRcncltnId", "_RcncltnTp", "_TxTtls"]
 	@property
-	def TxTtls(self):
-		return self._TxTtls
+	def POIRcncltnId(self):
+		return self._POIRcncltnId
 
-	@TxTtls.setter
-	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != base_types.auto else self.make_default("TxTtls")
+	@POIRcncltnId.setter
+	def POIRcncltnId(self, value):
+		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
 
-	@TxTtls.deleter
-	def TxTtls(self):
-		del self._TxTtls
-		self._TxTtls = None
+	@POIRcncltnId.deleter
+	def POIRcncltnId(self):
+		del self._POIRcncltnId
+		self._POIRcncltnId = None
 
 	@property
 	def RcncltnTp(self):
@@ -33,21 +33,21 @@ class ReconciliationResponseData2(base_types._BaseFieldType):
 		self._RcncltnTp = None
 
 	@property
-	def POIRcncltnId(self):
-		return self._POIRcncltnId
+	def TxTtls(self):
+		return self._TxTtls
 
-	@POIRcncltnId.setter
-	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+	@TxTtls.setter
+	def TxTtls(self, value):
+		self._TxTtls = value if type(value) != base_types.auto else self.make_default("TxTtls")
 
-	@POIRcncltnId.deleter
-	def POIRcncltnId(self):
-		del self._POIRcncltnId
-		self._POIRcncltnId = None
+	@TxTtls.deleter
+	def TxTtls(self):
+		del self._TxTtls
+		self._TxTtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTtls', type=TransactionTotalsSet2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RcncltnTp', type=ReconciliationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnTp', type=ReconciliationType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTtls', type=TransactionTotalsSet2, min=0, max=None, mutex_group=None, array=True),
 	))
 

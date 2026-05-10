@@ -1,41 +1,41 @@
 from . import base_types
-from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
-from ._Clearing7 import Clearing7
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._Settlement2 import Settlement2
-from ._TradeLeg11 import TradeLeg11
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SupplementaryData1 import SupplementaryData1
+from ._Clearing7 import Clearing7
+from ._TradeLeg11 import TradeLeg11
 from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._Settlement2 import Settlement2
+from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
+from ._PartyIdentification253Choice import PartyIdentification253Choice
 
 class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_TradLegDtls", "_NonClrMmb", "_ClrMmb", "_ClrAcct", "_SttlmDtls", "_DlvryAcct", "_SplmtryData", "_ClrDtls"]
+	__slots__ = ["_ClrMmb", "_SttlmDtls", "_DlvryAcct", "_ClrAcct", "_TradLegDtls", "_ClrDtls", "_NonClrMmb", "_SplmtryData"]
 	@property
-	def TradLegDtls(self):
-		return self._TradLegDtls
+	def ClrAcct(self):
+		return self._ClrAcct
 
-	@TradLegDtls.setter
-	def TradLegDtls(self, value):
-		self._TradLegDtls = value if type(value) != base_types.auto else self.make_default("TradLegDtls")
+	@ClrAcct.setter
+	def ClrAcct(self, value):
+		self._ClrAcct = value if type(value) != base_types.auto else self.make_default("ClrAcct")
 
-	@TradLegDtls.deleter
-	def TradLegDtls(self):
-		del self._TradLegDtls
-		self._TradLegDtls = None
+	@ClrAcct.deleter
+	def ClrAcct(self):
+		del self._ClrAcct
+		self._ClrAcct = None
 
 	@property
-	def NonClrMmb(self):
-		return self._NonClrMmb
+	def ClrDtls(self):
+		return self._ClrDtls
 
-	@NonClrMmb.setter
-	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
+	@ClrDtls.setter
+	def ClrDtls(self, value):
+		self._ClrDtls = value if type(value) != base_types.auto else self.make_default("ClrDtls")
 
-	@NonClrMmb.deleter
-	def NonClrMmb(self):
-		del self._NonClrMmb
-		self._NonClrMmb = None
+	@ClrDtls.deleter
+	def ClrDtls(self):
+		del self._ClrDtls
+		self._ClrDtls = None
 
 	@property
 	def ClrMmb(self):
@@ -51,32 +51,6 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 		self._ClrMmb = None
 
 	@property
-	def ClrAcct(self):
-		return self._ClrAcct
-
-	@ClrAcct.setter
-	def ClrAcct(self, value):
-		self._ClrAcct = value if type(value) != base_types.auto else self.make_default("ClrAcct")
-
-	@ClrAcct.deleter
-	def ClrAcct(self):
-		del self._ClrAcct
-		self._ClrAcct = None
-
-	@property
-	def SttlmDtls(self):
-		return self._SttlmDtls
-
-	@SttlmDtls.setter
-	def SttlmDtls(self, value):
-		self._SttlmDtls = value if type(value) != base_types.auto else self.make_default("SttlmDtls")
-
-	@SttlmDtls.deleter
-	def SttlmDtls(self):
-		del self._SttlmDtls
-		self._SttlmDtls = None
-
-	@property
 	def DlvryAcct(self):
 		return self._DlvryAcct
 
@@ -88,6 +62,19 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 	def DlvryAcct(self):
 		del self._DlvryAcct
 		self._DlvryAcct = None
+
+	@property
+	def NonClrMmb(self):
+		return self._NonClrMmb
+
+	@NonClrMmb.setter
+	def NonClrMmb(self, value):
+		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
+
+	@NonClrMmb.deleter
+	def NonClrMmb(self):
+		del self._NonClrMmb
+		self._NonClrMmb = None
 
 	@property
 	def SplmtryData(self):
@@ -103,26 +90,39 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def ClrDtls(self):
-		return self._ClrDtls
+	def SttlmDtls(self):
+		return self._SttlmDtls
 
-	@ClrDtls.setter
-	def ClrDtls(self, value):
-		self._ClrDtls = value if type(value) != base_types.auto else self.make_default("ClrDtls")
+	@SttlmDtls.setter
+	def SttlmDtls(self, value):
+		self._SttlmDtls = value if type(value) != base_types.auto else self.make_default("SttlmDtls")
 
-	@ClrDtls.deleter
-	def ClrDtls(self):
-		del self._ClrDtls
-		self._ClrDtls = None
+	@SttlmDtls.deleter
+	def SttlmDtls(self):
+		del self._SttlmDtls
+		self._SttlmDtls = None
+
+	@property
+	def TradLegDtls(self):
+		return self._TradLegDtls
+
+	@TradLegDtls.setter
+	def TradLegDtls(self, value):
+		self._TradLegDtls = value if type(value) != base_types.auto else self.make_default("TradLegDtls")
+
+	@TradLegDtls.deleter
+	def TradLegDtls(self):
+		del self._TradLegDtls
+		self._TradLegDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDtls', type=Settlement2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrDtls', type=Clearing7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmDtls', type=Settlement2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg11, min=1, max=1, mutex_group=None, array=False),
 	))
 

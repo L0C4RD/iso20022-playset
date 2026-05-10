@@ -5,19 +5,19 @@ from ._SecuritiesReferenceDataReport7 import SecuritiesReferenceDataReport7
 
 class FinancialInstrumentReportingCancellationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptHdr", "_CxlData"]
+	__slots__ = ["_CxlData", "_RptHdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CxlData(self):
+		return self._CxlData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@CxlData.setter
+	def CxlData(self, value):
+		self._CxlData = value if type(value) != base_types.auto else self.make_default("CxlData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CxlData.deleter
+	def CxlData(self):
+		del self._CxlData
+		self._CxlData = None
 
 	@property
 	def RptHdr(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentReportingCancellationReportV01(base_types._BaseFieldTyp
 		self._RptHdr = None
 
 	@property
-	def CxlData(self):
-		return self._CxlData
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CxlData.setter
-	def CxlData(self, value):
-		self._CxlData = value if type(value) != base_types.auto else self.make_default("CxlData")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@CxlData.deleter
-	def CxlData(self):
-		del self._CxlData
-		self._CxlData = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlData', type=SecuritiesReferenceDataReport7, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

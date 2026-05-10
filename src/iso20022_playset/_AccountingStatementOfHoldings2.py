@@ -1,26 +1,39 @@
 from . import base_types
-from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
+from ._SubAccountIdentification3 import SubAccountIdentification3
 from ._Statement6 import Statement6
 from ._AggregateBalanceInformation3 import AggregateBalanceInformation3
-from ._SubAccountIdentification3 import SubAccountIdentification3
-from ._Extension1 import Extension1
 from ._SafekeepingAccount2 import SafekeepingAccount2
+from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
+from ._Extension1 import Extension1
 
 class AccountingStatementOfHoldings2(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_StmtGnlDtls", "_SubAcctDtls", "_BalForAcct", "_AcctDtls", "_TtlVals"]
+	__slots__ = ["_SubAcctDtls", "_Xtnsn", "_BalForAcct", "_StmtGnlDtls", "_AcctDtls", "_TtlVals"]
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
+	def BalForAcct(self):
+		return self._BalForAcct
+
+	@BalForAcct.setter
+	def BalForAcct(self, value):
+		self._BalForAcct = value if type(value) != base_types.auto else self.make_default("BalForAcct")
+
+	@BalForAcct.deleter
+	def BalForAcct(self):
+		del self._BalForAcct
+		self._BalForAcct = None
 
 	@property
 	def StmtGnlDtls(self):
@@ -49,32 +62,6 @@ class AccountingStatementOfHoldings2(base_types._BaseFieldType):
 		self._SubAcctDtls = None
 
 	@property
-	def BalForAcct(self):
-		return self._BalForAcct
-
-	@BalForAcct.setter
-	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != base_types.auto else self.make_default("BalForAcct")
-
-	@BalForAcct.deleter
-	def BalForAcct(self):
-		del self._BalForAcct
-		self._BalForAcct = None
-
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
 	def TtlVals(self):
 		return self._TtlVals
 
@@ -87,12 +74,25 @@ class AccountingStatementOfHoldings2(base_types._BaseFieldType):
 		del self._TtlVals
 		self._TtlVals = None
 
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

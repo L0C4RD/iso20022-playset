@@ -1,11 +1,11 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._POIComponentStatus1Code import POIComponentStatus1Code
 from ._Max256Text import Max256Text
-from ._ISODate import ISODate
 
 class PointOfInteractionComponentStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_VrsnNb", "_XpryDt"]
+	__slots__ = ["_XpryDt", "_Sts", "_VrsnNb"]
 	@property
 	def Sts(self):
 		return self._Sts

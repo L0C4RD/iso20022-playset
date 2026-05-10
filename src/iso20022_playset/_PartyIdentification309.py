@@ -1,13 +1,13 @@
 from . import base_types
-from ._ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
 from ._LEIIdentifier import LEIIdentifier
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
 from ._GenericIdentification1 import GenericIdentification1
 from ._NameAndAddress5 import NameAndAddress5
 
 class PartyIdentification309(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_ClrSysMmbId", "_NmAndAdr", "_LEI", "_PrtryId"]
+	__slots__ = ["_LEI", "_ClrSysMmbId", "_AnyBIC", "_PrtryId", "_NmAndAdr"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC
@@ -35,19 +35,6 @@ class PartyIdentification309(base_types._BaseFieldType):
 		self._ClrSysMmbId = None
 
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
-	@property
 	def LEI(self):
 		return self._LEI
 
@@ -59,6 +46,19 @@ class PartyIdentification309(base_types._BaseFieldType):
 	def LEI(self):
 		del self._LEI
 		self._LEI = None
+
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	@property
 	def PrtryId(self):
@@ -76,8 +76,8 @@ class PartyIdentification309(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

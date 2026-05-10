@@ -1,15 +1,54 @@
 from . import base_types
-from ._DiagnosisRequest1 import DiagnosisRequest1
 from ._PaymentContext30 import PaymentContext30
-from ._LoginRequest7 import LoginRequest7
 from ._SupplementaryData1 import SupplementaryData1
-from ._RetailerService4Code import RetailerService4Code
-from ._LogoutRequest1 import LogoutRequest1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._RetailerService4Code import RetailerService4Code
+from ._LoginRequest7 import LoginRequest7
+from ._LogoutRequest1 import LogoutRequest1
+from ._DiagnosisRequest1 import DiagnosisRequest1
 
 class SessionManagementRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_LgnReq", "_LgtReq", "_SvcCntt", "_DgnssReq", "_SplmtryData", "_Cntxt", "_Envt"]
+	__slots__ = ["_SplmtryData", "_Cntxt", "_LgtReq", "_Envt", "_LgnReq", "_DgnssReq", "_SvcCntt"]
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
+
+	@property
+	def DgnssReq(self):
+		return self._DgnssReq
+
+	@DgnssReq.setter
+	def DgnssReq(self, value):
+		self._DgnssReq = value if type(value) != base_types.auto else self.make_default("DgnssReq")
+
+	@DgnssReq.deleter
+	def DgnssReq(self):
+		del self._DgnssReq
+		self._DgnssReq = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
 	@property
 	def LgnReq(self):
 		return self._LgnReq
@@ -37,32 +76,6 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 		self._LgtReq = None
 
 	@property
-	def SvcCntt(self):
-		return self._SvcCntt
-
-	@SvcCntt.setter
-	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != base_types.auto else self.make_default("SvcCntt")
-
-	@SvcCntt.deleter
-	def SvcCntt(self):
-		del self._SvcCntt
-		self._SvcCntt = None
-
-	@property
-	def DgnssReq(self):
-		return self._DgnssReq
-
-	@DgnssReq.setter
-	def DgnssReq(self, value):
-		self._DgnssReq = value if type(value) != base_types.auto else self.make_default("DgnssReq")
-
-	@DgnssReq.deleter
-	def DgnssReq(self):
-		del self._DgnssReq
-		self._DgnssReq = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -76,38 +89,25 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def SvcCntt(self):
+		return self._SvcCntt
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+	@SvcCntt.setter
+	def SvcCntt(self, value):
+		self._SvcCntt = value if type(value) != base_types.auto else self.make_default("SvcCntt")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@SvcCntt.deleter
+	def SvcCntt(self):
+		del self._SvcCntt
+		self._SvcCntt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgnssReq', type=DiagnosisRequest1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LgnReq', type=LoginRequest7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LgtReq', type=LogoutRequest1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcCntt', type=RetailerService4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgnssReq', type=DiagnosisRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcCntt', type=RetailerService4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._SchemeIdentificationType1Code import SchemeIdentificationType1Code
-from ._Max256Text import Max256Text
 from ._Max140Text import Max140Text
+from ._SchemeIdentificationType1Code import SchemeIdentificationType1Code
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
 
 class GenericIdentification165(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Id", "_SchmeNm", "_Desc"]
+	__slots__ = ["_SchmeNm", "_Desc", "_Issr", "_Id"]
 	@property
-	def Issr(self):
-		return self._Issr
+	def Desc(self):
+		return self._Desc
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def Id(self):
@@ -34,6 +34,19 @@ class GenericIdentification165(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
 	def SchmeNm(self):
 		return self._SchmeNm
 
@@ -46,23 +59,10 @@ class GenericIdentification165(base_types._BaseFieldType):
 		del self._SchmeNm
 		self._SchmeNm = None
 
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchmeNm', type=SchemeIdentificationType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=SchemeIdentificationType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

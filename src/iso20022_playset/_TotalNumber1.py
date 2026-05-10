@@ -5,19 +5,6 @@ class TotalNumber1(base_types._BaseFieldType):
 
 	__slots__ = ["_TtlOfLkdInstrs", "_CurInstrNb"]
 	@property
-	def TtlOfLkdInstrs(self):
-		return self._TtlOfLkdInstrs
-
-	@TtlOfLkdInstrs.setter
-	def TtlOfLkdInstrs(self, value):
-		self._TtlOfLkdInstrs = value if type(value) != base_types.auto else self.make_default("TtlOfLkdInstrs")
-
-	@TtlOfLkdInstrs.deleter
-	def TtlOfLkdInstrs(self):
-		del self._TtlOfLkdInstrs
-		self._TtlOfLkdInstrs = None
-
-	@property
 	def CurInstrNb(self):
 		return self._CurInstrNb
 
@@ -30,8 +17,21 @@ class TotalNumber1(base_types._BaseFieldType):
 		del self._CurInstrNb
 		self._CurInstrNb = None
 
+	@property
+	def TtlOfLkdInstrs(self):
+		return self._TtlOfLkdInstrs
+
+	@TtlOfLkdInstrs.setter
+	def TtlOfLkdInstrs(self, value):
+		self._TtlOfLkdInstrs = value if type(value) != base_types.auto else self.make_default("TtlOfLkdInstrs")
+
+	@TtlOfLkdInstrs.deleter
+	def TtlOfLkdInstrs(self):
+		del self._TtlOfLkdInstrs
+		self._TtlOfLkdInstrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlOfLkdInstrs', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurInstrNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlOfLkdInstrs', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

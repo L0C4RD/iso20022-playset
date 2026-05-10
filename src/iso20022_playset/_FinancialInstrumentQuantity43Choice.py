@@ -6,20 +6,7 @@ from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlTknUnit", "_AmtsdVal", "_Cd", "_FaceAmt", "_Unit"]
-	@property
-	def DgtlTknUnit(self):
-		return self._DgtlTknUnit
-
-	@DgtlTknUnit.setter
-	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != base_types.auto else self.make_default("DgtlTknUnit")
-
-	@DgtlTknUnit.deleter
-	def DgtlTknUnit(self):
-		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
-
+	__slots__ = ["_AmtsdVal", "_DgtlTknUnit", "_Cd", "_FaceAmt", "_Unit"]
 	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal
@@ -45,6 +32,19 @@ class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 	def Cd(self):
 		del self._Cd
 		self._Cd = None
+
+	@property
+	def DgtlTknUnit(self):
+		return self._DgtlTknUnit
+
+	@DgtlTknUnit.setter
+	def DgtlTknUnit(self, value):
+		self._DgtlTknUnit = value if type(value) != base_types.auto else self.make_default("DgtlTknUnit")
+
+	@DgtlTknUnit.deleter
+	def DgtlTknUnit(self):
+		del self._DgtlTknUnit
+		self._DgtlTknUnit = None
 
 	@property
 	def FaceAmt(self):
@@ -73,9 +73,9 @@ class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 		self._Unit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=Quantity5Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))

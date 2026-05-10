@@ -1,26 +1,13 @@
 from . import base_types
-from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
-from ._Max15NumericText import Max15NumericText
 from ._FinancingAgreementList1 import FinancingAgreementList1
 from ._BusinessLetter1 import BusinessLetter1
 from ._DecimalNumber import DecimalNumber
+from ._Max15NumericText import Max15NumericText
+from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
 
 class PartyRegistrationAndGuaranteeAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AttchdMsg", "_AckCnt", "_ItmCnt", "_AckList", "_Hdr", "_CtrlSum"]
-	@property
-	def AttchdMsg(self):
-		return self._AttchdMsg
-
-	@AttchdMsg.setter
-	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
-
-	@AttchdMsg.deleter
-	def AttchdMsg(self):
-		del self._AttchdMsg
-		self._AttchdMsg = None
-
+	__slots__ = ["_Hdr", "_AttchdMsg", "_CtrlSum", "_AckList", "_AckCnt", "_ItmCnt"]
 	@property
 	def AckCnt(self):
 		return self._AckCnt
@@ -33,19 +20,6 @@ class PartyRegistrationAndGuaranteeAcknowledgementV01(base_types._BaseFieldType)
 	def AckCnt(self):
 		del self._AckCnt
 		self._AckCnt = None
-
-	@property
-	def ItmCnt(self):
-		return self._ItmCnt
-
-	@ItmCnt.setter
-	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
-
-	@ItmCnt.deleter
-	def ItmCnt(self):
-		del self._ItmCnt
-		self._ItmCnt = None
 
 	@property
 	def AckList(self):
@@ -61,17 +35,17 @@ class PartyRegistrationAndGuaranteeAcknowledgementV01(base_types._BaseFieldType)
 		self._AckList = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def AttchdMsg(self):
+		return self._AttchdMsg
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+	@AttchdMsg.setter
+	def AttchdMsg(self, value):
+		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@AttchdMsg.deleter
+	def AttchdMsg(self):
+		del self._AttchdMsg
+		self._AttchdMsg = None
 
 	@property
 	def CtrlSum(self):
@@ -86,12 +60,38 @@ class PartyRegistrationAndGuaranteeAcknowledgementV01(base_types._BaseFieldType)
 		del self._CtrlSum
 		self._CtrlSum = None
 
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def ItmCnt(self):
+		return self._ItmCnt
+
+	@ItmCnt.setter
+	def ItmCnt(self, value):
+		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
+
+	@ItmCnt.deleter
+	def ItmCnt(self):
+		del self._ItmCnt
+		self._ItmCnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AckCnt', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AckList', type=FinancingAgreementList1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

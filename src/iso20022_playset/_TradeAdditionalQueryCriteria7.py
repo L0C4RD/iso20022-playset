@@ -1,38 +1,12 @@
 from . import base_types
+from ._TransactionOperationType6Code import TransactionOperationType6Code
 from ._SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
 from ._PartyNatureType1Code import PartyNatureType1Code
-from ._TransactionOperationType6Code import TransactionOperationType6Code
 from ._CorporateSectorCriteria5 import CorporateSectorCriteria5
 
 class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpSctr", "_NtrOfCtrPty", "_ActnTp", "_ExctnVn"]
-	@property
-	def CorpSctr(self):
-		return self._CorpSctr
-
-	@CorpSctr.setter
-	def CorpSctr(self, value):
-		self._CorpSctr = value if type(value) != base_types.auto else self.make_default("CorpSctr")
-
-	@CorpSctr.deleter
-	def CorpSctr(self):
-		del self._CorpSctr
-		self._CorpSctr = None
-
-	@property
-	def NtrOfCtrPty(self):
-		return self._NtrOfCtrPty
-
-	@NtrOfCtrPty.setter
-	def NtrOfCtrPty(self, value):
-		self._NtrOfCtrPty = value if type(value) != base_types.auto else self.make_default("NtrOfCtrPty")
-
-	@NtrOfCtrPty.deleter
-	def NtrOfCtrPty(self):
-		del self._NtrOfCtrPty
-		self._NtrOfCtrPty = None
-
+	__slots__ = ["_NtrOfCtrPty", "_ActnTp", "_CorpSctr", "_ExctnVn"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp
@@ -47,6 +21,19 @@ class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 		self._ActnTp = None
 
 	@property
+	def CorpSctr(self):
+		return self._CorpSctr
+
+	@CorpSctr.setter
+	def CorpSctr(self, value):
+		self._CorpSctr = value if type(value) != base_types.auto else self.make_default("CorpSctr")
+
+	@CorpSctr.deleter
+	def CorpSctr(self):
+		del self._CorpSctr
+		self._CorpSctr = None
+
+	@property
 	def ExctnVn(self):
 		return self._ExctnVn
 
@@ -59,10 +46,23 @@ class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 		del self._ExctnVn
 		self._ExctnVn = None
 
+	@property
+	def NtrOfCtrPty(self):
+		return self._NtrOfCtrPty
+
+	@NtrOfCtrPty.setter
+	def NtrOfCtrPty(self, value):
+		self._NtrOfCtrPty = value if type(value) != base_types.auto else self.make_default("NtrOfCtrPty")
+
+	@NtrOfCtrPty.deleter
+	def NtrOfCtrPty(self):
+		del self._NtrOfCtrPty
+		self._NtrOfCtrPty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpSctr', type=CorporateSectorCriteria5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtrOfCtrPty', type=PartyNatureType1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType6Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CorpSctr', type=CorporateSectorCriteria5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ExctnVn', type=SecuritiesTradeVenueCriteria1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtrOfCtrPty', type=PartyNatureType1Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

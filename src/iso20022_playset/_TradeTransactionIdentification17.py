@@ -4,7 +4,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class TradeTransactionIdentification17(base_types._BaseFieldType):
 
-	__slots__ = ["_NttyRspnsblForRpt", "_RptgCtrPty", "_TechRcrdId", "_RptSubmitgNtty"]
+	__slots__ = ["_RptgCtrPty", "_RptSubmitgNtty", "_TechRcrdId", "_NttyRspnsblForRpt"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt
@@ -17,6 +17,19 @@ class TradeTransactionIdentification17(base_types._BaseFieldType):
 	def NttyRspnsblForRpt(self):
 		del self._NttyRspnsblForRpt
 		self._NttyRspnsblForRpt = None
+
+	@property
+	def RptSubmitgNtty(self):
+		return self._RptSubmitgNtty
+
+	@RptSubmitgNtty.setter
+	def RptSubmitgNtty(self, value):
+		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
+
+	@RptSubmitgNtty.deleter
+	def RptSubmitgNtty(self):
+		del self._RptSubmitgNtty
+		self._RptSubmitgNtty = None
 
 	@property
 	def RptgCtrPty(self):
@@ -44,23 +57,10 @@ class TradeTransactionIdentification17(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def RptSubmitgNtty(self):
-		return self._RptSubmitgNtty
-
-	@RptSubmitgNtty.setter
-	def RptSubmitgNtty(self, value):
-		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
-
-	@RptSubmitgNtty.deleter
-	def RptSubmitgNtty(self):
-		del self._RptSubmitgNtty
-		self._RptSubmitgNtty = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

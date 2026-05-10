@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesAccountSearchCriteria2 import SecuritiesAccountSearchCriteria2
-from ._MessageHeader2 import MessageHeader2
 from ._SecuritiesAccountReturnCriteria1 import SecuritiesAccountReturnCriteria1
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader2 import MessageHeader2
 
 class SecuritiesAccountQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SchCrit", "_SplmtryData", "_RtrCrit"]
+	__slots__ = ["_SchCrit", "_RtrCrit", "_SplmtryData", "_MsgHdr"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -19,6 +19,19 @@ class SecuritiesAccountQueryV01(base_types._BaseFieldType):
 	def MsgHdr(self):
 		del self._MsgHdr
 		self._MsgHdr = None
+
+	@property
+	def RtrCrit(self):
+		return self._RtrCrit
+
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
 
 	@property
 	def SchCrit(self):
@@ -46,23 +59,10 @@ class SecuritiesAccountQueryV01(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def RtrCrit(self):
-		return self._RtrCrit
-
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
-
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrCrit', type=SecuritiesAccountReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=SecuritiesAccountSearchCriteria2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RtrCrit', type=SecuritiesAccountReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 	))
 

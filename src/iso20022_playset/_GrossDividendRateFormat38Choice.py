@@ -1,24 +1,24 @@
 from . import base_types
-from ._RateTypeAndAmountAndStatus57 import RateTypeAndAmountAndStatus57
-from ._AmountAndRateStatus1 import AmountAndRateStatus1
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._RateTypeAndAmountAndStatus57 import RateTypeAndAmountAndStatus57
 from ._RateType13Code import RateType13Code
+from ._AmountAndRateStatus1 import AmountAndRateStatus1
 
 class GrossDividendRateFormat38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_AmtAndRateSts", "_Amt", "_RateTpAndAmtAndRateSts"]
+	__slots__ = ["_AmtAndRateSts", "_NotSpcfdRate", "_RateTpAndAmtAndRateSts", "_Amt"]
 	@property
-	def NotSpcfdRate(self):
-		return self._NotSpcfdRate
+	def Amt(self):
+		return self._Amt
 
-	@NotSpcfdRate.setter
-	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@NotSpcfdRate.deleter
-	def NotSpcfdRate(self):
-		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def AmtAndRateSts(self):
@@ -34,17 +34,17 @@ class GrossDividendRateFormat38Choice(base_types._BaseFieldType):
 		self._AmtAndRateSts = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def NotSpcfdRate(self):
+		return self._NotSpcfdRate
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@NotSpcfdRate.setter
+	def NotSpcfdRate(self, value):
+		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@NotSpcfdRate.deleter
+	def NotSpcfdRate(self):
+		del self._NotSpcfdRate
+		self._NotSpcfdRate = None
 
 	@property
 	def RateTpAndAmtAndRateSts(self):
@@ -60,9 +60,9 @@ class GrossDividendRateFormat38Choice(base_types._BaseFieldType):
 		self._RateTpAndAmtAndRateSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfdRate', type=RateType13Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdRate', type=RateType13Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus57, min=0, max=1, mutex_group=1, array=False),
 	))
 

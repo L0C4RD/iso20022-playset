@@ -1,24 +1,37 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Charges1 import Charges1
+from ._Max35Text import Max35Text
 from ._CashAccount18 import CashAccount18
 
 class CashMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxAmt", "_Chrgs", "_AcctDtls", "_MvmntId", "_Amt"]
+	__slots__ = ["_TaxAmt", "_AcctDtls", "_Chrgs", "_MvmntId", "_Amt"]
 	@property
-	def TaxAmt(self):
-		return self._TaxAmt
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@TaxAmt.setter
-	def TaxAmt(self, value):
-		self._TaxAmt = value if type(value) != base_types.auto else self.make_default("TaxAmt")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
 
-	@TaxAmt.deleter
-	def TaxAmt(self):
-		del self._TaxAmt
-		self._TaxAmt = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Chrgs(self):
@@ -34,19 +47,6 @@ class CashMovement1(base_types._BaseFieldType):
 		self._Chrgs = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
 	def MvmntId(self):
 		return self._MvmntId
 
@@ -60,23 +60,23 @@ class CashMovement1(base_types._BaseFieldType):
 		self._MvmntId = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def TaxAmt(self):
+		return self._TaxAmt
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@TaxAmt.setter
+	def TaxAmt(self, value):
+		self._TaxAmt = value if type(value) != base_types.auto else self.make_default("TaxAmt")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@TaxAmt.deleter
+	def TaxAmt(self):
+		del self._TaxAmt
+		self._TaxAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chrgs', type=Charges1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctDtls', type=CashAccount18, min=1, max=2, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrgs', type=Charges1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

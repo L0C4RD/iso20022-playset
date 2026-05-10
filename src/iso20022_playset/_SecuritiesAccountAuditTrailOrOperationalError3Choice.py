@@ -4,20 +4,7 @@ from ._ErrorHandling5 import ErrorHandling5
 
 class SecuritiesAccountAuditTrailOrOperationalError3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctAudtTrlRpt", "_OprlErr"]
-	@property
-	def SctiesAcctAudtTrlRpt(self):
-		return self._SctiesAcctAudtTrlRpt
-
-	@SctiesAcctAudtTrlRpt.setter
-	def SctiesAcctAudtTrlRpt(self, value):
-		self._SctiesAcctAudtTrlRpt = value if type(value) != base_types.auto else self.make_default("SctiesAcctAudtTrlRpt")
-
-	@SctiesAcctAudtTrlRpt.deleter
-	def SctiesAcctAudtTrlRpt(self):
-		del self._SctiesAcctAudtTrlRpt
-		self._SctiesAcctAudtTrlRpt = None
-
+	__slots__ = ["_OprlErr", "_SctiesAcctAudtTrlRpt"]
 	@property
 	def OprlErr(self):
 		return self._OprlErr
@@ -31,8 +18,21 @@ class SecuritiesAccountAuditTrailOrOperationalError3Choice(base_types._BaseField
 		del self._OprlErr
 		self._OprlErr = None
 
+	@property
+	def SctiesAcctAudtTrlRpt(self):
+		return self._SctiesAcctAudtTrlRpt
+
+	@SctiesAcctAudtTrlRpt.setter
+	def SctiesAcctAudtTrlRpt(self, value):
+		self._SctiesAcctAudtTrlRpt = value if type(value) != base_types.auto else self.make_default("SctiesAcctAudtTrlRpt")
+
+	@SctiesAcctAudtTrlRpt.deleter
+	def SctiesAcctAudtTrlRpt(self):
+		del self._SctiesAcctAudtTrlRpt
+		self._SctiesAcctAudtTrlRpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAcctAudtTrlRpt', type=SecuritiesAccountAuditTrailReport3, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='SctiesAcctAudtTrlRpt', type=SecuritiesAccountAuditTrailReport3, min=1, max=None, mutex_group=1, array=True),
 	))
 

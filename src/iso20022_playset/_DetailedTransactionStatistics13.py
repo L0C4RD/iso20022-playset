@@ -4,7 +4,20 @@ from ._RejectionReason53 import RejectionReason53
 
 class DetailedTransactionStatistics13(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd", "_TxsRjctnsRsn", "_TtlNbOfTxs"]
+	__slots__ = ["_TtlNbOfTxsRjctd", "_TtlNbOfTxs", "_TtlNbOfTxsAccptd", "_TxsRjctnsRsn"]
+	@property
+	def TtlNbOfTxs(self):
+		return self._TtlNbOfTxs
+
+	@TtlNbOfTxs.setter
+	def TtlNbOfTxs(self, value):
+		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
+
+	@TtlNbOfTxs.deleter
+	def TtlNbOfTxs(self):
+		del self._TtlNbOfTxs
+		self._TtlNbOfTxs = None
+
 	@property
 	def TtlNbOfTxsAccptd(self):
 		return self._TtlNbOfTxsAccptd
@@ -44,23 +57,10 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		del self._TxsRjctnsRsn
 		self._TxsRjctnsRsn = None
 
-	@property
-	def TtlNbOfTxs(self):
-		return self._TtlNbOfTxs
-
-	@TtlNbOfTxs.setter
-	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
-
-	@TtlNbOfTxs.deleter
-	def TtlNbOfTxs(self):
-		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TtlNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason53, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

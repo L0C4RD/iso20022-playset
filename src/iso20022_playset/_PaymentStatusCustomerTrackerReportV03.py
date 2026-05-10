@@ -1,11 +1,11 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._TrackerStatusAndTransaction18 import TrackerStatusAndTransaction18
 from ._TrackerHeader5 import TrackerHeader5
+from ._TrackerStatusAndTransaction18 import TrackerStatusAndTransaction18
 
 class PaymentStatusCustomerTrackerReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_TrckrStsAndTx"]
+	__slots__ = ["_SplmtryData", "_TrckrStsAndTx", "_GrpHdr"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

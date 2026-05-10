@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentificationAndAccount209 import PartyIdentificationAndAccount209
-from ._PartyIdentificationAndAccount208 import PartyIdentificationAndAccount208
 from ._PartyIdentificationAndAccount181 import PartyIdentificationAndAccount181
+from ._PartyIdentificationAndAccount208 import PartyIdentificationAndAccount208
+from ._PartyIdentificationAndAccount209 import PartyIdentificationAndAccount209
 
 class OtherParties44(base_types._BaseFieldType):
 
-	__slots__ = ["_Brkr", "_StockXchg", "_QlfdFrgnIntrmy", "_TrptyAgt", "_TradRgltr", "_Invstr"]
+	__slots__ = ["_QlfdFrgnIntrmy", "_Brkr", "_Invstr", "_TrptyAgt", "_StockXchg", "_TradRgltr"]
 	@property
 	def Brkr(self):
 		return self._Brkr
@@ -20,17 +20,17 @@ class OtherParties44(base_types._BaseFieldType):
 		self._Brkr = None
 
 	@property
-	def StockXchg(self):
-		return self._StockXchg
+	def Invstr(self):
+		return self._Invstr
 
-	@StockXchg.setter
-	def StockXchg(self, value):
-		self._StockXchg = value if type(value) != base_types.auto else self.make_default("StockXchg")
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
 
-	@StockXchg.deleter
-	def StockXchg(self):
-		del self._StockXchg
-		self._StockXchg = None
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
 
 	@property
 	def QlfdFrgnIntrmy(self):
@@ -46,17 +46,17 @@ class OtherParties44(base_types._BaseFieldType):
 		self._QlfdFrgnIntrmy = None
 
 	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
+	def StockXchg(self):
+		return self._StockXchg
 
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+	@StockXchg.setter
+	def StockXchg(self, value):
+		self._StockXchg = value if type(value) != base_types.auto else self.make_default("StockXchg")
 
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
+	@StockXchg.deleter
+	def StockXchg(self):
+		del self._StockXchg
+		self._StockXchg = None
 
 	@property
 	def TradRgltr(self):
@@ -72,24 +72,24 @@ class OtherParties44(base_types._BaseFieldType):
 		self._TradRgltr = None
 
 	@property
-	def Invstr(self):
-		return self._Invstr
+	def TrptyAgt(self):
+		return self._TrptyAgt
 
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
 
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Brkr', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StockXchg', type=PartyIdentificationAndAccount181, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QlfdFrgnIntrmy', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradRgltr', type=PartyIdentificationAndAccount181, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount208, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='QlfdFrgnIntrmy', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockXchg', type=PartyIdentificationAndAccount181, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradRgltr', type=PartyIdentificationAndAccount181, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
 	))
 

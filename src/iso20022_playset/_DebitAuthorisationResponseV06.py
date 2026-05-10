@@ -1,25 +1,12 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
 from ._DebitAuthorisationConfirmation2 import DebitAuthorisationConfirmation2
-from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
+from ._Case6 import Case6
 
 class DebitAuthorisationResponseV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Assgnmt", "_Conf", "_Case"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Conf", "_Assgnmt", "_Case", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt
@@ -32,6 +19,19 @@ class DebitAuthorisationResponseV06(base_types._BaseFieldType):
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
+
+	@property
+	def Case(self):
+		return self._Case
+
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
 
 	@property
 	def Conf(self):
@@ -47,22 +47,22 @@ class DebitAuthorisationResponseV06(base_types._BaseFieldType):
 		self._Conf = None
 
 	@property
-	def Case(self):
-		return self._Case
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Conf', type=DebitAuthorisationConfirmation2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Conf', type=DebitAuthorisationConfirmation2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

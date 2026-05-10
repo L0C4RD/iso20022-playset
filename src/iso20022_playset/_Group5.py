@@ -1,24 +1,11 @@
 from . import base_types
-from ._Modification1Code import Modification1Code
 from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._PartyAndCertificate7 import PartyAndCertificate7
+from ._Modification1Code import Modification1Code
 
 class Group5(base_types._BaseFieldType):
 
-	__slots__ = ["_ModCd", "_GrpId", "_Pty"]
-	@property
-	def ModCd(self):
-		return self._ModCd
-
-	@ModCd.setter
-	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
-
-	@ModCd.deleter
-	def ModCd(self):
-		del self._ModCd
-		self._ModCd = None
-
+	__slots__ = ["_Pty", "_GrpId", "_ModCd"]
 	@property
 	def GrpId(self):
 		return self._GrpId
@@ -31,6 +18,19 @@ class Group5(base_types._BaseFieldType):
 	def GrpId(self):
 		del self._GrpId
 		self._GrpId = None
+
+	@property
+	def ModCd(self):
+		return self._ModCd
+
+	@ModCd.setter
+	def ModCd(self, value):
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+
+	@ModCd.deleter
+	def ModCd(self):
+		del self._ModCd
+		self._ModCd = None
 
 	@property
 	def Pty(self):
@@ -46,8 +46,8 @@ class Group5(base_types._BaseFieldType):
 		self._Pty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpId', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty', type=PartyAndCertificate7, min=1, max=None, mutex_group=None, array=True),
 	))
 

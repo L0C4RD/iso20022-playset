@@ -1,26 +1,26 @@
 from . import base_types
-from ._Max500Text import Max500Text
-from ._DocumentFormat2Choice import DocumentFormat2Choice
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DocumentType1Choice import DocumentType1Choice
+from ._DocumentFormat2Choice import DocumentFormat2Choice
+from ._Max500Text import Max500Text
 from ._RTPPartyIdentification2 import RTPPartyIdentification2
 from ._CustomerTypeRequest2 import CustomerTypeRequest2
+from ._DocumentType1Choice import DocumentType1Choice
 
 class CreditorInvoice5(base_types._BaseFieldType):
 
-	__slots__ = ["_LtdPresntmntInd", "_CdtrInstr", "_CstmrIdTp", "_ActvtnReqDlvryPty", "_CtrctRefTp", "_CtrctFrmtTp"]
+	__slots__ = ["_CtrctFrmtTp", "_ActvtnReqDlvryPty", "_CstmrIdTp", "_LtdPresntmntInd", "_CdtrInstr", "_CtrctRefTp"]
 	@property
-	def LtdPresntmntInd(self):
-		return self._LtdPresntmntInd
+	def ActvtnReqDlvryPty(self):
+		return self._ActvtnReqDlvryPty
 
-	@LtdPresntmntInd.setter
-	def LtdPresntmntInd(self, value):
-		self._LtdPresntmntInd = value if type(value) != base_types.auto else self.make_default("LtdPresntmntInd")
+	@ActvtnReqDlvryPty.setter
+	def ActvtnReqDlvryPty(self, value):
+		self._ActvtnReqDlvryPty = value if type(value) != base_types.auto else self.make_default("ActvtnReqDlvryPty")
 
-	@LtdPresntmntInd.deleter
-	def LtdPresntmntInd(self):
-		del self._LtdPresntmntInd
-		self._LtdPresntmntInd = None
+	@ActvtnReqDlvryPty.deleter
+	def ActvtnReqDlvryPty(self):
+		del self._ActvtnReqDlvryPty
+		self._ActvtnReqDlvryPty = None
 
 	@property
 	def CdtrInstr(self):
@@ -49,17 +49,17 @@ class CreditorInvoice5(base_types._BaseFieldType):
 		self._CstmrIdTp = None
 
 	@property
-	def ActvtnReqDlvryPty(self):
-		return self._ActvtnReqDlvryPty
+	def CtrctFrmtTp(self):
+		return self._CtrctFrmtTp
 
-	@ActvtnReqDlvryPty.setter
-	def ActvtnReqDlvryPty(self, value):
-		self._ActvtnReqDlvryPty = value if type(value) != base_types.auto else self.make_default("ActvtnReqDlvryPty")
+	@CtrctFrmtTp.setter
+	def CtrctFrmtTp(self, value):
+		self._CtrctFrmtTp = value if type(value) != base_types.auto else self.make_default("CtrctFrmtTp")
 
-	@ActvtnReqDlvryPty.deleter
-	def ActvtnReqDlvryPty(self):
-		del self._ActvtnReqDlvryPty
-		self._ActvtnReqDlvryPty = None
+	@CtrctFrmtTp.deleter
+	def CtrctFrmtTp(self):
+		del self._CtrctFrmtTp
+		self._CtrctFrmtTp = None
 
 	@property
 	def CtrctRefTp(self):
@@ -75,24 +75,24 @@ class CreditorInvoice5(base_types._BaseFieldType):
 		self._CtrctRefTp = None
 
 	@property
-	def CtrctFrmtTp(self):
-		return self._CtrctFrmtTp
+	def LtdPresntmntInd(self):
+		return self._LtdPresntmntInd
 
-	@CtrctFrmtTp.setter
-	def CtrctFrmtTp(self, value):
-		self._CtrctFrmtTp = value if type(value) != base_types.auto else self.make_default("CtrctFrmtTp")
+	@LtdPresntmntInd.setter
+	def LtdPresntmntInd(self, value):
+		self._LtdPresntmntInd = value if type(value) != base_types.auto else self.make_default("LtdPresntmntInd")
 
-	@CtrctFrmtTp.deleter
-	def CtrctFrmtTp(self):
-		del self._CtrctFrmtTp
-		self._CtrctFrmtTp = None
+	@LtdPresntmntInd.deleter
+	def LtdPresntmntInd(self):
+		del self._LtdPresntmntInd
+		self._LtdPresntmntInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LtdPresntmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtnReqDlvryPty', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrInstr', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrIdTp', type=CustomerTypeRequest2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtnReqDlvryPty', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctRefTp', type=DocumentType1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctFrmtTp', type=DocumentFormat2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrctRefTp', type=DocumentType1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LtdPresntmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

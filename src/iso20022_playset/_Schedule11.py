@@ -1,22 +1,22 @@
 from . import base_types
-from ._AmountAndDirection106 import AmountAndDirection106
 from ._ISODate import ISODate
+from ._AmountAndDirection106 import AmountAndDirection106
 
 class Schedule11(base_types._BaseFieldType):
 
 	__slots__ = ["_UadjstdFctvDt", "_UadjstdEndDt", "_Amt"]
 	@property
-	def UadjstdFctvDt(self):
-		return self._UadjstdFctvDt
+	def Amt(self):
+		return self._Amt
 
-	@UadjstdFctvDt.setter
-	def UadjstdFctvDt(self, value):
-		self._UadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("UadjstdFctvDt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@UadjstdFctvDt.deleter
-	def UadjstdFctvDt(self):
-		del self._UadjstdFctvDt
-		self._UadjstdFctvDt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def UadjstdEndDt(self):
@@ -32,21 +32,21 @@ class Schedule11(base_types._BaseFieldType):
 		self._UadjstdEndDt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def UadjstdFctvDt(self):
+		return self._UadjstdFctvDt
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@UadjstdFctvDt.setter
+	def UadjstdFctvDt(self, value):
+		self._UadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("UadjstdFctvDt")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@UadjstdFctvDt.deleter
+	def UadjstdFctvDt(self):
+		del self._UadjstdFctvDt
+		self._UadjstdFctvDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UadjstdFctvDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection106, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UadjstdFctvDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

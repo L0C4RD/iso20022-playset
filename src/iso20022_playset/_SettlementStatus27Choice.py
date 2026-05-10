@@ -4,7 +4,7 @@ from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class SettlementStatus27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlSttlm", "_Prtry", "_Sttld", "_Usttld"]
+	__slots__ = ["_PrtlSttlm", "_Sttld", "_Usttld", "_Prtry"]
 	@property
 	def PrtlSttlm(self):
 		return self._PrtlSttlm

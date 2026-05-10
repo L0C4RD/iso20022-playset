@@ -3,19 +3,19 @@ from ._AmountAndDirection14 import AmountAndDirection14
 
 class BalanceAmounts6(base_types._BaseFieldType):
 
-	__slots__ = ["_UrlsdGnLoss", "_HldgVal", "_BookVal"]
+	__slots__ = ["_BookVal", "_HldgVal", "_UrlsdGnLoss"]
 	@property
-	def UrlsdGnLoss(self):
-		return self._UrlsdGnLoss
+	def BookVal(self):
+		return self._BookVal
 
-	@UrlsdGnLoss.setter
-	def UrlsdGnLoss(self, value):
-		self._UrlsdGnLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnLoss")
+	@BookVal.setter
+	def BookVal(self, value):
+		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
 
-	@UrlsdGnLoss.deleter
-	def UrlsdGnLoss(self):
-		del self._UrlsdGnLoss
-		self._UrlsdGnLoss = None
+	@BookVal.deleter
+	def BookVal(self):
+		del self._BookVal
+		self._BookVal = None
 
 	@property
 	def HldgVal(self):
@@ -31,21 +31,21 @@ class BalanceAmounts6(base_types._BaseFieldType):
 		self._HldgVal = None
 
 	@property
-	def BookVal(self):
-		return self._BookVal
+	def UrlsdGnLoss(self):
+		return self._UrlsdGnLoss
 
-	@BookVal.setter
-	def BookVal(self, value):
-		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+	@UrlsdGnLoss.setter
+	def UrlsdGnLoss(self, value):
+		self._UrlsdGnLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnLoss")
 
-	@BookVal.deleter
-	def BookVal(self):
-		del self._BookVal
-		self._BookVal = None
+	@UrlsdGnLoss.deleter
+	def UrlsdGnLoss(self):
+		del self._UrlsdGnLoss
+		self._UrlsdGnLoss = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 	))
 

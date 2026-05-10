@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class TransactionIdentifier3(base_types._BaseFieldType):
 
-	__slots__ = ["_HstTxDtTm", "_TxDtTm", "_TxRef"]
+	__slots__ = ["_TxDtTm", "_TxRef", "_HstTxDtTm"]
 	@property
 	def HstTxDtTm(self):
 		return self._HstTxDtTm

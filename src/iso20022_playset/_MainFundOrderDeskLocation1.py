@@ -1,10 +1,10 @@
 from . import base_types
-from ._UTCOffset1 import UTCOffset1
 from ._CountryCode import CountryCode
+from ._UTCOffset1 import UTCOffset1
 
 class MainFundOrderDeskLocation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_TmZoneOffSet"]
+	__slots__ = ["_TmZoneOffSet", "_Ctry"]
 	@property
 	def Ctry(self):
 		return self._Ctry

@@ -1,24 +1,11 @@
 from . import base_types
+from ._TransactionAction1Code import TransactionAction1Code
 from ._RetailerService2Code import RetailerService2Code
 from ._ActionMessage11 import ActionMessage11
-from ._TransactionAction1Code import TransactionAction1Code
 
 class EnableServiceRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcsNbld", "_DispOutpt", "_TxActn"]
-	@property
-	def SvcsNbld(self):
-		return self._SvcsNbld
-
-	@SvcsNbld.setter
-	def SvcsNbld(self, value):
-		self._SvcsNbld = value if type(value) != base_types.auto else self.make_default("SvcsNbld")
-
-	@SvcsNbld.deleter
-	def SvcsNbld(self):
-		del self._SvcsNbld
-		self._SvcsNbld = None
-
+	__slots__ = ["_SvcsNbld", "_TxActn", "_DispOutpt"]
 	@property
 	def DispOutpt(self):
 		return self._DispOutpt
@@ -31,6 +18,19 @@ class EnableServiceRequest6(base_types._BaseFieldType):
 	def DispOutpt(self):
 		del self._DispOutpt
 		self._DispOutpt = None
+
+	@property
+	def SvcsNbld(self):
+		return self._SvcsNbld
+
+	@SvcsNbld.setter
+	def SvcsNbld(self, value):
+		self._SvcsNbld = value if type(value) != base_types.auto else self.make_default("SvcsNbld")
+
+	@SvcsNbld.deleter
+	def SvcsNbld(self):
+		del self._SvcsNbld
+		self._SvcsNbld = None
 
 	@property
 	def TxActn(self):
@@ -46,8 +46,8 @@ class EnableServiceRequest6(base_types._BaseFieldType):
 		self._TxActn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcsNbld', type=RetailerService2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcsNbld', type=RetailerService2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxActn', type=TransactionAction1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

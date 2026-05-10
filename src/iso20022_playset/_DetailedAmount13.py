@@ -1,7 +1,7 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Max70Text import Max70Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class DetailedAmount13(base_types._BaseFieldType):
 
@@ -20,19 +20,6 @@ class DetailedAmount13(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Labl(self):
-		return self._Labl
-
-	@Labl.setter
-	def Labl(self, value):
-		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
-
-	@Labl.deleter
-	def Labl(self):
-		del self._Labl
-		self._Labl = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -45,9 +32,22 @@ class DetailedAmount13(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def Labl(self):
+		return self._Labl
+
+	@Labl.setter
+	def Labl(self, value):
+		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
+
+	@Labl.deleter
+	def Labl(self):
+		del self._Labl
+		self._Labl = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

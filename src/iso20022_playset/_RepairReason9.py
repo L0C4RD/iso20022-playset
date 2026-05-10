@@ -4,7 +4,7 @@ from ._RepairReason10Choice import RepairReason10Choice
 
 class RepairReason9(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRsnInf", "_Cd"]
+	__slots__ = ["_Cd", "_AddtlRsnInf"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

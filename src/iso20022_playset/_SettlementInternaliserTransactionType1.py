@@ -3,7 +3,7 @@ from ._InternalisationData1 import InternalisationData1
 
 class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
-	__slots__ = ["_CollMgmtOpr", "_RpAgrmt", "_OthrTxs", "_SctiesLndgOrBrrwg", "_SctiesBuyOrSell"]
+	__slots__ = ["_SctiesBuyOrSell", "_CollMgmtOpr", "_OthrTxs", "_RpAgrmt", "_SctiesLndgOrBrrwg"]
 	@property
 	def CollMgmtOpr(self):
 		return self._CollMgmtOpr
@@ -16,19 +16,6 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 	def CollMgmtOpr(self):
 		del self._CollMgmtOpr
 		self._CollMgmtOpr = None
-
-	@property
-	def RpAgrmt(self):
-		return self._RpAgrmt
-
-	@RpAgrmt.setter
-	def RpAgrmt(self, value):
-		self._RpAgrmt = value if type(value) != base_types.auto else self.make_default("RpAgrmt")
-
-	@RpAgrmt.deleter
-	def RpAgrmt(self):
-		del self._RpAgrmt
-		self._RpAgrmt = None
 
 	@property
 	def OthrTxs(self):
@@ -44,17 +31,17 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 		self._OthrTxs = None
 
 	@property
-	def SctiesLndgOrBrrwg(self):
-		return self._SctiesLndgOrBrrwg
+	def RpAgrmt(self):
+		return self._RpAgrmt
 
-	@SctiesLndgOrBrrwg.setter
-	def SctiesLndgOrBrrwg(self, value):
-		self._SctiesLndgOrBrrwg = value if type(value) != base_types.auto else self.make_default("SctiesLndgOrBrrwg")
+	@RpAgrmt.setter
+	def RpAgrmt(self, value):
+		self._RpAgrmt = value if type(value) != base_types.auto else self.make_default("RpAgrmt")
 
-	@SctiesLndgOrBrrwg.deleter
-	def SctiesLndgOrBrrwg(self):
-		del self._SctiesLndgOrBrrwg
-		self._SctiesLndgOrBrrwg = None
+	@RpAgrmt.deleter
+	def RpAgrmt(self):
+		del self._RpAgrmt
+		self._RpAgrmt = None
 
 	@property
 	def SctiesBuyOrSell(self):
@@ -69,11 +56,24 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 		del self._SctiesBuyOrSell
 		self._SctiesBuyOrSell = None
 
+	@property
+	def SctiesLndgOrBrrwg(self):
+		return self._SctiesLndgOrBrrwg
+
+	@SctiesLndgOrBrrwg.setter
+	def SctiesLndgOrBrrwg(self, value):
+		self._SctiesLndgOrBrrwg = value if type(value) != base_types.auto else self.make_default("SctiesLndgOrBrrwg")
+
+	@SctiesLndgOrBrrwg.deleter
+	def SctiesLndgOrBrrwg(self):
+		del self._SctiesLndgOrBrrwg
+		self._SctiesLndgOrBrrwg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollMgmtOpr', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpAgrmt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTxs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyOrSell', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

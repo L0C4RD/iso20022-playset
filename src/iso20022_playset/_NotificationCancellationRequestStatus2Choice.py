@@ -4,7 +4,7 @@ from ._NotificationCancellationProcessingStatus2 import NotificationCancellation
 
 class NotificationCancellationRequestStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcdSts", "_RjctdSts"]
+	__slots__ = ["_RjctdSts", "_PrcdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ATMService22 import ATMService22
+from ._Max35Text import Max35Text
 
 class ATMContext18(base_types._BaseFieldType):
 
-	__slots__ = ["_SsnRef", "_Svc"]
+	__slots__ = ["_Svc", "_SsnRef"]
 	@property
 	def SsnRef(self):
 		return self._SsnRef

@@ -1,6 +1,6 @@
 from . import base_types
-from ._ProxyAppointmentInformation6 import ProxyAppointmentInformation6
 from ._ProxyNotAllowed1Code import ProxyNotAllowed1Code
+from ._ProxyAppointmentInformation6 import ProxyAppointmentInformation6
 
 class Proxy5Choice(base_types._BaseFieldType):
 

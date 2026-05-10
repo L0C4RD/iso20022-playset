@@ -1,32 +1,84 @@
 from . import base_types
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._Max350Text import Max350Text
-from ._Linkages57 import Linkages57
-from ._Amount2Choice import Amount2Choice
-from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
-from ._GenericIdentification37 import GenericIdentification37
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._SupplementaryData1 import SupplementaryData1
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._GenericIdentification37 import GenericIdentification37
+from ._PriorityNumeric4Choice import PriorityNumeric4Choice
 from ._PendingStatusAndReason2 import PendingStatusAndReason2
 from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
+from ._Linkages57 import Linkages57
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max350Text import Max350Text
 from ._ISODateTime import ISODateTime
+from ._Amount2Choice import Amount2Choice
+from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
 
 class IntraBalancePending6(base_types._BaseFieldType):
 
-	__slots__ = ["_StsAndRsn", "_CreDtTm", "_PoolId", "_IntnddSttlmDt", "_Lnkgs", "_BalFr", "_CorpActnEvtId", "_PrcrTxId", "_BalTo", "_SttlmAmt", "_MktInfrstrctrTxId", "_MsgOrgtr", "_CshSubBalId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_Prty", "_InstrPrcgAddtlDtls", "_SplmtryData", "_StsDt"]
+	__slots__ = ["_IntnddSttlmDt", "_CorpActnEvtId", "_MsgOrgtr", "_SttlmAmt", "_CshSubBalId", "_BalFr", "_StsAndRsn", "_Lnkgs", "_Prty", "_AcctOwnrTxId", "_CreDtTm", "_PoolId", "_StsDt", "_PrcrTxId", "_MktInfrstrctrTxId", "_InstrPrcgAddtlDtls", "_AcctSvcrTxId", "_SplmtryData", "_BalTo"]
 	@property
-	def StsAndRsn(self):
-		return self._StsAndRsn
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
 
-	@StsAndRsn.setter
-	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
 
-	@StsAndRsn.deleter
-	def StsAndRsn(self):
-		del self._StsAndRsn
-		self._StsAndRsn = None
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
+
+	@property
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
+
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
+
+	@property
+	def BalFr(self):
+		return self._BalFr
+
+	@BalFr.setter
+	def BalFr(self, value):
+		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+
+	@BalFr.deleter
+	def BalFr(self):
+		del self._BalFr
+		self._BalFr = None
+
+	@property
+	def BalTo(self):
+		return self._BalTo
+
+	@BalTo.setter
+	def BalTo(self, value):
+		self._BalTo = value if type(value) != base_types.auto else self.make_default("BalTo")
+
+	@BalTo.deleter
+	def BalTo(self):
+		del self._BalTo
+		self._BalTo = None
+
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def CreDtTm(self):
@@ -42,17 +94,30 @@ class IntraBalancePending6(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def PoolId(self):
-		return self._PoolId
+	def CshSubBalId(self):
+		return self._CshSubBalId
 
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+	@CshSubBalId.setter
+	def CshSubBalId(self, value):
+		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
 
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
+	@CshSubBalId.deleter
+	def CshSubBalId(self):
+		del self._CshSubBalId
+		self._CshSubBalId = None
+
+	@property
+	def InstrPrcgAddtlDtls(self):
+		return self._InstrPrcgAddtlDtls
+
+	@InstrPrcgAddtlDtls.setter
+	def InstrPrcgAddtlDtls(self, value):
+		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
+
+	@InstrPrcgAddtlDtls.deleter
+	def InstrPrcgAddtlDtls(self):
+		del self._InstrPrcgAddtlDtls
+		self._InstrPrcgAddtlDtls = None
 
 	@property
 	def IntnddSttlmDt(self):
@@ -81,71 +146,6 @@ class IntraBalancePending6(base_types._BaseFieldType):
 		self._Lnkgs = None
 
 	@property
-	def BalFr(self):
-		return self._BalFr
-
-	@BalFr.setter
-	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
-
-	@BalFr.deleter
-	def BalFr(self):
-		del self._BalFr
-		self._BalFr = None
-
-	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
-	@property
-	def BalTo(self):
-		return self._BalTo
-
-	@BalTo.setter
-	def BalTo(self, value):
-		self._BalTo = value if type(value) != base_types.auto else self.make_default("BalTo")
-
-	@BalTo.deleter
-	def BalTo(self):
-		del self._BalTo
-		self._BalTo = None
-
-	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
-
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
-
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
-
-	@property
 	def MktInfrstrctrTxId(self):
 		return self._MktInfrstrctrTxId
 
@@ -172,43 +172,30 @@ class IntraBalancePending6(base_types._BaseFieldType):
 		self._MsgOrgtr = None
 
 	@property
-	def CshSubBalId(self):
-		return self._CshSubBalId
+	def PoolId(self):
+		return self._PoolId
 
-	@CshSubBalId.setter
-	def CshSubBalId(self, value):
-		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
 
-	@CshSubBalId.deleter
-	def CshSubBalId(self):
-		del self._CshSubBalId
-		self._CshSubBalId = None
-
-	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
-
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
-
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
 
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
+	def PrcrTxId(self):
+		return self._PrcrTxId
 
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
 
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
 
 	@property
 	def Prty(self):
@@ -224,19 +211,6 @@ class IntraBalancePending6(base_types._BaseFieldType):
 		self._Prty = None
 
 	@property
-	def InstrPrcgAddtlDtls(self):
-		return self._InstrPrcgAddtlDtls
-
-	@InstrPrcgAddtlDtls.setter
-	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
-
-	@InstrPrcgAddtlDtls.deleter
-	def InstrPrcgAddtlDtls(self):
-		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -248,6 +222,19 @@ class IntraBalancePending6(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def StsAndRsn(self):
+		return self._StsAndRsn
+
+	@StsAndRsn.setter
+	def StsAndRsn(self, value):
+		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+
+	@StsAndRsn.deleter
+	def StsAndRsn(self):
+		del self._StsAndRsn
+		self._StsAndRsn = None
 
 	@property
 	def StsDt(self):
@@ -262,25 +249,38 @@ class IntraBalancePending6(base_types._BaseFieldType):
 		del self._StsDt
 		self._StsDt = None
 
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsAndRsn', type=PendingStatusAndReason2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTo', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntnddSttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTo', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsAndRsn', type=PendingStatusAndReason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

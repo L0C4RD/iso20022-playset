@@ -4,20 +4,7 @@ from ._SettlementObligation9 import SettlementObligation9
 
 class Report7(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmOblgtnDtls", "_NonClrMmb"]
-	@property
-	def SttlmOblgtnDtls(self):
-		return self._SttlmOblgtnDtls
-
-	@SttlmOblgtnDtls.setter
-	def SttlmOblgtnDtls(self, value):
-		self._SttlmOblgtnDtls = value if type(value) != base_types.auto else self.make_default("SttlmOblgtnDtls")
-
-	@SttlmOblgtnDtls.deleter
-	def SttlmOblgtnDtls(self):
-		del self._SttlmOblgtnDtls
-		self._SttlmOblgtnDtls = None
-
+	__slots__ = ["_NonClrMmb", "_SttlmOblgtnDtls"]
 	@property
 	def NonClrMmb(self):
 		return self._NonClrMmb
@@ -31,8 +18,21 @@ class Report7(base_types._BaseFieldType):
 		del self._NonClrMmb
 		self._NonClrMmb = None
 
+	@property
+	def SttlmOblgtnDtls(self):
+		return self._SttlmOblgtnDtls
+
+	@SttlmOblgtnDtls.setter
+	def SttlmOblgtnDtls(self, value):
+		self._SttlmOblgtnDtls = value if type(value) != base_types.auto else self.make_default("SttlmOblgtnDtls")
+
+	@SttlmOblgtnDtls.deleter
+	def SttlmOblgtnDtls(self):
+		del self._SttlmOblgtnDtls
+		self._SttlmOblgtnDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmOblgtnDtls', type=SettlementObligation9, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmOblgtnDtls', type=SettlementObligation9, min=1, max=None, mutex_group=None, array=True),
 	))
 

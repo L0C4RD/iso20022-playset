@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CountryCode import CountryCode
+from ._Max35Text import Max35Text
 
 class PostalAddress12(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrySubDvsn", "_Ctry", "_TwnNm"]
-	@property
-	def CtrySubDvsn(self):
-		return self._CtrySubDvsn
-
-	@CtrySubDvsn.setter
-	def CtrySubDvsn(self, value):
-		self._CtrySubDvsn = value if type(value) != base_types.auto else self.make_default("CtrySubDvsn")
-
-	@CtrySubDvsn.deleter
-	def CtrySubDvsn(self):
-		del self._CtrySubDvsn
-		self._CtrySubDvsn = None
-
+	__slots__ = ["_Ctry", "_CtrySubDvsn", "_TwnNm"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -30,6 +17,19 @@ class PostalAddress12(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def CtrySubDvsn(self):
+		return self._CtrySubDvsn
+
+	@CtrySubDvsn.setter
+	def CtrySubDvsn(self, value):
+		self._CtrySubDvsn = value if type(value) != base_types.auto else self.make_default("CtrySubDvsn")
+
+	@CtrySubDvsn.deleter
+	def CtrySubDvsn(self):
+		del self._CtrySubDvsn
+		self._CtrySubDvsn = None
 
 	@property
 	def TwnNm(self):
@@ -45,8 +45,8 @@ class PostalAddress12(base_types._BaseFieldType):
 		self._TwnNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrySubDvsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

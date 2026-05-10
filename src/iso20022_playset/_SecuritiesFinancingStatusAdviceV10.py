@@ -1,53 +1,27 @@
 from . import base_types
 from ._RepoCallRequestStatus7Choice import RepoCallRequestStatus7Choice
-from ._SecuritiesFinancingTransactionDetails57 import SecuritiesFinancingTransactionDetails57
-from ._ProcessingStatus83Choice import ProcessingStatus83Choice
-from ._TransactionIdentifications53 import TransactionIdentifications53
-from ._SettlementStatus18Choice import SettlementStatus18Choice
 from ._SupplementaryData1 import SupplementaryData1
+from ._SettlementStatus18Choice import SettlementStatus18Choice
+from ._TransactionIdentifications53 import TransactionIdentifications53
+from ._ProcessingStatus83Choice import ProcessingStatus83Choice
+from ._SecuritiesFinancingTransactionDetails57 import SecuritiesFinancingTransactionDetails57
 from ._MatchingStatus26Choice import MatchingStatus26Choice
 
 class SecuritiesFinancingStatusAdviceV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSts", "_TxId", "_PrcgSts", "_MtchgSts", "_IfrrdMtchgSts", "_RepoCallReqSts", "_SplmtryData", "_TxDtls"]
+	__slots__ = ["_TxId", "_TxDtls", "_IfrrdMtchgSts", "_RepoCallReqSts", "_PrcgSts", "_SttlmSts", "_SplmtryData", "_MtchgSts"]
 	@property
-	def SttlmSts(self):
-		return self._SttlmSts
+	def IfrrdMtchgSts(self):
+		return self._IfrrdMtchgSts
 
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+	@IfrrdMtchgSts.setter
+	def IfrrdMtchgSts(self, value):
+		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
 
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def PrcgSts(self):
-		return self._PrcgSts
-
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
-
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@IfrrdMtchgSts.deleter
+	def IfrrdMtchgSts(self):
+		del self._IfrrdMtchgSts
+		self._IfrrdMtchgSts = None
 
 	@property
 	def MtchgSts(self):
@@ -63,17 +37,17 @@ class SecuritiesFinancingStatusAdviceV10(base_types._BaseFieldType):
 		self._MtchgSts = None
 
 	@property
-	def IfrrdMtchgSts(self):
-		return self._IfrrdMtchgSts
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@IfrrdMtchgSts.setter
-	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
-	@IfrrdMtchgSts.deleter
-	def IfrrdMtchgSts(self):
-		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def RepoCallReqSts(self):
@@ -102,6 +76,19 @@ class SecuritiesFinancingStatusAdviceV10(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
+
+	@property
 	def TxDtls(self):
 		return self._TxDtls
 
@@ -114,14 +101,27 @@ class SecuritiesFinancingStatusAdviceV10(base_types._BaseFieldType):
 		del self._TxDtls
 		self._TxDtls = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifications53, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus83Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus26Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus83Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RepoCallReqSts', type=RepoCallRequestStatus7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=SecuritiesFinancingTransactionDetails57, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifications53, min=1, max=1, mutex_group=None, array=False),
 	))
 

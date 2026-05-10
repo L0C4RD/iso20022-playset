@@ -1,17 +1,30 @@
 from . import base_types
-from ._RejectionReason56 import RejectionReason56
+from ._CancellationPendingStatus7Choice import CancellationPendingStatus7Choice
 from ._PendingSettlementStatus3Choice import PendingSettlementStatus3Choice
+from ._CancelledStatus13Choice import CancelledStatus13Choice
+from ._RejectionReason56 import RejectionReason56
+from ._TransferInstructionStatus5 import TransferInstructionStatus5
+from ._TransferUnmatchedStatus4Choice import TransferUnmatchedStatus4Choice
 from ._InRepairStatus4Choice import InRepairStatus4Choice
 from ._FailedSettlementStatus2Choice import FailedSettlementStatus2Choice
-from ._CancelledStatus13Choice import CancelledStatus13Choice
 from ._ReversedStatus2Choice import ReversedStatus2Choice
-from ._TransferInstructionStatus5 import TransferInstructionStatus5
-from ._CancellationPendingStatus7Choice import CancellationPendingStatus7Choice
-from ._TransferUnmatchedStatus4Choice import TransferUnmatchedStatus4Choice
 
 class TransferStatus5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlPdg", "_Rvsd", "_PdgSttlm", "_FaildSttlm", "_Canc", "_InRpr", "_Rjctd", "_Umtchd", "_Sts"]
+	__slots__ = ["_FaildSttlm", "_Canc", "_PdgSttlm", "_Umtchd", "_CxlPdg", "_InRpr", "_Rjctd", "_Sts", "_Rvsd"]
+	@property
+	def Canc(self):
+		return self._Canc
+
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
+
 	@property
 	def CxlPdg(self):
 		return self._CxlPdg
@@ -24,32 +37,6 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 	def CxlPdg(self):
 		del self._CxlPdg
 		self._CxlPdg = None
-
-	@property
-	def Rvsd(self):
-		return self._Rvsd
-
-	@Rvsd.setter
-	def Rvsd(self, value):
-		self._Rvsd = value if type(value) != base_types.auto else self.make_default("Rvsd")
-
-	@Rvsd.deleter
-	def Rvsd(self):
-		del self._Rvsd
-		self._Rvsd = None
-
-	@property
-	def PdgSttlm(self):
-		return self._PdgSttlm
-
-	@PdgSttlm.setter
-	def PdgSttlm(self, value):
-		self._PdgSttlm = value if type(value) != base_types.auto else self.make_default("PdgSttlm")
-
-	@PdgSttlm.deleter
-	def PdgSttlm(self):
-		del self._PdgSttlm
-		self._PdgSttlm = None
 
 	@property
 	def FaildSttlm(self):
@@ -65,19 +52,6 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 		self._FaildSttlm = None
 
 	@property
-	def Canc(self):
-		return self._Canc
-
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
-
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
-
-	@property
 	def InRpr(self):
 		return self._InRpr
 
@@ -89,6 +63,19 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 	def InRpr(self):
 		del self._InRpr
 		self._InRpr = None
+
+	@property
+	def PdgSttlm(self):
+		return self._PdgSttlm
+
+	@PdgSttlm.setter
+	def PdgSttlm(self, value):
+		self._PdgSttlm = value if type(value) != base_types.auto else self.make_default("PdgSttlm")
+
+	@PdgSttlm.deleter
+	def PdgSttlm(self):
+		del self._PdgSttlm
+		self._PdgSttlm = None
 
 	@property
 	def Rjctd(self):
@@ -104,17 +91,17 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
-	def Umtchd(self):
-		return self._Umtchd
+	def Rvsd(self):
+		return self._Rvsd
 
-	@Umtchd.setter
-	def Umtchd(self, value):
-		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
+	@Rvsd.setter
+	def Rvsd(self, value):
+		self._Rvsd = value if type(value) != base_types.auto else self.make_default("Rvsd")
 
-	@Umtchd.deleter
-	def Umtchd(self):
-		del self._Umtchd
-		self._Umtchd = None
+	@Rvsd.deleter
+	def Rvsd(self):
+		del self._Rvsd
+		self._Rvsd = None
 
 	@property
 	def Sts(self):
@@ -129,15 +116,28 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def Umtchd(self):
+		return self._Umtchd
+
+	@Umtchd.setter
+	def Umtchd(self, value):
+		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
+
+	@Umtchd.deleter
+	def Umtchd(self):
+		del self._Umtchd
+		self._Umtchd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlPdg', type=CancellationPendingStatus7Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rvsd', type=ReversedStatus2Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgSttlm', type=PendingSettlementStatus3Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FaildSttlm', type=FailedSettlementStatus2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancelledStatus13Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlPdg', type=CancellationPendingStatus7Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FaildSttlm', type=FailedSettlementStatus2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='InRpr', type=InRepairStatus4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgSttlm', type=PendingSettlementStatus3Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionReason56, min=1, max=10, mutex_group=1, array=True),
-		base_types.FieldEntry(name='Umtchd', type=TransferUnmatchedStatus4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rvsd', type=ReversedStatus2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sts', type=TransferInstructionStatus5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Umtchd', type=TransferUnmatchedStatus4Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

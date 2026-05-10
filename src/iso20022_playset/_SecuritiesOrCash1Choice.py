@@ -1,6 +1,6 @@
 from . import base_types
-from ._CashParties24 import CashParties24
 from ._SettlementParties35 import SettlementParties35
+from ._CashParties24 import CashParties24
 
 class SecuritiesOrCash1Choice(base_types._BaseFieldType):
 

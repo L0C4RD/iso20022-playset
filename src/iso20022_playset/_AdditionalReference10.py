@@ -4,20 +4,7 @@ from ._PartyIdentification139 import PartyIdentification139
 
 class AdditionalReference10(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_MsgNm", "_RefIssr"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_RefIssr", "_MsgNm", "_Ref"]
 	@property
 	def MsgNm(self):
 		return self._MsgNm
@@ -30,6 +17,19 @@ class AdditionalReference10(base_types._BaseFieldType):
 	def MsgNm(self):
 		del self._MsgNm
 		self._MsgNm = None
+
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def RefIssr(self):
@@ -45,8 +45,8 @@ class AdditionalReference10(base_types._BaseFieldType):
 		self._RefIssr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefIssr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 	))
 

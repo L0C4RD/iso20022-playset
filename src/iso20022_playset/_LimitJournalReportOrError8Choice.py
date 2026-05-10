@@ -4,7 +4,7 @@ from ._ErrorHandling5 import ErrorHandling5
 
 class LimitJournalReportOrError8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BizErr", "_LmtJrnl"]
+	__slots__ = ["_LmtJrnl", "_BizErr"]
 	@property
 	def BizErr(self):
 		return self._BizErr

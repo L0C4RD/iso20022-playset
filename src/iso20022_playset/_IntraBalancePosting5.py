@@ -1,10 +1,10 @@
 from . import base_types
-from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
 from ._IntraBalancePosting6 import IntraBalancePosting6
+from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
 
 class IntraBalancePosting5(base_types._BaseFieldType):
 
-	__slots__ = ["_BalFr", "_Mvmnt"]
+	__slots__ = ["_Mvmnt", "_BalFr"]
 	@property
 	def BalFr(self):
 		return self._BalFr

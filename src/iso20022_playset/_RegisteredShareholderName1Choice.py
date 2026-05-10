@@ -1,6 +1,6 @@
 from . import base_types
-from ._IndividualPerson29 import IndividualPerson29
 from ._Organisation23 import Organisation23
+from ._IndividualPerson29 import IndividualPerson29
 
 class RegisteredShareholderName1Choice(base_types._BaseFieldType):
 

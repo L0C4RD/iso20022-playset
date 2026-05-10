@@ -5,7 +5,7 @@ from ._AssetClassProductType2Code import AssetClassProductType2Code
 
 class EnergyCommodityOil1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlSubPdct", "_BasePdct", "_SubPdct"]
+	__slots__ = ["_SubPdct", "_AddtlSubPdct", "_BasePdct"]
 	@property
 	def AddtlSubPdct(self):
 		return self._AddtlSubPdct

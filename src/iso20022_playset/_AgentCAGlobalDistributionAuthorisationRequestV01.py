@@ -5,19 +5,19 @@ from ._GlobalDistributionRequest1 import GlobalDistributionRequest1
 
 class AgentCAGlobalDistributionAuthorisationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_GblDstrbtnDtls", "_CorpActnGnlInf"]
+	__slots__ = ["_Id", "_CorpActnGnlInf", "_GblDstrbtnDtls"]
 	@property
-	def Id(self):
-		return self._Id
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	@property
 	def GblDstrbtnDtls(self):
@@ -33,21 +33,21 @@ class AgentCAGlobalDistributionAuthorisationRequestV01(base_types._BaseFieldType
 		self._GblDstrbtnDtls = None
 
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def Id(self):
+		return self._Id
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GblDstrbtnDtls', type=GlobalDistributionRequest1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GblDstrbtnDtls', type=GlobalDistributionRequest1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

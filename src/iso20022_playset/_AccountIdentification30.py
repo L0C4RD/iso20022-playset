@@ -1,10 +1,10 @@
 from . import base_types
-from ._AccountInformationType1Code import AccountInformationType1Code
 from ._AccountIdentification26 import AccountIdentification26
+from ._AccountInformationType1Code import AccountInformationType1Code
 
 class AccountIdentification30(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctTp", "_Id"]
+	__slots__ = ["_Id", "_AcctTp"]
 	@property
 	def AcctTp(self):
 		return self._AcctTp

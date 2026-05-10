@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._PostalAddress5 import PostalAddress5
 from ._GenericIdentification4 import GenericIdentification4
+from ._Max70Text import Max70Text
 
 class PartyIdentification26(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_PrtryId", "_PstlAdr"]
+	__slots__ = ["_PstlAdr", "_Nm", "_PrtryId"]
 	@property
 	def Nm(self):
 		return self._Nm

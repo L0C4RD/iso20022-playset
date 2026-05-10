@@ -1,13 +1,13 @@
 from . import base_types
-from ._OptionParty1Code import OptionParty1Code
-from ._PartyIdentificationAndAccount119 import PartyIdentificationAndAccount119
 from ._PartyIdentification78 import PartyIdentification78
-from ._OptionParty3Code import OptionParty3Code
+from ._PartyIdentificationAndAccount119 import PartyIdentificationAndAccount119
 from ._FundIdentification6 import FundIdentification6
+from ._OptionParty1Code import OptionParty1Code
+from ._OptionParty3Code import OptionParty3Code
 
 class TradePartyIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrOrSellrInd", "_InitrInd", "_SubmitgPty", "_TradPtyId", "_FndInf"]
+	__slots__ = ["_TradPtyId", "_FndInf", "_SubmitgPty", "_InitrInd", "_BuyrOrSellrInd"]
 	@property
 	def BuyrOrSellrInd(self):
 		return self._BuyrOrSellrInd
@@ -20,6 +20,19 @@ class TradePartyIdentification9(base_types._BaseFieldType):
 	def BuyrOrSellrInd(self):
 		del self._BuyrOrSellrInd
 		self._BuyrOrSellrInd = None
+
+	@property
+	def FndInf(self):
+		return self._FndInf
+
+	@FndInf.setter
+	def FndInf(self, value):
+		self._FndInf = value if type(value) != base_types.auto else self.make_default("FndInf")
+
+	@FndInf.deleter
+	def FndInf(self):
+		del self._FndInf
+		self._FndInf = None
 
 	@property
 	def InitrInd(self):
@@ -60,24 +73,11 @@ class TradePartyIdentification9(base_types._BaseFieldType):
 		del self._TradPtyId
 		self._TradPtyId = None
 
-	@property
-	def FndInf(self):
-		return self._FndInf
-
-	@FndInf.setter
-	def FndInf(self, value):
-		self._FndInf = value if type(value) != base_types.auto else self.make_default("FndInf")
-
-	@FndInf.deleter
-	def FndInf(self):
-		del self._FndInf
-		self._FndInf = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyrOrSellrInd', type=OptionParty1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndInf', type=FundIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitrInd', type=OptionParty3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitgPty', type=PartyIdentificationAndAccount119, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradPtyId', type=PartyIdentification78, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndInf', type=FundIdentification6, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-from ._EnvironmentalCommodityEmission3 import EnvironmentalCommodityEmission3
-from ._EnvironmentalCommodityCarbonRelated2 import EnvironmentalCommodityCarbonRelated2
-from ._EnvironmentCommodityOther2 import EnvironmentCommodityOther2
 from ._EnvironmentalCommodityWeather2 import EnvironmentalCommodityWeather2
+from ._EnvironmentalCommodityEmission3 import EnvironmentalCommodityEmission3
+from ._EnvironmentCommodityOther2 import EnvironmentCommodityOther2
+from ._EnvironmentalCommodityCarbonRelated2 import EnvironmentalCommodityCarbonRelated2
 
 class AssetClassCommodityEnvironmental3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Wthr", "_Emssns", "_Othr", "_CrbnRltd"]
+	__slots__ = ["_CrbnRltd", "_Emssns", "_Wthr", "_Othr"]
 	@property
-	def Wthr(self):
-		return self._Wthr
+	def CrbnRltd(self):
+		return self._CrbnRltd
 
-	@Wthr.setter
-	def Wthr(self, value):
-		self._Wthr = value if type(value) != base_types.auto else self.make_default("Wthr")
+	@CrbnRltd.setter
+	def CrbnRltd(self, value):
+		self._CrbnRltd = value if type(value) != base_types.auto else self.make_default("CrbnRltd")
 
-	@Wthr.deleter
-	def Wthr(self):
-		del self._Wthr
-		self._Wthr = None
+	@CrbnRltd.deleter
+	def CrbnRltd(self):
+		del self._CrbnRltd
+		self._CrbnRltd = None
 
 	@property
 	def Emssns(self):
@@ -47,22 +47,22 @@ class AssetClassCommodityEnvironmental3Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def CrbnRltd(self):
-		return self._CrbnRltd
+	def Wthr(self):
+		return self._Wthr
 
-	@CrbnRltd.setter
-	def CrbnRltd(self, value):
-		self._CrbnRltd = value if type(value) != base_types.auto else self.make_default("CrbnRltd")
+	@Wthr.setter
+	def Wthr(self, value):
+		self._Wthr = value if type(value) != base_types.auto else self.make_default("Wthr")
 
-	@CrbnRltd.deleter
-	def CrbnRltd(self):
-		del self._CrbnRltd
-		self._CrbnRltd = None
+	@Wthr.deleter
+	def Wthr(self):
+		del self._Wthr
+		self._Wthr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Wthr', type=EnvironmentalCommodityWeather2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CrbnRltd', type=EnvironmentalCommodityCarbonRelated2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Emssns', type=EnvironmentalCommodityEmission3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=EnvironmentCommodityOther2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CrbnRltd', type=EnvironmentalCommodityCarbonRelated2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Wthr', type=EnvironmentalCommodityWeather2, min=0, max=1, mutex_group=1, array=False),
 	))
 

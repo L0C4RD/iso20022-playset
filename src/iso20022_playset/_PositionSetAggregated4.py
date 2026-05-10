@@ -1,11 +1,11 @@
 from . import base_types
-from ._PositionSet22 import PositionSet22
 from ._ISODate import ISODate
+from ._PositionSet22 import PositionSet22
 from ._PositionSet21 import PositionSet21
 
 class PositionSetAggregated4(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyCollPosSet", "_CcyPosSet", "_CollPosSet", "_PosSet", "_RefDt"]
+	__slots__ = ["_CollPosSet", "_RefDt", "_PosSet", "_CcyCollPosSet", "_CcyPosSet"]
 	@property
 	def CcyCollPosSet(self):
 		return self._CcyCollPosSet

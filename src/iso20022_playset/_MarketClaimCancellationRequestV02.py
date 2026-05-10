@@ -1,25 +1,25 @@
 from . import base_types
-from ._AccountIdentification70 import AccountIdentification70
 from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification9 import DocumentIdentification9
-from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
 from ._References26 import References26
+from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
+from ._AccountIdentification70 import AccountIdentification70
+from ._DocumentIdentification9 import DocumentIdentification9
 
 class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MktClmCreId", "_CorpActnGnlInf", "_SplmtryData", "_TxRef", "_AcctDtls"]
+	__slots__ = ["_AcctDtls", "_MktClmCreId", "_CorpActnGnlInf", "_TxRef", "_SplmtryData"]
 	@property
-	def MktClmCreId(self):
-		return self._MktClmCreId
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@MktClmCreId.setter
-	def MktClmCreId(self, value):
-		self._MktClmCreId = value if type(value) != base_types.auto else self.make_default("MktClmCreId")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
 
-	@MktClmCreId.deleter
-	def MktClmCreId(self):
-		del self._MktClmCreId
-		self._MktClmCreId = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def CorpActnGnlInf(self):
@@ -33,6 +33,19 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
 		self._CorpActnGnlInf = None
+
+	@property
+	def MktClmCreId(self):
+		return self._MktClmCreId
+
+	@MktClmCreId.setter
+	def MktClmCreId(self, value):
+		self._MktClmCreId = value if type(value) != base_types.auto else self.make_default("MktClmCreId")
+
+	@MktClmCreId.deleter
+	def MktClmCreId(self):
+		del self._MktClmCreId
+		self._MktClmCreId = None
 
 	@property
 	def SplmtryData(self):
@@ -60,24 +73,11 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 		del self._TxRef
 		self._TxRef = None
 
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktClmCreId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClmCreId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),
 	))
 

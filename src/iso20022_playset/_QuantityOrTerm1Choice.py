@@ -1,10 +1,10 @@
 from . import base_types
-from ._QuantityTerm1 import QuantityTerm1
 from ._Schedule10 import Schedule10
+from ._QuantityTerm1 import QuantityTerm1
 
 class QuantityOrTerm1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SchdlPrd", "_Term"]
+	__slots__ = ["_Term", "_SchdlPrd"]
 	@property
 	def SchdlPrd(self):
 		return self._SchdlPrd

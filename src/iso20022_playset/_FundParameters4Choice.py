@@ -4,7 +4,7 @@ from ._NoCriteria1Code import NoCriteria1Code
 
 class FundParameters4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoCrit", "_Params"]
+	__slots__ = ["_Params", "_NoCrit"]
 	@property
 	def NoCrit(self):
 		return self._NoCrit

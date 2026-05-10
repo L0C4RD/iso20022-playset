@@ -1,61 +1,22 @@
 from . import base_types
-from ._UpdatedURLlnformation7 import UpdatedURLlnformation7
 from ._UpdatedAdditionalInformation26 import UpdatedAdditionalInformation26
+from ._UpdatedURLlnformation7 import UpdatedURLlnformation7
 
 class CorporateActionNarrative65(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsclmr", "_PrcgTxtForNxtIntrmy", "_NrrtvVrsn", "_PtyCtctNrrtv", "_BsktOrIndxInf", "_TaxtnConds", "_AddtlTxt", "_RegnDtls", "_URLAdr", "_InfConds", "_CertfctnBrkdwn", "_InfToCmplyWth"]
+	__slots__ = ["_BsktOrIndxInf", "_CertfctnBrkdwn", "_InfToCmplyWth", "_PtyCtctNrrtv", "_NrrtvVrsn", "_InfConds", "_TaxtnConds", "_Dsclmr", "_RegnDtls", "_PrcgTxtForNxtIntrmy", "_URLAdr", "_AddtlTxt"]
 	@property
-	def Dsclmr(self):
-		return self._Dsclmr
+	def AddtlTxt(self):
+		return self._AddtlTxt
 
-	@Dsclmr.setter
-	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
+	@AddtlTxt.setter
+	def AddtlTxt(self, value):
+		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
 
-	@Dsclmr.deleter
-	def Dsclmr(self):
-		del self._Dsclmr
-		self._Dsclmr = None
-
-	@property
-	def PrcgTxtForNxtIntrmy(self):
-		return self._PrcgTxtForNxtIntrmy
-
-	@PrcgTxtForNxtIntrmy.setter
-	def PrcgTxtForNxtIntrmy(self, value):
-		self._PrcgTxtForNxtIntrmy = value if type(value) != base_types.auto else self.make_default("PrcgTxtForNxtIntrmy")
-
-	@PrcgTxtForNxtIntrmy.deleter
-	def PrcgTxtForNxtIntrmy(self):
-		del self._PrcgTxtForNxtIntrmy
-		self._PrcgTxtForNxtIntrmy = None
-
-	@property
-	def NrrtvVrsn(self):
-		return self._NrrtvVrsn
-
-	@NrrtvVrsn.setter
-	def NrrtvVrsn(self, value):
-		self._NrrtvVrsn = value if type(value) != base_types.auto else self.make_default("NrrtvVrsn")
-
-	@NrrtvVrsn.deleter
-	def NrrtvVrsn(self):
-		del self._NrrtvVrsn
-		self._NrrtvVrsn = None
-
-	@property
-	def PtyCtctNrrtv(self):
-		return self._PtyCtctNrrtv
-
-	@PtyCtctNrrtv.setter
-	def PtyCtctNrrtv(self, value):
-		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
-
-	@PtyCtctNrrtv.deleter
-	def PtyCtctNrrtv(self):
-		del self._PtyCtctNrrtv
-		self._PtyCtctNrrtv = None
+	@AddtlTxt.deleter
+	def AddtlTxt(self):
+		del self._AddtlTxt
+		self._AddtlTxt = None
 
 	@property
 	def BsktOrIndxInf(self):
@@ -71,56 +32,30 @@ class CorporateActionNarrative65(base_types._BaseFieldType):
 		self._BsktOrIndxInf = None
 
 	@property
-	def TaxtnConds(self):
-		return self._TaxtnConds
+	def CertfctnBrkdwn(self):
+		return self._CertfctnBrkdwn
 
-	@TaxtnConds.setter
-	def TaxtnConds(self, value):
-		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
+	@CertfctnBrkdwn.setter
+	def CertfctnBrkdwn(self, value):
+		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
 
-	@TaxtnConds.deleter
-	def TaxtnConds(self):
-		del self._TaxtnConds
-		self._TaxtnConds = None
-
-	@property
-	def AddtlTxt(self):
-		return self._AddtlTxt
-
-	@AddtlTxt.setter
-	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
-
-	@AddtlTxt.deleter
-	def AddtlTxt(self):
-		del self._AddtlTxt
-		self._AddtlTxt = None
+	@CertfctnBrkdwn.deleter
+	def CertfctnBrkdwn(self):
+		del self._CertfctnBrkdwn
+		self._CertfctnBrkdwn = None
 
 	@property
-	def RegnDtls(self):
-		return self._RegnDtls
+	def Dsclmr(self):
+		return self._Dsclmr
 
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+	@Dsclmr.setter
+	def Dsclmr(self, value):
+		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
 
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
-
-	@property
-	def URLAdr(self):
-		return self._URLAdr
-
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
-
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
+	@Dsclmr.deleter
+	def Dsclmr(self):
+		del self._Dsclmr
+		self._Dsclmr = None
 
 	@property
 	def InfConds(self):
@@ -136,19 +71,6 @@ class CorporateActionNarrative65(base_types._BaseFieldType):
 		self._InfConds = None
 
 	@property
-	def CertfctnBrkdwn(self):
-		return self._CertfctnBrkdwn
-
-	@CertfctnBrkdwn.setter
-	def CertfctnBrkdwn(self, value):
-		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
-
-	@CertfctnBrkdwn.deleter
-	def CertfctnBrkdwn(self):
-		del self._CertfctnBrkdwn
-		self._CertfctnBrkdwn = None
-
-	@property
 	def InfToCmplyWth(self):
 		return self._InfToCmplyWth
 
@@ -161,18 +83,96 @@ class CorporateActionNarrative65(base_types._BaseFieldType):
 		del self._InfToCmplyWth
 		self._InfToCmplyWth = None
 
+	@property
+	def NrrtvVrsn(self):
+		return self._NrrtvVrsn
+
+	@NrrtvVrsn.setter
+	def NrrtvVrsn(self, value):
+		self._NrrtvVrsn = value if type(value) != base_types.auto else self.make_default("NrrtvVrsn")
+
+	@NrrtvVrsn.deleter
+	def NrrtvVrsn(self):
+		del self._NrrtvVrsn
+		self._NrrtvVrsn = None
+
+	@property
+	def PrcgTxtForNxtIntrmy(self):
+		return self._PrcgTxtForNxtIntrmy
+
+	@PrcgTxtForNxtIntrmy.setter
+	def PrcgTxtForNxtIntrmy(self, value):
+		self._PrcgTxtForNxtIntrmy = value if type(value) != base_types.auto else self.make_default("PrcgTxtForNxtIntrmy")
+
+	@PrcgTxtForNxtIntrmy.deleter
+	def PrcgTxtForNxtIntrmy(self):
+		del self._PrcgTxtForNxtIntrmy
+		self._PrcgTxtForNxtIntrmy = None
+
+	@property
+	def PtyCtctNrrtv(self):
+		return self._PtyCtctNrrtv
+
+	@PtyCtctNrrtv.setter
+	def PtyCtctNrrtv(self, value):
+		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
+
+	@PtyCtctNrrtv.deleter
+	def PtyCtctNrrtv(self):
+		del self._PtyCtctNrrtv
+		self._PtyCtctNrrtv = None
+
+	@property
+	def RegnDtls(self):
+		return self._RegnDtls
+
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
+
+	@property
+	def TaxtnConds(self):
+		return self._TaxtnConds
+
+	@TaxtnConds.setter
+	def TaxtnConds(self, value):
+		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
+
+	@TaxtnConds.deleter
+	def TaxtnConds(self):
+		del self._TaxtnConds
+		self._TaxtnConds = None
+
+	@property
+	def URLAdr(self):
+		return self._URLAdr
+
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dsclmr', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrcgTxtForNxtIntrmy', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NrrtvVrsn', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PtyCtctNrrtv', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BsktOrIndxInf', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegnDtls', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BsktOrIndxInf', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnBrkdwn', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dsclmr', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NrrtvVrsn', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgTxtForNxtIntrmy', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PtyCtctNrrtv', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegnDtls', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
 	))
 

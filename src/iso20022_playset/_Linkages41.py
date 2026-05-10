@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProcessingPosition9Choice import ProcessingPosition9Choice
 from ._Max35Text import Max35Text
+from ._ProcessingPosition9Choice import ProcessingPosition9Choice
 
 class Linkages41(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgPos", "_SctiesSttlmTxId"]
+	__slots__ = ["_SctiesSttlmTxId", "_PrcgPos"]
 	@property
 	def PrcgPos(self):
 		return self._PrcgPos

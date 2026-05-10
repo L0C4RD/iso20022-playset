@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._PINFormat3Code import PINFormat3Code
 from ._ContentInformationType40 import ContentInformationType40
+from ._Max35Text import Max35Text
 
 class OnLinePIN11(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdPINBlck", "_AddtlInpt", "_PINFrmt"]
-	@property
-	def NcrptdPINBlck(self):
-		return self._NcrptdPINBlck
-
-	@NcrptdPINBlck.setter
-	def NcrptdPINBlck(self, value):
-		self._NcrptdPINBlck = value if type(value) != base_types.auto else self.make_default("NcrptdPINBlck")
-
-	@NcrptdPINBlck.deleter
-	def NcrptdPINBlck(self):
-		del self._NcrptdPINBlck
-		self._NcrptdPINBlck = None
-
+	__slots__ = ["_PINFrmt", "_AddtlInpt", "_NcrptdPINBlck"]
 	@property
 	def AddtlInpt(self):
 		return self._AddtlInpt
@@ -31,6 +18,19 @@ class OnLinePIN11(base_types._BaseFieldType):
 	def AddtlInpt(self):
 		del self._AddtlInpt
 		self._AddtlInpt = None
+
+	@property
+	def NcrptdPINBlck(self):
+		return self._NcrptdPINBlck
+
+	@NcrptdPINBlck.setter
+	def NcrptdPINBlck(self, value):
+		self._NcrptdPINBlck = value if type(value) != base_types.auto else self.make_default("NcrptdPINBlck")
+
+	@NcrptdPINBlck.deleter
+	def NcrptdPINBlck(self):
+		del self._NcrptdPINBlck
+		self._NcrptdPINBlck = None
 
 	@property
 	def PINFrmt(self):
@@ -46,8 +46,8 @@ class OnLinePIN11(base_types._BaseFieldType):
 		self._PINFrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcrptdPINBlck', type=ContentInformationType40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInpt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdPINBlck', type=ContentInformationType40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PINFrmt', type=PINFormat3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

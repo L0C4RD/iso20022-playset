@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._SettledStatusReason2Code import SettledStatusReason2Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class PartiallySettled21Choice(base_types._BaseFieldType):
 

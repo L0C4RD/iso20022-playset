@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._PostalAddress1 import PostalAddress1
 from ._Max350Text import Max350Text
+from ._PostalAddress1 import PostalAddress1
+from ._Max140Text import Max140Text
 
 class PartyTextInformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_DclrtnDtls", "_RegnDtls", "_PtyCtctDtls", "_RegnAdr"]
+	__slots__ = ["_RegnAdr", "_DclrtnDtls", "_RegnDtls", "_PtyCtctDtls"]
 	@property
 	def DclrtnDtls(self):
 		return self._DclrtnDtls
@@ -18,19 +18,6 @@ class PartyTextInformation6(base_types._BaseFieldType):
 	def DclrtnDtls(self):
 		del self._DclrtnDtls
 		self._DclrtnDtls = None
-
-	@property
-	def RegnDtls(self):
-		return self._RegnDtls
-
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
-
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
 
 	@property
 	def PtyCtctDtls(self):
@@ -58,10 +45,23 @@ class PartyTextInformation6(base_types._BaseFieldType):
 		del self._RegnAdr
 		self._RegnAdr = None
 
+	@property
+	def RegnDtls(self):
+		return self._RegnDtls
+
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCtctDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

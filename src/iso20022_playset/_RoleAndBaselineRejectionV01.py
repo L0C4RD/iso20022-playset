@@ -1,11 +1,11 @@
 from . import base_types
 from ._Reason2 import Reason2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._MessageIdentification1 import MessageIdentification1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnId", "_RltdMsgRef", "_TxId", "_RjctnRsn"]
+	__slots__ = ["_RjctnRsn", "_RjctnId", "_TxId", "_RltdMsgRef"]
 	@property
 	def RjctnId(self):
 		return self._RjctnId
@@ -18,6 +18,19 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 	def RjctnId(self):
 		del self._RjctnId
 		self._RjctnId = None
+
+	@property
+	def RjctnRsn(self):
+		return self._RjctnRsn
+
+	@RjctnRsn.setter
+	def RjctnRsn(self, value):
+		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+
+	@RjctnRsn.deleter
+	def RjctnRsn(self):
+		del self._RjctnRsn
+		self._RjctnRsn = None
 
 	@property
 	def RltdMsgRef(self):
@@ -45,23 +58,10 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
-	@property
-	def RjctnRsn(self):
-		return self._RjctnRsn
-
-	@RjctnRsn.setter
-	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
-
-	@RjctnRsn.deleter
-	def RjctnRsn(self):
-		del self._RjctnRsn
-		self._RjctnRsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=0, max=1, mutex_group=None, array=False),
 	))
 

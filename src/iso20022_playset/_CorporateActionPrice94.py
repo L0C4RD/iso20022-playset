@@ -4,19 +4,19 @@ from ._PriceFormat62Choice import PriceFormat62Choice
 
 class CorporateActionPrice94(base_types._BaseFieldType):
 
-	__slots__ = ["_MinMltplCshToInst", "_MaxCshToInst", "_MinCshToInst", "_CshInLieuOfShrPric", "_OverSbcptDpstPric"]
+	__slots__ = ["_MinMltplCshToInst", "_MaxCshToInst", "_OverSbcptDpstPric", "_CshInLieuOfShrPric", "_MinCshToInst"]
 	@property
-	def MinMltplCshToInst(self):
-		return self._MinMltplCshToInst
+	def CshInLieuOfShrPric(self):
+		return self._CshInLieuOfShrPric
 
-	@MinMltplCshToInst.setter
-	def MinMltplCshToInst(self, value):
-		self._MinMltplCshToInst = value if type(value) != base_types.auto else self.make_default("MinMltplCshToInst")
+	@CshInLieuOfShrPric.setter
+	def CshInLieuOfShrPric(self, value):
+		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
 
-	@MinMltplCshToInst.deleter
-	def MinMltplCshToInst(self):
-		del self._MinMltplCshToInst
-		self._MinMltplCshToInst = None
+	@CshInLieuOfShrPric.deleter
+	def CshInLieuOfShrPric(self):
+		del self._CshInLieuOfShrPric
+		self._CshInLieuOfShrPric = None
 
 	@property
 	def MaxCshToInst(self):
@@ -45,17 +45,17 @@ class CorporateActionPrice94(base_types._BaseFieldType):
 		self._MinCshToInst = None
 
 	@property
-	def CshInLieuOfShrPric(self):
-		return self._CshInLieuOfShrPric
+	def MinMltplCshToInst(self):
+		return self._MinMltplCshToInst
 
-	@CshInLieuOfShrPric.setter
-	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+	@MinMltplCshToInst.setter
+	def MinMltplCshToInst(self, value):
+		self._MinMltplCshToInst = value if type(value) != base_types.auto else self.make_default("MinMltplCshToInst")
 
-	@CshInLieuOfShrPric.deleter
-	def CshInLieuOfShrPric(self):
-		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
+	@MinMltplCshToInst.deleter
+	def MinMltplCshToInst(self):
+		del self._MinMltplCshToInst
+		self._MinMltplCshToInst = None
 
 	@property
 	def OverSbcptDpstPric(self):
@@ -71,10 +71,10 @@ class CorporateActionPrice94(base_types._BaseFieldType):
 		self._OverSbcptDpstPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

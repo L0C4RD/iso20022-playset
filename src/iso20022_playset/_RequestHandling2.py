@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._ISODateTime import ISODateTime
+from ._Max140Text import Max140Text
 
 class RequestHandling2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_StsCd", "_StsDtTm"]
+	__slots__ = ["_StsDtTm", "_Desc", "_StsCd"]
 	@property
 	def Desc(self):
 		return self._Desc

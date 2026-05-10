@@ -1,10 +1,10 @@
 from . import base_types
-from ._CreditDefaultSwapIndex3 import CreditDefaultSwapIndex3
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._CreditDefaultSwapIndex3 import CreditDefaultSwapIndex3
 
 class CreditDefaultSwapDerivative5(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygCdtDfltSwpId", "_UndrlygCdtDfltSwpIndx"]
+	__slots__ = ["_UndrlygCdtDfltSwpIndx", "_UndrlygCdtDfltSwpId"]
 	@property
 	def UndrlygCdtDfltSwpId(self):
 		return self._UndrlygCdtDfltSwpId

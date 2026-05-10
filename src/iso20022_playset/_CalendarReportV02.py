@@ -5,7 +5,7 @@ from ._MessageHeader11 import MessageHeader11
 
 class CalendarReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_RptOrErr"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

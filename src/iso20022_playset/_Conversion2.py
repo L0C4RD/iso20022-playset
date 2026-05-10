@@ -1,24 +1,24 @@
 from . import base_types
+from ._FinancialInstrumentIdentification1 import FinancialInstrumentIdentification1
 from ._Unit13 import Unit13
 from ._DecimalNumber import DecimalNumber
-from ._FinancialInstrumentIdentification1 import FinancialInstrumentIdentification1
 from ._AdditionalInformation15 import AdditionalInformation15
 
 class Conversion2(base_types._BaseFieldType):
 
 	__slots__ = ["_UnitsDtls", "_SrcScty", "_AddtlInf", "_TtlUnitsNb"]
 	@property
-	def UnitsDtls(self):
-		return self._UnitsDtls
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@UnitsDtls.setter
-	def UnitsDtls(self, value):
-		self._UnitsDtls = value if type(value) != base_types.auto else self.make_default("UnitsDtls")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@UnitsDtls.deleter
-	def UnitsDtls(self):
-		del self._UnitsDtls
-		self._UnitsDtls = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def SrcScty(self):
@@ -34,19 +34,6 @@ class Conversion2(base_types._BaseFieldType):
 		self._SrcScty = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def TtlUnitsNb(self):
 		return self._TtlUnitsNb
 
@@ -59,10 +46,23 @@ class Conversion2(base_types._BaseFieldType):
 		del self._TtlUnitsNb
 		self._TtlUnitsNb = None
 
+	@property
+	def UnitsDtls(self):
+		return self._UnitsDtls
+
+	@UnitsDtls.setter
+	def UnitsDtls(self, value):
+		self._UnitsDtls = value if type(value) != base_types.auto else self.make_default("UnitsDtls")
+
+	@UnitsDtls.deleter
+	def UnitsDtls(self):
+		del self._UnitsDtls
+		self._UnitsDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitsDtls', type=Unit13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SrcScty', type=FinancialInstrumentIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SrcScty', type=FinancialInstrumentIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlUnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitsDtls', type=Unit13, min=0, max=None, mutex_group=None, array=True),
 	))
 

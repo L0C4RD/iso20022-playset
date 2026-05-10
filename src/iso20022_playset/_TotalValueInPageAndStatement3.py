@@ -3,7 +3,7 @@ from ._AmountAndDirection14 import AmountAndDirection14
 
 class TotalValueInPageAndStatement3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlBookValOfStmt", "_TtlHldgsValOfPg", "_TtlHldgsValOfStmt", "_TtlElgblCollVal"]
+	__slots__ = ["_TtlHldgsValOfPg", "_TtlBookValOfStmt", "_TtlElgblCollVal", "_TtlHldgsValOfStmt"]
 	@property
 	def TtlBookValOfStmt(self):
 		return self._TtlBookValOfStmt
@@ -16,6 +16,19 @@ class TotalValueInPageAndStatement3(base_types._BaseFieldType):
 	def TtlBookValOfStmt(self):
 		del self._TtlBookValOfStmt
 		self._TtlBookValOfStmt = None
+
+	@property
+	def TtlElgblCollVal(self):
+		return self._TtlElgblCollVal
+
+	@TtlElgblCollVal.setter
+	def TtlElgblCollVal(self, value):
+		self._TtlElgblCollVal = value if type(value) != base_types.auto else self.make_default("TtlElgblCollVal")
+
+	@TtlElgblCollVal.deleter
+	def TtlElgblCollVal(self):
+		del self._TtlElgblCollVal
+		self._TtlElgblCollVal = None
 
 	@property
 	def TtlHldgsValOfPg(self):
@@ -43,23 +56,10 @@ class TotalValueInPageAndStatement3(base_types._BaseFieldType):
 		del self._TtlHldgsValOfStmt
 		self._TtlHldgsValOfStmt = None
 
-	@property
-	def TtlElgblCollVal(self):
-		return self._TtlElgblCollVal
-
-	@TtlElgblCollVal.setter
-	def TtlElgblCollVal(self, value):
-		self._TtlElgblCollVal = value if type(value) != base_types.auto else self.make_default("TtlElgblCollVal")
-
-	@TtlElgblCollVal.deleter
-	def TtlElgblCollVal(self):
-		del self._TtlElgblCollVal
-		self._TtlElgblCollVal = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlBookValOfStmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlHldgsValOfPg', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlHldgsValOfStmt', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 	))
 

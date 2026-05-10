@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
 from ._CountryCode import CountryCode
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
 
 class TransportBySea6(base_types._BaseFieldType):
 
-	__slots__ = ["_SeaCrrierNm", "_CrrierAgtNm", "_PortOfLoadng", "_SeaCrrierCtry", "_CrrierAgtCtry", "_PortOfDschrge", "_VsslNm"]
+	__slots__ = ["_PortOfLoadng", "_CrrierAgtCtry", "_PortOfDschrge", "_CrrierAgtNm", "_SeaCrrierCtry", "_VsslNm", "_SeaCrrierNm"]
 	@property
-	def SeaCrrierNm(self):
-		return self._SeaCrrierNm
+	def CrrierAgtCtry(self):
+		return self._CrrierAgtCtry
 
-	@SeaCrrierNm.setter
-	def SeaCrrierNm(self, value):
-		self._SeaCrrierNm = value if type(value) != base_types.auto else self.make_default("SeaCrrierNm")
+	@CrrierAgtCtry.setter
+	def CrrierAgtCtry(self, value):
+		self._CrrierAgtCtry = value if type(value) != base_types.auto else self.make_default("CrrierAgtCtry")
 
-	@SeaCrrierNm.deleter
-	def SeaCrrierNm(self):
-		del self._SeaCrrierNm
-		self._SeaCrrierNm = None
+	@CrrierAgtCtry.deleter
+	def CrrierAgtCtry(self):
+		del self._CrrierAgtCtry
+		self._CrrierAgtCtry = None
 
 	@property
 	def CrrierAgtNm(self):
@@ -31,6 +31,19 @@ class TransportBySea6(base_types._BaseFieldType):
 	def CrrierAgtNm(self):
 		del self._CrrierAgtNm
 		self._CrrierAgtNm = None
+
+	@property
+	def PortOfDschrge(self):
+		return self._PortOfDschrge
+
+	@PortOfDschrge.setter
+	def PortOfDschrge(self, value):
+		self._PortOfDschrge = value if type(value) != base_types.auto else self.make_default("PortOfDschrge")
+
+	@PortOfDschrge.deleter
+	def PortOfDschrge(self):
+		del self._PortOfDschrge
+		self._PortOfDschrge = None
 
 	@property
 	def PortOfLoadng(self):
@@ -59,30 +72,17 @@ class TransportBySea6(base_types._BaseFieldType):
 		self._SeaCrrierCtry = None
 
 	@property
-	def CrrierAgtCtry(self):
-		return self._CrrierAgtCtry
+	def SeaCrrierNm(self):
+		return self._SeaCrrierNm
 
-	@CrrierAgtCtry.setter
-	def CrrierAgtCtry(self, value):
-		self._CrrierAgtCtry = value if type(value) != base_types.auto else self.make_default("CrrierAgtCtry")
+	@SeaCrrierNm.setter
+	def SeaCrrierNm(self, value):
+		self._SeaCrrierNm = value if type(value) != base_types.auto else self.make_default("SeaCrrierNm")
 
-	@CrrierAgtCtry.deleter
-	def CrrierAgtCtry(self):
-		del self._CrrierAgtCtry
-		self._CrrierAgtCtry = None
-
-	@property
-	def PortOfDschrge(self):
-		return self._PortOfDschrge
-
-	@PortOfDschrge.setter
-	def PortOfDschrge(self, value):
-		self._PortOfDschrge = value if type(value) != base_types.auto else self.make_default("PortOfDschrge")
-
-	@PortOfDschrge.deleter
-	def PortOfDschrge(self):
-		del self._PortOfDschrge
-		self._PortOfDschrge = None
+	@SeaCrrierNm.deleter
+	def SeaCrrierNm(self):
+		del self._SeaCrrierNm
+		self._SeaCrrierNm = None
 
 	@property
 	def VsslNm(self):
@@ -98,12 +98,12 @@ class TransportBySea6(base_types._BaseFieldType):
 		self._VsslNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SeaCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PortOfLoadng', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SeaCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SeaCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VsslNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -7,19 +7,6 @@ class Intermediary47(base_types._BaseFieldType):
 
 	__slots__ = ["_LglNttyIdr", "_Acct", "_Id"]
 	@property
-	def LglNttyIdr(self):
-		return self._LglNttyIdr
-
-	@LglNttyIdr.setter
-	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
-
-	@LglNttyIdr.deleter
-	def LglNttyIdr(self):
-		del self._LglNttyIdr
-		self._LglNttyIdr = None
-
-	@property
 	def Acct(self):
 		return self._Acct
 
@@ -45,9 +32,22 @@ class Intermediary47(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def LglNttyIdr(self):
+		return self._LglNttyIdr
+
+	@LglNttyIdr.setter
+	def LglNttyIdr(self, value):
+		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+
+	@LglNttyIdr.deleter
+	def LglNttyIdr(self):
+		del self._LglNttyIdr
+		self._LglNttyIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account32, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification125Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

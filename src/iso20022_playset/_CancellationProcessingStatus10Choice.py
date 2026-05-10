@@ -1,23 +1,23 @@
 from . import base_types
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._ProprietaryReason4 import ProprietaryReason4
 from ._CancellationReason39Choice import CancellationReason39Choice
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_CxlPdg", "_CxlCmpltd", "_CxlReqd"]
+	__slots__ = ["_PrtrySts", "_CxlPdg", "_CxlReqd", "_CxlCmpltd"]
 	@property
-	def PrtrySts(self):
-		return self._PrtrySts
+	def CxlCmpltd(self):
+		return self._CxlCmpltd
 
-	@PrtrySts.setter
-	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+	@CxlCmpltd.setter
+	def CxlCmpltd(self, value):
+		self._CxlCmpltd = value if type(value) != base_types.auto else self.make_default("CxlCmpltd")
 
-	@PrtrySts.deleter
-	def PrtrySts(self):
-		del self._PrtrySts
-		self._PrtrySts = None
+	@CxlCmpltd.deleter
+	def CxlCmpltd(self):
+		del self._CxlCmpltd
+		self._CxlCmpltd = None
 
 	@property
 	def CxlPdg(self):
@@ -33,19 +33,6 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 		self._CxlPdg = None
 
 	@property
-	def CxlCmpltd(self):
-		return self._CxlCmpltd
-
-	@CxlCmpltd.setter
-	def CxlCmpltd(self, value):
-		self._CxlCmpltd = value if type(value) != base_types.auto else self.make_default("CxlCmpltd")
-
-	@CxlCmpltd.deleter
-	def CxlCmpltd(self):
-		del self._CxlCmpltd
-		self._CxlCmpltd = None
-
-	@property
 	def CxlReqd(self):
 		return self._CxlReqd
 
@@ -58,10 +45,23 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 		del self._CxlReqd
 		self._CxlReqd = None
 
+	@property
+	def PrtrySts(self):
+		return self._PrtrySts
+
+	@PrtrySts.setter
+	def PrtrySts(self, value):
+		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+
+	@PrtrySts.deleter
+	def PrtrySts(self):
+		del self._PrtrySts
+		self._PrtrySts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CxlPdg', type=CancellationReason39Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlCmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlPdg', type=CancellationReason39Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
 

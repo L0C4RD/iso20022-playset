@@ -1,13 +1,26 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
-from ._ExposureType23Choice import ExposureType23Choice
-from ._CollateralStatus1Code import CollateralStatus1Code
 from ._PercentageRate import PercentageRate
+from ._ExposureType23Choice import ExposureType23Choice
+from ._GenericIdentification30 import GenericIdentification30
 from ._CollateralAmount16 import CollateralAmount16
+from ._CollateralStatus1Code import CollateralStatus1Code
 
 class ExposureTypeAggregation3(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnRate", "_XpsrTp", "_GblXpsrTpSts", "_ValtnAmts", "_SttlmPrc"]
+	__slots__ = ["_MrgnRate", "_GblXpsrTpSts", "_ValtnAmts", "_XpsrTp", "_SttlmPrc"]
+	@property
+	def GblXpsrTpSts(self):
+		return self._GblXpsrTpSts
+
+	@GblXpsrTpSts.setter
+	def GblXpsrTpSts(self, value):
+		self._GblXpsrTpSts = value if type(value) != base_types.auto else self.make_default("GblXpsrTpSts")
+
+	@GblXpsrTpSts.deleter
+	def GblXpsrTpSts(self):
+		del self._GblXpsrTpSts
+		self._GblXpsrTpSts = None
+
 	@property
 	def MrgnRate(self):
 		return self._MrgnRate
@@ -22,30 +35,17 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 		self._MrgnRate = None
 
 	@property
-	def XpsrTp(self):
-		return self._XpsrTp
+	def SttlmPrc(self):
+		return self._SttlmPrc
 
-	@XpsrTp.setter
-	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != base_types.auto else self.make_default("XpsrTp")
+	@SttlmPrc.setter
+	def SttlmPrc(self, value):
+		self._SttlmPrc = value if type(value) != base_types.auto else self.make_default("SttlmPrc")
 
-	@XpsrTp.deleter
-	def XpsrTp(self):
-		del self._XpsrTp
-		self._XpsrTp = None
-
-	@property
-	def GblXpsrTpSts(self):
-		return self._GblXpsrTpSts
-
-	@GblXpsrTpSts.setter
-	def GblXpsrTpSts(self, value):
-		self._GblXpsrTpSts = value if type(value) != base_types.auto else self.make_default("GblXpsrTpSts")
-
-	@GblXpsrTpSts.deleter
-	def GblXpsrTpSts(self):
-		del self._GblXpsrTpSts
-		self._GblXpsrTpSts = None
+	@SttlmPrc.deleter
+	def SttlmPrc(self):
+		del self._SttlmPrc
+		self._SttlmPrc = None
 
 	@property
 	def ValtnAmts(self):
@@ -61,23 +61,23 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 		self._ValtnAmts = None
 
 	@property
-	def SttlmPrc(self):
-		return self._SttlmPrc
+	def XpsrTp(self):
+		return self._XpsrTp
 
-	@SttlmPrc.setter
-	def SttlmPrc(self, value):
-		self._SttlmPrc = value if type(value) != base_types.auto else self.make_default("SttlmPrc")
+	@XpsrTp.setter
+	def XpsrTp(self, value):
+		self._XpsrTp = value if type(value) != base_types.auto else self.make_default("XpsrTp")
 
-	@SttlmPrc.deleter
-	def SttlmPrc(self):
-		del self._SttlmPrc
-		self._SttlmPrc = None
+	@XpsrTp.deleter
+	def XpsrTp(self):
+		del self._XpsrTp
+		self._XpsrTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GblXpsrTpSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

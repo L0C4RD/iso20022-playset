@@ -1,25 +1,25 @@
 from . import base_types
-from ._DatePeriod2 import DatePeriod2
 from ._SecuritiesSettlementSystemIdentification2 import SecuritiesSettlementSystemIdentification2
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._TransactionOperationType4Code import TransactionOperationType4Code
+from ._DatePeriod2 import DatePeriod2
 from ._ISODateTime import ISODateTime
+from ._TransactionOperationType4Code import TransactionOperationType4Code
 
 class SettlementFailsReportHeader2(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_CreDtTm", "_Ccy", "_RptSts", "_SctiesSttlmSys"]
+	__slots__ = ["_Ccy", "_RptSts", "_RptgPrd", "_SctiesSttlmSys", "_CreDtTm"]
 	@property
-	def RptgPrd(self):
-		return self._RptgPrd
+	def Ccy(self):
+		return self._Ccy
 
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def CreDtTm(self):
@@ -35,19 +35,6 @@ class SettlementFailsReportHeader2(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def RptSts(self):
 		return self._RptSts
 
@@ -59,6 +46,19 @@ class SettlementFailsReportHeader2(base_types._BaseFieldType):
 	def RptSts(self):
 		del self._RptSts
 		self._RptSts = None
+
+	@property
+	def RptgPrd(self):
+		return self._RptgPrd
+
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def SctiesSttlmSys(self):
@@ -74,10 +74,10 @@ class SettlementFailsReportHeader2(base_types._BaseFieldType):
 		self._SctiesSttlmSys = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgPrd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSts', type=TransactionOperationType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSttlmSys', type=SecuritiesSettlementSystemIdentification2, min=1, max=1, mutex_group=None, array=False),
 	))
 

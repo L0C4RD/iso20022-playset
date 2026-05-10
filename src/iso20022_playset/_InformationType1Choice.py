@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._InformationType1Code import InformationType1Code
+from ._Max140Text import Max140Text
 
 class InformationType1Choice(base_types._BaseFieldType):
 

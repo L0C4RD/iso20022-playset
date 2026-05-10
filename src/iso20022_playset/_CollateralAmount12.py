@@ -1,24 +1,37 @@
 from . import base_types
+from ._Max3NumericText import Max3NumericText
 from ._AmountAndDirection49 import AmountAndDirection49
 from ._CalculationMethod1Code import CalculationMethod1Code
-from ._Max3NumericText import Max3NumericText
 from ._Frequency38Choice import Frequency38Choice
 
 class CollateralAmount12(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_IntrstPmtDely", "_ValSght", "_Acrd", "_Termntn", "_PmtFrqcy", "_CmpndSmplAcrlClctn"]
+	__slots__ = ["_PmtFrqcy", "_IntrstPmtDely", "_Tx", "_Termntn", "_Acrd", "_ValSght", "_CmpndSmplAcrlClctn"]
 	@property
-	def Tx(self):
-		return self._Tx
+	def Acrd(self):
+		return self._Acrd
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+	@Acrd.setter
+	def Acrd(self, value):
+		self._Acrd = value if type(value) != base_types.auto else self.make_default("Acrd")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@Acrd.deleter
+	def Acrd(self):
+		del self._Acrd
+		self._Acrd = None
+
+	@property
+	def CmpndSmplAcrlClctn(self):
+		return self._CmpndSmplAcrlClctn
+
+	@CmpndSmplAcrlClctn.setter
+	def CmpndSmplAcrlClctn(self, value):
+		self._CmpndSmplAcrlClctn = value if type(value) != base_types.auto else self.make_default("CmpndSmplAcrlClctn")
+
+	@CmpndSmplAcrlClctn.deleter
+	def CmpndSmplAcrlClctn(self):
+		del self._CmpndSmplAcrlClctn
+		self._CmpndSmplAcrlClctn = None
 
 	@property
 	def IntrstPmtDely(self):
@@ -34,30 +47,17 @@ class CollateralAmount12(base_types._BaseFieldType):
 		self._IntrstPmtDely = None
 
 	@property
-	def ValSght(self):
-		return self._ValSght
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
 
-	@ValSght.setter
-	def ValSght(self, value):
-		self._ValSght = value if type(value) != base_types.auto else self.make_default("ValSght")
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
 
-	@ValSght.deleter
-	def ValSght(self):
-		del self._ValSght
-		self._ValSght = None
-
-	@property
-	def Acrd(self):
-		return self._Acrd
-
-	@Acrd.setter
-	def Acrd(self, value):
-		self._Acrd = value if type(value) != base_types.auto else self.make_default("Acrd")
-
-	@Acrd.deleter
-	def Acrd(self):
-		del self._Acrd
-		self._Acrd = None
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
 
 	@property
 	def Termntn(self):
@@ -73,38 +73,38 @@ class CollateralAmount12(base_types._BaseFieldType):
 		self._Termntn = None
 
 	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
+	def Tx(self):
+		return self._Tx
 
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
 
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	@property
-	def CmpndSmplAcrlClctn(self):
-		return self._CmpndSmplAcrlClctn
+	def ValSght(self):
+		return self._ValSght
 
-	@CmpndSmplAcrlClctn.setter
-	def CmpndSmplAcrlClctn(self, value):
-		self._CmpndSmplAcrlClctn = value if type(value) != base_types.auto else self.make_default("CmpndSmplAcrlClctn")
+	@ValSght.setter
+	def ValSght(self, value):
+		self._ValSght = value if type(value) != base_types.auto else self.make_default("ValSght")
 
-	@CmpndSmplAcrlClctn.deleter
-	def CmpndSmplAcrlClctn(self):
-		del self._CmpndSmplAcrlClctn
-		self._CmpndSmplAcrlClctn = None
+	@ValSght.deleter
+	def ValSght(self):
+		del self._ValSght
+		self._ValSght = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstPmtDely', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acrd', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Termntn', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFrqcy', type=Frequency38Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpndSmplAcrlClctn', type=CalculationMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstPmtDely', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=Frequency38Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Termntn', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 	))
 

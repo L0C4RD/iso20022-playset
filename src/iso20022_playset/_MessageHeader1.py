@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class MessageHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CreDtTm"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_CreDtTm", "_MsgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -31,8 +18,21 @@ class MessageHeader1(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

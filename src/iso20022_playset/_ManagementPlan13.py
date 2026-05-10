@@ -6,6 +6,19 @@ class ManagementPlan13(base_types._BaseFieldType):
 
 	__slots__ = ["_POIId", "_TermnlMgrId", "_DataSet"]
 	@property
+	def DataSet(self):
+		return self._DataSet
+
+	@DataSet.setter
+	def DataSet(self, value):
+		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
+
+	@DataSet.deleter
+	def DataSet(self):
+		del self._DataSet
+		self._DataSet = None
+
+	@property
 	def POIId(self):
 		return self._POIId
 
@@ -31,22 +44,9 @@ class ManagementPlan13(base_types._BaseFieldType):
 		del self._TermnlMgrId
 		self._TermnlMgrId = None
 
-	@property
-	def DataSet(self):
-		return self._DataSet
-
-	@DataSet.setter
-	def DataSet(self, value):
-		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
-
-	@DataSet.deleter
-	def DataSet(self):
-		del self._DataSet
-		self._DataSet = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DataSet', type=TerminalManagementDataSet34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermnlMgrId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSet', type=TerminalManagementDataSet34, min=1, max=1, mutex_group=None, array=False),
 	))
 

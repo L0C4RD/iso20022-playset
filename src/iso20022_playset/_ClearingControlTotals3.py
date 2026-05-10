@@ -1,12 +1,12 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._Number import Number
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._CreditDebit3Code import CreditDebit3Code
 
 class ClearingControlTotals3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Cnt", "_Ccy", "_CdtDbt"]
+	__slots__ = ["_Amt", "_Cnt", "_CdtDbt", "_Ccy"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -19,19 +19,6 @@ class ClearingControlTotals3(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
-
-	@property
-	def Cnt(self):
-		return self._Cnt
-
-	@Cnt.setter
-	def Cnt(self, value):
-		self._Cnt = value if type(value) != base_types.auto else self.make_default("Cnt")
-
-	@Cnt.deleter
-	def Cnt(self):
-		del self._Cnt
-		self._Cnt = None
 
 	@property
 	def Ccy(self):
@@ -59,10 +46,23 @@ class ClearingControlTotals3(base_types._BaseFieldType):
 		del self._CdtDbt
 		self._CdtDbt = None
 
+	@property
+	def Cnt(self):
+		return self._Cnt
+
+	@Cnt.setter
+	def Cnt(self, value):
+		self._Cnt = value if type(value) != base_types.auto else self.make_default("Cnt")
+
+	@Cnt.deleter
+	def Cnt(self):
+		del self._Cnt
+		self._Cnt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

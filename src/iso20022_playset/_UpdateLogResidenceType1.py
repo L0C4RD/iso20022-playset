@@ -3,7 +3,7 @@ from ._ResidenceType1Code import ResidenceType1Code
 
 class UpdateLogResidenceType1(base_types._BaseFieldType):
 
-	__slots__ = ["_New", "_Od"]
+	__slots__ = ["_Od", "_New"]
 	@property
 	def New(self):
 		return self._New

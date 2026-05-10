@@ -1,23 +1,10 @@
 from . import base_types
-from ._Modification1Code import Modification1Code
 from ._CashAccountType2Choice import CashAccountType2Choice
+from ._Modification1Code import Modification1Code
 
 class TypeModification1(base_types._BaseFieldType):
 
 	__slots__ = ["_Tp", "_ModCd"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
 	@property
 	def ModCd(self):
 		return self._ModCd
@@ -31,8 +18,21 @@ class TypeModification1(base_types._BaseFieldType):
 		del self._ModCd
 		self._ModCd = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

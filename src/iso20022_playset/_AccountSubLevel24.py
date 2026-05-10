@@ -4,19 +4,19 @@ from ._AccountSubLevel25 import AccountSubLevel25
 
 class AccountSubLevel24(base_types._BaseFieldType):
 
-	__slots__ = ["_NonDscldShrhldgQty", "_Dsclsr", "_BlwThrshldShrhldgQty"]
+	__slots__ = ["_NonDscldShrhldgQty", "_BlwThrshldShrhldgQty", "_Dsclsr"]
 	@property
-	def NonDscldShrhldgQty(self):
-		return self._NonDscldShrhldgQty
+	def BlwThrshldShrhldgQty(self):
+		return self._BlwThrshldShrhldgQty
 
-	@NonDscldShrhldgQty.setter
-	def NonDscldShrhldgQty(self, value):
-		self._NonDscldShrhldgQty = value if type(value) != base_types.auto else self.make_default("NonDscldShrhldgQty")
+	@BlwThrshldShrhldgQty.setter
+	def BlwThrshldShrhldgQty(self, value):
+		self._BlwThrshldShrhldgQty = value if type(value) != base_types.auto else self.make_default("BlwThrshldShrhldgQty")
 
-	@NonDscldShrhldgQty.deleter
-	def NonDscldShrhldgQty(self):
-		del self._NonDscldShrhldgQty
-		self._NonDscldShrhldgQty = None
+	@BlwThrshldShrhldgQty.deleter
+	def BlwThrshldShrhldgQty(self):
+		del self._BlwThrshldShrhldgQty
+		self._BlwThrshldShrhldgQty = None
 
 	@property
 	def Dsclsr(self):
@@ -32,21 +32,21 @@ class AccountSubLevel24(base_types._BaseFieldType):
 		self._Dsclsr = None
 
 	@property
-	def BlwThrshldShrhldgQty(self):
-		return self._BlwThrshldShrhldgQty
+	def NonDscldShrhldgQty(self):
+		return self._NonDscldShrhldgQty
 
-	@BlwThrshldShrhldgQty.setter
-	def BlwThrshldShrhldgQty(self, value):
-		self._BlwThrshldShrhldgQty = value if type(value) != base_types.auto else self.make_default("BlwThrshldShrhldgQty")
+	@NonDscldShrhldgQty.setter
+	def NonDscldShrhldgQty(self, value):
+		self._NonDscldShrhldgQty = value if type(value) != base_types.auto else self.make_default("NonDscldShrhldgQty")
 
-	@BlwThrshldShrhldgQty.deleter
-	def BlwThrshldShrhldgQty(self):
-		del self._BlwThrshldShrhldgQty
-		self._BlwThrshldShrhldgQty = None
+	@NonDscldShrhldgQty.deleter
+	def NonDscldShrhldgQty(self):
+		del self._NonDscldShrhldgQty
+		self._NonDscldShrhldgQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonDscldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dsclsr', type=AccountSubLevel25, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlwThrshldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsclsr', type=AccountSubLevel25, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NonDscldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

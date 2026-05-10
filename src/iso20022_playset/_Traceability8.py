@@ -1,12 +1,38 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._GenericIdentification177 import GenericIdentification177
-from ._Max6Text import Max6Text
 from ._ISODateTime import ISODateTime
+from ._GenericIdentification177 import GenericIdentification177
+from ._Max35Text import Max35Text
+from ._Max6Text import Max6Text
 
 class Traceability8(base_types._BaseFieldType):
 
-	__slots__ = ["_RlayId", "_TracDtTmIn", "_PrtcolNm", "_TracDtTmOut", "_PrtcolVrsn"]
+	__slots__ = ["_TracDtTmOut", "_PrtcolVrsn", "_TracDtTmIn", "_RlayId", "_PrtcolNm"]
+	@property
+	def PrtcolNm(self):
+		return self._PrtcolNm
+
+	@PrtcolNm.setter
+	def PrtcolNm(self, value):
+		self._PrtcolNm = value if type(value) != base_types.auto else self.make_default("PrtcolNm")
+
+	@PrtcolNm.deleter
+	def PrtcolNm(self):
+		del self._PrtcolNm
+		self._PrtcolNm = None
+
+	@property
+	def PrtcolVrsn(self):
+		return self._PrtcolVrsn
+
+	@PrtcolVrsn.setter
+	def PrtcolVrsn(self, value):
+		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
+
+	@PrtcolVrsn.deleter
+	def PrtcolVrsn(self):
+		del self._PrtcolVrsn
+		self._PrtcolVrsn = None
+
 	@property
 	def RlayId(self):
 		return self._RlayId
@@ -34,19 +60,6 @@ class Traceability8(base_types._BaseFieldType):
 		self._TracDtTmIn = None
 
 	@property
-	def PrtcolNm(self):
-		return self._PrtcolNm
-
-	@PrtcolNm.setter
-	def PrtcolNm(self, value):
-		self._PrtcolNm = value if type(value) != base_types.auto else self.make_default("PrtcolNm")
-
-	@PrtcolNm.deleter
-	def PrtcolNm(self):
-		del self._PrtcolNm
-		self._PrtcolNm = None
-
-	@property
 	def TracDtTmOut(self):
 		return self._TracDtTmOut
 
@@ -59,24 +72,11 @@ class Traceability8(base_types._BaseFieldType):
 		del self._TracDtTmOut
 		self._TracDtTmOut = None
 
-	@property
-	def PrtcolVrsn(self):
-		return self._PrtcolVrsn
-
-	@PrtcolVrsn.setter
-	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
-
-	@PrtcolVrsn.deleter
-	def PrtcolVrsn(self):
-		del self._PrtcolVrsn
-		self._PrtcolVrsn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrtcolNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RlayId', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcolNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,26 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max350Text import Max350Text
 from ._ISODateTime import ISODateTime
 
 class ThirdPartyRights2(base_types._BaseFieldType):
 
-	__slots__ = ["_LglNttyIdr", "_Desc", "_DtTm", "_Amt", "_Hldr", "_Tp"]
+	__slots__ = ["_Desc", "_Hldr", "_LglNttyIdr", "_Amt", "_Tp", "_DtTm"]
 	@property
-	def LglNttyIdr(self):
-		return self._LglNttyIdr
+	def Amt(self):
+		return self._Amt
 
-	@LglNttyIdr.setter
-	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@LglNttyIdr.deleter
-	def LglNttyIdr(self):
-		del self._LglNttyIdr
-		self._LglNttyIdr = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Desc(self):
@@ -49,19 +49,6 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 		self._DtTm = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def Hldr(self):
 		return self._Hldr
 
@@ -73,6 +60,19 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 	def Hldr(self):
 		del self._Hldr
 		self._Hldr = None
+
+	@property
+	def LglNttyIdr(self):
+		return self._LglNttyIdr
+
+	@LglNttyIdr.setter
+	def LglNttyIdr(self, value):
+		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+
+	@LglNttyIdr.deleter
+	def LglNttyIdr(self):
+		del self._LglNttyIdr
+		self._LglNttyIdr = None
 
 	@property
 	def Tp(self):
@@ -88,11 +88,11 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hldr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

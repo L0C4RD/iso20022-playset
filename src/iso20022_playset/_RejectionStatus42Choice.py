@@ -1,10 +1,10 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._RejectionReason63 import RejectionReason63
+from ._NoReasonCode import NoReasonCode
 
 class RejectionStatus42Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
+	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
 	@property
 	def NoSpcfdRsn(self):
 		return self._NoSpcfdRsn

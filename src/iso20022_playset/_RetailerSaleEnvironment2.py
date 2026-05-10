@@ -1,25 +1,25 @@
 from . import base_types
-from ._SaleCapabilities1Code import SaleCapabilities1Code
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._LoyaltyHandling1Code import LoyaltyHandling1Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._SaleCapabilities1Code import SaleCapabilities1Code
 
 class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxCshBckAmt", "_DbtPrefrdFlg", "_SaleCpblties", "_Ccy", "_LltyHdlg", "_MinSpltAmt", "_MinAmtToDlvr"]
+	__slots__ = ["_MinSpltAmt", "_LltyHdlg", "_MinAmtToDlvr", "_SaleCpblties", "_MaxCshBckAmt", "_DbtPrefrdFlg", "_Ccy"]
 	@property
-	def MaxCshBckAmt(self):
-		return self._MaxCshBckAmt
+	def Ccy(self):
+		return self._Ccy
 
-	@MaxCshBckAmt.setter
-	def MaxCshBckAmt(self, value):
-		self._MaxCshBckAmt = value if type(value) != base_types.auto else self.make_default("MaxCshBckAmt")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@MaxCshBckAmt.deleter
-	def MaxCshBckAmt(self):
-		del self._MaxCshBckAmt
-		self._MaxCshBckAmt = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def DbtPrefrdFlg(self):
@@ -35,32 +35,6 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 		self._DbtPrefrdFlg = None
 
 	@property
-	def SaleCpblties(self):
-		return self._SaleCpblties
-
-	@SaleCpblties.setter
-	def SaleCpblties(self, value):
-		self._SaleCpblties = value if type(value) != base_types.auto else self.make_default("SaleCpblties")
-
-	@SaleCpblties.deleter
-	def SaleCpblties(self):
-		del self._SaleCpblties
-		self._SaleCpblties = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def LltyHdlg(self):
 		return self._LltyHdlg
 
@@ -72,6 +46,32 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 	def LltyHdlg(self):
 		del self._LltyHdlg
 		self._LltyHdlg = None
+
+	@property
+	def MaxCshBckAmt(self):
+		return self._MaxCshBckAmt
+
+	@MaxCshBckAmt.setter
+	def MaxCshBckAmt(self, value):
+		self._MaxCshBckAmt = value if type(value) != base_types.auto else self.make_default("MaxCshBckAmt")
+
+	@MaxCshBckAmt.deleter
+	def MaxCshBckAmt(self):
+		del self._MaxCshBckAmt
+		self._MaxCshBckAmt = None
+
+	@property
+	def MinAmtToDlvr(self):
+		return self._MinAmtToDlvr
+
+	@MinAmtToDlvr.setter
+	def MinAmtToDlvr(self, value):
+		self._MinAmtToDlvr = value if type(value) != base_types.auto else self.make_default("MinAmtToDlvr")
+
+	@MinAmtToDlvr.deleter
+	def MinAmtToDlvr(self):
+		del self._MinAmtToDlvr
+		self._MinAmtToDlvr = None
 
 	@property
 	def MinSpltAmt(self):
@@ -87,25 +87,25 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 		self._MinSpltAmt = None
 
 	@property
-	def MinAmtToDlvr(self):
-		return self._MinAmtToDlvr
+	def SaleCpblties(self):
+		return self._SaleCpblties
 
-	@MinAmtToDlvr.setter
-	def MinAmtToDlvr(self, value):
-		self._MinAmtToDlvr = value if type(value) != base_types.auto else self.make_default("MinAmtToDlvr")
+	@SaleCpblties.setter
+	def SaleCpblties(self, value):
+		self._SaleCpblties = value if type(value) != base_types.auto else self.make_default("SaleCpblties")
 
-	@MinAmtToDlvr.deleter
-	def MinAmtToDlvr(self):
-		del self._MinAmtToDlvr
-		self._MinAmtToDlvr = None
+	@SaleCpblties.deleter
+	def SaleCpblties(self):
+		del self._SaleCpblties
+		self._SaleCpblties = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxCshBckAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtPrefrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleCpblties', type=SaleCapabilities1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtPrefrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyHdlg', type=LoyaltyHandling1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinSpltAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxCshBckAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinAmtToDlvr', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinSpltAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleCpblties', type=SaleCapabilities1Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

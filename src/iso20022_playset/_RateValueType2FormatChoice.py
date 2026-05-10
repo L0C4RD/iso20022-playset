@@ -4,7 +4,7 @@ from ._RateValueType2Code import RateValueType2Code
 
 class RateValueType2FormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

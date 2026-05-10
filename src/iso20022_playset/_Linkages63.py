@@ -1,12 +1,12 @@
 from . import base_types
 from ._PairedOrTurnedQuantity5Choice import PairedOrTurnedQuantity5Choice
-from ._References47Choice import References47Choice
 from ._DocumentNumber5Choice import DocumentNumber5Choice
 from ._ProcessingPosition7Choice import ProcessingPosition7Choice
+from ._References47Choice import References47Choice
 
 class Linkages63(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdQty", "_MsgNb", "_Ref", "_PrcgPos"]
+	__slots__ = ["_LkdQty", "_Ref", "_MsgNb", "_PrcgPos"]
 	@property
 	def LkdQty(self):
 		return self._LkdQty
@@ -34,19 +34,6 @@ class Linkages63(base_types._BaseFieldType):
 		self._MsgNb = None
 
 	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
 	def PrcgPos(self):
 		return self._PrcgPos
 
@@ -59,10 +46,23 @@ class Linkages63(base_types._BaseFieldType):
 		del self._PrcgPos
 		self._PrcgPos = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LkdQty', type=PairedOrTurnedQuantity5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=References47Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References47Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

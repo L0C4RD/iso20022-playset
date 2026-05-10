@@ -1,10 +1,10 @@
 from . import base_types
-from ._ActivityReportItems3 import ActivityReportItems3
 from ._MessageIdentification1 import MessageIdentification1
+from ._ActivityReportItems3 import ActivityReportItems3
 
 class ActivityReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdMsgRef", "_Rpt", "_RptId"]
+	__slots__ = ["_RltdMsgRef", "_RptId", "_Rpt"]
 	@property
 	def RltdMsgRef(self):
 		return self._RltdMsgRef

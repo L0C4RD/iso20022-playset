@@ -1,23 +1,23 @@
 from . import base_types
+from ._PhoneNumber import PhoneNumber
 from ._PostalAddress22 import PostalAddress22
 from ._Max256Text import Max256Text
-from ._PhoneNumber import PhoneNumber
 
 class CommunicationAddress9(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_CstmrSvc", "_URLAdr", "_Phne", "_Email", "_AddtlCtctInf"]
+	__slots__ = ["_CstmrSvc", "_Phne", "_URLAdr", "_Email", "_PstlAdr", "_AddtlCtctInf"]
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def AddtlCtctInf(self):
+		return self._AddtlCtctInf
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+	@AddtlCtctInf.setter
+	def AddtlCtctInf(self, value):
+		self._AddtlCtctInf = value if type(value) != base_types.auto else self.make_default("AddtlCtctInf")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@AddtlCtctInf.deleter
+	def AddtlCtctInf(self):
+		del self._AddtlCtctInf
+		self._AddtlCtctInf = None
 
 	@property
 	def CstmrSvc(self):
@@ -33,17 +33,17 @@ class CommunicationAddress9(base_types._BaseFieldType):
 		self._CstmrSvc = None
 
 	@property
-	def URLAdr(self):
-		return self._URLAdr
+	def Email(self):
+		return self._Email
 
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
 
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
 
 	@property
 	def Phne(self):
@@ -59,37 +59,37 @@ class CommunicationAddress9(base_types._BaseFieldType):
 		self._Phne = None
 
 	@property
-	def Email(self):
-		return self._Email
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
 
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
-	def AddtlCtctInf(self):
-		return self._AddtlCtctInf
+	def URLAdr(self):
+		return self._URLAdr
 
-	@AddtlCtctInf.setter
-	def AddtlCtctInf(self, value):
-		self._AddtlCtctInf = value if type(value) != base_types.auto else self.make_default("AddtlCtctInf")
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
 
-	@AddtlCtctInf.deleter
-	def AddtlCtctInf(self):
-		del self._AddtlCtctInf
-		self._AddtlCtctInf = None
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrSvc', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCtctInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrSvc', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

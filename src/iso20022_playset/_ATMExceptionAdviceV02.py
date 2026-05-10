@@ -1,12 +1,12 @@
 from . import base_types
+from ._ATMExceptionAdvice2 import ATMExceptionAdvice2
 from ._ContentInformationType10 import ContentInformationType10
 from ._ContentInformationType15 import ContentInformationType15
-from ._ATMExceptionAdvice2 import ATMExceptionAdvice2
 from ._Header32 import Header32
 
 class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMXcptnAdvc", "_PrtctdATMXcptnAdvc", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_PrtctdATMXcptnAdvc", "_SctyTrlr", "_Hdr", "_ATMXcptnAdvc"]
 	@property
 	def ATMXcptnAdvc(self):
 		return self._ATMXcptnAdvc
@@ -21,19 +21,6 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 		self._ATMXcptnAdvc = None
 
 	@property
-	def PrtctdATMXcptnAdvc(self):
-		return self._PrtctdATMXcptnAdvc
-
-	@PrtctdATMXcptnAdvc.setter
-	def PrtctdATMXcptnAdvc(self, value):
-		self._PrtctdATMXcptnAdvc = value if type(value) != base_types.auto else self.make_default("PrtctdATMXcptnAdvc")
-
-	@PrtctdATMXcptnAdvc.deleter
-	def PrtctdATMXcptnAdvc(self):
-		del self._PrtctdATMXcptnAdvc
-		self._PrtctdATMXcptnAdvc = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,6 +32,19 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
+
+	@property
+	def PrtctdATMXcptnAdvc(self):
+		return self._PrtctdATMXcptnAdvc
+
+	@PrtctdATMXcptnAdvc.setter
+	def PrtctdATMXcptnAdvc(self, value):
+		self._PrtctdATMXcptnAdvc = value if type(value) != base_types.auto else self.make_default("PrtctdATMXcptnAdvc")
+
+	@PrtctdATMXcptnAdvc.deleter
+	def PrtctdATMXcptnAdvc(self):
+		del self._PrtctdATMXcptnAdvc
+		self._PrtctdATMXcptnAdvc = None
 
 	@property
 	def SctyTrlr(self):
@@ -61,8 +61,8 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMXcptnAdvc', type=ATMExceptionAdvice2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMXcptnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMXcptnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

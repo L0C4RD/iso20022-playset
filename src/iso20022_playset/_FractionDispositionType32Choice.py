@@ -4,7 +4,7 @@ from ._FractionDispositionType9Code import FractionDispositionType9Code
 
 class FractionDispositionType32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

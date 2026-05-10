@@ -4,7 +4,7 @@ from ._Frequency6Code import Frequency6Code
 
 class FrequencyAndMoment1(base_types._BaseFieldType):
 
-	__slots__ = ["_PtInTm", "_Tp"]
+	__slots__ = ["_Tp", "_PtInTm"]
 	@property
 	def PtInTm(self):
 		return self._PtInTm

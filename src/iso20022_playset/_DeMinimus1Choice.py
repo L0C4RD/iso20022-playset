@@ -1,6 +1,6 @@
 from . import base_types
-from ._DeMinimusNotApplicable1 import DeMinimusNotApplicable1
 from ._DeMinimusApplicable1 import DeMinimusApplicable1
+from ._DeMinimusNotApplicable1 import DeMinimusNotApplicable1
 
 class DeMinimus1Choice(base_types._BaseFieldType):
 

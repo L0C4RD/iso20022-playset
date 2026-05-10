@@ -1,24 +1,11 @@
 from . import base_types
+from ._CountryCode import CountryCode
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._NameAndAddress5 import NameAndAddress5
-from ._CountryCode import CountryCode
 
 class PartyIdentification255Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_BIC", "_NmAndAdr"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
+	__slots__ = ["_NmAndAdr", "_Ctry", "_BIC"]
 	@property
 	def BIC(self):
 		return self._BIC
@@ -31,6 +18,19 @@ class PartyIdentification255Choice(base_types._BaseFieldType):
 	def BIC(self):
 		del self._BIC
 		self._BIC = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def NmAndAdr(self):
@@ -46,8 +46,8 @@ class PartyIdentification255Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 	))
 

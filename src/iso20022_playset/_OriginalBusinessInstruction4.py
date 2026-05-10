@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class OriginalBusinessInstruction4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNmId", "_CreDtTm", "_MsgId"]
-	@property
-	def MsgNmId(self):
-		return self._MsgNmId
-
-	@MsgNmId.setter
-	def MsgNmId(self, value):
-		self._MsgNmId = value if type(value) != base_types.auto else self.make_default("MsgNmId")
-
-	@MsgNmId.deleter
-	def MsgNmId(self):
-		del self._MsgNmId
-		self._MsgNmId = None
-
+	__slots__ = ["_MsgId", "_MsgNmId", "_CreDtTm"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -44,9 +31,22 @@ class OriginalBusinessInstruction4(base_types._BaseFieldType):
 		del self._MsgId
 		self._MsgId = None
 
+	@property
+	def MsgNmId(self):
+		return self._MsgNmId
+
+	@MsgNmId.setter
+	def MsgNmId(self, value):
+		self._MsgNmId = value if type(value) != base_types.auto else self.make_default("MsgNmId")
+
+	@MsgNmId.deleter
+	def MsgNmId(self):
+		del self._MsgNmId
+		self._MsgNmId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._IdentificationType42Choice import IdentificationType42Choice
 from ._CountryCode import CountryCode
+from ._Max35Text import Max35Text
 
 class AlternatePartyIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_TpOfId", "_Ctry", "_AltrnId"]
+	__slots__ = ["_Ctry", "_TpOfId", "_AltrnId"]
 	@property
-	def TpOfId(self):
-		return self._TpOfId
+	def AltrnId(self):
+		return self._AltrnId
 
-	@TpOfId.setter
-	def TpOfId(self, value):
-		self._TpOfId = value if type(value) != base_types.auto else self.make_default("TpOfId")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
-	@TpOfId.deleter
-	def TpOfId(self):
-		del self._TpOfId
-		self._TpOfId = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	@property
 	def Ctry(self):
@@ -33,21 +33,21 @@ class AlternatePartyIdentification10(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def TpOfId(self):
+		return self._TpOfId
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+	@TpOfId.setter
+	def TpOfId(self, value):
+		self._TpOfId = value if type(value) != base_types.auto else self.make_default("TpOfId")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@TpOfId.deleter
+	def TpOfId(self):
+		del self._TpOfId
+		self._TpOfId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TpOfId', type=IdentificationType42Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfId', type=IdentificationType42Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

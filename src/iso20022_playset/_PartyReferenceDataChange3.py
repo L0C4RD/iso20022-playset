@@ -1,23 +1,23 @@
 from . import base_types
+from ._ISODateTime import ISODateTime
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
-from ._ISODateTime import ISODateTime
 
 class PartyReferenceDataChange3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcrd", "_PtyId", "_OprTmStmp"]
+	__slots__ = ["_OprTmStmp", "_Rcrd", "_PtyId"]
 	@property
-	def Rcrd(self):
-		return self._Rcrd
+	def OprTmStmp(self):
+		return self._OprTmStmp
 
-	@Rcrd.setter
-	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
+	@OprTmStmp.setter
+	def OprTmStmp(self, value):
+		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
 
-	@Rcrd.deleter
-	def Rcrd(self):
-		del self._Rcrd
-		self._Rcrd = None
+	@OprTmStmp.deleter
+	def OprTmStmp(self):
+		del self._OprTmStmp
+		self._OprTmStmp = None
 
 	@property
 	def PtyId(self):
@@ -33,21 +33,21 @@ class PartyReferenceDataChange3(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def OprTmStmp(self):
-		return self._OprTmStmp
+	def Rcrd(self):
+		return self._Rcrd
 
-	@OprTmStmp.setter
-	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
+	@Rcrd.setter
+	def Rcrd(self, value):
+		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
 
-	@OprTmStmp.deleter
-	def OprTmStmp(self):
-		del self._OprTmStmp
-		self._OprTmStmp = None
+	@Rcrd.deleter
+	def Rcrd(self):
+		del self._Rcrd
+		self._Rcrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

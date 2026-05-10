@@ -1,13 +1,13 @@
 from . import base_types
-from ._BalanceTransfer5 import BalanceTransfer5
-from ._MessageIdentification1 import MessageIdentification1
-from ._AccountSwitchDetails1 import AccountSwitchDetails1
 from ._SupplementaryData1 import SupplementaryData1
+from ._BalanceTransfer5 import BalanceTransfer5
+from ._AccountSwitchDetails1 import AccountSwitchDetails1
+from ._MessageIdentification1 import MessageIdentification1
 from ._CashAccount43 import CashAccount43
 
 class AccountSwitchRequestBalanceTransferV05(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSwtchDtls", "_BalTrf", "_MsgId", "_SplmtryData", "_NewAcct", "_NmntdAcct"]
+	__slots__ = ["_AcctSwtchDtls", "_MsgId", "_NewAcct", "_NmntdAcct", "_SplmtryData", "_BalTrf"]
 	@property
 	def AcctSwtchDtls(self):
 		return self._AcctSwtchDtls
@@ -48,19 +48,6 @@ class AccountSwitchRequestBalanceTransferV05(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def NewAcct(self):
 		return self._NewAcct
 
@@ -86,12 +73,25 @@ class AccountSwitchRequestBalanceTransferV05(base_types._BaseFieldType):
 		del self._NmntdAcct
 		self._NmntdAcct = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTrf', type=BalanceTransfer5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmntdAcct', type=CashAccount43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

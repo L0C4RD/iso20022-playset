@@ -1,29 +1,42 @@
 from . import base_types
-from ._Frequency12Code import Frequency12Code
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._CardDataReading9Code import CardDataReading9Code
-from ._Max10PositiveNumber import Max10PositiveNumber
 from ._RiskAssessment1Code import RiskAssessment1Code
 from ._PartyIdentification285 import PartyIdentification285
 from ._Max5PositiveNumber import Max5PositiveNumber
 from ._AdditionalData1 import AdditionalData1
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._CardDataReading9Code import CardDataReading9Code
 from ._Max35Text import Max35Text
+from ._Max10PositiveNumber import Max10PositiveNumber
+from ._Frequency12Code import Frequency12Code
 
 class Wallet3(base_types._BaseFieldType):
 
-	__slots__ = ["_PANAge", "_AcctEmailAge", "_Prvdr", "_Actvty", "_ActvtyIntrvl", "_SspdCrds", "_DaysSncLastActvty", "_AcctAge", "_PrvdrDvcScore", "_AddtlData", "_CardDataNtryMd", "_AcctCtry", "_PrvdrAcctScore", "_UsrAcctAge", "_LastWlltChng", "_PrvdrPhneScore", "_PrvdrRskAssmntMdlVrsn", "_OthrCardDataNtryMd", "_PrvdrRskAssmnt"]
+	__slots__ = ["_AcctAge", "_PrvdrRskAssmnt", "_UsrAcctAge", "_LastWlltChng", "_AddtlData", "_Actvty", "_CardDataNtryMd", "_AcctEmailAge", "_DaysSncLastActvty", "_OthrCardDataNtryMd", "_PrvdrRskAssmntMdlVrsn", "_Prvdr", "_SspdCrds", "_AcctCtry", "_PrvdrPhneScore", "_PrvdrAcctScore", "_PANAge", "_ActvtyIntrvl", "_PrvdrDvcScore"]
 	@property
-	def PANAge(self):
-		return self._PANAge
+	def AcctAge(self):
+		return self._AcctAge
 
-	@PANAge.setter
-	def PANAge(self, value):
-		self._PANAge = value if type(value) != base_types.auto else self.make_default("PANAge")
+	@AcctAge.setter
+	def AcctAge(self, value):
+		self._AcctAge = value if type(value) != base_types.auto else self.make_default("AcctAge")
 
-	@PANAge.deleter
-	def PANAge(self):
-		del self._PANAge
-		self._PANAge = None
+	@AcctAge.deleter
+	def AcctAge(self):
+		del self._AcctAge
+		self._AcctAge = None
+
+	@property
+	def AcctCtry(self):
+		return self._AcctCtry
+
+	@AcctCtry.setter
+	def AcctCtry(self, value):
+		self._AcctCtry = value if type(value) != base_types.auto else self.make_default("AcctCtry")
+
+	@AcctCtry.deleter
+	def AcctCtry(self):
+		del self._AcctCtry
+		self._AcctCtry = None
 
 	@property
 	def AcctEmailAge(self):
@@ -37,19 +50,6 @@ class Wallet3(base_types._BaseFieldType):
 	def AcctEmailAge(self):
 		del self._AcctEmailAge
 		self._AcctEmailAge = None
-
-	@property
-	def Prvdr(self):
-		return self._Prvdr
-
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
-
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
 
 	@property
 	def Actvty(self):
@@ -78,58 +78,6 @@ class Wallet3(base_types._BaseFieldType):
 		self._ActvtyIntrvl = None
 
 	@property
-	def SspdCrds(self):
-		return self._SspdCrds
-
-	@SspdCrds.setter
-	def SspdCrds(self, value):
-		self._SspdCrds = value if type(value) != base_types.auto else self.make_default("SspdCrds")
-
-	@SspdCrds.deleter
-	def SspdCrds(self):
-		del self._SspdCrds
-		self._SspdCrds = None
-
-	@property
-	def DaysSncLastActvty(self):
-		return self._DaysSncLastActvty
-
-	@DaysSncLastActvty.setter
-	def DaysSncLastActvty(self, value):
-		self._DaysSncLastActvty = value if type(value) != base_types.auto else self.make_default("DaysSncLastActvty")
-
-	@DaysSncLastActvty.deleter
-	def DaysSncLastActvty(self):
-		del self._DaysSncLastActvty
-		self._DaysSncLastActvty = None
-
-	@property
-	def AcctAge(self):
-		return self._AcctAge
-
-	@AcctAge.setter
-	def AcctAge(self, value):
-		self._AcctAge = value if type(value) != base_types.auto else self.make_default("AcctAge")
-
-	@AcctAge.deleter
-	def AcctAge(self):
-		del self._AcctAge
-		self._AcctAge = None
-
-	@property
-	def PrvdrDvcScore(self):
-		return self._PrvdrDvcScore
-
-	@PrvdrDvcScore.setter
-	def PrvdrDvcScore(self, value):
-		self._PrvdrDvcScore = value if type(value) != base_types.auto else self.make_default("PrvdrDvcScore")
-
-	@PrvdrDvcScore.deleter
-	def PrvdrDvcScore(self):
-		del self._PrvdrDvcScore
-		self._PrvdrDvcScore = None
-
-	@property
 	def AddtlData(self):
 		return self._AddtlData
 
@@ -156,43 +104,17 @@ class Wallet3(base_types._BaseFieldType):
 		self._CardDataNtryMd = None
 
 	@property
-	def AcctCtry(self):
-		return self._AcctCtry
+	def DaysSncLastActvty(self):
+		return self._DaysSncLastActvty
 
-	@AcctCtry.setter
-	def AcctCtry(self, value):
-		self._AcctCtry = value if type(value) != base_types.auto else self.make_default("AcctCtry")
+	@DaysSncLastActvty.setter
+	def DaysSncLastActvty(self, value):
+		self._DaysSncLastActvty = value if type(value) != base_types.auto else self.make_default("DaysSncLastActvty")
 
-	@AcctCtry.deleter
-	def AcctCtry(self):
-		del self._AcctCtry
-		self._AcctCtry = None
-
-	@property
-	def PrvdrAcctScore(self):
-		return self._PrvdrAcctScore
-
-	@PrvdrAcctScore.setter
-	def PrvdrAcctScore(self, value):
-		self._PrvdrAcctScore = value if type(value) != base_types.auto else self.make_default("PrvdrAcctScore")
-
-	@PrvdrAcctScore.deleter
-	def PrvdrAcctScore(self):
-		del self._PrvdrAcctScore
-		self._PrvdrAcctScore = None
-
-	@property
-	def UsrAcctAge(self):
-		return self._UsrAcctAge
-
-	@UsrAcctAge.setter
-	def UsrAcctAge(self, value):
-		self._UsrAcctAge = value if type(value) != base_types.auto else self.make_default("UsrAcctAge")
-
-	@UsrAcctAge.deleter
-	def UsrAcctAge(self):
-		del self._UsrAcctAge
-		self._UsrAcctAge = None
+	@DaysSncLastActvty.deleter
+	def DaysSncLastActvty(self):
+		del self._DaysSncLastActvty
+		self._DaysSncLastActvty = None
 
 	@property
 	def LastWlltChng(self):
@@ -208,6 +130,71 @@ class Wallet3(base_types._BaseFieldType):
 		self._LastWlltChng = None
 
 	@property
+	def OthrCardDataNtryMd(self):
+		return self._OthrCardDataNtryMd
+
+	@OthrCardDataNtryMd.setter
+	def OthrCardDataNtryMd(self, value):
+		self._OthrCardDataNtryMd = value if type(value) != base_types.auto else self.make_default("OthrCardDataNtryMd")
+
+	@OthrCardDataNtryMd.deleter
+	def OthrCardDataNtryMd(self):
+		del self._OthrCardDataNtryMd
+		self._OthrCardDataNtryMd = None
+
+	@property
+	def PANAge(self):
+		return self._PANAge
+
+	@PANAge.setter
+	def PANAge(self, value):
+		self._PANAge = value if type(value) != base_types.auto else self.make_default("PANAge")
+
+	@PANAge.deleter
+	def PANAge(self):
+		del self._PANAge
+		self._PANAge = None
+
+	@property
+	def Prvdr(self):
+		return self._Prvdr
+
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
+
+	@property
+	def PrvdrAcctScore(self):
+		return self._PrvdrAcctScore
+
+	@PrvdrAcctScore.setter
+	def PrvdrAcctScore(self, value):
+		self._PrvdrAcctScore = value if type(value) != base_types.auto else self.make_default("PrvdrAcctScore")
+
+	@PrvdrAcctScore.deleter
+	def PrvdrAcctScore(self):
+		del self._PrvdrAcctScore
+		self._PrvdrAcctScore = None
+
+	@property
+	def PrvdrDvcScore(self):
+		return self._PrvdrDvcScore
+
+	@PrvdrDvcScore.setter
+	def PrvdrDvcScore(self, value):
+		self._PrvdrDvcScore = value if type(value) != base_types.auto else self.make_default("PrvdrDvcScore")
+
+	@PrvdrDvcScore.deleter
+	def PrvdrDvcScore(self):
+		del self._PrvdrDvcScore
+		self._PrvdrDvcScore = None
+
+	@property
 	def PrvdrPhneScore(self):
 		return self._PrvdrPhneScore
 
@@ -219,6 +206,19 @@ class Wallet3(base_types._BaseFieldType):
 	def PrvdrPhneScore(self):
 		del self._PrvdrPhneScore
 		self._PrvdrPhneScore = None
+
+	@property
+	def PrvdrRskAssmnt(self):
+		return self._PrvdrRskAssmnt
+
+	@PrvdrRskAssmnt.setter
+	def PrvdrRskAssmnt(self, value):
+		self._PrvdrRskAssmnt = value if type(value) != base_types.auto else self.make_default("PrvdrRskAssmnt")
+
+	@PrvdrRskAssmnt.deleter
+	def PrvdrRskAssmnt(self):
+		del self._PrvdrRskAssmnt
+		self._PrvdrRskAssmnt = None
 
 	@property
 	def PrvdrRskAssmntMdlVrsn(self):
@@ -234,50 +234,50 @@ class Wallet3(base_types._BaseFieldType):
 		self._PrvdrRskAssmntMdlVrsn = None
 
 	@property
-	def OthrCardDataNtryMd(self):
-		return self._OthrCardDataNtryMd
+	def SspdCrds(self):
+		return self._SspdCrds
 
-	@OthrCardDataNtryMd.setter
-	def OthrCardDataNtryMd(self, value):
-		self._OthrCardDataNtryMd = value if type(value) != base_types.auto else self.make_default("OthrCardDataNtryMd")
+	@SspdCrds.setter
+	def SspdCrds(self, value):
+		self._SspdCrds = value if type(value) != base_types.auto else self.make_default("SspdCrds")
 
-	@OthrCardDataNtryMd.deleter
-	def OthrCardDataNtryMd(self):
-		del self._OthrCardDataNtryMd
-		self._OthrCardDataNtryMd = None
+	@SspdCrds.deleter
+	def SspdCrds(self):
+		del self._SspdCrds
+		self._SspdCrds = None
 
 	@property
-	def PrvdrRskAssmnt(self):
-		return self._PrvdrRskAssmnt
+	def UsrAcctAge(self):
+		return self._UsrAcctAge
 
-	@PrvdrRskAssmnt.setter
-	def PrvdrRskAssmnt(self, value):
-		self._PrvdrRskAssmnt = value if type(value) != base_types.auto else self.make_default("PrvdrRskAssmnt")
+	@UsrAcctAge.setter
+	def UsrAcctAge(self, value):
+		self._UsrAcctAge = value if type(value) != base_types.auto else self.make_default("UsrAcctAge")
 
-	@PrvdrRskAssmnt.deleter
-	def PrvdrRskAssmnt(self):
-		del self._PrvdrRskAssmnt
-		self._PrvdrRskAssmnt = None
+	@UsrAcctAge.deleter
+	def UsrAcctAge(self):
+		del self._UsrAcctAge
+		self._UsrAcctAge = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PANAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctEmailAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prvdr', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Actvty', type=Max10PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyIntrvl', type=Frequency12Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SspdCrds', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DaysSncLastActvty', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvdrDvcScore', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading9Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvdrAcctScore', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrAcctAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DaysSncLastActvty', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastWlltChng', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvdrPhneScore', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvdrRskAssmntMdlVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCardDataNtryMd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PANAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prvdr', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvdrAcctScore', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvdrDvcScore', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvdrPhneScore', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvdrRskAssmnt', type=RiskAssessment1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvdrRskAssmntMdlVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SspdCrds', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrAcctAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

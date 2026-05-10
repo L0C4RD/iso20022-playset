@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max35Text import Max35Text
 
 class Dispute1(base_types._BaseFieldType):
 
 	__slots__ = ["_MrgnCallReqId", "_DsptdAmt", "_DsptDt"]
 	@property
-	def MrgnCallReqId(self):
-		return self._MrgnCallReqId
+	def DsptDt(self):
+		return self._DsptDt
 
-	@MrgnCallReqId.setter
-	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != base_types.auto else self.make_default("MrgnCallReqId")
+	@DsptDt.setter
+	def DsptDt(self, value):
+		self._DsptDt = value if type(value) != base_types.auto else self.make_default("DsptDt")
 
-	@MrgnCallReqId.deleter
-	def MrgnCallReqId(self):
-		del self._MrgnCallReqId
-		self._MrgnCallReqId = None
+	@DsptDt.deleter
+	def DsptDt(self):
+		del self._DsptDt
+		self._DsptDt = None
 
 	@property
 	def DsptdAmt(self):
@@ -33,21 +33,21 @@ class Dispute1(base_types._BaseFieldType):
 		self._DsptdAmt = None
 
 	@property
-	def DsptDt(self):
-		return self._DsptDt
+	def MrgnCallReqId(self):
+		return self._MrgnCallReqId
 
-	@DsptDt.setter
-	def DsptDt(self, value):
-		self._DsptDt = value if type(value) != base_types.auto else self.make_default("DsptDt")
+	@MrgnCallReqId.setter
+	def MrgnCallReqId(self, value):
+		self._MrgnCallReqId = value if type(value) != base_types.auto else self.make_default("MrgnCallReqId")
 
-	@DsptDt.deleter
-	def DsptDt(self):
-		del self._DsptDt
-		self._DsptDt = None
+	@MrgnCallReqId.deleter
+	def MrgnCallReqId(self):
+		del self._MrgnCallReqId
+		self._MrgnCallReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DsptdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsptDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DsptdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

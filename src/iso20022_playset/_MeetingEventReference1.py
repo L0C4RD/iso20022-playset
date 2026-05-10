@@ -1,6 +1,6 @@
 from . import base_types
-from ._MeetingEventReference1Choice import MeetingEventReference1Choice
 from ._ProcessingPosition3Code import ProcessingPosition3Code
+from ._MeetingEventReference1Choice import MeetingEventReference1Choice
 
 class MeetingEventReference1(base_types._BaseFieldType):
 

@@ -1,67 +1,15 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._InvestmentAccount58 import InvestmentAccount58
-from ._FinancialInstrument57 import FinancialInstrument57
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DecimalNumber import DecimalNumber
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._FinancialInstrument57 import FinancialInstrument57
 
 class FundOrderData5(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_HldgsRedRate", "_UnitsNb", "_InvstmtAcctDtls", "_FinInstrmDtls", "_QtdCcy", "_GrssAmt", "_NetAmt", "_SttlmAmt"]
-	@property
-	def UnitCcy(self):
-		return self._UnitCcy
-
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
-
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
-
-	@property
-	def HldgsRedRate(self):
-		return self._HldgsRedRate
-
-	@HldgsRedRate.setter
-	def HldgsRedRate(self, value):
-		self._HldgsRedRate = value if type(value) != base_types.auto else self.make_default("HldgsRedRate")
-
-	@HldgsRedRate.deleter
-	def HldgsRedRate(self):
-		del self._HldgsRedRate
-		self._HldgsRedRate = None
-
-	@property
-	def UnitsNb(self):
-		return self._UnitsNb
-
-	@UnitsNb.setter
-	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
-
-	@UnitsNb.deleter
-	def UnitsNb(self):
-		del self._UnitsNb
-		self._UnitsNb = None
-
-	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
-
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
-
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
-
+	__slots__ = ["_UnitsNb", "_NetAmt", "_HldgsRedRate", "_UnitCcy", "_GrssAmt", "_InvstmtAcctDtls", "_QtdCcy", "_SttlmAmt", "_FinInstrmDtls"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls
@@ -74,19 +22,6 @@ class FundOrderData5(base_types._BaseFieldType):
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
 		self._FinInstrmDtls = None
-
-	@property
-	def QtdCcy(self):
-		return self._QtdCcy
-
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
-
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
 
 	@property
 	def GrssAmt(self):
@@ -102,6 +37,32 @@ class FundOrderData5(base_types._BaseFieldType):
 		self._GrssAmt = None
 
 	@property
+	def HldgsRedRate(self):
+		return self._HldgsRedRate
+
+	@HldgsRedRate.setter
+	def HldgsRedRate(self, value):
+		self._HldgsRedRate = value if type(value) != base_types.auto else self.make_default("HldgsRedRate")
+
+	@HldgsRedRate.deleter
+	def HldgsRedRate(self):
+		del self._HldgsRedRate
+		self._HldgsRedRate = None
+
+	@property
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
+
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
+
+	@property
 	def NetAmt(self):
 		return self._NetAmt
 
@@ -113,6 +74,19 @@ class FundOrderData5(base_types._BaseFieldType):
 	def NetAmt(self):
 		del self._NetAmt
 		self._NetAmt = None
+
+	@property
+	def QtdCcy(self):
+		return self._QtdCcy
+
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
 
 	@property
 	def SttlmAmt(self):
@@ -127,15 +101,41 @@ class FundOrderData5(base_types._BaseFieldType):
 		del self._SttlmAmt
 		self._SttlmAmt = None
 
+	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
+
+	@property
+	def UnitsNb(self):
+		return self._UnitsNb
+
+	@UnitsNb.setter
+	def UnitsNb(self, value):
+		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+
+	@UnitsNb.deleter
+	def UnitsNb(self):
+		del self._UnitsNb
+		self._UnitsNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HldgsRedRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgsRedRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

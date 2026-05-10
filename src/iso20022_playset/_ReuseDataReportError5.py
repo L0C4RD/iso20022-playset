@@ -1,24 +1,24 @@
 from . import base_types
-from ._CounterpartyData87 import CounterpartyData87
-from ._Max140Text import Max140Text
 from ._SupplementaryData1 import SupplementaryData1
 from ._ISODateTime import ISODateTime
+from ._Max140Text import Max140Text
+from ._CounterpartyData87 import CounterpartyData87
 
 class ReuseDataReportError5(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptgDtTm", "_CtrPty", "_TechRcrdId"]
+	__slots__ = ["_CtrPty", "_SplmtryData", "_RptgDtTm", "_TechRcrdId"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CtrPty(self):
+		return self._CtrPty
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
 
 	@property
 	def RptgDtTm(self):
@@ -34,17 +34,17 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 		self._RptgDtTm = None
 
 	@property
-	def CtrPty(self):
-		return self._CtrPty
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TechRcrdId(self):
@@ -60,9 +60,9 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,37 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Undertaking6 import Undertaking6
 from ._Demand3 import Demand3
+from ._Undertaking6 import Undertaking6
+from ._Max35Text import Max35Text
 
 class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
-	__slots__ = ["_DmndDtls", "_UdrtkgId", "_CnfrmrRefNb", "_AdvsgPtyRefNb"]
+	__slots__ = ["_DmndDtls", "_CnfrmrRefNb", "_UdrtkgId", "_AdvsgPtyRefNb"]
+	@property
+	def AdvsgPtyRefNb(self):
+		return self._AdvsgPtyRefNb
+
+	@AdvsgPtyRefNb.setter
+	def AdvsgPtyRefNb(self, value):
+		self._AdvsgPtyRefNb = value if type(value) != base_types.auto else self.make_default("AdvsgPtyRefNb")
+
+	@AdvsgPtyRefNb.deleter
+	def AdvsgPtyRefNb(self):
+		del self._AdvsgPtyRefNb
+		self._AdvsgPtyRefNb = None
+
+	@property
+	def CnfrmrRefNb(self):
+		return self._CnfrmrRefNb
+
+	@CnfrmrRefNb.setter
+	def CnfrmrRefNb(self, value):
+		self._CnfrmrRefNb = value if type(value) != base_types.auto else self.make_default("CnfrmrRefNb")
+
+	@CnfrmrRefNb.deleter
+	def CnfrmrRefNb(self):
+		del self._CnfrmrRefNb
+		self._CnfrmrRefNb = None
+
 	@property
 	def DmndDtls(self):
 		return self._DmndDtls
@@ -32,36 +58,10 @@ class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 		del self._UdrtkgId
 		self._UdrtkgId = None
 
-	@property
-	def CnfrmrRefNb(self):
-		return self._CnfrmrRefNb
-
-	@CnfrmrRefNb.setter
-	def CnfrmrRefNb(self, value):
-		self._CnfrmrRefNb = value if type(value) != base_types.auto else self.make_default("CnfrmrRefNb")
-
-	@CnfrmrRefNb.deleter
-	def CnfrmrRefNb(self):
-		del self._CnfrmrRefNb
-		self._CnfrmrRefNb = None
-
-	@property
-	def AdvsgPtyRefNb(self):
-		return self._AdvsgPtyRefNb
-
-	@AdvsgPtyRefNb.setter
-	def AdvsgPtyRefNb(self, value):
-		self._AdvsgPtyRefNb = value if type(value) != base_types.auto else self.make_default("AdvsgPtyRefNb")
-
-	@AdvsgPtyRefNb.deleter
-	def AdvsgPtyRefNb(self):
-		del self._AdvsgPtyRefNb
-		self._AdvsgPtyRefNb = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmndDtls', type=Demand3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

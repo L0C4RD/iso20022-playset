@@ -1,15 +1,15 @@
 from . import base_types
-from ._Number import Number
 from ._ISODate import ISODate
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Max35Text import Max35Text
 from ._TransactionsBin2 import TransactionsBin2
+from ._Max35Text import Max35Text
+from ._Number import Number
 from ._MICIdentifier import MICIdentifier
 
 class TransparencyDataReport15(base_types._BaseFieldType):
 
-	__slots__ = ["_AggtdQttvData", "_Sspnsn", "_Id", "_RptgDt", "_TechRcrdId", "_TradgVn", "_NbTxs"]
+	__slots__ = ["_AggtdQttvData", "_NbTxs", "_TechRcrdId", "_TradgVn", "_Id", "_RptgDt", "_Sspnsn"]
 	@property
 	def AggtdQttvData(self):
 		return self._AggtdQttvData
@@ -22,19 +22,6 @@ class TransparencyDataReport15(base_types._BaseFieldType):
 	def AggtdQttvData(self):
 		del self._AggtdQttvData
 		self._AggtdQttvData = None
-
-	@property
-	def Sspnsn(self):
-		return self._Sspnsn
-
-	@Sspnsn.setter
-	def Sspnsn(self, value):
-		self._Sspnsn = value if type(value) != base_types.auto else self.make_default("Sspnsn")
-
-	@Sspnsn.deleter
-	def Sspnsn(self):
-		del self._Sspnsn
-		self._Sspnsn = None
 
 	@property
 	def Id(self):
@@ -50,6 +37,19 @@ class TransparencyDataReport15(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def NbTxs(self):
+		return self._NbTxs
+
+	@NbTxs.setter
+	def NbTxs(self, value):
+		self._NbTxs = value if type(value) != base_types.auto else self.make_default("NbTxs")
+
+	@NbTxs.deleter
+	def NbTxs(self):
+		del self._NbTxs
+		self._NbTxs = None
+
+	@property
 	def RptgDt(self):
 		return self._RptgDt
 
@@ -61,6 +61,19 @@ class TransparencyDataReport15(base_types._BaseFieldType):
 	def RptgDt(self):
 		del self._RptgDt
 		self._RptgDt = None
+
+	@property
+	def Sspnsn(self):
+		return self._Sspnsn
+
+	@Sspnsn.setter
+	def Sspnsn(self, value):
+		self._Sspnsn = value if type(value) != base_types.auto else self.make_default("Sspnsn")
+
+	@Sspnsn.deleter
+	def Sspnsn(self):
+		del self._Sspnsn
+		self._Sspnsn = None
 
 	@property
 	def TechRcrdId(self):
@@ -88,26 +101,13 @@ class TransparencyDataReport15(base_types._BaseFieldType):
 		del self._TradgVn
 		self._TradgVn = None
 
-	@property
-	def NbTxs(self):
-		return self._NbTxs
-
-	@NbTxs.setter
-	def NbTxs(self, value):
-		self._NbTxs = value if type(value) != base_types.auto else self.make_default("NbTxs")
-
-	@NbTxs.deleter
-	def NbTxs(self):
-		del self._NbTxs
-		self._NbTxs = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AggtdQttvData', type=TransactionsBin2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sspnsn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbTxs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sspnsn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbTxs', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

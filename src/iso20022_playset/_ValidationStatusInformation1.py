@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max105Text import Max105Text
 from ._StatusReason4Choice import StatusReason4Choice
 from ._TechnicalValidationStatus1Code import TechnicalValidationStatus1Code
+from ._Max105Text import Max105Text
 
 class ValidationStatusInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsn", "_Sts", "_AddtlStsRsnInf"]
+	__slots__ = ["_AddtlStsRsnInf", "_Sts", "_StsRsn"]
 	@property
-	def StsRsn(self):
-		return self._StsRsn
+	def AddtlStsRsnInf(self):
+		return self._AddtlStsRsnInf
 
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+	@AddtlStsRsnInf.setter
+	def AddtlStsRsnInf(self, value):
+		self._AddtlStsRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlStsRsnInf")
 
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
+	@AddtlStsRsnInf.deleter
+	def AddtlStsRsnInf(self):
+		del self._AddtlStsRsnInf
+		self._AddtlStsRsnInf = None
 
 	@property
 	def Sts(self):
@@ -33,21 +33,21 @@ class ValidationStatusInformation1(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def AddtlStsRsnInf(self):
-		return self._AddtlStsRsnInf
+	def StsRsn(self):
+		return self._StsRsn
 
-	@AddtlStsRsnInf.setter
-	def AddtlStsRsnInf(self, value):
-		self._AddtlStsRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlStsRsnInf")
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
 
-	@AddtlStsRsnInf.deleter
-	def AddtlStsRsnInf(self):
-		del self._AddtlStsRsnInf
-		self._AddtlStsRsnInf = None
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsRsn', type=StatusReason4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=TechnicalValidationStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=TechnicalValidationStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=StatusReason4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

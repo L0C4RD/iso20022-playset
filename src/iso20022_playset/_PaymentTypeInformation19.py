@@ -1,25 +1,12 @@
 from . import base_types
-from ._ServiceLevel8Choice import ServiceLevel8Choice
 from ._CategoryPurpose1Choice import CategoryPurpose1Choice
-from ._Priority2Code import Priority2Code
+from ._ServiceLevel8Choice import ServiceLevel8Choice
 from ._LocalInstrument2Choice import LocalInstrument2Choice
+from ._Priority2Code import Priority2Code
 
 class PaymentTypeInformation19(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrPrty", "_CtgyPurp", "_LclInstrm", "_SvcLvl"]
-	@property
-	def InstrPrty(self):
-		return self._InstrPrty
-
-	@InstrPrty.setter
-	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
-
-	@InstrPrty.deleter
-	def InstrPrty(self):
-		del self._InstrPrty
-		self._InstrPrty = None
-
+	__slots__ = ["_SvcLvl", "_CtgyPurp", "_LclInstrm", "_InstrPrty"]
 	@property
 	def CtgyPurp(self):
 		return self._CtgyPurp
@@ -32,6 +19,19 @@ class PaymentTypeInformation19(base_types._BaseFieldType):
 	def CtgyPurp(self):
 		del self._CtgyPurp
 		self._CtgyPurp = None
+
+	@property
+	def InstrPrty(self):
+		return self._InstrPrty
+
+	@InstrPrty.setter
+	def InstrPrty(self, value):
+		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
+
+	@InstrPrty.deleter
+	def InstrPrty(self):
+		del self._InstrPrty
+		self._InstrPrty = None
 
 	@property
 	def LclInstrm(self):
@@ -60,8 +60,8 @@ class PaymentTypeInformation19(base_types._BaseFieldType):
 		self._SvcLvl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrPrty', type=Priority2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrty', type=Priority2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclInstrm', type=LocalInstrument2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=1, mutex_group=None, array=False),
 	))

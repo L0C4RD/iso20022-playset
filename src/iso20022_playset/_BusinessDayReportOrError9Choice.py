@@ -1,10 +1,10 @@
 from . import base_types
-from ._BusinessDay8 import BusinessDay8
 from ._ErrorHandling5 import ErrorHandling5
+from ._BusinessDay8 import BusinessDay8
 
 class BusinessDayReportOrError9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BizRpt", "_OprlErr"]
+	__slots__ = ["_OprlErr", "_BizRpt"]
 	@property
 	def BizRpt(self):
 		return self._BizRpt

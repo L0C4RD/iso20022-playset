@@ -1,10 +1,10 @@
 from . import base_types
-from ._Unlimited9Text import Unlimited9Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Unlimited9Text import Unlimited9Text
 
 class FixedAmountOrUnlimited1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_NotLtd"]
+	__slots__ = ["_NotLtd", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

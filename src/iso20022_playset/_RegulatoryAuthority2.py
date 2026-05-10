@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._CountryCode import CountryCode
+from ._Max140Text import Max140Text
 
 class RegulatoryAuthority2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Nm"]
+	__slots__ = ["_Nm", "_Ctry"]
 	@property
 	def Ctry(self):
 		return self._Ctry

@@ -4,19 +4,19 @@ from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class GenericIdentification47(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Issr", "_Id"]
+	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
+	def Id(self):
+		return self._Id
 
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Issr(self):
@@ -32,21 +32,21 @@ class GenericIdentification47(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchmeNm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

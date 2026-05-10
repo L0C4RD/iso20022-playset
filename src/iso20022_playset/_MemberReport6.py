@@ -1,23 +1,10 @@
 from . import base_types
-from ._MemberIdentification3Choice import MemberIdentification3Choice
 from ._MemberReportOrError8Choice import MemberReportOrError8Choice
+from ._MemberIdentification3Choice import MemberIdentification3Choice
 
 class MemberReport6(base_types._BaseFieldType):
 
 	__slots__ = ["_MmbOrErr", "_MmbId"]
-	@property
-	def MmbOrErr(self):
-		return self._MmbOrErr
-
-	@MmbOrErr.setter
-	def MmbOrErr(self, value):
-		self._MmbOrErr = value if type(value) != base_types.auto else self.make_default("MmbOrErr")
-
-	@MmbOrErr.deleter
-	def MmbOrErr(self):
-		del self._MmbOrErr
-		self._MmbOrErr = None
-
 	@property
 	def MmbId(self):
 		return self._MmbId
@@ -31,8 +18,21 @@ class MemberReport6(base_types._BaseFieldType):
 		del self._MmbId
 		self._MmbId = None
 
+	@property
+	def MmbOrErr(self):
+		return self._MmbOrErr
+
+	@MmbOrErr.setter
+	def MmbOrErr(self, value):
+		self._MmbOrErr = value if type(value) != base_types.auto else self.make_default("MmbOrErr")
+
+	@MmbOrErr.deleter
+	def MmbOrErr(self):
+		del self._MmbOrErr
+		self._MmbOrErr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MmbOrErr', type=MemberReportOrError8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbId', type=MemberIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbOrErr', type=MemberReportOrError8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

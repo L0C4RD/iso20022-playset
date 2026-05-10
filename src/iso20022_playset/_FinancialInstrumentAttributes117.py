@@ -1,94 +1,29 @@
 from . import base_types
-from ._RenounceableEntitlementStatusTypeFormat4Choice import RenounceableEntitlementStatusTypeFormat4Choice
 from ._AmountPrice4 import AmountPrice4
-from ._FractionDispositionType32Choice import FractionDispositionType32Choice
-from ._DateFormat41Choice import DateFormat41Choice
-from ._QuantityToQuantityRatio2 import QuantityToQuantityRatio2
-from ._Period11 import Period11
 from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
+from ._DateFormat41Choice import DateFormat41Choice
 from ._BalanceFormat14Choice import BalanceFormat14Choice
 from ._SecurityIdentification20 import SecurityIdentification20
+from ._QuantityToQuantityRatio2 import QuantityToQuantityRatio2
+from ._Period11 import Period11
+from ._RenounceableEntitlementStatusTypeFormat4Choice import RenounceableEntitlementStatusTypeFormat4Choice
+from ._FractionDispositionType32Choice import FractionDispositionType32Choice
 
 class FinancialInstrumentAttributes117(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyId", "_UinstdBal", "_Qty", "_RnncblEntitlmntStsTp", "_MktPric", "_PstngDt", "_InstdBal", "_IntrmdtSctiesToUndrlygRatio", "_FrctnDspstn", "_TradgPrd", "_XpryDt"]
+	__slots__ = ["_MktPric", "_XpryDt", "_FrctnDspstn", "_IntrmdtSctiesToUndrlygRatio", "_Qty", "_UinstdBal", "_TradgPrd", "_RnncblEntitlmntStsTp", "_InstdBal", "_PstngDt", "_SctyId"]
 	@property
-	def SctyId(self):
-		return self._SctyId
+	def FrctnDspstn(self):
+		return self._FrctnDspstn
 
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+	@FrctnDspstn.setter
+	def FrctnDspstn(self, value):
+		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
 
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
-
-	@property
-	def UinstdBal(self):
-		return self._UinstdBal
-
-	@UinstdBal.setter
-	def UinstdBal(self, value):
-		self._UinstdBal = value if type(value) != base_types.auto else self.make_default("UinstdBal")
-
-	@UinstdBal.deleter
-	def UinstdBal(self):
-		del self._UinstdBal
-		self._UinstdBal = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
-	def RnncblEntitlmntStsTp(self):
-		return self._RnncblEntitlmntStsTp
-
-	@RnncblEntitlmntStsTp.setter
-	def RnncblEntitlmntStsTp(self, value):
-		self._RnncblEntitlmntStsTp = value if type(value) != base_types.auto else self.make_default("RnncblEntitlmntStsTp")
-
-	@RnncblEntitlmntStsTp.deleter
-	def RnncblEntitlmntStsTp(self):
-		del self._RnncblEntitlmntStsTp
-		self._RnncblEntitlmntStsTp = None
-
-	@property
-	def MktPric(self):
-		return self._MktPric
-
-	@MktPric.setter
-	def MktPric(self, value):
-		self._MktPric = value if type(value) != base_types.auto else self.make_default("MktPric")
-
-	@MktPric.deleter
-	def MktPric(self):
-		del self._MktPric
-		self._MktPric = None
-
-	@property
-	def PstngDt(self):
-		return self._PstngDt
-
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != base_types.auto else self.make_default("PstngDt")
-
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
+	@FrctnDspstn.deleter
+	def FrctnDspstn(self):
+		del self._FrctnDspstn
+		self._FrctnDspstn = None
 
 	@property
 	def InstdBal(self):
@@ -117,17 +52,69 @@ class FinancialInstrumentAttributes117(base_types._BaseFieldType):
 		self._IntrmdtSctiesToUndrlygRatio = None
 
 	@property
-	def FrctnDspstn(self):
-		return self._FrctnDspstn
+	def MktPric(self):
+		return self._MktPric
 
-	@FrctnDspstn.setter
-	def FrctnDspstn(self, value):
-		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+	@MktPric.setter
+	def MktPric(self, value):
+		self._MktPric = value if type(value) != base_types.auto else self.make_default("MktPric")
 
-	@FrctnDspstn.deleter
-	def FrctnDspstn(self):
-		del self._FrctnDspstn
-		self._FrctnDspstn = None
+	@MktPric.deleter
+	def MktPric(self):
+		del self._MktPric
+		self._MktPric = None
+
+	@property
+	def PstngDt(self):
+		return self._PstngDt
+
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != base_types.auto else self.make_default("PstngDt")
+
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
+
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
+	@property
+	def RnncblEntitlmntStsTp(self):
+		return self._RnncblEntitlmntStsTp
+
+	@RnncblEntitlmntStsTp.setter
+	def RnncblEntitlmntStsTp(self, value):
+		self._RnncblEntitlmntStsTp = value if type(value) != base_types.auto else self.make_default("RnncblEntitlmntStsTp")
+
+	@RnncblEntitlmntStsTp.deleter
+	def RnncblEntitlmntStsTp(self):
+		del self._RnncblEntitlmntStsTp
+		self._RnncblEntitlmntStsTp = None
+
+	@property
+	def SctyId(self):
+		return self._SctyId
+
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
 
 	@property
 	def TradgPrd(self):
@@ -143,6 +130,19 @@ class FinancialInstrumentAttributes117(base_types._BaseFieldType):
 		self._TradgPrd = None
 
 	@property
+	def UinstdBal(self):
+		return self._UinstdBal
+
+	@UinstdBal.setter
+	def UinstdBal(self, value):
+		self._UinstdBal = value if type(value) != base_types.auto else self.make_default("UinstdBal")
+
+	@UinstdBal.deleter
+	def UinstdBal(self):
+		del self._UinstdBal
+		self._UinstdBal = None
+
+	@property
 	def XpryDt(self):
 		return self._XpryDt
 
@@ -156,16 +156,16 @@ class FinancialInstrumentAttributes117(base_types._BaseFieldType):
 		self._XpryDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UinstdBal', type=BalanceFormat14Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RnncblEntitlmntStsTp', type=RenounceableEntitlementStatusTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktPric', type=AmountPrice4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngDt', type=DateFormat41Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdBal', type=BalanceFormat14Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmdtSctiesToUndrlygRatio', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType32Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPric', type=AmountPrice4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDt', type=DateFormat41Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RnncblEntitlmntStsTp', type=RenounceableEntitlementStatusTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgPrd', type=Period11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UinstdBal', type=BalanceFormat14Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=DateFormat41Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

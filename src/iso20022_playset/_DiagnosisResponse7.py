@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._HostStatus1 import HostStatus1
+from ._Max35Text import Max35Text
 from ._StatusReportContent14 import StatusReportContent14
 
 class DiagnosisResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_HstSts", "_LggdSaleId", "_POISts"]
+	__slots__ = ["_LggdSaleId", "_POISts", "_HstSts"]
 	@property
 	def HstSts(self):
 		return self._HstSts

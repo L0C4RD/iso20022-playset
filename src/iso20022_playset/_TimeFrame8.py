@@ -1,12 +1,25 @@
 from . import base_types
-from ._ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
-from ._Number import Number
-from ._Max350Text import Max350Text
 from ._BusinessDayConvention1Code import BusinessDayConvention1Code
+from ._Max350Text import Max350Text
+from ._Number import Number
+from ._ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
 
 class TimeFrame8(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTmFrameDesc", "_RefrToOrdrDsk", "_TPlus", "_NonWorkgDayAdjstmnt"]
+	__slots__ = ["_NonWorkgDayAdjstmnt", "_RefrToOrdrDsk", "_TPlus", "_OthrTmFrameDesc"]
+	@property
+	def NonWorkgDayAdjstmnt(self):
+		return self._NonWorkgDayAdjstmnt
+
+	@NonWorkgDayAdjstmnt.setter
+	def NonWorkgDayAdjstmnt(self, value):
+		self._NonWorkgDayAdjstmnt = value if type(value) != base_types.auto else self.make_default("NonWorkgDayAdjstmnt")
+
+	@NonWorkgDayAdjstmnt.deleter
+	def NonWorkgDayAdjstmnt(self):
+		del self._NonWorkgDayAdjstmnt
+		self._NonWorkgDayAdjstmnt = None
+
 	@property
 	def OthrTmFrameDesc(self):
 		return self._OthrTmFrameDesc
@@ -46,23 +59,10 @@ class TimeFrame8(base_types._BaseFieldType):
 		del self._TPlus
 		self._TPlus = None
 
-	@property
-	def NonWorkgDayAdjstmnt(self):
-		return self._NonWorkgDayAdjstmnt
-
-	@NonWorkgDayAdjstmnt.setter
-	def NonWorkgDayAdjstmnt(self, value):
-		self._NonWorkgDayAdjstmnt = value if type(value) != base_types.auto else self.make_default("NonWorkgDayAdjstmnt")
-
-	@NonWorkgDayAdjstmnt.deleter
-	def NonWorkgDayAdjstmnt(self):
-		del self._NonWorkgDayAdjstmnt
-		self._NonWorkgDayAdjstmnt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TPlus', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

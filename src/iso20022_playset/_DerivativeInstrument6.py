@@ -1,28 +1,28 @@
 from . import base_types
+from ._ISODate import ISODate
+from ._OptionType2Code import OptionType2Code
+from ._SecuritiesTransactionPrice4Choice import SecuritiesTransactionPrice4Choice
+from ._AssetClassAttributes1Choice import AssetClassAttributes1Choice
+from ._NonNegativeDecimalNumber import NonNegativeDecimalNumber
+from ._UnderlyingIdentification2Choice import UnderlyingIdentification2Choice
 from ._PhysicalTransferType4Code import PhysicalTransferType4Code
 from ._OptionStyle7Code import OptionStyle7Code
-from ._SecuritiesTransactionPrice4Choice import SecuritiesTransactionPrice4Choice
-from ._NonNegativeDecimalNumber import NonNegativeDecimalNumber
-from ._AssetClassAttributes1Choice import AssetClassAttributes1Choice
-from ._ISODate import ISODate
-from ._UnderlyingIdentification2Choice import UnderlyingIdentification2Choice
-from ._OptionType2Code import OptionType2Code
 
 class DerivativeInstrument6(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_DlvryTp", "_PricMltplr", "_AsstClssSpcfcAttrbts", "_UndrlygInstrm", "_XpryDt", "_OptnExrcStyle", "_StrkPric"]
+	__slots__ = ["_AsstClssSpcfcAttrbts", "_DlvryTp", "_XpryDt", "_OptnExrcStyle", "_OptnTp", "_PricMltplr", "_StrkPric", "_UndrlygInstrm"]
 	@property
-	def OptnTp(self):
-		return self._OptnTp
+	def AsstClssSpcfcAttrbts(self):
+		return self._AsstClssSpcfcAttrbts
 
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+	@AsstClssSpcfcAttrbts.setter
+	def AsstClssSpcfcAttrbts(self, value):
+		self._AsstClssSpcfcAttrbts = value if type(value) != base_types.auto else self.make_default("AsstClssSpcfcAttrbts")
 
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
+	@AsstClssSpcfcAttrbts.deleter
+	def AsstClssSpcfcAttrbts(self):
+		del self._AsstClssSpcfcAttrbts
+		self._AsstClssSpcfcAttrbts = None
 
 	@property
 	def DlvryTp(self):
@@ -38,6 +38,32 @@ class DerivativeInstrument6(base_types._BaseFieldType):
 		self._DlvryTp = None
 
 	@property
+	def OptnExrcStyle(self):
+		return self._OptnExrcStyle
+
+	@OptnExrcStyle.setter
+	def OptnExrcStyle(self, value):
+		self._OptnExrcStyle = value if type(value) != base_types.auto else self.make_default("OptnExrcStyle")
+
+	@OptnExrcStyle.deleter
+	def OptnExrcStyle(self):
+		del self._OptnExrcStyle
+		self._OptnExrcStyle = None
+
+	@property
+	def OptnTp(self):
+		return self._OptnTp
+
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
+
+	@property
 	def PricMltplr(self):
 		return self._PricMltplr
 
@@ -51,17 +77,17 @@ class DerivativeInstrument6(base_types._BaseFieldType):
 		self._PricMltplr = None
 
 	@property
-	def AsstClssSpcfcAttrbts(self):
-		return self._AsstClssSpcfcAttrbts
+	def StrkPric(self):
+		return self._StrkPric
 
-	@AsstClssSpcfcAttrbts.setter
-	def AsstClssSpcfcAttrbts(self, value):
-		self._AsstClssSpcfcAttrbts = value if type(value) != base_types.auto else self.make_default("AsstClssSpcfcAttrbts")
+	@StrkPric.setter
+	def StrkPric(self, value):
+		self._StrkPric = value if type(value) != base_types.auto else self.make_default("StrkPric")
 
-	@AsstClssSpcfcAttrbts.deleter
-	def AsstClssSpcfcAttrbts(self):
-		del self._AsstClssSpcfcAttrbts
-		self._AsstClssSpcfcAttrbts = None
+	@StrkPric.deleter
+	def StrkPric(self):
+		del self._StrkPric
+		self._StrkPric = None
 
 	@property
 	def UndrlygInstrm(self):
@@ -89,40 +115,14 @@ class DerivativeInstrument6(base_types._BaseFieldType):
 		del self._XpryDt
 		self._XpryDt = None
 
-	@property
-	def OptnExrcStyle(self):
-		return self._OptnExrcStyle
-
-	@OptnExrcStyle.setter
-	def OptnExrcStyle(self, value):
-		self._OptnExrcStyle = value if type(value) != base_types.auto else self.make_default("OptnExrcStyle")
-
-	@OptnExrcStyle.deleter
-	def OptnExrcStyle(self):
-		del self._OptnExrcStyle
-		self._OptnExrcStyle = None
-
-	@property
-	def StrkPric(self):
-		return self._StrkPric
-
-	@StrkPric.setter
-	def StrkPric(self, value):
-		self._StrkPric = value if type(value) != base_types.auto else self.make_default("StrkPric")
-
-	@StrkPric.deleter
-	def StrkPric(self):
-		del self._StrkPric
-		self._StrkPric = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnTp', type=OptionType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricMltplr', type=NonNegativeDecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstClssSpcfcAttrbts', type=AssetClassAttributes1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnExrcStyle', type=OptionStyle7Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=OptionType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricMltplr', type=NonNegativeDecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrkPric', type=SecuritiesTransactionPrice4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygInstrm', type=UnderlyingIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnExrcStyle', type=OptionStyle7Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrkPric', type=SecuritiesTransactionPrice4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

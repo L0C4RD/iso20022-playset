@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Number import Number
 from ._ReconciliationMessageType2Code import ReconciliationMessageType2Code
+from ._Number import Number
+from ._Max35Text import Max35Text
 
 class MessageReconciliation3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Cnt", "_Tp"]
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
+	__slots__ = ["_Cnt", "_Tp", "_OthrTp"]
 	@property
 	def Cnt(self):
 		return self._Cnt
@@ -31,6 +18,19 @@ class MessageReconciliation3(base_types._BaseFieldType):
 	def Cnt(self):
 		del self._Cnt
 		self._Cnt = None
+
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def Tp(self):
@@ -46,8 +46,8 @@ class MessageReconciliation3(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReconciliationMessageType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

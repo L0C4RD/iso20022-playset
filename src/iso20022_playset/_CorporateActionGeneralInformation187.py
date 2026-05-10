@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._SecurityIdentification21 import SecurityIdentification21
 from ._CorporateActionEventType116Choice import CorporateActionEventType116Choice
+from ._SecurityIdentification21 import SecurityIdentification21
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class CorporateActionGeneralInformation187(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_OffclCorpActnEvtId", "_FinInstrmId"]
+	__slots__ = ["_EvtTp", "_FinInstrmId", "_OffclCorpActnEvtId", "_CorpActnEvtId"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
@@ -33,19 +33,6 @@ class CorporateActionGeneralInformation187(base_types._BaseFieldType):
 		self._EvtTp = None
 
 	@property
-	def OffclCorpActnEvtId(self):
-		return self._OffclCorpActnEvtId
-
-	@OffclCorpActnEvtId.setter
-	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
-
-	@OffclCorpActnEvtId.deleter
-	def OffclCorpActnEvtId(self):
-		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
-
-	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -58,10 +45,23 @@ class CorporateActionGeneralInformation187(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
+	@property
+	def OffclCorpActnEvtId(self):
+		return self._OffclCorpActnEvtId
+
+	@OffclCorpActnEvtId.setter
+	def OffclCorpActnEvtId(self, value):
+		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
+
+	@OffclCorpActnEvtId.deleter
+	def OffclCorpActnEvtId(self):
+		del self._OffclCorpActnEvtId
+		self._OffclCorpActnEvtId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType116Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

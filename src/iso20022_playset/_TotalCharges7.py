@@ -1,25 +1,12 @@
 from . import base_types
+from ._Max15NumericText import Max15NumericText
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CreditDebitCode import CreditDebitCode
-from ._Max15NumericText import Max15NumericText
 from ._DecimalNumber import DecimalNumber
 
 class TotalCharges7(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlChrgsAmt", "_CdtDbtInd", "_NbOfChrgsRcrds", "_CtrlSum"]
-	@property
-	def TtlChrgsAmt(self):
-		return self._TtlChrgsAmt
-
-	@TtlChrgsAmt.setter
-	def TtlChrgsAmt(self, value):
-		self._TtlChrgsAmt = value if type(value) != base_types.auto else self.make_default("TtlChrgsAmt")
-
-	@TtlChrgsAmt.deleter
-	def TtlChrgsAmt(self):
-		del self._TtlChrgsAmt
-		self._TtlChrgsAmt = None
-
+	__slots__ = ["_CtrlSum", "_NbOfChrgsRcrds", "_TtlChrgsAmt", "_CdtDbtInd"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -32,6 +19,19 @@ class TotalCharges7(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
+
+	@property
+	def CtrlSum(self):
+		return self._CtrlSum
+
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
 
 	@property
 	def NbOfChrgsRcrds(self):
@@ -47,22 +47,22 @@ class TotalCharges7(base_types._BaseFieldType):
 		self._NbOfChrgsRcrds = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def TtlChrgsAmt(self):
+		return self._TtlChrgsAmt
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+	@TtlChrgsAmt.setter
+	def TtlChrgsAmt(self, value):
+		self._TtlChrgsAmt = value if type(value) != base_types.auto else self.make_default("TtlChrgsAmt")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
+	@TtlChrgsAmt.deleter
+	def TtlChrgsAmt(self):
+		del self._TtlChrgsAmt
+		self._TtlChrgsAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfChrgsRcrds', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfChrgsRcrds', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

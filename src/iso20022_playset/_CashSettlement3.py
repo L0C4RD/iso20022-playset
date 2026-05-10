@@ -4,7 +4,7 @@ from ._CashAccount204 import CashAccount204
 
 class CashSettlement3(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctDtls", "_OthrCshSttlmDtls"]
+	__slots__ = ["_OthrCshSttlmDtls", "_CshAcctDtls"]
 	@property
 	def CshAcctDtls(self):
 		return self._CshAcctDtls

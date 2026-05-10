@@ -5,19 +5,19 @@ from ._TimeUnit1Code import TimeUnit1Code
 
 class ProcessRetry3(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfTm", "_MaxNb", "_Dely"]
+	__slots__ = ["_MaxNb", "_UnitOfTm", "_Dely"]
 	@property
-	def UnitOfTm(self):
-		return self._UnitOfTm
+	def Dely(self):
+		return self._Dely
 
-	@UnitOfTm.setter
-	def UnitOfTm(self, value):
-		self._UnitOfTm = value if type(value) != base_types.auto else self.make_default("UnitOfTm")
+	@Dely.setter
+	def Dely(self, value):
+		self._Dely = value if type(value) != base_types.auto else self.make_default("Dely")
 
-	@UnitOfTm.deleter
-	def UnitOfTm(self):
-		del self._UnitOfTm
-		self._UnitOfTm = None
+	@Dely.deleter
+	def Dely(self):
+		del self._Dely
+		self._Dely = None
 
 	@property
 	def MaxNb(self):
@@ -33,21 +33,21 @@ class ProcessRetry3(base_types._BaseFieldType):
 		self._MaxNb = None
 
 	@property
-	def Dely(self):
-		return self._Dely
+	def UnitOfTm(self):
+		return self._UnitOfTm
 
-	@Dely.setter
-	def Dely(self, value):
-		self._Dely = value if type(value) != base_types.auto else self.make_default("Dely")
+	@UnitOfTm.setter
+	def UnitOfTm(self, value):
+		self._UnitOfTm = value if type(value) != base_types.auto else self.make_default("UnitOfTm")
 
-	@Dely.deleter
-	def Dely(self):
-		del self._Dely
-		self._Dely = None
+	@UnitOfTm.deleter
+	def UnitOfTm(self):
+		del self._UnitOfTm
+		self._UnitOfTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dely', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

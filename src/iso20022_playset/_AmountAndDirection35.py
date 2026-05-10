@@ -1,6 +1,6 @@
 from . import base_types
-from ._NonNegativeDecimalNumber import NonNegativeDecimalNumber
 from ._CreditDebitCode import CreditDebitCode
+from ._NonNegativeDecimalNumber import NonNegativeDecimalNumber
 
 class AmountAndDirection35(base_types._BaseFieldType):
 

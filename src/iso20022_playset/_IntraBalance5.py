@@ -1,14 +1,14 @@
 from . import base_types
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._GenericIdentification37 import GenericIdentification37
 from ._PriorityNumeric4Choice import PriorityNumeric4Choice
 from ._Max350Text import Max350Text
 from ._Amount2Choice import Amount2Choice
 from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class IntraBalance5(base_types._BaseFieldType):
 
-	__slots__ = ["_BalFr", "_BalTo", "_SttlmDt", "_InstrPrcgAddtlDtls", "_SttlmAmt", "_Prty", "_CshSubBalId"]
+	__slots__ = ["_SttlmDt", "_SttlmAmt", "_CshSubBalId", "_BalFr", "_Prty", "_InstrPrcgAddtlDtls", "_BalTo"]
 	@property
 	def BalFr(self):
 		return self._BalFr
@@ -36,17 +36,17 @@ class IntraBalance5(base_types._BaseFieldType):
 		self._BalTo = None
 
 	@property
-	def SttlmDt(self):
-		return self._SttlmDt
+	def CshSubBalId(self):
+		return self._CshSubBalId
 
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+	@CshSubBalId.setter
+	def CshSubBalId(self, value):
+		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
 
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
+	@CshSubBalId.deleter
+	def CshSubBalId(self):
+		del self._CshSubBalId
+		self._CshSubBalId = None
 
 	@property
 	def InstrPrcgAddtlDtls(self):
@@ -62,19 +62,6 @@ class IntraBalance5(base_types._BaseFieldType):
 		self._InstrPrcgAddtlDtls = None
 
 	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
-
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
-
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
-
-	@property
 	def Prty(self):
 		return self._Prty
 
@@ -88,25 +75,38 @@ class IntraBalance5(base_types._BaseFieldType):
 		self._Prty = None
 
 	@property
-	def CshSubBalId(self):
-		return self._CshSubBalId
+	def SttlmAmt(self):
+		return self._SttlmAmt
 
-	@CshSubBalId.setter
-	def CshSubBalId(self, value):
-		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
 
-	@CshSubBalId.deleter
-	def CshSubBalId(self):
-		del self._CshSubBalId
-		self._CshSubBalId = None
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTo', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

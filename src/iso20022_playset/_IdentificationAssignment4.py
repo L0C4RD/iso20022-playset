@@ -1,25 +1,12 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ISODateTime import ISODateTime
 from ._Party50Choice import Party50Choice
 from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class IdentificationAssignment4(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_Assgne", "_CreDtTm", "_Cretr", "_FrstAgt", "_MsgId"]
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
+	__slots__ = ["_FrstAgt", "_Assgnr", "_Cretr", "_Assgne", "_MsgId", "_CreDtTm"]
 	@property
 	def Assgne(self):
 		return self._Assgne
@@ -32,6 +19,19 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 	def Assgne(self):
 		del self._Assgne
 		self._Assgne = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def CreDtTm(self):
@@ -86,8 +86,8 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

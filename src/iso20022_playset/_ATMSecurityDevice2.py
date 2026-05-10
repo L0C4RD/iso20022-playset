@@ -1,13 +1,26 @@
 from . import base_types
-from ._FailureReason5Code import FailureReason5Code
+from ._TR34Status1Code import TR34Status1Code
 from ._ATMEquipment2 import ATMEquipment2
 from ._ATMStatus2Code import ATMStatus2Code
 from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
-from ._TR34Status1Code import TR34Status1Code
+from ._FailureReason5Code import FailureReason5Code
 
 class ATMSecurityDevice2(base_types._BaseFieldType):
 
-	__slots__ = ["_CurCfgtn", "_DvcPrprty", "_CurSts", "_BndgStat", "_Incdnt", "_SpprtdCfgtn"]
+	__slots__ = ["_CurCfgtn", "_BndgStat", "_CurSts", "_SpprtdCfgtn", "_DvcPrprty", "_Incdnt"]
+	@property
+	def BndgStat(self):
+		return self._BndgStat
+
+	@BndgStat.setter
+	def BndgStat(self, value):
+		self._BndgStat = value if type(value) != base_types.auto else self.make_default("BndgStat")
+
+	@BndgStat.deleter
+	def BndgStat(self):
+		del self._BndgStat
+		self._BndgStat = None
+
 	@property
 	def CurCfgtn(self):
 		return self._CurCfgtn
@@ -20,19 +33,6 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 	def CurCfgtn(self):
 		del self._CurCfgtn
 		self._CurCfgtn = None
-
-	@property
-	def DvcPrprty(self):
-		return self._DvcPrprty
-
-	@DvcPrprty.setter
-	def DvcPrprty(self, value):
-		self._DvcPrprty = value if type(value) != base_types.auto else self.make_default("DvcPrprty")
-
-	@DvcPrprty.deleter
-	def DvcPrprty(self):
-		del self._DvcPrprty
-		self._DvcPrprty = None
 
 	@property
 	def CurSts(self):
@@ -48,17 +48,17 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 		self._CurSts = None
 
 	@property
-	def BndgStat(self):
-		return self._BndgStat
+	def DvcPrprty(self):
+		return self._DvcPrprty
 
-	@BndgStat.setter
-	def BndgStat(self, value):
-		self._BndgStat = value if type(value) != base_types.auto else self.make_default("BndgStat")
+	@DvcPrprty.setter
+	def DvcPrprty(self, value):
+		self._DvcPrprty = value if type(value) != base_types.auto else self.make_default("DvcPrprty")
 
-	@BndgStat.deleter
-	def BndgStat(self):
-		del self._BndgStat
-		self._BndgStat = None
+	@DvcPrprty.deleter
+	def DvcPrprty(self):
+		del self._DvcPrprty
+		self._DvcPrprty = None
 
 	@property
 	def Incdnt(self):
@@ -87,10 +87,10 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 		self._SpprtdCfgtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvcPrprty', type=ATMEquipment2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurSts', type=ATMStatus2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BndgStat', type=TR34Status1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurSts', type=ATMStatus2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvcPrprty', type=ATMEquipment2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Incdnt', type=FailureReason5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpprtdCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReceivingPartiesAndAccount19 import ReceivingPartiesAndAccount19
 from ._DeliveringPartiesAndAccount19 import DeliveringPartiesAndAccount19
+from ._ReceivingPartiesAndAccount19 import ReceivingPartiesAndAccount19
 
 class SettlementParties36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrgSttlmPties", "_RcvgSttlmPties"]
+	__slots__ = ["_RcvgSttlmPties", "_DlvrgSttlmPties"]
 	@property
 	def DlvrgSttlmPties(self):
 		return self._DlvrgSttlmPties

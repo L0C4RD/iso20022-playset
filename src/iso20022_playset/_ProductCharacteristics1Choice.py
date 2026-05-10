@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProductCharacteristics1 import ProductCharacteristics1
 from ._GenericIdentification4 import GenericIdentification4
+from ._ProductCharacteristics1 import ProductCharacteristics1
 
 class ProductCharacteristics1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPdctChrtcs", "_StrdPdctChrtcs"]
+	__slots__ = ["_StrdPdctChrtcs", "_OthrPdctChrtcs"]
 	@property
 	def OthrPdctChrtcs(self):
 		return self._OthrPdctChrtcs

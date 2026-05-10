@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class TransactionIdentifications29(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_MktInfrstrctrTxId", "_PrcrTxId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctSvcrTxId", "_PrcrTxId", "_AcctOwnrTxId", "_MktInfrstrctrTxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
@@ -16,6 +16,19 @@ class TransactionIdentifications29(base_types._BaseFieldType):
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
 		self._AcctOwnrTxId = None
+
+	@property
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
+
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -43,23 +56,10 @@ class TransactionIdentifications29(base_types._BaseFieldType):
 		del self._PrcrTxId
 		self._PrcrTxId = None
 
-	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
-
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
-
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

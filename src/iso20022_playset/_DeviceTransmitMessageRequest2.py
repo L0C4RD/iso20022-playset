@@ -1,23 +1,23 @@
 from . import base_types
 from ._NetworkParameters7 import NetworkParameters7
-from ._Number import Number
 from ._Max100KBinary import Max100KBinary
+from ._Number import Number
 
 class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxWtgTm", "_MaxTrnsmssnTm", "_DstnAdr", "_MsgToSnd"]
+	__slots__ = ["_MaxTrnsmssnTm", "_DstnAdr", "_MsgToSnd", "_MaxWtgTm"]
 	@property
-	def MaxWtgTm(self):
-		return self._MaxWtgTm
+	def DstnAdr(self):
+		return self._DstnAdr
 
-	@MaxWtgTm.setter
-	def MaxWtgTm(self, value):
-		self._MaxWtgTm = value if type(value) != base_types.auto else self.make_default("MaxWtgTm")
+	@DstnAdr.setter
+	def DstnAdr(self, value):
+		self._DstnAdr = value if type(value) != base_types.auto else self.make_default("DstnAdr")
 
-	@MaxWtgTm.deleter
-	def MaxWtgTm(self):
-		del self._MaxWtgTm
-		self._MaxWtgTm = None
+	@DstnAdr.deleter
+	def DstnAdr(self):
+		del self._DstnAdr
+		self._DstnAdr = None
 
 	@property
 	def MaxTrnsmssnTm(self):
@@ -33,17 +33,17 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 		self._MaxTrnsmssnTm = None
 
 	@property
-	def DstnAdr(self):
-		return self._DstnAdr
+	def MaxWtgTm(self):
+		return self._MaxWtgTm
 
-	@DstnAdr.setter
-	def DstnAdr(self, value):
-		self._DstnAdr = value if type(value) != base_types.auto else self.make_default("DstnAdr")
+	@MaxWtgTm.setter
+	def MaxWtgTm(self, value):
+		self._MaxWtgTm = value if type(value) != base_types.auto else self.make_default("MaxWtgTm")
 
-	@DstnAdr.deleter
-	def DstnAdr(self):
-		del self._DstnAdr
-		self._DstnAdr = None
+	@MaxWtgTm.deleter
+	def MaxWtgTm(self):
+		del self._MaxWtgTm
+		self._MaxWtgTm = None
 
 	@property
 	def MsgToSnd(self):
@@ -59,9 +59,9 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 		self._MsgToSnd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxTrnsmssnTm', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstnAdr', type=NetworkParameters7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxTrnsmssnTm', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgToSnd', type=Max100KBinary, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,25 @@
 from . import base_types
-from ._Balance16 import Balance16
 from ._TypeOfPrice29Choice import TypeOfPrice29Choice
-from ._Price7 import Price7
-from ._GenericIdentification37 import GenericIdentification37
+from ._Balance16 import Balance16
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._GenericIdentification37 import GenericIdentification37
+from ._Price7 import Price7
 
 class QuantityBreakdown57(base_types._BaseFieldType):
 
-	__slots__ = ["_LotPric", "_TpOfPric", "_LotNb", "_LotDtTm", "_LotQty"]
+	__slots__ = ["_LotQty", "_TpOfPric", "_LotDtTm", "_LotNb", "_LotPric"]
 	@property
-	def LotPric(self):
-		return self._LotPric
+	def LotDtTm(self):
+		return self._LotDtTm
 
-	@LotPric.setter
-	def LotPric(self, value):
-		self._LotPric = value if type(value) != base_types.auto else self.make_default("LotPric")
+	@LotDtTm.setter
+	def LotDtTm(self, value):
+		self._LotDtTm = value if type(value) != base_types.auto else self.make_default("LotDtTm")
 
-	@LotPric.deleter
-	def LotPric(self):
-		del self._LotPric
-		self._LotPric = None
-
-	@property
-	def TpOfPric(self):
-		return self._TpOfPric
-
-	@TpOfPric.setter
-	def TpOfPric(self, value):
-		self._TpOfPric = value if type(value) != base_types.auto else self.make_default("TpOfPric")
-
-	@TpOfPric.deleter
-	def TpOfPric(self):
-		del self._TpOfPric
-		self._TpOfPric = None
+	@LotDtTm.deleter
+	def LotDtTm(self):
+		del self._LotDtTm
+		self._LotDtTm = None
 
 	@property
 	def LotNb(self):
@@ -48,17 +35,17 @@ class QuantityBreakdown57(base_types._BaseFieldType):
 		self._LotNb = None
 
 	@property
-	def LotDtTm(self):
-		return self._LotDtTm
+	def LotPric(self):
+		return self._LotPric
 
-	@LotDtTm.setter
-	def LotDtTm(self, value):
-		self._LotDtTm = value if type(value) != base_types.auto else self.make_default("LotDtTm")
+	@LotPric.setter
+	def LotPric(self, value):
+		self._LotPric = value if type(value) != base_types.auto else self.make_default("LotPric")
 
-	@LotDtTm.deleter
-	def LotDtTm(self):
-		del self._LotDtTm
-		self._LotDtTm = None
+	@LotPric.deleter
+	def LotPric(self):
+		del self._LotPric
+		self._LotPric = None
 
 	@property
 	def LotQty(self):
@@ -73,11 +60,24 @@ class QuantityBreakdown57(base_types._BaseFieldType):
 		del self._LotQty
 		self._LotQty = None
 
+	@property
+	def TpOfPric(self):
+		return self._TpOfPric
+
+	@TpOfPric.setter
+	def TpOfPric(self, value):
+		self._TpOfPric = value if type(value) != base_types.auto else self.make_default("TpOfPric")
+
+	@TpOfPric.deleter
+	def TpOfPric(self):
+		del self._TpOfPric
+		self._TpOfPric = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LotPric', type=Price7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpOfPric', type=TypeOfPrice29Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LotNb', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotNb', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotPric', type=Price7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotQty', type=Balance16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfPric', type=TypeOfPrice29Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

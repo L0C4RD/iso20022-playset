@@ -1,40 +1,27 @@
 from . import base_types
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
-from ._Max35Text import Max35Text
-from ._MandateTypeInformation2 import MandateTypeInformation2
-from ._Max10KBinary import Max10KBinary
-from ._Frequency36Choice import Frequency36Choice
 from ._ISODate import ISODate
+from ._Frequency36Choice import Frequency36Choice
+from ._MandateTypeInformation2 import MandateTypeInformation2
+from ._Max35Text import Max35Text
+from ._Max10KBinary import Max10KBinary
 from ._ISODateTime import ISODateTime
+from ._MandateSetupReason1Choice import MandateSetupReason1Choice
 
 class CreditTransferMandateData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_ElctrncSgntr", "_DtOfVrfctn", "_Tp", "_FnlPmtDt", "_DtOfSgntr", "_Rsn", "_FrstPmtDt", "_MndtId"]
+	__slots__ = ["_Rsn", "_FnlPmtDt", "_DtOfSgntr", "_Tp", "_FrstPmtDt", "_ElctrncSgntr", "_MndtId", "_DtOfVrfctn", "_Frqcy"]
 	@property
-	def Frqcy(self):
-		return self._Frqcy
+	def DtOfSgntr(self):
+		return self._DtOfSgntr
 
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+	@DtOfSgntr.setter
+	def DtOfSgntr(self, value):
+		self._DtOfSgntr = value if type(value) != base_types.auto else self.make_default("DtOfSgntr")
 
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
-
-	@property
-	def ElctrncSgntr(self):
-		return self._ElctrncSgntr
-
-	@ElctrncSgntr.setter
-	def ElctrncSgntr(self, value):
-		self._ElctrncSgntr = value if type(value) != base_types.auto else self.make_default("ElctrncSgntr")
-
-	@ElctrncSgntr.deleter
-	def ElctrncSgntr(self):
-		del self._ElctrncSgntr
-		self._ElctrncSgntr = None
+	@DtOfSgntr.deleter
+	def DtOfSgntr(self):
+		del self._DtOfSgntr
+		self._DtOfSgntr = None
 
 	@property
 	def DtOfVrfctn(self):
@@ -50,17 +37,17 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 		self._DtOfVrfctn = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def ElctrncSgntr(self):
+		return self._ElctrncSgntr
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@ElctrncSgntr.setter
+	def ElctrncSgntr(self, value):
+		self._ElctrncSgntr = value if type(value) != base_types.auto else self.make_default("ElctrncSgntr")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@ElctrncSgntr.deleter
+	def ElctrncSgntr(self):
+		del self._ElctrncSgntr
+		self._ElctrncSgntr = None
 
 	@property
 	def FnlPmtDt(self):
@@ -76,30 +63,17 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 		self._FnlPmtDt = None
 
 	@property
-	def DtOfSgntr(self):
-		return self._DtOfSgntr
+	def Frqcy(self):
+		return self._Frqcy
 
-	@DtOfSgntr.setter
-	def DtOfSgntr(self, value):
-		self._DtOfSgntr = value if type(value) != base_types.auto else self.make_default("DtOfSgntr")
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
 
-	@DtOfSgntr.deleter
-	def DtOfSgntr(self):
-		del self._DtOfSgntr
-		self._DtOfSgntr = None
-
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
 
 	@property
 	def FrstPmtDt(self):
@@ -127,15 +101,41 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 		del self._MndtId
 		self._MndtId = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctrncSgntr', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtOfVrfctn', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=MandateTypeInformation2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FnlPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfVrfctn', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctrncSgntr', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FnlPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=MandateTypeInformation2, min=0, max=1, mutex_group=None, array=False),
 	))
 

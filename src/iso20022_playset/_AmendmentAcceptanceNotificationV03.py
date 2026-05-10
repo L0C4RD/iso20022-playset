@@ -1,16 +1,16 @@
 from . import base_types
-from ._Count1 import Count1
-from ._BICIdentification1 import BICIdentification1
-from ._PendingActivity2 import PendingActivity2
-from ._MessageIdentification1 import MessageIdentification1
-from ._DocumentIdentification3 import DocumentIdentification3
 from ._TransactionStatus4 import TransactionStatus4
+from ._PendingActivity2 import PendingActivity2
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._BICIdentification1 import BICIdentification1
 from ._DocumentIdentification5 import DocumentIdentification5
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._Count1 import Count1
+from ._MessageIdentification1 import MessageIdentification1
 
 class AmendmentAcceptanceNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdAmdmntNb", "_UsrTxRef", "_EstblishdBaselnId", "_Initr", "_DltaRptRef", "_TxId", "_ReqForActn", "_TxSts", "_NtfctnId"]
+	__slots__ = ["_DltaRptRef", "_TxSts", "_Initr", "_TxId", "_AccptdAmdmntNb", "_ReqForActn", "_UsrTxRef", "_EstblishdBaselnId", "_NtfctnId"]
 	@property
 	def AccptdAmdmntNb(self):
 		return self._AccptdAmdmntNb
@@ -25,17 +25,17 @@ class AmendmentAcceptanceNotificationV03(base_types._BaseFieldType):
 		self._AccptdAmdmntNb = None
 
 	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
+	def DltaRptRef(self):
+		return self._DltaRptRef
 
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+	@DltaRptRef.setter
+	def DltaRptRef(self, value):
+		self._DltaRptRef = value if type(value) != base_types.auto else self.make_default("DltaRptRef")
 
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
+	@DltaRptRef.deleter
+	def DltaRptRef(self):
+		del self._DltaRptRef
+		self._DltaRptRef = None
 
 	@property
 	def EstblishdBaselnId(self):
@@ -64,30 +64,17 @@ class AmendmentAcceptanceNotificationV03(base_types._BaseFieldType):
 		self._Initr = None
 
 	@property
-	def DltaRptRef(self):
-		return self._DltaRptRef
+	def NtfctnId(self):
+		return self._NtfctnId
 
-	@DltaRptRef.setter
-	def DltaRptRef(self, value):
-		self._DltaRptRef = value if type(value) != base_types.auto else self.make_default("DltaRptRef")
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
 
-	@DltaRptRef.deleter
-	def DltaRptRef(self):
-		del self._DltaRptRef
-		self._DltaRptRef = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
 
 	@property
 	def ReqForActn(self):
@@ -103,6 +90,19 @@ class AmendmentAcceptanceNotificationV03(base_types._BaseFieldType):
 		self._ReqForActn = None
 
 	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
 	def TxSts(self):
 		return self._TxSts
 
@@ -116,27 +116,27 @@ class AmendmentAcceptanceNotificationV03(base_types._BaseFieldType):
 		self._TxSts = None
 
 	@property
-	def NtfctnId(self):
-		return self._NtfctnId
+	def UsrTxRef(self):
+		return self._UsrTxRef
 
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
 
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

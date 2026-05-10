@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentificationAndAccount229 import PartyIdentificationAndAccount229
 from ._PartyIdentification255Choice import PartyIdentification255Choice
+from ._PartyIdentificationAndAccount229 import PartyIdentificationAndAccount229
+from ._Max35Text import Max35Text
 
 class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 
-	__slots__ = ["_Dpstry", "_Pty1", "_SctiesSttlmSys", "_Pty2"]
+	__slots__ = ["_Dpstry", "_Pty2", "_SctiesSttlmSys", "_Pty1"]
 	@property
 	def Dpstry(self):
 		return self._Dpstry
@@ -33,19 +33,6 @@ class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 		self._Pty1 = None
 
 	@property
-	def SctiesSttlmSys(self):
-		return self._SctiesSttlmSys
-
-	@SctiesSttlmSys.setter
-	def SctiesSttlmSys(self, value):
-		self._SctiesSttlmSys = value if type(value) != base_types.auto else self.make_default("SctiesSttlmSys")
-
-	@SctiesSttlmSys.deleter
-	def SctiesSttlmSys(self):
-		del self._SctiesSttlmSys
-		self._SctiesSttlmSys = None
-
-	@property
 	def Pty2(self):
 		return self._Pty2
 
@@ -58,10 +45,23 @@ class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 		del self._Pty2
 		self._Pty2 = None
 
+	@property
+	def SctiesSttlmSys(self):
+		return self._SctiesSttlmSys
+
+	@SctiesSttlmSys.setter
+	def SctiesSttlmSys(self, value):
+		self._SctiesSttlmSys = value if type(value) != base_types.auto else self.make_default("SctiesSttlmSys")
+
+	@SctiesSttlmSys.deleter
+	def SctiesSttlmSys(self):
+		del self._SctiesSttlmSys
+		self._SctiesSttlmSys = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification255Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount229, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesSttlmSys', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount229, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesSttlmSys', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

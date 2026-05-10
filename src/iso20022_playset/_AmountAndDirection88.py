@@ -1,13 +1,39 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ForeignExchangeTerms23 import ForeignExchangeTerms23
-from ._CreditDebitCode import CreditDebitCode
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._CreditDebitCode import CreditDebitCode
 
 class AmountAndDirection88(base_types._BaseFieldType):
 
-	__slots__ = ["_FXDtls", "_OrgnlCcyAndOrdrdAmt", "_ValDt", "_Amt", "_CdtDbtInd"]
+	__slots__ = ["_OrgnlCcyAndOrdrdAmt", "_ValDt", "_CdtDbtInd", "_FXDtls", "_Amt"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
 	@property
 	def FXDtls(self):
 		return self._FXDtls
@@ -47,37 +73,11 @@ class AmountAndDirection88(base_types._BaseFieldType):
 		del self._ValDt
 		self._ValDt = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

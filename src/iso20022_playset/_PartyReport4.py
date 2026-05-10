@@ -1,10 +1,10 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._PartyOrBusinessError4Choice import PartyOrBusinessError4Choice
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class PartyReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_PtyOrErr"]
+	__slots__ = ["_PtyOrErr", "_PtyId"]
 	@property
 	def PtyId(self):
 		return self._PtyId

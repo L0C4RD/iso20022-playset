@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
 
 class AdditionalData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val"]
+	__slots__ = ["_Val", "_Tp"]
 	@property
 	def Tp(self):
 		return self._Tp

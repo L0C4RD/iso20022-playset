@@ -1,11 +1,24 @@
 from . import base_types
-from ._AffirmationReason2Choice import AffirmationReason2Choice
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._AffirmationReason2Choice import AffirmationReason2Choice
 from ._ProprietaryReason4 import ProprietaryReason4
 
 class AffirmationStatus11Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_PrtrySts", "_Uaffrmd", "_Affrmd"]
+	@property
+	def Affrmd(self):
+		return self._Affrmd
+
+	@Affrmd.setter
+	def Affrmd(self, value):
+		self._Affrmd = value if type(value) != base_types.auto else self.make_default("Affrmd")
+
+	@Affrmd.deleter
+	def Affrmd(self):
+		del self._Affrmd
+		self._Affrmd = None
+
 	@property
 	def PrtrySts(self):
 		return self._PrtrySts
@@ -32,22 +45,9 @@ class AffirmationStatus11Choice(base_types._BaseFieldType):
 		del self._Uaffrmd
 		self._Uaffrmd = None
 
-	@property
-	def Affrmd(self):
-		return self._Affrmd
-
-	@Affrmd.setter
-	def Affrmd(self, value):
-		self._Affrmd = value if type(value) != base_types.auto else self.make_default("Affrmd")
-
-	@Affrmd.deleter
-	def Affrmd(self):
-		del self._Affrmd
-		self._Affrmd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Affrmd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Uaffrmd', type=AffirmationReason2Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Affrmd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 	))
 

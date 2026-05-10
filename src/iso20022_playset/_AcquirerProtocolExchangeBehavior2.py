@@ -1,24 +1,24 @@
 from . import base_types
-from ._ExchangeConfiguration10 import ExchangeConfiguration10
-from ._ExchangeConfiguration9 import ExchangeConfiguration9
 from ._CancellationProcess2Code import CancellationProcess2Code
+from ._ExchangeConfiguration9 import ExchangeConfiguration9
+from ._ExchangeConfiguration10 import ExchangeConfiguration10
 from ._FinancialCapture1Code import FinancialCapture1Code
 
 class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlXchg", "_CmpltnXchg", "_FinCaptr", "_BtchTrf"]
+	__slots__ = ["_BtchTrf", "_CxlXchg", "_FinCaptr", "_CmpltnXchg"]
 	@property
-	def CxlXchg(self):
-		return self._CxlXchg
+	def BtchTrf(self):
+		return self._BtchTrf
 
-	@CxlXchg.setter
-	def CxlXchg(self, value):
-		self._CxlXchg = value if type(value) != base_types.auto else self.make_default("CxlXchg")
+	@BtchTrf.setter
+	def BtchTrf(self, value):
+		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
 
-	@CxlXchg.deleter
-	def CxlXchg(self):
-		del self._CxlXchg
-		self._CxlXchg = None
+	@BtchTrf.deleter
+	def BtchTrf(self):
+		del self._BtchTrf
+		self._BtchTrf = None
 
 	@property
 	def CmpltnXchg(self):
@@ -34,6 +34,19 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 		self._CmpltnXchg = None
 
 	@property
+	def CxlXchg(self):
+		return self._CxlXchg
+
+	@CxlXchg.setter
+	def CxlXchg(self, value):
+		self._CxlXchg = value if type(value) != base_types.auto else self.make_default("CxlXchg")
+
+	@CxlXchg.deleter
+	def CxlXchg(self):
+		del self._CxlXchg
+		self._CxlXchg = None
+
+	@property
 	def FinCaptr(self):
 		return self._FinCaptr
 
@@ -46,23 +59,10 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 		del self._FinCaptr
 		self._FinCaptr = None
 
-	@property
-	def BtchTrf(self):
-		return self._BtchTrf
-
-	@BtchTrf.setter
-	def BtchTrf(self, value):
-		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
-
-	@BtchTrf.deleter
-	def BtchTrf(self):
-		del self._BtchTrf
-		self._BtchTrf = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlXchg', type=CancellationProcess2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpltnXchg', type=ExchangeConfiguration10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinCaptr', type=FinancialCapture1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrf', type=ExchangeConfiguration9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltnXchg', type=ExchangeConfiguration10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlXchg', type=CancellationProcess2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinCaptr', type=FinancialCapture1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

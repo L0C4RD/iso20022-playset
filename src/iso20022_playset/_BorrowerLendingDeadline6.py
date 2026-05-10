@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateFormat49Choice import DateFormat49Choice
 from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._DateFormat49Choice import DateFormat49Choice
 
 class BorrowerLendingDeadline6(base_types._BaseFieldType):
 
-	__slots__ = ["_Brrwr", "_StockLndgDdln"]
+	__slots__ = ["_StockLndgDdln", "_Brrwr"]
 	@property
 	def Brrwr(self):
 		return self._Brrwr

@@ -5,20 +5,7 @@ from ._Max2048Text import Max2048Text
 
 class DocumentLineInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Amt", "_Id"]
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
+	__slots__ = ["_Id", "_Amt", "_Desc"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,6 +18,19 @@ class DocumentLineInformation2(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def Id(self):
@@ -46,8 +46,8 @@ class DocumentLineInformation2(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=RemittanceAmount4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentLineIdentification1, min=1, max=None, mutex_group=None, array=True),
 	))
 

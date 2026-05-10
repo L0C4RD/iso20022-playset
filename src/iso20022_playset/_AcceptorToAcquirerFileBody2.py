@@ -1,23 +1,23 @@
 from . import base_types
-from ._CardPaymentBatchTransfer13 import CardPaymentBatchTransfer13
 from ._AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
 from ._AcceptorCancellationAdvice14 import AcceptorCancellationAdvice14
+from ._CardPaymentBatchTransfer13 import CardPaymentBatchTransfer13
 
 class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlAdvc", "_CmpltnAdvc", "_BtchTrf"]
+	__slots__ = ["_BtchTrf", "_CxlAdvc", "_CmpltnAdvc"]
 	@property
-	def CxlAdvc(self):
-		return self._CxlAdvc
+	def BtchTrf(self):
+		return self._BtchTrf
 
-	@CxlAdvc.setter
-	def CxlAdvc(self, value):
-		self._CxlAdvc = value if type(value) != base_types.auto else self.make_default("CxlAdvc")
+	@BtchTrf.setter
+	def BtchTrf(self, value):
+		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
 
-	@CxlAdvc.deleter
-	def CxlAdvc(self):
-		del self._CxlAdvc
-		self._CxlAdvc = None
+	@BtchTrf.deleter
+	def BtchTrf(self):
+		del self._BtchTrf
+		self._BtchTrf = None
 
 	@property
 	def CmpltnAdvc(self):
@@ -33,21 +33,21 @@ class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 		self._CmpltnAdvc = None
 
 	@property
-	def BtchTrf(self):
-		return self._BtchTrf
+	def CxlAdvc(self):
+		return self._CxlAdvc
 
-	@BtchTrf.setter
-	def BtchTrf(self, value):
-		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
+	@CxlAdvc.setter
+	def CxlAdvc(self, value):
+		self._CxlAdvc = value if type(value) != base_types.auto else self.make_default("CxlAdvc")
 
-	@BtchTrf.deleter
-	def BtchTrf(self):
-		del self._BtchTrf
-		self._BtchTrf = None
+	@CxlAdvc.deleter
+	def CxlAdvc(self):
+		del self._CxlAdvc
+		self._CxlAdvc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlAdvc', type=AcceptorCancellationAdvice14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpltnAdvc', type=AcceptorCompletionAdvice14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrf', type=CardPaymentBatchTransfer13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltnAdvc', type=AcceptorCompletionAdvice14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlAdvc', type=AcceptorCancellationAdvice14, min=0, max=1, mutex_group=None, array=False),
 	))
 

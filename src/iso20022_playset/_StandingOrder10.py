@@ -1,15 +1,15 @@
 from . import base_types
-from ._DatePeriod2Choice import DatePeriod2Choice
-from ._ExecutionType1Choice import ExecutionType1Choice
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
+from ._ExecutionType1Choice import ExecutionType1Choice
 from ._Frequency2Code import Frequency2Code
+from ._DatePeriod2Choice import DatePeriod2Choice
 from ._Amount2Choice import Amount2Choice
+from ._CashAccount40 import CashAccount40
 
 class StandingOrder10(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_VldtyPrd", "_ZeroSweepInd", "_Cdtr", "_DbtrAcct", "_Dbtr", "_ExctnTp", "_Frqcy", "_CdtrAcct"]
+	__slots__ = ["_CdtrAcct", "_Amt", "_DbtrAcct", "_VldtyPrd", "_ExctnTp", "_ZeroSweepInd", "_Cdtr", "_Dbtr", "_Frqcy"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -22,32 +22,6 @@ class StandingOrder10(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
-
-	@property
-	def VldtyPrd(self):
-		return self._VldtyPrd
-
-	@VldtyPrd.setter
-	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
-
-	@VldtyPrd.deleter
-	def VldtyPrd(self):
-		del self._VldtyPrd
-		self._VldtyPrd = None
-
-	@property
-	def ZeroSweepInd(self):
-		return self._ZeroSweepInd
-
-	@ZeroSweepInd.setter
-	def ZeroSweepInd(self, value):
-		self._ZeroSweepInd = value if type(value) != base_types.auto else self.make_default("ZeroSweepInd")
-
-	@ZeroSweepInd.deleter
-	def ZeroSweepInd(self):
-		del self._ZeroSweepInd
-		self._ZeroSweepInd = None
 
 	@property
 	def Cdtr(self):
@@ -63,17 +37,17 @@ class StandingOrder10(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
+	def CdtrAcct(self):
+		return self._CdtrAcct
 
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+	@CdtrAcct.setter
+	def CdtrAcct(self, value):
+		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
 
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
+	@CdtrAcct.deleter
+	def CdtrAcct(self):
+		del self._CdtrAcct
+		self._CdtrAcct = None
 
 	@property
 	def Dbtr(self):
@@ -87,6 +61,19 @@ class StandingOrder10(base_types._BaseFieldType):
 	def Dbtr(self):
 		del self._Dbtr
 		self._Dbtr = None
+
+	@property
+	def DbtrAcct(self):
+		return self._DbtrAcct
+
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	@property
 	def ExctnTp(self):
@@ -115,27 +102,40 @@ class StandingOrder10(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def CdtrAcct(self):
-		return self._CdtrAcct
+	def VldtyPrd(self):
+		return self._VldtyPrd
 
-	@CdtrAcct.setter
-	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+	@VldtyPrd.setter
+	def VldtyPrd(self, value):
+		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
 
-	@CdtrAcct.deleter
-	def CdtrAcct(self):
-		del self._CdtrAcct
-		self._CdtrAcct = None
+	@VldtyPrd.deleter
+	def VldtyPrd(self):
+		del self._VldtyPrd
+		self._VldtyPrd = None
+
+	@property
+	def ZeroSweepInd(self):
+		return self._ZeroSweepInd
+
+	@ZeroSweepInd.setter
+	def ZeroSweepInd(self, value):
+		self._ZeroSweepInd = value if type(value) != base_types.auto else self.make_default("ZeroSweepInd")
+
+	@ZeroSweepInd.deleter
+	def ZeroSweepInd(self):
+		del self._ZeroSweepInd
+		self._ZeroSweepInd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyPrd', type=DatePeriod2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ZeroSweepInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnTp', type=ExecutionType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=DatePeriod2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ZeroSweepInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

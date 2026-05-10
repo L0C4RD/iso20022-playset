@@ -1,25 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 from ._SecurityIdentification7 import SecurityIdentification7
 
 class SecuritiesAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctId", "_AcctOwnrId", "_RegnDtls", "_SctyId", "_SfkpgPlc"]
-	@property
-	def SctiesAcctId(self):
-		return self._SctiesAcctId
-
-	@SctiesAcctId.setter
-	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
-
-	@SctiesAcctId.deleter
-	def SctiesAcctId(self):
-		del self._SctiesAcctId
-		self._SctiesAcctId = None
-
+	__slots__ = ["_SctiesAcctId", "_SfkpgPlc", "_AcctOwnrId", "_RegnDtls", "_SctyId"]
 	@property
 	def AcctOwnrId(self):
 		return self._AcctOwnrId
@@ -45,6 +32,19 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 	def RegnDtls(self):
 		del self._RegnDtls
 		self._RegnDtls = None
+
+	@property
+	def SctiesAcctId(self):
+		return self._SctiesAcctId
+
+	@SctiesAcctId.setter
+	def SctiesAcctId(self, value):
+		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+
+	@SctiesAcctId.deleter
+	def SctiesAcctId(self):
+		del self._SctiesAcctId
+		self._SctiesAcctId = None
 
 	@property
 	def SctyId(self):
@@ -73,9 +73,9 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 	))

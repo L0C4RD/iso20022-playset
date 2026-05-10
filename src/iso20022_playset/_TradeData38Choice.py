@@ -1,10 +1,10 @@
 from . import base_types
-from ._CollateralMarginNew10 import CollateralMarginNew10
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from ._CollateralMarginNew10 import CollateralMarginNew10
 
 class TradeData38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSetActn", "_Stat"]
+	__slots__ = ["_Stat", "_DataSetActn"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn

@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CurrencyControlHeader8 import CurrencyControlHeader8
 from ._RegisteredContract19 import RegisteredContract19
+from ._SupplementaryData1 import SupplementaryData1
 
 class ContractRegistrationClosureRequestV04(base_types._BaseFieldType):
 

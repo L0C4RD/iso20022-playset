@@ -1,12 +1,25 @@
 from . import base_types
-from ._CorporateActionInformation1 import CorporateActionInformation1
-from ._DocumentIdentification8 import DocumentIdentification8
 from ._CorporateActionDeactivationInstructionStatus1 import CorporateActionDeactivationInstructionStatus1
 from ._CorporateActionDeactivationCancellationStatus1Choice import CorporateActionDeactivationCancellationStatus1Choice
+from ._CorporateActionInformation1 import CorporateActionInformation1
+from ._DocumentIdentification8 import DocumentIdentification8
 
 class AgentCADeactivationStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCADeactvtnInstrId", "_DeactvtnInstrSts", "_AgtCADeactvtnCxlReqId", "_DeactvtnCxlReqSts", "_Id", "_CorpActnGnlInf"]
+	__slots__ = ["_Id", "_AgtCADeactvtnInstrId", "_AgtCADeactvtnCxlReqId", "_DeactvtnCxlReqSts", "_DeactvtnInstrSts", "_CorpActnGnlInf"]
+	@property
+	def AgtCADeactvtnCxlReqId(self):
+		return self._AgtCADeactvtnCxlReqId
+
+	@AgtCADeactvtnCxlReqId.setter
+	def AgtCADeactvtnCxlReqId(self, value):
+		self._AgtCADeactvtnCxlReqId = value if type(value) != base_types.auto else self.make_default("AgtCADeactvtnCxlReqId")
+
+	@AgtCADeactvtnCxlReqId.deleter
+	def AgtCADeactvtnCxlReqId(self):
+		del self._AgtCADeactvtnCxlReqId
+		self._AgtCADeactvtnCxlReqId = None
+
 	@property
 	def AgtCADeactvtnInstrId(self):
 		return self._AgtCADeactvtnInstrId
@@ -21,30 +34,17 @@ class AgentCADeactivationStatusAdviceV01(base_types._BaseFieldType):
 		self._AgtCADeactvtnInstrId = None
 
 	@property
-	def DeactvtnInstrSts(self):
-		return self._DeactvtnInstrSts
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@DeactvtnInstrSts.setter
-	def DeactvtnInstrSts(self, value):
-		self._DeactvtnInstrSts = value if type(value) != base_types.auto else self.make_default("DeactvtnInstrSts")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
 
-	@DeactvtnInstrSts.deleter
-	def DeactvtnInstrSts(self):
-		del self._DeactvtnInstrSts
-		self._DeactvtnInstrSts = None
-
-	@property
-	def AgtCADeactvtnCxlReqId(self):
-		return self._AgtCADeactvtnCxlReqId
-
-	@AgtCADeactvtnCxlReqId.setter
-	def AgtCADeactvtnCxlReqId(self, value):
-		self._AgtCADeactvtnCxlReqId = value if type(value) != base_types.auto else self.make_default("AgtCADeactvtnCxlReqId")
-
-	@AgtCADeactvtnCxlReqId.deleter
-	def AgtCADeactvtnCxlReqId(self):
-		del self._AgtCADeactvtnCxlReqId
-		self._AgtCADeactvtnCxlReqId = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	@property
 	def DeactvtnCxlReqSts(self):
@@ -60,6 +60,19 @@ class AgentCADeactivationStatusAdviceV01(base_types._BaseFieldType):
 		self._DeactvtnCxlReqSts = None
 
 	@property
+	def DeactvtnInstrSts(self):
+		return self._DeactvtnInstrSts
+
+	@DeactvtnInstrSts.setter
+	def DeactvtnInstrSts(self, value):
+		self._DeactvtnInstrSts = value if type(value) != base_types.auto else self.make_default("DeactvtnInstrSts")
+
+	@DeactvtnInstrSts.deleter
+	def DeactvtnInstrSts(self):
+		del self._DeactvtnInstrSts
+		self._DeactvtnInstrSts = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -72,25 +85,12 @@ class AgentCADeactivationStatusAdviceV01(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AgtCADeactvtnInstrId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DeactvtnInstrSts', type=CorporateActionDeactivationInstructionStatus1, min=1, max=None, mutex_group=2, array=True),
 		base_types.FieldEntry(name='AgtCADeactvtnCxlReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DeactvtnCxlReqSts', type=CorporateActionDeactivationCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtCADeactvtnInstrId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DeactvtnCxlReqSts', type=CorporateActionDeactivationCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='DeactvtnInstrSts', type=CorporateActionDeactivationInstructionStatus1, min=1, max=None, mutex_group=2, array=True),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

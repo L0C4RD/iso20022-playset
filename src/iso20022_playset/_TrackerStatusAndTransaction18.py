@@ -1,6 +1,6 @@
 from . import base_types
-from ._TrackerStatus4 import TrackerStatus4
 from ._TrackerPaymentTransaction14 import TrackerPaymentTransaction14
+from ._TrackerStatus4 import TrackerStatus4
 
 class TrackerStatusAndTransaction18(base_types._BaseFieldType):
 

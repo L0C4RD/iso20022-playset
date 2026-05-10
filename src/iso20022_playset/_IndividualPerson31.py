@@ -1,39 +1,13 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._GenericIdentification164 import GenericIdentification164
 from ._BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
-from ._Max350Text import Max350Text
 from ._CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
-from ._ISODate import ISODate
+from ._Max350Text import Max350Text
 
 class IndividualPerson31(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrId", "_Nm", "_BirthDt", "_BnfcryCertfctnCmpltn", "_CtryAndResdtlSts"]
-	@property
-	def OthrId(self):
-		return self._OthrId
-
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
-
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_CtryAndResdtlSts", "_OthrId", "_BnfcryCertfctnCmpltn", "_BirthDt", "_Nm"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt
@@ -73,11 +47,37 @@ class IndividualPerson31(base_types._BaseFieldType):
 		del self._CtryAndResdtlSts
 		self._CtryAndResdtlSts = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def OthrId(self):
+		return self._OthrId
+
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
 	))
 

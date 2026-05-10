@@ -3,20 +3,7 @@ from ._Max35Text import Max35Text
 
 class TransportByRail2(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfRct", "_PlcOfDlvry", "_RailCrrierNm"]
-	@property
-	def PlcOfRct(self):
-		return self._PlcOfRct
-
-	@PlcOfRct.setter
-	def PlcOfRct(self, value):
-		self._PlcOfRct = value if type(value) != base_types.auto else self.make_default("PlcOfRct")
-
-	@PlcOfRct.deleter
-	def PlcOfRct(self):
-		del self._PlcOfRct
-		self._PlcOfRct = None
-
+	__slots__ = ["_PlcOfDlvry", "_PlcOfRct", "_RailCrrierNm"]
 	@property
 	def PlcOfDlvry(self):
 		return self._PlcOfDlvry
@@ -29,6 +16,19 @@ class TransportByRail2(base_types._BaseFieldType):
 	def PlcOfDlvry(self):
 		del self._PlcOfDlvry
 		self._PlcOfDlvry = None
+
+	@property
+	def PlcOfRct(self):
+		return self._PlcOfRct
+
+	@PlcOfRct.setter
+	def PlcOfRct(self, value):
+		self._PlcOfRct = value if type(value) != base_types.auto else self.make_default("PlcOfRct")
+
+	@PlcOfRct.deleter
+	def PlcOfRct(self):
+		del self._PlcOfRct
+		self._PlcOfRct = None
 
 	@property
 	def RailCrrierNm(self):
@@ -44,8 +44,8 @@ class TransportByRail2(base_types._BaseFieldType):
 		self._RailCrrierNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RailCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

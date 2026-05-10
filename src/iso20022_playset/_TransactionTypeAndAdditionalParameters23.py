@@ -1,12 +1,77 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
 from ._RepurchaseType21Choice import RepurchaseType21Choice
+from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._Max35Text import Max35Text
 
 class TransactionTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
-	__slots__ = ["_Pmt", "_PoolId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_CmonId", "_NonceId", "_ModTp", "_SctiesFincgTxTp"]
+	__slots__ = ["_SctiesFincgTxTp", "_Pmt", "_NonceId", "_CmonId", "_ModTp", "_AcctSvcrTxId", "_AcctOwnrTxId", "_PoolId"]
+	@property
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
+
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
+
+	@property
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
+
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
+
+	@property
+	def CmonId(self):
+		return self._CmonId
+
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
+
+	@property
+	def ModTp(self):
+		return self._ModTp
+
+	@ModTp.setter
+	def ModTp(self, value):
+		self._ModTp = value if type(value) != base_types.auto else self.make_default("ModTp")
+
+	@ModTp.deleter
+	def ModTp(self):
+		del self._ModTp
+		self._ModTp = None
+
+	@property
+	def NonceId(self):
+		return self._NonceId
+
+	@NonceId.setter
+	def NonceId(self, value):
+		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+
+	@NonceId.deleter
+	def NonceId(self):
+		del self._NonceId
+		self._NonceId = None
+
 	@property
 	def Pmt(self):
 		return self._Pmt
@@ -34,71 +99,6 @@ class TransactionTypeAndAdditionalParameters23(base_types._BaseFieldType):
 		self._PoolId = None
 
 	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
-
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
-
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
-
-	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
-
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
-
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
-
-	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
-
-	@property
-	def NonceId(self):
-		return self._NonceId
-
-	@NonceId.setter
-	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
-
-	@NonceId.deleter
-	def NonceId(self):
-		del self._NonceId
-		self._NonceId = None
-
-	@property
-	def ModTp(self):
-		return self._ModTp
-
-	@ModTp.setter
-	def ModTp(self, value):
-		self._ModTp = value if type(value) != base_types.auto else self.make_default("ModTp")
-
-	@ModTp.deleter
-	def ModTp(self):
-		del self._ModTp
-		self._ModTp = None
-
-	@property
 	def SctiesFincgTxTp(self):
 		return self._SctiesFincgTxTp
 
@@ -112,13 +112,13 @@ class TransactionTypeAndAdditionalParameters23(base_types._BaseFieldType):
 		self._SctiesFincgTxTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModTp', type=RepurchaseType21Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModTp', type=RepurchaseType21Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

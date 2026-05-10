@@ -1,24 +1,24 @@
 from . import base_types
 from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Fee5 import Fee5
 from ._Tax35 import Tax35
+from ._Fee5 import Fee5
 
 class TotalFeesAndTaxes41(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlTaxs", "_IndvFee", "_IndvTax", "_TtlOvrhdApld", "_ComrclAgrmtRef", "_TtlFees"]
+	__slots__ = ["_TtlFees", "_IndvFee", "_IndvTax", "_ComrclAgrmtRef", "_TtlOvrhdApld", "_TtlTaxs"]
 	@property
-	def TtlTaxs(self):
-		return self._TtlTaxs
+	def ComrclAgrmtRef(self):
+		return self._ComrclAgrmtRef
 
-	@TtlTaxs.setter
-	def TtlTaxs(self, value):
-		self._TtlTaxs = value if type(value) != base_types.auto else self.make_default("TtlTaxs")
+	@ComrclAgrmtRef.setter
+	def ComrclAgrmtRef(self, value):
+		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
 
-	@TtlTaxs.deleter
-	def TtlTaxs(self):
-		del self._TtlTaxs
-		self._TtlTaxs = None
+	@ComrclAgrmtRef.deleter
+	def ComrclAgrmtRef(self):
+		del self._ComrclAgrmtRef
+		self._ComrclAgrmtRef = None
 
 	@property
 	def IndvFee(self):
@@ -47,6 +47,19 @@ class TotalFeesAndTaxes41(base_types._BaseFieldType):
 		self._IndvTax = None
 
 	@property
+	def TtlFees(self):
+		return self._TtlFees
+
+	@TtlFees.setter
+	def TtlFees(self, value):
+		self._TtlFees = value if type(value) != base_types.auto else self.make_default("TtlFees")
+
+	@TtlFees.deleter
+	def TtlFees(self):
+		del self._TtlFees
+		self._TtlFees = None
+
+	@property
 	def TtlOvrhdApld(self):
 		return self._TtlOvrhdApld
 
@@ -60,37 +73,24 @@ class TotalFeesAndTaxes41(base_types._BaseFieldType):
 		self._TtlOvrhdApld = None
 
 	@property
-	def ComrclAgrmtRef(self):
-		return self._ComrclAgrmtRef
+	def TtlTaxs(self):
+		return self._TtlTaxs
 
-	@ComrclAgrmtRef.setter
-	def ComrclAgrmtRef(self, value):
-		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
+	@TtlTaxs.setter
+	def TtlTaxs(self, value):
+		self._TtlTaxs = value if type(value) != base_types.auto else self.make_default("TtlTaxs")
 
-	@ComrclAgrmtRef.deleter
-	def ComrclAgrmtRef(self):
-		del self._ComrclAgrmtRef
-		self._ComrclAgrmtRef = None
-
-	@property
-	def TtlFees(self):
-		return self._TtlFees
-
-	@TtlFees.setter
-	def TtlFees(self, value):
-		self._TtlFees = value if type(value) != base_types.auto else self.make_default("TtlFees")
-
-	@TtlFees.deleter
-	def TtlFees(self):
-		del self._TtlFees
-		self._TtlFees = None
+	@TtlTaxs.deleter
+	def TtlTaxs(self):
+		del self._TtlTaxs
+		self._TtlTaxs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlTaxs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndvFee', type=Fee5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IndvTax', type=Tax35, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlOvrhdApld', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlFees', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlOvrhdApld', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTaxs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

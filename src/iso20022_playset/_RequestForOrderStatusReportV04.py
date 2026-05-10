@@ -1,11 +1,11 @@
 from . import base_types
-from ._MessageAndBusinessReference10 import MessageAndBusinessReference10
-from ._Extension1 import Extension1
 from ._MessageIdentification1 import MessageIdentification1
+from ._Extension1 import Extension1
+from ._MessageAndBusinessReference10 import MessageAndBusinessReference10
 
 class RequestForOrderStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ReqDtls", "_Xtnsn"]
+	__slots__ = ["_Xtnsn", "_MsgId", "_ReqDtls"]
 	@property
 	def MsgId(self):
 		return self._MsgId

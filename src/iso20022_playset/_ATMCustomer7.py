@@ -5,7 +5,7 @@ from ._ATMCustomerProfile6 import ATMCustomerProfile6
 
 class ATMCustomer7(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthntcnRslt", "_Prfl", "_SelctdLang"]
+	__slots__ = ["_SelctdLang", "_Prfl", "_AuthntcnRslt"]
 	@property
 	def AuthntcnRslt(self):
 		return self._AuthntcnRslt

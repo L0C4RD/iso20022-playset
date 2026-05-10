@@ -1,6 +1,6 @@
 from . import base_types
-from ._NotionalAmount6 import NotionalAmount6
 from ._NotionalAmount5 import NotionalAmount5
+from ._NotionalAmount6 import NotionalAmount6
 
 class NotionalAmountLegs5(base_types._BaseFieldType):
 

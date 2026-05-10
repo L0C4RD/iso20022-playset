@@ -1,23 +1,23 @@
 from . import base_types
+from ._Pension5 import Pension5
 from ._GeneralInvestment2 import GeneralInvestment2
 from ._TaxEfficientProduct7 import TaxEfficientProduct7
-from ._Pension5 import Pension5
 
 class FundPortfolio7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxEffcntPdct", "_Pnsn", "_GnlInvstmt"]
+	__slots__ = ["_GnlInvstmt", "_TaxEffcntPdct", "_Pnsn"]
 	@property
-	def TaxEffcntPdct(self):
-		return self._TaxEffcntPdct
+	def GnlInvstmt(self):
+		return self._GnlInvstmt
 
-	@TaxEffcntPdct.setter
-	def TaxEffcntPdct(self, value):
-		self._TaxEffcntPdct = value if type(value) != base_types.auto else self.make_default("TaxEffcntPdct")
+	@GnlInvstmt.setter
+	def GnlInvstmt(self, value):
+		self._GnlInvstmt = value if type(value) != base_types.auto else self.make_default("GnlInvstmt")
 
-	@TaxEffcntPdct.deleter
-	def TaxEffcntPdct(self):
-		del self._TaxEffcntPdct
-		self._TaxEffcntPdct = None
+	@GnlInvstmt.deleter
+	def GnlInvstmt(self):
+		del self._GnlInvstmt
+		self._GnlInvstmt = None
 
 	@property
 	def Pnsn(self):
@@ -33,21 +33,21 @@ class FundPortfolio7Choice(base_types._BaseFieldType):
 		self._Pnsn = None
 
 	@property
-	def GnlInvstmt(self):
-		return self._GnlInvstmt
+	def TaxEffcntPdct(self):
+		return self._TaxEffcntPdct
 
-	@GnlInvstmt.setter
-	def GnlInvstmt(self, value):
-		self._GnlInvstmt = value if type(value) != base_types.auto else self.make_default("GnlInvstmt")
+	@TaxEffcntPdct.setter
+	def TaxEffcntPdct(self, value):
+		self._TaxEffcntPdct = value if type(value) != base_types.auto else self.make_default("TaxEffcntPdct")
 
-	@GnlInvstmt.deleter
-	def GnlInvstmt(self):
-		del self._GnlInvstmt
-		self._GnlInvstmt = None
+	@TaxEffcntPdct.deleter
+	def TaxEffcntPdct(self):
+		del self._TaxEffcntPdct
+		self._TaxEffcntPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxEffcntPdct', type=TaxEfficientProduct7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pnsn', type=Pension5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='GnlInvstmt', type=GeneralInvestment2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pnsn', type=Pension5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TaxEffcntPdct', type=TaxEfficientProduct7, min=0, max=1, mutex_group=1, array=False),
 	))
 

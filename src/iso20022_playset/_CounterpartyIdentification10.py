@@ -1,23 +1,10 @@
 from . import base_types
-from ._CollateralRole1Code import CollateralRole1Code
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._CollateralRole1Code import CollateralRole1Code
 
 class CounterpartyIdentification10(base_types._BaseFieldType):
 
 	__slots__ = ["_Sd", "_Id"]
-	@property
-	def Sd(self):
-		return self._Sd
-
-	@Sd.setter
-	def Sd(self, value):
-		self._Sd = value if type(value) != base_types.auto else self.make_default("Sd")
-
-	@Sd.deleter
-	def Sd(self):
-		del self._Sd
-		self._Sd = None
-
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class CounterpartyIdentification10(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def Sd(self):
+		return self._Sd
+
+	@Sd.setter
+	def Sd(self, value):
+		self._Sd = value if type(value) != base_types.auto else self.make_default("Sd")
+
+	@Sd.deleter
+	def Sd(self):
+		del self._Sd
+		self._Sd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sd', type=CollateralRole1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sd', type=CollateralRole1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

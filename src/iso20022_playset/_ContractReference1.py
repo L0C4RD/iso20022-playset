@@ -1,10 +1,10 @@
 from . import base_types
-from ._DocumentType1Choice import DocumentType1Choice
 from ._Max500Text import Max500Text
+from ._DocumentType1Choice import DocumentType1Choice
 
 class ContractReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_Tp"]
+	__slots__ = ["_Tp", "_Ref"]
 	@property
 	def Ref(self):
 		return self._Ref

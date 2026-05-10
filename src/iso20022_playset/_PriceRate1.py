@@ -4,7 +4,7 @@ from ._PriceRateType3FormatChoice import PriceRateType3FormatChoice
 
 class PriceRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_RateTp"]
+	__slots__ = ["_RateTp", "_Rate"]
 	@property
 	def Rate(self):
 		return self._Rate

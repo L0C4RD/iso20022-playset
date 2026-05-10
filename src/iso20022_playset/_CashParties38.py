@@ -1,10 +1,23 @@
 from . import base_types
-from ._PartyIdentificationAndAccount178 import PartyIdentificationAndAccount178
 from ._PartyIdentificationAndAccount177 import PartyIdentificationAndAccount177
+from ._PartyIdentificationAndAccount178 import PartyIdentificationAndAccount178
 
 class CashParties38(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_DbtrAgt", "_Dbtr", "_Cdtr", "_Intrmy"]
+	__slots__ = ["_DbtrAgt", "_Intrmy", "_CdtrAgt", "_Cdtr", "_Dbtr"]
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
 	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt
@@ -17,19 +30,6 @@ class CashParties38(base_types._BaseFieldType):
 	def CdtrAgt(self):
 		del self._CdtrAgt
 		self._CdtrAgt = None
-
-	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
 
 	@property
 	def Dbtr(self):
@@ -45,17 +45,17 @@ class CashParties38(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
-	def Cdtr(self):
-		return self._Cdtr
+	def DbtrAgt(self):
+		return self._DbtrAgt
 
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
 
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
 
 	@property
 	def Intrmy(self):
@@ -71,10 +71,10 @@ class CashParties38(base_types._BaseFieldType):
 		self._Intrmy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentificationAndAccount177, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount177, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentificationAndAccount177, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
 	))
 

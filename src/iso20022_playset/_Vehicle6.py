@@ -1,16 +1,42 @@
 from . import base_types
-from ._Max35NumericText import Max35NumericText
-from ._CardDataReading5Code import CardDataReading5Code
-from ._OnBoardDiagnostics1 import OnBoardDiagnostics1
-from ._Vehicle2 import Vehicle2
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max10Text import Max10Text
-from ._Max35Text import Max35Text
 from ._DecimalNumber import DecimalNumber
+from ._Vehicle2 import Vehicle2
+from ._OnBoardDiagnostics1 import OnBoardDiagnostics1
+from ._CardDataReading5Code import CardDataReading5Code
+from ._Max35Text import Max35Text
+from ._Max10Text import Max10Text
+from ._Max35NumericText import Max35NumericText
 
 class Vehicle6(base_types._BaseFieldType):
 
-	__slots__ = ["_Hbmtr", "_Rplcmnt", "_Odmtr", "_OnBrdDgnstcs", "_FleetNb", "_SubFleetNb", "_IdNb", "_AddtlData", "_TagNtryMd", "_Nb", "_TrlrNb", "_MntncId", "_Tag", "_UnitNb"]
+	__slots__ = ["_AddtlData", "_UnitNb", "_Odmtr", "_Nb", "_Tag", "_SubFleetNb", "_Hbmtr", "_MntncId", "_OnBrdDgnstcs", "_FleetNb", "_TagNtryMd", "_TrlrNb", "_Rplcmnt", "_IdNb"]
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def FleetNb(self):
+		return self._FleetNb
+
+	@FleetNb.setter
+	def FleetNb(self, value):
+		self._FleetNb = value if type(value) != base_types.auto else self.make_default("FleetNb")
+
+	@FleetNb.deleter
+	def FleetNb(self):
+		del self._FleetNb
+		self._FleetNb = None
+
 	@property
 	def Hbmtr(self):
 		return self._Hbmtr
@@ -25,17 +51,43 @@ class Vehicle6(base_types._BaseFieldType):
 		self._Hbmtr = None
 
 	@property
-	def Rplcmnt(self):
-		return self._Rplcmnt
+	def IdNb(self):
+		return self._IdNb
 
-	@Rplcmnt.setter
-	def Rplcmnt(self, value):
-		self._Rplcmnt = value if type(value) != base_types.auto else self.make_default("Rplcmnt")
+	@IdNb.setter
+	def IdNb(self, value):
+		self._IdNb = value if type(value) != base_types.auto else self.make_default("IdNb")
 
-	@Rplcmnt.deleter
-	def Rplcmnt(self):
-		del self._Rplcmnt
-		self._Rplcmnt = None
+	@IdNb.deleter
+	def IdNb(self):
+		del self._IdNb
+		self._IdNb = None
+
+	@property
+	def MntncId(self):
+		return self._MntncId
+
+	@MntncId.setter
+	def MntncId(self, value):
+		self._MntncId = value if type(value) != base_types.auto else self.make_default("MntncId")
+
+	@MntncId.deleter
+	def MntncId(self):
+		del self._MntncId
+		self._MntncId = None
+
+	@property
+	def Nb(self):
+		return self._Nb
+
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
 
 	@property
 	def Odmtr(self):
@@ -64,17 +116,17 @@ class Vehicle6(base_types._BaseFieldType):
 		self._OnBrdDgnstcs = None
 
 	@property
-	def FleetNb(self):
-		return self._FleetNb
+	def Rplcmnt(self):
+		return self._Rplcmnt
 
-	@FleetNb.setter
-	def FleetNb(self, value):
-		self._FleetNb = value if type(value) != base_types.auto else self.make_default("FleetNb")
+	@Rplcmnt.setter
+	def Rplcmnt(self, value):
+		self._Rplcmnt = value if type(value) != base_types.auto else self.make_default("Rplcmnt")
 
-	@FleetNb.deleter
-	def FleetNb(self):
-		del self._FleetNb
-		self._FleetNb = None
+	@Rplcmnt.deleter
+	def Rplcmnt(self):
+		del self._Rplcmnt
+		self._Rplcmnt = None
 
 	@property
 	def SubFleetNb(self):
@@ -90,30 +142,17 @@ class Vehicle6(base_types._BaseFieldType):
 		self._SubFleetNb = None
 
 	@property
-	def IdNb(self):
-		return self._IdNb
+	def Tag(self):
+		return self._Tag
 
-	@IdNb.setter
-	def IdNb(self, value):
-		self._IdNb = value if type(value) != base_types.auto else self.make_default("IdNb")
+	@Tag.setter
+	def Tag(self, value):
+		self._Tag = value if type(value) != base_types.auto else self.make_default("Tag")
 
-	@IdNb.deleter
-	def IdNb(self):
-		del self._IdNb
-		self._IdNb = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@Tag.deleter
+	def Tag(self):
+		del self._Tag
+		self._Tag = None
 
 	@property
 	def TagNtryMd(self):
@@ -129,19 +168,6 @@ class Vehicle6(base_types._BaseFieldType):
 		self._TagNtryMd = None
 
 	@property
-	def Nb(self):
-		return self._Nb
-
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
-
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
-
-	@property
 	def TrlrNb(self):
 		return self._TrlrNb
 
@@ -153,32 +179,6 @@ class Vehicle6(base_types._BaseFieldType):
 	def TrlrNb(self):
 		del self._TrlrNb
 		self._TrlrNb = None
-
-	@property
-	def MntncId(self):
-		return self._MntncId
-
-	@MntncId.setter
-	def MntncId(self, value):
-		self._MntncId = value if type(value) != base_types.auto else self.make_default("MntncId")
-
-	@MntncId.deleter
-	def MntncId(self):
-		del self._MntncId
-		self._MntncId = None
-
-	@property
-	def Tag(self):
-		return self._Tag
-
-	@Tag.setter
-	def Tag(self, value):
-		self._Tag = value if type(value) != base_types.auto else self.make_default("Tag")
-
-	@Tag.deleter
-	def Tag(self):
-		del self._Tag
-		self._Tag = None
 
 	@property
 	def UnitNb(self):
@@ -194,19 +194,19 @@ class Vehicle6(base_types._BaseFieldType):
 		self._UnitNb = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlData', type=Vehicle2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FleetNb', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hbmtr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rplcmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IdNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MntncId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Odmtr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OnBrdDgnstcs', type=OnBoardDiagnostics1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FleetNb', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rplcmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubFleetNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IdNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=Vehicle2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TagNtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrlrNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MntncId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tag', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TagNtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrlrNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

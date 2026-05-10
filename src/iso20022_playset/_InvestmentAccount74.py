@@ -1,80 +1,80 @@
 from . import base_types
-from ._TaxExemptionReason2Choice import TaxExemptionReason2Choice
-from ._BlockedStatusReason2Choice import BlockedStatusReason2Choice
-from ._Liability1Choice import Liability1Choice
-from ._StatementFrequencyReason2Choice import StatementFrequencyReason2Choice
-from ._InvestorProfile2 import InvestorProfile2
-from ._Provided1Code import Provided1Code
-from ._Reinvestment4 import Reinvestment4
+from ._InvestmentAccountCategory1Choice import InvestmentAccountCategory1Choice
+from ._AccountingStatus1Choice import AccountingStatus1Choice
 from ._TransactionChannelType1Choice import TransactionChannelType1Choice
+from ._AccountStatus2 import AccountStatus2
+from ._AccountUsageType2Choice import AccountUsageType2Choice
+from ._AccountType2Choice import AccountType2Choice
+from ._FinancialInstrument87 import FinancialInstrument87
+from ._DateAndDateTime1Choice import DateAndDateTime1Choice
+from ._FiscalYear1Choice import FiscalYear1Choice
+from ._YesNoIndicator import YesNoIndicator
+from ._Provided1Code import Provided1Code
 from ._Collateral1Code import Collateral1Code
 from ._Max350Text import Max350Text
-from ._AccountStatus2 import AccountStatus2
-from ._RoundingParameters1 import RoundingParameters1
-from ._Eligible1Code import Eligible1Code
-from ._AccountingStatus1Choice import AccountingStatus1Choice
-from ._LetterIntent1 import LetterIntent1
-from ._LanguageCode import LanguageCode
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._ThirdPartyRights2 import ThirdPartyRights2
-from ._Number import Number
-from ._FiscalYear1Choice import FiscalYear1Choice
 from ._PositionEffect3Code import PositionEffect3Code
 from ._IncomePreference2Code import IncomePreference2Code
+from ._Liability1Choice import Liability1Choice
 from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._TaxReporting3 import TaxReporting3
-from ._TaxWithholdingMethod3Code import TaxWithholdingMethod3Code
-from ._FinancialInstrument87 import FinancialInstrument87
-from ._LevelOfControl1Choice import LevelOfControl1Choice
-from ._AccountUsageType2Choice import AccountUsageType2Choice
-from ._InvestmentAccountCategory1Choice import InvestmentAccountCategory1Choice
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._OwnershipType2Choice import OwnershipType2Choice
-from ._AccountType2Choice import AccountType2Choice
+from ._LanguageCode import LanguageCode
+from ._StatementFrequencyReason2Choice import StatementFrequencyReason2Choice
+from ._Number import Number
+from ._Reinvestment4 import Reinvestment4
+from ._LetterIntent1 import LetterIntent1
+from ._Eligible1Code import Eligible1Code
+from ._TaxExemptionReason2Choice import TaxExemptionReason2Choice
+from ._BlockedStatusReason2Choice import BlockedStatusReason2Choice
+from ._InvestorProfile2 import InvestorProfile2
+from ._TaxWithholdingMethod3Code import TaxWithholdingMethod3Code
+from ._ThirdPartyRights2 import ThirdPartyRights2
 from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from ._LevelOfControl1Choice import LevelOfControl1Choice
+from ._OwnershipType2Choice import OwnershipType2Choice
+from ._RoundingParameters1 import RoundingParameters1
+from ._TaxReporting3 import TaxReporting3
 
 class InvestmentAccount74(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRptg", "_RndgDtls", "_TaxXmptn", "_AcctUsgTp", "_IncmPref", "_Lang", "_TaxWhldgMtd", "_StmtFrqcy", "_BlckdSts", "_FrgnStsCertfctn", "_Nm", "_RefCcy", "_LttrInttDtls", "_InvstmtAcctCtgy", "_Dsgnt", "_FinInstrmDtls", "_ReqrdSgntriesNb", "_Pldgg", "_AcmltnRghtRef", "_Coll", "_ClsgDt", "_AcctSts", "_Tp", "_TxChanlTp", "_FsclYr", "_NegInd", "_AcctSgntrDtTm", "_AcctgSts", "_AcctSvcr", "_FndFmlyNm", "_StsDt", "_PwrOfAttnyLvlOfCtrl", "_ThrdPtyRghts", "_InvstrPrfl", "_Lblty", "_Id", "_RinvstmtDtls", "_OwnrshTp", "_PrcgOrdr", "_OpngDt"]
+	__slots__ = ["_Lblty", "_IncmPref", "_InvstrPrfl", "_Coll", "_Pldgg", "_ReqrdSgntriesNb", "_RinvstmtDtls", "_ThrdPtyRghts", "_Nm", "_StsDt", "_RndgDtls", "_Id", "_AcmltnRghtRef", "_OpngDt", "_OwnrshTp", "_FrgnStsCertfctn", "_StmtFrqcy", "_Lang", "_AcctSvcr", "_FsclYr", "_RefCcy", "_AcctSts", "_AcctSgntrDtTm", "_AcctUsgTp", "_TaxXmptn", "_Dsgnt", "_TaxRptg", "_TaxWhldgMtd", "_InvstmtAcctCtgy", "_BlckdSts", "_PrcgOrdr", "_AcctgSts", "_ClsgDt", "_FinInstrmDtls", "_LttrInttDtls", "_PwrOfAttnyLvlOfCtrl", "_Tp", "_TxChanlTp", "_NegInd", "_FndFmlyNm"]
 	@property
-	def TaxRptg(self):
-		return self._TaxRptg
+	def AcctSgntrDtTm(self):
+		return self._AcctSgntrDtTm
 
-	@TaxRptg.setter
-	def TaxRptg(self, value):
-		self._TaxRptg = value if type(value) != base_types.auto else self.make_default("TaxRptg")
+	@AcctSgntrDtTm.setter
+	def AcctSgntrDtTm(self, value):
+		self._AcctSgntrDtTm = value if type(value) != base_types.auto else self.make_default("AcctSgntrDtTm")
 
-	@TaxRptg.deleter
-	def TaxRptg(self):
-		del self._TaxRptg
-		self._TaxRptg = None
-
-	@property
-	def RndgDtls(self):
-		return self._RndgDtls
-
-	@RndgDtls.setter
-	def RndgDtls(self, value):
-		self._RndgDtls = value if type(value) != base_types.auto else self.make_default("RndgDtls")
-
-	@RndgDtls.deleter
-	def RndgDtls(self):
-		del self._RndgDtls
-		self._RndgDtls = None
+	@AcctSgntrDtTm.deleter
+	def AcctSgntrDtTm(self):
+		del self._AcctSgntrDtTm
+		self._AcctSgntrDtTm = None
 
 	@property
-	def TaxXmptn(self):
-		return self._TaxXmptn
+	def AcctSts(self):
+		return self._AcctSts
 
-	@TaxXmptn.setter
-	def TaxXmptn(self, value):
-		self._TaxXmptn = value if type(value) != base_types.auto else self.make_default("TaxXmptn")
+	@AcctSts.setter
+	def AcctSts(self, value):
+		self._AcctSts = value if type(value) != base_types.auto else self.make_default("AcctSts")
 
-	@TaxXmptn.deleter
-	def TaxXmptn(self):
-		del self._TaxXmptn
-		self._TaxXmptn = None
+	@AcctSts.deleter
+	def AcctSts(self):
+		del self._AcctSts
+		self._AcctSts = None
+
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
 
 	@property
 	def AcctUsgTp(self):
@@ -90,56 +90,30 @@ class InvestmentAccount74(base_types._BaseFieldType):
 		self._AcctUsgTp = None
 
 	@property
-	def IncmPref(self):
-		return self._IncmPref
+	def AcctgSts(self):
+		return self._AcctgSts
 
-	@IncmPref.setter
-	def IncmPref(self, value):
-		self._IncmPref = value if type(value) != base_types.auto else self.make_default("IncmPref")
+	@AcctgSts.setter
+	def AcctgSts(self, value):
+		self._AcctgSts = value if type(value) != base_types.auto else self.make_default("AcctgSts")
 
-	@IncmPref.deleter
-	def IncmPref(self):
-		del self._IncmPref
-		self._IncmPref = None
-
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
+	@AcctgSts.deleter
+	def AcctgSts(self):
+		del self._AcctgSts
+		self._AcctgSts = None
 
 	@property
-	def TaxWhldgMtd(self):
-		return self._TaxWhldgMtd
+	def AcmltnRghtRef(self):
+		return self._AcmltnRghtRef
 
-	@TaxWhldgMtd.setter
-	def TaxWhldgMtd(self, value):
-		self._TaxWhldgMtd = value if type(value) != base_types.auto else self.make_default("TaxWhldgMtd")
+	@AcmltnRghtRef.setter
+	def AcmltnRghtRef(self, value):
+		self._AcmltnRghtRef = value if type(value) != base_types.auto else self.make_default("AcmltnRghtRef")
 
-	@TaxWhldgMtd.deleter
-	def TaxWhldgMtd(self):
-		del self._TaxWhldgMtd
-		self._TaxWhldgMtd = None
-
-	@property
-	def StmtFrqcy(self):
-		return self._StmtFrqcy
-
-	@StmtFrqcy.setter
-	def StmtFrqcy(self, value):
-		self._StmtFrqcy = value if type(value) != base_types.auto else self.make_default("StmtFrqcy")
-
-	@StmtFrqcy.deleter
-	def StmtFrqcy(self):
-		del self._StmtFrqcy
-		self._StmtFrqcy = None
+	@AcmltnRghtRef.deleter
+	def AcmltnRghtRef(self):
+		del self._AcmltnRghtRef
+		self._AcmltnRghtRef = None
 
 	@property
 	def BlckdSts(self):
@@ -155,69 +129,30 @@ class InvestmentAccount74(base_types._BaseFieldType):
 		self._BlckdSts = None
 
 	@property
-	def FrgnStsCertfctn(self):
-		return self._FrgnStsCertfctn
+	def ClsgDt(self):
+		return self._ClsgDt
 
-	@FrgnStsCertfctn.setter
-	def FrgnStsCertfctn(self, value):
-		self._FrgnStsCertfctn = value if type(value) != base_types.auto else self.make_default("FrgnStsCertfctn")
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
 
-	@FrgnStsCertfctn.deleter
-	def FrgnStsCertfctn(self):
-		del self._FrgnStsCertfctn
-		self._FrgnStsCertfctn = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
 
 	@property
-	def RefCcy(self):
-		return self._RefCcy
+	def Coll(self):
+		return self._Coll
 
-	@RefCcy.setter
-	def RefCcy(self, value):
-		self._RefCcy = value if type(value) != base_types.auto else self.make_default("RefCcy")
+	@Coll.setter
+	def Coll(self, value):
+		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
 
-	@RefCcy.deleter
-	def RefCcy(self):
-		del self._RefCcy
-		self._RefCcy = None
-
-	@property
-	def LttrInttDtls(self):
-		return self._LttrInttDtls
-
-	@LttrInttDtls.setter
-	def LttrInttDtls(self, value):
-		self._LttrInttDtls = value if type(value) != base_types.auto else self.make_default("LttrInttDtls")
-
-	@LttrInttDtls.deleter
-	def LttrInttDtls(self):
-		del self._LttrInttDtls
-		self._LttrInttDtls = None
-
-	@property
-	def InvstmtAcctCtgy(self):
-		return self._InvstmtAcctCtgy
-
-	@InvstmtAcctCtgy.setter
-	def InvstmtAcctCtgy(self, value):
-		self._InvstmtAcctCtgy = value if type(value) != base_types.auto else self.make_default("InvstmtAcctCtgy")
-
-	@InvstmtAcctCtgy.deleter
-	def InvstmtAcctCtgy(self):
-		del self._InvstmtAcctCtgy
-		self._InvstmtAcctCtgy = None
+	@Coll.deleter
+	def Coll(self):
+		del self._Coll
+		self._Coll = None
 
 	@property
 	def Dsgnt(self):
@@ -246,17 +181,186 @@ class InvestmentAccount74(base_types._BaseFieldType):
 		self._FinInstrmDtls = None
 
 	@property
-	def ReqrdSgntriesNb(self):
-		return self._ReqrdSgntriesNb
+	def FndFmlyNm(self):
+		return self._FndFmlyNm
 
-	@ReqrdSgntriesNb.setter
-	def ReqrdSgntriesNb(self, value):
-		self._ReqrdSgntriesNb = value if type(value) != base_types.auto else self.make_default("ReqrdSgntriesNb")
+	@FndFmlyNm.setter
+	def FndFmlyNm(self, value):
+		self._FndFmlyNm = value if type(value) != base_types.auto else self.make_default("FndFmlyNm")
 
-	@ReqrdSgntriesNb.deleter
-	def ReqrdSgntriesNb(self):
-		del self._ReqrdSgntriesNb
-		self._ReqrdSgntriesNb = None
+	@FndFmlyNm.deleter
+	def FndFmlyNm(self):
+		del self._FndFmlyNm
+		self._FndFmlyNm = None
+
+	@property
+	def FrgnStsCertfctn(self):
+		return self._FrgnStsCertfctn
+
+	@FrgnStsCertfctn.setter
+	def FrgnStsCertfctn(self, value):
+		self._FrgnStsCertfctn = value if type(value) != base_types.auto else self.make_default("FrgnStsCertfctn")
+
+	@FrgnStsCertfctn.deleter
+	def FrgnStsCertfctn(self):
+		del self._FrgnStsCertfctn
+		self._FrgnStsCertfctn = None
+
+	@property
+	def FsclYr(self):
+		return self._FsclYr
+
+	@FsclYr.setter
+	def FsclYr(self, value):
+		self._FsclYr = value if type(value) != base_types.auto else self.make_default("FsclYr")
+
+	@FsclYr.deleter
+	def FsclYr(self):
+		del self._FsclYr
+		self._FsclYr = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def IncmPref(self):
+		return self._IncmPref
+
+	@IncmPref.setter
+	def IncmPref(self, value):
+		self._IncmPref = value if type(value) != base_types.auto else self.make_default("IncmPref")
+
+	@IncmPref.deleter
+	def IncmPref(self):
+		del self._IncmPref
+		self._IncmPref = None
+
+	@property
+	def InvstmtAcctCtgy(self):
+		return self._InvstmtAcctCtgy
+
+	@InvstmtAcctCtgy.setter
+	def InvstmtAcctCtgy(self, value):
+		self._InvstmtAcctCtgy = value if type(value) != base_types.auto else self.make_default("InvstmtAcctCtgy")
+
+	@InvstmtAcctCtgy.deleter
+	def InvstmtAcctCtgy(self):
+		del self._InvstmtAcctCtgy
+		self._InvstmtAcctCtgy = None
+
+	@property
+	def InvstrPrfl(self):
+		return self._InvstrPrfl
+
+	@InvstrPrfl.setter
+	def InvstrPrfl(self, value):
+		self._InvstrPrfl = value if type(value) != base_types.auto else self.make_default("InvstrPrfl")
+
+	@InvstrPrfl.deleter
+	def InvstrPrfl(self):
+		del self._InvstrPrfl
+		self._InvstrPrfl = None
+
+	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
+	@property
+	def Lblty(self):
+		return self._Lblty
+
+	@Lblty.setter
+	def Lblty(self, value):
+		self._Lblty = value if type(value) != base_types.auto else self.make_default("Lblty")
+
+	@Lblty.deleter
+	def Lblty(self):
+		del self._Lblty
+		self._Lblty = None
+
+	@property
+	def LttrInttDtls(self):
+		return self._LttrInttDtls
+
+	@LttrInttDtls.setter
+	def LttrInttDtls(self, value):
+		self._LttrInttDtls = value if type(value) != base_types.auto else self.make_default("LttrInttDtls")
+
+	@LttrInttDtls.deleter
+	def LttrInttDtls(self):
+		del self._LttrInttDtls
+		self._LttrInttDtls = None
+
+	@property
+	def NegInd(self):
+		return self._NegInd
+
+	@NegInd.setter
+	def NegInd(self, value):
+		self._NegInd = value if type(value) != base_types.auto else self.make_default("NegInd")
+
+	@NegInd.deleter
+	def NegInd(self):
+		del self._NegInd
+		self._NegInd = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def OpngDt(self):
+		return self._OpngDt
+
+	@OpngDt.setter
+	def OpngDt(self, value):
+		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+
+	@OpngDt.deleter
+	def OpngDt(self):
+		del self._OpngDt
+		self._OpngDt = None
+
+	@property
+	def OwnrshTp(self):
+		return self._OwnrshTp
+
+	@OwnrshTp.setter
+	def OwnrshTp(self, value):
+		self._OwnrshTp = value if type(value) != base_types.auto else self.make_default("OwnrshTp")
+
+	@OwnrshTp.deleter
+	def OwnrshTp(self):
+		del self._OwnrshTp
+		self._OwnrshTp = None
 
 	@property
 	def Pldgg(self):
@@ -272,56 +376,160 @@ class InvestmentAccount74(base_types._BaseFieldType):
 		self._Pldgg = None
 
 	@property
-	def AcmltnRghtRef(self):
-		return self._AcmltnRghtRef
+	def PrcgOrdr(self):
+		return self._PrcgOrdr
 
-	@AcmltnRghtRef.setter
-	def AcmltnRghtRef(self, value):
-		self._AcmltnRghtRef = value if type(value) != base_types.auto else self.make_default("AcmltnRghtRef")
+	@PrcgOrdr.setter
+	def PrcgOrdr(self, value):
+		self._PrcgOrdr = value if type(value) != base_types.auto else self.make_default("PrcgOrdr")
 
-	@AcmltnRghtRef.deleter
-	def AcmltnRghtRef(self):
-		del self._AcmltnRghtRef
-		self._AcmltnRghtRef = None
-
-	@property
-	def Coll(self):
-		return self._Coll
-
-	@Coll.setter
-	def Coll(self, value):
-		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
-
-	@Coll.deleter
-	def Coll(self):
-		del self._Coll
-		self._Coll = None
+	@PrcgOrdr.deleter
+	def PrcgOrdr(self):
+		del self._PrcgOrdr
+		self._PrcgOrdr = None
 
 	@property
-	def ClsgDt(self):
-		return self._ClsgDt
+	def PwrOfAttnyLvlOfCtrl(self):
+		return self._PwrOfAttnyLvlOfCtrl
 
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+	@PwrOfAttnyLvlOfCtrl.setter
+	def PwrOfAttnyLvlOfCtrl(self, value):
+		self._PwrOfAttnyLvlOfCtrl = value if type(value) != base_types.auto else self.make_default("PwrOfAttnyLvlOfCtrl")
 
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
+	@PwrOfAttnyLvlOfCtrl.deleter
+	def PwrOfAttnyLvlOfCtrl(self):
+		del self._PwrOfAttnyLvlOfCtrl
+		self._PwrOfAttnyLvlOfCtrl = None
 
 	@property
-	def AcctSts(self):
-		return self._AcctSts
+	def RefCcy(self):
+		return self._RefCcy
 
-	@AcctSts.setter
-	def AcctSts(self, value):
-		self._AcctSts = value if type(value) != base_types.auto else self.make_default("AcctSts")
+	@RefCcy.setter
+	def RefCcy(self, value):
+		self._RefCcy = value if type(value) != base_types.auto else self.make_default("RefCcy")
 
-	@AcctSts.deleter
-	def AcctSts(self):
-		del self._AcctSts
-		self._AcctSts = None
+	@RefCcy.deleter
+	def RefCcy(self):
+		del self._RefCcy
+		self._RefCcy = None
+
+	@property
+	def ReqrdSgntriesNb(self):
+		return self._ReqrdSgntriesNb
+
+	@ReqrdSgntriesNb.setter
+	def ReqrdSgntriesNb(self, value):
+		self._ReqrdSgntriesNb = value if type(value) != base_types.auto else self.make_default("ReqrdSgntriesNb")
+
+	@ReqrdSgntriesNb.deleter
+	def ReqrdSgntriesNb(self):
+		del self._ReqrdSgntriesNb
+		self._ReqrdSgntriesNb = None
+
+	@property
+	def RinvstmtDtls(self):
+		return self._RinvstmtDtls
+
+	@RinvstmtDtls.setter
+	def RinvstmtDtls(self, value):
+		self._RinvstmtDtls = value if type(value) != base_types.auto else self.make_default("RinvstmtDtls")
+
+	@RinvstmtDtls.deleter
+	def RinvstmtDtls(self):
+		del self._RinvstmtDtls
+		self._RinvstmtDtls = None
+
+	@property
+	def RndgDtls(self):
+		return self._RndgDtls
+
+	@RndgDtls.setter
+	def RndgDtls(self, value):
+		self._RndgDtls = value if type(value) != base_types.auto else self.make_default("RndgDtls")
+
+	@RndgDtls.deleter
+	def RndgDtls(self):
+		del self._RndgDtls
+		self._RndgDtls = None
+
+	@property
+	def StmtFrqcy(self):
+		return self._StmtFrqcy
+
+	@StmtFrqcy.setter
+	def StmtFrqcy(self, value):
+		self._StmtFrqcy = value if type(value) != base_types.auto else self.make_default("StmtFrqcy")
+
+	@StmtFrqcy.deleter
+	def StmtFrqcy(self):
+		del self._StmtFrqcy
+		self._StmtFrqcy = None
+
+	@property
+	def StsDt(self):
+		return self._StsDt
+
+	@StsDt.setter
+	def StsDt(self, value):
+		self._StsDt = value if type(value) != base_types.auto else self.make_default("StsDt")
+
+	@StsDt.deleter
+	def StsDt(self):
+		del self._StsDt
+		self._StsDt = None
+
+	@property
+	def TaxRptg(self):
+		return self._TaxRptg
+
+	@TaxRptg.setter
+	def TaxRptg(self, value):
+		self._TaxRptg = value if type(value) != base_types.auto else self.make_default("TaxRptg")
+
+	@TaxRptg.deleter
+	def TaxRptg(self):
+		del self._TaxRptg
+		self._TaxRptg = None
+
+	@property
+	def TaxWhldgMtd(self):
+		return self._TaxWhldgMtd
+
+	@TaxWhldgMtd.setter
+	def TaxWhldgMtd(self, value):
+		self._TaxWhldgMtd = value if type(value) != base_types.auto else self.make_default("TaxWhldgMtd")
+
+	@TaxWhldgMtd.deleter
+	def TaxWhldgMtd(self):
+		del self._TaxWhldgMtd
+		self._TaxWhldgMtd = None
+
+	@property
+	def TaxXmptn(self):
+		return self._TaxXmptn
+
+	@TaxXmptn.setter
+	def TaxXmptn(self, value):
+		self._TaxXmptn = value if type(value) != base_types.auto else self.make_default("TaxXmptn")
+
+	@TaxXmptn.deleter
+	def TaxXmptn(self):
+		del self._TaxXmptn
+		self._TaxXmptn = None
+
+	@property
+	def ThrdPtyRghts(self):
+		return self._ThrdPtyRghts
+
+	@ThrdPtyRghts.setter
+	def ThrdPtyRghts(self, value):
+		self._ThrdPtyRghts = value if type(value) != base_types.auto else self.make_default("ThrdPtyRghts")
+
+	@ThrdPtyRghts.deleter
+	def ThrdPtyRghts(self):
+		del self._ThrdPtyRghts
+		self._ThrdPtyRghts = None
 
 	@property
 	def Tp(self):
@@ -349,254 +557,46 @@ class InvestmentAccount74(base_types._BaseFieldType):
 		del self._TxChanlTp
 		self._TxChanlTp = None
 
-	@property
-	def FsclYr(self):
-		return self._FsclYr
-
-	@FsclYr.setter
-	def FsclYr(self, value):
-		self._FsclYr = value if type(value) != base_types.auto else self.make_default("FsclYr")
-
-	@FsclYr.deleter
-	def FsclYr(self):
-		del self._FsclYr
-		self._FsclYr = None
-
-	@property
-	def NegInd(self):
-		return self._NegInd
-
-	@NegInd.setter
-	def NegInd(self, value):
-		self._NegInd = value if type(value) != base_types.auto else self.make_default("NegInd")
-
-	@NegInd.deleter
-	def NegInd(self):
-		del self._NegInd
-		self._NegInd = None
-
-	@property
-	def AcctSgntrDtTm(self):
-		return self._AcctSgntrDtTm
-
-	@AcctSgntrDtTm.setter
-	def AcctSgntrDtTm(self, value):
-		self._AcctSgntrDtTm = value if type(value) != base_types.auto else self.make_default("AcctSgntrDtTm")
-
-	@AcctSgntrDtTm.deleter
-	def AcctSgntrDtTm(self):
-		del self._AcctSgntrDtTm
-		self._AcctSgntrDtTm = None
-
-	@property
-	def AcctgSts(self):
-		return self._AcctgSts
-
-	@AcctgSts.setter
-	def AcctgSts(self, value):
-		self._AcctgSts = value if type(value) != base_types.auto else self.make_default("AcctgSts")
-
-	@AcctgSts.deleter
-	def AcctgSts(self):
-		del self._AcctgSts
-		self._AcctgSts = None
-
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
-	def FndFmlyNm(self):
-		return self._FndFmlyNm
-
-	@FndFmlyNm.setter
-	def FndFmlyNm(self, value):
-		self._FndFmlyNm = value if type(value) != base_types.auto else self.make_default("FndFmlyNm")
-
-	@FndFmlyNm.deleter
-	def FndFmlyNm(self):
-		del self._FndFmlyNm
-		self._FndFmlyNm = None
-
-	@property
-	def StsDt(self):
-		return self._StsDt
-
-	@StsDt.setter
-	def StsDt(self, value):
-		self._StsDt = value if type(value) != base_types.auto else self.make_default("StsDt")
-
-	@StsDt.deleter
-	def StsDt(self):
-		del self._StsDt
-		self._StsDt = None
-
-	@property
-	def PwrOfAttnyLvlOfCtrl(self):
-		return self._PwrOfAttnyLvlOfCtrl
-
-	@PwrOfAttnyLvlOfCtrl.setter
-	def PwrOfAttnyLvlOfCtrl(self, value):
-		self._PwrOfAttnyLvlOfCtrl = value if type(value) != base_types.auto else self.make_default("PwrOfAttnyLvlOfCtrl")
-
-	@PwrOfAttnyLvlOfCtrl.deleter
-	def PwrOfAttnyLvlOfCtrl(self):
-		del self._PwrOfAttnyLvlOfCtrl
-		self._PwrOfAttnyLvlOfCtrl = None
-
-	@property
-	def ThrdPtyRghts(self):
-		return self._ThrdPtyRghts
-
-	@ThrdPtyRghts.setter
-	def ThrdPtyRghts(self, value):
-		self._ThrdPtyRghts = value if type(value) != base_types.auto else self.make_default("ThrdPtyRghts")
-
-	@ThrdPtyRghts.deleter
-	def ThrdPtyRghts(self):
-		del self._ThrdPtyRghts
-		self._ThrdPtyRghts = None
-
-	@property
-	def InvstrPrfl(self):
-		return self._InvstrPrfl
-
-	@InvstrPrfl.setter
-	def InvstrPrfl(self, value):
-		self._InvstrPrfl = value if type(value) != base_types.auto else self.make_default("InvstrPrfl")
-
-	@InvstrPrfl.deleter
-	def InvstrPrfl(self):
-		del self._InvstrPrfl
-		self._InvstrPrfl = None
-
-	@property
-	def Lblty(self):
-		return self._Lblty
-
-	@Lblty.setter
-	def Lblty(self, value):
-		self._Lblty = value if type(value) != base_types.auto else self.make_default("Lblty")
-
-	@Lblty.deleter
-	def Lblty(self):
-		del self._Lblty
-		self._Lblty = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def RinvstmtDtls(self):
-		return self._RinvstmtDtls
-
-	@RinvstmtDtls.setter
-	def RinvstmtDtls(self, value):
-		self._RinvstmtDtls = value if type(value) != base_types.auto else self.make_default("RinvstmtDtls")
-
-	@RinvstmtDtls.deleter
-	def RinvstmtDtls(self):
-		del self._RinvstmtDtls
-		self._RinvstmtDtls = None
-
-	@property
-	def OwnrshTp(self):
-		return self._OwnrshTp
-
-	@OwnrshTp.setter
-	def OwnrshTp(self, value):
-		self._OwnrshTp = value if type(value) != base_types.auto else self.make_default("OwnrshTp")
-
-	@OwnrshTp.deleter
-	def OwnrshTp(self):
-		del self._OwnrshTp
-		self._OwnrshTp = None
-
-	@property
-	def PrcgOrdr(self):
-		return self._PrcgOrdr
-
-	@PrcgOrdr.setter
-	def PrcgOrdr(self, value):
-		self._PrcgOrdr = value if type(value) != base_types.auto else self.make_default("PrcgOrdr")
-
-	@PrcgOrdr.deleter
-	def PrcgOrdr(self):
-		del self._PrcgOrdr
-		self._PrcgOrdr = None
-
-	@property
-	def OpngDt(self):
-		return self._OpngDt
-
-	@OpngDt.setter
-	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
-
-	@OpngDt.deleter
-	def OpngDt(self):
-		del self._OpngDt
-		self._OpngDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxRptg', type=TaxReporting3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RndgDtls', type=RoundingParameters1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxXmptn', type=TaxExemptionReason2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSgntrDtTm', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSts', type=AccountStatus2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctUsgTp', type=AccountUsageType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncmPref', type=IncomePreference2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxWhldgMtd', type=TaxWithholdingMethod3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtFrqcy', type=StatementFrequencyReason2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctgSts', type=AccountingStatus1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcmltnRghtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckdSts', type=BlockedStatusReason2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrgnStsCertfctn', type=Provided1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LttrInttDtls', type=LetterIntent1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctCtgy', type=InvestmentAccountCategory1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Coll', type=Collateral1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument87, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqrdSgntriesNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndFmlyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrgnStsCertfctn', type=Provided1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FsclYr', type=FiscalYear1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmPref', type=IncomePreference2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcctCtgy', type=InvestmentAccountCategory1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrPrfl', type=InvestorProfile2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Lang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lblty', type=Liability1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LttrInttDtls', type=LetterIntent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NegInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrshTp', type=OwnershipType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pldgg', type=Eligible1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcmltnRghtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Coll', type=Collateral1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSts', type=AccountStatus2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgOrdr', type=PositionEffect3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PwrOfAttnyLvlOfCtrl', type=LevelOfControl1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdSgntriesNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RinvstmtDtls', type=Reinvestment4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RndgDtls', type=RoundingParameters1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtFrqcy', type=StatementFrequencyReason2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRptg', type=TaxReporting3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxWhldgMtd', type=TaxWithholdingMethod3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxXmptn', type=TaxExemptionReason2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrdPtyRghts', type=ThirdPartyRights2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxChanlTp', type=TransactionChannelType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FsclYr', type=FiscalYear1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NegInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSgntrDtTm', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctgSts', type=AccountingStatus1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndFmlyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PwrOfAttnyLvlOfCtrl', type=LevelOfControl1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThrdPtyRghts', type=ThirdPartyRights2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrPrfl', type=InvestorProfile2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Lblty', type=Liability1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RinvstmtDtls', type=Reinvestment4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OwnrshTp', type=OwnershipType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgOrdr', type=PositionEffect3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

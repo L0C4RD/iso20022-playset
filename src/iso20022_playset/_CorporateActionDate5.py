@@ -3,20 +3,7 @@ from ._DateFormat4Choice import DateFormat4Choice
 
 class CorporateActionDate5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_EarlstPmtDt", "_FXRateFxgDt", "_ValDt"]
-	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
+	__slots__ = ["_ValDt", "_EarlstPmtDt", "_FXRateFxgDt", "_PmtDt"]
 	@property
 	def EarlstPmtDt(self):
 		return self._EarlstPmtDt
@@ -44,6 +31,19 @@ class CorporateActionDate5(base_types._BaseFieldType):
 		self._FXRateFxgDt = None
 
 	@property
+	def PmtDt(self):
+		return self._PmtDt
+
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
+
+	@property
 	def ValDt(self):
 		return self._ValDt
 
@@ -57,9 +57,9 @@ class CorporateActionDate5(base_types._BaseFieldType):
 		self._ValDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXRateFxgDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

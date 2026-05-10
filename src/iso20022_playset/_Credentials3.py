@@ -1,39 +1,13 @@
 from . import base_types
-from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
-from ._Max70Text import Max70Text
 from ._ISOYearMonth import ISOYearMonth
+from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
 from ._Authority1 import Authority1
+from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
 
 class Credentials3(base_types._BaseFieldType):
 
-	__slots__ = ["_XpryDt", "_Tp", "_Assgnr", "_OthrTp", "_SubTp", "_Val"]
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Tp", "_SubTp", "_XpryDt", "_OthrTp", "_Assgnr", "_Val"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr
@@ -74,6 +48,19 @@ class Credentials3(base_types._BaseFieldType):
 		self._SubTp = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def Val(self):
 		return self._Val
 
@@ -86,12 +73,25 @@ class Credentials3(base_types._BaseFieldType):
 		del self._Val
 		self._Val = None
 
+	@property
+	def XpryDt(self):
+		return self._XpryDt
+
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Authority1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
 	))
 

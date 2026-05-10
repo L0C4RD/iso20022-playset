@@ -1,13 +1,26 @@
 from . import base_types
-from ._EUCapitalGain3Choice import EUCapitalGain3Choice
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Tax40 import Tax40
-from ._EUDividendStatusType2Choice import EUDividendStatusType2Choice
 from ._PercentageRate import PercentageRate
+from ._EUDividendStatusType2Choice import EUDividendStatusType2Choice
+from ._Tax40 import Tax40
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._EUCapitalGain3Choice import EUCapitalGain3Choice
 
 class InformativeTax2(base_types._BaseFieldType):
 
-	__slots__ = ["_EUDvddSts", "_TaxblIncmPerDvdd", "_PctgOfDebtClm", "_IndvTax", "_EUCptlGn"]
+	__slots__ = ["_PctgOfDebtClm", "_TaxblIncmPerDvdd", "_EUCptlGn", "_EUDvddSts", "_IndvTax"]
+	@property
+	def EUCptlGn(self):
+		return self._EUCptlGn
+
+	@EUCptlGn.setter
+	def EUCptlGn(self, value):
+		self._EUCptlGn = value if type(value) != base_types.auto else self.make_default("EUCptlGn")
+
+	@EUCptlGn.deleter
+	def EUCptlGn(self):
+		del self._EUCptlGn
+		self._EUCptlGn = None
+
 	@property
 	def EUDvddSts(self):
 		return self._EUDvddSts
@@ -20,32 +33,6 @@ class InformativeTax2(base_types._BaseFieldType):
 	def EUDvddSts(self):
 		del self._EUDvddSts
 		self._EUDvddSts = None
-
-	@property
-	def TaxblIncmPerDvdd(self):
-		return self._TaxblIncmPerDvdd
-
-	@TaxblIncmPerDvdd.setter
-	def TaxblIncmPerDvdd(self, value):
-		self._TaxblIncmPerDvdd = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvdd")
-
-	@TaxblIncmPerDvdd.deleter
-	def TaxblIncmPerDvdd(self):
-		del self._TaxblIncmPerDvdd
-		self._TaxblIncmPerDvdd = None
-
-	@property
-	def PctgOfDebtClm(self):
-		return self._PctgOfDebtClm
-
-	@PctgOfDebtClm.setter
-	def PctgOfDebtClm(self, value):
-		self._PctgOfDebtClm = value if type(value) != base_types.auto else self.make_default("PctgOfDebtClm")
-
-	@PctgOfDebtClm.deleter
-	def PctgOfDebtClm(self):
-		del self._PctgOfDebtClm
-		self._PctgOfDebtClm = None
 
 	@property
 	def IndvTax(self):
@@ -61,23 +48,36 @@ class InformativeTax2(base_types._BaseFieldType):
 		self._IndvTax = None
 
 	@property
-	def EUCptlGn(self):
-		return self._EUCptlGn
+	def PctgOfDebtClm(self):
+		return self._PctgOfDebtClm
 
-	@EUCptlGn.setter
-	def EUCptlGn(self, value):
-		self._EUCptlGn = value if type(value) != base_types.auto else self.make_default("EUCptlGn")
+	@PctgOfDebtClm.setter
+	def PctgOfDebtClm(self, value):
+		self._PctgOfDebtClm = value if type(value) != base_types.auto else self.make_default("PctgOfDebtClm")
 
-	@EUCptlGn.deleter
-	def EUCptlGn(self):
-		del self._EUCptlGn
-		self._EUCptlGn = None
+	@PctgOfDebtClm.deleter
+	def PctgOfDebtClm(self):
+		del self._PctgOfDebtClm
+		self._PctgOfDebtClm = None
+
+	@property
+	def TaxblIncmPerDvdd(self):
+		return self._TaxblIncmPerDvdd
+
+	@TaxblIncmPerDvdd.setter
+	def TaxblIncmPerDvdd(self, value):
+		self._TaxblIncmPerDvdd = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvdd")
+
+	@TaxblIncmPerDvdd.deleter
+	def TaxblIncmPerDvdd(self):
+		del self._TaxblIncmPerDvdd
+		self._TaxblIncmPerDvdd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EUDvddSts', type=EUDividendStatusType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxblIncmPerDvdd', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PctgOfDebtClm', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvTax', type=Tax40, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EUCptlGn', type=EUCapitalGain3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EUDvddSts', type=EUDividendStatusType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvTax', type=Tax40, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PctgOfDebtClm', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerDvdd', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

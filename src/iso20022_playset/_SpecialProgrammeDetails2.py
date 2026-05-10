@@ -4,7 +4,7 @@ from ._Max256Text import Max256Text
 
 class SpecialProgrammeDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Val"]
+	__slots__ = ["_Val", "_Nm"]
 	@property
 	def Nm(self):
 		return self._Nm

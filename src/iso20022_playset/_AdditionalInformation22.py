@@ -1,13 +1,13 @@
 from . import base_types
-from ._UserInterface8Code import UserInterface8Code
 from ._PartyType19Code import PartyType19Code
 from ._Max35Text import Max35Text
 from ._Max20KText import Max20KText
 from ._OutputFormat4Code import OutputFormat4Code
+from ._UserInterface8Code import UserInterface8Code
 
 class AdditionalInformation22(base_types._BaseFieldType):
 
-	__slots__ = ["_Frmt", "_Trgt", "_Rcpt", "_Tp", "_Val"]
+	__slots__ = ["_Val", "_Frmt", "_Rcpt", "_Tp", "_Trgt"]
 	@property
 	def Frmt(self):
 		return self._Frmt
@@ -20,19 +20,6 @@ class AdditionalInformation22(base_types._BaseFieldType):
 	def Frmt(self):
 		del self._Frmt
 		self._Frmt = None
-
-	@property
-	def Trgt(self):
-		return self._Trgt
-
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
-
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
 
 	@property
 	def Rcpt(self):
@@ -61,6 +48,19 @@ class AdditionalInformation22(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def Trgt(self):
+		return self._Trgt
+
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
+
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
+
+	@property
 	def Val(self):
 		return self._Val
 
@@ -75,9 +75,9 @@ class AdditionalInformation22(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 	))
 

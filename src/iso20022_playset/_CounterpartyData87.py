@@ -3,7 +3,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class CounterpartyData87(base_types._BaseFieldType):
 
-	__slots__ = ["_NttyRspnsblForRpt", "_RptgCtrPty", "_RptSubmitgNtty"]
+	__slots__ = ["_RptgCtrPty", "_RptSubmitgNtty", "_NttyRspnsblForRpt"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt
@@ -18,19 +18,6 @@ class CounterpartyData87(base_types._BaseFieldType):
 		self._NttyRspnsblForRpt = None
 
 	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
-
-	@property
 	def RptSubmitgNtty(self):
 		return self._RptSubmitgNtty
 
@@ -43,9 +30,22 @@ class CounterpartyData87(base_types._BaseFieldType):
 		del self._RptSubmitgNtty
 		self._RptSubmitgNtty = None
 
+	@property
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
+
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

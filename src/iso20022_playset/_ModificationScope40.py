@@ -4,7 +4,7 @@ from ._DataModification1Code import DataModification1Code
 
 class ModificationScope40(base_types._BaseFieldType):
 
-	__slots__ = ["_Intrmy", "_ModScpIndctn"]
+	__slots__ = ["_ModScpIndctn", "_Intrmy"]
 	@property
 	def Intrmy(self):
 		return self._Intrmy

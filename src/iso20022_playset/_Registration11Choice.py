@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._Registration1Code import Registration1Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class Registration11Choice(base_types._BaseFieldType):
 

@@ -1,56 +1,56 @@
 from . import base_types
-from ._AccountForAction1 import AccountForAction1
-from ._AccountContract2 import AccountContract2
-from ._Group5 import Group5
-from ._PartyAndSignature4 import PartyAndSignature4
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._OrganisationIdentification39 import OrganisationIdentification39
-from ._OperationMandate6 import OperationMandate6
-from ._References4 import References4
-from ._ContractDocument1 import ContractDocument1
 from ._SupplementaryData1 import SupplementaryData1
+from ._AccountForAction1 import AccountForAction1
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Group5 import Group5
+from ._AccountContract2 import AccountContract2
+from ._References4 import References4
+from ._OperationMandate6 import OperationMandate6
+from ._ContractDocument1 import ContractDocument1
+from ._OrganisationIdentification39 import OrganisationIdentification39
+from ._PartyAndSignature4 import PartyAndSignature4
 
 class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgId", "_Grp", "_Mndt", "_DgtlSgntr", "_Fr", "_CtrctDts", "_AcctSvcrId", "_Refs", "_SplmtryData", "_AcctId", "_UndrlygMstrAgrmt"]
+	__slots__ = ["_Fr", "_Mndt", "_AcctId", "_AcctSvcrId", "_UndrlygMstrAgrmt", "_Grp", "_DgtlSgntr", "_CtrctDts", "_OrgId", "_Refs", "_SplmtryData"]
 	@property
-	def OrgId(self):
-		return self._OrgId
+	def AcctId(self):
+		return self._AcctId
 
-	@OrgId.setter
-	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@OrgId.deleter
-	def OrgId(self):
-		del self._OrgId
-		self._OrgId = None
-
-	@property
-	def Grp(self):
-		return self._Grp
-
-	@Grp.setter
-	def Grp(self, value):
-		self._Grp = value if type(value) != base_types.auto else self.make_default("Grp")
-
-	@Grp.deleter
-	def Grp(self):
-		del self._Grp
-		self._Grp = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
-	def Mndt(self):
-		return self._Mndt
+	def AcctSvcrId(self):
+		return self._AcctSvcrId
 
-	@Mndt.setter
-	def Mndt(self, value):
-		self._Mndt = value if type(value) != base_types.auto else self.make_default("Mndt")
+	@AcctSvcrId.setter
+	def AcctSvcrId(self, value):
+		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
 
-	@Mndt.deleter
-	def Mndt(self):
-		del self._Mndt
-		self._Mndt = None
+	@AcctSvcrId.deleter
+	def AcctSvcrId(self):
+		del self._AcctSvcrId
+		self._AcctSvcrId = None
+
+	@property
+	def CtrctDts(self):
+		return self._CtrctDts
+
+	@CtrctDts.setter
+	def CtrctDts(self, value):
+		self._CtrctDts = value if type(value) != base_types.auto else self.make_default("CtrctDts")
+
+	@CtrctDts.deleter
+	def CtrctDts(self):
+		del self._CtrctDts
+		self._CtrctDts = None
 
 	@property
 	def DgtlSgntr(self):
@@ -79,30 +79,43 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._Fr = None
 
 	@property
-	def CtrctDts(self):
-		return self._CtrctDts
+	def Grp(self):
+		return self._Grp
 
-	@CtrctDts.setter
-	def CtrctDts(self, value):
-		self._CtrctDts = value if type(value) != base_types.auto else self.make_default("CtrctDts")
+	@Grp.setter
+	def Grp(self, value):
+		self._Grp = value if type(value) != base_types.auto else self.make_default("Grp")
 
-	@CtrctDts.deleter
-	def CtrctDts(self):
-		del self._CtrctDts
-		self._CtrctDts = None
+	@Grp.deleter
+	def Grp(self):
+		del self._Grp
+		self._Grp = None
 
 	@property
-	def AcctSvcrId(self):
-		return self._AcctSvcrId
+	def Mndt(self):
+		return self._Mndt
 
-	@AcctSvcrId.setter
-	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+	@Mndt.setter
+	def Mndt(self, value):
+		self._Mndt = value if type(value) != base_types.auto else self.make_default("Mndt")
 
-	@AcctSvcrId.deleter
-	def AcctSvcrId(self):
-		del self._AcctSvcrId
-		self._AcctSvcrId = None
+	@Mndt.deleter
+	def Mndt(self):
+		del self._Mndt
+		self._Mndt = None
+
+	@property
+	def OrgId(self):
+		return self._OrgId
+
+	@OrgId.setter
+	def OrgId(self, value):
+		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+
+	@OrgId.deleter
+	def OrgId(self):
+		del self._OrgId
+		self._OrgId = None
 
 	@property
 	def Refs(self):
@@ -131,19 +144,6 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
 	def UndrlygMstrAgrmt(self):
 		return self._UndrlygMstrAgrmt
 
@@ -157,16 +157,16 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._UndrlygMstrAgrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification39, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Grp', type=Group5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Mndt', type=OperationMandate6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctDts', type=AccountContract2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Fr', type=OrganisationIdentification39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctDts', type=AccountContract2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Grp', type=Group5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Mndt', type=OperationMandate6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification39, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Refs', type=References4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UndrlygMstrAgrmt', type=ContractDocument1, min=0, max=1, mutex_group=None, array=False),
 	))
 

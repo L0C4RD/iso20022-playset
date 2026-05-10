@@ -1,10 +1,10 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._AwaitingCancellationReason2 import AwaitingCancellationReason2
+from ._NoReasonCode import NoReasonCode
 
 class CancellationReason39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
+	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
 	@property
 	def NoSpcfdRsn(self):
 		return self._NoSpcfdRsn

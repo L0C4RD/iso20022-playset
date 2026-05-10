@@ -3,7 +3,7 @@ from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18C
 
 class ProceedsQuantityBreakdown1(base_types._BaseFieldType):
 
-	__slots__ = ["_CshCompstnQty", "_TrfOfRcvdPrcdsQty"]
+	__slots__ = ["_TrfOfRcvdPrcdsQty", "_CshCompstnQty"]
 	@property
 	def CshCompstnQty(self):
 		return self._CshCompstnQty

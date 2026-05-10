@@ -1,6 +1,6 @@
 from . import base_types
-from ._PackageType5 import PackageType5
 from ._PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
+from ._PackageType5 import PackageType5
 
 class TerminalPackageType5(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._MissingOrIncorrectData1 import MissingOrIncorrectData1
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._MissingOrIncorrectData1 import MissingOrIncorrectData1
+from ._YesNoIndicator import YesNoIndicator
 
 class UnableToApplyJustification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PssblDplctInstr", "_MssngOrIncrrctInf", "_AnyInf"]
+	__slots__ = ["_PssblDplctInstr", "_AnyInf", "_MssngOrIncrrctInf"]
 	@property
-	def PssblDplctInstr(self):
-		return self._PssblDplctInstr
+	def AnyInf(self):
+		return self._AnyInf
 
-	@PssblDplctInstr.setter
-	def PssblDplctInstr(self, value):
-		self._PssblDplctInstr = value if type(value) != base_types.auto else self.make_default("PssblDplctInstr")
+	@AnyInf.setter
+	def AnyInf(self, value):
+		self._AnyInf = value if type(value) != base_types.auto else self.make_default("AnyInf")
 
-	@PssblDplctInstr.deleter
-	def PssblDplctInstr(self):
-		del self._PssblDplctInstr
-		self._PssblDplctInstr = None
+	@AnyInf.deleter
+	def AnyInf(self):
+		del self._AnyInf
+		self._AnyInf = None
 
 	@property
 	def MssngOrIncrrctInf(self):
@@ -33,21 +33,21 @@ class UnableToApplyJustification4Choice(base_types._BaseFieldType):
 		self._MssngOrIncrrctInf = None
 
 	@property
-	def AnyInf(self):
-		return self._AnyInf
+	def PssblDplctInstr(self):
+		return self._PssblDplctInstr
 
-	@AnyInf.setter
-	def AnyInf(self, value):
-		self._AnyInf = value if type(value) != base_types.auto else self.make_default("AnyInf")
+	@PssblDplctInstr.setter
+	def PssblDplctInstr(self, value):
+		self._PssblDplctInstr = value if type(value) != base_types.auto else self.make_default("PssblDplctInstr")
 
-	@AnyInf.deleter
-	def AnyInf(self):
-		del self._AnyInf
-		self._AnyInf = None
+	@PssblDplctInstr.deleter
+	def PssblDplctInstr(self):
+		del self._PssblDplctInstr
+		self._PssblDplctInstr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PssblDplctInstr', type=TrueFalseIndicator, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MssngOrIncrrctInf', type=MissingOrIncorrectData1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyInf', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MssngOrIncrrctInf', type=MissingOrIncorrectData1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PssblDplctInstr', type=TrueFalseIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
 

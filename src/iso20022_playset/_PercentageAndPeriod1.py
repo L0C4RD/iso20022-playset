@@ -1,22 +1,22 @@
 from . import base_types
-from ._PercentageBoundedRate import PercentageBoundedRate
 from ._ISODate import ISODate
+from ._PercentageBoundedRate import PercentageBoundedRate
 
 class PercentageAndPeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_Pctg", "_EndDt"]
+	__slots__ = ["_EndDt", "_Pctg", "_StartDt"]
 	@property
-	def StartDt(self):
-		return self._StartDt
+	def EndDt(self):
+		return self._EndDt
 
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
 
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
 
 	@property
 	def Pctg(self):
@@ -32,21 +32,21 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 		self._Pctg = None
 
 	@property
-	def EndDt(self):
-		return self._EndDt
+	def StartDt(self):
+		return self._StartDt
 
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
 
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageBoundedRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageBoundedRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

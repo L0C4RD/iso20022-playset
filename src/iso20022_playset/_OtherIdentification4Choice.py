@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._PersonIdentificationType6Code import PersonIdentificationType6Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class OtherIdentification4Choice(base_types._BaseFieldType):
 

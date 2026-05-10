@@ -1,13 +1,26 @@
 from . import base_types
-from ._ExternalCardTransactionCategory1Code import ExternalCardTransactionCategory1Code
+from ._Max35Text import Max35Text
 from ._CardSequenceNumberRange1 import CardSequenceNumberRange1
 from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
-from ._Max35Text import Max35Text
+from ._ExternalCardTransactionCategory1Code import ExternalCardTransactionCategory1Code
 from ._CardPaymentServiceType2Code import CardPaymentServiceType2Code
 
 class CardAggregated2(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRcncltnId", "_AddtlSvc", "_TxCtgy", "_TxDtRg", "_SeqNbRg"]
+	__slots__ = ["_TxCtgy", "_SaleRcncltnId", "_AddtlSvc", "_SeqNbRg", "_TxDtRg"]
+	@property
+	def AddtlSvc(self):
+		return self._AddtlSvc
+
+	@AddtlSvc.setter
+	def AddtlSvc(self, value):
+		self._AddtlSvc = value if type(value) != base_types.auto else self.make_default("AddtlSvc")
+
+	@AddtlSvc.deleter
+	def AddtlSvc(self):
+		del self._AddtlSvc
+		self._AddtlSvc = None
+
 	@property
 	def SaleRcncltnId(self):
 		return self._SaleRcncltnId
@@ -22,17 +35,17 @@ class CardAggregated2(base_types._BaseFieldType):
 		self._SaleRcncltnId = None
 
 	@property
-	def AddtlSvc(self):
-		return self._AddtlSvc
+	def SeqNbRg(self):
+		return self._SeqNbRg
 
-	@AddtlSvc.setter
-	def AddtlSvc(self, value):
-		self._AddtlSvc = value if type(value) != base_types.auto else self.make_default("AddtlSvc")
+	@SeqNbRg.setter
+	def SeqNbRg(self, value):
+		self._SeqNbRg = value if type(value) != base_types.auto else self.make_default("SeqNbRg")
 
-	@AddtlSvc.deleter
-	def AddtlSvc(self):
-		del self._AddtlSvc
-		self._AddtlSvc = None
+	@SeqNbRg.deleter
+	def SeqNbRg(self):
+		del self._SeqNbRg
+		self._SeqNbRg = None
 
 	@property
 	def TxCtgy(self):
@@ -60,24 +73,11 @@ class CardAggregated2(base_types._BaseFieldType):
 		del self._TxDtRg
 		self._TxDtRg = None
 
-	@property
-	def SeqNbRg(self):
-		return self._SeqNbRg
-
-	@SeqNbRg.setter
-	def SeqNbRg(self, value):
-		self._SeqNbRg = value if type(value) != base_types.auto else self.make_default("SeqNbRg")
-
-	@SeqNbRg.deleter
-	def SeqNbRg(self):
-		del self._SeqNbRg
-		self._SeqNbRg = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSvc', type=CardPaymentServiceType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNbRg', type=CardSequenceNumberRange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxCtgy', type=ExternalCardTransactionCategory1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtRg', type=DateOrDateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNbRg', type=CardSequenceNumberRange1, min=0, max=1, mutex_group=None, array=False),
 	))
 

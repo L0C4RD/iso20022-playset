@@ -1,27 +1,14 @@
 from . import base_types
-from ._PartyIdentification140 import PartyIdentification140
-from ._Max140Text import Max140Text
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
-from ._PostalAddress1 import PostalAddress1
 from ._ISODate import ISODate
+from ._CountryCode import CountryCode
+from ._PartyIdentification140 import PartyIdentification140
+from ._PostalAddress1 import PostalAddress1
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
 
 class Organisation36(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_CorpInvstrAdr", "_Id", "_Purp", "_TaxtnCtry", "_TaxIdNb", "_NtlRegnNb", "_RegnCtry", "_RegnDt"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Nm", "_TaxIdNb", "_TaxtnCtry", "_NtlRegnNb", "_Purp", "_RegnCtry", "_CorpInvstrAdr", "_Id", "_RegnDt"]
 	@property
 	def CorpInvstrAdr(self):
 		return self._CorpInvstrAdr
@@ -49,43 +36,17 @@ class Organisation36(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Purp(self):
-		return self._Purp
+	def Nm(self):
+		return self._Nm
 
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
-
-	@property
-	def TaxtnCtry(self):
-		return self._TaxtnCtry
-
-	@TaxtnCtry.setter
-	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != base_types.auto else self.make_default("TaxtnCtry")
-
-	@TaxtnCtry.deleter
-	def TaxtnCtry(self):
-		del self._TaxtnCtry
-		self._TaxtnCtry = None
-
-	@property
-	def TaxIdNb(self):
-		return self._TaxIdNb
-
-	@TaxIdNb.setter
-	def TaxIdNb(self, value):
-		self._TaxIdNb = value if type(value) != base_types.auto else self.make_default("TaxIdNb")
-
-	@TaxIdNb.deleter
-	def TaxIdNb(self):
-		del self._TaxIdNb
-		self._TaxIdNb = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def NtlRegnNb(self):
@@ -99,6 +60,19 @@ class Organisation36(base_types._BaseFieldType):
 	def NtlRegnNb(self):
 		del self._NtlRegnNb
 		self._NtlRegnNb = None
+
+	@property
+	def Purp(self):
+		return self._Purp
+
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
 
 	@property
 	def RegnCtry(self):
@@ -126,15 +100,41 @@ class Organisation36(base_types._BaseFieldType):
 		del self._RegnDt
 		self._RegnDt = None
 
+	@property
+	def TaxIdNb(self):
+		return self._TaxIdNb
+
+	@TaxIdNb.setter
+	def TaxIdNb(self, value):
+		self._TaxIdNb = value if type(value) != base_types.auto else self.make_default("TaxIdNb")
+
+	@TaxIdNb.deleter
+	def TaxIdNb(self):
+		del self._TaxIdNb
+		self._TaxIdNb = None
+
+	@property
+	def TaxtnCtry(self):
+		return self._TaxtnCtry
+
+	@TaxtnCtry.setter
+	def TaxtnCtry(self, value):
+		self._TaxtnCtry = value if type(value) != base_types.auto else self.make_default("TaxtnCtry")
+
+	@TaxtnCtry.deleter
+	def TaxtnCtry(self):
+		del self._TaxtnCtry
+		self._TaxtnCtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpInvstrAdr', type=PostalAddress1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification140, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

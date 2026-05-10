@@ -4,7 +4,7 @@ from ._AccountCriteria4Choice import AccountCriteria4Choice
 
 class AccountQuery4(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctCrit", "_QryTp"]
+	__slots__ = ["_QryTp", "_AcctCrit"]
 	@property
 	def AcctCrit(self):
 		return self._AcctCrit

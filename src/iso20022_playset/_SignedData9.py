@@ -1,13 +1,26 @@
 from . import base_types
-from ._Number import Number
-from ._AlgorithmIdentification36 import AlgorithmIdentification36
-from ._Signer8 import Signer8
-from ._EncapsulatedContent3 import EncapsulatedContent3
 from ._Max5000Binary import Max5000Binary
+from ._EncapsulatedContent3 import EncapsulatedContent3
+from ._Signer8 import Signer8
+from ._AlgorithmIdentification36 import AlgorithmIdentification36
+from ._Number import Number
 
 class SignedData9(base_types._BaseFieldType):
 
-	__slots__ = ["_DgstAlgo", "_NcpsltdCntt", "_Vrsn", "_Sgnr", "_Cert"]
+	__slots__ = ["_NcpsltdCntt", "_Sgnr", "_DgstAlgo", "_Vrsn", "_Cert"]
+	@property
+	def Cert(self):
+		return self._Cert
+
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
+
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo
@@ -35,19 +48,6 @@ class SignedData9(base_types._BaseFieldType):
 		self._NcpsltdCntt = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
 	def Sgnr(self):
 		return self._Sgnr
 
@@ -61,23 +61,23 @@ class SignedData9(base_types._BaseFieldType):
 		self._Sgnr = None
 
 	@property
-	def Cert(self):
-		return self._Cert
+	def Vrsn(self):
+		return self._Vrsn
 
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgnr', type=Signer8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

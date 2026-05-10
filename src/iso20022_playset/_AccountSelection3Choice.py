@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._InvestmentAccount76 import InvestmentAccount76
+from ._Max35Text import Max35Text
 
 class AccountSelection3Choice(base_types._BaseFieldType):
 

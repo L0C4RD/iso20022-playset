@@ -4,7 +4,7 @@ from ._PublicRSAKey1 import PublicRSAKey1
 
 class PublicRSAKey2(base_types._BaseFieldType):
 
-	__slots__ = ["_Algo", "_PblcKeyVal"]
+	__slots__ = ["_PblcKeyVal", "_Algo"]
 	@property
 	def Algo(self):
 		return self._Algo

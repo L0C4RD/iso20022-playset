@@ -1,10 +1,10 @@
 from . import base_types
-from ._Registration10Choice import Registration10Choice
 from ._Max210Text import Max210Text
+from ._Registration10Choice import Registration10Choice
 
 class RegistrationReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Cd"]
+	__slots__ = ["_Cd", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

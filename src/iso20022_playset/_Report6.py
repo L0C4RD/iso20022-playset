@@ -1,28 +1,15 @@
 from . import base_types
 from ._GenericIdentification30 import GenericIdentification30
-from ._Frequency25Choice import Frequency25Choice
-from ._Max5NumericText import Max5NumericText
-from ._Max35Text import Max35Text
-from ._StatementUpdateTypeCodeAndDSSCode1Choice import StatementUpdateTypeCodeAndDSSCode1Choice
-from ._QueryReference2 import QueryReference2
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
+from ._Frequency25Choice import Frequency25Choice
+from ._Max35Text import Max35Text
+from ._QueryReference2 import QueryReference2
+from ._StatementUpdateTypeCodeAndDSSCode1Choice import StatementUpdateTypeCodeAndDSSCode1Choice
+from ._Max5NumericText import Max5NumericText
 
 class Report6(base_types._BaseFieldType):
 
-	__slots__ = ["_QryRef", "_Frqcy", "_RptId", "_NtceTp", "_RptNb", "_RptDtTm", "_UpdTp"]
-	@property
-	def QryRef(self):
-		return self._QryRef
-
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
-
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
-
+	__slots__ = ["_Frqcy", "_NtceTp", "_RptId", "_QryRef", "_RptDtTm", "_UpdTp", "_RptNb"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -35,19 +22,6 @@ class Report6(base_types._BaseFieldType):
 	def Frqcy(self):
 		del self._Frqcy
 		self._Frqcy = None
-
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
 
 	@property
 	def NtceTp(self):
@@ -63,17 +37,17 @@ class Report6(base_types._BaseFieldType):
 		self._NtceTp = None
 
 	@property
-	def RptNb(self):
-		return self._RptNb
+	def QryRef(self):
+		return self._QryRef
 
-	@RptNb.setter
-	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
 
-	@RptNb.deleter
-	def RptNb(self):
-		del self._RptNb
-		self._RptNb = None
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
 
 	@property
 	def RptDtTm(self):
@@ -89,6 +63,32 @@ class Report6(base_types._BaseFieldType):
 		self._RptDtTm = None
 
 	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
+	@property
+	def RptNb(self):
+		return self._RptNb
+
+	@RptNb.setter
+	def RptNb(self, value):
+		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+
+	@RptNb.deleter
+	def RptNb(self):
+		del self._RptNb
+		self._RptNb = None
+
+	@property
 	def UpdTp(self):
 		return self._UpdTp
 
@@ -102,12 +102,12 @@ class Report6(base_types._BaseFieldType):
 		self._UpdTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QryRef', type=QueryReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency25Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtceTp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=QueryReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptDtTm', type=DateAndDateTime1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=StatementUpdateTypeCodeAndDSSCode1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

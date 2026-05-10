@@ -1,12 +1,38 @@
 from . import base_types
+from ._AcceptanceResult6 import AcceptanceResult6
 from ._SupplementaryData1 import SupplementaryData1
 from ._OriginalMandate11Choice import OriginalMandate11Choice
 from ._OriginalMessageInformation1 import OriginalMessageInformation1
-from ._AcceptanceResult6 import AcceptanceResult6
 
 class MandateAcceptance8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgInf", "_SplmtryData", "_OrgnlMndt", "_AccptncRslt"]
+	__slots__ = ["_AccptncRslt", "_OrgnlMndt", "_SplmtryData", "_OrgnlMsgInf"]
+	@property
+	def AccptncRslt(self):
+		return self._AccptncRslt
+
+	@AccptncRslt.setter
+	def AccptncRslt(self, value):
+		self._AccptncRslt = value if type(value) != base_types.auto else self.make_default("AccptncRslt")
+
+	@AccptncRslt.deleter
+	def AccptncRslt(self):
+		del self._AccptncRslt
+		self._AccptncRslt = None
+
+	@property
+	def OrgnlMndt(self):
+		return self._OrgnlMndt
+
+	@OrgnlMndt.setter
+	def OrgnlMndt(self, value):
+		self._OrgnlMndt = value if type(value) != base_types.auto else self.make_default("OrgnlMndt")
+
+	@OrgnlMndt.deleter
+	def OrgnlMndt(self):
+		del self._OrgnlMndt
+		self._OrgnlMndt = None
+
 	@property
 	def OrgnlMsgInf(self):
 		return self._OrgnlMsgInf
@@ -33,36 +59,10 @@ class MandateAcceptance8(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def OrgnlMndt(self):
-		return self._OrgnlMndt
-
-	@OrgnlMndt.setter
-	def OrgnlMndt(self, value):
-		self._OrgnlMndt = value if type(value) != base_types.auto else self.make_default("OrgnlMndt")
-
-	@OrgnlMndt.deleter
-	def OrgnlMndt(self):
-		del self._OrgnlMndt
-		self._OrgnlMndt = None
-
-	@property
-	def AccptncRslt(self):
-		return self._AccptncRslt
-
-	@AccptncRslt.setter
-	def AccptncRslt(self, value):
-		self._AccptncRslt = value if type(value) != base_types.auto else self.make_default("AccptncRslt")
-
-	@AccptncRslt.deleter
-	def AccptncRslt(self):
-		del self._AccptncRslt
-		self._AccptncRslt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AccptncRslt', type=AcceptanceResult6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate11Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AccptncRslt', type=AcceptanceResult6, min=1, max=1, mutex_group=None, array=False),
 	))
 

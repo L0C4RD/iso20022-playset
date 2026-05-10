@@ -1,24 +1,24 @@
 from . import base_types
-from ._TaxOrganisationIdentification1 import TaxOrganisationIdentification1
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._TaxReportingStatus1Code import TaxReportingStatus1Code
 from ._MessageIdentification1 import MessageIdentification1
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._TaxOrganisationIdentification1 import TaxOrganisationIdentification1
 
 class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxAuthrty", "_OrgnlMsgId", "_RptSts", "_MsgId", "_VldtnRule"]
+	__slots__ = ["_MsgId", "_VldtnRule", "_OrgnlMsgId", "_TaxAuthrty", "_RptSts"]
 	@property
-	def TaxAuthrty(self):
-		return self._TaxAuthrty
+	def MsgId(self):
+		return self._MsgId
 
-	@TaxAuthrty.setter
-	def TaxAuthrty(self, value):
-		self._TaxAuthrty = value if type(value) != base_types.auto else self.make_default("TaxAuthrty")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@TaxAuthrty.deleter
-	def TaxAuthrty(self):
-		del self._TaxAuthrty
-		self._TaxAuthrty = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def OrgnlMsgId(self):
@@ -47,17 +47,17 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 		self._RptSts = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def TaxAuthrty(self):
+		return self._TaxAuthrty
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@TaxAuthrty.setter
+	def TaxAuthrty(self, value):
+		self._TaxAuthrty = value if type(value) != base_types.auto else self.make_default("TaxAuthrty")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@TaxAuthrty.deleter
+	def TaxAuthrty(self):
+		del self._TaxAuthrty
+		self._TaxAuthrty = None
 
 	@property
 	def VldtnRule(self):
@@ -73,10 +73,10 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 		self._VldtnRule = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxAuthrty', type=TaxOrganisationIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSts', type=TaxReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxAuthrty', type=TaxOrganisationIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

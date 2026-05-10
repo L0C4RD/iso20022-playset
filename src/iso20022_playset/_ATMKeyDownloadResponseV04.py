@@ -1,38 +1,12 @@
 from . import base_types
+from ._ATMKeyDownloadResponse5 import ATMKeyDownloadResponse5
 from ._ContentInformationType10 import ContentInformationType10
 from ._Header31 import Header31
 from ._ContentInformationType13 import ContentInformationType13
-from ._ATMKeyDownloadResponse5 import ATMKeyDownloadResponse5
 
 class ATMKeyDownloadResponseV04(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMKeyDwnldRspn", "_SctyTrlr", "_ATMKeyDwnldRspn", "_Hdr"]
-	@property
-	def PrtctdATMKeyDwnldRspn(self):
-		return self._PrtctdATMKeyDwnldRspn
-
-	@PrtctdATMKeyDwnldRspn.setter
-	def PrtctdATMKeyDwnldRspn(self, value):
-		self._PrtctdATMKeyDwnldRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMKeyDwnldRspn")
-
-	@PrtctdATMKeyDwnldRspn.deleter
-	def PrtctdATMKeyDwnldRspn(self):
-		del self._PrtctdATMKeyDwnldRspn
-		self._PrtctdATMKeyDwnldRspn = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
+	__slots__ = ["_SctyTrlr", "_Hdr", "_PrtctdATMKeyDwnldRspn", "_ATMKeyDwnldRspn"]
 	@property
 	def ATMKeyDwnldRspn(self):
 		return self._ATMKeyDwnldRspn
@@ -59,10 +33,36 @@ class ATMKeyDownloadResponseV04(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def PrtctdATMKeyDwnldRspn(self):
+		return self._PrtctdATMKeyDwnldRspn
+
+	@PrtctdATMKeyDwnldRspn.setter
+	def PrtctdATMKeyDwnldRspn(self, value):
+		self._PrtctdATMKeyDwnldRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMKeyDwnldRspn")
+
+	@PrtctdATMKeyDwnldRspn.deleter
+	def PrtctdATMKeyDwnldRspn(self):
+		del self._PrtctdATMKeyDwnldRspn
+		self._PrtctdATMKeyDwnldRspn = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMKeyDwnldRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMKeyDwnldRspn', type=ATMKeyDownloadResponse5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMKeyDwnldRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 	))
 

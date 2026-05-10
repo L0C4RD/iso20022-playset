@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._SecuritiesCertificate4 import SecuritiesCertificate4
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._SecuritiesCertificate4 import SecuritiesCertificate4
+from ._Max35Text import Max35Text
 
 class RegistrationParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnId", "_CertfctnDtTm", "_CertNb", "_RegarAcct"]
+	__slots__ = ["_CertfctnDtTm", "_CertfctnId", "_CertNb", "_RegarAcct"]
 	@property
-	def CertfctnId(self):
-		return self._CertfctnId
+	def CertNb(self):
+		return self._CertNb
 
-	@CertfctnId.setter
-	def CertfctnId(self, value):
-		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
+	@CertNb.setter
+	def CertNb(self, value):
+		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
 
-	@CertfctnId.deleter
-	def CertfctnId(self):
-		del self._CertfctnId
-		self._CertfctnId = None
+	@CertNb.deleter
+	def CertNb(self):
+		del self._CertNb
+		self._CertNb = None
 
 	@property
 	def CertfctnDtTm(self):
@@ -33,17 +33,17 @@ class RegistrationParameters6(base_types._BaseFieldType):
 		self._CertfctnDtTm = None
 
 	@property
-	def CertNb(self):
-		return self._CertNb
+	def CertfctnId(self):
+		return self._CertfctnId
 
-	@CertNb.setter
-	def CertNb(self, value):
-		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+	@CertfctnId.setter
+	def CertfctnId(self, value):
+		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
 
-	@CertNb.deleter
-	def CertNb(self):
-		del self._CertNb
-		self._CertNb = None
+	@CertfctnId.deleter
+	def CertfctnId(self):
+		del self._CertfctnId
+		self._CertfctnId = None
 
 	@property
 	def RegarAcct(self):
@@ -59,9 +59,9 @@ class RegistrationParameters6(base_types._BaseFieldType):
 		self._RegarAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CertfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegarAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

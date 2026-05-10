@@ -1,27 +1,14 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GateHoldBack1Code import GateHoldBack1Code
-from ._Max350Text import Max350Text
 from ._RedemptionCompletion1Code import RedemptionCompletion1Code
 from ._SecurityIdentification25Choice import SecurityIdentification25Choice
-from ._ISODate import ISODate
+from ._Max350Text import Max350Text
+from ._GateHoldBack1Code import GateHoldBack1Code
 
 class HoldBackInformation3(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdRlsDt", "_Amt", "_FinInstrmId", "_RedCmpltn", "_Tp", "_FinInstrmNm"]
-	@property
-	def XpctdRlsDt(self):
-		return self._XpctdRlsDt
-
-	@XpctdRlsDt.setter
-	def XpctdRlsDt(self, value):
-		self._XpctdRlsDt = value if type(value) != base_types.auto else self.make_default("XpctdRlsDt")
-
-	@XpctdRlsDt.deleter
-	def XpctdRlsDt(self):
-		del self._XpctdRlsDt
-		self._XpctdRlsDt = None
-
+	__slots__ = ["_RedCmpltn", "_Tp", "_XpctdRlsDt", "_FinInstrmNm", "_FinInstrmId", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -47,6 +34,19 @@ class HoldBackInformation3(base_types._BaseFieldType):
 	def FinInstrmId(self):
 		del self._FinInstrmId
 		self._FinInstrmId = None
+
+	@property
+	def FinInstrmNm(self):
+		return self._FinInstrmNm
+
+	@FinInstrmNm.setter
+	def FinInstrmNm(self, value):
+		self._FinInstrmNm = value if type(value) != base_types.auto else self.make_default("FinInstrmNm")
+
+	@FinInstrmNm.deleter
+	def FinInstrmNm(self):
+		del self._FinInstrmNm
+		self._FinInstrmNm = None
 
 	@property
 	def RedCmpltn(self):
@@ -75,24 +75,24 @@ class HoldBackInformation3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def FinInstrmNm(self):
-		return self._FinInstrmNm
+	def XpctdRlsDt(self):
+		return self._XpctdRlsDt
 
-	@FinInstrmNm.setter
-	def FinInstrmNm(self, value):
-		self._FinInstrmNm = value if type(value) != base_types.auto else self.make_default("FinInstrmNm")
+	@XpctdRlsDt.setter
+	def XpctdRlsDt(self, value):
+		self._XpctdRlsDt = value if type(value) != base_types.auto else self.make_default("XpctdRlsDt")
 
-	@FinInstrmNm.deleter
-	def FinInstrmNm(self):
-		del self._FinInstrmNm
-		self._FinInstrmNm = None
+	@XpctdRlsDt.deleter
+	def XpctdRlsDt(self):
+		del self._XpctdRlsDt
+		self._XpctdRlsDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpctdRlsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification25Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RedCmpltn', type=RedemptionCompletion1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GateHoldBack1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdRlsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

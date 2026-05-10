@@ -1,11 +1,24 @@
 from . import base_types
 from ._PaymentContext30 import PaymentContext30
-from ._CardPaymentTransaction143 import CardPaymentTransaction143
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._CardPaymentTransaction143 import CardPaymentTransaction143
 
 class AcceptorCancellationAdvice14(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Tx", "_Cntxt"]
+	__slots__ = ["_Envt", "_Cntxt", "_Tx"]
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
+
 	@property
 	def Envt(self):
 		return self._Envt
@@ -32,22 +45,9 @@ class AcceptorCancellationAdvice14(base_types._BaseFieldType):
 		del self._Tx
 		self._Tx = None
 
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction143, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
 	))
 

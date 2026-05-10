@@ -1,24 +1,11 @@
 from . import base_types
-from ._SupportingDocumentRequestOrLetter4 import SupportingDocumentRequestOrLetter4
-from ._SupplementaryData1 import SupplementaryData1
 from ._CurrencyControlHeader9 import CurrencyControlHeader9
+from ._SupplementaryData1 import SupplementaryData1
+from ._SupportingDocumentRequestOrLetter4 import SupportingDocumentRequestOrLetter4
 
 class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_ReqOrLttr"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_ReqOrLttr", "_SplmtryData", "_GrpHdr"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -45,9 +32,22 @@ class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 		del self._ReqOrLttr
 		self._ReqOrLttr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqOrLttr', type=SupportingDocumentRequestOrLetter4, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._FixedOrRecurrentDate1Choice import FixedOrRecurrentDate1Choice
 from ._Document10 import Document10
+from ._FixedOrRecurrentDate1Choice import FixedOrRecurrentDate1Choice
 
 class Trigger1(base_types._BaseFieldType):
 
-	__slots__ = ["_DcmntryEvt", "_DtChc"]
+	__slots__ = ["_DtChc", "_DcmntryEvt"]
 	@property
 	def DcmntryEvt(self):
 		return self._DcmntryEvt

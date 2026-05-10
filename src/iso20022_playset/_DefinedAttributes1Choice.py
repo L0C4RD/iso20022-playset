@@ -4,7 +4,7 @@ from ._FinancialInstrumentAttributes89 import FinancialInstrumentAttributes89
 
 class DefinedAttributes1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyDfndAttrbts", "_ValDfndAttrbts"]
+	__slots__ = ["_ValDfndAttrbts", "_QtyDfndAttrbts"]
 	@property
 	def QtyDfndAttrbts(self):
 		return self._QtyDfndAttrbts

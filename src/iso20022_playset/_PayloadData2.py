@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class PayloadData2(base_types._BaseFieldType):
 
-	__slots__ = ["_PssblDplctFlg", "_CreDtAndTm", "_PyldIdr"]
-	@property
-	def PssblDplctFlg(self):
-		return self._PssblDplctFlg
-
-	@PssblDplctFlg.setter
-	def PssblDplctFlg(self, value):
-		self._PssblDplctFlg = value if type(value) != base_types.auto else self.make_default("PssblDplctFlg")
-
-	@PssblDplctFlg.deleter
-	def PssblDplctFlg(self):
-		del self._PssblDplctFlg
-		self._PssblDplctFlg = None
-
+	__slots__ = ["_PyldIdr", "_CreDtAndTm", "_PssblDplctFlg"]
 	@property
 	def CreDtAndTm(self):
 		return self._CreDtAndTm
@@ -31,6 +18,19 @@ class PayloadData2(base_types._BaseFieldType):
 	def CreDtAndTm(self):
 		del self._CreDtAndTm
 		self._CreDtAndTm = None
+
+	@property
+	def PssblDplctFlg(self):
+		return self._PssblDplctFlg
+
+	@PssblDplctFlg.setter
+	def PssblDplctFlg(self, value):
+		self._PssblDplctFlg = value if type(value) != base_types.auto else self.make_default("PssblDplctFlg")
+
+	@PssblDplctFlg.deleter
+	def PssblDplctFlg(self):
+		del self._PssblDplctFlg
+		self._PssblDplctFlg = None
 
 	@property
 	def PyldIdr(self):
@@ -46,8 +46,8 @@ class PayloadData2(base_types._BaseFieldType):
 		self._PyldIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PssblDplctFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PssblDplctFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyldIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

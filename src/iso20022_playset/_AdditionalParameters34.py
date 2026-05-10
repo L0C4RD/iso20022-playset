@@ -4,7 +4,20 @@ from ._PartialSettlement2Code import PartialSettlement2Code
 
 class AdditionalParameters34(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrTxId", "_PrcrTxId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_CorpActnEvtId", "_PrvsPrtlConfId", "_PrtlSttlm", "_AcctOwnrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_PoolId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_PrtlSttlm", "_PrvsPrtlConfId", "_MktInfrstrctrTxId", "_PrcrTxId", "_AcctSvcrTxId"]
+	@property
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
+
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
+
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
@@ -19,17 +32,17 @@ class AdditionalParameters34(base_types._BaseFieldType):
 		self._AcctSvcrTxId = None
 
 	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
 
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
@@ -71,30 +84,17 @@ class AdditionalParameters34(base_types._BaseFieldType):
 		self._PoolId = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
+	def PrcrTxId(self):
+		return self._PrcrTxId
 
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
 
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
-	def PrvsPrtlConfId(self):
-		return self._PrvsPrtlConfId
-
-	@PrvsPrtlConfId.setter
-	def PrvsPrtlConfId(self, value):
-		self._PrvsPrtlConfId = value if type(value) != base_types.auto else self.make_default("PrvsPrtlConfId")
-
-	@PrvsPrtlConfId.deleter
-	def PrvsPrtlConfId(self):
-		del self._PrvsPrtlConfId
-		self._PrvsPrtlConfId = None
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
 
 	@property
 	def PrtlSttlm(self):
@@ -110,27 +110,27 @@ class AdditionalParameters34(base_types._BaseFieldType):
 		self._PrtlSttlm = None
 
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
+	def PrvsPrtlConfId(self):
+		return self._PrvsPrtlConfId
 
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+	@PrvsPrtlConfId.setter
+	def PrvsPrtlConfId(self, value):
+		self._PrvsPrtlConfId = value if type(value) != base_types.auto else self.make_default("PrvsPrtlConfId")
 
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+	@PrvsPrtlConfId.deleter
+	def PrvsPrtlConfId(self):
+		del self._PrvsPrtlConfId
+		self._PrvsPrtlConfId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsPrtlConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsPrtlConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

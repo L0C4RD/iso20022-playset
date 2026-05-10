@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._OtherAmountType1Code import OtherAmountType1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class OtherAmountType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_PrtryCd"]
+	__slots__ = ["_PrtryCd", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

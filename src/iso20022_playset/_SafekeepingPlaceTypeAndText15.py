@@ -1,10 +1,10 @@
 from . import base_types
-from ._SafekeepingPlace3Code import SafekeepingPlace3Code
 from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
+from ._SafekeepingPlace3Code import SafekeepingPlace3Code
 
 class SafekeepingPlaceTypeAndText15(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SfkpgPlcTp"]
+	__slots__ = ["_SfkpgPlcTp", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

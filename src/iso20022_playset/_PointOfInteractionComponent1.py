@@ -1,25 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max16Text import Max16Text
 from ._POIComponentType1Code import POIComponentType1Code
 from ._Max70Text import Max70Text
+from ._Max16Text import Max16Text
+from ._Max35Text import Max35Text
 
 class PointOfInteractionComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_ApprvlNb", "_ManfctrId", "_VrsnNb", "_Mdl", "_POICmpntTp"]
-	@property
-	def SrlNb(self):
-		return self._SrlNb
-
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
-
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
-
+	__slots__ = ["_SrlNb", "_VrsnNb", "_POICmpntTp", "_Mdl", "_ManfctrId", "_ApprvlNb"]
 	@property
 	def ApprvlNb(self):
 		return self._ApprvlNb
@@ -47,19 +34,6 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		self._ManfctrId = None
 
 	@property
-	def VrsnNb(self):
-		return self._VrsnNb
-
-	@VrsnNb.setter
-	def VrsnNb(self, value):
-		self._VrsnNb = value if type(value) != base_types.auto else self.make_default("VrsnNb")
-
-	@VrsnNb.deleter
-	def VrsnNb(self):
-		del self._VrsnNb
-		self._VrsnNb = None
-
-	@property
 	def Mdl(self):
 		return self._Mdl
 
@@ -85,12 +59,38 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		del self._POICmpntTp
 		self._POICmpntTp = None
 
+	@property
+	def SrlNb(self):
+		return self._SrlNb
+
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
+
+	@property
+	def VrsnNb(self):
+		return self._VrsnNb
+
+	@VrsnNb.setter
+	def VrsnNb(self, value):
+		self._VrsnNb = value if type(value) != base_types.auto else self.make_default("VrsnNb")
+
+	@VrsnNb.deleter
+	def VrsnNb(self):
+		del self._VrsnNb
+		self._VrsnNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApprvlNb', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ManfctrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VrsnNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POICmpntTp', type=POIComponentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VrsnNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

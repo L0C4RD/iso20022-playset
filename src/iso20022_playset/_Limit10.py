@@ -1,10 +1,10 @@
 from . import base_types
-from ._Amount2Choice import Amount2Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._Amount2Choice import Amount2Choice
 
 class Limit10(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CdtDbtInd"]
+	__slots__ = ["_CdtDbtInd", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

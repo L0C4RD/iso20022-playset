@@ -1,25 +1,38 @@
 from . import base_types
+from ._SupplementaryData1 import SupplementaryData1
+from ._Max35Text import Max35Text
 from ._Reference16 import Reference16
 from ._Obligation9 import Obligation9
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
 from ._CollateralCancellationStatus2 import CollateralCancellationStatus2
 
 class CollateralManagementCancellationStatusV05(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_Ref", "_CxlSts", "_SplmtryData", "_Oblgtn"]
+	__slots__ = ["_Oblgtn", "_CxlSts", "_Ref", "_TxId", "_SplmtryData"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def CxlSts(self):
+		return self._CxlSts
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@CxlSts.setter
+	def CxlSts(self, value):
+		self._CxlSts = value if type(value) != base_types.auto else self.make_default("CxlSts")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@CxlSts.deleter
+	def CxlSts(self):
+		del self._CxlSts
+		self._CxlSts = None
+
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
 
 	@property
 	def Ref(self):
@@ -35,19 +48,6 @@ class CollateralManagementCancellationStatusV05(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
-	def CxlSts(self):
-		return self._CxlSts
-
-	@CxlSts.setter
-	def CxlSts(self, value):
-		self._CxlSts = value if type(value) != base_types.auto else self.make_default("CxlSts")
-
-	@CxlSts.deleter
-	def CxlSts(self):
-		del self._CxlSts
-		self._CxlSts = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -61,23 +61,23 @@ class CollateralManagementCancellationStatusV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Oblgtn(self):
-		return self._Oblgtn
+	def TxId(self):
+		return self._TxId
 
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Reference16, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlSts', type=CollateralCancellationStatus2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Reference16, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

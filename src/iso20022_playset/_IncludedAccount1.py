@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
 
 class IncludedAccount1(base_types._BaseFieldType):
 
 	__slots__ = ["_SctiesAcctId", "_InclInd"]
-	@property
-	def SctiesAcctId(self):
-		return self._SctiesAcctId
-
-	@SctiesAcctId.setter
-	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
-
-	@SctiesAcctId.deleter
-	def SctiesAcctId(self):
-		del self._SctiesAcctId
-		self._SctiesAcctId = None
-
 	@property
 	def InclInd(self):
 		return self._InclInd
@@ -31,8 +18,21 @@ class IncludedAccount1(base_types._BaseFieldType):
 		del self._InclInd
 		self._InclInd = None
 
+	@property
+	def SctiesAcctId(self):
+		return self._SctiesAcctId
+
+	@SctiesAcctId.setter
+	def SctiesAcctId(self, value):
+		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+
+	@SctiesAcctId.deleter
+	def SctiesAcctId(self):
+		del self._SctiesAcctId
+		self._SctiesAcctId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InclInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

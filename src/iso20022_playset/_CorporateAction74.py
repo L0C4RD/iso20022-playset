@@ -1,38 +1,12 @@
 from . import base_types
+from ._CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
 from ._CorporateActionDate89 import CorporateActionDate89
 from ._LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
 from ._AdditionalBusinessProcessFormat16Choice import AdditionalBusinessProcessFormat16Choice
-from ._CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
 
 class CorporateAction74(base_types._BaseFieldType):
 
-	__slots__ = ["_LtryTp", "_EvtStag", "_AddtlBizPrcInd", "_DtDtls"]
-	@property
-	def LtryTp(self):
-		return self._LtryTp
-
-	@LtryTp.setter
-	def LtryTp(self, value):
-		self._LtryTp = value if type(value) != base_types.auto else self.make_default("LtryTp")
-
-	@LtryTp.deleter
-	def LtryTp(self):
-		del self._LtryTp
-		self._LtryTp = None
-
-	@property
-	def EvtStag(self):
-		return self._EvtStag
-
-	@EvtStag.setter
-	def EvtStag(self, value):
-		self._EvtStag = value if type(value) != base_types.auto else self.make_default("EvtStag")
-
-	@EvtStag.deleter
-	def EvtStag(self):
-		del self._EvtStag
-		self._EvtStag = None
-
+	__slots__ = ["_EvtStag", "_LtryTp", "_DtDtls", "_AddtlBizPrcInd"]
 	@property
 	def AddtlBizPrcInd(self):
 		return self._AddtlBizPrcInd
@@ -59,10 +33,36 @@ class CorporateAction74(base_types._BaseFieldType):
 		del self._DtDtls
 		self._DtDtls = None
 
+	@property
+	def EvtStag(self):
+		return self._EvtStag
+
+	@EvtStag.setter
+	def EvtStag(self, value):
+		self._EvtStag = value if type(value) != base_types.auto else self.make_default("EvtStag")
+
+	@EvtStag.deleter
+	def EvtStag(self):
+		del self._EvtStag
+		self._EvtStag = None
+
+	@property
+	def LtryTp(self):
+		return self._LtryTp
+
+	@LtryTp.setter
+	def LtryTp(self, value):
+		self._LtryTp = value if type(value) != base_types.auto else self.make_default("LtryTp")
+
+	@LtryTp.deleter
+	def LtryTp(self):
+		del self._LtryTp
+		self._LtryTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat16Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

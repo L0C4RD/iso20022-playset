@@ -1,11 +1,24 @@
 from . import base_types
-from ._ContactIdentification1 import ContactIdentification1
 from ._PartyIdentification8 import PartyIdentification8
 from ._CashAccount7 import CashAccount7
+from ._ContactIdentification1 import ContactIdentification1
 
 class PartyAndAccountIdentificationAndContactInformation1(base_types._BaseFieldType):
 
 	__slots__ = ["_CtctInf", "_PtyId", "_AcctId"]
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
 	@property
 	def CtctInf(self):
 		return self._CtctInf
@@ -32,22 +45,9 @@ class PartyAndAccountIdentificationAndContactInformation1(base_types._BaseFieldT
 		del self._PtyId
 		self._PtyId = None
 
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctId', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctInf', type=ContactIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
 	))
 

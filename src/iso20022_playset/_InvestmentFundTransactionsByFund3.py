@@ -1,67 +1,15 @@
 from . import base_types
-from ._Max350Text import Max350Text
-from ._InvestmentFundTransaction4 import InvestmentFundTransaction4
-from ._PaginationBalance2 import PaginationBalance2
-from ._Max35Text import Max35Text
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._SecurityIdentification3Choice import SecurityIdentification3Choice
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._InvestmentFundTransaction4 import InvestmentFundTransaction4
+from ._Max35Text import Max35Text
+from ._Max350Text import Max350Text
+from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._PaginationBalance2 import PaginationBalance2
 
 class InvestmentFundTransactionsByFund3(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_Nm", "_SplmtryId", "_TxDtls", "_BalByPg", "_ClssTp", "_Id", "_DstrbtnPlcy"]
-	@property
-	def SctiesForm(self):
-		return self._SctiesForm
-
-	@SctiesForm.setter
-	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
-
-	@SctiesForm.deleter
-	def SctiesForm(self):
-		del self._SctiesForm
-		self._SctiesForm = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def SplmtryId(self):
-		return self._SplmtryId
-
-	@SplmtryId.setter
-	def SplmtryId(self, value):
-		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
-
-	@SplmtryId.deleter
-	def SplmtryId(self):
-		del self._SplmtryId
-		self._SplmtryId = None
-
-	@property
-	def TxDtls(self):
-		return self._TxDtls
-
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
-
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
-
+	__slots__ = ["_SctiesForm", "_TxDtls", "_DstrbtnPlcy", "_Nm", "_ClssTp", "_SplmtryId", "_BalByPg", "_Id"]
 	@property
 	def BalByPg(self):
 		return self._BalByPg
@@ -89,6 +37,19 @@ class InvestmentFundTransactionsByFund3(base_types._BaseFieldType):
 		self._ClssTp = None
 
 	@property
+	def DstrbtnPlcy(self):
+		return self._DstrbtnPlcy
+
+	@DstrbtnPlcy.setter
+	def DstrbtnPlcy(self, value):
+		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+
+	@DstrbtnPlcy.deleter
+	def DstrbtnPlcy(self):
+		del self._DstrbtnPlcy
+		self._DstrbtnPlcy = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -102,26 +63,65 @@ class InvestmentFundTransactionsByFund3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def DstrbtnPlcy(self):
-		return self._DstrbtnPlcy
+	def Nm(self):
+		return self._Nm
 
-	@DstrbtnPlcy.setter
-	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@DstrbtnPlcy.deleter
-	def DstrbtnPlcy(self):
-		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def SctiesForm(self):
+		return self._SctiesForm
+
+	@SctiesForm.setter
+	def SctiesForm(self, value):
+		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+
+	@SctiesForm.deleter
+	def SctiesForm(self):
+		del self._SctiesForm
+		self._SctiesForm = None
+
+	@property
+	def SplmtryId(self):
+		return self._SplmtryId
+
+	@SplmtryId.setter
+	def SplmtryId(self, value):
+		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
+
+	@SplmtryId.deleter
+	def SplmtryId(self):
+		del self._SplmtryId
+		self._SplmtryId = None
+
+	@property
+	def TxDtls(self):
+		return self._TxDtls
+
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtls', type=InvestmentFundTransaction4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BalByPg', type=PaginationBalance2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDtls', type=InvestmentFundTransaction4, min=1, max=None, mutex_group=None, array=True),
 	))
 

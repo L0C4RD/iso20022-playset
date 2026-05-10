@@ -7,19 +7,6 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_PerVote", "_PerAttndee", "_PerScty"]
 	@property
-	def PerVote(self):
-		return self._PerVote
-
-	@PerVote.setter
-	def PerVote(self, value):
-		self._PerVote = value if type(value) != base_types.auto else self.make_default("PerVote")
-
-	@PerVote.deleter
-	def PerVote(self):
-		del self._PerVote
-		self._PerVote = None
-
-	@property
 	def PerAttndee(self):
 		return self._PerAttndee
 
@@ -45,9 +32,22 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 		del self._PerScty
 		self._PerScty = None
 
+	@property
+	def PerVote(self):
+		return self._PerVote
+
+	@PerVote.setter
+	def PerVote(self, value):
+		self._PerVote = value if type(value) != base_types.auto else self.make_default("PerVote")
+
+	@PerVote.deleter
+	def PerVote(self):
+		del self._PerVote
+		self._PerVote = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PerVote', type=VoteTypeAndQuantity1, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='PerAttndee', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PerScty', type=Number, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PerVote', type=VoteTypeAndQuantity1, min=1, max=None, mutex_group=1, array=True),
 	))
 

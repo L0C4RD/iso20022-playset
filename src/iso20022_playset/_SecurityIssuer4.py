@@ -4,7 +4,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class SecurityIssuer4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_JursdctnCtry"]
+	__slots__ = ["_JursdctnCtry", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

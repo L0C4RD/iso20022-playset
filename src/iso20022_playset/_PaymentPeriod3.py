@@ -4,20 +4,7 @@ from ._Number import Number
 
 class PaymentPeriod3(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfDays", "_Cd"]
-	@property
-	def NbOfDays(self):
-		return self._NbOfDays
-
-	@NbOfDays.setter
-	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
-
-	@NbOfDays.deleter
-	def NbOfDays(self):
-		del self._NbOfDays
-		self._NbOfDays = None
-
+	__slots__ = ["_Cd", "_NbOfDays"]
 	@property
 	def Cd(self):
 		return self._Cd
@@ -31,8 +18,21 @@ class PaymentPeriod3(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def NbOfDays(self):
+		return self._NbOfDays
+
+	@NbOfDays.setter
+	def NbOfDays(self, value):
+		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
+
+	@NbOfDays.deleter
+	def NbOfDays(self):
+		del self._NbOfDays
+		self._NbOfDays = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfDays', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=PaymentTime3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfDays', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 from . import base_types
 from ._PartyIdentification232Choice import PartyIdentification232Choice
 from ._GenericIdentification36 import GenericIdentification36
-from ._ThirdPartyIdentification1 import ThirdPartyIdentification1
 from ._YesNoIndicator import YesNoIndicator
+from ._ThirdPartyIdentification1 import ThirdPartyIdentification1
 
 class PledgeInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrSctiesInd", "_PldgTp", "_Pldgr", "_ThrdPty"]
-	@property
-	def RtrSctiesInd(self):
-		return self._RtrSctiesInd
-
-	@RtrSctiesInd.setter
-	def RtrSctiesInd(self, value):
-		self._RtrSctiesInd = value if type(value) != base_types.auto else self.make_default("RtrSctiesInd")
-
-	@RtrSctiesInd.deleter
-	def RtrSctiesInd(self):
-		del self._RtrSctiesInd
-		self._RtrSctiesInd = None
-
+	__slots__ = ["_PldgTp", "_RtrSctiesInd", "_ThrdPty", "_Pldgr"]
 	@property
 	def PldgTp(self):
 		return self._PldgTp
@@ -47,6 +34,19 @@ class PledgeInformation1(base_types._BaseFieldType):
 		self._Pldgr = None
 
 	@property
+	def RtrSctiesInd(self):
+		return self._RtrSctiesInd
+
+	@RtrSctiesInd.setter
+	def RtrSctiesInd(self, value):
+		self._RtrSctiesInd = value if type(value) != base_types.auto else self.make_default("RtrSctiesInd")
+
+	@RtrSctiesInd.deleter
+	def RtrSctiesInd(self):
+		del self._RtrSctiesInd
+		self._RtrSctiesInd = None
+
+	@property
 	def ThrdPty(self):
 		return self._ThrdPty
 
@@ -60,9 +60,9 @@ class PledgeInformation1(base_types._BaseFieldType):
 		self._ThrdPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrSctiesInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PldgTp', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pldgr', type=PartyIdentification232Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrSctiesInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrdPty', type=ThirdPartyIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

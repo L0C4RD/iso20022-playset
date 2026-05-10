@@ -5,7 +5,20 @@ from ._BusinessInformationQueryDefinition3 import BusinessInformationQueryDefini
 
 class GetGeneralBusinessInformationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_GnlBizInfQryDef"]
+	__slots__ = ["_GnlBizInfQryDef", "_SplmtryData", "_MsgHdr"]
+	@property
+	def GnlBizInfQryDef(self):
+		return self._GnlBizInfQryDef
+
+	@GnlBizInfQryDef.setter
+	def GnlBizInfQryDef(self, value):
+		self._GnlBizInfQryDef = value if type(value) != base_types.auto else self.make_default("GnlBizInfQryDef")
+
+	@GnlBizInfQryDef.deleter
+	def GnlBizInfQryDef(self):
+		del self._GnlBizInfQryDef
+		self._GnlBizInfQryDef = None
+
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -32,22 +45,9 @@ class GetGeneralBusinessInformationV04(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def GnlBizInfQryDef(self):
-		return self._GnlBizInfQryDef
-
-	@GnlBizInfQryDef.setter
-	def GnlBizInfQryDef(self, value):
-		self._GnlBizInfQryDef = value if type(value) != base_types.auto else self.make_default("GnlBizInfQryDef")
-
-	@GnlBizInfQryDef.deleter
-	def GnlBizInfQryDef(self):
-		del self._GnlBizInfQryDef
-		self._GnlBizInfQryDef = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='GnlBizInfQryDef', type=BusinessInformationQueryDefinition3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GnlBizInfQryDef', type=BusinessInformationQueryDefinition3, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
 from ._Count1 import Count1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._MessageIdentification1 import MessageIdentification1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class AmendmentAcceptanceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_AccptdAmdmntNb", "_TxId", "_AccptncId", "_DltaRptRef"]
-	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
-
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != base_types.auto else self.make_default("SubmitrTxRef")
-
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
-
+	__slots__ = ["_DltaRptRef", "_AccptncId", "_SubmitrTxRef", "_TxId", "_AccptdAmdmntNb"]
 	@property
 	def AccptdAmdmntNb(self):
 		return self._AccptdAmdmntNb
@@ -31,19 +18,6 @@ class AmendmentAcceptanceV02(base_types._BaseFieldType):
 	def AccptdAmdmntNb(self):
 		del self._AccptdAmdmntNb
 		self._AccptdAmdmntNb = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
 
 	@property
 	def AccptncId(self):
@@ -71,11 +45,37 @@ class AmendmentAcceptanceV02(base_types._BaseFieldType):
 		del self._DltaRptRef
 		self._DltaRptRef = None
 
+	@property
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
+
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != base_types.auto else self.make_default("SubmitrTxRef")
+
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
 

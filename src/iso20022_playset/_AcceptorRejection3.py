@@ -1,23 +1,23 @@
 from . import base_types
-from ._RejectReason2Code import RejectReason2Code
 from ._Max500Text import Max500Text
 from ._Max100KBinary import Max100KBinary
+from ._RejectReason2Code import RejectReason2Code
 
 class AcceptorRejection3(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctRsn", "_MsgInErr", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_MsgInErr", "_RjctRsn"]
 	@property
-	def RjctRsn(self):
-		return self._RjctRsn
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@RjctRsn.setter
-	def RjctRsn(self, value):
-		self._RjctRsn = value if type(value) != base_types.auto else self.make_default("RjctRsn")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@RjctRsn.deleter
-	def RjctRsn(self):
-		del self._RjctRsn
-		self._RjctRsn = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def MsgInErr(self):
@@ -33,21 +33,21 @@ class AcceptorRejection3(base_types._BaseFieldType):
 		self._MsgInErr = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def RjctRsn(self):
+		return self._RjctRsn
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@RjctRsn.setter
+	def RjctRsn(self, value):
+		self._RjctRsn = value if type(value) != base_types.auto else self.make_default("RjctRsn")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@RjctRsn.deleter
+	def RjctRsn(self):
+		del self._RjctRsn
+		self._RjctRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctRsn', type=RejectReason2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgInErr', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgInErr', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctRsn', type=RejectReason2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

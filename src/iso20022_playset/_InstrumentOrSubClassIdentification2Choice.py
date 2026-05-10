@@ -4,7 +4,7 @@ from ._AssetClassAndSubClassIdentification2 import AssetClassAndSubClassIdentifi
 
 class InstrumentOrSubClassIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AsstClssAndSubClss", "_ISINAndSubClss"]
+	__slots__ = ["_ISINAndSubClss", "_AsstClssAndSubClss"]
 	@property
 	def AsstClssAndSubClss(self):
 		return self._AsstClssAndSubClss

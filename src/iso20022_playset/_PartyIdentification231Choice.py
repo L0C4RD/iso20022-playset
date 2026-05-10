@@ -6,19 +6,6 @@ class PartyIdentification231Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_NtrlPrsn", "_LglPrsn"]
 	@property
-	def NtrlPrsn(self):
-		return self._NtrlPrsn
-
-	@NtrlPrsn.setter
-	def NtrlPrsn(self, value):
-		self._NtrlPrsn = value if type(value) != base_types.auto else self.make_default("NtrlPrsn")
-
-	@NtrlPrsn.deleter
-	def NtrlPrsn(self):
-		del self._NtrlPrsn
-		self._NtrlPrsn = None
-
-	@property
 	def LglPrsn(self):
 		return self._LglPrsn
 
@@ -31,8 +18,21 @@ class PartyIdentification231Choice(base_types._BaseFieldType):
 		del self._LglPrsn
 		self._LglPrsn = None
 
+	@property
+	def NtrlPrsn(self):
+		return self._NtrlPrsn
+
+	@NtrlPrsn.setter
+	def NtrlPrsn(self, value):
+		self._NtrlPrsn = value if type(value) != base_types.auto else self.make_default("NtrlPrsn")
+
+	@NtrlPrsn.deleter
+	def NtrlPrsn(self):
+		del self._NtrlPrsn
+		self._NtrlPrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtrlPrsn', type=PartyIdentification238, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='LglPrsn', type=PartyIdentification221, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NtrlPrsn', type=PartyIdentification238, min=1, max=None, mutex_group=1, array=True),
 	))
 

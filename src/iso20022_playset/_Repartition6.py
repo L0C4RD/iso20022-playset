@@ -1,23 +1,23 @@
 from . import base_types
+from ._FinancialInstrument87 import FinancialInstrument87
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._UnitsOrAmountOrPercentage1Choice import UnitsOrAmountOrPercentage1Choice
-from ._FinancialInstrument87 import FinancialInstrument87
 
 class Repartition6(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_FinInstrm", "_CcyOfPlan"]
+	__slots__ = ["_CcyOfPlan", "_FinInstrm", "_Qty"]
 	@property
-	def Qty(self):
-		return self._Qty
+	def CcyOfPlan(self):
+		return self._CcyOfPlan
 
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+	@CcyOfPlan.setter
+	def CcyOfPlan(self, value):
+		self._CcyOfPlan = value if type(value) != base_types.auto else self.make_default("CcyOfPlan")
 
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@CcyOfPlan.deleter
+	def CcyOfPlan(self):
+		del self._CcyOfPlan
+		self._CcyOfPlan = None
 
 	@property
 	def FinInstrm(self):
@@ -33,21 +33,21 @@ class Repartition6(base_types._BaseFieldType):
 		self._FinInstrm = None
 
 	@property
-	def CcyOfPlan(self):
-		return self._CcyOfPlan
+	def Qty(self):
+		return self._Qty
 
-	@CcyOfPlan.setter
-	def CcyOfPlan(self, value):
-		self._CcyOfPlan = value if type(value) != base_types.auto else self.make_default("CcyOfPlan")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
-	@CcyOfPlan.deleter
-	def CcyOfPlan(self):
-		del self._CcyOfPlan
-		self._CcyOfPlan = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Qty', type=UnitsOrAmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyOfPlan', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=UnitsOrAmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

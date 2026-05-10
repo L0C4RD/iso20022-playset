@@ -1,37 +1,24 @@
 from . import base_types
+from ._ExternalChannel1Code import ExternalChannel1Code
 from ._PartyType1Choice import PartyType1Choice
 from ._Max140Text import Max140Text
 from ._PostalAddress6 import PostalAddress6
-from ._ExternalChannel1Code import ExternalChannel1Code
 
 class CommunicationChannel1(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtd", "_DlvrToPtyTp", "_DlvrToNm", "_DlvrToAdr"]
+	__slots__ = ["_DlvrToNm", "_Mtd", "_DlvrToPtyTp", "_DlvrToAdr"]
 	@property
-	def Mtd(self):
-		return self._Mtd
+	def DlvrToAdr(self):
+		return self._DlvrToAdr
 
-	@Mtd.setter
-	def Mtd(self, value):
-		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+	@DlvrToAdr.setter
+	def DlvrToAdr(self, value):
+		self._DlvrToAdr = value if type(value) != base_types.auto else self.make_default("DlvrToAdr")
 
-	@Mtd.deleter
-	def Mtd(self):
-		del self._Mtd
-		self._Mtd = None
-
-	@property
-	def DlvrToPtyTp(self):
-		return self._DlvrToPtyTp
-
-	@DlvrToPtyTp.setter
-	def DlvrToPtyTp(self, value):
-		self._DlvrToPtyTp = value if type(value) != base_types.auto else self.make_default("DlvrToPtyTp")
-
-	@DlvrToPtyTp.deleter
-	def DlvrToPtyTp(self):
-		del self._DlvrToPtyTp
-		self._DlvrToPtyTp = None
+	@DlvrToAdr.deleter
+	def DlvrToAdr(self):
+		del self._DlvrToAdr
+		self._DlvrToAdr = None
 
 	@property
 	def DlvrToNm(self):
@@ -47,22 +34,35 @@ class CommunicationChannel1(base_types._BaseFieldType):
 		self._DlvrToNm = None
 
 	@property
-	def DlvrToAdr(self):
-		return self._DlvrToAdr
+	def DlvrToPtyTp(self):
+		return self._DlvrToPtyTp
 
-	@DlvrToAdr.setter
-	def DlvrToAdr(self, value):
-		self._DlvrToAdr = value if type(value) != base_types.auto else self.make_default("DlvrToAdr")
+	@DlvrToPtyTp.setter
+	def DlvrToPtyTp(self, value):
+		self._DlvrToPtyTp = value if type(value) != base_types.auto else self.make_default("DlvrToPtyTp")
 
-	@DlvrToAdr.deleter
-	def DlvrToAdr(self):
-		del self._DlvrToAdr
-		self._DlvrToAdr = None
+	@DlvrToPtyTp.deleter
+	def DlvrToPtyTp(self):
+		del self._DlvrToPtyTp
+		self._DlvrToPtyTp = None
+
+	@property
+	def Mtd(self):
+		return self._Mtd
+
+	@Mtd.setter
+	def Mtd(self, value):
+		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+
+	@Mtd.deleter
+	def Mtd(self):
+		del self._Mtd
+		self._Mtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mtd', type=ExternalChannel1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrToPtyTp', type=PartyType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrToNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrToAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrToNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrToPtyTp', type=PartyType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=ExternalChannel1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

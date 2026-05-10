@@ -1,28 +1,28 @@
 from . import base_types
-from ._DocumentAmendment1 import DocumentAmendment1
-from ._SupportingDocumentEntry2 import SupportingDocumentEntry2
+from ._SupplementaryData1 import SupplementaryData1
 from ._DocumentIdentification28 import DocumentIdentification28
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._PartyIdentification272 import PartyIdentification272
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
+from ._DocumentAmendment1 import DocumentAmendment1
 from ._ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
+from ._SupportingDocumentEntry2 import SupportingDocumentEntry2
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
 
 class SupportingDocument4(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_AcctSvcr", "_AcctOwnr", "_Ntry", "_OrgnlReqId", "_SpprtgDocId", "_CtrctRef", "_SplmtryData", "_Amdmnt"]
+	__slots__ = ["_OrgnlReqId", "_Cert", "_CtrctRef", "_Ntry", "_AcctSvcr", "_SpprtgDocId", "_AcctOwnr", "_Amdmnt", "_SplmtryData"]
 	@property
-	def Cert(self):
-		return self._Cert
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
 	def AcctSvcr(self):
@@ -38,17 +38,43 @@ class SupportingDocument4(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def Amdmnt(self):
+		return self._Amdmnt
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+	@Amdmnt.setter
+	def Amdmnt(self, value):
+		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@Amdmnt.deleter
+	def Amdmnt(self):
+		del self._Amdmnt
+		self._Amdmnt = None
+
+	@property
+	def Cert(self):
+		return self._Cert
+
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
+
+	@property
+	def CtrctRef(self):
+		return self._CtrctRef
+
+	@CtrctRef.setter
+	def CtrctRef(self, value):
+		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
+
+	@CtrctRef.deleter
+	def CtrctRef(self):
+		del self._CtrctRef
+		self._CtrctRef = None
 
 	@property
 	def Ntry(self):
@@ -77,32 +103,6 @@ class SupportingDocument4(base_types._BaseFieldType):
 		self._OrgnlReqId = None
 
 	@property
-	def SpprtgDocId(self):
-		return self._SpprtgDocId
-
-	@SpprtgDocId.setter
-	def SpprtgDocId(self, value):
-		self._SpprtgDocId = value if type(value) != base_types.auto else self.make_default("SpprtgDocId")
-
-	@SpprtgDocId.deleter
-	def SpprtgDocId(self):
-		del self._SpprtgDocId
-		self._SpprtgDocId = None
-
-	@property
-	def CtrctRef(self):
-		return self._CtrctRef
-
-	@CtrctRef.setter
-	def CtrctRef(self, value):
-		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
-
-	@CtrctRef.deleter
-	def CtrctRef(self):
-		del self._CtrctRef
-		self._CtrctRef = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -116,27 +116,27 @@ class SupportingDocument4(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Amdmnt(self):
-		return self._Amdmnt
+	def SpprtgDocId(self):
+		return self._SpprtgDocId
 
-	@Amdmnt.setter
-	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
+	@SpprtgDocId.setter
+	def SpprtgDocId(self, value):
+		self._SpprtgDocId = value if type(value) != base_types.auto else self.make_default("SpprtgDocId")
 
-	@Amdmnt.deleter
-	def Amdmnt(self):
-		del self._Amdmnt
-		self._Amdmnt = None
+	@SpprtgDocId.deleter
+	def SpprtgDocId(self):
+		del self._SpprtgDocId
+		self._SpprtgDocId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntry', type=SupportingDocumentEntry2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpprtgDocId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtgDocId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

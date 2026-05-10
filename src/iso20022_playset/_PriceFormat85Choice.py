@@ -4,7 +4,7 @@ from ._AmountPrice5 import AmountPrice5
 
 class PriceFormat85Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPric", "_PctgPric"]
+	__slots__ = ["_PctgPric", "_AmtPric"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._BondType1Code import BondType1Code
+from ._ISODate import ISODate
 
 class DebtInstrument5(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncDt", "_Tp"]
+	__slots__ = ["_Tp", "_IssncDt"]
 	@property
 	def IssncDt(self):
 		return self._IssncDt

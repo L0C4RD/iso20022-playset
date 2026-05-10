@@ -5,20 +5,7 @@ from ._BenchmarkCurveName6Choice import BenchmarkCurveName6Choice
 
 class FloatingInterestRate6(base_types._BaseFieldType):
 
-	__slots__ = ["_RefRate", "_BsisPtSprd", "_Term"]
-	@property
-	def RefRate(self):
-		return self._RefRate
-
-	@RefRate.setter
-	def RefRate(self, value):
-		self._RefRate = value if type(value) != base_types.auto else self.make_default("RefRate")
-
-	@RefRate.deleter
-	def RefRate(self):
-		del self._RefRate
-		self._RefRate = None
-
+	__slots__ = ["_Term", "_BsisPtSprd", "_RefRate"]
 	@property
 	def BsisPtSprd(self):
 		return self._BsisPtSprd
@@ -31,6 +18,19 @@ class FloatingInterestRate6(base_types._BaseFieldType):
 	def BsisPtSprd(self):
 		del self._BsisPtSprd
 		self._BsisPtSprd = None
+
+	@property
+	def RefRate(self):
+		return self._RefRate
+
+	@RefRate.setter
+	def RefRate(self, value):
+		self._RefRate = value if type(value) != base_types.auto else self.make_default("RefRate")
+
+	@RefRate.deleter
+	def RefRate(self):
+		del self._RefRate
+		self._RefRate = None
 
 	@property
 	def Term(self):
@@ -46,8 +46,8 @@ class FloatingInterestRate6(base_types._BaseFieldType):
 		self._Term = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsisPtSprd', type=Max5Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-from ._OutputFormat1Code import OutputFormat1Code
-from ._Number import Number
 from ._UserInterface4Code import UserInterface4Code
 from ._LanguageCode import LanguageCode
+from ._Number import Number
+from ._OutputFormat1Code import OutputFormat1Code
 
 class DisplayCapabilities4(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblFrmt", "_LineWidth", "_Dstn", "_NbOfLines", "_AvlblLang"]
+	__slots__ = ["_AvlblFrmt", "_LineWidth", "_NbOfLines", "_Dstn", "_AvlblLang"]
 	@property
 	def AvlblFrmt(self):
 		return self._AvlblFrmt
@@ -21,17 +21,17 @@ class DisplayCapabilities4(base_types._BaseFieldType):
 		self._AvlblFrmt = None
 
 	@property
-	def LineWidth(self):
-		return self._LineWidth
+	def AvlblLang(self):
+		return self._AvlblLang
 
-	@LineWidth.setter
-	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != base_types.auto else self.make_default("LineWidth")
+	@AvlblLang.setter
+	def AvlblLang(self, value):
+		self._AvlblLang = value if type(value) != base_types.auto else self.make_default("AvlblLang")
 
-	@LineWidth.deleter
-	def LineWidth(self):
-		del self._LineWidth
-		self._LineWidth = None
+	@AvlblLang.deleter
+	def AvlblLang(self):
+		del self._AvlblLang
+		self._AvlblLang = None
 
 	@property
 	def Dstn(self):
@@ -47,6 +47,19 @@ class DisplayCapabilities4(base_types._BaseFieldType):
 		self._Dstn = None
 
 	@property
+	def LineWidth(self):
+		return self._LineWidth
+
+	@LineWidth.setter
+	def LineWidth(self, value):
+		self._LineWidth = value if type(value) != base_types.auto else self.make_default("LineWidth")
+
+	@LineWidth.deleter
+	def LineWidth(self):
+		del self._LineWidth
+		self._LineWidth = None
+
+	@property
 	def NbOfLines(self):
 		return self._NbOfLines
 
@@ -59,24 +72,11 @@ class DisplayCapabilities4(base_types._BaseFieldType):
 		del self._NbOfLines
 		self._NbOfLines = None
 
-	@property
-	def AvlblLang(self):
-		return self._AvlblLang
-
-	@AvlblLang.setter
-	def AvlblLang(self, value):
-		self._AvlblLang = value if type(value) != base_types.auto else self.make_default("AvlblLang")
-
-	@AvlblLang.deleter
-	def AvlblLang(self):
-		del self._AvlblLang
-		self._AvlblLang = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LineWidth', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dstn', type=UserInterface4Code, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfLines', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dstn', type=UserInterface4Code, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LineWidth', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfLines', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

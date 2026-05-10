@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._RejectionStatus3 import RejectionStatus3
+from ._Max35Text import Max35Text
 from ._Status4Code import Status4Code
 
 class CollateralCancellationStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CollStsCd", "_RjctnDtls"]
+	__slots__ = ["_AddtlInf", "_RjctnDtls", "_CollStsCd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

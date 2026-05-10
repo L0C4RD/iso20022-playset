@@ -1,12 +1,12 @@
 from . import base_types
+from ._ISODate import ISODate
+from ._ProtectTransactionType2Code import ProtectTransactionType2Code
 from ._RestrictedFINMax35Text import RestrictedFINMax35Text
 from ._RestrictedFINMax15Text import RestrictedFINMax15Text
-from ._ProtectTransactionType2Code import ProtectTransactionType2Code
-from ._ISODate import ISODate
 
 class ProtectInstruction5(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctDt", "_PrtctSfkpgAcct", "_TxTp", "_TxId"]
+	__slots__ = ["_PrtctSfkpgAcct", "_PrtctDt", "_TxTp", "_TxId"]
 	@property
 	def PrtctDt(self):
 		return self._PrtctDt
@@ -34,19 +34,6 @@ class ProtectInstruction5(base_types._BaseFieldType):
 		self._PrtctSfkpgAcct = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -59,10 +46,23 @@ class ProtectInstruction5(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctSfkpgAcct', type=RestrictedFINMax35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=RestrictedFINMax15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

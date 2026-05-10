@@ -4,20 +4,7 @@ from ._Max256Text import Max256Text
 
 class Acquirer10(base_types._BaseFieldType):
 
-	__slots__ = ["_ParamsVrsn", "_Id"]
-	@property
-	def ParamsVrsn(self):
-		return self._ParamsVrsn
-
-	@ParamsVrsn.setter
-	def ParamsVrsn(self, value):
-		self._ParamsVrsn = value if type(value) != base_types.auto else self.make_default("ParamsVrsn")
-
-	@ParamsVrsn.deleter
-	def ParamsVrsn(self):
-		del self._ParamsVrsn
-		self._ParamsVrsn = None
-
+	__slots__ = ["_Id", "_ParamsVrsn"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class Acquirer10(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def ParamsVrsn(self):
+		return self._ParamsVrsn
+
+	@ParamsVrsn.setter
+	def ParamsVrsn(self, value):
+		self._ParamsVrsn = value if type(value) != base_types.auto else self.make_default("ParamsVrsn")
+
+	@ParamsVrsn.deleter
+	def ParamsVrsn(self):
+		del self._ParamsVrsn
+		self._ParamsVrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ParamsVrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ParamsVrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

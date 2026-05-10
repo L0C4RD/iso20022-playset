@@ -1,38 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._TypeOfAmount19Code import TypeOfAmount19Code
-from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._TypeOfAmount19Code import TypeOfAmount19Code
+from ._Max35Text import Max35Text
+from ._CreditDebit3Code import CreditDebit3Code
 
 class Amount23(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Tp", "_Amt", "_CdtDbt"]
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Amt", "_CdtDbt", "_OthrTp", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -59,10 +33,36 @@ class Amount23(base_types._BaseFieldType):
 		del self._CdtDbt
 		self._CdtDbt = None
 
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeOfAmount19Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfAmount19Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

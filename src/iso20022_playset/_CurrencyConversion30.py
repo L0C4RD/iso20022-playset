@@ -1,10 +1,10 @@
 from . import base_types
-from ._CurrencyConversion29 import CurrencyConversion29
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._CurrencyConversion29 import CurrencyConversion29
 
 class CurrencyConversion30(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdByCrdhldr", "_Convs"]
+	__slots__ = ["_Convs", "_AccptdByCrdhldr"]
 	@property
 	def AccptdByCrdhldr(self):
 		return self._AccptdByCrdhldr

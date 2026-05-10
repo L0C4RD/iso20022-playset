@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._ExternalCreditorAgentInstruction1Code import ExternalCreditorAgentInstruction1Code
+from ._Max140Text import Max140Text
 
 class InstructionForCreditorAgent3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_InstrInf"]
+	__slots__ = ["_InstrInf", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

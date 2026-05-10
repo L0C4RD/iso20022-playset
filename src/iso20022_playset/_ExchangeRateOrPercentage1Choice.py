@@ -1,23 +1,10 @@
 from . import base_types
-from ._BaseOneRate import BaseOneRate
 from ._PercentageRate import PercentageRate
+from ._BaseOneRate import BaseOneRate
 
 class ExchangeRateOrPercentage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Pctg"]
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
+	__slots__ = ["_Pctg", "_Rate"]
 	@property
 	def Pctg(self):
 		return self._Pctg
@@ -31,8 +18,21 @@ class ExchangeRateOrPercentage1Choice(base_types._BaseFieldType):
 		del self._Pctg
 		self._Pctg = None
 
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rate', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

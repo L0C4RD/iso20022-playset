@@ -1,24 +1,11 @@
 from . import base_types
 from ._IntraPositionMovementDetails20 import IntraPositionMovementDetails20
-from ._SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
 from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
+from ._SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
 
 class IntraPositionDetails63(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_BalFr", "_IntraPosMvmnt"]
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
+	__slots__ = ["_BalFr", "_IntraPosMvmnt", "_SfkpgPlc"]
 	@property
 	def BalFr(self):
 		return self._BalFr
@@ -45,9 +32,22 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 		del self._IntraPosMvmnt
 		self._IntraPosMvmnt = None
 
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat39Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalFr', type=SecuritiesBalanceType8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraPosMvmnt', type=IntraPositionMovementDetails20, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat39Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

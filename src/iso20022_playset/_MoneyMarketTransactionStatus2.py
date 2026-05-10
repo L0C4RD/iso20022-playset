@@ -1,51 +1,25 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._StatisticalReportingStatus2Code import StatisticalReportingStatus2Code
-from ._Max105Text import Max105Text
 from ._SupplementaryData1 import SupplementaryData1
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._StatisticalReportingStatus2Code import StatisticalReportingStatus2Code
+from ._Max105Text import Max105Text
 
 class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqTxIdr", "_Sts", "_VldtnRule", "_PrtryTxId", "_SplmtryData", "_BrnchId"]
+	__slots__ = ["_VldtnRule", "_BrnchId", "_Sts", "_SplmtryData", "_UnqTxIdr", "_PrtryTxId"]
 	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
+	def BrnchId(self):
+		return self._BrnchId
 
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+	@BrnchId.setter
+	def BrnchId(self, value):
+		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
 
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
-	def VldtnRule(self):
-		return self._VldtnRule
-
-	@VldtnRule.setter
-	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
-
-	@VldtnRule.deleter
-	def VldtnRule(self):
-		del self._VldtnRule
-		self._VldtnRule = None
+	@BrnchId.deleter
+	def BrnchId(self):
+		del self._BrnchId
+		self._BrnchId = None
 
 	@property
 	def PrtryTxId(self):
@@ -74,24 +48,50 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def BrnchId(self):
-		return self._BrnchId
+	def Sts(self):
+		return self._Sts
 
-	@BrnchId.setter
-	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@BrnchId.deleter
-	def BrnchId(self):
-		del self._BrnchId
-		self._BrnchId = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
+
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
+
+	@property
+	def VldtnRule(self):
+		return self._VldtnRule
+
+	@VldtnRule.setter
+	def VldtnRule(self, value):
+		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
+
+	@VldtnRule.deleter
+	def VldtnRule(self):
+		del self._VldtnRule
+		self._VldtnRule = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
 from ._SecurityIdentification39 import SecurityIdentification39
+from ._ErrorHandling5 import ErrorHandling5
 
 class BusinessError4(base_types._BaseFieldType):
 
-	__slots__ = ["_BizErr", "_FinInstrmId"]
+	__slots__ = ["_FinInstrmId", "_BizErr"]
 	@property
 	def BizErr(self):
 		return self._BizErr

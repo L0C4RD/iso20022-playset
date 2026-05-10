@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._PartyType20Code import PartyType20Code
 from ._AdditionalData1 import AdditionalData1
+from ._PartyType20Code import PartyType20Code
 
 class ProgrammeMode4(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlId", "_IdSelctdBy", "_ApldId", "_PropsdId"]
+	__slots__ = ["_IdSelctdBy", "_AddtlId", "_PropsdId", "_ApldId"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId
@@ -20,19 +20,6 @@ class ProgrammeMode4(base_types._BaseFieldType):
 		self._AddtlId = None
 
 	@property
-	def IdSelctdBy(self):
-		return self._IdSelctdBy
-
-	@IdSelctdBy.setter
-	def IdSelctdBy(self, value):
-		self._IdSelctdBy = value if type(value) != base_types.auto else self.make_default("IdSelctdBy")
-
-	@IdSelctdBy.deleter
-	def IdSelctdBy(self):
-		del self._IdSelctdBy
-		self._IdSelctdBy = None
-
-	@property
 	def ApldId(self):
 		return self._ApldId
 
@@ -44,6 +31,19 @@ class ProgrammeMode4(base_types._BaseFieldType):
 	def ApldId(self):
 		del self._ApldId
 		self._ApldId = None
+
+	@property
+	def IdSelctdBy(self):
+		return self._IdSelctdBy
+
+	@IdSelctdBy.setter
+	def IdSelctdBy(self, value):
+		self._IdSelctdBy = value if type(value) != base_types.auto else self.make_default("IdSelctdBy")
+
+	@IdSelctdBy.deleter
+	def IdSelctdBy(self):
+		del self._IdSelctdBy
+		self._IdSelctdBy = None
 
 	@property
 	def PropsdId(self):
@@ -60,8 +60,8 @@ class ProgrammeMode4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IdSelctdBy', type=PartyType20Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApldId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IdSelctdBy', type=PartyType20Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PropsdId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

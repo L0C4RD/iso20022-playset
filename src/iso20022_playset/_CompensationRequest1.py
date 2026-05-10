@@ -1,14 +1,27 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DatePeriod2 import DatePeriod2
-from ._CashAccount40 import CashAccount40
-from ._PercentageRate import PercentageRate
 from ._ISODate import ISODate
+from ._PercentageRate import PercentageRate
+from ._DatePeriod2 import DatePeriod2
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max140Text import Max140Text
+from ._CashAccount40 import CashAccount40
 
 class CompensationRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_CompstnAcct", "_Rsn", "_IntrstRate", "_Prd", "_Amt", "_XpctdValDt"]
+	__slots__ = ["_Prd", "_XpctdValDt", "_IntrstRate", "_Amt", "_Rsn", "_CompstnAcct"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def CompstnAcct(self):
 		return self._CompstnAcct
@@ -21,19 +34,6 @@ class CompensationRequest1(base_types._BaseFieldType):
 	def CompstnAcct(self):
 		del self._CompstnAcct
 		self._CompstnAcct = None
-
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
 
 	@property
 	def IntrstRate(self):
@@ -62,17 +62,17 @@ class CompensationRequest1(base_types._BaseFieldType):
 		self._Prd = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Rsn(self):
+		return self._Rsn
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def XpctdValDt(self):
@@ -88,11 +88,11 @@ class CompensationRequest1(base_types._BaseFieldType):
 		self._XpctdValDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CompstnAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

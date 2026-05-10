@@ -1,7 +1,7 @@
 from . import base_types
+from ._ContactIdentificationAndAddress1 import ContactIdentificationAndAddress1
 from ._MemberIdentification3Choice import MemberIdentification3Choice
 from ._CommunicationAddress8 import CommunicationAddress8
-from ._ContactIdentificationAndAddress1 import ContactIdentificationAndAddress1
 
 class Member6(base_types._BaseFieldType):
 
@@ -20,19 +20,6 @@ class Member6(base_types._BaseFieldType):
 		self._ComAdr = None
 
 	@property
-	def MmbRtrAdr(self):
-		return self._MmbRtrAdr
-
-	@MmbRtrAdr.setter
-	def MmbRtrAdr(self, value):
-		self._MmbRtrAdr = value if type(value) != base_types.auto else self.make_default("MmbRtrAdr")
-
-	@MmbRtrAdr.deleter
-	def MmbRtrAdr(self):
-		del self._MmbRtrAdr
-		self._MmbRtrAdr = None
-
-	@property
 	def CtctRef(self):
 		return self._CtctRef
 
@@ -45,9 +32,22 @@ class Member6(base_types._BaseFieldType):
 		del self._CtctRef
 		self._CtctRef = None
 
+	@property
+	def MmbRtrAdr(self):
+		return self._MmbRtrAdr
+
+	@MmbRtrAdr.setter
+	def MmbRtrAdr(self, value):
+		self._MmbRtrAdr = value if type(value) != base_types.auto else self.make_default("MmbRtrAdr")
+
+	@MmbRtrAdr.deleter
+	def MmbRtrAdr(self):
+		del self._MmbRtrAdr
+		self._MmbRtrAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MmbRtrAdr', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtctRef', type=ContactIdentificationAndAddress1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MmbRtrAdr', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

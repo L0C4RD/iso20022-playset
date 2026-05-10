@@ -1,22 +1,22 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 
 class InterestPaymentDateRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdDt", "_IntrstSchdlId", "_DueDt"]
+	__slots__ = ["_XpctdDt", "_DueDt", "_IntrstSchdlId"]
 	@property
-	def XpctdDt(self):
-		return self._XpctdDt
+	def DueDt(self):
+		return self._DueDt
 
-	@XpctdDt.setter
-	def XpctdDt(self, value):
-		self._XpctdDt = value if type(value) != base_types.auto else self.make_default("XpctdDt")
+	@DueDt.setter
+	def DueDt(self, value):
+		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
 
-	@XpctdDt.deleter
-	def XpctdDt(self):
-		del self._XpctdDt
-		self._XpctdDt = None
+	@DueDt.deleter
+	def DueDt(self):
+		del self._DueDt
+		self._DueDt = None
 
 	@property
 	def IntrstSchdlId(self):
@@ -32,21 +32,21 @@ class InterestPaymentDateRange1(base_types._BaseFieldType):
 		self._IntrstSchdlId = None
 
 	@property
-	def DueDt(self):
-		return self._DueDt
+	def XpctdDt(self):
+		return self._XpctdDt
 
-	@DueDt.setter
-	def DueDt(self, value):
-		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
+	@XpctdDt.setter
+	def XpctdDt(self, value):
+		self._XpctdDt = value if type(value) != base_types.auto else self.make_default("XpctdDt")
 
-	@DueDt.deleter
-	def DueDt(self):
-		del self._DueDt
-		self._DueDt = None
+	@XpctdDt.deleter
+	def XpctdDt(self):
+		del self._XpctdDt
+		self._XpctdDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstSchdlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstSchdlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

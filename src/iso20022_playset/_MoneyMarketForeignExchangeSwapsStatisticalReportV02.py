@@ -1,24 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._ForeignExchangeSwap3Choice import ForeignExchangeSwap3Choice
+from ._SupplementaryData1 import SupplementaryData1
 from ._MoneyMarketReportHeader1 import MoneyMarketReportHeader1
 
 class MoneyMarketForeignExchangeSwapsStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_FXSwpsRpt", "_SplmtryData"]
-	@property
-	def RptHdr(self):
-		return self._RptHdr
-
-	@RptHdr.setter
-	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
-
-	@RptHdr.deleter
-	def RptHdr(self):
-		del self._RptHdr
-		self._RptHdr = None
-
+	__slots__ = ["_RptHdr", "_SplmtryData", "_FXSwpsRpt"]
 	@property
 	def FXSwpsRpt(self):
 		return self._FXSwpsRpt
@@ -31,6 +18,19 @@ class MoneyMarketForeignExchangeSwapsStatisticalReportV02(base_types._BaseFieldT
 	def FXSwpsRpt(self):
 		del self._FXSwpsRpt
 		self._FXSwpsRpt = None
+
+	@property
+	def RptHdr(self):
+		return self._RptHdr
+
+	@RptHdr.setter
+	def RptHdr(self, value):
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+
+	@RptHdr.deleter
+	def RptHdr(self):
+		del self._RptHdr
+		self._RptHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -46,8 +46,8 @@ class MoneyMarketForeignExchangeSwapsStatisticalReportV02(base_types._BaseFieldT
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXSwpsRpt', type=ForeignExchangeSwap3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradeData39Choice import TradeData39Choice
 from ._SupplementaryData1 import SupplementaryData1
+from ._TradeData39Choice import TradeData39Choice
 
 class SecuritiesFinancingReportingTransactionMarginDataReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TradData"]
+	__slots__ = ["_TradData", "_SplmtryData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData

@@ -1,13 +1,13 @@
 from . import base_types
-from ._IntraDayMarginCall1 import IntraDayMarginCall1
-from ._IntraDayRequirement1 import IntraDayRequirement1
-from ._EndOfDayRequirement2 import EndOfDayRequirement2
 from ._SupplementaryData1 import SupplementaryData1
+from ._IntraDayMarginCall1 import IntraDayMarginCall1
+from ._EndOfDayRequirement2 import EndOfDayRequirement2
 from ._DefaultFundRequirement1 import DefaultFundRequirement1
+from ._IntraDayRequirement1 import IntraDayRequirement1
 
 class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DfltFndRqrmnt", "_IntraDayMrgnCall", "_EndOfDayRqrmnt", "_IntraDayRqrmntAmt", "_SplmtryData"]
+	__slots__ = ["_IntraDayRqrmntAmt", "_IntraDayMrgnCall", "_SplmtryData", "_EndOfDayRqrmnt", "_DfltFndRqrmnt"]
 	@property
 	def DfltFndRqrmnt(self):
 		return self._DfltFndRqrmnt
@@ -22,19 +22,6 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 		self._DfltFndRqrmnt = None
 
 	@property
-	def IntraDayMrgnCall(self):
-		return self._IntraDayMrgnCall
-
-	@IntraDayMrgnCall.setter
-	def IntraDayMrgnCall(self, value):
-		self._IntraDayMrgnCall = value if type(value) != base_types.auto else self.make_default("IntraDayMrgnCall")
-
-	@IntraDayMrgnCall.deleter
-	def IntraDayMrgnCall(self):
-		del self._IntraDayMrgnCall
-		self._IntraDayMrgnCall = None
-
-	@property
 	def EndOfDayRqrmnt(self):
 		return self._EndOfDayRqrmnt
 
@@ -46,6 +33,19 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 	def EndOfDayRqrmnt(self):
 		del self._EndOfDayRqrmnt
 		self._EndOfDayRqrmnt = None
+
+	@property
+	def IntraDayMrgnCall(self):
+		return self._IntraDayMrgnCall
+
+	@IntraDayMrgnCall.setter
+	def IntraDayMrgnCall(self, value):
+		self._IntraDayMrgnCall = value if type(value) != base_types.auto else self.make_default("IntraDayMrgnCall")
+
+	@IntraDayMrgnCall.deleter
+	def IntraDayMrgnCall(self):
+		del self._IntraDayMrgnCall
+		self._IntraDayMrgnCall = None
 
 	@property
 	def IntraDayRqrmntAmt(self):
@@ -75,8 +75,8 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DfltFndRqrmnt', type=DefaultFundRequirement1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntraDayMrgnCall', type=IntraDayMarginCall1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EndOfDayRqrmnt', type=EndOfDayRequirement2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntraDayMrgnCall', type=IntraDayMarginCall1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntraDayRqrmntAmt', type=IntraDayRequirement1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))

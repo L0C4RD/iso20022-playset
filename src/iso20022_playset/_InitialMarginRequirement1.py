@@ -4,7 +4,7 @@ from ._InitialMarginExposure1 import InitialMarginExposure1
 
 class InitialMarginRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cdt", "_InitlMrgnXpsr"]
+	__slots__ = ["_InitlMrgnXpsr", "_Cdt"]
 	@property
 	def Cdt(self):
 		return self._Cdt

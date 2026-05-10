@@ -5,19 +5,19 @@ from ._PriceValue1 import PriceValue1
 
 class UnitPrice20(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_PricTp", "_PricMtd"]
+	__slots__ = ["_Val", "_PricMtd", "_PricTp"]
 	@property
-	def Val(self):
-		return self._Val
+	def PricMtd(self):
+		return self._PricMtd
 
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+	@PricMtd.setter
+	def PricMtd(self, value):
+		self._PricMtd = value if type(value) != base_types.auto else self.make_default("PricMtd")
 
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
+	@PricMtd.deleter
+	def PricMtd(self):
+		del self._PricMtd
+		self._PricMtd = None
 
 	@property
 	def PricTp(self):
@@ -33,21 +33,21 @@ class UnitPrice20(base_types._BaseFieldType):
 		self._PricTp = None
 
 	@property
-	def PricMtd(self):
-		return self._PricMtd
+	def Val(self):
+		return self._Val
 
-	@PricMtd.setter
-	def PricMtd(self, value):
-		self._PricMtd = value if type(value) != base_types.auto else self.make_default("PricMtd")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
-	@PricMtd.deleter
-	def PricMtd(self):
-		del self._PricMtd
-		self._PricMtd = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=PriceValue1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricTp', type=UnitPriceType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricTp', type=UnitPriceType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceValue1, min=1, max=1, mutex_group=None, array=False),
 	))
 

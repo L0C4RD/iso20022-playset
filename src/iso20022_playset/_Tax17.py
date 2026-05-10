@@ -1,14 +1,14 @@
 from . import base_types
+from ._PercentageRate import PercentageRate
+from ._CountryCode import CountryCode
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._TaxType12Code import TaxType12Code
-from ._CountryCode import CountryCode
-from ._Extended350Code import Extended350Code
-from ._PercentageRate import PercentageRate
 from ._TaxCalculationInformation4 import TaxCalculationInformation4
+from ._Extended350Code import Extended350Code
 
 class Tax17(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_Rate", "_TaxClctnDtls", "_Ctry", "_XtndedTp"]
+	__slots__ = ["_Ctry", "_Amt", "_TaxClctnDtls", "_XtndedTp", "_Tp", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -23,17 +23,17 @@ class Tax17(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Ctry(self):
+		return self._Ctry
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def Rate(self):
@@ -62,17 +62,17 @@ class Tax17(base_types._BaseFieldType):
 		self._TaxClctnDtls = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def Tp(self):
+		return self._Tp
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def XtndedTp(self):
@@ -89,10 +89,10 @@ class Tax17(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=7, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tp', type=TaxType12Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TaxType12Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XtndedTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

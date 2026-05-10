@@ -1,41 +1,15 @@
 from . import base_types
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._Exact3NumericText import Exact3NumericText
-from ._SecuritiesAccount7 import SecuritiesAccount7
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._PercentageRate import PercentageRate
-from ._CorporateActionCashMovements2 import CorporateActionCashMovements2
+from ._Exact3NumericText import Exact3NumericText
+from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._CorporateActionSecuritiesMovement2 import CorporateActionSecuritiesMovement2
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._SecuritiesAccount7 import SecuritiesAccount7
+from ._CorporateActionCashMovements2 import CorporateActionCashMovements2
 
 class CorporateActionElection3(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdSctiesQtyToRcv", "_OptnTp", "_AcctDtls", "_SctiesMvmntDtls", "_CshMvmntDtls", "_PropsdRate", "_OptnNb", "_InstdUndrlygSctiesQty"]
-	@property
-	def InstdSctiesQtyToRcv(self):
-		return self._InstdSctiesQtyToRcv
-
-	@InstdSctiesQtyToRcv.setter
-	def InstdSctiesQtyToRcv(self, value):
-		self._InstdSctiesQtyToRcv = value if type(value) != base_types.auto else self.make_default("InstdSctiesQtyToRcv")
-
-	@InstdSctiesQtyToRcv.deleter
-	def InstdSctiesQtyToRcv(self):
-		del self._InstdSctiesQtyToRcv
-		self._InstdSctiesQtyToRcv = None
-
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
-
+	__slots__ = ["_InstdUndrlygSctiesQty", "_CshMvmntDtls", "_PropsdRate", "_SctiesMvmntDtls", "_InstdSctiesQtyToRcv", "_OptnNb", "_AcctDtls", "_OptnTp"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
@@ -48,19 +22,6 @@ class CorporateActionElection3(base_types._BaseFieldType):
 	def AcctDtls(self):
 		del self._AcctDtls
 		self._AcctDtls = None
-
-	@property
-	def SctiesMvmntDtls(self):
-		return self._SctiesMvmntDtls
-
-	@SctiesMvmntDtls.setter
-	def SctiesMvmntDtls(self, value):
-		self._SctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesMvmntDtls")
-
-	@SctiesMvmntDtls.deleter
-	def SctiesMvmntDtls(self):
-		del self._SctiesMvmntDtls
-		self._SctiesMvmntDtls = None
 
 	@property
 	def CshMvmntDtls(self):
@@ -76,17 +37,30 @@ class CorporateActionElection3(base_types._BaseFieldType):
 		self._CshMvmntDtls = None
 
 	@property
-	def PropsdRate(self):
-		return self._PropsdRate
+	def InstdSctiesQtyToRcv(self):
+		return self._InstdSctiesQtyToRcv
 
-	@PropsdRate.setter
-	def PropsdRate(self, value):
-		self._PropsdRate = value if type(value) != base_types.auto else self.make_default("PropsdRate")
+	@InstdSctiesQtyToRcv.setter
+	def InstdSctiesQtyToRcv(self, value):
+		self._InstdSctiesQtyToRcv = value if type(value) != base_types.auto else self.make_default("InstdSctiesQtyToRcv")
 
-	@PropsdRate.deleter
-	def PropsdRate(self):
-		del self._PropsdRate
-		self._PropsdRate = None
+	@InstdSctiesQtyToRcv.deleter
+	def InstdSctiesQtyToRcv(self):
+		del self._InstdSctiesQtyToRcv
+		self._InstdSctiesQtyToRcv = None
+
+	@property
+	def InstdUndrlygSctiesQty(self):
+		return self._InstdUndrlygSctiesQty
+
+	@InstdUndrlygSctiesQty.setter
+	def InstdUndrlygSctiesQty(self, value):
+		self._InstdUndrlygSctiesQty = value if type(value) != base_types.auto else self.make_default("InstdUndrlygSctiesQty")
+
+	@InstdUndrlygSctiesQty.deleter
+	def InstdUndrlygSctiesQty(self):
+		del self._InstdUndrlygSctiesQty
+		self._InstdUndrlygSctiesQty = None
 
 	@property
 	def OptnNb(self):
@@ -102,26 +76,52 @@ class CorporateActionElection3(base_types._BaseFieldType):
 		self._OptnNb = None
 
 	@property
-	def InstdUndrlygSctiesQty(self):
-		return self._InstdUndrlygSctiesQty
+	def OptnTp(self):
+		return self._OptnTp
 
-	@InstdUndrlygSctiesQty.setter
-	def InstdUndrlygSctiesQty(self, value):
-		self._InstdUndrlygSctiesQty = value if type(value) != base_types.auto else self.make_default("InstdUndrlygSctiesQty")
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
 
-	@InstdUndrlygSctiesQty.deleter
-	def InstdUndrlygSctiesQty(self):
-		del self._InstdUndrlygSctiesQty
-		self._InstdUndrlygSctiesQty = None
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
+
+	@property
+	def PropsdRate(self):
+		return self._PropsdRate
+
+	@PropsdRate.setter
+	def PropsdRate(self, value):
+		self._PropsdRate = value if type(value) != base_types.auto else self.make_default("PropsdRate")
+
+	@PropsdRate.deleter
+	def PropsdRate(self):
+		del self._PropsdRate
+		self._PropsdRate = None
+
+	@property
+	def SctiesMvmntDtls(self):
+		return self._SctiesMvmntDtls
+
+	@SctiesMvmntDtls.setter
+	def SctiesMvmntDtls(self, value):
+		self._SctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesMvmntDtls")
+
+	@SctiesMvmntDtls.deleter
+	def SctiesMvmntDtls(self):
+		del self._SctiesMvmntDtls
+		self._SctiesMvmntDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstdSctiesQtyToRcv', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntDtls', type=CorporateActionSecuritiesMovement2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshMvmntDtls', type=CorporateActionCashMovements2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PropsdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdSctiesQtyToRcv', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdUndrlygSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PropsdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntDtls', type=CorporateActionSecuritiesMovement2, min=0, max=None, mutex_group=None, array=True),
 	))
 

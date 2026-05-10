@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._OrderWaiverReason3Choice import OrderWaiverReason3Choice
+from ._Max350Text import Max350Text
 
 class OrderWaiver1(base_types._BaseFieldType):
 

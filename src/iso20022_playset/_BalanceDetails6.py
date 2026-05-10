@@ -1,38 +1,12 @@
 from . import base_types
-from ._Unrealised1Code import Unrealised1Code
-from ._BalanceType7Choice import BalanceType7Choice
 from ._FinancialAssetTypeCategory1Code import FinancialAssetTypeCategory1Code
+from ._Unrealised1Code import Unrealised1Code
 from ._AmountAndDirection31 import AmountAndDirection31
+from ._BalanceType7Choice import BalanceType7Choice
 
 class BalanceDetails6(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Urlsd", "_Amt", "_Ctgy"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Urlsd(self):
-		return self._Urlsd
-
-	@Urlsd.setter
-	def Urlsd(self, value):
-		self._Urlsd = value if type(value) != base_types.auto else self.make_default("Urlsd")
-
-	@Urlsd.deleter
-	def Urlsd(self):
-		del self._Urlsd
-		self._Urlsd = None
-
+	__slots__ = ["_Ctgy", "_Tp", "_Amt", "_Urlsd"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -59,10 +33,36 @@ class BalanceDetails6(base_types._BaseFieldType):
 		del self._Ctgy
 		self._Ctgy = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Urlsd(self):
+		return self._Urlsd
+
+	@Urlsd.setter
+	def Urlsd(self, value):
+		self._Urlsd = value if type(value) != base_types.auto else self.make_default("Urlsd")
+
+	@Urlsd.deleter
+	def Urlsd(self):
+		del self._Urlsd
+		self._Urlsd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=BalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Urlsd', type=Unrealised1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctgy', type=FinancialAssetTypeCategory1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=BalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Urlsd', type=Unrealised1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

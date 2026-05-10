@@ -3,20 +3,7 @@ from ._PartyIdentification242Choice import PartyIdentification242Choice
 
 class SettlementParties120(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvgAgt", "_BnfcryInstn", "_DlvryAgt", "_Intrmy"]
-	@property
-	def RcvgAgt(self):
-		return self._RcvgAgt
-
-	@RcvgAgt.setter
-	def RcvgAgt(self, value):
-		self._RcvgAgt = value if type(value) != base_types.auto else self.make_default("RcvgAgt")
-
-	@RcvgAgt.deleter
-	def RcvgAgt(self):
-		del self._RcvgAgt
-		self._RcvgAgt = None
-
+	__slots__ = ["_BnfcryInstn", "_DlvryAgt", "_Intrmy", "_RcvgAgt"]
 	@property
 	def BnfcryInstn(self):
 		return self._BnfcryInstn
@@ -56,10 +43,23 @@ class SettlementParties120(base_types._BaseFieldType):
 		del self._Intrmy
 		self._Intrmy = None
 
+	@property
+	def RcvgAgt(self):
+		return self._RcvgAgt
+
+	@RcvgAgt.setter
+	def RcvgAgt(self, value):
+		self._RcvgAgt = value if type(value) != base_types.auto else self.make_default("RcvgAgt")
+
+	@RcvgAgt.deleter
+	def RcvgAgt(self):
+		del self._RcvgAgt
+		self._RcvgAgt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcvgAgt', type=PartyIdentification242Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BnfcryInstn', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryAgt', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgAgt', type=PartyIdentification242Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

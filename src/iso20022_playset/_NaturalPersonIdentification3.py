@@ -1,10 +1,10 @@
 from . import base_types
-from ._NaturalPersonIdentification2 import NaturalPersonIdentification2
 from ._CountryCode import CountryCode
+from ._NaturalPersonIdentification2 import NaturalPersonIdentification2
 
 class NaturalPersonIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Id"]
+	__slots__ = ["_Id", "_Ctry"]
 	@property
 	def Ctry(self):
 		return self._Ctry

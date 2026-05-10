@@ -3,19 +3,19 @@ from ._InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnership
 
 class AccountParties13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PmryOwnr", "_Nmnee", "_Trstee", "_JntOwnr"]
+	__slots__ = ["_Nmnee", "_JntOwnr", "_Trstee", "_PmryOwnr"]
 	@property
-	def PmryOwnr(self):
-		return self._PmryOwnr
+	def JntOwnr(self):
+		return self._JntOwnr
 
-	@PmryOwnr.setter
-	def PmryOwnr(self, value):
-		self._PmryOwnr = value if type(value) != base_types.auto else self.make_default("PmryOwnr")
+	@JntOwnr.setter
+	def JntOwnr(self, value):
+		self._JntOwnr = value if type(value) != base_types.auto else self.make_default("JntOwnr")
 
-	@PmryOwnr.deleter
-	def PmryOwnr(self):
-		del self._PmryOwnr
-		self._PmryOwnr = None
+	@JntOwnr.deleter
+	def JntOwnr(self):
+		del self._JntOwnr
+		self._JntOwnr = None
 
 	@property
 	def Nmnee(self):
@@ -31,6 +31,19 @@ class AccountParties13Choice(base_types._BaseFieldType):
 		self._Nmnee = None
 
 	@property
+	def PmryOwnr(self):
+		return self._PmryOwnr
+
+	@PmryOwnr.setter
+	def PmryOwnr(self, value):
+		self._PmryOwnr = value if type(value) != base_types.auto else self.make_default("PmryOwnr")
+
+	@PmryOwnr.deleter
+	def PmryOwnr(self):
+		del self._PmryOwnr
+		self._PmryOwnr = None
+
+	@property
 	def Trstee(self):
 		return self._Trstee
 
@@ -43,23 +56,10 @@ class AccountParties13Choice(base_types._BaseFieldType):
 		del self._Trstee
 		self._Trstee = None
 
-	@property
-	def JntOwnr(self):
-		return self._JntOwnr
-
-	@JntOwnr.setter
-	def JntOwnr(self, value):
-		self._JntOwnr = value if type(value) != base_types.auto else self.make_default("JntOwnr")
-
-	@JntOwnr.deleter
-	def JntOwnr(self):
-		del self._JntOwnr
-		self._JntOwnr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmryOwnr', type=InvestmentAccountOwnershipInformation17, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Nmnee', type=InvestmentAccountOwnershipInformation17, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Trstee', type=InvestmentAccountOwnershipInformation17, min=1, max=5, mutex_group=1, array=True),
 		base_types.FieldEntry(name='JntOwnr', type=InvestmentAccountOwnershipInformation17, min=1, max=5, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Nmnee', type=InvestmentAccountOwnershipInformation17, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PmryOwnr', type=InvestmentAccountOwnershipInformation17, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Trstee', type=InvestmentAccountOwnershipInformation17, min=1, max=5, mutex_group=1, array=True),
 	))
 

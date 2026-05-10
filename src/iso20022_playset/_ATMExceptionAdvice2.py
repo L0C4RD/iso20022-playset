@@ -1,24 +1,11 @@
 from . import base_types
-from ._ATMEnvironment20 import ATMEnvironment20
-from ._ATMTransaction40 import ATMTransaction40
 from ._ATMContext25 import ATMContext25
+from ._ATMTransaction40 import ATMTransaction40
+from ._ATMEnvironment20 import ATMEnvironment20
 
 class ATMExceptionAdvice2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Cntxt", "_Envt"]
-	@property
-	def Tx(self):
-		return self._Tx
-
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
-
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
-
+	__slots__ = ["_Cntxt", "_Tx", "_Envt"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt
@@ -45,9 +32,22 @@ class ATMExceptionAdvice2(base_types._BaseFieldType):
 		del self._Envt
 		self._Envt = None
 
+	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tx', type=ATMTransaction40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=ATMContext25, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=ATMTransaction40, min=1, max=1, mutex_group=None, array=False),
 	))
 

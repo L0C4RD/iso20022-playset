@@ -1,27 +1,40 @@
 from . import base_types
+from ._SupplementaryData1 import SupplementaryData1
 from ._EffectiveDate1 import EffectiveDate1
-from ._AccountIdentification26 import AccountIdentification26
 from ._Max35Text import Max35Text
 from ._PartyOrCurrency1Choice import PartyOrCurrency1Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingStatus43Choice import ProcessingStatus43Choice
 from ._MarketIdentificationOrCashPurpose1Choice import MarketIdentificationOrCashPurpose1Choice
+from ._AccountIdentification26 import AccountIdentification26
+from ._ProcessingStatus43Choice import ProcessingStatus43Choice
 
 class StandingSettlementInstructionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdMsgRef", "_MktId", "_PrcgSts", "_SplmtryData", "_FctvDtDtls", "_AcctId", "_SttlmDtls"]
+	__slots__ = ["_RltdMsgRef", "_SttlmDtls", "_PrcgSts", "_FctvDtDtls", "_MktId", "_AcctId", "_SplmtryData"]
 	@property
-	def RltdMsgRef(self):
-		return self._RltdMsgRef
+	def AcctId(self):
+		return self._AcctId
 
-	@RltdMsgRef.setter
-	def RltdMsgRef(self, value):
-		self._RltdMsgRef = value if type(value) != base_types.auto else self.make_default("RltdMsgRef")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@RltdMsgRef.deleter
-	def RltdMsgRef(self):
-		del self._RltdMsgRef
-		self._RltdMsgRef = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def FctvDtDtls(self):
+		return self._FctvDtDtls
+
+	@FctvDtDtls.setter
+	def FctvDtDtls(self, value):
+		self._FctvDtDtls = value if type(value) != base_types.auto else self.make_default("FctvDtDtls")
+
+	@FctvDtDtls.deleter
+	def FctvDtDtls(self):
+		del self._FctvDtDtls
+		self._FctvDtDtls = None
 
 	@property
 	def MktId(self):
@@ -50,6 +63,19 @@ class StandingSettlementInstructionStatusAdviceV01(base_types._BaseFieldType):
 		self._PrcgSts = None
 
 	@property
+	def RltdMsgRef(self):
+		return self._RltdMsgRef
+
+	@RltdMsgRef.setter
+	def RltdMsgRef(self, value):
+		self._RltdMsgRef = value if type(value) != base_types.auto else self.make_default("RltdMsgRef")
+
+	@RltdMsgRef.deleter
+	def RltdMsgRef(self):
+		del self._RltdMsgRef
+		self._RltdMsgRef = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -61,32 +87,6 @@ class StandingSettlementInstructionStatusAdviceV01(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def FctvDtDtls(self):
-		return self._FctvDtDtls
-
-	@FctvDtDtls.setter
-	def FctvDtDtls(self, value):
-		self._FctvDtDtls = value if type(value) != base_types.auto else self.make_default("FctvDtDtls")
-
-	@FctvDtDtls.deleter
-	def FctvDtDtls(self):
-		del self._FctvDtDtls
-		self._FctvDtDtls = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def SttlmDtls(self):
@@ -102,12 +102,12 @@ class StandingSettlementInstructionStatusAdviceV01(base_types._BaseFieldType):
 		self._SttlmDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdMsgRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification26, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FctvDtDtls', type=EffectiveDate1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktId', type=MarketIdentificationOrCashPurpose1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus43Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdMsgRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FctvDtDtls', type=EffectiveDate1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification26, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmDtls', type=PartyOrCurrency1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

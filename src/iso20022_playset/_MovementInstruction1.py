@@ -1,38 +1,12 @@
 from . import base_types
-from ._ProceedsMovement1 import ProceedsMovement1
+from ._CashMovement2 import CashMovement2
 from ._UnderlyingSecurityMovement1 import UnderlyingSecurityMovement1
 from ._CorporateActionMovement1 import CorporateActionMovement1
-from ._CashMovement2 import CashMovement2
+from ._ProceedsMovement1 import ProceedsMovement1
 
 class MovementInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygSctiesMvmntDtls", "_UndrlygCshMvmntDtls", "_MvmntGnlInf", "_PrcdsMvmntDtls"]
-	@property
-	def UndrlygSctiesMvmntDtls(self):
-		return self._UndrlygSctiesMvmntDtls
-
-	@UndrlygSctiesMvmntDtls.setter
-	def UndrlygSctiesMvmntDtls(self, value):
-		self._UndrlygSctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("UndrlygSctiesMvmntDtls")
-
-	@UndrlygSctiesMvmntDtls.deleter
-	def UndrlygSctiesMvmntDtls(self):
-		del self._UndrlygSctiesMvmntDtls
-		self._UndrlygSctiesMvmntDtls = None
-
-	@property
-	def UndrlygCshMvmntDtls(self):
-		return self._UndrlygCshMvmntDtls
-
-	@UndrlygCshMvmntDtls.setter
-	def UndrlygCshMvmntDtls(self, value):
-		self._UndrlygCshMvmntDtls = value if type(value) != base_types.auto else self.make_default("UndrlygCshMvmntDtls")
-
-	@UndrlygCshMvmntDtls.deleter
-	def UndrlygCshMvmntDtls(self):
-		del self._UndrlygCshMvmntDtls
-		self._UndrlygCshMvmntDtls = None
-
+	__slots__ = ["_UndrlygCshMvmntDtls", "_UndrlygSctiesMvmntDtls", "_MvmntGnlInf", "_PrcdsMvmntDtls"]
 	@property
 	def MvmntGnlInf(self):
 		return self._MvmntGnlInf
@@ -59,10 +33,36 @@ class MovementInstruction1(base_types._BaseFieldType):
 		del self._PrcdsMvmntDtls
 		self._PrcdsMvmntDtls = None
 
+	@property
+	def UndrlygCshMvmntDtls(self):
+		return self._UndrlygCshMvmntDtls
+
+	@UndrlygCshMvmntDtls.setter
+	def UndrlygCshMvmntDtls(self, value):
+		self._UndrlygCshMvmntDtls = value if type(value) != base_types.auto else self.make_default("UndrlygCshMvmntDtls")
+
+	@UndrlygCshMvmntDtls.deleter
+	def UndrlygCshMvmntDtls(self):
+		del self._UndrlygCshMvmntDtls
+		self._UndrlygCshMvmntDtls = None
+
+	@property
+	def UndrlygSctiesMvmntDtls(self):
+		return self._UndrlygSctiesMvmntDtls
+
+	@UndrlygSctiesMvmntDtls.setter
+	def UndrlygSctiesMvmntDtls(self, value):
+		self._UndrlygSctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("UndrlygSctiesMvmntDtls")
+
+	@UndrlygSctiesMvmntDtls.deleter
+	def UndrlygSctiesMvmntDtls(self):
+		del self._UndrlygSctiesMvmntDtls
+		self._UndrlygSctiesMvmntDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygSctiesMvmntDtls', type=UnderlyingSecurityMovement1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UndrlygCshMvmntDtls', type=CashMovement2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MvmntGnlInf', type=CorporateActionMovement1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcdsMvmntDtls', type=ProceedsMovement1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygCshMvmntDtls', type=CashMovement2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygSctiesMvmntDtls', type=UnderlyingSecurityMovement1, min=0, max=None, mutex_group=None, array=True),
 	))
 

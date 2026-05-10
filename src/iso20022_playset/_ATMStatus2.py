@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ATMStatus1Code import ATMStatus1Code
+from ._Max35Text import Max35Text
 
 class ATMStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_CurSts", "_CurStsRsn", "_DmnddSts"]
+	__slots__ = ["_DmnddSts", "_CurSts", "_CurStsRsn"]
 	@property
 	def CurSts(self):
 		return self._CurSts

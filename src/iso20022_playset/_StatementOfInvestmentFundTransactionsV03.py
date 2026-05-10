@@ -1,54 +1,28 @@
 from . import base_types
+from ._AdditionalReference2 import AdditionalReference2
+from ._InvestmentAccount43 import InvestmentAccount43
+from ._Extension1 import Extension1
+from ._Pagination import Pagination
 from ._Statement8 import Statement8
 from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination import Pagination
 from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
-from ._AdditionalReference2 import AdditionalReference2
 from ._SubAccountIdentification36 import SubAccountIdentification36
-from ._Extension1 import Extension1
-from ._InvestmentAccount43 import InvestmentAccount43
 
 class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_TxOnAcct", "_StmtGnlDtls", "_MsgId", "_SubAcctDtls", "_MsgPgntn", "_RltdRef", "_PrvsRef", "_InvstmtAcctDtls"]
+	__slots__ = ["_MsgId", "_PrvsRef", "_SubAcctDtls", "_RltdRef", "_InvstmtAcctDtls", "_MsgPgntn", "_StmtGnlDtls", "_TxOnAcct", "_Xtnsn"]
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def TxOnAcct(self):
-		return self._TxOnAcct
-
-	@TxOnAcct.setter
-	def TxOnAcct(self, value):
-		self._TxOnAcct = value if type(value) != base_types.auto else self.make_default("TxOnAcct")
-
-	@TxOnAcct.deleter
-	def TxOnAcct(self):
-		del self._TxOnAcct
-		self._TxOnAcct = None
-
-	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
-
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
-
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
 
 	@property
 	def MsgId(self):
@@ -64,19 +38,6 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
-
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
-
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
-
-	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
 
@@ -88,19 +49,6 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 	def MsgPgntn(self):
 		del self._MsgPgntn
 		self._MsgPgntn = None
-
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
 
 	@property
 	def PrvsRef(self):
@@ -116,27 +64,79 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
+	def RltdRef(self):
+		return self._RltdRef
 
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
 
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
+
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
+
+	@property
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
+
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
+
+	@property
+	def TxOnAcct(self):
+		return self._TxOnAcct
+
+	@TxOnAcct.setter
+	def TxOnAcct(self, value):
+		self._TxOnAcct = value if type(value) != base_types.auto else self.make_default("TxOnAcct")
+
+	@TxOnAcct.deleter
+	def TxOnAcct(self):
+		del self._TxOnAcct
+		self._TxOnAcct = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxOnAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification36, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification36, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxOnAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

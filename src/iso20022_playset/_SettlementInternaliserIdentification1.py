@@ -1,37 +1,24 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
 from ._Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
-from ._ContactDetails4 import ContactDetails4
 from ._CountryCode import CountryCode
+from ._ContactDetails4 import ContactDetails4
 
 class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnsblPrsn", "_LEI", "_Ctry", "_BrnchId"]
+	__slots__ = ["_Ctry", "_BrnchId", "_LEI", "_RspnsblPrsn"]
 	@property
-	def RspnsblPrsn(self):
-		return self._RspnsblPrsn
+	def BrnchId(self):
+		return self._BrnchId
 
-	@RspnsblPrsn.setter
-	def RspnsblPrsn(self, value):
-		self._RspnsblPrsn = value if type(value) != base_types.auto else self.make_default("RspnsblPrsn")
+	@BrnchId.setter
+	def BrnchId(self, value):
+		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
 
-	@RspnsblPrsn.deleter
-	def RspnsblPrsn(self):
-		del self._RspnsblPrsn
-		self._RspnsblPrsn = None
-
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@BrnchId.deleter
+	def BrnchId(self):
+		del self._BrnchId
+		self._BrnchId = None
 
 	@property
 	def Ctry(self):
@@ -47,22 +34,35 @@ class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def BrnchId(self):
-		return self._BrnchId
+	def LEI(self):
+		return self._LEI
 
-	@BrnchId.setter
-	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
-	@BrnchId.deleter
-	def BrnchId(self):
-		del self._BrnchId
-		self._BrnchId = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
+	@property
+	def RspnsblPrsn(self):
+		return self._RspnsblPrsn
+
+	@RspnsblPrsn.setter
+	def RspnsblPrsn(self, value):
+		self._RspnsblPrsn = value if type(value) != base_types.auto else self.make_default("RspnsblPrsn")
+
+	@RspnsblPrsn.deleter
+	def RspnsblPrsn(self):
+		del self._RspnsblPrsn
+		self._RspnsblPrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnsblPrsn', type=ContactDetails4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrnchId', type=Exact2UpperCaseAlphaText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnsblPrsn', type=ContactDetails4, min=1, max=1, mutex_group=None, array=False),
 	))
 

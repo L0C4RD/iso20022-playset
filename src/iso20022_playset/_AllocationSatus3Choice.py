@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._AllocationStatus1Code import AllocationStatus1Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class AllocationSatus3Choice(base_types._BaseFieldType):
 

@@ -1,13 +1,13 @@
 from . import base_types
-from ._EndPoint1Choice import EndPoint1Choice
 from ._BusinessDayConvention1Code import BusinessDayConvention1Code
-from ._Max3NumericText import Max3NumericText
-from ._Frequency37Choice import Frequency37Choice
 from ._ISODate import ISODate
+from ._Frequency37Choice import Frequency37Choice
+from ._Max3NumericText import Max3NumericText
+from ._EndPoint1Choice import EndPoint1Choice
 
 class Frequency1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndPtChc", "_NonWorkgDayAdjstmnt", "_ReqdFrqcyPttrn", "_Seq", "_StartDt"]
+	__slots__ = ["_NonWorkgDayAdjstmnt", "_EndPtChc", "_Seq", "_StartDt", "_ReqdFrqcyPttrn"]
 	@property
 	def EndPtChc(self):
 		return self._EndPtChc

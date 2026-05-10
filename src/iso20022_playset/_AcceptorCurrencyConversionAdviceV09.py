@@ -1,11 +1,11 @@
 from . import base_types
-from ._AcceptorCurrencyConversionAdvice9 import AcceptorCurrencyConversionAdvice9
 from ._Header70 import Header70
 from ._ContentInformationType37 import ContentInformationType37
+from ._AcceptorCurrencyConversionAdvice9 import AcceptorCurrencyConversionAdvice9
 
 class AcceptorCurrencyConversionAdviceV09(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptrCcyConvsAdvc", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_AccptrCcyConvsAdvc", "_SctyTrlr", "_Hdr"]
 	@property
 	def AccptrCcyConvsAdvc(self):
 		return self._AccptrCcyConvsAdvc

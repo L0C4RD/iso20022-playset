@@ -1,12 +1,12 @@
 from . import base_types
-from ._CorporateActionDeactivationInstructionRejectionStatus1 import CorporateActionDeactivationInstructionRejectionStatus1
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._Exact3NumericText import Exact3NumericText
+from ._CorporateActionDeactivationInstructionRejectionStatus1 import CorporateActionDeactivationInstructionRejectionStatus1
 from ._CorporateActionDeactivationInstructionProcessingStatus1 import CorporateActionDeactivationInstructionProcessingStatus1
 
 class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnNb", "_OptnTp", "_PrcdSts", "_RjctdSts"]
+	__slots__ = ["_PrcdSts", "_OptnNb", "_RjctdSts", "_OptnTp"]
 	@property
 	def OptnNb(self):
 		return self._OptnNb

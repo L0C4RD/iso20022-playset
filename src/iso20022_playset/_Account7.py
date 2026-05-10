@@ -4,7 +4,7 @@ from ._AccountIdentification1 import AccountIdentification1
 
 class Account7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcr", "_Id"]
+	__slots__ = ["_Id", "_AcctSvcr"]
 	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr

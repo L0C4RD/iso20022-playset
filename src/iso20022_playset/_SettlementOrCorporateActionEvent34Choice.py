@@ -4,7 +4,7 @@ from ._CorporateActionEventType110Choice import CorporateActionEventType110Choic
 
 class SettlementOrCorporateActionEvent34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtTp", "_SctiesTxTp"]
+	__slots__ = ["_SctiesTxTp", "_CorpActnEvtTp"]
 	@property
 	def CorpActnEvtTp(self):
 		return self._CorpActnEvtTp

@@ -1,39 +1,13 @@
 from . import base_types
 from ._QuantityBreakdown62 import QuantityBreakdown62
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._PartyIdentification144 import PartyIdentification144
 from ._Max210Text import Max210Text
+from ._PartyIdentification144 import PartyIdentification144
+from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
 from ._SafeKeepingPlace5 import SafeKeepingPlace5
 
 class QuantityAndAccount118(base_types._BaseFieldType):
 
-	__slots__ = ["_DnmtnChc", "_SfkpgPlc", "_AcctOwnr", "_QtyBrkdwn", "_CshAcct"]
-	@property
-	def DnmtnChc(self):
-		return self._DnmtnChc
-
-	@DnmtnChc.setter
-	def DnmtnChc(self, value):
-		self._DnmtnChc = value if type(value) != base_types.auto else self.make_default("DnmtnChc")
-
-	@DnmtnChc.deleter
-	def DnmtnChc(self):
-		del self._DnmtnChc
-		self._DnmtnChc = None
-
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
+	__slots__ = ["_DnmtnChc", "_SfkpgPlc", "_CshAcct", "_QtyBrkdwn", "_AcctOwnr"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -46,6 +20,32 @@ class QuantityAndAccount118(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
+
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
+
+	@property
+	def DnmtnChc(self):
+		return self._DnmtnChc
+
+	@DnmtnChc.setter
+	def DnmtnChc(self, value):
+		self._DnmtnChc = value if type(value) != base_types.auto else self.make_default("DnmtnChc")
+
+	@DnmtnChc.deleter
+	def DnmtnChc(self):
+		del self._DnmtnChc
+		self._DnmtnChc = None
 
 	@property
 	def QtyBrkdwn(self):
@@ -61,23 +61,23 @@ class QuantityAndAccount118(base_types._BaseFieldType):
 		self._QtyBrkdwn = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DnmtnChc', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown62, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DnmtnChc', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown62, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
 	))
 

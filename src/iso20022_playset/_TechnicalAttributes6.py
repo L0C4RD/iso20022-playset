@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._ISODateTime import ISODateTime
+from ._Max140Text import Max140Text
 
 class TechnicalAttributes6(base_types._BaseFieldType):
 
-	__slots__ = ["_RptRctTmStmp", "_TechRcrdId"]
+	__slots__ = ["_TechRcrdId", "_RptRctTmStmp"]
 	@property
 	def RptRctTmStmp(self):
 		return self._RptRctTmStmp

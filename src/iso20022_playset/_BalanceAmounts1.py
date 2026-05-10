@@ -3,19 +3,19 @@ from ._AmountAndDirection6 import AmountAndDirection6
 
 class BalanceAmounts1(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgVal", "_BookVal", "_PrvsHldgVal", "_AcrdIntrstAmt", "_UrlsdGnLoss"]
+	__slots__ = ["_BookVal", "_HldgVal", "_PrvsHldgVal", "_UrlsdGnLoss", "_AcrdIntrstAmt"]
 	@property
-	def HldgVal(self):
-		return self._HldgVal
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
 
-	@HldgVal.setter
-	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
 
-	@HldgVal.deleter
-	def HldgVal(self):
-		del self._HldgVal
-		self._HldgVal = None
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
 
 	@property
 	def BookVal(self):
@@ -31,6 +31,19 @@ class BalanceAmounts1(base_types._BaseFieldType):
 		self._BookVal = None
 
 	@property
+	def HldgVal(self):
+		return self._HldgVal
+
+	@HldgVal.setter
+	def HldgVal(self, value):
+		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+
+	@HldgVal.deleter
+	def HldgVal(self):
+		del self._HldgVal
+		self._HldgVal = None
+
+	@property
 	def PrvsHldgVal(self):
 		return self._PrvsHldgVal
 
@@ -42,19 +55,6 @@ class BalanceAmounts1(base_types._BaseFieldType):
 	def PrvsHldgVal(self):
 		del self._PrvsHldgVal
 		self._PrvsHldgVal = None
-
-	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
-
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
-
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
 
 	@property
 	def UrlsdGnLoss(self):
@@ -70,10 +70,10 @@ class BalanceAmounts1(base_types._BaseFieldType):
 		self._UrlsdGnLoss = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BookVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
 	))
 

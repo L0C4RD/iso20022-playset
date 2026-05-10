@@ -1,55 +1,42 @@
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Max70Text import Max70Text
-from ._PostalAddress27 import PostalAddress27
-from ._Max35Text import Max35Text
-from ._CountryCode import CountryCode
-from ._PartyIdentification272 import PartyIdentification272
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISODate import ISODate
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._PostalAddress27 import PostalAddress27
+from ._CountryCode import CountryCode
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
 from ._OrganisationLegalStatus1Code import OrganisationLegalStatus1Code
+from ._Max350Text import Max350Text
+from ._PartyIdentification272 import PartyIdentification272
 
 class Organisation43(base_types._BaseFieldType):
 
-	__slots__ = ["_MainMndtHldr", "_Sndr", "_RegnNb", "_CtryOfOpr", "_TradgNm", "_EstblishdDt", "_OprlAdr", "_FullLglNm", "_BizAdr", "_LglAdr", "_RprtvOffcr", "_TrsrMgr", "_TaxtnCtry", "_OrgLglSts", "_BrdRsltnInd", "_RegnCtry", "_RegnDt", "_TaxtnIdNb"]
+	__slots__ = ["_OrgLglSts", "_MainMndtHldr", "_OprlAdr", "_RegnCtry", "_LglAdr", "_EstblishdDt", "_Sndr", "_TradgNm", "_RegnNb", "_TaxtnCtry", "_TrsrMgr", "_TaxtnIdNb", "_BrdRsltnInd", "_BizAdr", "_RprtvOffcr", "_FullLglNm", "_RegnDt", "_CtryOfOpr"]
 	@property
-	def MainMndtHldr(self):
-		return self._MainMndtHldr
+	def BizAdr(self):
+		return self._BizAdr
 
-	@MainMndtHldr.setter
-	def MainMndtHldr(self, value):
-		self._MainMndtHldr = value if type(value) != base_types.auto else self.make_default("MainMndtHldr")
+	@BizAdr.setter
+	def BizAdr(self, value):
+		self._BizAdr = value if type(value) != base_types.auto else self.make_default("BizAdr")
 
-	@MainMndtHldr.deleter
-	def MainMndtHldr(self):
-		del self._MainMndtHldr
-		self._MainMndtHldr = None
-
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
+	@BizAdr.deleter
+	def BizAdr(self):
+		del self._BizAdr
+		self._BizAdr = None
 
 	@property
-	def RegnNb(self):
-		return self._RegnNb
+	def BrdRsltnInd(self):
+		return self._BrdRsltnInd
 
-	@RegnNb.setter
-	def RegnNb(self, value):
-		self._RegnNb = value if type(value) != base_types.auto else self.make_default("RegnNb")
+	@BrdRsltnInd.setter
+	def BrdRsltnInd(self, value):
+		self._BrdRsltnInd = value if type(value) != base_types.auto else self.make_default("BrdRsltnInd")
 
-	@RegnNb.deleter
-	def RegnNb(self):
-		del self._RegnNb
-		self._RegnNb = None
+	@BrdRsltnInd.deleter
+	def BrdRsltnInd(self):
+		del self._BrdRsltnInd
+		self._BrdRsltnInd = None
 
 	@property
 	def CtryOfOpr(self):
@@ -65,19 +52,6 @@ class Organisation43(base_types._BaseFieldType):
 		self._CtryOfOpr = None
 
 	@property
-	def TradgNm(self):
-		return self._TradgNm
-
-	@TradgNm.setter
-	def TradgNm(self, value):
-		self._TradgNm = value if type(value) != base_types.auto else self.make_default("TradgNm")
-
-	@TradgNm.deleter
-	def TradgNm(self):
-		del self._TradgNm
-		self._TradgNm = None
-
-	@property
 	def EstblishdDt(self):
 		return self._EstblishdDt
 
@@ -89,19 +63,6 @@ class Organisation43(base_types._BaseFieldType):
 	def EstblishdDt(self):
 		del self._EstblishdDt
 		self._EstblishdDt = None
-
-	@property
-	def OprlAdr(self):
-		return self._OprlAdr
-
-	@OprlAdr.setter
-	def OprlAdr(self, value):
-		self._OprlAdr = value if type(value) != base_types.auto else self.make_default("OprlAdr")
-
-	@OprlAdr.deleter
-	def OprlAdr(self):
-		del self._OprlAdr
-		self._OprlAdr = None
 
 	@property
 	def FullLglNm(self):
@@ -117,19 +78,6 @@ class Organisation43(base_types._BaseFieldType):
 		self._FullLglNm = None
 
 	@property
-	def BizAdr(self):
-		return self._BizAdr
-
-	@BizAdr.setter
-	def BizAdr(self, value):
-		self._BizAdr = value if type(value) != base_types.auto else self.make_default("BizAdr")
-
-	@BizAdr.deleter
-	def BizAdr(self):
-		del self._BizAdr
-		self._BizAdr = None
-
-	@property
 	def LglAdr(self):
 		return self._LglAdr
 
@@ -143,43 +91,30 @@ class Organisation43(base_types._BaseFieldType):
 		self._LglAdr = None
 
 	@property
-	def RprtvOffcr(self):
-		return self._RprtvOffcr
+	def MainMndtHldr(self):
+		return self._MainMndtHldr
 
-	@RprtvOffcr.setter
-	def RprtvOffcr(self, value):
-		self._RprtvOffcr = value if type(value) != base_types.auto else self.make_default("RprtvOffcr")
+	@MainMndtHldr.setter
+	def MainMndtHldr(self, value):
+		self._MainMndtHldr = value if type(value) != base_types.auto else self.make_default("MainMndtHldr")
 
-	@RprtvOffcr.deleter
-	def RprtvOffcr(self):
-		del self._RprtvOffcr
-		self._RprtvOffcr = None
-
-	@property
-	def TrsrMgr(self):
-		return self._TrsrMgr
-
-	@TrsrMgr.setter
-	def TrsrMgr(self, value):
-		self._TrsrMgr = value if type(value) != base_types.auto else self.make_default("TrsrMgr")
-
-	@TrsrMgr.deleter
-	def TrsrMgr(self):
-		del self._TrsrMgr
-		self._TrsrMgr = None
+	@MainMndtHldr.deleter
+	def MainMndtHldr(self):
+		del self._MainMndtHldr
+		self._MainMndtHldr = None
 
 	@property
-	def TaxtnCtry(self):
-		return self._TaxtnCtry
+	def OprlAdr(self):
+		return self._OprlAdr
 
-	@TaxtnCtry.setter
-	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != base_types.auto else self.make_default("TaxtnCtry")
+	@OprlAdr.setter
+	def OprlAdr(self, value):
+		self._OprlAdr = value if type(value) != base_types.auto else self.make_default("OprlAdr")
 
-	@TaxtnCtry.deleter
-	def TaxtnCtry(self):
-		del self._TaxtnCtry
-		self._TaxtnCtry = None
+	@OprlAdr.deleter
+	def OprlAdr(self):
+		del self._OprlAdr
+		self._OprlAdr = None
 
 	@property
 	def OrgLglSts(self):
@@ -193,19 +128,6 @@ class Organisation43(base_types._BaseFieldType):
 	def OrgLglSts(self):
 		del self._OrgLglSts
 		self._OrgLglSts = None
-
-	@property
-	def BrdRsltnInd(self):
-		return self._BrdRsltnInd
-
-	@BrdRsltnInd.setter
-	def BrdRsltnInd(self, value):
-		self._BrdRsltnInd = value if type(value) != base_types.auto else self.make_default("BrdRsltnInd")
-
-	@BrdRsltnInd.deleter
-	def BrdRsltnInd(self):
-		del self._BrdRsltnInd
-		self._BrdRsltnInd = None
 
 	@property
 	def RegnCtry(self):
@@ -234,6 +156,58 @@ class Organisation43(base_types._BaseFieldType):
 		self._RegnDt = None
 
 	@property
+	def RegnNb(self):
+		return self._RegnNb
+
+	@RegnNb.setter
+	def RegnNb(self, value):
+		self._RegnNb = value if type(value) != base_types.auto else self.make_default("RegnNb")
+
+	@RegnNb.deleter
+	def RegnNb(self):
+		del self._RegnNb
+		self._RegnNb = None
+
+	@property
+	def RprtvOffcr(self):
+		return self._RprtvOffcr
+
+	@RprtvOffcr.setter
+	def RprtvOffcr(self, value):
+		self._RprtvOffcr = value if type(value) != base_types.auto else self.make_default("RprtvOffcr")
+
+	@RprtvOffcr.deleter
+	def RprtvOffcr(self):
+		del self._RprtvOffcr
+		self._RprtvOffcr = None
+
+	@property
+	def Sndr(self):
+		return self._Sndr
+
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
+
+	@property
+	def TaxtnCtry(self):
+		return self._TaxtnCtry
+
+	@TaxtnCtry.setter
+	def TaxtnCtry(self, value):
+		self._TaxtnCtry = value if type(value) != base_types.auto else self.make_default("TaxtnCtry")
+
+	@TaxtnCtry.deleter
+	def TaxtnCtry(self):
+		del self._TaxtnCtry
+		self._TaxtnCtry = None
+
+	@property
 	def TaxtnIdNb(self):
 		return self._TaxtnIdNb
 
@@ -246,24 +220,50 @@ class Organisation43(base_types._BaseFieldType):
 		del self._TaxtnIdNb
 		self._TaxtnIdNb = None
 
+	@property
+	def TradgNm(self):
+		return self._TradgNm
+
+	@TradgNm.setter
+	def TradgNm(self, value):
+		self._TradgNm = value if type(value) != base_types.auto else self.make_default("TradgNm")
+
+	@TradgNm.deleter
+	def TradgNm(self):
+		del self._TradgNm
+		self._TradgNm = None
+
+	@property
+	def TrsrMgr(self):
+		return self._TrsrMgr
+
+	@TrsrMgr.setter
+	def TrsrMgr(self, value):
+		self._TrsrMgr = value if type(value) != base_types.auto else self.make_default("TrsrMgr")
+
+	@TrsrMgr.deleter
+	def TrsrMgr(self):
+		del self._TrsrMgr
+		self._TrsrMgr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MainMndtHldr', type=PartyIdentification272, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sndr', type=PartyIdentification272, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegnNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfOpr', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullLglNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RprtvOffcr', type=PartyIdentification272, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrsrMgr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgLglSts', type=OrganisationLegalStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrdRsltnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfOpr', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullLglNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MainMndtHldr', type=PartyIdentification272, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OprlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgLglSts', type=OrganisationLegalStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RprtvOffcr', type=PartyIdentification272, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sndr', type=PartyIdentification272, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrsrMgr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

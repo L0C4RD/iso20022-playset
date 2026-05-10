@@ -4,19 +4,19 @@ from ._PriceInformation28 import PriceInformation28
 
 class OtherPrices5(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPric", "_Bchmk", "_MrkdUp", "_BchmkWghtdAvrg", "_IndxPric", "_MrkdDwn", "_NetDscld", "_Max", "_AllMktsWghtdAvrg", "_RptdPric", "_RefPric", "_MktBrkrComssn", "_Tx", "_NtnlGrss", "_NetUdscld"]
+	__slots__ = ["_AllMktsWghtdAvrg", "_NetDscld", "_Max", "_NtnlGrss", "_OthrPric", "_RptdPric", "_IndxPric", "_MrkdDwn", "_Tx", "_NetUdscld", "_MrkdUp", "_Bchmk", "_BchmkWghtdAvrg", "_MktBrkrComssn", "_RefPric"]
 	@property
-	def OthrPric(self):
-		return self._OthrPric
+	def AllMktsWghtdAvrg(self):
+		return self._AllMktsWghtdAvrg
 
-	@OthrPric.setter
-	def OthrPric(self, value):
-		self._OthrPric = value if type(value) != base_types.auto else self.make_default("OthrPric")
+	@AllMktsWghtdAvrg.setter
+	def AllMktsWghtdAvrg(self, value):
+		self._AllMktsWghtdAvrg = value if type(value) != base_types.auto else self.make_default("AllMktsWghtdAvrg")
 
-	@OthrPric.deleter
-	def OthrPric(self):
-		del self._OthrPric
-		self._OthrPric = None
+	@AllMktsWghtdAvrg.deleter
+	def AllMktsWghtdAvrg(self):
+		del self._AllMktsWghtdAvrg
+		self._AllMktsWghtdAvrg = None
 
 	@property
 	def Bchmk(self):
@@ -30,19 +30,6 @@ class OtherPrices5(base_types._BaseFieldType):
 	def Bchmk(self):
 		del self._Bchmk
 		self._Bchmk = None
-
-	@property
-	def MrkdUp(self):
-		return self._MrkdUp
-
-	@MrkdUp.setter
-	def MrkdUp(self, value):
-		self._MrkdUp = value if type(value) != base_types.auto else self.make_default("MrkdUp")
-
-	@MrkdUp.deleter
-	def MrkdUp(self):
-		del self._MrkdUp
-		self._MrkdUp = None
 
 	@property
 	def BchmkWghtdAvrg(self):
@@ -71,32 +58,6 @@ class OtherPrices5(base_types._BaseFieldType):
 		self._IndxPric = None
 
 	@property
-	def MrkdDwn(self):
-		return self._MrkdDwn
-
-	@MrkdDwn.setter
-	def MrkdDwn(self, value):
-		self._MrkdDwn = value if type(value) != base_types.auto else self.make_default("MrkdDwn")
-
-	@MrkdDwn.deleter
-	def MrkdDwn(self):
-		del self._MrkdDwn
-		self._MrkdDwn = None
-
-	@property
-	def NetDscld(self):
-		return self._NetDscld
-
-	@NetDscld.setter
-	def NetDscld(self, value):
-		self._NetDscld = value if type(value) != base_types.auto else self.make_default("NetDscld")
-
-	@NetDscld.deleter
-	def NetDscld(self):
-		del self._NetDscld
-		self._NetDscld = None
-
-	@property
 	def Max(self):
 		return self._Max
 
@@ -108,45 +69,6 @@ class OtherPrices5(base_types._BaseFieldType):
 	def Max(self):
 		del self._Max
 		self._Max = None
-
-	@property
-	def AllMktsWghtdAvrg(self):
-		return self._AllMktsWghtdAvrg
-
-	@AllMktsWghtdAvrg.setter
-	def AllMktsWghtdAvrg(self, value):
-		self._AllMktsWghtdAvrg = value if type(value) != base_types.auto else self.make_default("AllMktsWghtdAvrg")
-
-	@AllMktsWghtdAvrg.deleter
-	def AllMktsWghtdAvrg(self):
-		del self._AllMktsWghtdAvrg
-		self._AllMktsWghtdAvrg = None
-
-	@property
-	def RptdPric(self):
-		return self._RptdPric
-
-	@RptdPric.setter
-	def RptdPric(self, value):
-		self._RptdPric = value if type(value) != base_types.auto else self.make_default("RptdPric")
-
-	@RptdPric.deleter
-	def RptdPric(self):
-		del self._RptdPric
-		self._RptdPric = None
-
-	@property
-	def RefPric(self):
-		return self._RefPric
-
-	@RefPric.setter
-	def RefPric(self, value):
-		self._RefPric = value if type(value) != base_types.auto else self.make_default("RefPric")
-
-	@RefPric.deleter
-	def RefPric(self):
-		del self._RefPric
-		self._RefPric = None
 
 	@property
 	def MktBrkrComssn(self):
@@ -162,17 +84,56 @@ class OtherPrices5(base_types._BaseFieldType):
 		self._MktBrkrComssn = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def MrkdDwn(self):
+		return self._MrkdDwn
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+	@MrkdDwn.setter
+	def MrkdDwn(self, value):
+		self._MrkdDwn = value if type(value) != base_types.auto else self.make_default("MrkdDwn")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@MrkdDwn.deleter
+	def MrkdDwn(self):
+		del self._MrkdDwn
+		self._MrkdDwn = None
+
+	@property
+	def MrkdUp(self):
+		return self._MrkdUp
+
+	@MrkdUp.setter
+	def MrkdUp(self, value):
+		self._MrkdUp = value if type(value) != base_types.auto else self.make_default("MrkdUp")
+
+	@MrkdUp.deleter
+	def MrkdUp(self):
+		del self._MrkdUp
+		self._MrkdUp = None
+
+	@property
+	def NetDscld(self):
+		return self._NetDscld
+
+	@NetDscld.setter
+	def NetDscld(self, value):
+		self._NetDscld = value if type(value) != base_types.auto else self.make_default("NetDscld")
+
+	@NetDscld.deleter
+	def NetDscld(self):
+		del self._NetDscld
+		self._NetDscld = None
+
+	@property
+	def NetUdscld(self):
+		return self._NetUdscld
+
+	@NetUdscld.setter
+	def NetUdscld(self, value):
+		self._NetUdscld = value if type(value) != base_types.auto else self.make_default("NetUdscld")
+
+	@NetUdscld.deleter
+	def NetUdscld(self):
+		del self._NetUdscld
+		self._NetUdscld = None
 
 	@property
 	def NtnlGrss(self):
@@ -188,33 +149,72 @@ class OtherPrices5(base_types._BaseFieldType):
 		self._NtnlGrss = None
 
 	@property
-	def NetUdscld(self):
-		return self._NetUdscld
+	def OthrPric(self):
+		return self._OthrPric
 
-	@NetUdscld.setter
-	def NetUdscld(self, value):
-		self._NetUdscld = value if type(value) != base_types.auto else self.make_default("NetUdscld")
+	@OthrPric.setter
+	def OthrPric(self, value):
+		self._OthrPric = value if type(value) != base_types.auto else self.make_default("OthrPric")
 
-	@NetUdscld.deleter
-	def NetUdscld(self):
-		del self._NetUdscld
-		self._NetUdscld = None
+	@OthrPric.deleter
+	def OthrPric(self):
+		del self._OthrPric
+		self._OthrPric = None
+
+	@property
+	def RefPric(self):
+		return self._RefPric
+
+	@RefPric.setter
+	def RefPric(self, value):
+		self._RefPric = value if type(value) != base_types.auto else self.make_default("RefPric")
+
+	@RefPric.deleter
+	def RefPric(self):
+		del self._RefPric
+		self._RefPric = None
+
+	@property
+	def RptdPric(self):
+		return self._RptdPric
+
+	@RptdPric.setter
+	def RptdPric(self, value):
+		self._RptdPric = value if type(value) != base_types.auto else self.make_default("RptdPric")
+
+	@RptdPric.deleter
+	def RptdPric(self):
+		del self._RptdPric
+		self._RptdPric = None
+
+	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllMktsWghtdAvrg', type=Price14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bchmk', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrkdUp', type=Price14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BchmkWghtdAvrg', type=Price14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndxPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrkdDwn', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetDscld', type=Price14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Max', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AllMktsWghtdAvrg', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptdPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefPric', type=PriceInformation28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktBrkrComssn', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tx', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlGrss', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrkdDwn', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrkdUp', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetDscld', type=Price14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetUdscld', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlGrss', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefPric', type=PriceInformation28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptdPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=Price14, min=0, max=1, mutex_group=None, array=False),
 	))
 

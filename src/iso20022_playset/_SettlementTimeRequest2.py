@@ -3,7 +3,20 @@ from ._ISOTime import ISOTime
 
 class SettlementTimeRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_FrTm", "_TillTm", "_RjctTm", "_CLSTm"]
+	__slots__ = ["_CLSTm", "_RjctTm", "_TillTm", "_FrTm"]
+	@property
+	def CLSTm(self):
+		return self._CLSTm
+
+	@CLSTm.setter
+	def CLSTm(self, value):
+		self._CLSTm = value if type(value) != base_types.auto else self.make_default("CLSTm")
+
+	@CLSTm.deleter
+	def CLSTm(self):
+		del self._CLSTm
+		self._CLSTm = None
+
 	@property
 	def FrTm(self):
 		return self._FrTm
@@ -16,19 +29,6 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 	def FrTm(self):
 		del self._FrTm
 		self._FrTm = None
-
-	@property
-	def TillTm(self):
-		return self._TillTm
-
-	@TillTm.setter
-	def TillTm(self, value):
-		self._TillTm = value if type(value) != base_types.auto else self.make_default("TillTm")
-
-	@TillTm.deleter
-	def TillTm(self):
-		del self._TillTm
-		self._TillTm = None
 
 	@property
 	def RjctTm(self):
@@ -44,22 +44,22 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 		self._RjctTm = None
 
 	@property
-	def CLSTm(self):
-		return self._CLSTm
+	def TillTm(self):
+		return self._TillTm
 
-	@CLSTm.setter
-	def CLSTm(self, value):
-		self._CLSTm = value if type(value) != base_types.auto else self.make_default("CLSTm")
+	@TillTm.setter
+	def TillTm(self, value):
+		self._TillTm = value if type(value) != base_types.auto else self.make_default("TillTm")
 
-	@CLSTm.deleter
-	def CLSTm(self):
-		del self._CLSTm
-		self._CLSTm = None
+	@TillTm.deleter
+	def TillTm(self):
+		del self._TillTm
+		self._TillTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TillTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CLSTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TillTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

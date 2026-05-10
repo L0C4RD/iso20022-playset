@@ -1,14 +1,14 @@
 from . import base_types
 from ._Min2Max3AlphaText import Min2Max3AlphaText
+from ._Max35Text import Max35Text
 from ._Min2Max3NumericText import Min2Max3NumericText
 from ._Geolocation1 import Geolocation1
-from ._Max35Text import Max35Text
-from ._SensitiveMobileData1 import SensitiveMobileData1
 from ._ContentInformationType40 import ContentInformationType40
+from ._SensitiveMobileData1 import SensitiveMobileData1
 
 class MobileData6(base_types._BaseFieldType):
 
-	__slots__ = ["_Glctn", "_MobCtryCd", "_MobMskdMSISDN", "_SnstvMobData", "_PrtctdMobData", "_MobNtwkCd"]
+	__slots__ = ["_SnstvMobData", "_PrtctdMobData", "_MobNtwkCd", "_Glctn", "_MobCtryCd", "_MobMskdMSISDN"]
 	@property
 	def Glctn(self):
 		return self._Glctn
@@ -49,17 +49,17 @@ class MobileData6(base_types._BaseFieldType):
 		self._MobMskdMSISDN = None
 
 	@property
-	def SnstvMobData(self):
-		return self._SnstvMobData
+	def MobNtwkCd(self):
+		return self._MobNtwkCd
 
-	@SnstvMobData.setter
-	def SnstvMobData(self, value):
-		self._SnstvMobData = value if type(value) != base_types.auto else self.make_default("SnstvMobData")
+	@MobNtwkCd.setter
+	def MobNtwkCd(self, value):
+		self._MobNtwkCd = value if type(value) != base_types.auto else self.make_default("MobNtwkCd")
 
-	@SnstvMobData.deleter
-	def SnstvMobData(self):
-		del self._SnstvMobData
-		self._SnstvMobData = None
+	@MobNtwkCd.deleter
+	def MobNtwkCd(self):
+		del self._MobNtwkCd
+		self._MobNtwkCd = None
 
 	@property
 	def PrtctdMobData(self):
@@ -75,24 +75,24 @@ class MobileData6(base_types._BaseFieldType):
 		self._PrtctdMobData = None
 
 	@property
-	def MobNtwkCd(self):
-		return self._MobNtwkCd
+	def SnstvMobData(self):
+		return self._SnstvMobData
 
-	@MobNtwkCd.setter
-	def MobNtwkCd(self, value):
-		self._MobNtwkCd = value if type(value) != base_types.auto else self.make_default("MobNtwkCd")
+	@SnstvMobData.setter
+	def SnstvMobData(self, value):
+		self._SnstvMobData = value if type(value) != base_types.auto else self.make_default("SnstvMobData")
 
-	@MobNtwkCd.deleter
-	def MobNtwkCd(self):
-		del self._MobNtwkCd
-		self._MobNtwkCd = None
+	@SnstvMobData.deleter
+	def SnstvMobData(self):
+		del self._SnstvMobData
+		self._SnstvMobData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Glctn', type=Geolocation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobCtryCd', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobMskdMSISDN', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SnstvMobData', type=SensitiveMobileData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdMobData', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobNtwkCd', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdMobData', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SnstvMobData', type=SensitiveMobileData1, min=0, max=1, mutex_group=None, array=False),
 	))
 

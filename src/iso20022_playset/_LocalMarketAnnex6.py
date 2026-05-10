@@ -1,28 +1,15 @@
 from . import base_types
-from ._CashAccount205 import CashAccount205
-from ._ProcessingCharacteristics10 import ProcessingCharacteristics10
 from ._CountryCode import CountryCode
 from ._ProcessingCharacteristics11 import ProcessingCharacteristics11
+from ._CashAccount205 import CashAccount205
 from ._ProcessingCharacteristics9 import ProcessingCharacteristics9
-from ._OrderDesk1 import OrderDesk1
+from ._ProcessingCharacteristics10 import ProcessingCharacteristics10
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._OrderDesk1 import OrderDesk1
 
 class LocalMarketAnnex6(base_types._BaseFieldType):
 
-	__slots__ = ["_LclOrdrDsk", "_AddtlInf", "_CshSttlmDtls", "_SbcptPrcgChrtcs", "_RedPrcgChrtcs", "_Ctry", "_SwtchPrcgChrtcs"]
-	@property
-	def LclOrdrDsk(self):
-		return self._LclOrdrDsk
-
-	@LclOrdrDsk.setter
-	def LclOrdrDsk(self, value):
-		self._LclOrdrDsk = value if type(value) != base_types.auto else self.make_default("LclOrdrDsk")
-
-	@LclOrdrDsk.deleter
-	def LclOrdrDsk(self):
-		del self._LclOrdrDsk
-		self._LclOrdrDsk = None
-
+	__slots__ = ["_CshSttlmDtls", "_SbcptPrcgChrtcs", "_AddtlInf", "_SwtchPrcgChrtcs", "_Ctry", "_LclOrdrDsk", "_RedPrcgChrtcs"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -50,17 +37,30 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 		self._CshSttlmDtls = None
 
 	@property
-	def SbcptPrcgChrtcs(self):
-		return self._SbcptPrcgChrtcs
+	def Ctry(self):
+		return self._Ctry
 
-	@SbcptPrcgChrtcs.setter
-	def SbcptPrcgChrtcs(self, value):
-		self._SbcptPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("SbcptPrcgChrtcs")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@SbcptPrcgChrtcs.deleter
-	def SbcptPrcgChrtcs(self):
-		del self._SbcptPrcgChrtcs
-		self._SbcptPrcgChrtcs = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
+	def LclOrdrDsk(self):
+		return self._LclOrdrDsk
+
+	@LclOrdrDsk.setter
+	def LclOrdrDsk(self, value):
+		self._LclOrdrDsk = value if type(value) != base_types.auto else self.make_default("LclOrdrDsk")
+
+	@LclOrdrDsk.deleter
+	def LclOrdrDsk(self):
+		del self._LclOrdrDsk
+		self._LclOrdrDsk = None
 
 	@property
 	def RedPrcgChrtcs(self):
@@ -76,17 +76,17 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 		self._RedPrcgChrtcs = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def SbcptPrcgChrtcs(self):
+		return self._SbcptPrcgChrtcs
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+	@SbcptPrcgChrtcs.setter
+	def SbcptPrcgChrtcs(self, value):
+		self._SbcptPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("SbcptPrcgChrtcs")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@SbcptPrcgChrtcs.deleter
+	def SbcptPrcgChrtcs(self):
+		del self._SbcptPrcgChrtcs
+		self._SbcptPrcgChrtcs = None
 
 	@property
 	def SwtchPrcgChrtcs(self):
@@ -102,12 +102,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 		self._SwtchPrcgChrtcs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LclOrdrDsk', type=OrderDesk1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshSttlmDtls', type=CashAccount205, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SbcptPrcgChrtcs', type=ProcessingCharacteristics11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedPrcgChrtcs', type=ProcessingCharacteristics10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LclOrdrDsk', type=OrderDesk1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedPrcgChrtcs', type=ProcessingCharacteristics10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbcptPrcgChrtcs', type=ProcessingCharacteristics11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SwtchPrcgChrtcs', type=ProcessingCharacteristics9, min=0, max=1, mutex_group=None, array=False),
 	))
 

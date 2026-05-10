@@ -1,10 +1,10 @@
 from . import base_types
-from ._Undertaking7 import Undertaking7
 from ._PartyIdentification43 import PartyIdentification43
+from ._Undertaking7 import Undertaking7
 
 class UndertakingNonExtensionStatusAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtifngPty", "_UdrtkgId"]
+	__slots__ = ["_UdrtkgId", "_NtifngPty"]
 	@property
 	def NtifngPty(self):
 		return self._NtifngPty

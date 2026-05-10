@@ -1,24 +1,24 @@
 from . import base_types
-from ._EarlyPaymentsVAT1 import EarlyPaymentsVAT1
 from ._ISODate import ISODate
 from ._PercentageRate import PercentageRate
+from ._EarlyPaymentsVAT1 import EarlyPaymentsVAT1
 from ._CurrencyAndAmount import CurrencyAndAmount
 
 class EarlyPayment1(base_types._BaseFieldType):
 
-	__slots__ = ["_DuePyblAmtWthEarlyPmt", "_DscntPct", "_DscntAmt", "_EarlyPmtDt", "_EarlyPmtTaxTtl", "_EarlyPmtTaxSpcfctn"]
+	__slots__ = ["_EarlyPmtDt", "_EarlyPmtTaxTtl", "_EarlyPmtTaxSpcfctn", "_DscntPct", "_DscntAmt", "_DuePyblAmtWthEarlyPmt"]
 	@property
-	def DuePyblAmtWthEarlyPmt(self):
-		return self._DuePyblAmtWthEarlyPmt
+	def DscntAmt(self):
+		return self._DscntAmt
 
-	@DuePyblAmtWthEarlyPmt.setter
-	def DuePyblAmtWthEarlyPmt(self, value):
-		self._DuePyblAmtWthEarlyPmt = value if type(value) != base_types.auto else self.make_default("DuePyblAmtWthEarlyPmt")
+	@DscntAmt.setter
+	def DscntAmt(self, value):
+		self._DscntAmt = value if type(value) != base_types.auto else self.make_default("DscntAmt")
 
-	@DuePyblAmtWthEarlyPmt.deleter
-	def DuePyblAmtWthEarlyPmt(self):
-		del self._DuePyblAmtWthEarlyPmt
-		self._DuePyblAmtWthEarlyPmt = None
+	@DscntAmt.deleter
+	def DscntAmt(self):
+		del self._DscntAmt
+		self._DscntAmt = None
 
 	@property
 	def DscntPct(self):
@@ -34,17 +34,17 @@ class EarlyPayment1(base_types._BaseFieldType):
 		self._DscntPct = None
 
 	@property
-	def DscntAmt(self):
-		return self._DscntAmt
+	def DuePyblAmtWthEarlyPmt(self):
+		return self._DuePyblAmtWthEarlyPmt
 
-	@DscntAmt.setter
-	def DscntAmt(self, value):
-		self._DscntAmt = value if type(value) != base_types.auto else self.make_default("DscntAmt")
+	@DuePyblAmtWthEarlyPmt.setter
+	def DuePyblAmtWthEarlyPmt(self, value):
+		self._DuePyblAmtWthEarlyPmt = value if type(value) != base_types.auto else self.make_default("DuePyblAmtWthEarlyPmt")
 
-	@DscntAmt.deleter
-	def DscntAmt(self):
-		del self._DscntAmt
-		self._DscntAmt = None
+	@DuePyblAmtWthEarlyPmt.deleter
+	def DuePyblAmtWthEarlyPmt(self):
+		del self._DuePyblAmtWthEarlyPmt
+		self._DuePyblAmtWthEarlyPmt = None
 
 	@property
 	def EarlyPmtDt(self):
@@ -60,19 +60,6 @@ class EarlyPayment1(base_types._BaseFieldType):
 		self._EarlyPmtDt = None
 
 	@property
-	def EarlyPmtTaxTtl(self):
-		return self._EarlyPmtTaxTtl
-
-	@EarlyPmtTaxTtl.setter
-	def EarlyPmtTaxTtl(self, value):
-		self._EarlyPmtTaxTtl = value if type(value) != base_types.auto else self.make_default("EarlyPmtTaxTtl")
-
-	@EarlyPmtTaxTtl.deleter
-	def EarlyPmtTaxTtl(self):
-		del self._EarlyPmtTaxTtl
-		self._EarlyPmtTaxTtl = None
-
-	@property
 	def EarlyPmtTaxSpcfctn(self):
 		return self._EarlyPmtTaxSpcfctn
 
@@ -85,12 +72,25 @@ class EarlyPayment1(base_types._BaseFieldType):
 		del self._EarlyPmtTaxSpcfctn
 		self._EarlyPmtTaxSpcfctn = None
 
+	@property
+	def EarlyPmtTaxTtl(self):
+		return self._EarlyPmtTaxTtl
+
+	@EarlyPmtTaxTtl.setter
+	def EarlyPmtTaxTtl(self, value):
+		self._EarlyPmtTaxTtl = value if type(value) != base_types.auto else self.make_default("EarlyPmtTaxTtl")
+
+	@EarlyPmtTaxTtl.deleter
+	def EarlyPmtTaxTtl(self):
+		del self._EarlyPmtTaxTtl
+		self._EarlyPmtTaxTtl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DuePyblAmtWthEarlyPmt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DscntPct', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscntAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntPct', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DuePyblAmtWthEarlyPmt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlyPmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyPmtTaxTtl', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlyPmtTaxSpcfctn', type=EarlyPaymentsVAT1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EarlyPmtTaxTtl', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from ._ClosingBalance7Choice import ClosingBalance7Choice
 from ._ShortLong1Code import ShortLong1Code
+from ._ClosingBalance7Choice import ClosingBalance7Choice
 
 class ClosingBalance6(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtLngInd", "_ClsgBal"]
-	@property
-	def ShrtLngInd(self):
-		return self._ShrtLngInd
-
-	@ShrtLngInd.setter
-	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
-
-	@ShrtLngInd.deleter
-	def ShrtLngInd(self):
-		del self._ShrtLngInd
-		self._ShrtLngInd = None
-
+	__slots__ = ["_ClsgBal", "_ShrtLngInd"]
 	@property
 	def ClsgBal(self):
 		return self._ClsgBal
@@ -31,8 +18,21 @@ class ClosingBalance6(base_types._BaseFieldType):
 		del self._ClsgBal
 		self._ClsgBal = None
 
+	@property
+	def ShrtLngInd(self):
+		return self._ShrtLngInd
+
+	@ShrtLngInd.setter
+	def ShrtLngInd(self, value):
+		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
+
+	@ShrtLngInd.deleter
+	def ShrtLngInd(self):
+		del self._ShrtLngInd
+		self._ShrtLngInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtLngInd', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance7Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtLngInd', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

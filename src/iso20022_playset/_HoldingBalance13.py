@@ -4,7 +4,7 @@ from ._SignedQuantityFormat14 import SignedQuantityFormat14
 
 class HoldingBalance13(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_BalTp"]
+	__slots__ = ["_BalTp", "_Bal"]
 	@property
 	def Bal(self):
 		return self._Bal

@@ -1,24 +1,11 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._Frequency3Code import Frequency3Code
 from ._Number import Number
-from ._ISODate import ISODate
 
 class RecurringTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrvlDay", "_EndDt", "_NbOfOcrncs", "_PrdUnit", "_StartDt"]
-	@property
-	def IntrvlDay(self):
-		return self._IntrvlDay
-
-	@IntrvlDay.setter
-	def IntrvlDay(self, value):
-		self._IntrvlDay = value if type(value) != base_types.auto else self.make_default("IntrvlDay")
-
-	@IntrvlDay.deleter
-	def IntrvlDay(self):
-		del self._IntrvlDay
-		self._IntrvlDay = None
-
+	__slots__ = ["_IntrvlDay", "_NbOfOcrncs", "_PrdUnit", "_StartDt", "_EndDt"]
 	@property
 	def EndDt(self):
 		return self._EndDt
@@ -31,6 +18,19 @@ class RecurringTransaction3(base_types._BaseFieldType):
 	def EndDt(self):
 		del self._EndDt
 		self._EndDt = None
+
+	@property
+	def IntrvlDay(self):
+		return self._IntrvlDay
+
+	@IntrvlDay.setter
+	def IntrvlDay(self, value):
+		self._IntrvlDay = value if type(value) != base_types.auto else self.make_default("IntrvlDay")
+
+	@IntrvlDay.deleter
+	def IntrvlDay(self):
+		del self._IntrvlDay
+		self._IntrvlDay = None
 
 	@property
 	def NbOfOcrncs(self):
@@ -72,8 +72,8 @@ class RecurringTransaction3(base_types._BaseFieldType):
 		self._StartDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrvlDay', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrvlDay', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfOcrncs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrdUnit', type=Frequency3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

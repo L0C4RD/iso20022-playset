@@ -1,10 +1,10 @@
 from . import base_types
-from ._VoteInstructionType1Choice import VoteInstructionType1Choice
 from ._NameAndAddress9 import NameAndAddress9
+from ._VoteInstructionType1Choice import VoteInstructionType1Choice
 
 class VoteInstructionForMeetingResolution3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Shrhldr", "_VoteIndctn"]
+	__slots__ = ["_VoteIndctn", "_Shrhldr"]
 	@property
 	def Shrhldr(self):
 		return self._Shrhldr

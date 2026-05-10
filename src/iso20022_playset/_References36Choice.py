@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class References36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_CorpActnEvtId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId"]
+	__slots__ = ["_CorpActnEvtId", "_AcctOwnrTxId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
@@ -18,19 +18,6 @@ class References36Choice(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
 
@@ -42,6 +29,19 @@ class References36Choice(base_types._BaseFieldType):
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
+
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -84,8 +84,8 @@ class References36Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

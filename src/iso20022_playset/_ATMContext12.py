@@ -4,7 +4,7 @@ from ._ATMService13 import ATMService13
 
 class ATMContext12(base_types._BaseFieldType):
 
-	__slots__ = ["_SsnRef", "_Svc"]
+	__slots__ = ["_Svc", "_SsnRef"]
 	@property
 	def SsnRef(self):
 		return self._SsnRef

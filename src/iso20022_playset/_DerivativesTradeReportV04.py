@@ -1,11 +1,11 @@
 from . import base_types
-from ._TradeData59Choice import TradeData59Choice
 from ._SupplementaryData1 import SupplementaryData1
 from ._TradeReportHeader4 import TradeReportHeader4
+from ._TradeData59Choice import TradeData59Choice
 
 class DerivativesTradeReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_TradData"]
+	__slots__ = ["_RptHdr", "_TradData", "_SplmtryData"]
 	@property
 	def RptHdr(self):
 		return self._RptHdr

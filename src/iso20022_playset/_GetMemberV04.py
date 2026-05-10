@@ -5,19 +5,19 @@ from ._MessageHeader9 import MessageHeader9
 
 class GetMemberV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_MmbQryDef"]
+	__slots__ = ["_MsgHdr", "_MmbQryDef", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MmbQryDef(self):
+		return self._MmbQryDef
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@MmbQryDef.setter
+	def MmbQryDef(self, value):
+		self._MmbQryDef = value if type(value) != base_types.auto else self.make_default("MmbQryDef")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MmbQryDef.deleter
+	def MmbQryDef(self):
+		del self._MmbQryDef
+		self._MmbQryDef = None
 
 	@property
 	def MsgHdr(self):
@@ -33,21 +33,21 @@ class GetMemberV04(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def MmbQryDef(self):
-		return self._MmbQryDef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MmbQryDef.setter
-	def MmbQryDef(self, value):
-		self._MmbQryDef = value if type(value) != base_types.auto else self.make_default("MmbQryDef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@MmbQryDef.deleter
-	def MmbQryDef(self):
-		del self._MmbQryDef
-		self._MmbQryDef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbQryDef', type=MemberQueryDefinition4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

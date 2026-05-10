@@ -1,26 +1,39 @@
 from . import base_types
-from ._Period7Choice import Period7Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._UpdateType16Choice import UpdateType16Choice
 from ._Frequency26Choice import Frequency26Choice
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._Number3Choice import Number3Choice
+from ._YesNoIndicator import YesNoIndicator
+from ._Period7Choice import Period7Choice
+from ._UpdateType16Choice import UpdateType16Choice
 
 class Statement81(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtPrd", "_QryRef", "_RptNb", "_ActvtyInd", "_UpdTp", "_Frqcy", "_StmtId"]
+	__slots__ = ["_ActvtyInd", "_QryRef", "_StmtPrd", "_UpdTp", "_RptNb", "_Frqcy", "_StmtId"]
 	@property
-	def StmtPrd(self):
-		return self._StmtPrd
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@StmtPrd.setter
-	def StmtPrd(self, value):
-		self._StmtPrd = value if type(value) != base_types.auto else self.make_default("StmtPrd")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
-	@StmtPrd.deleter
-	def StmtPrd(self):
-		del self._StmtPrd
-		self._StmtPrd = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
+	@property
+	def Frqcy(self):
+		return self._Frqcy
+
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
 
 	@property
 	def QryRef(self):
@@ -49,17 +62,30 @@ class Statement81(base_types._BaseFieldType):
 		self._RptNb = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def StmtId(self):
+		return self._StmtId
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+	@StmtId.setter
+	def StmtId(self, value):
+		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
+	@StmtId.deleter
+	def StmtId(self):
+		del self._StmtId
+		self._StmtId = None
+
+	@property
+	def StmtPrd(self):
+		return self._StmtPrd
+
+	@StmtPrd.setter
+	def StmtPrd(self, value):
+		self._StmtPrd = value if type(value) != base_types.auto else self.make_default("StmtPrd")
+
+	@StmtPrd.deleter
+	def StmtPrd(self):
+		del self._StmtPrd
+		self._StmtPrd = None
 
 	@property
 	def UpdTp(self):
@@ -74,39 +100,13 @@ class Statement81(base_types._BaseFieldType):
 		del self._UpdTp
 		self._UpdTp = None
 
-	@property
-	def Frqcy(self):
-		return self._Frqcy
-
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
-
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
-
-	@property
-	def StmtId(self):
-		return self._StmtId
-
-	@StmtId.setter
-	def StmtId(self, value):
-		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
-
-	@StmtId.deleter
-	def StmtId(self):
-		del self._StmtId
-		self._StmtId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtPrd', type=Period7Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryRef', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtPrd', type=Period7Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

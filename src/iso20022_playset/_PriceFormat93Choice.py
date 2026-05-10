@@ -1,12 +1,12 @@
 from . import base_types
 from ._PriceValueType10Code import PriceValueType10Code
-from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 from ._PercentagePrice3 import PercentagePrice3
 from ._AmountPrice5 import AmountPrice5
+from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class PriceFormat93Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPric", "_IndxPts", "_NotSpcfdPric", "_PctgPric"]
+	__slots__ = ["_PctgPric", "_AmtPric", "_NotSpcfdPric", "_IndxPts"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric

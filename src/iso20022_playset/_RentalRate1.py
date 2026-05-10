@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max4NumericText import Max4NumericText
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max4NumericText import Max4NumericText
 from ._PeriodUnit3Code import PeriodUnit3Code
+from ._Max35Text import Max35Text
 
 class RentalRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPrd", "_Rate", "_Prd", "_PrdCnt"]
+	__slots__ = ["_PrdCnt", "_OthrPrd", "_Prd", "_Rate"]
 	@property
 	def OthrPrd(self):
 		return self._OthrPrd
@@ -19,19 +19,6 @@ class RentalRate1(base_types._BaseFieldType):
 	def OthrPrd(self):
 		del self._OthrPrd
 		self._OthrPrd = None
-
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
 
 	@property
 	def Prd(self):
@@ -59,10 +46,23 @@ class RentalRate1(base_types._BaseFieldType):
 		del self._PrdCnt
 		self._PrdCnt = None
 
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPrd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=PeriodUnit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrdCnt', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

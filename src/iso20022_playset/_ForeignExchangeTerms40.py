@@ -1,11 +1,24 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BaseOne14Rate import BaseOne14Rate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class ForeignExchangeTerms40(base_types._BaseFieldType):
 
-	__slots__ = ["_RsltgAmt", "_UnitCcy", "_XchgRate", "_QtdCcy"]
+	__slots__ = ["_XchgRate", "_UnitCcy", "_RsltgAmt", "_QtdCcy"]
+	@property
+	def QtdCcy(self):
+		return self._QtdCcy
+
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
+
 	@property
 	def RsltgAmt(self):
 		return self._RsltgAmt
@@ -45,23 +58,10 @@ class ForeignExchangeTerms40(base_types._BaseFieldType):
 		del self._XchgRate
 		self._XchgRate = None
 
-	@property
-	def QtdCcy(self):
-		return self._QtdCcy
-
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
-
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsltgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOne14Rate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

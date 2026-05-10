@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max140Text import Max140Text
 from ._CollateralSubstitutionConfirmation1Code import CollateralSubstitutionConfirmation1Code
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 
 class CollateralConfirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmnt", "_ConfTp", "_CollSbstitnRspnId", "_CollSbstitnReqId"]
+	__slots__ = ["_CollSbstitnRspnId", "_Cmnt", "_ConfTp", "_CollSbstitnReqId"]
 	@property
 	def Cmnt(self):
 		return self._Cmnt
@@ -20,17 +20,17 @@ class CollateralConfirmation1(base_types._BaseFieldType):
 		self._Cmnt = None
 
 	@property
-	def ConfTp(self):
-		return self._ConfTp
+	def CollSbstitnReqId(self):
+		return self._CollSbstitnReqId
 
-	@ConfTp.setter
-	def ConfTp(self, value):
-		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
+	@CollSbstitnReqId.setter
+	def CollSbstitnReqId(self, value):
+		self._CollSbstitnReqId = value if type(value) != base_types.auto else self.make_default("CollSbstitnReqId")
 
-	@ConfTp.deleter
-	def ConfTp(self):
-		del self._ConfTp
-		self._ConfTp = None
+	@CollSbstitnReqId.deleter
+	def CollSbstitnReqId(self):
+		del self._CollSbstitnReqId
+		self._CollSbstitnReqId = None
 
 	@property
 	def CollSbstitnRspnId(self):
@@ -46,22 +46,22 @@ class CollateralConfirmation1(base_types._BaseFieldType):
 		self._CollSbstitnRspnId = None
 
 	@property
-	def CollSbstitnReqId(self):
-		return self._CollSbstitnReqId
+	def ConfTp(self):
+		return self._ConfTp
 
-	@CollSbstitnReqId.setter
-	def CollSbstitnReqId(self, value):
-		self._CollSbstitnReqId = value if type(value) != base_types.auto else self.make_default("CollSbstitnReqId")
+	@ConfTp.setter
+	def ConfTp(self, value):
+		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
 
-	@CollSbstitnReqId.deleter
-	def CollSbstitnReqId(self):
-		del self._CollSbstitnReqId
-		self._CollSbstitnReqId = None
+	@ConfTp.deleter
+	def ConfTp(self):
+		del self._ConfTp
+		self._ConfTp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmnt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfTp', type=CollateralSubstitutionConfirmation1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfTp', type=CollateralSubstitutionConfirmation1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

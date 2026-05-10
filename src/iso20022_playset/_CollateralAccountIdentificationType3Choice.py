@@ -4,7 +4,7 @@ from ._CollateralAccountType1Code import CollateralAccountType1Code
 
 class CollateralAccountIdentificationType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Tp"]
+	__slots__ = ["_Tp", "_Prtry"]
 	@property
 	def Prtry(self):
 		return self._Prtry

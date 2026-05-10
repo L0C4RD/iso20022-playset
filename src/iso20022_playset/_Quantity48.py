@@ -1,12 +1,25 @@
 from . import base_types
+from ._SecuritiesCertificate4 import SecuritiesCertificate4
+from ._Max210Text import Max210Text
 from ._QuantityBreakdown62 import QuantityBreakdown62
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._Max210Text import Max210Text
-from ._SecuritiesCertificate4 import SecuritiesCertificate4
 
 class Quantity48(base_types._BaseFieldType):
 
-	__slots__ = ["_DnmtnChc", "_QtyBrkdwn", "_CertNb", "_SttlmQty"]
+	__slots__ = ["_CertNb", "_QtyBrkdwn", "_DnmtnChc", "_SttlmQty"]
+	@property
+	def CertNb(self):
+		return self._CertNb
+
+	@CertNb.setter
+	def CertNb(self, value):
+		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+
+	@CertNb.deleter
+	def CertNb(self):
+		del self._CertNb
+		self._CertNb = None
+
 	@property
 	def DnmtnChc(self):
 		return self._DnmtnChc
@@ -34,19 +47,6 @@ class Quantity48(base_types._BaseFieldType):
 		self._QtyBrkdwn = None
 
 	@property
-	def CertNb(self):
-		return self._CertNb
-
-	@CertNb.setter
-	def CertNb(self, value):
-		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
-
-	@CertNb.deleter
-	def CertNb(self):
-		del self._CertNb
-		self._CertNb = None
-
-	@property
 	def SttlmQty(self):
 		return self._SttlmQty
 
@@ -60,9 +60,9 @@ class Quantity48(base_types._BaseFieldType):
 		self._SttlmQty = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DnmtnChc', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown62, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

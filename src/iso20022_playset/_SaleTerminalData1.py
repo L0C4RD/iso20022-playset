@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._AttendanceContext1Code import AttendanceContext1Code
+from ._Max35Text import Max35Text
 
 class SaleTerminalData1(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRcncltnId", "_TermnlEnvt"]
+	__slots__ = ["_TermnlEnvt", "_SaleRcncltnId"]
 	@property
 	def SaleRcncltnId(self):
 		return self._SaleRcncltnId

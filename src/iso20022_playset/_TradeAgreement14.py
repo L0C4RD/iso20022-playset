@@ -1,13 +1,26 @@
 from . import base_types
-from ._Max4Text import Max4Text
+from ._ISODate import ISODate
 from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
+from ._Max4Text import Max4Text
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._ISODate import ISODate
 
 class TradeAgreement14(base_types._BaseFieldType):
 
-	__slots__ = ["_OprScp", "_OrgtrRef", "_OprTp", "_PmtVrssPmtInd", "_TradDt", "_PdctTp", "_CmonRef", "_SttlmSsnIdr"]
+	__slots__ = ["_TradDt", "_PdctTp", "_SttlmSsnIdr", "_OprScp", "_PmtVrssPmtInd", "_OprTp", "_OrgtrRef", "_CmonRef"]
+	@property
+	def CmonRef(self):
+		return self._CmonRef
+
+	@CmonRef.setter
+	def CmonRef(self, value):
+		self._CmonRef = value if type(value) != base_types.auto else self.make_default("CmonRef")
+
+	@CmonRef.deleter
+	def CmonRef(self):
+		del self._CmonRef
+		self._CmonRef = None
+
 	@property
 	def OprScp(self):
 		return self._OprScp
@@ -20,19 +33,6 @@ class TradeAgreement14(base_types._BaseFieldType):
 	def OprScp(self):
 		del self._OprScp
 		self._OprScp = None
-
-	@property
-	def OrgtrRef(self):
-		return self._OrgtrRef
-
-	@OrgtrRef.setter
-	def OrgtrRef(self, value):
-		self._OrgtrRef = value if type(value) != base_types.auto else self.make_default("OrgtrRef")
-
-	@OrgtrRef.deleter
-	def OrgtrRef(self):
-		del self._OrgtrRef
-		self._OrgtrRef = None
 
 	@property
 	def OprTp(self):
@@ -48,30 +48,17 @@ class TradeAgreement14(base_types._BaseFieldType):
 		self._OprTp = None
 
 	@property
-	def PmtVrssPmtInd(self):
-		return self._PmtVrssPmtInd
+	def OrgtrRef(self):
+		return self._OrgtrRef
 
-	@PmtVrssPmtInd.setter
-	def PmtVrssPmtInd(self, value):
-		self._PmtVrssPmtInd = value if type(value) != base_types.auto else self.make_default("PmtVrssPmtInd")
+	@OrgtrRef.setter
+	def OrgtrRef(self, value):
+		self._OrgtrRef = value if type(value) != base_types.auto else self.make_default("OrgtrRef")
 
-	@PmtVrssPmtInd.deleter
-	def PmtVrssPmtInd(self):
-		del self._PmtVrssPmtInd
-		self._PmtVrssPmtInd = None
-
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@OrgtrRef.deleter
+	def OrgtrRef(self):
+		del self._OrgtrRef
+		self._OrgtrRef = None
 
 	@property
 	def PdctTp(self):
@@ -87,17 +74,17 @@ class TradeAgreement14(base_types._BaseFieldType):
 		self._PdctTp = None
 
 	@property
-	def CmonRef(self):
-		return self._CmonRef
+	def PmtVrssPmtInd(self):
+		return self._PmtVrssPmtInd
 
-	@CmonRef.setter
-	def CmonRef(self, value):
-		self._CmonRef = value if type(value) != base_types.auto else self.make_default("CmonRef")
+	@PmtVrssPmtInd.setter
+	def PmtVrssPmtInd(self, value):
+		self._PmtVrssPmtInd = value if type(value) != base_types.auto else self.make_default("PmtVrssPmtInd")
 
-	@CmonRef.deleter
-	def CmonRef(self):
-		del self._CmonRef
-		self._CmonRef = None
+	@PmtVrssPmtInd.deleter
+	def PmtVrssPmtInd(self):
+		del self._PmtVrssPmtInd
+		self._PmtVrssPmtInd = None
 
 	@property
 	def SttlmSsnIdr(self):
@@ -112,14 +99,27 @@ class TradeAgreement14(base_types._BaseFieldType):
 		del self._SttlmSsnIdr
 		self._SttlmSsnIdr = None
 
+	@property
+	def TradDt(self):
+		return self._TradDt
+
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OprScp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprTp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtVrssPmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprScp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprTp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtVrssPmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

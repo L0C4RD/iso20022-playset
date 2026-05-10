@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
 from ._ISODateTime import ISODateTime
+from ._Party50Choice import Party50Choice
+from ._Max35Text import Max35Text
 
 class CaseAssignment6(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_Assgne", "_CreDtTm", "_Id"]
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
+	__slots__ = ["_Id", "_Assgnr", "_Assgne", "_CreDtTm"]
 	@property
 	def Assgne(self):
 		return self._Assgne
@@ -31,6 +18,19 @@ class CaseAssignment6(base_types._BaseFieldType):
 	def Assgne(self):
 		del self._Assgne
 		self._Assgne = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def CreDtTm(self):
@@ -59,8 +59,8 @@ class CaseAssignment6(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))

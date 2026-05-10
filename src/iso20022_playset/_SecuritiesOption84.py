@@ -1,35 +1,22 @@
 from . import base_types
-from ._FinancialInstrumentQuantity44Choice import FinancialInstrumentQuantity44Choice
 from ._FinancialInstrumentQuantity43Choice import FinancialInstrumentQuantity43Choice
+from ._FinancialInstrumentQuantity44Choice import FinancialInstrumentQuantity44Choice
 
 class SecuritiesOption84(base_types._BaseFieldType):
 
-	__slots__ = ["_MinQtyToInst", "_MaxQtyToInst", "_FrntEndOddLotQty", "_MinMltplQtyToInst", "_NewBrdLotQty", "_BckEndOddLotQty", "_NewDnmtnQty"]
+	__slots__ = ["_BckEndOddLotQty", "_MinMltplQtyToInst", "_MinQtyToInst", "_NewDnmtnQty", "_MaxQtyToInst", "_FrntEndOddLotQty", "_NewBrdLotQty"]
 	@property
-	def MinQtyToInst(self):
-		return self._MinQtyToInst
+	def BckEndOddLotQty(self):
+		return self._BckEndOddLotQty
 
-	@MinQtyToInst.setter
-	def MinQtyToInst(self, value):
-		self._MinQtyToInst = value if type(value) != base_types.auto else self.make_default("MinQtyToInst")
+	@BckEndOddLotQty.setter
+	def BckEndOddLotQty(self, value):
+		self._BckEndOddLotQty = value if type(value) != base_types.auto else self.make_default("BckEndOddLotQty")
 
-	@MinQtyToInst.deleter
-	def MinQtyToInst(self):
-		del self._MinQtyToInst
-		self._MinQtyToInst = None
-
-	@property
-	def MaxQtyToInst(self):
-		return self._MaxQtyToInst
-
-	@MaxQtyToInst.setter
-	def MaxQtyToInst(self, value):
-		self._MaxQtyToInst = value if type(value) != base_types.auto else self.make_default("MaxQtyToInst")
-
-	@MaxQtyToInst.deleter
-	def MaxQtyToInst(self):
-		del self._MaxQtyToInst
-		self._MaxQtyToInst = None
+	@BckEndOddLotQty.deleter
+	def BckEndOddLotQty(self):
+		del self._BckEndOddLotQty
+		self._BckEndOddLotQty = None
 
 	@property
 	def FrntEndOddLotQty(self):
@@ -45,6 +32,19 @@ class SecuritiesOption84(base_types._BaseFieldType):
 		self._FrntEndOddLotQty = None
 
 	@property
+	def MaxQtyToInst(self):
+		return self._MaxQtyToInst
+
+	@MaxQtyToInst.setter
+	def MaxQtyToInst(self, value):
+		self._MaxQtyToInst = value if type(value) != base_types.auto else self.make_default("MaxQtyToInst")
+
+	@MaxQtyToInst.deleter
+	def MaxQtyToInst(self):
+		del self._MaxQtyToInst
+		self._MaxQtyToInst = None
+
+	@property
 	def MinMltplQtyToInst(self):
 		return self._MinMltplQtyToInst
 
@@ -56,6 +56,19 @@ class SecuritiesOption84(base_types._BaseFieldType):
 	def MinMltplQtyToInst(self):
 		del self._MinMltplQtyToInst
 		self._MinMltplQtyToInst = None
+
+	@property
+	def MinQtyToInst(self):
+		return self._MinQtyToInst
+
+	@MinQtyToInst.setter
+	def MinQtyToInst(self, value):
+		self._MinQtyToInst = value if type(value) != base_types.auto else self.make_default("MinQtyToInst")
+
+	@MinQtyToInst.deleter
+	def MinQtyToInst(self):
+		del self._MinQtyToInst
+		self._MinQtyToInst = None
 
 	@property
 	def NewBrdLotQty(self):
@@ -71,19 +84,6 @@ class SecuritiesOption84(base_types._BaseFieldType):
 		self._NewBrdLotQty = None
 
 	@property
-	def BckEndOddLotQty(self):
-		return self._BckEndOddLotQty
-
-	@BckEndOddLotQty.setter
-	def BckEndOddLotQty(self, value):
-		self._BckEndOddLotQty = value if type(value) != base_types.auto else self.make_default("BckEndOddLotQty")
-
-	@BckEndOddLotQty.deleter
-	def BckEndOddLotQty(self):
-		del self._BckEndOddLotQty
-		self._BckEndOddLotQty = None
-
-	@property
 	def NewDnmtnQty(self):
 		return self._NewDnmtnQty
 
@@ -97,12 +97,12 @@ class SecuritiesOption84(base_types._BaseFieldType):
 		self._NewDnmtnQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinQtyToInst', type=FinancialInstrumentQuantity44Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxQtyToInst', type=FinancialInstrumentQuantity44Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrntEndOddLotQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinMltplQtyToInst', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewBrdLotQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BckEndOddLotQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrntEndOddLotQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxQtyToInst', type=FinancialInstrumentQuantity44Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinMltplQtyToInst', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinQtyToInst', type=FinancialInstrumentQuantity44Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewBrdLotQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewDnmtnQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

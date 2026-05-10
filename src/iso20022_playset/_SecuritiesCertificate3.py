@@ -5,19 +5,6 @@ class SecuritiesCertificate3(base_types._BaseFieldType):
 
 	__slots__ = ["_SchmeNm", "_Issr", "_Nb"]
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
-
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
-
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
-
-	@property
 	def Issr(self):
 		return self._Issr
 
@@ -43,9 +30,22 @@ class SecuritiesCertificate3(base_types._BaseFieldType):
 		del self._Nb
 		self._Nb = None
 
+	@property
+	def SchmeNm(self):
+		return self._SchmeNm
+
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

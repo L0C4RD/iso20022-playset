@@ -1,43 +1,17 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._TransactionOperationType10Code import TransactionOperationType10Code
-from ._PartyIdentification248Choice import PartyIdentification248Choice
-from ._MasterAgreement8 import MasterAgreement8
-from ._CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
 from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
+from ._TransactionOperationType10Code import TransactionOperationType10Code
+from ._MasterAgreement8 import MasterAgreement8
 from ._DerivativeEventType3Code import DerivativeEventType3Code
+from ._PartyIdentification248Choice import PartyIdentification248Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
 from ._ISODateTime import ISODateTime
+from ._Max140Text import Max140Text
 
 class TradeTransactionIdentification24(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivEvtTp", "_UnqIdr", "_ActnTp", "_MstrAgrmt", "_CollPrtflCd", "_OthrCtrPty", "_RptgTmStmp", "_DerivEvtTmStmp", "_TechRcrdId"]
-	@property
-	def DerivEvtTp(self):
-		return self._DerivEvtTp
-
-	@DerivEvtTp.setter
-	def DerivEvtTp(self, value):
-		self._DerivEvtTp = value if type(value) != base_types.auto else self.make_default("DerivEvtTp")
-
-	@DerivEvtTp.deleter
-	def DerivEvtTp(self):
-		del self._DerivEvtTp
-		self._DerivEvtTp = None
-
-	@property
-	def UnqIdr(self):
-		return self._UnqIdr
-
-	@UnqIdr.setter
-	def UnqIdr(self, value):
-		self._UnqIdr = value if type(value) != base_types.auto else self.make_default("UnqIdr")
-
-	@UnqIdr.deleter
-	def UnqIdr(self):
-		del self._UnqIdr
-		self._UnqIdr = None
-
+	__slots__ = ["_CollPrtflCd", "_DerivEvtTp", "_OthrCtrPty", "_DerivEvtTmStmp", "_ActnTp", "_TechRcrdId", "_RptgTmStmp", "_UnqIdr", "_MstrAgrmt"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp
@@ -52,19 +26,6 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 		self._ActnTp = None
 
 	@property
-	def MstrAgrmt(self):
-		return self._MstrAgrmt
-
-	@MstrAgrmt.setter
-	def MstrAgrmt(self, value):
-		self._MstrAgrmt = value if type(value) != base_types.auto else self.make_default("MstrAgrmt")
-
-	@MstrAgrmt.deleter
-	def MstrAgrmt(self):
-		del self._MstrAgrmt
-		self._MstrAgrmt = None
-
-	@property
 	def CollPrtflCd(self):
 		return self._CollPrtflCd
 
@@ -76,6 +37,45 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 	def CollPrtflCd(self):
 		del self._CollPrtflCd
 		self._CollPrtflCd = None
+
+	@property
+	def DerivEvtTmStmp(self):
+		return self._DerivEvtTmStmp
+
+	@DerivEvtTmStmp.setter
+	def DerivEvtTmStmp(self, value):
+		self._DerivEvtTmStmp = value if type(value) != base_types.auto else self.make_default("DerivEvtTmStmp")
+
+	@DerivEvtTmStmp.deleter
+	def DerivEvtTmStmp(self):
+		del self._DerivEvtTmStmp
+		self._DerivEvtTmStmp = None
+
+	@property
+	def DerivEvtTp(self):
+		return self._DerivEvtTp
+
+	@DerivEvtTp.setter
+	def DerivEvtTp(self, value):
+		self._DerivEvtTp = value if type(value) != base_types.auto else self.make_default("DerivEvtTp")
+
+	@DerivEvtTp.deleter
+	def DerivEvtTp(self):
+		del self._DerivEvtTp
+		self._DerivEvtTp = None
+
+	@property
+	def MstrAgrmt(self):
+		return self._MstrAgrmt
+
+	@MstrAgrmt.setter
+	def MstrAgrmt(self, value):
+		self._MstrAgrmt = value if type(value) != base_types.auto else self.make_default("MstrAgrmt")
+
+	@MstrAgrmt.deleter
+	def MstrAgrmt(self):
+		del self._MstrAgrmt
+		self._MstrAgrmt = None
 
 	@property
 	def OthrCtrPty(self):
@@ -104,19 +104,6 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 		self._RptgTmStmp = None
 
 	@property
-	def DerivEvtTmStmp(self):
-		return self._DerivEvtTmStmp
-
-	@DerivEvtTmStmp.setter
-	def DerivEvtTmStmp(self, value):
-		self._DerivEvtTmStmp = value if type(value) != base_types.auto else self.make_default("DerivEvtTmStmp")
-
-	@DerivEvtTmStmp.deleter
-	def DerivEvtTmStmp(self):
-		del self._DerivEvtTmStmp
-		self._DerivEvtTmStmp = None
-
-	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -129,15 +116,28 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
+	@property
+	def UnqIdr(self):
+		return self._UnqIdr
+
+	@UnqIdr.setter
+	def UnqIdr(self, value):
+		self._UnqIdr = value if type(value) != base_types.auto else self.make_default("UnqIdr")
+
+	@UnqIdr.deleter
+	def UnqIdr(self):
+		del self._UnqIdr
+		self._UnqIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DerivEvtTp', type=DerivativeEventType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqIdr', type=UniqueTransactionIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType10Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivEvtTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivEvtTp', type=DerivativeEventType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification248Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivEvtTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqIdr', type=UniqueTransactionIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

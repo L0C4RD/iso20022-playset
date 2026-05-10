@@ -1,10 +1,10 @@
 from . import base_types
-from ._SystemStatus2Choice import SystemStatus2Choice
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._SystemStatus2Choice import SystemStatus2Choice
 
 class SystemStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_VldtyTm"]
+	__slots__ = ["_VldtyTm", "_Sts"]
 	@property
 	def Sts(self):
 		return self._Sts

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CollateralMovement6Choice import CollateralMovement6Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CollateralMovement12(base_types._BaseFieldType):
 
-	__slots__ = ["_AgrdAmt", "_MvmntDrctn"]
+	__slots__ = ["_MvmntDrctn", "_AgrdAmt"]
 	@property
 	def AgrdAmt(self):
 		return self._AgrdAmt

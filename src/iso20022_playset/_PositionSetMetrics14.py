@@ -3,7 +3,7 @@ from ._PositionSetBuyerAndSeller2 import PositionSetBuyerAndSeller2
 
 class PositionSetMetrics14(base_types._BaseFieldType):
 
-	__slots__ = ["_Clean", "_Ttl"]
+	__slots__ = ["_Ttl", "_Clean"]
 	@property
 	def Clean(self):
 		return self._Clean

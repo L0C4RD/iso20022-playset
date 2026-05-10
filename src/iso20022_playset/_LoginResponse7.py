@@ -1,25 +1,12 @@
 from . import base_types
-from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
-from ._ActionMessage11 import ActionMessage11
 from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
+from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
 from ._ISODateTime import ISODateTime
+from ._ActionMessage11 import ActionMessage11
 
 class LoginResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_POICpblties", "_OutptDisp", "_POIDtTm", "_POISftwr"]
-	@property
-	def POICpblties(self):
-		return self._POICpblties
-
-	@POICpblties.setter
-	def POICpblties(self, value):
-		self._POICpblties = value if type(value) != base_types.auto else self.make_default("POICpblties")
-
-	@POICpblties.deleter
-	def POICpblties(self):
-		del self._POICpblties
-		self._POICpblties = None
-
+	__slots__ = ["_POISftwr", "_POICpblties", "_OutptDisp", "_POIDtTm"]
 	@property
 	def OutptDisp(self):
 		return self._OutptDisp
@@ -32,6 +19,19 @@ class LoginResponse7(base_types._BaseFieldType):
 	def OutptDisp(self):
 		del self._OutptDisp
 		self._OutptDisp = None
+
+	@property
+	def POICpblties(self):
+		return self._POICpblties
+
+	@POICpblties.setter
+	def POICpblties(self, value):
+		self._POICpblties = value if type(value) != base_types.auto else self.make_default("POICpblties")
+
+	@POICpblties.deleter
+	def POICpblties(self):
+		del self._POICpblties
+		self._POICpblties = None
 
 	@property
 	def POIDtTm(self):
@@ -60,8 +60,8 @@ class LoginResponse7(base_types._BaseFieldType):
 		self._POISftwr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptDisp', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POISftwr', type=PointOfInteractionComponent17, min=1, max=None, mutex_group=None, array=True),
 	))

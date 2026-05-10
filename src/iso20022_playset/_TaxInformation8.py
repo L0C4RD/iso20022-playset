@@ -1,28 +1,28 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Number import Number
-from ._TaxRecord2 import TaxRecord2
 from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._TaxParty1 import TaxParty1
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._TaxParty2 import TaxParty2
+from ._Number import Number
+from ._TaxRecord2 import TaxRecord2
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._TaxParty1 import TaxParty1
 
 class TaxInformation8(base_types._BaseFieldType):
 
-	__slots__ = ["_Dbtr", "_Cdtr", "_TtlTaxAmt", "_AdmstnZone", "_TtlTaxblBaseAmt", "_SeqNb", "_Rcrd", "_Mtd", "_RefNb", "_Dt"]
+	__slots__ = ["_Dt", "_SeqNb", "_Rcrd", "_Cdtr", "_AdmstnZone", "_RefNb", "_Mtd", "_TtlTaxblBaseAmt", "_Dbtr", "_TtlTaxAmt"]
 	@property
-	def Dbtr(self):
-		return self._Dbtr
+	def AdmstnZone(self):
+		return self._AdmstnZone
 
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+	@AdmstnZone.setter
+	def AdmstnZone(self, value):
+		self._AdmstnZone = value if type(value) != base_types.auto else self.make_default("AdmstnZone")
 
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
+	@AdmstnZone.deleter
+	def AdmstnZone(self):
+		del self._AdmstnZone
+		self._AdmstnZone = None
 
 	@property
 	def Cdtr(self):
@@ -38,69 +38,30 @@ class TaxInformation8(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def TtlTaxAmt(self):
-		return self._TtlTaxAmt
+	def Dbtr(self):
+		return self._Dbtr
 
-	@TtlTaxAmt.setter
-	def TtlTaxAmt(self, value):
-		self._TtlTaxAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxAmt")
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
 
-	@TtlTaxAmt.deleter
-	def TtlTaxAmt(self):
-		del self._TtlTaxAmt
-		self._TtlTaxAmt = None
-
-	@property
-	def AdmstnZone(self):
-		return self._AdmstnZone
-
-	@AdmstnZone.setter
-	def AdmstnZone(self, value):
-		self._AdmstnZone = value if type(value) != base_types.auto else self.make_default("AdmstnZone")
-
-	@AdmstnZone.deleter
-	def AdmstnZone(self):
-		del self._AdmstnZone
-		self._AdmstnZone = None
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
 
 	@property
-	def TtlTaxblBaseAmt(self):
-		return self._TtlTaxblBaseAmt
+	def Dt(self):
+		return self._Dt
 
-	@TtlTaxblBaseAmt.setter
-	def TtlTaxblBaseAmt(self, value):
-		self._TtlTaxblBaseAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxblBaseAmt")
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
-	@TtlTaxblBaseAmt.deleter
-	def TtlTaxblBaseAmt(self):
-		del self._TtlTaxblBaseAmt
-		self._TtlTaxblBaseAmt = None
-
-	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
-
-	@property
-	def Rcrd(self):
-		return self._Rcrd
-
-	@Rcrd.setter
-	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
-
-	@Rcrd.deleter
-	def Rcrd(self):
-		del self._Rcrd
-		self._Rcrd = None
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def Mtd(self):
@@ -116,6 +77,19 @@ class TaxInformation8(base_types._BaseFieldType):
 		self._Mtd = None
 
 	@property
+	def Rcrd(self):
+		return self._Rcrd
+
+	@Rcrd.setter
+	def Rcrd(self, value):
+		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
+
+	@Rcrd.deleter
+	def Rcrd(self):
+		del self._Rcrd
+		self._Rcrd = None
+
+	@property
 	def RefNb(self):
 		return self._RefNb
 
@@ -129,28 +103,54 @@ class TaxInformation8(base_types._BaseFieldType):
 		self._RefNb = None
 
 	@property
-	def Dt(self):
-		return self._Dt
+	def SeqNb(self):
+		return self._SeqNb
 
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
 
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
+
+	@property
+	def TtlTaxAmt(self):
+		return self._TtlTaxAmt
+
+	@TtlTaxAmt.setter
+	def TtlTaxAmt(self, value):
+		self._TtlTaxAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxAmt")
+
+	@TtlTaxAmt.deleter
+	def TtlTaxAmt(self):
+		del self._TtlTaxAmt
+		self._TtlTaxAmt = None
+
+	@property
+	def TtlTaxblBaseAmt(self):
+		return self._TtlTaxblBaseAmt
+
+	@TtlTaxblBaseAmt.setter
+	def TtlTaxblBaseAmt(self, value):
+		self._TtlTaxblBaseAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxblBaseAmt")
+
+	@TtlTaxblBaseAmt.deleter
+	def TtlTaxblBaseAmt(self):
+		del self._TtlTaxblBaseAmt
+		self._TtlTaxblBaseAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dbtr', type=TaxParty2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=TaxParty1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlTaxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdmstnZone', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlTaxblBaseAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcrd', type=TaxRecord2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Mtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefNb', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=TaxParty1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=TaxParty2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcrd', type=TaxRecord2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RefNb', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTaxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTaxblBaseAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from ._SecuritiesNonTradingDay1 import SecuritiesNonTradingDay1
 from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from ._SecuritiesNonTradingDay1 import SecuritiesNonTradingDay1
 
 class SecuritiesNonTradingDayReport1(base_types._BaseFieldType):
 
 	__slots__ = ["_NonWorkgDay", "_Id"]
-	@property
-	def NonWorkgDay(self):
-		return self._NonWorkgDay
-
-	@NonWorkgDay.setter
-	def NonWorkgDay(self, value):
-		self._NonWorkgDay = value if type(value) != base_types.auto else self.make_default("NonWorkgDay")
-
-	@NonWorkgDay.deleter
-	def NonWorkgDay(self):
-		del self._NonWorkgDay
-		self._NonWorkgDay = None
-
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class SecuritiesNonTradingDayReport1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def NonWorkgDay(self):
+		return self._NonWorkgDay
+
+	@NonWorkgDay.setter
+	def NonWorkgDay(self, value):
+		self._NonWorkgDay = value if type(value) != base_types.auto else self.make_default("NonWorkgDay")
+
+	@NonWorkgDay.deleter
+	def NonWorkgDay(self):
+		del self._NonWorkgDay
+		self._NonWorkgDay = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonWorkgDay', type=SecuritiesNonTradingDay1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonWorkgDay', type=SecuritiesNonTradingDay1, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -4,7 +4,7 @@ from ._PersonIdentification10 import PersonIdentification10
 
 class PersonOrOrganisation2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Prsn"]
+	__slots__ = ["_Prsn", "_LEI"]
 	@property
 	def LEI(self):
 		return self._LEI

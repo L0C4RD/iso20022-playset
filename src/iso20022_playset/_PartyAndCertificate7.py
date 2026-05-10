@@ -1,23 +1,23 @@
 from . import base_types
 from ._Max10KBinary import Max10KBinary
-from ._Modification1Code import Modification1Code
 from ._PartyIdentification272 import PartyIdentification272
+from ._Modification1Code import Modification1Code
 
 class PartyAndCertificate7(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_ModCd", "_Cert"]
+	__slots__ = ["_Cert", "_ModCd", "_Pty"]
 	@property
-	def Pty(self):
-		return self._Pty
+	def Cert(self):
+		return self._Cert
 
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
 
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
 
 	@property
 	def ModCd(self):
@@ -33,21 +33,21 @@ class PartyAndCertificate7(base_types._BaseFieldType):
 		self._ModCd = None
 
 	@property
-	def Cert(self):
-		return self._Cert
+	def Pty(self):
+		return self._Pty
 
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
 
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cert', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 	))
 

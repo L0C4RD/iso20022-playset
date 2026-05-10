@@ -6,19 +6,6 @@ class ClearingMemberFee1(base_types._BaseFieldType):
 
 	__slots__ = ["_ClrMmbId", "_ClrFee"]
 	@property
-	def ClrMmbId(self):
-		return self._ClrMmbId
-
-	@ClrMmbId.setter
-	def ClrMmbId(self, value):
-		self._ClrMmbId = value if type(value) != base_types.auto else self.make_default("ClrMmbId")
-
-	@ClrMmbId.deleter
-	def ClrMmbId(self):
-		del self._ClrMmbId
-		self._ClrMmbId = None
-
-	@property
 	def ClrFee(self):
 		return self._ClrFee
 
@@ -31,8 +18,21 @@ class ClearingMemberFee1(base_types._BaseFieldType):
 		del self._ClrFee
 		self._ClrFee = None
 
+	@property
+	def ClrMmbId(self):
+		return self._ClrMmbId
+
+	@ClrMmbId.setter
+	def ClrMmbId(self, value):
+		self._ClrMmbId = value if type(value) != base_types.auto else self.make_default("ClrMmbId")
+
+	@ClrMmbId.deleter
+	def ClrMmbId(self):
+		del self._ClrMmbId
+		self._ClrMmbId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrMmbId', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrFee', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmbId', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

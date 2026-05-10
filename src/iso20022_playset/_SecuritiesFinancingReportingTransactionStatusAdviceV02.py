@@ -4,7 +4,7 @@ from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesFinancingReportingTransactionStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxRptStsAndRsn"]
+	__slots__ = ["_TxRptStsAndRsn", "_SplmtryData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData

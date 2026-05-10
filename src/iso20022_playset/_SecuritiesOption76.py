@@ -1,24 +1,24 @@
 from . import base_types
+from ._DateFormat58Choice import DateFormat58Choice
+from ._CreditDebitCode import CreditDebitCode
 from ._Quantity6Choice import Quantity6Choice
 from ._SecurityIdentification19 import SecurityIdentification19
-from ._CreditDebitCode import CreditDebitCode
-from ._DateFormat58Choice import DateFormat58Choice
 
 class SecuritiesOption76(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_EntitldQty", "_FinInstrmId", "_CdtDbtInd"]
+	__slots__ = ["_FinInstrmId", "_PmtDt", "_EntitldQty", "_CdtDbtInd"]
 	@property
-	def PmtDt(self):
-		return self._PmtDt
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def EntitldQty(self):
@@ -47,22 +47,22 @@ class SecuritiesOption76(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def PmtDt(self):
+		return self._PmtDt
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtDt', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EntitldQty', type=Quantity6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

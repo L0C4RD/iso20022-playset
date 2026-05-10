@@ -1,32 +1,71 @@
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PercentageRate import PercentageRate
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._ISODate import ISODate
 from ._OtherTypeOfCollateral3 import OtherTypeOfCollateral3
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._BaseOneRate import BaseOneRate
+from ._YesNoIndicator import YesNoIndicator
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._DateFormat14Choice import DateFormat14Choice
+from ._PercentageRate import PercentageRate
 from ._SafekeepingPlaceFormat29Choice import SafekeepingPlaceFormat29Choice
 from ._Max35Text import Max35Text
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._YesNoIndicator import YesNoIndicator
-from ._ISODate import ISODate
 from ._PartyIdentification178Choice import PartyIdentification178Choice
-from ._DateFormat14Choice import DateFormat14Choice
 
 class OtherCollateral9(base_types._BaseFieldType):
 
-	__slots__ = ["_LtdCvrgInd", "_Hrcut", "_SfkpgAcct", "_XchgRate", "_XpryDt", "_CollId", "_ValDt", "_IsseDt", "_SfkpgPlc", "_MktVal", "_LttrOfCdtAmt", "_OthrTpOfColl", "_CollVal", "_LttrOfCdtId", "_Issr", "_BlckChainAdrOrWllt", "_GrntAmt"]
+	__slots__ = ["_CollVal", "_ValDt", "_XpryDt", "_LttrOfCdtId", "_CollId", "_BlckChainAdrOrWllt", "_OthrTpOfColl", "_MktVal", "_XchgRate", "_LtdCvrgInd", "_Hrcut", "_SfkpgAcct", "_Issr", "_GrntAmt", "_LttrOfCdtAmt", "_SfkpgPlc", "_IsseDt"]
 	@property
-	def LtdCvrgInd(self):
-		return self._LtdCvrgInd
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@LtdCvrgInd.setter
-	def LtdCvrgInd(self, value):
-		self._LtdCvrgInd = value if type(value) != base_types.auto else self.make_default("LtdCvrgInd")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
 
-	@LtdCvrgInd.deleter
-	def LtdCvrgInd(self):
-		del self._LtdCvrgInd
-		self._LtdCvrgInd = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def CollId(self):
+		return self._CollId
+
+	@CollId.setter
+	def CollId(self, value):
+		self._CollId = value if type(value) != base_types.auto else self.make_default("CollId")
+
+	@CollId.deleter
+	def CollId(self):
+		del self._CollId
+		self._CollId = None
+
+	@property
+	def CollVal(self):
+		return self._CollVal
+
+	@CollVal.setter
+	def CollVal(self, value):
+		self._CollVal = value if type(value) != base_types.auto else self.make_default("CollVal")
+
+	@CollVal.deleter
+	def CollVal(self):
+		del self._CollVal
+		self._CollVal = None
+
+	@property
+	def GrntAmt(self):
+		return self._GrntAmt
+
+	@GrntAmt.setter
+	def GrntAmt(self, value):
+		self._GrntAmt = value if type(value) != base_types.auto else self.make_default("GrntAmt")
+
+	@GrntAmt.deleter
+	def GrntAmt(self):
+		del self._GrntAmt
+		self._GrntAmt = None
 
 	@property
 	def Hrcut(self):
@@ -42,6 +81,97 @@ class OtherCollateral9(base_types._BaseFieldType):
 		self._Hrcut = None
 
 	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def LtdCvrgInd(self):
+		return self._LtdCvrgInd
+
+	@LtdCvrgInd.setter
+	def LtdCvrgInd(self, value):
+		self._LtdCvrgInd = value if type(value) != base_types.auto else self.make_default("LtdCvrgInd")
+
+	@LtdCvrgInd.deleter
+	def LtdCvrgInd(self):
+		del self._LtdCvrgInd
+		self._LtdCvrgInd = None
+
+	@property
+	def LttrOfCdtAmt(self):
+		return self._LttrOfCdtAmt
+
+	@LttrOfCdtAmt.setter
+	def LttrOfCdtAmt(self, value):
+		self._LttrOfCdtAmt = value if type(value) != base_types.auto else self.make_default("LttrOfCdtAmt")
+
+	@LttrOfCdtAmt.deleter
+	def LttrOfCdtAmt(self):
+		del self._LttrOfCdtAmt
+		self._LttrOfCdtAmt = None
+
+	@property
+	def LttrOfCdtId(self):
+		return self._LttrOfCdtId
+
+	@LttrOfCdtId.setter
+	def LttrOfCdtId(self, value):
+		self._LttrOfCdtId = value if type(value) != base_types.auto else self.make_default("LttrOfCdtId")
+
+	@LttrOfCdtId.deleter
+	def LttrOfCdtId(self):
+		del self._LttrOfCdtId
+		self._LttrOfCdtId = None
+
+	@property
+	def MktVal(self):
+		return self._MktVal
+
+	@MktVal.setter
+	def MktVal(self, value):
+		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+
+	@MktVal.deleter
+	def MktVal(self):
+		del self._MktVal
+		self._MktVal = None
+
+	@property
+	def OthrTpOfColl(self):
+		return self._OthrTpOfColl
+
+	@OthrTpOfColl.setter
+	def OthrTpOfColl(self, value):
+		self._OthrTpOfColl = value if type(value) != base_types.auto else self.make_default("OthrTpOfColl")
+
+	@OthrTpOfColl.deleter
+	def OthrTpOfColl(self):
+		del self._OthrTpOfColl
+		self._OthrTpOfColl = None
+
+	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -53,6 +183,32 @@ class OtherCollateral9(base_types._BaseFieldType):
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def XchgRate(self):
@@ -80,179 +236,23 @@ class OtherCollateral9(base_types._BaseFieldType):
 		del self._XpryDt
 		self._XpryDt = None
 
-	@property
-	def CollId(self):
-		return self._CollId
-
-	@CollId.setter
-	def CollId(self, value):
-		self._CollId = value if type(value) != base_types.auto else self.make_default("CollId")
-
-	@CollId.deleter
-	def CollId(self):
-		del self._CollId
-		self._CollId = None
-
-	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
-	@property
-	def MktVal(self):
-		return self._MktVal
-
-	@MktVal.setter
-	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
-
-	@MktVal.deleter
-	def MktVal(self):
-		del self._MktVal
-		self._MktVal = None
-
-	@property
-	def LttrOfCdtAmt(self):
-		return self._LttrOfCdtAmt
-
-	@LttrOfCdtAmt.setter
-	def LttrOfCdtAmt(self, value):
-		self._LttrOfCdtAmt = value if type(value) != base_types.auto else self.make_default("LttrOfCdtAmt")
-
-	@LttrOfCdtAmt.deleter
-	def LttrOfCdtAmt(self):
-		del self._LttrOfCdtAmt
-		self._LttrOfCdtAmt = None
-
-	@property
-	def OthrTpOfColl(self):
-		return self._OthrTpOfColl
-
-	@OthrTpOfColl.setter
-	def OthrTpOfColl(self, value):
-		self._OthrTpOfColl = value if type(value) != base_types.auto else self.make_default("OthrTpOfColl")
-
-	@OthrTpOfColl.deleter
-	def OthrTpOfColl(self):
-		del self._OthrTpOfColl
-		self._OthrTpOfColl = None
-
-	@property
-	def CollVal(self):
-		return self._CollVal
-
-	@CollVal.setter
-	def CollVal(self, value):
-		self._CollVal = value if type(value) != base_types.auto else self.make_default("CollVal")
-
-	@CollVal.deleter
-	def CollVal(self):
-		del self._CollVal
-		self._CollVal = None
-
-	@property
-	def LttrOfCdtId(self):
-		return self._LttrOfCdtId
-
-	@LttrOfCdtId.setter
-	def LttrOfCdtId(self, value):
-		self._LttrOfCdtId = value if type(value) != base_types.auto else self.make_default("LttrOfCdtId")
-
-	@LttrOfCdtId.deleter
-	def LttrOfCdtId(self):
-		del self._LttrOfCdtId
-		self._LttrOfCdtId = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def GrntAmt(self):
-		return self._GrntAmt
-
-	@GrntAmt.setter
-	def GrntAmt(self, value):
-		self._GrntAmt = value if type(value) != base_types.auto else self.make_default("GrntAmt")
-
-	@GrntAmt.deleter
-	def GrntAmt(self):
-		del self._GrntAmt
-		self._GrntAmt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LtdCvrgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrntAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=DateFormat14Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtdCvrgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LttrOfCdtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LttrOfCdtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTpOfColl', type=OtherTypeOfCollateral3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat29Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=DateFormat14Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=DateFormat14Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat29Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LttrOfCdtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTpOfColl', type=OtherTypeOfCollateral3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LttrOfCdtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrntAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

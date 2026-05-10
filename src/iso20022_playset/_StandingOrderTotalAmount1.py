@@ -3,7 +3,20 @@ from ._TotalAmountAndCurrency1 import TotalAmountAndCurrency1
 
 class StandingOrderTotalAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgStgOrdr", "_SetPrdfndOrdr", "_SetStgOrdr", "_PdgPrdfndOrdr"]
+	__slots__ = ["_SetStgOrdr", "_PdgPrdfndOrdr", "_PdgStgOrdr", "_SetPrdfndOrdr"]
+	@property
+	def PdgPrdfndOrdr(self):
+		return self._PdgPrdfndOrdr
+
+	@PdgPrdfndOrdr.setter
+	def PdgPrdfndOrdr(self, value):
+		self._PdgPrdfndOrdr = value if type(value) != base_types.auto else self.make_default("PdgPrdfndOrdr")
+
+	@PdgPrdfndOrdr.deleter
+	def PdgPrdfndOrdr(self):
+		del self._PdgPrdfndOrdr
+		self._PdgPrdfndOrdr = None
+
 	@property
 	def PdgStgOrdr(self):
 		return self._PdgStgOrdr
@@ -43,23 +56,10 @@ class StandingOrderTotalAmount1(base_types._BaseFieldType):
 		del self._SetStgOrdr
 		self._SetStgOrdr = None
 
-	@property
-	def PdgPrdfndOrdr(self):
-		return self._PdgPrdfndOrdr
-
-	@PdgPrdfndOrdr.setter
-	def PdgPrdfndOrdr(self, value):
-		self._PdgPrdfndOrdr = value if type(value) != base_types.auto else self.make_default("PdgPrdfndOrdr")
-
-	@PdgPrdfndOrdr.deleter
-	def PdgPrdfndOrdr(self):
-		del self._PdgPrdfndOrdr
-		self._PdgPrdfndOrdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PdgPrdfndOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdgStgOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SetPrdfndOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SetStgOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgPrdfndOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 	))
 

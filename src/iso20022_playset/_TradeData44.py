@@ -1,38 +1,25 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._RegulatoryReporting8 import RegulatoryReporting8
 from ._Max35Text import Max35Text
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class TradeData44(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSysUnqRef", "_OrgtrRef", "_CurSttlmDt", "_MtchgSysMtchgRef", "_NewSttlmDt", "_PdctTp", "_MtchgSysMtchdSdRef", "_RgltryRptg", "_SttlmSsnIdr", "_CurStsDtTm"]
+	__slots__ = ["_PdctTp", "_SttlmSsnIdr", "_MtchgSysUnqRef", "_MtchgSysMtchgRef", "_MtchgSysMtchdSdRef", "_NewSttlmDt", "_RgltryRptg", "_CurStsDtTm", "_OrgtrRef", "_CurSttlmDt"]
 	@property
-	def MtchgSysUnqRef(self):
-		return self._MtchgSysUnqRef
+	def CurStsDtTm(self):
+		return self._CurStsDtTm
 
-	@MtchgSysUnqRef.setter
-	def MtchgSysUnqRef(self, value):
-		self._MtchgSysUnqRef = value if type(value) != base_types.auto else self.make_default("MtchgSysUnqRef")
+	@CurStsDtTm.setter
+	def CurStsDtTm(self, value):
+		self._CurStsDtTm = value if type(value) != base_types.auto else self.make_default("CurStsDtTm")
 
-	@MtchgSysUnqRef.deleter
-	def MtchgSysUnqRef(self):
-		del self._MtchgSysUnqRef
-		self._MtchgSysUnqRef = None
-
-	@property
-	def OrgtrRef(self):
-		return self._OrgtrRef
-
-	@OrgtrRef.setter
-	def OrgtrRef(self, value):
-		self._OrgtrRef = value if type(value) != base_types.auto else self.make_default("OrgtrRef")
-
-	@OrgtrRef.deleter
-	def OrgtrRef(self):
-		del self._OrgtrRef
-		self._OrgtrRef = None
+	@CurStsDtTm.deleter
+	def CurStsDtTm(self):
+		del self._CurStsDtTm
+		self._CurStsDtTm = None
 
 	@property
 	def CurSttlmDt(self):
@@ -48,6 +35,19 @@ class TradeData44(base_types._BaseFieldType):
 		self._CurSttlmDt = None
 
 	@property
+	def MtchgSysMtchdSdRef(self):
+		return self._MtchgSysMtchdSdRef
+
+	@MtchgSysMtchdSdRef.setter
+	def MtchgSysMtchdSdRef(self, value):
+		self._MtchgSysMtchdSdRef = value if type(value) != base_types.auto else self.make_default("MtchgSysMtchdSdRef")
+
+	@MtchgSysMtchdSdRef.deleter
+	def MtchgSysMtchdSdRef(self):
+		del self._MtchgSysMtchdSdRef
+		self._MtchgSysMtchdSdRef = None
+
+	@property
 	def MtchgSysMtchgRef(self):
 		return self._MtchgSysMtchgRef
 
@@ -59,6 +59,19 @@ class TradeData44(base_types._BaseFieldType):
 	def MtchgSysMtchgRef(self):
 		del self._MtchgSysMtchgRef
 		self._MtchgSysMtchgRef = None
+
+	@property
+	def MtchgSysUnqRef(self):
+		return self._MtchgSysUnqRef
+
+	@MtchgSysUnqRef.setter
+	def MtchgSysUnqRef(self, value):
+		self._MtchgSysUnqRef = value if type(value) != base_types.auto else self.make_default("MtchgSysUnqRef")
+
+	@MtchgSysUnqRef.deleter
+	def MtchgSysUnqRef(self):
+		del self._MtchgSysUnqRef
+		self._MtchgSysUnqRef = None
 
 	@property
 	def NewSttlmDt(self):
@@ -74,6 +87,19 @@ class TradeData44(base_types._BaseFieldType):
 		self._NewSttlmDt = None
 
 	@property
+	def OrgtrRef(self):
+		return self._OrgtrRef
+
+	@OrgtrRef.setter
+	def OrgtrRef(self, value):
+		self._OrgtrRef = value if type(value) != base_types.auto else self.make_default("OrgtrRef")
+
+	@OrgtrRef.deleter
+	def OrgtrRef(self):
+		del self._OrgtrRef
+		self._OrgtrRef = None
+
+	@property
 	def PdctTp(self):
 		return self._PdctTp
 
@@ -85,19 +111,6 @@ class TradeData44(base_types._BaseFieldType):
 	def PdctTp(self):
 		del self._PdctTp
 		self._PdctTp = None
-
-	@property
-	def MtchgSysMtchdSdRef(self):
-		return self._MtchgSysMtchdSdRef
-
-	@MtchgSysMtchdSdRef.setter
-	def MtchgSysMtchdSdRef(self, value):
-		self._MtchgSysMtchdSdRef = value if type(value) != base_types.auto else self.make_default("MtchgSysMtchdSdRef")
-
-	@MtchgSysMtchdSdRef.deleter
-	def MtchgSysMtchdSdRef(self):
-		del self._MtchgSysMtchdSdRef
-		self._MtchgSysMtchdSdRef = None
 
 	@property
 	def RgltryRptg(self):
@@ -125,29 +138,16 @@ class TradeData44(base_types._BaseFieldType):
 		del self._SttlmSsnIdr
 		self._SttlmSsnIdr = None
 
-	@property
-	def CurStsDtTm(self):
-		return self._CurStsDtTm
-
-	@CurStsDtTm.setter
-	def CurStsDtTm(self, value):
-		self._CurStsDtTm = value if type(value) != base_types.auto else self.make_default("CurStsDtTm")
-
-	@CurStsDtTm.deleter
-	def CurStsDtTm(self):
-		del self._CurStsDtTm
-		self._CurStsDtTm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurStsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchgSysMtchgRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSysMtchdSdRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgSysMtchgRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RgltryRptg', type=RegulatoryReporting8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurStsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

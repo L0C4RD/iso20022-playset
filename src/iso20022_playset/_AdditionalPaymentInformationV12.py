@@ -1,13 +1,13 @@
 from . import base_types
-from ._PaymentComplementaryInformation11 import PaymentComplementaryInformation11
+from ._SupplementaryData1 import SupplementaryData1
 from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from ._PaymentComplementaryInformation11 import PaymentComplementaryInformation11
 from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
-from ._SupplementaryData1 import SupplementaryData1
 
 class AdditionalPaymentInformationV12(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_Inf", "_Case", "_Undrlyg", "_SplmtryData"]
+	__slots__ = ["_Undrlyg", "_Assgnmt", "_Case", "_Inf", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt
@@ -20,19 +20,6 @@ class AdditionalPaymentInformationV12(base_types._BaseFieldType):
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
-
-	@property
-	def Inf(self):
-		return self._Inf
-
-	@Inf.setter
-	def Inf(self, value):
-		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
-
-	@Inf.deleter
-	def Inf(self):
-		del self._Inf
-		self._Inf = None
 
 	@property
 	def Case(self):
@@ -48,17 +35,17 @@ class AdditionalPaymentInformationV12(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def Undrlyg(self):
-		return self._Undrlyg
+	def Inf(self):
+		return self._Inf
 
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+	@Inf.setter
+	def Inf(self, value):
+		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
 
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
+	@Inf.deleter
+	def Inf(self):
+		del self._Inf
+		self._Inf = None
 
 	@property
 	def SplmtryData(self):
@@ -73,11 +60,24 @@ class AdditionalPaymentInformationV12(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def Undrlyg(self):
+		return self._Undrlyg
+
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Inf', type=PaymentComplementaryInformation11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Inf', type=PaymentComplementaryInformation11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

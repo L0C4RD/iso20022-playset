@@ -1,11 +1,11 @@
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._FlowDirectionType1Code import FlowDirectionType1Code
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class NetCashForecast3(base_types._BaseFieldType):
 
-	__slots__ = ["_FlowDrctn", "_NetAmt", "_NetUnitsNb"]
+	__slots__ = ["_NetUnitsNb", "_NetAmt", "_FlowDrctn"]
 	@property
 	def FlowDrctn(self):
 		return self._FlowDrctn

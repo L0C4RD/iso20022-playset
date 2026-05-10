@@ -1,12 +1,12 @@
 from . import base_types
+from ._Schedule1 import Schedule1
 from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
-from ._Schedule1 import Schedule1
 
 class PriceData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Pric", "_SchdlPrd", "_UnitOfMeasr", "_PricMltplr"]
+	__slots__ = ["_UnitOfMeasr", "_SchdlPrd", "_PricMltplr", "_Pric"]
 	@property
 	def Pric(self):
 		return self._Pric
@@ -19,6 +19,19 @@ class PriceData2(base_types._BaseFieldType):
 	def Pric(self):
 		del self._Pric
 		self._Pric = None
+
+	@property
+	def PricMltplr(self):
+		return self._PricMltplr
+
+	@PricMltplr.setter
+	def PricMltplr(self, value):
+		self._PricMltplr = value if type(value) != base_types.auto else self.make_default("PricMltplr")
+
+	@PricMltplr.deleter
+	def PricMltplr(self):
+		del self._PricMltplr
+		self._PricMltplr = None
 
 	@property
 	def SchdlPrd(self):
@@ -46,23 +59,10 @@ class PriceData2(base_types._BaseFieldType):
 		del self._UnitOfMeasr
 		self._UnitOfMeasr = None
 
-	@property
-	def PricMltplr(self):
-		return self._PricMltplr
-
-	@PricMltplr.setter
-	def PricMltplr(self, value):
-		self._PricMltplr = value if type(value) != base_types.auto else self.make_default("PricMltplr")
-
-	@PricMltplr.deleter
-	def PricMltplr(self):
-		del self._PricMltplr
-		self._PricMltplr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricMltplr', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchdlPrd', type=Schedule1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricMltplr', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

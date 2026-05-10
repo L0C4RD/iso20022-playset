@@ -4,7 +4,7 @@ from ._OpeningBalance7Choice import OpeningBalance7Choice
 
 class OpeningBalance6(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngBal", "_ShrtLngInd"]
+	__slots__ = ["_ShrtLngInd", "_OpngBal"]
 	@property
 	def OpngBal(self):
 		return self._OpngBal

@@ -1,17 +1,30 @@
 from . import base_types
-from ._PartyIdentification177Choice import PartyIdentification177Choice
-from ._Max350Text import Max350Text
-from ._ModificationScope34 import ModificationScope34
-from ._MICIdentifier import MICIdentifier
 from ._LEIIdentifier import LEIIdentifier
+from ._ISODate import ISODate
+from ._PartyIdentification177Choice import PartyIdentification177Choice
+from ._OrganisationType1Choice import OrganisationType1Choice
+from ._MICIdentifier import MICIdentifier
 from ._CountryCode import CountryCode
 from ._Max35Text import Max35Text
-from ._OrganisationType1Choice import OrganisationType1Choice
-from ._ISODate import ISODate
+from ._Max350Text import Max350Text
+from ._ModificationScope34 import ModificationScope34
 
 class Organisation40(base_types._BaseFieldType):
 
-	__slots__ = ["_LglNttyIdr", "_Nm", "_ShrtNm", "_ModfdPstlAdr", "_TpOfOrg", "_Purp", "_Id", "_PlcOfListg", "_RegnCtry", "_RegnDt"]
+	__slots__ = ["_ShrtNm", "_Id", "_LglNttyIdr", "_ModfdPstlAdr", "_TpOfOrg", "_Nm", "_Purp", "_RegnCtry", "_PlcOfListg", "_RegnDt"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def LglNttyIdr(self):
 		return self._LglNttyIdr
@@ -24,32 +37,6 @@ class Organisation40(base_types._BaseFieldType):
 	def LglNttyIdr(self):
 		del self._LglNttyIdr
 		self._LglNttyIdr = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
 
 	@property
 	def ModfdPstlAdr(self):
@@ -65,43 +52,17 @@ class Organisation40(base_types._BaseFieldType):
 		self._ModfdPstlAdr = None
 
 	@property
-	def TpOfOrg(self):
-		return self._TpOfOrg
+	def Nm(self):
+		return self._Nm
 
-	@TpOfOrg.setter
-	def TpOfOrg(self, value):
-		self._TpOfOrg = value if type(value) != base_types.auto else self.make_default("TpOfOrg")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@TpOfOrg.deleter
-	def TpOfOrg(self):
-		del self._TpOfOrg
-		self._TpOfOrg = None
-
-	@property
-	def Purp(self):
-		return self._Purp
-
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
-
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def PlcOfListg(self):
@@ -115,6 +76,19 @@ class Organisation40(base_types._BaseFieldType):
 	def PlcOfListg(self):
 		del self._PlcOfListg
 		self._PlcOfListg = None
+
+	@property
+	def Purp(self):
+		return self._Purp
+
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
 
 	@property
 	def RegnCtry(self):
@@ -142,16 +116,42 @@ class Organisation40(base_types._BaseFieldType):
 		del self._RegnDt
 		self._RegnDt = None
 
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
+
+	@property
+	def TpOfOrg(self):
+		return self._TpOfOrg
+
+	@TpOfOrg.setter
+	def TpOfOrg(self, value):
+		self._TpOfOrg = value if type(value) != base_types.auto else self.make_default("TpOfOrg")
+
+	@TpOfOrg.deleter
+	def TpOfOrg(self):
+		del self._TpOfOrg
+		self._TpOfOrg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModfdPstlAdr', type=ModificationScope34, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TpOfOrg', type=OrganisationType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModfdPstlAdr', type=ModificationScope34, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfListg', type=MICIdentifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfOrg', type=OrganisationType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

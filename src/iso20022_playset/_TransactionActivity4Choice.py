@@ -1,6 +1,6 @@
 from . import base_types
-from ._TransactionActivity1Code import TransactionActivity1Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._TransactionActivity1Code import TransactionActivity1Code
 
 class TransactionActivity4Choice(base_types._BaseFieldType):
 

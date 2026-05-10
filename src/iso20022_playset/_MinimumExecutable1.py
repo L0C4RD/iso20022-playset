@@ -4,7 +4,7 @@ from ._TrueFalseIndicator import TrueFalseIndicator
 
 class MinimumExecutable1(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstExctnOnly", "_Sz"]
+	__slots__ = ["_Sz", "_FrstExctnOnly"]
 	@property
 	def FrstExctnOnly(self):
 		return self._FrstExctnOnly

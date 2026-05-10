@@ -1,23 +1,10 @@
 from . import base_types
-from ._PartyIdentification316 import PartyIdentification316
 from ._PartyIdentificationAndAccount204 import PartyIdentificationAndAccount204
+from ._PartyIdentification316 import PartyIdentification316
 
 class SettlementParties129(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty2", "_Dpstry", "_Pty1", "_Pty3"]
-	@property
-	def Pty2(self):
-		return self._Pty2
-
-	@Pty2.setter
-	def Pty2(self, value):
-		self._Pty2 = value if type(value) != base_types.auto else self.make_default("Pty2")
-
-	@Pty2.deleter
-	def Pty2(self):
-		del self._Pty2
-		self._Pty2 = None
-
+	__slots__ = ["_Dpstry", "_Pty2", "_Pty3", "_Pty1"]
 	@property
 	def Dpstry(self):
 		return self._Dpstry
@@ -45,6 +32,19 @@ class SettlementParties129(base_types._BaseFieldType):
 		self._Pty1 = None
 
 	@property
+	def Pty2(self):
+		return self._Pty2
+
+	@Pty2.setter
+	def Pty2(self, value):
+		self._Pty2 = value if type(value) != base_types.auto else self.make_default("Pty2")
+
+	@Pty2.deleter
+	def Pty2(self):
+		del self._Pty2
+		self._Pty2 = None
+
+	@property
 	def Pty3(self):
 		return self._Pty3
 
@@ -58,9 +58,9 @@ class SettlementParties129(base_types._BaseFieldType):
 		self._Pty3 = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount204, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification316, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount204, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount204, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty3', type=PartyIdentificationAndAccount204, min=0, max=1, mutex_group=None, array=False),
 	))
 

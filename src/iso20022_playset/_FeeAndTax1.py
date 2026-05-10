@@ -1,11 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Tax30 import Tax30
+from ._Max35Text import Max35Text
 from ._Fee1 import Fee1
 
 class FeeAndTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvFee", "_IndvTax", "_ComrclAgrmtRef"]
+	__slots__ = ["_ComrclAgrmtRef", "_IndvTax", "_IndvFee"]
+	@property
+	def ComrclAgrmtRef(self):
+		return self._ComrclAgrmtRef
+
+	@ComrclAgrmtRef.setter
+	def ComrclAgrmtRef(self, value):
+		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
+
+	@ComrclAgrmtRef.deleter
+	def ComrclAgrmtRef(self):
+		del self._ComrclAgrmtRef
+		self._ComrclAgrmtRef = None
+
 	@property
 	def IndvFee(self):
 		return self._IndvFee
@@ -32,22 +45,9 @@ class FeeAndTax1(base_types._BaseFieldType):
 		del self._IndvTax
 		self._IndvTax = None
 
-	@property
-	def ComrclAgrmtRef(self):
-		return self._ComrclAgrmtRef
-
-	@ComrclAgrmtRef.setter
-	def ComrclAgrmtRef(self, value):
-		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
-
-	@ComrclAgrmtRef.deleter
-	def ComrclAgrmtRef(self):
-		del self._ComrclAgrmtRef
-		self._ComrclAgrmtRef = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndvFee', type=Fee1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IndvTax', type=Tax30, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

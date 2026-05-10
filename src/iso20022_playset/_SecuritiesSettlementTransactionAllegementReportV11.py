@@ -1,14 +1,40 @@
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._SecuritiesTradeDetails141 import SecuritiesTradeDetails141
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._Pagination1 import Pagination1
 from ._PartyIdentification144 import PartyIdentification144
-from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._Statement63 import Statement63
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._SecuritiesTradeDetails141 import SecuritiesTradeDetails141
 
 class SecuritiesSettlementTransactionAllegementReportV11(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_SfkpgAcct", "_StmtGnlDtls", "_Pgntn", "_AllgmtDtls"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_StmtGnlDtls", "_AllgmtDtls", "_SfkpgAcct", "_AcctOwnr", "_Pgntn"]
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def AllgmtDtls(self):
+		return self._AllgmtDtls
+
+	@AllgmtDtls.setter
+	def AllgmtDtls(self, value):
+		self._AllgmtDtls = value if type(value) != base_types.auto else self.make_default("AllgmtDtls")
+
+	@AllgmtDtls.deleter
+	def AllgmtDtls(self):
+		del self._AllgmtDtls
+		self._AllgmtDtls = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -23,17 +49,17 @@ class SecuritiesSettlementTransactionAllegementReportV11(base_types._BaseFieldTy
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def Pgntn(self):
+		return self._Pgntn
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def SfkpgAcct(self):
@@ -61,38 +87,12 @@ class SecuritiesSettlementTransactionAllegementReportV11(base_types._BaseFieldTy
 		del self._StmtGnlDtls
 		self._StmtGnlDtls = None
 
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def AllgmtDtls(self):
-		return self._AllgmtDtls
-
-	@AllgmtDtls.setter
-	def AllgmtDtls(self, value):
-		self._AllgmtDtls = value if type(value) != base_types.auto else self.make_default("AllgmtDtls")
-
-	@AllgmtDtls.deleter
-	def AllgmtDtls(self):
-		del self._AllgmtDtls
-		self._AllgmtDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllgmtDtls', type=SecuritiesTradeDetails141, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement63, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AllgmtDtls', type=SecuritiesTradeDetails141, min=0, max=None, mutex_group=None, array=True),
 	))
 

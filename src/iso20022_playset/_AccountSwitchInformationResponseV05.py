@@ -1,14 +1,14 @@
 from . import base_types
-from ._DirectDebitInstructionDetails3 import DirectDebitInstructionDetails3
-from ._MessageIdentification1 import MessageIdentification1
-from ._PaymentInstruction43 import PaymentInstruction43
-from ._AccountSwitchDetails1 import AccountSwitchDetails1
 from ._SupplementaryData1 import SupplementaryData1
+from ._DirectDebitInstructionDetails3 import DirectDebitInstructionDetails3
+from ._AccountSwitchDetails1 import AccountSwitchDetails1
+from ._PaymentInstruction43 import PaymentInstruction43
+from ._MessageIdentification1 import MessageIdentification1
 from ._CashAccount43 import CashAccount43
 
 class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSwtchDtls", "_DrctDbtInstr", "_PmtInstr", "_OdAcct", "_MsgId", "_NewAcct", "_SplmtryData"]
+	__slots__ = ["_AcctSwtchDtls", "_PmtInstr", "_DrctDbtInstr", "_MsgId", "_NewAcct", "_OdAcct", "_SplmtryData"]
 	@property
 	def AcctSwtchDtls(self):
 		return self._AcctSwtchDtls
@@ -34,32 +34,6 @@ class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 	def DrctDbtInstr(self):
 		del self._DrctDbtInstr
 		self._DrctDbtInstr = None
-
-	@property
-	def PmtInstr(self):
-		return self._PmtInstr
-
-	@PmtInstr.setter
-	def PmtInstr(self, value):
-		self._PmtInstr = value if type(value) != base_types.auto else self.make_default("PmtInstr")
-
-	@PmtInstr.deleter
-	def PmtInstr(self):
-		del self._PmtInstr
-		self._PmtInstr = None
-
-	@property
-	def OdAcct(self):
-		return self._OdAcct
-
-	@OdAcct.setter
-	def OdAcct(self, value):
-		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
-
-	@OdAcct.deleter
-	def OdAcct(self):
-		del self._OdAcct
-		self._OdAcct = None
 
 	@property
 	def MsgId(self):
@@ -88,6 +62,32 @@ class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 		self._NewAcct = None
 
 	@property
+	def OdAcct(self):
+		return self._OdAcct
+
+	@OdAcct.setter
+	def OdAcct(self, value):
+		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
+
+	@OdAcct.deleter
+	def OdAcct(self):
+		del self._OdAcct
+		self._OdAcct = None
+
+	@property
+	def PmtInstr(self):
+		return self._PmtInstr
+
+	@PmtInstr.setter
+	def PmtInstr(self, value):
+		self._PmtInstr = value if type(value) != base_types.auto else self.make_default("PmtInstr")
+
+	@PmtInstr.deleter
+	def PmtInstr(self):
+		del self._PmtInstr
+		self._PmtInstr = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -103,10 +103,10 @@ class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrctDbtInstr', type=DirectDebitInstructionDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtInstr', type=PaymentInstruction43, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstr', type=PaymentInstruction43, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

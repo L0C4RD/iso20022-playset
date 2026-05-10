@@ -1,6 +1,6 @@
 from . import base_types
-from ._SafekeepingAccount17 import SafekeepingAccount17
 from ._NoReasonCode import NoReasonCode
+from ._SafekeepingAccount17 import SafekeepingAccount17
 
 class Disclosure3Choice(base_types._BaseFieldType):
 

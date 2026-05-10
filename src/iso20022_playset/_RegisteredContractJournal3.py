@@ -1,25 +1,12 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ISODate import ISODate
 from ._ContractClosureReason1Choice import ContractClosureReason1Choice
 from ._DocumentIdentification28 import DocumentIdentification28
-from ._ISODate import ISODate
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class RegisteredContractJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrRsn", "_ClsrDt", "_UnqId", "_RegnAgt"]
-	@property
-	def ClsrRsn(self):
-		return self._ClsrRsn
-
-	@ClsrRsn.setter
-	def ClsrRsn(self, value):
-		self._ClsrRsn = value if type(value) != base_types.auto else self.make_default("ClsrRsn")
-
-	@ClsrRsn.deleter
-	def ClsrRsn(self):
-		del self._ClsrRsn
-		self._ClsrRsn = None
-
+	__slots__ = ["_ClsrRsn", "_UnqId", "_ClsrDt", "_RegnAgt"]
 	@property
 	def ClsrDt(self):
 		return self._ClsrDt
@@ -34,17 +21,17 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 		self._ClsrDt = None
 
 	@property
-	def UnqId(self):
-		return self._UnqId
+	def ClsrRsn(self):
+		return self._ClsrRsn
 
-	@UnqId.setter
-	def UnqId(self, value):
-		self._UnqId = value if type(value) != base_types.auto else self.make_default("UnqId")
+	@ClsrRsn.setter
+	def ClsrRsn(self, value):
+		self._ClsrRsn = value if type(value) != base_types.auto else self.make_default("ClsrRsn")
 
-	@UnqId.deleter
-	def UnqId(self):
-		del self._UnqId
-		self._UnqId = None
+	@ClsrRsn.deleter
+	def ClsrRsn(self):
+		del self._ClsrRsn
+		self._ClsrRsn = None
 
 	@property
 	def RegnAgt(self):
@@ -59,10 +46,23 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 		del self._RegnAgt
 		self._RegnAgt = None
 
+	@property
+	def UnqId(self):
+		return self._UnqId
+
+	@UnqId.setter
+	def UnqId(self, value):
+		self._UnqId = value if type(value) != base_types.auto else self.make_default("UnqId")
+
+	@UnqId.deleter
+	def UnqId(self):
+		del self._UnqId
+		self._UnqId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
 	))
 

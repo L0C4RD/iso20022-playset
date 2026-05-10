@@ -1,43 +1,121 @@
 from . import base_types
-from ._TransactionTotals14 import TransactionTotals14
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ProcessingResult23 import ProcessingResult23
 from ._Exact12Text import Exact12Text
-from ._Max12NumericText import Max12NumericText
-from ._AdditionalFee3 import AdditionalFee3
-from ._Jurisdiction2 import Jurisdiction2
-from ._Exact3NumericText import Exact3NumericText
-from ._Reconciliation4 import Reconciliation4
-from ._ContentInformationType41 import ContentInformationType41
-from ._Exact15Text import Exact15Text
-from ._PartyIdentification286 import PartyIdentification286
-from ._CardServiceType4Code import CardServiceType4Code
-from ._AdditionalData2 import AdditionalData2
-from ._SettlementService6 import SettlementService6
 from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._Max12NumericText import Max12NumericText
+from ._AdditionalData2 import AdditionalData2
+from ._Exact15Text import Exact15Text
+from ._ProgrammeMode5 import ProgrammeMode5
 from ._ReconciliationFunction1Code import ReconciliationFunction1Code
-from ._Header71 import Header71
-from ._ProtectedData2 import ProtectedData2
-from ._ReconciliationActivityType1Code import ReconciliationActivityType1Code
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
+from ._Jurisdiction2 import Jurisdiction2
 from ._ISODateTime import ISODateTime
+from ._CardServiceType4Code import CardServiceType4Code
+from ._PartyIdentification286 import PartyIdentification286
+from ._SupplementaryData1 import SupplementaryData1
+from ._ProcessingResult23 import ProcessingResult23
+from ._ContentInformationType41 import ContentInformationType41
+from ._SettlementService6 import SettlementService6
+from ._ProtectedData2 import ProtectedData2
+from ._AdditionalFee3 import AdditionalFee3
+from ._Reconciliation4 import Reconciliation4
+from ._Exact3NumericText import Exact3NumericText
+from ._Max35Text import Max35Text
+from ._ReconciliationActivityType1Code import ReconciliationActivityType1Code
+from ._TransactionTotals14 import TransactionTotals14
+from ._Header71 import Header71
 
 class ReconciliationResponseV04(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnFctn", "_Orgtr", "_OthrRcncltnActvtyTp", "_Hdr", "_RcncltnTp", "_RcncltnTtls", "_OrgnlRspnCd", "_RtrvlRefNb", "_PrcgRslt", "_Jursdctn", "_AddtlFee", "_Rcvr", "_SttlmSvc", "_ReqdCcy", "_PrtctdData", "_SysTracAudtNb", "_LifeCyclId", "_SctyTrlr", "_OthrRcncltnTp", "_Sndr", "_TrnsmssnDtTm", "_Prgrmm", "_Rcncltn", "_AddtlData", "_Dstn", "_RcncltnActvtyTp", "_SplmtryData"]
+	__slots__ = ["_OthrRcncltnTp", "_RcncltnTp", "_Sndr", "_ReqdCcy", "_RcncltnFctn", "_AddtlData", "_Jursdctn", "_AddtlFee", "_LifeCyclId", "_Hdr", "_RcncltnTtls", "_RcncltnActvtyTp", "_RtrvlRefNb", "_Rcncltn", "_Prgrmm", "_SctyTrlr", "_TrnsmssnDtTm", "_PrcgRslt", "_Rcvr", "_SysTracAudtNb", "_SttlmSvc", "_OthrRcncltnActvtyTp", "_PrtctdData", "_OrgnlRspnCd", "_Orgtr", "_SplmtryData", "_Dstn"]
 	@property
-	def RcncltnFctn(self):
-		return self._RcncltnFctn
+	def AddtlData(self):
+		return self._AddtlData
 
-	@RcncltnFctn.setter
-	def RcncltnFctn(self, value):
-		self._RcncltnFctn = value if type(value) != base_types.auto else self.make_default("RcncltnFctn")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
 
-	@RcncltnFctn.deleter
-	def RcncltnFctn(self):
-		del self._RcncltnFctn
-		self._RcncltnFctn = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def AddtlFee(self):
+		return self._AddtlFee
+
+	@AddtlFee.setter
+	def AddtlFee(self, value):
+		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+
+	@AddtlFee.deleter
+	def AddtlFee(self):
+		del self._AddtlFee
+		self._AddtlFee = None
+
+	@property
+	def Dstn(self):
+		return self._Dstn
+
+	@Dstn.setter
+	def Dstn(self, value):
+		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+
+	@Dstn.deleter
+	def Dstn(self):
+		del self._Dstn
+		self._Dstn = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def Jursdctn(self):
+		return self._Jursdctn
+
+	@Jursdctn.setter
+	def Jursdctn(self, value):
+		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+
+	@Jursdctn.deleter
+	def Jursdctn(self):
+		del self._Jursdctn
+		self._Jursdctn = None
+
+	@property
+	def LifeCyclId(self):
+		return self._LifeCyclId
+
+	@LifeCyclId.setter
+	def LifeCyclId(self, value):
+		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
+
+	@LifeCyclId.deleter
+	def LifeCyclId(self):
+		del self._LifeCyclId
+		self._LifeCyclId = None
+
+	@property
+	def OrgnlRspnCd(self):
+		return self._OrgnlRspnCd
+
+	@OrgnlRspnCd.setter
+	def OrgnlRspnCd(self, value):
+		self._OrgnlRspnCd = value if type(value) != base_types.auto else self.make_default("OrgnlRspnCd")
+
+	@OrgnlRspnCd.deleter
+	def OrgnlRspnCd(self):
+		del self._OrgnlRspnCd
+		self._OrgnlRspnCd = None
 
 	@property
 	def Orgtr(self):
@@ -66,17 +144,95 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 		self._OthrRcncltnActvtyTp = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def OthrRcncltnTp(self):
+		return self._OthrRcncltnTp
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+	@OthrRcncltnTp.setter
+	def OthrRcncltnTp(self, value):
+		self._OthrRcncltnTp = value if type(value) != base_types.auto else self.make_default("OthrRcncltnTp")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@OthrRcncltnTp.deleter
+	def OthrRcncltnTp(self):
+		del self._OthrRcncltnTp
+		self._OthrRcncltnTp = None
+
+	@property
+	def PrcgRslt(self):
+		return self._PrcgRslt
+
+	@PrcgRslt.setter
+	def PrcgRslt(self, value):
+		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
+
+	@PrcgRslt.deleter
+	def PrcgRslt(self):
+		del self._PrcgRslt
+		self._PrcgRslt = None
+
+	@property
+	def Prgrmm(self):
+		return self._Prgrmm
+
+	@Prgrmm.setter
+	def Prgrmm(self, value):
+		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+
+	@Prgrmm.deleter
+	def Prgrmm(self):
+		del self._Prgrmm
+		self._Prgrmm = None
+
+	@property
+	def PrtctdData(self):
+		return self._PrtctdData
+
+	@PrtctdData.setter
+	def PrtctdData(self, value):
+		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+
+	@PrtctdData.deleter
+	def PrtctdData(self):
+		del self._PrtctdData
+		self._PrtctdData = None
+
+	@property
+	def Rcncltn(self):
+		return self._Rcncltn
+
+	@Rcncltn.setter
+	def Rcncltn(self, value):
+		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+
+	@Rcncltn.deleter
+	def Rcncltn(self):
+		del self._Rcncltn
+		self._Rcncltn = None
+
+	@property
+	def RcncltnActvtyTp(self):
+		return self._RcncltnActvtyTp
+
+	@RcncltnActvtyTp.setter
+	def RcncltnActvtyTp(self, value):
+		self._RcncltnActvtyTp = value if type(value) != base_types.auto else self.make_default("RcncltnActvtyTp")
+
+	@RcncltnActvtyTp.deleter
+	def RcncltnActvtyTp(self):
+		del self._RcncltnActvtyTp
+		self._RcncltnActvtyTp = None
+
+	@property
+	def RcncltnFctn(self):
+		return self._RcncltnFctn
+
+	@RcncltnFctn.setter
+	def RcncltnFctn(self, value):
+		self._RcncltnFctn = value if type(value) != base_types.auto else self.make_default("RcncltnFctn")
+
+	@RcncltnFctn.deleter
+	def RcncltnFctn(self):
+		del self._RcncltnFctn
+		self._RcncltnFctn = None
 
 	@property
 	def RcncltnTp(self):
@@ -105,71 +261,6 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 		self._RcncltnTtls = None
 
 	@property
-	def OrgnlRspnCd(self):
-		return self._OrgnlRspnCd
-
-	@OrgnlRspnCd.setter
-	def OrgnlRspnCd(self, value):
-		self._OrgnlRspnCd = value if type(value) != base_types.auto else self.make_default("OrgnlRspnCd")
-
-	@OrgnlRspnCd.deleter
-	def OrgnlRspnCd(self):
-		del self._OrgnlRspnCd
-		self._OrgnlRspnCd = None
-
-	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
-
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
-
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
-
-	@property
-	def PrcgRslt(self):
-		return self._PrcgRslt
-
-	@PrcgRslt.setter
-	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
-
-	@PrcgRslt.deleter
-	def PrcgRslt(self):
-		del self._PrcgRslt
-		self._PrcgRslt = None
-
-	@property
-	def Jursdctn(self):
-		return self._Jursdctn
-
-	@Jursdctn.setter
-	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
-
-	@Jursdctn.deleter
-	def Jursdctn(self):
-		del self._Jursdctn
-		self._Jursdctn = None
-
-	@property
-	def AddtlFee(self):
-		return self._AddtlFee
-
-	@AddtlFee.setter
-	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
-
-	@AddtlFee.deleter
-	def AddtlFee(self):
-		del self._AddtlFee
-		self._AddtlFee = None
-
-	@property
 	def Rcvr(self):
 		return self._Rcvr
 
@@ -181,19 +272,6 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 	def Rcvr(self):
 		del self._Rcvr
 		self._Rcvr = None
-
-	@property
-	def SttlmSvc(self):
-		return self._SttlmSvc
-
-	@SttlmSvc.setter
-	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
-
-	@SttlmSvc.deleter
-	def SttlmSvc(self):
-		del self._SttlmSvc
-		self._SttlmSvc = None
 
 	@property
 	def ReqdCcy(self):
@@ -209,43 +287,17 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 		self._ReqdCcy = None
 
 	@property
-	def PrtctdData(self):
-		return self._PrtctdData
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
 
-	@PrtctdData.setter
-	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
 
-	@PrtctdData.deleter
-	def PrtctdData(self):
-		del self._PrtctdData
-		self._PrtctdData = None
-
-	@property
-	def SysTracAudtNb(self):
-		return self._SysTracAudtNb
-
-	@SysTracAudtNb.setter
-	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != base_types.auto else self.make_default("SysTracAudtNb")
-
-	@SysTracAudtNb.deleter
-	def SysTracAudtNb(self):
-		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
-
-	@property
-	def LifeCyclId(self):
-		return self._LifeCyclId
-
-	@LifeCyclId.setter
-	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
-
-	@LifeCyclId.deleter
-	def LifeCyclId(self):
-		del self._LifeCyclId
-		self._LifeCyclId = None
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
 
 	@property
 	def SctyTrlr(self):
@@ -261,19 +313,6 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def OthrRcncltnTp(self):
-		return self._OthrRcncltnTp
-
-	@OthrRcncltnTp.setter
-	def OthrRcncltnTp(self, value):
-		self._OthrRcncltnTp = value if type(value) != base_types.auto else self.make_default("OthrRcncltnTp")
-
-	@OthrRcncltnTp.deleter
-	def OthrRcncltnTp(self):
-		del self._OthrRcncltnTp
-		self._OthrRcncltnTp = None
-
-	@property
 	def Sndr(self):
 		return self._Sndr
 
@@ -285,84 +324,6 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 	def Sndr(self):
 		del self._Sndr
 		self._Sndr = None
-
-	@property
-	def TrnsmssnDtTm(self):
-		return self._TrnsmssnDtTm
-
-	@TrnsmssnDtTm.setter
-	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
-
-	@TrnsmssnDtTm.deleter
-	def TrnsmssnDtTm(self):
-		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
-
-	@property
-	def Prgrmm(self):
-		return self._Prgrmm
-
-	@Prgrmm.setter
-	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
-
-	@Prgrmm.deleter
-	def Prgrmm(self):
-		del self._Prgrmm
-		self._Prgrmm = None
-
-	@property
-	def Rcncltn(self):
-		return self._Rcncltn
-
-	@Rcncltn.setter
-	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
-
-	@Rcncltn.deleter
-	def Rcncltn(self):
-		del self._Rcncltn
-		self._Rcncltn = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def Dstn(self):
-		return self._Dstn
-
-	@Dstn.setter
-	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
-
-	@Dstn.deleter
-	def Dstn(self):
-		del self._Dstn
-		self._Dstn = None
-
-	@property
-	def RcncltnActvtyTp(self):
-		return self._RcncltnActvtyTp
-
-	@RcncltnActvtyTp.setter
-	def RcncltnActvtyTp(self, value):
-		self._RcncltnActvtyTp = value if type(value) != base_types.auto else self.make_default("RcncltnActvtyTp")
-
-	@RcncltnActvtyTp.deleter
-	def RcncltnActvtyTp(self):
-		del self._RcncltnActvtyTp
-		self._RcncltnActvtyTp = None
 
 	@property
 	def SplmtryData(self):
@@ -377,33 +338,72 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def SttlmSvc(self):
+		return self._SttlmSvc
+
+	@SttlmSvc.setter
+	def SttlmSvc(self, value):
+		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+
+	@SttlmSvc.deleter
+	def SttlmSvc(self):
+		del self._SttlmSvc
+		self._SttlmSvc = None
+
+	@property
+	def SysTracAudtNb(self):
+		return self._SysTracAudtNb
+
+	@SysTracAudtNb.setter
+	def SysTracAudtNb(self, value):
+		self._SysTracAudtNb = value if type(value) != base_types.auto else self.make_default("SysTracAudtNb")
+
+	@SysTracAudtNb.deleter
+	def SysTracAudtNb(self):
+		del self._SysTracAudtNb
+		self._SysTracAudtNb = None
+
+	@property
+	def TrnsmssnDtTm(self):
+		return self._TrnsmssnDtTm
+
+	@TrnsmssnDtTm.setter
+	def TrnsmssnDtTm(self, value):
+		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+
+	@TrnsmssnDtTm.deleter
+	def TrnsmssnDtTm(self):
+		del self._TrnsmssnDtTm
+		self._TrnsmssnDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnFctn', type=ReconciliationFunction1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrRcncltnActvtyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRcncltnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnActvtyTp', type=ReconciliationActivityType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnFctn', type=ReconciliationFunction1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnTp', type=CardServiceType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnTtls', type=TransactionTotals14, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult23, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdCcy', type=Exact3NumericText, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRcncltnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnActvtyTp', type=ReconciliationActivityType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

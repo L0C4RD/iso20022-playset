@@ -19,19 +19,6 @@ class AmountPricePerAmount3(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def PricVal(self):
-		return self._PricVal
-
-	@PricVal.setter
-	def PricVal(self, value):
-		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
-
-	@PricVal.deleter
-	def PricVal(self):
-		del self._PricVal
-		self._PricVal = None
-
-	@property
 	def AmtPricTp(self):
 		return self._AmtPricTp
 
@@ -44,9 +31,22 @@ class AmountPricePerAmount3(base_types._BaseFieldType):
 		del self._AmtPricTp
 		self._AmtPricTp = None
 
+	@property
+	def PricVal(self):
+		return self._PricVal
+
+	@PricVal.setter
+	def PricVal(self, value):
+		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
+
+	@PricVal.deleter
+	def PricVal(self):
+		del self._PricVal
+		self._PricVal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricVal', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricVal', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

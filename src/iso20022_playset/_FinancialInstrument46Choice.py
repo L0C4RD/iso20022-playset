@@ -1,6 +1,6 @@
 from . import base_types
-from ._BenchmarkCurveName2Code import BenchmarkCurveName2Code
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._BenchmarkCurveName2Code import BenchmarkCurveName2Code
 
 class FinancialInstrument46Choice(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._Max350Text import Max350Text
+from ._GenericIdentification30 import GenericIdentification30
 from ._InvestmentFundRole2Code import InvestmentFundRole2Code
 
 class Role6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd", "_Txt"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_Txt", "_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd
@@ -31,6 +18,19 @@ class Role6Choice(base_types._BaseFieldType):
 	def Cd(self):
 		del self._Cd
 		self._Cd = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def Txt(self):
@@ -46,8 +46,8 @@ class Role6Choice(base_types._BaseFieldType):
 		self._Txt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Txt', type=Max350Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,53 +1,40 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._SecurityIdentification3Choice import SecurityIdentification3Choice
 from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification3Choice import SecurityIdentification3Choice
+from ._Max35Text import Max35Text
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Max350Text import Max350Text
+from ._DistributionPolicy1Code import DistributionPolicy1Code
 
 class FinancialInstrument9(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_Nm", "_SplmtryId", "_DualFndInd", "_ClssTp", "_ReqdNAVCcy", "_Id", "_DstrbtnPlcy"]
+	__slots__ = ["_SctiesForm", "_DstrbtnPlcy", "_ClssTp", "_Nm", "_SplmtryId", "_Id", "_DualFndInd", "_ReqdNAVCcy"]
 	@property
-	def SctiesForm(self):
-		return self._SctiesForm
+	def ClssTp(self):
+		return self._ClssTp
 
-	@SctiesForm.setter
-	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+	@ClssTp.setter
+	def ClssTp(self, value):
+		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
 
-	@SctiesForm.deleter
-	def SctiesForm(self):
-		del self._SctiesForm
-		self._SctiesForm = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@ClssTp.deleter
+	def ClssTp(self):
+		del self._ClssTp
+		self._ClssTp = None
 
 	@property
-	def SplmtryId(self):
-		return self._SplmtryId
+	def DstrbtnPlcy(self):
+		return self._DstrbtnPlcy
 
-	@SplmtryId.setter
-	def SplmtryId(self, value):
-		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
+	@DstrbtnPlcy.setter
+	def DstrbtnPlcy(self, value):
+		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
 
-	@SplmtryId.deleter
-	def SplmtryId(self):
-		del self._SplmtryId
-		self._SplmtryId = None
+	@DstrbtnPlcy.deleter
+	def DstrbtnPlcy(self):
+		del self._DstrbtnPlcy
+		self._DstrbtnPlcy = None
 
 	@property
 	def DualFndInd(self):
@@ -63,17 +50,30 @@ class FinancialInstrument9(base_types._BaseFieldType):
 		self._DualFndInd = None
 
 	@property
-	def ClssTp(self):
-		return self._ClssTp
+	def Id(self):
+		return self._Id
 
-	@ClssTp.setter
-	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@ClssTp.deleter
-	def ClssTp(self):
-		del self._ClssTp
-		self._ClssTp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def ReqdNAVCcy(self):
@@ -89,39 +89,39 @@ class FinancialInstrument9(base_types._BaseFieldType):
 		self._ReqdNAVCcy = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def SctiesForm(self):
+		return self._SctiesForm
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SctiesForm.setter
+	def SctiesForm(self, value):
+		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SctiesForm.deleter
+	def SctiesForm(self):
+		del self._SctiesForm
+		self._SctiesForm = None
 
 	@property
-	def DstrbtnPlcy(self):
-		return self._DstrbtnPlcy
+	def SplmtryId(self):
+		return self._SplmtryId
 
-	@DstrbtnPlcy.setter
-	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+	@SplmtryId.setter
+	def SplmtryId(self, value):
+		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
 
-	@DstrbtnPlcy.deleter
-	def DstrbtnPlcy(self):
-		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
+	@SplmtryId.deleter
+	def SplmtryId(self):
+		del self._SplmtryId
+		self._SplmtryId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DualFndInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DualFndInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

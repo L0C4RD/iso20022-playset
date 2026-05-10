@@ -1,11 +1,11 @@
 from . import base_types
-from ._AmountAndDirection35 import AmountAndDirection35
 from ._Max15NumericText import Max15NumericText
+from ._AmountAndDirection35 import AmountAndDirection35
 from ._DecimalNumber import DecimalNumber
 
 class NumberAndSumOfTransactions4(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfNtries", "_Sum", "_TtlNetNtry"]
+	__slots__ = ["_Sum", "_TtlNetNtry", "_NbOfNtries"]
 	@property
 	def NbOfNtries(self):
 		return self._NbOfNtries

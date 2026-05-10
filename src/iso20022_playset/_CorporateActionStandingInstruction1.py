@@ -1,12 +1,12 @@
 from . import base_types
 from ._CashAccount17 import CashAccount17
-from ._SecuritiesAccount6 import SecuritiesAccount6
 from ._Max350Text import Max350Text
 from ._StandingInstructionGrossNet1Code import StandingInstructionGrossNet1Code
+from ._SecuritiesAccount6 import SecuritiesAccount6
 
 class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_SctiesDstrbtnDtls", "_CshDstrbtnDtls", "_NetOrGrss"]
+	__slots__ = ["_SctiesDstrbtnDtls", "_NetOrGrss", "_CshDstrbtnDtls", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -19,19 +19,6 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
-
-	@property
-	def SctiesDstrbtnDtls(self):
-		return self._SctiesDstrbtnDtls
-
-	@SctiesDstrbtnDtls.setter
-	def SctiesDstrbtnDtls(self, value):
-		self._SctiesDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("SctiesDstrbtnDtls")
-
-	@SctiesDstrbtnDtls.deleter
-	def SctiesDstrbtnDtls(self):
-		del self._SctiesDstrbtnDtls
-		self._SctiesDstrbtnDtls = None
 
 	@property
 	def CshDstrbtnDtls(self):
@@ -59,10 +46,23 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 		del self._NetOrGrss
 		self._NetOrGrss = None
 
+	@property
+	def SctiesDstrbtnDtls(self):
+		return self._SctiesDstrbtnDtls
+
+	@SctiesDstrbtnDtls.setter
+	def SctiesDstrbtnDtls(self, value):
+		self._SctiesDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("SctiesDstrbtnDtls")
+
+	@SctiesDstrbtnDtls.deleter
+	def SctiesDstrbtnDtls(self):
+		del self._SctiesDstrbtnDtls
+		self._SctiesDstrbtnDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesAccount6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshDstrbtnDtls', type=CashAccount17, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NetOrGrss', type=StandingInstructionGrossNet1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesAccount6, min=0, max=1, mutex_group=1, array=False),
 	))
 

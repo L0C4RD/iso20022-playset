@@ -1,23 +1,23 @@
 from . import base_types
 from ._Header70 import Header70
-from ._AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
 from ._ContentInformationType37 import ContentInformationType37
+from ._AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
 
 class AcceptorCancellationAdviceResponseV13(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_CxlAdvcRspn"]
+	__slots__ = ["_CxlAdvcRspn", "_SctyTrlr", "_Hdr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def CxlAdvcRspn(self):
+		return self._CxlAdvcRspn
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+	@CxlAdvcRspn.setter
+	def CxlAdvcRspn(self, value):
+		self._CxlAdvcRspn = value if type(value) != base_types.auto else self.make_default("CxlAdvcRspn")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@CxlAdvcRspn.deleter
+	def CxlAdvcRspn(self):
+		del self._CxlAdvcRspn
+		self._CxlAdvcRspn = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class AcceptorCancellationAdviceResponseV13(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def CxlAdvcRspn(self):
-		return self._CxlAdvcRspn
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@CxlAdvcRspn.setter
-	def CxlAdvcRspn(self, value):
-		self._CxlAdvcRspn = value if type(value) != base_types.auto else self.make_default("CxlAdvcRspn")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@CxlAdvcRspn.deleter
-	def CxlAdvcRspn(self):
-		del self._CxlAdvcRspn
-		self._CxlAdvcRspn = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlAdvcRspn', type=AcceptorCancellationAdviceResponse13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 	))
 

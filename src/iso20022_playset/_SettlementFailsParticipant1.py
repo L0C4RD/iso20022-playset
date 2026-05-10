@@ -1,7 +1,7 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._Max2NumericText import Max2NumericText
 from ._SettlementTotalData1 import SettlementTotalData1
+from ._Max2NumericText import Max2NumericText
 
 class SettlementFailsParticipant1(base_types._BaseFieldType):
 

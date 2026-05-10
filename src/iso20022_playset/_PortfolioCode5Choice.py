@@ -4,7 +4,7 @@ from ._PortfolioIdentification3 import PortfolioIdentification3
 
 class PortfolioCode5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoPrtfl", "_Prtfl"]
+	__slots__ = ["_Prtfl", "_NoPrtfl"]
 	@property
 	def NoPrtfl(self):
 		return self._NoPrtfl

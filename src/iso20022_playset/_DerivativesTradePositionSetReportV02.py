@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._PositionSetAggregated2Choice import PositionSetAggregated2Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class DerivativesTradePositionSetReportV02(base_types._BaseFieldType):
 

@@ -1,12 +1,25 @@
 from . import base_types
-from ._PaperCommodityRecoveredPaper1 import PaperCommodityRecoveredPaper1
 from ._PaperCommodityNewsprint1 import PaperCommodityNewsprint1
-from ._PaperCommodityPulp1 import PaperCommodityPulp1
 from ._PaperCommodityContainerBoard1 import PaperCommodityContainerBoard1
+from ._PaperCommodityRecoveredPaper1 import PaperCommodityRecoveredPaper1
+from ._PaperCommodityPulp1 import PaperCommodityPulp1
 
 class AssetClassCommodityPaper1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nwsprnt", "_Pulp", "_RcvrdPpr", "_CntnrBrd"]
+	__slots__ = ["_CntnrBrd", "_Nwsprnt", "_RcvrdPpr", "_Pulp"]
+	@property
+	def CntnrBrd(self):
+		return self._CntnrBrd
+
+	@CntnrBrd.setter
+	def CntnrBrd(self, value):
+		self._CntnrBrd = value if type(value) != base_types.auto else self.make_default("CntnrBrd")
+
+	@CntnrBrd.deleter
+	def CntnrBrd(self):
+		del self._CntnrBrd
+		self._CntnrBrd = None
+
 	@property
 	def Nwsprnt(self):
 		return self._Nwsprnt
@@ -46,23 +59,10 @@ class AssetClassCommodityPaper1Choice(base_types._BaseFieldType):
 		del self._RcvrdPpr
 		self._RcvrdPpr = None
 
-	@property
-	def CntnrBrd(self):
-		return self._CntnrBrd
-
-	@CntnrBrd.setter
-	def CntnrBrd(self, value):
-		self._CntnrBrd = value if type(value) != base_types.auto else self.make_default("CntnrBrd")
-
-	@CntnrBrd.deleter
-	def CntnrBrd(self):
-		del self._CntnrBrd
-		self._CntnrBrd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CntnrBrd', type=PaperCommodityContainerBoard1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Nwsprnt', type=PaperCommodityNewsprint1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pulp', type=PaperCommodityPulp1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcvrdPpr', type=PaperCommodityRecoveredPaper1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CntnrBrd', type=PaperCommodityContainerBoard1, min=0, max=1, mutex_group=1, array=False),
 	))
 

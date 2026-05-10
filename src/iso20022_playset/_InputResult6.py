@@ -5,20 +5,7 @@ from ._InformationQualify1Code import InformationQualify1Code
 
 class InputResult6(base_types._BaseFieldType):
 
-	__slots__ = ["_InfQlfr", "_DvcTp", "_InptRsltData"]
-	@property
-	def InfQlfr(self):
-		return self._InfQlfr
-
-	@InfQlfr.setter
-	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
-
-	@InfQlfr.deleter
-	def InfQlfr(self):
-		del self._InfQlfr
-		self._InfQlfr = None
-
+	__slots__ = ["_DvcTp", "_InfQlfr", "_InptRsltData"]
 	@property
 	def DvcTp(self):
 		return self._DvcTp
@@ -31,6 +18,19 @@ class InputResult6(base_types._BaseFieldType):
 	def DvcTp(self):
 		del self._DvcTp
 		self._DvcTp = None
+
+	@property
+	def InfQlfr(self):
+		return self._InfQlfr
+
+	@InfQlfr.setter
+	def InfQlfr(self, value):
+		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
+
+	@InfQlfr.deleter
+	def InfQlfr(self):
+		del self._InfQlfr
+		self._InfQlfr = None
 
 	@property
 	def InptRsltData(self):
@@ -46,8 +46,8 @@ class InputResult6(base_types._BaseFieldType):
 		self._InptRsltData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvcTp', type=SaleCapabilities2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InptRsltData', type=InputResultData6, min=1, max=1, mutex_group=None, array=False),
 	))
 

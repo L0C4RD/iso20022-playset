@@ -1,10 +1,10 @@
 from . import base_types
-from ._AccountManagementMessageReference5 import AccountManagementMessageReference5
 from ._MessageIdentification1 import MessageIdentification1
+from ._AccountManagementMessageReference5 import AccountManagementMessageReference5
 
 class RequestForAccountManagementStatusReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ReqDtls"]
+	__slots__ = ["_ReqDtls", "_MsgId"]
 	@property
 	def MsgId(self):
 		return self._MsgId

@@ -1,13 +1,13 @@
 from . import base_types
-from ._BlockChainAddressWallet2 import BlockChainAddressWallet2
 from ._AggregateBalanceInformation46 import AggregateBalanceInformation46
-from ._SecuritiesAccount25 import SecuritiesAccount25
-from ._PartyIdentification144 import PartyIdentification144
 from ._YesNoIndicator import YesNoIndicator
+from ._BlockChainAddressWallet2 import BlockChainAddressWallet2
+from ._PartyIdentification144 import PartyIdentification144
+from ._SecuritiesAccount25 import SecuritiesAccount25
 
 class SubAccountIdentification71(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_ActvtyInd", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_BalForSubAcct"]
+	__slots__ = ["_ActvtyInd", "_BlckChainAdrOrWllt", "_BalForSubAcct", "_SfkpgAcct", "_AcctOwnr"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -35,6 +35,19 @@ class SubAccountIdentification71(base_types._BaseFieldType):
 		self._ActvtyInd = None
 
 	@property
+	def BalForSubAcct(self):
+		return self._BalForSubAcct
+
+	@BalForSubAcct.setter
+	def BalForSubAcct(self, value):
+		self._BalForSubAcct = value if type(value) != base_types.auto else self.make_default("BalForSubAcct")
+
+	@BalForSubAcct.deleter
+	def BalForSubAcct(self):
+		del self._BalForSubAcct
+		self._BalForSubAcct = None
+
+	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
 
@@ -60,24 +73,11 @@ class SubAccountIdentification71(base_types._BaseFieldType):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
-	@property
-	def BalForSubAcct(self):
-		return self._BalForSubAcct
-
-	@BalForSubAcct.setter
-	def BalForSubAcct(self, value):
-		self._BalForSubAcct = value if type(value) != base_types.auto else self.make_default("BalForSubAcct")
-
-	@BalForSubAcct.deleter
-	def BalForSubAcct(self):
-		del self._BalForSubAcct
-		self._BalForSubAcct = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation46, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount25, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation46, min=0, max=None, mutex_group=None, array=True),
 	))
 

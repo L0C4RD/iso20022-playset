@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max35Text import Max35Text
 
 class CollateralSubstitutionResponse1(base_types._BaseFieldType):
 

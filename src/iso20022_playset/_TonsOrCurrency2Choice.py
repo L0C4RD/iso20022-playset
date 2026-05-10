@@ -1,10 +1,10 @@
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._DecimalNumber import DecimalNumber
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TonsOrCurrency2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Nb"]
+	__slots__ = ["_Nb", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

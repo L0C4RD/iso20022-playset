@@ -1,12 +1,25 @@
 from . import base_types
-from ._SecuritiesAccount10 import SecuritiesAccount10
 from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._Max350Text import Max350Text
 from ._SecurityIdentification7 import SecurityIdentification7
+from ._Max350Text import Max350Text
+from ._SecuritiesAccount10 import SecuritiesAccount10
 
 class SecuritiesProceeds1(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngQty", "_RcncltnDtls", "_AcctDtls", "_SctyId"]
+	__slots__ = ["_PstngQty", "_AcctDtls", "_SctyId", "_RcncltnDtls"]
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
 	@property
 	def PstngQty(self):
 		return self._PstngQty
@@ -34,19 +47,6 @@ class SecuritiesProceeds1(base_types._BaseFieldType):
 		self._RcncltnDtls = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
 	def SctyId(self):
 		return self._SctyId
 
@@ -60,9 +60,9 @@ class SecuritiesProceeds1(base_types._BaseFieldType):
 		self._SctyId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount10, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount10, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 	))
 

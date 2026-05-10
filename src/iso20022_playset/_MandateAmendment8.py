@@ -1,13 +1,13 @@
 from . import base_types
+from ._SupplementaryData1 import SupplementaryData1
+from ._OriginalMandate10Choice import OriginalMandate10Choice
+from ._Mandate21 import Mandate21
 from ._MandateAmendmentReason3 import MandateAmendmentReason3
 from ._OriginalMessageInformation1 import OriginalMessageInformation1
-from ._OriginalMandate10Choice import OriginalMandate10Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._Mandate21 import Mandate21
 
 class MandateAmendment8(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntRsn", "_OrgnlMsgInf", "_Mndt", "_OrgnlMndt", "_SplmtryData"]
+	__slots__ = ["_AmdmntRsn", "_OrgnlMsgInf", "_OrgnlMndt", "_Mndt", "_SplmtryData"]
 	@property
 	def AmdmntRsn(self):
 		return self._AmdmntRsn
@@ -20,19 +20,6 @@ class MandateAmendment8(base_types._BaseFieldType):
 	def AmdmntRsn(self):
 		del self._AmdmntRsn
 		self._AmdmntRsn = None
-
-	@property
-	def OrgnlMsgInf(self):
-		return self._OrgnlMsgInf
-
-	@OrgnlMsgInf.setter
-	def OrgnlMsgInf(self, value):
-		self._OrgnlMsgInf = value if type(value) != base_types.auto else self.make_default("OrgnlMsgInf")
-
-	@OrgnlMsgInf.deleter
-	def OrgnlMsgInf(self):
-		del self._OrgnlMsgInf
-		self._OrgnlMsgInf = None
 
 	@property
 	def Mndt(self):
@@ -61,6 +48,19 @@ class MandateAmendment8(base_types._BaseFieldType):
 		self._OrgnlMndt = None
 
 	@property
+	def OrgnlMsgInf(self):
+		return self._OrgnlMsgInf
+
+	@OrgnlMsgInf.setter
+	def OrgnlMsgInf(self, value):
+		self._OrgnlMsgInf = value if type(value) != base_types.auto else self.make_default("OrgnlMsgInf")
+
+	@OrgnlMsgInf.deleter
+	def OrgnlMsgInf(self):
+		del self._OrgnlMsgInf
+		self._OrgnlMsgInf = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -75,9 +75,9 @@ class MandateAmendment8(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntRsn', type=MandateAmendmentReason3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mndt', type=Mandate21, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate10Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

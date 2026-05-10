@@ -1,11 +1,11 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
 from ._LimitStructure6 import LimitStructure6
+from ._MessageHeader1 import MessageHeader1
 
 class CreateLimitV02(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtData", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_LmtData", "_SplmtryData", "_MsgHdr"]
 	@property
 	def LmtData(self):
 		return self._LmtData

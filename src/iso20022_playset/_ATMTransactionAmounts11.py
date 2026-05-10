@@ -1,12 +1,12 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ATMTransactionAmounts7 import ATMTransactionAmounts7
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ATMTransactionAmounts7 import ATMTransactionAmounts7
 from ._ATMTransactionAmounts10 import ATMTransactionAmounts10
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 
 class ATMTransactionAmounts11(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlAmt", "_Ccy", "_MinPssblAmt", "_MaxPssblAmt", "_DpstLmts"]
+	__slots__ = ["_MinPssblAmt", "_AddtlAmt", "_MaxPssblAmt", "_DpstLmts", "_Ccy"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt
@@ -34,17 +34,17 @@ class ATMTransactionAmounts11(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def MinPssblAmt(self):
-		return self._MinPssblAmt
+	def DpstLmts(self):
+		return self._DpstLmts
 
-	@MinPssblAmt.setter
-	def MinPssblAmt(self, value):
-		self._MinPssblAmt = value if type(value) != base_types.auto else self.make_default("MinPssblAmt")
+	@DpstLmts.setter
+	def DpstLmts(self, value):
+		self._DpstLmts = value if type(value) != base_types.auto else self.make_default("DpstLmts")
 
-	@MinPssblAmt.deleter
-	def MinPssblAmt(self):
-		del self._MinPssblAmt
-		self._MinPssblAmt = None
+	@DpstLmts.deleter
+	def DpstLmts(self):
+		del self._DpstLmts
+		self._DpstLmts = None
 
 	@property
 	def MaxPssblAmt(self):
@@ -60,23 +60,23 @@ class ATMTransactionAmounts11(base_types._BaseFieldType):
 		self._MaxPssblAmt = None
 
 	@property
-	def DpstLmts(self):
-		return self._DpstLmts
+	def MinPssblAmt(self):
+		return self._MinPssblAmt
 
-	@DpstLmts.setter
-	def DpstLmts(self, value):
-		self._DpstLmts = value if type(value) != base_types.auto else self.make_default("DpstLmts")
+	@MinPssblAmt.setter
+	def MinPssblAmt(self, value):
+		self._MinPssblAmt = value if type(value) != base_types.auto else self.make_default("MinPssblAmt")
 
-	@DpstLmts.deleter
-	def DpstLmts(self):
-		del self._DpstLmts
-		self._DpstLmts = None
+	@MinPssblAmt.deleter
+	def MinPssblAmt(self):
+		del self._MinPssblAmt
+		self._MinPssblAmt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlAmt', type=ATMTransactionAmounts7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DpstLmts', type=ATMTransactionAmounts10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

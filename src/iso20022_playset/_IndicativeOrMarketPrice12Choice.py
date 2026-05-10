@@ -3,7 +3,7 @@ from ._PriceFormat74Choice import PriceFormat74Choice
 
 class IndicativeOrMarketPrice12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndctvPric", "_MktPric"]
+	__slots__ = ["_MktPric", "_IndctvPric"]
 	@property
 	def IndctvPric(self):
 		return self._IndctvPric

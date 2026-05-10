@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._OtherIdentification1Choice import OtherIdentification1Choice
 from ._ISODate import ISODate
+from ._OtherIdentification1Choice import OtherIdentification1Choice
+from ._Max35Text import Max35Text
 
 class GenericIdentification44(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_IsseDt", "_Issr", "_XpryDt"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Tp", "_Id", "_Issr", "_XpryDt", "_IsseDt"]
 	@property
 	def Id(self):
 		return self._Id
@@ -59,6 +46,19 @@ class GenericIdentification44(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def XpryDt(self):
 		return self._XpryDt
 
@@ -72,10 +72,10 @@ class GenericIdentification44(base_types._BaseFieldType):
 		self._XpryDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=OtherIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=OtherIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

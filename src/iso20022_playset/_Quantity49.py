@@ -1,38 +1,12 @@
 from . import base_types
 from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
-from ._QuantityBreakdown69 import QuantityBreakdown69
 from ._SecuritiesCertificate5 import SecuritiesCertificate5
+from ._QuantityBreakdown69 import QuantityBreakdown69
 
 class Quantity49(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyBrkdwn", "_SttlmQty", "_CertNb", "_DnmtnChc"]
-	@property
-	def QtyBrkdwn(self):
-		return self._QtyBrkdwn
-
-	@QtyBrkdwn.setter
-	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
-
-	@QtyBrkdwn.deleter
-	def QtyBrkdwn(self):
-		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
-
-	@property
-	def SttlmQty(self):
-		return self._SttlmQty
-
-	@SttlmQty.setter
-	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
-
-	@SttlmQty.deleter
-	def SttlmQty(self):
-		del self._SttlmQty
-		self._SttlmQty = None
-
+	__slots__ = ["_SttlmQty", "_QtyBrkdwn", "_CertNb", "_DnmtnChc"]
 	@property
 	def CertNb(self):
 		return self._CertNb
@@ -59,10 +33,36 @@ class Quantity49(base_types._BaseFieldType):
 		del self._DnmtnChc
 		self._DnmtnChc = None
 
+	@property
+	def QtyBrkdwn(self):
+		return self._QtyBrkdwn
+
+	@QtyBrkdwn.setter
+	def QtyBrkdwn(self, value):
+		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
+
+	@QtyBrkdwn.deleter
+	def QtyBrkdwn(self):
+		del self._QtyBrkdwn
+		self._QtyBrkdwn = None
+
+	@property
+	def SttlmQty(self):
+		return self._SttlmQty
+
+	@SttlmQty.setter
+	def SttlmQty(self, value):
+		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+
+	@SttlmQty.deleter
+	def SttlmQty(self):
+		del self._SttlmQty
+		self._SttlmQty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown69, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity36Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DnmtnChc', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown69, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity36Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

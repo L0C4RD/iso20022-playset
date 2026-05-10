@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class QueryReference2(base_types._BaseFieldType):
 
-	__slots__ = ["_QryNm", "_QryRef"]
+	__slots__ = ["_QryRef", "_QryNm"]
 	@property
 	def QryNm(self):
 		return self._QryNm

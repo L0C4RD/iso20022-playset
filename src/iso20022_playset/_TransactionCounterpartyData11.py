@@ -1,23 +1,36 @@
 from . import base_types
 from ._PartyIdentification236Choice import PartyIdentification236Choice
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._SettlementParties34Choice import SettlementParties34Choice
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TransactionCounterpartyData11(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_Brkr", "_AgtLndr", "_TrptyAgt", "_SttlmPties", "_Bnfcry"]
+	__slots__ = ["_ClrMmb", "_Bnfcry", "_Brkr", "_TrptyAgt", "_SttlmPties", "_AgtLndr"]
 	@property
-	def ClrMmb(self):
-		return self._ClrMmb
+	def AgtLndr(self):
+		return self._AgtLndr
 
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+	@AgtLndr.setter
+	def AgtLndr(self, value):
+		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
 
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
+	@AgtLndr.deleter
+	def AgtLndr(self):
+		del self._AgtLndr
+		self._AgtLndr = None
+
+	@property
+	def Bnfcry(self):
+		return self._Bnfcry
+
+	@Bnfcry.setter
+	def Bnfcry(self, value):
+		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+
+	@Bnfcry.deleter
+	def Bnfcry(self):
+		del self._Bnfcry
+		self._Bnfcry = None
 
 	@property
 	def Brkr(self):
@@ -33,30 +46,17 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 		self._Brkr = None
 
 	@property
-	def AgtLndr(self):
-		return self._AgtLndr
+	def ClrMmb(self):
+		return self._ClrMmb
 
-	@AgtLndr.setter
-	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
 
-	@AgtLndr.deleter
-	def AgtLndr(self):
-		del self._AgtLndr
-		self._AgtLndr = None
-
-	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
-
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
-
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
 
 	@property
 	def SttlmPties(self):
@@ -72,24 +72,24 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 		self._SttlmPties = None
 
 	@property
-	def Bnfcry(self):
-		return self._Bnfcry
+	def TrptyAgt(self):
+		return self._TrptyAgt
 
-	@Bnfcry.setter
-	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
 
-	@Bnfcry.deleter
-	def Bnfcry(self):
-		del self._Bnfcry
-		self._Bnfcry = None
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrMmb', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Brkr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPties', type=SettlementParties34Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brkr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPties', type=SettlementParties34Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,29 +1,29 @@
 from . import base_types
-from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
-from ._MessageIdentification1 import MessageIdentification1
-from ._Statement7 import Statement7
-from ._SubAccountIdentification5 import SubAccountIdentification5
-from ._Pagination import Pagination
-from ._SafekeepingAccount2 import SafekeepingAccount2
 from ._AdditionalReference2 import AdditionalReference2
-from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
+from ._SafekeepingAccount2 import SafekeepingAccount2
 from ._Extension1 import Extension1
+from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
+from ._Statement7 import Statement7
+from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
+from ._SubAccountIdentification5 import SubAccountIdentification5
+from ._MessageIdentification1 import MessageIdentification1
+from ._Pagination import Pagination
 
 class CustodyStatementOfHoldingsV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_BalForAcct", "_StmtGnlDtls", "_MsgId", "_SubAcctDtls", "_MsgPgntn", "_RltdRef", "_TtlVals", "_PrvsRef", "_AcctDtls"]
+	__slots__ = ["_MsgId", "_PrvsRef", "_TtlVals", "_RltdRef", "_AcctDtls", "_MsgPgntn", "_StmtGnlDtls", "_Xtnsn", "_SubAcctDtls", "_BalForAcct"]
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def BalForAcct(self):
@@ -39,19 +39,6 @@ class CustodyStatementOfHoldingsV02(base_types._BaseFieldType):
 		self._BalForAcct = None
 
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
-
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
-
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
-
-	@property
 	def MsgId(self):
 		return self._MsgId
 
@@ -63,19 +50,6 @@ class CustodyStatementOfHoldingsV02(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
-
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
-
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
 
 	@property
 	def MsgPgntn(self):
@@ -91,6 +65,19 @@ class CustodyStatementOfHoldingsV02(base_types._BaseFieldType):
 		self._MsgPgntn = None
 
 	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
+	@property
 	def RltdRef(self):
 		return self._RltdRef
 
@@ -102,6 +89,32 @@ class CustodyStatementOfHoldingsV02(base_types._BaseFieldType):
 	def RltdRef(self):
 		del self._RltdRef
 		self._RltdRef = None
+
+	@property
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
+
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
+
+	@property
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
+
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
 
 	@property
 	def TtlVals(self):
@@ -117,41 +130,28 @@ class CustodyStatementOfHoldingsV02(base_types._BaseFieldType):
 		self._TtlVals = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
-
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

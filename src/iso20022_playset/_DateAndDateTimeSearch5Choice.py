@@ -4,7 +4,7 @@ from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 
 class DateAndDateTimeSearch5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_DtTm"]
+	__slots__ = ["_DtTm", "_Dt"]
 	@property
 	def Dt(self):
 		return self._Dt

@@ -1,13 +1,26 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max35Binary import Max35Binary
-from ._Max10KBinary import Max10KBinary
 from ._Max140Binary import Max140Binary
+from ._Max35Text import Max35Text
+from ._Max10KBinary import Max10KBinary
 from ._NetworkParameters9 import NetworkParameters9
+from ._Max35Binary import Max35Binary
 
 class NetworkParameters7(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_UsrNm", "_ClntCert", "_SvrCert", "_AccsCd", "_SvrCertIdr", "_SctyPrfl"]
+	__slots__ = ["_UsrNm", "_SvrCertIdr", "_SctyPrfl", "_Adr", "_AccsCd", "_SvrCert", "_ClntCert"]
+	@property
+	def AccsCd(self):
+		return self._AccsCd
+
+	@AccsCd.setter
+	def AccsCd(self, value):
+		self._AccsCd = value if type(value) != base_types.auto else self.make_default("AccsCd")
+
+	@AccsCd.deleter
+	def AccsCd(self):
+		del self._AccsCd
+		self._AccsCd = None
+
 	@property
 	def Adr(self):
 		return self._Adr
@@ -20,19 +33,6 @@ class NetworkParameters7(base_types._BaseFieldType):
 	def Adr(self):
 		del self._Adr
 		self._Adr = None
-
-	@property
-	def UsrNm(self):
-		return self._UsrNm
-
-	@UsrNm.setter
-	def UsrNm(self, value):
-		self._UsrNm = value if type(value) != base_types.auto else self.make_default("UsrNm")
-
-	@UsrNm.deleter
-	def UsrNm(self):
-		del self._UsrNm
-		self._UsrNm = None
 
 	@property
 	def ClntCert(self):
@@ -48,6 +48,19 @@ class NetworkParameters7(base_types._BaseFieldType):
 		self._ClntCert = None
 
 	@property
+	def SctyPrfl(self):
+		return self._SctyPrfl
+
+	@SctyPrfl.setter
+	def SctyPrfl(self, value):
+		self._SctyPrfl = value if type(value) != base_types.auto else self.make_default("SctyPrfl")
+
+	@SctyPrfl.deleter
+	def SctyPrfl(self):
+		del self._SctyPrfl
+		self._SctyPrfl = None
+
+	@property
 	def SvrCert(self):
 		return self._SvrCert
 
@@ -59,19 +72,6 @@ class NetworkParameters7(base_types._BaseFieldType):
 	def SvrCert(self):
 		del self._SvrCert
 		self._SvrCert = None
-
-	@property
-	def AccsCd(self):
-		return self._AccsCd
-
-	@AccsCd.setter
-	def AccsCd(self, value):
-		self._AccsCd = value if type(value) != base_types.auto else self.make_default("AccsCd")
-
-	@AccsCd.deleter
-	def AccsCd(self):
-		del self._AccsCd
-		self._AccsCd = None
 
 	@property
 	def SvrCertIdr(self):
@@ -87,25 +87,25 @@ class NetworkParameters7(base_types._BaseFieldType):
 		self._SvrCertIdr = None
 
 	@property
-	def SctyPrfl(self):
-		return self._SctyPrfl
+	def UsrNm(self):
+		return self._UsrNm
 
-	@SctyPrfl.setter
-	def SctyPrfl(self, value):
-		self._SctyPrfl = value if type(value) != base_types.auto else self.make_default("SctyPrfl")
+	@UsrNm.setter
+	def UsrNm(self, value):
+		self._UsrNm = value if type(value) != base_types.auto else self.make_default("UsrNm")
 
-	@SctyPrfl.deleter
-	def SctyPrfl(self):
-		del self._SctyPrfl
-		self._SctyPrfl = None
+	@UsrNm.deleter
+	def UsrNm(self):
+		del self._UsrNm
+		self._UsrNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=NetworkParameters9, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvrCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AccsCd', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvrCertIdr', type=Max140Binary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Adr', type=NetworkParameters9, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvrCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SvrCertIdr', type=Max140Binary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

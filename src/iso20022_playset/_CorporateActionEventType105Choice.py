@@ -1,10 +1,10 @@
 from . import base_types
-from ._ExtendedEventType7Code import ExtendedEventType7Code
 from ._CorporateActionEventType35Code import CorporateActionEventType35Code
+from ._ExtendedEventType7Code import ExtendedEventType7Code
 
 class CorporateActionEventType105Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PlainCorpEvtTp", "_XtndedCorpEvtTp"]
+	__slots__ = ["_XtndedCorpEvtTp", "_PlainCorpEvtTp"]
 	@property
 	def PlainCorpEvtTp(self):
 		return self._PlainCorpEvtTp

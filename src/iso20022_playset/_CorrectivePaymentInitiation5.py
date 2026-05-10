@@ -1,14 +1,14 @@
 from . import base_types
-from ._CorrectiveGroupInformation1 import CorrectiveGroupInformation1
-from ._Max35Text import Max35Text
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ISODate import ISODate
+from ._UUIDv4Identifier import UUIDv4Identifier
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._CorrectiveGroupInformation1 import CorrectiveGroupInformation1
 
 class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 
-	__slots__ = ["_EndToEndId", "_PmtInfId", "_ReqdExctnDt", "_GrpHdr", "_UETR", "_InstdAmt", "_InstrId", "_ReqdColltnDt"]
+	__slots__ = ["_PmtInfId", "_UETR", "_InstdAmt", "_ReqdExctnDt", "_EndToEndId", "_ReqdColltnDt", "_InstrId", "_GrpHdr"]
 	@property
 	def EndToEndId(self):
 		return self._EndToEndId
@@ -23,32 +23,6 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._EndToEndId = None
 
 	@property
-	def PmtInfId(self):
-		return self._PmtInfId
-
-	@PmtInfId.setter
-	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != base_types.auto else self.make_default("PmtInfId")
-
-	@PmtInfId.deleter
-	def PmtInfId(self):
-		del self._PmtInfId
-		self._PmtInfId = None
-
-	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
-
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
-
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
-
-	@property
 	def GrpHdr(self):
 		return self._GrpHdr
 
@@ -60,19 +34,6 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 	def GrpHdr(self):
 		del self._GrpHdr
 		self._GrpHdr = None
-
-	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
 
 	@property
 	def InstdAmt(self):
@@ -101,6 +62,19 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		self._InstrId = None
 
 	@property
+	def PmtInfId(self):
+		return self._PmtInfId
+
+	@PmtInfId.setter
+	def PmtInfId(self, value):
+		self._PmtInfId = value if type(value) != base_types.auto else self.make_default("PmtInfId")
+
+	@PmtInfId.deleter
+	def PmtInfId(self):
+		del self._PmtInfId
+		self._PmtInfId = None
+
+	@property
 	def ReqdColltnDt(self):
 		return self._ReqdColltnDt
 
@@ -113,14 +87,40 @@ class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 		del self._ReqdColltnDt
 		self._ReqdColltnDt = None
 
+	@property
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
+
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
+
+	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpHdr', type=CorrectiveGroupInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

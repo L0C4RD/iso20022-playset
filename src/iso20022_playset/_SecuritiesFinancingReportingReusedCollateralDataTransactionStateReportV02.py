@@ -4,7 +4,7 @@ from ._TradeData37Choice import TradeData37Choice
 
 class SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TradData"]
+	__slots__ = ["_TradData", "_SplmtryData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData

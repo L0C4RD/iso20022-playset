@@ -4,7 +4,7 @@ from ._InvestigationActionReason1 import InvestigationActionReason1
 
 class InvestigationRequestAction1(base_types._BaseFieldType):
 
-	__slots__ = ["_Actn", "_ActnRsn"]
+	__slots__ = ["_ActnRsn", "_Actn"]
 	@property
 	def Actn(self):
 		return self._Actn

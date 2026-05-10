@@ -5,20 +5,7 @@ from ._SecurityIdentification7 import SecurityIdentification7
 
 class FinancialInstrumentDescription3(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_PlcOfListg", "_SctyId"]
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
+	__slots__ = ["_SfkpgPlc", "_SctyId", "_PlcOfListg"]
 	@property
 	def PlcOfListg(self):
 		return self._PlcOfListg
@@ -45,9 +32,22 @@ class FinancialInstrumentDescription3(base_types._BaseFieldType):
 		del self._SctyId
 		self._SctyId = None
 
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfListg', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

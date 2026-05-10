@@ -1,38 +1,12 @@
 from . import base_types
 from ._PriceValueType10Code import PriceValueType10Code
 from ._PercentagePrice2 import PercentagePrice2
-from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 from ._AmountPrice5 import AmountPrice5
+from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class PriceFormat89Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxPts", "_PctgPric", "_AmtPric", "_NotSpcfdPric"]
-	@property
-	def IndxPts(self):
-		return self._IndxPts
-
-	@IndxPts.setter
-	def IndxPts(self, value):
-		self._IndxPts = value if type(value) != base_types.auto else self.make_default("IndxPts")
-
-	@IndxPts.deleter
-	def IndxPts(self):
-		del self._IndxPts
-		self._IndxPts = None
-
-	@property
-	def PctgPric(self):
-		return self._PctgPric
-
-	@PctgPric.setter
-	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
-
-	@PctgPric.deleter
-	def PctgPric(self):
-		del self._PctgPric
-		self._PctgPric = None
-
+	__slots__ = ["_PctgPric", "_AmtPric", "_NotSpcfdPric", "_IndxPts"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric
@@ -47,6 +21,19 @@ class PriceFormat89Choice(base_types._BaseFieldType):
 		self._AmtPric = None
 
 	@property
+	def IndxPts(self):
+		return self._IndxPts
+
+	@IndxPts.setter
+	def IndxPts(self, value):
+		self._IndxPts = value if type(value) != base_types.auto else self.make_default("IndxPts")
+
+	@IndxPts.deleter
+	def IndxPts(self):
+		del self._IndxPts
+		self._IndxPts = None
+
+	@property
 	def NotSpcfdPric(self):
 		return self._NotSpcfdPric
 
@@ -59,10 +46,23 @@ class PriceFormat89Choice(base_types._BaseFieldType):
 		del self._NotSpcfdPric
 		self._NotSpcfdPric = None
 
+	@property
+	def PctgPric(self):
+		return self._PctgPric
+
+	@PctgPric.setter
+	def PctgPric(self, value):
+		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
+
+	@PctgPric.deleter
+	def PctgPric(self):
+		del self._PctgPric
+		self._PctgPric = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndxPts', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndxPts', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
 	))
 

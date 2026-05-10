@@ -1,13 +1,26 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Number import Number
-from ._YesNoIndicator import YesNoIndicator
 from ._ISODate import ISODate
 from ._Exact1NumericText import Exact1NumericText
+from ._YesNoIndicator import YesNoIndicator
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Number import Number
 
 class LoanContractTranche1(base_types._BaseFieldType):
 
-	__slots__ = ["_DrtnCd", "_XpctdDt", "_LastTrchInd", "_TrchNb", "_Amt", "_DueDt"]
+	__slots__ = ["_XpctdDt", "_DueDt", "_LastTrchInd", "_TrchNb", "_DrtnCd", "_Amt"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def DrtnCd(self):
 		return self._DrtnCd
@@ -22,17 +35,17 @@ class LoanContractTranche1(base_types._BaseFieldType):
 		self._DrtnCd = None
 
 	@property
-	def XpctdDt(self):
-		return self._XpctdDt
+	def DueDt(self):
+		return self._DueDt
 
-	@XpctdDt.setter
-	def XpctdDt(self, value):
-		self._XpctdDt = value if type(value) != base_types.auto else self.make_default("XpctdDt")
+	@DueDt.setter
+	def DueDt(self, value):
+		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
 
-	@XpctdDt.deleter
-	def XpctdDt(self):
-		del self._XpctdDt
-		self._XpctdDt = None
+	@DueDt.deleter
+	def DueDt(self):
+		del self._DueDt
+		self._DueDt = None
 
 	@property
 	def LastTrchInd(self):
@@ -61,37 +74,24 @@ class LoanContractTranche1(base_types._BaseFieldType):
 		self._TrchNb = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def XpctdDt(self):
+		return self._XpctdDt
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@XpctdDt.setter
+	def XpctdDt(self, value):
+		self._XpctdDt = value if type(value) != base_types.auto else self.make_default("XpctdDt")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def DueDt(self):
-		return self._DueDt
-
-	@DueDt.setter
-	def DueDt(self, value):
-		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
-
-	@DueDt.deleter
-	def DueDt(self):
-		del self._DueDt
-		self._DueDt = None
+	@XpctdDt.deleter
+	def XpctdDt(self):
+		del self._XpctdDt
+		self._XpctdDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrtnCd', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastTrchInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrchNb', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

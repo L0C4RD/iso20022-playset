@@ -1,12 +1,25 @@
 from . import base_types
+from ._CountryCode import CountryCode
+from ._DTI2024Identifier import DTI2024Identifier
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._NameAndAddress5 import NameAndAddress5
-from ._DTI2024Identifier import DTI2024Identifier
-from ._CountryCode import CountryCode
 
 class PartyIdentification257Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_DgtlLdgrId", "_AnyBIC", "_NmAndAdr"]
+	__slots__ = ["_NmAndAdr", "_Ctry", "_DgtlLdgrId", "_AnyBIC"]
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -34,19 +47,6 @@ class PartyIdentification257Choice(base_types._BaseFieldType):
 		self._DgtlLdgrId = None
 
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
-	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
 
@@ -60,9 +60,9 @@ class PartyIdentification257Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,13 +1,13 @@
 from . import base_types
 from ._InvestmentFundRole2Choice import InvestmentFundRole2Choice
-from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 from ._Account22 import Account22
+from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 from ._PartyIdentification113 import PartyIdentification113
 from ._TradingCapacity8Code import TradingCapacity8Code
 
 class Intermediary39(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_Id", "_Role", "_TradgPtyCpcty", "_OrdrOrgtrElgblty"]
+	__slots__ = ["_Role", "_Acct", "_Id", "_OrdrOrgtrElgblty", "_TradgPtyCpcty"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -35,6 +35,19 @@ class Intermediary39(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def OrdrOrgtrElgblty(self):
+		return self._OrdrOrgtrElgblty
+
+	@OrdrOrgtrElgblty.setter
+	def OrdrOrgtrElgblty(self, value):
+		self._OrdrOrgtrElgblty = value if type(value) != base_types.auto else self.make_default("OrdrOrgtrElgblty")
+
+	@OrdrOrgtrElgblty.deleter
+	def OrdrOrgtrElgblty(self):
+		del self._OrdrOrgtrElgblty
+		self._OrdrOrgtrElgblty = None
+
+	@property
 	def Role(self):
 		return self._Role
 
@@ -60,24 +73,11 @@ class Intermediary39(base_types._BaseFieldType):
 		del self._TradgPtyCpcty
 		self._TradgPtyCpcty = None
 
-	@property
-	def OrdrOrgtrElgblty(self):
-		return self._OrdrOrgtrElgblty
-
-	@OrdrOrgtrElgblty.setter
-	def OrdrOrgtrElgblty(self, value):
-		self._OrdrOrgtrElgblty = value if type(value) != base_types.auto else self.make_default("OrdrOrgtrElgblty")
-
-	@OrdrOrgtrElgblty.deleter
-	def OrdrOrgtrElgblty(self):
-		del self._OrdrOrgtrElgblty
-		self._OrdrOrgtrElgblty = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=Account22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgPtyCpcty', type=TradingCapacity8Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 from . import base_types
-from ._DebtorActivationAmendment6 import DebtorActivationAmendment6
-from ._SupplementaryData1 import SupplementaryData1
 from ._DebtorActivationAmendmentReason3 import DebtorActivationAmendmentReason3
-from ._OriginalActivation3Choice import OriginalActivation3Choice
+from ._SupplementaryData1 import SupplementaryData1
 from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._DebtorActivationAmendment6 import DebtorActivationAmendment6
+from ._OriginalActivation3Choice import OriginalActivation3Choice
 
 class DebtorActivationAmendment5(base_types._BaseFieldType):
 
-	__slots__ = ["_Amdmnt", "_OrgnlActvtn", "_AmdmntRsn", "_OrgnlBizInstr", "_SplmtryData"]
+	__slots__ = ["_OrgnlActvtn", "_AmdmntRsn", "_OrgnlBizInstr", "_SplmtryData", "_Amdmnt"]
 	@property
 	def Amdmnt(self):
 		return self._Amdmnt
@@ -22,19 +22,6 @@ class DebtorActivationAmendment5(base_types._BaseFieldType):
 		self._Amdmnt = None
 
 	@property
-	def OrgnlActvtn(self):
-		return self._OrgnlActvtn
-
-	@OrgnlActvtn.setter
-	def OrgnlActvtn(self, value):
-		self._OrgnlActvtn = value if type(value) != base_types.auto else self.make_default("OrgnlActvtn")
-
-	@OrgnlActvtn.deleter
-	def OrgnlActvtn(self):
-		del self._OrgnlActvtn
-		self._OrgnlActvtn = None
-
-	@property
 	def AmdmntRsn(self):
 		return self._AmdmntRsn
 
@@ -46,6 +33,19 @@ class DebtorActivationAmendment5(base_types._BaseFieldType):
 	def AmdmntRsn(self):
 		del self._AmdmntRsn
 		self._AmdmntRsn = None
+
+	@property
+	def OrgnlActvtn(self):
+		return self._OrgnlActvtn
+
+	@OrgnlActvtn.setter
+	def OrgnlActvtn(self, value):
+		self._OrgnlActvtn = value if type(value) != base_types.auto else self.make_default("OrgnlActvtn")
+
+	@OrgnlActvtn.deleter
+	def OrgnlActvtn(self):
+		del self._OrgnlActvtn
+		self._OrgnlActvtn = None
 
 	@property
 	def OrgnlBizInstr(self):
@@ -75,8 +75,8 @@ class DebtorActivationAmendment5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amdmnt', type=DebtorActivationAmendment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlActvtn', type=OriginalActivation3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntRsn', type=DebtorActivationAmendmentReason3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlActvtn', type=OriginalActivation3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))

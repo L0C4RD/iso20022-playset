@@ -1,13 +1,39 @@
 from . import base_types
-from ._Price14 import Price14
-from ._PercentageRate import PercentageRate
 from ._ISODate import ISODate
+from ._PercentageRate import PercentageRate
 from ._CalculationType1Code import CalculationType1Code
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._Price14 import Price14
 
 class YieldCalculation7(base_types._BaseFieldType):
 
-	__slots__ = ["_RedPric", "_Val", "_ValDt", "_ClctnTp", "_ValPrd", "_ClctnDt"]
+	__slots__ = ["_Val", "_ValDt", "_ValPrd", "_ClctnDt", "_ClctnTp", "_RedPric"]
+	@property
+	def ClctnDt(self):
+		return self._ClctnDt
+
+	@ClctnDt.setter
+	def ClctnDt(self, value):
+		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
+
+	@ClctnDt.deleter
+	def ClctnDt(self):
+		del self._ClctnDt
+		self._ClctnDt = None
+
+	@property
+	def ClctnTp(self):
+		return self._ClctnTp
+
+	@ClctnTp.setter
+	def ClctnTp(self, value):
+		self._ClctnTp = value if type(value) != base_types.auto else self.make_default("ClctnTp")
+
+	@ClctnTp.deleter
+	def ClctnTp(self):
+		del self._ClctnTp
+		self._ClctnTp = None
+
 	@property
 	def RedPric(self):
 		return self._RedPric
@@ -48,19 +74,6 @@ class YieldCalculation7(base_types._BaseFieldType):
 		self._ValDt = None
 
 	@property
-	def ClctnTp(self):
-		return self._ClctnTp
-
-	@ClctnTp.setter
-	def ClctnTp(self, value):
-		self._ClctnTp = value if type(value) != base_types.auto else self.make_default("ClctnTp")
-
-	@ClctnTp.deleter
-	def ClctnTp(self):
-		del self._ClctnTp
-		self._ClctnTp = None
-
-	@property
 	def ValPrd(self):
 		return self._ValPrd
 
@@ -73,25 +86,12 @@ class YieldCalculation7(base_types._BaseFieldType):
 		del self._ValPrd
 		self._ValPrd = None
 
-	@property
-	def ClctnDt(self):
-		return self._ClctnDt
-
-	@ClctnDt.setter
-	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
-
-	@ClctnDt.deleter
-	def ClctnDt(self):
-		del self._ClctnDt
-		self._ClctnDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnTp', type=CalculationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RedPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnTp', type=CalculationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,14 +1,40 @@
 from . import base_types
 from ._SecuritiesTradeDetails140 import SecuritiesTradeDetails140
 from ._Statement69 import Statement69
-from ._Pagination1 import Pagination1
-from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._SecuritiesAccount30 import SecuritiesAccount30
 from ._PartyIdentification156 import PartyIdentification156
+from ._Pagination1 import Pagination1
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 
 class SecuritiesSettlementTransactionAllegementReport002V10(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_Pgntn", "_StmtGnlDtls", "_AcctOwnr", "_SfkpgAcct", "_AllgmtDtls"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_StmtGnlDtls", "_SfkpgAcct", "_AllgmtDtls", "_AcctOwnr", "_Pgntn"]
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def AllgmtDtls(self):
+		return self._AllgmtDtls
+
+	@AllgmtDtls.setter
+	def AllgmtDtls(self, value):
+		self._AllgmtDtls = value if type(value) != base_types.auto else self.make_default("AllgmtDtls")
+
+	@AllgmtDtls.deleter
+	def AllgmtDtls(self):
+		del self._AllgmtDtls
+		self._AllgmtDtls = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -36,32 +62,6 @@ class SecuritiesSettlementTransactionAllegementReport002V10(base_types._BaseFiel
 		self._Pgntn = None
 
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
-
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
-
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -75,24 +75,24 @@ class SecuritiesSettlementTransactionAllegementReport002V10(base_types._BaseFiel
 		self._SfkpgAcct = None
 
 	@property
-	def AllgmtDtls(self):
-		return self._AllgmtDtls
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
 
-	@AllgmtDtls.setter
-	def AllgmtDtls(self, value):
-		self._AllgmtDtls = value if type(value) != base_types.auto else self.make_default("AllgmtDtls")
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
 
-	@AllgmtDtls.deleter
-	def AllgmtDtls(self):
-		del self._AllgmtDtls
-		self._AllgmtDtls = None
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllgmtDtls', type=SecuritiesTradeDetails140, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement69, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AllgmtDtls', type=SecuritiesTradeDetails140, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement69, min=1, max=1, mutex_group=None, array=False),
 	))
 

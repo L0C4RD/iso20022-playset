@@ -4,7 +4,20 @@ from ._References59Choice import References59Choice
 
 class TransactionIdentifications50(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrTxId", "_PrcrTxId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_AcctOwnrTxId"]
+	__slots__ = ["_PrcrTxId", "_CtrPtyMktInfrstrctrTxId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_AcctOwnrTxId"]
+	@property
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
+
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
+
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
@@ -17,19 +30,6 @@ class TransactionIdentifications50(base_types._BaseFieldType):
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
-
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
 
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
@@ -58,23 +58,23 @@ class TransactionIdentifications50(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
+	def PrcrTxId(self):
+		return self._PrcrTxId
 
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
 
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnrTxId', type=References59Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=References59Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

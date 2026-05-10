@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CurrencyControlHeader9 import CurrencyControlHeader9
+from ._SupplementaryData1 import SupplementaryData1
 from ._SupportingDocument4 import SupportingDocument4
 
 class CurrencyControlSupportingDocumentDeliveryV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_SpprtgDoc"]
+	__slots__ = ["_SpprtgDoc", "_SplmtryData", "_GrpHdr"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

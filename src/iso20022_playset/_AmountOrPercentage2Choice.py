@@ -1,10 +1,10 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class AmountOrPercentage2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Pctg"]
+	__slots__ = ["_Pctg", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

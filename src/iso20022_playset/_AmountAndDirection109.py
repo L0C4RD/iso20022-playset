@@ -4,7 +4,7 @@ from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrenc
 
 class AmountAndDirection109(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Sgn"]
+	__slots__ = ["_Sgn", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,23 +1,23 @@
 from . import base_types
+from ._Response12Code import Response12Code
 from ._Max140Text import Max140Text
 from ._ResultDetail5Code import ResultDetail5Code
-from ._Response12Code import Response12Code
 
 class ResponseType12(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnRsn", "_Rspn", "_AddtlRspnInf"]
+	__slots__ = ["_AddtlRspnInf", "_Rspn", "_RspnRsn"]
 	@property
-	def RspnRsn(self):
-		return self._RspnRsn
+	def AddtlRspnInf(self):
+		return self._AddtlRspnInf
 
-	@RspnRsn.setter
-	def RspnRsn(self, value):
-		self._RspnRsn = value if type(value) != base_types.auto else self.make_default("RspnRsn")
+	@AddtlRspnInf.setter
+	def AddtlRspnInf(self, value):
+		self._AddtlRspnInf = value if type(value) != base_types.auto else self.make_default("AddtlRspnInf")
 
-	@RspnRsn.deleter
-	def RspnRsn(self):
-		del self._RspnRsn
-		self._RspnRsn = None
+	@AddtlRspnInf.deleter
+	def AddtlRspnInf(self):
+		del self._AddtlRspnInf
+		self._AddtlRspnInf = None
 
 	@property
 	def Rspn(self):
@@ -33,21 +33,21 @@ class ResponseType12(base_types._BaseFieldType):
 		self._Rspn = None
 
 	@property
-	def AddtlRspnInf(self):
-		return self._AddtlRspnInf
+	def RspnRsn(self):
+		return self._RspnRsn
 
-	@AddtlRspnInf.setter
-	def AddtlRspnInf(self, value):
-		self._AddtlRspnInf = value if type(value) != base_types.auto else self.make_default("AddtlRspnInf")
+	@RspnRsn.setter
+	def RspnRsn(self, value):
+		self._RspnRsn = value if type(value) != base_types.auto else self.make_default("RspnRsn")
 
-	@AddtlRspnInf.deleter
-	def AddtlRspnInf(self):
-		del self._AddtlRspnInf
-		self._AddtlRspnInf = None
+	@RspnRsn.deleter
+	def RspnRsn(self):
+		del self._RspnRsn
+		self._RspnRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnRsn', type=ResultDetail5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=Response12Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRspnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rspn', type=Response12Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnRsn', type=ResultDetail5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

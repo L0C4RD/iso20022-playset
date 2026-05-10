@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max350Text import Max350Text
 from ._PostalAddress21 import PostalAddress21
+from ._Max35Text import Max35Text
 from ._NamePrefix1Choice import NamePrefix1Choice
 
 class IndividualPerson29(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_MddlNm", "_NmPrfx", "_PstlAdr", "_GvnNm"]
+	__slots__ = ["_Nm", "_PstlAdr", "_GvnNm", "_MddlNm", "_NmPrfx"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def GvnNm(self):
+		return self._GvnNm
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
 
 	@property
 	def MddlNm(self):
@@ -32,6 +32,19 @@ class IndividualPerson29(base_types._BaseFieldType):
 	def MddlNm(self):
 		del self._MddlNm
 		self._MddlNm = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def NmPrfx(self):
@@ -59,24 +72,11 @@ class IndividualPerson29(base_types._BaseFieldType):
 		del self._PstlAdr
 		self._PstlAdr = None
 
-	@property
-	def GvnNm(self):
-		return self._GvnNm
-
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
-
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress21, min=1, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

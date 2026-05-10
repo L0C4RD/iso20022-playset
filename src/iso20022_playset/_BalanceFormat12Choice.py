@@ -4,7 +4,20 @@ from ._SignedQuantityFormat10 import SignedQuantityFormat10
 
 class BalanceFormat12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgblBal", "_PartWayPrdUnits", "_FullPrdUnits", "_NotElgblBal", "_Bal"]
+	__slots__ = ["_NotElgblBal", "_FullPrdUnits", "_Bal", "_ElgblBal", "_PartWayPrdUnits"]
+	@property
+	def Bal(self):
+		return self._Bal
+
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
+
 	@property
 	def ElgblBal(self):
 		return self._ElgblBal
@@ -17,19 +30,6 @@ class BalanceFormat12Choice(base_types._BaseFieldType):
 	def ElgblBal(self):
 		del self._ElgblBal
 		self._ElgblBal = None
-
-	@property
-	def PartWayPrdUnits(self):
-		return self._PartWayPrdUnits
-
-	@PartWayPrdUnits.setter
-	def PartWayPrdUnits(self, value):
-		self._PartWayPrdUnits = value if type(value) != base_types.auto else self.make_default("PartWayPrdUnits")
-
-	@PartWayPrdUnits.deleter
-	def PartWayPrdUnits(self):
-		del self._PartWayPrdUnits
-		self._PartWayPrdUnits = None
 
 	@property
 	def FullPrdUnits(self):
@@ -58,23 +58,23 @@ class BalanceFormat12Choice(base_types._BaseFieldType):
 		self._NotElgblBal = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def PartWayPrdUnits(self):
+		return self._PartWayPrdUnits
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+	@PartWayPrdUnits.setter
+	def PartWayPrdUnits(self, value):
+		self._PartWayPrdUnits = value if type(value) != base_types.auto else self.make_default("PartWayPrdUnits")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@PartWayPrdUnits.deleter
+	def PartWayPrdUnits(self):
+		del self._PartWayPrdUnits
+		self._PartWayPrdUnits = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FullPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
 	))
 

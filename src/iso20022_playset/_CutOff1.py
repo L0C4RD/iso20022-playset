@@ -1,25 +1,12 @@
 from . import base_types
 from ._Max35Text import Max35Text
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ISOTime import ISOTime
 from ._DateOffsetText import DateOffsetText
+from ._ISOTime import ISOTime
 
 class CutOff1(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDtOffset", "_Ccy", "_CutOffTm", "_CutOffUpdId"]
-	@property
-	def ValDtOffset(self):
-		return self._ValDtOffset
-
-	@ValDtOffset.setter
-	def ValDtOffset(self, value):
-		self._ValDtOffset = value if type(value) != base_types.auto else self.make_default("ValDtOffset")
-
-	@ValDtOffset.deleter
-	def ValDtOffset(self):
-		del self._ValDtOffset
-		self._ValDtOffset = None
-
+	__slots__ = ["_CutOffTm", "_Ccy", "_CutOffUpdId", "_ValDtOffset"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -59,10 +46,23 @@ class CutOff1(base_types._BaseFieldType):
 		del self._CutOffUpdId
 		self._CutOffUpdId = None
 
+	@property
+	def ValDtOffset(self):
+		return self._ValDtOffset
+
+	@ValDtOffset.setter
+	def ValDtOffset(self, value):
+		self._ValDtOffset = value if type(value) != base_types.auto else self.make_default("ValDtOffset")
+
+	@ValDtOffset.deleter
+	def ValDtOffset(self):
+		del self._ValDtOffset
+		self._ValDtOffset = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDtOffset', type=DateOffsetText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CutOffTm', type=ISOTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CutOffUpdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDtOffset', type=DateOffsetText, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -4,7 +4,7 @@ from ._NameAndAddress10 import NameAndAddress10
 
 class AddressOrParty1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NewAdr", "_NewBnfcry"]
+	__slots__ = ["_NewBnfcry", "_NewAdr"]
 	@property
 	def NewAdr(self):
 		return self._NewAdr

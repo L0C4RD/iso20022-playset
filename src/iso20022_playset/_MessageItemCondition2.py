@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._MessageItemCondition2Code import MessageItemCondition2Code
+from ._Max140Text import Max140Text
 
 class MessageItemCondition2(base_types._BaseFieldType):
 

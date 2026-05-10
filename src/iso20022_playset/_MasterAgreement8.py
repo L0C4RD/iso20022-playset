@@ -1,7 +1,7 @@
 from . import base_types
+from ._AgreementType2Choice import AgreementType2Choice
 from ._Max350Text import Max350Text
 from ._Max50Text import Max50Text
-from ._AgreementType2Choice import AgreementType2Choice
 
 class MasterAgreement8(base_types._BaseFieldType):
 
@@ -20,19 +20,6 @@ class MasterAgreement8(base_types._BaseFieldType):
 		self._OthrMstrAgrmtDtls = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -45,9 +32,22 @@ class MasterAgreement8(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrMstrAgrmtDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AgreementType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._OriginalMessage1 import OriginalMessage1
 from ._StatusReasonInformation8 import StatusReasonInformation8
 from ._UndertakingStatus1Code import UndertakingStatus1Code
+from ._Max35Text import Max35Text
 
 class TradeStatusReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_StsRsn", "_Sts", "_OrgnlMsgDtls"]
+	__slots__ = ["_Sts", "_AddtlInf", "_OrgnlMsgDtls", "_StsRsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -21,17 +21,17 @@ class TradeStatusReport1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def StsRsn(self):
-		return self._StsRsn
+	def OrgnlMsgDtls(self):
+		return self._OrgnlMsgDtls
 
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+	@OrgnlMsgDtls.setter
+	def OrgnlMsgDtls(self, value):
+		self._OrgnlMsgDtls = value if type(value) != base_types.auto else self.make_default("OrgnlMsgDtls")
 
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
+	@OrgnlMsgDtls.deleter
+	def OrgnlMsgDtls(self):
+		del self._OrgnlMsgDtls
+		self._OrgnlMsgDtls = None
 
 	@property
 	def Sts(self):
@@ -47,22 +47,22 @@ class TradeStatusReport1(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def OrgnlMsgDtls(self):
-		return self._OrgnlMsgDtls
+	def StsRsn(self):
+		return self._StsRsn
 
-	@OrgnlMsgDtls.setter
-	def OrgnlMsgDtls(self, value):
-		self._OrgnlMsgDtls = value if type(value) != base_types.auto else self.make_default("OrgnlMsgDtls")
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
 
-	@OrgnlMsgDtls.deleter
-	def OrgnlMsgDtls(self):
-		del self._OrgnlMsgDtls
-		self._OrgnlMsgDtls = None
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sts', type=UndertakingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgDtls', type=OriginalMessage1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=UndertakingStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation8, min=0, max=None, mutex_group=None, array=True),
 	))
 

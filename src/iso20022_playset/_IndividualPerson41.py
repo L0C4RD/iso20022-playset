@@ -1,38 +1,12 @@
 from . import base_types
-from ._PartyIdentification232Choice import PartyIdentification232Choice
-from ._AttendanceCard3 import AttendanceCard3
 from ._VotingParticipationMethod2Code import VotingParticipationMethod2Code
+from ._PartyIdentification232Choice import PartyIdentification232Choice
 from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._AttendanceCard3 import AttendanceCard3
 
 class IndividualPerson41(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtcptnMtd", "_Id", "_AttndncCardDtls", "_EmplngPty"]
-	@property
-	def PrtcptnMtd(self):
-		return self._PrtcptnMtd
-
-	@PrtcptnMtd.setter
-	def PrtcptnMtd(self, value):
-		self._PrtcptnMtd = value if type(value) != base_types.auto else self.make_default("PrtcptnMtd")
-
-	@PrtcptnMtd.deleter
-	def PrtcptnMtd(self):
-		del self._PrtcptnMtd
-		self._PrtcptnMtd = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Id", "_AttndncCardDtls", "_EmplngPty", "_PrtcptnMtd"]
 	@property
 	def AttndncCardDtls(self):
 		return self._AttndncCardDtls
@@ -59,10 +33,36 @@ class IndividualPerson41(base_types._BaseFieldType):
 		del self._EmplngPty
 		self._EmplngPty = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def PrtcptnMtd(self):
+		return self._PrtcptnMtd
+
+	@PrtcptnMtd.setter
+	def PrtcptnMtd(self, value):
+		self._PrtcptnMtd = value if type(value) != base_types.auto else self.make_default("PrtcptnMtd")
+
+	@PrtcptnMtd.deleter
+	def PrtcptnMtd(self):
+		del self._PrtcptnMtd
+		self._PrtcptnMtd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtcptnMtd', type=VotingParticipationMethod2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttndncCardDtls', type=AttendanceCard3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmplngPty', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcptnMtd', type=VotingParticipationMethod2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

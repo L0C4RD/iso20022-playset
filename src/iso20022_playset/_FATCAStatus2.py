@@ -1,10 +1,10 @@
 from . import base_types
-from ._FATCAStatus2Choice import FATCAStatus2Choice
 from ._FATCASource1Choice import FATCASource1Choice
+from ._FATCAStatus2Choice import FATCAStatus2Choice
 
 class FATCAStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_Src", "_Tp"]
+	__slots__ = ["_Tp", "_Src"]
 	@property
 	def Src(self):
 		return self._Src

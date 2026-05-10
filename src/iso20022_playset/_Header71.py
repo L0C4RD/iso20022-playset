@@ -1,17 +1,30 @@
 from . import base_types
-from ._BatchManagementInformation1 import BatchManagementInformation1
-from ._GenericIdentification183 import GenericIdentification183
-from ._ExternalMessageFunction1Code import ExternalMessageFunction1Code
-from ._Max3NumericText import Max3NumericText
-from ._Traceability10 import Traceability10
-from ._AdditionalData1 import AdditionalData1
-from ._Max35Text import Max35Text
 from ._Max2048Text import Max2048Text
+from ._Traceability10 import Traceability10
+from ._BatchManagementInformation1 import BatchManagementInformation1
+from ._ExternalMessageFunction1Code import ExternalMessageFunction1Code
+from ._AdditionalData1 import AdditionalData1
+from ._GenericIdentification183 import GenericIdentification183
+from ._Max35Text import Max35Text
+from ._Max3NumericText import Max3NumericText
 from ._ISODateTime import ISODateTime
 
 class Header71(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_InitgPty", "_RcptPty", "_PrtcolVrsn", "_XchgId", "_MsgFctn", "_TracData", "_Tracblt", "_ReTrnsmssnCntr", "_BtchMgmtInf"]
+	__slots__ = ["_InitgPty", "_TracData", "_RcptPty", "_MsgFctn", "_XchgId", "_BtchMgmtInf", "_ReTrnsmssnCntr", "_PrtcolVrsn", "_Tracblt", "_CreDtTm"]
+	@property
+	def BtchMgmtInf(self):
+		return self._BtchMgmtInf
+
+	@BtchMgmtInf.setter
+	def BtchMgmtInf(self, value):
+		self._BtchMgmtInf = value if type(value) != base_types.auto else self.make_default("BtchMgmtInf")
+
+	@BtchMgmtInf.deleter
+	def BtchMgmtInf(self):
+		del self._BtchMgmtInf
+		self._BtchMgmtInf = None
+
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -39,17 +52,17 @@ class Header71(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
-	def RcptPty(self):
-		return self._RcptPty
+	def MsgFctn(self):
+		return self._MsgFctn
 
-	@RcptPty.setter
-	def RcptPty(self, value):
-		self._RcptPty = value if type(value) != base_types.auto else self.make_default("RcptPty")
+	@MsgFctn.setter
+	def MsgFctn(self, value):
+		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
 
-	@RcptPty.deleter
-	def RcptPty(self):
-		del self._RcptPty
-		self._RcptPty = None
+	@MsgFctn.deleter
+	def MsgFctn(self):
+		del self._MsgFctn
+		self._MsgFctn = None
 
 	@property
 	def PrtcolVrsn(self):
@@ -65,30 +78,30 @@ class Header71(base_types._BaseFieldType):
 		self._PrtcolVrsn = None
 
 	@property
-	def XchgId(self):
-		return self._XchgId
+	def RcptPty(self):
+		return self._RcptPty
 
-	@XchgId.setter
-	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+	@RcptPty.setter
+	def RcptPty(self, value):
+		self._RcptPty = value if type(value) != base_types.auto else self.make_default("RcptPty")
 
-	@XchgId.deleter
-	def XchgId(self):
-		del self._XchgId
-		self._XchgId = None
+	@RcptPty.deleter
+	def RcptPty(self):
+		del self._RcptPty
+		self._RcptPty = None
 
 	@property
-	def MsgFctn(self):
-		return self._MsgFctn
+	def ReTrnsmssnCntr(self):
+		return self._ReTrnsmssnCntr
 
-	@MsgFctn.setter
-	def MsgFctn(self, value):
-		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
+	@ReTrnsmssnCntr.setter
+	def ReTrnsmssnCntr(self, value):
+		self._ReTrnsmssnCntr = value if type(value) != base_types.auto else self.make_default("ReTrnsmssnCntr")
 
-	@MsgFctn.deleter
-	def MsgFctn(self):
-		del self._MsgFctn
-		self._MsgFctn = None
+	@ReTrnsmssnCntr.deleter
+	def ReTrnsmssnCntr(self):
+		del self._ReTrnsmssnCntr
+		self._ReTrnsmssnCntr = None
 
 	@property
 	def TracData(self):
@@ -117,41 +130,28 @@ class Header71(base_types._BaseFieldType):
 		self._Tracblt = None
 
 	@property
-	def ReTrnsmssnCntr(self):
-		return self._ReTrnsmssnCntr
+	def XchgId(self):
+		return self._XchgId
 
-	@ReTrnsmssnCntr.setter
-	def ReTrnsmssnCntr(self, value):
-		self._ReTrnsmssnCntr = value if type(value) != base_types.auto else self.make_default("ReTrnsmssnCntr")
+	@XchgId.setter
+	def XchgId(self, value):
+		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
 
-	@ReTrnsmssnCntr.deleter
-	def ReTrnsmssnCntr(self):
-		del self._ReTrnsmssnCntr
-		self._ReTrnsmssnCntr = None
-
-	@property
-	def BtchMgmtInf(self):
-		return self._BtchMgmtInf
-
-	@BtchMgmtInf.setter
-	def BtchMgmtInf(self, value):
-		self._BtchMgmtInf = value if type(value) != base_types.auto else self.make_default("BtchMgmtInf")
-
-	@BtchMgmtInf.deleter
-	def BtchMgmtInf(self):
-		del self._BtchMgmtInf
-		self._BtchMgmtInf = None
+	@XchgId.deleter
+	def XchgId(self):
+		del self._XchgId
+		self._XchgId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BtchMgmtInf', type=BatchManagementInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=GenericIdentification183, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptPty', type=GenericIdentification183, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcolVrsn', type=Max2048Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgFctn', type=ExternalMessageFunction1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcolVrsn', type=Max2048Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptPty', type=GenericIdentification183, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReTrnsmssnCntr', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TracData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tracblt', type=Traceability10, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReTrnsmssnCntr', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BtchMgmtInf', type=BatchManagementInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

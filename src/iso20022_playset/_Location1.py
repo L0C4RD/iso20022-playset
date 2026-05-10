@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max2000Text import Max2000Text
-from ._CountryCode import CountryCode
 from ._CountrySubdivision1Choice import CountrySubdivision1Choice
+from ._CountryCode import CountryCode
+from ._Max2000Text import Max2000Text
 
 class Location1(base_types._BaseFieldType):
 
 	__slots__ = ["_Txt", "_CtrySubDvsn", "_Ctry"]
 	@property
-	def Txt(self):
-		return self._Txt
+	def Ctry(self):
+		return self._Ctry
 
-	@Txt.setter
-	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@Txt.deleter
-	def Txt(self):
-		del self._Txt
-		self._Txt = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def CtrySubDvsn(self):
@@ -33,21 +33,21 @@ class Location1(base_types._BaseFieldType):
 		self._CtrySubDvsn = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def Txt(self):
+		return self._Txt
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+	@Txt.setter
+	def Txt(self, value):
+		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@Txt.deleter
+	def Txt(self):
+		del self._Txt
+		self._Txt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Txt', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrySubDvsn', type=CountrySubdivision1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsn', type=CountrySubdivision1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Txt', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 	))
 

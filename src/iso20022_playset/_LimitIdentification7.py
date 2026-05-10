@@ -1,13 +1,13 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PartyIdentification136 import PartyIdentification136
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._PartyIdentification136 import PartyIdentification136
 from ._LimitType4Code import LimitType4Code
 
 class LimitIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_Tp", "_AcctOwnr", "_BilLmtCtrPtyId", "_LmtCcy"]
+	__slots__ = ["_BilLmtCtrPtyId", "_Tp", "_AcctOwnr", "_LmtCcy", "_AcctId"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -20,19 +20,6 @@ class LimitIdentification7(base_types._BaseFieldType):
 	def AcctId(self):
 		del self._AcctId
 		self._AcctId = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
 
 	@property
 	def AcctOwnr(self):
@@ -73,11 +60,24 @@ class LimitIdentification7(base_types._BaseFieldType):
 		del self._LmtCcy
 		self._LmtCcy = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=LimitType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BilLmtCtrPtyId', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=LimitType4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

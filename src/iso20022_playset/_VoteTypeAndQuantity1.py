@@ -4,7 +4,7 @@ from ._Number import Number
 
 class VoteTypeAndQuantity1(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteInstrTp", "_VoteQty"]
+	__slots__ = ["_VoteQty", "_VoteInstrTp"]
 	@property
 	def VoteInstrTp(self):
 		return self._VoteInstrTp

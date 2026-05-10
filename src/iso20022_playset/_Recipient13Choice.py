@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Binary import Max140Binary
 from ._IssuerAndSerialNumber2 import IssuerAndSerialNumber2
+from ._Max140Binary import Max140Binary
 
 class Recipient13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrAndSrlNb", "_SbjtKeyIdr"]
+	__slots__ = ["_SbjtKeyIdr", "_IssrAndSrlNb"]
 	@property
 	def IssrAndSrlNb(self):
 		return self._IssrAndSrlNb

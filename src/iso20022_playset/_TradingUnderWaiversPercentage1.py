@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._PercentageRate import PercentageRate
+from ._Max350Text import Max350Text
 from ._MICIdentifier import MICIdentifier
 
 class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgVn", "_TradgUdrWvrPctg", "_Dsclmr"]
+	__slots__ = ["_Dsclmr", "_TradgVn", "_TradgUdrWvrPctg"]
 	@property
-	def TradgVn(self):
-		return self._TradgVn
+	def Dsclmr(self):
+		return self._Dsclmr
 
-	@TradgVn.setter
-	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+	@Dsclmr.setter
+	def Dsclmr(self, value):
+		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
 
-	@TradgVn.deleter
-	def TradgVn(self):
-		del self._TradgVn
-		self._TradgVn = None
+	@Dsclmr.deleter
+	def Dsclmr(self):
+		del self._Dsclmr
+		self._Dsclmr = None
 
 	@property
 	def TradgUdrWvrPctg(self):
@@ -33,21 +33,21 @@ class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 		self._TradgUdrWvrPctg = None
 
 	@property
-	def Dsclmr(self):
-		return self._Dsclmr
+	def TradgVn(self):
+		return self._TradgVn
 
-	@Dsclmr.setter
-	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
+	@TradgVn.setter
+	def TradgVn(self, value):
+		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
 
-	@Dsclmr.deleter
-	def Dsclmr(self):
-		del self._Dsclmr
-		self._Dsclmr = None
+	@TradgVn.deleter
+	def TradgVn(self):
+		del self._TradgVn
+		self._TradgVn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgUdrWvrPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsclmr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgUdrWvrPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

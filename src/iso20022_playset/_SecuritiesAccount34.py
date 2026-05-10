@@ -1,23 +1,23 @@
 from . import base_types
+from ._PurposeCode8Choice import PurposeCode8Choice
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._Max70Text import Max70Text
-from ._PurposeCode8Choice import PurposeCode8Choice
 
 class SecuritiesAccount34(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nm", "_Id"]
+	__slots__ = ["_Nm", "_Tp", "_Id"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Id(self):
+		return self._Id
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Nm(self):
@@ -33,21 +33,21 @@ class SecuritiesAccount34(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Tp(self):
+		return self._Tp
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=PurposeCode8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PurposeCode8Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

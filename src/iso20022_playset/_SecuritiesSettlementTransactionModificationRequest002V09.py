@@ -1,23 +1,10 @@
 from . import base_types
-from ._TransactionDetails159 import TransactionDetails159
 from ._UpdateType38Choice import UpdateType38Choice
+from ._TransactionDetails159 import TransactionDetails159
 
 class SecuritiesSettlementTransactionModificationRequest002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_UpdTp", "_ModfdTxDtls"]
-	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
-
+	__slots__ = ["_ModfdTxDtls", "_UpdTp"]
 	@property
 	def ModfdTxDtls(self):
 		return self._ModfdTxDtls
@@ -31,8 +18,21 @@ class SecuritiesSettlementTransactionModificationRequest002V09(base_types._BaseF
 		del self._ModfdTxDtls
 		self._ModfdTxDtls = None
 
+	@property
+	def UpdTp(self):
+		return self._UpdTp
+
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UpdTp', type=UpdateType38Choice, min=1, max=3, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ModfdTxDtls', type=TransactionDetails159, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType38Choice, min=1, max=3, mutex_group=None, array=True),
 	))
 

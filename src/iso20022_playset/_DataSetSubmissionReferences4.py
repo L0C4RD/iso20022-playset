@@ -1,66 +1,14 @@
 from . import base_types
-from ._BaselineStatus3Code import BaselineStatus3Code
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._Max35Text import Max35Text
 from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification7 import DocumentIdentification7
 from ._YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
+from ._DocumentIdentification5 import DocumentIdentification5
+from ._BaselineStatus3Code import BaselineStatus3Code
 
 class DataSetSubmissionReferences4(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_TxId", "_PurchsOrdrRef", "_UsrTxRef", "_EstblishdBaselnId", "_ForcdMtch"]
-	@property
-	def TxSts(self):
-		return self._TxSts
-
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
-
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def PurchsOrdrRef(self):
-		return self._PurchsOrdrRef
-
-	@PurchsOrdrRef.setter
-	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
-
-	@PurchsOrdrRef.deleter
-	def PurchsOrdrRef(self):
-		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
-
-	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
+	__slots__ = ["_PurchsOrdrRef", "_UsrTxRef", "_EstblishdBaselnId", "_TxSts", "_TxId", "_ForcdMtch"]
 	@property
 	def EstblishdBaselnId(self):
 		return self._EstblishdBaselnId
@@ -87,12 +35,64 @@ class DataSetSubmissionReferences4(base_types._BaseFieldType):
 		del self._ForcdMtch
 		self._ForcdMtch = None
 
+	@property
+	def PurchsOrdrRef(self):
+		return self._PurchsOrdrRef
+
+	@PurchsOrdrRef.setter
+	def PurchsOrdrRef(self, value):
+		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+
+	@PurchsOrdrRef.deleter
+	def PurchsOrdrRef(self):
+		del self._PurchsOrdrRef
+		self._PurchsOrdrRef = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
+
+	@property
+	def UsrTxRef(self):
+		return self._UsrTxRef
+
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ForcdMtch', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

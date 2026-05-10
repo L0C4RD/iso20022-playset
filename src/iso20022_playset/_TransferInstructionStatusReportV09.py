@@ -1,26 +1,26 @@
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._AdditionalReference10 import AdditionalReference10
-from ._Extension1 import Extension1
-from ._TransferStatusAndReason8 import TransferStatusAndReason8
 from ._References64Choice import References64Choice
+from ._TransferStatusAndReason8 import TransferStatusAndReason8
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._MessageIdentification1 import MessageIdentification1
+from ._Extension1 import Extension1
+from ._AdditionalReference10 import AdditionalReference10
 
 class TransferInstructionStatusReportV09(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_MktPrctcVrsn", "_MsgId", "_Ref", "_StsRpt", "_CtrPtyRef"]
+	__slots__ = ["_StsRpt", "_MsgId", "_Xtnsn", "_MktPrctcVrsn", "_Ref", "_CtrPtyRef"]
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def CtrPtyRef(self):
+		return self._CtrPtyRef
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+	@CtrPtyRef.setter
+	def CtrPtyRef(self, value):
+		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@CtrPtyRef.deleter
+	def CtrPtyRef(self):
+		del self._CtrPtyRef
+		self._CtrPtyRef = None
 
 	@property
 	def MktPrctcVrsn(self):
@@ -75,24 +75,24 @@ class TransferInstructionStatusReportV09(base_types._BaseFieldType):
 		self._StsRpt = None
 
 	@property
-	def CtrPtyRef(self):
-		return self._CtrPtyRef
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@CtrPtyRef.setter
-	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
 
-	@CtrPtyRef.deleter
-	def CtrPtyRef(self):
-		del self._CtrPtyRef
-		self._CtrPtyRef = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References64Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRpt', type=TransferStatusAndReason8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

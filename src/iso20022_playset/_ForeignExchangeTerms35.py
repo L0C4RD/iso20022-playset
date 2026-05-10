@@ -1,12 +1,12 @@
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOneRate import BaseOneRate
 from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ISODateTime import ISODateTime
+from ._BaseOneRate import BaseOneRate
 
 class ForeignExchangeTerms35(base_types._BaseFieldType):
 
-	__slots__ = ["_QtdCcy", "_UnitCcy", "_QtgInstn", "_XchgRate", "_QtnDt"]
+	__slots__ = ["_QtgInstn", "_QtdCcy", "_QtnDt", "_XchgRate", "_UnitCcy"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy
@@ -19,19 +19,6 @@ class ForeignExchangeTerms35(base_types._BaseFieldType):
 	def QtdCcy(self):
 		del self._QtdCcy
 		self._QtdCcy = None
-
-	@property
-	def UnitCcy(self):
-		return self._UnitCcy
-
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
-
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
 
 	@property
 	def QtgInstn(self):
@@ -47,19 +34,6 @@ class ForeignExchangeTerms35(base_types._BaseFieldType):
 		self._QtgInstn = None
 
 	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
-	@property
 	def QtnDt(self):
 		return self._QtnDt
 
@@ -72,11 +46,37 @@ class ForeignExchangeTerms35(base_types._BaseFieldType):
 		del self._QtnDt
 		self._QtnDt = None
 
+	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification137Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

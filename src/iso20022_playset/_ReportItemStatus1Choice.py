@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReportItemStatus1 import ReportItemStatus1
 from ._NoReasonCode import NoReasonCode
+from ._ReportItemStatus1 import ReportItemStatus1
 
 class ReportItemStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Accptd", "_AccptdWthXcptn", "_Rjctd"]
+	__slots__ = ["_Accptd", "_Rjctd", "_AccptdWthXcptn"]
 	@property
 	def Accptd(self):
 		return self._Accptd

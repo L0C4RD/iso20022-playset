@@ -1,11 +1,11 @@
 from . import base_types
 from ._TargetMarket1Choice import TargetMarket1Choice
-from ._Max35Text import Max35Text
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._Max35Text import Max35Text
 
 class OtherInvestmentNeed1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Trgt", "_ClntObjctvsAndNeedsTp"]
+	__slots__ = ["_ClntObjctvsAndNeedsTp", "_Trgt", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -20,19 +20,6 @@ class OtherInvestmentNeed1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Trgt(self):
-		return self._Trgt
-
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
-
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
-
-	@property
 	def ClntObjctvsAndNeedsTp(self):
 		return self._ClntObjctvsAndNeedsTp
 
@@ -45,9 +32,22 @@ class OtherInvestmentNeed1(base_types._BaseFieldType):
 		del self._ClntObjctvsAndNeedsTp
 		self._ClntObjctvsAndNeedsTp = None
 
+	@property
+	def Trgt(self):
+		return self._Trgt
+
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
+
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntObjctvsAndNeedsTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

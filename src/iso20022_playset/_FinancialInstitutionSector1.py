@@ -1,6 +1,6 @@
 from . import base_types
-from ._FinancialPartyClassification2Choice import FinancialPartyClassification2Choice
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._FinancialPartyClassification2Choice import FinancialPartyClassification2Choice
 
 class FinancialInstitutionSector1(base_types._BaseFieldType):
 

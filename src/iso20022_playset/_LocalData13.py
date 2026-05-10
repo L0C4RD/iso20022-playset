@@ -1,39 +1,13 @@
 from . import base_types
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._AdditionalData1 import AdditionalData1
-from ._CardholderName2 import CardholderName2
-from ._Max35Text import Max35Text
 from ._LocalAddress1 import LocalAddress1
+from ._Max35Text import Max35Text
+from ._CardholderName2 import CardholderName2
+from ._AdditionalData1 import AdditionalData1
+from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
 
 class LocalData13(base_types._BaseFieldType):
 
-	__slots__ = ["_NcodgFrmt", "_Lang", "_AddtlData", "_Adr", "_Nm"]
-	@property
-	def NcodgFrmt(self):
-		return self._NcodgFrmt
-
-	@NcodgFrmt.setter
-	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
-
-	@NcodgFrmt.deleter
-	def NcodgFrmt(self):
-		del self._NcodgFrmt
-		self._NcodgFrmt = None
-
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
-
+	__slots__ = ["_Nm", "_Lang", "_Adr", "_AddtlData", "_NcodgFrmt"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData
@@ -61,6 +35,32 @@ class LocalData13(base_types._BaseFieldType):
 		self._Adr = None
 
 	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
+	@property
+	def NcodgFrmt(self):
+		return self._NcodgFrmt
+
+	@NcodgFrmt.setter
+	def NcodgFrmt(self, value):
+		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
+
+	@NcodgFrmt.deleter
+	def NcodgFrmt(self):
+		del self._NcodgFrmt
+		self._NcodgFrmt = None
+
+	@property
 	def Nm(self):
 		return self._Nm
 
@@ -74,10 +74,10 @@ class LocalData13(base_types._BaseFieldType):
 		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Adr', type=LocalAddress1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=CardholderName2, min=0, max=1, mutex_group=None, array=False),
 	))
 

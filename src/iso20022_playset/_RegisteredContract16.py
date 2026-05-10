@@ -1,25 +1,38 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._SupplementaryData1 import SupplementaryData1
 from ._RegisteredContract17 import RegisteredContract17
+from ._Max35Text import Max35Text
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._TradeParty6 import TradeParty6
 
 class RegisteredContract16(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPty", "_RegnAgt", "_CtrctRegnAmdmntId", "_SplmtryData", "_RegdCtrctAmdmnt"]
+	__slots__ = ["_RegnAgt", "_RegdCtrctAmdmnt", "_CtrctRegnAmdmntId", "_RptgPty", "_SplmtryData"]
 	@property
-	def RptgPty(self):
-		return self._RptgPty
+	def CtrctRegnAmdmntId(self):
+		return self._CtrctRegnAmdmntId
 
-	@RptgPty.setter
-	def RptgPty(self, value):
-		self._RptgPty = value if type(value) != base_types.auto else self.make_default("RptgPty")
+	@CtrctRegnAmdmntId.setter
+	def CtrctRegnAmdmntId(self, value):
+		self._CtrctRegnAmdmntId = value if type(value) != base_types.auto else self.make_default("CtrctRegnAmdmntId")
 
-	@RptgPty.deleter
-	def RptgPty(self):
-		del self._RptgPty
-		self._RptgPty = None
+	@CtrctRegnAmdmntId.deleter
+	def CtrctRegnAmdmntId(self):
+		del self._CtrctRegnAmdmntId
+		self._CtrctRegnAmdmntId = None
+
+	@property
+	def RegdCtrctAmdmnt(self):
+		return self._RegdCtrctAmdmnt
+
+	@RegdCtrctAmdmnt.setter
+	def RegdCtrctAmdmnt(self, value):
+		self._RegdCtrctAmdmnt = value if type(value) != base_types.auto else self.make_default("RegdCtrctAmdmnt")
+
+	@RegdCtrctAmdmnt.deleter
+	def RegdCtrctAmdmnt(self):
+		del self._RegdCtrctAmdmnt
+		self._RegdCtrctAmdmnt = None
 
 	@property
 	def RegnAgt(self):
@@ -35,17 +48,17 @@ class RegisteredContract16(base_types._BaseFieldType):
 		self._RegnAgt = None
 
 	@property
-	def CtrctRegnAmdmntId(self):
-		return self._CtrctRegnAmdmntId
+	def RptgPty(self):
+		return self._RptgPty
 
-	@CtrctRegnAmdmntId.setter
-	def CtrctRegnAmdmntId(self, value):
-		self._CtrctRegnAmdmntId = value if type(value) != base_types.auto else self.make_default("CtrctRegnAmdmntId")
+	@RptgPty.setter
+	def RptgPty(self, value):
+		self._RptgPty = value if type(value) != base_types.auto else self.make_default("RptgPty")
 
-	@CtrctRegnAmdmntId.deleter
-	def CtrctRegnAmdmntId(self):
-		del self._CtrctRegnAmdmntId
-		self._CtrctRegnAmdmntId = None
+	@RptgPty.deleter
+	def RptgPty(self):
+		del self._RptgPty
+		self._RptgPty = None
 
 	@property
 	def SplmtryData(self):
@@ -60,24 +73,11 @@ class RegisteredContract16(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def RegdCtrctAmdmnt(self):
-		return self._RegdCtrctAmdmnt
-
-	@RegdCtrctAmdmnt.setter
-	def RegdCtrctAmdmnt(self, value):
-		self._RegdCtrctAmdmnt = value if type(value) != base_types.auto else self.make_default("RegdCtrctAmdmnt")
-
-	@RegdCtrctAmdmnt.deleter
-	def RegdCtrctAmdmnt(self):
-		del self._RegdCtrctAmdmnt
-		self._RegdCtrctAmdmnt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctRegnAmdmntId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegdCtrctAmdmnt', type=RegisteredContract17, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -5,19 +5,19 @@ from ._MovementInstruction1 import MovementInstruction1
 
 class AgentCAMovementCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntDtls", "_CorpActnGnlInf", "_Id", "_AgtCAMvmntInstrId"]
+	__slots__ = ["_Id", "_CorpActnGnlInf", "_MvmntDtls", "_AgtCAMvmntInstrId"]
 	@property
-	def MvmntDtls(self):
-		return self._MvmntDtls
+	def AgtCAMvmntInstrId(self):
+		return self._AgtCAMvmntInstrId
 
-	@MvmntDtls.setter
-	def MvmntDtls(self, value):
-		self._MvmntDtls = value if type(value) != base_types.auto else self.make_default("MvmntDtls")
+	@AgtCAMvmntInstrId.setter
+	def AgtCAMvmntInstrId(self, value):
+		self._AgtCAMvmntInstrId = value if type(value) != base_types.auto else self.make_default("AgtCAMvmntInstrId")
 
-	@MvmntDtls.deleter
-	def MvmntDtls(self):
-		del self._MvmntDtls
-		self._MvmntDtls = None
+	@AgtCAMvmntInstrId.deleter
+	def AgtCAMvmntInstrId(self):
+		del self._AgtCAMvmntInstrId
+		self._AgtCAMvmntInstrId = None
 
 	@property
 	def CorpActnGnlInf(self):
@@ -46,22 +46,22 @@ class AgentCAMovementCancellationRequestV01(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AgtCAMvmntInstrId(self):
-		return self._AgtCAMvmntInstrId
+	def MvmntDtls(self):
+		return self._MvmntDtls
 
-	@AgtCAMvmntInstrId.setter
-	def AgtCAMvmntInstrId(self, value):
-		self._AgtCAMvmntInstrId = value if type(value) != base_types.auto else self.make_default("AgtCAMvmntInstrId")
+	@MvmntDtls.setter
+	def MvmntDtls(self, value):
+		self._MvmntDtls = value if type(value) != base_types.auto else self.make_default("MvmntDtls")
 
-	@AgtCAMvmntInstrId.deleter
-	def AgtCAMvmntInstrId(self):
-		del self._AgtCAMvmntInstrId
-		self._AgtCAMvmntInstrId = None
+	@MvmntDtls.deleter
+	def MvmntDtls(self):
+		del self._MvmntDtls
+		self._MvmntDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MvmntDtls', type=MovementInstruction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtCAMvmntInstrId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtCAMvmntInstrId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntDtls', type=MovementInstruction1, min=0, max=1, mutex_group=None, array=False),
 	))
 

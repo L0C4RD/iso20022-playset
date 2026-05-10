@@ -1,13 +1,13 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._Max35Text import Max35Text
 from ._GenericIdentification36 import GenericIdentification36
 from ._Max50Text import Max50Text
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._Max35Text import Max35Text
 
 class PartyIdentification198Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_ClntId", "_LEI", "_NtlRegnNb", "_PrtryId"]
+	__slots__ = ["_NtlRegnNb", "_ClntId", "_PrtryId", "_LEI", "_AnyBIC"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC

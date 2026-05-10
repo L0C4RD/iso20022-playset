@@ -4,20 +4,7 @@ from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class BasketDescription3(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_ISIN"]
-	@property
-	def Indx(self):
-		return self._Indx
-
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
-
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
-
+	__slots__ = ["_ISIN", "_Indx"]
 	@property
 	def ISIN(self):
 		return self._ISIN
@@ -31,8 +18,21 @@ class BasketDescription3(base_types._BaseFieldType):
 		del self._ISIN
 		self._ISIN = None
 
+	@property
+	def Indx(self):
+		return self._Indx
+
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Indx', type=FinancialInstrument58, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Indx', type=FinancialInstrument58, min=0, max=None, mutex_group=None, array=True),
 	))
 

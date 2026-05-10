@@ -1,26 +1,26 @@
 from . import base_types
+from ._PercentageRate import PercentageRate
+from ._PriceType2 import PriceType2
 from ._StatisticsByUserDefinedTimePeriod2 import StatisticsByUserDefinedTimePeriod2
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._PriceValueChange1 import PriceValueChange1
 from ._StatisticsByPredefinedTimePeriods2 import StatisticsByPredefinedTimePeriods2
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._PriceType2 import PriceType2
-from ._PercentageRate import PercentageRate
 
 class ValuationStatistics3(base_types._BaseFieldType):
 
-	__slots__ = ["_PricChng", "_ByUsrDfndTmPrd", "_Yld", "_Ccy", "_PricTpChngBsis", "_ByPrdfndTmPrds"]
+	__slots__ = ["_PricTpChngBsis", "_ByUsrDfndTmPrd", "_PricChng", "_ByPrdfndTmPrds", "_Ccy", "_Yld"]
 	@property
-	def PricChng(self):
-		return self._PricChng
+	def ByPrdfndTmPrds(self):
+		return self._ByPrdfndTmPrds
 
-	@PricChng.setter
-	def PricChng(self, value):
-		self._PricChng = value if type(value) != base_types.auto else self.make_default("PricChng")
+	@ByPrdfndTmPrds.setter
+	def ByPrdfndTmPrds(self, value):
+		self._ByPrdfndTmPrds = value if type(value) != base_types.auto else self.make_default("ByPrdfndTmPrds")
 
-	@PricChng.deleter
-	def PricChng(self):
-		del self._PricChng
-		self._PricChng = None
+	@ByPrdfndTmPrds.deleter
+	def ByPrdfndTmPrds(self):
+		del self._ByPrdfndTmPrds
+		self._ByPrdfndTmPrds = None
 
 	@property
 	def ByUsrDfndTmPrd(self):
@@ -36,19 +36,6 @@ class ValuationStatistics3(base_types._BaseFieldType):
 		self._ByUsrDfndTmPrd = None
 
 	@property
-	def Yld(self):
-		return self._Yld
-
-	@Yld.setter
-	def Yld(self, value):
-		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
-
-	@Yld.deleter
-	def Yld(self):
-		del self._Yld
-		self._Yld = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -60,6 +47,19 @@ class ValuationStatistics3(base_types._BaseFieldType):
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
+
+	@property
+	def PricChng(self):
+		return self._PricChng
+
+	@PricChng.setter
+	def PricChng(self, value):
+		self._PricChng = value if type(value) != base_types.auto else self.make_default("PricChng")
+
+	@PricChng.deleter
+	def PricChng(self):
+		del self._PricChng
+		self._PricChng = None
 
 	@property
 	def PricTpChngBsis(self):
@@ -75,24 +75,24 @@ class ValuationStatistics3(base_types._BaseFieldType):
 		self._PricTpChngBsis = None
 
 	@property
-	def ByPrdfndTmPrds(self):
-		return self._ByPrdfndTmPrds
+	def Yld(self):
+		return self._Yld
 
-	@ByPrdfndTmPrds.setter
-	def ByPrdfndTmPrds(self, value):
-		self._ByPrdfndTmPrds = value if type(value) != base_types.auto else self.make_default("ByPrdfndTmPrds")
+	@Yld.setter
+	def Yld(self, value):
+		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
 
-	@ByPrdfndTmPrds.deleter
-	def ByPrdfndTmPrds(self):
-		del self._ByPrdfndTmPrds
-		self._ByPrdfndTmPrds = None
+	@Yld.deleter
+	def Yld(self):
+		del self._Yld
+		self._Yld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ByUsrDfndTmPrd', type=StatisticsByUserDefinedTimePeriod2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricTpChngBsis', type=PriceType2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ByPrdfndTmPrds', type=StatisticsByPredefinedTimePeriods2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ByUsrDfndTmPrd', type=StatisticsByUserDefinedTimePeriod2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricTpChngBsis', type=PriceType2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -4,7 +4,7 @@ from ._AcceptedReason8Choice import AcceptedReason8Choice
 
 class AcceptedStatusReason7(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRsnInf", "_Rsn"]
+	__slots__ = ["_Rsn", "_AddtlRsnInf"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

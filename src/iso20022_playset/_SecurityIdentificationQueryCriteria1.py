@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._Max52Text import Max52Text
 
 class SecurityIdentificationQueryCriteria1(base_types._BaseFieldType):
 

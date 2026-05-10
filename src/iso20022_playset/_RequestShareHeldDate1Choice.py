@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateCalculationMethod1Code import DateCalculationMethod1Code
 from ._Max350Text import Max350Text
+from ._DateCalculationMethod1Code import DateCalculationMethod1Code
 
 class RequestShareHeldDate1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtClctnDesc", "_DtClctnMtd"]
+	__slots__ = ["_DtClctnMtd", "_DtClctnDesc"]
 	@property
 	def DtClctnDesc(self):
 		return self._DtClctnDesc

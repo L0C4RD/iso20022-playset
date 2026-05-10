@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._EUCapitalGain2Code import EUCapitalGain2Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class CapitalGainFormat3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

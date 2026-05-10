@@ -4,7 +4,7 @@ from ._RejectedElement1 import RejectedElement1
 
 class RejectionReason1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GblRjctnRsn", "_RjctdElmt"]
+	__slots__ = ["_RjctdElmt", "_GblRjctnRsn"]
 	@property
 	def GblRjctnRsn(self):
 		return self._GblRjctnRsn

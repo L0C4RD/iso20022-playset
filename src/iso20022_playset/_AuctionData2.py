@@ -1,24 +1,11 @@
 from . import base_types
 from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
-from ._Max50Text import Max50Text
 from ._SecuritiesTransactionPrice21Choice import SecuritiesTransactionPrice21Choice
+from ._Max50Text import Max50Text
 
 class AuctionData2(base_types._BaseFieldType):
 
 	__slots__ = ["_IndctvAuctnVol", "_IndctvAuctnPric", "_TradgPhs"]
-	@property
-	def IndctvAuctnVol(self):
-		return self._IndctvAuctnVol
-
-	@IndctvAuctnVol.setter
-	def IndctvAuctnVol(self, value):
-		self._IndctvAuctnVol = value if type(value) != base_types.auto else self.make_default("IndctvAuctnVol")
-
-	@IndctvAuctnVol.deleter
-	def IndctvAuctnVol(self):
-		del self._IndctvAuctnVol
-		self._IndctvAuctnVol = None
-
 	@property
 	def IndctvAuctnPric(self):
 		return self._IndctvAuctnPric
@@ -31,6 +18,19 @@ class AuctionData2(base_types._BaseFieldType):
 	def IndctvAuctnPric(self):
 		del self._IndctvAuctnPric
 		self._IndctvAuctnPric = None
+
+	@property
+	def IndctvAuctnVol(self):
+		return self._IndctvAuctnVol
+
+	@IndctvAuctnVol.setter
+	def IndctvAuctnVol(self, value):
+		self._IndctvAuctnVol = value if type(value) != base_types.auto else self.make_default("IndctvAuctnVol")
+
+	@IndctvAuctnVol.deleter
+	def IndctvAuctnVol(self):
+		del self._IndctvAuctnVol
+		self._IndctvAuctnVol = None
 
 	@property
 	def TradgPhs(self):
@@ -46,8 +46,8 @@ class AuctionData2(base_types._BaseFieldType):
 		self._TradgPhs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndctvAuctnVol', type=FinancialInstrumentQuantity25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndctvAuctnPric', type=SecuritiesTransactionPrice21Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndctvAuctnVol', type=FinancialInstrumentQuantity25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgPhs', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

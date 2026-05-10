@@ -1,82 +1,30 @@
 from . import base_types
-from ._ObligationType1Choice import ObligationType1Choice
-from ._Reference24 import Reference24
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._Price14 import Price14
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._AmountAndDirection27 import AmountAndDirection27
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._Max35Text import Max35Text
 from ._ISODate import ISODate
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._Reference24 import Reference24
+from ._Price14 import Price14
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._ObligationType1Choice import ObligationType1Choice
 from ._CurrencyCode import CurrencyCode
+from ._Max35Text import Max35Text
+from ._AmountAndDirection27 import AmountAndDirection27
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 
 class SettlementObligation10(base_types._BaseFieldType):
 
-	__slots__ = ["_Pmt", "_SttlmAmt", "_SctiesMvmntTp", "_Qty", "_RltdSttlmOblgtnId", "_NetPosPric", "_TradgCcy", "_TradDt", "_SttlmDt", "_Refs", "_Desc", "_OblgtnTp"]
+	__slots__ = ["_SttlmAmt", "_Qty", "_OblgtnTp", "_TradDt", "_SctiesMvmntTp", "_NetPosPric", "_Refs", "_TradgCcy", "_Pmt", "_Desc", "_SttlmDt", "_RltdSttlmOblgtnId"]
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def Desc(self):
+		return self._Desc
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
-	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
-
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
-
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
-
-	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
-
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
-
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
-	def RltdSttlmOblgtnId(self):
-		return self._RltdSttlmOblgtnId
-
-	@RltdSttlmOblgtnId.setter
-	def RltdSttlmOblgtnId(self, value):
-		self._RltdSttlmOblgtnId = value if type(value) != base_types.auto else self.make_default("RltdSttlmOblgtnId")
-
-	@RltdSttlmOblgtnId.deleter
-	def RltdSttlmOblgtnId(self):
-		del self._RltdSttlmOblgtnId
-		self._RltdSttlmOblgtnId = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def NetPosPric(self):
@@ -92,43 +40,43 @@ class SettlementObligation10(base_types._BaseFieldType):
 		self._NetPosPric = None
 
 	@property
-	def TradgCcy(self):
-		return self._TradgCcy
+	def OblgtnTp(self):
+		return self._OblgtnTp
 
-	@TradgCcy.setter
-	def TradgCcy(self, value):
-		self._TradgCcy = value if type(value) != base_types.auto else self.make_default("TradgCcy")
+	@OblgtnTp.setter
+	def OblgtnTp(self, value):
+		self._OblgtnTp = value if type(value) != base_types.auto else self.make_default("OblgtnTp")
 
-	@TradgCcy.deleter
-	def TradgCcy(self):
-		del self._TradgCcy
-		self._TradgCcy = None
-
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@OblgtnTp.deleter
+	def OblgtnTp(self):
+		del self._OblgtnTp
+		self._OblgtnTp = None
 
 	@property
-	def SttlmDt(self):
-		return self._SttlmDt
+	def Pmt(self):
+		return self._Pmt
 
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
 
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def Refs(self):
@@ -144,43 +92,95 @@ class SettlementObligation10(base_types._BaseFieldType):
 		self._Refs = None
 
 	@property
-	def Desc(self):
-		return self._Desc
+	def RltdSttlmOblgtnId(self):
+		return self._RltdSttlmOblgtnId
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+	@RltdSttlmOblgtnId.setter
+	def RltdSttlmOblgtnId(self, value):
+		self._RltdSttlmOblgtnId = value if type(value) != base_types.auto else self.make_default("RltdSttlmOblgtnId")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@RltdSttlmOblgtnId.deleter
+	def RltdSttlmOblgtnId(self):
+		del self._RltdSttlmOblgtnId
+		self._RltdSttlmOblgtnId = None
 
 	@property
-	def OblgtnTp(self):
-		return self._OblgtnTp
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
 
-	@OblgtnTp.setter
-	def OblgtnTp(self, value):
-		self._OblgtnTp = value if type(value) != base_types.auto else self.make_default("OblgtnTp")
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
 
-	@OblgtnTp.deleter
-	def OblgtnTp(self):
-		del self._OblgtnTp
-		self._OblgtnTp = None
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
+
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
+	def TradDt(self):
+		return self._TradDt
+
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
+
+	@property
+	def TradgCcy(self):
+		return self._TradgCcy
+
+	@TradgCcy.setter
+	def TradgCcy(self, value):
+		self._TradgCcy = value if type(value) != base_types.auto else self.make_default("TradgCcy")
+
+	@TradgCcy.deleter
+	def TradgCcy(self):
+		del self._TradgCcy
+		self._TradgCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection27, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdSttlmOblgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetPosPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgCcy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Refs', type=Reference24, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetPosPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OblgtnTp', type=ObligationType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Refs', type=Reference24, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdSttlmOblgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection27, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgCcy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

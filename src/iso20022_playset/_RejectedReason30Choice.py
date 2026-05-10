@@ -1,10 +1,10 @@
 from . import base_types
-from ._RejectionReason52Code import RejectionReason52Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._RejectionReason52Code import RejectionReason52Code
 
 class RejectedReason30Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,14 +1,40 @@
 from . import base_types
-from ._ServiceLevel8Choice import ServiceLevel8Choice
-from ._Max15NumericText import Max15NumericText
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
 from ._Max35Text import Max35Text
 from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._Max15NumericText import Max15NumericText
+from ._ServiceLevel8Choice import ServiceLevel8Choice
 from ._ISODateTime import ISODateTime
 
 class TrackerHeader5(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_TrckrInfrmgPty", "_OrgnlTrckrUpd", "_SvcLvl", "_TrckrInfrmdPty", "_MsgId", "_CreDtTm"]
+	__slots__ = ["_SvcLvl", "_TrckrInfrmdPty", "_TrckrInfrmgPty", "_MsgId", "_OrgnlTrckrUpd", "_CreDtTm", "_NbOfTxs"]
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	@property
 	def NbOfTxs(self):
 		return self._NbOfTxs
@@ -21,19 +47,6 @@ class TrackerHeader5(base_types._BaseFieldType):
 	def NbOfTxs(self):
 		del self._NbOfTxs
 		self._NbOfTxs = None
-
-	@property
-	def TrckrInfrmgPty(self):
-		return self._TrckrInfrmgPty
-
-	@TrckrInfrmgPty.setter
-	def TrckrInfrmgPty(self, value):
-		self._TrckrInfrmgPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmgPty")
-
-	@TrckrInfrmgPty.deleter
-	def TrckrInfrmgPty(self):
-		del self._TrckrInfrmgPty
-		self._TrckrInfrmgPty = None
 
 	@property
 	def OrgnlTrckrUpd(self):
@@ -75,38 +88,25 @@ class TrackerHeader5(base_types._BaseFieldType):
 		self._TrckrInfrmdPty = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def TrckrInfrmgPty(self):
+		return self._TrckrInfrmgPty
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@TrckrInfrmgPty.setter
+	def TrckrInfrmgPty(self, value):
+		self._TrckrInfrmgPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmgPty")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@TrckrInfrmgPty.deleter
+	def TrckrInfrmgPty(self):
+		del self._TrckrInfrmgPty
+		self._TrckrInfrmgPty = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrckrInfrmgPty', type=TrackerPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlTrckrUpd', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckrInfrmdPty', type=TrackerPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckrInfrmgPty', type=TrackerPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
 

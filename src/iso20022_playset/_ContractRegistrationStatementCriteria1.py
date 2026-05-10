@@ -3,7 +3,20 @@ from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_RgltryRuleVldtn", "_SpprtgDocJrnl", "_AddtlSpprtgDocJrnl", "_TxJrnl"]
+	__slots__ = ["_TxJrnl", "_AddtlSpprtgDocJrnl", "_SpprtgDocJrnl", "_RgltryRuleVldtn"]
+	@property
+	def AddtlSpprtgDocJrnl(self):
+		return self._AddtlSpprtgDocJrnl
+
+	@AddtlSpprtgDocJrnl.setter
+	def AddtlSpprtgDocJrnl(self, value):
+		self._AddtlSpprtgDocJrnl = value if type(value) != base_types.auto else self.make_default("AddtlSpprtgDocJrnl")
+
+	@AddtlSpprtgDocJrnl.deleter
+	def AddtlSpprtgDocJrnl(self):
+		del self._AddtlSpprtgDocJrnl
+		self._AddtlSpprtgDocJrnl = None
+
 	@property
 	def RgltryRuleVldtn(self):
 		return self._RgltryRuleVldtn
@@ -31,19 +44,6 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._SpprtgDocJrnl = None
 
 	@property
-	def AddtlSpprtgDocJrnl(self):
-		return self._AddtlSpprtgDocJrnl
-
-	@AddtlSpprtgDocJrnl.setter
-	def AddtlSpprtgDocJrnl(self, value):
-		self._AddtlSpprtgDocJrnl = value if type(value) != base_types.auto else self.make_default("AddtlSpprtgDocJrnl")
-
-	@AddtlSpprtgDocJrnl.deleter
-	def AddtlSpprtgDocJrnl(self):
-		del self._AddtlSpprtgDocJrnl
-		self._AddtlSpprtgDocJrnl = None
-
-	@property
 	def TxJrnl(self):
 		return self._TxJrnl
 
@@ -57,9 +57,9 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._TxJrnl = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RgltryRuleVldtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

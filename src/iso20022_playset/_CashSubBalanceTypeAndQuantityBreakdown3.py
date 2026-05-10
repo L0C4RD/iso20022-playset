@@ -1,10 +1,10 @@
 from . import base_types
-from ._AmountAndQuantityBreakdown1 import AmountAndQuantityBreakdown1
 from ._CashBalanceType3Choice import CashBalanceType3Choice
+from ._AmountAndQuantityBreakdown1 import AmountAndQuantityBreakdown1
 
 class CashSubBalanceTypeAndQuantityBreakdown3(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyBrkdwn", "_Tp"]
+	__slots__ = ["_Tp", "_QtyBrkdwn"]
 	@property
 	def QtyBrkdwn(self):
 		return self._QtyBrkdwn

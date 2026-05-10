@@ -4,7 +4,7 @@ from ._AgentRole1Code import AgentRole1Code
 
 class IssuerAgent3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Role"]
+	__slots__ = ["_Role", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

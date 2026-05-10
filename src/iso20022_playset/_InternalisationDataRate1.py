@@ -3,7 +3,7 @@ from ._PercentageRate import PercentageRate
 
 class InternalisationDataRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_VolPctg"]
+	__slots__ = ["_VolPctg", "_Val"]
 	@property
 	def Val(self):
 		return self._Val

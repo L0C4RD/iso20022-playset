@@ -1,38 +1,12 @@
 from . import base_types
+from ._AnyBICIdentifier import AnyBICIdentifier
+from ._CountryCode import CountryCode
 from ._Max35Text import Max35Text
 from ._MICIdentifier import MICIdentifier
-from ._CountryCode import CountryCode
-from ._AnyBICIdentifier import AnyBICIdentifier
 
 class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_Xchg", "_Ctry", "_OverTheCntr"]
-	@property
-	def Pty(self):
-		return self._Pty
-
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
-
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
-
-	@property
-	def Xchg(self):
-		return self._Xchg
-
-	@Xchg.setter
-	def Xchg(self, value):
-		self._Xchg = value if type(value) != base_types.auto else self.make_default("Xchg")
-
-	@Xchg.deleter
-	def Xchg(self):
-		del self._Xchg
-		self._Xchg = None
-
+	__slots__ = ["_Xchg", "_Ctry", "_Pty", "_OverTheCntr"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -59,10 +33,36 @@ class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 		del self._OverTheCntr
 		self._OverTheCntr = None
 
+	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
+
+	@property
+	def Xchg(self):
+		return self._Xchg
+
+	@Xchg.setter
+	def Xchg(self, value):
+		self._Xchg = value if type(value) != base_types.auto else self.make_default("Xchg")
+
+	@Xchg.deleter
+	def Xchg(self):
+		del self._Xchg
+		self._Xchg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Xchg', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OverTheCntr', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pty', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Xchg', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

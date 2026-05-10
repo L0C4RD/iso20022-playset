@@ -1,39 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max2MBBinary import Max2MBBinary
-from ._UndertakingDocumentType1Choice import UndertakingDocumentType1Choice
 from ._DocumentFormat1Choice import DocumentFormat1Choice
+from ._Max2MBBinary import Max2MBBinary
+from ._Max35Text import Max35Text
+from ._UndertakingDocumentType1Choice import UndertakingDocumentType1Choice
 from ._PartyAndSignature2 import PartyAndSignature2
 
 class Document9(base_types._BaseFieldType):
 
-	__slots__ = ["_Nclsr", "_Id", "_DgtlSgntr", "_Frmt", "_Tp"]
-	@property
-	def Nclsr(self):
-		return self._Nclsr
-
-	@Nclsr.setter
-	def Nclsr(self, value):
-		self._Nclsr = value if type(value) != base_types.auto else self.make_default("Nclsr")
-
-	@Nclsr.deleter
-	def Nclsr(self):
-		del self._Nclsr
-		self._Nclsr = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Tp", "_DgtlSgntr", "_Id", "_Frmt", "_Nclsr"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -61,6 +35,32 @@ class Document9(base_types._BaseFieldType):
 		self._Frmt = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Nclsr(self):
+		return self._Nclsr
+
+	@Nclsr.setter
+	def Nclsr(self, value):
+		self._Nclsr = value if type(value) != base_types.auto else self.make_default("Nclsr")
+
+	@Nclsr.deleter
+	def Nclsr(self):
+		del self._Nclsr
+		self._Nclsr = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -74,10 +74,10 @@ class Document9(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nclsr', type=Max2MBBinary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nclsr', type=Max2MBBinary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=UndertakingDocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

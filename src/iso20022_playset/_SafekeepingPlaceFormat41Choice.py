@@ -1,13 +1,26 @@
 from . import base_types
 from ._SafekeepingPlaceTypeAndText8 import SafekeepingPlaceTypeAndText8
-from ._GenericIdentification78 import GenericIdentification78
 from ._CountryCode import CountryCode
-from ._SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
 from ._DTI2024Identifier import DTI2024Identifier
+from ._GenericIdentification78 import GenericIdentification78
+from ._SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
 
 class SafekeepingPlaceFormat41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlLdgrId", "_Id", "_Prtry", "_Ctry", "_TpAndId"]
+	__slots__ = ["_Id", "_Ctry", "_TpAndId", "_Prtry", "_DgtlLdgrId"]
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	@property
 	def DgtlLdgrId(self):
 		return self._DgtlLdgrId
@@ -48,19 +61,6 @@ class SafekeepingPlaceFormat41Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
 	def TpAndId(self):
 		return self._TpAndId
 
@@ -74,10 +74,10 @@ class SafekeepingPlaceFormat41Choice(base_types._BaseFieldType):
 		self._TpAndId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification78, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,15 +1,28 @@
 from . import base_types
-from ._Account28 import Account28
-from ._AdditionalReference10 import AdditionalReference10
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
 from ._FinancialInstrument61Choice import FinancialInstrument61Choice
+from ._Account28 import Account28
 from ._FundSettlementParameters18 import FundSettlementParameters18
+from ._YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
+from ._AdditionalReference10 import AdditionalReference10
 from ._AdditionalInformation15 import AdditionalInformation15
 
 class FinancialInstrument101(base_types._BaseFieldType):
 
-	__slots__ = ["_AsstsHeldInOwnNm", "_TrfRsltsInChngOfBnfclOwnr", "_SttlmPtiesDtls", "_CtrPtyRef", "_Instrm", "_Trfr", "_ClntRef", "_AddtlInf", "_TrfeeAcct", "_LineId"]
+	__slots__ = ["_SttlmPtiesDtls", "_LineId", "_AsstsHeldInOwnNm", "_Instrm", "_Trfr", "_AddtlInf", "_TrfRsltsInChngOfBnfclOwnr", "_ClntRef", "_CtrPtyRef", "_TrfeeAcct"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def AsstsHeldInOwnNm(self):
 		return self._AsstsHeldInOwnNm
@@ -24,30 +37,17 @@ class FinancialInstrument101(base_types._BaseFieldType):
 		self._AsstsHeldInOwnNm = None
 
 	@property
-	def TrfRsltsInChngOfBnfclOwnr(self):
-		return self._TrfRsltsInChngOfBnfclOwnr
+	def ClntRef(self):
+		return self._ClntRef
 
-	@TrfRsltsInChngOfBnfclOwnr.setter
-	def TrfRsltsInChngOfBnfclOwnr(self, value):
-		self._TrfRsltsInChngOfBnfclOwnr = value if type(value) != base_types.auto else self.make_default("TrfRsltsInChngOfBnfclOwnr")
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
 
-	@TrfRsltsInChngOfBnfclOwnr.deleter
-	def TrfRsltsInChngOfBnfclOwnr(self):
-		del self._TrfRsltsInChngOfBnfclOwnr
-		self._TrfRsltsInChngOfBnfclOwnr = None
-
-	@property
-	def SttlmPtiesDtls(self):
-		return self._SttlmPtiesDtls
-
-	@SttlmPtiesDtls.setter
-	def SttlmPtiesDtls(self, value):
-		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
-
-	@SttlmPtiesDtls.deleter
-	def SttlmPtiesDtls(self):
-		del self._SttlmPtiesDtls
-		self._SttlmPtiesDtls = None
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
 
 	@property
 	def CtrPtyRef(self):
@@ -76,43 +76,43 @@ class FinancialInstrument101(base_types._BaseFieldType):
 		self._Instrm = None
 
 	@property
-	def Trfr(self):
-		return self._Trfr
+	def LineId(self):
+		return self._LineId
 
-	@Trfr.setter
-	def Trfr(self, value):
-		self._Trfr = value if type(value) != base_types.auto else self.make_default("Trfr")
+	@LineId.setter
+	def LineId(self, value):
+		self._LineId = value if type(value) != base_types.auto else self.make_default("LineId")
 
-	@Trfr.deleter
-	def Trfr(self):
-		del self._Trfr
-		self._Trfr = None
-
-	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
+	@LineId.deleter
+	def LineId(self):
+		del self._LineId
+		self._LineId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def SttlmPtiesDtls(self):
+		return self._SttlmPtiesDtls
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@SttlmPtiesDtls.setter
+	def SttlmPtiesDtls(self, value):
+		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@SttlmPtiesDtls.deleter
+	def SttlmPtiesDtls(self):
+		del self._SttlmPtiesDtls
+		self._SttlmPtiesDtls = None
+
+	@property
+	def TrfRsltsInChngOfBnfclOwnr(self):
+		return self._TrfRsltsInChngOfBnfclOwnr
+
+	@TrfRsltsInChngOfBnfclOwnr.setter
+	def TrfRsltsInChngOfBnfclOwnr(self, value):
+		self._TrfRsltsInChngOfBnfclOwnr = value if type(value) != base_types.auto else self.make_default("TrfRsltsInChngOfBnfclOwnr")
+
+	@TrfRsltsInChngOfBnfclOwnr.deleter
+	def TrfRsltsInChngOfBnfclOwnr(self):
+		del self._TrfRsltsInChngOfBnfclOwnr
+		self._TrfRsltsInChngOfBnfclOwnr = None
 
 	@property
 	def TrfeeAcct(self):
@@ -128,28 +128,28 @@ class FinancialInstrument101(base_types._BaseFieldType):
 		self._TrfeeAcct = None
 
 	@property
-	def LineId(self):
-		return self._LineId
+	def Trfr(self):
+		return self._Trfr
 
-	@LineId.setter
-	def LineId(self, value):
-		self._LineId = value if type(value) != base_types.auto else self.make_default("LineId")
+	@Trfr.setter
+	def Trfr(self, value):
+		self._Trfr = value if type(value) != base_types.auto else self.make_default("Trfr")
 
-	@LineId.deleter
-	def LineId(self):
-		del self._LineId
-		self._LineId = None
+	@Trfr.deleter
+	def Trfr(self):
+		del self._Trfr
+		self._Trfr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AsstsHeldInOwnNm', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfRsltsInChngOfBnfclOwnr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters18, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Instrm', type=FinancialInstrument61Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trfr', type=Account28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrfeeAcct', type=Account28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters18, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfRsltsInChngOfBnfclOwnr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfeeAcct', type=Account28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trfr', type=Account28, min=0, max=1, mutex_group=None, array=False),
 	))
 

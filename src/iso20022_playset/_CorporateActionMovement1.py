@@ -1,28 +1,28 @@
 from . import base_types
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._ISODate import ISODate
 from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
+from ._YesNoIndicator import YesNoIndicator
+from ._DistributionInstructionType1Code import DistributionInstructionType1Code
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 from ._Exact3NumericText import Exact3NumericText
 from ._Max35Text import Max35Text
-from ._DistributionInstructionType1Code import DistributionInstructionType1Code
-from ._YesNoIndicator import YesNoIndicator
-from ._ISODate import ISODate
 
 class CorporateActionMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_AcctOwnrId", "_HghPrtyInd", "_AcctId", "_ReqdExctnDt", "_OptnNb", "_ConfdBalSctiesQty", "_OrdrTp"]
+	__slots__ = ["_AcctOwnrId", "_HghPrtyInd", "_ReqdExctnDt", "_OrdrTp", "_ConfdBalSctiesQty", "_AcctId", "_OptnNb", "_OptnTp"]
 	@property
-	def OptnTp(self):
-		return self._OptnTp
+	def AcctId(self):
+		return self._AcctId
 
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def AcctOwnrId(self):
@@ -38,6 +38,19 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
+	def ConfdBalSctiesQty(self):
+		return self._ConfdBalSctiesQty
+
+	@ConfdBalSctiesQty.setter
+	def ConfdBalSctiesQty(self, value):
+		self._ConfdBalSctiesQty = value if type(value) != base_types.auto else self.make_default("ConfdBalSctiesQty")
+
+	@ConfdBalSctiesQty.deleter
+	def ConfdBalSctiesQty(self):
+		del self._ConfdBalSctiesQty
+		self._ConfdBalSctiesQty = None
+
+	@property
 	def HghPrtyInd(self):
 		return self._HghPrtyInd
 
@@ -49,32 +62,6 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 	def HghPrtyInd(self):
 		del self._HghPrtyInd
 		self._HghPrtyInd = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
-
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
-
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
 
 	@property
 	def OptnNb(self):
@@ -90,17 +77,17 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 		self._OptnNb = None
 
 	@property
-	def ConfdBalSctiesQty(self):
-		return self._ConfdBalSctiesQty
+	def OptnTp(self):
+		return self._OptnTp
 
-	@ConfdBalSctiesQty.setter
-	def ConfdBalSctiesQty(self, value):
-		self._ConfdBalSctiesQty = value if type(value) != base_types.auto else self.make_default("ConfdBalSctiesQty")
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
 
-	@ConfdBalSctiesQty.deleter
-	def ConfdBalSctiesQty(self):
-		del self._ConfdBalSctiesQty
-		self._ConfdBalSctiesQty = None
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
 
 	@property
 	def OrdrTp(self):
@@ -115,14 +102,27 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 		del self._OrdrTp
 		self._OrdrTp = None
 
+	@property
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
+
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HghPrtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfdBalSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HghPrtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrTp', type=DistributionInstructionType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

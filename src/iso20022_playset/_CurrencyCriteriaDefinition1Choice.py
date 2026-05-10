@@ -4,7 +4,7 @@ from ._CurrencyExchangeCriteria2 import CurrencyExchangeCriteria2
 
 class CurrencyCriteriaDefinition1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NewCrit", "_QryNm"]
+	__slots__ = ["_QryNm", "_NewCrit"]
 	@property
 	def NewCrit(self):
 		return self._NewCrit

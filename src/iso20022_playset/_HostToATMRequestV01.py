@@ -1,24 +1,24 @@
 from . import base_types
+from ._Header20 import Header20
 from ._ContentInformationType10 import ContentInformationType10
 from ._ContentInformationType15 import ContentInformationType15
 from ._HostToATMRequest1 import HostToATMRequest1
-from ._Header20 import Header20
 
 class HostToATMRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdHstToATMReq", "_HstToATMReq", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_PrtctdHstToATMReq", "_HstToATMReq"]
 	@property
-	def PrtctdHstToATMReq(self):
-		return self._PrtctdHstToATMReq
+	def Hdr(self):
+		return self._Hdr
 
-	@PrtctdHstToATMReq.setter
-	def PrtctdHstToATMReq(self, value):
-		self._PrtctdHstToATMReq = value if type(value) != base_types.auto else self.make_default("PrtctdHstToATMReq")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
-	@PrtctdHstToATMReq.deleter
-	def PrtctdHstToATMReq(self):
-		del self._PrtctdHstToATMReq
-		self._PrtctdHstToATMReq = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def HstToATMReq(self):
@@ -34,17 +34,17 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 		self._HstToATMReq = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def PrtctdHstToATMReq(self):
+		return self._PrtctdHstToATMReq
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+	@PrtctdHstToATMReq.setter
+	def PrtctdHstToATMReq(self, value):
+		self._PrtctdHstToATMReq = value if type(value) != base_types.auto else self.make_default("PrtctdHstToATMReq")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@PrtctdHstToATMReq.deleter
+	def PrtctdHstToATMReq(self):
+		del self._PrtctdHstToATMReq
+		self._PrtctdHstToATMReq = None
 
 	@property
 	def SctyTrlr(self):
@@ -60,9 +60,9 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdHstToATMReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstToATMReq', type=HostToATMRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstToATMReq', type=HostToATMRequest1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdHstToATMReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

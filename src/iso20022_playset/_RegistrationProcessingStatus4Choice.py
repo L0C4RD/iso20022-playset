@@ -1,6 +1,6 @@
 from . import base_types
-from ._RegistrationProcessingStatus1Code import RegistrationProcessingStatus1Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._RegistrationProcessingStatus1Code import RegistrationProcessingStatus1Code
 
 class RegistrationProcessingStatus4Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._CountryCode import CountryCode
+from ._Max350Text import Max350Text
 
 class RegulatoryStipulations1(base_types._BaseFieldType):
 
 	__slots__ = ["_Stiptns", "_Ctry"]
-	@property
-	def Stiptns(self):
-		return self._Stiptns
-
-	@Stiptns.setter
-	def Stiptns(self, value):
-		self._Stiptns = value if type(value) != base_types.auto else self.make_default("Stiptns")
-
-	@Stiptns.deleter
-	def Stiptns(self):
-		del self._Stiptns
-		self._Stiptns = None
-
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -31,8 +18,21 @@ class RegulatoryStipulations1(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def Stiptns(self):
+		return self._Stiptns
+
+	@Stiptns.setter
+	def Stiptns(self, value):
+		self._Stiptns = value if type(value) != base_types.auto else self.make_default("Stiptns")
+
+	@Stiptns.deleter
+	def Stiptns(self):
+		del self._Stiptns
+		self._Stiptns = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Stiptns', type=Max350Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Stiptns', type=Max350Text, min=1, max=None, mutex_group=None, array=True),
 	))
 

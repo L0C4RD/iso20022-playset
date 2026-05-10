@@ -1,25 +1,12 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
-from ._HostToATMAcknowledgement1 import HostToATMAcknowledgement1
-from ._ContentInformationType15 import ContentInformationType15
 from ._Header20 import Header20
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._HostToATMAcknowledgement1 import HostToATMAcknowledgement1
 
 class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdHstToATMAck", "_Hdr", "_HstToATMAck", "_SctyTrlr"]
-	@property
-	def PrtctdHstToATMAck(self):
-		return self._PrtctdHstToATMAck
-
-	@PrtctdHstToATMAck.setter
-	def PrtctdHstToATMAck(self, value):
-		self._PrtctdHstToATMAck = value if type(value) != base_types.auto else self.make_default("PrtctdHstToATMAck")
-
-	@PrtctdHstToATMAck.deleter
-	def PrtctdHstToATMAck(self):
-		del self._PrtctdHstToATMAck
-		self._PrtctdHstToATMAck = None
-
+	__slots__ = ["_SctyTrlr", "_Hdr", "_HstToATMAck", "_PrtctdHstToATMAck"]
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -47,6 +34,19 @@ class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 		self._HstToATMAck = None
 
 	@property
+	def PrtctdHstToATMAck(self):
+		return self._PrtctdHstToATMAck
+
+	@PrtctdHstToATMAck.setter
+	def PrtctdHstToATMAck(self, value):
+		self._PrtctdHstToATMAck = value if type(value) != base_types.auto else self.make_default("PrtctdHstToATMAck")
+
+	@PrtctdHstToATMAck.deleter
+	def PrtctdHstToATMAck(self):
+		del self._PrtctdHstToATMAck
+		self._PrtctdHstToATMAck = None
+
+	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
 
@@ -60,9 +60,9 @@ class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdHstToATMAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstToATMAck', type=HostToATMAcknowledgement1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdHstToATMAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

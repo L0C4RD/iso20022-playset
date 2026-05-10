@@ -5,7 +5,7 @@ from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmoun
 
 class AmountAndDirection51(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CdtDbtInd", "_OrgnlCcyAndOrdrdAmt"]
+	__slots__ = ["_OrgnlCcyAndOrdrdAmt", "_CdtDbtInd", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

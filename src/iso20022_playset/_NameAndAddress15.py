@@ -4,7 +4,7 @@ from ._PostalAddress21 import PostalAddress21
 
 class NameAndAddress15(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_PstlAdr"]
+	__slots__ = ["_PstlAdr", "_Nm"]
 	@property
 	def Nm(self):
 		return self._Nm

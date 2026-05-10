@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._Max35Text import Max35Text
 
 class PartyIdentification265(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrntvIdr", "_AnyBIC"]
+	__slots__ = ["_AnyBIC", "_AltrntvIdr"]
 	@property
 	def AltrntvIdr(self):
 		return self._AltrntvIdr

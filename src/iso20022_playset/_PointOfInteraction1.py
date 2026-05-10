@@ -1,13 +1,26 @@
 from . import base_types
-from ._PointOfInteractionComponent1 import PointOfInteractionComponent1
-from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._GenericIdentification32 import GenericIdentification32
+from ._Max35Text import Max35Text
 from ._PointOfInteractionCapabilities1 import PointOfInteractionCapabilities1
+from ._PointOfInteractionComponent1 import PointOfInteractionComponent1
+from ._GenericIdentification32 import GenericIdentification32
 
 class PointOfInteraction1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cpblties", "_SysNm", "_GrpId", "_Cmpnt", "_Id"]
+	__slots__ = ["_Cpblties", "_GrpId", "_Cmpnt", "_Id", "_SysNm"]
+	@property
+	def Cmpnt(self):
+		return self._Cmpnt
+
+	@Cmpnt.setter
+	def Cmpnt(self, value):
+		self._Cmpnt = value if type(value) != base_types.auto else self.make_default("Cmpnt")
+
+	@Cmpnt.deleter
+	def Cmpnt(self):
+		del self._Cmpnt
+		self._Cmpnt = None
+
 	@property
 	def Cpblties(self):
 		return self._Cpblties
@@ -20,19 +33,6 @@ class PointOfInteraction1(base_types._BaseFieldType):
 	def Cpblties(self):
 		del self._Cpblties
 		self._Cpblties = None
-
-	@property
-	def SysNm(self):
-		return self._SysNm
-
-	@SysNm.setter
-	def SysNm(self, value):
-		self._SysNm = value if type(value) != base_types.auto else self.make_default("SysNm")
-
-	@SysNm.deleter
-	def SysNm(self):
-		del self._SysNm
-		self._SysNm = None
 
 	@property
 	def GrpId(self):
@@ -48,19 +48,6 @@ class PointOfInteraction1(base_types._BaseFieldType):
 		self._GrpId = None
 
 	@property
-	def Cmpnt(self):
-		return self._Cmpnt
-
-	@Cmpnt.setter
-	def Cmpnt(self, value):
-		self._Cmpnt = value if type(value) != base_types.auto else self.make_default("Cmpnt")
-
-	@Cmpnt.deleter
-	def Cmpnt(self):
-		del self._Cmpnt
-		self._Cmpnt = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -73,11 +60,24 @@ class PointOfInteraction1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def SysNm(self):
+		return self._SysNm
+
+	@SysNm.setter
+	def SysNm(self, value):
+		self._SysNm = value if type(value) != base_types.auto else self.make_default("SysNm")
+
+	@SysNm.deleter
+	def SysNm(self):
+		del self._SysNm
+		self._SysNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmpnt', type=PointOfInteractionComponent1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=GenericIdentification32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

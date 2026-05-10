@@ -1,13 +1,26 @@
 from . import base_types
 from ._BaseOneRate import BaseOneRate
-from ._Max40Text import Max40Text
 from ._Max70Text import Max70Text
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ISODateTime import ISODateTime
+from ._Max40Text import Max40Text
 
 class CurrencyExchange6(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Cmnts", "_TrgtCcy", "_UnitCcy", "_XchgRate", "_QtnDt", "_SrcCcy"]
+	__slots__ = ["_UnitCcy", "_QtnDt", "_XchgRate", "_Cmnts", "_TrgtCcy", "_Desc", "_SrcCcy"]
+	@property
+	def Cmnts(self):
+		return self._Cmnts
+
+	@Cmnts.setter
+	def Cmnts(self, value):
+		self._Cmnts = value if type(value) != base_types.auto else self.make_default("Cmnts")
+
+	@Cmnts.deleter
+	def Cmnts(self):
+		del self._Cmnts
+		self._Cmnts = None
+
 	@property
 	def Desc(self):
 		return self._Desc
@@ -22,17 +35,30 @@ class CurrencyExchange6(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def Cmnts(self):
-		return self._Cmnts
+	def QtnDt(self):
+		return self._QtnDt
 
-	@Cmnts.setter
-	def Cmnts(self, value):
-		self._Cmnts = value if type(value) != base_types.auto else self.make_default("Cmnts")
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
 
-	@Cmnts.deleter
-	def Cmnts(self):
-		del self._Cmnts
-		self._Cmnts = None
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
+
+	@property
+	def SrcCcy(self):
+		return self._SrcCcy
+
+	@SrcCcy.setter
+	def SrcCcy(self, value):
+		self._SrcCcy = value if type(value) != base_types.auto else self.make_default("SrcCcy")
+
+	@SrcCcy.deleter
+	def SrcCcy(self):
+		del self._SrcCcy
+		self._SrcCcy = None
 
 	@property
 	def TrgtCcy(self):
@@ -73,39 +99,13 @@ class CurrencyExchange6(base_types._BaseFieldType):
 		del self._XchgRate
 		self._XchgRate = None
 
-	@property
-	def QtnDt(self):
-		return self._QtnDt
-
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
-
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
-
-	@property
-	def SrcCcy(self):
-		return self._SrcCcy
-
-	@SrcCcy.setter
-	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != base_types.auto else self.make_default("SrcCcy")
-
-	@SrcCcy.deleter
-	def SrcCcy(self):
-		del self._SrcCcy
-		self._SrcCcy = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnts', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrgtCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 from . import base_types
-from ._AutoExtend1Choice import AutoExtend1Choice
 from ._ISODate import ISODate
 from ._NonExtension1 import NonExtension1
+from ._AutoExtend1Choice import AutoExtend1Choice
 
 class AutoExtension1(base_types._BaseFieldType):
 
-	__slots__ = ["_NonXtnsnNtfctn", "_Prd", "_FnlXpryDt"]
+	__slots__ = ["_Prd", "_NonXtnsnNtfctn", "_FnlXpryDt"]
+	@property
+	def FnlXpryDt(self):
+		return self._FnlXpryDt
+
+	@FnlXpryDt.setter
+	def FnlXpryDt(self, value):
+		self._FnlXpryDt = value if type(value) != base_types.auto else self.make_default("FnlXpryDt")
+
+	@FnlXpryDt.deleter
+	def FnlXpryDt(self):
+		del self._FnlXpryDt
+		self._FnlXpryDt = None
+
 	@property
 	def NonXtnsnNtfctn(self):
 		return self._NonXtnsnNtfctn
@@ -32,22 +45,9 @@ class AutoExtension1(base_types._BaseFieldType):
 		del self._Prd
 		self._Prd = None
 
-	@property
-	def FnlXpryDt(self):
-		return self._FnlXpryDt
-
-	@FnlXpryDt.setter
-	def FnlXpryDt(self, value):
-		self._FnlXpryDt = value if type(value) != base_types.auto else self.make_default("FnlXpryDt")
-
-	@FnlXpryDt.deleter
-	def FnlXpryDt(self):
-		del self._FnlXpryDt
-		self._FnlXpryDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FnlXpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonXtnsnNtfctn', type=NonExtension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prd', type=AutoExtend1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FnlXpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,44 +1,18 @@
 from . import base_types
-from ._BilateralLimit4 import BilateralLimit4
-from ._Max70Text import Max70Text
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._StandingOrder11 import StandingOrder11
-from ._PartyIdentification272 import PartyIdentification272
 from ._CashBalance13 import CashBalance13
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Limit5 import Limit5
+from ._BilateralLimit4 import BilateralLimit4
 from ._CashAccountType2Choice import CashAccountType2Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._StandingOrder11 import StandingOrder11
+from ._Max70Text import Max70Text
 from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
+from ._PartyIdentification272 import PartyIdentification272
 
 class CashAccountData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Prxy", "_Ccy", "_Svcr", "_Nm", "_CurMulLmt", "_MulBal", "_Ownr", "_CurBilLmt", "_StgOrdr"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Prxy(self):
-		return self._Prxy
-
-	@Prxy.setter
-	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
-
-	@Prxy.deleter
-	def Prxy(self):
-		del self._Prxy
-		self._Prxy = None
-
+	__slots__ = ["_MulBal", "_Svcr", "_CurBilLmt", "_StgOrdr", "_Ownr", "_CurMulLmt", "_Tp", "_Prxy", "_Ccy", "_Nm"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -53,30 +27,17 @@ class CashAccountData1(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def Svcr(self):
-		return self._Svcr
+	def CurBilLmt(self):
+		return self._CurBilLmt
 
-	@Svcr.setter
-	def Svcr(self, value):
-		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
+	@CurBilLmt.setter
+	def CurBilLmt(self, value):
+		self._CurBilLmt = value if type(value) != base_types.auto else self.make_default("CurBilLmt")
 
-	@Svcr.deleter
-	def Svcr(self):
-		del self._Svcr
-		self._Svcr = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@CurBilLmt.deleter
+	def CurBilLmt(self):
+		del self._CurBilLmt
+		self._CurBilLmt = None
 
 	@property
 	def CurMulLmt(self):
@@ -105,6 +66,19 @@ class CashAccountData1(base_types._BaseFieldType):
 		self._MulBal = None
 
 	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def Ownr(self):
 		return self._Ownr
 
@@ -118,17 +92,17 @@ class CashAccountData1(base_types._BaseFieldType):
 		self._Ownr = None
 
 	@property
-	def CurBilLmt(self):
-		return self._CurBilLmt
+	def Prxy(self):
+		return self._Prxy
 
-	@CurBilLmt.setter
-	def CurBilLmt(self, value):
-		self._CurBilLmt = value if type(value) != base_types.auto else self.make_default("CurBilLmt")
+	@Prxy.setter
+	def Prxy(self, value):
+		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
 
-	@CurBilLmt.deleter
-	def CurBilLmt(self):
-		del self._CurBilLmt
-		self._CurBilLmt = None
+	@Prxy.deleter
+	def Prxy(self):
+		del self._Prxy
+		self._Prxy = None
 
 	@property
 	def StgOrdr(self):
@@ -143,16 +117,42 @@ class CashAccountData1(base_types._BaseFieldType):
 		del self._StgOrdr
 		self._StgOrdr = None
 
+	@property
+	def Svcr(self):
+		return self._Svcr
+
+	@Svcr.setter
+	def Svcr(self, value):
+		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
+
+	@Svcr.deleter
+	def Svcr(self):
+		del self._Svcr
+		self._Svcr = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prxy', type=ProxyAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurBilLmt', type=BilateralLimit4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CurMulLmt', type=Limit5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MulBal', type=CashBalance13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ownr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurBilLmt', type=BilateralLimit4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prxy', type=ProxyAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgOrdr', type=StandingOrder11, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

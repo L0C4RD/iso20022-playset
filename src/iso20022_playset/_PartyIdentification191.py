@@ -5,20 +5,7 @@ from ._PartyIdentification145Choice import PartyIdentification145Choice
 
 class PartyIdentification191(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Id", "_PrcgId"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
+	__slots__ = ["_LEI", "_PrcgId", "_Id"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class PartyIdentification191(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def PrcgId(self):
@@ -46,8 +46,8 @@ class PartyIdentification191(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification145Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

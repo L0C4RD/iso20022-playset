@@ -1,12 +1,12 @@
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOneRate import BaseOneRate
 from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ISODateTime import ISODateTime
+from ._BaseOneRate import BaseOneRate
 
 class ForeignExchangeTerms34(base_types._BaseFieldType):
 
-	__slots__ = ["_QtdCcy", "_UnitCcy", "_XchgRate", "_QtnDt", "_QtgInstn"]
+	__slots__ = ["_QtgInstn", "_QtdCcy", "_QtnDt", "_XchgRate", "_UnitCcy"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy
@@ -19,6 +19,32 @@ class ForeignExchangeTerms34(base_types._BaseFieldType):
 	def QtdCcy(self):
 		del self._QtdCcy
 		self._QtdCcy = None
+
+	@property
+	def QtgInstn(self):
+		return self._QtgInstn
+
+	@QtgInstn.setter
+	def QtgInstn(self, value):
+		self._QtgInstn = value if type(value) != base_types.auto else self.make_default("QtgInstn")
+
+	@QtgInstn.deleter
+	def QtgInstn(self):
+		del self._QtgInstn
+		self._QtgInstn = None
+
+	@property
+	def QtnDt(self):
+		return self._QtnDt
+
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
+
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
 
 	@property
 	def UnitCcy(self):
@@ -46,37 +72,11 @@ class ForeignExchangeTerms34(base_types._BaseFieldType):
 		del self._XchgRate
 		self._XchgRate = None
 
-	@property
-	def QtnDt(self):
-		return self._QtnDt
-
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
-
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
-
-	@property
-	def QtgInstn(self):
-		return self._QtgInstn
-
-	@QtgInstn.setter
-	def QtgInstn(self, value):
-		self._QtgInstn = value if type(value) != base_types.auto else self.make_default("QtgInstn")
-
-	@QtgInstn.deleter
-	def QtgInstn(self):
-		del self._QtgInstn
-		self._QtgInstn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

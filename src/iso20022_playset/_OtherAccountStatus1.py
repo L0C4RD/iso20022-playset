@@ -3,7 +3,7 @@ from ._GenericIdentification36 import GenericIdentification36
 
 class OtherAccountStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Sts"]
+	__slots__ = ["_Sts", "_Rsn"]
 	@property
 	def Rsn(self):
 		return self._Rsn

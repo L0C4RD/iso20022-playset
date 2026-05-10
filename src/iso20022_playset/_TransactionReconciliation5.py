@@ -1,13 +1,39 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
-from ._TransactionTotals12 import TransactionTotals12
 from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TransactionTotals12 import TransactionTotals12
 
 class TransactionReconciliation5(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnId", "_RcncltnTxId", "_AddtlTxData", "_TxTtls", "_ClsPrd"]
+	__slots__ = ["_TxTtls", "_RcncltnId", "_RcncltnTxId", "_ClsPrd", "_AddtlTxData"]
+	@property
+	def AddtlTxData(self):
+		return self._AddtlTxData
+
+	@AddtlTxData.setter
+	def AddtlTxData(self, value):
+		self._AddtlTxData = value if type(value) != base_types.auto else self.make_default("AddtlTxData")
+
+	@AddtlTxData.deleter
+	def AddtlTxData(self):
+		del self._AddtlTxData
+		self._AddtlTxData = None
+
+	@property
+	def ClsPrd(self):
+		return self._ClsPrd
+
+	@ClsPrd.setter
+	def ClsPrd(self, value):
+		self._ClsPrd = value if type(value) != base_types.auto else self.make_default("ClsPrd")
+
+	@ClsPrd.deleter
+	def ClsPrd(self):
+		del self._ClsPrd
+		self._ClsPrd = None
+
 	@property
 	def RcncltnId(self):
 		return self._RcncltnId
@@ -35,19 +61,6 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 		self._RcncltnTxId = None
 
 	@property
-	def AddtlTxData(self):
-		return self._AddtlTxData
-
-	@AddtlTxData.setter
-	def AddtlTxData(self, value):
-		self._AddtlTxData = value if type(value) != base_types.auto else self.make_default("AddtlTxData")
-
-	@AddtlTxData.deleter
-	def AddtlTxData(self):
-		del self._AddtlTxData
-		self._AddtlTxData = None
-
-	@property
 	def TxTtls(self):
 		return self._TxTtls
 
@@ -60,24 +73,11 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 		del self._TxTtls
 		self._TxTtls = None
 
-	@property
-	def ClsPrd(self):
-		return self._ClsPrd
-
-	@ClsPrd.setter
-	def ClsPrd(self, value):
-		self._ClsPrd = value if type(value) != base_types.auto else self.make_default("ClsPrd")
-
-	@ClsPrd.deleter
-	def ClsPrd(self):
-		del self._ClsPrd
-		self._ClsPrd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlTxData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsPrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnTxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlTxData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClsPrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

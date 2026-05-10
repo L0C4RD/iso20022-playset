@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._DecimalNumber import DecimalNumber
 from ._MemoryUnit1Code import MemoryUnit1Code
+from ._DecimalNumber import DecimalNumber
+from ._Max35Text import Max35Text
 
 class MemoryCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_Id", "_TtlSz", "_FreeSz"]
+	__slots__ = ["_Id", "_FreeSz", "_Unit", "_TtlSz"]
 	@property
-	def Unit(self):
-		return self._Unit
+	def FreeSz(self):
+		return self._FreeSz
 
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+	@FreeSz.setter
+	def FreeSz(self, value):
+		self._FreeSz = value if type(value) != base_types.auto else self.make_default("FreeSz")
 
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
+	@FreeSz.deleter
+	def FreeSz(self):
+		del self._FreeSz
+		self._FreeSz = None
 
 	@property
 	def Id(self):
@@ -46,22 +46,22 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 		self._TtlSz = None
 
 	@property
-	def FreeSz(self):
-		return self._FreeSz
+	def Unit(self):
+		return self._Unit
 
-	@FreeSz.setter
-	def FreeSz(self, value):
-		self._FreeSz = value if type(value) != base_types.auto else self.make_default("FreeSz")
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
 
-	@FreeSz.deleter
-	def FreeSz(self):
-		del self._FreeSz
-		self._FreeSz = None
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Unit', type=MemoryUnit1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Unit', type=MemoryUnit1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

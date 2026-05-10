@@ -1,6 +1,6 @@
 from . import base_types
-from ._OtherAsset2Code import OtherAsset2Code
 from ._GenericIdentification36 import GenericIdentification36
+from ._OtherAsset2Code import OtherAsset2Code
 
 class OtherAsset2Choice(base_types._BaseFieldType):
 

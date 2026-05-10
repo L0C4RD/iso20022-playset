@@ -1,39 +1,13 @@
 from . import base_types
+from ._CardAccount21 import CardAccount21
 from ._ContentInformationType10 import ContentInformationType10
 from ._DetailedAmount16 import DetailedAmount16
 from ._Max70Text import Max70Text
 from ._ATMDepositedMedia4 import ATMDepositedMedia4
-from ._CardAccount21 import CardAccount21
 
 class ATMDepositComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldReqdAmt", "_SubDpstId", "_AcctData", "_DpstdMdia", "_PrtctdAcctData"]
-	@property
-	def DtldReqdAmt(self):
-		return self._DtldReqdAmt
-
-	@DtldReqdAmt.setter
-	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
-
-	@DtldReqdAmt.deleter
-	def DtldReqdAmt(self):
-		del self._DtldReqdAmt
-		self._DtldReqdAmt = None
-
-	@property
-	def SubDpstId(self):
-		return self._SubDpstId
-
-	@SubDpstId.setter
-	def SubDpstId(self, value):
-		self._SubDpstId = value if type(value) != base_types.auto else self.make_default("SubDpstId")
-
-	@SubDpstId.deleter
-	def SubDpstId(self):
-		del self._SubDpstId
-		self._SubDpstId = None
-
+	__slots__ = ["_PrtctdAcctData", "_AcctData", "_DtldReqdAmt", "_SubDpstId", "_DpstdMdia"]
 	@property
 	def AcctData(self):
 		return self._AcctData
@@ -61,6 +35,19 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 		self._DpstdMdia = None
 
 	@property
+	def DtldReqdAmt(self):
+		return self._DtldReqdAmt
+
+	@DtldReqdAmt.setter
+	def DtldReqdAmt(self, value):
+		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
+
+	@DtldReqdAmt.deleter
+	def DtldReqdAmt(self):
+		del self._DtldReqdAmt
+		self._DtldReqdAmt = None
+
+	@property
 	def PrtctdAcctData(self):
 		return self._PrtctdAcctData
 
@@ -73,11 +60,24 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 		del self._PrtctdAcctData
 		self._PrtctdAcctData = None
 
+	@property
+	def SubDpstId(self):
+		return self._SubDpstId
+
+	@SubDpstId.setter
+	def SubDpstId(self, value):
+		self._SubDpstId = value if type(value) != base_types.auto else self.make_default("SubDpstId")
+
+	@SubDpstId.deleter
+	def SubDpstId(self):
+		del self._SubDpstId
+		self._SubDpstId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubDpstId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctData', type=CardAccount21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DpstdMdia', type=ATMDepositedMedia4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubDpstId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

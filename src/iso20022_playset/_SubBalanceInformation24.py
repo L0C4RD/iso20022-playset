@@ -1,38 +1,25 @@
 from . import base_types
+from ._SubBalanceType13Choice import SubBalanceType13Choice
+from ._AdditionalBalanceInformation24 import AdditionalBalanceInformation24
+from ._Balance27 import Balance27
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._QuantityBreakdown71 import QuantityBreakdown71
-from ._Balance27 import Balance27
-from ._AdditionalBalanceInformation24 import AdditionalBalanceInformation24
-from ._SubBalanceType13Choice import SubBalanceType13Choice
 
 class SubBalanceInformation24(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalTp", "_SubBalAddtlDtls", "_Qty", "_AddtlBalBrkdwnDtls", "_QtyBrkdwn"]
+	__slots__ = ["_SubBalTp", "_Qty", "_QtyBrkdwn", "_AddtlBalBrkdwnDtls", "_SubBalAddtlDtls"]
 	@property
-	def SubBalTp(self):
-		return self._SubBalTp
+	def AddtlBalBrkdwnDtls(self):
+		return self._AddtlBalBrkdwnDtls
 
-	@SubBalTp.setter
-	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+	@AddtlBalBrkdwnDtls.setter
+	def AddtlBalBrkdwnDtls(self, value):
+		self._AddtlBalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("AddtlBalBrkdwnDtls")
 
-	@SubBalTp.deleter
-	def SubBalTp(self):
-		del self._SubBalTp
-		self._SubBalTp = None
-
-	@property
-	def SubBalAddtlDtls(self):
-		return self._SubBalAddtlDtls
-
-	@SubBalAddtlDtls.setter
-	def SubBalAddtlDtls(self, value):
-		self._SubBalAddtlDtls = value if type(value) != base_types.auto else self.make_default("SubBalAddtlDtls")
-
-	@SubBalAddtlDtls.deleter
-	def SubBalAddtlDtls(self):
-		del self._SubBalAddtlDtls
-		self._SubBalAddtlDtls = None
+	@AddtlBalBrkdwnDtls.deleter
+	def AddtlBalBrkdwnDtls(self):
+		del self._AddtlBalBrkdwnDtls
+		self._AddtlBalBrkdwnDtls = None
 
 	@property
 	def Qty(self):
@@ -48,19 +35,6 @@ class SubBalanceInformation24(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def AddtlBalBrkdwnDtls(self):
-		return self._AddtlBalBrkdwnDtls
-
-	@AddtlBalBrkdwnDtls.setter
-	def AddtlBalBrkdwnDtls(self, value):
-		self._AddtlBalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("AddtlBalBrkdwnDtls")
-
-	@AddtlBalBrkdwnDtls.deleter
-	def AddtlBalBrkdwnDtls(self):
-		del self._AddtlBalBrkdwnDtls
-		self._AddtlBalBrkdwnDtls = None
-
-	@property
 	def QtyBrkdwn(self):
 		return self._QtyBrkdwn
 
@@ -73,11 +47,37 @@ class SubBalanceInformation24(base_types._BaseFieldType):
 		del self._QtyBrkdwn
 		self._QtyBrkdwn = None
 
+	@property
+	def SubBalAddtlDtls(self):
+		return self._SubBalAddtlDtls
+
+	@SubBalAddtlDtls.setter
+	def SubBalAddtlDtls(self, value):
+		self._SubBalAddtlDtls = value if type(value) != base_types.auto else self.make_default("SubBalAddtlDtls")
+
+	@SubBalAddtlDtls.deleter
+	def SubBalAddtlDtls(self):
+		del self._SubBalAddtlDtls
+		self._SubBalAddtlDtls = None
+
+	@property
+	def SubBalTp(self):
+		return self._SubBalTp
+
+	@SubBalTp.setter
+	def SubBalTp(self, value):
+		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+
+	@SubBalTp.deleter
+	def SubBalTp(self):
+		del self._SubBalTp
+		self._SubBalTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType13Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubBalAddtlDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=Balance27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation24, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Qty', type=Balance27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown71, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubBalAddtlDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType13Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

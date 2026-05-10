@@ -1,23 +1,23 @@
 from . import base_types
-from ._CardPaymentBatchTransfer13 import CardPaymentBatchTransfer13
-from ._ContentInformationType37 import ContentInformationType37
 from ._Header56 import Header56
+from ._ContentInformationType37 import ContentInformationType37
+from ._CardPaymentBatchTransfer13 import CardPaymentBatchTransfer13
 
 class AcceptorBatchTransferV14(base_types._BaseFieldType):
 
 	__slots__ = ["_SctyTrlr", "_Hdr", "_BtchTrf"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def BtchTrf(self):
+		return self._BtchTrf
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+	@BtchTrf.setter
+	def BtchTrf(self, value):
+		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@BtchTrf.deleter
+	def BtchTrf(self):
+		del self._BtchTrf
+		self._BtchTrf = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class AcceptorBatchTransferV14(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def BtchTrf(self):
-		return self._BtchTrf
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@BtchTrf.setter
-	def BtchTrf(self, value):
-		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@BtchTrf.deleter
-	def BtchTrf(self):
-		del self._BtchTrf
-		self._BtchTrf = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header56, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrf', type=CardPaymentBatchTransfer13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header56, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 	))
 

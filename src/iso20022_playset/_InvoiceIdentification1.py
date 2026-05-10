@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 
 class InvoiceIdentification1(base_types._BaseFieldType):
 

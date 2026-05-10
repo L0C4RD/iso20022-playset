@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradeNonConfirmation1 import TradeNonConfirmation1
 from ._TradeConfirmation5 import TradeConfirmation5
+from ._TradeNonConfirmation1 import TradeNonConfirmation1
 
 class TradeConfirmation4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Confd", "_NonConfd"]
+	__slots__ = ["_NonConfd", "_Confd"]
 	@property
 	def Confd(self):
 		return self._Confd

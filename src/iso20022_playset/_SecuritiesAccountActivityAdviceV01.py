@@ -6,7 +6,20 @@ from ._SecuritiesAccountStatement2 import SecuritiesAccountStatement2
 
 class SecuritiesAccountActivityAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Pgntn", "_SctiesAcctActvty", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_Pgntn", "_SctiesAcctActvty"]
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
 	@property
 	def Pgntn(self):
 		return self._Pgntn
@@ -46,23 +59,10 @@ class SecuritiesAccountActivityAdviceV01(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcctActvty', type=SecuritiesAccountStatement2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

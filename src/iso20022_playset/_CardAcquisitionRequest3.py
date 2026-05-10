@@ -1,14 +1,27 @@
 from . import base_types
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CardPaymentServiceType13Code import CardPaymentServiceType13Code
 from ._Max70Text import Max70Text
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardAcquisitionRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_AllwdPmtBrnd", "_SaleToAcqrrData", "_AllwdLltyBrnd", "_ForceCstmrSelctnFlg", "_PmtTp", "_SaleTxId", "_SaleToPOIData", "_SaleToIssrData", "_CshBckFlg", "_TtlAmt"]
+	__slots__ = ["_SaleToAcqrrData", "_SaleTxId", "_ForceCstmrSelctnFlg", "_CshBckFlg", "_TtlAmt", "_SaleToIssrData", "_PmtTp", "_AllwdLltyBrnd", "_AllwdPmtBrnd", "_SaleToPOIData"]
+	@property
+	def AllwdLltyBrnd(self):
+		return self._AllwdLltyBrnd
+
+	@AllwdLltyBrnd.setter
+	def AllwdLltyBrnd(self, value):
+		self._AllwdLltyBrnd = value if type(value) != base_types.auto else self.make_default("AllwdLltyBrnd")
+
+	@AllwdLltyBrnd.deleter
+	def AllwdLltyBrnd(self):
+		del self._AllwdLltyBrnd
+		self._AllwdLltyBrnd = None
+
 	@property
 	def AllwdPmtBrnd(self):
 		return self._AllwdPmtBrnd
@@ -23,30 +36,17 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		self._AllwdPmtBrnd = None
 
 	@property
-	def SaleToAcqrrData(self):
-		return self._SaleToAcqrrData
+	def CshBckFlg(self):
+		return self._CshBckFlg
 
-	@SaleToAcqrrData.setter
-	def SaleToAcqrrData(self, value):
-		self._SaleToAcqrrData = value if type(value) != base_types.auto else self.make_default("SaleToAcqrrData")
+	@CshBckFlg.setter
+	def CshBckFlg(self, value):
+		self._CshBckFlg = value if type(value) != base_types.auto else self.make_default("CshBckFlg")
 
-	@SaleToAcqrrData.deleter
-	def SaleToAcqrrData(self):
-		del self._SaleToAcqrrData
-		self._SaleToAcqrrData = None
-
-	@property
-	def AllwdLltyBrnd(self):
-		return self._AllwdLltyBrnd
-
-	@AllwdLltyBrnd.setter
-	def AllwdLltyBrnd(self, value):
-		self._AllwdLltyBrnd = value if type(value) != base_types.auto else self.make_default("AllwdLltyBrnd")
-
-	@AllwdLltyBrnd.deleter
-	def AllwdLltyBrnd(self):
-		del self._AllwdLltyBrnd
-		self._AllwdLltyBrnd = None
+	@CshBckFlg.deleter
+	def CshBckFlg(self):
+		del self._CshBckFlg
+		self._CshBckFlg = None
 
 	@property
 	def ForceCstmrSelctnFlg(self):
@@ -75,30 +75,17 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		self._PmtTp = None
 
 	@property
-	def SaleTxId(self):
-		return self._SaleTxId
+	def SaleToAcqrrData(self):
+		return self._SaleToAcqrrData
 
-	@SaleTxId.setter
-	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+	@SaleToAcqrrData.setter
+	def SaleToAcqrrData(self, value):
+		self._SaleToAcqrrData = value if type(value) != base_types.auto else self.make_default("SaleToAcqrrData")
 
-	@SaleTxId.deleter
-	def SaleTxId(self):
-		del self._SaleTxId
-		self._SaleTxId = None
-
-	@property
-	def SaleToPOIData(self):
-		return self._SaleToPOIData
-
-	@SaleToPOIData.setter
-	def SaleToPOIData(self, value):
-		self._SaleToPOIData = value if type(value) != base_types.auto else self.make_default("SaleToPOIData")
-
-	@SaleToPOIData.deleter
-	def SaleToPOIData(self):
-		del self._SaleToPOIData
-		self._SaleToPOIData = None
+	@SaleToAcqrrData.deleter
+	def SaleToAcqrrData(self):
+		del self._SaleToAcqrrData
+		self._SaleToAcqrrData = None
 
 	@property
 	def SaleToIssrData(self):
@@ -114,17 +101,30 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		self._SaleToIssrData = None
 
 	@property
-	def CshBckFlg(self):
-		return self._CshBckFlg
+	def SaleToPOIData(self):
+		return self._SaleToPOIData
 
-	@CshBckFlg.setter
-	def CshBckFlg(self, value):
-		self._CshBckFlg = value if type(value) != base_types.auto else self.make_default("CshBckFlg")
+	@SaleToPOIData.setter
+	def SaleToPOIData(self, value):
+		self._SaleToPOIData = value if type(value) != base_types.auto else self.make_default("SaleToPOIData")
 
-	@CshBckFlg.deleter
-	def CshBckFlg(self):
-		del self._CshBckFlg
-		self._CshBckFlg = None
+	@SaleToPOIData.deleter
+	def SaleToPOIData(self):
+		del self._SaleToPOIData
+		self._SaleToPOIData = None
+
+	@property
+	def SaleTxId(self):
+		return self._SaleTxId
+
+	@SaleTxId.setter
+	def SaleTxId(self, value):
+		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+
+	@SaleTxId.deleter
+	def SaleTxId(self):
+		del self._SaleTxId
+		self._SaleTxId = None
 
 	@property
 	def TtlAmt(self):
@@ -140,15 +140,15 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AllwdPmtBrnd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleToAcqrrData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdLltyBrnd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AllwdPmtBrnd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshBckFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ForceCstmrSelctnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTp', type=CardPaymentServiceType13Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleToPOIData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleToAcqrrData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleToIssrData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshBckFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleToPOIData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

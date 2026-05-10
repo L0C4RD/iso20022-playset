@@ -4,7 +4,7 @@ from ._ISODateTime import ISODateTime
 
 class DateAndDateTime1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_DtTm"]
+	__slots__ = ["_DtTm", "_Dt"]
 	@property
 	def Dt(self):
 		return self._Dt

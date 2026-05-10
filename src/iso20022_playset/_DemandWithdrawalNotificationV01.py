@@ -1,6 +1,6 @@
 from . import base_types
-from ._PartyAndSignature2 import PartyAndSignature2
 from ._UndertakingDemandWithdrawal1 import UndertakingDemandWithdrawal1
+from ._PartyAndSignature2 import PartyAndSignature2
 
 class DemandWithdrawalNotificationV01(base_types._BaseFieldType):
 

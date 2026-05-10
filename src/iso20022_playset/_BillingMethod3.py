@@ -1,6 +1,6 @@
 from . import base_types
-from ._AmountAndDirection34 import AmountAndDirection34
 from ._BillingServicesTax2 import BillingServicesTax2
+from ._AmountAndDirection34 import AmountAndDirection34
 
 class BillingMethod3(base_types._BaseFieldType):
 

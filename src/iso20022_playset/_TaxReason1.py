@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max105Text import Max105Text
 from ._Max10Text import Max10Text
+from ._Max105Text import Max105Text
 
 class TaxReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_Expltn", "_Cd"]
-	@property
-	def Expltn(self):
-		return self._Expltn
-
-	@Expltn.setter
-	def Expltn(self, value):
-		self._Expltn = value if type(value) != base_types.auto else self.make_default("Expltn")
-
-	@Expltn.deleter
-	def Expltn(self):
-		del self._Expltn
-		self._Expltn = None
-
+	__slots__ = ["_Cd", "_Expltn"]
 	@property
 	def Cd(self):
 		return self._Cd
@@ -31,8 +18,21 @@ class TaxReason1(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def Expltn(self):
+		return self._Expltn
+
+	@Expltn.setter
+	def Expltn(self, value):
+		self._Expltn = value if type(value) != base_types.auto else self.make_default("Expltn")
+
+	@Expltn.deleter
+	def Expltn(self):
+		del self._Expltn
+		self._Expltn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Expltn', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Expltn', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

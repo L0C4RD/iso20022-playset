@@ -4,7 +4,7 @@ from ._MessageReference1 import MessageReference1
 
 class ReceiptAcknowledgementReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqHdlg", "_RltdRef"]
+	__slots__ = ["_RltdRef", "_ReqHdlg"]
 	@property
 	def ReqHdlg(self):
 		return self._ReqHdlg

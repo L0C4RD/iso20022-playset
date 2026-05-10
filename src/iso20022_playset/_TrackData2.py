@@ -5,19 +5,19 @@ from ._TrackFormat1Code import TrackFormat1Code
 
 class TrackData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrckVal", "_TrckNb", "_TrckFrmt"]
+	__slots__ = ["_TrckVal", "_TrckFrmt", "_TrckNb"]
 	@property
-	def TrckVal(self):
-		return self._TrckVal
+	def TrckFrmt(self):
+		return self._TrckFrmt
 
-	@TrckVal.setter
-	def TrckVal(self, value):
-		self._TrckVal = value if type(value) != base_types.auto else self.make_default("TrckVal")
+	@TrckFrmt.setter
+	def TrckFrmt(self, value):
+		self._TrckFrmt = value if type(value) != base_types.auto else self.make_default("TrckFrmt")
 
-	@TrckVal.deleter
-	def TrckVal(self):
-		del self._TrckVal
-		self._TrckVal = None
+	@TrckFrmt.deleter
+	def TrckFrmt(self):
+		del self._TrckFrmt
+		self._TrckFrmt = None
 
 	@property
 	def TrckNb(self):
@@ -33,21 +33,21 @@ class TrackData2(base_types._BaseFieldType):
 		self._TrckNb = None
 
 	@property
-	def TrckFrmt(self):
-		return self._TrckFrmt
+	def TrckVal(self):
+		return self._TrckVal
 
-	@TrckFrmt.setter
-	def TrckFrmt(self, value):
-		self._TrckFrmt = value if type(value) != base_types.auto else self.make_default("TrckFrmt")
+	@TrckVal.setter
+	def TrckVal(self, value):
+		self._TrckVal = value if type(value) != base_types.auto else self.make_default("TrckVal")
 
-	@TrckFrmt.deleter
-	def TrckFrmt(self):
-		del self._TrckFrmt
-		self._TrckFrmt = None
+	@TrckVal.deleter
+	def TrckVal(self):
+		del self._TrckVal
+		self._TrckVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrckVal', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrckNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckFrmt', type=TrackFormat1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckVal', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

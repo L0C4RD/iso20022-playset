@@ -4,7 +4,7 @@ from ._DateAndDateTime1Choice import DateAndDateTime1Choice
 
 class TradeDate7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Val"]
+	__slots__ = ["_Val", "_Dt"]
 	@property
 	def Dt(self):
 		return self._Dt

@@ -1,24 +1,24 @@
 from . import base_types
 from ._ContentInformationType10 import ContentInformationType10
-from ._ATMReconciliationRequestComponent1 import ATMReconciliationRequestComponent1
-from ._ContentInformationType15 import ContentInformationType15
 from ._Header31 import Header31
+from ._ContentInformationType15 import ContentInformationType15
+from ._ATMReconciliationRequestComponent1 import ATMReconciliationRequestComponent1
 
 class ATMReconciliationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMRcncltnReq", "_Hdr", "_SctyTrlr", "_ATMRcncltnReq"]
+	__slots__ = ["_PrtctdATMRcncltnReq", "_Hdr", "_ATMRcncltnReq", "_SctyTrlr"]
 	@property
-	def PrtctdATMRcncltnReq(self):
-		return self._PrtctdATMRcncltnReq
+	def ATMRcncltnReq(self):
+		return self._ATMRcncltnReq
 
-	@PrtctdATMRcncltnReq.setter
-	def PrtctdATMRcncltnReq(self, value):
-		self._PrtctdATMRcncltnReq = value if type(value) != base_types.auto else self.make_default("PrtctdATMRcncltnReq")
+	@ATMRcncltnReq.setter
+	def ATMRcncltnReq(self, value):
+		self._ATMRcncltnReq = value if type(value) != base_types.auto else self.make_default("ATMRcncltnReq")
 
-	@PrtctdATMRcncltnReq.deleter
-	def PrtctdATMRcncltnReq(self):
-		del self._PrtctdATMRcncltnReq
-		self._PrtctdATMRcncltnReq = None
+	@ATMRcncltnReq.deleter
+	def ATMRcncltnReq(self):
+		del self._ATMRcncltnReq
+		self._ATMRcncltnReq = None
 
 	@property
 	def Hdr(self):
@@ -34,6 +34,19 @@ class ATMReconciliationRequestV01(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
+	def PrtctdATMRcncltnReq(self):
+		return self._PrtctdATMRcncltnReq
+
+	@PrtctdATMRcncltnReq.setter
+	def PrtctdATMRcncltnReq(self, value):
+		self._PrtctdATMRcncltnReq = value if type(value) != base_types.auto else self.make_default("PrtctdATMRcncltnReq")
+
+	@PrtctdATMRcncltnReq.deleter
+	def PrtctdATMRcncltnReq(self):
+		del self._PrtctdATMRcncltnReq
+		self._PrtctdATMRcncltnReq = None
+
+	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
 
@@ -46,23 +59,10 @@ class ATMReconciliationRequestV01(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
-	@property
-	def ATMRcncltnReq(self):
-		return self._ATMRcncltnReq
-
-	@ATMRcncltnReq.setter
-	def ATMRcncltnReq(self, value):
-		self._ATMRcncltnReq = value if type(value) != base_types.auto else self.make_default("ATMRcncltnReq")
-
-	@ATMRcncltnReq.deleter
-	def ATMRcncltnReq(self):
-		del self._ATMRcncltnReq
-		self._ATMRcncltnReq = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMRcncltnReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMRcncltnReq', type=ATMReconciliationRequestComponent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMRcncltnReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

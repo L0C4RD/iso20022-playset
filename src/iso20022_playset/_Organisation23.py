@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max350Text import Max350Text
 from ._PostalAddress21 import PostalAddress21
+from ._Max35Text import Max35Text
 
 class Organisation23(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_PstlAdr", "_ShrtNm"]
+	__slots__ = ["_ShrtNm", "_Nm", "_PstlAdr"]
 	@property
 	def Nm(self):
 		return self._Nm

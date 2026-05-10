@@ -1,22 +1,22 @@
 from . import base_types
-from ._BaseOneRate import BaseOneRate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._BaseOneRate import BaseOneRate
 
 class ForeignExchangeTerms19(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRate", "_UnitCcy", "_QtdCcy"]
+	__slots__ = ["_UnitCcy", "_XchgRate", "_QtdCcy"]
 	@property
-	def XchgRate(self):
-		return self._XchgRate
+	def QtdCcy(self):
+		return self._QtdCcy
 
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
 
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
 
 	@property
 	def UnitCcy(self):
@@ -32,21 +32,21 @@ class ForeignExchangeTerms19(base_types._BaseFieldType):
 		self._UnitCcy = None
 
 	@property
-	def QtdCcy(self):
-		return self._QtdCcy
+	def XchgRate(self):
+		return self._XchgRate
 
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
 
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

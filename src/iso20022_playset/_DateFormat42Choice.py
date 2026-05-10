@@ -1,6 +1,6 @@
 from . import base_types
-from ._ISOYearMonth import ISOYearMonth
 from ._ISODate import ISODate
+from ._ISOYearMonth import ISOYearMonth
 
 class DateFormat42Choice(base_types._BaseFieldType):
 

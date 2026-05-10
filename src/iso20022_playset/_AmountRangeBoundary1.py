@@ -1,23 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._YesNoIndicator import YesNoIndicator
 
 class AmountRangeBoundary1(base_types._BaseFieldType):
 
 	__slots__ = ["_Incl", "_BdryAmt"]
-	@property
-	def Incl(self):
-		return self._Incl
-
-	@Incl.setter
-	def Incl(self, value):
-		self._Incl = value if type(value) != base_types.auto else self.make_default("Incl")
-
-	@Incl.deleter
-	def Incl(self):
-		del self._Incl
-		self._Incl = None
-
 	@property
 	def BdryAmt(self):
 		return self._BdryAmt
@@ -31,8 +18,21 @@ class AmountRangeBoundary1(base_types._BaseFieldType):
 		del self._BdryAmt
 		self._BdryAmt = None
 
+	@property
+	def Incl(self):
+		return self._Incl
+
+	@Incl.setter
+	def Incl(self, value):
+		self._Incl = value if type(value) != base_types.auto else self.make_default("Incl")
+
+	@Incl.deleter
+	def Incl(self):
+		del self._Incl
+		self._Incl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Incl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BdryAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Incl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -4,7 +4,7 @@ from ._CollateralCancellationType1Choice import CollateralCancellationType1Choic
 
 class CollateralCancellationReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CxlRsnCd"]
+	__slots__ = ["_CxlRsnCd", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

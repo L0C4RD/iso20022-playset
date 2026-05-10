@@ -1,10 +1,10 @@
 from . import base_types
-from ._MarketType19Choice import MarketType19Choice
 from ._MarketIdentification5Choice import MarketIdentification5Choice
+from ._MarketType19Choice import MarketType19Choice
 
 class MarketIdentification98(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp"]
+	__slots__ = ["_Tp", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,63 +1,24 @@
 from . import base_types
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._YesNoIndicator import YesNoIndicator
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 
 class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
-	__slots__ = ["_Pmt", "_TrptyAgtSvcPrvdrCollTxId", "_RcncltnInd", "_CmonId", "_ClntTrptyCollTxId", "_NonceId", "_ClntCollInstrId", "_CorpActnEvtId", "_TrptyAgtSvcPrvdrCollInstrId", "_SctiesMvmntTp"]
+	__slots__ = ["_SctiesMvmntTp", "_TrptyAgtSvcPrvdrCollInstrId", "_RcncltnInd", "_CorpActnEvtId", "_ClntTrptyCollTxId", "_Pmt", "_TrptyAgtSvcPrvdrCollTxId", "_NonceId", "_CmonId", "_ClntCollInstrId"]
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def ClntCollInstrId(self):
+		return self._ClntCollInstrId
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+	@ClntCollInstrId.setter
+	def ClntCollInstrId(self, value):
+		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
-	@property
-	def TrptyAgtSvcPrvdrCollTxId(self):
-		return self._TrptyAgtSvcPrvdrCollTxId
-
-	@TrptyAgtSvcPrvdrCollTxId.setter
-	def TrptyAgtSvcPrvdrCollTxId(self, value):
-		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
-
-	@TrptyAgtSvcPrvdrCollTxId.deleter
-	def TrptyAgtSvcPrvdrCollTxId(self):
-		del self._TrptyAgtSvcPrvdrCollTxId
-		self._TrptyAgtSvcPrvdrCollTxId = None
-
-	@property
-	def RcncltnInd(self):
-		return self._RcncltnInd
-
-	@RcncltnInd.setter
-	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
-
-	@RcncltnInd.deleter
-	def RcncltnInd(self):
-		del self._RcncltnInd
-		self._RcncltnInd = None
-
-	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
+	@ClntCollInstrId.deleter
+	def ClntCollInstrId(self):
+		del self._ClntCollInstrId
+		self._ClntCollInstrId = None
 
 	@property
 	def ClntTrptyCollTxId(self):
@@ -73,30 +34,17 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 		self._ClntTrptyCollTxId = None
 
 	@property
-	def NonceId(self):
-		return self._NonceId
+	def CmonId(self):
+		return self._CmonId
 
-	@NonceId.setter
-	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
 
-	@NonceId.deleter
-	def NonceId(self):
-		del self._NonceId
-		self._NonceId = None
-
-	@property
-	def ClntCollInstrId(self):
-		return self._ClntCollInstrId
-
-	@ClntCollInstrId.setter
-	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
-
-	@ClntCollInstrId.deleter
-	def ClntCollInstrId(self):
-		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
 
 	@property
 	def CorpActnEvtId(self):
@@ -112,17 +60,43 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		return self._TrptyAgtSvcPrvdrCollInstrId
+	def NonceId(self):
+		return self._NonceId
 
-	@TrptyAgtSvcPrvdrCollInstrId.setter
-	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+	@NonceId.setter
+	def NonceId(self, value):
+		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
 
-	@TrptyAgtSvcPrvdrCollInstrId.deleter
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
+	@NonceId.deleter
+	def NonceId(self):
+		del self._NonceId
+		self._NonceId = None
+
+	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
+	@property
+	def RcncltnInd(self):
+		return self._RcncltnInd
+
+	@RcncltnInd.setter
+	def RcncltnInd(self, value):
+		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
+
+	@RcncltnInd.deleter
+	def RcncltnInd(self):
+		del self._RcncltnInd
+		self._RcncltnInd = None
 
 	@property
 	def SctiesMvmntTp(self):
@@ -137,16 +111,42 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 		del self._SctiesMvmntTp
 		self._SctiesMvmntTp = None
 
+	@property
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		return self._TrptyAgtSvcPrvdrCollInstrId
+
+	@TrptyAgtSvcPrvdrCollInstrId.setter
+	def TrptyAgtSvcPrvdrCollInstrId(self, value):
+		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+
+	@TrptyAgtSvcPrvdrCollInstrId.deleter
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		del self._TrptyAgtSvcPrvdrCollInstrId
+		self._TrptyAgtSvcPrvdrCollInstrId = None
+
+	@property
+	def TrptyAgtSvcPrvdrCollTxId(self):
+		return self._TrptyAgtSvcPrvdrCollTxId
+
+	@TrptyAgtSvcPrvdrCollTxId.setter
+	def TrptyAgtSvcPrvdrCollTxId(self, value):
+		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
+
+	@TrptyAgtSvcPrvdrCollTxId.deleter
+	def TrptyAgtSvcPrvdrCollTxId(self):
+		del self._TrptyAgtSvcPrvdrCollTxId
+		self._TrptyAgtSvcPrvdrCollTxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntTrptyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntTrptyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,40 +1,27 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
 from ._ATMCustomer9 import ATMCustomer9
-from ._Acquirer7 import Acquirer7
-from ._AutomatedTellerMachine2 import AutomatedTellerMachine2
-from ._PlainCardData24 import PlainCardData24
 from ._Acquirer8 import Acquirer8
+from ._ContentInformationType10 import ContentInformationType10
+from ._AutomatedTellerMachine2 import AutomatedTellerMachine2
 from ._TerminalHosting1 import TerminalHosting1
+from ._Acquirer7 import Acquirer7
+from ._PlainCardData24 import PlainCardData24
 
 class ATMEnvironment21(base_types._BaseFieldType):
 
-	__slots__ = ["_Cstmr", "_HstgNtty", "_ATMMgr", "_Acqrr", "_PrtctdCardData", "_ATM", "_PlainCardData"]
+	__slots__ = ["_Cstmr", "_PrtctdCardData", "_ATMMgr", "_Acqrr", "_PlainCardData", "_HstgNtty", "_ATM"]
 	@property
-	def Cstmr(self):
-		return self._Cstmr
+	def ATM(self):
+		return self._ATM
 
-	@Cstmr.setter
-	def Cstmr(self, value):
-		self._Cstmr = value if type(value) != base_types.auto else self.make_default("Cstmr")
+	@ATM.setter
+	def ATM(self, value):
+		self._ATM = value if type(value) != base_types.auto else self.make_default("ATM")
 
-	@Cstmr.deleter
-	def Cstmr(self):
-		del self._Cstmr
-		self._Cstmr = None
-
-	@property
-	def HstgNtty(self):
-		return self._HstgNtty
-
-	@HstgNtty.setter
-	def HstgNtty(self, value):
-		self._HstgNtty = value if type(value) != base_types.auto else self.make_default("HstgNtty")
-
-	@HstgNtty.deleter
-	def HstgNtty(self):
-		del self._HstgNtty
-		self._HstgNtty = None
+	@ATM.deleter
+	def ATM(self):
+		del self._ATM
+		self._ATM = None
 
 	@property
 	def ATMMgr(self):
@@ -63,30 +50,30 @@ class ATMEnvironment21(base_types._BaseFieldType):
 		self._Acqrr = None
 
 	@property
-	def PrtctdCardData(self):
-		return self._PrtctdCardData
+	def Cstmr(self):
+		return self._Cstmr
 
-	@PrtctdCardData.setter
-	def PrtctdCardData(self, value):
-		self._PrtctdCardData = value if type(value) != base_types.auto else self.make_default("PrtctdCardData")
+	@Cstmr.setter
+	def Cstmr(self, value):
+		self._Cstmr = value if type(value) != base_types.auto else self.make_default("Cstmr")
 
-	@PrtctdCardData.deleter
-	def PrtctdCardData(self):
-		del self._PrtctdCardData
-		self._PrtctdCardData = None
+	@Cstmr.deleter
+	def Cstmr(self):
+		del self._Cstmr
+		self._Cstmr = None
 
 	@property
-	def ATM(self):
-		return self._ATM
+	def HstgNtty(self):
+		return self._HstgNtty
 
-	@ATM.setter
-	def ATM(self, value):
-		self._ATM = value if type(value) != base_types.auto else self.make_default("ATM")
+	@HstgNtty.setter
+	def HstgNtty(self, value):
+		self._HstgNtty = value if type(value) != base_types.auto else self.make_default("HstgNtty")
 
-	@ATM.deleter
-	def ATM(self):
-		del self._ATM
-		self._ATM = None
+	@HstgNtty.deleter
+	def HstgNtty(self):
+		del self._HstgNtty
+		self._HstgNtty = None
 
 	@property
 	def PlainCardData(self):
@@ -101,13 +88,26 @@ class ATMEnvironment21(base_types._BaseFieldType):
 		del self._PlainCardData
 		self._PlainCardData = None
 
+	@property
+	def PrtctdCardData(self):
+		return self._PrtctdCardData
+
+	@PrtctdCardData.setter
+	def PrtctdCardData(self, value):
+		self._PrtctdCardData = value if type(value) != base_types.auto else self.make_default("PrtctdCardData")
+
+	@PrtctdCardData.deleter
+	def PrtctdCardData(self):
+		del self._PrtctdCardData
+		self._PrtctdCardData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cstmr', type=ATMCustomer9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMMgr', type=Acquirer8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdCardData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cstmr', type=ATMCustomer9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlainCardData', type=PlainCardData24, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdCardData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

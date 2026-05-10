@@ -1,11 +1,24 @@
 from . import base_types
-from ._DerivativeInstrument6 import DerivativeInstrument6
 from ._DebtInstrument4 import DebtInstrument4
 from ._SecurityInstrumentDescription23 import SecurityInstrumentDescription23
+from ._DerivativeInstrument6 import DerivativeInstrument6
 
 class SecurityInstrumentDescription22(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivInstrmAttrbts", "_FinInstrmGnlAttrbts", "_DebtInstrmAttrbts"]
+	__slots__ = ["_DebtInstrmAttrbts", "_FinInstrmGnlAttrbts", "_DerivInstrmAttrbts"]
+	@property
+	def DebtInstrmAttrbts(self):
+		return self._DebtInstrmAttrbts
+
+	@DebtInstrmAttrbts.setter
+	def DebtInstrmAttrbts(self, value):
+		self._DebtInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("DebtInstrmAttrbts")
+
+	@DebtInstrmAttrbts.deleter
+	def DebtInstrmAttrbts(self):
+		del self._DebtInstrmAttrbts
+		self._DebtInstrmAttrbts = None
+
 	@property
 	def DerivInstrmAttrbts(self):
 		return self._DerivInstrmAttrbts
@@ -32,22 +45,9 @@ class SecurityInstrumentDescription22(base_types._BaseFieldType):
 		del self._FinInstrmGnlAttrbts
 		self._FinInstrmGnlAttrbts = None
 
-	@property
-	def DebtInstrmAttrbts(self):
-		return self._DebtInstrmAttrbts
-
-	@DebtInstrmAttrbts.setter
-	def DebtInstrmAttrbts(self, value):
-		self._DebtInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("DebtInstrmAttrbts")
-
-	@DebtInstrmAttrbts.deleter
-	def DebtInstrmAttrbts(self):
-		del self._DebtInstrmAttrbts
-		self._DebtInstrmAttrbts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription23, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument4, min=0, max=1, mutex_group=None, array=False),
 	))
 

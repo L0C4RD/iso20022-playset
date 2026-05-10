@@ -1,26 +1,26 @@
 from . import base_types
-from ._Frequency25Choice import Frequency25Choice
 from ._Number3Choice import Number3Choice
-from ._UpdateType15Choice import UpdateType15Choice
-from ._Max35Text import Max35Text
 from ._YesNoIndicator import YesNoIndicator
+from ._Frequency25Choice import Frequency25Choice
+from ._Max35Text import Max35Text
+from ._UpdateType15Choice import UpdateType15Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class Statement63(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtDtTm", "_Frqcy", "_StmtId", "_QryRef", "_UpdTp", "_RptNb", "_ActvtyInd"]
+	__slots__ = ["_Frqcy", "_RptNb", "_UpdTp", "_ActvtyInd", "_QryRef", "_StmtDtTm", "_StmtId"]
 	@property
-	def StmtDtTm(self):
-		return self._StmtDtTm
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@StmtDtTm.setter
-	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != base_types.auto else self.make_default("StmtDtTm")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
-	@StmtDtTm.deleter
-	def StmtDtTm(self):
-		del self._StmtDtTm
-		self._StmtDtTm = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def Frqcy(self):
@@ -36,19 +36,6 @@ class Statement63(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def StmtId(self):
-		return self._StmtId
-
-	@StmtId.setter
-	def StmtId(self, value):
-		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
-
-	@StmtId.deleter
-	def StmtId(self):
-		del self._StmtId
-		self._StmtId = None
-
-	@property
 	def QryRef(self):
 		return self._QryRef
 
@@ -60,19 +47,6 @@ class Statement63(base_types._BaseFieldType):
 	def QryRef(self):
 		del self._QryRef
 		self._QryRef = None
-
-	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
 
 	@property
 	def RptNb(self):
@@ -88,25 +62,51 @@ class Statement63(base_types._BaseFieldType):
 		self._RptNb = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def StmtDtTm(self):
+		return self._StmtDtTm
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+	@StmtDtTm.setter
+	def StmtDtTm(self, value):
+		self._StmtDtTm = value if type(value) != base_types.auto else self.make_default("StmtDtTm")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
+	@StmtDtTm.deleter
+	def StmtDtTm(self):
+		del self._StmtDtTm
+		self._StmtDtTm = None
+
+	@property
+	def StmtId(self):
+		return self._StmtId
+
+	@StmtId.setter
+	def StmtId(self, value):
+		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
+
+	@StmtId.deleter
+	def StmtId(self):
+		del self._StmtId
+		self._StmtId = None
+
+	@property
+	def UpdTp(self):
+		return self._UpdTp
+
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency25Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency25Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

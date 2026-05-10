@@ -3,7 +3,7 @@ from ._CollateralProposalResponseType4 import CollateralProposalResponseType4
 
 class CollateralProposalResponse4(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmt", "_VartnMrgn"]
+	__slots__ = ["_VartnMrgn", "_SgrtdIndpdntAmt"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt

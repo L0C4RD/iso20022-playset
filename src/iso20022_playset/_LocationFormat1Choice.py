@@ -1,10 +1,10 @@
 from . import base_types
-from ._PostalAddress1 import PostalAddress1
 from ._PlaceType1Code import PlaceType1Code
+from ._PostalAddress1 import PostalAddress1
 
 class LocationFormat1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_LctnCd"]
+	__slots__ = ["_LctnCd", "_Adr"]
 	@property
 	def Adr(self):
 		return self._Adr

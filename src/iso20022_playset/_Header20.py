@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Traceability4 import Traceability4
-from ._Max3NumericText import Max3NumericText
 from ._ATMMessageFunction1 import ATMMessageFunction1
+from ._Max35Text import Max35Text
 from ._Max6Text import Max6Text
+from ._Traceability4 import Traceability4
 from ._ISODateTime import ISODateTime
+from ._Max3NumericText import Max3NumericText
 
 class Header20(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_PrtcolVrsn", "_XchgId", "_InitgPty", "_PrcStat", "_MsgFctn", "_RcptPty", "_Tracblt"]
+	__slots__ = ["_XchgId", "_RcptPty", "_InitgPty", "_PrcStat", "_Tracblt", "_PrtcolVrsn", "_MsgFctn", "_CreDtTm"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -21,32 +21,6 @@ class Header20(base_types._BaseFieldType):
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
-
-	@property
-	def PrtcolVrsn(self):
-		return self._PrtcolVrsn
-
-	@PrtcolVrsn.setter
-	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
-
-	@PrtcolVrsn.deleter
-	def PrtcolVrsn(self):
-		del self._PrtcolVrsn
-		self._PrtcolVrsn = None
-
-	@property
-	def XchgId(self):
-		return self._XchgId
-
-	@XchgId.setter
-	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
-
-	@XchgId.deleter
-	def XchgId(self):
-		del self._XchgId
-		self._XchgId = None
 
 	@property
 	def InitgPty(self):
@@ -62,6 +36,19 @@ class Header20(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
+	def MsgFctn(self):
+		return self._MsgFctn
+
+	@MsgFctn.setter
+	def MsgFctn(self, value):
+		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
+
+	@MsgFctn.deleter
+	def MsgFctn(self):
+		del self._MsgFctn
+		self._MsgFctn = None
+
+	@property
 	def PrcStat(self):
 		return self._PrcStat
 
@@ -75,17 +62,17 @@ class Header20(base_types._BaseFieldType):
 		self._PrcStat = None
 
 	@property
-	def MsgFctn(self):
-		return self._MsgFctn
+	def PrtcolVrsn(self):
+		return self._PrtcolVrsn
 
-	@MsgFctn.setter
-	def MsgFctn(self, value):
-		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
+	@PrtcolVrsn.setter
+	def PrtcolVrsn(self, value):
+		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
 
-	@MsgFctn.deleter
-	def MsgFctn(self):
-		del self._MsgFctn
-		self._MsgFctn = None
+	@PrtcolVrsn.deleter
+	def PrtcolVrsn(self):
+		del self._PrtcolVrsn
+		self._PrtcolVrsn = None
 
 	@property
 	def RcptPty(self):
@@ -113,14 +100,27 @@ class Header20(base_types._BaseFieldType):
 		del self._Tracblt
 		self._Tracblt = None
 
+	@property
+	def XchgId(self):
+		return self._XchgId
+
+	@XchgId.setter
+	def XchgId(self, value):
+		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+
+	@XchgId.deleter
+	def XchgId(self):
+		del self._XchgId
+		self._XchgId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgId', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcStat', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgFctn', type=ATMMessageFunction1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcStat', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptPty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tracblt', type=Traceability4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XchgId', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

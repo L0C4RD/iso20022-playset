@@ -4,7 +4,7 @@ from ._ActiveCurrencyAndAmountRange3 import ActiveCurrencyAndAmountRange3
 
 class ActiveAmountRange3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyAndAmtRg", "_ImpldCcyAndAmtRg"]
+	__slots__ = ["_ImpldCcyAndAmtRg", "_CcyAndAmtRg"]
 	@property
 	def CcyAndAmtRg(self):
 		return self._CcyAndAmtRg

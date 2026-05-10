@@ -1,11 +1,24 @@
 from . import base_types
+from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._Party50Choice import Party50Choice
-from ._YesNoIndicator import YesNoIndicator
 
 class Case6(base_types._BaseFieldType):
 
 	__slots__ = ["_Id", "_ReopCaseIndctn", "_Cretr"]
+	@property
+	def Cretr(self):
+		return self._Cretr
+
+	@Cretr.setter
+	def Cretr(self, value):
+		self._Cretr = value if type(value) != base_types.auto else self.make_default("Cretr")
+
+	@Cretr.deleter
+	def Cretr(self):
+		del self._Cretr
+		self._Cretr = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -32,22 +45,9 @@ class Case6(base_types._BaseFieldType):
 		del self._ReopCaseIndctn
 		self._ReopCaseIndctn = None
 
-	@property
-	def Cretr(self):
-		return self._Cretr
-
-	@Cretr.setter
-	def Cretr(self, value):
-		self._Cretr = value if type(value) != base_types.auto else self.make_default("Cretr")
-
-	@Cretr.deleter
-	def Cretr(self):
-		del self._Cretr
-		self._Cretr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReopCaseIndctn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

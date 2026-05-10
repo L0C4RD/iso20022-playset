@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._CountryCode import CountryCode
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CountryCode import CountryCode
+from ._Max35Text import Max35Text
 
 class AdditionalParameters1(base_types._BaseFieldType):
 
-	__slots__ = ["_GeoArea", "_Ctry", "_Ccy"]
+	__slots__ = ["_GeoArea", "_Ccy", "_Ctry"]
 	@property
-	def GeoArea(self):
-		return self._GeoArea
+	def Ccy(self):
+		return self._Ccy
 
-	@GeoArea.setter
-	def GeoArea(self, value):
-		self._GeoArea = value if type(value) != base_types.auto else self.make_default("GeoArea")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@GeoArea.deleter
-	def GeoArea(self):
-		del self._GeoArea
-		self._GeoArea = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Ctry(self):
@@ -33,21 +33,21 @@ class AdditionalParameters1(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def GeoArea(self):
+		return self._GeoArea
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@GeoArea.setter
+	def GeoArea(self, value):
+		self._GeoArea = value if type(value) != base_types.auto else self.make_default("GeoArea")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@GeoArea.deleter
+	def GeoArea(self):
+		del self._GeoArea
+		self._GeoArea = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GeoArea', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GeoArea', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

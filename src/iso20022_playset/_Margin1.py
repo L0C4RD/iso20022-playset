@@ -4,7 +4,7 @@ from ._VariationMargin1 import VariationMargin1
 
 class Margin1(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmtMrgn", "_VartnMrgn"]
+	__slots__ = ["_VartnMrgn", "_SgrtdIndpdntAmtMrgn"]
 	@property
 	def SgrtdIndpdntAmtMrgn(self):
 		return self._SgrtdIndpdntAmtMrgn

@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._DistributionPolicy1Code import DistributionPolicy1Code
 from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._Max35Text import Max35Text
 from ._SecurityClassificationType2Choice import SecurityClassificationType2Choice
 
 class FinancialInstrument72(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssTp", "_SctiesForm", "_ClssfctnTp", "_SplmtryId", "_DstrbtnPlcy"]
+	__slots__ = ["_SctiesForm", "_SplmtryId", "_DstrbtnPlcy", "_ClssfctnTp", "_ClssTp"]
 	@property
 	def ClssTp(self):
 		return self._ClssTp
@@ -19,19 +19,6 @@ class FinancialInstrument72(base_types._BaseFieldType):
 	def ClssTp(self):
 		del self._ClssTp
 		self._ClssTp = None
-
-	@property
-	def SctiesForm(self):
-		return self._SctiesForm
-
-	@SctiesForm.setter
-	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
-
-	@SctiesForm.deleter
-	def SctiesForm(self):
-		del self._SctiesForm
-		self._SctiesForm = None
 
 	@property
 	def ClssfctnTp(self):
@@ -47,19 +34,6 @@ class FinancialInstrument72(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	@property
-	def SplmtryId(self):
-		return self._SplmtryId
-
-	@SplmtryId.setter
-	def SplmtryId(self, value):
-		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
-
-	@SplmtryId.deleter
-	def SplmtryId(self):
-		del self._SplmtryId
-		self._SplmtryId = None
-
-	@property
 	def DstrbtnPlcy(self):
 		return self._DstrbtnPlcy
 
@@ -72,11 +46,37 @@ class FinancialInstrument72(base_types._BaseFieldType):
 		del self._DstrbtnPlcy
 		self._DstrbtnPlcy = None
 
+	@property
+	def SctiesForm(self):
+		return self._SctiesForm
+
+	@SctiesForm.setter
+	def SctiesForm(self, value):
+		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+
+	@SctiesForm.deleter
+	def SctiesForm(self):
+		del self._SctiesForm
+		self._SctiesForm = None
+
+	@property
+	def SplmtryId(self):
+		return self._SplmtryId
+
+	@SplmtryId.setter
+	def SplmtryId(self, value):
+		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
+
+	@SplmtryId.deleter
+	def SplmtryId(self):
+		del self._SplmtryId
+		self._SplmtryId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=SecurityClassificationType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

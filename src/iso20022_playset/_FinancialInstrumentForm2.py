@@ -4,7 +4,7 @@ from ._FormOfSecurity8Choice import FormOfSecurity8Choice
 
 class FinancialInstrumentForm2(base_types._BaseFieldType):
 
-	__slots__ = ["_BookgApprnc", "_LglForm"]
+	__slots__ = ["_LglForm", "_BookgApprnc"]
 	@property
 	def BookgApprnc(self):
 		return self._BookgApprnc

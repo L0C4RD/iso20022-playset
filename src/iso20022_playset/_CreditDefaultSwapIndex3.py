@@ -1,27 +1,14 @@
 from . import base_types
-from ._Number import Number
-from ._RestrictedMonthExact2Number import RestrictedMonthExact2Number
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ISODate import ISODate
 from ._Max25Text import Max25Text
+from ._ISODate import ISODate
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._RestrictedMonthExact2Number import RestrictedMonthExact2Number
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Number import Number
 
 class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygIndxNm", "_NtnlCcy", "_NxtRollDt", "_Srs", "_Vrsn", "_UndrlygIndxId", "_RollMnth"]
-	@property
-	def UndrlygIndxNm(self):
-		return self._UndrlygIndxNm
-
-	@UndrlygIndxNm.setter
-	def UndrlygIndxNm(self, value):
-		self._UndrlygIndxNm = value if type(value) != base_types.auto else self.make_default("UndrlygIndxNm")
-
-	@UndrlygIndxNm.deleter
-	def UndrlygIndxNm(self):
-		del self._UndrlygIndxNm
-		self._UndrlygIndxNm = None
-
+	__slots__ = ["_UndrlygIndxId", "_NtnlCcy", "_Vrsn", "_RollMnth", "_Srs", "_UndrlygIndxNm", "_NxtRollDt"]
 	@property
 	def NtnlCcy(self):
 		return self._NtnlCcy
@@ -49,6 +36,19 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 		self._NxtRollDt = None
 
 	@property
+	def RollMnth(self):
+		return self._RollMnth
+
+	@RollMnth.setter
+	def RollMnth(self, value):
+		self._RollMnth = value if type(value) != base_types.auto else self.make_default("RollMnth")
+
+	@RollMnth.deleter
+	def RollMnth(self):
+		del self._RollMnth
+		self._RollMnth = None
+
+	@property
 	def Srs(self):
 		return self._Srs
 
@@ -60,19 +60,6 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 	def Srs(self):
 		del self._Srs
 		self._Srs = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
 
 	@property
 	def UndrlygIndxId(self):
@@ -88,25 +75,38 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 		self._UndrlygIndxId = None
 
 	@property
-	def RollMnth(self):
-		return self._RollMnth
+	def UndrlygIndxNm(self):
+		return self._UndrlygIndxNm
 
-	@RollMnth.setter
-	def RollMnth(self, value):
-		self._RollMnth = value if type(value) != base_types.auto else self.make_default("RollMnth")
+	@UndrlygIndxNm.setter
+	def UndrlygIndxNm(self, value):
+		self._UndrlygIndxNm = value if type(value) != base_types.auto else self.make_default("UndrlygIndxNm")
 
-	@RollMnth.deleter
-	def RollMnth(self):
-		del self._RollMnth
-		self._RollMnth = None
+	@UndrlygIndxNm.deleter
+	def UndrlygIndxNm(self):
+		del self._UndrlygIndxNm
+		self._UndrlygIndxNm = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygIndxNm', type=Max25Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NxtRollDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Srs', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygIndxId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RollMnth', type=RestrictedMonthExact2Number, min=0, max=12, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Srs', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygIndxId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygIndxNm', type=Max25Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

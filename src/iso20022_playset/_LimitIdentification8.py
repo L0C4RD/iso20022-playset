@@ -1,24 +1,37 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._SystemIdentification2Choice import SystemIdentification2Choice
-from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._LimitType1Choice import LimitType1Choice
+from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class LimitIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_BilLmtCtrPtyId", "_SysId", "_AcctId", "_AcctOwnr"]
+	__slots__ = ["_AcctId", "_SysId", "_Tp", "_BilLmtCtrPtyId", "_AcctOwnr"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def AcctId(self):
+		return self._AcctId
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
 	def BilLmtCtrPtyId(self):
@@ -47,36 +60,23 @@ class LimitIdentification8(base_types._BaseFieldType):
 		self._SysId = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def Tp(self):
+		return self._Tp
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=LimitType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BilLmtCtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BilLmtCtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=LimitType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

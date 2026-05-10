@@ -3,20 +3,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class CounterpartyData92(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSubmitgNtty", "_NttyRspnsblForRpt", "_RptgCtrPty"]
-	@property
-	def RptSubmitgNtty(self):
-		return self._RptSubmitgNtty
-
-	@RptSubmitgNtty.setter
-	def RptSubmitgNtty(self, value):
-		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
-
-	@RptSubmitgNtty.deleter
-	def RptSubmitgNtty(self):
-		del self._RptSubmitgNtty
-		self._RptSubmitgNtty = None
-
+	__slots__ = ["_RptSubmitgNtty", "_RptgCtrPty", "_NttyRspnsblForRpt"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt
@@ -29,6 +16,19 @@ class CounterpartyData92(base_types._BaseFieldType):
 	def NttyRspnsblForRpt(self):
 		del self._NttyRspnsblForRpt
 		self._NttyRspnsblForRpt = None
+
+	@property
+	def RptSubmitgNtty(self):
+		return self._RptSubmitgNtty
+
+	@RptSubmitgNtty.setter
+	def RptSubmitgNtty(self, value):
+		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
+
+	@RptSubmitgNtty.deleter
+	def RptSubmitgNtty(self):
+		del self._RptSubmitgNtty
+		self._RptSubmitgNtty = None
 
 	@property
 	def RptgCtrPty(self):
@@ -44,8 +44,8 @@ class CounterpartyData92(base_types._BaseFieldType):
 		self._RptgCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

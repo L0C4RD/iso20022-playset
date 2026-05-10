@@ -3,7 +3,7 @@ from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Cho
 
 class CompareUnitPrice5(base_types._BaseFieldType):
 
-	__slots__ = ["_Val1", "_Val2"]
+	__slots__ = ["_Val2", "_Val1"]
 	@property
 	def Val1(self):
 		return self._Val1

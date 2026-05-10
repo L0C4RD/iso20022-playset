@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProxyAccountType1Choice import ProxyAccountType1Choice
 from ._Max2048Text import Max2048Text
+from ._ProxyAccountType1Choice import ProxyAccountType1Choice
 
 class ProxyAccountIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp"]
+	__slots__ = ["_Tp", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

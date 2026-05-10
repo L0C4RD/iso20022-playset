@@ -1,39 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
-from ._NamePrefix2Code import NamePrefix2Code
 from ._ISODate import ISODate
+from ._NamePrefix2Code import NamePrefix2Code
+from ._Max35Text import Max35Text
 from ._Max6Text import Max6Text
+from ._Max350Text import Max350Text
 
 class IndividualPersonNameLong2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_StartDt", "_EndDt", "_Srnm", "_Initls", "_GvnNm", "_NmSfx", "_NmPrfx", "_MddlNm"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
+	__slots__ = ["_Srnm", "_NmPrfx", "_Initls", "_NmSfx", "_Nm", "_GvnNm", "_EndDt", "_StartDt", "_MddlNm"]
 	@property
 	def EndDt(self):
 		return self._EndDt
@@ -46,32 +20,6 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 	def EndDt(self):
 		del self._EndDt
 		self._EndDt = None
-
-	@property
-	def Srnm(self):
-		return self._Srnm
-
-	@Srnm.setter
-	def Srnm(self, value):
-		self._Srnm = value if type(value) != base_types.auto else self.make_default("Srnm")
-
-	@Srnm.deleter
-	def Srnm(self):
-		del self._Srnm
-		self._Srnm = None
-
-	@property
-	def Initls(self):
-		return self._Initls
-
-	@Initls.setter
-	def Initls(self, value):
-		self._Initls = value if type(value) != base_types.auto else self.make_default("Initls")
-
-	@Initls.deleter
-	def Initls(self):
-		del self._Initls
-		self._Initls = None
 
 	@property
 	def GvnNm(self):
@@ -87,17 +35,43 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 		self._GvnNm = None
 
 	@property
-	def NmSfx(self):
-		return self._NmSfx
+	def Initls(self):
+		return self._Initls
 
-	@NmSfx.setter
-	def NmSfx(self, value):
-		self._NmSfx = value if type(value) != base_types.auto else self.make_default("NmSfx")
+	@Initls.setter
+	def Initls(self, value):
+		self._Initls = value if type(value) != base_types.auto else self.make_default("Initls")
 
-	@NmSfx.deleter
-	def NmSfx(self):
-		del self._NmSfx
-		self._NmSfx = None
+	@Initls.deleter
+	def Initls(self):
+		del self._Initls
+		self._Initls = None
+
+	@property
+	def MddlNm(self):
+		return self._MddlNm
+
+	@MddlNm.setter
+	def MddlNm(self, value):
+		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+
+	@MddlNm.deleter
+	def MddlNm(self):
+		del self._MddlNm
+		self._MddlNm = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def NmPrfx(self):
@@ -113,27 +87,53 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 		self._NmPrfx = None
 
 	@property
-	def MddlNm(self):
-		return self._MddlNm
+	def NmSfx(self):
+		return self._NmSfx
 
-	@MddlNm.setter
-	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+	@NmSfx.setter
+	def NmSfx(self, value):
+		self._NmSfx = value if type(value) != base_types.auto else self.make_default("NmSfx")
 
-	@MddlNm.deleter
-	def MddlNm(self):
-		del self._MddlNm
-		self._MddlNm = None
+	@NmSfx.deleter
+	def NmSfx(self):
+		del self._NmSfx
+		self._NmSfx = None
+
+	@property
+	def Srnm(self):
+		return self._Srnm
+
+	@Srnm.setter
+	def Srnm(self, value):
+		self._Srnm = value if type(value) != base_types.auto else self.make_default("Srnm")
+
+	@Srnm.deleter
+	def Srnm(self):
+		del self._Srnm
+		self._Srnm = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Srnm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Initls', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmSfx', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmPrfx', type=NamePrefix2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Initls', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmPrfx', type=NamePrefix2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmSfx', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Srnm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

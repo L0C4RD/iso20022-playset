@@ -5,7 +5,7 @@ from ._CreditorEnrolmentCancellation3 import CreditorEnrolmentCancellation3
 
 class RequestToPayCreditorEnrolmentCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlData", "_Hdr", "_SplmtryData"]
+	__slots__ = ["_Hdr", "_SplmtryData", "_CxlData"]
 	@property
 	def CxlData(self):
 		return self._CxlData

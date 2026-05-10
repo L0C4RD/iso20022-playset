@@ -1,37 +1,11 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._PartyIdentification139 import PartyIdentification139
 from ._FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
+from ._PartyIdentification139 import PartyIdentification139
 
 class Cheque21(base_types._BaseFieldType):
 
-	__slots__ = ["_DrwrId", "_PyeeId", "_DrweeId", "_Nb"]
-	@property
-	def DrwrId(self):
-		return self._DrwrId
-
-	@DrwrId.setter
-	def DrwrId(self, value):
-		self._DrwrId = value if type(value) != base_types.auto else self.make_default("DrwrId")
-
-	@DrwrId.deleter
-	def DrwrId(self):
-		del self._DrwrId
-		self._DrwrId = None
-
-	@property
-	def PyeeId(self):
-		return self._PyeeId
-
-	@PyeeId.setter
-	def PyeeId(self, value):
-		self._PyeeId = value if type(value) != base_types.auto else self.make_default("PyeeId")
-
-	@PyeeId.deleter
-	def PyeeId(self):
-		del self._PyeeId
-		self._PyeeId = None
-
+	__slots__ = ["_DrwrId", "_DrweeId", "_Nb", "_PyeeId"]
 	@property
 	def DrweeId(self):
 		return self._DrweeId
@@ -46,6 +20,19 @@ class Cheque21(base_types._BaseFieldType):
 		self._DrweeId = None
 
 	@property
+	def DrwrId(self):
+		return self._DrwrId
+
+	@DrwrId.setter
+	def DrwrId(self, value):
+		self._DrwrId = value if type(value) != base_types.auto else self.make_default("DrwrId")
+
+	@DrwrId.deleter
+	def DrwrId(self):
+		del self._DrwrId
+		self._DrwrId = None
+
+	@property
 	def Nb(self):
 		return self._Nb
 
@@ -58,10 +45,23 @@ class Cheque21(base_types._BaseFieldType):
 		del self._Nb
 		self._Nb = None
 
+	@property
+	def PyeeId(self):
+		return self._PyeeId
+
+	@PyeeId.setter
+	def PyeeId(self, value):
+		self._PyeeId = value if type(value) != base_types.auto else self.make_default("PyeeId")
+
+	@PyeeId.deleter
+	def PyeeId(self):
+		del self._PyeeId
+		self._PyeeId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrwrId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PyeeId', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrweeId', type=FinancialInstitutionIdentification15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrwrId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PyeeId', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
 	))
 

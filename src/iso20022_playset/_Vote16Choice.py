@@ -4,7 +4,7 @@ from ._Vote15 import Vote15
 
 class Vote16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GblVoteInstr", "_VoteInstr"]
+	__slots__ = ["_VoteInstr", "_GblVoteInstr"]
 	@property
 	def GblVoteInstr(self):
 		return self._GblVoteInstr

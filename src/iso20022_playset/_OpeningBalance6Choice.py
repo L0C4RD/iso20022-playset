@@ -3,7 +3,7 @@ from ._BalanceQuantity14Choice import BalanceQuantity14Choice
 
 class OpeningBalance6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Frst", "_Intrmy"]
+	__slots__ = ["_Intrmy", "_Frst"]
 	@property
 	def Frst(self):
 		return self._Frst

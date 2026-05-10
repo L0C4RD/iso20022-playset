@@ -1,37 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
+from ._Max35Binary import Max35Binary
 from ._POICommunicationType2Code import POICommunicationType2Code
 from ._Max2KBinary import Max2KBinary
-from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
 
 class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrNm", "_IntrfcTp", "_AddtlParams", "_AccsCd", "_SctyPrfl", "_IntrfcNm"]
+	__slots__ = ["_IntrfcNm", "_SctyPrfl", "_AddtlParams", "_IntrfcTp", "_AccsCd", "_UsrNm"]
 	@property
-	def UsrNm(self):
-		return self._UsrNm
+	def AccsCd(self):
+		return self._AccsCd
 
-	@UsrNm.setter
-	def UsrNm(self, value):
-		self._UsrNm = value if type(value) != base_types.auto else self.make_default("UsrNm")
+	@AccsCd.setter
+	def AccsCd(self, value):
+		self._AccsCd = value if type(value) != base_types.auto else self.make_default("AccsCd")
 
-	@UsrNm.deleter
-	def UsrNm(self):
-		del self._UsrNm
-		self._UsrNm = None
-
-	@property
-	def IntrfcTp(self):
-		return self._IntrfcTp
-
-	@IntrfcTp.setter
-	def IntrfcTp(self, value):
-		self._IntrfcTp = value if type(value) != base_types.auto else self.make_default("IntrfcTp")
-
-	@IntrfcTp.deleter
-	def IntrfcTp(self):
-		del self._IntrfcTp
-		self._IntrfcTp = None
+	@AccsCd.deleter
+	def AccsCd(self):
+		del self._AccsCd
+		self._AccsCd = None
 
 	@property
 	def AddtlParams(self):
@@ -47,17 +34,30 @@ class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 		self._AddtlParams = None
 
 	@property
-	def AccsCd(self):
-		return self._AccsCd
+	def IntrfcNm(self):
+		return self._IntrfcNm
 
-	@AccsCd.setter
-	def AccsCd(self, value):
-		self._AccsCd = value if type(value) != base_types.auto else self.make_default("AccsCd")
+	@IntrfcNm.setter
+	def IntrfcNm(self, value):
+		self._IntrfcNm = value if type(value) != base_types.auto else self.make_default("IntrfcNm")
 
-	@AccsCd.deleter
-	def AccsCd(self):
-		del self._AccsCd
-		self._AccsCd = None
+	@IntrfcNm.deleter
+	def IntrfcNm(self):
+		del self._IntrfcNm
+		self._IntrfcNm = None
+
+	@property
+	def IntrfcTp(self):
+		return self._IntrfcTp
+
+	@IntrfcTp.setter
+	def IntrfcTp(self, value):
+		self._IntrfcTp = value if type(value) != base_types.auto else self.make_default("IntrfcTp")
+
+	@IntrfcTp.deleter
+	def IntrfcTp(self):
+		del self._IntrfcTp
+		self._IntrfcTp = None
 
 	@property
 	def SctyPrfl(self):
@@ -73,24 +73,24 @@ class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 		self._SctyPrfl = None
 
 	@property
-	def IntrfcNm(self):
-		return self._IntrfcNm
+	def UsrNm(self):
+		return self._UsrNm
 
-	@IntrfcNm.setter
-	def IntrfcNm(self, value):
-		self._IntrfcNm = value if type(value) != base_types.auto else self.make_default("IntrfcNm")
+	@UsrNm.setter
+	def UsrNm(self, value):
+		self._UsrNm = value if type(value) != base_types.auto else self.make_default("UsrNm")
 
-	@IntrfcNm.deleter
-	def IntrfcNm(self):
-		del self._IntrfcNm
-		self._IntrfcNm = None
+	@UsrNm.deleter
+	def UsrNm(self):
+		del self._UsrNm
+		self._UsrNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrfcTp', type=POICommunicationType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlParams', type=Max2KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccsCd', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlParams', type=Max2KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrfcNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrfcTp', type=POICommunicationType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

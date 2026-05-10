@@ -5,7 +5,7 @@ from ._CollateralSubstitutionResponse3 import CollateralSubstitutionResponse3
 
 class SubstitutionResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSbstitnAccptncDtls", "_CollSbstitnRjctnDtls", "_RspnTp"]
+	__slots__ = ["_RspnTp", "_CollSbstitnRjctnDtls", "_CollSbstitnAccptncDtls"]
 	@property
 	def CollSbstitnAccptncDtls(self):
 		return self._CollSbstitnAccptncDtls

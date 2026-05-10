@@ -4,7 +4,7 @@ from ._FutureOrOptionDetails3 import FutureOrOptionDetails3
 
 class TwoLegTransactionType4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FutrOrOptnDtls", "_SctiesFincgDtls"]
+	__slots__ = ["_SctiesFincgDtls", "_FutrOrOptnDtls"]
 	@property
 	def FutrOrOptnDtls(self):
 		return self._FutrOrOptnDtls

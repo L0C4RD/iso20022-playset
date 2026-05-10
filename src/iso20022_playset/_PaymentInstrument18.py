@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PaymentInstrument25Choice import PaymentInstrument25Choice
 from ._ISODate import ISODate
+from ._PaymentInstrument25Choice import PaymentInstrument25Choice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._Max35Text import Max35Text
 
 class PaymentInstrument18(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_CshSttlmDtls", "_PmtDt", "_Amt"]
+	__slots__ = ["_PmtDt", "_Amt", "_CshSttlmDtls", "_Ref"]
 	@property
-	def Ref(self):
-		return self._Ref
+	def Amt(self):
+		return self._Amt
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def CshSttlmDtls(self):
@@ -47,22 +47,22 @@ class PaymentInstrument18(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Ref(self):
+		return self._Ref
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlmDtls', type=PaymentInstrument25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

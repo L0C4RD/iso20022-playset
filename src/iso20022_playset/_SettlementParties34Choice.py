@@ -3,20 +3,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class SettlementParties34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndrctPtcpt", "_CntrlSctiesDpstryPtcpt"]
-	@property
-	def IndrctPtcpt(self):
-		return self._IndrctPtcpt
-
-	@IndrctPtcpt.setter
-	def IndrctPtcpt(self, value):
-		self._IndrctPtcpt = value if type(value) != base_types.auto else self.make_default("IndrctPtcpt")
-
-	@IndrctPtcpt.deleter
-	def IndrctPtcpt(self):
-		del self._IndrctPtcpt
-		self._IndrctPtcpt = None
-
+	__slots__ = ["_CntrlSctiesDpstryPtcpt", "_IndrctPtcpt"]
 	@property
 	def CntrlSctiesDpstryPtcpt(self):
 		return self._CntrlSctiesDpstryPtcpt
@@ -30,8 +17,21 @@ class SettlementParties34Choice(base_types._BaseFieldType):
 		del self._CntrlSctiesDpstryPtcpt
 		self._CntrlSctiesDpstryPtcpt = None
 
+	@property
+	def IndrctPtcpt(self):
+		return self._IndrctPtcpt
+
+	@IndrctPtcpt.setter
+	def IndrctPtcpt(self, value):
+		self._IndrctPtcpt = value if type(value) != base_types.auto else self.make_default("IndrctPtcpt")
+
+	@IndrctPtcpt.deleter
+	def IndrctPtcpt(self):
+		del self._IndrctPtcpt
+		self._IndrctPtcpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndrctPtcpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CntrlSctiesDpstryPtcpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndrctPtcpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

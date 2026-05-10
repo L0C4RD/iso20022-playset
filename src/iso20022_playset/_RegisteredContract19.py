@@ -1,17 +1,43 @@
 from . import base_types
+from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
 from ._SupplementaryData1 import SupplementaryData1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Priority2Code import Priority2Code
 from ._ContractCessionData2 import ContractCessionData2
+from ._TradeParty6 import TradeParty6
+from ._ContractClosureReason1Choice import ContractClosureReason1Choice
 from ._DocumentIdentification29 import DocumentIdentification29
 from ._Max35Text import Max35Text
-from ._ContractClosureReason1Choice import ContractClosureReason1Choice
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._TradeParty6 import TradeParty6
+from ._Priority2Code import Priority2Code
 
 class RegisteredContract19(base_types._BaseFieldType):
 
-	__slots__ = ["_Cssn", "_OrgnlRegdCtrct", "_Attchmnt", "_RegdCtrctClsrId", "_ClsrRsn", "_RptgPty", "_RegnAgt", "_SplmtryData", "_Prty"]
+	__slots__ = ["_Cssn", "_RegnAgt", "_RptgPty", "_RegdCtrctClsrId", "_SplmtryData", "_ClsrRsn", "_Attchmnt", "_OrgnlRegdCtrct", "_Prty"]
+	@property
+	def Attchmnt(self):
+		return self._Attchmnt
+
+	@Attchmnt.setter
+	def Attchmnt(self, value):
+		self._Attchmnt = value if type(value) != base_types.auto else self.make_default("Attchmnt")
+
+	@Attchmnt.deleter
+	def Attchmnt(self):
+		del self._Attchmnt
+		self._Attchmnt = None
+
+	@property
+	def ClsrRsn(self):
+		return self._ClsrRsn
+
+	@ClsrRsn.setter
+	def ClsrRsn(self, value):
+		self._ClsrRsn = value if type(value) != base_types.auto else self.make_default("ClsrRsn")
+
+	@ClsrRsn.deleter
+	def ClsrRsn(self):
+		del self._ClsrRsn
+		self._ClsrRsn = None
+
 	@property
 	def Cssn(self):
 		return self._Cssn
@@ -39,17 +65,17 @@ class RegisteredContract19(base_types._BaseFieldType):
 		self._OrgnlRegdCtrct = None
 
 	@property
-	def Attchmnt(self):
-		return self._Attchmnt
+	def Prty(self):
+		return self._Prty
 
-	@Attchmnt.setter
-	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != base_types.auto else self.make_default("Attchmnt")
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
 
-	@Attchmnt.deleter
-	def Attchmnt(self):
-		del self._Attchmnt
-		self._Attchmnt = None
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
 
 	@property
 	def RegdCtrctClsrId(self):
@@ -65,17 +91,17 @@ class RegisteredContract19(base_types._BaseFieldType):
 		self._RegdCtrctClsrId = None
 
 	@property
-	def ClsrRsn(self):
-		return self._ClsrRsn
+	def RegnAgt(self):
+		return self._RegnAgt
 
-	@ClsrRsn.setter
-	def ClsrRsn(self, value):
-		self._ClsrRsn = value if type(value) != base_types.auto else self.make_default("ClsrRsn")
+	@RegnAgt.setter
+	def RegnAgt(self, value):
+		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
 
-	@ClsrRsn.deleter
-	def ClsrRsn(self):
-		del self._ClsrRsn
-		self._ClsrRsn = None
+	@RegnAgt.deleter
+	def RegnAgt(self):
+		del self._RegnAgt
+		self._RegnAgt = None
 
 	@property
 	def RptgPty(self):
@@ -91,19 +117,6 @@ class RegisteredContract19(base_types._BaseFieldType):
 		self._RptgPty = None
 
 	@property
-	def RegnAgt(self):
-		return self._RegnAgt
-
-	@RegnAgt.setter
-	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
-
-	@RegnAgt.deleter
-	def RegnAgt(self):
-		del self._RegnAgt
-		self._RegnAgt = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -116,28 +129,15 @@ class RegisteredContract19(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def Prty(self):
-		return self._Prty
-
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
-
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cssn', type=ContractCessionData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlRegdCtrct', type=DocumentIdentification29, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegdCtrctClsrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prty', type=Priority2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdCtrctClsrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

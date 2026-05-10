@@ -1,24 +1,24 @@
 from . import base_types
 from ._Max35Text import Max35Text
 from ._SubAccount5 import SubAccount5
-from ._PartyIdentification132 import PartyIdentification132
 from ._GenericIdentification30 import GenericIdentification30
+from ._PartyIdentification132 import PartyIdentification132
 
 class Account33(base_types._BaseFieldType):
 
-	__slots__ = ["_Svcr", "_AcctId", "_OwnrId", "_AcctNm", "_Tp", "_SubAcctDtls", "_AcctDsgnt"]
+	__slots__ = ["_Svcr", "_SubAcctDtls", "_OwnrId", "_Tp", "_AcctId", "_AcctNm", "_AcctDsgnt"]
 	@property
-	def Svcr(self):
-		return self._Svcr
+	def AcctDsgnt(self):
+		return self._AcctDsgnt
 
-	@Svcr.setter
-	def Svcr(self, value):
-		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
+	@AcctDsgnt.setter
+	def AcctDsgnt(self, value):
+		self._AcctDsgnt = value if type(value) != base_types.auto else self.make_default("AcctDsgnt")
 
-	@Svcr.deleter
-	def Svcr(self):
-		del self._Svcr
-		self._Svcr = None
+	@AcctDsgnt.deleter
+	def AcctDsgnt(self):
+		del self._AcctDsgnt
+		self._AcctDsgnt = None
 
 	@property
 	def AcctId(self):
@@ -34,19 +34,6 @@ class Account33(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def OwnrId(self):
-		return self._OwnrId
-
-	@OwnrId.setter
-	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
-
-	@OwnrId.deleter
-	def OwnrId(self):
-		del self._OwnrId
-		self._OwnrId = None
-
-	@property
 	def AcctNm(self):
 		return self._AcctNm
 
@@ -60,17 +47,17 @@ class Account33(base_types._BaseFieldType):
 		self._AcctNm = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def OwnrId(self):
+		return self._OwnrId
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@OwnrId.setter
+	def OwnrId(self, value):
+		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@OwnrId.deleter
+	def OwnrId(self):
+		del self._OwnrId
+		self._OwnrId = None
 
 	@property
 	def SubAcctDtls(self):
@@ -86,25 +73,38 @@ class Account33(base_types._BaseFieldType):
 		self._SubAcctDtls = None
 
 	@property
-	def AcctDsgnt(self):
-		return self._AcctDsgnt
+	def Svcr(self):
+		return self._Svcr
 
-	@AcctDsgnt.setter
-	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != base_types.auto else self.make_default("AcctDsgnt")
+	@Svcr.setter
+	def Svcr(self, value):
+		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
 
-	@AcctDsgnt.deleter
-	def AcctDsgnt(self):
-		del self._AcctDsgnt
-		self._AcctDsgnt = None
+	@Svcr.deleter
+	def Svcr(self):
+		del self._Svcr
+		self._Svcr = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Svcr', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrId', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrId', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
 

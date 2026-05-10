@@ -4,7 +4,7 @@ from ._PartyIdentification201 import PartyIdentification201
 
 class PartyIdentification205Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LglPrsn", "_NtrlPrsn"]
+	__slots__ = ["_NtrlPrsn", "_LglPrsn"]
 	@property
 	def LglPrsn(self):
 		return self._LglPrsn

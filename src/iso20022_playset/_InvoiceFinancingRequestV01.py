@@ -1,10 +1,10 @@
 from . import base_types
-from ._RequestGroupInformation1 import RequestGroupInformation1
 from ._InvoiceRequestInformation1 import InvoiceRequestInformation1
+from ._RequestGroupInformation1 import RequestGroupInformation1
 
 class InvoiceFinancingRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_InvcReqInf", "_ReqGrpInf"]
+	__slots__ = ["_ReqGrpInf", "_InvcReqInf"]
 	@property
 	def InvcReqInf(self):
 		return self._InvcReqInf

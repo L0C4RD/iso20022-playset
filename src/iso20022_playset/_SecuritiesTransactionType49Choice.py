@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._SecuritiesTransactionType24Code import SecuritiesTransactionType24Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class SecuritiesTransactionType49Choice(base_types._BaseFieldType):
 

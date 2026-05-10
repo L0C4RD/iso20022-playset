@@ -1,25 +1,12 @@
 from . import base_types
+from ._GlobalDistributionStatus1 import GlobalDistributionStatus1
 from ._CorporateActionInformation1 import CorporateActionInformation1
 from ._DocumentIdentification8 import DocumentIdentification8
 from ._IndividualMovementStatus1 import IndividualMovementStatus1
-from ._GlobalDistributionStatus1 import GlobalDistributionStatus1
 
 class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvMvmntSts", "_AgtCAGblDstrbtnAuthstnReqId", "_Id", "_GblMvmntSts", "_CorpActnGnlInf"]
-	@property
-	def IndvMvmntSts(self):
-		return self._IndvMvmntSts
-
-	@IndvMvmntSts.setter
-	def IndvMvmntSts(self, value):
-		self._IndvMvmntSts = value if type(value) != base_types.auto else self.make_default("IndvMvmntSts")
-
-	@IndvMvmntSts.deleter
-	def IndvMvmntSts(self):
-		del self._IndvMvmntSts
-		self._IndvMvmntSts = None
-
+	__slots__ = ["_IndvMvmntSts", "_Id", "_AgtCAGblDstrbtnAuthstnReqId", "_GblMvmntSts", "_CorpActnGnlInf"]
 	@property
 	def AgtCAGblDstrbtnAuthstnReqId(self):
 		return self._AgtCAGblDstrbtnAuthstnReqId
@@ -34,17 +21,17 @@ class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 		self._AgtCAGblDstrbtnAuthstnReqId = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	@property
 	def GblMvmntSts(self):
@@ -60,23 +47,36 @@ class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 		self._GblMvmntSts = None
 
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def Id(self):
+		return self._Id
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def IndvMvmntSts(self):
+		return self._IndvMvmntSts
+
+	@IndvMvmntSts.setter
+	def IndvMvmntSts(self, value):
+		self._IndvMvmntSts = value if type(value) != base_types.auto else self.make_default("IndvMvmntSts")
+
+	@IndvMvmntSts.deleter
+	def IndvMvmntSts(self):
+		del self._IndvMvmntSts
+		self._IndvMvmntSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndvMvmntSts', type=IndividualMovementStatus1, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='AgtCAGblDstrbtnAuthstnReqId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GblMvmntSts', type=GlobalDistributionStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GblMvmntSts', type=GlobalDistributionStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvMvmntSts', type=IndividualMovementStatus1, min=1, max=None, mutex_group=1, array=True),
 	))
 

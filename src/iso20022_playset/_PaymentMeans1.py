@@ -1,51 +1,12 @@
 from . import base_types
-from ._CashAccount16 import CashAccount16
-from ._PaymentTypeInformation19 import PaymentTypeInformation19
-from ._BranchAndFinancialInstitutionIdentification4 import BranchAndFinancialInstitutionIdentification4
 from ._PaymentMethod4Code import PaymentMethod4Code
+from ._PaymentTypeInformation19 import PaymentTypeInformation19
+from ._CashAccount16 import CashAccount16
+from ._BranchAndFinancialInstitutionIdentification4 import BranchAndFinancialInstitutionIdentification4
 
 class PaymentMeans1(base_types._BaseFieldType):
 
-	__slots__ = ["_PyerFI", "_PyerDbtrAcct", "_PyeeFI", "_PmtMtdCd", "_PmtTp", "_PyeeCdtrAcct"]
-	@property
-	def PyerFI(self):
-		return self._PyerFI
-
-	@PyerFI.setter
-	def PyerFI(self, value):
-		self._PyerFI = value if type(value) != base_types.auto else self.make_default("PyerFI")
-
-	@PyerFI.deleter
-	def PyerFI(self):
-		del self._PyerFI
-		self._PyerFI = None
-
-	@property
-	def PyerDbtrAcct(self):
-		return self._PyerDbtrAcct
-
-	@PyerDbtrAcct.setter
-	def PyerDbtrAcct(self, value):
-		self._PyerDbtrAcct = value if type(value) != base_types.auto else self.make_default("PyerDbtrAcct")
-
-	@PyerDbtrAcct.deleter
-	def PyerDbtrAcct(self):
-		del self._PyerDbtrAcct
-		self._PyerDbtrAcct = None
-
-	@property
-	def PyeeFI(self):
-		return self._PyeeFI
-
-	@PyeeFI.setter
-	def PyeeFI(self, value):
-		self._PyeeFI = value if type(value) != base_types.auto else self.make_default("PyeeFI")
-
-	@PyeeFI.deleter
-	def PyeeFI(self):
-		del self._PyeeFI
-		self._PyeeFI = None
-
+	__slots__ = ["_PmtMtdCd", "_PyeeFI", "_PyerFI", "_PmtTp", "_PyerDbtrAcct", "_PyeeCdtrAcct"]
 	@property
 	def PmtMtdCd(self):
 		return self._PmtMtdCd
@@ -85,12 +46,51 @@ class PaymentMeans1(base_types._BaseFieldType):
 		del self._PyeeCdtrAcct
 		self._PyeeCdtrAcct = None
 
+	@property
+	def PyeeFI(self):
+		return self._PyeeFI
+
+	@PyeeFI.setter
+	def PyeeFI(self, value):
+		self._PyeeFI = value if type(value) != base_types.auto else self.make_default("PyeeFI")
+
+	@PyeeFI.deleter
+	def PyeeFI(self):
+		del self._PyeeFI
+		self._PyeeFI = None
+
+	@property
+	def PyerDbtrAcct(self):
+		return self._PyerDbtrAcct
+
+	@PyerDbtrAcct.setter
+	def PyerDbtrAcct(self, value):
+		self._PyerDbtrAcct = value if type(value) != base_types.auto else self.make_default("PyerDbtrAcct")
+
+	@PyerDbtrAcct.deleter
+	def PyerDbtrAcct(self):
+		del self._PyerDbtrAcct
+		self._PyerDbtrAcct = None
+
+	@property
+	def PyerFI(self):
+		return self._PyerFI
+
+	@PyerFI.setter
+	def PyerFI(self, value):
+		self._PyerFI = value if type(value) != base_types.auto else self.make_default("PyerFI")
+
+	@PyerFI.deleter
+	def PyerFI(self):
+		del self._PyerFI
+		self._PyerFI = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PyerFI', type=BranchAndFinancialInstitutionIdentification4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PyerDbtrAcct', type=CashAccount16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PyeeFI', type=BranchAndFinancialInstitutionIdentification4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMtdCd', type=PaymentMethod4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTp', type=PaymentTypeInformation19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyeeCdtrAcct', type=CashAccount16, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PyeeFI', type=BranchAndFinancialInstitutionIdentification4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PyerDbtrAcct', type=CashAccount16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PyerFI', type=BranchAndFinancialInstitutionIdentification4, min=0, max=1, mutex_group=None, array=False),
 	))
 

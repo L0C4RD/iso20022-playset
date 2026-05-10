@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Party50Choice import Party50Choice
+from ._Max35Text import Max35Text
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Max15NumericText import Max15NumericText
 from ._ISODateTime import ISODateTime
 
 class CurrencyControlHeader9(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_InitgPty", "_FwdgAgt", "_MsgId", "_NbOfItms"]
+	__slots__ = ["_FwdgAgt", "_MsgId", "_NbOfItms", "_CreDtTm", "_InitgPty"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -22,19 +22,6 @@ class CurrencyControlHeader9(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
-	@property
 	def FwdgAgt(self):
 		return self._FwdgAgt
 
@@ -46,6 +33,19 @@ class CurrencyControlHeader9(base_types._BaseFieldType):
 	def FwdgAgt(self):
 		del self._FwdgAgt
 		self._FwdgAgt = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def MsgId(self):
@@ -75,8 +75,8 @@ class CurrencyControlHeader9(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))

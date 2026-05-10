@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._Max2048Text import Max2048Text
 from ._UpdatedURLlnformation6 import UpdatedURLlnformation6
+from ._Max350Text import Max350Text
 
 class CorporateActionNarrative58(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtPrcgWebSiteAdr", "_NewCpnyNm", "_URLAdr", "_Offerr"]
+	__slots__ = ["_NewCpnyNm", "_Offerr", "_URLAdr", "_EvtPrcgWebSiteAdr"]
 	@property
 	def EvtPrcgWebSiteAdr(self):
 		return self._EvtPrcgWebSiteAdr
@@ -33,19 +33,6 @@ class CorporateActionNarrative58(base_types._BaseFieldType):
 		self._NewCpnyNm = None
 
 	@property
-	def URLAdr(self):
-		return self._URLAdr
-
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
-
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
-
-	@property
 	def Offerr(self):
 		return self._Offerr
 
@@ -58,10 +45,23 @@ class CorporateActionNarrative58(base_types._BaseFieldType):
 		del self._Offerr
 		self._Offerr = None
 
+	@property
+	def URLAdr(self):
+		return self._URLAdr
+
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewCpnyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Offerr', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation6, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-from ._TargetMarket5Choice import TargetMarket5Choice
 from ._OtherTargetMarketInvestor1 import OtherTargetMarketInvestor1
-from ._TargetMarket3Code import TargetMarket3Code
+from ._TargetMarket5Choice import TargetMarket5Choice
 from ._TargetMarket1Code import TargetMarket1Code
+from ._TargetMarket3Code import TargetMarket3Code
 
 class InvestorType2(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrTpElgblCtrPty", "_Othr", "_InvstrTpPrfssnl", "_InvstrTpRtl"]
+	__slots__ = ["_InvstrTpRtl", "_InvstrTpElgblCtrPty", "_InvstrTpPrfssnl", "_Othr"]
 	@property
 	def InvstrTpElgblCtrPty(self):
 		return self._InvstrTpElgblCtrPty
@@ -19,19 +19,6 @@ class InvestorType2(base_types._BaseFieldType):
 	def InvstrTpElgblCtrPty(self):
 		del self._InvstrTpElgblCtrPty
 		self._InvstrTpElgblCtrPty = None
-
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
 
 	@property
 	def InvstrTpPrfssnl(self):
@@ -59,10 +46,23 @@ class InvestorType2(base_types._BaseFieldType):
 		del self._InvstrTpRtl
 		self._InvstrTpRtl = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstrTpElgblCtrPty', type=TargetMarket3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstrTpPrfssnl', type=TargetMarket5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrTpRtl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
 	))
 

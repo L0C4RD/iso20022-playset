@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._SubAccount5 import SubAccount5
 from ._PartyIdentification139 import PartyIdentification139
+from ._Max35Text import Max35Text
 
 class Account31(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsgnt", "_AcctNm", "_Id", "_SubAcctDtls", "_Svcr"]
-	@property
-	def Dsgnt(self):
-		return self._Dsgnt
-
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
-
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
-
+	__slots__ = ["_Id", "_SubAcctDtls", "_Svcr", "_AcctNm", "_Dsgnt"]
 	@property
 	def AcctNm(self):
 		return self._AcctNm
@@ -31,6 +18,19 @@ class Account31(base_types._BaseFieldType):
 	def AcctNm(self):
 		del self._AcctNm
 		self._AcctNm = None
+
+	@property
+	def Dsgnt(self):
+		return self._Dsgnt
+
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
 
 	@property
 	def Id(self):
@@ -72,8 +72,8 @@ class Account31(base_types._BaseFieldType):
 		self._Svcr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),

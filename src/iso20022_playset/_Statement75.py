@@ -1,18 +1,31 @@
 from . import base_types
+from ._Frequency26Choice import Frequency26Choice
 from ._DatePeriod2 import DatePeriod2
-from ._Max5NumericText import Max5NumericText
+from ._YesNoIndicator import YesNoIndicator
 from ._UpdateType16Choice import UpdateType16Choice
+from ._Max5NumericText import Max5NumericText
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CorporateActionStatementReportingType1Code import CorporateActionStatementReportingType1Code
-from ._Frequency26Choice import Frequency26Choice
 from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
 from ._CorporateActionStatementType2Code import CorporateActionStatementType2Code
-from ._YesNoIndicator import YesNoIndicator
+from ._CorporateActionStatementReportingType1Code import CorporateActionStatementReportingType1Code
 
 class Statement75(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_InstrAggtnPrd", "_RptNb", "_NtfctnDdlnPrd", "_RptgTp", "_UpdTp", "_StmtDtTm", "_ActvtyInd", "_StmtTp", "_StmtId"]
+	__slots__ = ["_StmtTp", "_InstrAggtnPrd", "_StmtDtTm", "_UpdTp", "_RptNb", "_NtfctnDdlnPrd", "_Frqcy", "_ActvtyInd", "_RptgTp", "_StmtId"]
+	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -40,19 +53,6 @@ class Statement75(base_types._BaseFieldType):
 		self._InstrAggtnPrd = None
 
 	@property
-	def RptNb(self):
-		return self._RptNb
-
-	@RptNb.setter
-	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
-
-	@RptNb.deleter
-	def RptNb(self):
-		del self._RptNb
-		self._RptNb = None
-
-	@property
 	def NtfctnDdlnPrd(self):
 		return self._NtfctnDdlnPrd
 
@@ -64,6 +64,19 @@ class Statement75(base_types._BaseFieldType):
 	def NtfctnDdlnPrd(self):
 		del self._NtfctnDdlnPrd
 		self._NtfctnDdlnPrd = None
+
+	@property
+	def RptNb(self):
+		return self._RptNb
+
+	@RptNb.setter
+	def RptNb(self, value):
+		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+
+	@RptNb.deleter
+	def RptNb(self):
+		del self._RptNb
+		self._RptNb = None
 
 	@property
 	def RptgTp(self):
@@ -79,19 +92,6 @@ class Statement75(base_types._BaseFieldType):
 		self._RptgTp = None
 
 	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
-
-	@property
 	def StmtDtTm(self):
 		return self._StmtDtTm
 
@@ -105,17 +105,17 @@ class Statement75(base_types._BaseFieldType):
 		self._StmtDtTm = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def StmtId(self):
+		return self._StmtId
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+	@StmtId.setter
+	def StmtId(self, value):
+		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
+	@StmtId.deleter
+	def StmtId(self):
+		del self._StmtId
+		self._StmtId = None
 
 	@property
 	def StmtTp(self):
@@ -131,28 +131,28 @@ class Statement75(base_types._BaseFieldType):
 		self._StmtTp = None
 
 	@property
-	def StmtId(self):
-		return self._StmtId
+	def UpdTp(self):
+		return self._UpdTp
 
-	@StmtId.setter
-	def StmtId(self, value):
-		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
 
-	@StmtId.deleter
-	def StmtId(self):
-		del self._StmtId
-		self._StmtId = None
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrAggtnPrd', type=DatePeriod2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnDdlnPrd', type=DateOrDateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgTp', type=CorporateActionStatementReportingType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtTp', type=CorporateActionStatementType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtTp', type=CorporateActionStatementType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

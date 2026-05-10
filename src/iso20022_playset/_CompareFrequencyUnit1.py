@@ -3,7 +3,7 @@ from ._Frequency13Code import Frequency13Code
 
 class CompareFrequencyUnit1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val1", "_Val2"]
+	__slots__ = ["_Val2", "_Val1"]
 	@property
 	def Val1(self):
 		return self._Val1

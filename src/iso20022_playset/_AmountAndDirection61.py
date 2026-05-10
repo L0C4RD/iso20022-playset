@@ -1,10 +1,10 @@
 from . import base_types
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class AmountAndDirection61(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Sgn"]
+	__slots__ = ["_Sgn", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

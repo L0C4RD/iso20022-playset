@@ -1,55 +1,16 @@
 from . import base_types
-from ._Period12 import Period12
-from ._Trade9 import Trade9
-from ._Max35NumericText import Max35NumericText
-from ._MessageIdentification1 import MessageIdentification1
-from ._QueryTradeStatus1Code import QueryTradeStatus1Code
-from ._Header23 import Header23
 from ._SupplementaryData1 import SupplementaryData1
 from ._TradePartyIdentification9 import TradePartyIdentification9
+from ._Trade9 import Trade9
+from ._Period12 import Period12
+from ._Header23 import Header23
+from ._QueryTradeStatus1Code import QueryTradeStatus1Code
+from ._MessageIdentification1 import MessageIdentification1
+from ._Max35NumericText import Max35NumericText
 
 class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgSdId", "_QryPrd", "_Hdr", "_AmdmntReqId", "_CtrPtySdId", "_QryStartNb", "_QryTradSts", "_SplmtryData", "_TradDtl"]
-	@property
-	def TradgSdId(self):
-		return self._TradgSdId
-
-	@TradgSdId.setter
-	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != base_types.auto else self.make_default("TradgSdId")
-
-	@TradgSdId.deleter
-	def TradgSdId(self):
-		del self._TradgSdId
-		self._TradgSdId = None
-
-	@property
-	def QryPrd(self):
-		return self._QryPrd
-
-	@QryPrd.setter
-	def QryPrd(self, value):
-		self._QryPrd = value if type(value) != base_types.auto else self.make_default("QryPrd")
-
-	@QryPrd.deleter
-	def QryPrd(self):
-		del self._QryPrd
-		self._QryPrd = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_AmdmntReqId", "_TradDtl", "_Hdr", "_TradgSdId", "_CtrPtySdId", "_QryStartNb", "_QryPrd", "_QryTradSts", "_SplmtryData"]
 	@property
 	def AmdmntReqId(self):
 		return self._AmdmntReqId
@@ -75,6 +36,32 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 	def CtrPtySdId(self):
 		del self._CtrPtySdId
 		self._CtrPtySdId = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def QryPrd(self):
+		return self._QryPrd
+
+	@QryPrd.setter
+	def QryPrd(self, value):
+		self._QryPrd = value if type(value) != base_types.auto else self.make_default("QryPrd")
+
+	@QryPrd.deleter
+	def QryPrd(self):
+		del self._QryPrd
+		self._QryPrd = None
 
 	@property
 	def QryStartNb(self):
@@ -128,15 +115,28 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 		del self._TradDtl
 		self._TradDtl = None
 
+	@property
+	def TradgSdId(self):
+		return self._TradgSdId
+
+	@TradgSdId.setter
+	def TradgSdId(self, value):
+		self._TradgSdId = value if type(value) != base_types.auto else self.make_default("TradgSdId")
+
+	@TradgSdId.deleter
+	def TradgSdId(self):
+		del self._TradgSdId
+		self._TradgSdId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryPrd', type=Period12, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryPrd', type=Period12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryStartNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTradSts', type=QueryTradeStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TradDtl', type=Trade9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
 

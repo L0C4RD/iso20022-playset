@@ -4,19 +4,19 @@ from ._Number import Number
 
 class SettlementCategoryTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgFee", "_Cnt", "_Amt", "_IntrchngFee"]
+	__slots__ = ["_Amt", "_IntrchngFee", "_PrcgFee", "_Cnt"]
 	@property
-	def PrcgFee(self):
-		return self._PrcgFee
+	def Amt(self):
+		return self._Amt
 
-	@PrcgFee.setter
-	def PrcgFee(self, value):
-		self._PrcgFee = value if type(value) != base_types.auto else self.make_default("PrcgFee")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@PrcgFee.deleter
-	def PrcgFee(self):
-		del self._PrcgFee
-		self._PrcgFee = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Cnt(self):
@@ -32,19 +32,6 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 		self._Cnt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def IntrchngFee(self):
 		return self._IntrchngFee
 
@@ -57,10 +44,23 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 		del self._IntrchngFee
 		self._IntrchngFee = None
 
+	@property
+	def PrcgFee(self):
+		return self._PrcgFee
+
+	@PrcgFee.setter
+	def PrcgFee(self, value):
+		self._PrcgFee = value if type(value) != base_types.auto else self.make_default("PrcgFee")
+
+	@PrcgFee.deleter
+	def PrcgFee(self):
+		del self._PrcgFee
+		self._PrcgFee = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount17, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 	))
 

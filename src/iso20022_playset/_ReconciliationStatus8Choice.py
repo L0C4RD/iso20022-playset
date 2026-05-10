@@ -1,23 +1,10 @@
 from . import base_types
-from ._ReconciliationMatchedStatus9Choice import ReconciliationMatchedStatus9Choice
 from ._NoReasonCode import NoReasonCode
+from ._ReconciliationMatchedStatus9Choice import ReconciliationMatchedStatus9Choice
 
 class ReconciliationStatus8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgData", "_NoRcncltnReqrd"]
-	@property
-	def RptgData(self):
-		return self._RptgData
-
-	@RptgData.setter
-	def RptgData(self, value):
-		self._RptgData = value if type(value) != base_types.auto else self.make_default("RptgData")
-
-	@RptgData.deleter
-	def RptgData(self):
-		del self._RptgData
-		self._RptgData = None
-
+	__slots__ = ["_NoRcncltnReqrd", "_RptgData"]
 	@property
 	def NoRcncltnReqrd(self):
 		return self._NoRcncltnReqrd
@@ -31,8 +18,21 @@ class ReconciliationStatus8Choice(base_types._BaseFieldType):
 		del self._NoRcncltnReqrd
 		self._NoRcncltnReqrd = None
 
+	@property
+	def RptgData(self):
+		return self._RptgData
+
+	@RptgData.setter
+	def RptgData(self, value):
+		self._RptgData = value if type(value) != base_types.auto else self.make_default("RptgData")
+
+	@RptgData.deleter
+	def RptgData(self):
+		del self._RptgData
+		self._RptgData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgData', type=ReconciliationMatchedStatus9Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NoRcncltnReqrd', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RptgData', type=ReconciliationMatchedStatus9Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

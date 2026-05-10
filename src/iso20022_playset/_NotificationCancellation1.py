@@ -4,7 +4,7 @@ from ._CorporateActionNotificationType2Code import CorporateActionNotificationTy
 
 class NotificationCancellation1(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdAgtCANtfctnAdvcId", "_NtfctnCxlTp"]
+	__slots__ = ["_NtfctnCxlTp", "_LkdAgtCANtfctnAdvcId"]
 	@property
 	def LkdAgtCANtfctnAdvcId(self):
 		return self._LkdAgtCANtfctnAdvcId

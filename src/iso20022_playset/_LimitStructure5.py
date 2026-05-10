@@ -1,12 +1,25 @@
 from . import base_types
-from ._LimitIdentification3Choice import LimitIdentification3Choice
 from ._Limit8 import Limit8
 from ._Amount4Choice import Amount4Choice
 from ._Limit10 import Limit10
+from ._LimitIdentification3Choice import LimitIdentification3Choice
 
 class LimitStructure5(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtValAmdmnt", "_NewLmtValSet", "_OdLmtValSet", "_LmtId"]
+	__slots__ = ["_NewLmtValSet", "_OdLmtValSet", "_LmtValAmdmnt", "_LmtId"]
+	@property
+	def LmtId(self):
+		return self._LmtId
+
+	@LmtId.setter
+	def LmtId(self, value):
+		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
+
+	@LmtId.deleter
+	def LmtId(self):
+		del self._LmtId
+		self._LmtId = None
+
 	@property
 	def LmtValAmdmnt(self):
 		return self._LmtValAmdmnt
@@ -46,23 +59,10 @@ class LimitStructure5(base_types._BaseFieldType):
 		del self._OdLmtValSet
 		self._OdLmtValSet = None
 
-	@property
-	def LmtId(self):
-		return self._LmtId
-
-	@LmtId.setter
-	def LmtId(self, value):
-		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
-
-	@LmtId.deleter
-	def LmtId(self):
-		del self._LmtId
-		self._LmtId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LmtId', type=LimitIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtValAmdmnt', type=Amount4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewLmtValSet', type=Limit8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdLmtValSet', type=Limit10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtId', type=LimitIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

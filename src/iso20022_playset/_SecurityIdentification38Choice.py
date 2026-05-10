@@ -1,27 +1,53 @@
 from . import base_types
 from ._TickerIdentifier import TickerIdentifier
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._RICIdentifier import RICIdentifier
+from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
+from ._AlternateIdentification1 import AlternateIdentification1
 from ._Bloomberg2Identifier import Bloomberg2Identifier
 from ._ConsolidatedTapeAssociationIdentifier import ConsolidatedTapeAssociationIdentifier
-from ._RICIdentifier import RICIdentifier
-from ._AlternateIdentification1 import AlternateIdentification1
-from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
 
 class SecurityIdentification38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TckrSymb", "_Cmon", "_ISIN", "_CTA", "_AltrnId", "_Blmbrg", "_RIC"]
+	__slots__ = ["_ISIN", "_AltrnId", "_Cmon", "_CTA", "_TckrSymb", "_RIC", "_Blmbrg"]
 	@property
-	def TckrSymb(self):
-		return self._TckrSymb
+	def AltrnId(self):
+		return self._AltrnId
 
-	@TckrSymb.setter
-	def TckrSymb(self, value):
-		self._TckrSymb = value if type(value) != base_types.auto else self.make_default("TckrSymb")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
-	@TckrSymb.deleter
-	def TckrSymb(self):
-		del self._TckrSymb
-		self._TckrSymb = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
+
+	@property
+	def Blmbrg(self):
+		return self._Blmbrg
+
+	@Blmbrg.setter
+	def Blmbrg(self, value):
+		self._Blmbrg = value if type(value) != base_types.auto else self.make_default("Blmbrg")
+
+	@Blmbrg.deleter
+	def Blmbrg(self):
+		del self._Blmbrg
+		self._Blmbrg = None
+
+	@property
+	def CTA(self):
+		return self._CTA
+
+	@CTA.setter
+	def CTA(self, value):
+		self._CTA = value if type(value) != base_types.auto else self.make_default("CTA")
+
+	@CTA.deleter
+	def CTA(self):
+		del self._CTA
+		self._CTA = None
 
 	@property
 	def Cmon(self):
@@ -50,45 +76,6 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 		self._ISIN = None
 
 	@property
-	def CTA(self):
-		return self._CTA
-
-	@CTA.setter
-	def CTA(self, value):
-		self._CTA = value if type(value) != base_types.auto else self.make_default("CTA")
-
-	@CTA.deleter
-	def CTA(self):
-		del self._CTA
-		self._CTA = None
-
-	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
-	@property
-	def Blmbrg(self):
-		return self._Blmbrg
-
-	@Blmbrg.setter
-	def Blmbrg(self, value):
-		self._Blmbrg = value if type(value) != base_types.auto else self.make_default("Blmbrg")
-
-	@Blmbrg.deleter
-	def Blmbrg(self):
-		del self._Blmbrg
-		self._Blmbrg = None
-
-	@property
 	def RIC(self):
 		return self._RIC
 
@@ -101,13 +88,26 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 		del self._RIC
 		self._RIC = None
 
+	@property
+	def TckrSymb(self):
+		return self._TckrSymb
+
+	@TckrSymb.setter
+	def TckrSymb(self, value):
+		self._TckrSymb = value if type(value) != base_types.auto else self.make_default("TckrSymb")
+
+	@TckrSymb.deleter
+	def TckrSymb(self):
+		del self._TckrSymb
+		self._TckrSymb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TckrSymb', type=TickerIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmon', type=EuroclearClearstreamIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CTA', type=ConsolidatedTapeAssociationIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternateIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Blmbrg', type=Bloomberg2Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CTA', type=ConsolidatedTapeAssociationIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmon', type=EuroclearClearstreamIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RIC', type=RICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TckrSymb', type=TickerIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

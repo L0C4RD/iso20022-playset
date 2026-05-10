@@ -1,11 +1,11 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DecimalNumber import DecimalNumber
 
 class UnitsOrAmountOrPercentage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Pctg", "_Unit"]
+	__slots__ = ["_Unit", "_Pctg", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,10 +1,10 @@
 from . import base_types
-from ._AssetClassSubProductType48Code import AssetClassSubProductType48Code
 from ._AssetClassProductType11Code import AssetClassProductType11Code
+from ._AssetClassSubProductType48Code import AssetClassSubProductType48Code
 
 class OtherC10CommodityNonDeliverable2(base_types._BaseFieldType):
 
-	__slots__ = ["_BasePdct", "_SubPdct"]
+	__slots__ = ["_SubPdct", "_BasePdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct

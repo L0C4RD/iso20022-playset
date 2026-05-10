@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._GenericIdentification175 import GenericIdentification175
+from ._Max52Text import Max52Text
 
 class UniqueProductIdentifier1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Prtry"]
+	__slots__ = ["_Prtry", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

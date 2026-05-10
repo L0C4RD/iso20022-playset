@@ -1,23 +1,23 @@
 from . import base_types
 from ._PaymentCard29 import PaymentCard29
-from ._YesNoIndicator import YesNoIndicator
 from ._DirectDebitMandate7 import DirectDebitMandate7
+from ._YesNoIndicator import YesNoIndicator
 
 class PaymentInstrument24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctDbtDtls", "_Chq", "_BkrsDrft", "_PmtCardDtls"]
+	__slots__ = ["_PmtCardDtls", "_Chq", "_BkrsDrft", "_DrctDbtDtls"]
 	@property
-	def DrctDbtDtls(self):
-		return self._DrctDbtDtls
+	def BkrsDrft(self):
+		return self._BkrsDrft
 
-	@DrctDbtDtls.setter
-	def DrctDbtDtls(self, value):
-		self._DrctDbtDtls = value if type(value) != base_types.auto else self.make_default("DrctDbtDtls")
+	@BkrsDrft.setter
+	def BkrsDrft(self, value):
+		self._BkrsDrft = value if type(value) != base_types.auto else self.make_default("BkrsDrft")
 
-	@DrctDbtDtls.deleter
-	def DrctDbtDtls(self):
-		del self._DrctDbtDtls
-		self._DrctDbtDtls = None
+	@BkrsDrft.deleter
+	def BkrsDrft(self):
+		del self._BkrsDrft
+		self._BkrsDrft = None
 
 	@property
 	def Chq(self):
@@ -33,17 +33,17 @@ class PaymentInstrument24Choice(base_types._BaseFieldType):
 		self._Chq = None
 
 	@property
-	def BkrsDrft(self):
-		return self._BkrsDrft
+	def DrctDbtDtls(self):
+		return self._DrctDbtDtls
 
-	@BkrsDrft.setter
-	def BkrsDrft(self, value):
-		self._BkrsDrft = value if type(value) != base_types.auto else self.make_default("BkrsDrft")
+	@DrctDbtDtls.setter
+	def DrctDbtDtls(self, value):
+		self._DrctDbtDtls = value if type(value) != base_types.auto else self.make_default("DrctDbtDtls")
 
-	@BkrsDrft.deleter
-	def BkrsDrft(self):
-		del self._BkrsDrft
-		self._BkrsDrft = None
+	@DrctDbtDtls.deleter
+	def DrctDbtDtls(self):
+		del self._DrctDbtDtls
+		self._DrctDbtDtls = None
 
 	@property
 	def PmtCardDtls(self):
@@ -59,9 +59,9 @@ class PaymentInstrument24Choice(base_types._BaseFieldType):
 		self._PmtCardDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrctDbtDtls', type=DirectDebitMandate7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Chq', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BkrsDrft', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Chq', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DrctDbtDtls', type=DirectDebitMandate7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PmtCardDtls', type=PaymentCard29, min=0, max=1, mutex_group=1, array=False),
 	))
 

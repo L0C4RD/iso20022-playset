@@ -1,12 +1,25 @@
 from . import base_types
-from ._MatchingReason6Choice import MatchingReason6Choice
 from ._ProprietaryReason4 import ProprietaryReason4
-from ._MatchingReason5Choice import MatchingReason5Choice
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._MatchingReason5Choice import MatchingReason5Choice
+from ._MatchingReason6Choice import MatchingReason6Choice
 
 class MatchingStatus35Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchdWthTlrnce", "_Umtchd", "_Mtchd", "_PrtrySts", "_MtchgAllgd"]
+	__slots__ = ["_Mtchd", "_MtchdWthTlrnce", "_Umtchd", "_PrtrySts", "_MtchgAllgd"]
+	@property
+	def Mtchd(self):
+		return self._Mtchd
+
+	@Mtchd.setter
+	def Mtchd(self, value):
+		self._Mtchd = value if type(value) != base_types.auto else self.make_default("Mtchd")
+
+	@Mtchd.deleter
+	def Mtchd(self):
+		del self._Mtchd
+		self._Mtchd = None
+
 	@property
 	def MtchdWthTlrnce(self):
 		return self._MtchdWthTlrnce
@@ -21,30 +34,17 @@ class MatchingStatus35Choice(base_types._BaseFieldType):
 		self._MtchdWthTlrnce = None
 
 	@property
-	def Umtchd(self):
-		return self._Umtchd
+	def MtchgAllgd(self):
+		return self._MtchgAllgd
 
-	@Umtchd.setter
-	def Umtchd(self, value):
-		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
+	@MtchgAllgd.setter
+	def MtchgAllgd(self, value):
+		self._MtchgAllgd = value if type(value) != base_types.auto else self.make_default("MtchgAllgd")
 
-	@Umtchd.deleter
-	def Umtchd(self):
-		del self._Umtchd
-		self._Umtchd = None
-
-	@property
-	def Mtchd(self):
-		return self._Mtchd
-
-	@Mtchd.setter
-	def Mtchd(self, value):
-		self._Mtchd = value if type(value) != base_types.auto else self.make_default("Mtchd")
-
-	@Mtchd.deleter
-	def Mtchd(self):
-		del self._Mtchd
-		self._Mtchd = None
+	@MtchgAllgd.deleter
+	def MtchgAllgd(self):
+		del self._MtchgAllgd
+		self._MtchgAllgd = None
 
 	@property
 	def PrtrySts(self):
@@ -60,23 +60,23 @@ class MatchingStatus35Choice(base_types._BaseFieldType):
 		self._PrtrySts = None
 
 	@property
-	def MtchgAllgd(self):
-		return self._MtchgAllgd
+	def Umtchd(self):
+		return self._Umtchd
 
-	@MtchgAllgd.setter
-	def MtchgAllgd(self, value):
-		self._MtchgAllgd = value if type(value) != base_types.auto else self.make_default("MtchgAllgd")
+	@Umtchd.setter
+	def Umtchd(self, value):
+		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
 
-	@MtchgAllgd.deleter
-	def MtchgAllgd(self):
-		del self._MtchgAllgd
-		self._MtchgAllgd = None
+	@Umtchd.deleter
+	def Umtchd(self):
+		del self._Umtchd
+		self._Umtchd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchdWthTlrnce', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Umtchd', type=MatchingReason6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mtchd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtchdWthTlrnce', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchgAllgd', type=MatchingReason5Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Umtchd', type=MatchingReason6Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

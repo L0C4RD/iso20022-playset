@@ -1,23 +1,23 @@
 from . import base_types
 from ._Number import Number
-from ._InterestRateContractTerm1 import InterestRateContractTerm1
 from ._BenchmarkCurveName4Choice import BenchmarkCurveName4Choice
+from ._InterestRateContractTerm1 import InterestRateContractTerm1
 
 class FloatingInterestRate4(base_types._BaseFieldType):
 
-	__slots__ = ["_Term", "_RefRate", "_BsisPtSprd"]
+	__slots__ = ["_BsisPtSprd", "_Term", "_RefRate"]
 	@property
-	def Term(self):
-		return self._Term
+	def BsisPtSprd(self):
+		return self._BsisPtSprd
 
-	@Term.setter
-	def Term(self, value):
-		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
+	@BsisPtSprd.setter
+	def BsisPtSprd(self, value):
+		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
 
-	@Term.deleter
-	def Term(self):
-		del self._Term
-		self._Term = None
+	@BsisPtSprd.deleter
+	def BsisPtSprd(self):
+		del self._BsisPtSprd
+		self._BsisPtSprd = None
 
 	@property
 	def RefRate(self):
@@ -33,21 +33,21 @@ class FloatingInterestRate4(base_types._BaseFieldType):
 		self._RefRate = None
 
 	@property
-	def BsisPtSprd(self):
-		return self._BsisPtSprd
+	def Term(self):
+		return self._Term
 
-	@BsisPtSprd.setter
-	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
+	@Term.setter
+	def Term(self, value):
+		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
 
-	@BsisPtSprd.deleter
-	def BsisPtSprd(self):
-		del self._BsisPtSprd
-		self._BsisPtSprd = None
+	@Term.deleter
+	def Term(self):
+		del self._Term
+		self._Term = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Term', type=InterestRateContractTerm1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Term', type=InterestRateContractTerm1, min=1, max=1, mutex_group=None, array=False),
 	))
 

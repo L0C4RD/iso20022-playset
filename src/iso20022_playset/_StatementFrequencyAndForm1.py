@@ -1,12 +1,12 @@
 from . import base_types
 from ._CommunicationMethod2Choice import CommunicationMethod2Choice
-from ._Frequency7Code import Frequency7Code
-from ._Max350Text import Max350Text
 from ._CommunicationFormat1Choice import CommunicationFormat1Choice
+from ._Max350Text import Max350Text
+from ._Frequency7Code import Frequency7Code
 
 class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
-	__slots__ = ["_ComMtd", "_Frqcy", "_Frmt", "_DlvryAdr"]
+	__slots__ = ["_Frmt", "_DlvryAdr", "_Frqcy", "_ComMtd"]
 	@property
 	def ComMtd(self):
 		return self._ComMtd
@@ -21,17 +21,17 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 		self._ComMtd = None
 
 	@property
-	def Frqcy(self):
-		return self._Frqcy
+	def DlvryAdr(self):
+		return self._DlvryAdr
 
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+	@DlvryAdr.setter
+	def DlvryAdr(self, value):
+		self._DlvryAdr = value if type(value) != base_types.auto else self.make_default("DlvryAdr")
 
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
+	@DlvryAdr.deleter
+	def DlvryAdr(self):
+		del self._DlvryAdr
+		self._DlvryAdr = None
 
 	@property
 	def Frmt(self):
@@ -47,22 +47,22 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 		self._Frmt = None
 
 	@property
-	def DlvryAdr(self):
-		return self._DlvryAdr
+	def Frqcy(self):
+		return self._Frqcy
 
-	@DlvryAdr.setter
-	def DlvryAdr(self, value):
-		self._DlvryAdr = value if type(value) != base_types.auto else self.make_default("DlvryAdr")
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
 
-	@DlvryAdr.deleter
-	def DlvryAdr(self):
-		del self._DlvryAdr
-		self._DlvryAdr = None
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComMtd', type=CommunicationMethod2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency7Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=CommunicationFormat1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryAdr', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=CommunicationFormat1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency7Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

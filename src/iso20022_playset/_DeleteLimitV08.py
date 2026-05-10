@@ -1,11 +1,11 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._LimitStructure3Choice import LimitStructure3Choice
 from ._MessageHeader1 import MessageHeader1
+from ._LimitStructure3Choice import LimitStructure3Choice
 
 class DeleteLimitV08(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtDtls", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_LmtDtls", "_SplmtryData", "_MsgHdr"]
 	@property
 	def LmtDtls(self):
 		return self._LmtDtls

@@ -1,23 +1,10 @@
 from . import base_types
-from ._TradeNonConfirmation1 import TradeNonConfirmation1
 from ._TradeConfirmation4 import TradeConfirmation4
+from ._TradeNonConfirmation1 import TradeNonConfirmation1
 
 class TradeConfirmation3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NonConfd", "_Confd"]
-	@property
-	def NonConfd(self):
-		return self._NonConfd
-
-	@NonConfd.setter
-	def NonConfd(self, value):
-		self._NonConfd = value if type(value) != base_types.auto else self.make_default("NonConfd")
-
-	@NonConfd.deleter
-	def NonConfd(self):
-		del self._NonConfd
-		self._NonConfd = None
-
+	__slots__ = ["_Confd", "_NonConfd"]
 	@property
 	def Confd(self):
 		return self._Confd
@@ -31,8 +18,21 @@ class TradeConfirmation3Choice(base_types._BaseFieldType):
 		del self._Confd
 		self._Confd = None
 
+	@property
+	def NonConfd(self):
+		return self._NonConfd
+
+	@NonConfd.setter
+	def NonConfd(self, value):
+		self._NonConfd = value if type(value) != base_types.auto else self.make_default("NonConfd")
+
+	@NonConfd.deleter
+	def NonConfd(self):
+		del self._NonConfd
+		self._NonConfd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonConfd', type=TradeNonConfirmation1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Confd', type=TradeConfirmation4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NonConfd', type=TradeNonConfirmation1, min=0, max=1, mutex_group=1, array=False),
 	))
 

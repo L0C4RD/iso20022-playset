@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Number import Number
 from ._Exact3NumericText import Exact3NumericText
+from ._Number import Number
+from ._Max35Text import Max35Text
 
 class CurrencyDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Dcml", "_AlphaCd", "_NmrcCd"]
+	__slots__ = ["_Dcml", "_AlphaCd", "_NmrcCd", "_Nm"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def AlphaCd(self):
+		return self._AlphaCd
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@AlphaCd.setter
+	def AlphaCd(self, value):
+		self._AlphaCd = value if type(value) != base_types.auto else self.make_default("AlphaCd")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@AlphaCd.deleter
+	def AlphaCd(self):
+		del self._AlphaCd
+		self._AlphaCd = None
 
 	@property
 	def Dcml(self):
@@ -34,17 +34,17 @@ class CurrencyDetails2(base_types._BaseFieldType):
 		self._Dcml = None
 
 	@property
-	def AlphaCd(self):
-		return self._AlphaCd
+	def Nm(self):
+		return self._Nm
 
-	@AlphaCd.setter
-	def AlphaCd(self, value):
-		self._AlphaCd = value if type(value) != base_types.auto else self.make_default("AlphaCd")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@AlphaCd.deleter
-	def AlphaCd(self):
-		del self._AlphaCd
-		self._AlphaCd = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def NmrcCd(self):
@@ -60,9 +60,9 @@ class CurrencyDetails2(base_types._BaseFieldType):
 		self._NmrcCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dcml', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AlphaCd', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dcml', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

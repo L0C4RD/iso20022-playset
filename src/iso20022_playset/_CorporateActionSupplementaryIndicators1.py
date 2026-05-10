@@ -3,33 +3,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 
-	__slots__ = ["_RghtsTrfblInd", "_StepUpPrvlgInd", "_CondlPmtAplblInd", "_RghtsOvrsbcptInd", "_SrrndrShrsToAgtInd", "_SlctnDealrFeeInd", "_RghtsRndUpPrvlgInd", "_EscrwToMtrtyInd"]
-	@property
-	def RghtsTrfblInd(self):
-		return self._RghtsTrfblInd
-
-	@RghtsTrfblInd.setter
-	def RghtsTrfblInd(self, value):
-		self._RghtsTrfblInd = value if type(value) != base_types.auto else self.make_default("RghtsTrfblInd")
-
-	@RghtsTrfblInd.deleter
-	def RghtsTrfblInd(self):
-		del self._RghtsTrfblInd
-		self._RghtsTrfblInd = None
-
-	@property
-	def StepUpPrvlgInd(self):
-		return self._StepUpPrvlgInd
-
-	@StepUpPrvlgInd.setter
-	def StepUpPrvlgInd(self, value):
-		self._StepUpPrvlgInd = value if type(value) != base_types.auto else self.make_default("StepUpPrvlgInd")
-
-	@StepUpPrvlgInd.deleter
-	def StepUpPrvlgInd(self):
-		del self._StepUpPrvlgInd
-		self._StepUpPrvlgInd = None
-
+	__slots__ = ["_EscrwToMtrtyInd", "_SlctnDealrFeeInd", "_SrrndrShrsToAgtInd", "_RghtsTrfblInd", "_RghtsRndUpPrvlgInd", "_StepUpPrvlgInd", "_CondlPmtAplblInd", "_RghtsOvrsbcptInd"]
 	@property
 	def CondlPmtAplblInd(self):
 		return self._CondlPmtAplblInd
@@ -42,6 +16,19 @@ class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 	def CondlPmtAplblInd(self):
 		del self._CondlPmtAplblInd
 		self._CondlPmtAplblInd = None
+
+	@property
+	def EscrwToMtrtyInd(self):
+		return self._EscrwToMtrtyInd
+
+	@EscrwToMtrtyInd.setter
+	def EscrwToMtrtyInd(self, value):
+		self._EscrwToMtrtyInd = value if type(value) != base_types.auto else self.make_default("EscrwToMtrtyInd")
+
+	@EscrwToMtrtyInd.deleter
+	def EscrwToMtrtyInd(self):
+		del self._EscrwToMtrtyInd
+		self._EscrwToMtrtyInd = None
 
 	@property
 	def RghtsOvrsbcptInd(self):
@@ -57,17 +44,30 @@ class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 		self._RghtsOvrsbcptInd = None
 
 	@property
-	def SrrndrShrsToAgtInd(self):
-		return self._SrrndrShrsToAgtInd
+	def RghtsRndUpPrvlgInd(self):
+		return self._RghtsRndUpPrvlgInd
 
-	@SrrndrShrsToAgtInd.setter
-	def SrrndrShrsToAgtInd(self, value):
-		self._SrrndrShrsToAgtInd = value if type(value) != base_types.auto else self.make_default("SrrndrShrsToAgtInd")
+	@RghtsRndUpPrvlgInd.setter
+	def RghtsRndUpPrvlgInd(self, value):
+		self._RghtsRndUpPrvlgInd = value if type(value) != base_types.auto else self.make_default("RghtsRndUpPrvlgInd")
 
-	@SrrndrShrsToAgtInd.deleter
-	def SrrndrShrsToAgtInd(self):
-		del self._SrrndrShrsToAgtInd
-		self._SrrndrShrsToAgtInd = None
+	@RghtsRndUpPrvlgInd.deleter
+	def RghtsRndUpPrvlgInd(self):
+		del self._RghtsRndUpPrvlgInd
+		self._RghtsRndUpPrvlgInd = None
+
+	@property
+	def RghtsTrfblInd(self):
+		return self._RghtsTrfblInd
+
+	@RghtsTrfblInd.setter
+	def RghtsTrfblInd(self, value):
+		self._RghtsTrfblInd = value if type(value) != base_types.auto else self.make_default("RghtsTrfblInd")
+
+	@RghtsTrfblInd.deleter
+	def RghtsTrfblInd(self):
+		del self._RghtsTrfblInd
+		self._RghtsTrfblInd = None
 
 	@property
 	def SlctnDealrFeeInd(self):
@@ -83,39 +83,39 @@ class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 		self._SlctnDealrFeeInd = None
 
 	@property
-	def RghtsRndUpPrvlgInd(self):
-		return self._RghtsRndUpPrvlgInd
+	def SrrndrShrsToAgtInd(self):
+		return self._SrrndrShrsToAgtInd
 
-	@RghtsRndUpPrvlgInd.setter
-	def RghtsRndUpPrvlgInd(self, value):
-		self._RghtsRndUpPrvlgInd = value if type(value) != base_types.auto else self.make_default("RghtsRndUpPrvlgInd")
+	@SrrndrShrsToAgtInd.setter
+	def SrrndrShrsToAgtInd(self, value):
+		self._SrrndrShrsToAgtInd = value if type(value) != base_types.auto else self.make_default("SrrndrShrsToAgtInd")
 
-	@RghtsRndUpPrvlgInd.deleter
-	def RghtsRndUpPrvlgInd(self):
-		del self._RghtsRndUpPrvlgInd
-		self._RghtsRndUpPrvlgInd = None
+	@SrrndrShrsToAgtInd.deleter
+	def SrrndrShrsToAgtInd(self):
+		del self._SrrndrShrsToAgtInd
+		self._SrrndrShrsToAgtInd = None
 
 	@property
-	def EscrwToMtrtyInd(self):
-		return self._EscrwToMtrtyInd
+	def StepUpPrvlgInd(self):
+		return self._StepUpPrvlgInd
 
-	@EscrwToMtrtyInd.setter
-	def EscrwToMtrtyInd(self, value):
-		self._EscrwToMtrtyInd = value if type(value) != base_types.auto else self.make_default("EscrwToMtrtyInd")
+	@StepUpPrvlgInd.setter
+	def StepUpPrvlgInd(self, value):
+		self._StepUpPrvlgInd = value if type(value) != base_types.auto else self.make_default("StepUpPrvlgInd")
 
-	@EscrwToMtrtyInd.deleter
-	def EscrwToMtrtyInd(self):
-		del self._EscrwToMtrtyInd
-		self._EscrwToMtrtyInd = None
+	@StepUpPrvlgInd.deleter
+	def StepUpPrvlgInd(self):
+		del self._StepUpPrvlgInd
+		self._StepUpPrvlgInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RghtsTrfblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StepUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CondlPmtAplblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RghtsOvrsbcptInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrrndrShrsToAgtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SlctnDealrFeeInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RghtsRndUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EscrwToMtrtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RghtsOvrsbcptInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RghtsRndUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RghtsTrfblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SlctnDealrFeeInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrrndrShrsToAgtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StepUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

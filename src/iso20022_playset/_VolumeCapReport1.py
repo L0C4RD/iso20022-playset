@@ -5,19 +5,19 @@ from ._MICIdentifier import MICIdentifier
 
 class VolumeCapReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgVn", "_RptgPrd", "_InstrmRpt"]
+	__slots__ = ["_InstrmRpt", "_RptgPrd", "_TradgVn"]
 	@property
-	def TradgVn(self):
-		return self._TradgVn
+	def InstrmRpt(self):
+		return self._InstrmRpt
 
-	@TradgVn.setter
-	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+	@InstrmRpt.setter
+	def InstrmRpt(self, value):
+		self._InstrmRpt = value if type(value) != base_types.auto else self.make_default("InstrmRpt")
 
-	@TradgVn.deleter
-	def TradgVn(self):
-		del self._TradgVn
-		self._TradgVn = None
+	@InstrmRpt.deleter
+	def InstrmRpt(self):
+		del self._InstrmRpt
+		self._InstrmRpt = None
 
 	@property
 	def RptgPrd(self):
@@ -33,21 +33,21 @@ class VolumeCapReport1(base_types._BaseFieldType):
 		self._RptgPrd = None
 
 	@property
-	def InstrmRpt(self):
-		return self._InstrmRpt
+	def TradgVn(self):
+		return self._TradgVn
 
-	@InstrmRpt.setter
-	def InstrmRpt(self, value):
-		self._InstrmRpt = value if type(value) != base_types.auto else self.make_default("InstrmRpt")
+	@TradgVn.setter
+	def TradgVn(self, value):
+		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
 
-	@InstrmRpt.deleter
-	def InstrmRpt(self):
-		del self._InstrmRpt
-		self._InstrmRpt = None
+	@TradgVn.deleter
+	def TradgVn(self):
+		del self._TradgVn
+		self._TradgVn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrmRpt', type=VolumeCapReport2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

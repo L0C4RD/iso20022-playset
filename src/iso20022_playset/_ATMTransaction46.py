@@ -1,18 +1,44 @@
 from . import base_types
-from ._DetailedAmount12 import DetailedAmount12
-from ._CurrencyConversion32 import CurrencyConversion32
-from ._ContentInformationType10 import ContentInformationType10
-from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._Max10000Binary import Max10000Binary
-from ._CardAccount20 import CardAccount20
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
+from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._DetailedAmount12 import DetailedAmount12
+from ._CardAccount20 import CardAccount20
 from ._ATMMediaMix1 import ATMMediaMix1
 from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._CurrencyConversion32 import CurrencyConversion32
+from ._ContentInformationType10 import ContentInformationType10
+from ._Max10000Binary import Max10000Binary
+from ._Max35Text import Max35Text
 
 class ATMTransaction46(base_types._BaseFieldType):
 
-	__slots__ = ["_CshDspnsd", "_PrtctdAcctData", "_RcncltnId", "_TtlReqdAmt", "_DtldReqdAmt", "_SelctdMixTp", "_AcctData", "_ReqdRct", "_TxId", "_CcyConvsRslt", "_ICCRltdData", "_SelctdMix"]
+	__slots__ = ["_CcyConvsRslt", "_AcctData", "_DtldReqdAmt", "_PrtctdAcctData", "_SelctdMix", "_ReqdRct", "_SelctdMixTp", "_ICCRltdData", "_RcncltnId", "_CshDspnsd", "_TxId", "_TtlReqdAmt"]
+	@property
+	def AcctData(self):
+		return self._AcctData
+
+	@AcctData.setter
+	def AcctData(self, value):
+		self._AcctData = value if type(value) != base_types.auto else self.make_default("AcctData")
+
+	@AcctData.deleter
+	def AcctData(self):
+		del self._AcctData
+		self._AcctData = None
+
+	@property
+	def CcyConvsRslt(self):
+		return self._CcyConvsRslt
+
+	@CcyConvsRslt.setter
+	def CcyConvsRslt(self, value):
+		self._CcyConvsRslt = value if type(value) != base_types.auto else self.make_default("CcyConvsRslt")
+
+	@CcyConvsRslt.deleter
+	def CcyConvsRslt(self):
+		del self._CcyConvsRslt
+		self._CcyConvsRslt = None
+
 	@property
 	def CshDspnsd(self):
 		return self._CshDspnsd
@@ -25,6 +51,32 @@ class ATMTransaction46(base_types._BaseFieldType):
 	def CshDspnsd(self):
 		del self._CshDspnsd
 		self._CshDspnsd = None
+
+	@property
+	def DtldReqdAmt(self):
+		return self._DtldReqdAmt
+
+	@DtldReqdAmt.setter
+	def DtldReqdAmt(self, value):
+		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
+
+	@DtldReqdAmt.deleter
+	def DtldReqdAmt(self):
+		del self._DtldReqdAmt
+		self._DtldReqdAmt = None
+
+	@property
+	def ICCRltdData(self):
+		return self._ICCRltdData
+
+	@ICCRltdData.setter
+	def ICCRltdData(self, value):
+		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+
+	@ICCRltdData.deleter
+	def ICCRltdData(self):
+		del self._ICCRltdData
+		self._ICCRltdData = None
 
 	@property
 	def PrtctdAcctData(self):
@@ -53,30 +105,30 @@ class ATMTransaction46(base_types._BaseFieldType):
 		self._RcncltnId = None
 
 	@property
-	def TtlReqdAmt(self):
-		return self._TtlReqdAmt
+	def ReqdRct(self):
+		return self._ReqdRct
 
-	@TtlReqdAmt.setter
-	def TtlReqdAmt(self, value):
-		self._TtlReqdAmt = value if type(value) != base_types.auto else self.make_default("TtlReqdAmt")
+	@ReqdRct.setter
+	def ReqdRct(self, value):
+		self._ReqdRct = value if type(value) != base_types.auto else self.make_default("ReqdRct")
 
-	@TtlReqdAmt.deleter
-	def TtlReqdAmt(self):
-		del self._TtlReqdAmt
-		self._TtlReqdAmt = None
+	@ReqdRct.deleter
+	def ReqdRct(self):
+		del self._ReqdRct
+		self._ReqdRct = None
 
 	@property
-	def DtldReqdAmt(self):
-		return self._DtldReqdAmt
+	def SelctdMix(self):
+		return self._SelctdMix
 
-	@DtldReqdAmt.setter
-	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
+	@SelctdMix.setter
+	def SelctdMix(self, value):
+		self._SelctdMix = value if type(value) != base_types.auto else self.make_default("SelctdMix")
 
-	@DtldReqdAmt.deleter
-	def DtldReqdAmt(self):
-		del self._DtldReqdAmt
-		self._DtldReqdAmt = None
+	@SelctdMix.deleter
+	def SelctdMix(self):
+		del self._SelctdMix
+		self._SelctdMix = None
 
 	@property
 	def SelctdMixTp(self):
@@ -92,30 +144,17 @@ class ATMTransaction46(base_types._BaseFieldType):
 		self._SelctdMixTp = None
 
 	@property
-	def AcctData(self):
-		return self._AcctData
+	def TtlReqdAmt(self):
+		return self._TtlReqdAmt
 
-	@AcctData.setter
-	def AcctData(self, value):
-		self._AcctData = value if type(value) != base_types.auto else self.make_default("AcctData")
+	@TtlReqdAmt.setter
+	def TtlReqdAmt(self, value):
+		self._TtlReqdAmt = value if type(value) != base_types.auto else self.make_default("TtlReqdAmt")
 
-	@AcctData.deleter
-	def AcctData(self):
-		del self._AcctData
-		self._AcctData = None
-
-	@property
-	def ReqdRct(self):
-		return self._ReqdRct
-
-	@ReqdRct.setter
-	def ReqdRct(self, value):
-		self._ReqdRct = value if type(value) != base_types.auto else self.make_default("ReqdRct")
-
-	@ReqdRct.deleter
-	def ReqdRct(self):
-		del self._ReqdRct
-		self._ReqdRct = None
+	@TtlReqdAmt.deleter
+	def TtlReqdAmt(self):
+		del self._TtlReqdAmt
+		self._TtlReqdAmt = None
 
 	@property
 	def TxId(self):
@@ -130,57 +169,18 @@ class ATMTransaction46(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
-	@property
-	def CcyConvsRslt(self):
-		return self._CcyConvsRslt
-
-	@CcyConvsRslt.setter
-	def CcyConvsRslt(self, value):
-		self._CcyConvsRslt = value if type(value) != base_types.auto else self.make_default("CcyConvsRslt")
-
-	@CcyConvsRslt.deleter
-	def CcyConvsRslt(self):
-		del self._CcyConvsRslt
-		self._CcyConvsRslt = None
-
-	@property
-	def ICCRltdData(self):
-		return self._ICCRltdData
-
-	@ICCRltdData.setter
-	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
-
-	@ICCRltdData.deleter
-	def ICCRltdData(self):
-		del self._ICCRltdData
-		self._ICCRltdData = None
-
-	@property
-	def SelctdMix(self):
-		return self._SelctdMix
-
-	@SelctdMix.setter
-	def SelctdMix(self, value):
-		self._SelctdMix = value if type(value) != base_types.auto else self.make_default("SelctdMix")
-
-	@SelctdMix.deleter
-	def SelctdMix(self):
-		del self._SelctdMix
-		self._SelctdMix = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctData', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyConvsRslt', type=CurrencyConversion32, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshDspnsd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlReqdAmt', type=AmountAndCurrency1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SelctdMixTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctData', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdRct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyConvsRslt', type=CurrencyConversion32, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SelctdMix', type=ATMMediaMix1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SelctdMixTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlReqdAmt', type=AmountAndCurrency1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 	))
 

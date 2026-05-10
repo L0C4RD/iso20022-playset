@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._PartyIdentification236Choice import PartyIdentification236Choice
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._Max52Text import Max52Text
+from ._Max140Text import Max140Text
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TradeTransactionIdentification16(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPty", "_NttyRspnsblForRpt", "_RptgCtrPty", "_TechRcrdId", "_CollPrtflId"]
+	__slots__ = ["_RptgCtrPty", "_OthrCtrPty", "_TechRcrdId", "_NttyRspnsblForRpt", "_CollPrtflId"]
 	@property
-	def OthrCtrPty(self):
-		return self._OthrCtrPty
+	def CollPrtflId(self):
+		return self._CollPrtflId
 
-	@OthrCtrPty.setter
-	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+	@CollPrtflId.setter
+	def CollPrtflId(self, value):
+		self._CollPrtflId = value if type(value) != base_types.auto else self.make_default("CollPrtflId")
 
-	@OthrCtrPty.deleter
-	def OthrCtrPty(self):
-		del self._OthrCtrPty
-		self._OthrCtrPty = None
+	@CollPrtflId.deleter
+	def CollPrtflId(self):
+		del self._CollPrtflId
+		self._CollPrtflId = None
 
 	@property
 	def NttyRspnsblForRpt(self):
@@ -32,6 +32,19 @@ class TradeTransactionIdentification16(base_types._BaseFieldType):
 	def NttyRspnsblForRpt(self):
 		del self._NttyRspnsblForRpt
 		self._NttyRspnsblForRpt = None
+
+	@property
+	def OthrCtrPty(self):
+		return self._OthrCtrPty
+
+	@OthrCtrPty.setter
+	def OthrCtrPty(self, value):
+		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+
+	@OthrCtrPty.deleter
+	def OthrCtrPty(self):
+		del self._OthrCtrPty
+		self._OthrCtrPty = None
 
 	@property
 	def RptgCtrPty(self):
@@ -59,24 +72,11 @@ class TradeTransactionIdentification16(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def CollPrtflId(self):
-		return self._CollPrtflId
-
-	@CollPrtflId.setter
-	def CollPrtflId(self, value):
-		self._CollPrtflId = value if type(value) != base_types.auto else self.make_default("CollPrtflId")
-
-	@CollPrtflId.deleter
-	def CollPrtflId(self):
-		del self._CollPrtflId
-		self._CollPrtflId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

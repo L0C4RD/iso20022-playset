@@ -1,40 +1,27 @@
 from . import base_types
-from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from ._Max1000Text import Max1000Text
-from ._AdditionalData1 import AdditionalData1
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max1000Text import Max1000Text
+from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
 from ._Max35Text import Max35Text
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from ._AdditionalData1 import AdditionalData1
 from ._Max256Text import Max256Text
 
 class TransactionCharacteristics2(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRsn", "_TxSubTp", "_AltrnMsgRsn", "_TxDesc", "_AddtlData", "_Cxl", "_TxTp"]
+	__slots__ = ["_TxTp", "_AltrnMsgRsn", "_MsgRsn", "_TxDesc", "_TxSubTp", "_Cxl", "_AddtlData"]
 	@property
-	def MsgRsn(self):
-		return self._MsgRsn
+	def AddtlData(self):
+		return self._AddtlData
 
-	@MsgRsn.setter
-	def MsgRsn(self, value):
-		self._MsgRsn = value if type(value) != base_types.auto else self.make_default("MsgRsn")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
 
-	@MsgRsn.deleter
-	def MsgRsn(self):
-		del self._MsgRsn
-		self._MsgRsn = None
-
-	@property
-	def TxSubTp(self):
-		return self._TxSubTp
-
-	@TxSubTp.setter
-	def TxSubTp(self, value):
-		self._TxSubTp = value if type(value) != base_types.auto else self.make_default("TxSubTp")
-
-	@TxSubTp.deleter
-	def TxSubTp(self):
-		del self._TxSubTp
-		self._TxSubTp = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
 	def AltrnMsgRsn(self):
@@ -50,6 +37,32 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 		self._AltrnMsgRsn = None
 
 	@property
+	def Cxl(self):
+		return self._Cxl
+
+	@Cxl.setter
+	def Cxl(self, value):
+		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
+
+	@Cxl.deleter
+	def Cxl(self):
+		del self._Cxl
+		self._Cxl = None
+
+	@property
+	def MsgRsn(self):
+		return self._MsgRsn
+
+	@MsgRsn.setter
+	def MsgRsn(self, value):
+		self._MsgRsn = value if type(value) != base_types.auto else self.make_default("MsgRsn")
+
+	@MsgRsn.deleter
+	def MsgRsn(self):
+		del self._MsgRsn
+		self._MsgRsn = None
+
+	@property
 	def TxDesc(self):
 		return self._TxDesc
 
@@ -63,30 +76,17 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 		self._TxDesc = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def TxSubTp(self):
+		return self._TxSubTp
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+	@TxSubTp.setter
+	def TxSubTp(self, value):
+		self._TxSubTp = value if type(value) != base_types.auto else self.make_default("TxSubTp")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def Cxl(self):
-		return self._Cxl
-
-	@Cxl.setter
-	def Cxl(self, value):
-		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
-
-	@Cxl.deleter
-	def Cxl(self):
-		del self._Cxl
-		self._Cxl = None
+	@TxSubTp.deleter
+	def TxSubTp(self):
+		del self._TxSubTp
+		self._TxSubTp = None
 
 	@property
 	def TxTp(self):
@@ -102,12 +102,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 		self._TxTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cxl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

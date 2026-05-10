@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification232 import PartyIdentification232
 from ._GenericIdentification37 import GenericIdentification37
+from ._PartyIdentification232 import PartyIdentification232
 
 class CollateralParties4(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntPtyB", "_ElgbltySetPrfl", "_PtyB"]
+	__slots__ = ["_ClntPtyB", "_PtyB", "_ElgbltySetPrfl"]
 	@property
 	def ClntPtyB(self):
 		return self._ClntPtyB

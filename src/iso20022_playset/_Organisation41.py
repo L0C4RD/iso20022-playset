@@ -1,26 +1,13 @@
 from . import base_types
 from ._Max140Text import Max140Text
 from ._Max70Text import Max70Text
+from ._LocationCategory4Code import LocationCategory4Code
 from ._GenericIdentification32 import GenericIdentification32
 from ._CommunicationAddress9 import CommunicationAddress9
-from ._LocationCategory4Code import LocationCategory4Code
 
 class Organisation41(base_types._BaseFieldType):
 
-	__slots__ = ["_LctnCtgy", "_CmonNm", "_SchmeData", "_LctnAndCtct", "_Id"]
-	@property
-	def LctnCtgy(self):
-		return self._LctnCtgy
-
-	@LctnCtgy.setter
-	def LctnCtgy(self, value):
-		self._LctnCtgy = value if type(value) != base_types.auto else self.make_default("LctnCtgy")
-
-	@LctnCtgy.deleter
-	def LctnCtgy(self):
-		del self._LctnCtgy
-		self._LctnCtgy = None
-
+	__slots__ = ["_LctnAndCtct", "_CmonNm", "_Id", "_SchmeData", "_LctnCtgy"]
 	@property
 	def CmonNm(self):
 		return self._CmonNm
@@ -35,17 +22,17 @@ class Organisation41(base_types._BaseFieldType):
 		self._CmonNm = None
 
 	@property
-	def SchmeData(self):
-		return self._SchmeData
+	def Id(self):
+		return self._Id
 
-	@SchmeData.setter
-	def SchmeData(self, value):
-		self._SchmeData = value if type(value) != base_types.auto else self.make_default("SchmeData")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@SchmeData.deleter
-	def SchmeData(self):
-		del self._SchmeData
-		self._SchmeData = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def LctnAndCtct(self):
@@ -61,23 +48,36 @@ class Organisation41(base_types._BaseFieldType):
 		self._LctnAndCtct = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def LctnCtgy(self):
+		return self._LctnCtgy
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@LctnCtgy.setter
+	def LctnCtgy(self, value):
+		self._LctnCtgy = value if type(value) != base_types.auto else self.make_default("LctnCtgy")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@LctnCtgy.deleter
+	def LctnCtgy(self):
+		del self._LctnCtgy
+		self._LctnCtgy = None
+
+	@property
+	def SchmeData(self):
+		return self._SchmeData
+
+	@SchmeData.setter
+	def SchmeData(self, value):
+		self._SchmeData = value if type(value) != base_types.auto else self.make_default("SchmeData")
+
+	@SchmeData.deleter
+	def SchmeData(self):
+		del self._SchmeData
+		self._SchmeData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LctnCtgy', type=LocationCategory4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchmeData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LctnAndCtct', type=CommunicationAddress9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=GenericIdentification32, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LctnAndCtct', type=CommunicationAddress9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LctnCtgy', type=LocationCategory4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

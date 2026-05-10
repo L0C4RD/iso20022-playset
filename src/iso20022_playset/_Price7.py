@@ -1,23 +1,10 @@
 from . import base_types
-from ._PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
 from ._YieldedOrValueType1Choice import YieldedOrValueType1Choice
+from ._PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
 
 class Price7(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Tp"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_Tp", "_Val"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,8 +18,21 @@ class Price7(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=PriceRateOrAmount3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceRateOrAmount3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

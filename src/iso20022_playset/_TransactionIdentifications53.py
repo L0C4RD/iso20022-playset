@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class TransactionIdentifications53(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_CmonId", "_AcctSvcrTxId", "_NonceId"]
+	__slots__ = ["_CmonId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_NonceId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
@@ -18,19 +18,6 @@ class TransactionIdentifications53(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
-
-	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
 
@@ -42,6 +29,19 @@ class TransactionIdentifications53(base_types._BaseFieldType):
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
+
+	@property
+	def CmonId(self):
+		return self._CmonId
+
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
 
 	@property
 	def NonceId(self):
@@ -58,8 +58,8 @@ class TransactionIdentifications53(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

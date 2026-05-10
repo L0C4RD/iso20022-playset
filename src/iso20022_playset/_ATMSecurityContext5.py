@@ -1,26 +1,13 @@
 from . import base_types
 from ._ATMSecurityScheme4Code import ATMSecurityScheme4Code
 from ._ATMSecurityDevice2 import ATMSecurityDevice2
-from ._CryptographicKey11 import CryptographicKey11
 from ._Max140Binary import Max140Binary
 from ._ATMSecurityScheme3Code import ATMSecurityScheme3Code
+from ._CryptographicKey11 import CryptographicKey11
 
 class ATMSecurityContext5(base_types._BaseFieldType):
 
-	__slots__ = ["_SctySchmeCpblties", "_CurSctySchme", "_HstChllng", "_Key", "_SctyDvc"]
-	@property
-	def SctySchmeCpblties(self):
-		return self._SctySchmeCpblties
-
-	@SctySchmeCpblties.setter
-	def SctySchmeCpblties(self, value):
-		self._SctySchmeCpblties = value if type(value) != base_types.auto else self.make_default("SctySchmeCpblties")
-
-	@SctySchmeCpblties.deleter
-	def SctySchmeCpblties(self):
-		del self._SctySchmeCpblties
-		self._SctySchmeCpblties = None
-
+	__slots__ = ["_CurSctySchme", "_HstChllng", "_Key", "_SctyDvc", "_SctySchmeCpblties"]
 	@property
 	def CurSctySchme(self):
 		return self._CurSctySchme
@@ -73,11 +60,24 @@ class ATMSecurityContext5(base_types._BaseFieldType):
 		del self._SctyDvc
 		self._SctyDvc = None
 
+	@property
+	def SctySchmeCpblties(self):
+		return self._SctySchmeCpblties
+
+	@SctySchmeCpblties.setter
+	def SctySchmeCpblties(self, value):
+		self._SctySchmeCpblties = value if type(value) != base_types.auto else self.make_default("SctySchmeCpblties")
+
+	@SctySchmeCpblties.deleter
+	def SctySchmeCpblties(self):
+		del self._SctySchmeCpblties
+		self._SctySchmeCpblties = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctySchmeCpblties', type=ATMSecurityScheme4Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CurSctySchme', type=ATMSecurityScheme3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Key', type=CryptographicKey11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyDvc', type=ATMSecurityDevice2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctySchmeCpblties', type=ATMSecurityScheme4Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

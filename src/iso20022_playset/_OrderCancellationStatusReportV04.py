@@ -1,12 +1,12 @@
 from . import base_types
 from ._Status26Choice import Status26Choice
-from ._Extension1 import Extension1
-from ._References61Choice import References61Choice
 from ._MessageIdentification1 import MessageIdentification1
+from ._References61Choice import References61Choice
+from ._Extension1 import Extension1
 
 class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_Xtnsn", "_StsRpt", "_Ref"]
+	__slots__ = ["_Xtnsn", "_Ref", "_StsRpt", "_MsgId"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -21,17 +21,17 @@ class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def Ref(self):
+		return self._Ref
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def StsRpt(self):
@@ -47,22 +47,22 @@ class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 		self._StsRpt = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsRpt', type=Status26Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRpt', type=Status26Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

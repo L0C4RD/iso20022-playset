@@ -1,24 +1,24 @@
 from . import base_types
-from ._PartyIdentification157 import PartyIdentification157
 from ._SettlementParties105 import SettlementParties105
 from ._Counterparty16Choice import Counterparty16Choice
+from ._PartyIdentification157 import PartyIdentification157
 from ._SettlementStandingInstructionDatabase5Choice import SettlementStandingInstructionDatabase5Choice
 
 class StandingSettlementInstruction19(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrRcvgSttlmPties", "_OthrDlvrgSttlmPties", "_CtrPty", "_SttlmStgInstrDB", "_Vndr"]
+	__slots__ = ["_Vndr", "_CtrPty", "_OthrRcvgSttlmPties", "_OthrDlvrgSttlmPties", "_SttlmStgInstrDB"]
 	@property
-	def OthrRcvgSttlmPties(self):
-		return self._OthrRcvgSttlmPties
+	def CtrPty(self):
+		return self._CtrPty
 
-	@OthrRcvgSttlmPties.setter
-	def OthrRcvgSttlmPties(self, value):
-		self._OthrRcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("OthrRcvgSttlmPties")
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
 
-	@OthrRcvgSttlmPties.deleter
-	def OthrRcvgSttlmPties(self):
-		del self._OthrRcvgSttlmPties
-		self._OthrRcvgSttlmPties = None
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
 
 	@property
 	def OthrDlvrgSttlmPties(self):
@@ -34,17 +34,17 @@ class StandingSettlementInstruction19(base_types._BaseFieldType):
 		self._OthrDlvrgSttlmPties = None
 
 	@property
-	def CtrPty(self):
-		return self._CtrPty
+	def OthrRcvgSttlmPties(self):
+		return self._OthrRcvgSttlmPties
 
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+	@OthrRcvgSttlmPties.setter
+	def OthrRcvgSttlmPties(self, value):
+		self._OthrRcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("OthrRcvgSttlmPties")
 
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
+	@OthrRcvgSttlmPties.deleter
+	def OthrRcvgSttlmPties(self):
+		del self._OthrRcvgSttlmPties
+		self._OthrRcvgSttlmPties = None
 
 	@property
 	def SttlmStgInstrDB(self):
@@ -73,9 +73,9 @@ class StandingSettlementInstruction19(base_types._BaseFieldType):
 		self._Vndr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrDlvrgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=Counterparty16Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrDlvrgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vndr', type=PartyIdentification157, min=0, max=1, mutex_group=None, array=False),
 	))

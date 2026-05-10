@@ -1,55 +1,29 @@
 from . import base_types
-from ._IntraBalance5 import IntraBalance5
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ProcessingStatus67Choice import ProcessingStatus67Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._SettlementStatus16Choice import SettlementStatus16Choice
 from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentifications24 import TransactionIdentifications24
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._DocumentIdentification51 import DocumentIdentification51
+from ._TransactionIdentifications24 import TransactionIdentifications24
+from ._IntraBalance5 import IntraBalance5
+from ._SettlementStatus16Choice import SettlementStatus16Choice
+from ._ProcessingStatus67Choice import ProcessingStatus67Choice
+from ._CashAccount40 import CashAccount40
 
 class IntraBalanceMovementStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygIntraBal", "_Id", "_SttlmSts", "_CshAcctOwnr", "_TxId", "_CshAcctSvcr", "_CshAcct", "_PrcgSts", "_SplmtryData"]
+	__slots__ = ["_Id", "_UndrlygIntraBal", "_TxId", "_CshAcctSvcr", "_CshAcct", "_SttlmSts", "_PrcgSts", "_CshAcctOwnr", "_SplmtryData"]
 	@property
-	def UndrlygIntraBal(self):
-		return self._UndrlygIntraBal
+	def CshAcct(self):
+		return self._CshAcct
 
-	@UndrlygIntraBal.setter
-	def UndrlygIntraBal(self, value):
-		self._UndrlygIntraBal = value if type(value) != base_types.auto else self.make_default("UndrlygIntraBal")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
 
-	@UndrlygIntraBal.deleter
-	def UndrlygIntraBal(self):
-		del self._UndrlygIntraBal
-		self._UndrlygIntraBal = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def SttlmSts(self):
-		return self._SttlmSts
-
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
-
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def CshAcctOwnr(self):
@@ -65,19 +39,6 @@ class IntraBalanceMovementStatusAdviceV02(base_types._BaseFieldType):
 		self._CshAcctOwnr = None
 
 	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def CshAcctSvcr(self):
 		return self._CshAcctSvcr
 
@@ -91,17 +52,17 @@ class IntraBalanceMovementStatusAdviceV02(base_types._BaseFieldType):
 		self._CshAcctSvcr = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def Id(self):
+		return self._Id
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def PrcgSts(self):
@@ -129,15 +90,54 @@ class IntraBalanceMovementStatusAdviceV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def UndrlygIntraBal(self):
+		return self._UndrlygIntraBal
+
+	@UndrlygIntraBal.setter
+	def UndrlygIntraBal(self, value):
+		self._UndrlygIntraBal = value if type(value) != base_types.auto else self.make_default("UndrlygIntraBal")
+
+	@UndrlygIntraBal.deleter
+	def UndrlygIntraBal(self):
+		del self._UndrlygIntraBal
+		self._UndrlygIntraBal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygIntraBal', type=IntraBalance5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus16Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifications24, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus67Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifications24, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygIntraBal', type=IntraBalance5, min=0, max=1, mutex_group=None, array=False),
 	))
 

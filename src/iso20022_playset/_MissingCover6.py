@@ -1,10 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._SettlementInstruction16 import SettlementInstruction16
+from ._YesNoIndicator import YesNoIndicator
 
 class MissingCover6(base_types._BaseFieldType):
 
-	__slots__ = ["_CoverCrrctn", "_MssngCoverInd"]
+	__slots__ = ["_MssngCoverInd", "_CoverCrrctn"]
 	@property
 	def CoverCrrctn(self):
 		return self._CoverCrrctn

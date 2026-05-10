@@ -1,11 +1,11 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader109(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_InstgAgt", "_InstdAgt", "_MsgId"]
+	__slots__ = ["_InstgAgt", "_InstdAgt", "_CreDtTm", "_MsgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -20,19 +20,6 @@ class GroupHeader109(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def InstgAgt(self):
-		return self._InstgAgt
-
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
-
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
-
-	@property
 	def InstdAgt(self):
 		return self._InstdAgt
 
@@ -44,6 +31,19 @@ class GroupHeader109(base_types._BaseFieldType):
 	def InstdAgt(self):
 		del self._InstdAgt
 		self._InstdAgt = None
+
+	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
 
 	@property
 	def MsgId(self):
@@ -60,8 +60,8 @@ class GroupHeader109(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
 from ._InformationDistribution1Choice import InformationDistribution1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Notification2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnTp", "_DstrbtnTp", "_Reqrd"]
-	@property
-	def NtfctnTp(self):
-		return self._NtfctnTp
-
-	@NtfctnTp.setter
-	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
-
-	@NtfctnTp.deleter
-	def NtfctnTp(self):
-		del self._NtfctnTp
-		self._NtfctnTp = None
-
+	__slots__ = ["_Reqrd", "_NtfctnTp", "_DstrbtnTp"]
 	@property
 	def DstrbtnTp(self):
 		return self._DstrbtnTp
@@ -31,6 +18,19 @@ class Notification2(base_types._BaseFieldType):
 	def DstrbtnTp(self):
 		del self._DstrbtnTp
 		self._DstrbtnTp = None
+
+	@property
+	def NtfctnTp(self):
+		return self._NtfctnTp
+
+	@NtfctnTp.setter
+	def NtfctnTp(self, value):
+		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
+
+	@NtfctnTp.deleter
+	def NtfctnTp(self):
+		del self._NtfctnTp
+		self._NtfctnTp = None
 
 	@property
 	def Reqrd(self):
@@ -46,8 +46,8 @@ class Notification2(base_types._BaseFieldType):
 		self._Reqrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnTp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstrbtnTp', type=InformationDistribution1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnTp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Reqrd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

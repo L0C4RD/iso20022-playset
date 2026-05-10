@@ -4,20 +4,7 @@ from ._CorporateActionEventType115Choice import CorporateActionEventType115Choic
 
 class CorporateActionGeneralInformation186(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_ClssActnNb", "_EvtTp", "_OffclCorpActnEvtId"]
-	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
+	__slots__ = ["_ClssActnNb", "_EvtTp", "_OffclCorpActnEvtId", "_CorpActnEvtId"]
 	@property
 	def ClssActnNb(self):
 		return self._ClssActnNb
@@ -30,6 +17,19 @@ class CorporateActionGeneralInformation186(base_types._BaseFieldType):
 	def ClssActnNb(self):
 		del self._ClssActnNb
 		self._ClssActnNb = None
+
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def EvtTp(self):
@@ -58,8 +58,8 @@ class CorporateActionGeneralInformation186(base_types._BaseFieldType):
 		self._OffclCorpActnEvtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssActnNb', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType115Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))

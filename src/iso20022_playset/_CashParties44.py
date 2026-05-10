@@ -4,19 +4,19 @@ from ._PartyIdentificationAndAccount232 import PartyIdentificationAndAccount232
 
 class CashParties44(base_types._BaseFieldType):
 
-	__slots__ = ["_MktClmCtrPty", "_CdtrAgt", "_Cdtr"]
+	__slots__ = ["_CdtrAgt", "_MktClmCtrPty", "_Cdtr"]
 	@property
-	def MktClmCtrPty(self):
-		return self._MktClmCtrPty
+	def Cdtr(self):
+		return self._Cdtr
 
-	@MktClmCtrPty.setter
-	def MktClmCtrPty(self, value):
-		self._MktClmCtrPty = value if type(value) != base_types.auto else self.make_default("MktClmCtrPty")
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
 
-	@MktClmCtrPty.deleter
-	def MktClmCtrPty(self):
-		del self._MktClmCtrPty
-		self._MktClmCtrPty = None
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
 
 	@property
 	def CdtrAgt(self):
@@ -32,21 +32,21 @@ class CashParties44(base_types._BaseFieldType):
 		self._CdtrAgt = None
 
 	@property
-	def Cdtr(self):
-		return self._Cdtr
+	def MktClmCtrPty(self):
+		return self._MktClmCtrPty
 
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+	@MktClmCtrPty.setter
+	def MktClmCtrPty(self, value):
+		self._MktClmCtrPty = value if type(value) != base_types.auto else self.make_default("MktClmCtrPty")
 
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@MktClmCtrPty.deleter
+	def MktClmCtrPty(self):
+		del self._MktClmCtrPty
+		self._MktClmCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktClmCtrPty', type=PartyIdentificationAndAccount231, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount232, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount231, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount232, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClmCtrPty', type=PartyIdentificationAndAccount231, min=0, max=1, mutex_group=None, array=False),
 	))
 

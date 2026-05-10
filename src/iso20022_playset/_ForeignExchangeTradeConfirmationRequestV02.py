@@ -1,28 +1,28 @@
 from . import base_types
-from ._Period12 import Period12
-from ._Trade9 import Trade9
-from ._Max35NumericText import Max35NumericText
-from ._MessageIdentification1 import MessageIdentification1
-from ._QueryTradeStatus1Code import QueryTradeStatus1Code
-from ._Header23 import Header23
-from ._ConfirmationRequest1Code import ConfirmationRequest1Code
 from ._SupplementaryData1 import SupplementaryData1
+from ._Trade9 import Trade9
+from ._Period12 import Period12
+from ._Header23 import Header23
+from ._QueryTradeStatus1Code import QueryTradeStatus1Code
+from ._ConfirmationRequest1Code import ConfirmationRequest1Code
+from ._MessageIdentification1 import MessageIdentification1
+from ._Max35NumericText import Max35NumericText
 
 class ForeignExchangeTradeConfirmationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTradSts", "_Hdr", "_TradDtl", "_QryStartNb", "_ConfTp", "_SplmtryData", "_ReqId", "_QryPrd"]
+	__slots__ = ["_ConfTp", "_TradDtl", "_Hdr", "_ReqId", "_QryStartNb", "_QryPrd", "_QryTradSts", "_SplmtryData"]
 	@property
-	def QryTradSts(self):
-		return self._QryTradSts
+	def ConfTp(self):
+		return self._ConfTp
 
-	@QryTradSts.setter
-	def QryTradSts(self, value):
-		self._QryTradSts = value if type(value) != base_types.auto else self.make_default("QryTradSts")
+	@ConfTp.setter
+	def ConfTp(self, value):
+		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
 
-	@QryTradSts.deleter
-	def QryTradSts(self):
-		del self._QryTradSts
-		self._QryTradSts = None
+	@ConfTp.deleter
+	def ConfTp(self):
+		del self._ConfTp
+		self._ConfTp = None
 
 	@property
 	def Hdr(self):
@@ -38,17 +38,17 @@ class ForeignExchangeTradeConfirmationRequestV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def TradDtl(self):
-		return self._TradDtl
+	def QryPrd(self):
+		return self._QryPrd
 
-	@TradDtl.setter
-	def TradDtl(self, value):
-		self._TradDtl = value if type(value) != base_types.auto else self.make_default("TradDtl")
+	@QryPrd.setter
+	def QryPrd(self, value):
+		self._QryPrd = value if type(value) != base_types.auto else self.make_default("QryPrd")
 
-	@TradDtl.deleter
-	def TradDtl(self):
-		del self._TradDtl
-		self._TradDtl = None
+	@QryPrd.deleter
+	def QryPrd(self):
+		del self._QryPrd
+		self._QryPrd = None
 
 	@property
 	def QryStartNb(self):
@@ -64,30 +64,17 @@ class ForeignExchangeTradeConfirmationRequestV02(base_types._BaseFieldType):
 		self._QryStartNb = None
 
 	@property
-	def ConfTp(self):
-		return self._ConfTp
+	def QryTradSts(self):
+		return self._QryTradSts
 
-	@ConfTp.setter
-	def ConfTp(self, value):
-		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
+	@QryTradSts.setter
+	def QryTradSts(self, value):
+		self._QryTradSts = value if type(value) != base_types.auto else self.make_default("QryTradSts")
 
-	@ConfTp.deleter
-	def ConfTp(self):
-		del self._ConfTp
-		self._ConfTp = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@QryTradSts.deleter
+	def QryTradSts(self):
+		del self._QryTradSts
+		self._QryTradSts = None
 
 	@property
 	def ReqId(self):
@@ -103,26 +90,39 @@ class ForeignExchangeTradeConfirmationRequestV02(base_types._BaseFieldType):
 		self._ReqId = None
 
 	@property
-	def QryPrd(self):
-		return self._QryPrd
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@QryPrd.setter
-	def QryPrd(self, value):
-		self._QryPrd = value if type(value) != base_types.auto else self.make_default("QryPrd")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@QryPrd.deleter
-	def QryPrd(self):
-		del self._QryPrd
-		self._QryPrd = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def TradDtl(self):
+		return self._TradDtl
+
+	@TradDtl.setter
+	def TradDtl(self, value):
+		self._TradDtl = value if type(value) != base_types.auto else self.make_default("TradDtl")
+
+	@TradDtl.deleter
+	def TradDtl(self):
+		del self._TradDtl
+		self._TradDtl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QryTradSts', type=QueryTradeStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDtl', type=Trade9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryStartNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfTp', type=ConfirmationRequest1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryPrd', type=Period12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryStartNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryTradSts', type=QueryTradeStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradDtl', type=Trade9, min=1, max=1, mutex_group=None, array=False),
 	))
 

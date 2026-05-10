@@ -4,7 +4,7 @@ from ._Max5NumericText import Max5NumericText
 
 class NumberModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ModCd", "_Nb"]
+	__slots__ = ["_Nb", "_ModCd"]
 	@property
 	def ModCd(self):
 		return self._ModCd

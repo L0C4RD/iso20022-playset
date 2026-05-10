@@ -1,14 +1,14 @@
 from . import base_types
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._Pagination1 import Pagination1
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._SupplementaryData1 import SupplementaryData1
+from ._Pagination1 import Pagination1
 from ._TradeLegStatement4 import TradeLegStatement4
 from ._Statement86 import Statement86
+from ._PartyIdentification253Choice import PartyIdentification253Choice
 
 class TradeLegStatementV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrAcct", "_ClrMmb", "_Pgntn", "_StmtDtls", "_SplmtryData", "_StmtParams"]
+	__slots__ = ["_ClrMmb", "_StmtParams", "_ClrAcct", "_StmtDtls", "_SplmtryData", "_Pgntn"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct
@@ -49,19 +49,6 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	@property
-	def StmtDtls(self):
-		return self._StmtDtls
-
-	@StmtDtls.setter
-	def StmtDtls(self, value):
-		self._StmtDtls = value if type(value) != base_types.auto else self.make_default("StmtDtls")
-
-	@StmtDtls.deleter
-	def StmtDtls(self):
-		del self._StmtDtls
-		self._StmtDtls = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -73,6 +60,19 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def StmtDtls(self):
+		return self._StmtDtls
+
+	@StmtDtls.setter
+	def StmtDtls(self, value):
+		self._StmtDtls = value if type(value) != base_types.auto else self.make_default("StmtDtls")
+
+	@StmtDtls.deleter
+	def StmtDtls(self):
+		del self._StmtDtls
+		self._StmtDtls = None
 
 	@property
 	def StmtParams(self):
@@ -91,8 +91,8 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtls', type=TradeLegStatement4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtDtls', type=TradeLegStatement4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtParams', type=Statement86, min=1, max=1, mutex_group=None, array=False),
 	))
 

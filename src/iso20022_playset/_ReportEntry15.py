@@ -1,64 +1,25 @@
 from . import base_types
-from ._CashAvailability1 import CashAvailability1
-from ._TransactionInterest4 import TransactionInterest4
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CardEntry5 import CardEntry5
-from ._AmountAndCurrencyExchange4 import AmountAndCurrencyExchange4
-from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._MessageIdentification2 import MessageIdentification2
-from ._EntryDetails14 import EntryDetails14
 from ._Charges15 import Charges15
-from ._Max500Text import Max500Text
-from ._EntryStatus1Choice import EntryStatus1Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
-from ._CreditDebitCode import CreditDebitCode
-from ._YesNoIndicator import YesNoIndicator
 from ._TechnicalInputChannel1Choice import TechnicalInputChannel1Choice
+from ._AmountAndCurrencyExchange4 import AmountAndCurrencyExchange4
+from ._Max500Text import Max500Text
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
+from ._TransactionInterest4 import TransactionInterest4
+from ._EntryDetails14 import EntryDetails14
+from ._YesNoIndicator import YesNoIndicator
+from ._CardEntry5 import CardEntry5
+from ._MessageIdentification2 import MessageIdentification2
+from ._Max35Text import Max35Text
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._CashAvailability1 import CashAvailability1
+from ._CreditDebitCode import CreditDebitCode
+from ._EntryStatus1Choice import EntryStatus1Choice
 
 class ReportEntry15(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInfInd", "_NtryDtls", "_Chrgs", "_AcctSvcrRef", "_CardTx", "_Amt", "_AddtlNtryInf", "_AmtDtls", "_Avlbty", "_Intrst", "_CdtDbtInd", "_TechInptChanl", "_BkTxCd", "_ComssnWvrInd", "_RvslInd", "_NtryRef", "_BookgDt", "_Sts", "_ValDt"]
-	@property
-	def AddtlInfInd(self):
-		return self._AddtlInfInd
-
-	@AddtlInfInd.setter
-	def AddtlInfInd(self, value):
-		self._AddtlInfInd = value if type(value) != base_types.auto else self.make_default("AddtlInfInd")
-
-	@AddtlInfInd.deleter
-	def AddtlInfInd(self):
-		del self._AddtlInfInd
-		self._AddtlInfInd = None
-
-	@property
-	def NtryDtls(self):
-		return self._NtryDtls
-
-	@NtryDtls.setter
-	def NtryDtls(self, value):
-		self._NtryDtls = value if type(value) != base_types.auto else self.make_default("NtryDtls")
-
-	@NtryDtls.deleter
-	def NtryDtls(self):
-		del self._NtryDtls
-		self._NtryDtls = None
-
-	@property
-	def Chrgs(self):
-		return self._Chrgs
-
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
-
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
-
+	__slots__ = ["_Chrgs", "_CdtDbtInd", "_BookgDt", "_RvslInd", "_NtryRef", "_ComssnWvrInd", "_AmtDtls", "_Intrst", "_NtryDtls", "_AcctSvcrRef", "_BkTxCd", "_AddtlNtryInf", "_Avlbty", "_TechInptChanl", "_ValDt", "_Amt", "_CardTx", "_Sts", "_AddtlInfInd"]
 	@property
 	def AcctSvcrRef(self):
 		return self._AcctSvcrRef
@@ -73,30 +34,17 @@ class ReportEntry15(base_types._BaseFieldType):
 		self._AcctSvcrRef = None
 
 	@property
-	def CardTx(self):
-		return self._CardTx
+	def AddtlInfInd(self):
+		return self._AddtlInfInd
 
-	@CardTx.setter
-	def CardTx(self, value):
-		self._CardTx = value if type(value) != base_types.auto else self.make_default("CardTx")
+	@AddtlInfInd.setter
+	def AddtlInfInd(self, value):
+		self._AddtlInfInd = value if type(value) != base_types.auto else self.make_default("AddtlInfInd")
 
-	@CardTx.deleter
-	def CardTx(self):
-		del self._CardTx
-		self._CardTx = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@AddtlInfInd.deleter
+	def AddtlInfInd(self):
+		del self._AddtlInfInd
+		self._AddtlInfInd = None
 
 	@property
 	def AddtlNtryInf(self):
@@ -110,6 +58,19 @@ class ReportEntry15(base_types._BaseFieldType):
 	def AddtlNtryInf(self):
 		del self._AddtlNtryInf
 		self._AddtlNtryInf = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def AmtDtls(self):
@@ -138,45 +99,6 @@ class ReportEntry15(base_types._BaseFieldType):
 		self._Avlbty = None
 
 	@property
-	def Intrst(self):
-		return self._Intrst
-
-	@Intrst.setter
-	def Intrst(self, value):
-		self._Intrst = value if type(value) != base_types.auto else self.make_default("Intrst")
-
-	@Intrst.deleter
-	def Intrst(self):
-		del self._Intrst
-		self._Intrst = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def TechInptChanl(self):
-		return self._TechInptChanl
-
-	@TechInptChanl.setter
-	def TechInptChanl(self, value):
-		self._TechInptChanl = value if type(value) != base_types.auto else self.make_default("TechInptChanl")
-
-	@TechInptChanl.deleter
-	def TechInptChanl(self):
-		del self._TechInptChanl
-		self._TechInptChanl = None
-
-	@property
 	def BkTxCd(self):
 		return self._BkTxCd
 
@@ -188,45 +110,6 @@ class ReportEntry15(base_types._BaseFieldType):
 	def BkTxCd(self):
 		del self._BkTxCd
 		self._BkTxCd = None
-
-	@property
-	def ComssnWvrInd(self):
-		return self._ComssnWvrInd
-
-	@ComssnWvrInd.setter
-	def ComssnWvrInd(self, value):
-		self._ComssnWvrInd = value if type(value) != base_types.auto else self.make_default("ComssnWvrInd")
-
-	@ComssnWvrInd.deleter
-	def ComssnWvrInd(self):
-		del self._ComssnWvrInd
-		self._ComssnWvrInd = None
-
-	@property
-	def RvslInd(self):
-		return self._RvslInd
-
-	@RvslInd.setter
-	def RvslInd(self, value):
-		self._RvslInd = value if type(value) != base_types.auto else self.make_default("RvslInd")
-
-	@RvslInd.deleter
-	def RvslInd(self):
-		del self._RvslInd
-		self._RvslInd = None
-
-	@property
-	def NtryRef(self):
-		return self._NtryRef
-
-	@NtryRef.setter
-	def NtryRef(self, value):
-		self._NtryRef = value if type(value) != base_types.auto else self.make_default("NtryRef")
-
-	@NtryRef.deleter
-	def NtryRef(self):
-		del self._NtryRef
-		self._NtryRef = None
 
 	@property
 	def BookgDt(self):
@@ -242,6 +125,110 @@ class ReportEntry15(base_types._BaseFieldType):
 		self._BookgDt = None
 
 	@property
+	def CardTx(self):
+		return self._CardTx
+
+	@CardTx.setter
+	def CardTx(self, value):
+		self._CardTx = value if type(value) != base_types.auto else self.make_default("CardTx")
+
+	@CardTx.deleter
+	def CardTx(self):
+		del self._CardTx
+		self._CardTx = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
+	def Chrgs(self):
+		return self._Chrgs
+
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
+
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
+
+	@property
+	def ComssnWvrInd(self):
+		return self._ComssnWvrInd
+
+	@ComssnWvrInd.setter
+	def ComssnWvrInd(self, value):
+		self._ComssnWvrInd = value if type(value) != base_types.auto else self.make_default("ComssnWvrInd")
+
+	@ComssnWvrInd.deleter
+	def ComssnWvrInd(self):
+		del self._ComssnWvrInd
+		self._ComssnWvrInd = None
+
+	@property
+	def Intrst(self):
+		return self._Intrst
+
+	@Intrst.setter
+	def Intrst(self, value):
+		self._Intrst = value if type(value) != base_types.auto else self.make_default("Intrst")
+
+	@Intrst.deleter
+	def Intrst(self):
+		del self._Intrst
+		self._Intrst = None
+
+	@property
+	def NtryDtls(self):
+		return self._NtryDtls
+
+	@NtryDtls.setter
+	def NtryDtls(self, value):
+		self._NtryDtls = value if type(value) != base_types.auto else self.make_default("NtryDtls")
+
+	@NtryDtls.deleter
+	def NtryDtls(self):
+		del self._NtryDtls
+		self._NtryDtls = None
+
+	@property
+	def NtryRef(self):
+		return self._NtryRef
+
+	@NtryRef.setter
+	def NtryRef(self, value):
+		self._NtryRef = value if type(value) != base_types.auto else self.make_default("NtryRef")
+
+	@NtryRef.deleter
+	def NtryRef(self):
+		del self._NtryRef
+		self._NtryRef = None
+
+	@property
+	def RvslInd(self):
+		return self._RvslInd
+
+	@RvslInd.setter
+	def RvslInd(self, value):
+		self._RvslInd = value if type(value) != base_types.auto else self.make_default("RvslInd")
+
+	@RvslInd.deleter
+	def RvslInd(self):
+		del self._RvslInd
+		self._RvslInd = None
+
+	@property
 	def Sts(self):
 		return self._Sts
 
@@ -253,6 +240,19 @@ class ReportEntry15(base_types._BaseFieldType):
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
+
+	@property
+	def TechInptChanl(self):
+		return self._TechInptChanl
+
+	@TechInptChanl.setter
+	def TechInptChanl(self, value):
+		self._TechInptChanl = value if type(value) != base_types.auto else self.make_default("TechInptChanl")
+
+	@TechInptChanl.deleter
+	def TechInptChanl(self):
+		del self._TechInptChanl
+		self._TechInptChanl = None
 
 	@property
 	def ValDt(self):
@@ -268,24 +268,24 @@ class ReportEntry15(base_types._BaseFieldType):
 		self._ValDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInfInd', type=MessageIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryDtls', type=EntryDetails14, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Chrgs', type=Charges15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardTx', type=CardEntry5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInfInd', type=MessageIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlNtryInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtDtls', type=AmountAndCurrencyExchange4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Avlbty', type=CashAvailability1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Intrst', type=TransactionInterest4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechInptChanl', type=TechnicalInputChannel1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComssnWvrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvslInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BookgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardTx', type=CardEntry5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrgs', type=Charges15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComssnWvrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrst', type=TransactionInterest4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryDtls', type=EntryDetails14, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvslInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=EntryStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechInptChanl', type=TechnicalInputChannel1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

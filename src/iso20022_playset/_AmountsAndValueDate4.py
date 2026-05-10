@@ -1,11 +1,24 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ISODate import ISODate
 
 class AmountsAndValueDate4(base_types._BaseFieldType):
 
-	__slots__ = ["_FnlSttlmDt", "_OptnSttlmCcy", "_PutAmt", "_CallAmt"]
+	__slots__ = ["_PutAmt", "_OptnSttlmCcy", "_CallAmt", "_FnlSttlmDt"]
+	@property
+	def CallAmt(self):
+		return self._CallAmt
+
+	@CallAmt.setter
+	def CallAmt(self, value):
+		self._CallAmt = value if type(value) != base_types.auto else self.make_default("CallAmt")
+
+	@CallAmt.deleter
+	def CallAmt(self):
+		del self._CallAmt
+		self._CallAmt = None
+
 	@property
 	def FnlSttlmDt(self):
 		return self._FnlSttlmDt
@@ -45,23 +58,10 @@ class AmountsAndValueDate4(base_types._BaseFieldType):
 		del self._PutAmt
 		self._PutAmt = None
 
-	@property
-	def CallAmt(self):
-		return self._CallAmt
-
-	@CallAmt.setter
-	def CallAmt(self, value):
-		self._CallAmt = value if type(value) != base_types.auto else self.make_default("CallAmt")
-
-	@CallAmt.deleter
-	def CallAmt(self):
-		del self._CallAmt
-		self._CallAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CallAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FnlSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnSttlmCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PutAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CallAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

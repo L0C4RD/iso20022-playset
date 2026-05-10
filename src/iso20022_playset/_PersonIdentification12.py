@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericPersonIdentification1 import GenericPersonIdentification1
 from ._CountryCode import CountryCode
+from ._GenericPersonIdentification1 import GenericPersonIdentification1
 
 class PersonIdentification12(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfBrnch", "_Othr"]
+	__slots__ = ["_Othr", "_CtryOfBrnch"]
 	@property
 	def CtryOfBrnch(self):
 		return self._CtryOfBrnch

@@ -1,10 +1,10 @@
 from . import base_types
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._MessageIdentification1 import MessageIdentification1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptncId", "_RltdMsgRef", "_TxId"]
+	__slots__ = ["_AccptncId", "_TxId", "_RltdMsgRef"]
 	@property
 	def AccptncId(self):
 		return self._AccptncId

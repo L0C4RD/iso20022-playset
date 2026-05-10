@@ -1,48 +1,22 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ProprietaryReference1 import ProprietaryReference1
+from ._Max35Text import Max35Text
 
 class CertificateIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_Prtry", "_MsgId", "_EndToEndId", "_PmtInfId", "_AcctSvcrRef"]
+	__slots__ = ["_MsgId", "_EndToEndId", "_PmtInfId", "_AcctSvcrRef", "_Prtry", "_InstrId"]
 	@property
-	def InstrId(self):
-		return self._InstrId
+	def AcctSvcrRef(self):
+		return self._AcctSvcrRef
 
-	@InstrId.setter
-	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+	@AcctSvcrRef.setter
+	def AcctSvcrRef(self, value):
+		self._AcctSvcrRef = value if type(value) != base_types.auto else self.make_default("AcctSvcrRef")
 
-	@InstrId.deleter
-	def InstrId(self):
-		del self._InstrId
-		self._InstrId = None
-
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@AcctSvcrRef.deleter
+	def AcctSvcrRef(self):
+		del self._AcctSvcrRef
+		self._AcctSvcrRef = None
 
 	@property
 	def EndToEndId(self):
@@ -58,6 +32,32 @@ class CertificateIdentification1(base_types._BaseFieldType):
 		self._EndToEndId = None
 
 	@property
+	def InstrId(self):
+		return self._InstrId
+
+	@InstrId.setter
+	def InstrId(self, value):
+		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+
+	@InstrId.deleter
+	def InstrId(self):
+		del self._InstrId
+		self._InstrId = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
 	def PmtInfId(self):
 		return self._PmtInfId
 
@@ -71,24 +71,24 @@ class CertificateIdentification1(base_types._BaseFieldType):
 		self._PmtInfId = None
 
 	@property
-	def AcctSvcrRef(self):
-		return self._AcctSvcrRef
+	def Prtry(self):
+		return self._Prtry
 
-	@AcctSvcrRef.setter
-	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != base_types.auto else self.make_default("AcctSvcrRef")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
-	@AcctSvcrRef.deleter
-	def AcctSvcrRef(self):
-		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=1, mutex_group=None, array=False),
 	))
 

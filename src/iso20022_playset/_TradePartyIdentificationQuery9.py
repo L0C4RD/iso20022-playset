@@ -1,25 +1,38 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
 from ._CountryCode import CountryCode
+from ._Max50Text import Max50Text
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._NotReported1Code import NotReported1Code
-from ._Max50Text import Max50Text
 
 class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 
-	__slots__ = ["_NotRptd", "_CtryCd", "_AnyBIC", "_LEI", "_ClntId"]
+	__slots__ = ["_ClntId", "_NotRptd", "_AnyBIC", "_LEI", "_CtryCd"]
 	@property
-	def NotRptd(self):
-		return self._NotRptd
+	def AnyBIC(self):
+		return self._AnyBIC
 
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
+	@property
+	def ClntId(self):
+		return self._ClntId
+
+	@ClntId.setter
+	def ClntId(self, value):
+		self._ClntId = value if type(value) != base_types.auto else self.make_default("ClntId")
+
+	@ClntId.deleter
+	def ClntId(self):
+		del self._ClntId
+		self._ClntId = None
 
 	@property
 	def CtryCd(self):
@@ -35,19 +48,6 @@ class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 		self._CtryCd = None
 
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
-	@property
 	def LEI(self):
 		return self._LEI
 
@@ -61,23 +61,23 @@ class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def ClntId(self):
-		return self._ClntId
+	def NotRptd(self):
+		return self._NotRptd
 
-	@ClntId.setter
-	def ClntId(self, value):
-		self._ClntId = value if type(value) != base_types.auto else self.make_default("ClntId")
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
 
-	@ClntId.deleter
-	def ClntId(self):
-		del self._ClntId
-		self._ClntId = None
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryCd', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntId', type=Max50Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtryCd', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

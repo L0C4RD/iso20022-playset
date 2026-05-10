@@ -1,12 +1,12 @@
 from . import base_types
-from ._CorporateActionNotificationAdvice1 import CorporateActionNotificationAdvice1
 from ._NotificationCancellation1 import NotificationCancellation1
+from ._CorporateActionNotificationAdvice1 import CorporateActionNotificationAdvice1
 from ._DocumentIdentification8 import DocumentIdentification8
 from ._CorporateActionInformation2 import CorporateActionInformation2
 
 class AgentCANotificationCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_NtfctnCxlTpAndLkg", "_Id", "_CorpActnNtfctnDtls"]
+	__slots__ = ["_CorpActnNtfctnDtls", "_Id", "_NtfctnCxlTpAndLkg", "_CorpActnGnlInf"]
 	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf
@@ -21,17 +21,17 @@ class AgentCANotificationCancellationRequestV01(base_types._BaseFieldType):
 		self._CorpActnGnlInf = None
 
 	@property
-	def NtfctnCxlTpAndLkg(self):
-		return self._NtfctnCxlTpAndLkg
+	def CorpActnNtfctnDtls(self):
+		return self._CorpActnNtfctnDtls
 
-	@NtfctnCxlTpAndLkg.setter
-	def NtfctnCxlTpAndLkg(self, value):
-		self._NtfctnCxlTpAndLkg = value if type(value) != base_types.auto else self.make_default("NtfctnCxlTpAndLkg")
+	@CorpActnNtfctnDtls.setter
+	def CorpActnNtfctnDtls(self, value):
+		self._CorpActnNtfctnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnNtfctnDtls")
 
-	@NtfctnCxlTpAndLkg.deleter
-	def NtfctnCxlTpAndLkg(self):
-		del self._NtfctnCxlTpAndLkg
-		self._NtfctnCxlTpAndLkg = None
+	@CorpActnNtfctnDtls.deleter
+	def CorpActnNtfctnDtls(self):
+		del self._CorpActnNtfctnDtls
+		self._CorpActnNtfctnDtls = None
 
 	@property
 	def Id(self):
@@ -47,22 +47,22 @@ class AgentCANotificationCancellationRequestV01(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def CorpActnNtfctnDtls(self):
-		return self._CorpActnNtfctnDtls
+	def NtfctnCxlTpAndLkg(self):
+		return self._NtfctnCxlTpAndLkg
 
-	@CorpActnNtfctnDtls.setter
-	def CorpActnNtfctnDtls(self, value):
-		self._CorpActnNtfctnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnNtfctnDtls")
+	@NtfctnCxlTpAndLkg.setter
+	def NtfctnCxlTpAndLkg(self, value):
+		self._NtfctnCxlTpAndLkg = value if type(value) != base_types.auto else self.make_default("NtfctnCxlTpAndLkg")
 
-	@CorpActnNtfctnDtls.deleter
-	def CorpActnNtfctnDtls(self):
-		del self._CorpActnNtfctnDtls
-		self._CorpActnNtfctnDtls = None
+	@NtfctnCxlTpAndLkg.deleter
+	def NtfctnCxlTpAndLkg(self):
+		del self._NtfctnCxlTpAndLkg
+		self._NtfctnCxlTpAndLkg = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnCxlTpAndLkg', type=NotificationCancellation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnNtfctnDtls', type=CorporateActionNotificationAdvice1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnCxlTpAndLkg', type=NotificationCancellation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

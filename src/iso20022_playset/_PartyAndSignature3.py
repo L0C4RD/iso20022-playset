@@ -1,10 +1,10 @@
 from . import base_types
-from ._SkipPayload import SkipPayload
 from ._PartyIdentification135 import PartyIdentification135
+from ._SkipPayload import SkipPayload
 
 class PartyAndSignature3(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_Sgntr"]
+	__slots__ = ["_Sgntr", "_Pty"]
 	@property
 	def Pty(self):
 		return self._Pty

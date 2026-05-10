@@ -1,6 +1,6 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
 from ._RoundingDirection1Code import RoundingDirection1Code
+from ._DecimalNumber import DecimalNumber
 
 class RoundingParameters1(base_types._BaseFieldType):
 

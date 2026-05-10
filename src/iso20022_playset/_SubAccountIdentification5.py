@@ -1,11 +1,11 @@
 from . import base_types
+from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
 from ._YesNoIndicator import YesNoIndicator
 from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
-from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
 
 class SubAccountIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_FngbInd", "_Id", "_BalForSubAcct"]
+	__slots__ = ["_FngbInd", "_ActvtyInd", "_Id", "_BalForSubAcct"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
@@ -18,6 +18,19 @@ class SubAccountIdentification5(base_types._BaseFieldType):
 	def ActvtyInd(self):
 		del self._ActvtyInd
 		self._ActvtyInd = None
+
+	@property
+	def BalForSubAcct(self):
+		return self._BalForSubAcct
+
+	@BalForSubAcct.setter
+	def BalForSubAcct(self, value):
+		self._BalForSubAcct = value if type(value) != base_types.auto else self.make_default("BalForSubAcct")
+
+	@BalForSubAcct.deleter
+	def BalForSubAcct(self):
+		del self._BalForSubAcct
+		self._BalForSubAcct = None
 
 	@property
 	def FngbInd(self):
@@ -45,23 +58,10 @@ class SubAccountIdentification5(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def BalForSubAcct(self):
-		return self._BalForSubAcct
-
-	@BalForSubAcct.setter
-	def BalForSubAcct(self, value):
-		self._BalForSubAcct = value if type(value) != base_types.auto else self.make_default("BalForSubAcct")
-
-	@BalForSubAcct.deleter
-	def BalForSubAcct(self):
-		del self._BalForSubAcct
-		self._BalForSubAcct = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,37 +1,24 @@
 from . import base_types
-from ._Recipient15Choice import Recipient15Choice
-from ._Number import Number
-from ._OriginatorInformation1 import OriginatorInformation1
 from ._EncryptedContent7 import EncryptedContent7
+from ._OriginatorInformation1 import OriginatorInformation1
+from ._Number import Number
+from ._Recipient15Choice import Recipient15Choice
 
 class EnvelopedData11(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_Rcpt", "_OrgtrInf", "_NcrptdCntt"]
+	__slots__ = ["_NcrptdCntt", "_OrgtrInf", "_Vrsn", "_Rcpt"]
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def NcrptdCntt(self):
+		return self._NcrptdCntt
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+	@NcrptdCntt.setter
+	def NcrptdCntt(self, value):
+		self._NcrptdCntt = value if type(value) != base_types.auto else self.make_default("NcrptdCntt")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
-	def Rcpt(self):
-		return self._Rcpt
-
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
-
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
+	@NcrptdCntt.deleter
+	def NcrptdCntt(self):
+		del self._NcrptdCntt
+		self._NcrptdCntt = None
 
 	@property
 	def OrgtrInf(self):
@@ -47,22 +34,35 @@ class EnvelopedData11(base_types._BaseFieldType):
 		self._OrgtrInf = None
 
 	@property
-	def NcrptdCntt(self):
-		return self._NcrptdCntt
+	def Rcpt(self):
+		return self._Rcpt
 
-	@NcrptdCntt.setter
-	def NcrptdCntt(self, value):
-		self._NcrptdCntt = value if type(value) != base_types.auto else self.make_default("NcrptdCntt")
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
 
-	@NcrptdCntt.deleter
-	def NcrptdCntt(self):
-		del self._NcrptdCntt
-		self._NcrptdCntt = None
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgtrInf', type=OriginatorInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrInf', type=OriginatorInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

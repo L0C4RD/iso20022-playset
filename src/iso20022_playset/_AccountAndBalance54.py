@@ -5,7 +5,7 @@ from ._BalanceFormat14Choice import BalanceFormat14Choice
 
 class AccountAndBalance54(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_ConfdBal", "_SfkpgAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_ConfdBal"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

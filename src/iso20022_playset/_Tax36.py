@@ -4,7 +4,7 @@ from ._AdditionalInformation15 import AdditionalInformation15
 
 class Tax36(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_DtOrPrd"]
+	__slots__ = ["_DtOrPrd", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

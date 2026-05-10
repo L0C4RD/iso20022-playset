@@ -1,24 +1,11 @@
 from . import base_types
+from ._TransactionStatus4 import TransactionStatus4
 from ._MessageIdentification1 import MessageIdentification1
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransactionStatus4 import TransactionStatus4
 
 class StatusExtensionRequestAcceptanceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedSts", "_AccptncId", "_SubmitrTxRef", "_TxId"]
-	@property
-	def XtndedSts(self):
-		return self._XtndedSts
-
-	@XtndedSts.setter
-	def XtndedSts(self, value):
-		self._XtndedSts = value if type(value) != base_types.auto else self.make_default("XtndedSts")
-
-	@XtndedSts.deleter
-	def XtndedSts(self):
-		del self._XtndedSts
-		self._XtndedSts = None
-
+	__slots__ = ["_AccptncId", "_XtndedSts", "_TxId", "_SubmitrTxRef"]
 	@property
 	def AccptncId(self):
 		return self._AccptncId
@@ -58,10 +45,23 @@ class StatusExtensionRequestAcceptanceV03(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def XtndedSts(self):
+		return self._XtndedSts
+
+	@XtndedSts.setter
+	def XtndedSts(self, value):
+		self._XtndedSts = value if type(value) != base_types.auto else self.make_default("XtndedSts")
+
+	@XtndedSts.deleter
+	def XtndedSts(self):
+		del self._XtndedSts
+		self._XtndedSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XtndedSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XtndedSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 	))
 

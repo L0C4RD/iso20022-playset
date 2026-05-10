@@ -6,6 +6,19 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 
 	__slots__ = ["_UndrlygQtyDnmtr", "_UndrlygQtyNmrtr", "_RltdFinInstrmId"]
 	@property
+	def RltdFinInstrmId(self):
+		return self._RltdFinInstrmId
+
+	@RltdFinInstrmId.setter
+	def RltdFinInstrmId(self, value):
+		self._RltdFinInstrmId = value if type(value) != base_types.auto else self.make_default("RltdFinInstrmId")
+
+	@RltdFinInstrmId.deleter
+	def RltdFinInstrmId(self):
+		del self._RltdFinInstrmId
+		self._RltdFinInstrmId = None
+
+	@property
 	def UndrlygQtyDnmtr(self):
 		return self._UndrlygQtyDnmtr
 
@@ -31,22 +44,9 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 		del self._UndrlygQtyNmrtr
 		self._UndrlygQtyNmrtr = None
 
-	@property
-	def RltdFinInstrmId(self):
-		return self._RltdFinInstrmId
-
-	@RltdFinInstrmId.setter
-	def RltdFinInstrmId(self, value):
-		self._RltdFinInstrmId = value if type(value) != base_types.auto else self.make_default("RltdFinInstrmId")
-
-	@RltdFinInstrmId.deleter
-	def RltdFinInstrmId(self):
-		del self._RltdFinInstrmId
-		self._RltdFinInstrmId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RltdFinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UndrlygQtyDnmtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygQtyNmrtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdFinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
 	))
 

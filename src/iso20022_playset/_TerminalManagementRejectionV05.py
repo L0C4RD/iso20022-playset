@@ -1,6 +1,6 @@
 from . import base_types
-from ._TMSHeader1 import TMSHeader1
 from ._AcceptorRejection3 import AcceptorRejection3
+from ._TMSHeader1 import TMSHeader1
 
 class TerminalManagementRejectionV05(base_types._BaseFieldType):
 

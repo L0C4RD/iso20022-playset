@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Min6Max8Text import Min6Max8Text
 from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._Max35Text import Max35Text
 
 class LoyaltyServerData1(base_types._BaseFieldType):
 
-	__slots__ = ["_LltySvrId", "_ApprvlCd", "_HstRcncltnId", "_LltyTxId"]
-	@property
-	def LltySvrId(self):
-		return self._LltySvrId
-
-	@LltySvrId.setter
-	def LltySvrId(self, value):
-		self._LltySvrId = value if type(value) != base_types.auto else self.make_default("LltySvrId")
-
-	@LltySvrId.deleter
-	def LltySvrId(self):
-		del self._LltySvrId
-		self._LltySvrId = None
-
+	__slots__ = ["_LltyTxId", "_HstRcncltnId", "_LltySvrId", "_ApprvlCd"]
 	@property
 	def ApprvlCd(self):
 		return self._ApprvlCd
@@ -46,6 +33,19 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 		self._HstRcncltnId = None
 
 	@property
+	def LltySvrId(self):
+		return self._LltySvrId
+
+	@LltySvrId.setter
+	def LltySvrId(self, value):
+		self._LltySvrId = value if type(value) != base_types.auto else self.make_default("LltySvrId")
+
+	@LltySvrId.deleter
+	def LltySvrId(self):
+		del self._LltySvrId
+		self._LltySvrId = None
+
+	@property
 	def LltyTxId(self):
 		return self._LltyTxId
 
@@ -59,9 +59,9 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 		self._LltyTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LltySvrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApprvlCd', type=Min6Max8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltySvrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 	))
 

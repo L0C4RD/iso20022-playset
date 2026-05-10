@@ -1,23 +1,10 @@
 from . import base_types
-from ._Algorithm14Code import Algorithm14Code
 from ._Parameter8 import Parameter8
+from ._Algorithm14Code import Algorithm14Code
 
 class AlgorithmIdentification17(base_types._BaseFieldType):
 
-	__slots__ = ["_Param", "_Algo"]
-	@property
-	def Param(self):
-		return self._Param
-
-	@Param.setter
-	def Param(self, value):
-		self._Param = value if type(value) != base_types.auto else self.make_default("Param")
-
-	@Param.deleter
-	def Param(self):
-		del self._Param
-		self._Param = None
-
+	__slots__ = ["_Algo", "_Param"]
 	@property
 	def Algo(self):
 		return self._Algo
@@ -31,8 +18,21 @@ class AlgorithmIdentification17(base_types._BaseFieldType):
 		del self._Algo
 		self._Algo = None
 
+	@property
+	def Param(self):
+		return self._Param
+
+	@Param.setter
+	def Param(self, value):
+		self._Param = value if type(value) != base_types.auto else self.make_default("Param")
+
+	@Param.deleter
+	def Param(self):
+		del self._Param
+		self._Param = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Param', type=Parameter8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Algo', type=Algorithm14Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Param', type=Parameter8, min=0, max=1, mutex_group=None, array=False),
 	))
 

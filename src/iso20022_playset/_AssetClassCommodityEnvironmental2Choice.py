@@ -1,12 +1,25 @@
 from . import base_types
-from ._EnvironmentalCommodityEmission2 import EnvironmentalCommodityEmission2
-from ._EnvironmentalCommodityCarbonRelated1 import EnvironmentalCommodityCarbonRelated1
-from ._EnvironmentCommodityOther1 import EnvironmentCommodityOther1
 from ._EnvironmentalCommodityWeather1 import EnvironmentalCommodityWeather1
+from ._EnvironmentCommodityOther1 import EnvironmentCommodityOther1
+from ._EnvironmentalCommodityCarbonRelated1 import EnvironmentalCommodityCarbonRelated1
+from ._EnvironmentalCommodityEmission2 import EnvironmentalCommodityEmission2
 
 class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Emssns", "_Wthr", "_Othr", "_CrbnRltd"]
+	__slots__ = ["_Wthr", "_Emssns", "_CrbnRltd", "_Othr"]
+	@property
+	def CrbnRltd(self):
+		return self._CrbnRltd
+
+	@CrbnRltd.setter
+	def CrbnRltd(self, value):
+		self._CrbnRltd = value if type(value) != base_types.auto else self.make_default("CrbnRltd")
+
+	@CrbnRltd.deleter
+	def CrbnRltd(self):
+		del self._CrbnRltd
+		self._CrbnRltd = None
+
 	@property
 	def Emssns(self):
 		return self._Emssns
@@ -19,19 +32,6 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 	def Emssns(self):
 		del self._Emssns
 		self._Emssns = None
-
-	@property
-	def Wthr(self):
-		return self._Wthr
-
-	@Wthr.setter
-	def Wthr(self, value):
-		self._Wthr = value if type(value) != base_types.auto else self.make_default("Wthr")
-
-	@Wthr.deleter
-	def Wthr(self):
-		del self._Wthr
-		self._Wthr = None
 
 	@property
 	def Othr(self):
@@ -47,22 +47,22 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def CrbnRltd(self):
-		return self._CrbnRltd
+	def Wthr(self):
+		return self._Wthr
 
-	@CrbnRltd.setter
-	def CrbnRltd(self, value):
-		self._CrbnRltd = value if type(value) != base_types.auto else self.make_default("CrbnRltd")
+	@Wthr.setter
+	def Wthr(self, value):
+		self._Wthr = value if type(value) != base_types.auto else self.make_default("Wthr")
 
-	@CrbnRltd.deleter
-	def CrbnRltd(self):
-		del self._CrbnRltd
-		self._CrbnRltd = None
+	@Wthr.deleter
+	def Wthr(self):
+		del self._Wthr
+		self._Wthr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Emssns', type=EnvironmentalCommodityEmission2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Wthr', type=EnvironmentalCommodityWeather1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=EnvironmentCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CrbnRltd', type=EnvironmentalCommodityCarbonRelated1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Emssns', type=EnvironmentalCommodityEmission2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=EnvironmentCommodityOther1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Wthr', type=EnvironmentalCommodityWeather1, min=0, max=1, mutex_group=1, array=False),
 	))
 

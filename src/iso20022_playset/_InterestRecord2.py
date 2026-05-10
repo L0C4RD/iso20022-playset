@@ -1,66 +1,27 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._DateTimePeriod1 import DateTimePeriod1
-from ._Rate4 import Rate4
 from ._InterestType1Choice import InterestType1Choice
 from ._Max35Text import Max35Text
+from ._Rate4 import Rate4
 from ._CreditDebitCode import CreditDebitCode
 from ._TaxCharges2 import TaxCharges2
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class InterestRecord2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_FrToDt", "_Tax", "_Rsn", "_CdtDbtInd", "_Rate", "_Amt"]
+	__slots__ = ["_Tp", "_FrToDt", "_Tax", "_CdtDbtInd", "_Amt", "_Rsn", "_Rate"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Amt(self):
+		return self._Amt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def FrToDt(self):
-		return self._FrToDt
-
-	@FrToDt.setter
-	def FrToDt(self, value):
-		self._FrToDt = value if type(value) != base_types.auto else self.make_default("FrToDt")
-
-	@FrToDt.deleter
-	def FrToDt(self):
-		del self._FrToDt
-		self._FrToDt = None
-
-	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
-
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def CdtDbtInd(self):
@@ -76,6 +37,19 @@ class InterestRecord2(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
+	def FrToDt(self):
+		return self._FrToDt
+
+	@FrToDt.setter
+	def FrToDt(self, value):
+		self._FrToDt = value if type(value) != base_types.auto else self.make_default("FrToDt")
+
+	@FrToDt.deleter
+	def FrToDt(self):
+		del self._FrToDt
+		self._FrToDt = None
+
+	@property
 	def Rate(self):
 		return self._Rate
 
@@ -89,25 +63,51 @@ class InterestRecord2(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Rsn(self):
+		return self._Rsn
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
+	@property
+	def Tax(self):
+		return self._Tax
+
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=InterestType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=TaxCharges2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=Rate4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=Rate4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=TaxCharges2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=InterestType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

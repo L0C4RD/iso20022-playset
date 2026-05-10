@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max37Text import Max37Text
 from ._Max19HexBinaryText import Max19HexBinaryText
+from ._Max37Text import Max37Text
 
 class Track2Data1Choice(base_types._BaseFieldType):
 

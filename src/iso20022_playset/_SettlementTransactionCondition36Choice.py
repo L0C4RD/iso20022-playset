@@ -1,10 +1,10 @@
 from . import base_types
-from ._SettlementTransactionCondition13Code import SettlementTransactionCondition13Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._SettlementTransactionCondition13Code import SettlementTransactionCondition13Code
 
 class SettlementTransactionCondition36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

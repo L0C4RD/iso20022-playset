@@ -1,39 +1,13 @@
 from . import base_types
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._IntraBalanceMovement7 import IntraBalanceMovement7
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._IntraBalanceStatusAndReason2 import IntraBalanceStatusAndReason2
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._IntraBalanceMovement7 import IntraBalanceMovement7
 from ._CashAccount40 import CashAccount40
 
 class IntraBalanceMovements4(base_types._BaseFieldType):
 
-	__slots__ = ["_Mvmnt", "_StsAndRsn", "_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr"]
-	@property
-	def Mvmnt(self):
-		return self._Mvmnt
-
-	@Mvmnt.setter
-	def Mvmnt(self, value):
-		self._Mvmnt = value if type(value) != base_types.auto else self.make_default("Mvmnt")
-
-	@Mvmnt.deleter
-	def Mvmnt(self):
-		del self._Mvmnt
-		self._Mvmnt = None
-
-	@property
-	def StsAndRsn(self):
-		return self._StsAndRsn
-
-	@StsAndRsn.setter
-	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
-
-	@StsAndRsn.deleter
-	def StsAndRsn(self):
-		del self._StsAndRsn
-		self._StsAndRsn = None
-
+	__slots__ = ["_CshAcctSvcr", "_StsAndRsn", "_CshAcct", "_CshAcctOwnr", "_Mvmnt"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct
@@ -73,11 +47,37 @@ class IntraBalanceMovements4(base_types._BaseFieldType):
 		del self._CshAcctSvcr
 		self._CshAcctSvcr = None
 
+	@property
+	def Mvmnt(self):
+		return self._Mvmnt
+
+	@Mvmnt.setter
+	def Mvmnt(self, value):
+		self._Mvmnt = value if type(value) != base_types.auto else self.make_default("Mvmnt")
+
+	@Mvmnt.deleter
+	def Mvmnt(self):
+		del self._Mvmnt
+		self._Mvmnt = None
+
+	@property
+	def StsAndRsn(self):
+		return self._StsAndRsn
+
+	@StsAndRsn.setter
+	def StsAndRsn(self, value):
+		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+
+	@StsAndRsn.deleter
+	def StsAndRsn(self):
+		del self._StsAndRsn
+		self._StsAndRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mvmnt', type=IntraBalanceMovement7, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsAndRsn', type=IntraBalanceStatusAndReason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mvmnt', type=IntraBalanceMovement7, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsAndRsn', type=IntraBalanceStatusAndReason2, min=0, max=1, mutex_group=None, array=False),
 	))
 

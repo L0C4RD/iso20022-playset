@@ -4,7 +4,20 @@ from ._SecuritiesReferenceDataReport7 import SecuritiesReferenceDataReport7
 
 class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ModfdRcrd", "_NewRcrd", "_CancRcrd", "_TermntdRcrd"]
+	__slots__ = ["_CancRcrd", "_ModfdRcrd", "_NewRcrd", "_TermntdRcrd"]
+	@property
+	def CancRcrd(self):
+		return self._CancRcrd
+
+	@CancRcrd.setter
+	def CancRcrd(self, value):
+		self._CancRcrd = value if type(value) != base_types.auto else self.make_default("CancRcrd")
+
+	@CancRcrd.deleter
+	def CancRcrd(self):
+		del self._CancRcrd
+		self._CancRcrd = None
+
 	@property
 	def ModfdRcrd(self):
 		return self._ModfdRcrd
@@ -32,19 +45,6 @@ class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 		self._NewRcrd = None
 
 	@property
-	def CancRcrd(self):
-		return self._CancRcrd
-
-	@CancRcrd.setter
-	def CancRcrd(self, value):
-		self._CancRcrd = value if type(value) != base_types.auto else self.make_default("CancRcrd")
-
-	@CancRcrd.deleter
-	def CancRcrd(self):
-		del self._CancRcrd
-		self._CancRcrd = None
-
-	@property
 	def TermntdRcrd(self):
 		return self._TermntdRcrd
 
@@ -58,9 +58,9 @@ class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 		self._TermntdRcrd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CancRcrd', type=SecuritiesReferenceDataReport7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ModfdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NewRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CancRcrd', type=SecuritiesReferenceDataReport7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TermntdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,42 +1,16 @@
 from . import base_types
-from ._ATMMediaType4Code import ATMMediaType4Code
-from ._Number import Number
-from ._CardholderVerificationCapability3Code import CardholderVerificationCapability3Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CardDataReading4Code import CardDataReading4Code
 from ._DisplayCapabilities5 import DisplayCapabilities5
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ATMMediaType1Code import ATMMediaType1Code
+from ._Number import Number
 from ._Max256Text import Max256Text
+from ._ATMMediaType4Code import ATMMediaType4Code
+from ._ATMMediaType1Code import ATMMediaType1Code
+from ._CardholderVerificationCapability3Code import CardholderVerificationCapability3Code
 
 class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
-	__slots__ = ["_MxScrptLngth", "_PINLngthCpblties", "_ApprvlCdLngth", "_Authntcn", "_DpstdMdia", "_RctPrtg", "_WdrwlMdia", "_CardCaptrCpbl", "_CardRdData", "_IntractvTxs", "_MsgCpblties", "_CardWrtData"]
-	@property
-	def MxScrptLngth(self):
-		return self._MxScrptLngth
-
-	@MxScrptLngth.setter
-	def MxScrptLngth(self, value):
-		self._MxScrptLngth = value if type(value) != base_types.auto else self.make_default("MxScrptLngth")
-
-	@MxScrptLngth.deleter
-	def MxScrptLngth(self):
-		del self._MxScrptLngth
-		self._MxScrptLngth = None
-
-	@property
-	def PINLngthCpblties(self):
-		return self._PINLngthCpblties
-
-	@PINLngthCpblties.setter
-	def PINLngthCpblties(self, value):
-		self._PINLngthCpblties = value if type(value) != base_types.auto else self.make_default("PINLngthCpblties")
-
-	@PINLngthCpblties.deleter
-	def PINLngthCpblties(self):
-		del self._PINLngthCpblties
-		self._PINLngthCpblties = None
-
+	__slots__ = ["_WdrwlMdia", "_IntractvTxs", "_PINLngthCpblties", "_CardRdData", "_CardCaptrCpbl", "_MxScrptLngth", "_RctPrtg", "_MsgCpblties", "_CardWrtData", "_DpstdMdia", "_ApprvlCdLngth", "_Authntcn"]
 	@property
 	def ApprvlCdLngth(self):
 		return self._ApprvlCdLngth
@@ -62,45 +36,6 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 	def Authntcn(self):
 		del self._Authntcn
 		self._Authntcn = None
-
-	@property
-	def DpstdMdia(self):
-		return self._DpstdMdia
-
-	@DpstdMdia.setter
-	def DpstdMdia(self, value):
-		self._DpstdMdia = value if type(value) != base_types.auto else self.make_default("DpstdMdia")
-
-	@DpstdMdia.deleter
-	def DpstdMdia(self):
-		del self._DpstdMdia
-		self._DpstdMdia = None
-
-	@property
-	def RctPrtg(self):
-		return self._RctPrtg
-
-	@RctPrtg.setter
-	def RctPrtg(self, value):
-		self._RctPrtg = value if type(value) != base_types.auto else self.make_default("RctPrtg")
-
-	@RctPrtg.deleter
-	def RctPrtg(self):
-		del self._RctPrtg
-		self._RctPrtg = None
-
-	@property
-	def WdrwlMdia(self):
-		return self._WdrwlMdia
-
-	@WdrwlMdia.setter
-	def WdrwlMdia(self, value):
-		self._WdrwlMdia = value if type(value) != base_types.auto else self.make_default("WdrwlMdia")
-
-	@WdrwlMdia.deleter
-	def WdrwlMdia(self):
-		del self._WdrwlMdia
-		self._WdrwlMdia = None
 
 	@property
 	def CardCaptrCpbl(self):
@@ -129,6 +64,32 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 		self._CardRdData = None
 
 	@property
+	def CardWrtData(self):
+		return self._CardWrtData
+
+	@CardWrtData.setter
+	def CardWrtData(self, value):
+		self._CardWrtData = value if type(value) != base_types.auto else self.make_default("CardWrtData")
+
+	@CardWrtData.deleter
+	def CardWrtData(self):
+		del self._CardWrtData
+		self._CardWrtData = None
+
+	@property
+	def DpstdMdia(self):
+		return self._DpstdMdia
+
+	@DpstdMdia.setter
+	def DpstdMdia(self, value):
+		self._DpstdMdia = value if type(value) != base_types.auto else self.make_default("DpstdMdia")
+
+	@DpstdMdia.deleter
+	def DpstdMdia(self):
+		del self._DpstdMdia
+		self._DpstdMdia = None
+
+	@property
 	def IntractvTxs(self):
 		return self._IntractvTxs
 
@@ -155,30 +116,69 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 		self._MsgCpblties = None
 
 	@property
-	def CardWrtData(self):
-		return self._CardWrtData
+	def MxScrptLngth(self):
+		return self._MxScrptLngth
 
-	@CardWrtData.setter
-	def CardWrtData(self, value):
-		self._CardWrtData = value if type(value) != base_types.auto else self.make_default("CardWrtData")
+	@MxScrptLngth.setter
+	def MxScrptLngth(self, value):
+		self._MxScrptLngth = value if type(value) != base_types.auto else self.make_default("MxScrptLngth")
 
-	@CardWrtData.deleter
-	def CardWrtData(self):
-		del self._CardWrtData
-		self._CardWrtData = None
+	@MxScrptLngth.deleter
+	def MxScrptLngth(self):
+		del self._MxScrptLngth
+		self._MxScrptLngth = None
+
+	@property
+	def PINLngthCpblties(self):
+		return self._PINLngthCpblties
+
+	@PINLngthCpblties.setter
+	def PINLngthCpblties(self, value):
+		self._PINLngthCpblties = value if type(value) != base_types.auto else self.make_default("PINLngthCpblties")
+
+	@PINLngthCpblties.deleter
+	def PINLngthCpblties(self):
+		del self._PINLngthCpblties
+		self._PINLngthCpblties = None
+
+	@property
+	def RctPrtg(self):
+		return self._RctPrtg
+
+	@RctPrtg.setter
+	def RctPrtg(self, value):
+		self._RctPrtg = value if type(value) != base_types.auto else self.make_default("RctPrtg")
+
+	@RctPrtg.deleter
+	def RctPrtg(self):
+		del self._RctPrtg
+		self._RctPrtg = None
+
+	@property
+	def WdrwlMdia(self):
+		return self._WdrwlMdia
+
+	@WdrwlMdia.setter
+	def WdrwlMdia(self, value):
+		self._WdrwlMdia = value if type(value) != base_types.auto else self.make_default("WdrwlMdia")
+
+	@WdrwlMdia.deleter
+	def WdrwlMdia(self):
+		del self._WdrwlMdia
+		self._WdrwlMdia = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MxScrptLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PINLngthCpblties', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApprvlCdLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authntcn', type=CardholderVerificationCapability3Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DpstdMdia', type=ATMMediaType4Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RctPrtg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WdrwlMdia', type=ATMMediaType1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CardCaptrCpbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardRdData', type=CardDataReading4Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CardWrtData', type=CardDataReading4Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DpstdMdia', type=ATMMediaType4Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntractvTxs', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgCpblties', type=DisplayCapabilities5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CardWrtData', type=CardDataReading4Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MxScrptLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PINLngthCpblties', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RctPrtg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WdrwlMdia', type=ATMMediaType1Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

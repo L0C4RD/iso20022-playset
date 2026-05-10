@@ -1,11 +1,37 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
-from ._ISODate import ISODate
 
 class Schedule10(base_types._BaseFieldType):
 
-	__slots__ = ["_UadjstdFctvDt", "_UnitOfMeasr", "_UadjstdEndDt", "_Qty"]
+	__slots__ = ["_UnitOfMeasr", "_UadjstdFctvDt", "_UadjstdEndDt", "_Qty"]
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
+	@property
+	def UadjstdEndDt(self):
+		return self._UadjstdEndDt
+
+	@UadjstdEndDt.setter
+	def UadjstdEndDt(self, value):
+		self._UadjstdEndDt = value if type(value) != base_types.auto else self.make_default("UadjstdEndDt")
+
+	@UadjstdEndDt.deleter
+	def UadjstdEndDt(self):
+		del self._UadjstdEndDt
+		self._UadjstdEndDt = None
+
 	@property
 	def UadjstdFctvDt(self):
 		return self._UadjstdFctvDt
@@ -32,36 +58,10 @@ class Schedule10(base_types._BaseFieldType):
 		del self._UnitOfMeasr
 		self._UnitOfMeasr = None
 
-	@property
-	def UadjstdEndDt(self):
-		return self._UadjstdEndDt
-
-	@UadjstdEndDt.setter
-	def UadjstdEndDt(self, value):
-		self._UadjstdEndDt = value if type(value) != base_types.auto else self.make_default("UadjstdEndDt")
-
-	@UadjstdEndDt.deleter
-	def UadjstdEndDt(self):
-		del self._UadjstdEndDt
-		self._UadjstdEndDt = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UadjstdFctvDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
 

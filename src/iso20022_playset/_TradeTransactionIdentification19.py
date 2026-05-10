@@ -1,12 +1,25 @@
 from . import base_types
-from ._MasterAgreement7 import MasterAgreement7
-from ._Max52Text import Max52Text
 from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._Max52Text import Max52Text
+from ._MasterAgreement7 import MasterAgreement7
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TradeTransactionIdentification19(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrAgrmt", "_UnqTradIdr", "_OthrCtrPty", "_NttyRspnsblForRpt", "_RptgCtrPty", "_TrptyAgt", "_AgtLndr"]
+	__slots__ = ["_TrptyAgt", "_MstrAgrmt", "_RptgCtrPty", "_NttyRspnsblForRpt", "_AgtLndr", "_OthrCtrPty", "_UnqTradIdr"]
+	@property
+	def AgtLndr(self):
+		return self._AgtLndr
+
+	@AgtLndr.setter
+	def AgtLndr(self, value):
+		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+
+	@AgtLndr.deleter
+	def AgtLndr(self):
+		del self._AgtLndr
+		self._AgtLndr = None
+
 	@property
 	def MstrAgrmt(self):
 		return self._MstrAgrmt
@@ -21,17 +34,17 @@ class TradeTransactionIdentification19(base_types._BaseFieldType):
 		self._MstrAgrmt = None
 
 	@property
-	def UnqTradIdr(self):
-		return self._UnqTradIdr
+	def NttyRspnsblForRpt(self):
+		return self._NttyRspnsblForRpt
 
-	@UnqTradIdr.setter
-	def UnqTradIdr(self, value):
-		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
+	@NttyRspnsblForRpt.setter
+	def NttyRspnsblForRpt(self, value):
+		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
 
-	@UnqTradIdr.deleter
-	def UnqTradIdr(self):
-		del self._UnqTradIdr
-		self._UnqTradIdr = None
+	@NttyRspnsblForRpt.deleter
+	def NttyRspnsblForRpt(self):
+		del self._NttyRspnsblForRpt
+		self._NttyRspnsblForRpt = None
 
 	@property
 	def OthrCtrPty(self):
@@ -45,19 +58,6 @@ class TradeTransactionIdentification19(base_types._BaseFieldType):
 	def OthrCtrPty(self):
 		del self._OthrCtrPty
 		self._OthrCtrPty = None
-
-	@property
-	def NttyRspnsblForRpt(self):
-		return self._NttyRspnsblForRpt
-
-	@NttyRspnsblForRpt.setter
-	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
-
-	@NttyRspnsblForRpt.deleter
-	def NttyRspnsblForRpt(self):
-		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
 
 	@property
 	def RptgCtrPty(self):
@@ -86,25 +86,25 @@ class TradeTransactionIdentification19(base_types._BaseFieldType):
 		self._TrptyAgt = None
 
 	@property
-	def AgtLndr(self):
-		return self._AgtLndr
+	def UnqTradIdr(self):
+		return self._UnqTradIdr
 
-	@AgtLndr.setter
-	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+	@UnqTradIdr.setter
+	def UnqTradIdr(self, value):
+		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
 
-	@AgtLndr.deleter
-	def AgtLndr(self):
-		del self._AgtLndr
-		self._AgtLndr = None
+	@UnqTradIdr.deleter
+	def UnqTradIdr(self):
+		del self._UnqTradIdr
+		self._UnqTradIdr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

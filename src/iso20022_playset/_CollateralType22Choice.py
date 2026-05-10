@@ -1,10 +1,10 @@
 from . import base_types
-from ._GeneralCollateral4 import GeneralCollateral4
 from ._SpecificCollateral3 import SpecificCollateral3
+from ._GeneralCollateral4 import GeneralCollateral4
 
 class CollateralType22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlColl", "_SpcfcColl"]
+	__slots__ = ["_SpcfcColl", "_GnlColl"]
 	@property
 	def GnlColl(self):
 		return self._GnlColl

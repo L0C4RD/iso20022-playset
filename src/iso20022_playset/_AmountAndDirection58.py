@@ -1,24 +1,11 @@
 from . import base_types
 from ._RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
-from ._CreditDebitCode import CreditDebitCode
 from ._ForeignExchangeTerms27 import ForeignExchangeTerms27
+from ._CreditDebitCode import CreditDebitCode
 
 class AmountAndDirection58(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCcyAndOrdrdAmt", "_Amt", "_FXDtls", "_CdtDbtInd"]
-	@property
-	def OrgnlCcyAndOrdrdAmt(self):
-		return self._OrgnlCcyAndOrdrdAmt
-
-	@OrgnlCcyAndOrdrdAmt.setter
-	def OrgnlCcyAndOrdrdAmt(self, value):
-		self._OrgnlCcyAndOrdrdAmt = value if type(value) != base_types.auto else self.make_default("OrgnlCcyAndOrdrdAmt")
-
-	@OrgnlCcyAndOrdrdAmt.deleter
-	def OrgnlCcyAndOrdrdAmt(self):
-		del self._OrgnlCcyAndOrdrdAmt
-		self._OrgnlCcyAndOrdrdAmt = None
-
+	__slots__ = ["_CdtDbtInd", "_Amt", "_OrgnlCcyAndOrdrdAmt", "_FXDtls"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,6 +18,19 @@ class AmountAndDirection58(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def FXDtls(self):
@@ -46,22 +46,22 @@ class AmountAndDirection58(base_types._BaseFieldType):
 		self._FXDtls = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def OrgnlCcyAndOrdrdAmt(self):
+		return self._OrgnlCcyAndOrdrdAmt
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+	@OrgnlCcyAndOrdrdAmt.setter
+	def OrgnlCcyAndOrdrdAmt(self, value):
+		self._OrgnlCcyAndOrdrdAmt = value if type(value) != base_types.auto else self.make_default("OrgnlCcyAndOrdrdAmt")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@OrgnlCcyAndOrdrdAmt.deleter
+	def OrgnlCcyAndOrdrdAmt(self):
+		del self._OrgnlCcyAndOrdrdAmt
+		self._OrgnlCcyAndOrdrdAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=RestrictedFINActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms27, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=RestrictedFINActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -4,7 +4,7 @@ from ._DecimalNumber import DecimalNumber
 
 class NumberAndSumOfTransactions1(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfNtries", "_Sum"]
+	__slots__ = ["_Sum", "_NbOfNtries"]
 	@property
 	def NbOfNtries(self):
 		return self._NbOfNtries

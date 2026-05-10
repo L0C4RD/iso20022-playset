@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader9 import MessageHeader9
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionQuery8 import TransactionQuery8
 
 class GetTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_TxQryDef"]
+	__slots__ = ["_TxQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

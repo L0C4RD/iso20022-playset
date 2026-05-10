@@ -1,6 +1,6 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._ConsentOrRejectionReason5Choice import ConsentOrRejectionReason5Choice
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 
 class ConsentReason5(base_types._BaseFieldType):
 

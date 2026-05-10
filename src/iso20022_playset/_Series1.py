@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DateFormat42Choice import DateFormat42Choice
+from ._Max35Text import Max35Text
 
 class Series1(base_types._BaseFieldType):
 

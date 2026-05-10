@@ -1,43 +1,43 @@
 from . import base_types
-from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
-from ._MarginCollateralReport5 import MarginCollateralReport5
-from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
-from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
-from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._TechnicalAttributes6 import TechnicalAttributes6
-from ._SupplementaryData1 import SupplementaryData1
 from ._ISODate import ISODate
+from ._SupplementaryData1 import SupplementaryData1
+from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
+from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
+from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
+from ._TechnicalAttributes6 import TechnicalAttributes6
 from ._ISODateTime import ISODateTime
+from ._MarginCollateralReport5 import MarginCollateralReport5
 
 class MarginReportData9(base_types._BaseFieldType):
 
-	__slots__ = ["_PstdMrgnOrColl", "_TxId", "_CtrPtyRatgThrshldInd", "_Coll", "_RcvdMrgnOrColl", "_RptgTmStmp", "_TechAttrbts", "_CtrPtyId", "_SplmtryData", "_CtrPtyRatgTrggrInd", "_EvtDt"]
+	__slots__ = ["_EvtDt", "_RptgTmStmp", "_TxId", "_SplmtryData", "_PstdMrgnOrColl", "_Coll", "_CtrPtyId", "_TechAttrbts", "_CtrPtyRatgTrggrInd", "_RcvdMrgnOrColl", "_CtrPtyRatgThrshldInd"]
 	@property
-	def PstdMrgnOrColl(self):
-		return self._PstdMrgnOrColl
+	def Coll(self):
+		return self._Coll
 
-	@PstdMrgnOrColl.setter
-	def PstdMrgnOrColl(self, value):
-		self._PstdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("PstdMrgnOrColl")
+	@Coll.setter
+	def Coll(self, value):
+		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
 
-	@PstdMrgnOrColl.deleter
-	def PstdMrgnOrColl(self):
-		del self._PstdMrgnOrColl
-		self._PstdMrgnOrColl = None
+	@Coll.deleter
+	def Coll(self):
+		del self._Coll
+		self._Coll = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def CtrPtyId(self):
+		return self._CtrPtyId
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
 
 	@property
 	def CtrPtyRatgThrshldInd(self):
@@ -53,17 +53,43 @@ class MarginReportData9(base_types._BaseFieldType):
 		self._CtrPtyRatgThrshldInd = None
 
 	@property
-	def Coll(self):
-		return self._Coll
+	def CtrPtyRatgTrggrInd(self):
+		return self._CtrPtyRatgTrggrInd
 
-	@Coll.setter
-	def Coll(self, value):
-		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
+	@CtrPtyRatgTrggrInd.setter
+	def CtrPtyRatgTrggrInd(self, value):
+		self._CtrPtyRatgTrggrInd = value if type(value) != base_types.auto else self.make_default("CtrPtyRatgTrggrInd")
 
-	@Coll.deleter
-	def Coll(self):
-		del self._Coll
-		self._Coll = None
+	@CtrPtyRatgTrggrInd.deleter
+	def CtrPtyRatgTrggrInd(self):
+		del self._CtrPtyRatgTrggrInd
+		self._CtrPtyRatgTrggrInd = None
+
+	@property
+	def EvtDt(self):
+		return self._EvtDt
+
+	@EvtDt.setter
+	def EvtDt(self, value):
+		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
+
+	@EvtDt.deleter
+	def EvtDt(self):
+		del self._EvtDt
+		self._EvtDt = None
+
+	@property
+	def PstdMrgnOrColl(self):
+		return self._PstdMrgnOrColl
+
+	@PstdMrgnOrColl.setter
+	def PstdMrgnOrColl(self, value):
+		self._PstdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("PstdMrgnOrColl")
+
+	@PstdMrgnOrColl.deleter
+	def PstdMrgnOrColl(self):
+		del self._PstdMrgnOrColl
+		self._PstdMrgnOrColl = None
 
 	@property
 	def RcvdMrgnOrColl(self):
@@ -92,32 +118,6 @@ class MarginReportData9(base_types._BaseFieldType):
 		self._RptgTmStmp = None
 
 	@property
-	def TechAttrbts(self):
-		return self._TechAttrbts
-
-	@TechAttrbts.setter
-	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
-
-	@TechAttrbts.deleter
-	def TechAttrbts(self):
-		del self._TechAttrbts
-		self._TechAttrbts = None
-
-	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
-
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
-
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -131,42 +131,42 @@ class MarginReportData9(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def CtrPtyRatgTrggrInd(self):
-		return self._CtrPtyRatgTrggrInd
+	def TechAttrbts(self):
+		return self._TechAttrbts
 
-	@CtrPtyRatgTrggrInd.setter
-	def CtrPtyRatgTrggrInd(self, value):
-		self._CtrPtyRatgTrggrInd = value if type(value) != base_types.auto else self.make_default("CtrPtyRatgTrggrInd")
+	@TechAttrbts.setter
+	def TechAttrbts(self, value):
+		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
 
-	@CtrPtyRatgTrggrInd.deleter
-	def CtrPtyRatgTrggrInd(self):
-		del self._CtrPtyRatgTrggrInd
-		self._CtrPtyRatgTrggrInd = None
+	@TechAttrbts.deleter
+	def TechAttrbts(self):
+		del self._TechAttrbts
+		self._TechAttrbts = None
 
 	@property
-	def EvtDt(self):
-		return self._EvtDt
+	def TxId(self):
+		return self._TxId
 
-	@EvtDt.setter
-	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@EvtDt.deleter
-	def EvtDt(self):
-		del self._EvtDt
-		self._EvtDt = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstdMrgnOrColl', type=PostedMarginOrCollateral6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=UniqueTransactionIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyRatgThrshldInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Coll', type=MarginCollateralReport5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvdMrgnOrColl', type=ReceivedMarginOrCollateral6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyId', type=TradeCounterpartyReport20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrPtyRatgThrshldInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRatgTrggrInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstdMrgnOrColl', type=PostedMarginOrCollateral6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvdMrgnOrColl', type=ReceivedMarginOrCollateral6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=UniqueTransactionIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

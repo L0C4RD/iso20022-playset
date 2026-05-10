@@ -1,24 +1,11 @@
 from . import base_types
-from ._AttendanceAdmissionConditions2 import AttendanceAdmissionConditions2
 from ._Max350Text import Max350Text
 from ._DateFormat58Choice import DateFormat58Choice
+from ._AttendanceAdmissionConditions2 import AttendanceAdmissionConditions2
 
 class Attendance2(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfMktDdln", "_AdmssnConds", "_ConfInf", "_ConfDdln"]
-	@property
-	def ConfMktDdln(self):
-		return self._ConfMktDdln
-
-	@ConfMktDdln.setter
-	def ConfMktDdln(self, value):
-		self._ConfMktDdln = value if type(value) != base_types.auto else self.make_default("ConfMktDdln")
-
-	@ConfMktDdln.deleter
-	def ConfMktDdln(self):
-		del self._ConfMktDdln
-		self._ConfMktDdln = None
-
+	__slots__ = ["_ConfInf", "_AdmssnConds", "_ConfDdln", "_ConfMktDdln"]
 	@property
 	def AdmssnConds(self):
 		return self._AdmssnConds
@@ -31,6 +18,19 @@ class Attendance2(base_types._BaseFieldType):
 	def AdmssnConds(self):
 		del self._AdmssnConds
 		self._AdmssnConds = None
+
+	@property
+	def ConfDdln(self):
+		return self._ConfDdln
+
+	@ConfDdln.setter
+	def ConfDdln(self, value):
+		self._ConfDdln = value if type(value) != base_types.auto else self.make_default("ConfDdln")
+
+	@ConfDdln.deleter
+	def ConfDdln(self):
+		del self._ConfDdln
+		self._ConfDdln = None
 
 	@property
 	def ConfInf(self):
@@ -46,22 +46,22 @@ class Attendance2(base_types._BaseFieldType):
 		self._ConfInf = None
 
 	@property
-	def ConfDdln(self):
-		return self._ConfDdln
+	def ConfMktDdln(self):
+		return self._ConfMktDdln
 
-	@ConfDdln.setter
-	def ConfDdln(self, value):
-		self._ConfDdln = value if type(value) != base_types.auto else self.make_default("ConfDdln")
+	@ConfMktDdln.setter
+	def ConfMktDdln(self, value):
+		self._ConfMktDdln = value if type(value) != base_types.auto else self.make_default("ConfMktDdln")
 
-	@ConfDdln.deleter
-	def ConfDdln(self):
-		del self._ConfDdln
-		self._ConfDdln = None
+	@ConfMktDdln.deleter
+	def ConfMktDdln(self):
+		del self._ConfMktDdln
+		self._ConfMktDdln = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdmssnConds', type=AttendanceAdmissionConditions2, min=0, max=7, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ConfInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

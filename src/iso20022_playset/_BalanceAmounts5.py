@@ -3,33 +3,7 @@ from ._AmountAndDirection14 import AmountAndDirection14
 
 class BalanceAmounts5(base_types._BaseFieldType):
 
-	__slots__ = ["_UrlsdGnLoss", "_PrvsHldgVal", "_AcrdIntrstAmt", "_HldgVal", "_BookVal"]
-	@property
-	def UrlsdGnLoss(self):
-		return self._UrlsdGnLoss
-
-	@UrlsdGnLoss.setter
-	def UrlsdGnLoss(self, value):
-		self._UrlsdGnLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnLoss")
-
-	@UrlsdGnLoss.deleter
-	def UrlsdGnLoss(self):
-		del self._UrlsdGnLoss
-		self._UrlsdGnLoss = None
-
-	@property
-	def PrvsHldgVal(self):
-		return self._PrvsHldgVal
-
-	@PrvsHldgVal.setter
-	def PrvsHldgVal(self, value):
-		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
-
-	@PrvsHldgVal.deleter
-	def PrvsHldgVal(self):
-		del self._PrvsHldgVal
-		self._PrvsHldgVal = None
-
+	__slots__ = ["_AcrdIntrstAmt", "_HldgVal", "_UrlsdGnLoss", "_PrvsHldgVal", "_BookVal"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt
@@ -42,6 +16,19 @@ class BalanceAmounts5(base_types._BaseFieldType):
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
 		self._AcrdIntrstAmt = None
+
+	@property
+	def BookVal(self):
+		return self._BookVal
+
+	@BookVal.setter
+	def BookVal(self, value):
+		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+
+	@BookVal.deleter
+	def BookVal(self):
+		del self._BookVal
+		self._BookVal = None
 
 	@property
 	def HldgVal(self):
@@ -57,23 +44,36 @@ class BalanceAmounts5(base_types._BaseFieldType):
 		self._HldgVal = None
 
 	@property
-	def BookVal(self):
-		return self._BookVal
+	def PrvsHldgVal(self):
+		return self._PrvsHldgVal
 
-	@BookVal.setter
-	def BookVal(self, value):
-		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+	@PrvsHldgVal.setter
+	def PrvsHldgVal(self, value):
+		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
 
-	@BookVal.deleter
-	def BookVal(self):
-		del self._BookVal
-		self._BookVal = None
+	@PrvsHldgVal.deleter
+	def PrvsHldgVal(self):
+		del self._PrvsHldgVal
+		self._PrvsHldgVal = None
+
+	@property
+	def UrlsdGnLoss(self):
+		return self._UrlsdGnLoss
+
+	@UrlsdGnLoss.setter
+	def UrlsdGnLoss(self, value):
+		self._UrlsdGnLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnLoss")
+
+	@UrlsdGnLoss.deleter
+	def UrlsdGnLoss(self):
+		del self._UrlsdGnLoss
+		self._UrlsdGnLoss = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 	))
 

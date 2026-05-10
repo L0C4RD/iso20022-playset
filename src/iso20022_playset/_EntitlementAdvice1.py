@@ -1,24 +1,24 @@
 from . import base_types
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._Entitlement1 import Entitlement1
 from ._Exact3NumericText import Exact3NumericText
+from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._DateFormat4Choice import DateFormat4Choice
+from ._Entitlement1 import Entitlement1
 
 class EntitlementAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_OptnNb", "_RcrdDt", "_OptnTp", "_AcctAndDstrbtnDtls"]
+	__slots__ = ["_RcrdDt", "_AcctAndDstrbtnDtls", "_OptnTp", "_OptnNb", "_PmtDt"]
 	@property
-	def PmtDt(self):
-		return self._PmtDt
+	def AcctAndDstrbtnDtls(self):
+		return self._AcctAndDstrbtnDtls
 
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+	@AcctAndDstrbtnDtls.setter
+	def AcctAndDstrbtnDtls(self, value):
+		self._AcctAndDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("AcctAndDstrbtnDtls")
 
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
+	@AcctAndDstrbtnDtls.deleter
+	def AcctAndDstrbtnDtls(self):
+		del self._AcctAndDstrbtnDtls
+		self._AcctAndDstrbtnDtls = None
 
 	@property
 	def OptnNb(self):
@@ -34,19 +34,6 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 		self._OptnNb = None
 
 	@property
-	def RcrdDt(self):
-		return self._RcrdDt
-
-	@RcrdDt.setter
-	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
-
-	@RcrdDt.deleter
-	def RcrdDt(self):
-		del self._RcrdDt
-		self._RcrdDt = None
-
-	@property
 	def OptnTp(self):
 		return self._OptnTp
 
@@ -60,23 +47,36 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 		self._OptnTp = None
 
 	@property
-	def AcctAndDstrbtnDtls(self):
-		return self._AcctAndDstrbtnDtls
+	def PmtDt(self):
+		return self._PmtDt
 
-	@AcctAndDstrbtnDtls.setter
-	def AcctAndDstrbtnDtls(self, value):
-		self._AcctAndDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("AcctAndDstrbtnDtls")
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
 
-	@AcctAndDstrbtnDtls.deleter
-	def AcctAndDstrbtnDtls(self):
-		del self._AcctAndDstrbtnDtls
-		self._AcctAndDstrbtnDtls = None
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
+
+	@property
+	def RcrdDt(self):
+		return self._RcrdDt
+
+	@RcrdDt.setter
+	def RcrdDt(self, value):
+		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
+
+	@RcrdDt.deleter
+	def RcrdDt(self):
+		del self._RcrdDt
+		self._RcrdDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctAndDstrbtnDtls', type=Entitlement1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

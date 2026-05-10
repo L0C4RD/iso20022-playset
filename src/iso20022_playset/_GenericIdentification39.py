@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINMax30Text import RestrictedFINMax30Text
 from ._RestrictedFINMax8Text import RestrictedFINMax8Text
+from ._RestrictedFINMax30Text import RestrictedFINMax30Text
 
 class GenericIdentification39(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr"]
+	__slots__ = ["_Issr", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

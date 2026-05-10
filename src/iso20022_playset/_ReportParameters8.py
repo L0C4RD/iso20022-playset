@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max35Text import Max35Text
 
 class ReportParameters8(base_types._BaseFieldType):
 
-	__slots__ = ["_RptId", "_RptDtAndTm"]
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
-
+	__slots__ = ["_RptDtAndTm", "_RptId"]
 	@property
 	def RptDtAndTm(self):
 		return self._RptDtAndTm
@@ -31,8 +18,21 @@ class ReportParameters8(base_types._BaseFieldType):
 		del self._RptDtAndTm
 		self._RptDtAndTm = None
 
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

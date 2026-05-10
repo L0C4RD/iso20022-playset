@@ -1,11 +1,24 @@
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._DocumentType7Code import DocumentType7Code
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._DocumentType7Code import DocumentType7Code
+from ._ActionMessage11 import ActionMessage11
 
 class PaymentReceipt6(base_types._BaseFieldType):
 
-	__slots__ = ["_IntgrtdPrtFlg", "_OutptCntt", "_ReqrdSgntrFlg", "_DocQlfr"]
+	__slots__ = ["_IntgrtdPrtFlg", "_DocQlfr", "_ReqrdSgntrFlg", "_OutptCntt"]
+	@property
+	def DocQlfr(self):
+		return self._DocQlfr
+
+	@DocQlfr.setter
+	def DocQlfr(self, value):
+		self._DocQlfr = value if type(value) != base_types.auto else self.make_default("DocQlfr")
+
+	@DocQlfr.deleter
+	def DocQlfr(self):
+		del self._DocQlfr
+		self._DocQlfr = None
+
 	@property
 	def IntgrtdPrtFlg(self):
 		return self._IntgrtdPrtFlg
@@ -45,23 +58,10 @@ class PaymentReceipt6(base_types._BaseFieldType):
 		del self._ReqrdSgntrFlg
 		self._ReqrdSgntrFlg = None
 
-	@property
-	def DocQlfr(self):
-		return self._DocQlfr
-
-	@DocQlfr.setter
-	def DocQlfr(self, value):
-		self._DocQlfr = value if type(value) != base_types.auto else self.make_default("DocQlfr")
-
-	@DocQlfr.deleter
-	def DocQlfr(self):
-		del self._DocQlfr
-		self._DocQlfr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DocQlfr', type=DocumentType7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntgrtdPrtFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptCntt', type=ActionMessage11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqrdSgntrFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocQlfr', type=DocumentType7Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

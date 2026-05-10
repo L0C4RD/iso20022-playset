@@ -1,13 +1,13 @@
 from . import base_types
-from ._CurrencyControlRecordStatus3 import CurrencyControlRecordStatus3
 from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from ._Max35Text import Max35Text
+from ._CurrencyControlRecordStatus3 import CurrencyControlRecordStatus3
 from ._ValidationStatusReason3 import ValidationStatusReason3
+from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
 
 class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_PackgId", "_Sts", "_StsDtTm", "_StsRsn", "_RcrdSts"]
+	__slots__ = ["_PackgId", "_StsRsn", "_StsDtTm", "_RcrdSts", "_Sts"]
 	@property
 	def PackgId(self):
 		return self._PackgId
@@ -20,6 +20,19 @@ class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 	def PackgId(self):
 		del self._PackgId
 		self._PackgId = None
+
+	@property
+	def RcrdSts(self):
+		return self._RcrdSts
+
+	@RcrdSts.setter
+	def RcrdSts(self, value):
+		self._RcrdSts = value if type(value) != base_types.auto else self.make_default("RcrdSts")
+
+	@RcrdSts.deleter
+	def RcrdSts(self):
+		del self._RcrdSts
+		self._RcrdSts = None
 
 	@property
 	def Sts(self):
@@ -60,24 +73,11 @@ class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 		del self._StsRsn
 		self._StsRsn = None
 
-	@property
-	def RcrdSts(self):
-		return self._RcrdSts
-
-	@RcrdSts.setter
-	def RcrdSts(self, value):
-		self._RcrdSts = value if type(value) != base_types.auto else self.make_default("RcrdSts")
-
-	@RcrdSts.deleter
-	def RcrdSts(self):
-		del self._RcrdSts
-		self._RcrdSts = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PackgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdSts', type=CurrencyControlRecordStatus3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RcrdSts', type=CurrencyControlRecordStatus3, min=0, max=None, mutex_group=None, array=True),
 	))
 

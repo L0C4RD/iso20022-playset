@@ -1,23 +1,23 @@
 from . import base_types
 from ._AmountAndDirection106 import AmountAndDirection106
-from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
 
 class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnTmStmp", "_ValtnAmt", "_TxId"]
+	__slots__ = ["_ValtnAmt", "_ValtnTmStmp", "_TxId"]
 	@property
-	def ValtnTmStmp(self):
-		return self._ValtnTmStmp
+	def TxId(self):
+		return self._TxId
 
-	@ValtnTmStmp.setter
-	def ValtnTmStmp(self, value):
-		self._ValtnTmStmp = value if type(value) != base_types.auto else self.make_default("ValtnTmStmp")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@ValtnTmStmp.deleter
-	def ValtnTmStmp(self):
-		del self._ValtnTmStmp
-		self._ValtnTmStmp = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def ValtnAmt(self):
@@ -33,21 +33,21 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 		self._ValtnAmt = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def ValtnTmStmp(self):
+		return self._ValtnTmStmp
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@ValtnTmStmp.setter
+	def ValtnTmStmp(self, value):
+		self._ValtnTmStmp = value if type(value) != base_types.auto else self.make_default("ValtnTmStmp")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@ValtnTmStmp.deleter
+	def ValtnTmStmp(self):
+		del self._ValtnTmStmp
+		self._ValtnTmStmp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

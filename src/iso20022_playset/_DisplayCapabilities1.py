@@ -1,6 +1,6 @@
 from . import base_types
-from ._UserInterface2Code import UserInterface2Code
 from ._Max3NumericText import Max3NumericText
+from ._UserInterface2Code import UserInterface2Code
 
 class DisplayCapabilities1(base_types._BaseFieldType):
 

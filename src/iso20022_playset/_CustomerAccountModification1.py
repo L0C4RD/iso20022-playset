@@ -1,45 +1,19 @@
 from . import base_types
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._NumberModification1 import NumberModification1
+from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._NameModification1 import NameModification1
 from ._AccountStatusModification1 import AccountStatusModification1
-from ._RestrictionModification1 import RestrictionModification1
-from ._TypeModification1 import TypeModification1
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._DateModification1 import DateModification1
-from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._PurposeModification1 import PurposeModification1
-from ._StatementFrequencyAndFormModification1 import StatementFrequencyAndFormModification1
-from ._NumberModification1 import NumberModification1
 from ._AmountModification1 import AmountModification1
+from ._RestrictionModification1 import RestrictionModification1
+from ._DateModification1 import DateModification1
+from ._TypeModification1 import TypeModification1
+from ._StatementFrequencyAndFormModification1 import StatementFrequencyAndFormModification1
 
 class CustomerAccountModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rstrctn", "_MnthlyTxNb", "_AcctPurp", "_Ccy", "_Tp", "_Nm", "_Sts", "_StmtFrqcyAndFrmt", "_Id", "_MnthlyPmtVal", "_MnthlyRcvdVal", "_ClsgDt", "_FlrNtfctnAmt", "_ClngNtfctnAmt", "_AvrgBal"]
-	@property
-	def Rstrctn(self):
-		return self._Rstrctn
-
-	@Rstrctn.setter
-	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != base_types.auto else self.make_default("Rstrctn")
-
-	@Rstrctn.deleter
-	def Rstrctn(self):
-		del self._Rstrctn
-		self._Rstrctn = None
-
-	@property
-	def MnthlyTxNb(self):
-		return self._MnthlyTxNb
-
-	@MnthlyTxNb.setter
-	def MnthlyTxNb(self, value):
-		self._MnthlyTxNb = value if type(value) != base_types.auto else self.make_default("MnthlyTxNb")
-
-	@MnthlyTxNb.deleter
-	def MnthlyTxNb(self):
-		del self._MnthlyTxNb
-		self._MnthlyTxNb = None
-
+	__slots__ = ["_Tp", "_MnthlyPmtVal", "_Ccy", "_ClngNtfctnAmt", "_FlrNtfctnAmt", "_StmtFrqcyAndFrmt", "_Rstrctn", "_Nm", "_Id", "_MnthlyTxNb", "_AvrgBal", "_AcctPurp", "_MnthlyRcvdVal", "_Sts", "_ClsgDt"]
 	@property
 	def AcctPurp(self):
 		return self._AcctPurp
@@ -52,6 +26,19 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 	def AcctPurp(self):
 		del self._AcctPurp
 		self._AcctPurp = None
+
+	@property
+	def AvrgBal(self):
+		return self._AvrgBal
+
+	@AvrgBal.setter
+	def AvrgBal(self, value):
+		self._AvrgBal = value if type(value) != base_types.auto else self.make_default("AvrgBal")
+
+	@AvrgBal.deleter
+	def AvrgBal(self):
+		del self._AvrgBal
+		self._AvrgBal = None
 
 	@property
 	def Ccy(self):
@@ -67,56 +54,43 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def ClngNtfctnAmt(self):
+		return self._ClngNtfctnAmt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@ClngNtfctnAmt.setter
+	def ClngNtfctnAmt(self, value):
+		self._ClngNtfctnAmt = value if type(value) != base_types.auto else self.make_default("ClngNtfctnAmt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@ClngNtfctnAmt.deleter
+	def ClngNtfctnAmt(self):
+		del self._ClngNtfctnAmt
+		self._ClngNtfctnAmt = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def ClsgDt(self):
+		return self._ClsgDt
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
 
 	@property
-	def StmtFrqcyAndFrmt(self):
-		return self._StmtFrqcyAndFrmt
+	def FlrNtfctnAmt(self):
+		return self._FlrNtfctnAmt
 
-	@StmtFrqcyAndFrmt.setter
-	def StmtFrqcyAndFrmt(self, value):
-		self._StmtFrqcyAndFrmt = value if type(value) != base_types.auto else self.make_default("StmtFrqcyAndFrmt")
+	@FlrNtfctnAmt.setter
+	def FlrNtfctnAmt(self, value):
+		self._FlrNtfctnAmt = value if type(value) != base_types.auto else self.make_default("FlrNtfctnAmt")
 
-	@StmtFrqcyAndFrmt.deleter
-	def StmtFrqcyAndFrmt(self):
-		del self._StmtFrqcyAndFrmt
-		self._StmtFrqcyAndFrmt = None
+	@FlrNtfctnAmt.deleter
+	def FlrNtfctnAmt(self):
+		del self._FlrNtfctnAmt
+		self._FlrNtfctnAmt = None
 
 	@property
 	def Id(self):
@@ -158,72 +132,98 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 		self._MnthlyRcvdVal = None
 
 	@property
-	def ClsgDt(self):
-		return self._ClsgDt
+	def MnthlyTxNb(self):
+		return self._MnthlyTxNb
 
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+	@MnthlyTxNb.setter
+	def MnthlyTxNb(self, value):
+		self._MnthlyTxNb = value if type(value) != base_types.auto else self.make_default("MnthlyTxNb")
 
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
-
-	@property
-	def FlrNtfctnAmt(self):
-		return self._FlrNtfctnAmt
-
-	@FlrNtfctnAmt.setter
-	def FlrNtfctnAmt(self, value):
-		self._FlrNtfctnAmt = value if type(value) != base_types.auto else self.make_default("FlrNtfctnAmt")
-
-	@FlrNtfctnAmt.deleter
-	def FlrNtfctnAmt(self):
-		del self._FlrNtfctnAmt
-		self._FlrNtfctnAmt = None
+	@MnthlyTxNb.deleter
+	def MnthlyTxNb(self):
+		del self._MnthlyTxNb
+		self._MnthlyTxNb = None
 
 	@property
-	def ClngNtfctnAmt(self):
-		return self._ClngNtfctnAmt
+	def Nm(self):
+		return self._Nm
 
-	@ClngNtfctnAmt.setter
-	def ClngNtfctnAmt(self, value):
-		self._ClngNtfctnAmt = value if type(value) != base_types.auto else self.make_default("ClngNtfctnAmt")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@ClngNtfctnAmt.deleter
-	def ClngNtfctnAmt(self):
-		del self._ClngNtfctnAmt
-		self._ClngNtfctnAmt = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
-	def AvrgBal(self):
-		return self._AvrgBal
+	def Rstrctn(self):
+		return self._Rstrctn
 
-	@AvrgBal.setter
-	def AvrgBal(self, value):
-		self._AvrgBal = value if type(value) != base_types.auto else self.make_default("AvrgBal")
+	@Rstrctn.setter
+	def Rstrctn(self, value):
+		self._Rstrctn = value if type(value) != base_types.auto else self.make_default("Rstrctn")
 
-	@AvrgBal.deleter
-	def AvrgBal(self):
-		del self._AvrgBal
-		self._AvrgBal = None
+	@Rstrctn.deleter
+	def Rstrctn(self):
+		del self._Rstrctn
+		self._Rstrctn = None
+
+	@property
+	def StmtFrqcyAndFrmt(self):
+		return self._StmtFrqcyAndFrmt
+
+	@StmtFrqcyAndFrmt.setter
+	def StmtFrqcyAndFrmt(self, value):
+		self._StmtFrqcyAndFrmt = value if type(value) != base_types.auto else self.make_default("StmtFrqcyAndFrmt")
+
+	@StmtFrqcyAndFrmt.deleter
+	def StmtFrqcyAndFrmt(self):
+		del self._StmtFrqcyAndFrmt
+		self._StmtFrqcyAndFrmt = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rstrctn', type=RestrictionModification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MnthlyTxNb', type=NumberModification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctPurp', type=PurposeModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvrgBal', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeModification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=NameModification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=AccountStatusModification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtFrqcyAndFrmt', type=StatementFrequencyAndFormModification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClngNtfctnAmt', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=DateModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlrNtfctnAmt', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MnthlyPmtVal', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnthlyRcvdVal', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=DateModification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FlrNtfctnAmt', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClngNtfctnAmt', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvrgBal', type=AmountModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MnthlyTxNb', type=NumberModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=NameModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rstrctn', type=RestrictionModification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtFrqcyAndFrmt', type=StatementFrequencyAndFormModification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=AccountStatusModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeModification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

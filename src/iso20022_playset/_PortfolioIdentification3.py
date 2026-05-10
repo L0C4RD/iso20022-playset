@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max52Text import Max52Text
 
 class PortfolioIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_PrtflTxXmptn"]
+	__slots__ = ["_PrtflTxXmptn", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

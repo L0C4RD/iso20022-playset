@@ -1,24 +1,11 @@
 from . import base_types
 from ._PendingStatus69Choice import PendingStatus69Choice
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 from ._FailingStatus14Choice import FailingStatus14Choice
+from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 
 class SettlementStatus31Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Flng", "_Pdg"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_Flng", "_Pdg", "_Prtry"]
 	@property
 	def Flng(self):
 		return self._Flng
@@ -45,9 +32,22 @@ class SettlementStatus31Choice(base_types._BaseFieldType):
 		del self._Pdg
 		self._Pdg = None
 
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Flng', type=FailingStatus14Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=PendingStatus69Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 	))
 

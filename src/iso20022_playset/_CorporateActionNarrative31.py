@@ -3,7 +3,7 @@ from ._Max350Text import Max350Text
 
 class CorporateActionNarrative31(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlTxt", "_PtyCtctNrrtv", "_TaxtnConds", "_NrrtvVrsn"]
+	__slots__ = ["_AddtlTxt", "_PtyCtctNrrtv", "_NrrtvVrsn", "_TaxtnConds"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt
@@ -16,6 +16,19 @@ class CorporateActionNarrative31(base_types._BaseFieldType):
 	def AddtlTxt(self):
 		del self._AddtlTxt
 		self._AddtlTxt = None
+
+	@property
+	def NrrtvVrsn(self):
+		return self._NrrtvVrsn
+
+	@NrrtvVrsn.setter
+	def NrrtvVrsn(self, value):
+		self._NrrtvVrsn = value if type(value) != base_types.auto else self.make_default("NrrtvVrsn")
+
+	@NrrtvVrsn.deleter
+	def NrrtvVrsn(self):
+		del self._NrrtvVrsn
+		self._NrrtvVrsn = None
 
 	@property
 	def PtyCtctNrrtv(self):
@@ -43,23 +56,10 @@ class CorporateActionNarrative31(base_types._BaseFieldType):
 		del self._TaxtnConds
 		self._TaxtnConds = None
 
-	@property
-	def NrrtvVrsn(self):
-		return self._NrrtvVrsn
-
-	@NrrtvVrsn.setter
-	def NrrtvVrsn(self, value):
-		self._NrrtvVrsn = value if type(value) != base_types.auto else self.make_default("NrrtvVrsn")
-
-	@NrrtvVrsn.deleter
-	def NrrtvVrsn(self):
-		del self._NrrtvVrsn
-		self._NrrtvVrsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NrrtvVrsn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyCtctNrrtv', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NrrtvVrsn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

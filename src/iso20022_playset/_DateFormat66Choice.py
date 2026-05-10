@@ -6,19 +6,6 @@ class DateFormat66Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_DtCd", "_Dt"]
 	@property
-	def DtCd(self):
-		return self._DtCd
-
-	@DtCd.setter
-	def DtCd(self, value):
-		self._DtCd = value if type(value) != base_types.auto else self.make_default("DtCd")
-
-	@DtCd.deleter
-	def DtCd(self):
-		del self._DtCd
-		self._DtCd = None
-
-	@property
 	def Dt(self):
 		return self._Dt
 
@@ -31,8 +18,21 @@ class DateFormat66Choice(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def DtCd(self):
+		return self._DtCd
+
+	@DtCd.setter
+	def DtCd(self, value):
+		self._DtCd = value if type(value) != base_types.auto else self.make_default("DtCd")
+
+	@DtCd.deleter
+	def DtCd(self):
+		del self._DtCd
+		self._DtCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtCd', type=DateCode20Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtCd', type=DateCode20Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

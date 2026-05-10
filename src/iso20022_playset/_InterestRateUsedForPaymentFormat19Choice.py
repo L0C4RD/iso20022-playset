@@ -1,23 +1,23 @@
 from . import base_types
-from ._Percentage14Rate import Percentage14Rate
 from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._Percentage14Rate import Percentage14Rate
 from ._RateTypeAndAmountAndStatus32 import RateTypeAndAmountAndStatus32
 
 class InterestRateUsedForPaymentFormat19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RateTpAndAmtAndRateSts", "_Rate", "_Amt"]
+	__slots__ = ["_Rate", "_Amt", "_RateTpAndAmtAndRateSts"]
 	@property
-	def RateTpAndAmtAndRateSts(self):
-		return self._RateTpAndAmtAndRateSts
+	def Amt(self):
+		return self._Amt
 
-	@RateTpAndAmtAndRateSts.setter
-	def RateTpAndAmtAndRateSts(self, value):
-		self._RateTpAndAmtAndRateSts = value if type(value) != base_types.auto else self.make_default("RateTpAndAmtAndRateSts")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@RateTpAndAmtAndRateSts.deleter
-	def RateTpAndAmtAndRateSts(self):
-		del self._RateTpAndAmtAndRateSts
-		self._RateTpAndAmtAndRateSts = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Rate(self):
@@ -33,21 +33,21 @@ class InterestRateUsedForPaymentFormat19Choice(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def RateTpAndAmtAndRateSts(self):
+		return self._RateTpAndAmtAndRateSts
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@RateTpAndAmtAndRateSts.setter
+	def RateTpAndAmtAndRateSts(self, value):
+		self._RateTpAndAmtAndRateSts = value if type(value) != base_types.auto else self.make_default("RateTpAndAmtAndRateSts")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@RateTpAndAmtAndRateSts.deleter
+	def RateTpAndAmtAndRateSts(self):
+		del self._RateTpAndAmtAndRateSts
+		self._RateTpAndAmtAndRateSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus32, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus32, min=0, max=1, mutex_group=1, array=False),
 	))
 

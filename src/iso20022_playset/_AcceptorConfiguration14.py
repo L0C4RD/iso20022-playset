@@ -1,11 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._GenericIdentification176 import GenericIdentification176
 from ._AcceptorConfigurationDataSet6 import AcceptorConfigurationDataSet6
+from ._GenericIdentification176 import GenericIdentification176
+from ._Max35Text import Max35Text
 
 class AcceptorConfiguration14(base_types._BaseFieldType):
 
-	__slots__ = ["_POIGrpId", "_TermnlMgrId", "_DataSet"]
+	__slots__ = ["_DataSet", "_TermnlMgrId", "_POIGrpId"]
+	@property
+	def DataSet(self):
+		return self._DataSet
+
+	@DataSet.setter
+	def DataSet(self, value):
+		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
+
+	@DataSet.deleter
+	def DataSet(self):
+		del self._DataSet
+		self._DataSet = None
+
 	@property
 	def POIGrpId(self):
 		return self._POIGrpId
@@ -32,22 +45,9 @@ class AcceptorConfiguration14(base_types._BaseFieldType):
 		del self._TermnlMgrId
 		self._TermnlMgrId = None
 
-	@property
-	def DataSet(self):
-		return self._DataSet
-
-	@DataSet.setter
-	def DataSet(self, value):
-		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
-
-	@DataSet.deleter
-	def DataSet(self):
-		del self._DataSet
-		self._DataSet = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DataSet', type=AcceptorConfigurationDataSet6, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TermnlMgrId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSet', type=AcceptorConfigurationDataSet6, min=1, max=None, mutex_group=None, array=True),
 	))
 

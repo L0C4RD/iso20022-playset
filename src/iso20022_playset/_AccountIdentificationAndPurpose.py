@@ -1,6 +1,6 @@
 from . import base_types
-from ._AccountIdentification1 import AccountIdentification1
 from ._SecuritiesAccountPurposeType1Code import SecuritiesAccountPurposeType1Code
+from ._AccountIdentification1 import AccountIdentification1
 
 class AccountIdentificationAndPurpose(base_types._BaseFieldType):
 

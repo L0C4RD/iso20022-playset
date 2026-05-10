@@ -1,25 +1,25 @@
 from . import base_types
-from ._InterestRateIndexTenor2Code import InterestRateIndexTenor2Code
-from ._Max3NumericText import Max3NumericText
-from ._BenchmarkCurveName13Choice import BenchmarkCurveName13Choice
 from ._CrystallisationDay1 import CrystallisationDay1
+from ._BenchmarkCurveName13Choice import BenchmarkCurveName13Choice
+from ._Max3NumericText import Max3NumericText
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._InterestRateIndexTenor2Code import InterestRateIndexTenor2Code
 
 class RateTypeAndLookback2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CrstllstnDt", "_Tnr", "_Ccy", "_LookBckDays"]
+	__slots__ = ["_LookBckDays", "_Ccy", "_Tnr", "_Tp", "_CrstllstnDt"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Ccy(self):
+		return self._Ccy
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def CrstllstnDt(self):
@@ -35,6 +35,19 @@ class RateTypeAndLookback2(base_types._BaseFieldType):
 		self._CrstllstnDt = None
 
 	@property
+	def LookBckDays(self):
+		return self._LookBckDays
+
+	@LookBckDays.setter
+	def LookBckDays(self, value):
+		self._LookBckDays = value if type(value) != base_types.auto else self.make_default("LookBckDays")
+
+	@LookBckDays.deleter
+	def LookBckDays(self):
+		del self._LookBckDays
+		self._LookBckDays = None
+
+	@property
 	def Tnr(self):
 		return self._Tnr
 
@@ -48,36 +61,23 @@ class RateTypeAndLookback2(base_types._BaseFieldType):
 		self._Tnr = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Tp(self):
+		return self._Tp
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def LookBckDays(self):
-		return self._LookBckDays
-
-	@LookBckDays.setter
-	def LookBckDays(self, value):
-		self._LookBckDays = value if type(value) != base_types.auto else self.make_default("LookBckDays")
-
-	@LookBckDays.deleter
-	def LookBckDays(self):
-		del self._LookBckDays
-		self._LookBckDays = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=BenchmarkCurveName13Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrstllstnDt', type=CrystallisationDay1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tnr', type=InterestRateIndexTenor2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrstllstnDt', type=CrystallisationDay1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LookBckDays', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tnr', type=InterestRateIndexTenor2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=BenchmarkCurveName13Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

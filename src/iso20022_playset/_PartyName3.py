@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
 from ._ISODate import ISODate
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 
 class PartyName3(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_ShrtNm", "_VldFr"]
+	__slots__ = ["_ShrtNm", "_VldFr", "_Nm"]
 	@property
 	def Nm(self):
 		return self._Nm

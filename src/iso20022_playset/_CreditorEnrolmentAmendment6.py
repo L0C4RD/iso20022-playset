@@ -4,7 +4,7 @@ from ._CreditorEnrolment6 import CreditorEnrolment6
 
 class CreditorEnrolmentAmendment6(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtnData", "_CdtrEnrlmnt"]
+	__slots__ = ["_CdtrEnrlmnt", "_ActvtnData"]
 	@property
 	def ActvtnData(self):
 		return self._ActvtnData

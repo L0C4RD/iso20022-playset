@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max52Text import Max52Text
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._ISODateTime import ISODateTime
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class ClearingPartyAndTime14(base_types._BaseFieldType):
 
-	__slots__ = ["_CCP", "_ClrDtTm", "_RptTrckgNb", "_PrtflCd"]
+	__slots__ = ["_CCP", "_PrtflCd", "_RptTrckgNb", "_ClrDtTm"]
 	@property
 	def CCP(self):
 		return self._CCP
@@ -33,19 +33,6 @@ class ClearingPartyAndTime14(base_types._BaseFieldType):
 		self._ClrDtTm = None
 
 	@property
-	def RptTrckgNb(self):
-		return self._RptTrckgNb
-
-	@RptTrckgNb.setter
-	def RptTrckgNb(self, value):
-		self._RptTrckgNb = value if type(value) != base_types.auto else self.make_default("RptTrckgNb")
-
-	@RptTrckgNb.deleter
-	def RptTrckgNb(self):
-		del self._RptTrckgNb
-		self._RptTrckgNb = None
-
-	@property
 	def PrtflCd(self):
 		return self._PrtflCd
 
@@ -58,10 +45,23 @@ class ClearingPartyAndTime14(base_types._BaseFieldType):
 		del self._PrtflCd
 		self._PrtflCd = None
 
+	@property
+	def RptTrckgNb(self):
+		return self._RptTrckgNb
+
+	@RptTrckgNb.setter
+	def RptTrckgNb(self, value):
+		self._RptTrckgNb = value if type(value) != base_types.auto else self.make_default("RptTrckgNb")
+
+	@RptTrckgNb.deleter
+	def RptTrckgNb(self):
+		del self._RptTrckgNb
+		self._RptTrckgNb = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CCP', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptTrckgNb', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtflCd', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptTrckgNb', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

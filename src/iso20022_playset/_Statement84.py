@@ -1,25 +1,25 @@
 from . import base_types
-from ._StatementType6Choice import StatementType6Choice
-from ._UpdateType16Choice import UpdateType16Choice
 from ._Frequency26Choice import Frequency26Choice
-from ._DateAndPeriod3Choice import DateAndPeriod3Choice
+from ._UpdateType16Choice import UpdateType16Choice
 from ._StatementBasis9Choice import StatementBasis9Choice
+from ._StatementType6Choice import StatementType6Choice
+from ._DateAndPeriod3Choice import DateAndPeriod3Choice
 
 class Statement84(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtTp", "_StmtBsis", "_Frqcy", "_UpdTp", "_StmtDtOrPrd"]
+	__slots__ = ["_StmtTp", "_StmtBsis", "_StmtDtOrPrd", "_UpdTp", "_Frqcy"]
 	@property
-	def StmtTp(self):
-		return self._StmtTp
+	def Frqcy(self):
+		return self._Frqcy
 
-	@StmtTp.setter
-	def StmtTp(self, value):
-		self._StmtTp = value if type(value) != base_types.auto else self.make_default("StmtTp")
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
 
-	@StmtTp.deleter
-	def StmtTp(self):
-		del self._StmtTp
-		self._StmtTp = None
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
 
 	@property
 	def StmtBsis(self):
@@ -35,17 +35,30 @@ class Statement84(base_types._BaseFieldType):
 		self._StmtBsis = None
 
 	@property
-	def Frqcy(self):
-		return self._Frqcy
+	def StmtDtOrPrd(self):
+		return self._StmtDtOrPrd
 
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+	@StmtDtOrPrd.setter
+	def StmtDtOrPrd(self, value):
+		self._StmtDtOrPrd = value if type(value) != base_types.auto else self.make_default("StmtDtOrPrd")
 
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
+	@StmtDtOrPrd.deleter
+	def StmtDtOrPrd(self):
+		del self._StmtDtOrPrd
+		self._StmtDtOrPrd = None
+
+	@property
+	def StmtTp(self):
+		return self._StmtTp
+
+	@StmtTp.setter
+	def StmtTp(self, value):
+		self._StmtTp = value if type(value) != base_types.auto else self.make_default("StmtTp")
+
+	@StmtTp.deleter
+	def StmtTp(self):
+		del self._StmtTp
+		self._StmtTp = None
 
 	@property
 	def UpdTp(self):
@@ -60,24 +73,11 @@ class Statement84(base_types._BaseFieldType):
 		del self._UpdTp
 		self._UpdTp = None
 
-	@property
-	def StmtDtOrPrd(self):
-		return self._StmtDtOrPrd
-
-	@StmtDtOrPrd.setter
-	def StmtDtOrPrd(self, value):
-		self._StmtDtOrPrd = value if type(value) != base_types.auto else self.make_default("StmtDtOrPrd")
-
-	@StmtDtOrPrd.deleter
-	def StmtDtOrPrd(self):
-		del self._StmtDtOrPrd
-		self._StmtDtOrPrd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtTp', type=StatementType6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtTp', type=StatementType6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

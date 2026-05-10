@@ -1,6 +1,6 @@
 from . import base_types
-from ._ExternalAuthorityIdentification1Code import ExternalAuthorityIdentification1Code
 from ._Max350Text import Max350Text
+from ._ExternalAuthorityIdentification1Code import ExternalAuthorityIdentification1Code
 
 class SupervisingAuthorityIdentification1Choice(base_types._BaseFieldType):
 

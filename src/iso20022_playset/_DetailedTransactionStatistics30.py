@@ -4,20 +4,7 @@ from ._Max20PositiveNumber import Max20PositiveNumber
 
 class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsAccptd", "_TtlCrrctdRjctns", "_TtlNbOfTxs", "_TtlNbOfTxsRjctd", "_TxsRjctnsRsn"]
-	@property
-	def TtlNbOfTxsAccptd(self):
-		return self._TtlNbOfTxsAccptd
-
-	@TtlNbOfTxsAccptd.setter
-	def TtlNbOfTxsAccptd(self, value):
-		self._TtlNbOfTxsAccptd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsAccptd")
-
-	@TtlNbOfTxsAccptd.deleter
-	def TtlNbOfTxsAccptd(self):
-		del self._TtlNbOfTxsAccptd
-		self._TtlNbOfTxsAccptd = None
-
+	__slots__ = ["_TxsRjctnsRsn", "_TtlNbOfTxsAccptd", "_TtlNbOfTxs", "_TtlCrrctdRjctns", "_TtlNbOfTxsRjctd"]
 	@property
 	def TtlCrrctdRjctns(self):
 		return self._TtlCrrctdRjctns
@@ -43,6 +30,19 @@ class DetailedTransactionStatistics30(base_types._BaseFieldType):
 	def TtlNbOfTxs(self):
 		del self._TtlNbOfTxs
 		self._TtlNbOfTxs = None
+
+	@property
+	def TtlNbOfTxsAccptd(self):
+		return self._TtlNbOfTxsAccptd
+
+	@TtlNbOfTxsAccptd.setter
+	def TtlNbOfTxsAccptd(self, value):
+		self._TtlNbOfTxsAccptd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsAccptd")
+
+	@TtlNbOfTxsAccptd.deleter
+	def TtlNbOfTxsAccptd(self):
+		del self._TtlNbOfTxsAccptd
+		self._TtlNbOfTxsAccptd = None
 
 	@property
 	def TtlNbOfTxsRjctd(self):
@@ -71,9 +71,9 @@ class DetailedTransactionStatistics30(base_types._BaseFieldType):
 		self._TxsRjctnsRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlCrrctdRjctns', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxs', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason71, min=0, max=None, mutex_group=None, array=True),
 	))

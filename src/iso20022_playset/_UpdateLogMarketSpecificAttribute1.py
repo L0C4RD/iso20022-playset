@@ -3,7 +3,7 @@ from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
 
 class UpdateLogMarketSpecificAttribute1(base_types._BaseFieldType):
 
-	__slots__ = ["_New", "_Od"]
+	__slots__ = ["_Od", "_New"]
 	@property
 	def New(self):
 		return self._New

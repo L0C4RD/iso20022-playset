@@ -1,23 +1,23 @@
 from . import base_types
-from ._FinancialPartySectorType2Code import FinancialPartySectorType2Code
 from ._NotReported1Code import NotReported1Code
+from ._FinancialPartySectorType2Code import FinancialPartySectorType2Code
 from ._NonFinancialPartySector1Code import NonFinancialPartySector1Code
 
 class CorporateSectorCriteria6(base_types._BaseFieldType):
 
 	__slots__ = ["_NotRptd", "_NFISctr", "_FISctr"]
 	@property
-	def NotRptd(self):
-		return self._NotRptd
+	def FISctr(self):
+		return self._FISctr
 
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+	@FISctr.setter
+	def FISctr(self, value):
+		self._FISctr = value if type(value) != base_types.auto else self.make_default("FISctr")
 
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
+	@FISctr.deleter
+	def FISctr(self):
+		del self._FISctr
+		self._FISctr = None
 
 	@property
 	def NFISctr(self):
@@ -33,21 +33,21 @@ class CorporateSectorCriteria6(base_types._BaseFieldType):
 		self._NFISctr = None
 
 	@property
-	def FISctr(self):
-		return self._FISctr
+	def NotRptd(self):
+		return self._NotRptd
 
-	@FISctr.setter
-	def FISctr(self, value):
-		self._FISctr = value if type(value) != base_types.auto else self.make_default("FISctr")
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
 
-	@FISctr.deleter
-	def FISctr(self):
-		del self._FISctr
-		self._FISctr = None
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NFISctr', type=NonFinancialPartySector1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FISctr', type=FinancialPartySectorType2Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NFISctr', type=NonFinancialPartySector1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

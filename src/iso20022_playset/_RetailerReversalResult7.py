@@ -1,11 +1,11 @@
 from . import base_types
+from ._PaymentTransaction165 import PaymentTransaction165
 from ._Max35Text import Max35Text
 from ._CustomerOrder1 import CustomerOrder1
-from ._PaymentTransaction165 import PaymentTransaction165
 
 class RetailerReversalResult7(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrOrdr", "_OrgnlPmtTx", "_POIRcncltnId"]
+	__slots__ = ["_POIRcncltnId", "_OrgnlPmtTx", "_CstmrOrdr"]
 	@property
 	def CstmrOrdr(self):
 		return self._CstmrOrdr

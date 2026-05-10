@@ -1,10 +1,10 @@
 from . import base_types
-from ._CardIndividualTransaction2 import CardIndividualTransaction2
 from ._CardAggregated2 import CardAggregated2
+from ._CardIndividualTransaction2 import CardIndividualTransaction2
 
 class CardTransaction3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Aggtd", "_Indv"]
+	__slots__ = ["_Indv", "_Aggtd"]
 	@property
 	def Aggtd(self):
 		return self._Aggtd

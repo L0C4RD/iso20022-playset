@@ -1,10 +1,10 @@
 from . import base_types
-from ._OptionParty1Code import OptionParty1Code
 from ._Direction2 import Direction2
+from ._OptionParty1Code import OptionParty1Code
 
 class Direction4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySd", "_Drctn"]
+	__slots__ = ["_Drctn", "_CtrPtySd"]
 	@property
 	def CtrPtySd(self):
 		return self._CtrPtySd

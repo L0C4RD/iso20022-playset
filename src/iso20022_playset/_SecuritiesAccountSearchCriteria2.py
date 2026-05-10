@@ -1,27 +1,27 @@
 from . import base_types
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
-from ._SystemPartyType1Choice import SystemPartyType1Choice
-from ._Max35Text import Max35Text
 from ._PartyIdentification136 import PartyIdentification136
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._Max35Text import Max35Text
+from ._SystemPartyType1Choice import SystemPartyType1Choice
+from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class SecuritiesAccountSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctTp", "_AcctOwnr", "_OpngDt", "_ClsgDt", "_AcctSvcr", "_PtyTp", "_AcctId", "_EndInvstrFlg", "_PricgSchme"]
+	__slots__ = ["_PtyTp", "_EndInvstrFlg", "_OpngDt", "_AcctSvcr", "_AcctOwnr", "_PricgSchme", "_ClsgDt", "_AcctId", "_AcctTp"]
 	@property
-	def AcctTp(self):
-		return self._AcctTp
+	def AcctId(self):
+		return self._AcctId
 
-	@AcctTp.setter
-	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@AcctTp.deleter
-	def AcctTp(self):
-		del self._AcctTp
-		self._AcctTp = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def AcctOwnr(self):
@@ -37,17 +37,30 @@ class SecuritiesAccountSearchCriteria2(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def OpngDt(self):
-		return self._OpngDt
+	def AcctSvcr(self):
+		return self._AcctSvcr
 
-	@OpngDt.setter
-	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
 
-	@OpngDt.deleter
-	def OpngDt(self):
-		del self._OpngDt
-		self._OpngDt = None
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def AcctTp(self):
+		return self._AcctTp
+
+	@AcctTp.setter
+	def AcctTp(self, value):
+		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+
+	@AcctTp.deleter
+	def AcctTp(self):
+		del self._AcctTp
+		self._AcctTp = None
 
 	@property
 	def ClsgDt(self):
@@ -63,45 +76,6 @@ class SecuritiesAccountSearchCriteria2(base_types._BaseFieldType):
 		self._ClsgDt = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
-	def PtyTp(self):
-		return self._PtyTp
-
-	@PtyTp.setter
-	def PtyTp(self, value):
-		self._PtyTp = value if type(value) != base_types.auto else self.make_default("PtyTp")
-
-	@PtyTp.deleter
-	def PtyTp(self):
-		del self._PtyTp
-		self._PtyTp = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
 	def EndInvstrFlg(self):
 		return self._EndInvstrFlg
 
@@ -113,6 +87,19 @@ class SecuritiesAccountSearchCriteria2(base_types._BaseFieldType):
 	def EndInvstrFlg(self):
 		del self._EndInvstrFlg
 		self._EndInvstrFlg = None
+
+	@property
+	def OpngDt(self):
+		return self._OpngDt
+
+	@OpngDt.setter
+	def OpngDt(self, value):
+		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+
+	@OpngDt.deleter
+	def OpngDt(self):
+		del self._OpngDt
+		self._OpngDt = None
 
 	@property
 	def PricgSchme(self):
@@ -127,15 +114,28 @@ class SecuritiesAccountSearchCriteria2(base_types._BaseFieldType):
 		del self._PricgSchme
 		self._PricgSchme = None
 
+	@property
+	def PtyTp(self):
+		return self._PtyTp
+
+	@PtyTp.setter
+	def PtyTp(self, value):
+		self._PtyTp = value if type(value) != base_types.auto else self.make_default("PtyTp")
+
+	@PtyTp.deleter
+	def PtyTp(self):
+		del self._PtyTp
+		self._PtyTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctTp', type=SystemSecuritiesAccountType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyTp', type=SystemPartyType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTp', type=SystemSecuritiesAccountType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndInvstrFlg', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgSchme', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyTp', type=SystemPartyType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

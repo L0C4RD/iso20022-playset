@@ -1,24 +1,24 @@
 from . import base_types
-from ._StrictPayload import StrictPayload
 from ._xs:ID import xs:ID
-from ._YesNoIndicator import YesNoIndicator
 from ._BusinessApplicationHeader1 import BusinessApplicationHeader1
+from ._YesNoIndicator import YesNoIndicator
+from ._StrictPayload import StrictPayload
 
 class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtl", "_Msg", "_Prfx", "_Hdr"]
+	__slots__ = ["_Hdr", "_Prtl", "_Prfx", "_Msg"]
 	@property
-	def Prtl(self):
-		return self._Prtl
+	def Hdr(self):
+		return self._Hdr
 
-	@Prtl.setter
-	def Prtl(self, value):
-		self._Prtl = value if type(value) != base_types.auto else self.make_default("Prtl")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
-	@Prtl.deleter
-	def Prtl(self):
-		del self._Prtl
-		self._Prtl = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def Msg(self):
@@ -47,22 +47,22 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 		self._Prfx = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def Prtl(self):
+		return self._Prtl
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+	@Prtl.setter
+	def Prtl(self, value):
+		self._Prtl = value if type(value) != base_types.auto else self.make_default("Prtl")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@Prtl.deleter
+	def Prtl(self):
+		del self._Prtl
+		self._Prtl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=BusinessApplicationHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Msg', type=StrictPayload, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prfx', type=XS_ID, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=BusinessApplicationHeader1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

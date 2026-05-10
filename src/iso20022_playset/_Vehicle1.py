@@ -1,80 +1,15 @@
 from . import base_types
-from ._Max35NumericText import Max35NumericText
-from ._CardDataReading5Code import CardDataReading5Code
-from ._DecimalNumber import DecimalNumber
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
+from ._CardDataReading5Code import CardDataReading5Code
 from ._PlainCardData17 import PlainCardData17
 from ._Vehicle2 import Vehicle2
+from ._DecimalNumber import DecimalNumber
+from ._Max35Text import Max35Text
+from ._Max35NumericText import Max35NumericText
 
 class Vehicle1(base_types._BaseFieldType):
 
-	__slots__ = ["_Hbmtr", "_Odmtr", "_TrlrHrs", "_VhclTagNtryMd", "_RefrHrs", "_AddtlVhclData", "_RplcmntCar", "_VhclTag", "_VhclNb", "_TrlrNb", "_MntncId", "_UnitNb", "_DrvrOrVhclCard"]
-	@property
-	def Hbmtr(self):
-		return self._Hbmtr
-
-	@Hbmtr.setter
-	def Hbmtr(self, value):
-		self._Hbmtr = value if type(value) != base_types.auto else self.make_default("Hbmtr")
-
-	@Hbmtr.deleter
-	def Hbmtr(self):
-		del self._Hbmtr
-		self._Hbmtr = None
-
-	@property
-	def Odmtr(self):
-		return self._Odmtr
-
-	@Odmtr.setter
-	def Odmtr(self, value):
-		self._Odmtr = value if type(value) != base_types.auto else self.make_default("Odmtr")
-
-	@Odmtr.deleter
-	def Odmtr(self):
-		del self._Odmtr
-		self._Odmtr = None
-
-	@property
-	def TrlrHrs(self):
-		return self._TrlrHrs
-
-	@TrlrHrs.setter
-	def TrlrHrs(self, value):
-		self._TrlrHrs = value if type(value) != base_types.auto else self.make_default("TrlrHrs")
-
-	@TrlrHrs.deleter
-	def TrlrHrs(self):
-		del self._TrlrHrs
-		self._TrlrHrs = None
-
-	@property
-	def VhclTagNtryMd(self):
-		return self._VhclTagNtryMd
-
-	@VhclTagNtryMd.setter
-	def VhclTagNtryMd(self, value):
-		self._VhclTagNtryMd = value if type(value) != base_types.auto else self.make_default("VhclTagNtryMd")
-
-	@VhclTagNtryMd.deleter
-	def VhclTagNtryMd(self):
-		del self._VhclTagNtryMd
-		self._VhclTagNtryMd = None
-
-	@property
-	def RefrHrs(self):
-		return self._RefrHrs
-
-	@RefrHrs.setter
-	def RefrHrs(self, value):
-		self._RefrHrs = value if type(value) != base_types.auto else self.make_default("RefrHrs")
-
-	@RefrHrs.deleter
-	def RefrHrs(self):
-		del self._RefrHrs
-		self._RefrHrs = None
-
+	__slots__ = ["_RplcmntCar", "_UnitNb", "_Odmtr", "_VhclTag", "_Hbmtr", "_TrlrHrs", "_MntncId", "_VhclNb", "_AddtlVhclData", "_RefrHrs", "_VhclTagNtryMd", "_TrlrNb", "_DrvrOrVhclCard"]
 	@property
 	def AddtlVhclData(self):
 		return self._AddtlVhclData
@@ -89,56 +24,30 @@ class Vehicle1(base_types._BaseFieldType):
 		self._AddtlVhclData = None
 
 	@property
-	def RplcmntCar(self):
-		return self._RplcmntCar
+	def DrvrOrVhclCard(self):
+		return self._DrvrOrVhclCard
 
-	@RplcmntCar.setter
-	def RplcmntCar(self, value):
-		self._RplcmntCar = value if type(value) != base_types.auto else self.make_default("RplcmntCar")
+	@DrvrOrVhclCard.setter
+	def DrvrOrVhclCard(self, value):
+		self._DrvrOrVhclCard = value if type(value) != base_types.auto else self.make_default("DrvrOrVhclCard")
 
-	@RplcmntCar.deleter
-	def RplcmntCar(self):
-		del self._RplcmntCar
-		self._RplcmntCar = None
-
-	@property
-	def VhclTag(self):
-		return self._VhclTag
-
-	@VhclTag.setter
-	def VhclTag(self, value):
-		self._VhclTag = value if type(value) != base_types.auto else self.make_default("VhclTag")
-
-	@VhclTag.deleter
-	def VhclTag(self):
-		del self._VhclTag
-		self._VhclTag = None
+	@DrvrOrVhclCard.deleter
+	def DrvrOrVhclCard(self):
+		del self._DrvrOrVhclCard
+		self._DrvrOrVhclCard = None
 
 	@property
-	def VhclNb(self):
-		return self._VhclNb
+	def Hbmtr(self):
+		return self._Hbmtr
 
-	@VhclNb.setter
-	def VhclNb(self, value):
-		self._VhclNb = value if type(value) != base_types.auto else self.make_default("VhclNb")
+	@Hbmtr.setter
+	def Hbmtr(self, value):
+		self._Hbmtr = value if type(value) != base_types.auto else self.make_default("Hbmtr")
 
-	@VhclNb.deleter
-	def VhclNb(self):
-		del self._VhclNb
-		self._VhclNb = None
-
-	@property
-	def TrlrNb(self):
-		return self._TrlrNb
-
-	@TrlrNb.setter
-	def TrlrNb(self, value):
-		self._TrlrNb = value if type(value) != base_types.auto else self.make_default("TrlrNb")
-
-	@TrlrNb.deleter
-	def TrlrNb(self):
-		del self._TrlrNb
-		self._TrlrNb = None
+	@Hbmtr.deleter
+	def Hbmtr(self):
+		del self._Hbmtr
+		self._Hbmtr = None
 
 	@property
 	def MntncId(self):
@@ -154,6 +63,71 @@ class Vehicle1(base_types._BaseFieldType):
 		self._MntncId = None
 
 	@property
+	def Odmtr(self):
+		return self._Odmtr
+
+	@Odmtr.setter
+	def Odmtr(self, value):
+		self._Odmtr = value if type(value) != base_types.auto else self.make_default("Odmtr")
+
+	@Odmtr.deleter
+	def Odmtr(self):
+		del self._Odmtr
+		self._Odmtr = None
+
+	@property
+	def RefrHrs(self):
+		return self._RefrHrs
+
+	@RefrHrs.setter
+	def RefrHrs(self, value):
+		self._RefrHrs = value if type(value) != base_types.auto else self.make_default("RefrHrs")
+
+	@RefrHrs.deleter
+	def RefrHrs(self):
+		del self._RefrHrs
+		self._RefrHrs = None
+
+	@property
+	def RplcmntCar(self):
+		return self._RplcmntCar
+
+	@RplcmntCar.setter
+	def RplcmntCar(self, value):
+		self._RplcmntCar = value if type(value) != base_types.auto else self.make_default("RplcmntCar")
+
+	@RplcmntCar.deleter
+	def RplcmntCar(self):
+		del self._RplcmntCar
+		self._RplcmntCar = None
+
+	@property
+	def TrlrHrs(self):
+		return self._TrlrHrs
+
+	@TrlrHrs.setter
+	def TrlrHrs(self, value):
+		self._TrlrHrs = value if type(value) != base_types.auto else self.make_default("TrlrHrs")
+
+	@TrlrHrs.deleter
+	def TrlrHrs(self):
+		del self._TrlrHrs
+		self._TrlrHrs = None
+
+	@property
+	def TrlrNb(self):
+		return self._TrlrNb
+
+	@TrlrNb.setter
+	def TrlrNb(self, value):
+		self._TrlrNb = value if type(value) != base_types.auto else self.make_default("TrlrNb")
+
+	@TrlrNb.deleter
+	def TrlrNb(self):
+		del self._TrlrNb
+		self._TrlrNb = None
+
+	@property
 	def UnitNb(self):
 		return self._UnitNb
 
@@ -167,31 +141,57 @@ class Vehicle1(base_types._BaseFieldType):
 		self._UnitNb = None
 
 	@property
-	def DrvrOrVhclCard(self):
-		return self._DrvrOrVhclCard
+	def VhclNb(self):
+		return self._VhclNb
 
-	@DrvrOrVhclCard.setter
-	def DrvrOrVhclCard(self, value):
-		self._DrvrOrVhclCard = value if type(value) != base_types.auto else self.make_default("DrvrOrVhclCard")
+	@VhclNb.setter
+	def VhclNb(self, value):
+		self._VhclNb = value if type(value) != base_types.auto else self.make_default("VhclNb")
 
-	@DrvrOrVhclCard.deleter
-	def DrvrOrVhclCard(self):
-		del self._DrvrOrVhclCard
-		self._DrvrOrVhclCard = None
+	@VhclNb.deleter
+	def VhclNb(self):
+		del self._VhclNb
+		self._VhclNb = None
+
+	@property
+	def VhclTag(self):
+		return self._VhclTag
+
+	@VhclTag.setter
+	def VhclTag(self, value):
+		self._VhclTag = value if type(value) != base_types.auto else self.make_default("VhclTag")
+
+	@VhclTag.deleter
+	def VhclTag(self):
+		del self._VhclTag
+		self._VhclTag = None
+
+	@property
+	def VhclTagNtryMd(self):
+		return self._VhclTagNtryMd
+
+	@VhclTagNtryMd.setter
+	def VhclTagNtryMd(self, value):
+		self._VhclTagNtryMd = value if type(value) != base_types.auto else self.make_default("VhclTagNtryMd")
+
+	@VhclTagNtryMd.deleter
+	def VhclTagNtryMd(self):
+		del self._VhclTagNtryMd
+		self._VhclTagNtryMd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hbmtr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Odmtr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrlrHrs', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VhclTagNtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefrHrs', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlVhclData', type=Vehicle2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RplcmntCar', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VhclTag', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VhclNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrlrNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MntncId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrvrOrVhclCard', type=PlainCardData17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hbmtr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MntncId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Odmtr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefrHrs', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RplcmntCar', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrlrHrs', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrlrNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VhclNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VhclTag', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VhclTagNtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,58 +1,19 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ExchangeRate1 import ExchangeRate1
-from ._InterestPaymentDateRange1 import InterestPaymentDateRange1
+from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
+from ._InterestPaymentDateRange1 import InterestPaymentDateRange1
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ExchangeRate1 import ExchangeRate1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._TradeParty6 import TradeParty6
 from ._ShipmentSchedule2Choice import ShipmentSchedule2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._ISODate import ISODate
 from ._DocumentIdentification22 import DocumentIdentification22
+from ._Max35Text import Max35Text
 
 class TradeContract4(base_types._BaseFieldType):
 
-	__slots__ = ["_PrlngtnFlg", "_StartDt", "_PmtSchdl", "_Amt", "_MtrtyDt", "_Attchmnt", "_ShipmntSchdl", "_Sellr", "_SttlmCcy", "_Buyr", "_CtrctDocId", "_TradTpId", "_XchgRateInf"]
-	@property
-	def PrlngtnFlg(self):
-		return self._PrlngtnFlg
-
-	@PrlngtnFlg.setter
-	def PrlngtnFlg(self, value):
-		self._PrlngtnFlg = value if type(value) != base_types.auto else self.make_default("PrlngtnFlg")
-
-	@PrlngtnFlg.deleter
-	def PrlngtnFlg(self):
-		del self._PrlngtnFlg
-		self._PrlngtnFlg = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
-	@property
-	def PmtSchdl(self):
-		return self._PmtSchdl
-
-	@PmtSchdl.setter
-	def PmtSchdl(self, value):
-		self._PmtSchdl = value if type(value) != base_types.auto else self.make_default("PmtSchdl")
-
-	@PmtSchdl.deleter
-	def PmtSchdl(self):
-		del self._PmtSchdl
-		self._PmtSchdl = None
-
+	__slots__ = ["_StartDt", "_Buyr", "_SttlmCcy", "_ShipmntSchdl", "_TradTpId", "_MtrtyDt", "_PmtSchdl", "_Attchmnt", "_PrlngtnFlg", "_Amt", "_Sellr", "_CtrctDocId", "_XchgRateInf"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -67,19 +28,6 @@ class TradeContract4(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
-
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
-
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
-	@property
 	def Attchmnt(self):
 		return self._Attchmnt
 
@@ -91,45 +39,6 @@ class TradeContract4(base_types._BaseFieldType):
 	def Attchmnt(self):
 		del self._Attchmnt
 		self._Attchmnt = None
-
-	@property
-	def ShipmntSchdl(self):
-		return self._ShipmntSchdl
-
-	@ShipmntSchdl.setter
-	def ShipmntSchdl(self, value):
-		self._ShipmntSchdl = value if type(value) != base_types.auto else self.make_default("ShipmntSchdl")
-
-	@ShipmntSchdl.deleter
-	def ShipmntSchdl(self):
-		del self._ShipmntSchdl
-		self._ShipmntSchdl = None
-
-	@property
-	def Sellr(self):
-		return self._Sellr
-
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
-
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
-
-	@property
-	def SttlmCcy(self):
-		return self._SttlmCcy
-
-	@SttlmCcy.setter
-	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
-
-	@SttlmCcy.deleter
-	def SttlmCcy(self):
-		del self._SttlmCcy
-		self._SttlmCcy = None
 
 	@property
 	def Buyr(self):
@@ -158,6 +67,97 @@ class TradeContract4(base_types._BaseFieldType):
 		self._CtrctDocId = None
 
 	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
+	@property
+	def PmtSchdl(self):
+		return self._PmtSchdl
+
+	@PmtSchdl.setter
+	def PmtSchdl(self, value):
+		self._PmtSchdl = value if type(value) != base_types.auto else self.make_default("PmtSchdl")
+
+	@PmtSchdl.deleter
+	def PmtSchdl(self):
+		del self._PmtSchdl
+		self._PmtSchdl = None
+
+	@property
+	def PrlngtnFlg(self):
+		return self._PrlngtnFlg
+
+	@PrlngtnFlg.setter
+	def PrlngtnFlg(self, value):
+		self._PrlngtnFlg = value if type(value) != base_types.auto else self.make_default("PrlngtnFlg")
+
+	@PrlngtnFlg.deleter
+	def PrlngtnFlg(self):
+		del self._PrlngtnFlg
+		self._PrlngtnFlg = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
+
+	@property
+	def ShipmntSchdl(self):
+		return self._ShipmntSchdl
+
+	@ShipmntSchdl.setter
+	def ShipmntSchdl(self, value):
+		self._ShipmntSchdl = value if type(value) != base_types.auto else self.make_default("ShipmntSchdl")
+
+	@ShipmntSchdl.deleter
+	def ShipmntSchdl(self):
+		del self._ShipmntSchdl
+		self._ShipmntSchdl = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
+	def SttlmCcy(self):
+		return self._SttlmCcy
+
+	@SttlmCcy.setter
+	def SttlmCcy(self, value):
+		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+
+	@SttlmCcy.deleter
+	def SttlmCcy(self):
+		del self._SttlmCcy
+		self._SttlmCcy = None
+
+	@property
 	def TradTpId(self):
 		return self._TradTpId
 
@@ -184,17 +184,17 @@ class TradeContract4(base_types._BaseFieldType):
 		self._XchgRateInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrlngtnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtSchdl', type=InterestPaymentDateRange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ShipmntSchdl', type=ShipmentSchedule2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=TradeParty6, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=TradeParty6, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctDocId', type=DocumentIdentification22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtSchdl', type=InterestPaymentDateRange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrlngtnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=TradeParty6, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ShipmntSchdl', type=ShipmentSchedule2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradTpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRate1, min=0, max=1, mutex_group=None, array=False),
 	))

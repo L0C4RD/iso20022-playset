@@ -4,20 +4,7 @@ from ._TaxType2Choice import TaxType2Choice
 
 class Tax23(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AmtOrPctg"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_AmtOrPctg", "_Tp"]
 	@property
 	def AmtOrPctg(self):
 		return self._AmtOrPctg
@@ -31,8 +18,21 @@ class Tax23(base_types._BaseFieldType):
 		del self._AmtOrPctg
 		self._AmtOrPctg = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TaxType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtOrPctg', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TaxType2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

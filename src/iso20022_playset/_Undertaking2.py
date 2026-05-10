@@ -1,54 +1,28 @@
 from . import base_types
-from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
-from ._GovernanceRules1 import GovernanceRules1
-from ._Max2000Text import Max2000Text
-from ._UndertakingAmount1 import UndertakingAmount1
-from ._UndertakingName1Code import UndertakingName1Code
-from ._YesNoIndicator import YesNoIndicator
-from ._ExpiryDetails2 import ExpiryDetails2
 from ._PartyIdentification43 import PartyIdentification43
+from ._ExpiryDetails2 import ExpiryDetails2
+from ._YesNoIndicator import YesNoIndicator
+from ._UndertakingName1Code import UndertakingName1Code
+from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
+from ._UndertakingAmount1 import UndertakingAmount1
+from ._Max2000Text import Max2000Text
+from ._GovernanceRules1 import GovernanceRules1
 
 class Undertaking2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_ConfChrgsPyblBy", "_StdClmDocInd", "_Bnfcry", "_XpryDtls", "_CntrUdrtkgAmt", "_GovncRulesAndLaw", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Bnfcry", "_GovncRulesAndLaw", "_StdClmDocInd", "_CntrUdrtkgAmt", "_ConfChrgsPyblBy", "_XpryDtls", "_Nm"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def ConfChrgsPyblBy(self):
-		return self._ConfChrgsPyblBy
-
-	@ConfChrgsPyblBy.setter
-	def ConfChrgsPyblBy(self, value):
-		self._ConfChrgsPyblBy = value if type(value) != base_types.auto else self.make_default("ConfChrgsPyblBy")
-
-	@ConfChrgsPyblBy.deleter
-	def ConfChrgsPyblBy(self):
-		del self._ConfChrgsPyblBy
-		self._ConfChrgsPyblBy = None
-
-	@property
-	def StdClmDocInd(self):
-		return self._StdClmDocInd
-
-	@StdClmDocInd.setter
-	def StdClmDocInd(self, value):
-		self._StdClmDocInd = value if type(value) != base_types.auto else self.make_default("StdClmDocInd")
-
-	@StdClmDocInd.deleter
-	def StdClmDocInd(self):
-		del self._StdClmDocInd
-		self._StdClmDocInd = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Bnfcry(self):
@@ -64,19 +38,6 @@ class Undertaking2(base_types._BaseFieldType):
 		self._Bnfcry = None
 
 	@property
-	def XpryDtls(self):
-		return self._XpryDtls
-
-	@XpryDtls.setter
-	def XpryDtls(self, value):
-		self._XpryDtls = value if type(value) != base_types.auto else self.make_default("XpryDtls")
-
-	@XpryDtls.deleter
-	def XpryDtls(self):
-		del self._XpryDtls
-		self._XpryDtls = None
-
-	@property
 	def CntrUdrtkgAmt(self):
 		return self._CntrUdrtkgAmt
 
@@ -88,6 +49,19 @@ class Undertaking2(base_types._BaseFieldType):
 	def CntrUdrtkgAmt(self):
 		del self._CntrUdrtkgAmt
 		self._CntrUdrtkgAmt = None
+
+	@property
+	def ConfChrgsPyblBy(self):
+		return self._ConfChrgsPyblBy
+
+	@ConfChrgsPyblBy.setter
+	def ConfChrgsPyblBy(self, value):
+		self._ConfChrgsPyblBy = value if type(value) != base_types.auto else self.make_default("ConfChrgsPyblBy")
+
+	@ConfChrgsPyblBy.deleter
+	def ConfChrgsPyblBy(self):
+		del self._ConfChrgsPyblBy
+		self._ConfChrgsPyblBy = None
 
 	@property
 	def GovncRulesAndLaw(self):
@@ -103,26 +77,52 @@ class Undertaking2(base_types._BaseFieldType):
 		self._GovncRulesAndLaw = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Nm(self):
+		return self._Nm
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def StdClmDocInd(self):
+		return self._StdClmDocInd
+
+	@StdClmDocInd.setter
+	def StdClmDocInd(self, value):
+		self._StdClmDocInd = value if type(value) != base_types.auto else self.make_default("StdClmDocInd")
+
+	@StdClmDocInd.deleter
+	def StdClmDocInd(self):
+		del self._StdClmDocInd
+		self._StdClmDocInd = None
+
+	@property
+	def XpryDtls(self):
+		return self._XpryDtls
+
+	@XpryDtls.setter
+	def XpryDtls(self, value):
+		self._XpryDtls = value if type(value) != base_types.auto else self.make_default("XpryDtls")
+
+	@XpryDtls.deleter
+	def XpryDtls(self):
+		del self._XpryDtls
+		self._XpryDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=UndertakingName1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfChrgsPyblBy', type=ExternalTypeOfParty1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StdClmDocInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDtls', type=ExpiryDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CntrUdrtkgAmt', type=UndertakingAmount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GovncRulesAndLaw', type=GovernanceRules1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntrUdrtkgAmt', type=UndertakingAmount1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfChrgsPyblBy', type=ExternalTypeOfParty1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GovncRulesAndLaw', type=GovernanceRules1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=UndertakingName1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StdClmDocInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDtls', type=ExpiryDetails2, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from ._ReferredAgent3 import ReferredAgent3
 from ._DataModification1Code import DataModification1Code
+from ._ReferredAgent3 import ReferredAgent3
 
 class ModificationScope43(base_types._BaseFieldType):
 

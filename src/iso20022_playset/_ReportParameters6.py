@@ -1,39 +1,13 @@
 from . import base_types
-from ._EventFrequency6Code import EventFrequency6Code
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODateTime import ISODateTime
+from ._EventFrequency6Code import EventFrequency6Code
 
 class ReportParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_RptId", "_RptDtAndTm", "_ClctnDt", "_Frqcy", "_RptCcy"]
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
-
-	@property
-	def RptDtAndTm(self):
-		return self._RptDtAndTm
-
-	@RptDtAndTm.setter
-	def RptDtAndTm(self, value):
-		self._RptDtAndTm = value if type(value) != base_types.auto else self.make_default("RptDtAndTm")
-
-	@RptDtAndTm.deleter
-	def RptDtAndTm(self):
-		del self._RptDtAndTm
-		self._RptDtAndTm = None
-
+	__slots__ = ["_RptDtAndTm", "_Frqcy", "_RptId", "_ClctnDt", "_RptCcy"]
 	@property
 	def ClctnDt(self):
 		return self._ClctnDt
@@ -73,11 +47,37 @@ class ReportParameters6(base_types._BaseFieldType):
 		del self._RptCcy
 		self._RptCcy = None
 
+	@property
+	def RptDtAndTm(self):
+		return self._RptDtAndTm
+
+	@RptDtAndTm.setter
+	def RptDtAndTm(self, value):
+		self._RptDtAndTm = value if type(value) != base_types.auto else self.make_default("RptDtAndTm")
+
+	@RptDtAndTm.deleter
+	def RptDtAndTm(self):
+		del self._RptDtAndTm
+		self._RptDtAndTm = None
+
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=EventFrequency6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
 from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 
 class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctAudtTrlOrErr", "_DtPrd", "_SctiesAcctId"]
-	@property
-	def SctiesAcctAudtTrlOrErr(self):
-		return self._SctiesAcctAudtTrlOrErr
-
-	@SctiesAcctAudtTrlOrErr.setter
-	def SctiesAcctAudtTrlOrErr(self, value):
-		self._SctiesAcctAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAcctAudtTrlOrErr")
-
-	@SctiesAcctAudtTrlOrErr.deleter
-	def SctiesAcctAudtTrlOrErr(self):
-		del self._SctiesAcctAudtTrlOrErr
-		self._SctiesAcctAudtTrlOrErr = None
-
+	__slots__ = ["_SctiesAcctId", "_DtPrd", "_SctiesAcctAudtTrlOrErr"]
 	@property
 	def DtPrd(self):
 		return self._DtPrd
@@ -31,6 +18,19 @@ class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 	def DtPrd(self):
 		del self._DtPrd
 		self._DtPrd = None
+
+	@property
+	def SctiesAcctAudtTrlOrErr(self):
+		return self._SctiesAcctAudtTrlOrErr
+
+	@SctiesAcctAudtTrlOrErr.setter
+	def SctiesAcctAudtTrlOrErr(self, value):
+		self._SctiesAcctAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAcctAudtTrlOrErr")
+
+	@SctiesAcctAudtTrlOrErr.deleter
+	def SctiesAcctAudtTrlOrErr(self):
+		del self._SctiesAcctAudtTrlOrErr
+		self._SctiesAcctAudtTrlOrErr = None
 
 	@property
 	def SctiesAcctId(self):
@@ -46,8 +46,8 @@ class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 		self._SctiesAcctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAcctAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 	))
 

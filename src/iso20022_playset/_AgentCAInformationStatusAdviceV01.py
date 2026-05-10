@@ -1,11 +1,11 @@
 from . import base_types
 from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
-from ._DocumentIdentification8 import DocumentIdentification8
 from ._CorporateActionInformationStatus1Choice import CorporateActionInformationStatus1Choice
+from ._DocumentIdentification8 import DocumentIdentification8
 
 class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCAInfAdvcId", "_InfStsDtls", "_Id", "_CorpActnAddtlInf"]
+	__slots__ = ["_AgtCAInfAdvcId", "_Id", "_CorpActnAddtlInf", "_InfStsDtls"]
 	@property
 	def AgtCAInfAdvcId(self):
 		return self._AgtCAInfAdvcId
@@ -20,17 +20,17 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 		self._AgtCAInfAdvcId = None
 
 	@property
-	def InfStsDtls(self):
-		return self._InfStsDtls
+	def CorpActnAddtlInf(self):
+		return self._CorpActnAddtlInf
 
-	@InfStsDtls.setter
-	def InfStsDtls(self, value):
-		self._InfStsDtls = value if type(value) != base_types.auto else self.make_default("InfStsDtls")
+	@CorpActnAddtlInf.setter
+	def CorpActnAddtlInf(self, value):
+		self._CorpActnAddtlInf = value if type(value) != base_types.auto else self.make_default("CorpActnAddtlInf")
 
-	@InfStsDtls.deleter
-	def InfStsDtls(self):
-		del self._InfStsDtls
-		self._InfStsDtls = None
+	@CorpActnAddtlInf.deleter
+	def CorpActnAddtlInf(self):
+		del self._CorpActnAddtlInf
+		self._CorpActnAddtlInf = None
 
 	@property
 	def Id(self):
@@ -46,22 +46,22 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def CorpActnAddtlInf(self):
-		return self._CorpActnAddtlInf
+	def InfStsDtls(self):
+		return self._InfStsDtls
 
-	@CorpActnAddtlInf.setter
-	def CorpActnAddtlInf(self, value):
-		self._CorpActnAddtlInf = value if type(value) != base_types.auto else self.make_default("CorpActnAddtlInf")
+	@InfStsDtls.setter
+	def InfStsDtls(self, value):
+		self._InfStsDtls = value if type(value) != base_types.auto else self.make_default("InfStsDtls")
 
-	@CorpActnAddtlInf.deleter
-	def CorpActnAddtlInf(self):
-		del self._CorpActnAddtlInf
-		self._CorpActnAddtlInf = None
+	@InfStsDtls.deleter
+	def InfStsDtls(self):
+		del self._InfStsDtls
+		self._InfStsDtls = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCAInfAdvcId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfStsDtls', type=CorporateActionInformationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnAddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfStsDtls', type=CorporateActionInformationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -6,19 +6,6 @@ class FrequencyRateFixing1Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_NbOfDays", "_Cd"]
 	@property
-	def NbOfDays(self):
-		return self._NbOfDays
-
-	@NbOfDays.setter
-	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
-
-	@NbOfDays.deleter
-	def NbOfDays(self):
-		del self._NbOfDays
-		self._NbOfDays = None
-
-	@property
 	def Cd(self):
 		return self._Cd
 
@@ -31,8 +18,21 @@ class FrequencyRateFixing1Choice(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def NbOfDays(self):
+		return self._NbOfDays
+
+	@NbOfDays.setter
+	def NbOfDays(self, value):
+		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
+
+	@NbOfDays.deleter
+	def NbOfDays(self):
+		del self._NbOfDays
+		self._NbOfDays = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfDays', type=Max3NumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=FrequencyRateFixing1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NbOfDays', type=Max3NumericText, min=0, max=1, mutex_group=1, array=False),
 	))
 

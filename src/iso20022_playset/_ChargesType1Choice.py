@@ -4,7 +4,7 @@ from ._ChargeType8Code import ChargeType8Code
 
 class ChargesType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrChrgsTp", "_Tp"]
+	__slots__ = ["_Tp", "_OthrChrgsTp"]
 	@property
 	def OthrChrgsTp(self):
 		return self._OthrChrgsTp

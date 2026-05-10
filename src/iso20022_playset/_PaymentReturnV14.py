@@ -1,12 +1,12 @@
 from . import base_types
 from ._PaymentTransaction163 import PaymentTransaction163
 from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalGroupHeader19 import OriginalGroupHeader19
 from ._GroupHeader123 import GroupHeader123
+from ._OriginalGroupHeader19 import OriginalGroupHeader19
 
 class PaymentReturnV14(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_TxInf", "_OrgnlGrpInf"]
+	__slots__ = ["_TxInf", "_GrpHdr", "_OrgnlGrpInf", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -19,6 +19,19 @@ class PaymentReturnV14(base_types._BaseFieldType):
 	def GrpHdr(self):
 		del self._GrpHdr
 		self._GrpHdr = None
+
+	@property
+	def OrgnlGrpInf(self):
+		return self._OrgnlGrpInf
+
+	@OrgnlGrpInf.setter
+	def OrgnlGrpInf(self, value):
+		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+
+	@OrgnlGrpInf.deleter
+	def OrgnlGrpInf(self):
+		del self._OrgnlGrpInf
+		self._OrgnlGrpInf = None
 
 	@property
 	def SplmtryData(self):
@@ -46,23 +59,10 @@ class PaymentReturnV14(base_types._BaseFieldType):
 		del self._TxInf
 		self._TxInf = None
 
-	@property
-	def OrgnlGrpInf(self):
-		return self._OrgnlGrpInf
-
-	@OrgnlGrpInf.setter
-	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
-
-	@OrgnlGrpInf.deleter
-	def OrgnlGrpInf(self):
-		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader123, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxInf', type=PaymentTransaction163, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader19, min=0, max=1, mutex_group=None, array=False),
 	))
 

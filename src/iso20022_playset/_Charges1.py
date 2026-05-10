@@ -4,7 +4,7 @@ from ._ChargeType2FormatChoice import ChargeType2FormatChoice
 
 class Charges1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp"]
+	__slots__ = ["_Tp", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

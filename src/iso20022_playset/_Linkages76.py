@@ -4,7 +4,7 @@ from ._DocumentNumber17Choice import DocumentNumber17Choice
 
 class Linkages76(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNb", "_Ref"]
+	__slots__ = ["_Ref", "_MsgNb"]
 	@property
 	def MsgNb(self):
 		return self._MsgNb

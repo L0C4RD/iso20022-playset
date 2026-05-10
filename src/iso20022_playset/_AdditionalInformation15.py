@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._Max350Text import Max350Text
+from ._GenericIdentification36 import GenericIdentification36
 
 class AdditionalInformation15(base_types._BaseFieldType):
 
-	__slots__ = ["_InfTp", "_InfVal"]
+	__slots__ = ["_InfVal", "_InfTp"]
 	@property
 	def InfTp(self):
 		return self._InfTp

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._OpeningConditions1 import OpeningConditions1
+from ._Max35Text import Max35Text
 
 class NDFOpeningFixing1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngConds", "_OpngConfRef"]
+	__slots__ = ["_OpngConfRef", "_OpngConds"]
 	@property
 	def OpngConds(self):
 		return self._OpngConds

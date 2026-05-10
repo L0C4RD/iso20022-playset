@@ -3,20 +3,7 @@ from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CollateralAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptdCcyAndAmt", "_AcrdIntrstAmt", "_MktValAmt", "_FeesAndComssns", "_CollAmt"]
-	@property
-	def RptdCcyAndAmt(self):
-		return self._RptdCcyAndAmt
-
-	@RptdCcyAndAmt.setter
-	def RptdCcyAndAmt(self, value):
-		self._RptdCcyAndAmt = value if type(value) != base_types.auto else self.make_default("RptdCcyAndAmt")
-
-	@RptdCcyAndAmt.deleter
-	def RptdCcyAndAmt(self):
-		del self._RptdCcyAndAmt
-		self._RptdCcyAndAmt = None
-
+	__slots__ = ["_FeesAndComssns", "_MktValAmt", "_CollAmt", "_AcrdIntrstAmt", "_RptdCcyAndAmt"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt
@@ -31,17 +18,17 @@ class CollateralAmount1(base_types._BaseFieldType):
 		self._AcrdIntrstAmt = None
 
 	@property
-	def MktValAmt(self):
-		return self._MktValAmt
+	def CollAmt(self):
+		return self._CollAmt
 
-	@MktValAmt.setter
-	def MktValAmt(self, value):
-		self._MktValAmt = value if type(value) != base_types.auto else self.make_default("MktValAmt")
+	@CollAmt.setter
+	def CollAmt(self, value):
+		self._CollAmt = value if type(value) != base_types.auto else self.make_default("CollAmt")
 
-	@MktValAmt.deleter
-	def MktValAmt(self):
-		del self._MktValAmt
-		self._MktValAmt = None
+	@CollAmt.deleter
+	def CollAmt(self):
+		del self._CollAmt
+		self._CollAmt = None
 
 	@property
 	def FeesAndComssns(self):
@@ -57,23 +44,36 @@ class CollateralAmount1(base_types._BaseFieldType):
 		self._FeesAndComssns = None
 
 	@property
-	def CollAmt(self):
-		return self._CollAmt
+	def MktValAmt(self):
+		return self._MktValAmt
 
-	@CollAmt.setter
-	def CollAmt(self, value):
-		self._CollAmt = value if type(value) != base_types.auto else self.make_default("CollAmt")
+	@MktValAmt.setter
+	def MktValAmt(self, value):
+		self._MktValAmt = value if type(value) != base_types.auto else self.make_default("MktValAmt")
 
-	@CollAmt.deleter
-	def CollAmt(self):
-		del self._CollAmt
-		self._CollAmt = None
+	@MktValAmt.deleter
+	def MktValAmt(self):
+		del self._MktValAmt
+		self._MktValAmt = None
+
+	@property
+	def RptdCcyAndAmt(self):
+		return self._RptdCcyAndAmt
+
+	@RptdCcyAndAmt.setter
+	def RptdCcyAndAmt(self, value):
+		self._RptdCcyAndAmt = value if type(value) != base_types.auto else self.make_default("RptdCcyAndAmt")
+
+	@RptdCcyAndAmt.deleter
+	def RptdCcyAndAmt(self):
+		del self._RptdCcyAndAmt
+		self._RptdCcyAndAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptdCcyAndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktValAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktValAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptdCcyAndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

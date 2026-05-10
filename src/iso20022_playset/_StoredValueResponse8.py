@@ -1,11 +1,11 @@
 from . import base_types
-from ._StoredValueData8 import StoredValueData8
 from ._PaymentReceipt6 import PaymentReceipt6
 from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._StoredValueData8 import StoredValueData8
 
 class StoredValueResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_POITxId", "_SaleTxId", "_Rct", "_Rslt"]
+	__slots__ = ["_Rslt", "_POITxId", "_Rct", "_SaleTxId"]
 	@property
 	def POITxId(self):
 		return self._POITxId
@@ -18,19 +18,6 @@ class StoredValueResponse8(base_types._BaseFieldType):
 	def POITxId(self):
 		del self._POITxId
 		self._POITxId = None
-
-	@property
-	def SaleTxId(self):
-		return self._SaleTxId
-
-	@SaleTxId.setter
-	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
-
-	@SaleTxId.deleter
-	def SaleTxId(self):
-		del self._SaleTxId
-		self._SaleTxId = None
 
 	@property
 	def Rct(self):
@@ -58,10 +45,23 @@ class StoredValueResponse8(base_types._BaseFieldType):
 		del self._Rslt
 		self._Rslt = None
 
+	@property
+	def SaleTxId(self):
+		return self._SaleTxId
+
+	@SaleTxId.setter
+	def SaleTxId(self, value):
+		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+
+	@SaleTxId.deleter
+	def SaleTxId(self):
+		del self._SaleTxId
+		self._SaleTxId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rct', type=PaymentReceipt6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rslt', type=StoredValueData8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 	))
 

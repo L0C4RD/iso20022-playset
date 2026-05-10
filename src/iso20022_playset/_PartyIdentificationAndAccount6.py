@@ -1,22 +1,22 @@
 from . import base_types
-from ._PartyIdentification25 import PartyIdentification25
 from ._CashAccount7 import CashAccount7
+from ._PartyIdentification25 import PartyIdentification25
 
 class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 
 	__slots__ = ["_PtyId", "_FincgAcct", "_CdtAcct"]
 	@property
-	def PtyId(self):
-		return self._PtyId
+	def CdtAcct(self):
+		return self._CdtAcct
 
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+	@CdtAcct.setter
+	def CdtAcct(self, value):
+		self._CdtAcct = value if type(value) != base_types.auto else self.make_default("CdtAcct")
 
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
+	@CdtAcct.deleter
+	def CdtAcct(self):
+		del self._CdtAcct
+		self._CdtAcct = None
 
 	@property
 	def FincgAcct(self):
@@ -32,21 +32,21 @@ class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 		self._FincgAcct = None
 
 	@property
-	def CdtAcct(self):
-		return self._CdtAcct
+	def PtyId(self):
+		return self._PtyId
 
-	@CdtAcct.setter
-	def CdtAcct(self, value):
-		self._CdtAcct = value if type(value) != base_types.auto else self.make_default("CdtAcct")
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
 
-	@CdtAcct.deleter
-	def CdtAcct(self):
-		del self._CdtAcct
-		self._CdtAcct = None
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification25, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FincgAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FincgAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification25, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 from . import base_types
 from ._PercentagePrice2 import PercentagePrice2
-from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 from ._AmountPrice5 import AmountPrice5
+from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class PriceFormat86Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxPts", "_PctgPric", "_AmtPric"]
+	__slots__ = ["_PctgPric", "_AmtPric", "_IndxPts"]
+	@property
+	def AmtPric(self):
+		return self._AmtPric
+
+	@AmtPric.setter
+	def AmtPric(self, value):
+		self._AmtPric = value if type(value) != base_types.auto else self.make_default("AmtPric")
+
+	@AmtPric.deleter
+	def AmtPric(self):
+		del self._AmtPric
+		self._AmtPric = None
+
 	@property
 	def IndxPts(self):
 		return self._IndxPts
@@ -32,22 +45,9 @@ class PriceFormat86Choice(base_types._BaseFieldType):
 		del self._PctgPric
 		self._PctgPric = None
 
-	@property
-	def AmtPric(self):
-		return self._AmtPric
-
-	@AmtPric.setter
-	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != base_types.auto else self.make_default("AmtPric")
-
-	@AmtPric.deleter
-	def AmtPric(self):
-		del self._AmtPric
-		self._AmtPric = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxPts', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),
 	))
 

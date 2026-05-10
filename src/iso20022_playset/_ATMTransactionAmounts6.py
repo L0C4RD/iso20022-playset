@@ -1,11 +1,11 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ATMTransactionAmounts7 import ATMTransactionAmounts7
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ATMTransactionAmounts7 import ATMTransactionAmounts7
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 
 class ATMTransactionAmounts6(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlAmt", "_MinPssblAmt", "_MaxPssblAmt", "_Ccy"]
+	__slots__ = ["_MinPssblAmt", "_AddtlAmt", "_MaxPssblAmt", "_Ccy"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt
@@ -20,17 +20,17 @@ class ATMTransactionAmounts6(base_types._BaseFieldType):
 		self._AddtlAmt = None
 
 	@property
-	def MinPssblAmt(self):
-		return self._MinPssblAmt
+	def Ccy(self):
+		return self._Ccy
 
-	@MinPssblAmt.setter
-	def MinPssblAmt(self, value):
-		self._MinPssblAmt = value if type(value) != base_types.auto else self.make_default("MinPssblAmt")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@MinPssblAmt.deleter
-	def MinPssblAmt(self):
-		del self._MinPssblAmt
-		self._MinPssblAmt = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def MaxPssblAmt(self):
@@ -46,22 +46,22 @@ class ATMTransactionAmounts6(base_types._BaseFieldType):
 		self._MaxPssblAmt = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def MinPssblAmt(self):
+		return self._MinPssblAmt
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@MinPssblAmt.setter
+	def MinPssblAmt(self, value):
+		self._MinPssblAmt = value if type(value) != base_types.auto else self.make_default("MinPssblAmt")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@MinPssblAmt.deleter
+	def MinPssblAmt(self):
+		del self._MinPssblAmt
+		self._MinPssblAmt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlAmt', type=ATMTransactionAmounts7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MinPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

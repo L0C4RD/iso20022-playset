@@ -1,12 +1,25 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._DerivativeEventType3Code import DerivativeEventType3Code
-from ._EventIdentifier1Choice import EventIdentifier1Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._EventIdentifier1Choice import EventIdentifier1Choice
 
 class DerivativeEvent6(base_types._BaseFieldType):
 
 	__slots__ = ["_Id", "_TmStmp", "_Tp", "_AmdmntInd"]
+	@property
+	def AmdmntInd(self):
+		return self._AmdmntInd
+
+	@AmdmntInd.setter
+	def AmdmntInd(self, value):
+		self._AmdmntInd = value if type(value) != base_types.auto else self.make_default("AmdmntInd")
+
+	@AmdmntInd.deleter
+	def AmdmntInd(self):
+		del self._AmdmntInd
+		self._AmdmntInd = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -46,23 +59,10 @@ class DerivativeEvent6(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def AmdmntInd(self):
-		return self._AmdmntInd
-
-	@AmdmntInd.setter
-	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != base_types.auto else self.make_default("AmdmntInd")
-
-	@AmdmntInd.deleter
-	def AmdmntInd(self):
-		del self._AmdmntInd
-		self._AmdmntInd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=EventIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DerivativeEventType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

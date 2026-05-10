@@ -4,20 +4,7 @@ from ._Number import Number
 
 class RejectedElement1(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvRjctnRsn", "_ElmtSeqNb"]
-	@property
-	def IndvRjctnRsn(self):
-		return self._IndvRjctnRsn
-
-	@IndvRjctnRsn.setter
-	def IndvRjctnRsn(self, value):
-		self._IndvRjctnRsn = value if type(value) != base_types.auto else self.make_default("IndvRjctnRsn")
-
-	@IndvRjctnRsn.deleter
-	def IndvRjctnRsn(self):
-		del self._IndvRjctnRsn
-		self._IndvRjctnRsn = None
-
+	__slots__ = ["_ElmtSeqNb", "_IndvRjctnRsn"]
 	@property
 	def ElmtSeqNb(self):
 		return self._ElmtSeqNb
@@ -31,8 +18,21 @@ class RejectedElement1(base_types._BaseFieldType):
 		del self._ElmtSeqNb
 		self._ElmtSeqNb = None
 
+	@property
+	def IndvRjctnRsn(self):
+		return self._IndvRjctnRsn
+
+	@IndvRjctnRsn.setter
+	def IndvRjctnRsn(self, value):
+		self._IndvRjctnRsn = value if type(value) != base_types.auto else self.make_default("IndvRjctnRsn")
+
+	@IndvRjctnRsn.deleter
+	def IndvRjctnRsn(self):
+		del self._IndvRjctnRsn
+		self._IndvRjctnRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndvRjctnRsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElmtSeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvRjctnRsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

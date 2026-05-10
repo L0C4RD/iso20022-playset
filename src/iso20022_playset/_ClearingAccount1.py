@@ -1,6 +1,6 @@
 from . import base_types
-from ._CollateralAccount5 import CollateralAccount5
 from ._ClearingAccountType3Code import ClearingAccountType3Code
+from ._CollateralAccount5 import CollateralAccount5
 
 class ClearingAccount1(base_types._BaseFieldType):
 

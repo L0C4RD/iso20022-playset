@@ -1,6 +1,6 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class Amount2Choice(base_types._BaseFieldType):
 

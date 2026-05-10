@@ -1,25 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PhysicalTransferType4Code import PhysicalTransferType4Code
 from ._ContractSize1 import ContractSize1
 from ._GenericIdentification165 import GenericIdentification165
+from ._PhysicalTransferType4Code import PhysicalTransferType4Code
 
 class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygId", "_CtrctSz", "_DlvryTp", "_PricCcy"]
-	@property
-	def UndrlygId(self):
-		return self._UndrlygId
-
-	@UndrlygId.setter
-	def UndrlygId(self, value):
-		self._UndrlygId = value if type(value) != base_types.auto else self.make_default("UndrlygId")
-
-	@UndrlygId.deleter
-	def UndrlygId(self):
-		del self._UndrlygId
-		self._UndrlygId = None
-
+	__slots__ = ["_UndrlygId", "_DlvryTp", "_PricCcy", "_CtrctSz"]
 	@property
 	def CtrctSz(self):
 		return self._CtrctSz
@@ -59,10 +46,23 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 		del self._PricCcy
 		self._PricCcy = None
 
+	@property
+	def UndrlygId(self):
+		return self._UndrlygId
+
+	@UndrlygId.setter
+	def UndrlygId(self, value):
+		self._UndrlygId = value if type(value) != base_types.auto else self.make_default("UndrlygId")
+
+	@UndrlygId.deleter
+	def UndrlygId(self):
+		del self._UndrlygId
+		self._UndrlygId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctSz', type=ContractSize1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 	))
 

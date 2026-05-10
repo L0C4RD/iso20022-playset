@@ -4,7 +4,7 @@ from ._GenericIdentification168 import GenericIdentification168
 
 class PartyIdentification118Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Prtry"]
+	__slots__ = ["_Prtry", "_LEI"]
 	@property
 	def LEI(self):
 		return self._LEI

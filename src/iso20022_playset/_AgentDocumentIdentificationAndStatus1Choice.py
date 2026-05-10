@@ -1,10 +1,10 @@
 from . import base_types
-from ._AgentNotificationIdentificationAndStatus1 import AgentNotificationIdentificationAndStatus1
 from ._AgentNotificationCancellationIdentificationAndStatus1 import AgentNotificationCancellationIdentificationAndStatus1
+from ._AgentNotificationIdentificationAndStatus1 import AgentNotificationIdentificationAndStatus1
 
 class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCANtfctnAdvcIdAndSts", "_AgtCANtfctnCxlReqIdAndSts"]
+	__slots__ = ["_AgtCANtfctnCxlReqIdAndSts", "_AgtCANtfctnAdvcIdAndSts"]
 	@property
 	def AgtCANtfctnAdvcIdAndSts(self):
 		return self._AgtCANtfctnAdvcIdAndSts

@@ -1,12 +1,12 @@
 from . import base_types
-from ._Number import Number
-from ._ReportingRequirement3Choice import ReportingRequirement3Choice
 from ._ISODate import ISODate
+from ._ReportingRequirement3Choice import ReportingRequirement3Choice
 from ._ReconciliationCounterpartyPairStatistics7 import ReconciliationCounterpartyPairStatistics7
+from ._Number import Number
 
 class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnCtgrs", "_TtlNbOfTxs", "_RefDt", "_TxDtls"]
+	__slots__ = ["_TtlNbOfTxs", "_TxDtls", "_RefDt", "_RcncltnCtgrs"]
 	@property
 	def RcncltnCtgrs(self):
 		return self._RcncltnCtgrs
@@ -21,19 +21,6 @@ class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 		self._RcncltnCtgrs = None
 
 	@property
-	def TtlNbOfTxs(self):
-		return self._TtlNbOfTxs
-
-	@TtlNbOfTxs.setter
-	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
-
-	@TtlNbOfTxs.deleter
-	def TtlNbOfTxs(self):
-		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
-
-	@property
 	def RefDt(self):
 		return self._RefDt
 
@@ -45,6 +32,19 @@ class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 	def RefDt(self):
 		del self._RefDt
 		self._RefDt = None
+
+	@property
+	def TtlNbOfTxs(self):
+		return self._TtlNbOfTxs
+
+	@TtlNbOfTxs.setter
+	def TtlNbOfTxs(self, value):
+		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
+
+	@TtlNbOfTxs.deleter
+	def TtlNbOfTxs(self):
+		del self._TtlNbOfTxs
+		self._TtlNbOfTxs = None
 
 	@property
 	def TxDtls(self):
@@ -61,8 +61,8 @@ class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcncltnCtgrs', type=ReportingRequirement3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=ReconciliationCounterpartyPairStatistics7, min=0, max=None, mutex_group=None, array=True),
 	))
 

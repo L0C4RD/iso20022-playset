@@ -1,24 +1,11 @@
 from . import base_types
-from ._SecuritiesTransactionReport7 import SecuritiesTransactionReport7
 from ._SupplementaryData1 import SupplementaryData1
+from ._SecuritiesTransactionReport7 import SecuritiesTransactionReport7
 from ._SecuritiesTransactionReport2 import SecuritiesTransactionReport2
 
 class ReportingTransactionType3Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_SplmtryData", "_Cxl", "_New"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
 	@property
 	def Cxl(self):
 		return self._Cxl
@@ -45,9 +32,22 @@ class ReportingTransactionType3Choice(base_types._BaseFieldType):
 		del self._New
 		self._New = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Cxl', type=SecuritiesTransactionReport2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=SecuritiesTransactionReport7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=1, array=True),
 	))
 

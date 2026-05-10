@@ -4,7 +4,7 @@ from ._Restriction1 import Restriction1
 
 class RestrictionModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ModCd", "_Rstrctn"]
+	__slots__ = ["_Rstrctn", "_ModCd"]
 	@property
 	def ModCd(self):
 		return self._ModCd

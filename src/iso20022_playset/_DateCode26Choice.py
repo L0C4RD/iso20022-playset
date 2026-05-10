@@ -4,7 +4,7 @@ from ._DateType7Code import DateType7Code
 
 class DateCode26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

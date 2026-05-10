@@ -1,15 +1,15 @@
 from . import base_types
-from ._DatePeriod1 import DatePeriod1
-from ._AmountAndDirection106 import AmountAndDirection106
-from ._WeekDay3Code import WeekDay3Code
-from ._Quantity47Choice import Quantity47Choice
-from ._EnergyQuantityUnit2Choice import EnergyQuantityUnit2Choice
-from ._DurationType1Code import DurationType1Code
 from ._TimePeriodDetails1 import TimePeriodDetails1
+from ._DurationType1Code import DurationType1Code
+from ._AmountAndDirection106 import AmountAndDirection106
+from ._Quantity47Choice import Quantity47Choice
+from ._DatePeriod1 import DatePeriod1
+from ._EnergyQuantityUnit2Choice import EnergyQuantityUnit2Choice
+from ._WeekDay3Code import WeekDay3Code
 
 class EnergyDeliveryAttribute10(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryCpcty", "_WkDay", "_PricTmIntrvlQty", "_QtyUnit", "_DlvryIntrvl", "_DlvryDt", "_Drtn"]
+	__slots__ = ["_Drtn", "_QtyUnit", "_PricTmIntrvlQty", "_DlvryIntrvl", "_DlvryDt", "_DlvryCpcty", "_WkDay"]
 	@property
 	def DlvryCpcty(self):
 		return self._DlvryCpcty
@@ -24,17 +24,43 @@ class EnergyDeliveryAttribute10(base_types._BaseFieldType):
 		self._DlvryCpcty = None
 
 	@property
-	def WkDay(self):
-		return self._WkDay
+	def DlvryDt(self):
+		return self._DlvryDt
 
-	@WkDay.setter
-	def WkDay(self, value):
-		self._WkDay = value if type(value) != base_types.auto else self.make_default("WkDay")
+	@DlvryDt.setter
+	def DlvryDt(self, value):
+		self._DlvryDt = value if type(value) != base_types.auto else self.make_default("DlvryDt")
 
-	@WkDay.deleter
-	def WkDay(self):
-		del self._WkDay
-		self._WkDay = None
+	@DlvryDt.deleter
+	def DlvryDt(self):
+		del self._DlvryDt
+		self._DlvryDt = None
+
+	@property
+	def DlvryIntrvl(self):
+		return self._DlvryIntrvl
+
+	@DlvryIntrvl.setter
+	def DlvryIntrvl(self, value):
+		self._DlvryIntrvl = value if type(value) != base_types.auto else self.make_default("DlvryIntrvl")
+
+	@DlvryIntrvl.deleter
+	def DlvryIntrvl(self):
+		del self._DlvryIntrvl
+		self._DlvryIntrvl = None
+
+	@property
+	def Drtn(self):
+		return self._Drtn
+
+	@Drtn.setter
+	def Drtn(self, value):
+		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
+
+	@Drtn.deleter
+	def Drtn(self):
+		del self._Drtn
+		self._Drtn = None
 
 	@property
 	def PricTmIntrvlQty(self):
@@ -63,51 +89,25 @@ class EnergyDeliveryAttribute10(base_types._BaseFieldType):
 		self._QtyUnit = None
 
 	@property
-	def DlvryIntrvl(self):
-		return self._DlvryIntrvl
+	def WkDay(self):
+		return self._WkDay
 
-	@DlvryIntrvl.setter
-	def DlvryIntrvl(self, value):
-		self._DlvryIntrvl = value if type(value) != base_types.auto else self.make_default("DlvryIntrvl")
+	@WkDay.setter
+	def WkDay(self, value):
+		self._WkDay = value if type(value) != base_types.auto else self.make_default("WkDay")
 
-	@DlvryIntrvl.deleter
-	def DlvryIntrvl(self):
-		del self._DlvryIntrvl
-		self._DlvryIntrvl = None
-
-	@property
-	def DlvryDt(self):
-		return self._DlvryDt
-
-	@DlvryDt.setter
-	def DlvryDt(self, value):
-		self._DlvryDt = value if type(value) != base_types.auto else self.make_default("DlvryDt")
-
-	@DlvryDt.deleter
-	def DlvryDt(self):
-		del self._DlvryDt
-		self._DlvryDt = None
-
-	@property
-	def Drtn(self):
-		return self._Drtn
-
-	@Drtn.setter
-	def Drtn(self, value):
-		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
-
-	@Drtn.deleter
-	def Drtn(self):
-		del self._Drtn
-		self._Drtn = None
+	@WkDay.deleter
+	def WkDay(self):
+		del self._WkDay
+		self._WkDay = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvryCpcty', type=Quantity47Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WkDay', type=WeekDay3Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvryDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryIntrvl', type=TimePeriodDetails1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Drtn', type=DurationType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricTmIntrvlQty', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyUnit', type=EnergyQuantityUnit2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryIntrvl', type=TimePeriodDetails1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlvryDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Drtn', type=DurationType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WkDay', type=WeekDay3Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

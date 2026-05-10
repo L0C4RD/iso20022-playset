@@ -7,6 +7,19 @@ class CorporateActionNotification12(base_types._BaseFieldType):
 
 	__slots__ = ["_NtfctnTp", "_PrcgSts", "_NtfctnId"]
 	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
+	@property
 	def NtfctnTp(self):
 		return self._NtfctnTp
 
@@ -32,22 +45,9 @@ class CorporateActionNotification12(base_types._BaseFieldType):
 		del self._PrcgSts
 		self._PrcgSts = None
 
-	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnTp', type=CorporateActionNotificationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CorporateActionProcessingStatus7Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Amount2Choice import Amount2Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Amount2Choice import Amount2Choice
 
 class Reservation4(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_StartDtTm"]
+	__slots__ = ["_StartDtTm", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

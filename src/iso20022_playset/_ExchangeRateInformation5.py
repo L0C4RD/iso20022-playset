@@ -1,43 +1,30 @@
 from . import base_types
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._Endpoint1Code import Endpoint1Code
-from ._Max70Text import Max70Text
-from ._ExchangeRateType2Code import ExchangeRateType2Code
-from ._BaseOne25Rate import BaseOne25Rate
-from ._ISOTime import ISOTime
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
-from ._ExchangeRateAgreementType1Code import ExchangeRateAgreementType1Code
 from ._ISODate import ISODate
+from ._ISOTime import ISOTime
+from ._ExchangeRateAgreementType1Code import ExchangeRateAgreementType1Code
+from ._BaseOne25Rate import BaseOne25Rate
+from ._Endpoint1Code import Endpoint1Code
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ExchangeRateType2Code import ExchangeRateType2Code
 
 class ExchangeRateInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAgrmtTp", "_OthrEndPt", "_BaseCcyCd", "_AgrmtTp", "_Dt", "_EndPt", "_Id", "_Rate", "_RateLckReqd", "_CntrCcyCd", "_OthrRateTp", "_Tm", "_RateLckElgbl", "_Prvdr", "_RateLckApld", "_RateTp"]
+	__slots__ = ["_EndPt", "_RateLckElgbl", "_Dt", "_Rate", "_OthrAgrmtTp", "_BaseCcyCd", "_Tm", "_CntrCcyCd", "_RateLckApld", "_OthrEndPt", "_OthrRateTp", "_Prvdr", "_RateLckReqd", "_Id", "_AgrmtTp", "_RateTp"]
 	@property
-	def OthrAgrmtTp(self):
-		return self._OthrAgrmtTp
+	def AgrmtTp(self):
+		return self._AgrmtTp
 
-	@OthrAgrmtTp.setter
-	def OthrAgrmtTp(self, value):
-		self._OthrAgrmtTp = value if type(value) != base_types.auto else self.make_default("OthrAgrmtTp")
+	@AgrmtTp.setter
+	def AgrmtTp(self, value):
+		self._AgrmtTp = value if type(value) != base_types.auto else self.make_default("AgrmtTp")
 
-	@OthrAgrmtTp.deleter
-	def OthrAgrmtTp(self):
-		del self._OthrAgrmtTp
-		self._OthrAgrmtTp = None
-
-	@property
-	def OthrEndPt(self):
-		return self._OthrEndPt
-
-	@OthrEndPt.setter
-	def OthrEndPt(self, value):
-		self._OthrEndPt = value if type(value) != base_types.auto else self.make_default("OthrEndPt")
-
-	@OthrEndPt.deleter
-	def OthrEndPt(self):
-		del self._OthrEndPt
-		self._OthrEndPt = None
+	@AgrmtTp.deleter
+	def AgrmtTp(self):
+		del self._AgrmtTp
+		self._AgrmtTp = None
 
 	@property
 	def BaseCcyCd(self):
@@ -53,17 +40,17 @@ class ExchangeRateInformation5(base_types._BaseFieldType):
 		self._BaseCcyCd = None
 
 	@property
-	def AgrmtTp(self):
-		return self._AgrmtTp
+	def CntrCcyCd(self):
+		return self._CntrCcyCd
 
-	@AgrmtTp.setter
-	def AgrmtTp(self, value):
-		self._AgrmtTp = value if type(value) != base_types.auto else self.make_default("AgrmtTp")
+	@CntrCcyCd.setter
+	def CntrCcyCd(self, value):
+		self._CntrCcyCd = value if type(value) != base_types.auto else self.make_default("CntrCcyCd")
 
-	@AgrmtTp.deleter
-	def AgrmtTp(self):
-		del self._AgrmtTp
-		self._AgrmtTp = None
+	@CntrCcyCd.deleter
+	def CntrCcyCd(self):
+		del self._CntrCcyCd
+		self._CntrCcyCd = None
 
 	@property
 	def Dt(self):
@@ -105,43 +92,30 @@ class ExchangeRateInformation5(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def OthrAgrmtTp(self):
+		return self._OthrAgrmtTp
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+	@OthrAgrmtTp.setter
+	def OthrAgrmtTp(self, value):
+		self._OthrAgrmtTp = value if type(value) != base_types.auto else self.make_default("OthrAgrmtTp")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
-	def RateLckReqd(self):
-		return self._RateLckReqd
-
-	@RateLckReqd.setter
-	def RateLckReqd(self, value):
-		self._RateLckReqd = value if type(value) != base_types.auto else self.make_default("RateLckReqd")
-
-	@RateLckReqd.deleter
-	def RateLckReqd(self):
-		del self._RateLckReqd
-		self._RateLckReqd = None
+	@OthrAgrmtTp.deleter
+	def OthrAgrmtTp(self):
+		del self._OthrAgrmtTp
+		self._OthrAgrmtTp = None
 
 	@property
-	def CntrCcyCd(self):
-		return self._CntrCcyCd
+	def OthrEndPt(self):
+		return self._OthrEndPt
 
-	@CntrCcyCd.setter
-	def CntrCcyCd(self, value):
-		self._CntrCcyCd = value if type(value) != base_types.auto else self.make_default("CntrCcyCd")
+	@OthrEndPt.setter
+	def OthrEndPt(self, value):
+		self._OthrEndPt = value if type(value) != base_types.auto else self.make_default("OthrEndPt")
 
-	@CntrCcyCd.deleter
-	def CntrCcyCd(self):
-		del self._CntrCcyCd
-		self._CntrCcyCd = None
+	@OthrEndPt.deleter
+	def OthrEndPt(self):
+		del self._OthrEndPt
+		self._OthrEndPt = None
 
 	@property
 	def OthrRateTp(self):
@@ -157,32 +131,6 @@ class ExchangeRateInformation5(base_types._BaseFieldType):
 		self._OthrRateTp = None
 
 	@property
-	def Tm(self):
-		return self._Tm
-
-	@Tm.setter
-	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
-
-	@Tm.deleter
-	def Tm(self):
-		del self._Tm
-		self._Tm = None
-
-	@property
-	def RateLckElgbl(self):
-		return self._RateLckElgbl
-
-	@RateLckElgbl.setter
-	def RateLckElgbl(self, value):
-		self._RateLckElgbl = value if type(value) != base_types.auto else self.make_default("RateLckElgbl")
-
-	@RateLckElgbl.deleter
-	def RateLckElgbl(self):
-		del self._RateLckElgbl
-		self._RateLckElgbl = None
-
-	@property
 	def Prvdr(self):
 		return self._Prvdr
 
@@ -194,6 +142,19 @@ class ExchangeRateInformation5(base_types._BaseFieldType):
 	def Prvdr(self):
 		del self._Prvdr
 		self._Prvdr = None
+
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	@property
 	def RateLckApld(self):
@@ -209,6 +170,32 @@ class ExchangeRateInformation5(base_types._BaseFieldType):
 		self._RateLckApld = None
 
 	@property
+	def RateLckElgbl(self):
+		return self._RateLckElgbl
+
+	@RateLckElgbl.setter
+	def RateLckElgbl(self, value):
+		self._RateLckElgbl = value if type(value) != base_types.auto else self.make_default("RateLckElgbl")
+
+	@RateLckElgbl.deleter
+	def RateLckElgbl(self):
+		del self._RateLckElgbl
+		self._RateLckElgbl = None
+
+	@property
+	def RateLckReqd(self):
+		return self._RateLckReqd
+
+	@RateLckReqd.setter
+	def RateLckReqd(self, value):
+		self._RateLckReqd = value if type(value) != base_types.auto else self.make_default("RateLckReqd")
+
+	@RateLckReqd.deleter
+	def RateLckReqd(self):
+		del self._RateLckReqd
+		self._RateLckReqd = None
+
+	@property
 	def RateTp(self):
 		return self._RateTp
 
@@ -221,22 +208,35 @@ class ExchangeRateInformation5(base_types._BaseFieldType):
 		del self._RateTp
 		self._RateTp = None
 
+	@property
+	def Tm(self):
+		return self._Tm
+
+	@Tm.setter
+	def Tm(self, value):
+		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+
+	@Tm.deleter
+	def Tm(self):
+		del self._Tm
+		self._Tm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrAgrmtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrEndPt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcyCd', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtTp', type=ExchangeRateAgreementType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcyCd', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntrCcyCd', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndPt', type=Endpoint1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=BaseOne25Rate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateLckReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CntrCcyCd', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAgrmtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrEndPt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrRateTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateLckElgbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prvdr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=BaseOne25Rate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateLckApld', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateLckElgbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateLckReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateTp', type=ExchangeRateType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

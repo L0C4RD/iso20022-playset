@@ -1,13 +1,13 @@
 from . import base_types
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._TypeTransactionTotals2Code import TypeTransactionTotals2Code
+from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Number import Number
-from ._Max35Text import Max35Text
-from ._TypeTransactionTotals2Code import TypeTransactionTotals2Code
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 
 class TransactionTotals12(base_types._BaseFieldType):
 
-	__slots__ = ["_CardBrnd", "_Tp", "_TtlNb", "_CardPdctPrfl", "_Ccy", "_CmltvAmt", "_POIGrpId"]
+	__slots__ = ["_Tp", "_POIGrpId", "_CardPdctPrfl", "_CardBrnd", "_CmltvAmt", "_TtlNb", "_Ccy"]
 	@property
 	def CardBrnd(self):
 		return self._CardBrnd
@@ -20,32 +20,6 @@ class TransactionTotals12(base_types._BaseFieldType):
 	def CardBrnd(self):
 		del self._CardBrnd
 		self._CardBrnd = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def TtlNb(self):
-		return self._TtlNb
-
-	@TtlNb.setter
-	def TtlNb(self, value):
-		self._TtlNb = value if type(value) != base_types.auto else self.make_default("TtlNb")
-
-	@TtlNb.deleter
-	def TtlNb(self):
-		del self._TtlNb
-		self._TtlNb = None
 
 	@property
 	def CardPdctPrfl(self):
@@ -99,13 +73,39 @@ class TransactionTotals12(base_types._BaseFieldType):
 		del self._POIGrpId
 		self._POIGrpId = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def TtlNb(self):
+		return self._TtlNb
+
+	@TtlNb.setter
+	def TtlNb(self, value):
+		self._TtlNb = value if type(value) != base_types.auto else self.make_default("TtlNb")
+
+	@TtlNb.deleter
+	def TtlNb(self):
+		del self._TtlNb
+		self._TtlNb = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardBrnd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeTransactionTotals2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeTransactionTotals2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

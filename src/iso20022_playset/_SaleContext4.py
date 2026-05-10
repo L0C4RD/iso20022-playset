@@ -1,29 +1,29 @@
 from . import base_types
-from ._Max70Text import Max70Text
-from ._CardDataReading8Code import CardDataReading8Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max2NumericText import Max2NumericText
-from ._SaleTokenScope1Code import SaleTokenScope1Code
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
-from ._LanguageCode import LanguageCode
 from ._Organisation26 import Organisation26
+from ._SaleTokenScope1Code import SaleTokenScope1Code
+from ._LanguageCode import LanguageCode
+from ._Max2NumericText import Max2NumericText
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._CardDataReading8Code import CardDataReading8Code
 
 class SaleContext4(base_types._BaseFieldType):
 
-	__slots__ = ["_ForceOnlnFlg", "_AllwdNtryMd", "_CshrLang", "_PurchsOrdrNb", "_CstmrOrdrReqFlg", "_RmngAmt", "_SaleId", "_SaleRefNb", "_InvcNb", "_SpnsrdMrchnt", "_ShftNb", "_SpltPmt", "_SaleRcncltnId", "_SaleTknScp", "_AddtlSaleData", "_DlvryNoteNb", "_CshrId", "_ReuseCardDataFlg"]
+	__slots__ = ["_SaleRcncltnId", "_AddtlSaleData", "_DlvryNoteNb", "_ShftNb", "_SaleTknScp", "_CshrId", "_CstmrOrdrReqFlg", "_ReuseCardDataFlg", "_SpnsrdMrchnt", "_CshrLang", "_ForceOnlnFlg", "_RmngAmt", "_SaleId", "_AllwdNtryMd", "_SaleRefNb", "_PurchsOrdrNb", "_InvcNb", "_SpltPmt"]
 	@property
-	def ForceOnlnFlg(self):
-		return self._ForceOnlnFlg
+	def AddtlSaleData(self):
+		return self._AddtlSaleData
 
-	@ForceOnlnFlg.setter
-	def ForceOnlnFlg(self, value):
-		self._ForceOnlnFlg = value if type(value) != base_types.auto else self.make_default("ForceOnlnFlg")
+	@AddtlSaleData.setter
+	def AddtlSaleData(self, value):
+		self._AddtlSaleData = value if type(value) != base_types.auto else self.make_default("AddtlSaleData")
 
-	@ForceOnlnFlg.deleter
-	def ForceOnlnFlg(self):
-		del self._ForceOnlnFlg
-		self._ForceOnlnFlg = None
+	@AddtlSaleData.deleter
+	def AddtlSaleData(self):
+		del self._AddtlSaleData
+		self._AddtlSaleData = None
 
 	@property
 	def AllwdNtryMd(self):
@@ -39,6 +39,19 @@ class SaleContext4(base_types._BaseFieldType):
 		self._AllwdNtryMd = None
 
 	@property
+	def CshrId(self):
+		return self._CshrId
+
+	@CshrId.setter
+	def CshrId(self, value):
+		self._CshrId = value if type(value) != base_types.auto else self.make_default("CshrId")
+
+	@CshrId.deleter
+	def CshrId(self):
+		del self._CshrId
+		self._CshrId = None
+
+	@property
 	def CshrLang(self):
 		return self._CshrLang
 
@@ -50,6 +63,58 @@ class SaleContext4(base_types._BaseFieldType):
 	def CshrLang(self):
 		del self._CshrLang
 		self._CshrLang = None
+
+	@property
+	def CstmrOrdrReqFlg(self):
+		return self._CstmrOrdrReqFlg
+
+	@CstmrOrdrReqFlg.setter
+	def CstmrOrdrReqFlg(self, value):
+		self._CstmrOrdrReqFlg = value if type(value) != base_types.auto else self.make_default("CstmrOrdrReqFlg")
+
+	@CstmrOrdrReqFlg.deleter
+	def CstmrOrdrReqFlg(self):
+		del self._CstmrOrdrReqFlg
+		self._CstmrOrdrReqFlg = None
+
+	@property
+	def DlvryNoteNb(self):
+		return self._DlvryNoteNb
+
+	@DlvryNoteNb.setter
+	def DlvryNoteNb(self, value):
+		self._DlvryNoteNb = value if type(value) != base_types.auto else self.make_default("DlvryNoteNb")
+
+	@DlvryNoteNb.deleter
+	def DlvryNoteNb(self):
+		del self._DlvryNoteNb
+		self._DlvryNoteNb = None
+
+	@property
+	def ForceOnlnFlg(self):
+		return self._ForceOnlnFlg
+
+	@ForceOnlnFlg.setter
+	def ForceOnlnFlg(self, value):
+		self._ForceOnlnFlg = value if type(value) != base_types.auto else self.make_default("ForceOnlnFlg")
+
+	@ForceOnlnFlg.deleter
+	def ForceOnlnFlg(self):
+		del self._ForceOnlnFlg
+		self._ForceOnlnFlg = None
+
+	@property
+	def InvcNb(self):
+		return self._InvcNb
+
+	@InvcNb.setter
+	def InvcNb(self, value):
+		self._InvcNb = value if type(value) != base_types.auto else self.make_default("InvcNb")
+
+	@InvcNb.deleter
+	def InvcNb(self):
+		del self._InvcNb
+		self._InvcNb = None
 
 	@property
 	def PurchsOrdrNb(self):
@@ -65,17 +130,17 @@ class SaleContext4(base_types._BaseFieldType):
 		self._PurchsOrdrNb = None
 
 	@property
-	def CstmrOrdrReqFlg(self):
-		return self._CstmrOrdrReqFlg
+	def ReuseCardDataFlg(self):
+		return self._ReuseCardDataFlg
 
-	@CstmrOrdrReqFlg.setter
-	def CstmrOrdrReqFlg(self, value):
-		self._CstmrOrdrReqFlg = value if type(value) != base_types.auto else self.make_default("CstmrOrdrReqFlg")
+	@ReuseCardDataFlg.setter
+	def ReuseCardDataFlg(self, value):
+		self._ReuseCardDataFlg = value if type(value) != base_types.auto else self.make_default("ReuseCardDataFlg")
 
-	@CstmrOrdrReqFlg.deleter
-	def CstmrOrdrReqFlg(self):
-		del self._CstmrOrdrReqFlg
-		self._CstmrOrdrReqFlg = None
+	@ReuseCardDataFlg.deleter
+	def ReuseCardDataFlg(self):
+		del self._ReuseCardDataFlg
+		self._ReuseCardDataFlg = None
 
 	@property
 	def RmngAmt(self):
@@ -104,6 +169,19 @@ class SaleContext4(base_types._BaseFieldType):
 		self._SaleId = None
 
 	@property
+	def SaleRcncltnId(self):
+		return self._SaleRcncltnId
+
+	@SaleRcncltnId.setter
+	def SaleRcncltnId(self, value):
+		self._SaleRcncltnId = value if type(value) != base_types.auto else self.make_default("SaleRcncltnId")
+
+	@SaleRcncltnId.deleter
+	def SaleRcncltnId(self):
+		del self._SaleRcncltnId
+		self._SaleRcncltnId = None
+
+	@property
 	def SaleRefNb(self):
 		return self._SaleRefNb
 
@@ -117,30 +195,17 @@ class SaleContext4(base_types._BaseFieldType):
 		self._SaleRefNb = None
 
 	@property
-	def InvcNb(self):
-		return self._InvcNb
+	def SaleTknScp(self):
+		return self._SaleTknScp
 
-	@InvcNb.setter
-	def InvcNb(self, value):
-		self._InvcNb = value if type(value) != base_types.auto else self.make_default("InvcNb")
+	@SaleTknScp.setter
+	def SaleTknScp(self, value):
+		self._SaleTknScp = value if type(value) != base_types.auto else self.make_default("SaleTknScp")
 
-	@InvcNb.deleter
-	def InvcNb(self):
-		del self._InvcNb
-		self._InvcNb = None
-
-	@property
-	def SpnsrdMrchnt(self):
-		return self._SpnsrdMrchnt
-
-	@SpnsrdMrchnt.setter
-	def SpnsrdMrchnt(self, value):
-		self._SpnsrdMrchnt = value if type(value) != base_types.auto else self.make_default("SpnsrdMrchnt")
-
-	@SpnsrdMrchnt.deleter
-	def SpnsrdMrchnt(self):
-		del self._SpnsrdMrchnt
-		self._SpnsrdMrchnt = None
+	@SaleTknScp.deleter
+	def SaleTknScp(self):
+		del self._SaleTknScp
+		self._SaleTknScp = None
 
 	@property
 	def ShftNb(self):
@@ -169,101 +234,36 @@ class SaleContext4(base_types._BaseFieldType):
 		self._SpltPmt = None
 
 	@property
-	def SaleRcncltnId(self):
-		return self._SaleRcncltnId
+	def SpnsrdMrchnt(self):
+		return self._SpnsrdMrchnt
 
-	@SaleRcncltnId.setter
-	def SaleRcncltnId(self, value):
-		self._SaleRcncltnId = value if type(value) != base_types.auto else self.make_default("SaleRcncltnId")
+	@SpnsrdMrchnt.setter
+	def SpnsrdMrchnt(self, value):
+		self._SpnsrdMrchnt = value if type(value) != base_types.auto else self.make_default("SpnsrdMrchnt")
 
-	@SaleRcncltnId.deleter
-	def SaleRcncltnId(self):
-		del self._SaleRcncltnId
-		self._SaleRcncltnId = None
-
-	@property
-	def SaleTknScp(self):
-		return self._SaleTknScp
-
-	@SaleTknScp.setter
-	def SaleTknScp(self, value):
-		self._SaleTknScp = value if type(value) != base_types.auto else self.make_default("SaleTknScp")
-
-	@SaleTknScp.deleter
-	def SaleTknScp(self):
-		del self._SaleTknScp
-		self._SaleTknScp = None
-
-	@property
-	def AddtlSaleData(self):
-		return self._AddtlSaleData
-
-	@AddtlSaleData.setter
-	def AddtlSaleData(self, value):
-		self._AddtlSaleData = value if type(value) != base_types.auto else self.make_default("AddtlSaleData")
-
-	@AddtlSaleData.deleter
-	def AddtlSaleData(self):
-		del self._AddtlSaleData
-		self._AddtlSaleData = None
-
-	@property
-	def DlvryNoteNb(self):
-		return self._DlvryNoteNb
-
-	@DlvryNoteNb.setter
-	def DlvryNoteNb(self, value):
-		self._DlvryNoteNb = value if type(value) != base_types.auto else self.make_default("DlvryNoteNb")
-
-	@DlvryNoteNb.deleter
-	def DlvryNoteNb(self):
-		del self._DlvryNoteNb
-		self._DlvryNoteNb = None
-
-	@property
-	def CshrId(self):
-		return self._CshrId
-
-	@CshrId.setter
-	def CshrId(self, value):
-		self._CshrId = value if type(value) != base_types.auto else self.make_default("CshrId")
-
-	@CshrId.deleter
-	def CshrId(self):
-		del self._CshrId
-		self._CshrId = None
-
-	@property
-	def ReuseCardDataFlg(self):
-		return self._ReuseCardDataFlg
-
-	@ReuseCardDataFlg.setter
-	def ReuseCardDataFlg(self, value):
-		self._ReuseCardDataFlg = value if type(value) != base_types.auto else self.make_default("ReuseCardDataFlg")
-
-	@ReuseCardDataFlg.deleter
-	def ReuseCardDataFlg(self):
-		del self._ReuseCardDataFlg
-		self._ReuseCardDataFlg = None
+	@SpnsrdMrchnt.deleter
+	def SpnsrdMrchnt(self):
+		del self._SpnsrdMrchnt
+		self._SpnsrdMrchnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ForceOnlnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSaleData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdNtryMd', type=CardDataReading8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshrLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PurchsOrdrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrOrdrReqFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryNoteNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ForceOnlnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsOrdrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReuseCardDataFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmngAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvcNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpnsrdMrchnt', type=Organisation26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SaleTknScp', type=SaleTokenScope1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShftNb', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpltPmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleTknScp', type=SaleTokenScope1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSaleData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryNoteNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReuseCardDataFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpnsrdMrchnt', type=Organisation26, min=0, max=None, mutex_group=None, array=True),
 	))
 

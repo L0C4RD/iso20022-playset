@@ -1,53 +1,14 @@
 from . import base_types
+from ._ISODate import ISODate
+from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
-from ._PercentageRate import PercentageRate
-from ._ISODate import ISODate
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._AdditionalInformation15 import AdditionalInformation15
 
 class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 
-	__slots__ = ["_CrstllstnAmt", "_PctgOfAllwnc", "_EvtTpNb", "_AddtlInf", "_LftmAllwncPrtcn", "_EvtDt", "_EvtTpNm"]
-	@property
-	def CrstllstnAmt(self):
-		return self._CrstllstnAmt
-
-	@CrstllstnAmt.setter
-	def CrstllstnAmt(self, value):
-		self._CrstllstnAmt = value if type(value) != base_types.auto else self.make_default("CrstllstnAmt")
-
-	@CrstllstnAmt.deleter
-	def CrstllstnAmt(self):
-		del self._CrstllstnAmt
-		self._CrstllstnAmt = None
-
-	@property
-	def PctgOfAllwnc(self):
-		return self._PctgOfAllwnc
-
-	@PctgOfAllwnc.setter
-	def PctgOfAllwnc(self, value):
-		self._PctgOfAllwnc = value if type(value) != base_types.auto else self.make_default("PctgOfAllwnc")
-
-	@PctgOfAllwnc.deleter
-	def PctgOfAllwnc(self):
-		del self._PctgOfAllwnc
-		self._PctgOfAllwnc = None
-
-	@property
-	def EvtTpNb(self):
-		return self._EvtTpNb
-
-	@EvtTpNb.setter
-	def EvtTpNb(self, value):
-		self._EvtTpNb = value if type(value) != base_types.auto else self.make_default("EvtTpNb")
-
-	@EvtTpNb.deleter
-	def EvtTpNb(self):
-		del self._EvtTpNb
-		self._EvtTpNb = None
-
+	__slots__ = ["_EvtTpNm", "_AddtlInf", "_EvtDt", "_PctgOfAllwnc", "_LftmAllwncPrtcn", "_CrstllstnAmt", "_EvtTpNb"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -62,17 +23,17 @@ class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def LftmAllwncPrtcn(self):
-		return self._LftmAllwncPrtcn
+	def CrstllstnAmt(self):
+		return self._CrstllstnAmt
 
-	@LftmAllwncPrtcn.setter
-	def LftmAllwncPrtcn(self, value):
-		self._LftmAllwncPrtcn = value if type(value) != base_types.auto else self.make_default("LftmAllwncPrtcn")
+	@CrstllstnAmt.setter
+	def CrstllstnAmt(self, value):
+		self._CrstllstnAmt = value if type(value) != base_types.auto else self.make_default("CrstllstnAmt")
 
-	@LftmAllwncPrtcn.deleter
-	def LftmAllwncPrtcn(self):
-		del self._LftmAllwncPrtcn
-		self._LftmAllwncPrtcn = None
+	@CrstllstnAmt.deleter
+	def CrstllstnAmt(self):
+		del self._CrstllstnAmt
+		self._CrstllstnAmt = None
 
 	@property
 	def EvtDt(self):
@@ -88,6 +49,19 @@ class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 		self._EvtDt = None
 
 	@property
+	def EvtTpNb(self):
+		return self._EvtTpNb
+
+	@EvtTpNb.setter
+	def EvtTpNb(self, value):
+		self._EvtTpNb = value if type(value) != base_types.auto else self.make_default("EvtTpNb")
+
+	@EvtTpNb.deleter
+	def EvtTpNb(self):
+		del self._EvtTpNb
+		self._EvtTpNb = None
+
+	@property
 	def EvtTpNm(self):
 		return self._EvtTpNm
 
@@ -100,13 +74,39 @@ class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 		del self._EvtTpNm
 		self._EvtTpNm = None
 
+	@property
+	def LftmAllwncPrtcn(self):
+		return self._LftmAllwncPrtcn
+
+	@LftmAllwncPrtcn.setter
+	def LftmAllwncPrtcn(self, value):
+		self._LftmAllwncPrtcn = value if type(value) != base_types.auto else self.make_default("LftmAllwncPrtcn")
+
+	@LftmAllwncPrtcn.deleter
+	def LftmAllwncPrtcn(self):
+		del self._LftmAllwncPrtcn
+		self._LftmAllwncPrtcn = None
+
+	@property
+	def PctgOfAllwnc(self):
+		return self._PctgOfAllwnc
+
+	@PctgOfAllwnc.setter
+	def PctgOfAllwnc(self, value):
+		self._PctgOfAllwnc = value if type(value) != base_types.auto else self.make_default("PctgOfAllwnc")
+
+	@PctgOfAllwnc.deleter
+	def PctgOfAllwnc(self):
+		del self._PctgOfAllwnc
+		self._PctgOfAllwnc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CrstllstnAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PctgOfAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTpNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrstllstnAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTpNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTpNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgOfAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

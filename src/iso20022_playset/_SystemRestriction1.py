@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class SystemRestriction1(base_types._BaseFieldType):
 
-	__slots__ = ["_VldTo", "_Tp", "_VldFr"]
-	@property
-	def VldTo(self):
-		return self._VldTo
-
-	@VldTo.setter
-	def VldTo(self, value):
-		self._VldTo = value if type(value) != base_types.auto else self.make_default("VldTo")
-
-	@VldTo.deleter
-	def VldTo(self):
-		del self._VldTo
-		self._VldTo = None
-
+	__slots__ = ["_Tp", "_VldFr", "_VldTo"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -44,9 +31,22 @@ class SystemRestriction1(base_types._BaseFieldType):
 		del self._VldFr
 		self._VldFr = None
 
+	@property
+	def VldTo(self):
+		return self._VldTo
+
+	@VldTo.setter
+	def VldTo(self, value):
+		self._VldTo = value if type(value) != base_types.auto else self.make_default("VldTo")
+
+	@VldTo.deleter
+	def VldTo(self):
+		del self._VldTo
+		self._VldTo = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldTo', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldFr', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldTo', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

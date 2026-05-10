@@ -4,7 +4,7 @@ from ._GovernanceProcessType1Code import GovernanceProcessType1Code
 
 class GovernanceProcess1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

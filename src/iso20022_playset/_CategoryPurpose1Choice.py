@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ExternalCategoryPurpose1Code import ExternalCategoryPurpose1Code
+from ._Max35Text import Max35Text
 
 class CategoryPurpose1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

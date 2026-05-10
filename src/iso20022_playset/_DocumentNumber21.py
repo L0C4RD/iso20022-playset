@@ -1,10 +1,10 @@
 from . import base_types
-from ._Identification31 import Identification31
 from ._DocumentNumber5Choice import DocumentNumber5Choice
+from ._Identification31 import Identification31
 
 class DocumentNumber21(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_Refs"]
+	__slots__ = ["_Refs", "_Nb"]
 	@property
 	def Nb(self):
 		return self._Nb

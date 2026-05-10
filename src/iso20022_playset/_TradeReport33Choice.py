@@ -3,7 +3,7 @@ from ._TradeData43 import TradeData43
 
 class TradeReport33Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmprssn", "_ValtnUpd", "_Err", "_New", "_Othr", "_Mod", "_PosCmpnt", "_Rvv", "_PortOut", "_Crrctn", "_Termntn"]
+	__slots__ = ["_Err", "_New", "_Crrctn", "_Rvv", "_Othr", "_Cmprssn", "_PortOut", "_Mod", "_PosCmpnt", "_Termntn", "_ValtnUpd"]
 	@property
 	def Cmprssn(self):
 		return self._Cmprssn
@@ -18,17 +18,17 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		self._Cmprssn = None
 
 	@property
-	def ValtnUpd(self):
-		return self._ValtnUpd
+	def Crrctn(self):
+		return self._Crrctn
 
-	@ValtnUpd.setter
-	def ValtnUpd(self, value):
-		self._ValtnUpd = value if type(value) != base_types.auto else self.make_default("ValtnUpd")
+	@Crrctn.setter
+	def Crrctn(self, value):
+		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
 
-	@ValtnUpd.deleter
-	def ValtnUpd(self):
-		del self._ValtnUpd
-		self._ValtnUpd = None
+	@Crrctn.deleter
+	def Crrctn(self):
+		del self._Crrctn
+		self._Crrctn = None
 
 	@property
 	def Err(self):
@@ -42,6 +42,19 @@ class TradeReport33Choice(base_types._BaseFieldType):
 	def Err(self):
 		del self._Err
 		self._Err = None
+
+	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	@property
 	def New(self):
@@ -70,17 +83,17 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Mod(self):
-		return self._Mod
+	def PortOut(self):
+		return self._PortOut
 
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+	@PortOut.setter
+	def PortOut(self, value):
+		self._PortOut = value if type(value) != base_types.auto else self.make_default("PortOut")
 
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
+	@PortOut.deleter
+	def PortOut(self):
+		del self._PortOut
+		self._PortOut = None
 
 	@property
 	def PosCmpnt(self):
@@ -109,32 +122,6 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		self._Rvv = None
 
 	@property
-	def PortOut(self):
-		return self._PortOut
-
-	@PortOut.setter
-	def PortOut(self, value):
-		self._PortOut = value if type(value) != base_types.auto else self.make_default("PortOut")
-
-	@PortOut.deleter
-	def PortOut(self):
-		del self._PortOut
-		self._PortOut = None
-
-	@property
-	def Crrctn(self):
-		return self._Crrctn
-
-	@Crrctn.setter
-	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
-
-	@Crrctn.deleter
-	def Crrctn(self):
-		del self._Crrctn
-		self._Crrctn = None
-
-	@property
 	def Termntn(self):
 		return self._Termntn
 
@@ -147,17 +134,30 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		del self._Termntn
 		self._Termntn = None
 
+	@property
+	def ValtnUpd(self):
+		return self._ValtnUpd
+
+	@ValtnUpd.setter
+	def ValtnUpd(self, value):
+		self._ValtnUpd = value if type(value) != base_types.auto else self.make_default("ValtnUpd")
+
+	@ValtnUpd.deleter
+	def ValtnUpd(self):
+		del self._ValtnUpd
+		self._ValtnUpd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmprssn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ValtnUpd', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Crrctn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Err', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Mod', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Mod', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PortOut', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PosCmpnt', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rvv', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PortOut', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Crrctn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Termntn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ValtnUpd', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max6NumericText import Max6NumericText
 from ._TotalNumber2 import TotalNumber2
+from ._Max6NumericText import Max6NumericText
 
 class NumberCount2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CurInstrNb", "_TtlNb"]
+	__slots__ = ["_TtlNb", "_CurInstrNb"]
 	@property
 	def CurInstrNb(self):
 		return self._CurInstrNb

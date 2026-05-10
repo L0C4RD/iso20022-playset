@@ -1,24 +1,24 @@
 from . import base_types
 from ._ContentInformationType10 import ContentInformationType10
-from ._ATMTransferResponse2 import ATMTransferResponse2
 from ._Header31 import Header31
 from ._ContentInformationType15 import ContentInformationType15
+from ._ATMTransferResponse2 import ATMTransferResponse2
 
 class ATMTransferResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMTrfRspn", "_Hdr", "_ATMTrfRspn", "_SctyTrlr"]
+	__slots__ = ["_PrtctdATMTrfRspn", "_Hdr", "_SctyTrlr", "_ATMTrfRspn"]
 	@property
-	def PrtctdATMTrfRspn(self):
-		return self._PrtctdATMTrfRspn
+	def ATMTrfRspn(self):
+		return self._ATMTrfRspn
 
-	@PrtctdATMTrfRspn.setter
-	def PrtctdATMTrfRspn(self, value):
-		self._PrtctdATMTrfRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMTrfRspn")
+	@ATMTrfRspn.setter
+	def ATMTrfRspn(self, value):
+		self._ATMTrfRspn = value if type(value) != base_types.auto else self.make_default("ATMTrfRspn")
 
-	@PrtctdATMTrfRspn.deleter
-	def PrtctdATMTrfRspn(self):
-		del self._PrtctdATMTrfRspn
-		self._PrtctdATMTrfRspn = None
+	@ATMTrfRspn.deleter
+	def ATMTrfRspn(self):
+		del self._ATMTrfRspn
+		self._ATMTrfRspn = None
 
 	@property
 	def Hdr(self):
@@ -34,17 +34,17 @@ class ATMTransferResponseV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def ATMTrfRspn(self):
-		return self._ATMTrfRspn
+	def PrtctdATMTrfRspn(self):
+		return self._PrtctdATMTrfRspn
 
-	@ATMTrfRspn.setter
-	def ATMTrfRspn(self, value):
-		self._ATMTrfRspn = value if type(value) != base_types.auto else self.make_default("ATMTrfRspn")
+	@PrtctdATMTrfRspn.setter
+	def PrtctdATMTrfRspn(self, value):
+		self._PrtctdATMTrfRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMTrfRspn")
 
-	@ATMTrfRspn.deleter
-	def ATMTrfRspn(self):
-		del self._ATMTrfRspn
-		self._ATMTrfRspn = None
+	@PrtctdATMTrfRspn.deleter
+	def PrtctdATMTrfRspn(self):
+		del self._PrtctdATMTrfRspn
+		self._PrtctdATMTrfRspn = None
 
 	@property
 	def SctyTrlr(self):
@@ -60,9 +60,9 @@ class ATMTransferResponseV02(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMTrfRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMTrfRspn', type=ATMTransferResponse2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMTrfRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

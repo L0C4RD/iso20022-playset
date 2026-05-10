@@ -3,7 +3,7 @@ from ._PercentageRate import PercentageRate
 
 class AdditionalProductInformation3(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmTxCostsExAnteUK", "_FinInstrmTxCostsExPstUK"]
+	__slots__ = ["_FinInstrmTxCostsExPstUK", "_FinInstrmTxCostsExAnteUK"]
 	@property
 	def FinInstrmTxCostsExAnteUK(self):
 		return self._FinInstrmTxCostsExAnteUK

@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._PaymentType3Code import PaymentType3Code
+from ._Max35Text import Max35Text
 
 class PaymentType4Choice(base_types._BaseFieldType):
 

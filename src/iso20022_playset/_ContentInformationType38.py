@@ -1,23 +1,23 @@
 from . import base_types
-from ._AuthenticatedData10 import AuthenticatedData10
-from ._ContentType2Code import ContentType2Code
 from ._SignedData9 import SignedData9
+from ._ContentType2Code import ContentType2Code
+from ._AuthenticatedData10 import AuthenticatedData10
 
 class ContentInformationType38(base_types._BaseFieldType):
 
-	__slots__ = ["_SgndData", "_CnttTp", "_AuthntcdData"]
+	__slots__ = ["_CnttTp", "_AuthntcdData", "_SgndData"]
 	@property
-	def SgndData(self):
-		return self._SgndData
+	def AuthntcdData(self):
+		return self._AuthntcdData
 
-	@SgndData.setter
-	def SgndData(self, value):
-		self._SgndData = value if type(value) != base_types.auto else self.make_default("SgndData")
+	@AuthntcdData.setter
+	def AuthntcdData(self, value):
+		self._AuthntcdData = value if type(value) != base_types.auto else self.make_default("AuthntcdData")
 
-	@SgndData.deleter
-	def SgndData(self):
-		del self._SgndData
-		self._SgndData = None
+	@AuthntcdData.deleter
+	def AuthntcdData(self):
+		del self._AuthntcdData
+		self._AuthntcdData = None
 
 	@property
 	def CnttTp(self):
@@ -33,21 +33,21 @@ class ContentInformationType38(base_types._BaseFieldType):
 		self._CnttTp = None
 
 	@property
-	def AuthntcdData(self):
-		return self._AuthntcdData
+	def SgndData(self):
+		return self._SgndData
 
-	@AuthntcdData.setter
-	def AuthntcdData(self, value):
-		self._AuthntcdData = value if type(value) != base_types.auto else self.make_default("AuthntcdData")
+	@SgndData.setter
+	def SgndData(self, value):
+		self._SgndData = value if type(value) != base_types.auto else self.make_default("SgndData")
 
-	@AuthntcdData.deleter
-	def AuthntcdData(self):
-		del self._AuthntcdData
-		self._AuthntcdData = None
+	@SgndData.deleter
+	def SgndData(self):
+		del self._SgndData
+		self._SgndData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SgndData', type=SignedData9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgndData', type=SignedData9, min=0, max=1, mutex_group=None, array=False),
 	))
 

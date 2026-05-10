@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
 from ._CountryCode import CountryCode
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
 
 class TransportByRoad4(base_types._BaseFieldType):
 
-	__slots__ = ["_CrrierAgtCtry", "_CrrierAgtNm", "_RoadCrrierNm", "_PlcOfDlvry", "_PlcOfRct", "_RoadCrrierCtry"]
+	__slots__ = ["_RoadCrrierCtry", "_PlcOfDlvry", "_PlcOfRct", "_CrrierAgtCtry", "_CrrierAgtNm", "_RoadCrrierNm"]
 	@property
 	def CrrierAgtCtry(self):
 		return self._CrrierAgtCtry
@@ -31,19 +31,6 @@ class TransportByRoad4(base_types._BaseFieldType):
 	def CrrierAgtNm(self):
 		del self._CrrierAgtNm
 		self._CrrierAgtNm = None
-
-	@property
-	def RoadCrrierNm(self):
-		return self._RoadCrrierNm
-
-	@RoadCrrierNm.setter
-	def RoadCrrierNm(self, value):
-		self._RoadCrrierNm = value if type(value) != base_types.auto else self.make_default("RoadCrrierNm")
-
-	@RoadCrrierNm.deleter
-	def RoadCrrierNm(self):
-		del self._RoadCrrierNm
-		self._RoadCrrierNm = None
 
 	@property
 	def PlcOfDlvry(self):
@@ -84,12 +71,25 @@ class TransportByRoad4(base_types._BaseFieldType):
 		del self._RoadCrrierCtry
 		self._RoadCrrierCtry = None
 
+	@property
+	def RoadCrrierNm(self):
+		return self._RoadCrrierNm
+
+	@RoadCrrierNm.setter
+	def RoadCrrierNm(self, value):
+		self._RoadCrrierNm = value if type(value) != base_types.auto else self.make_default("RoadCrrierNm")
+
+	@RoadCrrierNm.deleter
+	def RoadCrrierNm(self):
+		del self._RoadCrrierNm
+		self._RoadCrrierNm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RoadCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RoadCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RoadCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

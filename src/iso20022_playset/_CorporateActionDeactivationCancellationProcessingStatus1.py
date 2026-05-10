@@ -1,6 +1,6 @@
 from . import base_types
-from ._ProcessedStatus2FormatChoice import ProcessedStatus2FormatChoice
 from ._Max350Text import Max350Text
+from ._ProcessedStatus2FormatChoice import ProcessedStatus2FormatChoice
 
 class CorporateActionDeactivationCancellationProcessingStatus1(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
-from ._Operation3Code import Operation3Code
 from ._CollateralType6Code import CollateralType6Code
 from ._ExposureType10Code import ExposureType10Code
+from ._Operation3Code import Operation3Code
 
 class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_CollCmpntTp", "_Oprtr", "_SctiesFincgTxTp"]
+	__slots__ = ["_Oprtr", "_SctiesFincgTxTp", "_CollCmpntTp"]
 	@property
 	def CollCmpntTp(self):
 		return self._CollCmpntTp

@@ -3,19 +3,19 @@ from ._DateFormat41Choice import DateFormat41Choice
 
 class CorporateActionDate93(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdDt", "_LtryDt", "_ExDvddDt"]
+	__slots__ = ["_LtryDt", "_RcrdDt", "_ExDvddDt"]
 	@property
-	def RcrdDt(self):
-		return self._RcrdDt
+	def ExDvddDt(self):
+		return self._ExDvddDt
 
-	@RcrdDt.setter
-	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
+	@ExDvddDt.setter
+	def ExDvddDt(self, value):
+		self._ExDvddDt = value if type(value) != base_types.auto else self.make_default("ExDvddDt")
 
-	@RcrdDt.deleter
-	def RcrdDt(self):
-		del self._RcrdDt
-		self._RcrdDt = None
+	@ExDvddDt.deleter
+	def ExDvddDt(self):
+		del self._ExDvddDt
+		self._ExDvddDt = None
 
 	@property
 	def LtryDt(self):
@@ -31,21 +31,21 @@ class CorporateActionDate93(base_types._BaseFieldType):
 		self._LtryDt = None
 
 	@property
-	def ExDvddDt(self):
-		return self._ExDvddDt
+	def RcrdDt(self):
+		return self._RcrdDt
 
-	@ExDvddDt.setter
-	def ExDvddDt(self, value):
-		self._ExDvddDt = value if type(value) != base_types.auto else self.make_default("ExDvddDt")
+	@RcrdDt.setter
+	def RcrdDt(self, value):
+		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
 
-	@ExDvddDt.deleter
-	def ExDvddDt(self):
-		del self._ExDvddDt
-		self._ExDvddDt = None
+	@RcrdDt.deleter
+	def RcrdDt(self):
+		del self._RcrdDt
+		self._RcrdDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcrdDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtryDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExDvddDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtryDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -3,7 +3,7 @@ from ._ActiveOrHistoricCurrencyAnd20DecimalAmount import ActiveOrHistoricCurrenc
 
 class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlMrgnPstdPreHrcut", "_InitlMrgnPstdPstHrcut", "_XcssCollPstd", "_VartnMrgnPstdPreHrcut", "_VartnMrgnPstdPstHrcut"]
+	__slots__ = ["_VartnMrgnPstdPreHrcut", "_XcssCollPstd", "_InitlMrgnPstdPstHrcut", "_VartnMrgnPstdPstHrcut", "_InitlMrgnPstdPreHrcut"]
 	@property
 	def InitlMrgnPstdPreHrcut(self):
 		return self._InitlMrgnPstdPreHrcut
@@ -31,19 +31,6 @@ class PostedMarginOrCollateral6(base_types._BaseFieldType):
 		self._InitlMrgnPstdPstHrcut = None
 
 	@property
-	def XcssCollPstd(self):
-		return self._XcssCollPstd
-
-	@XcssCollPstd.setter
-	def XcssCollPstd(self, value):
-		self._XcssCollPstd = value if type(value) != base_types.auto else self.make_default("XcssCollPstd")
-
-	@XcssCollPstd.deleter
-	def XcssCollPstd(self):
-		del self._XcssCollPstd
-		self._XcssCollPstd = None
-
-	@property
 	def VartnMrgnPstdPreHrcut(self):
 		return self._VartnMrgnPstdPreHrcut
 
@@ -69,11 +56,24 @@ class PostedMarginOrCollateral6(base_types._BaseFieldType):
 		del self._VartnMrgnPstdPstHrcut
 		self._VartnMrgnPstdPstHrcut = None
 
+	@property
+	def XcssCollPstd(self):
+		return self._XcssCollPstd
+
+	@XcssCollPstd.setter
+	def XcssCollPstd(self, value):
+		self._XcssCollPstd = value if type(value) != base_types.auto else self.make_default("XcssCollPstd")
+
+	@XcssCollPstd.deleter
+	def XcssCollPstd(self):
+		del self._XcssCollPstd
+		self._XcssCollPstd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlMrgnPstdPreHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlMrgnPstdPstHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnPstdPreHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnPstdPstHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

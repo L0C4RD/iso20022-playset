@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._NotificationAdviceStatus2Choice import NotificationAdviceStatus2Choice
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class AgentNotificationIdentificationAndStatus1(base_types._BaseFieldType):
 
 	__slots__ = ["_Sts", "_Id", "_CreDtTm"]
 	@property
-	def Sts(self):
-		return self._Sts
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def Id(self):
@@ -33,21 +33,21 @@ class AgentNotificationIdentificationAndStatus1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def Sts(self):
+		return self._Sts
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=NotificationAdviceStatus2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=NotificationAdviceStatus2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

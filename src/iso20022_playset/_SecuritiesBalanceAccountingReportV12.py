@@ -1,70 +1,18 @@
 from . import base_types
-from ._SecuritiesAccount26 import SecuritiesAccount26
 from ._Intermediary44 import Intermediary44
-from ._BlockChainAddressWallet1 import BlockChainAddressWallet1
-from ._PartyIdentification136 import PartyIdentification136
-from ._TotalValueInPageAndStatement2 import TotalValueInPageAndStatement2
-from ._Statement74 import Statement74
-from ._Pagination1 import Pagination1
-from ._PartyIdentification144 import PartyIdentification144
-from ._SubAccountIdentification72 import SubAccountIdentification72
 from ._AggregateBalanceInformation45 import AggregateBalanceInformation45
+from ._SubAccountIdentification72 import SubAccountIdentification72
+from ._BlockChainAddressWallet1 import BlockChainAddressWallet1
+from ._SecuritiesAccount26 import SecuritiesAccount26
+from ._TotalValueInPageAndStatement2 import TotalValueInPageAndStatement2
+from ._PartyIdentification136 import PartyIdentification136
+from ._Statement74 import Statement74
+from ._PartyIdentification144 import PartyIdentification144
+from ._Pagination1 import Pagination1
 
 class SecuritiesBalanceAccountingReportV12(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AltrnRptgCcyTtlAmts", "_StmtGnlDtls", "_SubAcctDtls", "_AcctBaseCcyTtlAmts", "_SfkpgAcct", "_BalForAcct", "_AcctOwnr", "_AcctSvcr", "_Pgntn", "_IntrmyInf"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def AltrnRptgCcyTtlAmts(self):
-		return self._AltrnRptgCcyTtlAmts
-
-	@AltrnRptgCcyTtlAmts.setter
-	def AltrnRptgCcyTtlAmts(self, value):
-		self._AltrnRptgCcyTtlAmts = value if type(value) != base_types.auto else self.make_default("AltrnRptgCcyTtlAmts")
-
-	@AltrnRptgCcyTtlAmts.deleter
-	def AltrnRptgCcyTtlAmts(self):
-		del self._AltrnRptgCcyTtlAmts
-		self._AltrnRptgCcyTtlAmts = None
-
-	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
-
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
-
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
-
-	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
-
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
-
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
-
+	__slots__ = ["_BalForAcct", "_BlckChainAdrOrWllt", "_IntrmyInf", "_AcctSvcr", "_SfkpgAcct", "_SubAcctDtls", "_Pgntn", "_AcctBaseCcyTtlAmts", "_StmtGnlDtls", "_AltrnRptgCcyTtlAmts", "_AcctOwnr"]
 	@property
 	def AcctBaseCcyTtlAmts(self):
 		return self._AcctBaseCcyTtlAmts
@@ -77,32 +25,6 @@ class SecuritiesBalanceAccountingReportV12(base_types._BaseFieldType):
 	def AcctBaseCcyTtlAmts(self):
 		del self._AcctBaseCcyTtlAmts
 		self._AcctBaseCcyTtlAmts = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
-	@property
-	def BalForAcct(self):
-		return self._BalForAcct
-
-	@BalForAcct.setter
-	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != base_types.auto else self.make_default("BalForAcct")
-
-	@BalForAcct.deleter
-	def BalForAcct(self):
-		del self._BalForAcct
-		self._BalForAcct = None
 
 	@property
 	def AcctOwnr(self):
@@ -131,17 +53,43 @@ class SecuritiesBalanceAccountingReportV12(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def AltrnRptgCcyTtlAmts(self):
+		return self._AltrnRptgCcyTtlAmts
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+	@AltrnRptgCcyTtlAmts.setter
+	def AltrnRptgCcyTtlAmts(self, value):
+		self._AltrnRptgCcyTtlAmts = value if type(value) != base_types.auto else self.make_default("AltrnRptgCcyTtlAmts")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@AltrnRptgCcyTtlAmts.deleter
+	def AltrnRptgCcyTtlAmts(self):
+		del self._AltrnRptgCcyTtlAmts
+		self._AltrnRptgCcyTtlAmts = None
+
+	@property
+	def BalForAcct(self):
+		return self._BalForAcct
+
+	@BalForAcct.setter
+	def BalForAcct(self, value):
+		self._BalForAcct = value if type(value) != base_types.auto else self.make_default("BalForAcct")
+
+	@BalForAcct.deleter
+	def BalForAcct(self):
+		del self._BalForAcct
+		self._BalForAcct = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def IntrmyInf(self):
@@ -156,17 +104,69 @@ class SecuritiesBalanceAccountingReportV12(base_types._BaseFieldType):
 		del self._IntrmyInf
 		self._IntrmyInf = None
 
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
+
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
+
+	@property
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
+
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnRptgCcyTtlAmts', type=TotalValueInPageAndStatement2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement74, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification72, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctBaseCcyTtlAmts', type=TotalValueInPageAndStatement2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation45, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnRptgCcyTtlAmts', type=TotalValueInPageAndStatement2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation45, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyInf', type=Intermediary44, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement74, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification72, min=0, max=None, mutex_group=None, array=True),
 	))
 

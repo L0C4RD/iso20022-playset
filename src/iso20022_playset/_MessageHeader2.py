@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._RequestType2Choice import RequestType2Choice
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class MessageHeader2(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqTp", "_MsgId", "_CreDtTm"]
+	__slots__ = ["_ReqTp", "_CreDtTm", "_MsgId"]
 	@property
-	def ReqTp(self):
-		return self._ReqTp
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@ReqTp.setter
-	def ReqTp(self, value):
-		self._ReqTp = value if type(value) != base_types.auto else self.make_default("ReqTp")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
-	@ReqTp.deleter
-	def ReqTp(self):
-		del self._ReqTp
-		self._ReqTp = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def MsgId(self):
@@ -33,21 +33,21 @@ class MessageHeader2(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def ReqTp(self):
+		return self._ReqTp
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+	@ReqTp.setter
+	def ReqTp(self, value):
+		self._ReqTp = value if type(value) != base_types.auto else self.make_default("ReqTp")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@ReqTp.deleter
+	def ReqTp(self):
+		del self._ReqTp
+		self._ReqTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqTp', type=RequestType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqTp', type=RequestType2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

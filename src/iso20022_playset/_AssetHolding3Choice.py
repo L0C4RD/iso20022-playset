@@ -1,13 +1,13 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TripartyCollateralAndAmount1 import TripartyCollateralAndAmount1
-from ._SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
-from ._Commodity2 import Commodity2
 from ._Guarantee1 import Guarantee1
+from ._SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
+from ._TripartyCollateralAndAmount1 import TripartyCollateralAndAmount1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Commodity2 import Commodity2
 
 class AssetHolding3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmmdty", "_Grnt", "_Gold", "_Scty", "_Csh", "_Trpty"]
+	__slots__ = ["_Grnt", "_Cmmdty", "_Gold", "_Trpty", "_Csh", "_Scty"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty
@@ -22,17 +22,17 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 		self._Cmmdty = None
 
 	@property
-	def Grnt(self):
-		return self._Grnt
+	def Csh(self):
+		return self._Csh
 
-	@Grnt.setter
-	def Grnt(self, value):
-		self._Grnt = value if type(value) != base_types.auto else self.make_default("Grnt")
+	@Csh.setter
+	def Csh(self, value):
+		self._Csh = value if type(value) != base_types.auto else self.make_default("Csh")
 
-	@Grnt.deleter
-	def Grnt(self):
-		del self._Grnt
-		self._Grnt = None
+	@Csh.deleter
+	def Csh(self):
+		del self._Csh
+		self._Csh = None
 
 	@property
 	def Gold(self):
@@ -48,6 +48,19 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 		self._Gold = None
 
 	@property
+	def Grnt(self):
+		return self._Grnt
+
+	@Grnt.setter
+	def Grnt(self, value):
+		self._Grnt = value if type(value) != base_types.auto else self.make_default("Grnt")
+
+	@Grnt.deleter
+	def Grnt(self):
+		del self._Grnt
+		self._Grnt = None
+
+	@property
 	def Scty(self):
 		return self._Scty
 
@@ -59,19 +72,6 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 	def Scty(self):
 		del self._Scty
 		self._Scty = None
-
-	@property
-	def Csh(self):
-		return self._Csh
-
-	@Csh.setter
-	def Csh(self, value):
-		self._Csh = value if type(value) != base_types.auto else self.make_default("Csh")
-
-	@Csh.deleter
-	def Csh(self):
-		del self._Csh
-		self._Csh = None
 
 	@property
 	def Trpty(self):
@@ -88,10 +88,10 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmmdty', type=Commodity2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Grnt', type=Guarantee1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Scty', type=SecurityIdentificationAndAmount1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Csh', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Grnt', type=Guarantee1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Scty', type=SecurityIdentificationAndAmount1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Trpty', type=TripartyCollateralAndAmount1, min=0, max=1, mutex_group=1, array=False),
 	))
 

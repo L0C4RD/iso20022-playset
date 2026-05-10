@@ -1,10 +1,10 @@
 from . import base_types
-from ._PaymentMethod4Code import PaymentMethod4Code
 from ._CashAccount7 import CashAccount7
+from ._PaymentMethod4Code import PaymentMethod4Code
 
 class PaymentInformation15(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtAcct", "_PmtMtd"]
+	__slots__ = ["_PmtMtd", "_PmtAcct"]
 	@property
 	def PmtAcct(self):
 		return self._PmtAcct

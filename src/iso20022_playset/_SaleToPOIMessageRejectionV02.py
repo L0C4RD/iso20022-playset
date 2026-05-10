@@ -1,10 +1,10 @@
 from . import base_types
-from ._Header41 import Header41
 from ._AcceptorRejection2 import AcceptorRejection2
+from ._Header41 import Header41
 
 class SaleToPOIMessageRejectionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_Rjct"]
+	__slots__ = ["_Rjct", "_Hdr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

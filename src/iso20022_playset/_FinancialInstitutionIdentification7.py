@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
+from ._BICIdentifier import BICIdentifier
 from ._ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
 from ._PostalAddress6 import PostalAddress6
-from ._BICIdentifier import BICIdentifier
+from ._Max140Text import Max140Text
+from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
 
 class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_BIC", "_Othr", "_ClrSysMmbId", "_PstlAdr", "_Nm"]
+	__slots__ = ["_ClrSysMmbId", "_BIC", "_Nm", "_PstlAdr", "_Othr"]
 	@property
 	def BIC(self):
 		return self._BIC
@@ -20,19 +20,6 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 	def BIC(self):
 		del self._BIC
 		self._BIC = None
-
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
 
 	@property
 	def ClrSysMmbId(self):
@@ -48,19 +35,6 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 		self._ClrSysMmbId = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
-	@property
 	def Nm(self):
 		return self._Nm
 
@@ -73,11 +47,37 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 	))
 

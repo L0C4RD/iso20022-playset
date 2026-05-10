@@ -4,7 +4,7 @@ from ._ExposureMetrics4 import ExposureMetrics4
 
 class VolumeMetrics5(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_Xpsr"]
+	__slots__ = ["_Xpsr", "_NbOfTxs"]
 	@property
 	def NbOfTxs(self):
 		return self._NbOfTxs

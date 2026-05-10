@@ -1,35 +1,35 @@
 from . import base_types
-from ._ReferredAgent3 import ReferredAgent3
-from ._MessageIdentification1 import MessageIdentification1
 from ._InvestmentAccount73 import InvestmentAccount73
-from ._InvestmentFundOrder4 import InvestmentFundOrder4
-from ._InvestmentAccountOpening4 import InvestmentAccountOpening4
-from ._AdditiononalInformation13 import AdditiononalInformation13
+from ._Intermediary46 import Intermediary46
 from ._AccountParties17 import AccountParties17
-from ._AdditionalReference13 import AdditionalReference13
+from ._AdditiononalInformation13 import AdditiononalInformation13
+from ._InvestmentFundOrder4 import InvestmentFundOrder4
 from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._CashSettlement3 import CashSettlement3
-from ._InvestmentPlan17 import InvestmentPlan17
-from ._Extension1 import Extension1
 from ._NewIssueAllocation2 import NewIssueAllocation2
-from ._Intermediary46 import Intermediary46
+from ._InvestmentAccountOpening4 import InvestmentAccountOpening4
+from ._InvestmentPlan17 import InvestmentPlan17
 from ._DocumentToSend4 import DocumentToSend4
+from ._MessageIdentification1 import MessageIdentification1
+from ._AdditionalReference13 import AdditionalReference13
+from ._Extension1 import Extension1
+from ._ReferredAgent3 import ReferredAgent3
 
 class AccountOpeningInstructionV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_AddtlInf", "_Plcmnt", "_OrdrRef", "_InstrDtls", "_MktPrctcVrsn", "_CshSttlm", "_Xtnsn", "_Intrmies", "_NewIsseAllcn", "_WdrwlInvstmtPlan", "_SvgsInvstmtPlan", "_InvstmtAcct", "_PrvsRef", "_SvcLvlAgrmt", "_AcctPties"]
+	__slots__ = ["_CshSttlm", "_Plcmnt", "_NewIsseAllcn", "_Intrmies", "_SvcLvlAgrmt", "_InvstmtAcct", "_AddtlInf", "_OrdrRef", "_MktPrctcVrsn", "_MsgId", "_PrvsRef", "_WdrwlInvstmtPlan", "_InstrDtls", "_Xtnsn", "_AcctPties", "_SvgsInvstmtPlan"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def AcctPties(self):
+		return self._AcctPties
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@AcctPties.setter
+	def AcctPties(self, value):
+		self._AcctPties = value if type(value) != base_types.auto else self.make_default("AcctPties")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@AcctPties.deleter
+	def AcctPties(self):
+		del self._AcctPties
+		self._AcctPties = None
 
 	@property
 	def AddtlInf(self):
@@ -45,30 +45,17 @@ class AccountOpeningInstructionV08(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Plcmnt(self):
-		return self._Plcmnt
+	def CshSttlm(self):
+		return self._CshSttlm
 
-	@Plcmnt.setter
-	def Plcmnt(self, value):
-		self._Plcmnt = value if type(value) != base_types.auto else self.make_default("Plcmnt")
+	@CshSttlm.setter
+	def CshSttlm(self, value):
+		self._CshSttlm = value if type(value) != base_types.auto else self.make_default("CshSttlm")
 
-	@Plcmnt.deleter
-	def Plcmnt(self):
-		del self._Plcmnt
-		self._Plcmnt = None
-
-	@property
-	def OrdrRef(self):
-		return self._OrdrRef
-
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
-
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
+	@CshSttlm.deleter
+	def CshSttlm(self):
+		del self._CshSttlm
+		self._CshSttlm = None
 
 	@property
 	def InstrDtls(self):
@@ -84,6 +71,32 @@ class AccountOpeningInstructionV08(base_types._BaseFieldType):
 		self._InstrDtls = None
 
 	@property
+	def Intrmies(self):
+		return self._Intrmies
+
+	@Intrmies.setter
+	def Intrmies(self, value):
+		self._Intrmies = value if type(value) != base_types.auto else self.make_default("Intrmies")
+
+	@Intrmies.deleter
+	def Intrmies(self):
+		del self._Intrmies
+		self._Intrmies = None
+
+	@property
+	def InvstmtAcct(self):
+		return self._InvstmtAcct
+
+	@InvstmtAcct.setter
+	def InvstmtAcct(self, value):
+		self._InvstmtAcct = value if type(value) != base_types.auto else self.make_default("InvstmtAcct")
+
+	@InvstmtAcct.deleter
+	def InvstmtAcct(self):
+		del self._InvstmtAcct
+		self._InvstmtAcct = None
+
+	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn
 
@@ -97,43 +110,17 @@ class AccountOpeningInstructionV08(base_types._BaseFieldType):
 		self._MktPrctcVrsn = None
 
 	@property
-	def CshSttlm(self):
-		return self._CshSttlm
+	def MsgId(self):
+		return self._MsgId
 
-	@CshSttlm.setter
-	def CshSttlm(self, value):
-		self._CshSttlm = value if type(value) != base_types.auto else self.make_default("CshSttlm")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@CshSttlm.deleter
-	def CshSttlm(self):
-		del self._CshSttlm
-		self._CshSttlm = None
-
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def Intrmies(self):
-		return self._Intrmies
-
-	@Intrmies.setter
-	def Intrmies(self, value):
-		self._Intrmies = value if type(value) != base_types.auto else self.make_default("Intrmies")
-
-	@Intrmies.deleter
-	def Intrmies(self):
-		del self._Intrmies
-		self._Intrmies = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def NewIsseAllcn(self):
@@ -149,43 +136,30 @@ class AccountOpeningInstructionV08(base_types._BaseFieldType):
 		self._NewIsseAllcn = None
 
 	@property
-	def WdrwlInvstmtPlan(self):
-		return self._WdrwlInvstmtPlan
+	def OrdrRef(self):
+		return self._OrdrRef
 
-	@WdrwlInvstmtPlan.setter
-	def WdrwlInvstmtPlan(self, value):
-		self._WdrwlInvstmtPlan = value if type(value) != base_types.auto else self.make_default("WdrwlInvstmtPlan")
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
 
-	@WdrwlInvstmtPlan.deleter
-	def WdrwlInvstmtPlan(self):
-		del self._WdrwlInvstmtPlan
-		self._WdrwlInvstmtPlan = None
-
-	@property
-	def SvgsInvstmtPlan(self):
-		return self._SvgsInvstmtPlan
-
-	@SvgsInvstmtPlan.setter
-	def SvgsInvstmtPlan(self, value):
-		self._SvgsInvstmtPlan = value if type(value) != base_types.auto else self.make_default("SvgsInvstmtPlan")
-
-	@SvgsInvstmtPlan.deleter
-	def SvgsInvstmtPlan(self):
-		del self._SvgsInvstmtPlan
-		self._SvgsInvstmtPlan = None
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
 
 	@property
-	def InvstmtAcct(self):
-		return self._InvstmtAcct
+	def Plcmnt(self):
+		return self._Plcmnt
 
-	@InvstmtAcct.setter
-	def InvstmtAcct(self, value):
-		self._InvstmtAcct = value if type(value) != base_types.auto else self.make_default("InvstmtAcct")
+	@Plcmnt.setter
+	def Plcmnt(self, value):
+		self._Plcmnt = value if type(value) != base_types.auto else self.make_default("Plcmnt")
 
-	@InvstmtAcct.deleter
-	def InvstmtAcct(self):
-		del self._InvstmtAcct
-		self._InvstmtAcct = None
+	@Plcmnt.deleter
+	def Plcmnt(self):
+		del self._Plcmnt
+		self._Plcmnt = None
 
 	@property
 	def PrvsRef(self):
@@ -214,34 +188,60 @@ class AccountOpeningInstructionV08(base_types._BaseFieldType):
 		self._SvcLvlAgrmt = None
 
 	@property
-	def AcctPties(self):
-		return self._AcctPties
+	def SvgsInvstmtPlan(self):
+		return self._SvgsInvstmtPlan
 
-	@AcctPties.setter
-	def AcctPties(self, value):
-		self._AcctPties = value if type(value) != base_types.auto else self.make_default("AcctPties")
+	@SvgsInvstmtPlan.setter
+	def SvgsInvstmtPlan(self, value):
+		self._SvgsInvstmtPlan = value if type(value) != base_types.auto else self.make_default("SvgsInvstmtPlan")
 
-	@AcctPties.deleter
-	def AcctPties(self):
-		del self._AcctPties
-		self._AcctPties = None
+	@SvgsInvstmtPlan.deleter
+	def SvgsInvstmtPlan(self):
+		del self._SvgsInvstmtPlan
+		self._SvgsInvstmtPlan = None
+
+	@property
+	def WdrwlInvstmtPlan(self):
+		return self._WdrwlInvstmtPlan
+
+	@WdrwlInvstmtPlan.setter
+	def WdrwlInvstmtPlan(self, value):
+		self._WdrwlInvstmtPlan = value if type(value) != base_types.auto else self.make_default("WdrwlInvstmtPlan")
+
+	@WdrwlInvstmtPlan.deleter
+	def WdrwlInvstmtPlan(self):
+		del self._WdrwlInvstmtPlan
+		self._WdrwlInvstmtPlan = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctPties', type=AccountParties17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditiononalInformation13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Plcmnt', type=ReferredAgent3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=InvestmentFundOrder4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrDtls', type=InvestmentAccountOpening4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlm', type=CashSettlement3, min=0, max=8, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InstrDtls', type=InvestmentAccountOpening4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmies', type=Intermediary46, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NewIsseAllcn', type=NewIssueAllocation2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WdrwlInvstmtPlan', type=InvestmentPlan17, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvgsInvstmtPlan', type=InvestmentPlan17, min=0, max=50, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstmtAcct', type=InvestmentAccount73, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewIsseAllcn', type=NewIssueAllocation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=InvestmentFundOrder4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Plcmnt', type=ReferredAgent3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcLvlAgrmt', type=DocumentToSend4, min=0, max=30, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctPties', type=AccountParties17, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvgsInvstmtPlan', type=InvestmentPlan17, min=0, max=50, mutex_group=None, array=True),
+		base_types.FieldEntry(name='WdrwlInvstmtPlan', type=InvestmentPlan17, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

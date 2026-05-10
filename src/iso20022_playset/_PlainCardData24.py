@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max10DateText import Max10DateText
-from ._Min2Max3NumericText import Min2Max3NumericText
 from ._Max76Text import Max76Text
 from ._Min8Max28NumericText import Min8Max28NumericText
-from ._Max37Text import Max37Text
 from ._Max10Text import Max10Text
+from ._Max10DateText import Max10DateText
+from ._Min2Max3NumericText import Min2Max3NumericText
+from ._Max37Text import Max37Text
 from ._Max104Text import Max104Text
 
 class PlainCardData24(base_types._BaseFieldType):
 
-	__slots__ = ["_CardSeqNb", "_Trck2", "_Trck1", "_FctvDt", "_Trck3", "_PAN", "_XpryDt"]
+	__slots__ = ["_PAN", "_XpryDt", "_FctvDt", "_Trck2", "_Trck3", "_Trck1", "_CardSeqNb"]
 	@property
 	def CardSeqNb(self):
 		return self._CardSeqNb
@@ -22,32 +22,6 @@ class PlainCardData24(base_types._BaseFieldType):
 	def CardSeqNb(self):
 		del self._CardSeqNb
 		self._CardSeqNb = None
-
-	@property
-	def Trck2(self):
-		return self._Trck2
-
-	@Trck2.setter
-	def Trck2(self, value):
-		self._Trck2 = value if type(value) != base_types.auto else self.make_default("Trck2")
-
-	@Trck2.deleter
-	def Trck2(self):
-		del self._Trck2
-		self._Trck2 = None
-
-	@property
-	def Trck1(self):
-		return self._Trck1
-
-	@Trck1.setter
-	def Trck1(self, value):
-		self._Trck1 = value if type(value) != base_types.auto else self.make_default("Trck1")
-
-	@Trck1.deleter
-	def Trck1(self):
-		del self._Trck1
-		self._Trck1 = None
 
 	@property
 	def FctvDt(self):
@@ -63,19 +37,6 @@ class PlainCardData24(base_types._BaseFieldType):
 		self._FctvDt = None
 
 	@property
-	def Trck3(self):
-		return self._Trck3
-
-	@Trck3.setter
-	def Trck3(self, value):
-		self._Trck3 = value if type(value) != base_types.auto else self.make_default("Trck3")
-
-	@Trck3.deleter
-	def Trck3(self):
-		del self._Trck3
-		self._Trck3 = None
-
-	@property
 	def PAN(self):
 		return self._PAN
 
@@ -87,6 +48,45 @@ class PlainCardData24(base_types._BaseFieldType):
 	def PAN(self):
 		del self._PAN
 		self._PAN = None
+
+	@property
+	def Trck1(self):
+		return self._Trck1
+
+	@Trck1.setter
+	def Trck1(self, value):
+		self._Trck1 = value if type(value) != base_types.auto else self.make_default("Trck1")
+
+	@Trck1.deleter
+	def Trck1(self):
+		del self._Trck1
+		self._Trck1 = None
+
+	@property
+	def Trck2(self):
+		return self._Trck2
+
+	@Trck2.setter
+	def Trck2(self, value):
+		self._Trck2 = value if type(value) != base_types.auto else self.make_default("Trck2")
+
+	@Trck2.deleter
+	def Trck2(self):
+		del self._Trck2
+		self._Trck2 = None
+
+	@property
+	def Trck3(self):
+		return self._Trck3
+
+	@Trck3.setter
+	def Trck3(self, value):
+		self._Trck3 = value if type(value) != base_types.auto else self.make_default("Trck3")
+
+	@Trck3.deleter
+	def Trck3(self):
+		del self._Trck3
+		self._Trck3 = None
 
 	@property
 	def XpryDt(self):
@@ -103,11 +103,11 @@ class PlainCardData24(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trck2', type=Max37Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trck1', type=Max76Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trck3', type=Max104Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PAN', type=Min8Max28NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trck1', type=Max76Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trck2', type=Max37Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trck3', type=Max104Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=Max10DateText, min=0, max=1, mutex_group=None, array=False),
 	))
 

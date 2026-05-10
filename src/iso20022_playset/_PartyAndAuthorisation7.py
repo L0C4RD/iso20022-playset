@@ -1,7 +1,7 @@
 from . import base_types
-from ._PartyOrGroup3Choice import PartyOrGroup3Choice
 from ._Authorisation2 import Authorisation2
 from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
+from ._PartyOrGroup3Choice import PartyOrGroup3Choice
 
 class PartyAndAuthorisation7(base_types._BaseFieldType):
 

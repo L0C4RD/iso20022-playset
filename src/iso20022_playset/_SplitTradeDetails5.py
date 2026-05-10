@@ -1,24 +1,11 @@
 from . import base_types
-from ._AgreedRate3 import AgreedRate3
 from ._AmountsAndValueDate8 import AmountsAndValueDate8
+from ._AgreedRate3 import AgreedRate3
 from ._TradeData16 import TradeData16
 
 class SplitTradeDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_TradAmts", "_AgrdRate", "_StsDtls"]
-	@property
-	def TradAmts(self):
-		return self._TradAmts
-
-	@TradAmts.setter
-	def TradAmts(self, value):
-		self._TradAmts = value if type(value) != base_types.auto else self.make_default("TradAmts")
-
-	@TradAmts.deleter
-	def TradAmts(self):
-		del self._TradAmts
-		self._TradAmts = None
-
+	__slots__ = ["_StsDtls", "_TradAmts", "_AgrdRate"]
 	@property
 	def AgrdRate(self):
 		return self._AgrdRate
@@ -45,9 +32,22 @@ class SplitTradeDetails5(base_types._BaseFieldType):
 		del self._StsDtls
 		self._StsDtls = None
 
+	@property
+	def TradAmts(self):
+		return self._TradAmts
+
+	@TradAmts.setter
+	def TradAmts(self, value):
+		self._TradAmts = value if type(value) != base_types.auto else self.make_default("TradAmts")
+
+	@TradAmts.deleter
+	def TradAmts(self):
+		del self._TradAmts
+		self._TradAmts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradAmts', type=AmountsAndValueDate8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrdRate', type=AgreedRate3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsDtls', type=TradeData16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradAmts', type=AmountsAndValueDate8, min=1, max=1, mutex_group=None, array=False),
 	))
 

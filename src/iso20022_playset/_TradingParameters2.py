@@ -1,25 +1,12 @@
 from . import base_types
 from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._Number import Number
 from ._MICIdentifier import MICIdentifier
+from ._Number import Number
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class TradingParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_MinTraddNmnlQty", "_MaxTraddNmnlQty", "_RndLot", "_TradLotSz", "_PmryPlcOfListgId", "_ScndryPlcOfListg", "_MinTradgPricgIncrmt", "_MktId"]
-	@property
-	def MinTraddNmnlQty(self):
-		return self._MinTraddNmnlQty
-
-	@MinTraddNmnlQty.setter
-	def MinTraddNmnlQty(self, value):
-		self._MinTraddNmnlQty = value if type(value) != base_types.auto else self.make_default("MinTraddNmnlQty")
-
-	@MinTraddNmnlQty.deleter
-	def MinTraddNmnlQty(self):
-		del self._MinTraddNmnlQty
-		self._MinTraddNmnlQty = None
-
+	__slots__ = ["_TradLotSz", "_PmryPlcOfListgId", "_MinTradgPricgIncrmt", "_MaxTraddNmnlQty", "_MinTraddNmnlQty", "_ScndryPlcOfListg", "_MktId", "_RndLot"]
 	@property
 	def MaxTraddNmnlQty(self):
 		return self._MaxTraddNmnlQty
@@ -34,56 +21,17 @@ class TradingParameters2(base_types._BaseFieldType):
 		self._MaxTraddNmnlQty = None
 
 	@property
-	def RndLot(self):
-		return self._RndLot
+	def MinTraddNmnlQty(self):
+		return self._MinTraddNmnlQty
 
-	@RndLot.setter
-	def RndLot(self, value):
-		self._RndLot = value if type(value) != base_types.auto else self.make_default("RndLot")
+	@MinTraddNmnlQty.setter
+	def MinTraddNmnlQty(self, value):
+		self._MinTraddNmnlQty = value if type(value) != base_types.auto else self.make_default("MinTraddNmnlQty")
 
-	@RndLot.deleter
-	def RndLot(self):
-		del self._RndLot
-		self._RndLot = None
-
-	@property
-	def TradLotSz(self):
-		return self._TradLotSz
-
-	@TradLotSz.setter
-	def TradLotSz(self, value):
-		self._TradLotSz = value if type(value) != base_types.auto else self.make_default("TradLotSz")
-
-	@TradLotSz.deleter
-	def TradLotSz(self):
-		del self._TradLotSz
-		self._TradLotSz = None
-
-	@property
-	def PmryPlcOfListgId(self):
-		return self._PmryPlcOfListgId
-
-	@PmryPlcOfListgId.setter
-	def PmryPlcOfListgId(self, value):
-		self._PmryPlcOfListgId = value if type(value) != base_types.auto else self.make_default("PmryPlcOfListgId")
-
-	@PmryPlcOfListgId.deleter
-	def PmryPlcOfListgId(self):
-		del self._PmryPlcOfListgId
-		self._PmryPlcOfListgId = None
-
-	@property
-	def ScndryPlcOfListg(self):
-		return self._ScndryPlcOfListg
-
-	@ScndryPlcOfListg.setter
-	def ScndryPlcOfListg(self, value):
-		self._ScndryPlcOfListg = value if type(value) != base_types.auto else self.make_default("ScndryPlcOfListg")
-
-	@ScndryPlcOfListg.deleter
-	def ScndryPlcOfListg(self):
-		del self._ScndryPlcOfListg
-		self._ScndryPlcOfListg = None
+	@MinTraddNmnlQty.deleter
+	def MinTraddNmnlQty(self):
+		del self._MinTraddNmnlQty
+		self._MinTraddNmnlQty = None
 
 	@property
 	def MinTradgPricgIncrmt(self):
@@ -111,14 +59,66 @@ class TradingParameters2(base_types._BaseFieldType):
 		del self._MktId
 		self._MktId = None
 
+	@property
+	def PmryPlcOfListgId(self):
+		return self._PmryPlcOfListgId
+
+	@PmryPlcOfListgId.setter
+	def PmryPlcOfListgId(self, value):
+		self._PmryPlcOfListgId = value if type(value) != base_types.auto else self.make_default("PmryPlcOfListgId")
+
+	@PmryPlcOfListgId.deleter
+	def PmryPlcOfListgId(self):
+		del self._PmryPlcOfListgId
+		self._PmryPlcOfListgId = None
+
+	@property
+	def RndLot(self):
+		return self._RndLot
+
+	@RndLot.setter
+	def RndLot(self, value):
+		self._RndLot = value if type(value) != base_types.auto else self.make_default("RndLot")
+
+	@RndLot.deleter
+	def RndLot(self):
+		del self._RndLot
+		self._RndLot = None
+
+	@property
+	def ScndryPlcOfListg(self):
+		return self._ScndryPlcOfListg
+
+	@ScndryPlcOfListg.setter
+	def ScndryPlcOfListg(self, value):
+		self._ScndryPlcOfListg = value if type(value) != base_types.auto else self.make_default("ScndryPlcOfListg")
+
+	@ScndryPlcOfListg.deleter
+	def ScndryPlcOfListg(self):
+		del self._ScndryPlcOfListg
+		self._ScndryPlcOfListg = None
+
+	@property
+	def TradLotSz(self):
+		return self._TradLotSz
+
+	@TradLotSz.setter
+	def TradLotSz(self, value):
+		self._TradLotSz = value if type(value) != base_types.auto else self.make_default("TradLotSz")
+
+	@TradLotSz.deleter
+	def TradLotSz(self):
+		del self._TradLotSz
+		self._TradLotSz = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinTraddNmnlQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxTraddNmnlQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RndLot', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradLotSz', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmryPlcOfListgId', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndryPlcOfListg', type=MICIdentifier, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MinTraddNmnlQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinTradgPricgIncrmt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktId', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryPlcOfListgId', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RndLot', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndryPlcOfListg', type=MICIdentifier, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradLotSz', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

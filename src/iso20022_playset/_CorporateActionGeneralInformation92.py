@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CorporateActionNarrative3Choice import CorporateActionNarrative3Choice
+from ._Max35Text import Max35Text
 
 class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
-	__slots__ = ["_OffclCorpActnEvtId", "_CorpActnEvtId", "_NrrtvTp"]
-	@property
-	def OffclCorpActnEvtId(self):
-		return self._OffclCorpActnEvtId
-
-	@OffclCorpActnEvtId.setter
-	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
-
-	@OffclCorpActnEvtId.deleter
-	def OffclCorpActnEvtId(self):
-		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
-
+	__slots__ = ["_NrrtvTp", "_OffclCorpActnEvtId", "_CorpActnEvtId"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
@@ -44,9 +31,22 @@ class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 		del self._NrrtvTp
 		self._NrrtvTp = None
 
+	@property
+	def OffclCorpActnEvtId(self):
+		return self._OffclCorpActnEvtId
+
+	@OffclCorpActnEvtId.setter
+	def OffclCorpActnEvtId(self, value):
+		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
+
+	@OffclCorpActnEvtId.deleter
+	def OffclCorpActnEvtId(self):
+		del self._OffclCorpActnEvtId
+		self._OffclCorpActnEvtId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NrrtvTp', type=CorporateActionNarrative3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

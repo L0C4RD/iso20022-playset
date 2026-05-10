@@ -5,7 +5,7 @@ from ._BillingServicesTax1 import BillingServicesTax1
 
 class BillingMethod2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcChrgHstAmt", "_SvcTax", "_TaxId"]
+	__slots__ = ["_SvcChrgHstAmt", "_TaxId", "_SvcTax"]
 	@property
 	def SvcChrgHstAmt(self):
 		return self._SvcChrgHstAmt

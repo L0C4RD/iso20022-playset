@@ -4,7 +4,7 @@ from ._PriceRateOrAmountChoice import PriceRateOrAmountChoice
 
 class Price4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val"]
+	__slots__ = ["_Val", "_Tp"]
 	@property
 	def Tp(self):
 		return self._Tp

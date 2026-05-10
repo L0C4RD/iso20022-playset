@@ -4,7 +4,7 @@ from ._RestrictedFINZMax8000Text import RestrictedFINZMax8000Text
 
 class UpdatedAdditionalInformation26(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Lang"]
+	__slots__ = ["_Lang", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

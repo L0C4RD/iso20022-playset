@@ -1,7 +1,7 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._InformationQualifierType1 import InformationQualifierType1
 from ._CharacterSearch1Choice import CharacterSearch1Choice
+from ._InformationQualifierType1 import InformationQualifierType1
 
 class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 
@@ -20,19 +20,6 @@ class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 		self._Qlfr = None
 
 	@property
-	def Sbjt(self):
-		return self._Sbjt
-
-	@Sbjt.setter
-	def Sbjt(self, value):
-		self._Sbjt = value if type(value) != base_types.auto else self.make_default("Sbjt")
-
-	@Sbjt.deleter
-	def Sbjt(self):
-		del self._Sbjt
-		self._Sbjt = None
-
-	@property
 	def Ref(self):
 		return self._Ref
 
@@ -45,9 +32,22 @@ class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def Sbjt(self):
+		return self._Sbjt
+
+	@Sbjt.setter
+	def Sbjt(self, value):
+		self._Sbjt = value if type(value) != base_types.auto else self.make_default("Sbjt")
+
+	@Sbjt.deleter
+	def Sbjt(self):
+		del self._Sbjt
+		self._Sbjt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qlfr', type=InformationQualifierType1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sbjt', type=CharacterSearch1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sbjt', type=CharacterSearch1Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

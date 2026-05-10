@@ -1,12 +1,12 @@
 from . import base_types
-from ._BaseOneRate import BaseOneRate
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ModelType1Choice import ModelType1Choice
 from ._Max2000Text import Max2000Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._BaseOneRate import BaseOneRate
 
 class BackTestingMethodology1(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_RskMdlTp", "_MdlCnfdncLvl", "_VartnMrgnCleanInd"]
+	__slots__ = ["_VartnMrgnCleanInd", "_RskMdlTp", "_MdlCnfdncLvl", "_Desc"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -21,19 +21,6 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def RskMdlTp(self):
-		return self._RskMdlTp
-
-	@RskMdlTp.setter
-	def RskMdlTp(self, value):
-		self._RskMdlTp = value if type(value) != base_types.auto else self.make_default("RskMdlTp")
-
-	@RskMdlTp.deleter
-	def RskMdlTp(self):
-		del self._RskMdlTp
-		self._RskMdlTp = None
-
-	@property
 	def MdlCnfdncLvl(self):
 		return self._MdlCnfdncLvl
 
@@ -45,6 +32,19 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 	def MdlCnfdncLvl(self):
 		del self._MdlCnfdncLvl
 		self._MdlCnfdncLvl = None
+
+	@property
+	def RskMdlTp(self):
+		return self._RskMdlTp
+
+	@RskMdlTp.setter
+	def RskMdlTp(self, value):
+		self._RskMdlTp = value if type(value) != base_types.auto else self.make_default("RskMdlTp")
+
+	@RskMdlTp.deleter
+	def RskMdlTp(self):
+		del self._RskMdlTp
+		self._RskMdlTp = None
 
 	@property
 	def VartnMrgnCleanInd(self):
@@ -61,8 +61,8 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RskMdlTp', type=ModelType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdlCnfdncLvl', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskMdlTp', type=ModelType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnCleanInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

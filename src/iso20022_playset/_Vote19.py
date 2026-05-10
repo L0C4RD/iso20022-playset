@@ -1,39 +1,26 @@
 from . import base_types
-from ._Max35Text import Max35Text
+from ._ItemDescription2 import ItemDescription2
+from ._YesNoIndicator import YesNoIndicator
 from ._ProprietaryVote2 import ProprietaryVote2
+from ._Max35Text import Max35Text
 from ._ResolutionSubStatus1Code import ResolutionSubStatus1Code
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._ItemDescription2 import ItemDescription2
 
 class Vote19(base_types._BaseFieldType):
 
-	__slots__ = ["_Dscrtnry", "_Desc", "_Agnst", "_SubSts", "_NoActn", "_Blnk", "_OneYr", "_Wdrwn", "_Wthhld", "_For", "_AgnstMgmt", "_Abstn", "_Prtry", "_ThreeYrs", "_TwoYrs", "_WthMgmt", "_IssrLabl"]
+	__slots__ = ["_Dscrtnry", "_Blnk", "_IssrLabl", "_Desc", "_Agnst", "_For", "_ThreeYrs", "_NoActn", "_WthMgmt", "_Wthhld", "_Prtry", "_Wdrwn", "_AgnstMgmt", "_SubSts", "_Abstn", "_OneYr", "_TwoYrs"]
 	@property
-	def Dscrtnry(self):
-		return self._Dscrtnry
+	def Abstn(self):
+		return self._Abstn
 
-	@Dscrtnry.setter
-	def Dscrtnry(self, value):
-		self._Dscrtnry = value if type(value) != base_types.auto else self.make_default("Dscrtnry")
+	@Abstn.setter
+	def Abstn(self, value):
+		self._Abstn = value if type(value) != base_types.auto else self.make_default("Abstn")
 
-	@Dscrtnry.deleter
-	def Dscrtnry(self):
-		del self._Dscrtnry
-		self._Dscrtnry = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@Abstn.deleter
+	def Abstn(self):
+		del self._Abstn
+		self._Abstn = None
 
 	@property
 	def Agnst(self):
@@ -49,30 +36,17 @@ class Vote19(base_types._BaseFieldType):
 		self._Agnst = None
 
 	@property
-	def SubSts(self):
-		return self._SubSts
+	def AgnstMgmt(self):
+		return self._AgnstMgmt
 
-	@SubSts.setter
-	def SubSts(self, value):
-		self._SubSts = value if type(value) != base_types.auto else self.make_default("SubSts")
+	@AgnstMgmt.setter
+	def AgnstMgmt(self, value):
+		self._AgnstMgmt = value if type(value) != base_types.auto else self.make_default("AgnstMgmt")
 
-	@SubSts.deleter
-	def SubSts(self):
-		del self._SubSts
-		self._SubSts = None
-
-	@property
-	def NoActn(self):
-		return self._NoActn
-
-	@NoActn.setter
-	def NoActn(self, value):
-		self._NoActn = value if type(value) != base_types.auto else self.make_default("NoActn")
-
-	@NoActn.deleter
-	def NoActn(self):
-		del self._NoActn
-		self._NoActn = None
+	@AgnstMgmt.deleter
+	def AgnstMgmt(self):
+		del self._AgnstMgmt
+		self._AgnstMgmt = None
 
 	@property
 	def Blnk(self):
@@ -88,43 +62,30 @@ class Vote19(base_types._BaseFieldType):
 		self._Blnk = None
 
 	@property
-	def OneYr(self):
-		return self._OneYr
+	def Desc(self):
+		return self._Desc
 
-	@OneYr.setter
-	def OneYr(self, value):
-		self._OneYr = value if type(value) != base_types.auto else self.make_default("OneYr")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
-	@OneYr.deleter
-	def OneYr(self):
-		del self._OneYr
-		self._OneYr = None
-
-	@property
-	def Wdrwn(self):
-		return self._Wdrwn
-
-	@Wdrwn.setter
-	def Wdrwn(self, value):
-		self._Wdrwn = value if type(value) != base_types.auto else self.make_default("Wdrwn")
-
-	@Wdrwn.deleter
-	def Wdrwn(self):
-		del self._Wdrwn
-		self._Wdrwn = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
-	def Wthhld(self):
-		return self._Wthhld
+	def Dscrtnry(self):
+		return self._Dscrtnry
 
-	@Wthhld.setter
-	def Wthhld(self, value):
-		self._Wthhld = value if type(value) != base_types.auto else self.make_default("Wthhld")
+	@Dscrtnry.setter
+	def Dscrtnry(self, value):
+		self._Dscrtnry = value if type(value) != base_types.auto else self.make_default("Dscrtnry")
 
-	@Wthhld.deleter
-	def Wthhld(self):
-		del self._Wthhld
-		self._Wthhld = None
+	@Dscrtnry.deleter
+	def Dscrtnry(self):
+		del self._Dscrtnry
+		self._Dscrtnry = None
 
 	@property
 	def For(self):
@@ -140,30 +101,43 @@ class Vote19(base_types._BaseFieldType):
 		self._For = None
 
 	@property
-	def AgnstMgmt(self):
-		return self._AgnstMgmt
+	def IssrLabl(self):
+		return self._IssrLabl
 
-	@AgnstMgmt.setter
-	def AgnstMgmt(self, value):
-		self._AgnstMgmt = value if type(value) != base_types.auto else self.make_default("AgnstMgmt")
+	@IssrLabl.setter
+	def IssrLabl(self, value):
+		self._IssrLabl = value if type(value) != base_types.auto else self.make_default("IssrLabl")
 
-	@AgnstMgmt.deleter
-	def AgnstMgmt(self):
-		del self._AgnstMgmt
-		self._AgnstMgmt = None
+	@IssrLabl.deleter
+	def IssrLabl(self):
+		del self._IssrLabl
+		self._IssrLabl = None
 
 	@property
-	def Abstn(self):
-		return self._Abstn
+	def NoActn(self):
+		return self._NoActn
 
-	@Abstn.setter
-	def Abstn(self, value):
-		self._Abstn = value if type(value) != base_types.auto else self.make_default("Abstn")
+	@NoActn.setter
+	def NoActn(self, value):
+		self._NoActn = value if type(value) != base_types.auto else self.make_default("NoActn")
 
-	@Abstn.deleter
-	def Abstn(self):
-		del self._Abstn
-		self._Abstn = None
+	@NoActn.deleter
+	def NoActn(self):
+		del self._NoActn
+		self._NoActn = None
+
+	@property
+	def OneYr(self):
+		return self._OneYr
+
+	@OneYr.setter
+	def OneYr(self, value):
+		self._OneYr = value if type(value) != base_types.auto else self.make_default("OneYr")
+
+	@OneYr.deleter
+	def OneYr(self):
+		del self._OneYr
+		self._OneYr = None
 
 	@property
 	def Prtry(self):
@@ -177,6 +151,19 @@ class Vote19(base_types._BaseFieldType):
 	def Prtry(self):
 		del self._Prtry
 		self._Prtry = None
+
+	@property
+	def SubSts(self):
+		return self._SubSts
+
+	@SubSts.setter
+	def SubSts(self, value):
+		self._SubSts = value if type(value) != base_types.auto else self.make_default("SubSts")
+
+	@SubSts.deleter
+	def SubSts(self):
+		del self._SubSts
+		self._SubSts = None
 
 	@property
 	def ThreeYrs(self):
@@ -205,6 +192,19 @@ class Vote19(base_types._BaseFieldType):
 		self._TwoYrs = None
 
 	@property
+	def Wdrwn(self):
+		return self._Wdrwn
+
+	@Wdrwn.setter
+	def Wdrwn(self, value):
+		self._Wdrwn = value if type(value) != base_types.auto else self.make_default("Wdrwn")
+
+	@Wdrwn.deleter
+	def Wdrwn(self):
+		del self._Wdrwn
+		self._Wdrwn = None
+
+	@property
 	def WthMgmt(self):
 		return self._WthMgmt
 
@@ -218,35 +218,35 @@ class Vote19(base_types._BaseFieldType):
 		self._WthMgmt = None
 
 	@property
-	def IssrLabl(self):
-		return self._IssrLabl
+	def Wthhld(self):
+		return self._Wthhld
 
-	@IssrLabl.setter
-	def IssrLabl(self, value):
-		self._IssrLabl = value if type(value) != base_types.auto else self.make_default("IssrLabl")
+	@Wthhld.setter
+	def Wthhld(self, value):
+		self._Wthhld = value if type(value) != base_types.auto else self.make_default("Wthhld")
 
-	@IssrLabl.deleter
-	def IssrLabl(self):
-		del self._IssrLabl
-		self._IssrLabl = None
+	@Wthhld.deleter
+	def Wthhld(self):
+		del self._Wthhld
+		self._Wthhld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dscrtnry', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=ItemDescription2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Agnst', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubSts', type=ResolutionSubStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NoActn', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Blnk', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OneYr', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Wdrwn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Wthhld', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='For', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgnstMgmt', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Abstn', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agnst', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgnstMgmt', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Blnk', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=ItemDescription2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dscrtnry', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='For', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrLabl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NoActn', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OneYr', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryVote2, min=0, max=4, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubSts', type=ResolutionSubStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThreeYrs', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwoYrs', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Wdrwn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WthMgmt', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrLabl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Wthhld', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

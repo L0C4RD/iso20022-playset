@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._AccountIdentificationAndName7 import AccountIdentificationAndName7
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._Max35Text import Max35Text
 
 class CashAccount206(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_AcctTpDesc", "_Svcr"]
+	__slots__ = ["_Svcr", "_AcctId", "_AcctTpDesc"]
 	@property
 	def AcctId(self):
 		return self._AcctId

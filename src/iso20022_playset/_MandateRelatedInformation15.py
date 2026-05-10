@@ -1,16 +1,16 @@
 from . import base_types
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
-from ._AmendmentInformationDetails14 import AmendmentInformationDetails14
-from ._Max1025Text import Max1025Text
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
-from ._Exact2NumericText import Exact2NumericText
-from ._Frequency36Choice import Frequency36Choice
 from ._ISODate import ISODate
+from ._Frequency36Choice import Frequency36Choice
+from ._AmendmentInformationDetails14 import AmendmentInformationDetails14
+from ._Exact2NumericText import Exact2NumericText
+from ._Max35Text import Max35Text
+from ._Max1025Text import Max1025Text
+from ._MandateSetupReason1Choice import MandateSetupReason1Choice
 
 class MandateRelatedInformation15(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntInd", "_Frqcy", "_FrstColltnDt", "_AmdmntInfDtls", "_ElctrncSgntr", "_DtOfSgntr", "_Rsn", "_FnlColltnDt", "_MndtId", "_TrckgDays"]
+	__slots__ = ["_Rsn", "_DtOfSgntr", "_ElctrncSgntr", "_AmdmntInd", "_MndtId", "_FrstColltnDt", "_AmdmntInfDtls", "_FnlColltnDt", "_TrckgDays", "_Frqcy"]
 	@property
 	def AmdmntInd(self):
 		return self._AmdmntInd
@@ -23,6 +23,58 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 	def AmdmntInd(self):
 		del self._AmdmntInd
 		self._AmdmntInd = None
+
+	@property
+	def AmdmntInfDtls(self):
+		return self._AmdmntInfDtls
+
+	@AmdmntInfDtls.setter
+	def AmdmntInfDtls(self, value):
+		self._AmdmntInfDtls = value if type(value) != base_types.auto else self.make_default("AmdmntInfDtls")
+
+	@AmdmntInfDtls.deleter
+	def AmdmntInfDtls(self):
+		del self._AmdmntInfDtls
+		self._AmdmntInfDtls = None
+
+	@property
+	def DtOfSgntr(self):
+		return self._DtOfSgntr
+
+	@DtOfSgntr.setter
+	def DtOfSgntr(self, value):
+		self._DtOfSgntr = value if type(value) != base_types.auto else self.make_default("DtOfSgntr")
+
+	@DtOfSgntr.deleter
+	def DtOfSgntr(self):
+		del self._DtOfSgntr
+		self._DtOfSgntr = None
+
+	@property
+	def ElctrncSgntr(self):
+		return self._ElctrncSgntr
+
+	@ElctrncSgntr.setter
+	def ElctrncSgntr(self, value):
+		self._ElctrncSgntr = value if type(value) != base_types.auto else self.make_default("ElctrncSgntr")
+
+	@ElctrncSgntr.deleter
+	def ElctrncSgntr(self):
+		del self._ElctrncSgntr
+		self._ElctrncSgntr = None
+
+	@property
+	def FnlColltnDt(self):
+		return self._FnlColltnDt
+
+	@FnlColltnDt.setter
+	def FnlColltnDt(self, value):
+		self._FnlColltnDt = value if type(value) != base_types.auto else self.make_default("FnlColltnDt")
+
+	@FnlColltnDt.deleter
+	def FnlColltnDt(self):
+		del self._FnlColltnDt
+		self._FnlColltnDt = None
 
 	@property
 	def Frqcy(self):
@@ -51,43 +103,17 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 		self._FrstColltnDt = None
 
 	@property
-	def AmdmntInfDtls(self):
-		return self._AmdmntInfDtls
+	def MndtId(self):
+		return self._MndtId
 
-	@AmdmntInfDtls.setter
-	def AmdmntInfDtls(self, value):
-		self._AmdmntInfDtls = value if type(value) != base_types.auto else self.make_default("AmdmntInfDtls")
+	@MndtId.setter
+	def MndtId(self, value):
+		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
 
-	@AmdmntInfDtls.deleter
-	def AmdmntInfDtls(self):
-		del self._AmdmntInfDtls
-		self._AmdmntInfDtls = None
-
-	@property
-	def ElctrncSgntr(self):
-		return self._ElctrncSgntr
-
-	@ElctrncSgntr.setter
-	def ElctrncSgntr(self, value):
-		self._ElctrncSgntr = value if type(value) != base_types.auto else self.make_default("ElctrncSgntr")
-
-	@ElctrncSgntr.deleter
-	def ElctrncSgntr(self):
-		del self._ElctrncSgntr
-		self._ElctrncSgntr = None
-
-	@property
-	def DtOfSgntr(self):
-		return self._DtOfSgntr
-
-	@DtOfSgntr.setter
-	def DtOfSgntr(self, value):
-		self._DtOfSgntr = value if type(value) != base_types.auto else self.make_default("DtOfSgntr")
-
-	@DtOfSgntr.deleter
-	def DtOfSgntr(self):
-		del self._DtOfSgntr
-		self._DtOfSgntr = None
+	@MndtId.deleter
+	def MndtId(self):
+		del self._MndtId
+		self._MndtId = None
 
 	@property
 	def Rsn(self):
@@ -101,32 +127,6 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 	def Rsn(self):
 		del self._Rsn
 		self._Rsn = None
-
-	@property
-	def FnlColltnDt(self):
-		return self._FnlColltnDt
-
-	@FnlColltnDt.setter
-	def FnlColltnDt(self, value):
-		self._FnlColltnDt = value if type(value) != base_types.auto else self.make_default("FnlColltnDt")
-
-	@FnlColltnDt.deleter
-	def FnlColltnDt(self):
-		del self._FnlColltnDt
-		self._FnlColltnDt = None
-
-	@property
-	def MndtId(self):
-		return self._MndtId
-
-	@MndtId.setter
-	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
-
-	@MndtId.deleter
-	def MndtId(self):
-		del self._MndtId
-		self._MndtId = None
 
 	@property
 	def TrckgDays(self):
@@ -143,14 +143,14 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntInfDtls', type=AmendmentInformationDetails14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctrncSgntr', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FnlColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntInfDtls', type=AmendmentInformationDetails14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctrncSgntr', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FnlColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckgDays', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

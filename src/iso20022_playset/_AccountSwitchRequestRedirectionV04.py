@@ -1,12 +1,12 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._CashAccount43 import CashAccount43
 from ._MessageIdentification1 import MessageIdentification1
+from ._CashAccount43 import CashAccount43
 from ._AccountSwitchDetails1 import AccountSwitchDetails1
 
 class AccountSwitchRequestRedirectionV04(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSwtchDtls", "_OdAcct", "_MsgId", "_NewAcct", "_SplmtryData"]
+	__slots__ = ["_AcctSwtchDtls", "_MsgId", "_NewAcct", "_OdAcct", "_SplmtryData"]
 	@property
 	def AcctSwtchDtls(self):
 		return self._AcctSwtchDtls
@@ -19,19 +19,6 @@ class AccountSwitchRequestRedirectionV04(base_types._BaseFieldType):
 	def AcctSwtchDtls(self):
 		del self._AcctSwtchDtls
 		self._AcctSwtchDtls = None
-
-	@property
-	def OdAcct(self):
-		return self._OdAcct
-
-	@OdAcct.setter
-	def OdAcct(self, value):
-		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
-
-	@OdAcct.deleter
-	def OdAcct(self):
-		del self._OdAcct
-		self._OdAcct = None
 
 	@property
 	def MsgId(self):
@@ -60,6 +47,19 @@ class AccountSwitchRequestRedirectionV04(base_types._BaseFieldType):
 		self._NewAcct = None
 
 	@property
+	def OdAcct(self):
+		return self._OdAcct
+
+	@OdAcct.setter
+	def OdAcct(self, value):
+		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
+
+	@OdAcct.deleter
+	def OdAcct(self):
+		del self._OdAcct
+		self._OdAcct = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -74,9 +74,9 @@ class AccountSwitchRequestRedirectionV04(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

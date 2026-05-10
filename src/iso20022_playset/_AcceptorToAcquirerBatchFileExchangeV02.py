@@ -1,24 +1,11 @@
 from . import base_types
-from ._AcceptorToAcquirerFileBody2 import AcceptorToAcquirerFileBody2
-from ._ContentInformationType38 import ContentInformationType38
 from ._Header56 import Header56
+from ._ContentInformationType38 import ContentInformationType38
+from ._AcceptorToAcquirerFileBody2 import AcceptorToAcquirerFileBody2
 
 class AcceptorToAcquirerBatchFileExchangeV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_BodyElmt", "_SctyTrlr"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_BodyElmt", "_Hdr", "_SctyTrlr"]
 	@property
 	def BodyElmt(self):
 		return self._BodyElmt
@@ -31,6 +18,19 @@ class AcceptorToAcquirerBatchFileExchangeV02(base_types._BaseFieldType):
 	def BodyElmt(self):
 		del self._BodyElmt
 		self._BodyElmt = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -46,8 +46,8 @@ class AcceptorToAcquirerBatchFileExchangeV02(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header56, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BodyElmt', type=AcceptorToAcquirerFileBody2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=Header56, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

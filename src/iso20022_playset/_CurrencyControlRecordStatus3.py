@@ -1,13 +1,26 @@
 from . import base_types
-from ._DocumentIdentification28 import DocumentIdentification28
 from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from ._Max35Text import Max35Text
 from ._ValidationStatusReason3 import ValidationStatusReason3
+from ._DocumentIdentification28 import DocumentIdentification28
+from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
 
 class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdId", "_Sts", "_StsDtTm", "_DocId", "_StsRsn"]
+	__slots__ = ["_RcrdId", "_DocId", "_StsRsn", "_StsDtTm", "_Sts"]
+	@property
+	def DocId(self):
+		return self._DocId
+
+	@DocId.setter
+	def DocId(self, value):
+		self._DocId = value if type(value) != base_types.auto else self.make_default("DocId")
+
+	@DocId.deleter
+	def DocId(self):
+		del self._DocId
+		self._DocId = None
+
 	@property
 	def RcrdId(self):
 		return self._RcrdId
@@ -48,19 +61,6 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 		self._StsDtTm = None
 
 	@property
-	def DocId(self):
-		return self._DocId
-
-	@DocId.setter
-	def DocId(self, value):
-		self._DocId = value if type(value) != base_types.auto else self.make_default("DocId")
-
-	@DocId.deleter
-	def DocId(self):
-		del self._DocId
-		self._DocId = None
-
-	@property
 	def StsRsn(self):
 		return self._StsRsn
 
@@ -74,10 +74,10 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DocId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
 	))
 

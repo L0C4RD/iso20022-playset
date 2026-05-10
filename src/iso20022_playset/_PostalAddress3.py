@@ -1,24 +1,11 @@
 from . import base_types
-from ._NameAndAddress4 import NameAndAddress4
-from ._YesNoIndicator import YesNoIndicator
 from ._AddressType1Code import AddressType1Code
+from ._YesNoIndicator import YesNoIndicator
+from ._NameAndAddress4 import NameAndAddress4
 
 class PostalAddress3(base_types._BaseFieldType):
 
-	__slots__ = ["_MlngInd", "_AdrTp", "_NmAndAdr", "_RegnAdrInd"]
-	@property
-	def MlngInd(self):
-		return self._MlngInd
-
-	@MlngInd.setter
-	def MlngInd(self, value):
-		self._MlngInd = value if type(value) != base_types.auto else self.make_default("MlngInd")
-
-	@MlngInd.deleter
-	def MlngInd(self):
-		del self._MlngInd
-		self._MlngInd = None
-
+	__slots__ = ["_NmAndAdr", "_RegnAdrInd", "_MlngInd", "_AdrTp"]
 	@property
 	def AdrTp(self):
 		return self._AdrTp
@@ -31,6 +18,19 @@ class PostalAddress3(base_types._BaseFieldType):
 	def AdrTp(self):
 		del self._AdrTp
 		self._AdrTp = None
+
+	@property
+	def MlngInd(self):
+		return self._MlngInd
+
+	@MlngInd.setter
+	def MlngInd(self, value):
+		self._MlngInd = value if type(value) != base_types.auto else self.make_default("MlngInd")
+
+	@MlngInd.deleter
+	def MlngInd(self):
+		del self._MlngInd
+		self._MlngInd = None
 
 	@property
 	def NmAndAdr(self):
@@ -59,8 +59,8 @@ class PostalAddress3(base_types._BaseFieldType):
 		self._RegnAdrInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MlngInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdrTp', type=AddressType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MlngInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))

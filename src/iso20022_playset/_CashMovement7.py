@@ -1,14 +1,40 @@
 from . import base_types
-from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
 
 class CashMovement7(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcct", "_MvmntSts", "_TrptyAgtSvcPrvdrCshMvmntId", "_CshMvmnt", "_CshMvmntApprvd", "_ClntCshMvmntId", "_CshAmt", "_CollMvmnt", "_PosTp"]
+	__slots__ = ["_MvmntSts", "_ClntCshMvmntId", "_PosTp", "_CshAcct", "_TrptyAgtSvcPrvdrCshMvmntId", "_CshMvmntApprvd", "_CollMvmnt", "_CshMvmnt", "_CshAmt"]
+	@property
+	def ClntCshMvmntId(self):
+		return self._ClntCshMvmntId
+
+	@ClntCshMvmntId.setter
+	def ClntCshMvmntId(self, value):
+		self._ClntCshMvmntId = value if type(value) != base_types.auto else self.make_default("ClntCshMvmntId")
+
+	@ClntCshMvmntId.deleter
+	def ClntCshMvmntId(self):
+		del self._ClntCshMvmntId
+		self._ClntCshMvmntId = None
+
+	@property
+	def CollMvmnt(self):
+		return self._CollMvmnt
+
+	@CollMvmnt.setter
+	def CollMvmnt(self, value):
+		self._CollMvmnt = value if type(value) != base_types.auto else self.make_default("CollMvmnt")
+
+	@CollMvmnt.deleter
+	def CollMvmnt(self):
+		del self._CollMvmnt
+		self._CollMvmnt = None
+
 	@property
 	def CshAcct(self):
 		return self._CshAcct
@@ -23,30 +49,17 @@ class CashMovement7(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def MvmntSts(self):
-		return self._MvmntSts
+	def CshAmt(self):
+		return self._CshAmt
 
-	@MvmntSts.setter
-	def MvmntSts(self, value):
-		self._MvmntSts = value if type(value) != base_types.auto else self.make_default("MvmntSts")
+	@CshAmt.setter
+	def CshAmt(self, value):
+		self._CshAmt = value if type(value) != base_types.auto else self.make_default("CshAmt")
 
-	@MvmntSts.deleter
-	def MvmntSts(self):
-		del self._MvmntSts
-		self._MvmntSts = None
-
-	@property
-	def TrptyAgtSvcPrvdrCshMvmntId(self):
-		return self._TrptyAgtSvcPrvdrCshMvmntId
-
-	@TrptyAgtSvcPrvdrCshMvmntId.setter
-	def TrptyAgtSvcPrvdrCshMvmntId(self, value):
-		self._TrptyAgtSvcPrvdrCshMvmntId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCshMvmntId")
-
-	@TrptyAgtSvcPrvdrCshMvmntId.deleter
-	def TrptyAgtSvcPrvdrCshMvmntId(self):
-		del self._TrptyAgtSvcPrvdrCshMvmntId
-		self._TrptyAgtSvcPrvdrCshMvmntId = None
+	@CshAmt.deleter
+	def CshAmt(self):
+		del self._CshAmt
+		self._CshAmt = None
 
 	@property
 	def CshMvmnt(self):
@@ -75,43 +88,17 @@ class CashMovement7(base_types._BaseFieldType):
 		self._CshMvmntApprvd = None
 
 	@property
-	def ClntCshMvmntId(self):
-		return self._ClntCshMvmntId
+	def MvmntSts(self):
+		return self._MvmntSts
 
-	@ClntCshMvmntId.setter
-	def ClntCshMvmntId(self, value):
-		self._ClntCshMvmntId = value if type(value) != base_types.auto else self.make_default("ClntCshMvmntId")
+	@MvmntSts.setter
+	def MvmntSts(self, value):
+		self._MvmntSts = value if type(value) != base_types.auto else self.make_default("MvmntSts")
 
-	@ClntCshMvmntId.deleter
-	def ClntCshMvmntId(self):
-		del self._ClntCshMvmntId
-		self._ClntCshMvmntId = None
-
-	@property
-	def CshAmt(self):
-		return self._CshAmt
-
-	@CshAmt.setter
-	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != base_types.auto else self.make_default("CshAmt")
-
-	@CshAmt.deleter
-	def CshAmt(self):
-		del self._CshAmt
-		self._CshAmt = None
-
-	@property
-	def CollMvmnt(self):
-		return self._CollMvmnt
-
-	@CollMvmnt.setter
-	def CollMvmnt(self, value):
-		self._CollMvmnt = value if type(value) != base_types.auto else self.make_default("CollMvmnt")
-
-	@CollMvmnt.deleter
-	def CollMvmnt(self):
-		del self._CollMvmnt
-		self._CollMvmnt = None
+	@MvmntSts.deleter
+	def MvmntSts(self):
+		del self._MvmntSts
+		self._MvmntSts = None
 
 	@property
 	def PosTp(self):
@@ -126,15 +113,28 @@ class CashMovement7(base_types._BaseFieldType):
 		del self._PosTp
 		self._PosTp = None
 
+	@property
+	def TrptyAgtSvcPrvdrCshMvmntId(self):
+		return self._TrptyAgtSvcPrvdrCshMvmntId
+
+	@TrptyAgtSvcPrvdrCshMvmntId.setter
+	def TrptyAgtSvcPrvdrCshMvmntId(self, value):
+		self._TrptyAgtSvcPrvdrCshMvmntId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCshMvmntId")
+
+	@TrptyAgtSvcPrvdrCshMvmntId.deleter
+	def TrptyAgtSvcPrvdrCshMvmntId(self):
+		del self._TrptyAgtSvcPrvdrCshMvmntId
+		self._TrptyAgtSvcPrvdrCshMvmntId = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClntCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MvmntSts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshMvmnt', type=CreditDebit3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshMvmntApprvd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntSts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PosTp', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

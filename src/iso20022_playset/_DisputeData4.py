@@ -1,65 +1,13 @@
 from . import base_types
-from ._DisputeReference1 import DisputeReference1
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._AdditionalData1 import AdditionalData1
-from ._Max35Text import Max35Text
 from ._Exact1NumericText import Exact1NumericText
+from ._DisputeReference1 import DisputeReference1
+from ._Max35Text import Max35Text
+from ._AdditionalData1 import AdditionalData1
 
 class DisputeData4(base_types._BaseFieldType):
 
-	__slots__ = ["_Cycl", "_Cond", "_DcmnttnSts", "_Sts", "_AddtlData", "_ChrgbckElgblty", "_Prtl", "_Ref", "_RjctRsn"]
-	@property
-	def Cycl(self):
-		return self._Cycl
-
-	@Cycl.setter
-	def Cycl(self, value):
-		self._Cycl = value if type(value) != base_types.auto else self.make_default("Cycl")
-
-	@Cycl.deleter
-	def Cycl(self):
-		del self._Cycl
-		self._Cycl = None
-
-	@property
-	def Cond(self):
-		return self._Cond
-
-	@Cond.setter
-	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
-
-	@Cond.deleter
-	def Cond(self):
-		del self._Cond
-		self._Cond = None
-
-	@property
-	def DcmnttnSts(self):
-		return self._DcmnttnSts
-
-	@DcmnttnSts.setter
-	def DcmnttnSts(self, value):
-		self._DcmnttnSts = value if type(value) != base_types.auto else self.make_default("DcmnttnSts")
-
-	@DcmnttnSts.deleter
-	def DcmnttnSts(self):
-		del self._DcmnttnSts
-		self._DcmnttnSts = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_Prtl", "_ChrgbckElgblty", "_Cycl", "_RjctRsn", "_AddtlData", "_Cond", "_Sts", "_DcmnttnSts", "_Ref"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData
@@ -85,6 +33,45 @@ class DisputeData4(base_types._BaseFieldType):
 	def ChrgbckElgblty(self):
 		del self._ChrgbckElgblty
 		self._ChrgbckElgblty = None
+
+	@property
+	def Cond(self):
+		return self._Cond
+
+	@Cond.setter
+	def Cond(self, value):
+		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+
+	@Cond.deleter
+	def Cond(self):
+		del self._Cond
+		self._Cond = None
+
+	@property
+	def Cycl(self):
+		return self._Cycl
+
+	@Cycl.setter
+	def Cycl(self, value):
+		self._Cycl = value if type(value) != base_types.auto else self.make_default("Cycl")
+
+	@Cycl.deleter
+	def Cycl(self):
+		del self._Cycl
+		self._Cycl = None
+
+	@property
+	def DcmnttnSts(self):
+		return self._DcmnttnSts
+
+	@DcmnttnSts.setter
+	def DcmnttnSts(self, value):
+		self._DcmnttnSts = value if type(value) != base_types.auto else self.make_default("DcmnttnSts")
+
+	@DcmnttnSts.deleter
+	def DcmnttnSts(self):
+		del self._DcmnttnSts
+		self._DcmnttnSts = None
 
 	@property
 	def Prtl(self):
@@ -125,15 +112,28 @@ class DisputeData4(base_types._BaseFieldType):
 		del self._RjctRsn
 		self._RjctRsn = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cond', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DcmnttnSts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ChrgbckElgblty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cond', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DcmnttnSts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=DisputeReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RjctRsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

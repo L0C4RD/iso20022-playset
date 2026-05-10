@@ -1,11 +1,11 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AmountUnit1Code import AmountUnit1Code
 
 class LoyaltyAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Unit", "_Ccy"]
+	__slots__ = ["_Amt", "_Ccy", "_Unit"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -20,19 +20,6 @@ class LoyaltyAmount1(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -45,9 +32,22 @@ class LoyaltyAmount1(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Unit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Unit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
+from ._NoReasonCode import NoReasonCode
 from ._PendingSettlementStatusReason2Code import PendingSettlementStatusReason2Code
 from ._GenericIdentification1 import GenericIdentification1
-from ._NoReasonCode import NoReasonCode
 from ._Extended350Code import Extended350Code
 
 class PendingSettlementStatus3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSrcSchme", "_NoSpcfdRsn", "_Rsn", "_XtndedRsn"]
+	__slots__ = ["_NoSpcfdRsn", "_XtndedRsn", "_Rsn", "_DataSrcSchme"]
 	@property
 	def DataSrcSchme(self):
 		return self._DataSrcSchme

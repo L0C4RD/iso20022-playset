@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class FXStandingInstruction5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ind", "_Prtry"]
+	__slots__ = ["_Prtry", "_Ind"]
 	@property
 	def Ind(self):
 		return self._Ind

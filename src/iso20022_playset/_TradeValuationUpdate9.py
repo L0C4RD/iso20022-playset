@@ -1,24 +1,24 @@
 from . import base_types
 from ._CounterpartyData88 import CounterpartyData88
-from ._Max140Text import Max140Text
 from ._SupplementaryData1 import SupplementaryData1
+from ._Max140Text import Max140Text
 from ._LoanData113 import LoanData113
 
 class TradeValuationUpdate9(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_LnData", "_TechRcrdId", "_CtrPtySpcfcData"]
+	__slots__ = ["_CtrPtySpcfcData", "_SplmtryData", "_TechRcrdId", "_LnData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
 
 	@property
 	def LnData(self):
@@ -34,6 +34,19 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 		self._LnData = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -46,23 +59,10 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
-
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
-
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LnData', type=LoanData113, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LnData', type=LoanData113, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

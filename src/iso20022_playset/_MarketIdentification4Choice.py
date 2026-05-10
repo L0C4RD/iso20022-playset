@@ -4,7 +4,7 @@ from ._MICIdentifier import MICIdentifier
 
 class MarketIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_MktIdrCd"]
+	__slots__ = ["_MktIdrCd", "_Desc"]
 	@property
 	def Desc(self):
 		return self._Desc

@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._ValidityPeriodType1Code import ValidityPeriodType1Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class ValidityPeriod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_VldtyPrdCd"]
+	__slots__ = ["_VldtyPrdCd", "_Prtry"]
 	@property
 	def Prtry(self):
 		return self._Prtry

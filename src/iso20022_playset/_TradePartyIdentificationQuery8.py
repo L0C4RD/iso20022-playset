@@ -1,38 +1,12 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._NotReported1Code import NotReported1Code
 from ._Max50Text import Max50Text
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_NotRptd", "_AnyBIC", "_ClntId"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
-	@property
-	def NotRptd(self):
-		return self._NotRptd
-
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
-
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
-
+	__slots__ = ["_ClntId", "_LEI", "_AnyBIC", "_NotRptd"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC
@@ -59,10 +33,36 @@ class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 		del self._ClntId
 		self._ClntId = None
 
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
+	@property
+	def NotRptd(self):
+		return self._NotRptd
+
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntId', type=Max50Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

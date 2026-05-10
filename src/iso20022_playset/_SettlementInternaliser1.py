@@ -1,13 +1,13 @@
 from . import base_types
-from ._InternalisationData1 import InternalisationData1
-from ._SettlementInternaliserClientType1 import SettlementInternaliserClientType1
-from ._SettlementInternaliserIdentification1 import SettlementInternaliserIdentification1
 from ._SettlementInternaliserFinancialInstrument1 import SettlementInternaliserFinancialInstrument1
+from ._SettlementInternaliserIdentification1 import SettlementInternaliserIdentification1
+from ._SettlementInternaliserClientType1 import SettlementInternaliserClientType1
+from ._InternalisationData1 import InternalisationData1
 from ._SettlementInternaliserTransactionType1 import SettlementInternaliserTransactionType1
 
 class SettlementInternaliser1(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntTp", "_FinInstrm", "_Id", "_TtlCshTrf", "_TxTp", "_OvrllTtl"]
+	__slots__ = ["_Id", "_FinInstrm", "_OvrllTtl", "_TtlCshTrf", "_ClntTp", "_TxTp"]
 	@property
 	def ClntTp(self):
 		return self._ClntTp
@@ -48,6 +48,19 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def OvrllTtl(self):
+		return self._OvrllTtl
+
+	@OvrllTtl.setter
+	def OvrllTtl(self, value):
+		self._OvrllTtl = value if type(value) != base_types.auto else self.make_default("OvrllTtl")
+
+	@OvrllTtl.deleter
+	def OvrllTtl(self):
+		del self._OvrllTtl
+		self._OvrllTtl = None
+
+	@property
 	def TtlCshTrf(self):
 		return self._TtlCshTrf
 
@@ -73,25 +86,12 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 		del self._TxTp
 		self._TxTp = None
 
-	@property
-	def OvrllTtl(self):
-		return self._OvrllTtl
-
-	@OvrllTtl.setter
-	def OvrllTtl(self, value):
-		self._OvrllTtl = value if type(value) != base_types.auto else self.make_default("OvrllTtl")
-
-	@OvrllTtl.deleter
-	def OvrllTtl(self):
-		del self._OvrllTtl
-		self._OvrllTtl = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntTp', type=SettlementInternaliserClientType1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrm', type=SettlementInternaliserFinancialInstrument1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SettlementInternaliserIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlCshTrf', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=SettlementInternaliserTransactionType1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

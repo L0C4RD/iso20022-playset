@@ -1,24 +1,11 @@
 from . import base_types
-from ._ExternallyDefinedData5 import ExternallyDefinedData5
 from ._CardPaymentTransaction139 import CardPaymentTransaction139
+from ._ExternallyDefinedData5 import ExternallyDefinedData5
 from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
 
 class NonFinancialRequestContentComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_NonFinReqTp", "_AddtlReq", "_Tx"]
-	@property
-	def NonFinReqTp(self):
-		return self._NonFinReqTp
-
-	@NonFinReqTp.setter
-	def NonFinReqTp(self, value):
-		self._NonFinReqTp = value if type(value) != base_types.auto else self.make_default("NonFinReqTp")
-
-	@NonFinReqTp.deleter
-	def NonFinReqTp(self):
-		del self._NonFinReqTp
-		self._NonFinReqTp = None
-
+	__slots__ = ["_Tx", "_NonFinReqTp", "_AddtlReq"]
 	@property
 	def AddtlReq(self):
 		return self._AddtlReq
@@ -31,6 +18,19 @@ class NonFinancialRequestContentComponent5(base_types._BaseFieldType):
 	def AddtlReq(self):
 		del self._AddtlReq
 		self._AddtlReq = None
+
+	@property
+	def NonFinReqTp(self):
+		return self._NonFinReqTp
+
+	@NonFinReqTp.setter
+	def NonFinReqTp(self, value):
+		self._NonFinReqTp = value if type(value) != base_types.auto else self.make_default("NonFinReqTp")
+
+	@NonFinReqTp.deleter
+	def NonFinReqTp(self):
+		del self._NonFinReqTp
+		self._NonFinReqTp = None
 
 	@property
 	def Tx(self):
@@ -46,8 +46,8 @@ class NonFinancialRequestContentComponent5(base_types._BaseFieldType):
 		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonFinReqTp', type=NonFinancialRequestType2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlReq', type=ExternallyDefinedData5, min=0, max=8, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NonFinReqTp', type=NonFinancialRequestType2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction139, min=0, max=1, mutex_group=None, array=False),
 	))
 

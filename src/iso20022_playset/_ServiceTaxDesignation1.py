@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ServiceTaxDesignation1Code import ServiceTaxDesignation1Code
 from ._TaxReason1 import TaxReason1
+from ._ServiceTaxDesignation1Code import ServiceTaxDesignation1Code
+from ._Max35Text import Max35Text
 
 class ServiceTaxDesignation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRsn", "_Rgn", "_Cd"]
+	__slots__ = ["_Rgn", "_Cd", "_TaxRsn"]
 	@property
-	def TaxRsn(self):
-		return self._TaxRsn
+	def Cd(self):
+		return self._Cd
 
-	@TaxRsn.setter
-	def TaxRsn(self, value):
-		self._TaxRsn = value if type(value) != base_types.auto else self.make_default("TaxRsn")
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
 
-	@TaxRsn.deleter
-	def TaxRsn(self):
-		del self._TaxRsn
-		self._TaxRsn = None
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
 
 	@property
 	def Rgn(self):
@@ -33,21 +33,21 @@ class ServiceTaxDesignation1(base_types._BaseFieldType):
 		self._Rgn = None
 
 	@property
-	def Cd(self):
-		return self._Cd
+	def TaxRsn(self):
+		return self._TaxRsn
 
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+	@TaxRsn.setter
+	def TaxRsn(self, value):
+		self._TaxRsn = value if type(value) != base_types.auto else self.make_default("TaxRsn")
 
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
+	@TaxRsn.deleter
+	def TaxRsn(self):
+		del self._TaxRsn
+		self._TaxRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxRsn', type=TaxReason1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=ServiceTaxDesignation1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRsn', type=TaxReason1, min=0, max=None, mutex_group=None, array=True),
 	))
 

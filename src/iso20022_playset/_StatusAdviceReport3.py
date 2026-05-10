@@ -1,24 +1,24 @@
 from . import base_types
-from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._ISODate import ISODate
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._OriginalReportStatistics3 import OriginalReportStatistics3
+from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
 
 class StatusAdviceReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtnRule", "_Sts", "_Sttstcs", "_MsgDt"]
+	__slots__ = ["_Sts", "_VldtnRule", "_MsgDt", "_Sttstcs"]
 	@property
-	def VldtnRule(self):
-		return self._VldtnRule
+	def MsgDt(self):
+		return self._MsgDt
 
-	@VldtnRule.setter
-	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
+	@MsgDt.setter
+	def MsgDt(self, value):
+		self._MsgDt = value if type(value) != base_types.auto else self.make_default("MsgDt")
 
-	@VldtnRule.deleter
-	def VldtnRule(self):
-		del self._VldtnRule
-		self._VldtnRule = None
+	@MsgDt.deleter
+	def MsgDt(self):
+		del self._MsgDt
+		self._MsgDt = None
 
 	@property
 	def Sts(self):
@@ -47,22 +47,22 @@ class StatusAdviceReport3(base_types._BaseFieldType):
 		self._Sttstcs = None
 
 	@property
-	def MsgDt(self):
-		return self._MsgDt
+	def VldtnRule(self):
+		return self._VldtnRule
 
-	@MsgDt.setter
-	def MsgDt(self, value):
-		self._MsgDt = value if type(value) != base_types.auto else self.make_default("MsgDt")
+	@VldtnRule.setter
+	def VldtnRule(self, value):
+		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
 
-	@MsgDt.deleter
-	def MsgDt(self):
-		del self._MsgDt
-		self._MsgDt = None
+	@VldtnRule.deleter
+	def VldtnRule(self):
+		del self._VldtnRule
+		self._VldtnRule = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sttstcs', type=OriginalReportStatistics3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

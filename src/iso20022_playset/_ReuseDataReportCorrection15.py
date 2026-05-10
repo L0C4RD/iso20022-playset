@@ -1,30 +1,17 @@
 from . import base_types
-from ._CounterpartyData87 import CounterpartyData87
-from ._ContractModification3 import ContractModification3
-from ._Max140Text import Max140Text
-from ._FundingSource3 import FundingSource3
-from ._CollateralType19 import CollateralType19
-from ._ReconciliationFlag2 import ReconciliationFlag2
-from ._SupplementaryData1 import SupplementaryData1
 from ._ISODate import ISODate
+from ._SupplementaryData1 import SupplementaryData1
+from ._CounterpartyData87 import CounterpartyData87
+from ._FundingSource3 import FundingSource3
+from ._ReconciliationFlag2 import ReconciliationFlag2
+from ._CollateralType19 import CollateralType19
 from ._ISODateTime import ISODateTime
+from ._Max140Text import Max140Text
+from ._ContractModification3 import ContractModification3
 
 class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctMod", "_CollCmpnt", "_RcncltnFlg", "_CtrPty", "_EvtDay", "_FndgSrc", "_RptgDtTm", "_SplmtryData", "_TechRcrdId"]
-	@property
-	def CtrctMod(self):
-		return self._CtrctMod
-
-	@CtrctMod.setter
-	def CtrctMod(self, value):
-		self._CtrctMod = value if type(value) != base_types.auto else self.make_default("CtrctMod")
-
-	@CtrctMod.deleter
-	def CtrctMod(self):
-		del self._CtrctMod
-		self._CtrctMod = None
-
+	__slots__ = ["_EvtDay", "_RcncltnFlg", "_CollCmpnt", "_CtrctMod", "_SplmtryData", "_RptgDtTm", "_TechRcrdId", "_CtrPty", "_FndgSrc"]
 	@property
 	def CollCmpnt(self):
 		return self._CollCmpnt
@@ -39,19 +26,6 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 		self._CollCmpnt = None
 
 	@property
-	def RcncltnFlg(self):
-		return self._RcncltnFlg
-
-	@RcncltnFlg.setter
-	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != base_types.auto else self.make_default("RcncltnFlg")
-
-	@RcncltnFlg.deleter
-	def RcncltnFlg(self):
-		del self._RcncltnFlg
-		self._RcncltnFlg = None
-
-	@property
 	def CtrPty(self):
 		return self._CtrPty
 
@@ -63,6 +37,19 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 	def CtrPty(self):
 		del self._CtrPty
 		self._CtrPty = None
+
+	@property
+	def CtrctMod(self):
+		return self._CtrctMod
+
+	@CtrctMod.setter
+	def CtrctMod(self, value):
+		self._CtrctMod = value if type(value) != base_types.auto else self.make_default("CtrctMod")
+
+	@CtrctMod.deleter
+	def CtrctMod(self):
+		del self._CtrctMod
+		self._CtrctMod = None
 
 	@property
 	def EvtDay(self):
@@ -89,6 +76,19 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 	def FndgSrc(self):
 		del self._FndgSrc
 		self._FndgSrc = None
+
+	@property
+	def RcncltnFlg(self):
+		return self._RcncltnFlg
+
+	@RcncltnFlg.setter
+	def RcncltnFlg(self, value):
+		self._RcncltnFlg = value if type(value) != base_types.auto else self.make_default("RcncltnFlg")
+
+	@RcncltnFlg.deleter
+	def RcncltnFlg(self):
+		del self._RcncltnFlg
+		self._RcncltnFlg = None
 
 	@property
 	def RptgDtTm(self):
@@ -130,12 +130,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctMod', type=ContractModification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollCmpnt', type=CollateralType19, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctMod', type=ContractModification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtDay', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndgSrc', type=FundingSource3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

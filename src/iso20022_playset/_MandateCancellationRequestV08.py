@@ -5,7 +5,7 @@ from ._GroupHeader110 import GroupHeader110
 
 class MandateCancellationRequestV08(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_UndrlygCxlDtls"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_UndrlygCxlDtls"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

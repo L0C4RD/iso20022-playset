@@ -4,7 +4,7 @@ from ._Exact4NumericText import Exact4NumericText
 
 class PriorityNumeric5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nmrc", "_Prtry"]
+	__slots__ = ["_Prtry", "_Nmrc"]
 	@property
 	def Nmrc(self):
 		return self._Nmrc

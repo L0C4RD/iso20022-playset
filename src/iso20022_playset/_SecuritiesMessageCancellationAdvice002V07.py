@@ -1,25 +1,25 @@
 from . import base_types
-from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._PartyIdentification156 import PartyIdentification156
 from ._SupplementaryData1 import SupplementaryData1
 from ._References79Choice import References79Choice
+from ._PartyIdentification156 import PartyIdentification156
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 
 class SecuritiesMessageCancellationAdvice002V07(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_BlckChainAdrOrWllt", "_SplmtryData", "_AcctOwnr", "_SfkpgAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_Ref", "_SfkpgAcct", "_AcctOwnr", "_SplmtryData"]
 	@property
-	def Ref(self):
-		return self._Ref
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -35,30 +35,17 @@ class SecuritiesMessageCancellationAdvice002V07(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Ref(self):
+		return self._Ref
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def SfkpgAcct(self):
@@ -73,11 +60,24 @@ class SecuritiesMessageCancellationAdvice002V07(base_types._BaseFieldType):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=References79Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References79Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

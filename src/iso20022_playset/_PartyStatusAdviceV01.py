@@ -1,24 +1,11 @@
 from . import base_types
+from ._PartyStatus2 import PartyStatus2
 from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader12 import MessageHeader12
-from ._PartyStatus2 import PartyStatus2
 
 class PartyStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PtySts", "_MsgHdr", "_SplmtryData"]
-	@property
-	def PtySts(self):
-		return self._PtySts
-
-	@PtySts.setter
-	def PtySts(self, value):
-		self._PtySts = value if type(value) != base_types.auto else self.make_default("PtySts")
-
-	@PtySts.deleter
-	def PtySts(self):
-		del self._PtySts
-		self._PtySts = None
-
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_PtySts"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -31,6 +18,19 @@ class PartyStatusAdviceV01(base_types._BaseFieldType):
 	def MsgHdr(self):
 		del self._MsgHdr
 		self._MsgHdr = None
+
+	@property
+	def PtySts(self):
+		return self._PtySts
+
+	@PtySts.setter
+	def PtySts(self, value):
+		self._PtySts = value if type(value) != base_types.auto else self.make_default("PtySts")
+
+	@PtySts.deleter
+	def PtySts(self):
+		del self._PtySts
+		self._PtySts = None
 
 	@property
 	def SplmtryData(self):
@@ -46,8 +46,8 @@ class PartyStatusAdviceV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtySts', type=PartyStatus2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtySts', type=PartyStatus2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

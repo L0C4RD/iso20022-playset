@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max20PositiveNumber import Max20PositiveNumber
 from ._NumberOfTransactionsPerValidationRule6 import NumberOfTransactionsPerValidationRule6
+from ._Max20PositiveNumber import Max20PositiveNumber
 
 class DetailedReportStatistics7(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfRptsRjctdPerErr", "_TtlNbOfRpts", "_TtlNbOfRptsAccptd", "_TtlNbOfRptsRjctd"]
+	__slots__ = ["_NbOfRptsRjctdPerErr", "_TtlNbOfRptsRjctd", "_TtlNbOfRptsAccptd", "_TtlNbOfRpts"]
 	@property
 	def NbOfRptsRjctdPerErr(self):
 		return self._NbOfRptsRjctdPerErr

@@ -1,57 +1,31 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Authorisation1Choice import Authorisation1Choice
+from ._ISODate import ISODate
 from ._BatchBookingIndicator import BatchBookingIndicator
+from ._DecimalNumber import DecimalNumber
 from ._PaymentTypeInformation27 import PaymentTypeInformation27
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Authorisation1Choice import Authorisation1Choice
+from ._Max35Text import Max35Text
 from ._SettlementInstruction14 import SettlementInstruction14
 from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._ISODate import ISODate
-from ._DecimalNumber import DecimalNumber
 from ._ISODateTime import ISODateTime
 
 class GroupHeader125(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_IntrBkSttlmDt", "_TtlIntrBkSttlmAmt", "_BtchBookg", "_SttlmInf", "_InstgAgt", "_PmtTpInf", "_MsgId", "_NbOfTxs", "_InstdAgt", "_Authstn", "_CtrlSum"]
+	__slots__ = ["_NbOfTxs", "_IntrBkSttlmDt", "_MsgId", "_CtrlSum", "_TtlIntrBkSttlmAmt", "_InstgAgt", "_Authstn", "_SttlmInf", "_PmtTpInf", "_InstdAgt", "_CreDtTm", "_BtchBookg"]
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def Authstn(self):
+		return self._Authstn
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
-
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
-
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
-
-	@property
-	def TtlIntrBkSttlmAmt(self):
-		return self._TtlIntrBkSttlmAmt
-
-	@TtlIntrBkSttlmAmt.setter
-	def TtlIntrBkSttlmAmt(self, value):
-		self._TtlIntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("TtlIntrBkSttlmAmt")
-
-	@TtlIntrBkSttlmAmt.deleter
-	def TtlIntrBkSttlmAmt(self):
-		del self._TtlIntrBkSttlmAmt
-		self._TtlIntrBkSttlmAmt = None
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
 
 	@property
 	def BtchBookg(self):
@@ -67,17 +41,43 @@ class GroupHeader125(base_types._BaseFieldType):
 		self._BtchBookg = None
 
 	@property
-	def SttlmInf(self):
-		return self._SttlmInf
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@SttlmInf.setter
-	def SttlmInf(self, value):
-		self._SttlmInf = value if type(value) != base_types.auto else self.make_default("SttlmInf")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
-	@SttlmInf.deleter
-	def SttlmInf(self):
-		del self._SttlmInf
-		self._SttlmInf = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
+	@property
+	def CtrlSum(self):
+		return self._CtrlSum
+
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
+
+	@property
+	def InstdAgt(self):
+		return self._InstdAgt
+
+	@InstdAgt.setter
+	def InstdAgt(self, value):
+		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
+
+	@InstdAgt.deleter
+	def InstdAgt(self):
+		del self._InstdAgt
+		self._InstdAgt = None
 
 	@property
 	def InstgAgt(self):
@@ -93,17 +93,17 @@ class GroupHeader125(base_types._BaseFieldType):
 		self._InstgAgt = None
 
 	@property
-	def PmtTpInf(self):
-		return self._PmtTpInf
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
 
-	@PmtTpInf.setter
-	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != base_types.auto else self.make_default("PmtTpInf")
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
 
-	@PmtTpInf.deleter
-	def PmtTpInf(self):
-		del self._PmtTpInf
-		self._PmtTpInf = None
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
 
 	@property
 	def MsgId(self):
@@ -132,56 +132,56 @@ class GroupHeader125(base_types._BaseFieldType):
 		self._NbOfTxs = None
 
 	@property
-	def InstdAgt(self):
-		return self._InstdAgt
+	def PmtTpInf(self):
+		return self._PmtTpInf
 
-	@InstdAgt.setter
-	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
+	@PmtTpInf.setter
+	def PmtTpInf(self, value):
+		self._PmtTpInf = value if type(value) != base_types.auto else self.make_default("PmtTpInf")
 
-	@InstdAgt.deleter
-	def InstdAgt(self):
-		del self._InstdAgt
-		self._InstdAgt = None
-
-	@property
-	def Authstn(self):
-		return self._Authstn
-
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
-
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
+	@PmtTpInf.deleter
+	def PmtTpInf(self):
+		del self._PmtTpInf
+		self._PmtTpInf = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def SttlmInf(self):
+		return self._SttlmInf
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+	@SttlmInf.setter
+	def SttlmInf(self, value):
+		self._SttlmInf = value if type(value) != base_types.auto else self.make_default("SttlmInf")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
+	@SttlmInf.deleter
+	def SttlmInf(self):
+		del self._SttlmInf
+		self._SttlmInf = None
+
+	@property
+	def TtlIntrBkSttlmAmt(self):
+		return self._TtlIntrBkSttlmAmt
+
+	@TtlIntrBkSttlmAmt.setter
+	def TtlIntrBkSttlmAmt(self, value):
+		self._TtlIntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("TtlIntrBkSttlmAmt")
+
+	@TtlIntrBkSttlmAmt.deleter
+	def TtlIntrBkSttlmAmt(self):
+		del self._TtlIntrBkSttlmAmt
+		self._TtlIntrBkSttlmAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BtchBookg', type=BatchBookingIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmInf', type=SettlementInstruction14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmInf', type=SettlementInstruction14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

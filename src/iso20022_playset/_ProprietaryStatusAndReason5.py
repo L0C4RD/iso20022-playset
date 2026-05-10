@@ -1,11 +1,11 @@
 from . import base_types
 from ._ProprietaryReason1Choice import ProprietaryReason1Choice
-from ._Max210Text import Max210Text
 from ._GenericIdentification36 import GenericIdentification36
+from ._Max210Text import Max210Text
 
 class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRsnInf", "_Rsn", "_Sts"]
+	__slots__ = ["_Sts", "_Rsn", "_AddtlRsnInf"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

@@ -1,25 +1,12 @@
 from . import base_types
+from ._IdentificationInformation5 import IdentificationInformation5
+from ._VerificationReason1Choice import VerificationReason1Choice
 from ._Max35Text import Max35Text
 from ._IdentificationVerificationIndicator import IdentificationVerificationIndicator
-from ._VerificationReason1Choice import VerificationReason1Choice
-from ._IdentificationInformation5 import IdentificationInformation5
 
 class VerificationReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrfctn", "_OrgnlId", "_Rsn", "_OrgnlPtyAndAcctId", "_UpdtdPtyAndAcctId"]
-	@property
-	def Vrfctn(self):
-		return self._Vrfctn
-
-	@Vrfctn.setter
-	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
-
-	@Vrfctn.deleter
-	def Vrfctn(self):
-		del self._Vrfctn
-		self._Vrfctn = None
-
+	__slots__ = ["_Vrfctn", "_OrgnlPtyAndAcctId", "_OrgnlId", "_Rsn", "_UpdtdPtyAndAcctId"]
 	@property
 	def OrgnlId(self):
 		return self._OrgnlId
@@ -32,19 +19,6 @@ class VerificationReport5(base_types._BaseFieldType):
 	def OrgnlId(self):
 		del self._OrgnlId
 		self._OrgnlId = None
-
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
 
 	@property
 	def OrgnlPtyAndAcctId(self):
@@ -60,6 +34,19 @@ class VerificationReport5(base_types._BaseFieldType):
 		self._OrgnlPtyAndAcctId = None
 
 	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
+	@property
 	def UpdtdPtyAndAcctId(self):
 		return self._UpdtdPtyAndAcctId
 
@@ -72,11 +59,24 @@ class VerificationReport5(base_types._BaseFieldType):
 		del self._UpdtdPtyAndAcctId
 		self._UpdtdPtyAndAcctId = None
 
+	@property
+	def Vrfctn(self):
+		return self._Vrfctn
+
+	@Vrfctn.setter
+	def Vrfctn(self, value):
+		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
+
+	@Vrfctn.deleter
+	def Vrfctn(self):
+		del self._Vrfctn
+		self._Vrfctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrfctn', type=IdentificationVerificationIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=VerificationReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=VerificationReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdtdPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrfctn', type=IdentificationVerificationIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

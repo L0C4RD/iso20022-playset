@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max105Text import Max105Text
 from ._GenericIdentification175 import GenericIdentification175
 from ._Max500Text import Max500Text
+from ._Max105Text import Max105Text
 
 class OrganisationIdentification38(base_types._BaseFieldType):
 
 	__slots__ = ["_Id", "_Dmcl", "_Nm"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	@property
 	def Dmcl(self):
 		return self._Dmcl
@@ -31,6 +18,19 @@ class OrganisationIdentification38(base_types._BaseFieldType):
 	def Dmcl(self):
 		del self._Dmcl
 		self._Dmcl = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Nm(self):
@@ -46,8 +46,8 @@ class OrganisationIdentification38(base_types._BaseFieldType):
 		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=GenericIdentification175, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dmcl', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=GenericIdentification175, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

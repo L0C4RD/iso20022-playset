@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyType1Choice import PartyType1Choice
 from ._PartyIdentification43 import PartyIdentification43
+from ._PartyType1Choice import PartyType1Choice
 
 class PartyAndType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_Tp"]
+	__slots__ = ["_Tp", "_Pty"]
 	@property
 	def Pty(self):
 		return self._Pty

@@ -1,12 +1,25 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._GenericIdentification164 import GenericIdentification164
 from ._Max350Text import Max350Text
-from ._ISODate import ISODate
 from ._CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
 
 class IndividualPerson32(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryAndResdtlSts", "_Nm", "_OthrId", "_BirthDt"]
+	__slots__ = ["_CtryAndResdtlSts", "_OthrId", "_BirthDt", "_Nm"]
+	@property
+	def BirthDt(self):
+		return self._BirthDt
+
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
+
 	@property
 	def CtryAndResdtlSts(self):
 		return self._CtryAndResdtlSts
@@ -46,23 +59,10 @@ class IndividualPerson32(base_types._BaseFieldType):
 		del self._OthrId
 		self._OthrId = None
 
-	@property
-	def BirthDt(self):
-		return self._BirthDt
-
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
-
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

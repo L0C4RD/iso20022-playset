@@ -1,12 +1,25 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Intermediary27 import Intermediary27
 from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._AccountIdentification1 import AccountIdentification1
+from ._Max35Text import Max35Text
+from ._Intermediary27 import Intermediary27
 
 class InvestmentAccount43(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsgnt", "_Id", "_AcctSvcr", "_Nm", "_IntrmyInf"]
+	__slots__ = ["_Id", "_IntrmyInf", "_Nm", "_AcctSvcr", "_Dsgnt"]
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt
@@ -34,17 +47,17 @@ class InvestmentAccount43(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
+	def IntrmyInf(self):
+		return self._IntrmyInf
 
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+	@IntrmyInf.setter
+	def IntrmyInf(self, value):
+		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
 
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
+	@IntrmyInf.deleter
+	def IntrmyInf(self):
+		del self._IntrmyInf
+		self._IntrmyInf = None
 
 	@property
 	def Nm(self):
@@ -59,24 +72,11 @@ class InvestmentAccount43(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
-	@property
-	def IntrmyInf(self):
-		return self._IntrmyInf
-
-	@IntrmyInf.setter
-	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
-
-	@IntrmyInf.deleter
-	def IntrmyInf(self):
-		del self._IntrmyInf
-		self._IntrmyInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyInf', type=Intermediary27, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

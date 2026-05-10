@@ -1,11 +1,11 @@
 from . import base_types
+from ._CorporateActionCancellationReason1Code import CorporateActionCancellationReason1Code
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._CorporateActionEventStatus1 import CorporateActionEventStatus1
-from ._CorporateActionCancellationReason1Code import CorporateActionCancellationReason1Code
 
 class CorporateActionCancellation4(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_CxlRsnCd", "_PrcgSts"]
+	__slots__ = ["_PrcgSts", "_CxlRsnCd", "_CxlRsn"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

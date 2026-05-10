@@ -1,49 +1,23 @@
 from . import base_types
 from ._TradePartyIdentificationQuery11Choice import TradePartyIdentificationQuery11Choice
-from ._Operation3Code import Operation3Code
 from ._TradePartyIdentificationQuery10Choice import TradePartyIdentificationQuery10Choice
+from ._Operation3Code import Operation3Code
 
 class TradePartyQueryCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_NttyRspnsblForRpt", "_SubmitgAgt", "_Oprtr", "_Brkr", "_Bnfcry", "_OthrCtrPty", "_RptgCtrPty", "_CCP", "_ClrMmb"]
+	__slots__ = ["_OthrCtrPty", "_Bnfcry", "_Brkr", "_SubmitgAgt", "_ClrMmb", "_Oprtr", "_RptgCtrPty", "_CCP", "_NttyRspnsblForRpt"]
 	@property
-	def NttyRspnsblForRpt(self):
-		return self._NttyRspnsblForRpt
+	def Bnfcry(self):
+		return self._Bnfcry
 
-	@NttyRspnsblForRpt.setter
-	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
+	@Bnfcry.setter
+	def Bnfcry(self, value):
+		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
 
-	@NttyRspnsblForRpt.deleter
-	def NttyRspnsblForRpt(self):
-		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
-
-	@property
-	def SubmitgAgt(self):
-		return self._SubmitgAgt
-
-	@SubmitgAgt.setter
-	def SubmitgAgt(self, value):
-		self._SubmitgAgt = value if type(value) != base_types.auto else self.make_default("SubmitgAgt")
-
-	@SubmitgAgt.deleter
-	def SubmitgAgt(self):
-		del self._SubmitgAgt
-		self._SubmitgAgt = None
-
-	@property
-	def Oprtr(self):
-		return self._Oprtr
-
-	@Oprtr.setter
-	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
-
-	@Oprtr.deleter
-	def Oprtr(self):
-		del self._Oprtr
-		self._Oprtr = None
+	@Bnfcry.deleter
+	def Bnfcry(self):
+		del self._Bnfcry
+		self._Bnfcry = None
 
 	@property
 	def Brkr(self):
@@ -59,17 +33,56 @@ class TradePartyQueryCriteria7(base_types._BaseFieldType):
 		self._Brkr = None
 
 	@property
-	def Bnfcry(self):
-		return self._Bnfcry
+	def CCP(self):
+		return self._CCP
 
-	@Bnfcry.setter
-	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+	@CCP.setter
+	def CCP(self, value):
+		self._CCP = value if type(value) != base_types.auto else self.make_default("CCP")
 
-	@Bnfcry.deleter
-	def Bnfcry(self):
-		del self._Bnfcry
-		self._Bnfcry = None
+	@CCP.deleter
+	def CCP(self):
+		del self._CCP
+		self._CCP = None
+
+	@property
+	def ClrMmb(self):
+		return self._ClrMmb
+
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
+	@property
+	def NttyRspnsblForRpt(self):
+		return self._NttyRspnsblForRpt
+
+	@NttyRspnsblForRpt.setter
+	def NttyRspnsblForRpt(self, value):
+		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
+
+	@NttyRspnsblForRpt.deleter
+	def NttyRspnsblForRpt(self):
+		del self._NttyRspnsblForRpt
+		self._NttyRspnsblForRpt = None
+
+	@property
+	def Oprtr(self):
+		return self._Oprtr
+
+	@Oprtr.setter
+	def Oprtr(self, value):
+		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
+
+	@Oprtr.deleter
+	def Oprtr(self):
+		del self._Oprtr
+		self._Oprtr = None
 
 	@property
 	def OthrCtrPty(self):
@@ -98,40 +111,27 @@ class TradePartyQueryCriteria7(base_types._BaseFieldType):
 		self._RptgCtrPty = None
 
 	@property
-	def CCP(self):
-		return self._CCP
+	def SubmitgAgt(self):
+		return self._SubmitgAgt
 
-	@CCP.setter
-	def CCP(self, value):
-		self._CCP = value if type(value) != base_types.auto else self.make_default("CCP")
+	@SubmitgAgt.setter
+	def SubmitgAgt(self, value):
+		self._SubmitgAgt = value if type(value) != base_types.auto else self.make_default("SubmitgAgt")
 
-	@CCP.deleter
-	def CCP(self):
-		del self._CCP
-		self._CCP = None
-
-	@property
-	def ClrMmb(self):
-		return self._ClrMmb
-
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
-
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
+	@SubmitgAgt.deleter
+	def SubmitgAgt(self):
+		del self._SubmitgAgt
+		self._SubmitgAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NttyRspnsblForRpt', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitgAgt', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Brkr', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bnfcry', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrCtrPty', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgCtrPty', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brkr', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CCP', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmb', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NttyRspnsblForRpt', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgAgt', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

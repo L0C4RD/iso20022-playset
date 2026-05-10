@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class MessageIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_Id"]
+	__slots__ = ["_Id", "_CreDtTm"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

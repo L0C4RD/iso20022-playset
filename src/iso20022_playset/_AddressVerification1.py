@@ -3,7 +3,7 @@ from ._Max5NumericText import Max5NumericText
 
 class AddressVerification1(base_types._BaseFieldType):
 
-	__slots__ = ["_AdrDgts", "_PstlCdDgts"]
+	__slots__ = ["_PstlCdDgts", "_AdrDgts"]
 	@property
 	def AdrDgts(self):
 		return self._AdrDgts

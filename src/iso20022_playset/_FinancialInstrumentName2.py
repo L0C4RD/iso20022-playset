@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 
 class FinancialInstrumentName2(base_types._BaseFieldType):
 
-	__slots__ = ["_ISOLngNm", "_ISOShrtNm", "_VldFr"]
+	__slots__ = ["_VldFr", "_ISOLngNm", "_ISOShrtNm"]
 	@property
 	def ISOLngNm(self):
 		return self._ISOLngNm

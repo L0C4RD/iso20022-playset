@@ -1,24 +1,24 @@
 from . import base_types
 from ._AcquirerToAcceptorFileBody2 import AcquirerToAcceptorFileBody2
-from ._ResponseType11 import ResponseType11
-from ._ContentInformationType38 import ContentInformationType38
 from ._Header56 import Header56
+from ._ContentInformationType38 import ContentInformationType38
+from ._ResponseType11 import ResponseType11
 
 class AcquirerToAcceptorBatchFileExchangeV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_Rspn", "_BodyElmt"]
+	__slots__ = ["_BodyElmt", "_Hdr", "_Rspn", "_SctyTrlr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def BodyElmt(self):
+		return self._BodyElmt
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+	@BodyElmt.setter
+	def BodyElmt(self, value):
+		self._BodyElmt = value if type(value) != base_types.auto else self.make_default("BodyElmt")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@BodyElmt.deleter
+	def BodyElmt(self):
+		del self._BodyElmt
+		self._BodyElmt = None
 
 	@property
 	def Hdr(self):
@@ -47,22 +47,22 @@ class AcquirerToAcceptorBatchFileExchangeV02(base_types._BaseFieldType):
 		self._Rspn = None
 
 	@property
-	def BodyElmt(self):
-		return self._BodyElmt
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@BodyElmt.setter
-	def BodyElmt(self, value):
-		self._BodyElmt = value if type(value) != base_types.auto else self.make_default("BodyElmt")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@BodyElmt.deleter
-	def BodyElmt(self):
-		del self._BodyElmt
-		self._BodyElmt = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BodyElmt', type=AcquirerToAcceptorFileBody2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Hdr', type=Header56, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BodyElmt', type=AcquirerToAcceptorFileBody2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

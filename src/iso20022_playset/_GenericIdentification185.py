@@ -1,22 +1,22 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max100Text import Max100Text
+from ._Max35Text import Max35Text
 
 class GenericIdentification185(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Issr", "_Id"]
+	__slots__ = ["_SchmeNm", "_Id", "_Issr"]
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
+	def Id(self):
+		return self._Id
 
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Issr(self):
@@ -32,21 +32,21 @@ class GenericIdentification185(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max100Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
 from ._ATMConfigurationControlComponent1 import ATMConfigurationControlComponent1
-from ._ContentInformationType15 import ContentInformationType15
+from ._ContentInformationType10 import ContentInformationType10
 from ._Header31 import Header31
+from ._ContentInformationType15 import ContentInformationType15
 
 class ATMConfigurationControlV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMCfgtnCtrl", "_PrtctdATMCfgtnCtrl", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_SctyTrlr", "_ATMCfgtnCtrl", "_PrtctdATMCfgtnCtrl"]
 	@property
 	def ATMCfgtnCtrl(self):
 		return self._ATMCfgtnCtrl
@@ -21,19 +21,6 @@ class ATMConfigurationControlV01(base_types._BaseFieldType):
 		self._ATMCfgtnCtrl = None
 
 	@property
-	def PrtctdATMCfgtnCtrl(self):
-		return self._PrtctdATMCfgtnCtrl
-
-	@PrtctdATMCfgtnCtrl.setter
-	def PrtctdATMCfgtnCtrl(self, value):
-		self._PrtctdATMCfgtnCtrl = value if type(value) != base_types.auto else self.make_default("PrtctdATMCfgtnCtrl")
-
-	@PrtctdATMCfgtnCtrl.deleter
-	def PrtctdATMCfgtnCtrl(self):
-		del self._PrtctdATMCfgtnCtrl
-		self._PrtctdATMCfgtnCtrl = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,6 +32,19 @@ class ATMConfigurationControlV01(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
+
+	@property
+	def PrtctdATMCfgtnCtrl(self):
+		return self._PrtctdATMCfgtnCtrl
+
+	@PrtctdATMCfgtnCtrl.setter
+	def PrtctdATMCfgtnCtrl(self, value):
+		self._PrtctdATMCfgtnCtrl = value if type(value) != base_types.auto else self.make_default("PrtctdATMCfgtnCtrl")
+
+	@PrtctdATMCfgtnCtrl.deleter
+	def PrtctdATMCfgtnCtrl(self):
+		del self._PrtctdATMCfgtnCtrl
+		self._PrtctdATMCfgtnCtrl = None
 
 	@property
 	def SctyTrlr(self):
@@ -61,8 +61,8 @@ class ATMConfigurationControlV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMCfgtnCtrl', type=ATMConfigurationControlComponent1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMCfgtnCtrl', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMCfgtnCtrl', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

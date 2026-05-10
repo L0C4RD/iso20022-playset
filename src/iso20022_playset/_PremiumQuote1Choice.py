@@ -1,36 +1,10 @@
 from . import base_types
-from ._BaseOneRate import BaseOneRate
 from ._PercentageRate import PercentageRate
+from ._BaseOneRate import BaseOneRate
 
 class PremiumQuote1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgOfPutAmt", "_PtsOfPutAmt", "_PctgOfCallAmt", "_PtsOfCallAmt"]
-	@property
-	def PctgOfPutAmt(self):
-		return self._PctgOfPutAmt
-
-	@PctgOfPutAmt.setter
-	def PctgOfPutAmt(self, value):
-		self._PctgOfPutAmt = value if type(value) != base_types.auto else self.make_default("PctgOfPutAmt")
-
-	@PctgOfPutAmt.deleter
-	def PctgOfPutAmt(self):
-		del self._PctgOfPutAmt
-		self._PctgOfPutAmt = None
-
-	@property
-	def PtsOfPutAmt(self):
-		return self._PtsOfPutAmt
-
-	@PtsOfPutAmt.setter
-	def PtsOfPutAmt(self, value):
-		self._PtsOfPutAmt = value if type(value) != base_types.auto else self.make_default("PtsOfPutAmt")
-
-	@PtsOfPutAmt.deleter
-	def PtsOfPutAmt(self):
-		del self._PtsOfPutAmt
-		self._PtsOfPutAmt = None
-
+	__slots__ = ["_PctgOfPutAmt", "_PctgOfCallAmt", "_PtsOfCallAmt", "_PtsOfPutAmt"]
 	@property
 	def PctgOfCallAmt(self):
 		return self._PctgOfCallAmt
@@ -45,6 +19,19 @@ class PremiumQuote1Choice(base_types._BaseFieldType):
 		self._PctgOfCallAmt = None
 
 	@property
+	def PctgOfPutAmt(self):
+		return self._PctgOfPutAmt
+
+	@PctgOfPutAmt.setter
+	def PctgOfPutAmt(self, value):
+		self._PctgOfPutAmt = value if type(value) != base_types.auto else self.make_default("PctgOfPutAmt")
+
+	@PctgOfPutAmt.deleter
+	def PctgOfPutAmt(self):
+		del self._PctgOfPutAmt
+		self._PctgOfPutAmt = None
+
+	@property
 	def PtsOfCallAmt(self):
 		return self._PtsOfCallAmt
 
@@ -57,10 +44,23 @@ class PremiumQuote1Choice(base_types._BaseFieldType):
 		del self._PtsOfCallAmt
 		self._PtsOfCallAmt = None
 
+	@property
+	def PtsOfPutAmt(self):
+		return self._PtsOfPutAmt
+
+	@PtsOfPutAmt.setter
+	def PtsOfPutAmt(self, value):
+		self._PtsOfPutAmt = value if type(value) != base_types.auto else self.make_default("PtsOfPutAmt")
+
+	@PtsOfPutAmt.deleter
+	def PtsOfPutAmt(self):
+		del self._PtsOfPutAmt
+		self._PtsOfPutAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PctgOfPutAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PtsOfPutAmt', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgOfCallAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PctgOfPutAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtsOfCallAmt', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PtsOfPutAmt', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,36 +1,23 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
 from ._MessageIdentification1 import MessageIdentification1
+from ._Max70Text import Max70Text
 
 class References3(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqRsn", "_ReqToBeCmpltdId", "_MsgId", "_PrcId", "_AttchdDocNm"]
+	__slots__ = ["_AttchdDocNm", "_PrcId", "_MsgId", "_ReqRsn", "_ReqToBeCmpltdId"]
 	@property
-	def ReqRsn(self):
-		return self._ReqRsn
+	def AttchdDocNm(self):
+		return self._AttchdDocNm
 
-	@ReqRsn.setter
-	def ReqRsn(self, value):
-		self._ReqRsn = value if type(value) != base_types.auto else self.make_default("ReqRsn")
+	@AttchdDocNm.setter
+	def AttchdDocNm(self, value):
+		self._AttchdDocNm = value if type(value) != base_types.auto else self.make_default("AttchdDocNm")
 
-	@ReqRsn.deleter
-	def ReqRsn(self):
-		del self._ReqRsn
-		self._ReqRsn = None
-
-	@property
-	def ReqToBeCmpltdId(self):
-		return self._ReqToBeCmpltdId
-
-	@ReqToBeCmpltdId.setter
-	def ReqToBeCmpltdId(self, value):
-		self._ReqToBeCmpltdId = value if type(value) != base_types.auto else self.make_default("ReqToBeCmpltdId")
-
-	@ReqToBeCmpltdId.deleter
-	def ReqToBeCmpltdId(self):
-		del self._ReqToBeCmpltdId
-		self._ReqToBeCmpltdId = None
+	@AttchdDocNm.deleter
+	def AttchdDocNm(self):
+		del self._AttchdDocNm
+		self._AttchdDocNm = None
 
 	@property
 	def MsgId(self):
@@ -59,23 +46,36 @@ class References3(base_types._BaseFieldType):
 		self._PrcId = None
 
 	@property
-	def AttchdDocNm(self):
-		return self._AttchdDocNm
+	def ReqRsn(self):
+		return self._ReqRsn
 
-	@AttchdDocNm.setter
-	def AttchdDocNm(self, value):
-		self._AttchdDocNm = value if type(value) != base_types.auto else self.make_default("AttchdDocNm")
+	@ReqRsn.setter
+	def ReqRsn(self, value):
+		self._ReqRsn = value if type(value) != base_types.auto else self.make_default("ReqRsn")
 
-	@AttchdDocNm.deleter
-	def AttchdDocNm(self):
-		del self._AttchdDocNm
-		self._AttchdDocNm = None
+	@ReqRsn.deleter
+	def ReqRsn(self):
+		del self._ReqRsn
+		self._ReqRsn = None
+
+	@property
+	def ReqToBeCmpltdId(self):
+		return self._ReqToBeCmpltdId
+
+	@ReqToBeCmpltdId.setter
+	def ReqToBeCmpltdId(self, value):
+		self._ReqToBeCmpltdId = value if type(value) != base_types.auto else self.make_default("ReqToBeCmpltdId")
+
+	@ReqToBeCmpltdId.deleter
+	def ReqToBeCmpltdId(self):
+		del self._ReqToBeCmpltdId
+		self._ReqToBeCmpltdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqRsn', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqToBeCmpltdId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqRsn', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqToBeCmpltdId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

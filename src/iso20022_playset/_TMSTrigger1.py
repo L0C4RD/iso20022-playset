@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._TMSContactLevel1Code import TMSContactLevel1Code
 from ._ISODateTime import ISODateTime
+from ._TMSContactLevel1Code import TMSContactLevel1Code
+from ._Max35Text import Max35Text
 
 class TMSTrigger1(base_types._BaseFieldType):
 
-	__slots__ = ["_TMSCtctLvl", "_TMSCtctDtTm", "_TMSId"]
-	@property
-	def TMSCtctLvl(self):
-		return self._TMSCtctLvl
-
-	@TMSCtctLvl.setter
-	def TMSCtctLvl(self, value):
-		self._TMSCtctLvl = value if type(value) != base_types.auto else self.make_default("TMSCtctLvl")
-
-	@TMSCtctLvl.deleter
-	def TMSCtctLvl(self):
-		del self._TMSCtctLvl
-		self._TMSCtctLvl = None
-
+	__slots__ = ["_TMSId", "_TMSCtctLvl", "_TMSCtctDtTm"]
 	@property
 	def TMSCtctDtTm(self):
 		return self._TMSCtctDtTm
@@ -31,6 +18,19 @@ class TMSTrigger1(base_types._BaseFieldType):
 	def TMSCtctDtTm(self):
 		del self._TMSCtctDtTm
 		self._TMSCtctDtTm = None
+
+	@property
+	def TMSCtctLvl(self):
+		return self._TMSCtctLvl
+
+	@TMSCtctLvl.setter
+	def TMSCtctLvl(self, value):
+		self._TMSCtctLvl = value if type(value) != base_types.auto else self.make_default("TMSCtctLvl")
+
+	@TMSCtctLvl.deleter
+	def TMSCtctLvl(self):
+		del self._TMSCtctLvl
+		self._TMSCtctLvl = None
 
 	@property
 	def TMSId(self):
@@ -46,8 +46,8 @@ class TMSTrigger1(base_types._BaseFieldType):
 		self._TMSId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TMSCtctLvl', type=TMSContactLevel1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSCtctDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMSCtctLvl', type=TMSContactLevel1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

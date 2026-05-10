@@ -1,53 +1,27 @@
 from . import base_types
-from ._Pagination1 import Pagination1
-from ._Obligation9 import Obligation9
+from ._SupplementaryData1 import SupplementaryData1
 from ._InterestStatement5 import InterestStatement5
 from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._Statement85 import Statement85
 from ._Agreement4 import Agreement4
+from ._Pagination1 import Pagination1
+from ._Statement85 import Statement85
+from ._Obligation9 import Obligation9
 
 class InterestPaymentStatementV05(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_Pgntn", "_StmtParams", "_IntrstStmt", "_Agrmt", "_SplmtryData", "_Oblgtn"]
+	__slots__ = ["_Oblgtn", "_IntrstStmt", "_StmtParams", "_Agrmt", "_TxId", "_SplmtryData", "_Pgntn"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def Agrmt(self):
+		return self._Agrmt
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def StmtParams(self):
-		return self._StmtParams
-
-	@StmtParams.setter
-	def StmtParams(self, value):
-		self._StmtParams = value if type(value) != base_types.auto else self.make_default("StmtParams")
-
-	@StmtParams.deleter
-	def StmtParams(self):
-		del self._StmtParams
-		self._StmtParams = None
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
 
 	@property
 	def IntrstStmt(self):
@@ -63,17 +37,30 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 		self._IntrstStmt = None
 
 	@property
-	def Agrmt(self):
-		return self._Agrmt
+	def Oblgtn(self):
+		return self._Oblgtn
 
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
 
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def SplmtryData(self):
@@ -89,25 +76,38 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Oblgtn(self):
-		return self._Oblgtn
+	def StmtParams(self):
+		return self._StmtParams
 
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+	@StmtParams.setter
+	def StmtParams(self, value):
+		self._StmtParams = value if type(value) != base_types.auto else self.make_default("StmtParams")
 
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
+	@StmtParams.deleter
+	def StmtParams(self):
+		del self._StmtParams
+		self._StmtParams = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtParams', type=Statement85, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstStmt', type=InterestStatement5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrstStmt', type=InterestStatement5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtParams', type=Statement85, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

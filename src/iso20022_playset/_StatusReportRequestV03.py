@@ -1,10 +1,10 @@
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
 from ._MessageIdentification1 import MessageIdentification1
+from ._BICIdentification1 import BICIdentification1
 
 class StatusReportRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_NttiesToBeRptd", "_ReqId"]
+	__slots__ = ["_ReqId", "_NttiesToBeRptd"]
 	@property
 	def NttiesToBeRptd(self):
 		return self._NttiesToBeRptd

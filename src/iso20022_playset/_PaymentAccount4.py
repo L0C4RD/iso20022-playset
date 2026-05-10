@@ -1,25 +1,12 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Max10NumericText import Max10NumericText
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._AmountAndDirection86 import AmountAndDirection86
 
 class PaymentAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_NetPmt", "_Ccy", "_GrssCdts", "_GrssDbts", "_LatePmtConf"]
-	@property
-	def NetPmt(self):
-		return self._NetPmt
-
-	@NetPmt.setter
-	def NetPmt(self, value):
-		self._NetPmt = value if type(value) != base_types.auto else self.make_default("NetPmt")
-
-	@NetPmt.deleter
-	def NetPmt(self):
-		del self._NetPmt
-		self._NetPmt = None
-
+	__slots__ = ["_Ccy", "_GrssCdts", "_LatePmtConf", "_GrssDbts", "_NetPmt"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -72,11 +59,24 @@ class PaymentAccount4(base_types._BaseFieldType):
 		del self._LatePmtConf
 		self._LatePmtConf = None
 
+	@property
+	def NetPmt(self):
+		return self._NetPmt
+
+	@NetPmt.setter
+	def NetPmt(self, value):
+		self._NetPmt = value if type(value) != base_types.auto else self.make_default("NetPmt")
+
+	@NetPmt.deleter
+	def NetPmt(self):
+		del self._NetPmt
+		self._NetPmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetPmt', type=AmountAndDirection86, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrssCdts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrssDbts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetPmt', type=AmountAndDirection86, min=1, max=1, mutex_group=None, array=False),
 	))
 

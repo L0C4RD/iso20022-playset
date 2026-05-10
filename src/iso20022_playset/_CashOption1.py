@@ -1,25 +1,25 @@
 from . import base_types
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._CorporateActionAmounts1 import CorporateActionAmounts1
 from ._CorporateActionDate5 import CorporateActionDate5
 from ._ForeignExchangeTerms8 import ForeignExchangeTerms8
-from ._CorporateActionAmounts1 import CorporateActionAmounts1
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CreditDebitCode import CreditDebitCode
 
 class CashOption1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_Ccy", "_CdtDbtInd", "_XchgRate", "_AmtDtls"]
+	__slots__ = ["_XchgRate", "_CdtDbtInd", "_DtDtls", "_Ccy", "_AmtDtls"]
 	@property
-	def DtDtls(self):
-		return self._DtDtls
+	def AmtDtls(self):
+		return self._AmtDtls
 
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+	@AmtDtls.setter
+	def AmtDtls(self, value):
+		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
 
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
+	@AmtDtls.deleter
+	def AmtDtls(self):
+		del self._AmtDtls
+		self._AmtDtls = None
 
 	@property
 	def Ccy(self):
@@ -48,6 +48,19 @@ class CashOption1(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
+	def DtDtls(self):
+		return self._DtDtls
+
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
+
+	@property
 	def XchgRate(self):
 		return self._XchgRate
 
@@ -60,24 +73,11 @@ class CashOption1(base_types._BaseFieldType):
 		del self._XchgRate
 		self._XchgRate = None
 
-	@property
-	def AmtDtls(self):
-		return self._AmtDtls
-
-	@AmtDtls.setter
-	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
-
-	@AmtDtls.deleter
-	def AmtDtls(self):
-		del self._AmtDtls
-		self._AmtDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=ForeignExchangeTerms8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts1, min=0, max=1, mutex_group=None, array=False),
 	))
 

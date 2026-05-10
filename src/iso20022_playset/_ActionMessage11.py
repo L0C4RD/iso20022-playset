@@ -1,16 +1,42 @@
 from . import base_types
-from ._Max20000Text import Max20000Text
-from ._Number import Number
-from ._UserInterface4Code import UserInterface4Code
-from ._OutputBarcode2 import OutputBarcode2
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._InformationQualify1Code import InformationQualify1Code
+from ._OutputBarcode2 import OutputBarcode2
+from ._Max20000Text import Max20000Text
 from ._OutputFormat3Code import OutputFormat3Code
+from ._Number import Number
 from ._ContentInformationType38 import ContentInformationType38
+from ._UserInterface4Code import UserInterface4Code
+from ._InformationQualify1Code import InformationQualify1Code
 
 class ActionMessage11(base_types._BaseFieldType):
 
-	__slots__ = ["_MinDispTm", "_MsgCntt", "_MsgDstn", "_MsgCnttSgntr", "_OutptBrcd", "_RspnReqrdFlg", "_InfQlfr", "_Frmt"]
+	__slots__ = ["_MsgCnttSgntr", "_RspnReqrdFlg", "_Frmt", "_OutptBrcd", "_InfQlfr", "_MsgCntt", "_MsgDstn", "_MinDispTm"]
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
+	@property
+	def InfQlfr(self):
+		return self._InfQlfr
+
+	@InfQlfr.setter
+	def InfQlfr(self, value):
+		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
+
+	@InfQlfr.deleter
+	def InfQlfr(self):
+		del self._InfQlfr
+		self._InfQlfr = None
+
 	@property
 	def MinDispTm(self):
 		return self._MinDispTm
@@ -38,19 +64,6 @@ class ActionMessage11(base_types._BaseFieldType):
 		self._MsgCntt = None
 
 	@property
-	def MsgDstn(self):
-		return self._MsgDstn
-
-	@MsgDstn.setter
-	def MsgDstn(self, value):
-		self._MsgDstn = value if type(value) != base_types.auto else self.make_default("MsgDstn")
-
-	@MsgDstn.deleter
-	def MsgDstn(self):
-		del self._MsgDstn
-		self._MsgDstn = None
-
-	@property
 	def MsgCnttSgntr(self):
 		return self._MsgCnttSgntr
 
@@ -62,6 +75,19 @@ class ActionMessage11(base_types._BaseFieldType):
 	def MsgCnttSgntr(self):
 		del self._MsgCnttSgntr
 		self._MsgCnttSgntr = None
+
+	@property
+	def MsgDstn(self):
+		return self._MsgDstn
+
+	@MsgDstn.setter
+	def MsgDstn(self, value):
+		self._MsgDstn = value if type(value) != base_types.auto else self.make_default("MsgDstn")
+
+	@MsgDstn.deleter
+	def MsgDstn(self):
+		del self._MsgDstn
+		self._MsgDstn = None
 
 	@property
 	def OutptBrcd(self):
@@ -89,40 +115,14 @@ class ActionMessage11(base_types._BaseFieldType):
 		del self._RspnReqrdFlg
 		self._RspnReqrdFlg = None
 
-	@property
-	def InfQlfr(self):
-		return self._InfQlfr
-
-	@InfQlfr.setter
-	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
-
-	@InfQlfr.deleter
-	def InfQlfr(self):
-		del self._InfQlfr
-		self._InfQlfr = None
-
-	@property
-	def Frmt(self):
-		return self._Frmt
-
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
-
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Frmt', type=OutputFormat3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinDispTm', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgCntt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgDstn', type=UserInterface4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgCnttSgntr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgDstn', type=UserInterface4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptBrcd', type=OutputBarcode2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnReqrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=OutputFormat3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

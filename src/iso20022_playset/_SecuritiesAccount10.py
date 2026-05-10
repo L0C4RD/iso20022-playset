@@ -1,14 +1,27 @@
 from . import base_types
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._CreditDebitCode import CreditDebitCode
 from ._NationalityCode import NationalityCode
-from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._Max35Text import Max35Text
 from ._SecuritiesBalanceType9FormatChoice import SecuritiesBalanceType9FormatChoice
+from ._CreditDebitCode import CreditDebitCode
 
 class SecuritiesAccount10(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_SctyHldgForm", "_BalTp", "_AcctId", "_CdtDbtInd", "_AcctOwnrNtlty"]
+	__slots__ = ["_BalTp", "_AcctId", "_AcctOwnrId", "_CdtDbtInd", "_SctyHldgForm", "_AcctOwnrNtlty"]
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
 	@property
 	def AcctOwnrId(self):
 		return self._AcctOwnrId
@@ -23,17 +36,17 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
-	def SctyHldgForm(self):
-		return self._SctyHldgForm
+	def AcctOwnrNtlty(self):
+		return self._AcctOwnrNtlty
 
-	@SctyHldgForm.setter
-	def SctyHldgForm(self, value):
-		self._SctyHldgForm = value if type(value) != base_types.auto else self.make_default("SctyHldgForm")
+	@AcctOwnrNtlty.setter
+	def AcctOwnrNtlty(self, value):
+		self._AcctOwnrNtlty = value if type(value) != base_types.auto else self.make_default("AcctOwnrNtlty")
 
-	@SctyHldgForm.deleter
-	def SctyHldgForm(self):
-		del self._SctyHldgForm
-		self._SctyHldgForm = None
+	@AcctOwnrNtlty.deleter
+	def AcctOwnrNtlty(self):
+		del self._AcctOwnrNtlty
+		self._AcctOwnrNtlty = None
 
 	@property
 	def BalTp(self):
@@ -49,19 +62,6 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 		self._BalTp = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
@@ -75,24 +75,24 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def AcctOwnrNtlty(self):
-		return self._AcctOwnrNtlty
+	def SctyHldgForm(self):
+		return self._SctyHldgForm
 
-	@AcctOwnrNtlty.setter
-	def AcctOwnrNtlty(self, value):
-		self._AcctOwnrNtlty = value if type(value) != base_types.auto else self.make_default("AcctOwnrNtlty")
+	@SctyHldgForm.setter
+	def SctyHldgForm(self, value):
+		self._SctyHldgForm = value if type(value) != base_types.auto else self.make_default("SctyHldgForm")
 
-	@AcctOwnrNtlty.deleter
-	def AcctOwnrNtlty(self):
-		del self._AcctOwnrNtlty
-		self._AcctOwnrNtlty = None
+	@SctyHldgForm.deleter
+	def SctyHldgForm(self):
+		del self._SctyHldgForm
+		self._SctyHldgForm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType9FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrNtlty', type=NationalityCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType9FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

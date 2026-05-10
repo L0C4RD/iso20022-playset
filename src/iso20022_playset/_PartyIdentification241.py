@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification231Choice import PartyIdentification231Choice
 from ._PartyAdditionalIdentification2Choice import PartyAdditionalIdentification2Choice
+from ._PartyIdentification231Choice import PartyIdentification231Choice
 
 class PartyIdentification241(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlIdInf", "_Id"]
+	__slots__ = ["_Id", "_AddtlIdInf"]
 	@property
 	def AddtlIdInf(self):
 		return self._AddtlIdInf

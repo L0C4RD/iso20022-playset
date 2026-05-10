@@ -1,23 +1,23 @@
 from . import base_types
-from ._AcceptorCurrencyConversionResponse12 import AcceptorCurrencyConversionResponse12
 from ._Header70 import Header70
 from ._ContentInformationType37 import ContentInformationType37
+from ._AcceptorCurrencyConversionResponse12 import AcceptorCurrencyConversionResponse12
 
 class AcceptorCurrencyConversionResponseV12(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_CcyConvsRspn"]
+	__slots__ = ["_SctyTrlr", "_CcyConvsRspn", "_Hdr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def CcyConvsRspn(self):
+		return self._CcyConvsRspn
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+	@CcyConvsRspn.setter
+	def CcyConvsRspn(self, value):
+		self._CcyConvsRspn = value if type(value) != base_types.auto else self.make_default("CcyConvsRspn")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@CcyConvsRspn.deleter
+	def CcyConvsRspn(self):
+		del self._CcyConvsRspn
+		self._CcyConvsRspn = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class AcceptorCurrencyConversionResponseV12(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def CcyConvsRspn(self):
-		return self._CcyConvsRspn
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@CcyConvsRspn.setter
-	def CcyConvsRspn(self, value):
-		self._CcyConvsRspn = value if type(value) != base_types.auto else self.make_default("CcyConvsRspn")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@CcyConvsRspn.deleter
-	def CcyConvsRspn(self):
-		del self._CcyConvsRspn
-		self._CcyConvsRspn = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyConvsRspn', type=AcceptorCurrencyConversionResponse12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 	))
 

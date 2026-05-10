@@ -1,11 +1,24 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
 from ._POIComponentType5Code import POIComponentType5Code
+from ._Max70Text import Max70Text
 
 class PointOfInteractionComponent16(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmNb", "_PrvdrId", "_Id", "_Tp", "_SrlNb"]
+	__slots__ = ["_SrlNb", "_Id", "_PrvdrId", "_Tp", "_ItmNb"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def ItmNb(self):
 		return self._ItmNb
@@ -33,17 +46,17 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 		self._PrvdrId = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def SrlNb(self):
+		return self._SrlNb
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
 
 	@property
 	def Tp(self):
@@ -58,24 +71,11 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def SrlNb(self):
-		return self._SrlNb
-
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
-
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=POIComponentType5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrlNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=POIComponentType5Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

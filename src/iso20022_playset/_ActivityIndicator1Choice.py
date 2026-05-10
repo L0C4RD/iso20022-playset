@@ -4,7 +4,7 @@ from ._ISICIdentifier import ISICIdentifier
 
 class ActivityIndicator1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ISICIdr", "_PrtryInd"]
+	__slots__ = ["_PrtryInd", "_ISICIdr"]
 	@property
 	def ISICIdr(self):
 		return self._ISICIdr

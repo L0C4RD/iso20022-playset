@@ -1,6 +1,6 @@
 from . import base_types
-from ._Header57 import Header57
 from ._AcceptorRejection2 import AcceptorRejection2
+from ._Header57 import Header57
 
 class AcceptorRejectionV06(base_types._BaseFieldType):
 

@@ -7,17 +7,17 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 
 	__slots__ = ["_LdTp", "_DlvryPtOrZone", "_DlvryAttr", "_IntrCnnctnPt"]
 	@property
-	def LdTp(self):
-		return self._LdTp
+	def DlvryAttr(self):
+		return self._DlvryAttr
 
-	@LdTp.setter
-	def LdTp(self, value):
-		self._LdTp = value if type(value) != base_types.auto else self.make_default("LdTp")
+	@DlvryAttr.setter
+	def DlvryAttr(self, value):
+		self._DlvryAttr = value if type(value) != base_types.auto else self.make_default("DlvryAttr")
 
-	@LdTp.deleter
-	def LdTp(self):
-		del self._LdTp
-		self._LdTp = None
+	@DlvryAttr.deleter
+	def DlvryAttr(self):
+		del self._DlvryAttr
+		self._DlvryAttr = None
 
 	@property
 	def DlvryPtOrZone(self):
@@ -33,19 +33,6 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 		self._DlvryPtOrZone = None
 
 	@property
-	def DlvryAttr(self):
-		return self._DlvryAttr
-
-	@DlvryAttr.setter
-	def DlvryAttr(self, value):
-		self._DlvryAttr = value if type(value) != base_types.auto else self.make_default("DlvryAttr")
-
-	@DlvryAttr.deleter
-	def DlvryAttr(self):
-		del self._DlvryAttr
-		self._DlvryAttr = None
-
-	@property
 	def IntrCnnctnPt(self):
 		return self._IntrCnnctnPt
 
@@ -58,10 +45,23 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 		del self._IntrCnnctnPt
 		self._IntrCnnctnPt = None
 
+	@property
+	def LdTp(self):
+		return self._LdTp
+
+	@LdTp.setter
+	def LdTp(self, value):
+		self._LdTp = value if type(value) != base_types.auto else self.make_default("LdTp")
+
+	@LdTp.deleter
+	def LdTp(self):
+		del self._LdTp
+		self._LdTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryPtOrZone', type=DeliveryInterconnectionPoint1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlvryAttr', type=EnergyDeliveryAttribute10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvryPtOrZone', type=DeliveryInterconnectionPoint1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntrCnnctnPt', type=DeliveryInterconnectionPoint1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from ._TimeToMaturity2Choice import TimeToMaturity2Choice
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._TimeToMaturity2Choice import TimeToMaturity2Choice
 
 class ContractTerm6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Opn", "_Fxd"]
-	@property
-	def Opn(self):
-		return self._Opn
-
-	@Opn.setter
-	def Opn(self, value):
-		self._Opn = value if type(value) != base_types.auto else self.make_default("Opn")
-
-	@Opn.deleter
-	def Opn(self):
-		del self._Opn
-		self._Opn = None
-
+	__slots__ = ["_Fxd", "_Opn"]
 	@property
 	def Fxd(self):
 		return self._Fxd
@@ -31,8 +18,21 @@ class ContractTerm6Choice(base_types._BaseFieldType):
 		del self._Fxd
 		self._Fxd = None
 
+	@property
+	def Opn(self):
+		return self._Opn
+
+	@Opn.setter
+	def Opn(self, value):
+		self._Opn = value if type(value) != base_types.auto else self.make_default("Opn")
+
+	@Opn.deleter
+	def Opn(self):
+		del self._Opn
+		self._Opn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Opn', type=TrueFalseIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Fxd', type=TimeToMaturity2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Opn', type=TrueFalseIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
 

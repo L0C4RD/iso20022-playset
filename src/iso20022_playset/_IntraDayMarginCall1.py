@@ -7,19 +7,6 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 
 	__slots__ = ["_MrgnAcctId", "_IntraDayCall", "_TmStmp"]
 	@property
-	def MrgnAcctId(self):
-		return self._MrgnAcctId
-
-	@MrgnAcctId.setter
-	def MrgnAcctId(self, value):
-		self._MrgnAcctId = value if type(value) != base_types.auto else self.make_default("MrgnAcctId")
-
-	@MrgnAcctId.deleter
-	def MrgnAcctId(self):
-		del self._MrgnAcctId
-		self._MrgnAcctId = None
-
-	@property
 	def IntraDayCall(self):
 		return self._IntraDayCall
 
@@ -31,6 +18,19 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 	def IntraDayCall(self):
 		del self._IntraDayCall
 		self._IntraDayCall = None
+
+	@property
+	def MrgnAcctId(self):
+		return self._MrgnAcctId
+
+	@MrgnAcctId.setter
+	def MrgnAcctId(self, value):
+		self._MrgnAcctId = value if type(value) != base_types.auto else self.make_default("MrgnAcctId")
+
+	@MrgnAcctId.deleter
+	def MrgnAcctId(self):
+		del self._MrgnAcctId
+		self._MrgnAcctId = None
 
 	@property
 	def TmStmp(self):
@@ -46,8 +46,8 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 		self._TmStmp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnAcctId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraDayCall', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnAcctId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

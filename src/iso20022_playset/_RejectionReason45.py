@@ -1,11 +1,11 @@
 from . import base_types
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._Max140Text import Max140Text
 from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 
 class RejectionReason45(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldVldtnRule", "_MsgRptId", "_Sts"]
+	__slots__ = ["_DtldVldtnRule", "_Sts", "_MsgRptId"]
 	@property
 	def DtldVldtnRule(self):
 		return self._DtldVldtnRule

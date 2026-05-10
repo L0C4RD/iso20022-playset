@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DocumentNumber6Choice import DocumentNumber6Choice
+from ._Max35Text import Max35Text
 
 class DocumentIdentification55(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNb", "_Ref"]
+	__slots__ = ["_Ref", "_MsgNb"]
 	@property
 	def MsgNb(self):
 		return self._MsgNb

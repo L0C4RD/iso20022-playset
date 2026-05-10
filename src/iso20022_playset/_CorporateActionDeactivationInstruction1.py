@@ -1,10 +1,10 @@
 from . import base_types
-from ._CorporateActionOption2 import CorporateActionOption2
 from ._ISODateTime import ISODateTime
+from ._CorporateActionOption2 import CorporateActionOption2
 
 class CorporateActionDeactivationInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_DeactvtnDtAndTm", "_OptnDtls"]
+	__slots__ = ["_OptnDtls", "_DeactvtnDtAndTm"]
 	@property
 	def DeactvtnDtAndTm(self):
 		return self._DeactvtnDtAndTm

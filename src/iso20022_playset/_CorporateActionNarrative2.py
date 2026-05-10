@@ -3,7 +3,20 @@ from ._Max350Text import Max350Text
 
 class CorporateActionNarrative2(base_types._BaseFieldType):
 
-	__slots__ = ["_DclrtnDtls", "_RegnDtls", "_InfConds", "_InfToCmplyWth", "_AddtlTxt", "_TaxtnConds"]
+	__slots__ = ["_InfConds", "_TaxtnConds", "_DclrtnDtls", "_InfToCmplyWth", "_RegnDtls", "_AddtlTxt"]
+	@property
+	def AddtlTxt(self):
+		return self._AddtlTxt
+
+	@AddtlTxt.setter
+	def AddtlTxt(self, value):
+		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
+
+	@AddtlTxt.deleter
+	def AddtlTxt(self):
+		del self._AddtlTxt
+		self._AddtlTxt = None
+
 	@property
 	def DclrtnDtls(self):
 		return self._DclrtnDtls
@@ -16,19 +29,6 @@ class CorporateActionNarrative2(base_types._BaseFieldType):
 	def DclrtnDtls(self):
 		del self._DclrtnDtls
 		self._DclrtnDtls = None
-
-	@property
-	def RegnDtls(self):
-		return self._RegnDtls
-
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
-
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
 
 	@property
 	def InfConds(self):
@@ -57,17 +57,17 @@ class CorporateActionNarrative2(base_types._BaseFieldType):
 		self._InfToCmplyWth = None
 
 	@property
-	def AddtlTxt(self):
-		return self._AddtlTxt
+	def RegnDtls(self):
+		return self._RegnDtls
 
-	@AddtlTxt.setter
-	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
 
-	@AddtlTxt.deleter
-	def AddtlTxt(self):
-		del self._AddtlTxt
-		self._AddtlTxt = None
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
 
 	@property
 	def TaxtnConds(self):
@@ -83,11 +83,11 @@ class CorporateActionNarrative2(base_types._BaseFieldType):
 		self._TaxtnConds = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

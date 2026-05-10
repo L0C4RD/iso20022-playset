@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._GenericIdentification165 import GenericIdentification165
+from ._Max35Text import Max35Text
 
 class DefaultFundRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcId", "_ClrMmbId", "_Amt"]
+	__slots__ = ["_Amt", "_ClrMmbId", "_SvcId"]
 	@property
-	def SvcId(self):
-		return self._SvcId
+	def Amt(self):
+		return self._Amt
 
-	@SvcId.setter
-	def SvcId(self, value):
-		self._SvcId = value if type(value) != base_types.auto else self.make_default("SvcId")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@SvcId.deleter
-	def SvcId(self):
-		del self._SvcId
-		self._SvcId = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def ClrMmbId(self):
@@ -33,21 +33,21 @@ class DefaultFundRequirement1(base_types._BaseFieldType):
 		self._ClrMmbId = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def SvcId(self):
+		return self._SvcId
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@SvcId.setter
+	def SvcId(self, value):
+		self._SvcId = value if type(value) != base_types.auto else self.make_default("SvcId")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@SvcId.deleter
+	def SvcId(self):
+		del self._SvcId
+		self._SvcId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmbId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmbId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

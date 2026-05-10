@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyAndSignature2 import PartyAndSignature2
-from ._UndertakingIssuanceMessage import UndertakingIssuanceMessage
 from ._AdvisingPartyAdditionalInformation1 import AdvisingPartyAdditionalInformation1
+from ._UndertakingIssuanceMessage import UndertakingIssuanceMessage
 from ._UndertakingConfirmation1 import UndertakingConfirmation1
+from ._PartyAndSignature2 import PartyAndSignature2
 
 class UndertakingAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfDtls", "_ScndAdvsgPtyAddtlInf", "_FrstAdvsgPtyAddtlInf", "_DgtlSgntr", "_UdrtkgIssncMsg"]
+	__slots__ = ["_ConfDtls", "_DgtlSgntr", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf", "_UdrtkgIssncMsg"]
 	@property
 	def ConfDtls(self):
 		return self._ConfDtls
@@ -21,17 +21,17 @@ class UndertakingAdvice1(base_types._BaseFieldType):
 		self._ConfDtls = None
 
 	@property
-	def ScndAdvsgPtyAddtlInf(self):
-		return self._ScndAdvsgPtyAddtlInf
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
 
-	@ScndAdvsgPtyAddtlInf.setter
-	def ScndAdvsgPtyAddtlInf(self, value):
-		self._ScndAdvsgPtyAddtlInf = value if type(value) != base_types.auto else self.make_default("ScndAdvsgPtyAddtlInf")
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
 
-	@ScndAdvsgPtyAddtlInf.deleter
-	def ScndAdvsgPtyAddtlInf(self):
-		del self._ScndAdvsgPtyAddtlInf
-		self._ScndAdvsgPtyAddtlInf = None
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
 
 	@property
 	def FrstAdvsgPtyAddtlInf(self):
@@ -47,17 +47,17 @@ class UndertakingAdvice1(base_types._BaseFieldType):
 		self._FrstAdvsgPtyAddtlInf = None
 
 	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
+	def ScndAdvsgPtyAddtlInf(self):
+		return self._ScndAdvsgPtyAddtlInf
 
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+	@ScndAdvsgPtyAddtlInf.setter
+	def ScndAdvsgPtyAddtlInf(self, value):
+		self._ScndAdvsgPtyAddtlInf = value if type(value) != base_types.auto else self.make_default("ScndAdvsgPtyAddtlInf")
 
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
+	@ScndAdvsgPtyAddtlInf.deleter
+	def ScndAdvsgPtyAddtlInf(self):
+		del self._ScndAdvsgPtyAddtlInf
+		self._ScndAdvsgPtyAddtlInf = None
 
 	@property
 	def UdrtkgIssncMsg(self):
@@ -74,9 +74,9 @@ class UndertakingAdvice1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfDtls', type=UndertakingConfirmation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=3, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FrstAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgIssncMsg', type=UndertakingIssuanceMessage, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesAccountModification2Choice import SecuritiesAccountModification2Choice
 from ._DataModification1Code import DataModification1Code
+from ._SecuritiesAccountModification2Choice import SecuritiesAccountModification2Choice
 
 class SecuritiesAccountModification2(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdMod", "_ScpIndctn"]
+	__slots__ = ["_ScpIndctn", "_ReqdMod"]
 	@property
 	def ReqdMod(self):
 		return self._ReqdMod

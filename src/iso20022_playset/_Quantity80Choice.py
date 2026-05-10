@@ -1,6 +1,6 @@
 from . import base_types
-from ._Quantity57Choice import Quantity57Choice
 from ._ProprietaryQuantity10 import ProprietaryQuantity10
+from ._Quantity57Choice import Quantity57Choice
 
 class Quantity80Choice(base_types._BaseFieldType):
 

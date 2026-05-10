@@ -4,7 +4,7 @@ from ._ISODateTime import ISODateTime
 
 class PayInScheduleItems1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Ddln"]
+	__slots__ = ["_Ddln", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

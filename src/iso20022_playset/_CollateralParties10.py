@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification136 import PartyIdentification136
 from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
 from ._PartyIdentificationAndAccount203 import PartyIdentificationAndAccount203
+from ._PartyIdentification136 import PartyIdentification136
+from ._PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
 
 class CollateralParties10(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntPtyA", "_TrptyAgt", "_PtyA", "_ClntPtyB", "_CollAcct", "_PtyB"]
+	__slots__ = ["_TrptyAgt", "_ClntPtyA", "_ClntPtyB", "_PtyB", "_PtyA", "_CollAcct"]
 	@property
 	def ClntPtyA(self):
 		return self._ClntPtyA
@@ -19,32 +19,6 @@ class CollateralParties10(base_types._BaseFieldType):
 	def ClntPtyA(self):
 		del self._ClntPtyA
 		self._ClntPtyA = None
-
-	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
-
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
-
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
-
-	@property
-	def PtyA(self):
-		return self._PtyA
-
-	@PtyA.setter
-	def PtyA(self, value):
-		self._PtyA = value if type(value) != base_types.auto else self.make_default("PtyA")
-
-	@PtyA.deleter
-	def PtyA(self):
-		del self._PtyA
-		self._PtyA = None
 
 	@property
 	def ClntPtyB(self):
@@ -73,6 +47,19 @@ class CollateralParties10(base_types._BaseFieldType):
 		self._CollAcct = None
 
 	@property
+	def PtyA(self):
+		return self._PtyA
+
+	@PtyA.setter
+	def PtyA(self, value):
+		self._PtyA = value if type(value) != base_types.auto else self.make_default("PtyA")
+
+	@PtyA.deleter
+	def PtyA(self):
+		del self._PtyA
+		self._PtyA = None
+
+	@property
 	def PtyB(self):
 		return self._PtyB
 
@@ -85,12 +72,25 @@ class CollateralParties10(base_types._BaseFieldType):
 		del self._PtyB
 		self._PtyB = None
 
+	@property
+	def TrptyAgt(self):
+		return self._TrptyAgt
+
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentificationAndAccount202, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyA', type=PartyIdentificationAndAccount202, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentificationAndAccount203, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyA', type=PartyIdentificationAndAccount202, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyB', type=PartyIdentificationAndAccount203, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

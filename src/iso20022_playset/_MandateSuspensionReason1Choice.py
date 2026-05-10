@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ExternalMandateSuspensionReason1Code import ExternalMandateSuspensionReason1Code
+from ._Max35Text import Max35Text
 
 class MandateSuspensionReason1Choice(base_types._BaseFieldType):
 

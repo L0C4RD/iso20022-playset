@@ -1,14 +1,14 @@
 from . import base_types
 from ._CounterpartyData88 import CounterpartyData88
-from ._Max140Text import Max140Text
-from ._TransactionLoanData31Choice import TransactionLoanData31Choice
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionCollateralData18Choice import TransactionCollateralData18Choice
 from ._ModificationLevel1Code import ModificationLevel1Code
-from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionLoanData31Choice import TransactionLoanData31Choice
+from ._Max140Text import Max140Text
 
 class TradeTransactionCorrection13(base_types._BaseFieldType):
 
-	__slots__ = ["_CollData", "_LvlTp", "_LnData", "_SplmtryData", "_TechRcrdId", "_CtrPtySpcfcData"]
+	__slots__ = ["_CtrPtySpcfcData", "_LvlTp", "_TechRcrdId", "_CollData", "_LnData", "_SplmtryData"]
 	@property
 	def CollData(self):
 		return self._CollData
@@ -23,17 +23,17 @@ class TradeTransactionCorrection13(base_types._BaseFieldType):
 		self._CollData = None
 
 	@property
-	def LvlTp(self):
-		return self._LvlTp
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
 
-	@LvlTp.setter
-	def LvlTp(self, value):
-		self._LvlTp = value if type(value) != base_types.auto else self.make_default("LvlTp")
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
 
-	@LvlTp.deleter
-	def LvlTp(self):
-		del self._LvlTp
-		self._LvlTp = None
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
 
 	@property
 	def LnData(self):
@@ -47,6 +47,19 @@ class TradeTransactionCorrection13(base_types._BaseFieldType):
 	def LnData(self):
 		del self._LnData
 		self._LnData = None
+
+	@property
+	def LvlTp(self):
+		return self._LvlTp
+
+	@LvlTp.setter
+	def LvlTp(self, value):
+		self._LvlTp = value if type(value) != base_types.auto else self.make_default("LvlTp")
+
+	@LvlTp.deleter
+	def LvlTp(self):
+		del self._LvlTp
+		self._LvlTp = None
 
 	@property
 	def SplmtryData(self):
@@ -74,25 +87,12 @@ class TradeTransactionCorrection13(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
-
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
-
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollData', type=TransactionCollateralData18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LvlTp', type=ModificationLevel1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnData', type=TransactionLoanData31Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LvlTp', type=ModificationLevel1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 	))
 

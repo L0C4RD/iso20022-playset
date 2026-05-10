@@ -3,7 +3,7 @@ from ._MarginCollateral1 import MarginCollateral1
 
 class Collateral1(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmt", "_VartnMrgn"]
+	__slots__ = ["_VartnMrgn", "_SgrtdIndpdntAmt"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt

@@ -1,10 +1,10 @@
 from . import base_types
-from ._MovementResponseType1Code import MovementResponseType1Code
 from ._IntraBalanceQueryCriteria11 import IntraBalanceQueryCriteria11
+from ._MovementResponseType1Code import MovementResponseType1Code
 
 class IntraBalanceQueryDefinition11(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_SchCrit"]
+	__slots__ = ["_SchCrit", "_QryTp"]
 	@property
 	def QryTp(self):
 		return self._QryTp

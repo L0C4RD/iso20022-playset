@@ -1,11 +1,11 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CreditDebitCode import CreditDebitCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class TotalAmountAndCurrency1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_CdtDbtInd", "_TtlAmt"]
+	__slots__ = ["_CdtDbtInd", "_Ccy", "_TtlAmt"]
 	@property
 	def Ccy(self):
 		return self._Ccy

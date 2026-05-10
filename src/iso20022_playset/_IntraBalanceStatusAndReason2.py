@@ -1,24 +1,11 @@
 from . import base_types
-from ._SettlementStatus16Choice import SettlementStatus16Choice
-from ._ProprietaryReason4 import ProprietaryReason4
 from ._ProcessingStatus67Choice import ProcessingStatus67Choice
+from ._ProprietaryReason4 import ProprietaryReason4
+from ._SettlementStatus16Choice import SettlementStatus16Choice
 
 class IntraBalanceStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttld", "_PrcgSts", "_SttlmSts"]
-	@property
-	def Sttld(self):
-		return self._Sttld
-
-	@Sttld.setter
-	def Sttld(self, value):
-		self._Sttld = value if type(value) != base_types.auto else self.make_default("Sttld")
-
-	@Sttld.deleter
-	def Sttld(self):
-		del self._Sttld
-		self._Sttld = None
-
+	__slots__ = ["_PrcgSts", "_SttlmSts", "_Sttld"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
@@ -31,6 +18,19 @@ class IntraBalanceStatusAndReason2(base_types._BaseFieldType):
 	def PrcgSts(self):
 		del self._PrcgSts
 		self._PrcgSts = None
+
+	@property
+	def Sttld(self):
+		return self._Sttld
+
+	@Sttld.setter
+	def Sttld(self, value):
+		self._Sttld = value if type(value) != base_types.auto else self.make_default("Sttld")
+
+	@Sttld.deleter
+	def Sttld(self):
+		del self._Sttld
+		self._Sttld = None
 
 	@property
 	def SttlmSts(self):
@@ -46,8 +46,8 @@ class IntraBalanceStatusAndReason2(base_types._BaseFieldType):
 		self._SttlmSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sttld', type=ProprietaryReason4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus67Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sttld', type=ProprietaryReason4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus16Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

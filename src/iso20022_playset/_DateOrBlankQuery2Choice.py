@@ -1,10 +1,10 @@
 from . import base_types
-from ._DatePeriod1 import DatePeriod1
 from ._NotReported1Code import NotReported1Code
+from ._DatePeriod1 import DatePeriod1
 
 class DateOrBlankQuery2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotRptd", "_Rg"]
+	__slots__ = ["_Rg", "_NotRptd"]
 	@property
 	def NotRptd(self):
 		return self._NotRptd

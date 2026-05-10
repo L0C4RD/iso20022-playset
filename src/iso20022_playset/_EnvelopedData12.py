@@ -1,23 +1,23 @@
 from . import base_types
+from ._Recipient7Choice import Recipient7Choice
 from ._EncryptedContent8 import EncryptedContent8
 from ._Number import Number
-from ._Recipient7Choice import Recipient7Choice
 
 class EnvelopedData12(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_Rcpt", "_NcrptdCntt"]
+	__slots__ = ["_NcrptdCntt", "_Rcpt", "_Vrsn"]
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def NcrptdCntt(self):
+		return self._NcrptdCntt
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+	@NcrptdCntt.setter
+	def NcrptdCntt(self, value):
+		self._NcrptdCntt = value if type(value) != base_types.auto else self.make_default("NcrptdCntt")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@NcrptdCntt.deleter
+	def NcrptdCntt(self):
+		del self._NcrptdCntt
+		self._NcrptdCntt = None
 
 	@property
 	def Rcpt(self):
@@ -33,21 +33,21 @@ class EnvelopedData12(base_types._BaseFieldType):
 		self._Rcpt = None
 
 	@property
-	def NcrptdCntt(self):
-		return self._NcrptdCntt
+	def Vrsn(self):
+		return self._Vrsn
 
-	@NcrptdCntt.setter
-	def NcrptdCntt(self, value):
-		self._NcrptdCntt = value if type(value) != base_types.auto else self.make_default("NcrptdCntt")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
-	@NcrptdCntt.deleter
-	def NcrptdCntt(self):
-		del self._NcrptdCntt
-		self._NcrptdCntt = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=Recipient7Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=Recipient7Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

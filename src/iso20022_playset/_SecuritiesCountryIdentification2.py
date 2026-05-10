@@ -1,25 +1,25 @@
 from . import base_types
-from ._Modification1Code import Modification1Code
-from ._CountryCodeAndName3 import CountryCodeAndName3
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Period4Choice import Period4Choice
 from ._ISODate import ISODate
+from ._CountryCodeAndName3 import CountryCodeAndName3
+from ._Period4Choice import Period4Choice
+from ._Modification1Code import Modification1Code
 
 class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_LastUpdtd", "_EEACtry", "_Ctry", "_Mod", "_VldtyPrd"]
+	__slots__ = ["_Ctry", "_VldtyPrd", "_LastUpdtd", "_Mod", "_EEACtry"]
 	@property
-	def LastUpdtd(self):
-		return self._LastUpdtd
+	def Ctry(self):
+		return self._Ctry
 
-	@LastUpdtd.setter
-	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != base_types.auto else self.make_default("LastUpdtd")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@LastUpdtd.deleter
-	def LastUpdtd(self):
-		del self._LastUpdtd
-		self._LastUpdtd = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def EEACtry(self):
@@ -35,17 +35,17 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 		self._EEACtry = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def LastUpdtd(self):
+		return self._LastUpdtd
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+	@LastUpdtd.setter
+	def LastUpdtd(self, value):
+		self._LastUpdtd = value if type(value) != base_types.auto else self.make_default("LastUpdtd")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@LastUpdtd.deleter
+	def LastUpdtd(self):
+		del self._LastUpdtd
+		self._LastUpdtd = None
 
 	@property
 	def Mod(self):
@@ -74,9 +74,9 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EEACtry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EEACtry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 	))

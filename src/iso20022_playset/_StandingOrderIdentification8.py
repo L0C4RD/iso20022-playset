@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Max35Text import Max35Text
 from ._CashAccount40 import CashAccount40
 
 class StandingOrderIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AcctOwnr", "_Acct"]
+	__slots__ = ["_Id", "_Acct", "_AcctOwnr"]
 	@property
-	def Id(self):
-		return self._Id
+	def Acct(self):
+		return self._Acct
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def AcctOwnr(self):
@@ -33,21 +33,21 @@ class StandingOrderIdentification8(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def Acct(self):
-		return self._Acct
+	def Id(self):
+		return self._Id
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

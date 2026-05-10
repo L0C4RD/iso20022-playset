@@ -1,12 +1,12 @@
 from . import base_types
-from ._IBANIdentifier import IBANIdentifier
-from ._UPICIdentifier import UPICIdentifier
 from ._BBANIdentifier import BBANIdentifier
 from ._SimpleIdentificationInformation2 import SimpleIdentificationInformation2
+from ._IBANIdentifier import IBANIdentifier
+from ._UPICIdentifier import UPICIdentifier
 
 class AccountIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BBAN", "_PrtryAcct", "_IBAN", "_UPIC"]
+	__slots__ = ["_IBAN", "_BBAN", "_PrtryAcct", "_UPIC"]
 	@property
 	def BBAN(self):
 		return self._BBAN
@@ -21,19 +21,6 @@ class AccountIdentification3Choice(base_types._BaseFieldType):
 		self._BBAN = None
 
 	@property
-	def PrtryAcct(self):
-		return self._PrtryAcct
-
-	@PrtryAcct.setter
-	def PrtryAcct(self, value):
-		self._PrtryAcct = value if type(value) != base_types.auto else self.make_default("PrtryAcct")
-
-	@PrtryAcct.deleter
-	def PrtryAcct(self):
-		del self._PrtryAcct
-		self._PrtryAcct = None
-
-	@property
 	def IBAN(self):
 		return self._IBAN
 
@@ -45,6 +32,19 @@ class AccountIdentification3Choice(base_types._BaseFieldType):
 	def IBAN(self):
 		del self._IBAN
 		self._IBAN = None
+
+	@property
+	def PrtryAcct(self):
+		return self._PrtryAcct
+
+	@PrtryAcct.setter
+	def PrtryAcct(self, value):
+		self._PrtryAcct = value if type(value) != base_types.auto else self.make_default("PrtryAcct")
+
+	@PrtryAcct.deleter
+	def PrtryAcct(self):
+		del self._PrtryAcct
+		self._PrtryAcct = None
 
 	@property
 	def UPIC(self):
@@ -61,8 +61,8 @@ class AccountIdentification3Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtryAcct', type=SimpleIdentificationInformation2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryAcct', type=SimpleIdentificationInformation2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

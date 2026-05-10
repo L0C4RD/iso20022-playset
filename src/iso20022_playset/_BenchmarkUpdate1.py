@@ -1,28 +1,15 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._StatusDetail1 import StatusDetail1
-from ._BenchmarkDetail1 import BenchmarkDetail1
 from ._SupplementaryData1 import SupplementaryData1
+from ._StatusDetail1 import StatusDetail1
 from ._Period4Choice import Period4Choice
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._PartyIdentification136 import PartyIdentification136
+from ._Max35Text import Max35Text
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._BenchmarkDetail1 import BenchmarkDetail1
 
 class BenchmarkUpdate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Admstr", "_Id", "_SplmtryData", "_PrvsId", "_TechVldtyPrd", "_NdrsngPty", "_TechRcrdId", "_Othr"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_NdrsngPty", "_Othr", "_PrvsId", "_Sts", "_SplmtryData", "_TechRcrdId", "_TechVldtyPrd", "_Id", "_Admstr"]
 	@property
 	def Admstr(self):
 		return self._Admstr
@@ -50,17 +37,30 @@ class BenchmarkUpdate1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def NdrsngPty(self):
+		return self._NdrsngPty
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@NdrsngPty.setter
+	def NdrsngPty(self, value):
+		self._NdrsngPty = value if type(value) != base_types.auto else self.make_default("NdrsngPty")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@NdrsngPty.deleter
+	def NdrsngPty(self):
+		del self._NdrsngPty
+		self._NdrsngPty = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def PrvsId(self):
@@ -76,30 +76,30 @@ class BenchmarkUpdate1(base_types._BaseFieldType):
 		self._PrvsId = None
 
 	@property
-	def TechVldtyPrd(self):
-		return self._TechVldtyPrd
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@TechVldtyPrd.setter
-	def TechVldtyPrd(self, value):
-		self._TechVldtyPrd = value if type(value) != base_types.auto else self.make_default("TechVldtyPrd")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@TechVldtyPrd.deleter
-	def TechVldtyPrd(self):
-		del self._TechVldtyPrd
-		self._TechVldtyPrd = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
-	def NdrsngPty(self):
-		return self._NdrsngPty
+	def Sts(self):
+		return self._Sts
 
-	@NdrsngPty.setter
-	def NdrsngPty(self, value):
-		self._NdrsngPty = value if type(value) != base_types.auto else self.make_default("NdrsngPty")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@NdrsngPty.deleter
-	def NdrsngPty(self):
-		del self._NdrsngPty
-		self._NdrsngPty = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def TechRcrdId(self):
@@ -115,27 +115,27 @@ class BenchmarkUpdate1(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def TechVldtyPrd(self):
+		return self._TechVldtyPrd
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+	@TechVldtyPrd.setter
+	def TechVldtyPrd(self, value):
+		self._TechVldtyPrd = value if type(value) != base_types.auto else self.make_default("TechVldtyPrd")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@TechVldtyPrd.deleter
+	def TechVldtyPrd(self):
+		del self._TechVldtyPrd
+		self._TechVldtyPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=StatusDetail1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Admstr', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechVldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NdrsngPty', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=BenchmarkDetail1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=StatusDetail1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechVldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._SoftwareType1Code import SoftwareType1Code
+from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
 
 class Software1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Tp", "_SubTp", "_Vrsn"]
+	__slots__ = ["_SubTp", "_Tp", "_OthrTp", "_Vrsn"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
@@ -20,19 +20,6 @@ class Software1(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def SubTp(self):
 		return self._SubTp
 
@@ -44,6 +31,19 @@ class Software1(base_types._BaseFieldType):
 	def SubTp(self):
 		del self._SubTp
 		self._SubTp = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Vrsn(self):
@@ -60,8 +60,8 @@ class Software1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=SoftwareType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=SoftwareType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

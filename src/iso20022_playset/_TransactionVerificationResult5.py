@@ -1,26 +1,13 @@
 from . import base_types
-from ._AuthenticationEntity2Code import AuthenticationEntity2Code
-from ._AuthenticationMethod7Code import AuthenticationMethod7Code
+from ._Verification1Code import Verification1Code
 from ._Max140Binary import Max140Binary
 from ._Max500Text import Max500Text
-from ._Verification1Code import Verification1Code
+from ._AuthenticationEntity2Code import AuthenticationEntity2Code
+from ._AuthenticationMethod7Code import AuthenticationMethod7Code
 
 class TransactionVerificationResult5(base_types._BaseFieldType):
 
-	__slots__ = ["_VrfctnNtty", "_AddtlRslt", "_Rslt", "_Mtd", "_AuthntcnTkn"]
-	@property
-	def VrfctnNtty(self):
-		return self._VrfctnNtty
-
-	@VrfctnNtty.setter
-	def VrfctnNtty(self, value):
-		self._VrfctnNtty = value if type(value) != base_types.auto else self.make_default("VrfctnNtty")
-
-	@VrfctnNtty.deleter
-	def VrfctnNtty(self):
-		del self._VrfctnNtty
-		self._VrfctnNtty = None
-
+	__slots__ = ["_VrfctnNtty", "_AddtlRslt", "_Mtd", "_Rslt", "_AuthntcnTkn"]
 	@property
 	def AddtlRslt(self):
 		return self._AddtlRslt
@@ -35,17 +22,17 @@ class TransactionVerificationResult5(base_types._BaseFieldType):
 		self._AddtlRslt = None
 
 	@property
-	def Rslt(self):
-		return self._Rslt
+	def AuthntcnTkn(self):
+		return self._AuthntcnTkn
 
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+	@AuthntcnTkn.setter
+	def AuthntcnTkn(self, value):
+		self._AuthntcnTkn = value if type(value) != base_types.auto else self.make_default("AuthntcnTkn")
 
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
+	@AuthntcnTkn.deleter
+	def AuthntcnTkn(self):
+		del self._AuthntcnTkn
+		self._AuthntcnTkn = None
 
 	@property
 	def Mtd(self):
@@ -61,23 +48,36 @@ class TransactionVerificationResult5(base_types._BaseFieldType):
 		self._Mtd = None
 
 	@property
-	def AuthntcnTkn(self):
-		return self._AuthntcnTkn
+	def Rslt(self):
+		return self._Rslt
 
-	@AuthntcnTkn.setter
-	def AuthntcnTkn(self, value):
-		self._AuthntcnTkn = value if type(value) != base_types.auto else self.make_default("AuthntcnTkn")
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
 
-	@AuthntcnTkn.deleter
-	def AuthntcnTkn(self):
-		del self._AuthntcnTkn
-		self._AuthntcnTkn = None
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
+
+	@property
+	def VrfctnNtty(self):
+		return self._VrfctnNtty
+
+	@VrfctnNtty.setter
+	def VrfctnNtty(self, value):
+		self._VrfctnNtty = value if type(value) != base_types.auto else self.make_default("VrfctnNtty")
+
+	@VrfctnNtty.deleter
+	def VrfctnNtty(self):
+		del self._VrfctnNtty
+		self._VrfctnNtty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VrfctnNtty', type=AuthenticationEntity2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRslt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rslt', type=Verification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mtd', type=AuthenticationMethod7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcnTkn', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=AuthenticationMethod7Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=Verification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VrfctnNtty', type=AuthenticationEntity2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

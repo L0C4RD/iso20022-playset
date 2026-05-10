@@ -3,20 +3,7 @@ from ._CollateralMovement9 import CollateralMovement9
 
 class ExpectedCollateralMovement2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rtr", "_Dlvry"]
-	@property
-	def Rtr(self):
-		return self._Rtr
-
-	@Rtr.setter
-	def Rtr(self, value):
-		self._Rtr = value if type(value) != base_types.auto else self.make_default("Rtr")
-
-	@Rtr.deleter
-	def Rtr(self):
-		del self._Rtr
-		self._Rtr = None
-
+	__slots__ = ["_Dlvry", "_Rtr"]
 	@property
 	def Dlvry(self):
 		return self._Dlvry
@@ -30,8 +17,21 @@ class ExpectedCollateralMovement2(base_types._BaseFieldType):
 		del self._Dlvry
 		self._Dlvry = None
 
+	@property
+	def Rtr(self):
+		return self._Rtr
+
+	@Rtr.setter
+	def Rtr(self, value):
+		self._Rtr = value if type(value) != base_types.auto else self.make_default("Rtr")
+
+	@Rtr.deleter
+	def Rtr(self):
+		del self._Rtr
+		self._Rtr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rtr', type=CollateralMovement9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dlvry', type=CollateralMovement9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rtr', type=CollateralMovement9, min=0, max=None, mutex_group=None, array=True),
 	))
 

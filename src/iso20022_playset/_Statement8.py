@@ -1,27 +1,40 @@
 from . import base_types
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._StatementUpdateTypeCode import StatementUpdateTypeCode
-from ._YesNoIndicator import YesNoIndicator
 from ._Max5NumericText import Max5NumericText
+from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
-from ._DatePeriodDetails import DatePeriodDetails
 from ._EventFrequency1Code import EventFrequency1Code
+from ._DatePeriodDetails import DatePeriodDetails
+from ._StatementUpdateTypeCode import StatementUpdateTypeCode
 
 class Statement8(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtPrd", "_Frqcy", "_UpdTp", "_RptNb", "_ActvtyInd", "_Ref", "_CreDtTm"]
+	__slots__ = ["_ActvtyInd", "_CreDtTm", "_UpdTp", "_Frqcy", "_StmtPrd", "_Ref", "_RptNb"]
 	@property
-	def StmtPrd(self):
-		return self._StmtPrd
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@StmtPrd.setter
-	def StmtPrd(self, value):
-		self._StmtPrd = value if type(value) != base_types.auto else self.make_default("StmtPrd")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
-	@StmtPrd.deleter
-	def StmtPrd(self):
-		del self._StmtPrd
-		self._StmtPrd = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def Frqcy(self):
@@ -37,17 +50,17 @@ class Statement8(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def UpdTp(self):
-		return self._UpdTp
+	def Ref(self):
+		return self._Ref
 
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def RptNb(self):
@@ -63,51 +76,38 @@ class Statement8(base_types._BaseFieldType):
 		self._RptNb = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def StmtPrd(self):
+		return self._StmtPrd
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+	@StmtPrd.setter
+	def StmtPrd(self, value):
+		self._StmtPrd = value if type(value) != base_types.auto else self.make_default("StmtPrd")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@StmtPrd.deleter
+	def StmtPrd(self):
+		del self._StmtPrd
+		self._StmtPrd = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def UpdTp(self):
+		return self._UpdTp
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtPrd', type=DatePeriodDetails, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=EventFrequency1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=StatementUpdateTypeCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=EventFrequency1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtPrd', type=DatePeriodDetails, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=StatementUpdateTypeCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

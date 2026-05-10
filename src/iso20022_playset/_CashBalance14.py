@@ -1,24 +1,24 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._BalanceCounterparty1Code import BalanceCounterparty1Code
-from ._BalanceType11Choice import BalanceType11Choice
 from ._DateAndDateTimeSearch4Choice import DateAndDateTimeSearch4Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._BalanceType11Choice import BalanceType11Choice
+from ._BalanceCounterparty1Code import BalanceCounterparty1Code
 
 class CashBalance14(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_CtrPtyTp", "_Tp", "_CtrPtyId", "_PrcgDt"]
+	__slots__ = ["_CtrPtyTp", "_PrcgDt", "_Tp", "_CtrPtyId", "_ValDt"]
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def CtrPtyId(self):
+		return self._CtrPtyId
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
 
 	@property
 	def CtrPtyTp(self):
@@ -34,6 +34,19 @@ class CashBalance14(base_types._BaseFieldType):
 		self._CtrPtyTp = None
 
 	@property
+	def PrcgDt(self):
+		return self._PrcgDt
+
+	@PrcgDt.setter
+	def PrcgDt(self, value):
+		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
+
+	@PrcgDt.deleter
+	def PrcgDt(self):
+		del self._PrcgDt
+		self._PrcgDt = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -47,36 +60,23 @@ class CashBalance14(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
+	def ValDt(self):
+		return self._ValDt
 
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
 
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
-	@property
-	def PrcgDt(self):
-		return self._PrcgDt
-
-	@PrcgDt.setter
-	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
-
-	@PrcgDt.deleter
-	def PrcgDt(self):
-		del self._PrcgDt
-		self._PrcgDt = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDt', type=DateAndDateTimeSearch4Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrPtyTp', type=BalanceCounterparty1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=BalanceType11Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrPtyTp', type=BalanceCounterparty1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTimeSearch4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=BalanceType11Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ValDt', type=DateAndDateTimeSearch4Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

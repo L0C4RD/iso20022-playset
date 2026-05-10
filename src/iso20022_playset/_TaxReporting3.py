@@ -1,25 +1,25 @@
 from . import base_types
+from ._PercentageRate import PercentageRate
 from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._Max350Text import Max350Text
 from ._CashAccount204 import CashAccount204
 from ._CountryCode import CountryCode
-from ._PercentageRate import PercentageRate
+from ._Max350Text import Max350Text
 
 class TaxReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRate", "_Desc", "_TaxRcpt", "_TaxPyer", "_TaxtnCtry", "_CshAcctDtls"]
+	__slots__ = ["_TaxRate", "_Desc", "_CshAcctDtls", "_TaxtnCtry", "_TaxRcpt", "_TaxPyer"]
 	@property
-	def TaxRate(self):
-		return self._TaxRate
+	def CshAcctDtls(self):
+		return self._CshAcctDtls
 
-	@TaxRate.setter
-	def TaxRate(self, value):
-		self._TaxRate = value if type(value) != base_types.auto else self.make_default("TaxRate")
+	@CshAcctDtls.setter
+	def CshAcctDtls(self, value):
+		self._CshAcctDtls = value if type(value) != base_types.auto else self.make_default("CshAcctDtls")
 
-	@TaxRate.deleter
-	def TaxRate(self):
-		del self._TaxRate
-		self._TaxRate = None
+	@CshAcctDtls.deleter
+	def CshAcctDtls(self):
+		del self._CshAcctDtls
+		self._CshAcctDtls = None
 
 	@property
 	def Desc(self):
@@ -35,19 +35,6 @@ class TaxReporting3(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def TaxRcpt(self):
-		return self._TaxRcpt
-
-	@TaxRcpt.setter
-	def TaxRcpt(self, value):
-		self._TaxRcpt = value if type(value) != base_types.auto else self.make_default("TaxRcpt")
-
-	@TaxRcpt.deleter
-	def TaxRcpt(self):
-		del self._TaxRcpt
-		self._TaxRcpt = None
-
-	@property
 	def TaxPyer(self):
 		return self._TaxPyer
 
@@ -59,6 +46,32 @@ class TaxReporting3(base_types._BaseFieldType):
 	def TaxPyer(self):
 		del self._TaxPyer
 		self._TaxPyer = None
+
+	@property
+	def TaxRate(self):
+		return self._TaxRate
+
+	@TaxRate.setter
+	def TaxRate(self, value):
+		self._TaxRate = value if type(value) != base_types.auto else self.make_default("TaxRate")
+
+	@TaxRate.deleter
+	def TaxRate(self):
+		del self._TaxRate
+		self._TaxRate = None
+
+	@property
+	def TaxRcpt(self):
+		return self._TaxRcpt
+
+	@TaxRcpt.setter
+	def TaxRcpt(self, value):
+		self._TaxRcpt = value if type(value) != base_types.auto else self.make_default("TaxRcpt")
+
+	@TaxRcpt.deleter
+	def TaxRcpt(self):
+		del self._TaxRcpt
+		self._TaxRcpt = None
 
 	@property
 	def TaxtnCtry(self):
@@ -73,25 +86,12 @@ class TaxReporting3(base_types._BaseFieldType):
 		del self._TaxtnCtry
 		self._TaxtnCtry = None
 
-	@property
-	def CshAcctDtls(self):
-		return self._CshAcctDtls
-
-	@CshAcctDtls.setter
-	def CshAcctDtls(self, value):
-		self._CshAcctDtls = value if type(value) != base_types.auto else self.make_default("CshAcctDtls")
-
-	@CshAcctDtls.deleter
-	def CshAcctDtls(self):
-		del self._CshAcctDtls
-		self._CshAcctDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRcpt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxPyer', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctDtls', type=CashAccount204, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxPyer', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRcpt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

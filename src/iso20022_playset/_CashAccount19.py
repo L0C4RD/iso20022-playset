@@ -1,24 +1,11 @@
 from . import base_types
 from ._AccountIdentification2Choice import AccountIdentification2Choice
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class CashAccount19(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_AcctId", "_CdtDbtInd"]
-	@property
-	def AcctOwnrId(self):
-		return self._AcctOwnrId
-
-	@AcctOwnrId.setter
-	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
-
-	@AcctOwnrId.deleter
-	def AcctOwnrId(self):
-		del self._AcctOwnrId
-		self._AcctOwnrId = None
-
+	__slots__ = ["_AcctId", "_AcctOwnrId", "_CdtDbtInd"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -31,6 +18,19 @@ class CashAccount19(base_types._BaseFieldType):
 	def AcctId(self):
 		del self._AcctId
 		self._AcctId = None
+
+	@property
+	def AcctOwnrId(self):
+		return self._AcctOwnrId
+
+	@AcctOwnrId.setter
+	def AcctOwnrId(self, value):
+		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+
+	@AcctOwnrId.deleter
+	def AcctOwnrId(self):
+		del self._AcctOwnrId
+		self._AcctOwnrId = None
 
 	@property
 	def CdtDbtInd(self):
@@ -46,8 +46,8 @@ class CashAccount19(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

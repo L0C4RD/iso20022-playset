@@ -4,7 +4,7 @@ from ._FinancialInstrument53 import FinancialInstrument53
 
 class FinancialInstrumentIdentification5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Bskt", "_Sngl"]
+	__slots__ = ["_Sngl", "_Bskt"]
 	@property
 	def Bskt(self):
 		return self._Bskt

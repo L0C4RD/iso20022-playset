@@ -1,13 +1,13 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
-from ._PartyIdentification272 import PartyIdentification272
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Max15NumericText import Max15NumericText
 from ._ISODateTime import ISODateTime
+from ._PartyIdentification272 import PartyIdentification272
 
 class CurrencyControlHeader7(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_RcvgPty", "_RegnAgt", "_MsgId", "_NbOfItms"]
+	__slots__ = ["_RcvgPty", "_RegnAgt", "_MsgId", "_NbOfItms", "_CreDtTm"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -20,32 +20,6 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
-
-	@property
-	def RcvgPty(self):
-		return self._RcvgPty
-
-	@RcvgPty.setter
-	def RcvgPty(self, value):
-		self._RcvgPty = value if type(value) != base_types.auto else self.make_default("RcvgPty")
-
-	@RcvgPty.deleter
-	def RcvgPty(self):
-		del self._RcvgPty
-		self._RcvgPty = None
-
-	@property
-	def RegnAgt(self):
-		return self._RegnAgt
-
-	@RegnAgt.setter
-	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
-
-	@RegnAgt.deleter
-	def RegnAgt(self):
-		del self._RegnAgt
-		self._RegnAgt = None
 
 	@property
 	def MsgId(self):
@@ -73,11 +47,37 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 		del self._NbOfItms
 		self._NbOfItms = None
 
+	@property
+	def RcvgPty(self):
+		return self._RcvgPty
+
+	@RcvgPty.setter
+	def RcvgPty(self, value):
+		self._RcvgPty = value if type(value) != base_types.auto else self.make_default("RcvgPty")
+
+	@RcvgPty.deleter
+	def RcvgPty(self):
+		del self._RcvgPty
+		self._RcvgPty = None
+
+	@property
+	def RegnAgt(self):
+		return self._RegnAgt
+
+	@RegnAgt.setter
+	def RegnAgt(self, value):
+		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
+
+	@RegnAgt.deleter
+	def RegnAgt(self):
+		del self._RegnAgt
+		self._RegnAgt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
 from . import base_types
 from ._SettlementParties126 import SettlementParties126
-from ._PartyIdentification136 import PartyIdentification136
-from ._Counterparty15Choice import Counterparty15Choice
 from ._SettlementStandingInstructionDatabase4Choice import SettlementStandingInstructionDatabase4Choice
+from ._Counterparty15Choice import Counterparty15Choice
+from ._PartyIdentification136 import PartyIdentification136
 
 class StandingSettlementInstruction20(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrRcvgSttlmPties", "_Vndr", "_CtrPty", "_OthrDlvrgSttlmPties", "_SttlmStgInstrDB"]
-	@property
-	def OthrRcvgSttlmPties(self):
-		return self._OthrRcvgSttlmPties
-
-	@OthrRcvgSttlmPties.setter
-	def OthrRcvgSttlmPties(self, value):
-		self._OthrRcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("OthrRcvgSttlmPties")
-
-	@OthrRcvgSttlmPties.deleter
-	def OthrRcvgSttlmPties(self):
-		del self._OthrRcvgSttlmPties
-		self._OthrRcvgSttlmPties = None
-
-	@property
-	def Vndr(self):
-		return self._Vndr
-
-	@Vndr.setter
-	def Vndr(self, value):
-		self._Vndr = value if type(value) != base_types.auto else self.make_default("Vndr")
-
-	@Vndr.deleter
-	def Vndr(self):
-		del self._Vndr
-		self._Vndr = None
-
+	__slots__ = ["_OthrDlvrgSttlmPties", "_CtrPty", "_SttlmStgInstrDB", "_Vndr", "_OthrRcvgSttlmPties"]
 	@property
 	def CtrPty(self):
 		return self._CtrPty
@@ -60,6 +34,19 @@ class StandingSettlementInstruction20(base_types._BaseFieldType):
 		self._OthrDlvrgSttlmPties = None
 
 	@property
+	def OthrRcvgSttlmPties(self):
+		return self._OthrRcvgSttlmPties
+
+	@OthrRcvgSttlmPties.setter
+	def OthrRcvgSttlmPties(self, value):
+		self._OthrRcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("OthrRcvgSttlmPties")
+
+	@OthrRcvgSttlmPties.deleter
+	def OthrRcvgSttlmPties(self):
+		del self._OthrRcvgSttlmPties
+		self._OthrRcvgSttlmPties = None
+
+	@property
 	def SttlmStgInstrDB(self):
 		return self._SttlmStgInstrDB
 
@@ -72,11 +59,24 @@ class StandingSettlementInstruction20(base_types._BaseFieldType):
 		del self._SttlmStgInstrDB
 		self._SttlmStgInstrDB = None
 
+	@property
+	def Vndr(self):
+		return self._Vndr
+
+	@Vndr.setter
+	def Vndr(self, value):
+		self._Vndr = value if type(value) != base_types.auto else self.make_default("Vndr")
+
+	@Vndr.deleter
+	def Vndr(self):
+		del self._Vndr
+		self._Vndr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties126, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vndr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=Counterparty15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrDlvrgSttlmPties', type=SettlementParties126, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties126, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vndr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

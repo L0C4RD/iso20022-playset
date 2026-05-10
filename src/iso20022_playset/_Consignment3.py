@@ -18,19 +18,6 @@ class Consignment3(base_types._BaseFieldType):
 		self._TtlQty = None
 
 	@property
-	def TtlWght(self):
-		return self._TtlWght
-
-	@TtlWght.setter
-	def TtlWght(self, value):
-		self._TtlWght = value if type(value) != base_types.auto else self.make_default("TtlWght")
-
-	@TtlWght.deleter
-	def TtlWght(self):
-		del self._TtlWght
-		self._TtlWght = None
-
-	@property
 	def TtlVol(self):
 		return self._TtlVol
 
@@ -43,9 +30,22 @@ class Consignment3(base_types._BaseFieldType):
 		del self._TtlVol
 		self._TtlVol = None
 
+	@property
+	def TtlWght(self):
+		return self._TtlWght
+
+	@TtlWght.setter
+	def TtlWght(self, value):
+		self._TtlWght = value if type(value) != base_types.auto else self.make_default("TtlWght")
+
+	@TtlWght.deleter
+	def TtlWght(self):
+		del self._TtlWght
+		self._TtlWght = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlQty', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlWght', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlVol', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlWght', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
 	))
 

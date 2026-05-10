@@ -1,24 +1,11 @@
 from . import base_types
-from ._OriginalNotification15 import OriginalNotification15
 from ._SupplementaryData1 import SupplementaryData1
+from ._OriginalNotification15 import OriginalNotification15
 from ._GroupHeader121 import GroupHeader121
 
 class NotificationToReceiveStatusReportV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_OrgnlNtfctnAndSts"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_SplmtryData", "_OrgnlNtfctnAndSts", "_GrpHdr"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -45,9 +32,22 @@ class NotificationToReceiveStatusReportV08(base_types._BaseFieldType):
 		del self._OrgnlNtfctnAndSts
 		self._OrgnlNtfctnAndSts = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader121, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNtfctnAndSts', type=OriginalNotification15, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

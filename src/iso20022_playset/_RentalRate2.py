@@ -1,12 +1,12 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max4NumericText import Max4NumericText
 from ._Max35Text import Max35Text
 from ._PeriodUnit4Code import PeriodUnit4Code
-from ._Max4NumericText import Max4NumericText
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class RentalRate2(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPrd", "_Rate", "_PrdCnt", "_Prd"]
+	__slots__ = ["_OthrPrd", "_Prd", "_Rate", "_PrdCnt"]
 	@property
 	def OthrPrd(self):
 		return self._OthrPrd
@@ -21,17 +21,17 @@ class RentalRate2(base_types._BaseFieldType):
 		self._OthrPrd = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def Prd(self):
+		return self._Prd
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	@property
 	def PrdCnt(self):
@@ -47,22 +47,22 @@ class RentalRate2(base_types._BaseFieldType):
 		self._PrdCnt = None
 
 	@property
-	def Prd(self):
-		return self._Prd
+	def Rate(self):
+		return self._Rate
 
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPrd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrdCnt', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=PeriodUnit4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrdCnt', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

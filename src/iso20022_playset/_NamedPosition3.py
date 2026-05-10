@@ -1,26 +1,26 @@
 from . import base_types
-from ._PositionSet19 import PositionSet19
+from ._ISODate import ISODate
 from ._PositionSet20 import PositionSet20
+from ._PositionSet18 import PositionSet18
+from ._PositionSet19 import PositionSet19
 from ._PositionSet16 import PositionSet16
 from ._PositionSet17 import PositionSet17
-from ._ISODate import ISODate
-from ._PositionSet18 import PositionSet18
 
 class NamedPosition3(base_types._BaseFieldType):
 
-	__slots__ = ["_Reuse", "_GnlInf", "_Ln", "_Coll", "_RefDt", "_Mrgn"]
+	__slots__ = ["_GnlInf", "_Reuse", "_Mrgn", "_RefDt", "_Ln", "_Coll"]
 	@property
-	def Reuse(self):
-		return self._Reuse
+	def Coll(self):
+		return self._Coll
 
-	@Reuse.setter
-	def Reuse(self, value):
-		self._Reuse = value if type(value) != base_types.auto else self.make_default("Reuse")
+	@Coll.setter
+	def Coll(self, value):
+		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
 
-	@Reuse.deleter
-	def Reuse(self):
-		del self._Reuse
-		self._Reuse = None
+	@Coll.deleter
+	def Coll(self):
+		del self._Coll
+		self._Coll = None
 
 	@property
 	def GnlInf(self):
@@ -49,17 +49,17 @@ class NamedPosition3(base_types._BaseFieldType):
 		self._Ln = None
 
 	@property
-	def Coll(self):
-		return self._Coll
+	def Mrgn(self):
+		return self._Mrgn
 
-	@Coll.setter
-	def Coll(self, value):
-		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
+	@Mrgn.setter
+	def Mrgn(self, value):
+		self._Mrgn = value if type(value) != base_types.auto else self.make_default("Mrgn")
 
-	@Coll.deleter
-	def Coll(self):
-		del self._Coll
-		self._Coll = None
+	@Mrgn.deleter
+	def Mrgn(self):
+		del self._Mrgn
+		self._Mrgn = None
 
 	@property
 	def RefDt(self):
@@ -75,24 +75,24 @@ class NamedPosition3(base_types._BaseFieldType):
 		self._RefDt = None
 
 	@property
-	def Mrgn(self):
-		return self._Mrgn
+	def Reuse(self):
+		return self._Reuse
 
-	@Mrgn.setter
-	def Mrgn(self, value):
-		self._Mrgn = value if type(value) != base_types.auto else self.make_default("Mrgn")
+	@Reuse.setter
+	def Reuse(self, value):
+		self._Reuse = value if type(value) != base_types.auto else self.make_default("Reuse")
 
-	@Mrgn.deleter
-	def Mrgn(self):
-		del self._Mrgn
-		self._Mrgn = None
+	@Reuse.deleter
+	def Reuse(self):
+		del self._Reuse
+		self._Reuse = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Reuse', type=PositionSet19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Coll', type=PositionSet18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GnlInf', type=PositionSet16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ln', type=PositionSet17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Coll', type=PositionSet18, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mrgn', type=PositionSet20, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Reuse', type=PositionSet19, min=0, max=None, mutex_group=None, array=True),
 	))
 

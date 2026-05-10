@@ -1,16 +1,16 @@
 from . import base_types
-from ._SystemRestriction1 import SystemRestriction1
-from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
-from ._SystemPartyType1Choice import SystemPartyType1Choice
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISODate import ISODate
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
+from ._SystemPartyType1Choice import SystemPartyType1Choice
+from ._SystemRestriction1 import SystemRestriction1
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
 
 class SystemSecuritiesAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_NegPos", "_MktSpcfcAttr", "_HldInd", "_Tp", "_PtyTp", "_ClsgDt", "_EndInvstrFlg", "_OpngDt", "_Rstrctn", "_PricgSchme"]
+	__slots__ = ["_PtyTp", "_Rstrctn", "_NegPos", "_EndInvstrFlg", "_HldInd", "_MktSpcfcAttr", "_Tp", "_AcctOwnr", "_PricgSchme", "_OpngDt", "_ClsgDt"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -23,71 +23,6 @@ class SystemSecuritiesAccount6(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
-
-	@property
-	def NegPos(self):
-		return self._NegPos
-
-	@NegPos.setter
-	def NegPos(self, value):
-		self._NegPos = value if type(value) != base_types.auto else self.make_default("NegPos")
-
-	@NegPos.deleter
-	def NegPos(self):
-		del self._NegPos
-		self._NegPos = None
-
-	@property
-	def MktSpcfcAttr(self):
-		return self._MktSpcfcAttr
-
-	@MktSpcfcAttr.setter
-	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != base_types.auto else self.make_default("MktSpcfcAttr")
-
-	@MktSpcfcAttr.deleter
-	def MktSpcfcAttr(self):
-		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
-
-	@property
-	def HldInd(self):
-		return self._HldInd
-
-	@HldInd.setter
-	def HldInd(self, value):
-		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
-
-	@HldInd.deleter
-	def HldInd(self):
-		del self._HldInd
-		self._HldInd = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def PtyTp(self):
-		return self._PtyTp
-
-	@PtyTp.setter
-	def PtyTp(self, value):
-		self._PtyTp = value if type(value) != base_types.auto else self.make_default("PtyTp")
-
-	@PtyTp.deleter
-	def PtyTp(self):
-		del self._PtyTp
-		self._PtyTp = None
 
 	@property
 	def ClsgDt(self):
@@ -116,6 +51,45 @@ class SystemSecuritiesAccount6(base_types._BaseFieldType):
 		self._EndInvstrFlg = None
 
 	@property
+	def HldInd(self):
+		return self._HldInd
+
+	@HldInd.setter
+	def HldInd(self, value):
+		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
+
+	@HldInd.deleter
+	def HldInd(self):
+		del self._HldInd
+		self._HldInd = None
+
+	@property
+	def MktSpcfcAttr(self):
+		return self._MktSpcfcAttr
+
+	@MktSpcfcAttr.setter
+	def MktSpcfcAttr(self, value):
+		self._MktSpcfcAttr = value if type(value) != base_types.auto else self.make_default("MktSpcfcAttr")
+
+	@MktSpcfcAttr.deleter
+	def MktSpcfcAttr(self):
+		del self._MktSpcfcAttr
+		self._MktSpcfcAttr = None
+
+	@property
+	def NegPos(self):
+		return self._NegPos
+
+	@NegPos.setter
+	def NegPos(self, value):
+		self._NegPos = value if type(value) != base_types.auto else self.make_default("NegPos")
+
+	@NegPos.deleter
+	def NegPos(self):
+		del self._NegPos
+		self._NegPos = None
+
+	@property
 	def OpngDt(self):
 		return self._OpngDt
 
@@ -127,6 +101,32 @@ class SystemSecuritiesAccount6(base_types._BaseFieldType):
 	def OpngDt(self):
 		del self._OpngDt
 		self._OpngDt = None
+
+	@property
+	def PricgSchme(self):
+		return self._PricgSchme
+
+	@PricgSchme.setter
+	def PricgSchme(self, value):
+		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
+
+	@PricgSchme.deleter
+	def PricgSchme(self):
+		del self._PricgSchme
+		self._PricgSchme = None
+
+	@property
+	def PtyTp(self):
+		return self._PtyTp
+
+	@PtyTp.setter
+	def PtyTp(self, value):
+		self._PtyTp = value if type(value) != base_types.auto else self.make_default("PtyTp")
+
+	@PtyTp.deleter
+	def PtyTp(self):
+		del self._PtyTp
+		self._PtyTp = None
 
 	@property
 	def Rstrctn(self):
@@ -142,29 +142,29 @@ class SystemSecuritiesAccount6(base_types._BaseFieldType):
 		self._Rstrctn = None
 
 	@property
-	def PricgSchme(self):
-		return self._PricgSchme
+	def Tp(self):
+		return self._Tp
 
-	@PricgSchme.setter
-	def PricgSchme(self, value):
-		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@PricgSchme.deleter
-	def PricgSchme(self):
-		del self._PricgSchme
-		self._PricgSchme = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NegPos', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='HldInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=SystemSecuritiesAccountType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyTp', type=SystemPartyType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndInvstrFlg', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NegPos', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rstrctn', type=SystemRestriction1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PricgSchme', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyTp', type=SystemPartyType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rstrctn', type=SystemRestriction1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=SystemSecuritiesAccountType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

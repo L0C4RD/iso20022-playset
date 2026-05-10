@@ -1,14 +1,40 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
 from ._PercentageRate import PercentageRate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._DecimalNumber import DecimalNumber
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Adjustment14(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Pctg", "_Amt", "_Tp", "_Qty", "_UnitPric", "_PrmtnCpnNb", "_AddtlTp", "_PrmtnElgblty", "_TaxOnOrgnlAmt", "_Rsn", "_PrmtnCd"]
+	__slots__ = ["_PrmtnCd", "_Amt", "_Qty", "_Rsn", "_TaxOnOrgnlAmt", "_UnitPric", "_PrmtnElgblty", "_AddtlTp", "_Tp", "_PrmtnCpnNb", "_Desc", "_Pctg"]
+	@property
+	def AddtlTp(self):
+		return self._AddtlTp
+
+	@AddtlTp.setter
+	def AddtlTp(self, value):
+		self._AddtlTp = value if type(value) != base_types.auto else self.make_default("AddtlTp")
+
+	@AddtlTp.deleter
+	def AddtlTp(self):
+		del self._AddtlTp
+		self._AddtlTp = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def Desc(self):
 		return self._Desc
@@ -36,56 +62,17 @@ class Adjustment14(base_types._BaseFieldType):
 		self._Pctg = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def PrmtnCd(self):
+		return self._PrmtnCd
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@PrmtnCd.setter
+	def PrmtnCd(self, value):
+		self._PrmtnCd = value if type(value) != base_types.auto else self.make_default("PrmtnCd")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
-	def UnitPric(self):
-		return self._UnitPric
-
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
-
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
+	@PrmtnCd.deleter
+	def PrmtnCd(self):
+		del self._PrmtnCd
+		self._PrmtnCd = None
 
 	@property
 	def PrmtnCpnNb(self):
@@ -101,19 +88,6 @@ class Adjustment14(base_types._BaseFieldType):
 		self._PrmtnCpnNb = None
 
 	@property
-	def AddtlTp(self):
-		return self._AddtlTp
-
-	@AddtlTp.setter
-	def AddtlTp(self, value):
-		self._AddtlTp = value if type(value) != base_types.auto else self.make_default("AddtlTp")
-
-	@AddtlTp.deleter
-	def AddtlTp(self):
-		del self._AddtlTp
-		self._AddtlTp = None
-
-	@property
 	def PrmtnElgblty(self):
 		return self._PrmtnElgblty
 
@@ -127,17 +101,17 @@ class Adjustment14(base_types._BaseFieldType):
 		self._PrmtnElgblty = None
 
 	@property
-	def TaxOnOrgnlAmt(self):
-		return self._TaxOnOrgnlAmt
+	def Qty(self):
+		return self._Qty
 
-	@TaxOnOrgnlAmt.setter
-	def TaxOnOrgnlAmt(self, value):
-		self._TaxOnOrgnlAmt = value if type(value) != base_types.auto else self.make_default("TaxOnOrgnlAmt")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
-	@TaxOnOrgnlAmt.deleter
-	def TaxOnOrgnlAmt(self):
-		del self._TaxOnOrgnlAmt
-		self._TaxOnOrgnlAmt = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def Rsn(self):
@@ -153,30 +127,56 @@ class Adjustment14(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def PrmtnCd(self):
-		return self._PrmtnCd
+	def TaxOnOrgnlAmt(self):
+		return self._TaxOnOrgnlAmt
 
-	@PrmtnCd.setter
-	def PrmtnCd(self, value):
-		self._PrmtnCd = value if type(value) != base_types.auto else self.make_default("PrmtnCd")
+	@TaxOnOrgnlAmt.setter
+	def TaxOnOrgnlAmt(self, value):
+		self._TaxOnOrgnlAmt = value if type(value) != base_types.auto else self.make_default("TaxOnOrgnlAmt")
 
-	@PrmtnCd.deleter
-	def PrmtnCd(self):
-		del self._PrmtnCd
-		self._PrmtnCd = None
+	@TaxOnOrgnlAmt.deleter
+	def TaxOnOrgnlAmt(self):
+		del self._TaxOnOrgnlAmt
+		self._TaxOnOrgnlAmt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def UnitPric(self):
+		return self._UnitPric
+
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmtnCpnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmtnElgblty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrmtnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmtnCpnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmtnElgblty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

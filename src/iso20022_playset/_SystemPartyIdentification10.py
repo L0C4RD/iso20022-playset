@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification136 import PartyIdentification136
 from ._ISODate import ISODate
+from ._PartyIdentification136 import PartyIdentification136
 
 class SystemPartyIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_VldFr"]
+	__slots__ = ["_VldFr", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,26 +1,52 @@
 from . import base_types
-from ._TransferInstruction1 import TransferInstruction1
-from ._PartyIdentification272 import PartyIdentification272
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._YesNoIndicator import YesNoIndicator
-from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._TransferInstruction1 import TransferInstruction1
 
 class DirectDebitInstructionDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDtls", "_LastColltnCcyAmt", "_LastColltnDt", "_AutomtdDrctDbtInstrInd", "_MndtId", "_DrctDbtTrfblInd", "_Cdtr"]
+	__slots__ = ["_OthrDtls", "_DrctDbtTrfblInd", "_MndtId", "_LastColltnCcyAmt", "_AutomtdDrctDbtInstrInd", "_Cdtr", "_LastColltnDt"]
 	@property
-	def OthrDtls(self):
-		return self._OthrDtls
+	def AutomtdDrctDbtInstrInd(self):
+		return self._AutomtdDrctDbtInstrInd
 
-	@OthrDtls.setter
-	def OthrDtls(self, value):
-		self._OthrDtls = value if type(value) != base_types.auto else self.make_default("OthrDtls")
+	@AutomtdDrctDbtInstrInd.setter
+	def AutomtdDrctDbtInstrInd(self, value):
+		self._AutomtdDrctDbtInstrInd = value if type(value) != base_types.auto else self.make_default("AutomtdDrctDbtInstrInd")
 
-	@OthrDtls.deleter
-	def OthrDtls(self):
-		del self._OthrDtls
-		self._OthrDtls = None
+	@AutomtdDrctDbtInstrInd.deleter
+	def AutomtdDrctDbtInstrInd(self):
+		del self._AutomtdDrctDbtInstrInd
+		self._AutomtdDrctDbtInstrInd = None
+
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
+	@property
+	def DrctDbtTrfblInd(self):
+		return self._DrctDbtTrfblInd
+
+	@DrctDbtTrfblInd.setter
+	def DrctDbtTrfblInd(self, value):
+		self._DrctDbtTrfblInd = value if type(value) != base_types.auto else self.make_default("DrctDbtTrfblInd")
+
+	@DrctDbtTrfblInd.deleter
+	def DrctDbtTrfblInd(self):
+		del self._DrctDbtTrfblInd
+		self._DrctDbtTrfblInd = None
 
 	@property
 	def LastColltnCcyAmt(self):
@@ -49,19 +75,6 @@ class DirectDebitInstructionDetails3(base_types._BaseFieldType):
 		self._LastColltnDt = None
 
 	@property
-	def AutomtdDrctDbtInstrInd(self):
-		return self._AutomtdDrctDbtInstrInd
-
-	@AutomtdDrctDbtInstrInd.setter
-	def AutomtdDrctDbtInstrInd(self, value):
-		self._AutomtdDrctDbtInstrInd = value if type(value) != base_types.auto else self.make_default("AutomtdDrctDbtInstrInd")
-
-	@AutomtdDrctDbtInstrInd.deleter
-	def AutomtdDrctDbtInstrInd(self):
-		del self._AutomtdDrctDbtInstrInd
-		self._AutomtdDrctDbtInstrInd = None
-
-	@property
 	def MndtId(self):
 		return self._MndtId
 
@@ -75,38 +88,25 @@ class DirectDebitInstructionDetails3(base_types._BaseFieldType):
 		self._MndtId = None
 
 	@property
-	def DrctDbtTrfblInd(self):
-		return self._DrctDbtTrfblInd
+	def OthrDtls(self):
+		return self._OthrDtls
 
-	@DrctDbtTrfblInd.setter
-	def DrctDbtTrfblInd(self, value):
-		self._DrctDbtTrfblInd = value if type(value) != base_types.auto else self.make_default("DrctDbtTrfblInd")
+	@OthrDtls.setter
+	def OthrDtls(self, value):
+		self._OthrDtls = value if type(value) != base_types.auto else self.make_default("OthrDtls")
 
-	@DrctDbtTrfblInd.deleter
-	def DrctDbtTrfblInd(self):
-		del self._DrctDbtTrfblInd
-		self._DrctDbtTrfblInd = None
-
-	@property
-	def Cdtr(self):
-		return self._Cdtr
-
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
-
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@OthrDtls.deleter
+	def OthrDtls(self):
+		del self._OthrDtls
+		self._OthrDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrDtls', type=TransferInstruction1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AutomtdDrctDbtInstrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctDbtTrfblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastColltnCcyAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AutomtdDrctDbtInstrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrctDbtTrfblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrDtls', type=TransferInstruction1, min=0, max=None, mutex_group=None, array=True),
 	))
 

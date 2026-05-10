@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CollateralValueReturnCriteria1 import CollateralValueReturnCriteria1
+from ._Max35Text import Max35Text
 from ._CollateralValueSearchCriteria4 import CollateralValueSearchCriteria4
 
 class CollateralValueCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_QryNm", "_RtrCrit", "_SchCrit"]
+	__slots__ = ["_RtrCrit", "_SchCrit", "_QryNm"]
 	@property
 	def QryNm(self):
 		return self._QryNm

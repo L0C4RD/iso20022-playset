@@ -1,24 +1,11 @@
 from . import base_types
-from ._Demand4 import Demand4
 from ._DemandStatus1Code import DemandStatus1Code
+from ._Demand4 import Demand4
 from ._Undertaking9 import Undertaking9
 
 class ExtendOrPayQuery2(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgId", "_DmndDtls", "_Sts"]
-	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
-
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
-
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
-
+	__slots__ = ["_DmndDtls", "_Sts", "_UdrtkgId"]
 	@property
 	def DmndDtls(self):
 		return self._DmndDtls
@@ -45,9 +32,22 @@ class ExtendOrPayQuery2(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def UdrtkgId(self):
+		return self._UdrtkgId
+
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmndDtls', type=Demand4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=DemandStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 	))
 

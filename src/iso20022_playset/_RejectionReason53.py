@@ -1,11 +1,24 @@
 from . import base_types
-from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._TransactionIdentification3Choice import TransactionIdentification3Choice
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
 
 class RejectionReason53(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_TxId", "_DtldVldtnRule"]
+	__slots__ = ["_TxId", "_Sts", "_DtldVldtnRule"]
+	@property
+	def DtldVldtnRule(self):
+		return self._DtldVldtnRule
+
+	@DtldVldtnRule.setter
+	def DtldVldtnRule(self, value):
+		self._DtldVldtnRule = value if type(value) != base_types.auto else self.make_default("DtldVldtnRule")
+
+	@DtldVldtnRule.deleter
+	def DtldVldtnRule(self):
+		del self._DtldVldtnRule
+		self._DtldVldtnRule = None
+
 	@property
 	def Sts(self):
 		return self._Sts
@@ -32,22 +45,9 @@ class RejectionReason53(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
-	@property
-	def DtldVldtnRule(self):
-		return self._DtldVldtnRule
-
-	@DtldVldtnRule.setter
-	def DtldVldtnRule(self, value):
-		self._DtldVldtnRule = value if type(value) != base_types.auto else self.make_default("DtldVldtnRule")
-
-	@DtldVldtnRule.deleter
-	def DtldVldtnRule(self):
-		del self._DtldVldtnRule
-		self._DtldVldtnRule = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DtldVldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldVldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

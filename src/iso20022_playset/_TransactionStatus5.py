@@ -1,23 +1,23 @@
 from . import base_types
-from ._BaselineStatus3Code import BaselineStatus3Code
-from ._Max140Text import Max140Text
 from ._ISODateTime import ISODateTime
+from ._Max140Text import Max140Text
+from ._BaselineStatus3Code import BaselineStatus3Code
 
 class TransactionStatus5(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Desc", "_ChngDtTm"]
+	__slots__ = ["_Desc", "_Sts", "_ChngDtTm"]
 	@property
-	def Sts(self):
-		return self._Sts
+	def ChngDtTm(self):
+		return self._ChngDtTm
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+	@ChngDtTm.setter
+	def ChngDtTm(self, value):
+		self._ChngDtTm = value if type(value) != base_types.auto else self.make_default("ChngDtTm")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@ChngDtTm.deleter
+	def ChngDtTm(self):
+		del self._ChngDtTm
+		self._ChngDtTm = None
 
 	@property
 	def Desc(self):
@@ -33,21 +33,21 @@ class TransactionStatus5(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def ChngDtTm(self):
-		return self._ChngDtTm
+	def Sts(self):
+		return self._Sts
 
-	@ChngDtTm.setter
-	def ChngDtTm(self, value):
-		self._ChngDtTm = value if type(value) != base_types.auto else self.make_default("ChngDtTm")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@ChngDtTm.deleter
-	def ChngDtTm(self):
-		del self._ChngDtTm
-		self._ChngDtTm = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChngDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

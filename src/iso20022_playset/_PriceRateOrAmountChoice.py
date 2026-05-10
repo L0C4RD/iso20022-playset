@@ -4,7 +4,7 @@ from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrenc
 
 class PriceRateOrAmountChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate"]
+	__slots__ = ["_Rate", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

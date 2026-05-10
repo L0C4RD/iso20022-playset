@@ -1,10 +1,10 @@
 from . import base_types
-from ._LongPostalAddress2Choice import LongPostalAddress2Choice
 from ._Max350Text import Max350Text
+from ._LongPostalAddress2Choice import LongPostalAddress2Choice
 
 class NameAndAddress9(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_Nm"]
+	__slots__ = ["_Nm", "_Adr"]
 	@property
 	def Adr(self):
 		return self._Adr

@@ -1,25 +1,25 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
 from ._Max35Text import Max35Text
-from ._PartyIdentification215 import PartyIdentification215
 from ._ResponseProcessingStatus1Choice import ResponseProcessingStatus1Choice
 from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
+from ._PartyIdentification215 import PartyIdentification215
 
 class ShareholderIdentificationDisclosureResponseStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnRcptnSts", "_IssrDsclsrReqRef", "_DsclsrRspnId", "_RspndgIntrmy", "_SplmtryData"]
+	__slots__ = ["_RspndgIntrmy", "_IssrDsclsrReqRef", "_DsclsrRspnId", "_RspnRcptnSts", "_SplmtryData"]
 	@property
-	def RspnRcptnSts(self):
-		return self._RspnRcptnSts
+	def DsclsrRspnId(self):
+		return self._DsclsrRspnId
 
-	@RspnRcptnSts.setter
-	def RspnRcptnSts(self, value):
-		self._RspnRcptnSts = value if type(value) != base_types.auto else self.make_default("RspnRcptnSts")
+	@DsclsrRspnId.setter
+	def DsclsrRspnId(self, value):
+		self._DsclsrRspnId = value if type(value) != base_types.auto else self.make_default("DsclsrRspnId")
 
-	@RspnRcptnSts.deleter
-	def RspnRcptnSts(self):
-		del self._RspnRcptnSts
-		self._RspnRcptnSts = None
+	@DsclsrRspnId.deleter
+	def DsclsrRspnId(self):
+		del self._DsclsrRspnId
+		self._DsclsrRspnId = None
 
 	@property
 	def IssrDsclsrReqRef(self):
@@ -35,17 +35,17 @@ class ShareholderIdentificationDisclosureResponseStatusAdviceV01(base_types._Bas
 		self._IssrDsclsrReqRef = None
 
 	@property
-	def DsclsrRspnId(self):
-		return self._DsclsrRspnId
+	def RspnRcptnSts(self):
+		return self._RspnRcptnSts
 
-	@DsclsrRspnId.setter
-	def DsclsrRspnId(self, value):
-		self._DsclsrRspnId = value if type(value) != base_types.auto else self.make_default("DsclsrRspnId")
+	@RspnRcptnSts.setter
+	def RspnRcptnSts(self, value):
+		self._RspnRcptnSts = value if type(value) != base_types.auto else self.make_default("RspnRcptnSts")
 
-	@DsclsrRspnId.deleter
-	def DsclsrRspnId(self):
-		del self._DsclsrRspnId
-		self._DsclsrRspnId = None
+	@RspnRcptnSts.deleter
+	def RspnRcptnSts(self):
+		del self._RspnRcptnSts
+		self._RspnRcptnSts = None
 
 	@property
 	def RspndgIntrmy(self):
@@ -74,9 +74,9 @@ class ShareholderIdentificationDisclosureResponseStatusAdviceV01(base_types._Bas
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnRcptnSts', type=ResponseProcessingStatus1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnRcptnSts', type=ResponseProcessingStatus1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification215, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))

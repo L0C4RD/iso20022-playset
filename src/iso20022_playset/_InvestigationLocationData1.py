@@ -1,11 +1,11 @@
 from . import base_types
-from ._InvestigationLocationMethod1Code import InvestigationLocationMethod1Code
 from ._Max2048Text import Max2048Text
+from ._InvestigationLocationMethod1Code import InvestigationLocationMethod1Code
 from ._NameAndAddress16 import NameAndAddress16
 
 class InvestigationLocationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctrncAdr", "_Mtd", "_PstlAdr"]
+	__slots__ = ["_Mtd", "_ElctrncAdr", "_PstlAdr"]
 	@property
 	def ElctrncAdr(self):
 		return self._ElctrncAdr

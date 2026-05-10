@@ -5,7 +5,7 @@ from ._GenericIdentification165 import GenericIdentification165
 
 class EndOfDayRequirement2(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlMrgnRqrmnts", "_MrgnAcctId", "_VartnMrgnRqrmnts"]
+	__slots__ = ["_VartnMrgnRqrmnts", "_MrgnAcctId", "_InitlMrgnRqrmnts"]
 	@property
 	def InitlMrgnRqrmnts(self):
 		return self._InitlMrgnRqrmnts

@@ -1,28 +1,15 @@
 from . import base_types
-from ._UnmatchedStatusReason1Code import UnmatchedStatusReason1Code
 from ._PendingSettlement2Code import PendingSettlement2Code
-from ._Max35Text import Max35Text
-from ._PendingFailingSettlement1Code import PendingFailingSettlement1Code
-from ._ProprietaryStatusJustification2 import ProprietaryStatusJustification2
 from ._SuspendedStatusReason1Code import SuspendedStatusReason1Code
+from ._Max35Text import Max35Text
+from ._ProprietaryStatusJustification2 import ProprietaryStatusJustification2
+from ._UnmatchedStatusReason1Code import UnmatchedStatusReason1Code
 from ._CancelledStatusReason1Code import CancelledStatusReason1Code
+from ._PendingFailingSettlement1Code import PendingFailingSettlement1Code
 
 class PaymentStatusReason1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Umtchd", "_Canc", "_Prtry", "_PdgSttlm", "_Sspd", "_PrtryRjctn", "_PdgFlngSttlm"]
-	@property
-	def Umtchd(self):
-		return self._Umtchd
-
-	@Umtchd.setter
-	def Umtchd(self, value):
-		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
-
-	@Umtchd.deleter
-	def Umtchd(self):
-		del self._Umtchd
-		self._Umtchd = None
-
+	__slots__ = ["_PdgSttlm", "_PrtryRjctn", "_Umtchd", "_Sspd", "_PdgFlngSttlm", "_Canc", "_Prtry"]
 	@property
 	def Canc(self):
 		return self._Canc
@@ -37,17 +24,17 @@ class PaymentStatusReason1Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def PdgFlngSttlm(self):
+		return self._PdgFlngSttlm
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+	@PdgFlngSttlm.setter
+	def PdgFlngSttlm(self, value):
+		self._PdgFlngSttlm = value if type(value) != base_types.auto else self.make_default("PdgFlngSttlm")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@PdgFlngSttlm.deleter
+	def PdgFlngSttlm(self):
+		del self._PdgFlngSttlm
+		self._PdgFlngSttlm = None
 
 	@property
 	def PdgSttlm(self):
@@ -63,17 +50,17 @@ class PaymentStatusReason1Choice(base_types._BaseFieldType):
 		self._PdgSttlm = None
 
 	@property
-	def Sspd(self):
-		return self._Sspd
+	def Prtry(self):
+		return self._Prtry
 
-	@Sspd.setter
-	def Sspd(self, value):
-		self._Sspd = value if type(value) != base_types.auto else self.make_default("Sspd")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
-	@Sspd.deleter
-	def Sspd(self):
-		del self._Sspd
-		self._Sspd = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def PrtryRjctn(self):
@@ -89,25 +76,38 @@ class PaymentStatusReason1Choice(base_types._BaseFieldType):
 		self._PrtryRjctn = None
 
 	@property
-	def PdgFlngSttlm(self):
-		return self._PdgFlngSttlm
+	def Sspd(self):
+		return self._Sspd
 
-	@PdgFlngSttlm.setter
-	def PdgFlngSttlm(self, value):
-		self._PdgFlngSttlm = value if type(value) != base_types.auto else self.make_default("PdgFlngSttlm")
+	@Sspd.setter
+	def Sspd(self, value):
+		self._Sspd = value if type(value) != base_types.auto else self.make_default("Sspd")
 
-	@PdgFlngSttlm.deleter
-	def PdgFlngSttlm(self):
-		del self._PdgFlngSttlm
-		self._PdgFlngSttlm = None
+	@Sspd.deleter
+	def Sspd(self):
+		del self._Sspd
+		self._Sspd = None
+
+	@property
+	def Umtchd(self):
+		return self._Umtchd
+
+	@Umtchd.setter
+	def Umtchd(self, value):
+		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
+
+	@Umtchd.deleter
+	def Umtchd(self):
+		del self._Umtchd
+		self._Umtchd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Umtchd', type=UnmatchedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancelledStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgSttlm', type=PendingSettlement2Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Sspd', type=SuspendedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtryRjctn', type=ProprietaryStatusJustification2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgFlngSttlm', type=PendingFailingSettlement1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgSttlm', type=PendingSettlement2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryRjctn', type=ProprietaryStatusJustification2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Sspd', type=SuspendedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Umtchd', type=UnmatchedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

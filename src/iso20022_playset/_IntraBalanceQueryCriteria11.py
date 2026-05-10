@@ -1,45 +1,19 @@
 from . import base_types
+from ._IntraBalanceType3 import IntraBalanceType3
+from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._References36Choice import References36Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._GenericIdentification37 import GenericIdentification37
 from ._PriorityNumeric4Choice import PriorityNumeric4Choice
 from ._IntraBalanceQueryStatus3 import IntraBalanceQueryStatus3
 from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
-from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._IntraBalanceType3 import IntraBalanceType3
-from ._GenericIdentification37 import GenericIdentification37
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._References36Choice import References36Choice
-from ._ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
 
 class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
-	__slots__ = ["_SttldAmt", "_Sts", "_BalTp", "_MsgOrgtr", "_CreDtTm", "_CshAcct", "_Refs", "_CshAcctSvcr", "_SttlmAmt", "_FctvSttlmDt", "_IntnddSttlmDt", "_Prty", "_CshSubBalId", "_SttlmCcy", "_CshAcctOwnr"]
-	@property
-	def SttldAmt(self):
-		return self._SttldAmt
-
-	@SttldAmt.setter
-	def SttldAmt(self, value):
-		self._SttldAmt = value if type(value) != base_types.auto else self.make_default("SttldAmt")
-
-	@SttldAmt.deleter
-	def SttldAmt(self):
-		del self._SttldAmt
-		self._SttldAmt = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_BalTp", "_MsgOrgtr", "_CshAcct", "_SttldAmt", "_IntnddSttlmDt", "_SttlmCcy", "_FctvSttlmDt", "_Sts", "_Refs", "_CshSubBalId", "_Prty", "_CshAcctSvcr", "_CreDtTm", "_CshAcctOwnr", "_SttlmAmt"]
 	@property
 	def BalTp(self):
 		return self._BalTp
@@ -52,19 +26,6 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 	def BalTp(self):
 		del self._BalTp
 		self._BalTp = None
-
-	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
-
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
-
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
 
 	@property
 	def CreDtTm(self):
@@ -93,17 +54,17 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def Refs(self):
-		return self._Refs
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
 
-	@Refs.setter
-	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
 
-	@Refs.deleter
-	def Refs(self):
-		del self._Refs
-		self._Refs = None
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
 
 	@property
 	def CshAcctSvcr(self):
@@ -119,17 +80,17 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 		self._CshAcctSvcr = None
 
 	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
+	def CshSubBalId(self):
+		return self._CshSubBalId
 
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+	@CshSubBalId.setter
+	def CshSubBalId(self, value):
+		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
 
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
+	@CshSubBalId.deleter
+	def CshSubBalId(self):
+		del self._CshSubBalId
+		self._CshSubBalId = None
 
 	@property
 	def FctvSttlmDt(self):
@@ -158,6 +119,19 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 		self._IntnddSttlmDt = None
 
 	@property
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
+
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
+
+	@property
 	def Prty(self):
 		return self._Prty
 
@@ -171,17 +145,56 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 		self._Prty = None
 
 	@property
-	def CshSubBalId(self):
-		return self._CshSubBalId
+	def Refs(self):
+		return self._Refs
 
-	@CshSubBalId.setter
-	def CshSubBalId(self, value):
-		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
+	@Refs.setter
+	def Refs(self, value):
+		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
 
-	@CshSubBalId.deleter
-	def CshSubBalId(self):
-		del self._CshSubBalId
-		self._CshSubBalId = None
+	@Refs.deleter
+	def Refs(self):
+		del self._Refs
+		self._Refs = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def SttldAmt(self):
+		return self._SttldAmt
+
+	@SttldAmt.setter
+	def SttldAmt(self, value):
+		self._SttldAmt = value if type(value) != base_types.auto else self.make_default("SttldAmt")
+
+	@SttldAmt.deleter
+	def SttldAmt(self):
+		del self._SttldAmt
+		self._SttldAmt = None
+
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
 
 	@property
 	def SttlmCcy(self):
@@ -196,34 +209,21 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 		del self._SttlmCcy
 		self._SttlmCcy = None
 
-	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
-
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
-
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttldAmt', type=ImpliedCurrencyAmountRange1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=IntraBalanceQueryStatus3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTp', type=IntraBalanceType3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Refs', type=References36Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=ImpliedCurrencyAmountRange1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FctvSttlmDt', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntnddSttlmDt', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Refs', type=References36Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=IntraBalanceQueryStatus3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttldAmt', type=ImpliedCurrencyAmountRange1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=ImpliedCurrencyAmountRange1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
 	))
 

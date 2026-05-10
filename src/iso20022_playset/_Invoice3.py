@@ -1,111 +1,33 @@
 from . import base_types
+from ._ISODate import ISODate
+from ._PartyIdentification285 import PartyIdentification285
+from ._AdditionalData1 import AdditionalData1
+from ._InvoiceLineItem3 import InvoiceLineItem3
+from ._TaxReclaimMethod1Code import TaxReclaimMethod1Code
+from ._Address2 import Address2
+from ._Max1000Text import Max1000Text
 from ._Max70Text import Max70Text
 from ._ContactBusiness1 import ContactBusiness1
-from ._Max1000Text import Max1000Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._InvoiceLineItem3 import InvoiceLineItem3
 from ._Max35Text import Max35Text
-from ._PartyIdentification285 import PartyIdentification285
-from ._TaxReclaimMethod1Code import TaxReclaimMethod1Code
-from ._AdditionalData1 import AdditionalData1
-from ._Tax41 import Tax41
-from ._Address2 import Address2
-from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Tax41 import Tax41
 
 class Invoice3(base_types._BaseFieldType):
 
-	__slots__ = ["_SellrAdr", "_BuyrCtct", "_FrghtAmt", "_CreDtTm", "_SellrId", "_BuyrTaxRegnId", "_SellrNm", "_BuyrAddtlInf", "_Dt", "_TaxTtl", "_BuyrNm", "_LineItm", "_AddtlData", "_SellrCtct", "_TaxRclmMtd", "_SummryCmmdtyId", "_SellrAddtlInf", "_Nb", "_SellrTaxRegnId", "_BuyrId", "_BuyrAdr"]
+	__slots__ = ["_BuyrTaxRegnId", "_TaxRclmMtd", "_Dt", "_AddtlData", "_CreDtTm", "_SellrTaxRegnId", "_Nb", "_SellrAdr", "_SellrAddtlInf", "_BuyrId", "_SellrNm", "_SellrCtct", "_BuyrNm", "_BuyrAdr", "_TaxTtl", "_BuyrCtct", "_SummryCmmdtyId", "_LineItm", "_SellrId", "_BuyrAddtlInf", "_FrghtAmt"]
 	@property
-	def SellrAdr(self):
-		return self._SellrAdr
+	def AddtlData(self):
+		return self._AddtlData
 
-	@SellrAdr.setter
-	def SellrAdr(self, value):
-		self._SellrAdr = value if type(value) != base_types.auto else self.make_default("SellrAdr")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
 
-	@SellrAdr.deleter
-	def SellrAdr(self):
-		del self._SellrAdr
-		self._SellrAdr = None
-
-	@property
-	def BuyrCtct(self):
-		return self._BuyrCtct
-
-	@BuyrCtct.setter
-	def BuyrCtct(self, value):
-		self._BuyrCtct = value if type(value) != base_types.auto else self.make_default("BuyrCtct")
-
-	@BuyrCtct.deleter
-	def BuyrCtct(self):
-		del self._BuyrCtct
-		self._BuyrCtct = None
-
-	@property
-	def FrghtAmt(self):
-		return self._FrghtAmt
-
-	@FrghtAmt.setter
-	def FrghtAmt(self, value):
-		self._FrghtAmt = value if type(value) != base_types.auto else self.make_default("FrghtAmt")
-
-	@FrghtAmt.deleter
-	def FrghtAmt(self):
-		del self._FrghtAmt
-		self._FrghtAmt = None
-
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
-	def SellrId(self):
-		return self._SellrId
-
-	@SellrId.setter
-	def SellrId(self, value):
-		self._SellrId = value if type(value) != base_types.auto else self.make_default("SellrId")
-
-	@SellrId.deleter
-	def SellrId(self):
-		del self._SellrId
-		self._SellrId = None
-
-	@property
-	def BuyrTaxRegnId(self):
-		return self._BuyrTaxRegnId
-
-	@BuyrTaxRegnId.setter
-	def BuyrTaxRegnId(self, value):
-		self._BuyrTaxRegnId = value if type(value) != base_types.auto else self.make_default("BuyrTaxRegnId")
-
-	@BuyrTaxRegnId.deleter
-	def BuyrTaxRegnId(self):
-		del self._BuyrTaxRegnId
-		self._BuyrTaxRegnId = None
-
-	@property
-	def SellrNm(self):
-		return self._SellrNm
-
-	@SellrNm.setter
-	def SellrNm(self, value):
-		self._SellrNm = value if type(value) != base_types.auto else self.make_default("SellrNm")
-
-	@SellrNm.deleter
-	def SellrNm(self):
-		del self._SellrNm
-		self._SellrNm = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
 	def BuyrAddtlInf(self):
@@ -121,147 +43,30 @@ class Invoice3(base_types._BaseFieldType):
 		self._BuyrAddtlInf = None
 
 	@property
-	def Dt(self):
-		return self._Dt
+	def BuyrAdr(self):
+		return self._BuyrAdr
 
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+	@BuyrAdr.setter
+	def BuyrAdr(self, value):
+		self._BuyrAdr = value if type(value) != base_types.auto else self.make_default("BuyrAdr")
 
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def TaxTtl(self):
-		return self._TaxTtl
-
-	@TaxTtl.setter
-	def TaxTtl(self, value):
-		self._TaxTtl = value if type(value) != base_types.auto else self.make_default("TaxTtl")
-
-	@TaxTtl.deleter
-	def TaxTtl(self):
-		del self._TaxTtl
-		self._TaxTtl = None
+	@BuyrAdr.deleter
+	def BuyrAdr(self):
+		del self._BuyrAdr
+		self._BuyrAdr = None
 
 	@property
-	def BuyrNm(self):
-		return self._BuyrNm
+	def BuyrCtct(self):
+		return self._BuyrCtct
 
-	@BuyrNm.setter
-	def BuyrNm(self, value):
-		self._BuyrNm = value if type(value) != base_types.auto else self.make_default("BuyrNm")
+	@BuyrCtct.setter
+	def BuyrCtct(self, value):
+		self._BuyrCtct = value if type(value) != base_types.auto else self.make_default("BuyrCtct")
 
-	@BuyrNm.deleter
-	def BuyrNm(self):
-		del self._BuyrNm
-		self._BuyrNm = None
-
-	@property
-	def LineItm(self):
-		return self._LineItm
-
-	@LineItm.setter
-	def LineItm(self, value):
-		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
-
-	@LineItm.deleter
-	def LineItm(self):
-		del self._LineItm
-		self._LineItm = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def SellrCtct(self):
-		return self._SellrCtct
-
-	@SellrCtct.setter
-	def SellrCtct(self, value):
-		self._SellrCtct = value if type(value) != base_types.auto else self.make_default("SellrCtct")
-
-	@SellrCtct.deleter
-	def SellrCtct(self):
-		del self._SellrCtct
-		self._SellrCtct = None
-
-	@property
-	def TaxRclmMtd(self):
-		return self._TaxRclmMtd
-
-	@TaxRclmMtd.setter
-	def TaxRclmMtd(self, value):
-		self._TaxRclmMtd = value if type(value) != base_types.auto else self.make_default("TaxRclmMtd")
-
-	@TaxRclmMtd.deleter
-	def TaxRclmMtd(self):
-		del self._TaxRclmMtd
-		self._TaxRclmMtd = None
-
-	@property
-	def SummryCmmdtyId(self):
-		return self._SummryCmmdtyId
-
-	@SummryCmmdtyId.setter
-	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
-
-	@SummryCmmdtyId.deleter
-	def SummryCmmdtyId(self):
-		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
-
-	@property
-	def SellrAddtlInf(self):
-		return self._SellrAddtlInf
-
-	@SellrAddtlInf.setter
-	def SellrAddtlInf(self, value):
-		self._SellrAddtlInf = value if type(value) != base_types.auto else self.make_default("SellrAddtlInf")
-
-	@SellrAddtlInf.deleter
-	def SellrAddtlInf(self):
-		del self._SellrAddtlInf
-		self._SellrAddtlInf = None
-
-	@property
-	def Nb(self):
-		return self._Nb
-
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
-
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
-
-	@property
-	def SellrTaxRegnId(self):
-		return self._SellrTaxRegnId
-
-	@SellrTaxRegnId.setter
-	def SellrTaxRegnId(self, value):
-		self._SellrTaxRegnId = value if type(value) != base_types.auto else self.make_default("SellrTaxRegnId")
-
-	@SellrTaxRegnId.deleter
-	def SellrTaxRegnId(self):
-		del self._SellrTaxRegnId
-		self._SellrTaxRegnId = None
+	@BuyrCtct.deleter
+	def BuyrCtct(self):
+		del self._BuyrCtct
+		self._BuyrCtct = None
 
 	@property
 	def BuyrId(self):
@@ -277,39 +82,234 @@ class Invoice3(base_types._BaseFieldType):
 		self._BuyrId = None
 
 	@property
-	def BuyrAdr(self):
-		return self._BuyrAdr
+	def BuyrNm(self):
+		return self._BuyrNm
 
-	@BuyrAdr.setter
-	def BuyrAdr(self, value):
-		self._BuyrAdr = value if type(value) != base_types.auto else self.make_default("BuyrAdr")
+	@BuyrNm.setter
+	def BuyrNm(self, value):
+		self._BuyrNm = value if type(value) != base_types.auto else self.make_default("BuyrNm")
 
-	@BuyrAdr.deleter
-	def BuyrAdr(self):
-		del self._BuyrAdr
-		self._BuyrAdr = None
+	@BuyrNm.deleter
+	def BuyrNm(self):
+		del self._BuyrNm
+		self._BuyrNm = None
+
+	@property
+	def BuyrTaxRegnId(self):
+		return self._BuyrTaxRegnId
+
+	@BuyrTaxRegnId.setter
+	def BuyrTaxRegnId(self, value):
+		self._BuyrTaxRegnId = value if type(value) != base_types.auto else self.make_default("BuyrTaxRegnId")
+
+	@BuyrTaxRegnId.deleter
+	def BuyrTaxRegnId(self):
+		del self._BuyrTaxRegnId
+		self._BuyrTaxRegnId = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
+	@property
+	def FrghtAmt(self):
+		return self._FrghtAmt
+
+	@FrghtAmt.setter
+	def FrghtAmt(self, value):
+		self._FrghtAmt = value if type(value) != base_types.auto else self.make_default("FrghtAmt")
+
+	@FrghtAmt.deleter
+	def FrghtAmt(self):
+		del self._FrghtAmt
+		self._FrghtAmt = None
+
+	@property
+	def LineItm(self):
+		return self._LineItm
+
+	@LineItm.setter
+	def LineItm(self, value):
+		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
+
+	@LineItm.deleter
+	def LineItm(self):
+		del self._LineItm
+		self._LineItm = None
+
+	@property
+	def Nb(self):
+		return self._Nb
+
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
+
+	@property
+	def SellrAddtlInf(self):
+		return self._SellrAddtlInf
+
+	@SellrAddtlInf.setter
+	def SellrAddtlInf(self, value):
+		self._SellrAddtlInf = value if type(value) != base_types.auto else self.make_default("SellrAddtlInf")
+
+	@SellrAddtlInf.deleter
+	def SellrAddtlInf(self):
+		del self._SellrAddtlInf
+		self._SellrAddtlInf = None
+
+	@property
+	def SellrAdr(self):
+		return self._SellrAdr
+
+	@SellrAdr.setter
+	def SellrAdr(self, value):
+		self._SellrAdr = value if type(value) != base_types.auto else self.make_default("SellrAdr")
+
+	@SellrAdr.deleter
+	def SellrAdr(self):
+		del self._SellrAdr
+		self._SellrAdr = None
+
+	@property
+	def SellrCtct(self):
+		return self._SellrCtct
+
+	@SellrCtct.setter
+	def SellrCtct(self, value):
+		self._SellrCtct = value if type(value) != base_types.auto else self.make_default("SellrCtct")
+
+	@SellrCtct.deleter
+	def SellrCtct(self):
+		del self._SellrCtct
+		self._SellrCtct = None
+
+	@property
+	def SellrId(self):
+		return self._SellrId
+
+	@SellrId.setter
+	def SellrId(self, value):
+		self._SellrId = value if type(value) != base_types.auto else self.make_default("SellrId")
+
+	@SellrId.deleter
+	def SellrId(self):
+		del self._SellrId
+		self._SellrId = None
+
+	@property
+	def SellrNm(self):
+		return self._SellrNm
+
+	@SellrNm.setter
+	def SellrNm(self, value):
+		self._SellrNm = value if type(value) != base_types.auto else self.make_default("SellrNm")
+
+	@SellrNm.deleter
+	def SellrNm(self):
+		del self._SellrNm
+		self._SellrNm = None
+
+	@property
+	def SellrTaxRegnId(self):
+		return self._SellrTaxRegnId
+
+	@SellrTaxRegnId.setter
+	def SellrTaxRegnId(self, value):
+		self._SellrTaxRegnId = value if type(value) != base_types.auto else self.make_default("SellrTaxRegnId")
+
+	@SellrTaxRegnId.deleter
+	def SellrTaxRegnId(self):
+		del self._SellrTaxRegnId
+		self._SellrTaxRegnId = None
+
+	@property
+	def SummryCmmdtyId(self):
+		return self._SummryCmmdtyId
+
+	@SummryCmmdtyId.setter
+	def SummryCmmdtyId(self, value):
+		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
+
+	@SummryCmmdtyId.deleter
+	def SummryCmmdtyId(self):
+		del self._SummryCmmdtyId
+		self._SummryCmmdtyId = None
+
+	@property
+	def TaxRclmMtd(self):
+		return self._TaxRclmMtd
+
+	@TaxRclmMtd.setter
+	def TaxRclmMtd(self, value):
+		self._TaxRclmMtd = value if type(value) != base_types.auto else self.make_default("TaxRclmMtd")
+
+	@TaxRclmMtd.deleter
+	def TaxRclmMtd(self):
+		del self._TaxRclmMtd
+		self._TaxRclmMtd = None
+
+	@property
+	def TaxTtl(self):
+		return self._TaxTtl
+
+	@TaxTtl.setter
+	def TaxTtl(self, value):
+		self._TaxTtl = value if type(value) != base_types.auto else self.make_default("TaxTtl")
+
+	@TaxTtl.deleter
+	def TaxTtl(self):
+		del self._TaxTtl
+		self._TaxTtl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SellrAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrghtAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrTaxRegnId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrAddtlInf', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxTtl', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BuyrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineItm', type=InvoiceLineItem3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SellrCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRclmMtd', type=TaxReclaimMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrAddtlInf', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrTaxRegnId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrAddtlInf', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrTaxRegnId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrghtAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LineItm', type=InvoiceLineItem3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrAddtlInf', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrTaxRegnId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRclmMtd', type=TaxReclaimMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxTtl', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -4,7 +4,7 @@ from ._CountryCode import CountryCode
 
 class SecurityWithHoldingTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_WhldgTaxVal"]
+	__slots__ = ["_WhldgTaxVal", "_Ctry"]
 	@property
 	def Ctry(self):
 		return self._Ctry

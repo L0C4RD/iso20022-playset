@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._ExternalChannel1Code import ExternalChannel1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class Channel1Choice(base_types._BaseFieldType):
 

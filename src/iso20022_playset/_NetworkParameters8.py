@@ -1,6 +1,6 @@
 from . import base_types
-from ._NetworkType2Code import NetworkType2Code
 from ._NetworkParameters7 import NetworkParameters7
+from ._NetworkType2Code import NetworkType2Code
 
 class NetworkParameters8(base_types._BaseFieldType):
 

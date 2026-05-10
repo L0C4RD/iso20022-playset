@@ -5,19 +5,6 @@ class SettlementDataRate1Choice(base_types._BaseFieldType):
 
 	__slots__ = ["_ValOfInstrs", "_NbOfInstrs"]
 	@property
-	def ValOfInstrs(self):
-		return self._ValOfInstrs
-
-	@ValOfInstrs.setter
-	def ValOfInstrs(self, value):
-		self._ValOfInstrs = value if type(value) != base_types.auto else self.make_default("ValOfInstrs")
-
-	@ValOfInstrs.deleter
-	def ValOfInstrs(self):
-		del self._ValOfInstrs
-		self._ValOfInstrs = None
-
-	@property
 	def NbOfInstrs(self):
 		return self._NbOfInstrs
 
@@ -30,8 +17,21 @@ class SettlementDataRate1Choice(base_types._BaseFieldType):
 		del self._NbOfInstrs
 		self._NbOfInstrs = None
 
+	@property
+	def ValOfInstrs(self):
+		return self._ValOfInstrs
+
+	@ValOfInstrs.setter
+	def ValOfInstrs(self, value):
+		self._ValOfInstrs = value if type(value) != base_types.auto else self.make_default("ValOfInstrs")
+
+	@ValOfInstrs.deleter
+	def ValOfInstrs(self):
+		del self._ValOfInstrs
+		self._ValOfInstrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValOfInstrs', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NbOfInstrs', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ValOfInstrs', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

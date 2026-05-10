@@ -1,10 +1,10 @@
 from . import base_types
-from ._QueryType2Code import QueryType2Code
 from ._BusinessDayCriteria3Choice import BusinessDayCriteria3Choice
+from ._QueryType2Code import QueryType2Code
 
 class BusinessDayQuery2(base_types._BaseFieldType):
 
-	__slots__ = ["_Crit", "_QryTp"]
+	__slots__ = ["_QryTp", "_Crit"]
 	@property
 	def Crit(self):
 		return self._Crit

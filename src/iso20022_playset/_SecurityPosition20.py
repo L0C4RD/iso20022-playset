@@ -1,6 +1,6 @@
 from . import base_types
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._EligiblePosition18 import EligiblePosition18
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class SecurityPosition20(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
 from ._ISODateTime import ISODateTime
+from ._Party50Choice import Party50Choice
+from ._Max35Text import Max35Text
 
 class ReportHeader7(base_types._BaseFieldType):
 
-	__slots__ = ["_To", "_CreDtTm", "_Fr", "_Id"]
-	@property
-	def To(self):
-		return self._To
-
-	@To.setter
-	def To(self, value):
-		self._To = value if type(value) != base_types.auto else self.make_default("To")
-
-	@To.deleter
-	def To(self):
-		del self._To
-		self._To = None
-
+	__slots__ = ["_To", "_Id", "_Fr", "_CreDtTm"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -58,10 +45,23 @@ class ReportHeader7(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def To(self):
+		return self._To
+
+	@To.setter
+	def To(self, value):
+		self._To = value if type(value) != base_types.auto else self.make_default("To")
+
+	@To.deleter
+	def To(self):
+		del self._To
+		self._To = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='To', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='To', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
+from ._SignedData4 import SignedData4
 from ._ContentType2Code import ContentType2Code
 from ._AuthenticatedData4 import AuthenticatedData4
-from ._SignedData4 import SignedData4
 
 class ContentInformationType13(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthntcdData", "_CnttTp", "_SgndData"]
+	__slots__ = ["_SgndData", "_CnttTp", "_AuthntcdData"]
 	@property
 	def AuthntcdData(self):
 		return self._AuthntcdData

@@ -1,23 +1,10 @@
 from . import base_types
-from ._CreditDefaultSwapSingleName2 import CreditDefaultSwapSingleName2
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._CreditDefaultSwapSingleName2 import CreditDefaultSwapSingleName2
 
 class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 
 	__slots__ = ["_SnglNm", "_OblgtnId", "_UndrlygCdtDfltSwpId"]
-	@property
-	def SnglNm(self):
-		return self._SnglNm
-
-	@SnglNm.setter
-	def SnglNm(self, value):
-		self._SnglNm = value if type(value) != base_types.auto else self.make_default("SnglNm")
-
-	@SnglNm.deleter
-	def SnglNm(self):
-		del self._SnglNm
-		self._SnglNm = None
-
 	@property
 	def OblgtnId(self):
 		return self._OblgtnId
@@ -30,6 +17,19 @@ class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 	def OblgtnId(self):
 		del self._OblgtnId
 		self._OblgtnId = None
+
+	@property
+	def SnglNm(self):
+		return self._SnglNm
+
+	@SnglNm.setter
+	def SnglNm(self, value):
+		self._SnglNm = value if type(value) != base_types.auto else self.make_default("SnglNm")
+
+	@SnglNm.deleter
+	def SnglNm(self):
+		del self._SnglNm
+		self._SnglNm = None
 
 	@property
 	def UndrlygCdtDfltSwpId(self):
@@ -45,8 +45,8 @@ class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 		self._UndrlygCdtDfltSwpId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SnglNm', type=CreditDefaultSwapSingleName2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OblgtnId', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SnglNm', type=CreditDefaultSwapSingleName2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygCdtDfltSwpId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

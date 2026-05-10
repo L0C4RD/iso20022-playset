@@ -1,27 +1,105 @@
 from . import base_types
-from ._CardholderName3 import CardholderName3
 from ._Max10NumericText import Max10NumericText
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
-from ._Address2 import Address2
-from ._LoyaltyValueType1Code import LoyaltyValueType1Code
 from ._ISODate import ISODate
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Address2 import Address2
+from ._CardholderName3 import CardholderName3
+from ._Max35Text import Max35Text
+from ._LoyaltyValueType1Code import LoyaltyValueType1Code
 
 class LoyaltyProgramme5(base_types._BaseFieldType):
 
-	__slots__ = ["_ValTp", "_OthrValTp", "_Val", "_MmbId", "_ValToCdt", "_Bal", "_MmbNm", "_MmbAdr", "_XprtnDt", "_Elgblty", "_MmbSts", "_ValToDbt", "_Issr"]
+	__slots__ = ["_Val", "_MmbId", "_MmbSts", "_OthrValTp", "_MmbNm", "_Elgblty", "_XprtnDt", "_ValToCdt", "_ValTp", "_MmbAdr", "_Bal", "_Issr", "_ValToDbt"]
 	@property
-	def ValTp(self):
-		return self._ValTp
+	def Bal(self):
+		return self._Bal
 
-	@ValTp.setter
-	def ValTp(self, value):
-		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
 
-	@ValTp.deleter
-	def ValTp(self):
-		del self._ValTp
-		self._ValTp = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
+
+	@property
+	def Elgblty(self):
+		return self._Elgblty
+
+	@Elgblty.setter
+	def Elgblty(self, value):
+		self._Elgblty = value if type(value) != base_types.auto else self.make_default("Elgblty")
+
+	@Elgblty.deleter
+	def Elgblty(self):
+		del self._Elgblty
+		self._Elgblty = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def MmbAdr(self):
+		return self._MmbAdr
+
+	@MmbAdr.setter
+	def MmbAdr(self, value):
+		self._MmbAdr = value if type(value) != base_types.auto else self.make_default("MmbAdr")
+
+	@MmbAdr.deleter
+	def MmbAdr(self):
+		del self._MmbAdr
+		self._MmbAdr = None
+
+	@property
+	def MmbId(self):
+		return self._MmbId
+
+	@MmbId.setter
+	def MmbId(self, value):
+		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+
+	@MmbId.deleter
+	def MmbId(self):
+		del self._MmbId
+		self._MmbId = None
+
+	@property
+	def MmbNm(self):
+		return self._MmbNm
+
+	@MmbNm.setter
+	def MmbNm(self, value):
+		self._MmbNm = value if type(value) != base_types.auto else self.make_default("MmbNm")
+
+	@MmbNm.deleter
+	def MmbNm(self):
+		del self._MmbNm
+		self._MmbNm = None
+
+	@property
+	def MmbSts(self):
+		return self._MmbSts
+
+	@MmbSts.setter
+	def MmbSts(self, value):
+		self._MmbSts = value if type(value) != base_types.auto else self.make_default("MmbSts")
+
+	@MmbSts.deleter
+	def MmbSts(self):
+		del self._MmbSts
+		self._MmbSts = None
 
 	@property
 	def OthrValTp(self):
@@ -50,19 +128,6 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def MmbId(self):
-		return self._MmbId
-
-	@MmbId.setter
-	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
-
-	@MmbId.deleter
-	def MmbId(self):
-		del self._MmbId
-		self._MmbId = None
-
-	@property
 	def ValToCdt(self):
 		return self._ValToCdt
 
@@ -74,84 +139,6 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 	def ValToCdt(self):
 		del self._ValToCdt
 		self._ValToCdt = None
-
-	@property
-	def Bal(self):
-		return self._Bal
-
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
-
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
-
-	@property
-	def MmbNm(self):
-		return self._MmbNm
-
-	@MmbNm.setter
-	def MmbNm(self, value):
-		self._MmbNm = value if type(value) != base_types.auto else self.make_default("MmbNm")
-
-	@MmbNm.deleter
-	def MmbNm(self):
-		del self._MmbNm
-		self._MmbNm = None
-
-	@property
-	def MmbAdr(self):
-		return self._MmbAdr
-
-	@MmbAdr.setter
-	def MmbAdr(self, value):
-		self._MmbAdr = value if type(value) != base_types.auto else self.make_default("MmbAdr")
-
-	@MmbAdr.deleter
-	def MmbAdr(self):
-		del self._MmbAdr
-		self._MmbAdr = None
-
-	@property
-	def XprtnDt(self):
-		return self._XprtnDt
-
-	@XprtnDt.setter
-	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
-
-	@XprtnDt.deleter
-	def XprtnDt(self):
-		del self._XprtnDt
-		self._XprtnDt = None
-
-	@property
-	def Elgblty(self):
-		return self._Elgblty
-
-	@Elgblty.setter
-	def Elgblty(self, value):
-		self._Elgblty = value if type(value) != base_types.auto else self.make_default("Elgblty")
-
-	@Elgblty.deleter
-	def Elgblty(self):
-		del self._Elgblty
-		self._Elgblty = None
-
-	@property
-	def MmbSts(self):
-		return self._MmbSts
-
-	@MmbSts.setter
-	def MmbSts(self, value):
-		self._MmbSts = value if type(value) != base_types.auto else self.make_default("MmbSts")
-
-	@MmbSts.deleter
-	def MmbSts(self):
-		del self._MmbSts
-		self._MmbSts = None
 
 	@property
 	def ValToDbt(self):
@@ -167,31 +154,44 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 		self._ValToDbt = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def ValTp(self):
+		return self._ValTp
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+	@ValTp.setter
+	def ValTp(self, value):
+		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@ValTp.deleter
+	def ValTp(self):
+		del self._ValTp
+		self._ValTp = None
+
+	@property
+	def XprtnDt(self):
+		return self._XprtnDt
+
+	@XprtnDt.setter
+	def XprtnDt(self, value):
+		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+
+	@XprtnDt.deleter
+	def XprtnDt(self):
+		del self._XprtnDt
+		self._XprtnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValTp', type=LoyaltyValueType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Elgblty', type=TrueFalseIndicator, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbNm', type=CardholderName3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbSts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrValTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MmbId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValToCdt', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bal', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MmbNm', type=CardholderName3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MmbAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Elgblty', type=TrueFalseIndicator, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MmbSts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValToDbt', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValTp', type=LoyaltyValueType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

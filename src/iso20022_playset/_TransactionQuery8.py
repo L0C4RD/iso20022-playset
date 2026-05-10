@@ -4,7 +4,7 @@ from ._QueryType2Code import QueryType2Code
 
 class TransactionQuery8(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_TxCrit"]
+	__slots__ = ["_TxCrit", "_QryTp"]
 	@property
 	def QryTp(self):
 		return self._QryTp

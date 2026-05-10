@@ -1,26 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ISODate import ISODate
 from ._Max10000Binary import Max10000Binary
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
-	__slots__ = ["_ICCRltdData", "_Ccy", "_VldtyDt", "_KeepAuthstnOpn", "_TtlAmt"]
-	@property
-	def ICCRltdData(self):
-		return self._ICCRltdData
-
-	@ICCRltdData.setter
-	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
-
-	@ICCRltdData.deleter
-	def ICCRltdData(self):
-		del self._ICCRltdData
-		self._ICCRltdData = None
-
+	__slots__ = ["_KeepAuthstnOpn", "_ICCRltdData", "_VldtyDt", "_Ccy", "_TtlAmt"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -35,17 +22,17 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def VldtyDt(self):
-		return self._VldtyDt
+	def ICCRltdData(self):
+		return self._ICCRltdData
 
-	@VldtyDt.setter
-	def VldtyDt(self, value):
-		self._VldtyDt = value if type(value) != base_types.auto else self.make_default("VldtyDt")
+	@ICCRltdData.setter
+	def ICCRltdData(self, value):
+		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
 
-	@VldtyDt.deleter
-	def VldtyDt(self):
-		del self._VldtyDt
-		self._VldtyDt = None
+	@ICCRltdData.deleter
+	def ICCRltdData(self):
+		del self._ICCRltdData
+		self._ICCRltdData = None
 
 	@property
 	def KeepAuthstnOpn(self):
@@ -73,11 +60,24 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 		del self._TtlAmt
 		self._TtlAmt = None
 
+	@property
+	def VldtyDt(self):
+		return self._VldtyDt
+
+	@VldtyDt.setter
+	def VldtyDt(self, value):
+		self._VldtyDt = value if type(value) != base_types.auto else self.make_default("VldtyDt")
+
+	@VldtyDt.deleter
+	def VldtyDt(self):
+		del self._VldtyDt
+		self._VldtyDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeepAuthstnOpn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

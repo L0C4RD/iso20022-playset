@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._Max140Text import Max140Text
 
 class OtherTypeOfCollateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Qty"]
+	__slots__ = ["_Qty", "_Desc"]
 	@property
 	def Desc(self):
 		return self._Desc

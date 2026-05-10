@@ -6,19 +6,6 @@ class ReturnExcessCash1(base_types._BaseFieldType):
 
 	__slots__ = ["_RtrXcssCshTp", "_CshCollCcy"]
 	@property
-	def RtrXcssCshTp(self):
-		return self._RtrXcssCshTp
-
-	@RtrXcssCshTp.setter
-	def RtrXcssCshTp(self, value):
-		self._RtrXcssCshTp = value if type(value) != base_types.auto else self.make_default("RtrXcssCshTp")
-
-	@RtrXcssCshTp.deleter
-	def RtrXcssCshTp(self):
-		del self._RtrXcssCshTp
-		self._RtrXcssCshTp = None
-
-	@property
 	def CshCollCcy(self):
 		return self._CshCollCcy
 
@@ -31,8 +18,21 @@ class ReturnExcessCash1(base_types._BaseFieldType):
 		del self._CshCollCcy
 		self._CshCollCcy = None
 
+	@property
+	def RtrXcssCshTp(self):
+		return self._RtrXcssCshTp
+
+	@RtrXcssCshTp.setter
+	def RtrXcssCshTp(self, value):
+		self._RtrXcssCshTp = value if type(value) != base_types.auto else self.make_default("RtrXcssCshTp")
+
+	@RtrXcssCshTp.deleter
+	def RtrXcssCshTp(self):
+		del self._RtrXcssCshTp
+		self._RtrXcssCshTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrXcssCshTp', type=ReturnExcessCash1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshCollCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrXcssCshTp', type=ReturnExcessCash1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

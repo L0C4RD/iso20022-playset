@@ -5,7 +5,7 @@ from ._AmountAndRateStatus2 import AmountAndRateStatus2
 
 class NetDividendRateFormat41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_AmtAndRateSts", "_RateTpAndAmtAndRateSts"]
+	__slots__ = ["_AmtAndRateSts", "_Amt", "_RateTpAndAmtAndRateSts"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,23 +1,10 @@
 from . import base_types
-from ._MissingValuationsData2 import MissingValuationsData2
 from ._Number import Number
+from ._MissingValuationsData2 import MissingValuationsData2
 
 class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
-	__slots__ = ["_Wrnngs", "_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthNoValtn", "_NbOfOutsdngDerivsWthOutdtdValtn"]
-	@property
-	def Wrnngs(self):
-		return self._Wrnngs
-
-	@Wrnngs.setter
-	def Wrnngs(self, value):
-		self._Wrnngs = value if type(value) != base_types.auto else self.make_default("Wrnngs")
-
-	@Wrnngs.deleter
-	def Wrnngs(self):
-		del self._Wrnngs
-		self._Wrnngs = None
-
+	__slots__ = ["_Wrnngs", "_NbOfOutsdngDerivsWthOutdtdValtn", "_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthNoValtn"]
 	@property
 	def NbOfOutsdngDerivs(self):
 		return self._NbOfOutsdngDerivs
@@ -57,10 +44,23 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 		del self._NbOfOutsdngDerivsWthOutdtdValtn
 		self._NbOfOutsdngDerivsWthOutdtdValtn = None
 
+	@property
+	def Wrnngs(self):
+		return self._Wrnngs
+
+	@Wrnngs.setter
+	def Wrnngs(self, value):
+		self._Wrnngs = value if type(value) != base_types.auto else self.make_default("Wrnngs")
+
+	@Wrnngs.deleter
+	def Wrnngs(self):
+		del self._Wrnngs
+		self._Wrnngs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Wrnngs', type=MissingValuationsData2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfOutsdngDerivs', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfOutsdngDerivsWthNoValtn', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfOutsdngDerivsWthOutdtdValtn', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Wrnngs', type=MissingValuationsData2, min=1, max=None, mutex_group=None, array=True),
 	))
 

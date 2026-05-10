@@ -1,24 +1,11 @@
 from . import base_types
-from ._TMSHeader1 import TMSHeader1
 from ._AcceptorConfiguration14 import AcceptorConfiguration14
 from ._ContentInformationType38 import ContentInformationType38
+from ._TMSHeader1 import TMSHeader1
 
 class AcceptorConfigurationUpdateV14(base_types._BaseFieldType):
 
 	__slots__ = ["_Hdr", "_AccptrCfgtn", "_SctyTrlr"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
 	@property
 	def AccptrCfgtn(self):
 		return self._AccptrCfgtn
@@ -31,6 +18,19 @@ class AcceptorConfigurationUpdateV14(base_types._BaseFieldType):
 	def AccptrCfgtn(self):
 		del self._AccptrCfgtn
 		self._AccptrCfgtn = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -46,8 +46,8 @@ class AcceptorConfigurationUpdateV14(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptrCfgtn', type=AcceptorConfiguration14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

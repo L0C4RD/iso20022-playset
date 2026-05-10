@@ -4,7 +4,7 @@ from ._GenericIdentification7 import GenericIdentification7
 
 class Number1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NbId", "_Prtry"]
+	__slots__ = ["_Prtry", "_NbId"]
 	@property
 	def NbId(self):
 		return self._NbId

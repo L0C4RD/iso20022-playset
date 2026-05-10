@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification136 import PartyIdentification136
 from ._ISODate import ISODate
 from ._SequenceRange1Choice import SequenceRange1Choice
+from ._PartyIdentification136 import PartyIdentification136
+from ._Max35Text import Max35Text
 
 class ResendSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_FileRef", "_SeqRg", "_Rcpt", "_SeqNb", "_BizDt"]
+	__slots__ = ["_Rcpt", "_OrgnlMsgNmId", "_SeqNb", "_BizDt", "_SeqRg", "_FileRef"]
 	@property
-	def OrgnlMsgNmId(self):
-		return self._OrgnlMsgNmId
+	def BizDt(self):
+		return self._BizDt
 
-	@OrgnlMsgNmId.setter
-	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
+	@BizDt.setter
+	def BizDt(self, value):
+		self._BizDt = value if type(value) != base_types.auto else self.make_default("BizDt")
 
-	@OrgnlMsgNmId.deleter
-	def OrgnlMsgNmId(self):
-		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+	@BizDt.deleter
+	def BizDt(self):
+		del self._BizDt
+		self._BizDt = None
 
 	@property
 	def FileRef(self):
@@ -34,17 +34,17 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 		self._FileRef = None
 
 	@property
-	def SeqRg(self):
-		return self._SeqRg
+	def OrgnlMsgNmId(self):
+		return self._OrgnlMsgNmId
 
-	@SeqRg.setter
-	def SeqRg(self, value):
-		self._SeqRg = value if type(value) != base_types.auto else self.make_default("SeqRg")
+	@OrgnlMsgNmId.setter
+	def OrgnlMsgNmId(self, value):
+		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
 
-	@SeqRg.deleter
-	def SeqRg(self):
-		del self._SeqRg
-		self._SeqRg = None
+	@OrgnlMsgNmId.deleter
+	def OrgnlMsgNmId(self):
+		del self._OrgnlMsgNmId
+		self._OrgnlMsgNmId = None
 
 	@property
 	def Rcpt(self):
@@ -73,24 +73,24 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 		self._SeqNb = None
 
 	@property
-	def BizDt(self):
-		return self._BizDt
+	def SeqRg(self):
+		return self._SeqRg
 
-	@BizDt.setter
-	def BizDt(self, value):
-		self._BizDt = value if type(value) != base_types.auto else self.make_default("BizDt")
+	@SeqRg.setter
+	def SeqRg(self, value):
+		self._SeqRg = value if type(value) != base_types.auto else self.make_default("SeqRg")
 
-	@BizDt.deleter
-	def BizDt(self):
-		del self._BizDt
-		self._BizDt = None
+	@SeqRg.deleter
+	def SeqRg(self):
+		del self._SeqRg
+		self._SeqRg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FileRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqRg', type=SequenceRange1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BizDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqRg', type=SequenceRange1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

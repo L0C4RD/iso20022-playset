@@ -5,19 +5,19 @@ from ._ContentInformationType37 import ContentInformationType37
 
 class AcceptorAuthorisationRequestV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_AuthstnReq"]
+	__slots__ = ["_SctyTrlr", "_AuthstnReq", "_Hdr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def AuthstnReq(self):
+		return self._AuthstnReq
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+	@AuthstnReq.setter
+	def AuthstnReq(self, value):
+		self._AuthstnReq = value if type(value) != base_types.auto else self.make_default("AuthstnReq")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@AuthstnReq.deleter
+	def AuthstnReq(self):
+		del self._AuthstnReq
+		self._AuthstnReq = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class AcceptorAuthorisationRequestV14(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def AuthstnReq(self):
-		return self._AuthstnReq
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@AuthstnReq.setter
-	def AuthstnReq(self, value):
-		self._AuthstnReq = value if type(value) != base_types.auto else self.make_default("AuthstnReq")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@AuthstnReq.deleter
-	def AuthstnReq(self):
-		del self._AuthstnReq
-		self._AuthstnReq = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthstnReq', type=AcceptorAuthorisationRequest14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 	))
 

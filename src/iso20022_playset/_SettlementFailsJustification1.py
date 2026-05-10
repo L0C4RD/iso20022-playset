@@ -4,7 +4,7 @@ from ._Max20PositiveDecimalNumber import Max20PositiveDecimalNumber
 
 class SettlementFailsJustification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Val"]
+	__slots__ = ["_Val", "_Rate"]
 	@property
 	def Rate(self):
 		return self._Rate

@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODate import ISODate
 from ._NonTradingDayReason1Code import NonTradingDayReason1Code
+from ._Max35Text import Max35Text
 
 class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_Rsn", "_Dt"]
+	__slots__ = ["_Dt", "_TechRcrdId", "_Rsn"]
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
+	def Dt(self):
+		return self._Dt
 
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
 
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def Rsn(self):
@@ -33,21 +33,21 @@ class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def Dt(self):
-		return self._Dt
+	def TechRcrdId(self):
+		return self._TechRcrdId
 
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
 
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=NonTradingDayReason1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=NonTradingDayReason1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

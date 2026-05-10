@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ATMConfigurationParameter1 import ATMConfigurationParameter1
+from ._Max35Text import Max35Text
 
 class ATMEquipment1(base_types._BaseFieldType):
 
-	__slots__ = ["_ApprvlNb", "_ApplNm", "_Mdl", "_ApplPrvdr", "_SrlNb", "_ApplVrsn", "_CfgtnParam", "_Manfctr"]
-	@property
-	def ApprvlNb(self):
-		return self._ApprvlNb
-
-	@ApprvlNb.setter
-	def ApprvlNb(self, value):
-		self._ApprvlNb = value if type(value) != base_types.auto else self.make_default("ApprvlNb")
-
-	@ApprvlNb.deleter
-	def ApprvlNb(self):
-		del self._ApprvlNb
-		self._ApprvlNb = None
-
+	__slots__ = ["_SrlNb", "_ApplNm", "_ApprvlNb", "_Mdl", "_CfgtnParam", "_ApplPrvdr", "_ApplVrsn", "_Manfctr"]
 	@property
 	def ApplNm(self):
 		return self._ApplNm
@@ -30,19 +17,6 @@ class ATMEquipment1(base_types._BaseFieldType):
 	def ApplNm(self):
 		del self._ApplNm
 		self._ApplNm = None
-
-	@property
-	def Mdl(self):
-		return self._Mdl
-
-	@Mdl.setter
-	def Mdl(self, value):
-		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
-
-	@Mdl.deleter
-	def Mdl(self):
-		del self._Mdl
-		self._Mdl = None
 
 	@property
 	def ApplPrvdr(self):
@@ -58,19 +32,6 @@ class ATMEquipment1(base_types._BaseFieldType):
 		self._ApplPrvdr = None
 
 	@property
-	def SrlNb(self):
-		return self._SrlNb
-
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
-
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
-
-	@property
 	def ApplVrsn(self):
 		return self._ApplVrsn
 
@@ -82,6 +43,19 @@ class ATMEquipment1(base_types._BaseFieldType):
 	def ApplVrsn(self):
 		del self._ApplVrsn
 		self._ApplVrsn = None
+
+	@property
+	def ApprvlNb(self):
+		return self._ApprvlNb
+
+	@ApprvlNb.setter
+	def ApprvlNb(self, value):
+		self._ApprvlNb = value if type(value) != base_types.auto else self.make_default("ApprvlNb")
+
+	@ApprvlNb.deleter
+	def ApprvlNb(self):
+		del self._ApprvlNb
+		self._ApprvlNb = None
 
 	@property
 	def CfgtnParam(self):
@@ -109,14 +83,40 @@ class ATMEquipment1(base_types._BaseFieldType):
 		del self._Manfctr
 		self._Manfctr = None
 
+	@property
+	def Mdl(self):
+		return self._Mdl
+
+	@Mdl.setter
+	def Mdl(self, value):
+		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
+
+	@Mdl.deleter
+	def Mdl(self):
+		del self._Mdl
+		self._Mdl = None
+
+	@property
+	def SrlNb(self):
+		return self._SrlNb
+
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ApprvlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApplNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApplPrvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApplVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CfgtnParam', type=ATMConfigurationParameter1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Manfctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

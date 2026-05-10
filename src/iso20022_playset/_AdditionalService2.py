@@ -1,24 +1,37 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._AdditionalServiceResult1Code import AdditionalServiceResult1Code
 from ._AdditionalServiceType2Code import AdditionalServiceType2Code
+from ._AdditionalServiceResult1Code import AdditionalServiceResult1Code
 from ._AdditionalData1 import AdditionalData1
 
 class AdditionalService2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Rslt", "_SvcDtl", "_OthrTp", "_OthrRslt"]
+	__slots__ = ["_SvcDtl", "_Rslt", "_Tp", "_OthrRslt", "_OthrTp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def OthrRslt(self):
+		return self._OthrRslt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@OthrRslt.setter
+	def OthrRslt(self, value):
+		self._OthrRslt = value if type(value) != base_types.auto else self.make_default("OthrRslt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@OthrRslt.deleter
+	def OthrRslt(self):
+		del self._OthrRslt
+		self._OthrRslt = None
+
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def Rslt(self):
@@ -47,36 +60,23 @@ class AdditionalService2(base_types._BaseFieldType):
 		self._SvcDtl = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def Tp(self):
+		return self._Tp
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
-	def OthrRslt(self):
-		return self._OthrRslt
-
-	@OthrRslt.setter
-	def OthrRslt(self, value):
-		self._OthrRslt = value if type(value) != base_types.auto else self.make_default("OthrRslt")
-
-	@OthrRslt.deleter
-	def OthrRslt(self):
-		del self._OthrRslt
-		self._OthrRslt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=AdditionalServiceType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rslt', type=AdditionalServiceResult1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcDtl', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=AdditionalServiceType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

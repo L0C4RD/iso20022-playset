@@ -1,37 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._PaymentIdentification15 import PaymentIdentification15
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class OriginalTransactionReference43(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNmId", "_OrgnlTx", "_CreDtTm", "_MsgId"]
-	@property
-	def MsgNmId(self):
-		return self._MsgNmId
-
-	@MsgNmId.setter
-	def MsgNmId(self, value):
-		self._MsgNmId = value if type(value) != base_types.auto else self.make_default("MsgNmId")
-
-	@MsgNmId.deleter
-	def MsgNmId(self):
-		del self._MsgNmId
-		self._MsgNmId = None
-
-	@property
-	def OrgnlTx(self):
-		return self._OrgnlTx
-
-	@OrgnlTx.setter
-	def OrgnlTx(self, value):
-		self._OrgnlTx = value if type(value) != base_types.auto else self.make_default("OrgnlTx")
-
-	@OrgnlTx.deleter
-	def OrgnlTx(self):
-		del self._OrgnlTx
-		self._OrgnlTx = None
-
+	__slots__ = ["_MsgId", "_MsgNmId", "_CreDtTm", "_OrgnlTx"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -58,10 +32,36 @@ class OriginalTransactionReference43(base_types._BaseFieldType):
 		del self._MsgId
 		self._MsgId = None
 
+	@property
+	def MsgNmId(self):
+		return self._MsgNmId
+
+	@MsgNmId.setter
+	def MsgNmId(self, value):
+		self._MsgNmId = value if type(value) != base_types.auto else self.make_default("MsgNmId")
+
+	@MsgNmId.deleter
+	def MsgNmId(self):
+		del self._MsgNmId
+		self._MsgNmId = None
+
+	@property
+	def OrgnlTx(self):
+		return self._OrgnlTx
+
+	@OrgnlTx.setter
+	def OrgnlTx(self, value):
+		self._OrgnlTx = value if type(value) != base_types.auto else self.make_default("OrgnlTx")
+
+	@OrgnlTx.deleter
+	def OrgnlTx(self):
+		del self._OrgnlTx
+		self._OrgnlTx = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTx', type=PaymentIdentification15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTx', type=PaymentIdentification15, min=0, max=None, mutex_group=None, array=True),
 	))
 

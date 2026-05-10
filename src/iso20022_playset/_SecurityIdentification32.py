@@ -1,11 +1,11 @@
 from . import base_types
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._OtherIdentification3 import OtherIdentification3
-from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class SecurityIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_OthrId", "_ISIN"]
+	__slots__ = ["_OthrId", "_ISIN", "_Desc"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -20,19 +20,6 @@ class SecurityIdentification32(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def OthrId(self):
-		return self._OthrId
-
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
-
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
-
-	@property
 	def ISIN(self):
 		return self._ISIN
 
@@ -45,9 +32,22 @@ class SecurityIdentification32(base_types._BaseFieldType):
 		del self._ISIN
 		self._ISIN = None
 
+	@property
+	def OthrId(self):
+		return self._OthrId
+
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrId', type=OtherIdentification3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=OtherIdentification3, min=0, max=None, mutex_group=None, array=True),
 	))
 

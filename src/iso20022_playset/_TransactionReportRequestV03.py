@@ -1,6 +1,6 @@
 from . import base_types
-from ._ReportSpecification4 import ReportSpecification4
 from ._MessageIdentification1 import MessageIdentification1
+from ._ReportSpecification4 import ReportSpecification4
 
 class TransactionReportRequestV03(base_types._BaseFieldType):
 

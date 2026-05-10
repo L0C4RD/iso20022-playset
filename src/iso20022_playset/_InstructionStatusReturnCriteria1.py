@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInstrStsDtTmInd", "_PmtInstrStsInd", "_PmtInstrStsRsnInd"]
+	__slots__ = ["_PmtInstrStsRsnInd", "_PmtInstrStsInd", "_PmtInstrStsDtTmInd"]
 	@property
 	def PmtInstrStsDtTmInd(self):
 		return self._PmtInstrStsDtTmInd

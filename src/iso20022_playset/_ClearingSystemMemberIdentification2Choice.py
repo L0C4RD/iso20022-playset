@@ -1,186 +1,56 @@
 from . import base_types
-from ._GermanBankleitzahlIdentifier import GermanBankleitzahlIdentifier
-from ._ItalianDomesticIdentifier import ItalianDomesticIdentifier
-from ._Max35Text import Max35Text
-from ._NewZealandNCCIdentifier import NewZealandNCCIdentifier
-from ._AustrianBankleitzahlIdentifier import AustrianBankleitzahlIdentifier
-from ._SwissSICIdentifier import SwissSICIdentifier
-from ._FedwireRoutingNumberIdentifier import FedwireRoutingNumberIdentifier
 from ._CanadianPaymentsARNIdentifier import CanadianPaymentsARNIdentifier
-from ._SwissBCIdentifier import SwissBCIdentifier
-from ._SouthAfricanNCCIdentifier import SouthAfricanNCCIdentifier
-from ._RussianCentralBankIdentificationCodeIdentifier import RussianCentralBankIdentificationCodeIdentifier
-from ._SmallNetworkIdentifier import SmallNetworkIdentifier
-from ._CHIPSParticipantIdentifier import CHIPSParticipantIdentifier
-from ._HellenicBankIdentificationCodeIdentifier import HellenicBankIdentificationCodeIdentifier
-from ._HongKongBankIdentifier import HongKongBankIdentifier
-from ._SpanishDomesticInterbankingIdentifier import SpanishDomesticInterbankingIdentifier
 from ._PortugueseNCCIdentifier import PortugueseNCCIdentifier
-from ._UKDomesticSortCodeIdentifier import UKDomesticSortCodeIdentifier
+from ._SwissSICIdentifier import SwissSICIdentifier
+from ._SmallNetworkIdentifier import SmallNetworkIdentifier
+from ._SwissBCIdentifier import SwissBCIdentifier
+from ._IndianFinancialSystemCodeIdentifier import IndianFinancialSystemCodeIdentifier
+from ._SouthAfricanNCCIdentifier import SouthAfricanNCCIdentifier
 from ._ExtensiveBranchNetworkIdentifier import ExtensiveBranchNetworkIdentifier
+from ._AustrianBankleitzahlIdentifier import AustrianBankleitzahlIdentifier
+from ._RussianCentralBankIdentificationCodeIdentifier import RussianCentralBankIdentificationCodeIdentifier
+from ._NewZealandNCCIdentifier import NewZealandNCCIdentifier
+from ._FedwireRoutingNumberIdentifier import FedwireRoutingNumberIdentifier
+from ._GermanBankleitzahlIdentifier import GermanBankleitzahlIdentifier
 from ._IrishNSCIdentifier import IrishNSCIdentifier
 from ._PolishNationalClearingCodeIdentifier import PolishNationalClearingCodeIdentifier
-from ._IndianFinancialSystemCodeIdentifier import IndianFinancialSystemCodeIdentifier
+from ._ItalianDomesticIdentifier import ItalianDomesticIdentifier
+from ._CHIPSParticipantIdentifier import CHIPSParticipantIdentifier
+from ._HongKongBankIdentifier import HongKongBankIdentifier
+from ._HellenicBankIdentificationCodeIdentifier import HellenicBankIdentificationCodeIdentifier
 from ._CHIPSUniversalIdentifier import CHIPSUniversalIdentifier
+from ._Max35Text import Max35Text
+from ._UKDomesticSortCodeIdentifier import UKDomesticSortCodeIdentifier
+from ._SpanishDomesticInterbankingIdentifier import SpanishDomesticInterbankingIdentifier
 
 class ClearingSystemMemberIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IENSC", "_GRHEBIC", "_GBSC", "_INIFSC", "_CHBC", "_USCH", "_CACPA", "_USCHU", "_USFW", "_ESNCC", "_DEBLZ", "_ZANCC", "_AUBSBx", "_HKNCC", "_RUCB", "_PLKNR", "_PTNCC", "_CHSIC", "_NZNCC", "_OthrClrCdId", "_AUBSBs", "_ATBLZ", "_ITNCC"]
+	__slots__ = ["_AUBSBs", "_ITNCC", "_ZANCC", "_PLKNR", "_INIFSC", "_PTNCC", "_RUCB", "_GBSC", "_CHBC", "_OthrClrCdId", "_AUBSBx", "_USCHU", "_HKNCC", "_USCH", "_IENSC", "_GRHEBIC", "_ATBLZ", "_ESNCC", "_CHSIC", "_CACPA", "_NZNCC", "_USFW", "_DEBLZ"]
 	@property
-	def IENSC(self):
-		return self._IENSC
+	def ATBLZ(self):
+		return self._ATBLZ
 
-	@IENSC.setter
-	def IENSC(self, value):
-		self._IENSC = value if type(value) != base_types.auto else self.make_default("IENSC")
+	@ATBLZ.setter
+	def ATBLZ(self, value):
+		self._ATBLZ = value if type(value) != base_types.auto else self.make_default("ATBLZ")
 
-	@IENSC.deleter
-	def IENSC(self):
-		del self._IENSC
-		self._IENSC = None
-
-	@property
-	def GRHEBIC(self):
-		return self._GRHEBIC
-
-	@GRHEBIC.setter
-	def GRHEBIC(self, value):
-		self._GRHEBIC = value if type(value) != base_types.auto else self.make_default("GRHEBIC")
-
-	@GRHEBIC.deleter
-	def GRHEBIC(self):
-		del self._GRHEBIC
-		self._GRHEBIC = None
+	@ATBLZ.deleter
+	def ATBLZ(self):
+		del self._ATBLZ
+		self._ATBLZ = None
 
 	@property
-	def GBSC(self):
-		return self._GBSC
+	def AUBSBs(self):
+		return self._AUBSBs
 
-	@GBSC.setter
-	def GBSC(self, value):
-		self._GBSC = value if type(value) != base_types.auto else self.make_default("GBSC")
+	@AUBSBs.setter
+	def AUBSBs(self, value):
+		self._AUBSBs = value if type(value) != base_types.auto else self.make_default("AUBSBs")
 
-	@GBSC.deleter
-	def GBSC(self):
-		del self._GBSC
-		self._GBSC = None
-
-	@property
-	def INIFSC(self):
-		return self._INIFSC
-
-	@INIFSC.setter
-	def INIFSC(self, value):
-		self._INIFSC = value if type(value) != base_types.auto else self.make_default("INIFSC")
-
-	@INIFSC.deleter
-	def INIFSC(self):
-		del self._INIFSC
-		self._INIFSC = None
-
-	@property
-	def CHBC(self):
-		return self._CHBC
-
-	@CHBC.setter
-	def CHBC(self, value):
-		self._CHBC = value if type(value) != base_types.auto else self.make_default("CHBC")
-
-	@CHBC.deleter
-	def CHBC(self):
-		del self._CHBC
-		self._CHBC = None
-
-	@property
-	def USCH(self):
-		return self._USCH
-
-	@USCH.setter
-	def USCH(self, value):
-		self._USCH = value if type(value) != base_types.auto else self.make_default("USCH")
-
-	@USCH.deleter
-	def USCH(self):
-		del self._USCH
-		self._USCH = None
-
-	@property
-	def CACPA(self):
-		return self._CACPA
-
-	@CACPA.setter
-	def CACPA(self, value):
-		self._CACPA = value if type(value) != base_types.auto else self.make_default("CACPA")
-
-	@CACPA.deleter
-	def CACPA(self):
-		del self._CACPA
-		self._CACPA = None
-
-	@property
-	def USCHU(self):
-		return self._USCHU
-
-	@USCHU.setter
-	def USCHU(self, value):
-		self._USCHU = value if type(value) != base_types.auto else self.make_default("USCHU")
-
-	@USCHU.deleter
-	def USCHU(self):
-		del self._USCHU
-		self._USCHU = None
-
-	@property
-	def USFW(self):
-		return self._USFW
-
-	@USFW.setter
-	def USFW(self, value):
-		self._USFW = value if type(value) != base_types.auto else self.make_default("USFW")
-
-	@USFW.deleter
-	def USFW(self):
-		del self._USFW
-		self._USFW = None
-
-	@property
-	def ESNCC(self):
-		return self._ESNCC
-
-	@ESNCC.setter
-	def ESNCC(self, value):
-		self._ESNCC = value if type(value) != base_types.auto else self.make_default("ESNCC")
-
-	@ESNCC.deleter
-	def ESNCC(self):
-		del self._ESNCC
-		self._ESNCC = None
-
-	@property
-	def DEBLZ(self):
-		return self._DEBLZ
-
-	@DEBLZ.setter
-	def DEBLZ(self, value):
-		self._DEBLZ = value if type(value) != base_types.auto else self.make_default("DEBLZ")
-
-	@DEBLZ.deleter
-	def DEBLZ(self):
-		del self._DEBLZ
-		self._DEBLZ = None
-
-	@property
-	def ZANCC(self):
-		return self._ZANCC
-
-	@ZANCC.setter
-	def ZANCC(self, value):
-		self._ZANCC = value if type(value) != base_types.auto else self.make_default("ZANCC")
-
-	@ZANCC.deleter
-	def ZANCC(self):
-		del self._ZANCC
-		self._ZANCC = None
+	@AUBSBs.deleter
+	def AUBSBs(self):
+		del self._AUBSBs
+		self._AUBSBs = None
 
 	@property
 	def AUBSBx(self):
@@ -196,56 +66,30 @@ class ClearingSystemMemberIdentification2Choice(base_types._BaseFieldType):
 		self._AUBSBx = None
 
 	@property
-	def HKNCC(self):
-		return self._HKNCC
+	def CACPA(self):
+		return self._CACPA
 
-	@HKNCC.setter
-	def HKNCC(self, value):
-		self._HKNCC = value if type(value) != base_types.auto else self.make_default("HKNCC")
+	@CACPA.setter
+	def CACPA(self, value):
+		self._CACPA = value if type(value) != base_types.auto else self.make_default("CACPA")
 
-	@HKNCC.deleter
-	def HKNCC(self):
-		del self._HKNCC
-		self._HKNCC = None
-
-	@property
-	def RUCB(self):
-		return self._RUCB
-
-	@RUCB.setter
-	def RUCB(self, value):
-		self._RUCB = value if type(value) != base_types.auto else self.make_default("RUCB")
-
-	@RUCB.deleter
-	def RUCB(self):
-		del self._RUCB
-		self._RUCB = None
+	@CACPA.deleter
+	def CACPA(self):
+		del self._CACPA
+		self._CACPA = None
 
 	@property
-	def PLKNR(self):
-		return self._PLKNR
+	def CHBC(self):
+		return self._CHBC
 
-	@PLKNR.setter
-	def PLKNR(self, value):
-		self._PLKNR = value if type(value) != base_types.auto else self.make_default("PLKNR")
+	@CHBC.setter
+	def CHBC(self, value):
+		self._CHBC = value if type(value) != base_types.auto else self.make_default("CHBC")
 
-	@PLKNR.deleter
-	def PLKNR(self):
-		del self._PLKNR
-		self._PLKNR = None
-
-	@property
-	def PTNCC(self):
-		return self._PTNCC
-
-	@PTNCC.setter
-	def PTNCC(self, value):
-		self._PTNCC = value if type(value) != base_types.auto else self.make_default("PTNCC")
-
-	@PTNCC.deleter
-	def PTNCC(self):
-		del self._PTNCC
-		self._PTNCC = None
+	@CHBC.deleter
+	def CHBC(self):
+		del self._CHBC
+		self._CHBC = None
 
 	@property
 	def CHSIC(self):
@@ -259,6 +103,110 @@ class ClearingSystemMemberIdentification2Choice(base_types._BaseFieldType):
 	def CHSIC(self):
 		del self._CHSIC
 		self._CHSIC = None
+
+	@property
+	def DEBLZ(self):
+		return self._DEBLZ
+
+	@DEBLZ.setter
+	def DEBLZ(self, value):
+		self._DEBLZ = value if type(value) != base_types.auto else self.make_default("DEBLZ")
+
+	@DEBLZ.deleter
+	def DEBLZ(self):
+		del self._DEBLZ
+		self._DEBLZ = None
+
+	@property
+	def ESNCC(self):
+		return self._ESNCC
+
+	@ESNCC.setter
+	def ESNCC(self, value):
+		self._ESNCC = value if type(value) != base_types.auto else self.make_default("ESNCC")
+
+	@ESNCC.deleter
+	def ESNCC(self):
+		del self._ESNCC
+		self._ESNCC = None
+
+	@property
+	def GBSC(self):
+		return self._GBSC
+
+	@GBSC.setter
+	def GBSC(self, value):
+		self._GBSC = value if type(value) != base_types.auto else self.make_default("GBSC")
+
+	@GBSC.deleter
+	def GBSC(self):
+		del self._GBSC
+		self._GBSC = None
+
+	@property
+	def GRHEBIC(self):
+		return self._GRHEBIC
+
+	@GRHEBIC.setter
+	def GRHEBIC(self, value):
+		self._GRHEBIC = value if type(value) != base_types.auto else self.make_default("GRHEBIC")
+
+	@GRHEBIC.deleter
+	def GRHEBIC(self):
+		del self._GRHEBIC
+		self._GRHEBIC = None
+
+	@property
+	def HKNCC(self):
+		return self._HKNCC
+
+	@HKNCC.setter
+	def HKNCC(self, value):
+		self._HKNCC = value if type(value) != base_types.auto else self.make_default("HKNCC")
+
+	@HKNCC.deleter
+	def HKNCC(self):
+		del self._HKNCC
+		self._HKNCC = None
+
+	@property
+	def IENSC(self):
+		return self._IENSC
+
+	@IENSC.setter
+	def IENSC(self, value):
+		self._IENSC = value if type(value) != base_types.auto else self.make_default("IENSC")
+
+	@IENSC.deleter
+	def IENSC(self):
+		del self._IENSC
+		self._IENSC = None
+
+	@property
+	def INIFSC(self):
+		return self._INIFSC
+
+	@INIFSC.setter
+	def INIFSC(self, value):
+		self._INIFSC = value if type(value) != base_types.auto else self.make_default("INIFSC")
+
+	@INIFSC.deleter
+	def INIFSC(self):
+		del self._INIFSC
+		self._INIFSC = None
+
+	@property
+	def ITNCC(self):
+		return self._ITNCC
+
+	@ITNCC.setter
+	def ITNCC(self, value):
+		self._ITNCC = value if type(value) != base_types.auto else self.make_default("ITNCC")
+
+	@ITNCC.deleter
+	def ITNCC(self):
+		del self._ITNCC
+		self._ITNCC = None
 
 	@property
 	def NZNCC(self):
@@ -287,67 +235,119 @@ class ClearingSystemMemberIdentification2Choice(base_types._BaseFieldType):
 		self._OthrClrCdId = None
 
 	@property
-	def AUBSBs(self):
-		return self._AUBSBs
+	def PLKNR(self):
+		return self._PLKNR
 
-	@AUBSBs.setter
-	def AUBSBs(self, value):
-		self._AUBSBs = value if type(value) != base_types.auto else self.make_default("AUBSBs")
+	@PLKNR.setter
+	def PLKNR(self, value):
+		self._PLKNR = value if type(value) != base_types.auto else self.make_default("PLKNR")
 
-	@AUBSBs.deleter
-	def AUBSBs(self):
-		del self._AUBSBs
-		self._AUBSBs = None
-
-	@property
-	def ATBLZ(self):
-		return self._ATBLZ
-
-	@ATBLZ.setter
-	def ATBLZ(self, value):
-		self._ATBLZ = value if type(value) != base_types.auto else self.make_default("ATBLZ")
-
-	@ATBLZ.deleter
-	def ATBLZ(self):
-		del self._ATBLZ
-		self._ATBLZ = None
+	@PLKNR.deleter
+	def PLKNR(self):
+		del self._PLKNR
+		self._PLKNR = None
 
 	@property
-	def ITNCC(self):
-		return self._ITNCC
+	def PTNCC(self):
+		return self._PTNCC
 
-	@ITNCC.setter
-	def ITNCC(self, value):
-		self._ITNCC = value if type(value) != base_types.auto else self.make_default("ITNCC")
+	@PTNCC.setter
+	def PTNCC(self, value):
+		self._PTNCC = value if type(value) != base_types.auto else self.make_default("PTNCC")
 
-	@ITNCC.deleter
-	def ITNCC(self):
-		del self._ITNCC
-		self._ITNCC = None
+	@PTNCC.deleter
+	def PTNCC(self):
+		del self._PTNCC
+		self._PTNCC = None
+
+	@property
+	def RUCB(self):
+		return self._RUCB
+
+	@RUCB.setter
+	def RUCB(self, value):
+		self._RUCB = value if type(value) != base_types.auto else self.make_default("RUCB")
+
+	@RUCB.deleter
+	def RUCB(self):
+		del self._RUCB
+		self._RUCB = None
+
+	@property
+	def USCH(self):
+		return self._USCH
+
+	@USCH.setter
+	def USCH(self, value):
+		self._USCH = value if type(value) != base_types.auto else self.make_default("USCH")
+
+	@USCH.deleter
+	def USCH(self):
+		del self._USCH
+		self._USCH = None
+
+	@property
+	def USCHU(self):
+		return self._USCHU
+
+	@USCHU.setter
+	def USCHU(self, value):
+		self._USCHU = value if type(value) != base_types.auto else self.make_default("USCHU")
+
+	@USCHU.deleter
+	def USCHU(self):
+		del self._USCHU
+		self._USCHU = None
+
+	@property
+	def USFW(self):
+		return self._USFW
+
+	@USFW.setter
+	def USFW(self, value):
+		self._USFW = value if type(value) != base_types.auto else self.make_default("USFW")
+
+	@USFW.deleter
+	def USFW(self):
+		del self._USFW
+		self._USFW = None
+
+	@property
+	def ZANCC(self):
+		return self._ZANCC
+
+	@ZANCC.setter
+	def ZANCC(self, value):
+		self._ZANCC = value if type(value) != base_types.auto else self.make_default("ZANCC")
+
+	@ZANCC.deleter
+	def ZANCC(self):
+		del self._ZANCC
+		self._ZANCC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IENSC', type=IrishNSCIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='GRHEBIC', type=HellenicBankIdentificationCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='GBSC', type=UKDomesticSortCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='INIFSC', type=IndianFinancialSystemCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CHBC', type=SwissBCIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='USCH', type=CHIPSParticipantIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CACPA', type=CanadianPaymentsARNIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='USCHU', type=CHIPSUniversalIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='USFW', type=FedwireRoutingNumberIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ESNCC', type=SpanishDomesticInterbankingIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DEBLZ', type=GermanBankleitzahlIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ZANCC', type=SouthAfricanNCCIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ATBLZ', type=AustrianBankleitzahlIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AUBSBs', type=SmallNetworkIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AUBSBx', type=ExtensiveBranchNetworkIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='HKNCC', type=HongKongBankIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RUCB', type=RussianCentralBankIdentificationCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PLKNR', type=PolishNationalClearingCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PTNCC', type=PortugueseNCCIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CACPA', type=CanadianPaymentsARNIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CHBC', type=SwissBCIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CHSIC', type=SwissSICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DEBLZ', type=GermanBankleitzahlIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ESNCC', type=SpanishDomesticInterbankingIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GBSC', type=UKDomesticSortCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GRHEBIC', type=HellenicBankIdentificationCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='HKNCC', type=HongKongBankIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IENSC', type=IrishNSCIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='INIFSC', type=IndianFinancialSystemCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ITNCC', type=ItalianDomesticIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NZNCC', type=NewZealandNCCIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrClrCdId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AUBSBs', type=SmallNetworkIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ATBLZ', type=AustrianBankleitzahlIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ITNCC', type=ItalianDomesticIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PLKNR', type=PolishNationalClearingCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PTNCC', type=PortugueseNCCIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RUCB', type=RussianCentralBankIdentificationCodeIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='USCH', type=CHIPSParticipantIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='USCHU', type=CHIPSUniversalIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='USFW', type=FedwireRoutingNumberIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ZANCC', type=SouthAfricanNCCIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

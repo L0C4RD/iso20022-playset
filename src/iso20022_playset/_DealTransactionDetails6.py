@@ -1,18 +1,18 @@
 from . import base_types
-from ._FrequencyRateFixing1Choice import FrequencyRateFixing1Choice
-from ._RepoTerminationOption1Code import RepoTerminationOption1Code
-from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
-from ._CollateralAmount12 import CollateralAmount12
+from ._ClosingDate4Choice import ClosingDate4Choice
 from ._RateOrName4Choice import RateOrName4Choice
 from ._PercentageRate import PercentageRate
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._Exact3NumericText import Exact3NumericText
-from ._ClosingDate4Choice import ClosingDate4Choice
 from ._OptionType6Choice import OptionType6Choice
+from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
+from ._FrequencyRateFixing1Choice import FrequencyRateFixing1Choice
+from ._RepoTerminationOption1Code import RepoTerminationOption1Code
+from ._CollateralAmount12 import CollateralAmount12
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 
 class DealTransactionDetails6(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsgDt", "_MinNtcePrd", "_TermntnOptn", "_DealDtlsAmt", "_Pmt", "_OptnTp", "_DayCntBsis", "_PricgRateAndIndx", "_Sprd", "_OvrnghtFrqcyRateFxg"]
+	__slots__ = ["_TermntnOptn", "_Pmt", "_PricgRateAndIndx", "_OptnTp", "_OvrnghtFrqcyRateFxg", "_Sprd", "_MinNtcePrd", "_DayCntBsis", "_ClsgDt", "_DealDtlsAmt"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt
@@ -27,30 +27,17 @@ class DealTransactionDetails6(base_types._BaseFieldType):
 		self._ClsgDt = None
 
 	@property
-	def MinNtcePrd(self):
-		return self._MinNtcePrd
+	def DayCntBsis(self):
+		return self._DayCntBsis
 
-	@MinNtcePrd.setter
-	def MinNtcePrd(self, value):
-		self._MinNtcePrd = value if type(value) != base_types.auto else self.make_default("MinNtcePrd")
+	@DayCntBsis.setter
+	def DayCntBsis(self, value):
+		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
 
-	@MinNtcePrd.deleter
-	def MinNtcePrd(self):
-		del self._MinNtcePrd
-		self._MinNtcePrd = None
-
-	@property
-	def TermntnOptn(self):
-		return self._TermntnOptn
-
-	@TermntnOptn.setter
-	def TermntnOptn(self, value):
-		self._TermntnOptn = value if type(value) != base_types.auto else self.make_default("TermntnOptn")
-
-	@TermntnOptn.deleter
-	def TermntnOptn(self):
-		del self._TermntnOptn
-		self._TermntnOptn = None
+	@DayCntBsis.deleter
+	def DayCntBsis(self):
+		del self._DayCntBsis
+		self._DayCntBsis = None
 
 	@property
 	def DealDtlsAmt(self):
@@ -66,17 +53,17 @@ class DealTransactionDetails6(base_types._BaseFieldType):
 		self._DealDtlsAmt = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def MinNtcePrd(self):
+		return self._MinNtcePrd
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+	@MinNtcePrd.setter
+	def MinNtcePrd(self, value):
+		self._MinNtcePrd = value if type(value) != base_types.auto else self.make_default("MinNtcePrd")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
+	@MinNtcePrd.deleter
+	def MinNtcePrd(self):
+		del self._MinNtcePrd
+		self._MinNtcePrd = None
 
 	@property
 	def OptnTp(self):
@@ -92,17 +79,30 @@ class DealTransactionDetails6(base_types._BaseFieldType):
 		self._OptnTp = None
 
 	@property
-	def DayCntBsis(self):
-		return self._DayCntBsis
+	def OvrnghtFrqcyRateFxg(self):
+		return self._OvrnghtFrqcyRateFxg
 
-	@DayCntBsis.setter
-	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
+	@OvrnghtFrqcyRateFxg.setter
+	def OvrnghtFrqcyRateFxg(self, value):
+		self._OvrnghtFrqcyRateFxg = value if type(value) != base_types.auto else self.make_default("OvrnghtFrqcyRateFxg")
 
-	@DayCntBsis.deleter
-	def DayCntBsis(self):
-		del self._DayCntBsis
-		self._DayCntBsis = None
+	@OvrnghtFrqcyRateFxg.deleter
+	def OvrnghtFrqcyRateFxg(self):
+		del self._OvrnghtFrqcyRateFxg
+		self._OvrnghtFrqcyRateFxg = None
+
+	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
 
 	@property
 	def PricgRateAndIndx(self):
@@ -131,28 +131,28 @@ class DealTransactionDetails6(base_types._BaseFieldType):
 		self._Sprd = None
 
 	@property
-	def OvrnghtFrqcyRateFxg(self):
-		return self._OvrnghtFrqcyRateFxg
+	def TermntnOptn(self):
+		return self._TermntnOptn
 
-	@OvrnghtFrqcyRateFxg.setter
-	def OvrnghtFrqcyRateFxg(self, value):
-		self._OvrnghtFrqcyRateFxg = value if type(value) != base_types.auto else self.make_default("OvrnghtFrqcyRateFxg")
+	@TermntnOptn.setter
+	def TermntnOptn(self, value):
+		self._TermntnOptn = value if type(value) != base_types.auto else self.make_default("TermntnOptn")
 
-	@OvrnghtFrqcyRateFxg.deleter
-	def OvrnghtFrqcyRateFxg(self):
-		del self._OvrnghtFrqcyRateFxg
-		self._OvrnghtFrqcyRateFxg = None
+	@TermntnOptn.deleter
+	def TermntnOptn(self):
+		del self._TermntnOptn
+		self._TermntnOptn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsgDt', type=ClosingDate4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinNtcePrd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermntnOptn', type=RepoTerminationOption1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealDtlsAmt', type=CollateralAmount12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=OptionType6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealDtlsAmt', type=CollateralAmount12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinNtcePrd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=OptionType6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OvrnghtFrqcyRateFxg', type=FrequencyRateFixing1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgRateAndIndx', type=RateOrName4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OvrnghtFrqcyRateFxg', type=FrequencyRateFixing1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnOptn', type=RepoTerminationOption1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
+from ._ATMCompletionAcknowledgement3 import ATMCompletionAcknowledgement3
 from ._ContentInformationType10 import ContentInformationType10
 from ._ContentInformationType15 import ContentInformationType15
-from ._ATMCompletionAcknowledgement3 import ATMCompletionAcknowledgement3
 from ._Header32 import Header32
 
 class ATMCompletionAcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMCmpltnAck", "_Hdr", "_PrtctdATMCmpltnAck", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_PrtctdATMCmpltnAck", "_Hdr", "_ATMCmpltnAck"]
 	@property
 	def ATMCmpltnAck(self):
 		return self._ATMCmpltnAck

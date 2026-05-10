@@ -1,26 +1,26 @@
 from . import base_types
-from ._AdditionalReference9 import AdditionalReference9
 from ._CopyInformation4 import CopyInformation4
-from ._InvestmentFundOrder9 import InvestmentFundOrder9
-from ._MessageIdentification1 import MessageIdentification1
-from ._Max35Text import Max35Text
 from ._AdditionalReference8 import AdditionalReference8
+from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
+from ._InvestmentFundOrder9 import InvestmentFundOrder9
+from ._AdditionalReference9 import AdditionalReference9
 
 class SubscriptionOrderCancellationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsRef", "_MsgId", "_PoolRef", "_MstrRef", "_OrdrRefs", "_CpyDtls"]
+	__slots__ = ["_MstrRef", "_OrdrRefs", "_MsgId", "_CpyDtls", "_PoolRef", "_PrvsRef"]
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def CpyDtls(self):
+		return self._CpyDtls
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+	@CpyDtls.setter
+	def CpyDtls(self, value):
+		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@CpyDtls.deleter
+	def CpyDtls(self):
+		del self._CpyDtls
+		self._CpyDtls = None
 
 	@property
 	def MsgId(self):
@@ -34,19 +34,6 @@ class SubscriptionOrderCancellationRequestV04(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
 
 	@property
 	def MstrRef(self):
@@ -75,24 +62,37 @@ class SubscriptionOrderCancellationRequestV04(base_types._BaseFieldType):
 		self._OrdrRefs = None
 
 	@property
-	def CpyDtls(self):
-		return self._CpyDtls
+	def PoolRef(self):
+		return self._PoolRef
 
-	@CpyDtls.setter
-	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
 
-	@CpyDtls.deleter
-	def CpyDtls(self):
-		del self._CpyDtls
-		self._CpyDtls = None
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRefs', type=InvestmentFundOrder9, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 	))
 

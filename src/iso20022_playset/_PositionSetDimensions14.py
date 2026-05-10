@@ -1,12 +1,12 @@
 from . import base_types
-from ._LoanData134 import LoanData134
-from ._CollateralData33 import CollateralData33
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._CollateralData33 import CollateralData33
+from ._LoanData134 import LoanData134
 from ._CounterpartyData86 import CounterpartyData86
 
 class PositionSetDimensions14(base_types._BaseFieldType):
 
-	__slots__ = ["_CollData", "_CtrPtyData", "_LnData", "_OtlrsIncl"]
+	__slots__ = ["_CtrPtyData", "_LnData", "_CollData", "_OtlrsIncl"]
 	@property
 	def CollData(self):
 		return self._CollData

@@ -1,26 +1,13 @@
 from . import base_types
-from ._OriginalMessageInformation1 import OriginalMessageInformation1
-from ._Max35Text import Max35Text
-from ._OriginalMandate10Choice import OriginalMandate10Choice
 from ._SupplementaryData1 import SupplementaryData1
+from ._OriginalMandate10Choice import OriginalMandate10Choice
+from ._Max35Text import Max35Text
+from ._OriginalMessageInformation1 import OriginalMessageInformation1
 from ._MandateSuspensionReason3 import MandateSuspensionReason3
 
 class MandateSuspension4(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgInf", "_OrgnlMndt", "_SplmtryData", "_SspnsnReqId", "_SspnsnRsn"]
-	@property
-	def OrgnlMsgInf(self):
-		return self._OrgnlMsgInf
-
-	@OrgnlMsgInf.setter
-	def OrgnlMsgInf(self, value):
-		self._OrgnlMsgInf = value if type(value) != base_types.auto else self.make_default("OrgnlMsgInf")
-
-	@OrgnlMsgInf.deleter
-	def OrgnlMsgInf(self):
-		del self._OrgnlMsgInf
-		self._OrgnlMsgInf = None
-
+	__slots__ = ["_OrgnlMsgInf", "_OrgnlMndt", "_SspnsnReqId", "_SplmtryData", "_SspnsnRsn"]
 	@property
 	def OrgnlMndt(self):
 		return self._OrgnlMndt
@@ -33,6 +20,19 @@ class MandateSuspension4(base_types._BaseFieldType):
 	def OrgnlMndt(self):
 		del self._OrgnlMndt
 		self._OrgnlMndt = None
+
+	@property
+	def OrgnlMsgInf(self):
+		return self._OrgnlMsgInf
+
+	@OrgnlMsgInf.setter
+	def OrgnlMsgInf(self, value):
+		self._OrgnlMsgInf = value if type(value) != base_types.auto else self.make_default("OrgnlMsgInf")
+
+	@OrgnlMsgInf.deleter
+	def OrgnlMsgInf(self):
+		del self._OrgnlMsgInf
+		self._OrgnlMsgInf = None
 
 	@property
 	def SplmtryData(self):
@@ -74,8 +74,8 @@ class MandateSuspension4(base_types._BaseFieldType):
 		self._SspnsnRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate10Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SspnsnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SspnsnRsn', type=MandateSuspensionReason3, min=1, max=1, mutex_group=None, array=False),

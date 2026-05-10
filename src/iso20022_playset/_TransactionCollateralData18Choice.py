@@ -5,7 +5,33 @@ from ._Collateral52 import Collateral52
 
 class TransactionCollateralData18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RpTrad", "_SctiesLndg", "_MrgnLndg", "_BuySellBck"]
+	__slots__ = ["_SctiesLndg", "_MrgnLndg", "_RpTrad", "_BuySellBck"]
+	@property
+	def BuySellBck(self):
+		return self._BuySellBck
+
+	@BuySellBck.setter
+	def BuySellBck(self, value):
+		self._BuySellBck = value if type(value) != base_types.auto else self.make_default("BuySellBck")
+
+	@BuySellBck.deleter
+	def BuySellBck(self):
+		del self._BuySellBck
+		self._BuySellBck = None
+
+	@property
+	def MrgnLndg(self):
+		return self._MrgnLndg
+
+	@MrgnLndg.setter
+	def MrgnLndg(self, value):
+		self._MrgnLndg = value if type(value) != base_types.auto else self.make_default("MrgnLndg")
+
+	@MrgnLndg.deleter
+	def MrgnLndg(self):
+		del self._MrgnLndg
+		self._MrgnLndg = None
+
 	@property
 	def RpTrad(self):
 		return self._RpTrad
@@ -32,36 +58,10 @@ class TransactionCollateralData18Choice(base_types._BaseFieldType):
 		del self._SctiesLndg
 		self._SctiesLndg = None
 
-	@property
-	def MrgnLndg(self):
-		return self._MrgnLndg
-
-	@MrgnLndg.setter
-	def MrgnLndg(self, value):
-		self._MrgnLndg = value if type(value) != base_types.auto else self.make_default("MrgnLndg")
-
-	@MrgnLndg.deleter
-	def MrgnLndg(self):
-		del self._MrgnLndg
-		self._MrgnLndg = None
-
-	@property
-	def BuySellBck(self):
-		return self._BuySellBck
-
-	@BuySellBck.setter
-	def BuySellBck(self, value):
-		self._BuySellBck = value if type(value) != base_types.auto else self.make_default("BuySellBck")
-
-	@BuySellBck.deleter
-	def BuySellBck(self):
-		del self._BuySellBck
-		self._BuySellBck = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BuySellBck', type=Collateral52, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MrgnLndg', type=Security55, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='RpTrad', type=Collateral52, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesLndg', type=CollateralFlag13Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MrgnLndg', type=Security55, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='BuySellBck', type=Collateral52, min=0, max=1, mutex_group=1, array=False),
 	))
 

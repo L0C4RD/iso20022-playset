@@ -3,20 +3,7 @@ from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmoun
 
 class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_XcssCollPstd", "_InitlMrgnPstd", "_VartnMrgnPstd"]
-	@property
-	def XcssCollPstd(self):
-		return self._XcssCollPstd
-
-	@XcssCollPstd.setter
-	def XcssCollPstd(self, value):
-		self._XcssCollPstd = value if type(value) != base_types.auto else self.make_default("XcssCollPstd")
-
-	@XcssCollPstd.deleter
-	def XcssCollPstd(self):
-		del self._XcssCollPstd
-		self._XcssCollPstd = None
-
+	__slots__ = ["_InitlMrgnPstd", "_VartnMrgnPstd", "_XcssCollPstd"]
 	@property
 	def InitlMrgnPstd(self):
 		return self._InitlMrgnPstd
@@ -43,9 +30,22 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 		del self._VartnMrgnPstd
 		self._VartnMrgnPstd = None
 
+	@property
+	def XcssCollPstd(self):
+		return self._XcssCollPstd
+
+	@XcssCollPstd.setter
+	def XcssCollPstd(self, value):
+		self._XcssCollPstd = value if type(value) != base_types.auto else self.make_default("XcssCollPstd")
+
+	@XcssCollPstd.deleter
+	def XcssCollPstd(self):
+		del self._XcssCollPstd
+		self._XcssCollPstd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

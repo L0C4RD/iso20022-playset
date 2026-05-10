@@ -1,17 +1,17 @@
 from . import base_types
-from ._PaymentScheduleType2Choice import PaymentScheduleType2Choice
-from ._Priority2Code import Priority2Code
 from ._UnderlyingContract4Choice import UnderlyingContract4Choice
-from ._Max1025Text import Max1025Text
-from ._ContractBalance1 import ContractBalance1
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
 from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
+from ._SupplementaryData1 import SupplementaryData1
+from ._ContractBalance1 import ContractBalance1
 from ._DocumentIdentification22 import DocumentIdentification22
+from ._PaymentScheduleType2Choice import PaymentScheduleType2Choice
+from ._Max35Text import Max35Text
+from ._Max1025Text import Max1025Text
+from ._Priority2Code import Priority2Code
 
 class ContractRegistration8(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Attchmnt", "_Ctrct", "_PrvsRegnId", "_CtrctRegnOpngId", "_PmtSchdlTp", "_CtrctBal", "_SplmtryData", "_Prty"]
+	__slots__ = ["_CtrctRegnOpngId", "_Ctrct", "_PrvsRegnId", "_PmtSchdlTp", "_AddtlInf", "_CtrctBal", "_Attchmnt", "_SplmtryData", "_Prty"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -52,17 +52,17 @@ class ContractRegistration8(base_types._BaseFieldType):
 		self._Ctrct = None
 
 	@property
-	def PrvsRegnId(self):
-		return self._PrvsRegnId
+	def CtrctBal(self):
+		return self._CtrctBal
 
-	@PrvsRegnId.setter
-	def PrvsRegnId(self, value):
-		self._PrvsRegnId = value if type(value) != base_types.auto else self.make_default("PrvsRegnId")
+	@CtrctBal.setter
+	def CtrctBal(self, value):
+		self._CtrctBal = value if type(value) != base_types.auto else self.make_default("CtrctBal")
 
-	@PrvsRegnId.deleter
-	def PrvsRegnId(self):
-		del self._PrvsRegnId
-		self._PrvsRegnId = None
+	@CtrctBal.deleter
+	def CtrctBal(self):
+		del self._CtrctBal
+		self._CtrctBal = None
 
 	@property
 	def CtrctRegnOpngId(self):
@@ -91,17 +91,30 @@ class ContractRegistration8(base_types._BaseFieldType):
 		self._PmtSchdlTp = None
 
 	@property
-	def CtrctBal(self):
-		return self._CtrctBal
+	def Prty(self):
+		return self._Prty
 
-	@CtrctBal.setter
-	def CtrctBal(self, value):
-		self._CtrctBal = value if type(value) != base_types.auto else self.make_default("CtrctBal")
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
 
-	@CtrctBal.deleter
-	def CtrctBal(self):
-		del self._CtrctBal
-		self._CtrctBal = None
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
+	@property
+	def PrvsRegnId(self):
+		return self._PrvsRegnId
+
+	@PrvsRegnId.setter
+	def PrvsRegnId(self, value):
+		self._PrvsRegnId = value if type(value) != base_types.auto else self.make_default("PrvsRegnId")
+
+	@PrvsRegnId.deleter
+	def PrvsRegnId(self):
+		del self._PrvsRegnId
+		self._PrvsRegnId = None
 
 	@property
 	def SplmtryData(self):
@@ -116,28 +129,15 @@ class ContractRegistration8(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def Prty(self):
-		return self._Prty
-
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
-
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ctrct', type=UnderlyingContract4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRegnId', type=DocumentIdentification22, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrctBal', type=ContractBalance1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctRegnOpngId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtSchdlTp', type=PaymentScheduleType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctBal', type=ContractBalance1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prty', type=Priority2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRegnId', type=DocumentIdentification22, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

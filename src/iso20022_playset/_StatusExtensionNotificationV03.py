@@ -1,14 +1,53 @@
 from . import base_types
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._PendingActivity2 import PendingActivity2
 from ._MessageIdentification1 import MessageIdentification1
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._TransactionStatus5 import TransactionStatus5
 
 class StatusExtensionNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_UsrTxRef", "_EstblishdBaselnId", "_XtndedSts", "_ReqForActn", "_NtfctnId"]
+	__slots__ = ["_EstblishdBaselnId", "_UsrTxRef", "_XtndedSts", "_TxId", "_NtfctnId", "_ReqForActn"]
+	@property
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
+
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
+
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
+
+	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
+	@property
+	def ReqForActn(self):
+		return self._ReqForActn
+
+	@ReqForActn.setter
+	def ReqForActn(self, value):
+		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
+
+	@ReqForActn.deleter
+	def ReqForActn(self):
+		del self._ReqForActn
+		self._ReqForActn = None
+
 	@property
 	def TxId(self):
 		return self._TxId
@@ -36,19 +75,6 @@ class StatusExtensionNotificationV03(base_types._BaseFieldType):
 		self._UsrTxRef = None
 
 	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
-
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
-
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
-
-	@property
 	def XtndedSts(self):
 		return self._XtndedSts
 
@@ -61,38 +87,12 @@ class StatusExtensionNotificationV03(base_types._BaseFieldType):
 		del self._XtndedSts
 		self._XtndedSts = None
 
-	@property
-	def ReqForActn(self):
-		return self._ReqForActn
-
-	@ReqForActn.setter
-	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
-
-	@ReqForActn.deleter
-	def ReqForActn(self):
-		del self._ReqForActn
-		self._ReqForActn = None
-
-	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedSts', type=TransactionStatus5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

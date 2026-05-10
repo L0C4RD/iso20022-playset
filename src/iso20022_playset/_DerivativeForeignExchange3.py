@@ -1,6 +1,6 @@
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._AssetFXSubProductType1Code import AssetFXSubProductType1Code
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class DerivativeForeignExchange3(base_types._BaseFieldType):
 

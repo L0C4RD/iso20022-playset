@@ -1,23 +1,23 @@
 from . import base_types
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
-from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
 from ._SecurityIdentification39 import SecurityIdentification39
+from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
+from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 
 class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAudtTrlOrErr", "_FinInstrmId", "_DtPrd"]
+	__slots__ = ["_SctiesAudtTrlOrErr", "_DtPrd", "_FinInstrmId"]
 	@property
-	def SctiesAudtTrlOrErr(self):
-		return self._SctiesAudtTrlOrErr
+	def DtPrd(self):
+		return self._DtPrd
 
-	@SctiesAudtTrlOrErr.setter
-	def SctiesAudtTrlOrErr(self, value):
-		self._SctiesAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAudtTrlOrErr")
+	@DtPrd.setter
+	def DtPrd(self, value):
+		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
 
-	@SctiesAudtTrlOrErr.deleter
-	def SctiesAudtTrlOrErr(self):
-		del self._SctiesAudtTrlOrErr
-		self._SctiesAudtTrlOrErr = None
+	@DtPrd.deleter
+	def DtPrd(self):
+		del self._DtPrd
+		self._DtPrd = None
 
 	@property
 	def FinInstrmId(self):
@@ -33,21 +33,21 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def DtPrd(self):
-		return self._DtPrd
+	def SctiesAudtTrlOrErr(self):
+		return self._SctiesAudtTrlOrErr
 
-	@DtPrd.setter
-	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
+	@SctiesAudtTrlOrErr.setter
+	def SctiesAudtTrlOrErr(self, value):
+		self._SctiesAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAudtTrlOrErr")
 
-	@DtPrd.deleter
-	def DtPrd(self):
-		del self._DtPrd
-		self._DtPrd = None
+	@SctiesAudtTrlOrErr.deleter
+	def SctiesAudtTrlOrErr(self):
+		del self._SctiesAudtTrlOrErr
+		self._SctiesAudtTrlOrErr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

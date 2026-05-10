@@ -1,59 +1,33 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max140Text import Max140Text
-from ._DatePeriod2 import DatePeriod2
-from ._CalculationMethod1Code import CalculationMethod1Code
 from ._CollateralPurpose1Choice import CollateralPurpose1Choice
-from ._Frequency1Code import Frequency1Code
 from ._Max210Text import Max210Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DatePeriod2 import DatePeriod2
 from ._InterestComputationMethod2Code import InterestComputationMethod2Code
-from ._CollateralBalance1 import CollateralBalance1
-from ._InterestMethod1Code import InterestMethod1Code
 from ._YesNoIndicator import YesNoIndicator
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Frequency1Code import Frequency1Code
+from ._CalculationMethod1Code import CalculationMethod1Code
+from ._InterestMethod1Code import InterestMethod1Code
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._InterestRate1Choice import InterestRate1Choice
+from ._Max140Text import Max140Text
+from ._CollateralBalance1 import CollateralBalance1
 
 class InterestAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstMtd", "_ClsgCollBal", "_ClctnMtd", "_AddtlInf", "_IntrstRate", "_ApldWhldgTax", "_DayCntBsis", "_OpngCollBal", "_ClctnFrqcy", "_CollPurp", "_AcrdIntrstAmt", "_ValDt", "_IntrstPrd", "_StdSttlmInstrs"]
+	__slots__ = ["_DayCntBsis", "_ValDt", "_OpngCollBal", "_StdSttlmInstrs", "_IntrstRate", "_ClctnMtd", "_CollPurp", "_AcrdIntrstAmt", "_AddtlInf", "_IntrstMtd", "_ClsgCollBal", "_IntrstPrd", "_ClctnFrqcy", "_ApldWhldgTax"]
 	@property
-	def IntrstMtd(self):
-		return self._IntrstMtd
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
 
-	@IntrstMtd.setter
-	def IntrstMtd(self, value):
-		self._IntrstMtd = value if type(value) != base_types.auto else self.make_default("IntrstMtd")
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
 
-	@IntrstMtd.deleter
-	def IntrstMtd(self):
-		del self._IntrstMtd
-		self._IntrstMtd = None
-
-	@property
-	def ClsgCollBal(self):
-		return self._ClsgCollBal
-
-	@ClsgCollBal.setter
-	def ClsgCollBal(self, value):
-		self._ClsgCollBal = value if type(value) != base_types.auto else self.make_default("ClsgCollBal")
-
-	@ClsgCollBal.deleter
-	def ClsgCollBal(self):
-		del self._ClsgCollBal
-		self._ClsgCollBal = None
-
-	@property
-	def ClctnMtd(self):
-		return self._ClctnMtd
-
-	@ClctnMtd.setter
-	def ClctnMtd(self, value):
-		self._ClctnMtd = value if type(value) != base_types.auto else self.make_default("ClctnMtd")
-
-	@ClctnMtd.deleter
-	def ClctnMtd(self):
-		del self._ClctnMtd
-		self._ClctnMtd = None
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
 
 	@property
 	def AddtlInf(self):
@@ -69,19 +43,6 @@ class InterestAmount3(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def IntrstRate(self):
-		return self._IntrstRate
-
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
-
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
-	@property
 	def ApldWhldgTax(self):
 		return self._ApldWhldgTax
 
@@ -93,32 +54,6 @@ class InterestAmount3(base_types._BaseFieldType):
 	def ApldWhldgTax(self):
 		del self._ApldWhldgTax
 		self._ApldWhldgTax = None
-
-	@property
-	def DayCntBsis(self):
-		return self._DayCntBsis
-
-	@DayCntBsis.setter
-	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
-
-	@DayCntBsis.deleter
-	def DayCntBsis(self):
-		del self._DayCntBsis
-		self._DayCntBsis = None
-
-	@property
-	def OpngCollBal(self):
-		return self._OpngCollBal
-
-	@OpngCollBal.setter
-	def OpngCollBal(self, value):
-		self._OpngCollBal = value if type(value) != base_types.auto else self.make_default("OpngCollBal")
-
-	@OpngCollBal.deleter
-	def OpngCollBal(self):
-		del self._OpngCollBal
-		self._OpngCollBal = None
 
 	@property
 	def ClctnFrqcy(self):
@@ -134,6 +69,32 @@ class InterestAmount3(base_types._BaseFieldType):
 		self._ClctnFrqcy = None
 
 	@property
+	def ClctnMtd(self):
+		return self._ClctnMtd
+
+	@ClctnMtd.setter
+	def ClctnMtd(self, value):
+		self._ClctnMtd = value if type(value) != base_types.auto else self.make_default("ClctnMtd")
+
+	@ClctnMtd.deleter
+	def ClctnMtd(self):
+		del self._ClctnMtd
+		self._ClctnMtd = None
+
+	@property
+	def ClsgCollBal(self):
+		return self._ClsgCollBal
+
+	@ClsgCollBal.setter
+	def ClsgCollBal(self, value):
+		self._ClsgCollBal = value if type(value) != base_types.auto else self.make_default("ClsgCollBal")
+
+	@ClsgCollBal.deleter
+	def ClsgCollBal(self):
+		del self._ClsgCollBal
+		self._ClsgCollBal = None
+
+	@property
 	def CollPurp(self):
 		return self._CollPurp
 
@@ -147,30 +108,30 @@ class InterestAmount3(base_types._BaseFieldType):
 		self._CollPurp = None
 
 	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
+	def DayCntBsis(self):
+		return self._DayCntBsis
 
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+	@DayCntBsis.setter
+	def DayCntBsis(self, value):
+		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
 
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+	@DayCntBsis.deleter
+	def DayCntBsis(self):
+		del self._DayCntBsis
+		self._DayCntBsis = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def IntrstMtd(self):
+		return self._IntrstMtd
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+	@IntrstMtd.setter
+	def IntrstMtd(self, value):
+		self._IntrstMtd = value if type(value) != base_types.auto else self.make_default("IntrstMtd")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@IntrstMtd.deleter
+	def IntrstMtd(self):
+		del self._IntrstMtd
+		self._IntrstMtd = None
 
 	@property
 	def IntrstPrd(self):
@@ -186,6 +147,32 @@ class InterestAmount3(base_types._BaseFieldType):
 		self._IntrstPrd = None
 
 	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
+	@property
+	def OpngCollBal(self):
+		return self._OpngCollBal
+
+	@OpngCollBal.setter
+	def OpngCollBal(self, value):
+		self._OpngCollBal = value if type(value) != base_types.auto else self.make_default("OpngCollBal")
+
+	@OpngCollBal.deleter
+	def OpngCollBal(self):
+		del self._OpngCollBal
+		self._OpngCollBal = None
+
+	@property
 	def StdSttlmInstrs(self):
 		return self._StdSttlmInstrs
 
@@ -198,20 +185,33 @@ class InterestAmount3(base_types._BaseFieldType):
 		del self._StdSttlmInstrs
 		self._StdSttlmInstrs = None
 
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstMtd', type=InterestMethod1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgCollBal', type=CollateralBalance1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnMtd', type=CalculationMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRate', type=InterestRate1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApldWhldgTax', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethod2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngCollBal', type=CollateralBalance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnFrqcy', type=Frequency1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPurp', type=CollateralPurpose1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApldWhldgTax', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnFrqcy', type=Frequency1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnMtd', type=CalculationMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgCollBal', type=CollateralBalance1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPurp', type=CollateralPurpose1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethod2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstMtd', type=InterestMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstPrd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=InterestRate1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngCollBal', type=CollateralBalance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,22 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CancellationReason32Choice import CancellationReason32Choice
+from ._Max35Text import Max35Text
 
 class InvestmentFundOrder9(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrRef", "_CxlRef", "_ClntRef", "_CxlRsn"]
+	__slots__ = ["_CxlRef", "_ClntRef", "_CxlRsn", "_OrdrRef"]
 	@property
-	def OrdrRef(self):
-		return self._OrdrRef
+	def ClntRef(self):
+		return self._ClntRef
 
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
 
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
 
 	@property
 	def CxlRef(self):
@@ -32,19 +32,6 @@ class InvestmentFundOrder9(base_types._BaseFieldType):
 		self._CxlRef = None
 
 	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
-
-	@property
 	def CxlRsn(self):
 		return self._CxlRsn
 
@@ -57,10 +44,23 @@ class InvestmentFundOrder9(base_types._BaseFieldType):
 		del self._CxlRsn
 		self._CxlRsn = None
 
+	@property
+	def OrdrRef(self):
+		return self._OrdrRef
+
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
+
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsn', type=CancellationReason32Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

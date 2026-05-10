@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max256Text import Max256Text
 from ._Max350Text import Max350Text
+from ._Max256Text import Max256Text
 
 class AgreementClauses1(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_DocURL"]
+	__slots__ = ["_DocURL", "_Desc"]
 	@property
 	def Desc(self):
 		return self._Desc

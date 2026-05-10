@@ -1,88 +1,23 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ATMCounterType3Code import ATMCounterType3Code
 from ._Number import Number
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ATMCassetteCounters5(base_types._BaseFieldType):
 
-	__slots__ = ["_PresntdNb", "_RcycldNb", "_DspnsdNb", "_RmvdAmt", "_Tp", "_RmvdNb", "_DpstdAmt", "_DpstdNb", "_RtrctdNb", "_AddedNb", "_RjctdNb", "_RtrctdAmt", "_InitlNb", "_InitlAmt"]
+	__slots__ = ["_RcycldNb", "_Tp", "_DpstdAmt", "_RmvdAmt", "_DpstdNb", "_AddedNb", "_InitlAmt", "_DspnsdNb", "_PresntdNb", "_InitlNb", "_RtrctdAmt", "_RtrctdNb", "_RmvdNb", "_RjctdNb"]
 	@property
-	def PresntdNb(self):
-		return self._PresntdNb
+	def AddedNb(self):
+		return self._AddedNb
 
-	@PresntdNb.setter
-	def PresntdNb(self, value):
-		self._PresntdNb = value if type(value) != base_types.auto else self.make_default("PresntdNb")
+	@AddedNb.setter
+	def AddedNb(self, value):
+		self._AddedNb = value if type(value) != base_types.auto else self.make_default("AddedNb")
 
-	@PresntdNb.deleter
-	def PresntdNb(self):
-		del self._PresntdNb
-		self._PresntdNb = None
-
-	@property
-	def RcycldNb(self):
-		return self._RcycldNb
-
-	@RcycldNb.setter
-	def RcycldNb(self, value):
-		self._RcycldNb = value if type(value) != base_types.auto else self.make_default("RcycldNb")
-
-	@RcycldNb.deleter
-	def RcycldNb(self):
-		del self._RcycldNb
-		self._RcycldNb = None
-
-	@property
-	def DspnsdNb(self):
-		return self._DspnsdNb
-
-	@DspnsdNb.setter
-	def DspnsdNb(self, value):
-		self._DspnsdNb = value if type(value) != base_types.auto else self.make_default("DspnsdNb")
-
-	@DspnsdNb.deleter
-	def DspnsdNb(self):
-		del self._DspnsdNb
-		self._DspnsdNb = None
-
-	@property
-	def RmvdAmt(self):
-		return self._RmvdAmt
-
-	@RmvdAmt.setter
-	def RmvdAmt(self, value):
-		self._RmvdAmt = value if type(value) != base_types.auto else self.make_default("RmvdAmt")
-
-	@RmvdAmt.deleter
-	def RmvdAmt(self):
-		del self._RmvdAmt
-		self._RmvdAmt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def RmvdNb(self):
-		return self._RmvdNb
-
-	@RmvdNb.setter
-	def RmvdNb(self, value):
-		self._RmvdNb = value if type(value) != base_types.auto else self.make_default("RmvdNb")
-
-	@RmvdNb.deleter
-	def RmvdNb(self):
-		del self._RmvdNb
-		self._RmvdNb = None
+	@AddedNb.deleter
+	def AddedNb(self):
+		del self._AddedNb
+		self._AddedNb = None
 
 	@property
 	def DpstdAmt(self):
@@ -111,56 +46,30 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 		self._DpstdNb = None
 
 	@property
-	def RtrctdNb(self):
-		return self._RtrctdNb
+	def DspnsdNb(self):
+		return self._DspnsdNb
 
-	@RtrctdNb.setter
-	def RtrctdNb(self, value):
-		self._RtrctdNb = value if type(value) != base_types.auto else self.make_default("RtrctdNb")
+	@DspnsdNb.setter
+	def DspnsdNb(self, value):
+		self._DspnsdNb = value if type(value) != base_types.auto else self.make_default("DspnsdNb")
 
-	@RtrctdNb.deleter
-	def RtrctdNb(self):
-		del self._RtrctdNb
-		self._RtrctdNb = None
-
-	@property
-	def AddedNb(self):
-		return self._AddedNb
-
-	@AddedNb.setter
-	def AddedNb(self, value):
-		self._AddedNb = value if type(value) != base_types.auto else self.make_default("AddedNb")
-
-	@AddedNb.deleter
-	def AddedNb(self):
-		del self._AddedNb
-		self._AddedNb = None
+	@DspnsdNb.deleter
+	def DspnsdNb(self):
+		del self._DspnsdNb
+		self._DspnsdNb = None
 
 	@property
-	def RjctdNb(self):
-		return self._RjctdNb
+	def InitlAmt(self):
+		return self._InitlAmt
 
-	@RjctdNb.setter
-	def RjctdNb(self, value):
-		self._RjctdNb = value if type(value) != base_types.auto else self.make_default("RjctdNb")
+	@InitlAmt.setter
+	def InitlAmt(self, value):
+		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
 
-	@RjctdNb.deleter
-	def RjctdNb(self):
-		del self._RjctdNb
-		self._RjctdNb = None
-
-	@property
-	def RtrctdAmt(self):
-		return self._RtrctdAmt
-
-	@RtrctdAmt.setter
-	def RtrctdAmt(self, value):
-		self._RtrctdAmt = value if type(value) != base_types.auto else self.make_default("RtrctdAmt")
-
-	@RtrctdAmt.deleter
-	def RtrctdAmt(self):
-		del self._RtrctdAmt
-		self._RtrctdAmt = None
+	@InitlAmt.deleter
+	def InitlAmt(self):
+		del self._InitlAmt
+		self._InitlAmt = None
 
 	@property
 	def InitlNb(self):
@@ -176,32 +85,123 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 		self._InitlNb = None
 
 	@property
-	def InitlAmt(self):
-		return self._InitlAmt
+	def PresntdNb(self):
+		return self._PresntdNb
 
-	@InitlAmt.setter
-	def InitlAmt(self, value):
-		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
+	@PresntdNb.setter
+	def PresntdNb(self, value):
+		self._PresntdNb = value if type(value) != base_types.auto else self.make_default("PresntdNb")
 
-	@InitlAmt.deleter
-	def InitlAmt(self):
-		del self._InitlAmt
-		self._InitlAmt = None
+	@PresntdNb.deleter
+	def PresntdNb(self):
+		del self._PresntdNb
+		self._PresntdNb = None
+
+	@property
+	def RcycldNb(self):
+		return self._RcycldNb
+
+	@RcycldNb.setter
+	def RcycldNb(self, value):
+		self._RcycldNb = value if type(value) != base_types.auto else self.make_default("RcycldNb")
+
+	@RcycldNb.deleter
+	def RcycldNb(self):
+		del self._RcycldNb
+		self._RcycldNb = None
+
+	@property
+	def RjctdNb(self):
+		return self._RjctdNb
+
+	@RjctdNb.setter
+	def RjctdNb(self, value):
+		self._RjctdNb = value if type(value) != base_types.auto else self.make_default("RjctdNb")
+
+	@RjctdNb.deleter
+	def RjctdNb(self):
+		del self._RjctdNb
+		self._RjctdNb = None
+
+	@property
+	def RmvdAmt(self):
+		return self._RmvdAmt
+
+	@RmvdAmt.setter
+	def RmvdAmt(self, value):
+		self._RmvdAmt = value if type(value) != base_types.auto else self.make_default("RmvdAmt")
+
+	@RmvdAmt.deleter
+	def RmvdAmt(self):
+		del self._RmvdAmt
+		self._RmvdAmt = None
+
+	@property
+	def RmvdNb(self):
+		return self._RmvdNb
+
+	@RmvdNb.setter
+	def RmvdNb(self, value):
+		self._RmvdNb = value if type(value) != base_types.auto else self.make_default("RmvdNb")
+
+	@RmvdNb.deleter
+	def RmvdNb(self):
+		del self._RmvdNb
+		self._RmvdNb = None
+
+	@property
+	def RtrctdAmt(self):
+		return self._RtrctdAmt
+
+	@RtrctdAmt.setter
+	def RtrctdAmt(self, value):
+		self._RtrctdAmt = value if type(value) != base_types.auto else self.make_default("RtrctdAmt")
+
+	@RtrctdAmt.deleter
+	def RtrctdAmt(self):
+		del self._RtrctdAmt
+		self._RtrctdAmt = None
+
+	@property
+	def RtrctdNb(self):
+		return self._RtrctdNb
+
+	@RtrctdNb.setter
+	def RtrctdNb(self, value):
+		self._RtrctdNb = value if type(value) != base_types.auto else self.make_default("RtrctdNb")
+
+	@RtrctdNb.deleter
+	def RtrctdNb(self):
+		del self._RtrctdNb
+		self._RtrctdNb = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PresntdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcycldNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DspnsdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmvdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ATMCounterType3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmvdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddedNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DpstdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DpstdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrctdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddedNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrctdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DspnsdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PresntdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcycldNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmvdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmvdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrctdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrctdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ATMCounterType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

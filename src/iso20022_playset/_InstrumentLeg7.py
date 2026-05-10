@@ -1,70 +1,44 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._SettlementDate8Code import SettlementDate8Code
-from ._Side1Code import Side1Code
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max35Text import Max35Text
-from ._SecurityIdentification18 import SecurityIdentification18
-from ._AgreedRate3 import AgreedRate3
 from ._ISODate import ISODate
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DecimalNumber import DecimalNumber
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._SecurityIdentification18 import SecurityIdentification18
+from ._SettlementDate8Code import SettlementDate8Code
+from ._AgreedRate3 import AgreedRate3
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._Max35Text import Max35Text
+from ._Side1Code import Side1Code
 from ._ISODateTime import ISODateTime
 
 class InstrumentLeg7(base_types._BaseFieldType):
 
-	__slots__ = ["_LegSd", "_LegLastPric", "_LegRskAmt", "_LegSttlmDt", "_LegFwdPts", "_LegSttlmCcy", "_LegOrdrQty", "_LegValtnRate", "_LegSctyId", "_LegSttlmTp", "_LegSymb", "_LegCcy", "_LegValDt", "_LegClctdCtrPtyCcyLastQty"]
+	__slots__ = ["_LegOrdrQty", "_LegSymb", "_LegSctyId", "_LegValtnRate", "_LegCcy", "_LegRskAmt", "_LegValDt", "_LegSttlmTp", "_LegSttlmCcy", "_LegFwdPts", "_LegSttlmDt", "_LegLastPric", "_LegClctdCtrPtyCcyLastQty", "_LegSd"]
 	@property
-	def LegSd(self):
-		return self._LegSd
+	def LegCcy(self):
+		return self._LegCcy
 
-	@LegSd.setter
-	def LegSd(self, value):
-		self._LegSd = value if type(value) != base_types.auto else self.make_default("LegSd")
+	@LegCcy.setter
+	def LegCcy(self, value):
+		self._LegCcy = value if type(value) != base_types.auto else self.make_default("LegCcy")
 
-	@LegSd.deleter
-	def LegSd(self):
-		del self._LegSd
-		self._LegSd = None
-
-	@property
-	def LegLastPric(self):
-		return self._LegLastPric
-
-	@LegLastPric.setter
-	def LegLastPric(self, value):
-		self._LegLastPric = value if type(value) != base_types.auto else self.make_default("LegLastPric")
-
-	@LegLastPric.deleter
-	def LegLastPric(self):
-		del self._LegLastPric
-		self._LegLastPric = None
+	@LegCcy.deleter
+	def LegCcy(self):
+		del self._LegCcy
+		self._LegCcy = None
 
 	@property
-	def LegRskAmt(self):
-		return self._LegRskAmt
+	def LegClctdCtrPtyCcyLastQty(self):
+		return self._LegClctdCtrPtyCcyLastQty
 
-	@LegRskAmt.setter
-	def LegRskAmt(self, value):
-		self._LegRskAmt = value if type(value) != base_types.auto else self.make_default("LegRskAmt")
+	@LegClctdCtrPtyCcyLastQty.setter
+	def LegClctdCtrPtyCcyLastQty(self, value):
+		self._LegClctdCtrPtyCcyLastQty = value if type(value) != base_types.auto else self.make_default("LegClctdCtrPtyCcyLastQty")
 
-	@LegRskAmt.deleter
-	def LegRskAmt(self):
-		del self._LegRskAmt
-		self._LegRskAmt = None
-
-	@property
-	def LegSttlmDt(self):
-		return self._LegSttlmDt
-
-	@LegSttlmDt.setter
-	def LegSttlmDt(self, value):
-		self._LegSttlmDt = value if type(value) != base_types.auto else self.make_default("LegSttlmDt")
-
-	@LegSttlmDt.deleter
-	def LegSttlmDt(self):
-		del self._LegSttlmDt
-		self._LegSttlmDt = None
+	@LegClctdCtrPtyCcyLastQty.deleter
+	def LegClctdCtrPtyCcyLastQty(self):
+		del self._LegClctdCtrPtyCcyLastQty
+		self._LegClctdCtrPtyCcyLastQty = None
 
 	@property
 	def LegFwdPts(self):
@@ -80,17 +54,17 @@ class InstrumentLeg7(base_types._BaseFieldType):
 		self._LegFwdPts = None
 
 	@property
-	def LegSttlmCcy(self):
-		return self._LegSttlmCcy
+	def LegLastPric(self):
+		return self._LegLastPric
 
-	@LegSttlmCcy.setter
-	def LegSttlmCcy(self, value):
-		self._LegSttlmCcy = value if type(value) != base_types.auto else self.make_default("LegSttlmCcy")
+	@LegLastPric.setter
+	def LegLastPric(self, value):
+		self._LegLastPric = value if type(value) != base_types.auto else self.make_default("LegLastPric")
 
-	@LegSttlmCcy.deleter
-	def LegSttlmCcy(self):
-		del self._LegSttlmCcy
-		self._LegSttlmCcy = None
+	@LegLastPric.deleter
+	def LegLastPric(self):
+		del self._LegLastPric
+		self._LegLastPric = None
 
 	@property
 	def LegOrdrQty(self):
@@ -106,17 +80,17 @@ class InstrumentLeg7(base_types._BaseFieldType):
 		self._LegOrdrQty = None
 
 	@property
-	def LegValtnRate(self):
-		return self._LegValtnRate
+	def LegRskAmt(self):
+		return self._LegRskAmt
 
-	@LegValtnRate.setter
-	def LegValtnRate(self, value):
-		self._LegValtnRate = value if type(value) != base_types.auto else self.make_default("LegValtnRate")
+	@LegRskAmt.setter
+	def LegRskAmt(self, value):
+		self._LegRskAmt = value if type(value) != base_types.auto else self.make_default("LegRskAmt")
 
-	@LegValtnRate.deleter
-	def LegValtnRate(self):
-		del self._LegValtnRate
-		self._LegValtnRate = None
+	@LegRskAmt.deleter
+	def LegRskAmt(self):
+		del self._LegRskAmt
+		self._LegRskAmt = None
 
 	@property
 	def LegSctyId(self):
@@ -130,6 +104,45 @@ class InstrumentLeg7(base_types._BaseFieldType):
 	def LegSctyId(self):
 		del self._LegSctyId
 		self._LegSctyId = None
+
+	@property
+	def LegSd(self):
+		return self._LegSd
+
+	@LegSd.setter
+	def LegSd(self, value):
+		self._LegSd = value if type(value) != base_types.auto else self.make_default("LegSd")
+
+	@LegSd.deleter
+	def LegSd(self):
+		del self._LegSd
+		self._LegSd = None
+
+	@property
+	def LegSttlmCcy(self):
+		return self._LegSttlmCcy
+
+	@LegSttlmCcy.setter
+	def LegSttlmCcy(self, value):
+		self._LegSttlmCcy = value if type(value) != base_types.auto else self.make_default("LegSttlmCcy")
+
+	@LegSttlmCcy.deleter
+	def LegSttlmCcy(self):
+		del self._LegSttlmCcy
+		self._LegSttlmCcy = None
+
+	@property
+	def LegSttlmDt(self):
+		return self._LegSttlmDt
+
+	@LegSttlmDt.setter
+	def LegSttlmDt(self, value):
+		self._LegSttlmDt = value if type(value) != base_types.auto else self.make_default("LegSttlmDt")
+
+	@LegSttlmDt.deleter
+	def LegSttlmDt(self):
+		del self._LegSttlmDt
+		self._LegSttlmDt = None
 
 	@property
 	def LegSttlmTp(self):
@@ -158,19 +171,6 @@ class InstrumentLeg7(base_types._BaseFieldType):
 		self._LegSymb = None
 
 	@property
-	def LegCcy(self):
-		return self._LegCcy
-
-	@LegCcy.setter
-	def LegCcy(self, value):
-		self._LegCcy = value if type(value) != base_types.auto else self.make_default("LegCcy")
-
-	@LegCcy.deleter
-	def LegCcy(self):
-		del self._LegCcy
-		self._LegCcy = None
-
-	@property
 	def LegValDt(self):
 		return self._LegValDt
 
@@ -184,32 +184,32 @@ class InstrumentLeg7(base_types._BaseFieldType):
 		self._LegValDt = None
 
 	@property
-	def LegClctdCtrPtyCcyLastQty(self):
-		return self._LegClctdCtrPtyCcyLastQty
+	def LegValtnRate(self):
+		return self._LegValtnRate
 
-	@LegClctdCtrPtyCcyLastQty.setter
-	def LegClctdCtrPtyCcyLastQty(self, value):
-		self._LegClctdCtrPtyCcyLastQty = value if type(value) != base_types.auto else self.make_default("LegClctdCtrPtyCcyLastQty")
+	@LegValtnRate.setter
+	def LegValtnRate(self, value):
+		self._LegValtnRate = value if type(value) != base_types.auto else self.make_default("LegValtnRate")
 
-	@LegClctdCtrPtyCcyLastQty.deleter
-	def LegClctdCtrPtyCcyLastQty(self):
-		del self._LegClctdCtrPtyCcyLastQty
-		self._LegClctdCtrPtyCcyLastQty = None
+	@LegValtnRate.deleter
+	def LegValtnRate(self):
+		del self._LegValtnRate
+		self._LegValtnRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LegSd', type=Side1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegLastPric', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegRskAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegSttlmDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegClctdCtrPtyCcyLastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegFwdPts', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegSttlmCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegLastPric', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegOrdrQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegValtnRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegRskAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegSctyId', type=SecurityIdentification18, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegSd', type=Side1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegSttlmCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegSttlmDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegSttlmTp', type=SettlementDate8Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegSymb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegClctdCtrPtyCcyLastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegValtnRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
 	))
 

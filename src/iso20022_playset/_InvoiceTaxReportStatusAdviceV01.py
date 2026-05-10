@@ -1,24 +1,11 @@
 from . import base_types
-from ._InvoiceTaxStatusReportHeader1 import InvoiceTaxStatusReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
 from ._InvoiceTaxReportTransactionStatus1 import InvoiceTaxReportTransactionStatus1
+from ._SupplementaryData1 import SupplementaryData1
+from ._InvoiceTaxStatusReportHeader1 import InvoiceTaxStatusReportHeader1
 
 class InvoiceTaxReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_SplmtryData", "_StsRptHdr"]
-	@property
-	def TxSts(self):
-		return self._TxSts
-
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
-
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
-
+	__slots__ = ["_StsRptHdr", "_TxSts", "_SplmtryData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -45,9 +32,22 @@ class InvoiceTaxReportStatusAdviceV01(base_types._BaseFieldType):
 		del self._StsRptHdr
 		self._StsRptHdr = None
 
+	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSts', type=InvoiceTaxReportTransactionStatus1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsRptHdr', type=InvoiceTaxStatusReportHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=InvoiceTaxReportTransactionStatus1, min=0, max=None, mutex_group=None, array=True),
 	))
 

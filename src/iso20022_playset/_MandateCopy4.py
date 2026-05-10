@@ -6,7 +6,7 @@ from ._OriginalMessageInformation1 import OriginalMessageInformation1
 
 class MandateCopy4(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtSts", "_OrgnlMndt", "_OrgnlMsgInf", "_SplmtryData"]
+	__slots__ = ["_OrgnlMndt", "_MndtSts", "_SplmtryData", "_OrgnlMsgInf"]
 	@property
 	def MndtSts(self):
 		return self._MndtSts

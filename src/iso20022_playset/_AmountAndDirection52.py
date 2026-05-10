@@ -4,7 +4,7 @@ from ._CreditDebitCode import CreditDebitCode
 
 class AmountAndDirection52(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CdtDbtInd"]
+	__slots__ = ["_CdtDbtInd", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

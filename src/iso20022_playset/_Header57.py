@@ -1,28 +1,15 @@
 from . import base_types
-from ._Traceability8 import Traceability8
-from ._Number import Number
-from ._MessageFunction9Code import MessageFunction9Code
-from ._GenericIdentification177 import GenericIdentification177
-from ._GenericIdentification176 import GenericIdentification176
 from ._Max6Text import Max6Text
+from ._MessageFunction9Code import MessageFunction9Code
+from ._Traceability8 import Traceability8
 from ._ISODateTime import ISODateTime
+from ._GenericIdentification177 import GenericIdentification177
+from ._Number import Number
+from ._GenericIdentification176 import GenericIdentification176
 
 class Header57(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgId", "_CreDtTm", "_InitgPty", "_Tracblt", "_RcptPty", "_MsgFctn", "_PrtcolVrsn"]
-	@property
-	def XchgId(self):
-		return self._XchgId
-
-	@XchgId.setter
-	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
-
-	@XchgId.deleter
-	def XchgId(self):
-		del self._XchgId
-		self._XchgId = None
-
+	__slots__ = ["_InitgPty", "_MsgFctn", "_PrtcolVrsn", "_XchgId", "_Tracblt", "_RcptPty", "_CreDtTm"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -50,32 +37,6 @@ class Header57(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
-	def Tracblt(self):
-		return self._Tracblt
-
-	@Tracblt.setter
-	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != base_types.auto else self.make_default("Tracblt")
-
-	@Tracblt.deleter
-	def Tracblt(self):
-		del self._Tracblt
-		self._Tracblt = None
-
-	@property
-	def RcptPty(self):
-		return self._RcptPty
-
-	@RcptPty.setter
-	def RcptPty(self, value):
-		self._RcptPty = value if type(value) != base_types.auto else self.make_default("RcptPty")
-
-	@RcptPty.deleter
-	def RcptPty(self):
-		del self._RcptPty
-		self._RcptPty = None
-
-	@property
 	def MsgFctn(self):
 		return self._MsgFctn
 
@@ -101,13 +62,52 @@ class Header57(base_types._BaseFieldType):
 		del self._PrtcolVrsn
 		self._PrtcolVrsn = None
 
+	@property
+	def RcptPty(self):
+		return self._RcptPty
+
+	@RcptPty.setter
+	def RcptPty(self, value):
+		self._RcptPty = value if type(value) != base_types.auto else self.make_default("RcptPty")
+
+	@RcptPty.deleter
+	def RcptPty(self):
+		del self._RcptPty
+		self._RcptPty = None
+
+	@property
+	def Tracblt(self):
+		return self._Tracblt
+
+	@Tracblt.setter
+	def Tracblt(self, value):
+		self._Tracblt = value if type(value) != base_types.auto else self.make_default("Tracblt")
+
+	@Tracblt.deleter
+	def Tracblt(self):
+		del self._Tracblt
+		self._Tracblt = None
+
+	@property
+	def XchgId(self):
+		return self._XchgId
+
+	@XchgId.setter
+	def XchgId(self, value):
+		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+
+	@XchgId.deleter
+	def XchgId(self):
+		del self._XchgId
+		self._XchgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgId', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RcptPty', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgFctn', type=MessageFunction9Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptPty', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XchgId', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

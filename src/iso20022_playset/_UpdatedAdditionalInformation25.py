@@ -4,7 +4,7 @@ from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class UpdatedAdditionalInformation25(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Lang"]
+	__slots__ = ["_Lang", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

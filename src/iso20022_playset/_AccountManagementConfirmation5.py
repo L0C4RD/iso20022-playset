@@ -1,50 +1,24 @@
 from . import base_types
 from ._ConfirmationType1Choice import ConfirmationType1Choice
-from ._Max35Text import Max35Text
 from ._Account23 import Account23
 from ._AdditionalReference13 import AdditionalReference13
+from ._Max35Text import Max35Text
 
 class AccountManagementConfirmation5(base_types._BaseFieldType):
 
-	__slots__ = ["_ExstgAcctId", "_CtrPtyRef", "_ConfTp", "_ClntRef", "_AcctApplId"]
+	__slots__ = ["_ExstgAcctId", "_AcctApplId", "_CtrPtyRef", "_ClntRef", "_ConfTp"]
 	@property
-	def ExstgAcctId(self):
-		return self._ExstgAcctId
+	def AcctApplId(self):
+		return self._AcctApplId
 
-	@ExstgAcctId.setter
-	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != base_types.auto else self.make_default("ExstgAcctId")
+	@AcctApplId.setter
+	def AcctApplId(self, value):
+		self._AcctApplId = value if type(value) != base_types.auto else self.make_default("AcctApplId")
 
-	@ExstgAcctId.deleter
-	def ExstgAcctId(self):
-		del self._ExstgAcctId
-		self._ExstgAcctId = None
-
-	@property
-	def CtrPtyRef(self):
-		return self._CtrPtyRef
-
-	@CtrPtyRef.setter
-	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
-
-	@CtrPtyRef.deleter
-	def CtrPtyRef(self):
-		del self._CtrPtyRef
-		self._CtrPtyRef = None
-
-	@property
-	def ConfTp(self):
-		return self._ConfTp
-
-	@ConfTp.setter
-	def ConfTp(self, value):
-		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
-
-	@ConfTp.deleter
-	def ConfTp(self):
-		del self._ConfTp
-		self._ConfTp = None
+	@AcctApplId.deleter
+	def AcctApplId(self):
+		del self._AcctApplId
+		self._AcctApplId = None
 
 	@property
 	def ClntRef(self):
@@ -60,23 +34,49 @@ class AccountManagementConfirmation5(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
-	def AcctApplId(self):
-		return self._AcctApplId
+	def ConfTp(self):
+		return self._ConfTp
 
-	@AcctApplId.setter
-	def AcctApplId(self, value):
-		self._AcctApplId = value if type(value) != base_types.auto else self.make_default("AcctApplId")
+	@ConfTp.setter
+	def ConfTp(self, value):
+		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
 
-	@AcctApplId.deleter
-	def AcctApplId(self):
-		del self._AcctApplId
-		self._AcctApplId = None
+	@ConfTp.deleter
+	def ConfTp(self):
+		del self._ConfTp
+		self._ConfTp = None
+
+	@property
+	def CtrPtyRef(self):
+		return self._CtrPtyRef
+
+	@CtrPtyRef.setter
+	def CtrPtyRef(self, value):
+		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
+
+	@CtrPtyRef.deleter
+	def CtrPtyRef(self):
+		del self._CtrPtyRef
+		self._CtrPtyRef = None
+
+	@property
+	def ExstgAcctId(self):
+		return self._ExstgAcctId
+
+	@ExstgAcctId.setter
+	def ExstgAcctId(self, value):
+		self._ExstgAcctId = value if type(value) != base_types.auto else self.make_default("ExstgAcctId")
+
+	@ExstgAcctId.deleter
+	def ExstgAcctId(self):
+		del self._ExstgAcctId
+		self._ExstgAcctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfTp', type=ConfirmationType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfTp', type=ConfirmationType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 	))
 

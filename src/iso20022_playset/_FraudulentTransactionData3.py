@@ -1,27 +1,40 @@
 from . import base_types
-from ._DisputeReference1 import DisputeReference1
-from ._PartyType26Code import PartyType26Code
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max100KBinary import Max100KBinary
-from ._Max35Text import Max35Text
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
 from ._Exact1NumericText import Exact1NumericText
+from ._DisputeReference1 import DisputeReference1
+from ._Max35Text import Max35Text
+from ._Max100KBinary import Max100KBinary
+from ._PartyType26Code import PartyType26Code
 
 class FraudulentTransactionData3(base_types._BaseFieldType):
 
-	__slots__ = ["_PresntmntCycl", "_AuthstnNtty", "_DsptCond", "_DsptRef", "_FrdlntMsg", "_OthrAuthstnNtty", "_Authstn", "_AltrnMsgRsn", "_MsgRsn"]
+	__slots__ = ["_OthrAuthstnNtty", "_FrdlntMsg", "_MsgRsn", "_DsptRef", "_PresntmntCycl", "_Authstn", "_AltrnMsgRsn", "_DsptCond", "_AuthstnNtty"]
 	@property
-	def PresntmntCycl(self):
-		return self._PresntmntCycl
+	def AltrnMsgRsn(self):
+		return self._AltrnMsgRsn
 
-	@PresntmntCycl.setter
-	def PresntmntCycl(self, value):
-		self._PresntmntCycl = value if type(value) != base_types.auto else self.make_default("PresntmntCycl")
+	@AltrnMsgRsn.setter
+	def AltrnMsgRsn(self, value):
+		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
 
-	@PresntmntCycl.deleter
-	def PresntmntCycl(self):
-		del self._PresntmntCycl
-		self._PresntmntCycl = None
+	@AltrnMsgRsn.deleter
+	def AltrnMsgRsn(self):
+		del self._AltrnMsgRsn
+		self._AltrnMsgRsn = None
+
+	@property
+	def Authstn(self):
+		return self._Authstn
+
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
+
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
 
 	@property
 	def AuthstnNtty(self):
@@ -76,6 +89,19 @@ class FraudulentTransactionData3(base_types._BaseFieldType):
 		self._FrdlntMsg = None
 
 	@property
+	def MsgRsn(self):
+		return self._MsgRsn
+
+	@MsgRsn.setter
+	def MsgRsn(self, value):
+		self._MsgRsn = value if type(value) != base_types.auto else self.make_default("MsgRsn")
+
+	@MsgRsn.deleter
+	def MsgRsn(self):
+		del self._MsgRsn
+		self._MsgRsn = None
+
+	@property
 	def OthrAuthstnNtty(self):
 		return self._OthrAuthstnNtty
 
@@ -89,53 +115,27 @@ class FraudulentTransactionData3(base_types._BaseFieldType):
 		self._OthrAuthstnNtty = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def PresntmntCycl(self):
+		return self._PresntmntCycl
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
+	@PresntmntCycl.setter
+	def PresntmntCycl(self, value):
+		self._PresntmntCycl = value if type(value) != base_types.auto else self.make_default("PresntmntCycl")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
-
-	@property
-	def AltrnMsgRsn(self):
-		return self._AltrnMsgRsn
-
-	@AltrnMsgRsn.setter
-	def AltrnMsgRsn(self, value):
-		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
-
-	@AltrnMsgRsn.deleter
-	def AltrnMsgRsn(self):
-		del self._AltrnMsgRsn
-		self._AltrnMsgRsn = None
-
-	@property
-	def MsgRsn(self):
-		return self._MsgRsn
-
-	@MsgRsn.setter
-	def MsgRsn(self, value):
-		self._MsgRsn = value if type(value) != base_types.auto else self.make_default("MsgRsn")
-
-	@MsgRsn.deleter
-	def MsgRsn(self):
-		del self._MsgRsn
-		self._MsgRsn = None
+	@PresntmntCycl.deleter
+	def PresntmntCycl(self):
+		del self._PresntmntCycl
+		self._PresntmntCycl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PresntmntCycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnMsgRsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Authstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthstnNtty', type=PartyType26Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsptCond', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsptRef', type=DisputeReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FrdlntMsg', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrAuthstnNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnMsgRsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrAuthstnNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PresntmntCycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

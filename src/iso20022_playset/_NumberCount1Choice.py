@@ -1,10 +1,10 @@
 from . import base_types
-from ._TotalNumber1 import TotalNumber1
 from ._Exact3NumericText import Exact3NumericText
+from ._TotalNumber1 import TotalNumber1
 
 class NumberCount1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CurInstrNb", "_TtlNb"]
+	__slots__ = ["_TtlNb", "_CurInstrNb"]
 	@property
 	def CurInstrNb(self):
 		return self._CurInstrNb

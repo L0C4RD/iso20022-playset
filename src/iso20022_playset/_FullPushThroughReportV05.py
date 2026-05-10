@@ -1,30 +1,30 @@
 from . import base_types
+from ._TransactionStatus4 import TransactionStatus4
+from ._DocumentIdentification3 import DocumentIdentification3
 from ._ContactIdentification1 import ContactIdentification1
 from ._ContactIdentification3 import ContactIdentification3
-from ._MessageIdentification1 import MessageIdentification1
-from ._PendingActivity2 import PendingActivity2
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._TransactionStatus4 import TransactionStatus4
-from ._DocumentIdentification5 import DocumentIdentification5
 from ._ReportType1 import ReportType1
+from ._DocumentIdentification5 import DocumentIdentification5
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._PendingActivity2 import PendingActivity2
+from ._MessageIdentification1 import MessageIdentification1
 from ._Baseline5 import Baseline5
 
 class FullPushThroughReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_RptPurp", "_BuyrCtctPrsn", "_SellrBkCtctPrsn", "_UsrTxRef", "_OthrBkCtctPrsn", "_PushdThrghBaseln", "_BuyrBkCtctPrsn", "_TxId", "_EstblishdBaselnId", "_RptId", "_ReqForActn", "_TxSts", "_SellrCtctPrsn"]
+	__slots__ = ["_TxSts", "_PushdThrghBaseln", "_BuyrBkCtctPrsn", "_TxId", "_RptId", "_ReqForActn", "_SellrBkCtctPrsn", "_BuyrCtctPrsn", "_EstblishdBaselnId", "_UsrTxRef", "_SellrCtctPrsn", "_OthrBkCtctPrsn", "_RptPurp"]
 	@property
-	def RptPurp(self):
-		return self._RptPurp
+	def BuyrBkCtctPrsn(self):
+		return self._BuyrBkCtctPrsn
 
-	@RptPurp.setter
-	def RptPurp(self, value):
-		self._RptPurp = value if type(value) != base_types.auto else self.make_default("RptPurp")
+	@BuyrBkCtctPrsn.setter
+	def BuyrBkCtctPrsn(self, value):
+		self._BuyrBkCtctPrsn = value if type(value) != base_types.auto else self.make_default("BuyrBkCtctPrsn")
 
-	@RptPurp.deleter
-	def RptPurp(self):
-		del self._RptPurp
-		self._RptPurp = None
+	@BuyrBkCtctPrsn.deleter
+	def BuyrBkCtctPrsn(self):
+		del self._BuyrBkCtctPrsn
+		self._BuyrBkCtctPrsn = None
 
 	@property
 	def BuyrCtctPrsn(self):
@@ -40,30 +40,17 @@ class FullPushThroughReportV05(base_types._BaseFieldType):
 		self._BuyrCtctPrsn = None
 
 	@property
-	def SellrBkCtctPrsn(self):
-		return self._SellrBkCtctPrsn
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
 
-	@SellrBkCtctPrsn.setter
-	def SellrBkCtctPrsn(self, value):
-		self._SellrBkCtctPrsn = value if type(value) != base_types.auto else self.make_default("SellrBkCtctPrsn")
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
 
-	@SellrBkCtctPrsn.deleter
-	def SellrBkCtctPrsn(self):
-		del self._SellrBkCtctPrsn
-		self._SellrBkCtctPrsn = None
-
-	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
 
 	@property
 	def OthrBkCtctPrsn(self):
@@ -92,43 +79,17 @@ class FullPushThroughReportV05(base_types._BaseFieldType):
 		self._PushdThrghBaseln = None
 
 	@property
-	def BuyrBkCtctPrsn(self):
-		return self._BuyrBkCtctPrsn
+	def ReqForActn(self):
+		return self._ReqForActn
 
-	@BuyrBkCtctPrsn.setter
-	def BuyrBkCtctPrsn(self, value):
-		self._BuyrBkCtctPrsn = value if type(value) != base_types.auto else self.make_default("BuyrBkCtctPrsn")
+	@ReqForActn.setter
+	def ReqForActn(self, value):
+		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
 
-	@BuyrBkCtctPrsn.deleter
-	def BuyrBkCtctPrsn(self):
-		del self._BuyrBkCtctPrsn
-		self._BuyrBkCtctPrsn = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
-
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
-
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+	@ReqForActn.deleter
+	def ReqForActn(self):
+		del self._ReqForActn
+		self._ReqForActn = None
 
 	@property
 	def RptId(self):
@@ -144,17 +105,56 @@ class FullPushThroughReportV05(base_types._BaseFieldType):
 		self._RptId = None
 
 	@property
-	def ReqForActn(self):
-		return self._ReqForActn
+	def RptPurp(self):
+		return self._RptPurp
 
-	@ReqForActn.setter
-	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
+	@RptPurp.setter
+	def RptPurp(self, value):
+		self._RptPurp = value if type(value) != base_types.auto else self.make_default("RptPurp")
 
-	@ReqForActn.deleter
-	def ReqForActn(self):
-		del self._ReqForActn
-		self._ReqForActn = None
+	@RptPurp.deleter
+	def RptPurp(self):
+		del self._RptPurp
+		self._RptPurp = None
+
+	@property
+	def SellrBkCtctPrsn(self):
+		return self._SellrBkCtctPrsn
+
+	@SellrBkCtctPrsn.setter
+	def SellrBkCtctPrsn(self, value):
+		self._SellrBkCtctPrsn = value if type(value) != base_types.auto else self.make_default("SellrBkCtctPrsn")
+
+	@SellrBkCtctPrsn.deleter
+	def SellrBkCtctPrsn(self):
+		del self._SellrBkCtctPrsn
+		self._SellrBkCtctPrsn = None
+
+	@property
+	def SellrCtctPrsn(self):
+		return self._SellrCtctPrsn
+
+	@SellrCtctPrsn.setter
+	def SellrCtctPrsn(self, value):
+		self._SellrCtctPrsn = value if type(value) != base_types.auto else self.make_default("SellrCtctPrsn")
+
+	@SellrCtctPrsn.deleter
+	def SellrCtctPrsn(self):
+		del self._SellrCtctPrsn
+		self._SellrCtctPrsn = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def TxSts(self):
@@ -170,31 +170,31 @@ class FullPushThroughReportV05(base_types._BaseFieldType):
 		self._TxSts = None
 
 	@property
-	def SellrCtctPrsn(self):
-		return self._SellrCtctPrsn
+	def UsrTxRef(self):
+		return self._UsrTxRef
 
-	@SellrCtctPrsn.setter
-	def SellrCtctPrsn(self, value):
-		self._SellrCtctPrsn = value if type(value) != base_types.auto else self.make_default("SellrCtctPrsn")
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
 
-	@SellrCtctPrsn.deleter
-	def SellrCtctPrsn(self):
-		del self._SellrCtctPrsn
-		self._SellrCtctPrsn = None
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptPurp', type=ReportType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBkCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BuyrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SellrBkCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrBkCtctPrsn', type=ContactIdentification3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PushdThrghBaseln', type=Baseline5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBkCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptPurp', type=ReportType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrBkCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SellrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

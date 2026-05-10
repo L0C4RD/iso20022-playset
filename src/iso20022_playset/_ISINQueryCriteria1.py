@@ -4,7 +4,7 @@ from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class ISINQueryCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_Idr", "_NotRptd"]
+	__slots__ = ["_NotRptd", "_Idr"]
 	@property
 	def Idr(self):
 		return self._Idr

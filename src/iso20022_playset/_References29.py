@@ -1,35 +1,22 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._UTIIdentifier import UTIIdentifier
+from ._Max35Text import Max35Text
 
 class References29(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyMktInfrstrctrTxId", "_PoolId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_CmonId", "_PrcrTxId", "_UnqTxIdr", "_MktInfrstrctrTxId", "_TradId"]
+	__slots__ = ["_PrcrTxId", "_MktInfrstrctrTxId", "_TradId", "_CtrPtyMktInfrstrctrTxId", "_CmonId", "_UnqTxIdr", "_AcctSvcrTxId", "_AcctOwnrTxId", "_PoolId"]
 	@property
-	def CtrPtyMktInfrstrctrTxId(self):
-		return self._CtrPtyMktInfrstrctrTxId
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
 
-	@CtrPtyMktInfrstrctrTxId.setter
-	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
 
-	@CtrPtyMktInfrstrctrTxId.deleter
-	def CtrPtyMktInfrstrctrTxId(self):
-		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
-
-	@property
-	def PoolId(self):
-		return self._PoolId
-
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
-
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -45,19 +32,6 @@ class References29(base_types._BaseFieldType):
 		self._AcctSvcrTxId = None
 
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
-
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
-
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
-
-	@property
 	def CmonId(self):
 		return self._CmonId
 
@@ -71,30 +45,17 @@ class References29(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
+	def CtrPtyMktInfrstrctrTxId(self):
+		return self._CtrPtyMktInfrstrctrTxId
 
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+	@CtrPtyMktInfrstrctrTxId.setter
+	def CtrPtyMktInfrstrctrTxId(self, value):
+		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
 
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
-	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
-
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
-
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
+	@CtrPtyMktInfrstrctrTxId.deleter
+	def CtrPtyMktInfrstrctrTxId(self):
+		del self._CtrPtyMktInfrstrctrTxId
+		self._CtrPtyMktInfrstrctrTxId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -110,6 +71,32 @@ class References29(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
+	def PoolId(self):
+		return self._PoolId
+
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
+
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
+	@property
 	def TradId(self):
 		return self._TradId
 
@@ -122,15 +109,28 @@ class References29(base_types._BaseFieldType):
 		del self._TradId
 		self._TradId = None
 
+	@property
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
+
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

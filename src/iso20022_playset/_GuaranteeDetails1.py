@@ -1,64 +1,38 @@
 from . import base_types
+from ._xs:positiveInteger import xs:positiveInteger
 from ._xs:IDREF import xs:IDREF
+from ._Max2000Text import Max2000Text
 from ._PercentageAndPeriod1 import PercentageAndPeriod1
 from ._AmountAndPeriod1 import AmountAndPeriod1
-from ._Max2000Text import Max2000Text
-from ._xs:positiveInteger import xs:positiveInteger
 
 class GuaranteeDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Xcss", "_Pos", "_Issr", "_GrntedAmt", "_CvrdPctg", "_Desc", "_AssoctdDoc", "_AddtlInf"]
+	__slots__ = ["_Issr", "_AddtlInf", "_Desc", "_GrntedAmt", "_Pos", "_CvrdPctg", "_Xcss", "_AssoctdDoc"]
 	@property
-	def Xcss(self):
-		return self._Xcss
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Xcss.setter
-	def Xcss(self, value):
-		self._Xcss = value if type(value) != base_types.auto else self.make_default("Xcss")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@Xcss.deleter
-	def Xcss(self):
-		del self._Xcss
-		self._Xcss = None
-
-	@property
-	def Pos(self):
-		return self._Pos
-
-	@Pos.setter
-	def Pos(self, value):
-		self._Pos = value if type(value) != base_types.auto else self.make_default("Pos")
-
-	@Pos.deleter
-	def Pos(self):
-		del self._Pos
-		self._Pos = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def AssoctdDoc(self):
+		return self._AssoctdDoc
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+	@AssoctdDoc.setter
+	def AssoctdDoc(self, value):
+		self._AssoctdDoc = value if type(value) != base_types.auto else self.make_default("AssoctdDoc")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
-	def GrntedAmt(self):
-		return self._GrntedAmt
-
-	@GrntedAmt.setter
-	def GrntedAmt(self, value):
-		self._GrntedAmt = value if type(value) != base_types.auto else self.make_default("GrntedAmt")
-
-	@GrntedAmt.deleter
-	def GrntedAmt(self):
-		del self._GrntedAmt
-		self._GrntedAmt = None
+	@AssoctdDoc.deleter
+	def AssoctdDoc(self):
+		del self._AssoctdDoc
+		self._AssoctdDoc = None
 
 	@property
 	def CvrdPctg(self):
@@ -87,39 +61,65 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def AssoctdDoc(self):
-		return self._AssoctdDoc
+	def GrntedAmt(self):
+		return self._GrntedAmt
 
-	@AssoctdDoc.setter
-	def AssoctdDoc(self, value):
-		self._AssoctdDoc = value if type(value) != base_types.auto else self.make_default("AssoctdDoc")
+	@GrntedAmt.setter
+	def GrntedAmt(self, value):
+		self._GrntedAmt = value if type(value) != base_types.auto else self.make_default("GrntedAmt")
 
-	@AssoctdDoc.deleter
-	def AssoctdDoc(self):
-		del self._AssoctdDoc
-		self._AssoctdDoc = None
+	@GrntedAmt.deleter
+	def GrntedAmt(self):
+		del self._GrntedAmt
+		self._GrntedAmt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Issr(self):
+		return self._Issr
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def Pos(self):
+		return self._Pos
+
+	@Pos.setter
+	def Pos(self, value):
+		self._Pos = value if type(value) != base_types.auto else self.make_default("Pos")
+
+	@Pos.deleter
+	def Pos(self):
+		del self._Pos
+		self._Pos = None
+
+	@property
+	def Xcss(self):
+		return self._Xcss
+
+	@Xcss.setter
+	def Xcss(self, value):
+		self._Xcss = value if type(value) != base_types.auto else self.make_default("Xcss")
+
+	@Xcss.deleter
+	def Xcss(self):
+		del self._Xcss
+		self._Xcss = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xcss', type=AmountAndPeriod1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pos', type=XS_positiveInteger, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrntedAmt', type=AmountAndPeriod1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CvrdPctg', type=PercentageAndPeriod1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrntedAmt', type=AmountAndPeriod1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Issr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pos', type=XS_positiveInteger, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xcss', type=AmountAndPeriod1, min=0, max=None, mutex_group=None, array=True),
 	))
 

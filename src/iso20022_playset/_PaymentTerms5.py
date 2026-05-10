@@ -1,10 +1,10 @@
 from . import base_types
-from ._PaymentCodeOrOther2Choice import PaymentCodeOrOther2Choice
 from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
+from ._PaymentCodeOrOther2Choice import PaymentCodeOrOther2Choice
 
 class PaymentTerms5(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtOrPctg", "_PmtTerms"]
+	__slots__ = ["_PmtTerms", "_AmtOrPctg"]
 	@property
 	def AmtOrPctg(self):
 		return self._AmtOrPctg

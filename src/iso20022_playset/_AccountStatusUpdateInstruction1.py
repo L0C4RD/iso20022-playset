@@ -6,19 +6,6 @@ class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 
 	__slots__ = ["_UpdInstrRsn", "_UpdInstr"]
 	@property
-	def UpdInstrRsn(self):
-		return self._UpdInstrRsn
-
-	@UpdInstrRsn.setter
-	def UpdInstrRsn(self, value):
-		self._UpdInstrRsn = value if type(value) != base_types.auto else self.make_default("UpdInstrRsn")
-
-	@UpdInstrRsn.deleter
-	def UpdInstrRsn(self):
-		del self._UpdInstrRsn
-		self._UpdInstrRsn = None
-
-	@property
 	def UpdInstr(self):
 		return self._UpdInstr
 
@@ -31,8 +18,21 @@ class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 		del self._UpdInstr
 		self._UpdInstr = None
 
+	@property
+	def UpdInstrRsn(self):
+		return self._UpdInstrRsn
+
+	@UpdInstrRsn.setter
+	def UpdInstrRsn(self, value):
+		self._UpdInstrRsn = value if type(value) != base_types.auto else self.make_default("UpdInstrRsn")
+
+	@UpdInstrRsn.deleter
+	def UpdInstrRsn(self):
+		del self._UpdInstrRsn
+		self._UpdInstrRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UpdInstrRsn', type=AccountStatusUpdateInstructionReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdInstr', type=AccountStatusUpdateInstruction1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdInstrRsn', type=AccountStatusUpdateInstructionReason1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

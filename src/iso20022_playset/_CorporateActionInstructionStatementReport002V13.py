@@ -1,12 +1,25 @@
 from . import base_types
 from ._AccountIdentification74 import AccountIdentification74
 from ._SupplementaryData1 import SupplementaryData1
-from ._Pagination1 import Pagination1
 from ._Statement75 import Statement75
+from ._Pagination1 import Pagination1
 
 class CorporateActionInstructionStatementReport002V13(base_types._BaseFieldType):
 
-	__slots__ = ["_Pgntn", "_SplmtryData", "_StmtGnlDtls", "_AcctAndStmtDtls"]
+	__slots__ = ["_AcctAndStmtDtls", "_SplmtryData", "_Pgntn", "_StmtGnlDtls"]
+	@property
+	def AcctAndStmtDtls(self):
+		return self._AcctAndStmtDtls
+
+	@AcctAndStmtDtls.setter
+	def AcctAndStmtDtls(self, value):
+		self._AcctAndStmtDtls = value if type(value) != base_types.auto else self.make_default("AcctAndStmtDtls")
+
+	@AcctAndStmtDtls.deleter
+	def AcctAndStmtDtls(self):
+		del self._AcctAndStmtDtls
+		self._AcctAndStmtDtls = None
+
 	@property
 	def Pgntn(self):
 		return self._Pgntn
@@ -46,23 +59,10 @@ class CorporateActionInstructionStatementReport002V13(base_types._BaseFieldType)
 		del self._StmtGnlDtls
 		self._StmtGnlDtls = None
 
-	@property
-	def AcctAndStmtDtls(self):
-		return self._AcctAndStmtDtls
-
-	@AcctAndStmtDtls.setter
-	def AcctAndStmtDtls(self, value):
-		self._AcctAndStmtDtls = value if type(value) != base_types.auto else self.make_default("AcctAndStmtDtls")
-
-	@AcctAndStmtDtls.deleter
-	def AcctAndStmtDtls(self):
-		del self._AcctAndStmtDtls
-		self._AcctAndStmtDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctAndStmtDtls', type=AccountIdentification74, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement75, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctAndStmtDtls', type=AccountIdentification74, min=1, max=None, mutex_group=None, array=True),
 	))
 

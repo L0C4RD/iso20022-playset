@@ -1,12 +1,12 @@
 from . import base_types
-from ._OriginalGroupInformation32 import OriginalGroupInformation32
 from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader111 import GroupHeader111
+from ._OriginalGroupInformation32 import OriginalGroupInformation32
 from ._OriginalPaymentInstruction47 import OriginalPaymentInstruction47
 
 class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_OrgnlPmtInfAndSts", "_OrgnlGrpInfAndSts"]
+	__slots__ = ["_SplmtryData", "_OrgnlPmtInfAndSts", "_OrgnlGrpInfAndSts", "_GrpHdr"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -21,17 +21,17 @@ class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType)
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrgnlGrpInfAndSts(self):
+		return self._OrgnlGrpInfAndSts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@OrgnlGrpInfAndSts.setter
+	def OrgnlGrpInfAndSts(self, value):
+		self._OrgnlGrpInfAndSts = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndSts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrgnlGrpInfAndSts.deleter
+	def OrgnlGrpInfAndSts(self):
+		del self._OrgnlGrpInfAndSts
+		self._OrgnlGrpInfAndSts = None
 
 	@property
 	def OrgnlPmtInfAndSts(self):
@@ -47,22 +47,22 @@ class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType)
 		self._OrgnlPmtInfAndSts = None
 
 	@property
-	def OrgnlGrpInfAndSts(self):
-		return self._OrgnlGrpInfAndSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@OrgnlGrpInfAndSts.setter
-	def OrgnlGrpInfAndSts(self, value):
-		self._OrgnlGrpInfAndSts = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@OrgnlGrpInfAndSts.deleter
-	def OrgnlGrpInfAndSts(self):
-		del self._OrgnlGrpInfAndSts
-		self._OrgnlGrpInfAndSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader111, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction47, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupInformation32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction47, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

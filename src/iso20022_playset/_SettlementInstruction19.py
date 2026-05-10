@@ -1,11 +1,11 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
 from ._ISODate import ISODate
+from ._CashAccount40 import CashAccount40
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class SettlementInstruction19(base_types._BaseFieldType):
 
-	__slots__ = ["_Cdtr", "_CdtrAgtAcct", "_CdtrAgt", "_ReqdSttlmDt", "_CdtrAcct"]
+	__slots__ = ["_CdtrAgt", "_ReqdSttlmDt", "_CdtrAgtAcct", "_Cdtr", "_CdtrAcct"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr
@@ -20,17 +20,17 @@ class SettlementInstruction19(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def CdtrAgtAcct(self):
-		return self._CdtrAgtAcct
+	def CdtrAcct(self):
+		return self._CdtrAcct
 
-	@CdtrAgtAcct.setter
-	def CdtrAgtAcct(self, value):
-		self._CdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("CdtrAgtAcct")
+	@CdtrAcct.setter
+	def CdtrAcct(self, value):
+		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
 
-	@CdtrAgtAcct.deleter
-	def CdtrAgtAcct(self):
-		del self._CdtrAgtAcct
-		self._CdtrAgtAcct = None
+	@CdtrAcct.deleter
+	def CdtrAcct(self):
+		del self._CdtrAcct
+		self._CdtrAcct = None
 
 	@property
 	def CdtrAgt(self):
@@ -46,6 +46,19 @@ class SettlementInstruction19(base_types._BaseFieldType):
 		self._CdtrAgt = None
 
 	@property
+	def CdtrAgtAcct(self):
+		return self._CdtrAgtAcct
+
+	@CdtrAgtAcct.setter
+	def CdtrAgtAcct(self, value):
+		self._CdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("CdtrAgtAcct")
+
+	@CdtrAgtAcct.deleter
+	def CdtrAgtAcct(self):
+		del self._CdtrAgtAcct
+		self._CdtrAgtAcct = None
+
+	@property
 	def ReqdSttlmDt(self):
 		return self._ReqdSttlmDt
 
@@ -58,24 +71,11 @@ class SettlementInstruction19(base_types._BaseFieldType):
 		del self._ReqdSttlmDt
 		self._ReqdSttlmDt = None
 
-	@property
-	def CdtrAcct(self):
-		return self._CdtrAcct
-
-	@CdtrAcct.setter
-	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
-
-	@CdtrAcct.deleter
-	def CdtrAcct(self):
-		del self._CdtrAcct
-		self._CdtrAcct = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

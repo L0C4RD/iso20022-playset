@@ -1,30 +1,30 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max140Text import Max140Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._TransactionReferences7 import TransactionReferences7
 from ._InstructionForInstructedAgent1 import InstructionForInstructedAgent1
 from ._PartyIdentification272 import PartyIdentification272
 from ._Max35Text import Max35Text
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._Max140Text import Max140Text
+from ._CashAccount40 import CashAccount40
 
 class ChargesPerTypeRecord5(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsAcct", "_Amt", "_UndrlygTx", "_RcrdId", "_DbtrAcct", "_ChrgsAcctOwnr", "_InstrForInstdAgt", "_DbtrAgtAcct", "_ChrgsRqstr", "_CdtDbtInd", "_Dbtr", "_AddtlInf", "_DbtrAgt", "_ValDt"]
+	__slots__ = ["_UndrlygTx", "_ChrgsAcct", "_InstrForInstdAgt", "_DbtrAcct", "_Amt", "_CdtDbtInd", "_RcrdId", "_ChrgsRqstr", "_ValDt", "_DbtrAgt", "_AddtlInf", "_ChrgsAcctOwnr", "_DbtrAgtAcct", "_Dbtr"]
 	@property
-	def ChrgsAcct(self):
-		return self._ChrgsAcct
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@ChrgsAcct.setter
-	def ChrgsAcct(self, value):
-		self._ChrgsAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcct")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@ChrgsAcct.deleter
-	def ChrgsAcct(self):
-		del self._ChrgsAcct
-		self._ChrgsAcct = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Amt(self):
@@ -40,43 +40,30 @@ class ChargesPerTypeRecord5(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def UndrlygTx(self):
-		return self._UndrlygTx
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@UndrlygTx.setter
-	def UndrlygTx(self, value):
-		self._UndrlygTx = value if type(value) != base_types.auto else self.make_default("UndrlygTx")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
-	@UndrlygTx.deleter
-	def UndrlygTx(self):
-		del self._UndrlygTx
-		self._UndrlygTx = None
-
-	@property
-	def RcrdId(self):
-		return self._RcrdId
-
-	@RcrdId.setter
-	def RcrdId(self, value):
-		self._RcrdId = value if type(value) != base_types.auto else self.make_default("RcrdId")
-
-	@RcrdId.deleter
-	def RcrdId(self):
-		del self._RcrdId
-		self._RcrdId = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
+	def ChrgsAcct(self):
+		return self._ChrgsAcct
 
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+	@ChrgsAcct.setter
+	def ChrgsAcct(self, value):
+		self._ChrgsAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcct")
 
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
+	@ChrgsAcct.deleter
+	def ChrgsAcct(self):
+		del self._ChrgsAcct
+		self._ChrgsAcct = None
 
 	@property
 	def ChrgsAcctOwnr(self):
@@ -92,32 +79,6 @@ class ChargesPerTypeRecord5(base_types._BaseFieldType):
 		self._ChrgsAcctOwnr = None
 
 	@property
-	def InstrForInstdAgt(self):
-		return self._InstrForInstdAgt
-
-	@InstrForInstdAgt.setter
-	def InstrForInstdAgt(self, value):
-		self._InstrForInstdAgt = value if type(value) != base_types.auto else self.make_default("InstrForInstdAgt")
-
-	@InstrForInstdAgt.deleter
-	def InstrForInstdAgt(self):
-		del self._InstrForInstdAgt
-		self._InstrForInstdAgt = None
-
-	@property
-	def DbtrAgtAcct(self):
-		return self._DbtrAgtAcct
-
-	@DbtrAgtAcct.setter
-	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("DbtrAgtAcct")
-
-	@DbtrAgtAcct.deleter
-	def DbtrAgtAcct(self):
-		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
-
-	@property
 	def ChrgsRqstr(self):
 		return self._ChrgsRqstr
 
@@ -129,19 +90,6 @@ class ChargesPerTypeRecord5(base_types._BaseFieldType):
 	def ChrgsRqstr(self):
 		del self._ChrgsRqstr
 		self._ChrgsRqstr = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
 
 	@property
 	def Dbtr(self):
@@ -157,17 +105,17 @@ class ChargesPerTypeRecord5(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def DbtrAcct(self):
+		return self._DbtrAcct
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	@property
 	def DbtrAgt(self):
@@ -183,6 +131,58 @@ class ChargesPerTypeRecord5(base_types._BaseFieldType):
 		self._DbtrAgt = None
 
 	@property
+	def DbtrAgtAcct(self):
+		return self._DbtrAgtAcct
+
+	@DbtrAgtAcct.setter
+	def DbtrAgtAcct(self, value):
+		self._DbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("DbtrAgtAcct")
+
+	@DbtrAgtAcct.deleter
+	def DbtrAgtAcct(self):
+		del self._DbtrAgtAcct
+		self._DbtrAgtAcct = None
+
+	@property
+	def InstrForInstdAgt(self):
+		return self._InstrForInstdAgt
+
+	@InstrForInstdAgt.setter
+	def InstrForInstdAgt(self, value):
+		self._InstrForInstdAgt = value if type(value) != base_types.auto else self.make_default("InstrForInstdAgt")
+
+	@InstrForInstdAgt.deleter
+	def InstrForInstdAgt(self):
+		del self._InstrForInstdAgt
+		self._InstrForInstdAgt = None
+
+	@property
+	def RcrdId(self):
+		return self._RcrdId
+
+	@RcrdId.setter
+	def RcrdId(self, value):
+		self._RcrdId = value if type(value) != base_types.auto else self.make_default("RcrdId")
+
+	@RcrdId.deleter
+	def RcrdId(self):
+		del self._RcrdId
+		self._RcrdId = None
+
+	@property
+	def UndrlygTx(self):
+		return self._UndrlygTx
+
+	@UndrlygTx.setter
+	def UndrlygTx(self, value):
+		self._UndrlygTx = value if type(value) != base_types.auto else self.make_default("UndrlygTx")
+
+	@UndrlygTx.deleter
+	def UndrlygTx(self):
+		del self._UndrlygTx
+		self._UndrlygTx = None
+
+	@property
 	def ValDt(self):
 		return self._ValDt
 
@@ -196,19 +196,19 @@ class ChargesPerTypeRecord5(base_types._BaseFieldType):
 		self._ValDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ChrgsAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygTx', type=TransactionReferences7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsAcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrForInstdAgt', type=InstructionForInstructedAgent1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsRqstr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsRqstr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrForInstdAgt', type=InstructionForInstructedAgent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygTx', type=TransactionReferences7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

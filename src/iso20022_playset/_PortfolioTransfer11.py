@@ -1,17 +1,30 @@
 from . import base_types
+from ._ISODate import ISODate
+from ._AllOtherCash1 import AllOtherCash1
 from ._FinancialInstrument102 import FinancialInstrument102
+from ._AdditionalInformation15 import AdditionalInformation15
 from ._CashAll1 import CashAll1
 from ._ResidualCash2 import ResidualCash2
-from ._AllOtherCash1 import AllOtherCash1
-from ._FundPortfolio8Choice import FundPortfolio8Choice
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
 from ._PaymentInstrument14 import PaymentInstrument14
-from ._AdditionalInformation15 import AdditionalInformation15
+from ._Max35Text import Max35Text
+from ._FundPortfolio8Choice import FundPortfolio8Choice
 
 class PortfolioTransfer11(base_types._BaseFieldType):
 
-	__slots__ = ["_AllOthrCsh", "_MstrRef", "_TrfConfId", "_CshAll", "_RsdlCsh", "_PmtDtls", "_FinInstrmAsstForTrf", "_AddtlInf", "_ReqdTrfDt", "_TrfId", "_Prtfl"]
+	__slots__ = ["_FinInstrmAsstForTrf", "_AllOthrCsh", "_CshAll", "_Prtfl", "_RsdlCsh", "_MstrRef", "_ReqdTrfDt", "_TrfId", "_AddtlInf", "_PmtDtls", "_TrfConfId"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def AllOthrCsh(self):
 		return self._AllOthrCsh
@@ -24,32 +37,6 @@ class PortfolioTransfer11(base_types._BaseFieldType):
 	def AllOthrCsh(self):
 		del self._AllOthrCsh
 		self._AllOthrCsh = None
-
-	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
-	@property
-	def TrfConfId(self):
-		return self._TrfConfId
-
-	@TrfConfId.setter
-	def TrfConfId(self, value):
-		self._TrfConfId = value if type(value) != base_types.auto else self.make_default("TrfConfId")
-
-	@TrfConfId.deleter
-	def TrfConfId(self):
-		del self._TrfConfId
-		self._TrfConfId = None
 
 	@property
 	def CshAll(self):
@@ -65,17 +52,30 @@ class PortfolioTransfer11(base_types._BaseFieldType):
 		self._CshAll = None
 
 	@property
-	def RsdlCsh(self):
-		return self._RsdlCsh
+	def FinInstrmAsstForTrf(self):
+		return self._FinInstrmAsstForTrf
 
-	@RsdlCsh.setter
-	def RsdlCsh(self, value):
-		self._RsdlCsh = value if type(value) != base_types.auto else self.make_default("RsdlCsh")
+	@FinInstrmAsstForTrf.setter
+	def FinInstrmAsstForTrf(self, value):
+		self._FinInstrmAsstForTrf = value if type(value) != base_types.auto else self.make_default("FinInstrmAsstForTrf")
 
-	@RsdlCsh.deleter
-	def RsdlCsh(self):
-		del self._RsdlCsh
-		self._RsdlCsh = None
+	@FinInstrmAsstForTrf.deleter
+	def FinInstrmAsstForTrf(self):
+		del self._FinInstrmAsstForTrf
+		self._FinInstrmAsstForTrf = None
+
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
 
 	@property
 	def PmtDtls(self):
@@ -91,30 +91,17 @@ class PortfolioTransfer11(base_types._BaseFieldType):
 		self._PmtDtls = None
 
 	@property
-	def FinInstrmAsstForTrf(self):
-		return self._FinInstrmAsstForTrf
+	def Prtfl(self):
+		return self._Prtfl
 
-	@FinInstrmAsstForTrf.setter
-	def FinInstrmAsstForTrf(self, value):
-		self._FinInstrmAsstForTrf = value if type(value) != base_types.auto else self.make_default("FinInstrmAsstForTrf")
+	@Prtfl.setter
+	def Prtfl(self, value):
+		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
 
-	@FinInstrmAsstForTrf.deleter
-	def FinInstrmAsstForTrf(self):
-		del self._FinInstrmAsstForTrf
-		self._FinInstrmAsstForTrf = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Prtfl.deleter
+	def Prtfl(self):
+		del self._Prtfl
+		self._Prtfl = None
 
 	@property
 	def ReqdTrfDt(self):
@@ -130,6 +117,32 @@ class PortfolioTransfer11(base_types._BaseFieldType):
 		self._ReqdTrfDt = None
 
 	@property
+	def RsdlCsh(self):
+		return self._RsdlCsh
+
+	@RsdlCsh.setter
+	def RsdlCsh(self, value):
+		self._RsdlCsh = value if type(value) != base_types.auto else self.make_default("RsdlCsh")
+
+	@RsdlCsh.deleter
+	def RsdlCsh(self):
+		del self._RsdlCsh
+		self._RsdlCsh = None
+
+	@property
+	def TrfConfId(self):
+		return self._TrfConfId
+
+	@TrfConfId.setter
+	def TrfConfId(self, value):
+		self._TrfConfId = value if type(value) != base_types.auto else self.make_default("TrfConfId")
+
+	@TrfConfId.deleter
+	def TrfConfId(self):
+		del self._TrfConfId
+		self._TrfConfId = None
+
+	@property
 	def TrfId(self):
 		return self._TrfId
 
@@ -142,30 +155,17 @@ class PortfolioTransfer11(base_types._BaseFieldType):
 		del self._TrfId
 		self._TrfId = None
 
-	@property
-	def Prtfl(self):
-		return self._Prtfl
-
-	@Prtfl.setter
-	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
-
-	@Prtfl.deleter
-	def Prtfl(self):
-		del self._Prtfl
-		self._Prtfl = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AllOthrCsh', type=AllOtherCash1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAll', type=CashAll1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RsdlCsh', type=ResidualCash2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtDtls', type=PaymentInstrument14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument102, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqdTrfDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllOthrCsh', type=AllOtherCash1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAll', type=CashAll1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument102, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDtls', type=PaymentInstrument14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtfl', type=FundPortfolio8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdTrfDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsdlCsh', type=ResidualCash2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrfConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

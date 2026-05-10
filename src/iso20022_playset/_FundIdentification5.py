@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification242Choice import PartyIdentification242Choice
 from ._PartyIdentification60 import PartyIdentification60
+from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._Max35Text import Max35Text
 
 class FundIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_FndId", "_AcctIdWthCtdn", "_CtdnId"]
-	@property
-	def FndId(self):
-		return self._FndId
-
-	@FndId.setter
-	def FndId(self, value):
-		self._FndId = value if type(value) != base_types.auto else self.make_default("FndId")
-
-	@FndId.deleter
-	def FndId(self):
-		del self._FndId
-		self._FndId = None
-
+	__slots__ = ["_CtdnId", "_FndId", "_AcctIdWthCtdn"]
 	@property
 	def AcctIdWthCtdn(self):
 		return self._AcctIdWthCtdn
@@ -45,9 +32,22 @@ class FundIdentification5(base_types._BaseFieldType):
 		del self._CtdnId
 		self._CtdnId = None
 
+	@property
+	def FndId(self):
+		return self._FndId
+
+	@FndId.setter
+	def FndId(self, value):
+		self._FndId = value if type(value) != base_types.auto else self.make_default("FndId")
+
+	@FndId.deleter
+	def FndId(self):
+		del self._FndId
+		self._FndId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FndId', type=PartyIdentification60, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctIdWthCtdn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtdnId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndId', type=PartyIdentification60, min=1, max=1, mutex_group=None, array=False),
 	))
 

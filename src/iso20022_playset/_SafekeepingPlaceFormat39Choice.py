@@ -1,25 +1,12 @@
 from . import base_types
-from ._GenericIdentification85 import GenericIdentification85
 from ._SafekeepingPlaceTypeAndText15 import SafekeepingPlaceTypeAndText15
-from ._SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
+from ._GenericIdentification85 import GenericIdentification85
 from ._CountryCode import CountryCode
+from ._SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
 
 class SafekeepingPlaceFormat39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ctry", "_Prtry", "_TpAndId"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_TpAndId", "_Ctry", "_Id", "_Prtry"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -32,6 +19,19 @@ class SafekeepingPlaceFormat39Choice(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Prtry(self):
@@ -60,8 +60,8 @@ class SafekeepingPlaceFormat39Choice(base_types._BaseFieldType):
 		self._TpAndId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText15, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText15, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification85, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))

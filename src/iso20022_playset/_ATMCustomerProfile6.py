@@ -1,36 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ATMCustomerProfile1Code import ATMCustomerProfile1Code
 from ._LanguageCode import LanguageCode
+from ._Max35Text import Max35Text
 
 class ATMCustomerProfile6(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrvlMd", "_PrflRef", "_PrefrdLang", "_CstmrId"]
+	__slots__ = ["_PrefrdLang", "_PrflRef", "_RtrvlMd", "_CstmrId"]
 	@property
-	def RtrvlMd(self):
-		return self._RtrvlMd
+	def CstmrId(self):
+		return self._CstmrId
 
-	@RtrvlMd.setter
-	def RtrvlMd(self, value):
-		self._RtrvlMd = value if type(value) != base_types.auto else self.make_default("RtrvlMd")
+	@CstmrId.setter
+	def CstmrId(self, value):
+		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
 
-	@RtrvlMd.deleter
-	def RtrvlMd(self):
-		del self._RtrvlMd
-		self._RtrvlMd = None
-
-	@property
-	def PrflRef(self):
-		return self._PrflRef
-
-	@PrflRef.setter
-	def PrflRef(self, value):
-		self._PrflRef = value if type(value) != base_types.auto else self.make_default("PrflRef")
-
-	@PrflRef.deleter
-	def PrflRef(self):
-		del self._PrflRef
-		self._PrflRef = None
+	@CstmrId.deleter
+	def CstmrId(self):
+		del self._CstmrId
+		self._CstmrId = None
 
 	@property
 	def PrefrdLang(self):
@@ -46,22 +33,35 @@ class ATMCustomerProfile6(base_types._BaseFieldType):
 		self._PrefrdLang = None
 
 	@property
-	def CstmrId(self):
-		return self._CstmrId
+	def PrflRef(self):
+		return self._PrflRef
 
-	@CstmrId.setter
-	def CstmrId(self, value):
-		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
+	@PrflRef.setter
+	def PrflRef(self, value):
+		self._PrflRef = value if type(value) != base_types.auto else self.make_default("PrflRef")
 
-	@CstmrId.deleter
-	def CstmrId(self):
-		del self._CstmrId
-		self._CstmrId = None
+	@PrflRef.deleter
+	def PrflRef(self):
+		del self._PrflRef
+		self._PrflRef = None
+
+	@property
+	def RtrvlMd(self):
+		return self._RtrvlMd
+
+	@RtrvlMd.setter
+	def RtrvlMd(self, value):
+		self._RtrvlMd = value if type(value) != base_types.auto else self.make_default("RtrvlMd")
+
+	@RtrvlMd.deleter
+	def RtrvlMd(self):
+		del self._RtrvlMd
+		self._RtrvlMd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrvlMd', type=ATMCustomerProfile1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrflRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrefrdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrefrdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrflRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlMd', type=ATMCustomerProfile1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

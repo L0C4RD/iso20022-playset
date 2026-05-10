@@ -4,7 +4,7 @@ from ._DecimalNumber import DecimalNumber
 
 class ShipmentDateRange2(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstShipmntDt", "_SubQtyVal", "_LatstShipmntDt"]
+	__slots__ = ["_SubQtyVal", "_LatstShipmntDt", "_EarlstShipmntDt"]
 	@property
 	def EarlstShipmntDt(self):
 		return self._EarlstShipmntDt
@@ -19,19 +19,6 @@ class ShipmentDateRange2(base_types._BaseFieldType):
 		self._EarlstShipmntDt = None
 
 	@property
-	def SubQtyVal(self):
-		return self._SubQtyVal
-
-	@SubQtyVal.setter
-	def SubQtyVal(self, value):
-		self._SubQtyVal = value if type(value) != base_types.auto else self.make_default("SubQtyVal")
-
-	@SubQtyVal.deleter
-	def SubQtyVal(self):
-		del self._SubQtyVal
-		self._SubQtyVal = None
-
-	@property
 	def LatstShipmntDt(self):
 		return self._LatstShipmntDt
 
@@ -44,9 +31,22 @@ class ShipmentDateRange2(base_types._BaseFieldType):
 		del self._LatstShipmntDt
 		self._LatstShipmntDt = None
 
+	@property
+	def SubQtyVal(self):
+		return self._SubQtyVal
+
+	@SubQtyVal.setter
+	def SubQtyVal(self, value):
+		self._SubQtyVal = value if type(value) != base_types.auto else self.make_default("SubQtyVal")
+
+	@SubQtyVal.deleter
+	def SubQtyVal(self):
+		del self._SubQtyVal
+		self._SubQtyVal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EarlstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubQtyVal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubQtyVal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
 

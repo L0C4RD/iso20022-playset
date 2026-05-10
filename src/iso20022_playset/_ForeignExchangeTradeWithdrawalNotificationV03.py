@@ -1,12 +1,25 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._SupplementaryData1 import SupplementaryData1
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._WithdrawalReason1 import WithdrawalReason1
+from ._Max35Text import Max35Text
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSysUnqRef", "_SttlmSsnIdr", "_WdrwlRsn", "_SplmtryData", "_MsgId"]
+	__slots__ = ["_MtchgSysUnqRef", "_SttlmSsnIdr", "_MsgId", "_WdrwlRsn", "_SplmtryData"]
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	@property
 	def MtchgSysUnqRef(self):
 		return self._MtchgSysUnqRef
@@ -19,6 +32,19 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 	def MtchgSysUnqRef(self):
 		del self._MtchgSysUnqRef
 		self._MtchgSysUnqRef = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def SttlmSsnIdr(self):
@@ -46,37 +72,11 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 		del self._WdrwlRsn
 		self._WdrwlRsn = None
 
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WdrwlRsn', type=WithdrawalReason1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

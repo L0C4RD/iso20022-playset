@@ -1,14 +1,14 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Party50Choice import Party50Choice
-from ._CashAccount40 import CashAccount40
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._OriginalItem8 import OriginalItem8
+from ._Party50Choice import Party50Choice
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
 
 class OriginalNotificationReference14(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_AcctOwnr", "_IntrmyAgt", "_OrgnlItm", "_AcctSvcr", "_RltdAcct", "_TtlAmt", "_Dbtr", "_XpctdValDt", "_DbtrAgt"]
+	__slots__ = ["_AcctSvcr", "_RltdAcct", "_XpctdValDt", "_Dbtr", "_OrgnlItm", "_AcctOwnr", "_IntrmyAgt", "_DbtrAgt", "_Acct", "_TtlAmt"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -34,6 +34,45 @@ class OriginalNotificationReference14(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
+
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def Dbtr(self):
+		return self._Dbtr
+
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
 
 	@property
 	def IntrmyAgt(self):
@@ -62,19 +101,6 @@ class OriginalNotificationReference14(base_types._BaseFieldType):
 		self._OrgnlItm = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
 	def RltdAcct(self):
 		return self._RltdAcct
 
@@ -101,19 +127,6 @@ class OriginalNotificationReference14(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
 	def XpctdValDt(self):
 		return self._XpctdValDt
 
@@ -126,29 +139,16 @@ class OriginalNotificationReference14(base_types._BaseFieldType):
 		del self._XpctdValDt
 		self._XpctdValDt = None
 
-	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlItm', type=OriginalItem8, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

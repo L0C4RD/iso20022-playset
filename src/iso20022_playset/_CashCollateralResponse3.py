@@ -1,12 +1,25 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._RejectionReason68Code import RejectionReason68Code
-from ._Status4Code import Status4Code
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._Max35Text import Max35Text
+from ._Status4Code import Status4Code
 
 class CashCollateralResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_CollId", "_CshAcctId", "_RspnTp", "_AsstNb", "_RjctnRsn", "_RjctnInf"]
+	__slots__ = ["_CshAcctId", "_RspnTp", "_RjctnInf", "_RjctnRsn", "_CollId", "_AsstNb"]
+	@property
+	def AsstNb(self):
+		return self._AsstNb
+
+	@AsstNb.setter
+	def AsstNb(self, value):
+		self._AsstNb = value if type(value) != base_types.auto else self.make_default("AsstNb")
+
+	@AsstNb.deleter
+	def AsstNb(self):
+		del self._AsstNb
+		self._AsstNb = None
+
 	@property
 	def CollId(self):
 		return self._CollId
@@ -34,30 +47,17 @@ class CashCollateralResponse3(base_types._BaseFieldType):
 		self._CshAcctId = None
 
 	@property
-	def RspnTp(self):
-		return self._RspnTp
+	def RjctnInf(self):
+		return self._RjctnInf
 
-	@RspnTp.setter
-	def RspnTp(self, value):
-		self._RspnTp = value if type(value) != base_types.auto else self.make_default("RspnTp")
+	@RjctnInf.setter
+	def RjctnInf(self, value):
+		self._RjctnInf = value if type(value) != base_types.auto else self.make_default("RjctnInf")
 
-	@RspnTp.deleter
-	def RspnTp(self):
-		del self._RspnTp
-		self._RspnTp = None
-
-	@property
-	def AsstNb(self):
-		return self._AsstNb
-
-	@AsstNb.setter
-	def AsstNb(self, value):
-		self._AsstNb = value if type(value) != base_types.auto else self.make_default("AsstNb")
-
-	@AsstNb.deleter
-	def AsstNb(self):
-		del self._AsstNb
-		self._AsstNb = None
+	@RjctnInf.deleter
+	def RjctnInf(self):
+		del self._RjctnInf
+		self._RjctnInf = None
 
 	@property
 	def RjctnRsn(self):
@@ -73,24 +73,24 @@ class CashCollateralResponse3(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
-	def RjctnInf(self):
-		return self._RjctnInf
+	def RspnTp(self):
+		return self._RspnTp
 
-	@RjctnInf.setter
-	def RjctnInf(self, value):
-		self._RjctnInf = value if type(value) != base_types.auto else self.make_default("RjctnInf")
+	@RspnTp.setter
+	def RspnTp(self, value):
+		self._RspnTp = value if type(value) != base_types.auto else self.make_default("RspnTp")
 
-	@RjctnInf.deleter
-	def RjctnInf(self):
-		del self._RjctnInf
-		self._RjctnInf = None
+	@RspnTp.deleter
+	def RspnTp(self):
+		del self._RspnTp
+		self._RspnTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason68Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason68Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

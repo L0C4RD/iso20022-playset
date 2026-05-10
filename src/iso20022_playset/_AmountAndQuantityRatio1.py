@@ -4,7 +4,7 @@ from ._DecimalNumber import DecimalNumber
 
 class AmountAndQuantityRatio1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Qty"]
+	__slots__ = ["_Qty", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

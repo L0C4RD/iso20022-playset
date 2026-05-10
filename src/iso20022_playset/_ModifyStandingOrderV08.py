@@ -1,25 +1,12 @@
 from . import base_types
-from ._StandingOrderIdentification8 import StandingOrderIdentification8
 from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
+from ._StandingOrderIdentification8 import StandingOrderIdentification8
 from ._StandingOrder10 import StandingOrder10
+from ._MessageHeader1 import MessageHeader1
 
 class ModifyStandingOrderV08(base_types._BaseFieldType):
 
-	__slots__ = ["_StgOrdrId", "_MsgHdr", "_SplmtryData", "_NewStgOrdrValSet"]
-	@property
-	def StgOrdrId(self):
-		return self._StgOrdrId
-
-	@StgOrdrId.setter
-	def StgOrdrId(self, value):
-		self._StgOrdrId = value if type(value) != base_types.auto else self.make_default("StgOrdrId")
-
-	@StgOrdrId.deleter
-	def StgOrdrId(self):
-		del self._StgOrdrId
-		self._StgOrdrId = None
-
+	__slots__ = ["_StgOrdrId", "_SplmtryData", "_MsgHdr", "_NewStgOrdrValSet"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -32,6 +19,19 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 	def MsgHdr(self):
 		del self._MsgHdr
 		self._MsgHdr = None
+
+	@property
+	def NewStgOrdrValSet(self):
+		return self._NewStgOrdrValSet
+
+	@NewStgOrdrValSet.setter
+	def NewStgOrdrValSet(self, value):
+		self._NewStgOrdrValSet = value if type(value) != base_types.auto else self.make_default("NewStgOrdrValSet")
+
+	@NewStgOrdrValSet.deleter
+	def NewStgOrdrValSet(self):
+		del self._NewStgOrdrValSet
+		self._NewStgOrdrValSet = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def NewStgOrdrValSet(self):
-		return self._NewStgOrdrValSet
+	def StgOrdrId(self):
+		return self._StgOrdrId
 
-	@NewStgOrdrValSet.setter
-	def NewStgOrdrValSet(self, value):
-		self._NewStgOrdrValSet = value if type(value) != base_types.auto else self.make_default("NewStgOrdrValSet")
+	@StgOrdrId.setter
+	def StgOrdrId(self, value):
+		self._StgOrdrId = value if type(value) != base_types.auto else self.make_default("StgOrdrId")
 
-	@NewStgOrdrValSet.deleter
-	def NewStgOrdrValSet(self):
-		del self._NewStgOrdrValSet
-		self._NewStgOrdrValSet = None
+	@StgOrdrId.deleter
+	def StgOrdrId(self):
+		del self._StgOrdrId
+		self._StgOrdrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewStgOrdrValSet', type=StandingOrder10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

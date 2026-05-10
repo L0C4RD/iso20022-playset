@@ -4,20 +4,7 @@ from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmoun
 
 class AmountAndCurrencyExchangeDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyXchg", "_Amt"]
-	@property
-	def CcyXchg(self):
-		return self._CcyXchg
-
-	@CcyXchg.setter
-	def CcyXchg(self, value):
-		self._CcyXchg = value if type(value) != base_types.auto else self.make_default("CcyXchg")
-
-	@CcyXchg.deleter
-	def CcyXchg(self):
-		del self._CcyXchg
-		self._CcyXchg = None
-
+	__slots__ = ["_Amt", "_CcyXchg"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class AmountAndCurrencyExchangeDetails5(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def CcyXchg(self):
+		return self._CcyXchg
+
+	@CcyXchg.setter
+	def CcyXchg(self, value):
+		self._CcyXchg = value if type(value) != base_types.auto else self.make_default("CcyXchg")
+
+	@CcyXchg.deleter
+	def CcyXchg(self):
+		del self._CcyXchg
+		self._CcyXchg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CcyXchg', type=CurrencyExchange24, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyXchg', type=CurrencyExchange24, min=0, max=1, mutex_group=None, array=False),
 	))
 

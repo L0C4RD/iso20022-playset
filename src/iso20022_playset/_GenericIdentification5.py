@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._Max8Text import Max8Text
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class GenericIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_Inf", "_Issr", "_Nrrtv"]
+	__slots__ = ["_Issr", "_Nrrtv", "_Inf"]
 	@property
 	def Inf(self):
 		return self._Inf

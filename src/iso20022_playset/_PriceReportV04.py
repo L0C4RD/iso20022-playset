@@ -1,15 +1,28 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._PriceReportFunction1Code import PriceReportFunction1Code
-from ._MessageIdentification1 import MessageIdentification1
-from ._AdditionalReference3 import AdditionalReference3
 from ._Pagination import Pagination
-from ._Extension1 import Extension1
 from ._PriceValuation4 import PriceValuation4
+from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
+from ._Extension1 import Extension1
+from ._AdditionalReference3 import AdditionalReference3
 
 class PriceReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctn", "_PricRptId", "_Xtnsn", "_PoolRef", "_PricValtnDtls", "_MsgId", "_MsgPgntn", "_RltdRef", "_PrvsRef", "_CxlId"]
+	__slots__ = ["_MsgId", "_Fctn", "_PrvsRef", "_PricValtnDtls", "_PoolRef", "_MsgPgntn", "_PricRptId", "_Xtnsn", "_RltdRef", "_CxlId"]
+	@property
+	def CxlId(self):
+		return self._CxlId
+
+	@CxlId.setter
+	def CxlId(self, value):
+		self._CxlId = value if type(value) != base_types.auto else self.make_default("CxlId")
+
+	@CxlId.deleter
+	def CxlId(self):
+		del self._CxlId
+		self._CxlId = None
+
 	@property
 	def Fctn(self):
 		return self._Fctn
@@ -22,58 +35,6 @@ class PriceReportV04(base_types._BaseFieldType):
 	def Fctn(self):
 		del self._Fctn
 		self._Fctn = None
-
-	@property
-	def PricRptId(self):
-		return self._PricRptId
-
-	@PricRptId.setter
-	def PricRptId(self, value):
-		self._PricRptId = value if type(value) != base_types.auto else self.make_default("PricRptId")
-
-	@PricRptId.deleter
-	def PricRptId(self):
-		del self._PricRptId
-		self._PricRptId = None
-
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
-	@property
-	def PricValtnDtls(self):
-		return self._PricValtnDtls
-
-	@PricValtnDtls.setter
-	def PricValtnDtls(self, value):
-		self._PricValtnDtls = value if type(value) != base_types.auto else self.make_default("PricValtnDtls")
-
-	@PricValtnDtls.deleter
-	def PricValtnDtls(self):
-		del self._PricValtnDtls
-		self._PricValtnDtls = None
 
 	@property
 	def MsgId(self):
@@ -102,17 +63,43 @@ class PriceReportV04(base_types._BaseFieldType):
 		self._MsgPgntn = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def PoolRef(self):
+		return self._PoolRef
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def PricRptId(self):
+		return self._PricRptId
+
+	@PricRptId.setter
+	def PricRptId(self, value):
+		self._PricRptId = value if type(value) != base_types.auto else self.make_default("PricRptId")
+
+	@PricRptId.deleter
+	def PricRptId(self):
+		del self._PricRptId
+		self._PricRptId = None
+
+	@property
+	def PricValtnDtls(self):
+		return self._PricValtnDtls
+
+	@PricValtnDtls.setter
+	def PricValtnDtls(self, value):
+		self._PricValtnDtls = value if type(value) != base_types.auto else self.make_default("PricValtnDtls")
+
+	@PricValtnDtls.deleter
+	def PricValtnDtls(self):
+		del self._PricValtnDtls
+		self._PricValtnDtls = None
 
 	@property
 	def PrvsRef(self):
@@ -128,28 +115,41 @@ class PriceReportV04(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def CxlId(self):
-		return self._CxlId
+	def RltdRef(self):
+		return self._RltdRef
 
-	@CxlId.setter
-	def CxlId(self, value):
-		self._CxlId = value if type(value) != base_types.auto else self.make_default("CxlId")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
 
-	@CxlId.deleter
-	def CxlId(self):
-		del self._CxlId
-		self._CxlId = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctn', type=PriceReportFunction1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricRptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricValtnDtls', type=PriceValuation4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricRptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricValtnDtls', type=PriceValuation4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CxlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

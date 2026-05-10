@@ -4,7 +4,7 @@ from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialIns
 
 class Party40Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_Pty"]
+	__slots__ = ["_Pty", "_Agt"]
 	@property
 	def Agt(self):
 		return self._Agt

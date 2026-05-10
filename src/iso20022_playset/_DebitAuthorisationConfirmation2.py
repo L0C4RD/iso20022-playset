@@ -1,25 +1,12 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
 from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Max140Text import Max140Text
+from ._YesNoIndicator import YesNoIndicator
 
 class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtAuthstn", "_AmtToDbt", "_Rsn", "_ValDtToDbt"]
-	@property
-	def DbtAuthstn(self):
-		return self._DbtAuthstn
-
-	@DbtAuthstn.setter
-	def DbtAuthstn(self, value):
-		self._DbtAuthstn = value if type(value) != base_types.auto else self.make_default("DbtAuthstn")
-
-	@DbtAuthstn.deleter
-	def DbtAuthstn(self):
-		del self._DbtAuthstn
-		self._DbtAuthstn = None
-
+	__slots__ = ["_AmtToDbt", "_DbtAuthstn", "_Rsn", "_ValDtToDbt"]
 	@property
 	def AmtToDbt(self):
 		return self._AmtToDbt
@@ -32,6 +19,19 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 	def AmtToDbt(self):
 		del self._AmtToDbt
 		self._AmtToDbt = None
+
+	@property
+	def DbtAuthstn(self):
+		return self._DbtAuthstn
+
+	@DbtAuthstn.setter
+	def DbtAuthstn(self, value):
+		self._DbtAuthstn = value if type(value) != base_types.auto else self.make_default("DbtAuthstn")
+
+	@DbtAuthstn.deleter
+	def DbtAuthstn(self):
+		del self._DbtAuthstn
+		self._DbtAuthstn = None
 
 	@property
 	def Rsn(self):
@@ -60,8 +60,8 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 		self._ValDtToDbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DbtAuthstn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtAuthstn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))

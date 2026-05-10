@@ -1,23 +1,23 @@
 from . import base_types
-from ._SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 from ._IntraPositionMovementDetails21 import IntraPositionMovementDetails21
 from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
+from ._SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 
 class IntraPositionDetails66(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_IntraPosMvmnt", "_BalFr"]
+	__slots__ = ["_SfkpgPlc", "_BalFr", "_IntraPosMvmnt"]
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def BalFr(self):
+		return self._BalFr
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+	@BalFr.setter
+	def BalFr(self, value):
+		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@BalFr.deleter
+	def BalFr(self):
+		del self._BalFr
+		self._BalFr = None
 
 	@property
 	def IntraPosMvmnt(self):
@@ -33,21 +33,21 @@ class IntraPositionDetails66(base_types._BaseFieldType):
 		self._IntraPosMvmnt = None
 
 	@property
-	def BalFr(self):
-		return self._BalFr
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@BalFr.setter
-	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
 
-	@BalFr.deleter
-	def BalFr(self):
-		del self._BalFr
-		self._BalFr = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntraPosMvmnt', type=IntraPositionMovementDetails21, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BalFr', type=SecuritiesBalanceType6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntraPosMvmnt', type=IntraPositionMovementDetails21, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

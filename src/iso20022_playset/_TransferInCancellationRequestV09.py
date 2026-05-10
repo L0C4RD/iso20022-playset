@@ -1,54 +1,28 @@
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._TransferReference15 import TransferReference15
 from ._TransferInFunction1Code import TransferInFunction1Code
 from ._AdditionalReference10 import AdditionalReference10
 from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._Max35Text import Max35Text
-from ._CopyInformation5 import CopyInformation5
 from ._AdditionalReference11 import AdditionalReference11
+from ._CopyInformation5 import CopyInformation5
+from ._TransferReference15 import TransferReference15
+from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
 
 class TransferInCancellationRequestV09(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_MsgId", "_TrfRefs", "_Fctn", "_MstrRef", "_PrvsRef", "_MktPrctcVrsn", "_CpyDtls", "_PoolRef"]
+	__slots__ = ["_TrfRefs", "_MsgId", "_RltdRef", "_PoolRef", "_PrvsRef", "_MstrRef", "_Fctn", "_MktPrctcVrsn", "_CpyDtls"]
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def CpyDtls(self):
+		return self._CpyDtls
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+	@CpyDtls.setter
+	def CpyDtls(self, value):
+		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def TrfRefs(self):
-		return self._TrfRefs
-
-	@TrfRefs.setter
-	def TrfRefs(self, value):
-		self._TrfRefs = value if type(value) != base_types.auto else self.make_default("TrfRefs")
-
-	@TrfRefs.deleter
-	def TrfRefs(self):
-		del self._TrfRefs
-		self._TrfRefs = None
+	@CpyDtls.deleter
+	def CpyDtls(self):
+		del self._CpyDtls
+		self._CpyDtls = None
 
 	@property
 	def Fctn(self):
@@ -64,6 +38,32 @@ class TransferInCancellationRequestV09(base_types._BaseFieldType):
 		self._Fctn = None
 
 	@property
+	def MktPrctcVrsn(self):
+		return self._MktPrctcVrsn
+
+	@MktPrctcVrsn.setter
+	def MktPrctcVrsn(self, value):
+		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+
+	@MktPrctcVrsn.deleter
+	def MktPrctcVrsn(self):
+		del self._MktPrctcVrsn
+		self._MktPrctcVrsn = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
 	def MstrRef(self):
 		return self._MstrRef
 
@@ -75,6 +75,19 @@ class TransferInCancellationRequestV09(base_types._BaseFieldType):
 	def MstrRef(self):
 		del self._MstrRef
 		self._MstrRef = None
+
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
 
 	@property
 	def PrvsRef(self):
@@ -90,53 +103,40 @@ class TransferInCancellationRequestV09(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def MktPrctcVrsn(self):
-		return self._MktPrctcVrsn
+	def RltdRef(self):
+		return self._RltdRef
 
-	@MktPrctcVrsn.setter
-	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
 
-	@MktPrctcVrsn.deleter
-	def MktPrctcVrsn(self):
-		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
-
-	@property
-	def CpyDtls(self):
-		return self._CpyDtls
-
-	@CpyDtls.setter
-	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
-
-	@CpyDtls.deleter
-	def CpyDtls(self):
-		del self._CpyDtls
-		self._CpyDtls = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
-	def PoolRef(self):
-		return self._PoolRef
+	def TrfRefs(self):
+		return self._TrfRefs
 
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+	@TrfRefs.setter
+	def TrfRefs(self, value):
+		self._TrfRefs = value if type(value) != base_types.auto else self.make_default("TrfRefs")
 
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
+	@TrfRefs.deleter
+	def TrfRefs(self):
+		del self._TrfRefs
+		self._TrfRefs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfRefs', type=TransferReference15, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Fctn', type=TransferInFunction1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=TransferInFunction1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfRefs', type=TransferReference15, min=1, max=None, mutex_group=None, array=True),
 	))
 

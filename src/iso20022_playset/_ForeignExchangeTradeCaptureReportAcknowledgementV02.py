@@ -1,26 +1,13 @@
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._Status5Code import Status5Code
 from ._AdditionalReferences2 import AdditionalReferences2
+from ._SupplementaryData1 import SupplementaryData1
+from ._Max35Text import Max35Text
+from ._Status5Code import Status5Code
+from ._MessageIdentification1 import MessageIdentification1
 
 class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_AckId", "_Ref", "_TradId", "_SplmtryData", "_DealTcktId"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_TradId", "_AckId", "_Ref", "_DealTcktId", "_SplmtryData", "_Sts"]
 	@property
 	def AckId(self):
 		return self._AckId
@@ -33,6 +20,19 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 	def AckId(self):
 		del self._AckId
 		self._AckId = None
+
+	@property
+	def DealTcktId(self):
+		return self._DealTcktId
+
+	@DealTcktId.setter
+	def DealTcktId(self, value):
+		self._DealTcktId = value if type(value) != base_types.auto else self.make_default("DealTcktId")
+
+	@DealTcktId.deleter
+	def DealTcktId(self):
+		del self._DealTcktId
+		self._DealTcktId = None
 
 	@property
 	def Ref(self):
@@ -48,19 +48,6 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 		self._Ref = None
 
 	@property
-	def TradId(self):
-		return self._TradId
-
-	@TradId.setter
-	def TradId(self, value):
-		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
-
-	@TradId.deleter
-	def TradId(self):
-		del self._TradId
-		self._TradId = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -74,24 +61,37 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 		self._SplmtryData = None
 
 	@property
-	def DealTcktId(self):
-		return self._DealTcktId
+	def Sts(self):
+		return self._Sts
 
-	@DealTcktId.setter
-	def DealTcktId(self, value):
-		self._DealTcktId = value if type(value) != base_types.auto else self.make_default("DealTcktId")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@DealTcktId.deleter
-	def DealTcktId(self):
-		del self._DealTcktId
-		self._DealTcktId = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def TradId(self):
+		return self._TradId
+
+	@TradId.setter
+	def TradId(self, value):
+		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
+
+	@TradId.deleter
+	def TradId(self):
+		del self._TradId
+		self._TradId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=Status5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AckId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=AdditionalReferences2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DealTcktId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=AdditionalReferences2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=Status5Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

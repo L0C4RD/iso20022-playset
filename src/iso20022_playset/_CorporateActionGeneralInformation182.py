@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CorporateActionEventType112Choice import CorporateActionEventType112Choice
+from ._Max35Text import Max35Text
 
 class CorporateActionGeneralInformation182(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssActnNb", "_OffclCorpActnEvtId", "_CorpActnEvtId", "_EvtTp"]
+	__slots__ = ["_OffclCorpActnEvtId", "_EvtTp", "_ClssActnNb", "_CorpActnEvtId"]
 	@property
 	def ClssActnNb(self):
 		return self._ClssActnNb
@@ -17,19 +17,6 @@ class CorporateActionGeneralInformation182(base_types._BaseFieldType):
 	def ClssActnNb(self):
 		del self._ClssActnNb
 		self._ClssActnNb = None
-
-	@property
-	def OffclCorpActnEvtId(self):
-		return self._OffclCorpActnEvtId
-
-	@OffclCorpActnEvtId.setter
-	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
-
-	@OffclCorpActnEvtId.deleter
-	def OffclCorpActnEvtId(self):
-		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
 
 	@property
 	def CorpActnEvtId(self):
@@ -57,10 +44,23 @@ class CorporateActionGeneralInformation182(base_types._BaseFieldType):
 		del self._EvtTp
 		self._EvtTp = None
 
+	@property
+	def OffclCorpActnEvtId(self):
+		return self._OffclCorpActnEvtId
+
+	@OffclCorpActnEvtId.setter
+	def OffclCorpActnEvtId(self, value):
+		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
+
+	@OffclCorpActnEvtId.deleter
+	def OffclCorpActnEvtId(self):
+		del self._OffclCorpActnEvtId
+		self._OffclCorpActnEvtId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssActnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

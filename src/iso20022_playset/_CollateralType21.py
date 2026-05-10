@@ -5,7 +5,7 @@ from ._AmountHaircutMargin1 import AmountHaircutMargin1
 
 class CollateralType21(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmmdty", "_Csh", "_Scty"]
+	__slots__ = ["_Csh", "_Scty", "_Cmmdty"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty

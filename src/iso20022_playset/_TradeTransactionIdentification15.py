@@ -1,12 +1,25 @@
 from . import base_types
-from ._MasterAgreement7 import MasterAgreement7
-from ._Max52Text import Max52Text
 from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._Max52Text import Max52Text
+from ._MasterAgreement7 import MasterAgreement7
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TradeTransactionIdentification15(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrAgrmt", "_UnqTradIdr", "_OthrCtrPty", "_RptgCtrPty", "_AgtLndr", "_TrptyAgt"]
+	__slots__ = ["_TrptyAgt", "_MstrAgrmt", "_RptgCtrPty", "_AgtLndr", "_OthrCtrPty", "_UnqTradIdr"]
+	@property
+	def AgtLndr(self):
+		return self._AgtLndr
+
+	@AgtLndr.setter
+	def AgtLndr(self, value):
+		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+
+	@AgtLndr.deleter
+	def AgtLndr(self):
+		del self._AgtLndr
+		self._AgtLndr = None
+
 	@property
 	def MstrAgrmt(self):
 		return self._MstrAgrmt
@@ -19,19 +32,6 @@ class TradeTransactionIdentification15(base_types._BaseFieldType):
 	def MstrAgrmt(self):
 		del self._MstrAgrmt
 		self._MstrAgrmt = None
-
-	@property
-	def UnqTradIdr(self):
-		return self._UnqTradIdr
-
-	@UnqTradIdr.setter
-	def UnqTradIdr(self, value):
-		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
-
-	@UnqTradIdr.deleter
-	def UnqTradIdr(self):
-		del self._UnqTradIdr
-		self._UnqTradIdr = None
 
 	@property
 	def OthrCtrPty(self):
@@ -60,19 +60,6 @@ class TradeTransactionIdentification15(base_types._BaseFieldType):
 		self._RptgCtrPty = None
 
 	@property
-	def AgtLndr(self):
-		return self._AgtLndr
-
-	@AgtLndr.setter
-	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
-
-	@AgtLndr.deleter
-	def AgtLndr(self):
-		del self._AgtLndr
-		self._AgtLndr = None
-
-	@property
 	def TrptyAgt(self):
 		return self._TrptyAgt
 
@@ -85,12 +72,25 @@ class TradeTransactionIdentification15(base_types._BaseFieldType):
 		del self._TrptyAgt
 		self._TrptyAgt = None
 
+	@property
+	def UnqTradIdr(self):
+		return self._UnqTradIdr
+
+	@UnqTradIdr.setter
+	def UnqTradIdr(self, value):
+		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
+
+	@UnqTradIdr.deleter
+	def UnqTradIdr(self):
+		del self._UnqTradIdr
+		self._UnqTradIdr = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

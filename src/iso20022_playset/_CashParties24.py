@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentificationAndAccount96 import PartyIdentificationAndAccount96
 from ._PartyIdentificationAndAccount97 import PartyIdentificationAndAccount97
+from ._PartyIdentificationAndAccount96 import PartyIdentificationAndAccount96
 
 class CashParties24(base_types._BaseFieldType):
 
-	__slots__ = ["_Cdtr", "_Intrmy2", "_CdtrAgt", "_Intrmy"]
+	__slots__ = ["_CdtrAgt", "_Intrmy", "_Intrmy2", "_Cdtr"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr
@@ -17,19 +17,6 @@ class CashParties24(base_types._BaseFieldType):
 	def Cdtr(self):
 		del self._Cdtr
 		self._Cdtr = None
-
-	@property
-	def Intrmy2(self):
-		return self._Intrmy2
-
-	@Intrmy2.setter
-	def Intrmy2(self, value):
-		self._Intrmy2 = value if type(value) != base_types.auto else self.make_default("Intrmy2")
-
-	@Intrmy2.deleter
-	def Intrmy2(self):
-		del self._Intrmy2
-		self._Intrmy2 = None
 
 	@property
 	def CdtrAgt(self):
@@ -57,10 +44,23 @@ class CashParties24(base_types._BaseFieldType):
 		del self._Intrmy
 		self._Intrmy = None
 
+	@property
+	def Intrmy2(self):
+		return self._Intrmy2
+
+	@Intrmy2.setter
+	def Intrmy2(self, value):
+		self._Intrmy2 = value if type(value) != base_types.auto else self.make_default("Intrmy2")
+
+	@Intrmy2.deleter
+	def Intrmy2(self):
+		del self._Intrmy2
+		self._Intrmy2 = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount96, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Intrmy2', type=PartyIdentificationAndAccount97, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount97, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount97, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrmy2', type=PartyIdentificationAndAccount97, min=0, max=1, mutex_group=None, array=False),
 	))
 

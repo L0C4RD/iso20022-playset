@@ -1,13 +1,26 @@
 from . import base_types
+from ._Recipient15Choice import Recipient15Choice
+from ._Max140Binary import Max140Binary
+from ._EncapsulatedContent3 import EncapsulatedContent3
 from ._Number import Number
 from ._AlgorithmIdentification31 import AlgorithmIdentification31
-from ._Recipient15Choice import Recipient15Choice
-from ._EncapsulatedContent3 import EncapsulatedContent3
-from ._Max140Binary import Max140Binary
 
 class AuthenticatedData10(base_types._BaseFieldType):
 
-	__slots__ = ["_MACAlgo", "_Rcpt", "_MAC", "_Vrsn", "_NcpsltdCntt"]
+	__slots__ = ["_NcpsltdCntt", "_Vrsn", "_Rcpt", "_MAC", "_MACAlgo"]
+	@property
+	def MAC(self):
+		return self._MAC
+
+	@MAC.setter
+	def MAC(self, value):
+		self._MAC = value if type(value) != base_types.auto else self.make_default("MAC")
+
+	@MAC.deleter
+	def MAC(self):
+		del self._MAC
+		self._MAC = None
+
 	@property
 	def MACAlgo(self):
 		return self._MACAlgo
@@ -20,6 +33,19 @@ class AuthenticatedData10(base_types._BaseFieldType):
 	def MACAlgo(self):
 		del self._MACAlgo
 		self._MACAlgo = None
+
+	@property
+	def NcpsltdCntt(self):
+		return self._NcpsltdCntt
+
+	@NcpsltdCntt.setter
+	def NcpsltdCntt(self, value):
+		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
+
+	@NcpsltdCntt.deleter
+	def NcpsltdCntt(self):
+		del self._NcpsltdCntt
+		self._NcpsltdCntt = None
 
 	@property
 	def Rcpt(self):
@@ -35,19 +61,6 @@ class AuthenticatedData10(base_types._BaseFieldType):
 		self._Rcpt = None
 
 	@property
-	def MAC(self):
-		return self._MAC
-
-	@MAC.setter
-	def MAC(self, value):
-		self._MAC = value if type(value) != base_types.auto else self.make_default("MAC")
-
-	@MAC.deleter
-	def MAC(self):
-		del self._MAC
-		self._MAC = None
-
-	@property
 	def Vrsn(self):
 		return self._Vrsn
 
@@ -60,24 +73,11 @@ class AuthenticatedData10(base_types._BaseFieldType):
 		del self._Vrsn
 		self._Vrsn = None
 
-	@property
-	def NcpsltdCntt(self):
-		return self._NcpsltdCntt
-
-	@NcpsltdCntt.setter
-	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
-
-	@NcpsltdCntt.deleter
-	def NcpsltdCntt(self):
-		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MACAlgo', type=AlgorithmIdentification31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MAC', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MACAlgo', type=AlgorithmIdentification31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

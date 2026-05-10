@@ -1,13 +1,26 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._Max256Text import Max256Text
 from ._ISODate import ISODate
 from ._DocumentType4Code import DocumentType4Code
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._Max256Text import Max256Text
 
 class DocumentGeneralInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_DocTp", "_IsseDt", "_SndrRcvrSeqId", "_URL", "_DocNb"]
+	__slots__ = ["_SndrRcvrSeqId", "_URL", "_IsseDt", "_DocTp", "_DocNb"]
+	@property
+	def DocNb(self):
+		return self._DocNb
+
+	@DocNb.setter
+	def DocNb(self, value):
+		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+
+	@DocNb.deleter
+	def DocNb(self):
+		del self._DocNb
+		self._DocNb = None
+
 	@property
 	def DocTp(self):
 		return self._DocTp
@@ -60,24 +73,11 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 		del self._URL
 		self._URL = None
 
-	@property
-	def DocNb(self):
-		return self._DocNb
-
-	@DocNb.setter
-	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
-
-	@DocNb.deleter
-	def DocNb(self):
-		del self._DocNb
-		self._DocNb = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocTp', type=DocumentType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification242Choice import PartyIdentification242Choice
-from ._NetObligation3 import NetObligation3
 from ._NetReportData2 import NetReportData2
+from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._NetObligation3 import NetObligation3
 
 class NetReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_NetOblgtn", "_NetSvcCtrPtyId", "_NetSvcPtcptId", "_SplmtryData", "_NetRptData"]
+	__slots__ = ["_NetOblgtn", "_NetSvcCtrPtyId", "_NetSvcPtcptId", "_NetRptData", "_SplmtryData"]
 	@property
 	def NetOblgtn(self):
 		return self._NetOblgtn
@@ -19,6 +19,19 @@ class NetReportV03(base_types._BaseFieldType):
 	def NetOblgtn(self):
 		del self._NetOblgtn
 		self._NetOblgtn = None
+
+	@property
+	def NetRptData(self):
+		return self._NetRptData
+
+	@NetRptData.setter
+	def NetRptData(self, value):
+		self._NetRptData = value if type(value) != base_types.auto else self.make_default("NetRptData")
+
+	@NetRptData.deleter
+	def NetRptData(self):
+		del self._NetRptData
+		self._NetRptData = None
 
 	@property
 	def NetSvcCtrPtyId(self):
@@ -59,24 +72,11 @@ class NetReportV03(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def NetRptData(self):
-		return self._NetRptData
-
-	@NetRptData.setter
-	def NetRptData(self, value):
-		self._NetRptData = value if type(value) != base_types.auto else self.make_default("NetRptData")
-
-	@NetRptData.deleter
-	def NetRptData(self):
-		del self._NetRptData
-		self._NetRptData = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetOblgtn', type=NetObligation3, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NetRptData', type=NetReportData2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetSvcCtrPtyId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetSvcPtcptId', type=PartyIdentification242Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NetRptData', type=NetReportData2, min=1, max=1, mutex_group=None, array=False),
 	))
 

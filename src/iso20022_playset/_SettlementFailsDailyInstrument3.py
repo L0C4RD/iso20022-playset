@@ -3,20 +3,7 @@ from ._SettlementFailsDailyTransactionType1Choice import SettlementFailsDailyTra
 
 class SettlementFailsDailyInstrument3(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Bd", "_EmssnAllwnc", "_Eqty", "_MnyMktInstrm", "_OthrTrfblScties", "_XchgTraddFnds", "_SvrgnDebt", "_CllctvInvstmtUdrtkgs"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_OthrTrfblScties", "_EmssnAllwnc", "_Eqty", "_MnyMktInstrm", "_CllctvInvstmtUdrtkgs", "_SvrgnDebt", "_XchgTraddFnds", "_Othr", "_Bd"]
 	@property
 	def Bd(self):
 		return self._Bd
@@ -29,6 +16,19 @@ class SettlementFailsDailyInstrument3(base_types._BaseFieldType):
 	def Bd(self):
 		del self._Bd
 		self._Bd = None
+
+	@property
+	def CllctvInvstmtUdrtkgs(self):
+		return self._CllctvInvstmtUdrtkgs
+
+	@CllctvInvstmtUdrtkgs.setter
+	def CllctvInvstmtUdrtkgs(self, value):
+		self._CllctvInvstmtUdrtkgs = value if type(value) != base_types.auto else self.make_default("CllctvInvstmtUdrtkgs")
+
+	@CllctvInvstmtUdrtkgs.deleter
+	def CllctvInvstmtUdrtkgs(self):
+		del self._CllctvInvstmtUdrtkgs
+		self._CllctvInvstmtUdrtkgs = None
 
 	@property
 	def EmssnAllwnc(self):
@@ -70,6 +70,19 @@ class SettlementFailsDailyInstrument3(base_types._BaseFieldType):
 		self._MnyMktInstrm = None
 
 	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
 	def OthrTrfblScties(self):
 		return self._OthrTrfblScties
 
@@ -81,19 +94,6 @@ class SettlementFailsDailyInstrument3(base_types._BaseFieldType):
 	def OthrTrfblScties(self):
 		del self._OthrTrfblScties
 		self._OthrTrfblScties = None
-
-	@property
-	def XchgTraddFnds(self):
-		return self._XchgTraddFnds
-
-	@XchgTraddFnds.setter
-	def XchgTraddFnds(self, value):
-		self._XchgTraddFnds = value if type(value) != base_types.auto else self.make_default("XchgTraddFnds")
-
-	@XchgTraddFnds.deleter
-	def XchgTraddFnds(self):
-		del self._XchgTraddFnds
-		self._XchgTraddFnds = None
 
 	@property
 	def SvrgnDebt(self):
@@ -109,27 +109,27 @@ class SettlementFailsDailyInstrument3(base_types._BaseFieldType):
 		self._SvrgnDebt = None
 
 	@property
-	def CllctvInvstmtUdrtkgs(self):
-		return self._CllctvInvstmtUdrtkgs
+	def XchgTraddFnds(self):
+		return self._XchgTraddFnds
 
-	@CllctvInvstmtUdrtkgs.setter
-	def CllctvInvstmtUdrtkgs(self, value):
-		self._CllctvInvstmtUdrtkgs = value if type(value) != base_types.auto else self.make_default("CllctvInvstmtUdrtkgs")
+	@XchgTraddFnds.setter
+	def XchgTraddFnds(self, value):
+		self._XchgTraddFnds = value if type(value) != base_types.auto else self.make_default("XchgTraddFnds")
 
-	@CllctvInvstmtUdrtkgs.deleter
-	def CllctvInvstmtUdrtkgs(self):
-		del self._CllctvInvstmtUdrtkgs
-		self._CllctvInvstmtUdrtkgs = None
+	@XchgTraddFnds.deleter
+	def XchgTraddFnds(self):
+		del self._XchgTraddFnds
+		self._XchgTraddFnds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bd', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CllctvInvstmtUdrtkgs', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmssnAllwnc', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Eqty', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnyMktInstrm', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTrfblScties', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgTraddFnds', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvrgnDebt', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CllctvInvstmtUdrtkgs', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgTraddFnds', type=SettlementFailsDailyTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._Max15NumericText import Max15NumericText
 from ._CreditDebitCode import CreditDebitCode
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class BatchInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_TtlAmt", "_CdtDbtInd", "_PmtInfId", "_MsgId"]
-	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
-
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
-
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
-
-	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
-
+	__slots__ = ["_CdtDbtInd", "_TtlAmt", "_PmtInfId", "_MsgId", "_NbOfTxs"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -45,6 +19,32 @@ class BatchInformation2(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def NbOfTxs(self):
+		return self._NbOfTxs
+
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
+
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
 
 	@property
 	def PmtInfId(self):
@@ -60,23 +60,23 @@ class BatchInformation2(base_types._BaseFieldType):
 		self._PmtInfId = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def TtlAmt(self):
+		return self._TtlAmt
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

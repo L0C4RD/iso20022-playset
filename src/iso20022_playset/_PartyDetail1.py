@@ -1,15 +1,28 @@
 from . import base_types
-from ._Max20000Text import Max20000Text
-from ._SupervisingAuthorityIdentification1Choice import SupervisingAuthorityIdentification1Choice
-from ._Max350Text import Max350Text
 from ._CountryCode import CountryCode
+from ._Max20000Text import Max20000Text
+from ._Max350Text import Max350Text
 from ._Max10Text import Max10Text
 from ._PostalAddress6 import PostalAddress6
+from ._SupervisingAuthorityIdentification1Choice import SupervisingAuthorityIdentification1Choice
 from ._CommunicationAddress7 import CommunicationAddress7
 
 class PartyDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctct", "_PstlAdr", "_Cmnt", "_PtyTp", "_SprvsgAuthrty", "_FullNm", "_Ctry"]
+	__slots__ = ["_Cmnt", "_PstlAdr", "_PtyTp", "_Ctry", "_FullNm", "_SprvsgAuthrty", "_Ctct"]
+	@property
+	def Cmnt(self):
+		return self._Cmnt
+
+	@Cmnt.setter
+	def Cmnt(self, value):
+		self._Cmnt = value if type(value) != base_types.auto else self.make_default("Cmnt")
+
+	@Cmnt.deleter
+	def Cmnt(self):
+		del self._Cmnt
+		self._Cmnt = None
+
 	@property
 	def Ctct(self):
 		return self._Ctct
@@ -24,6 +37,32 @@ class PartyDetail1(base_types._BaseFieldType):
 		self._Ctct = None
 
 	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
+	def FullNm(self):
+		return self._FullNm
+
+	@FullNm.setter
+	def FullNm(self, value):
+		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+
+	@FullNm.deleter
+	def FullNm(self):
+		del self._FullNm
+		self._FullNm = None
+
+	@property
 	def PstlAdr(self):
 		return self._PstlAdr
 
@@ -35,19 +74,6 @@ class PartyDetail1(base_types._BaseFieldType):
 	def PstlAdr(self):
 		del self._PstlAdr
 		self._PstlAdr = None
-
-	@property
-	def Cmnt(self):
-		return self._Cmnt
-
-	@Cmnt.setter
-	def Cmnt(self, value):
-		self._Cmnt = value if type(value) != base_types.auto else self.make_default("Cmnt")
-
-	@Cmnt.deleter
-	def Cmnt(self):
-		del self._Cmnt
-		self._Cmnt = None
 
 	@property
 	def PtyTp(self):
@@ -75,39 +101,13 @@ class PartyDetail1(base_types._BaseFieldType):
 		del self._SprvsgAuthrty
 		self._SprvsgAuthrty = None
 
-	@property
-	def FullNm(self):
-		return self._FullNm
-
-	@FullNm.setter
-	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
-
-	@FullNm.deleter
-	def FullNm(self):
-		del self._FullNm
-		self._FullNm = None
-
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctct', type=CommunicationAddress7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctct', type=CommunicationAddress7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyTp', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SprvsgAuthrty', type=SupervisingAuthorityIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

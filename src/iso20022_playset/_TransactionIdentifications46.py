@@ -1,22 +1,22 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max52Text import Max52Text
+from ._Max35Text import Max35Text
 
 class TransactionIdentifications46(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgtSvcPrvdrCollTxId", "_ClntCollTxId", "_CmonTxId", "_TrptyAgtSvcPrvdrCollInstrId", "_ClntCollInstrId", "_CtrPtyCollTxId"]
+	__slots__ = ["_TrptyAgtSvcPrvdrCollInstrId", "_CtrPtyCollTxId", "_ClntCollTxId", "_ClntCollInstrId", "_CmonTxId", "_TrptyAgtSvcPrvdrCollTxId"]
 	@property
-	def TrptyAgtSvcPrvdrCollTxId(self):
-		return self._TrptyAgtSvcPrvdrCollTxId
+	def ClntCollInstrId(self):
+		return self._ClntCollInstrId
 
-	@TrptyAgtSvcPrvdrCollTxId.setter
-	def TrptyAgtSvcPrvdrCollTxId(self, value):
-		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
+	@ClntCollInstrId.setter
+	def ClntCollInstrId(self, value):
+		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
 
-	@TrptyAgtSvcPrvdrCollTxId.deleter
-	def TrptyAgtSvcPrvdrCollTxId(self):
-		del self._TrptyAgtSvcPrvdrCollTxId
-		self._TrptyAgtSvcPrvdrCollTxId = None
+	@ClntCollInstrId.deleter
+	def ClntCollInstrId(self):
+		del self._ClntCollInstrId
+		self._ClntCollInstrId = None
 
 	@property
 	def ClntCollTxId(self):
@@ -45,6 +45,19 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 		self._CmonTxId = None
 
 	@property
+	def CtrPtyCollTxId(self):
+		return self._CtrPtyCollTxId
+
+	@CtrPtyCollTxId.setter
+	def CtrPtyCollTxId(self, value):
+		self._CtrPtyCollTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyCollTxId")
+
+	@CtrPtyCollTxId.deleter
+	def CtrPtyCollTxId(self):
+		del self._CtrPtyCollTxId
+		self._CtrPtyCollTxId = None
+
+	@property
 	def TrptyAgtSvcPrvdrCollInstrId(self):
 		return self._TrptyAgtSvcPrvdrCollInstrId
 
@@ -58,37 +71,24 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 		self._TrptyAgtSvcPrvdrCollInstrId = None
 
 	@property
-	def ClntCollInstrId(self):
-		return self._ClntCollInstrId
+	def TrptyAgtSvcPrvdrCollTxId(self):
+		return self._TrptyAgtSvcPrvdrCollTxId
 
-	@ClntCollInstrId.setter
-	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
+	@TrptyAgtSvcPrvdrCollTxId.setter
+	def TrptyAgtSvcPrvdrCollTxId(self, value):
+		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
 
-	@ClntCollInstrId.deleter
-	def ClntCollInstrId(self):
-		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
-
-	@property
-	def CtrPtyCollTxId(self):
-		return self._CtrPtyCollTxId
-
-	@CtrPtyCollTxId.setter
-	def CtrPtyCollTxId(self, value):
-		self._CtrPtyCollTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyCollTxId")
-
-	@CtrPtyCollTxId.deleter
-	def CtrPtyCollTxId(self):
-		del self._CtrPtyCollTxId
-		self._CtrPtyCollTxId = None
+	@TrptyAgtSvcPrvdrCollTxId.deleter
+	def TrptyAgtSvcPrvdrCollTxId(self):
+		del self._TrptyAgtSvcPrvdrCollTxId
+		self._TrptyAgtSvcPrvdrCollTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

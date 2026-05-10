@@ -4,7 +4,7 @@ from ._TransactionOrError6Choice import TransactionOrError6Choice
 
 class TransactionReport8(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtId", "_TxOrErr"]
+	__slots__ = ["_TxOrErr", "_PmtId"]
 	@property
 	def PmtId(self):
 		return self._PmtId

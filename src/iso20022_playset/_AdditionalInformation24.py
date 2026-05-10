@@ -3,7 +3,7 @@ from ._Max350Text import Max350Text
 
 class AdditionalInformation24(base_types._BaseFieldType):
 
-	__slots__ = ["_CollInstr", "_Note"]
+	__slots__ = ["_Note", "_CollInstr"]
 	@property
 	def CollInstr(self):
 		return self._CollInstr

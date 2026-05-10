@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max15NumericText import Max15NumericText
-from ._CurrencyAndAmount import CurrencyAndAmount
 from ._UnitOfMeasure3Choice import UnitOfMeasure3Choice
+from ._CurrencyAndAmount import CurrencyAndAmount
 
 class UnitPrice18(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Fctr", "_UnitPric"]
+	__slots__ = ["_UnitPric", "_Fctr", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

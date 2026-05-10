@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DecimalNumber import DecimalNumber
+from ._Max35Text import Max35Text
 
 class Entitlement1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EntitlmntDesc", "_EntitlmntRatio"]
+	__slots__ = ["_EntitlmntRatio", "_EntitlmntDesc"]
 	@property
 	def EntitlmntDesc(self):
 		return self._EntitlmntDesc

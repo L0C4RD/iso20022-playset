@@ -1,13 +1,26 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
 from ._Authorisation1Choice import Authorisation1Choice
+from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ISODateTime import ISODateTime
+from ._PartyIdentification272 import PartyIdentification272
 
 class GroupHeader110(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_InstdAgt", "_InitgPty", "_Authstn", "_InstgAgt", "_MsgId"]
+	__slots__ = ["_InstdAgt", "_MsgId", "_InitgPty", "_InstgAgt", "_Authstn", "_CreDtTm"]
+	@property
+	def Authstn(self):
+		return self._Authstn
+
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
+
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
+
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -20,19 +33,6 @@ class GroupHeader110(base_types._BaseFieldType):
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
-
-	@property
-	def InstdAgt(self):
-		return self._InstdAgt
-
-	@InstdAgt.setter
-	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
-
-	@InstdAgt.deleter
-	def InstdAgt(self):
-		del self._InstdAgt
-		self._InstdAgt = None
 
 	@property
 	def InitgPty(self):
@@ -48,17 +48,17 @@ class GroupHeader110(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def InstdAgt(self):
+		return self._InstdAgt
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
+	@InstdAgt.setter
+	def InstdAgt(self, value):
+		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
+	@InstdAgt.deleter
+	def InstdAgt(self):
+		del self._InstdAgt
+		self._InstdAgt = None
 
 	@property
 	def InstgAgt(self):
@@ -87,10 +87,10 @@ class GroupHeader110(base_types._BaseFieldType):
 		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))

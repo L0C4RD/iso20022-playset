@@ -1,25 +1,25 @@
 from . import base_types
-from ._CancelledStatus11Choice import CancelledStatus11Choice
-from ._NoSpecifiedReason1 import NoSpecifiedReason1
+from ._RejectedStatus53Choice import RejectedStatus53Choice
 from ._PendingCancellationStatus13Choice import PendingCancellationStatus13Choice
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._RejectedStatus53Choice import RejectedStatus53Choice
+from ._CancelledStatus11Choice import CancelledStatus11Choice
+from ._NoSpecifiedReason1 import NoSpecifiedReason1
 
 class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgCxl", "_CxlCmpltd", "_PrtrySts", "_Accptd", "_Rjctd"]
+	__slots__ = ["_CxlCmpltd", "_PdgCxl", "_PrtrySts", "_Rjctd", "_Accptd"]
 	@property
-	def PdgCxl(self):
-		return self._PdgCxl
+	def Accptd(self):
+		return self._Accptd
 
-	@PdgCxl.setter
-	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+	@Accptd.setter
+	def Accptd(self, value):
+		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
 
-	@PdgCxl.deleter
-	def PdgCxl(self):
-		del self._PdgCxl
-		self._PdgCxl = None
+	@Accptd.deleter
+	def Accptd(self):
+		del self._Accptd
+		self._Accptd = None
 
 	@property
 	def CxlCmpltd(self):
@@ -35,6 +35,19 @@ class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 		self._CxlCmpltd = None
 
 	@property
+	def PdgCxl(self):
+		return self._PdgCxl
+
+	@PdgCxl.setter
+	def PdgCxl(self, value):
+		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+
+	@PdgCxl.deleter
+	def PdgCxl(self):
+		del self._PdgCxl
+		self._PdgCxl = None
+
+	@property
 	def PrtrySts(self):
 		return self._PrtrySts
 
@@ -46,19 +59,6 @@ class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 	def PrtrySts(self):
 		del self._PrtrySts
 		self._PrtrySts = None
-
-	@property
-	def Accptd(self):
-		return self._Accptd
-
-	@Accptd.setter
-	def Accptd(self, value):
-		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
-
-	@Accptd.deleter
-	def Accptd(self):
-		del self._Accptd
-		self._Accptd = None
 
 	@property
 	def Rjctd(self):
@@ -74,10 +74,10 @@ class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus13Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CxlCmpltd', type=CancelledStatus11Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlCmpltd', type=CancelledStatus11Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus13Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus53Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

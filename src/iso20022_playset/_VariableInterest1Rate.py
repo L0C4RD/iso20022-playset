@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Number import Number
+from ._Max35Text import Max35Text
 
 class VariableInterest1Rate(base_types._BaseFieldType):
 
-	__slots__ = ["_BsisPtSprd", "_Indx"]
+	__slots__ = ["_Indx", "_BsisPtSprd"]
 	@property
 	def BsisPtSprd(self):
 		return self._BsisPtSprd

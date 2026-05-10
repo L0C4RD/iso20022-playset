@@ -1,23 +1,23 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Acquirer10 import Acquirer10
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class PaymentAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtAcqrrData", "_CurBal", "_Ccy"]
+	__slots__ = ["_CurBal", "_PmtAcqrrData", "_Ccy"]
 	@property
-	def PmtAcqrrData(self):
-		return self._PmtAcqrrData
+	def Ccy(self):
+		return self._Ccy
 
-	@PmtAcqrrData.setter
-	def PmtAcqrrData(self, value):
-		self._PmtAcqrrData = value if type(value) != base_types.auto else self.make_default("PmtAcqrrData")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@PmtAcqrrData.deleter
-	def PmtAcqrrData(self):
-		del self._PmtAcqrrData
-		self._PmtAcqrrData = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def CurBal(self):
@@ -33,21 +33,21 @@ class PaymentAccount3(base_types._BaseFieldType):
 		self._CurBal = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def PmtAcqrrData(self):
+		return self._PmtAcqrrData
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@PmtAcqrrData.setter
+	def PmtAcqrrData(self, value):
+		self._PmtAcqrrData = value if type(value) != base_types.auto else self.make_default("PmtAcqrrData")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@PmtAcqrrData.deleter
+	def PmtAcqrrData(self):
+		del self._PmtAcqrrData
+		self._PmtAcqrrData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtAcqrrData', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtAcqrrData', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
 	))
 

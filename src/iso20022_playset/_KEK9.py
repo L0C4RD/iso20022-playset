@@ -1,24 +1,24 @@
 from . import base_types
+from ._Max500Binary import Max500Binary
 from ._AlgorithmIdentification32 import AlgorithmIdentification32
 from ._Number import Number
-from ._Max500Binary import Max500Binary
 from ._KEKIdentifier7 import KEKIdentifier7
 
 class KEK9(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_KeyNcrptnAlgo", "_KEKId", "_NcrptdKey"]
+	__slots__ = ["_KEKId", "_Vrsn", "_KeyNcrptnAlgo", "_NcrptdKey"]
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def KEKId(self):
+		return self._KEKId
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+	@KEKId.setter
+	def KEKId(self, value):
+		self._KEKId = value if type(value) != base_types.auto else self.make_default("KEKId")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@KEKId.deleter
+	def KEKId(self):
+		del self._KEKId
+		self._KEKId = None
 
 	@property
 	def KeyNcrptnAlgo(self):
@@ -34,19 +34,6 @@ class KEK9(base_types._BaseFieldType):
 		self._KeyNcrptnAlgo = None
 
 	@property
-	def KEKId(self):
-		return self._KEKId
-
-	@KEKId.setter
-	def KEKId(self, value):
-		self._KEKId = value if type(value) != base_types.auto else self.make_default("KEKId")
-
-	@KEKId.deleter
-	def KEKId(self):
-		del self._KEKId
-		self._KEKId = None
-
-	@property
 	def NcrptdKey(self):
 		return self._NcrptdKey
 
@@ -59,10 +46,23 @@ class KEK9(base_types._BaseFieldType):
 		del self._NcrptdKey
 		self._NcrptdKey = None
 
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KEKId', type=KEKIdentifier7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

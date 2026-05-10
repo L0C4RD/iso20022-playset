@@ -1,23 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max35Text import Max35Text
 
 class Jurisdiction2(base_types._BaseFieldType):
 
 	__slots__ = ["_DmstQlfctn", "_DmstInd"]
-	@property
-	def DmstQlfctn(self):
-		return self._DmstQlfctn
-
-	@DmstQlfctn.setter
-	def DmstQlfctn(self, value):
-		self._DmstQlfctn = value if type(value) != base_types.auto else self.make_default("DmstQlfctn")
-
-	@DmstQlfctn.deleter
-	def DmstQlfctn(self):
-		del self._DmstQlfctn
-		self._DmstQlfctn = None
-
 	@property
 	def DmstInd(self):
 		return self._DmstInd
@@ -31,8 +18,21 @@ class Jurisdiction2(base_types._BaseFieldType):
 		del self._DmstInd
 		self._DmstInd = None
 
+	@property
+	def DmstQlfctn(self):
+		return self._DmstQlfctn
+
+	@DmstQlfctn.setter
+	def DmstQlfctn(self, value):
+		self._DmstQlfctn = value if type(value) != base_types.auto else self.make_default("DmstQlfctn")
+
+	@DmstQlfctn.deleter
+	def DmstQlfctn(self):
+		del self._DmstQlfctn
+		self._DmstQlfctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DmstQlfctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmstInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmstQlfctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

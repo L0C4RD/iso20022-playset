@@ -1,15 +1,41 @@
 from . import base_types
-from ._Max70Text import Max70Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccountType2Choice import CashAccountType2Choice
-from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._Max70Text import Max70Text
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
+from ._PartyIdentification272 import PartyIdentification272
 
 class CashAccount43(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Ownr", "_Tp", "_Prxy", "_Svcr", "_Ccy", "_Id"]
+	__slots__ = ["_Id", "_Svcr", "_Ccy", "_Ownr", "_Nm", "_Tp", "_Prxy"]
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def Nm(self):
 		return self._Nm
@@ -35,19 +61,6 @@ class CashAccount43(base_types._BaseFieldType):
 	def Ownr(self):
 		del self._Ownr
 		self._Ownr = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
 
 	@property
 	def Prxy(self):
@@ -76,38 +89,25 @@ class CashAccount43(base_types._BaseFieldType):
 		self._Svcr = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Tp(self):
+		return self._Tp
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ownr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prxy', type=ProxyAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ownr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prxy', type=ProxyAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

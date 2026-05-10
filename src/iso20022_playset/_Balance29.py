@@ -1,28 +1,15 @@
 from . import base_types
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISODate import ISODate
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
 from ._BalanceType15Code import BalanceType15Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Balance29(base_types._BaseFieldType):
 
-	__slots__ = ["_BalDt", "_Amt", "_Ccy", "_CdtDbt", "_CrdhldrCcy", "_OthrTp", "_Tp"]
-	@property
-	def BalDt(self):
-		return self._BalDt
-
-	@BalDt.setter
-	def BalDt(self, value):
-		self._BalDt = value if type(value) != base_types.auto else self.make_default("BalDt")
-
-	@BalDt.deleter
-	def BalDt(self):
-		del self._BalDt
-		self._BalDt = None
-
+	__slots__ = ["_Amt", "_Tp", "_CrdhldrCcy", "_Ccy", "_CdtDbt", "_OthrTp", "_BalDt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -35,6 +22,19 @@ class Balance29(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def BalDt(self):
+		return self._BalDt
+
+	@BalDt.setter
+	def BalDt(self, value):
+		self._BalDt = value if type(value) != base_types.auto else self.make_default("BalDt")
+
+	@BalDt.deleter
+	def BalDt(self):
+		del self._BalDt
+		self._BalDt = None
 
 	@property
 	def Ccy(self):
@@ -102,8 +102,8 @@ class Balance29(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrCcy', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

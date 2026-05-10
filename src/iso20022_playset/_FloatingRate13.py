@@ -1,67 +1,28 @@
 from . import base_types
-from ._Max350Text import Max350Text
-from ._ResetDateAndValue1 import ResetDateAndValue1
-from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
 from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
-from ._FloatingRateIdentification8Choice import FloatingRateIdentification8Choice
+from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ResetDateAndValue1 import ResetDateAndValue1
+from ._FloatingRateIdentification8Choice import FloatingRateIdentification8Choice
+from ._Max350Text import Max350Text
 from ._SecuritiesTransactionPrice20Choice import SecuritiesTransactionPrice20Choice
 from ._InterestRateContractTerm4 import InterestRateContractTerm4
 
 class FloatingRate13(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_RefPrd", "_Rate", "_LastFltgRst", "_Id", "_DayCnt", "_PmtFrqcy", "_Sprd", "_RstFrqcy", "_NxtFltgRst"]
+	__slots__ = ["_PmtFrqcy", "_NxtFltgRst", "_DayCnt", "_RefPrd", "_Nm", "_Rate", "_LastFltgRst", "_RstFrqcy", "_Id", "_Sprd"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def DayCnt(self):
+		return self._DayCnt
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@DayCnt.setter
+	def DayCnt(self, value):
+		self._DayCnt = value if type(value) != base_types.auto else self.make_default("DayCnt")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def RefPrd(self):
-		return self._RefPrd
-
-	@RefPrd.setter
-	def RefPrd(self, value):
-		self._RefPrd = value if type(value) != base_types.auto else self.make_default("RefPrd")
-
-	@RefPrd.deleter
-	def RefPrd(self):
-		del self._RefPrd
-		self._RefPrd = None
-
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
-	def LastFltgRst(self):
-		return self._LastFltgRst
-
-	@LastFltgRst.setter
-	def LastFltgRst(self, value):
-		self._LastFltgRst = value if type(value) != base_types.auto else self.make_default("LastFltgRst")
-
-	@LastFltgRst.deleter
-	def LastFltgRst(self):
-		del self._LastFltgRst
-		self._LastFltgRst = None
+	@DayCnt.deleter
+	def DayCnt(self):
+		del self._DayCnt
+		self._DayCnt = None
 
 	@property
 	def Id(self):
@@ -77,17 +38,43 @@ class FloatingRate13(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def DayCnt(self):
-		return self._DayCnt
+	def LastFltgRst(self):
+		return self._LastFltgRst
 
-	@DayCnt.setter
-	def DayCnt(self, value):
-		self._DayCnt = value if type(value) != base_types.auto else self.make_default("DayCnt")
+	@LastFltgRst.setter
+	def LastFltgRst(self, value):
+		self._LastFltgRst = value if type(value) != base_types.auto else self.make_default("LastFltgRst")
 
-	@DayCnt.deleter
-	def DayCnt(self):
-		del self._DayCnt
-		self._DayCnt = None
+	@LastFltgRst.deleter
+	def LastFltgRst(self):
+		del self._LastFltgRst
+		self._LastFltgRst = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def NxtFltgRst(self):
+		return self._NxtFltgRst
+
+	@NxtFltgRst.setter
+	def NxtFltgRst(self, value):
+		self._NxtFltgRst = value if type(value) != base_types.auto else self.make_default("NxtFltgRst")
+
+	@NxtFltgRst.deleter
+	def NxtFltgRst(self):
+		del self._NxtFltgRst
+		self._NxtFltgRst = None
 
 	@property
 	def PmtFrqcy(self):
@@ -103,17 +90,30 @@ class FloatingRate13(base_types._BaseFieldType):
 		self._PmtFrqcy = None
 
 	@property
-	def Sprd(self):
-		return self._Sprd
+	def Rate(self):
+		return self._Rate
 
-	@Sprd.setter
-	def Sprd(self, value):
-		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
-	@Sprd.deleter
-	def Sprd(self):
-		del self._Sprd
-		self._Sprd = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
+	@property
+	def RefPrd(self):
+		return self._RefPrd
+
+	@RefPrd.setter
+	def RefPrd(self, value):
+		self._RefPrd = value if type(value) != base_types.auto else self.make_default("RefPrd")
+
+	@RefPrd.deleter
+	def RefPrd(self):
+		del self._RefPrd
+		self._RefPrd = None
 
 	@property
 	def RstFrqcy(self):
@@ -129,28 +129,28 @@ class FloatingRate13(base_types._BaseFieldType):
 		self._RstFrqcy = None
 
 	@property
-	def NxtFltgRst(self):
-		return self._NxtFltgRst
+	def Sprd(self):
+		return self._Sprd
 
-	@NxtFltgRst.setter
-	def NxtFltgRst(self, value):
-		self._NxtFltgRst = value if type(value) != base_types.auto else self.make_default("NxtFltgRst")
+	@Sprd.setter
+	def Sprd(self, value):
+		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
 
-	@NxtFltgRst.deleter
-	def NxtFltgRst(self):
-		del self._NxtFltgRst
-		self._NxtFltgRst = None
+	@Sprd.deleter
+	def Sprd(self):
+		del self._Sprd
+		self._Sprd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefPrd', type=InterestRateContractTerm4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=FloatingRateIdentification8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastFltgRst', type=ResetDateAndValue1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DayCnt', type=InterestComputationMethodFormat7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFrqcy', type=InterestRateFrequency3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice20Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstFrqcy', type=InterestRateFrequency3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastFltgRst', type=ResetDateAndValue1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NxtFltgRst', type=ResetDateAndValue1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=InterestRateFrequency3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=FloatingRateIdentification8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefPrd', type=InterestRateContractTerm4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstFrqcy', type=InterestRateFrequency3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice20Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

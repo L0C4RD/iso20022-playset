@@ -4,7 +4,7 @@ from ._Max140Text import Max140Text
 
 class CertificationRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_CertReqInf", "_KeyVrsn", "_KeyId"]
+	__slots__ = ["_KeyId", "_KeyVrsn", "_CertReqInf"]
 	@property
 	def CertReqInf(self):
 		return self._CertReqInf
@@ -19,19 +19,6 @@ class CertificationRequest1(base_types._BaseFieldType):
 		self._CertReqInf = None
 
 	@property
-	def KeyVrsn(self):
-		return self._KeyVrsn
-
-	@KeyVrsn.setter
-	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
-
-	@KeyVrsn.deleter
-	def KeyVrsn(self):
-		del self._KeyVrsn
-		self._KeyVrsn = None
-
-	@property
 	def KeyId(self):
 		return self._KeyId
 
@@ -44,9 +31,22 @@ class CertificationRequest1(base_types._BaseFieldType):
 		del self._KeyId
 		self._KeyId = None
 
+	@property
+	def KeyVrsn(self):
+		return self._KeyVrsn
+
+	@KeyVrsn.setter
+	def KeyVrsn(self, value):
+		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
+
+	@KeyVrsn.deleter
+	def KeyVrsn(self):
+		del self._KeyVrsn
+		self._KeyVrsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertReqInf', type=CertificationRequest2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

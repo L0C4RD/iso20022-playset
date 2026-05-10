@@ -6,19 +6,19 @@ from ._DateFormat3Choice import DateFormat3Choice
 
 class IncentivePremium6(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Desc", "_PmtDt", "_Amt"]
+	__slots__ = ["_Desc", "_PmtDt", "_Amt", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Amt(self):
+		return self._Amt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Desc(self):
@@ -47,22 +47,22 @@ class IncentivePremium6(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Tp(self):
+		return self._Tp
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=IncentivePremiumType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=PriceRateOrAmount8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=DateFormat3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=PriceRateOrAmount8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=IncentivePremiumType2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

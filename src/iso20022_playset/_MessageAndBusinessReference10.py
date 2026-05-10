@@ -1,11 +1,11 @@
 from . import base_types
-from ._References62Choice import References62Choice
-from ._InvestmentFundOrder8 import InvestmentFundOrder8
 from ._AdditionalReference8 import AdditionalReference8
+from ._InvestmentFundOrder8 import InvestmentFundOrder8
+from ._References62Choice import References62Choice
 
 class MessageAndBusinessReference10(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrRef", "_Ref", "_RltdRef"]
+	__slots__ = ["_RltdRef", "_OrdrRef", "_Ref"]
 	@property
 	def OrdrRef(self):
 		return self._OrdrRef

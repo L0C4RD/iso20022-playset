@@ -4,7 +4,7 @@ from ._Product6 import Product6
 
 class SaleItemRebate1(base_types._BaseFieldType):
 
-	__slots__ = ["_RbtLabl", "_SaleItm"]
+	__slots__ = ["_SaleItm", "_RbtLabl"]
 	@property
 	def RbtLabl(self):
 		return self._RbtLabl

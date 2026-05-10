@@ -4,7 +4,7 @@ from ._SystemAndCurrency1 import SystemAndCurrency1
 
 class CalendarReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_CalOrErr", "_Svc"]
+	__slots__ = ["_Svc", "_CalOrErr"]
 	@property
 	def CalOrErr(self):
 		return self._CalOrErr

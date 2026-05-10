@@ -1,11 +1,11 @@
 from . import base_types
+from ._OptionNumber1Choice import OptionNumber1Choice
 from ._Quantity52Choice import Quantity52Choice
 from ._CorporateActionOption40Choice import CorporateActionOption40Choice
-from ._OptionNumber1Choice import OptionNumber1Choice
 
 class CorporateActionOption200(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdQty", "_OptnNb", "_OptnTp"]
+	__slots__ = ["_OptnTp", "_OptnNb", "_InstdQty"]
 	@property
 	def InstdQty(self):
 		return self._InstdQty

@@ -3,32 +3,19 @@ from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmoun
 
 class CollateralAmount9(base_types._BaseFieldType):
 
-	__slots__ = ["_XpsrCollInRptgCcy", "_MktValAmtPstHrcut", "_ActlMktValPstHrcut", "_MktValAmtBfrHrcut", "_XpsrCollInTxCcy", "_ActlMktValBfrHrcut"]
+	__slots__ = ["_ActlMktValBfrHrcut", "_ActlMktValPstHrcut", "_XpsrCollInTxCcy", "_MktValAmtBfrHrcut", "_XpsrCollInRptgCcy", "_MktValAmtPstHrcut"]
 	@property
-	def XpsrCollInRptgCcy(self):
-		return self._XpsrCollInRptgCcy
+	def ActlMktValBfrHrcut(self):
+		return self._ActlMktValBfrHrcut
 
-	@XpsrCollInRptgCcy.setter
-	def XpsrCollInRptgCcy(self, value):
-		self._XpsrCollInRptgCcy = value if type(value) != base_types.auto else self.make_default("XpsrCollInRptgCcy")
+	@ActlMktValBfrHrcut.setter
+	def ActlMktValBfrHrcut(self, value):
+		self._ActlMktValBfrHrcut = value if type(value) != base_types.auto else self.make_default("ActlMktValBfrHrcut")
 
-	@XpsrCollInRptgCcy.deleter
-	def XpsrCollInRptgCcy(self):
-		del self._XpsrCollInRptgCcy
-		self._XpsrCollInRptgCcy = None
-
-	@property
-	def MktValAmtPstHrcut(self):
-		return self._MktValAmtPstHrcut
-
-	@MktValAmtPstHrcut.setter
-	def MktValAmtPstHrcut(self, value):
-		self._MktValAmtPstHrcut = value if type(value) != base_types.auto else self.make_default("MktValAmtPstHrcut")
-
-	@MktValAmtPstHrcut.deleter
-	def MktValAmtPstHrcut(self):
-		del self._MktValAmtPstHrcut
-		self._MktValAmtPstHrcut = None
+	@ActlMktValBfrHrcut.deleter
+	def ActlMktValBfrHrcut(self):
+		del self._ActlMktValBfrHrcut
+		self._ActlMktValBfrHrcut = None
 
 	@property
 	def ActlMktValPstHrcut(self):
@@ -57,6 +44,32 @@ class CollateralAmount9(base_types._BaseFieldType):
 		self._MktValAmtBfrHrcut = None
 
 	@property
+	def MktValAmtPstHrcut(self):
+		return self._MktValAmtPstHrcut
+
+	@MktValAmtPstHrcut.setter
+	def MktValAmtPstHrcut(self, value):
+		self._MktValAmtPstHrcut = value if type(value) != base_types.auto else self.make_default("MktValAmtPstHrcut")
+
+	@MktValAmtPstHrcut.deleter
+	def MktValAmtPstHrcut(self):
+		del self._MktValAmtPstHrcut
+		self._MktValAmtPstHrcut = None
+
+	@property
+	def XpsrCollInRptgCcy(self):
+		return self._XpsrCollInRptgCcy
+
+	@XpsrCollInRptgCcy.setter
+	def XpsrCollInRptgCcy(self, value):
+		self._XpsrCollInRptgCcy = value if type(value) != base_types.auto else self.make_default("XpsrCollInRptgCcy")
+
+	@XpsrCollInRptgCcy.deleter
+	def XpsrCollInRptgCcy(self):
+		del self._XpsrCollInRptgCcy
+		self._XpsrCollInRptgCcy = None
+
+	@property
 	def XpsrCollInTxCcy(self):
 		return self._XpsrCollInTxCcy
 
@@ -69,25 +82,12 @@ class CollateralAmount9(base_types._BaseFieldType):
 		del self._XpsrCollInTxCcy
 		self._XpsrCollInTxCcy = None
 
-	@property
-	def ActlMktValBfrHrcut(self):
-		return self._ActlMktValBfrHrcut
-
-	@ActlMktValBfrHrcut.setter
-	def ActlMktValBfrHrcut(self, value):
-		self._ActlMktValBfrHrcut = value if type(value) != base_types.auto else self.make_default("ActlMktValBfrHrcut")
-
-	@ActlMktValBfrHrcut.deleter
-	def ActlMktValBfrHrcut(self):
-		del self._ActlMktValBfrHrcut
-		self._ActlMktValBfrHrcut = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpsrCollInRptgCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktValAmtPstHrcut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActlMktValBfrHrcut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActlMktValPstHrcut', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktValAmtBfrHrcut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktValAmtPstHrcut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsrCollInRptgCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrCollInTxCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActlMktValBfrHrcut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

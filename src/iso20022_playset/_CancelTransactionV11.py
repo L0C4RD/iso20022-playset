@@ -1,13 +1,26 @@
 from . import base_types
+from ._SupplementaryData1 import SupplementaryData1
+from ._PaymentIdentification8Choice import PaymentIdentification8Choice
 from ._MessageHeader9 import MessageHeader9
 from ._PaymentCancellationReason6 import PaymentCancellationReason6
-from ._PaymentIdentification8Choice import PaymentIdentification8Choice
-from ._SupplementaryData1 import SupplementaryData1
 from ._CashAccount40 import CashAccount40
 
 class CancelTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_MsgHdr", "_PmtId", "_CshAcct", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_CshAcct", "_CxlRsn", "_SplmtryData", "_PmtId"]
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
+
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn
@@ -48,19 +61,6 @@ class CancelTransactionV11(base_types._BaseFieldType):
 		self._PmtId = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -74,10 +74,10 @@ class CancelTransactionV11(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsn', type=PaymentCancellationReason6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtId', type=PaymentIdentification8Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

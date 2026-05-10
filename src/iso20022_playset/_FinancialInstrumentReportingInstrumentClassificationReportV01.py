@@ -4,7 +4,7 @@ from ._SecuritiesInstrumentClassification2 import SecuritiesInstrumentClassifica
 
 class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrmClssfctn", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_InstrmClssfctn"]
 	@property
 	def InstrmClssfctn(self):
 		return self._InstrmClssfctn

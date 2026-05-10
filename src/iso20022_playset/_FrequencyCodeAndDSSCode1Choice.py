@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification7 import GenericIdentification7
 from ._EventFrequency1Code import EventFrequency1Code
+from ._GenericIdentification7 import GenericIdentification7
 
 class FrequencyCodeAndDSSCode1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrqcyAsCd", "_FrqcyAsDSS"]
+	__slots__ = ["_FrqcyAsDSS", "_FrqcyAsCd"]
 	@property
 	def FrqcyAsCd(self):
 		return self._FrqcyAsCd

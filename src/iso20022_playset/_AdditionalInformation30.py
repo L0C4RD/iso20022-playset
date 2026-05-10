@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._UserInterface8Code import UserInterface8Code
 from ._PartyType19Code import PartyType19Code
 from ._Max35Text import Max35Text
+from ._UserInterface8Code import UserInterface8Code
 from ._Max20KText import Max20KText
 from ._OutputFormat4Code import OutputFormat4Code
+from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
 
 class AdditionalInformation30(base_types._BaseFieldType):
 
-	__slots__ = ["_Frmt", "_Trgt", "_Lang", "_Tp", "_Rcpt", "_Val"]
+	__slots__ = ["_Val", "_Frmt", "_Lang", "_Rcpt", "_Tp", "_Trgt"]
 	@property
 	def Frmt(self):
 		return self._Frmt
@@ -21,19 +21,6 @@ class AdditionalInformation30(base_types._BaseFieldType):
 	def Frmt(self):
 		del self._Frmt
 		self._Frmt = None
-
-	@property
-	def Trgt(self):
-		return self._Trgt
-
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
-
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
 
 	@property
 	def Lang(self):
@@ -49,6 +36,19 @@ class AdditionalInformation30(base_types._BaseFieldType):
 		self._Lang = None
 
 	@property
+	def Rcpt(self):
+		return self._Rcpt
+
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -62,17 +62,17 @@ class AdditionalInformation30(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Rcpt(self):
-		return self._Rcpt
+	def Trgt(self):
+		return self._Trgt
 
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
 
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
 
 	@property
 	def Val(self):
@@ -89,10 +89,10 @@ class AdditionalInformation30(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 	))
 

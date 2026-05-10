@@ -1,24 +1,24 @@
 from . import base_types
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._PaymentType4Choice import PaymentType4Choice
 from ._Instruction1Code import Instruction1Code
 from ._Priority1Choice import Priority1Choice
-from ._PaymentType4Choice import PaymentType4Choice
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class PaymentInstruction33(base_types._BaseFieldType):
 
-	__slots__ = ["_Prty", "_PrcgVldtyTm", "_Instr", "_Tp"]
+	__slots__ = ["_Instr", "_Prty", "_PrcgVldtyTm", "_Tp"]
 	@property
-	def Prty(self):
-		return self._Prty
+	def Instr(self):
+		return self._Instr
 
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+	@Instr.setter
+	def Instr(self, value):
+		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
 
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
+	@Instr.deleter
+	def Instr(self):
+		del self._Instr
+		self._Instr = None
 
 	@property
 	def PrcgVldtyTm(self):
@@ -34,17 +34,17 @@ class PaymentInstruction33(base_types._BaseFieldType):
 		self._PrcgVldtyTm = None
 
 	@property
-	def Instr(self):
-		return self._Instr
+	def Prty(self):
+		return self._Prty
 
-	@Instr.setter
-	def Instr(self, value):
-		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
 
-	@Instr.deleter
-	def Instr(self):
-		del self._Instr
-		self._Instr = None
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
 
 	@property
 	def Tp(self):
@@ -60,9 +60,9 @@ class PaymentInstruction33(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgVldtyTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Instr', type=Instruction1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgVldtyTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

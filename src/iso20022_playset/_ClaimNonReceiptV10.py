@@ -1,14 +1,14 @@
 from . import base_types
-from ._MissingCover6 import MissingCover6
+from ._SupplementaryData1 import SupplementaryData1
 from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from ._InstructionForAssignee1 import InstructionForAssignee1
 from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
-from ._SupplementaryData1 import SupplementaryData1
-from ._InstructionForAssignee1 import InstructionForAssignee1
+from ._MissingCover6 import MissingCover6
 
 class ClaimNonReceiptV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_CoverDtls", "_Case", "_Undrlyg", "_SplmtryData", "_InstrForAssgne"]
+	__slots__ = ["_Undrlyg", "_CoverDtls", "_InstrForAssgne", "_Assgnmt", "_Case", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt
@@ -21,19 +21,6 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
-
-	@property
-	def CoverDtls(self):
-		return self._CoverDtls
-
-	@CoverDtls.setter
-	def CoverDtls(self, value):
-		self._CoverDtls = value if type(value) != base_types.auto else self.make_default("CoverDtls")
-
-	@CoverDtls.deleter
-	def CoverDtls(self):
-		del self._CoverDtls
-		self._CoverDtls = None
 
 	@property
 	def Case(self):
@@ -49,17 +36,30 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def Undrlyg(self):
-		return self._Undrlyg
+	def CoverDtls(self):
+		return self._CoverDtls
 
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+	@CoverDtls.setter
+	def CoverDtls(self, value):
+		self._CoverDtls = value if type(value) != base_types.auto else self.make_default("CoverDtls")
 
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
+	@CoverDtls.deleter
+	def CoverDtls(self):
+		del self._CoverDtls
+		self._CoverDtls = None
+
+	@property
+	def InstrForAssgne(self):
+		return self._InstrForAssgne
+
+	@InstrForAssgne.setter
+	def InstrForAssgne(self, value):
+		self._InstrForAssgne = value if type(value) != base_types.auto else self.make_default("InstrForAssgne")
+
+	@InstrForAssgne.deleter
+	def InstrForAssgne(self):
+		del self._InstrForAssgne
+		self._InstrForAssgne = None
 
 	@property
 	def SplmtryData(self):
@@ -75,24 +75,24 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def InstrForAssgne(self):
-		return self._InstrForAssgne
+	def Undrlyg(self):
+		return self._Undrlyg
 
-	@InstrForAssgne.setter
-	def InstrForAssgne(self, value):
-		self._InstrForAssgne = value if type(value) != base_types.auto else self.make_default("InstrForAssgne")
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
 
-	@InstrForAssgne.deleter
-	def InstrForAssgne(self):
-		del self._InstrForAssgne
-		self._InstrForAssgne = None
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CoverDtls', type=MissingCover6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CoverDtls', type=MissingCover6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrForAssgne', type=InstructionForAssignee1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

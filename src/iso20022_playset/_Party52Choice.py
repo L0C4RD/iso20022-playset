@@ -4,7 +4,7 @@ from ._PersonIdentification18 import PersonIdentification18
 
 class Party52Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgId", "_PrvtId"]
+	__slots__ = ["_PrvtId", "_OrgId"]
 	@property
 	def OrgId(self):
 		return self._OrgId

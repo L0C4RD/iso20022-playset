@@ -1,12 +1,12 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._SystemIdentification2Choice import SystemIdentification2Choice
-from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._LimitType1Choice import LimitType1Choice
+from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class LimitIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_AcctOwnr", "_Tp", "_SysId"]
+	__slots__ = ["_AcctOwnr", "_AcctId", "_SysId", "_Tp"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -34,19 +34,6 @@ class LimitIdentification9(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def SysId(self):
 		return self._SysId
 
@@ -59,10 +46,23 @@ class LimitIdentification9(base_types._BaseFieldType):
 		del self._SysId
 		self._SysId = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=LimitType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=LimitType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

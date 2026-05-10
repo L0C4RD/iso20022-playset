@@ -1,10 +1,10 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class DateAndAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Dt"]
+	__slots__ = ["_Dt", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

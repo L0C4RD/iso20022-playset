@@ -1,25 +1,12 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._PartyIdentification73Choice import PartyIdentification73Choice
 from ._ReportData5 import ReportData5
+from ._PartyIdentification73Choice import PartyIdentification73Choice
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class PayInCallV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_PtyId", "_RptData", "_SttlmSsnIdr"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_PtyId", "_SttlmSsnIdr", "_SplmtryData", "_RptData"]
 	@property
 	def PtyId(self):
 		return self._PtyId
@@ -47,6 +34,19 @@ class PayInCallV02(base_types._BaseFieldType):
 		self._RptData = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def SttlmSsnIdr(self):
 		return self._SttlmSsnIdr
 
@@ -60,9 +60,9 @@ class PayInCallV02(base_types._BaseFieldType):
 		self._SttlmSsnIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification73Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptData', type=ReportData5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

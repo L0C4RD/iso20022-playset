@@ -1,11 +1,11 @@
 from . import base_types
+from ._PercentageRate import PercentageRate
 from ._BillingRateIdentification1Choice import BillingRateIdentification1Choice
 from ._Number import Number
-from ._PercentageRate import PercentageRate
 
 class BillingRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_DaysInPrd", "_Val", "_DaysInYr", "_Id"]
+	__slots__ = ["_Val", "_DaysInYr", "_Id", "_DaysInPrd"]
 	@property
 	def DaysInPrd(self):
 		return self._DaysInPrd
@@ -18,19 +18,6 @@ class BillingRate1(base_types._BaseFieldType):
 	def DaysInPrd(self):
 		del self._DaysInPrd
 		self._DaysInPrd = None
-
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
 
 	@property
 	def DaysInYr(self):
@@ -58,10 +45,23 @@ class BillingRate1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DaysInPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DaysInYr', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=BillingRateIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

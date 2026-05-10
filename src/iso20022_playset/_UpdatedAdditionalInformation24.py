@@ -1,6 +1,6 @@
 from . import base_types
-from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._ISO2ALanguageCode import ISO2ALanguageCode
 
 class UpdatedAdditionalInformation24(base_types._BaseFieldType):
 

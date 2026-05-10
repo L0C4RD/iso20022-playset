@@ -1,11 +1,24 @@
 from . import base_types
-from ._Max105Text import Max105Text
-from ._DeliveryPlace3Code import DeliveryPlace3Code
 from ._NameAndAddress9 import NameAndAddress9
+from ._DeliveryPlace3Code import DeliveryPlace3Code
+from ._Max105Text import Max105Text
 
 class AttendanceCard3(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryMtd", "_OthrAdr", "_AttndncCardLbllg"]
+	__slots__ = ["_AttndncCardLbllg", "_OthrAdr", "_DlvryMtd"]
+	@property
+	def AttndncCardLbllg(self):
+		return self._AttndncCardLbllg
+
+	@AttndncCardLbllg.setter
+	def AttndncCardLbllg(self, value):
+		self._AttndncCardLbllg = value if type(value) != base_types.auto else self.make_default("AttndncCardLbllg")
+
+	@AttndncCardLbllg.deleter
+	def AttndncCardLbllg(self):
+		del self._AttndncCardLbllg
+		self._AttndncCardLbllg = None
+
 	@property
 	def DlvryMtd(self):
 		return self._DlvryMtd
@@ -32,22 +45,9 @@ class AttendanceCard3(base_types._BaseFieldType):
 		del self._OthrAdr
 		self._OthrAdr = None
 
-	@property
-	def AttndncCardLbllg(self):
-		return self._AttndncCardLbllg
-
-	@AttndncCardLbllg.setter
-	def AttndncCardLbllg(self, value):
-		self._AttndncCardLbllg = value if type(value) != base_types.auto else self.make_default("AttndncCardLbllg")
-
-	@AttndncCardLbllg.deleter
-	def AttndncCardLbllg(self):
-		del self._AttndncCardLbllg
-		self._AttndncCardLbllg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AttndncCardLbllg', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryMtd', type=DeliveryPlace3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrAdr', type=NameAndAddress9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttndncCardLbllg', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

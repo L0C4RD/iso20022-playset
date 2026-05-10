@@ -5,7 +5,7 @@ from ._OrderStatusAndReason10 import OrderStatusAndReason10
 
 class Status24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvOrdrDtlsRpt", "_OrdrDtlsRpt", "_SwtchOrdrDtlsRpt"]
+	__slots__ = ["_OrdrDtlsRpt", "_SwtchOrdrDtlsRpt", "_IndvOrdrDtlsRpt"]
 	@property
 	def IndvOrdrDtlsRpt(self):
 		return self._IndvOrdrDtlsRpt

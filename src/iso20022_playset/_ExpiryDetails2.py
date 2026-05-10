@@ -4,7 +4,7 @@ from ._Max2000Text import Max2000Text
 
 class ExpiryDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlXpryInf", "_XpryTerms"]
+	__slots__ = ["_XpryTerms", "_AddtlXpryInf"]
 	@property
 	def AddtlXpryInf(self):
 		return self._AddtlXpryInf

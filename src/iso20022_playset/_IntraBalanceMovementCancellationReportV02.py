@@ -1,26 +1,13 @@
 from . import base_types
-from ._IntraBalanceOrOperationalError10Choice import IntraBalanceOrOperationalError10Choice
-from ._Pagination1 import Pagination1
 from ._SupplementaryData1 import SupplementaryData1
+from ._Pagination1 import Pagination1
+from ._IntraBalanceOrOperationalError10Choice import IntraBalanceOrOperationalError10Choice
 from ._IntraBalanceReport5 import IntraBalanceReport5
 from ._DocumentIdentification51 import DocumentIdentification51
 
 class IntraBalanceMovementCancellationReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Pgntn", "_Id", "_RptGnlDtls", "_RptOrErr", "_SplmtryData"]
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
+	__slots__ = ["_Id", "_RptOrErr", "_RptGnlDtls", "_SplmtryData", "_Pgntn"]
 	@property
 	def Id(self):
 		return self._Id
@@ -33,6 +20,19 @@ class IntraBalanceMovementCancellationReportV02(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def RptGnlDtls(self):
@@ -74,8 +74,8 @@ class IntraBalanceMovementCancellationReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptOrErr', type=IntraBalanceOrOperationalError10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),

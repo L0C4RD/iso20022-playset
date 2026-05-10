@@ -3,7 +3,20 @@ from ._GenericIdentification1 import GenericIdentification1
 
 class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_ExclsnBsktId", "_PrfrntlBsktIdNb", "_FllbckStartgBsktId", "_ElgbltySetPrfl"]
+	__slots__ = ["_FllbckStartgBsktId", "_PrfrntlBsktIdNb", "_ElgbltySetPrfl", "_ExclsnBsktId"]
+	@property
+	def ElgbltySetPrfl(self):
+		return self._ElgbltySetPrfl
+
+	@ElgbltySetPrfl.setter
+	def ElgbltySetPrfl(self, value):
+		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
+
+	@ElgbltySetPrfl.deleter
+	def ElgbltySetPrfl(self):
+		del self._ElgbltySetPrfl
+		self._ElgbltySetPrfl = None
+
 	@property
 	def ExclsnBsktId(self):
 		return self._ExclsnBsktId
@@ -16,19 +29,6 @@ class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 	def ExclsnBsktId(self):
 		del self._ExclsnBsktId
 		self._ExclsnBsktId = None
-
-	@property
-	def PrfrntlBsktIdNb(self):
-		return self._PrfrntlBsktIdNb
-
-	@PrfrntlBsktIdNb.setter
-	def PrfrntlBsktIdNb(self, value):
-		self._PrfrntlBsktIdNb = value if type(value) != base_types.auto else self.make_default("PrfrntlBsktIdNb")
-
-	@PrfrntlBsktIdNb.deleter
-	def PrfrntlBsktIdNb(self):
-		del self._PrfrntlBsktIdNb
-		self._PrfrntlBsktIdNb = None
 
 	@property
 	def FllbckStartgBsktId(self):
@@ -44,22 +44,22 @@ class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 		self._FllbckStartgBsktId = None
 
 	@property
-	def ElgbltySetPrfl(self):
-		return self._ElgbltySetPrfl
+	def PrfrntlBsktIdNb(self):
+		return self._PrfrntlBsktIdNb
 
-	@ElgbltySetPrfl.setter
-	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
+	@PrfrntlBsktIdNb.setter
+	def PrfrntlBsktIdNb(self, value):
+		self._PrfrntlBsktIdNb = value if type(value) != base_types.auto else self.make_default("PrfrntlBsktIdNb")
 
-	@ElgbltySetPrfl.deleter
-	def ElgbltySetPrfl(self):
-		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+	@PrfrntlBsktIdNb.deleter
+	def PrfrntlBsktIdNb(self):
+		del self._PrfrntlBsktIdNb
+		self._PrfrntlBsktIdNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExclsnBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrfrntlBsktIdNb', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FllbckStartgBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExclsnBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FllbckStartgBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrfrntlBsktIdNb', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

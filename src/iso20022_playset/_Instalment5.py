@@ -1,97 +1,32 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Number import Number
-from ._Frequency3Code import Frequency3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._InstalmentPlan1Code import InstalmentPlan1Code
-from ._ActionMessage11 import ActionMessage11
-from ._GracePeriod1 import GracePeriod1
-from ._InstalmentAmountDetails1 import InstalmentAmountDetails1
-from ._Max35Text import Max35Text
-from ._PlanOwner1Code import PlanOwner1Code
 from ._ISODate import ISODate
+from ._InstalmentPlan1Code import InstalmentPlan1Code
+from ._PlanOwner1Code import PlanOwner1Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._InterestRateDetails1 import InterestRateDetails1
+from ._Number import Number
+from ._InstalmentAmountDetails1 import InstalmentAmountDetails1
+from ._ActionMessage11 import ActionMessage11
+from ._Max35Text import Max35Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Frequency3Code import Frequency3Code
+from ._GracePeriod1 import GracePeriod1
 
 class Instalment5(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstRate", "_GracePrd", "_PrdUnit", "_TtlNbOfPmts", "_SbsqntAmt", "_TtlAmt", "_DtldChrgs", "_PlanNtce", "_FrstPmtDt", "_InstlmtPlan", "_PlanOwnr", "_PlanId", "_FrstAmt", "_LastAmt", "_Chrgs", "_InstlmtPrd", "_SeqNb"]
+	__slots__ = ["_SeqNb", "_Chrgs", "_FrstPmtDt", "_TtlAmt", "_DtldChrgs", "_PlanNtce", "_PlanId", "_FrstAmt", "_LastAmt", "_GracePrd", "_InstlmtPrd", "_SbsqntAmt", "_PlanOwnr", "_PrdUnit", "_TtlNbOfPmts", "_IntrstRate", "_InstlmtPlan"]
 	@property
-	def IntrstRate(self):
-		return self._IntrstRate
+	def Chrgs(self):
+		return self._Chrgs
 
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
 
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
-	@property
-	def GracePrd(self):
-		return self._GracePrd
-
-	@GracePrd.setter
-	def GracePrd(self, value):
-		self._GracePrd = value if type(value) != base_types.auto else self.make_default("GracePrd")
-
-	@GracePrd.deleter
-	def GracePrd(self):
-		del self._GracePrd
-		self._GracePrd = None
-
-	@property
-	def PrdUnit(self):
-		return self._PrdUnit
-
-	@PrdUnit.setter
-	def PrdUnit(self, value):
-		self._PrdUnit = value if type(value) != base_types.auto else self.make_default("PrdUnit")
-
-	@PrdUnit.deleter
-	def PrdUnit(self):
-		del self._PrdUnit
-		self._PrdUnit = None
-
-	@property
-	def TtlNbOfPmts(self):
-		return self._TtlNbOfPmts
-
-	@TtlNbOfPmts.setter
-	def TtlNbOfPmts(self, value):
-		self._TtlNbOfPmts = value if type(value) != base_types.auto else self.make_default("TtlNbOfPmts")
-
-	@TtlNbOfPmts.deleter
-	def TtlNbOfPmts(self):
-		del self._TtlNbOfPmts
-		self._TtlNbOfPmts = None
-
-	@property
-	def SbsqntAmt(self):
-		return self._SbsqntAmt
-
-	@SbsqntAmt.setter
-	def SbsqntAmt(self, value):
-		self._SbsqntAmt = value if type(value) != base_types.auto else self.make_default("SbsqntAmt")
-
-	@SbsqntAmt.deleter
-	def SbsqntAmt(self):
-		del self._SbsqntAmt
-		self._SbsqntAmt = None
-
-	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
 
 	@property
 	def DtldChrgs(self):
@@ -107,17 +42,17 @@ class Instalment5(base_types._BaseFieldType):
 		self._DtldChrgs = None
 
 	@property
-	def PlanNtce(self):
-		return self._PlanNtce
+	def FrstAmt(self):
+		return self._FrstAmt
 
-	@PlanNtce.setter
-	def PlanNtce(self, value):
-		self._PlanNtce = value if type(value) != base_types.auto else self.make_default("PlanNtce")
+	@FrstAmt.setter
+	def FrstAmt(self, value):
+		self._FrstAmt = value if type(value) != base_types.auto else self.make_default("FrstAmt")
 
-	@PlanNtce.deleter
-	def PlanNtce(self):
-		del self._PlanNtce
-		self._PlanNtce = None
+	@FrstAmt.deleter
+	def FrstAmt(self):
+		del self._FrstAmt
+		self._FrstAmt = None
 
 	@property
 	def FrstPmtDt(self):
@@ -133,6 +68,19 @@ class Instalment5(base_types._BaseFieldType):
 		self._FrstPmtDt = None
 
 	@property
+	def GracePrd(self):
+		return self._GracePrd
+
+	@GracePrd.setter
+	def GracePrd(self, value):
+		self._GracePrd = value if type(value) != base_types.auto else self.make_default("GracePrd")
+
+	@GracePrd.deleter
+	def GracePrd(self):
+		del self._GracePrd
+		self._GracePrd = None
+
+	@property
 	def InstlmtPlan(self):
 		return self._InstlmtPlan
 
@@ -144,71 +92,6 @@ class Instalment5(base_types._BaseFieldType):
 	def InstlmtPlan(self):
 		del self._InstlmtPlan
 		self._InstlmtPlan = None
-
-	@property
-	def PlanOwnr(self):
-		return self._PlanOwnr
-
-	@PlanOwnr.setter
-	def PlanOwnr(self, value):
-		self._PlanOwnr = value if type(value) != base_types.auto else self.make_default("PlanOwnr")
-
-	@PlanOwnr.deleter
-	def PlanOwnr(self):
-		del self._PlanOwnr
-		self._PlanOwnr = None
-
-	@property
-	def PlanId(self):
-		return self._PlanId
-
-	@PlanId.setter
-	def PlanId(self, value):
-		self._PlanId = value if type(value) != base_types.auto else self.make_default("PlanId")
-
-	@PlanId.deleter
-	def PlanId(self):
-		del self._PlanId
-		self._PlanId = None
-
-	@property
-	def FrstAmt(self):
-		return self._FrstAmt
-
-	@FrstAmt.setter
-	def FrstAmt(self, value):
-		self._FrstAmt = value if type(value) != base_types.auto else self.make_default("FrstAmt")
-
-	@FrstAmt.deleter
-	def FrstAmt(self):
-		del self._FrstAmt
-		self._FrstAmt = None
-
-	@property
-	def LastAmt(self):
-		return self._LastAmt
-
-	@LastAmt.setter
-	def LastAmt(self, value):
-		self._LastAmt = value if type(value) != base_types.auto else self.make_default("LastAmt")
-
-	@LastAmt.deleter
-	def LastAmt(self):
-		del self._LastAmt
-		self._LastAmt = None
-
-	@property
-	def Chrgs(self):
-		return self._Chrgs
-
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
-
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
 
 	@property
 	def InstlmtPrd(self):
@@ -224,6 +107,97 @@ class Instalment5(base_types._BaseFieldType):
 		self._InstlmtPrd = None
 
 	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
+	@property
+	def LastAmt(self):
+		return self._LastAmt
+
+	@LastAmt.setter
+	def LastAmt(self, value):
+		self._LastAmt = value if type(value) != base_types.auto else self.make_default("LastAmt")
+
+	@LastAmt.deleter
+	def LastAmt(self):
+		del self._LastAmt
+		self._LastAmt = None
+
+	@property
+	def PlanId(self):
+		return self._PlanId
+
+	@PlanId.setter
+	def PlanId(self, value):
+		self._PlanId = value if type(value) != base_types.auto else self.make_default("PlanId")
+
+	@PlanId.deleter
+	def PlanId(self):
+		del self._PlanId
+		self._PlanId = None
+
+	@property
+	def PlanNtce(self):
+		return self._PlanNtce
+
+	@PlanNtce.setter
+	def PlanNtce(self, value):
+		self._PlanNtce = value if type(value) != base_types.auto else self.make_default("PlanNtce")
+
+	@PlanNtce.deleter
+	def PlanNtce(self):
+		del self._PlanNtce
+		self._PlanNtce = None
+
+	@property
+	def PlanOwnr(self):
+		return self._PlanOwnr
+
+	@PlanOwnr.setter
+	def PlanOwnr(self, value):
+		self._PlanOwnr = value if type(value) != base_types.auto else self.make_default("PlanOwnr")
+
+	@PlanOwnr.deleter
+	def PlanOwnr(self):
+		del self._PlanOwnr
+		self._PlanOwnr = None
+
+	@property
+	def PrdUnit(self):
+		return self._PrdUnit
+
+	@PrdUnit.setter
+	def PrdUnit(self, value):
+		self._PrdUnit = value if type(value) != base_types.auto else self.make_default("PrdUnit")
+
+	@PrdUnit.deleter
+	def PrdUnit(self):
+		del self._PrdUnit
+		self._PrdUnit = None
+
+	@property
+	def SbsqntAmt(self):
+		return self._SbsqntAmt
+
+	@SbsqntAmt.setter
+	def SbsqntAmt(self, value):
+		self._SbsqntAmt = value if type(value) != base_types.auto else self.make_default("SbsqntAmt")
+
+	@SbsqntAmt.deleter
+	def SbsqntAmt(self):
+		del self._SbsqntAmt
+		self._SbsqntAmt = None
+
+	@property
 	def SeqNb(self):
 		return self._SeqNb
 
@@ -236,23 +210,49 @@ class Instalment5(base_types._BaseFieldType):
 		del self._SeqNb
 		self._SeqNb = None
 
+	@property
+	def TtlAmt(self):
+		return self._TtlAmt
+
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
+
+	@property
+	def TtlNbOfPmts(self):
+		return self._TtlNbOfPmts
+
+	@TtlNbOfPmts.setter
+	def TtlNbOfPmts(self, value):
+		self._TtlNbOfPmts = value if type(value) != base_types.auto else self.make_default("TtlNbOfPmts")
+
+	@TtlNbOfPmts.deleter
+	def TtlNbOfPmts(self):
+		del self._TtlNbOfPmts
+		self._TtlNbOfPmts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstRate', type=InterestRateDetails1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GracePrd', type=GracePeriod1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrdUnit', type=Frequency3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbsqntAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldChrgs', type=InstalmentAmountDetails1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PlanNtce', type=ActionMessage11, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FrstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstlmtPlan', type=InstalmentPlan1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PlanOwnr', type=PlanOwner1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlanId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chrgs', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldChrgs', type=InstalmentAmountDetails1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FrstAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GracePrd', type=GracePeriod1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InstlmtPlan', type=InstalmentPlan1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstlmtPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=InterestRateDetails1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LastAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlanId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlanNtce', type=ActionMessage11, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PlanOwnr', type=PlanOwner1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrdUnit', type=Frequency3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbsqntAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

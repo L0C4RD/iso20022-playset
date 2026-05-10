@@ -1,11 +1,11 @@
 from . import base_types
+from ._MessageHeader4 import MessageHeader4
 from ._SupplementaryData1 import SupplementaryData1
 from ._StandingOrderQuery5 import StandingOrderQuery5
-from ._MessageHeader4 import MessageHeader4
 
 class GetStandingOrderV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_StgOrdrQryDef"]
+	__slots__ = ["_StgOrdrQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

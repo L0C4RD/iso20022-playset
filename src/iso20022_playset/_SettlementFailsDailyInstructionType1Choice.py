@@ -4,7 +4,7 @@ from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class SettlementFailsDailyInstructionType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Data", "_DataSetActn"]
+	__slots__ = ["_DataSetActn", "_Data"]
 	@property
 	def Data(self):
 		return self._Data

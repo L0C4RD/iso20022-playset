@@ -1,11 +1,11 @@
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._PercentageRate import PercentageRate
 from ._DecimalNumber import DecimalNumber
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssAmt", "_UnitsNb", "_PctgOfTtlRedAmt", "_NetAmt"]
+	__slots__ = ["_GrssAmt", "_UnitsNb", "_NetAmt", "_PctgOfTtlRedAmt"]
 	@property
 	def GrssAmt(self):
 		return self._GrssAmt
@@ -20,17 +20,17 @@ class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 		self._GrssAmt = None
 
 	@property
-	def UnitsNb(self):
-		return self._UnitsNb
+	def NetAmt(self):
+		return self._NetAmt
 
-	@UnitsNb.setter
-	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
 
-	@UnitsNb.deleter
-	def UnitsNb(self):
-		del self._UnitsNb
-		self._UnitsNb = None
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
 
 	@property
 	def PctgOfTtlRedAmt(self):
@@ -46,22 +46,22 @@ class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 		self._PctgOfTtlRedAmt = None
 
 	@property
-	def NetAmt(self):
-		return self._NetAmt
+	def UnitsNb(self):
+		return self._UnitsNb
 
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+	@UnitsNb.setter
+	def UnitsNb(self, value):
+		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
 
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
+	@UnitsNb.deleter
+	def UnitsNb(self):
+		del self._UnitsNb
+		self._UnitsNb = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PctgOfTtlRedAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PctgOfTtlRedAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

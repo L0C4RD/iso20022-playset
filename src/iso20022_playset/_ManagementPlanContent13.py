@@ -5,19 +5,19 @@ from ._TMSAction13 import TMSAction13
 
 class ManagementPlanContent13(base_types._BaseFieldType):
 
-	__slots__ = ["_TMChllng", "_KeyNcphrmntCert", "_Actn"]
+	__slots__ = ["_Actn", "_TMChllng", "_KeyNcphrmntCert"]
 	@property
-	def TMChllng(self):
-		return self._TMChllng
+	def Actn(self):
+		return self._Actn
 
-	@TMChllng.setter
-	def TMChllng(self, value):
-		self._TMChllng = value if type(value) != base_types.auto else self.make_default("TMChllng")
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
 
-	@TMChllng.deleter
-	def TMChllng(self):
-		del self._TMChllng
-		self._TMChllng = None
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
 
 	@property
 	def KeyNcphrmntCert(self):
@@ -33,21 +33,21 @@ class ManagementPlanContent13(base_types._BaseFieldType):
 		self._KeyNcphrmntCert = None
 
 	@property
-	def Actn(self):
-		return self._Actn
+	def TMChllng(self):
+		return self._TMChllng
 
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+	@TMChllng.setter
+	def TMChllng(self, value):
+		self._TMChllng = value if type(value) != base_types.auto else self.make_default("TMChllng")
 
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
+	@TMChllng.deleter
+	def TMChllng(self):
+		del self._TMChllng
+		self._TMChllng = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyNcphrmntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Actn', type=TMSAction13, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='KeyNcphrmntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

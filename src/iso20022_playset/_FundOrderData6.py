@@ -1,25 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AdditionalAmount1Choice import AdditionalAmount1Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._AdditionalAmount1Choice import AdditionalAmount1Choice
 
 class FundOrderData6(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_AddtlAmt", "_SttlmMtd", "_SttlmAmt", "_QtdCcy"]
-	@property
-	def UnitCcy(self):
-		return self._UnitCcy
-
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
-
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
-
+	__slots__ = ["_AddtlAmt", "_QtdCcy", "_UnitCcy", "_SttlmAmt", "_SttlmMtd"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt
@@ -34,17 +21,17 @@ class FundOrderData6(base_types._BaseFieldType):
 		self._AddtlAmt = None
 
 	@property
-	def SttlmMtd(self):
-		return self._SttlmMtd
+	def QtdCcy(self):
+		return self._QtdCcy
 
-	@SttlmMtd.setter
-	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
 
-	@SttlmMtd.deleter
-	def SttlmMtd(self):
-		del self._SttlmMtd
-		self._SttlmMtd = None
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
 
 	@property
 	def SttlmAmt(self):
@@ -60,23 +47,36 @@ class FundOrderData6(base_types._BaseFieldType):
 		self._SttlmAmt = None
 
 	@property
-	def QtdCcy(self):
-		return self._QtdCcy
+	def SttlmMtd(self):
+		return self._SttlmMtd
 
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+	@SttlmMtd.setter
+	def SttlmMtd(self, value):
+		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
 
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
+	@SttlmMtd.deleter
+	def SttlmMtd(self):
+		del self._SttlmMtd
+		self._SttlmMtd = None
+
+	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlAmt', type=AdditionalAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmMtd', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmMtd', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

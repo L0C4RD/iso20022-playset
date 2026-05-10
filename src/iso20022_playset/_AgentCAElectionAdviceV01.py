@@ -1,14 +1,14 @@
 from . import base_types
-from ._DocumentIdentification8 import DocumentIdentification8
-from ._CorporateActionInformation1 import CorporateActionInformation1
-from ._ElectionAdviceFunction1 import ElectionAdviceFunction1
 from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
-from ._ContactPerson1 import ContactPerson1
+from ._CorporateActionInformation1 import CorporateActionInformation1
+from ._DocumentIdentification8 import DocumentIdentification8
 from ._CorporateActionElection3 import CorporateActionElection3
+from ._ElectionAdviceFunction1 import ElectionAdviceFunction1
+from ._ContactPerson1 import ContactPerson1
 
 class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Id", "_ElctnDtls", "_CtctDtls", "_ElctnAdvcTpAndLkg", "_CorpActnGnlInf"]
+	__slots__ = ["_ElctnDtls", "_Id", "_AddtlInf", "_CtctDtls", "_ElctnAdvcTpAndLkg", "_CorpActnGnlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -23,30 +23,17 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def ElctnDtls(self):
-		return self._ElctnDtls
-
-	@ElctnDtls.setter
-	def ElctnDtls(self, value):
-		self._ElctnDtls = value if type(value) != base_types.auto else self.make_default("ElctnDtls")
-
-	@ElctnDtls.deleter
-	def ElctnDtls(self):
-		del self._ElctnDtls
-		self._ElctnDtls = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	@property
 	def CtctDtls(self):
@@ -75,24 +62,37 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 		self._ElctnAdvcTpAndLkg = None
 
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def ElctnDtls(self):
+		return self._ElctnDtls
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+	@ElctnDtls.setter
+	def ElctnDtls(self, value):
+		self._ElctnDtls = value if type(value) != base_types.auto else self.make_default("ElctnDtls")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+	@ElctnDtls.deleter
+	def ElctnDtls(self):
+		del self._ElctnDtls
+		self._ElctnDtls = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctnDtls', type=CorporateActionElection3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctnAdvcTpAndLkg', type=ElectionAdviceFunction1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctnDtls', type=CorporateActionElection3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

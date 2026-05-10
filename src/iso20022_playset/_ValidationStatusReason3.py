@@ -1,12 +1,25 @@
 from . import base_types
-from ._Max105Text import Max105Text
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._StatusReason6Choice import StatusReason6Choice
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._PartyIdentification272 import PartyIdentification272
+from ._Max105Text import Max105Text
 
 class ValidationStatusReason3(base_types._BaseFieldType):
 
-	__slots__ = ["_Orgtr", "_VldtnRule", "_Rsn", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Rsn", "_VldtnRule", "_Orgtr"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def Orgtr(self):
 		return self._Orgtr
@@ -19,19 +32,6 @@ class ValidationStatusReason3(base_types._BaseFieldType):
 	def Orgtr(self):
 		del self._Orgtr
 		self._Orgtr = None
-
-	@property
-	def VldtnRule(self):
-		return self._VldtnRule
-
-	@VldtnRule.setter
-	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
-
-	@VldtnRule.deleter
-	def VldtnRule(self):
-		del self._VldtnRule
-		self._VldtnRule = None
 
 	@property
 	def Rsn(self):
@@ -47,22 +47,22 @@ class ValidationStatusReason3(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def VldtnRule(self):
+		return self._VldtnRule
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@VldtnRule.setter
+	def VldtnRule(self, value):
+		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@VldtnRule.deleter
+	def VldtnRule(self):
+		del self._VldtnRule
+		self._VldtnRule = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rsn', type=StatusReason6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=StatusReason6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,25 +1,12 @@
 from . import base_types
-from ._RestrictedFINMax35Text import RestrictedFINMax35Text
-from ._RestrictedFINMax8Text import RestrictedFINMax8Text
-from ._RestrictedFINMax23Text import RestrictedFINMax23Text
 from ._CountryCode import CountryCode
+from ._RestrictedFINMax35Text import RestrictedFINMax35Text
+from ._RestrictedFINMax23Text import RestrictedFINMax23Text
+from ._RestrictedFINMax8Text import RestrictedFINMax8Text
 
 class PostalAddress7(base_types._BaseFieldType):
 
-	__slots__ = ["_PstCd", "_AdrLine", "_Ctry", "_TwnNm"]
-	@property
-	def PstCd(self):
-		return self._PstCd
-
-	@PstCd.setter
-	def PstCd(self, value):
-		self._PstCd = value if type(value) != base_types.auto else self.make_default("PstCd")
-
-	@PstCd.deleter
-	def PstCd(self):
-		del self._PstCd
-		self._PstCd = None
-
+	__slots__ = ["_PstCd", "_Ctry", "_AdrLine", "_TwnNm"]
 	@property
 	def AdrLine(self):
 		return self._AdrLine
@@ -47,6 +34,19 @@ class PostalAddress7(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
+	def PstCd(self):
+		return self._PstCd
+
+	@PstCd.setter
+	def PstCd(self, value):
+		self._PstCd = value if type(value) != base_types.auto else self.make_default("PstCd")
+
+	@PstCd.deleter
+	def PstCd(self):
+		del self._PstCd
+		self._PstCd = None
+
+	@property
 	def TwnNm(self):
 		return self._TwnNm
 
@@ -60,9 +60,9 @@ class PostalAddress7(base_types._BaseFieldType):
 		self._TwnNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstCd', type=RestrictedFINMax8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdrLine', type=RestrictedFINMax35Text, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstCd', type=RestrictedFINMax8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwnNm', type=RestrictedFINMax23Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

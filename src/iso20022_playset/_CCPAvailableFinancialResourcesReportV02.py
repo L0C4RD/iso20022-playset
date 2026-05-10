@@ -5,7 +5,7 @@ from ._AvailableFinancialResourcesAmount2 import AvailableFinancialResourcesAmou
 
 class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblFinRsrcsAmt", "_SplmtryData", "_OthrPrfnddRsrcs"]
+	__slots__ = ["_OthrPrfnddRsrcs", "_SplmtryData", "_AvlblFinRsrcsAmt"]
 	@property
 	def AvlblFinRsrcsAmt(self):
 		return self._AvlblFinRsrcsAmt
@@ -20,19 +20,6 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 		self._AvlblFinRsrcsAmt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def OthrPrfnddRsrcs(self):
 		return self._OthrPrfnddRsrcs
 
@@ -45,9 +32,22 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 		del self._OthrPrfnddRsrcs
 		self._OthrPrfnddRsrcs = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlblFinRsrcsAmt', type=AvailableFinancialResourcesAmount2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrPrfnddRsrcs', type=ReportingAssetBreakdown2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

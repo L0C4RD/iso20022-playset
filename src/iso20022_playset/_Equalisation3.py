@@ -1,12 +1,25 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._EqualisationMethodologyType2 import EqualisationMethodologyType2
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class Equalisation3(base_types._BaseFieldType):
 
-	__slots__ = ["_EqulstnMthdlgyTp", "_GrssAsstVal", "_Amt", "_Rate", "_HghWtrmrk"]
+	__slots__ = ["_GrssAsstVal", "_Amt", "_EqulstnMthdlgyTp", "_HghWtrmrk", "_Rate"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def EqulstnMthdlgyTp(self):
 		return self._EqulstnMthdlgyTp
@@ -34,17 +47,17 @@ class Equalisation3(base_types._BaseFieldType):
 		self._GrssAsstVal = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def HghWtrmrk(self):
+		return self._HghWtrmrk
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@HghWtrmrk.setter
+	def HghWtrmrk(self, value):
+		self._HghWtrmrk = value if type(value) != base_types.auto else self.make_default("HghWtrmrk")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@HghWtrmrk.deleter
+	def HghWtrmrk(self):
+		del self._HghWtrmrk
+		self._HghWtrmrk = None
 
 	@property
 	def Rate(self):
@@ -59,24 +72,11 @@ class Equalisation3(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
-	@property
-	def HghWtrmrk(self):
-		return self._HghWtrmrk
-
-	@HghWtrmrk.setter
-	def HghWtrmrk(self, value):
-		self._HghWtrmrk = value if type(value) != base_types.auto else self.make_default("HghWtrmrk")
-
-	@HghWtrmrk.deleter
-	def HghWtrmrk(self):
-		del self._HghWtrmrk
-		self._HghWtrmrk = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EqulstnMthdlgyTp', type=EqualisationMethodologyType2, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrssAsstVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghWtrmrk', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

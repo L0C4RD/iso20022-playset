@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max10000Binary import Max10000Binary
 from ._OnLinePIN5 import OnLinePIN5
-from ._Max35Text import Max35Text
 from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._Max10000Binary import Max10000Binary
+from ._Max35Text import Max35Text
 
 class ATMTransaction43(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_ICCRltdData", "_CrdhldrNewPIN", "_RcncltnId"]
+	__slots__ = ["_ICCRltdData", "_RcncltnId", "_CrdhldrNewPIN", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def CrdhldrNewPIN(self):
+		return self._CrdhldrNewPIN
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@CrdhldrNewPIN.setter
+	def CrdhldrNewPIN(self, value):
+		self._CrdhldrNewPIN = value if type(value) != base_types.auto else self.make_default("CrdhldrNewPIN")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@CrdhldrNewPIN.deleter
+	def CrdhldrNewPIN(self):
+		del self._CrdhldrNewPIN
+		self._CrdhldrNewPIN = None
 
 	@property
 	def ICCRltdData(self):
@@ -34,19 +34,6 @@ class ATMTransaction43(base_types._BaseFieldType):
 		self._ICCRltdData = None
 
 	@property
-	def CrdhldrNewPIN(self):
-		return self._CrdhldrNewPIN
-
-	@CrdhldrNewPIN.setter
-	def CrdhldrNewPIN(self, value):
-		self._CrdhldrNewPIN = value if type(value) != base_types.auto else self.make_default("CrdhldrNewPIN")
-
-	@CrdhldrNewPIN.deleter
-	def CrdhldrNewPIN(self):
-		del self._CrdhldrNewPIN
-		self._CrdhldrNewPIN = None
-
-	@property
 	def RcncltnId(self):
 		return self._RcncltnId
 
@@ -59,10 +46,23 @@ class ATMTransaction43(base_types._BaseFieldType):
 		del self._RcncltnId
 		self._RcncltnId = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrNewPIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 	))
 

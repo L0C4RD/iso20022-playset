@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._Max350Text import Max350Text
+from ._Max140Text import Max140Text
 
 class PartyTextInformation1(base_types._BaseFieldType):
 
@@ -19,19 +19,6 @@ class PartyTextInformation1(base_types._BaseFieldType):
 		self._DclrtnDtls = None
 
 	@property
-	def RegnDtls(self):
-		return self._RegnDtls
-
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
-
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
-
-	@property
 	def PtyCtctDtls(self):
 		return self._PtyCtctDtls
 
@@ -44,9 +31,22 @@ class PartyTextInformation1(base_types._BaseFieldType):
 		del self._PtyCtctDtls
 		self._PtyCtctDtls = None
 
+	@property
+	def RegnDtls(self):
+		return self._RegnDtls
+
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCtctDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

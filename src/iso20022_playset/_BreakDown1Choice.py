@@ -4,7 +4,7 @@ from ._ReportLine5 import ReportLine5
 
 class BreakDown1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ByComrclInvc", "_ByPurchsOrdr"]
+	__slots__ = ["_ByPurchsOrdr", "_ByComrclInvc"]
 	@property
 	def ByComrclInvc(self):
 		return self._ByComrclInvc

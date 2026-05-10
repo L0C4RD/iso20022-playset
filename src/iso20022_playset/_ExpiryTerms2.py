@@ -1,12 +1,12 @@
 from . import base_types
-from ._AutoExtension1 import AutoExtension1
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._YesNoIndicator import YesNoIndicator
+from ._AutoExtension1 import AutoExtension1
 from ._Max2000Text import Max2000Text
+from ._YesNoIndicator import YesNoIndicator
 
 class ExpiryTerms2(base_types._BaseFieldType):
 
-	__slots__ = ["_AutoXtnsn", "_DtTm", "_OpnEnddInd", "_Cond"]
+	__slots__ = ["_OpnEnddInd", "_Cond", "_AutoXtnsn", "_DtTm"]
 	@property
 	def AutoXtnsn(self):
 		return self._AutoXtnsn
@@ -19,6 +19,19 @@ class ExpiryTerms2(base_types._BaseFieldType):
 	def AutoXtnsn(self):
 		del self._AutoXtnsn
 		self._AutoXtnsn = None
+
+	@property
+	def Cond(self):
+		return self._Cond
+
+	@Cond.setter
+	def Cond(self, value):
+		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+
+	@Cond.deleter
+	def Cond(self):
+		del self._Cond
+		self._Cond = None
 
 	@property
 	def DtTm(self):
@@ -46,23 +59,10 @@ class ExpiryTerms2(base_types._BaseFieldType):
 		del self._OpnEnddInd
 		self._OpnEnddInd = None
 
-	@property
-	def Cond(self):
-		return self._Cond
-
-	@Cond.setter
-	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
-
-	@Cond.deleter
-	def Cond(self):
-		del self._Cond
-		self._Cond = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AutoXtnsn', type=AutoExtension1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cond', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpnEnddInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cond', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

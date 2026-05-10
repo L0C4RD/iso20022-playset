@@ -4,7 +4,7 @@ from ._ActiveOrHistoricCurrencyAndAmountRange2 import ActiveOrHistoricCurrencyAn
 
 class ActiveOrHistoricAmountRange2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyAndAmtRg", "_ImpldCcyAndAmtRg"]
+	__slots__ = ["_ImpldCcyAndAmtRg", "_CcyAndAmtRg"]
 	@property
 	def CcyAndAmtRg(self):
 		return self._CcyAndAmtRg

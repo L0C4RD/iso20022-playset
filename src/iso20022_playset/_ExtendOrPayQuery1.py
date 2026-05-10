@@ -1,40 +1,40 @@
 from . import base_types
-from ._Demand2 import Demand2
+from ._Contacts3 import Contacts3
+from ._BankInstructions1 import BankInstructions1
 from ._ISODate import ISODate
 from ._Document9 import Document9
-from ._Undertaking9 import Undertaking9
-from ._BankInstructions1 import BankInstructions1
-from ._Contacts3 import Contacts3
 from ._Max2000Text import Max2000Text
+from ._Demand2 import Demand2
+from ._Undertaking9 import Undertaking9
 
 class ExtendOrPayQuery1(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgId", "_ReqdXpryDt", "_BkInstrs", "_DmndDtls", "_NclsdFile", "_AddtlInf", "_BkCtct"]
+	__slots__ = ["_AddtlInf", "_DmndDtls", "_UdrtkgId", "_BkCtct", "_NclsdFile", "_BkInstrs", "_ReqdXpryDt"]
 	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
-	def ReqdXpryDt(self):
-		return self._ReqdXpryDt
+	def BkCtct(self):
+		return self._BkCtct
 
-	@ReqdXpryDt.setter
-	def ReqdXpryDt(self, value):
-		self._ReqdXpryDt = value if type(value) != base_types.auto else self.make_default("ReqdXpryDt")
+	@BkCtct.setter
+	def BkCtct(self, value):
+		self._BkCtct = value if type(value) != base_types.auto else self.make_default("BkCtct")
 
-	@ReqdXpryDt.deleter
-	def ReqdXpryDt(self):
-		del self._ReqdXpryDt
-		self._ReqdXpryDt = None
+	@BkCtct.deleter
+	def BkCtct(self):
+		del self._BkCtct
+		self._BkCtct = None
 
 	@property
 	def BkInstrs(self):
@@ -76,38 +76,38 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 		self._NclsdFile = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def ReqdXpryDt(self):
+		return self._ReqdXpryDt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@ReqdXpryDt.setter
+	def ReqdXpryDt(self, value):
+		self._ReqdXpryDt = value if type(value) != base_types.auto else self.make_default("ReqdXpryDt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@ReqdXpryDt.deleter
+	def ReqdXpryDt(self):
+		del self._ReqdXpryDt
+		self._ReqdXpryDt = None
 
 	@property
-	def BkCtct(self):
-		return self._BkCtct
+	def UdrtkgId(self):
+		return self._UdrtkgId
 
-	@BkCtct.setter
-	def BkCtct(self, value):
-		self._BkCtct = value if type(value) != base_types.auto else self.make_default("BkCtct")
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
 
-	@BkCtct.deleter
-	def BkCtct(self):
-		del self._BkCtct
-		self._BkCtct = None
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdXpryDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BkCtct', type=Contacts3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BkInstrs', type=BankInstructions1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmndDtls', type=Demand2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BkCtct', type=Contacts3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqdXpryDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 	))
 

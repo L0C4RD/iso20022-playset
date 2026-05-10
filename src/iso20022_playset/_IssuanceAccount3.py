@@ -1,7 +1,7 @@
 from . import base_types
 from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._YesNoIndicator import YesNoIndicator
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._YesNoIndicator import YesNoIndicator
 
 class IssuanceAccount3(base_types._BaseFieldType):
 
@@ -20,19 +20,6 @@ class IssuanceAccount3(base_types._BaseFieldType):
 		self._IssncAcct = None
 
 	@property
-	def PmryAcctInd(self):
-		return self._PmryAcctInd
-
-	@PmryAcctInd.setter
-	def PmryAcctInd(self, value):
-		self._PmryAcctInd = value if type(value) != base_types.auto else self.make_default("PmryAcctInd")
-
-	@PmryAcctInd.deleter
-	def PmryAcctInd(self):
-		del self._PmryAcctInd
-		self._PmryAcctInd = None
-
-	@property
 	def IssncBlckChainAdrOrWllt(self):
 		return self._IssncBlckChainAdrOrWllt
 
@@ -45,9 +32,22 @@ class IssuanceAccount3(base_types._BaseFieldType):
 		del self._IssncBlckChainAdrOrWllt
 		self._IssncBlckChainAdrOrWllt = None
 
+	@property
+	def PmryAcctInd(self):
+		return self._PmryAcctInd
+
+	@PmryAcctInd.setter
+	def PmryAcctInd(self, value):
+		self._PmryAcctInd = value if type(value) != base_types.auto else self.make_default("PmryAcctInd")
+
+	@PmryAcctInd.deleter
+	def PmryAcctInd(self):
+		del self._PmryAcctInd
+		self._PmryAcctInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IssncAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmryAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssncBlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

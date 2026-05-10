@@ -1,6 +1,6 @@
 from . import base_types
-from ._ContentType2Code import ContentType2Code
 from ._Max100KBinary import Max100KBinary
+from ._ContentType2Code import ContentType2Code
 
 class EncapsulatedContent3(base_types._BaseFieldType):
 

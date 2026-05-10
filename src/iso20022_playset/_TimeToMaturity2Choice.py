@@ -4,7 +4,7 @@ from ._SpecialPurpose2Code import SpecialPurpose2Code
 
 class TimeToMaturity2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_Spcl"]
+	__slots__ = ["_Spcl", "_Prd"]
 	@property
 	def Prd(self):
 		return self._Prd

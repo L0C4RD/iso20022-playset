@@ -4,7 +4,7 @@ from ._RejectedStatus29Choice import RejectedStatus29Choice
 
 class ResponseProcessingStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Accptd", "_Rjctd"]
+	__slots__ = ["_Rjctd", "_Accptd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

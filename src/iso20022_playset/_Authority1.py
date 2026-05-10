@@ -1,11 +1,24 @@
 from . import base_types
 from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
-from ._Max50Text import Max50Text
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
+from ._Max50Text import Max50Text
 
 class Authority1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrySubDvsnMjr", "_Ctry", "_CtrySubDvsnMnr", "_CtrySubDvsnMnrNm", "_Nm", "_CtrySubDvsnMjrNm"]
+	__slots__ = ["_CtrySubDvsnMnrNm", "_Ctry", "_Nm", "_CtrySubDvsnMnr", "_CtrySubDvsnMjr", "_CtrySubDvsnMjrNm"]
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	@property
 	def CtrySubDvsnMjr(self):
 		return self._CtrySubDvsnMjr
@@ -20,17 +33,17 @@ class Authority1(base_types._BaseFieldType):
 		self._CtrySubDvsnMjr = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def CtrySubDvsnMjrNm(self):
+		return self._CtrySubDvsnMjrNm
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+	@CtrySubDvsnMjrNm.setter
+	def CtrySubDvsnMjrNm(self, value):
+		self._CtrySubDvsnMjrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMjrNm")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@CtrySubDvsnMjrNm.deleter
+	def CtrySubDvsnMjrNm(self):
+		del self._CtrySubDvsnMjrNm
+		self._CtrySubDvsnMjrNm = None
 
 	@property
 	def CtrySubDvsnMnr(self):
@@ -71,25 +84,12 @@ class Authority1(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
-	@property
-	def CtrySubDvsnMjrNm(self):
-		return self._CtrySubDvsnMjrNm
-
-	@CtrySubDvsnMjrNm.setter
-	def CtrySubDvsnMjrNm(self, value):
-		self._CtrySubDvsnMjrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMjrNm")
-
-	@CtrySubDvsnMjrNm.deleter
-	def CtrySubDvsnMjrNm(self):
-		del self._CtrySubDvsnMjrNm
-		self._CtrySubDvsnMjrNm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrySubDvsnMjr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMjr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMnr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMnrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

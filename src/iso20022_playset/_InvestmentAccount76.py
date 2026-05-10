@@ -1,26 +1,26 @@
 from . import base_types
 from ._PartyIdentification125Choice import PartyIdentification125Choice
 from ._Intermediary47 import Intermediary47
-from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
 from ._FinancialInstrument55 import FinancialInstrument55
+from ._Max350Text import Max350Text
 from ._AccountOwner3Choice import AccountOwner3Choice
 
 class InvestmentAccount76(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsgnt", "_AcctSvcr", "_FndFmlyNm", "_Intrmy", "_AcctOwnr", "_SctyDtls", "_FndTp", "_Nm"]
+	__slots__ = ["_Nm", "_AcctOwnr", "_Intrmy", "_FndTp", "_Dsgnt", "_AcctSvcr", "_SctyDtls", "_FndFmlyNm"]
 	@property
-	def Dsgnt(self):
-		return self._Dsgnt
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
 	def AcctSvcr(self):
@@ -36,6 +36,19 @@ class InvestmentAccount76(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
+	def Dsgnt(self):
+		return self._Dsgnt
+
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
+
+	@property
 	def FndFmlyNm(self):
 		return self._FndFmlyNm
 
@@ -47,45 +60,6 @@ class InvestmentAccount76(base_types._BaseFieldType):
 	def FndFmlyNm(self):
 		del self._FndFmlyNm
 		self._FndFmlyNm = None
-
-	@property
-	def Intrmy(self):
-		return self._Intrmy
-
-	@Intrmy.setter
-	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
-
-	@Intrmy.deleter
-	def Intrmy(self):
-		del self._Intrmy
-		self._Intrmy = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def SctyDtls(self):
-		return self._SctyDtls
-
-	@SctyDtls.setter
-	def SctyDtls(self, value):
-		self._SctyDtls = value if type(value) != base_types.auto else self.make_default("SctyDtls")
-
-	@SctyDtls.deleter
-	def SctyDtls(self):
-		del self._SctyDtls
-		self._SctyDtls = None
 
 	@property
 	def FndTp(self):
@@ -101,6 +75,19 @@ class InvestmentAccount76(base_types._BaseFieldType):
 		self._FndTp = None
 
 	@property
+	def Intrmy(self):
+		return self._Intrmy
+
+	@Intrmy.setter
+	def Intrmy(self, value):
+		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
+
+	@Intrmy.deleter
+	def Intrmy(self):
+		del self._Intrmy
+		self._Intrmy = None
+
+	@property
 	def Nm(self):
 		return self._Nm
 
@@ -113,14 +100,27 @@ class InvestmentAccount76(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def SctyDtls(self):
+		return self._SctyDtls
+
+	@SctyDtls.setter
+	def SctyDtls(self, value):
+		self._SctyDtls = value if type(value) != base_types.auto else self.make_default("SctyDtls")
+
+	@SctyDtls.deleter
+	def SctyDtls(self):
+		del self._SctyDtls
+		self._SctyDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndFmlyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Intrmy', type=Intermediary47, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=AccountOwner3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyDtls', type=FinancialInstrument55, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndFmlyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrmy', type=Intermediary47, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyDtls', type=FinancialInstrument55, min=0, max=1, mutex_group=None, array=False),
 	))
 

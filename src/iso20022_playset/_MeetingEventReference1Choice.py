@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class MeetingEventReference1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdIssrMtgId", "_LkdMtgId"]
+	__slots__ = ["_LkdMtgId", "_LkdIssrMtgId"]
 	@property
 	def LkdIssrMtgId(self):
 		return self._LkdIssrMtgId

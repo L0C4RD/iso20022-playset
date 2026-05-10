@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
 from ._Max10NumericText import Max10NumericText
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max70Text import Max70Text
 from ._CustomerReference1 import CustomerReference1
+from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class TravelAgencyPackage2(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtCardSlipNb", "_DataSrc", "_CstmrRef", "_Insrnc", "_Tp", "_InsrncAmt", "_NbInPty", "_RsvatnNb", "_Fee", "_DlvryOrdrNb"]
+	__slots__ = ["_CstmrRef", "_NbInPty", "_Fee", "_DlvryOrdrNb", "_CdtCardSlipNb", "_RsvatnNb", "_DataSrc", "_InsrncAmt", "_Tp", "_Insrnc"]
 	@property
 	def CdtCardSlipNb(self):
 		return self._CdtCardSlipNb
@@ -21,19 +21,6 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 	def CdtCardSlipNb(self):
 		del self._CdtCardSlipNb
 		self._CdtCardSlipNb = None
-
-	@property
-	def DataSrc(self):
-		return self._DataSrc
-
-	@DataSrc.setter
-	def DataSrc(self, value):
-		self._DataSrc = value if type(value) != base_types.auto else self.make_default("DataSrc")
-
-	@DataSrc.deleter
-	def DataSrc(self):
-		del self._DataSrc
-		self._DataSrc = None
 
 	@property
 	def CstmrRef(self):
@@ -49,6 +36,45 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 		self._CstmrRef = None
 
 	@property
+	def DataSrc(self):
+		return self._DataSrc
+
+	@DataSrc.setter
+	def DataSrc(self, value):
+		self._DataSrc = value if type(value) != base_types.auto else self.make_default("DataSrc")
+
+	@DataSrc.deleter
+	def DataSrc(self):
+		del self._DataSrc
+		self._DataSrc = None
+
+	@property
+	def DlvryOrdrNb(self):
+		return self._DlvryOrdrNb
+
+	@DlvryOrdrNb.setter
+	def DlvryOrdrNb(self, value):
+		self._DlvryOrdrNb = value if type(value) != base_types.auto else self.make_default("DlvryOrdrNb")
+
+	@DlvryOrdrNb.deleter
+	def DlvryOrdrNb(self):
+		del self._DlvryOrdrNb
+		self._DlvryOrdrNb = None
+
+	@property
+	def Fee(self):
+		return self._Fee
+
+	@Fee.setter
+	def Fee(self, value):
+		self._Fee = value if type(value) != base_types.auto else self.make_default("Fee")
+
+	@Fee.deleter
+	def Fee(self):
+		del self._Fee
+		self._Fee = None
+
+	@property
 	def Insrnc(self):
 		return self._Insrnc
 
@@ -60,19 +86,6 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 	def Insrnc(self):
 		del self._Insrnc
 		self._Insrnc = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
 
 	@property
 	def InsrncAmt(self):
@@ -114,41 +127,28 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 		self._RsvatnNb = None
 
 	@property
-	def Fee(self):
-		return self._Fee
+	def Tp(self):
+		return self._Tp
 
-	@Fee.setter
-	def Fee(self, value):
-		self._Fee = value if type(value) != base_types.auto else self.make_default("Fee")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Fee.deleter
-	def Fee(self):
-		del self._Fee
-		self._Fee = None
-
-	@property
-	def DlvryOrdrNb(self):
-		return self._DlvryOrdrNb
-
-	@DlvryOrdrNb.setter
-	def DlvryOrdrNb(self, value):
-		self._DlvryOrdrNb = value if type(value) != base_types.auto else self.make_default("DlvryOrdrNb")
-
-	@DlvryOrdrNb.deleter
-	def DlvryOrdrNb(self):
-		del self._DlvryOrdrNb
-		self._DlvryOrdrNb = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtCardSlipNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSrc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrRef', type=CustomerReference1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DataSrc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryOrdrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fee', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbInPty', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fee', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryOrdrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

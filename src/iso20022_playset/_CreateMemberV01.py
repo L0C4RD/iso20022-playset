@@ -1,24 +1,24 @@
 from . import base_types
-from ._MemberIdentification3Choice import MemberIdentification3Choice
 from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
+from ._MemberIdentification3Choice import MemberIdentification3Choice
 from ._Member6 import Member6
+from ._MessageHeader1 import MessageHeader1
 
 class CreateMemberV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ValSet", "_MsgHdr", "_SplmtryData", "_MmbId"]
+	__slots__ = ["_ValSet", "_SplmtryData", "_MsgHdr", "_MmbId"]
 	@property
-	def ValSet(self):
-		return self._ValSet
+	def MmbId(self):
+		return self._MmbId
 
-	@ValSet.setter
-	def ValSet(self, value):
-		self._ValSet = value if type(value) != base_types.auto else self.make_default("ValSet")
+	@MmbId.setter
+	def MmbId(self, value):
+		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
 
-	@ValSet.deleter
-	def ValSet(self):
-		del self._ValSet
-		self._ValSet = None
+	@MmbId.deleter
+	def MmbId(self):
+		del self._MmbId
+		self._MmbId = None
 
 	@property
 	def MsgHdr(self):
@@ -47,22 +47,22 @@ class CreateMemberV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def MmbId(self):
-		return self._MmbId
+	def ValSet(self):
+		return self._ValSet
 
-	@MmbId.setter
-	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+	@ValSet.setter
+	def ValSet(self, value):
+		self._ValSet = value if type(value) != base_types.auto else self.make_default("ValSet")
 
-	@MmbId.deleter
-	def MmbId(self):
-		del self._MmbId
-		self._MmbId = None
+	@ValSet.deleter
+	def ValSet(self):
+		del self._ValSet
+		self._ValSet = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValSet', type=Member6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbId', type=MemberIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MmbId', type=MemberIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValSet', type=Member6, min=1, max=1, mutex_group=None, array=False),
 	))
 

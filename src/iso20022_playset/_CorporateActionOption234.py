@@ -1,12 +1,12 @@
 from . import base_types
+from ._Exact3NumericText import Exact3NumericText
 from ._SecuritiesOption76 import SecuritiesOption76
 from ._CorporateActionOption30Choice import CorporateActionOption30Choice
 from ._CashOption106 import CashOption106
-from ._Exact3NumericText import Exact3NumericText
 
 class CorporateActionOption234(base_types._BaseFieldType):
 
-	__slots__ = ["_CshMvmntDtls", "_OptnNb", "_SctiesMvmntDtls", "_OptnTp"]
+	__slots__ = ["_OptnTp", "_SctiesMvmntDtls", "_CshMvmntDtls", "_OptnNb"]
 	@property
 	def CshMvmntDtls(self):
 		return self._CshMvmntDtls
@@ -34,19 +34,6 @@ class CorporateActionOption234(base_types._BaseFieldType):
 		self._OptnNb = None
 
 	@property
-	def SctiesMvmntDtls(self):
-		return self._SctiesMvmntDtls
-
-	@SctiesMvmntDtls.setter
-	def SctiesMvmntDtls(self, value):
-		self._SctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesMvmntDtls")
-
-	@SctiesMvmntDtls.deleter
-	def SctiesMvmntDtls(self):
-		del self._SctiesMvmntDtls
-		self._SctiesMvmntDtls = None
-
-	@property
 	def OptnTp(self):
 		return self._OptnTp
 
@@ -59,10 +46,23 @@ class CorporateActionOption234(base_types._BaseFieldType):
 		del self._OptnTp
 		self._OptnTp = None
 
+	@property
+	def SctiesMvmntDtls(self):
+		return self._SctiesMvmntDtls
+
+	@SctiesMvmntDtls.setter
+	def SctiesMvmntDtls(self, value):
+		self._SctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesMvmntDtls")
+
+	@SctiesMvmntDtls.deleter
+	def SctiesMvmntDtls(self):
+		del self._SctiesMvmntDtls
+		self._SctiesMvmntDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption106, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption76, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption30Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption76, min=0, max=None, mutex_group=None, array=True),
 	))
 

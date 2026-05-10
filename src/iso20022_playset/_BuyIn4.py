@@ -1,24 +1,11 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._ISODate import ISODate
 from ._DateFormat15Choice import DateFormat15Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class BuyIn4(base_types._BaseFieldType):
 
-	__slots__ = ["_WrngInd", "_BuyInRvrsnDt", "_CxlLmtDt", "_XpctdBuyInDt"]
-	@property
-	def WrngInd(self):
-		return self._WrngInd
-
-	@WrngInd.setter
-	def WrngInd(self, value):
-		self._WrngInd = value if type(value) != base_types.auto else self.make_default("WrngInd")
-
-	@WrngInd.deleter
-	def WrngInd(self):
-		del self._WrngInd
-		self._WrngInd = None
-
+	__slots__ = ["_WrngInd", "_XpctdBuyInDt", "_BuyInRvrsnDt", "_CxlLmtDt"]
 	@property
 	def BuyInRvrsnDt(self):
 		return self._BuyInRvrsnDt
@@ -46,6 +33,19 @@ class BuyIn4(base_types._BaseFieldType):
 		self._CxlLmtDt = None
 
 	@property
+	def WrngInd(self):
+		return self._WrngInd
+
+	@WrngInd.setter
+	def WrngInd(self, value):
+		self._WrngInd = value if type(value) != base_types.auto else self.make_default("WrngInd")
+
+	@WrngInd.deleter
+	def WrngInd(self):
+		del self._WrngInd
+		self._WrngInd = None
+
+	@property
 	def XpctdBuyInDt(self):
 		return self._XpctdBuyInDt
 
@@ -59,9 +59,9 @@ class BuyIn4(base_types._BaseFieldType):
 		self._XpctdBuyInDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='WrngInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInRvrsnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlLmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WrngInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdBuyInDt', type=DateFormat15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

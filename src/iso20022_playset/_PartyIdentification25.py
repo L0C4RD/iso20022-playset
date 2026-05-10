@@ -1,11 +1,11 @@
 from . import base_types
-from ._BEIIdentifier import BEIIdentifier
-from ._Max70Text import Max70Text
 from ._GenericIdentification4 import GenericIdentification4
+from ._Max70Text import Max70Text
+from ._BEIIdentifier import BEIIdentifier
 
 class PartyIdentification25(base_types._BaseFieldType):
 
-	__slots__ = ["_BEI", "_Nm", "_PrtryId"]
+	__slots__ = ["_Nm", "_BEI", "_PrtryId"]
 	@property
 	def BEI(self):
 		return self._BEI

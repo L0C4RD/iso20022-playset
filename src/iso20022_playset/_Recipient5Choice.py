@@ -1,10 +1,10 @@
 from . import base_types
-from ._KEKIdentifier2 import KEKIdentifier2
 from ._IssuerAndSerialNumber1 import IssuerAndSerialNumber1
+from ._KEKIdentifier2 import KEKIdentifier2
 
 class Recipient5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrAndSrlNb", "_KeyIdr"]
+	__slots__ = ["_KeyIdr", "_IssrAndSrlNb"]
 	@property
 	def IssrAndSrlNb(self):
 		return self._IssrAndSrlNb

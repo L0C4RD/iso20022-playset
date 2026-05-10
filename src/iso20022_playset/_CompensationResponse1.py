@@ -1,52 +1,26 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max140Text import Max140Text
-from ._DatePeriod2 import DatePeriod2
+from ._ISODate import ISODate
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._PercentageRate import PercentageRate
-from ._ISODate import ISODate
+from ._DatePeriod2 import DatePeriod2
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max140Text import Max140Text
 
 class CompensationResponse1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_IntrstRate", "_InitlAmt", "_Grantd", "_AmtDue", "_PdChrgs", "_XpctdValDt", "_Rsn"]
+	__slots__ = ["_XpctdValDt", "_Rsn", "_InitlAmt", "_Prd", "_IntrstRate", "_Grantd", "_AmtDue", "_PdChrgs"]
 	@property
-	def Prd(self):
-		return self._Prd
+	def AmtDue(self):
+		return self._AmtDue
 
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+	@AmtDue.setter
+	def AmtDue(self, value):
+		self._AmtDue = value if type(value) != base_types.auto else self.make_default("AmtDue")
 
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
-	def IntrstRate(self):
-		return self._IntrstRate
-
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
-
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
-	@property
-	def InitlAmt(self):
-		return self._InitlAmt
-
-	@InitlAmt.setter
-	def InitlAmt(self, value):
-		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
-
-	@InitlAmt.deleter
-	def InitlAmt(self):
-		del self._InitlAmt
-		self._InitlAmt = None
+	@AmtDue.deleter
+	def AmtDue(self):
+		del self._AmtDue
+		self._AmtDue = None
 
 	@property
 	def Grantd(self):
@@ -62,17 +36,30 @@ class CompensationResponse1(base_types._BaseFieldType):
 		self._Grantd = None
 
 	@property
-	def AmtDue(self):
-		return self._AmtDue
+	def InitlAmt(self):
+		return self._InitlAmt
 
-	@AmtDue.setter
-	def AmtDue(self, value):
-		self._AmtDue = value if type(value) != base_types.auto else self.make_default("AmtDue")
+	@InitlAmt.setter
+	def InitlAmt(self, value):
+		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
 
-	@AmtDue.deleter
-	def AmtDue(self):
-		del self._AmtDue
-		self._AmtDue = None
+	@InitlAmt.deleter
+	def InitlAmt(self):
+		del self._InitlAmt
+		self._InitlAmt = None
+
+	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
 
 	@property
 	def PdChrgs(self):
@@ -88,17 +75,17 @@ class CompensationResponse1(base_types._BaseFieldType):
 		self._PdChrgs = None
 
 	@property
-	def XpctdValDt(self):
-		return self._XpctdValDt
+	def Prd(self):
+		return self._Prd
 
-	@XpctdValDt.setter
-	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
-	@XpctdValDt.deleter
-	def XpctdValDt(self):
-		del self._XpctdValDt
-		self._XpctdValDt = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	@property
 	def Rsn(self):
@@ -113,14 +100,27 @@ class CompensationResponse1(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def XpctdValDt(self):
+		return self._XpctdValDt
+
+	@XpctdValDt.setter
+	def XpctdValDt(self, value):
+		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+
+	@XpctdValDt.deleter
+	def XpctdValDt(self):
+		del self._XpctdValDt
+		self._XpctdValDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prd', type=DatePeriod2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Grantd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtDue', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Grantd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdChrgs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=DatePeriod2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

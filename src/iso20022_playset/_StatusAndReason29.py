@@ -1,11 +1,24 @@
 from . import base_types
-from ._ProcessingStatus62Choice import ProcessingStatus62Choice
-from ._SettlementStatus22Choice import SettlementStatus22Choice
 from ._MatchingStatus32Choice import MatchingStatus32Choice
+from ._SettlementStatus22Choice import SettlementStatus22Choice
+from ._ProcessingStatus62Choice import ProcessingStatus62Choice
 
 class StatusAndReason29(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSts", "_PrcgSts", "_SttlmSts", "_IfrrdMtchgSts"]
+	__slots__ = ["_IfrrdMtchgSts", "_PrcgSts", "_MtchgSts", "_SttlmSts"]
+	@property
+	def IfrrdMtchgSts(self):
+		return self._IfrrdMtchgSts
+
+	@IfrrdMtchgSts.setter
+	def IfrrdMtchgSts(self, value):
+		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
+
+	@IfrrdMtchgSts.deleter
+	def IfrrdMtchgSts(self):
+		del self._IfrrdMtchgSts
+		self._IfrrdMtchgSts = None
+
 	@property
 	def MtchgSts(self):
 		return self._MtchgSts
@@ -45,23 +58,10 @@ class StatusAndReason29(base_types._BaseFieldType):
 		del self._SttlmSts
 		self._SttlmSts = None
 
-	@property
-	def IfrrdMtchgSts(self):
-		return self._IfrrdMtchgSts
-
-	@IfrrdMtchgSts.setter
-	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
-
-	@IfrrdMtchgSts.deleter
-	def IfrrdMtchgSts(self):
-		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus22Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
 from ._UnderlyingStatementEntry3 import UnderlyingStatementEntry3
-from ._UnderlyingPaymentTransaction8 import UnderlyingPaymentTransaction8
 from ._UnderlyingPaymentInstruction9 import UnderlyingPaymentInstruction9
+from ._UnderlyingPaymentTransaction8 import UnderlyingPaymentTransaction8
 
 class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 

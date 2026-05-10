@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ExternalMarketInfrastructure1Code import ExternalMarketInfrastructure1Code
+from ._Max35Text import Max35Text
 
 class MarketInfrastructureIdentification1Choice(base_types._BaseFieldType):
 

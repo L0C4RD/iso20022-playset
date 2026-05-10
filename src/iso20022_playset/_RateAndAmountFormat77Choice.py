@@ -1,13 +1,26 @@
 from . import base_types
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._RateTypeAndAmountAndStatus54 import RateTypeAndAmountAndStatus54
 from ._Percentage14Rate import Percentage14Rate
 from ._RateValueType7Code import RateValueType7Code
-from ._RateTypeAndAmountAndStatus54 import RateTypeAndAmountAndStatus54
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 from ._RateTypeAndPercentageRate22 import RateTypeAndPercentageRate22
 
 class RateAndAmountFormat77Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_Rate", "_Amt", "_RateTpAndRate", "_RateTpAndAmtAndRateSts"]
+	__slots__ = ["_Amt", "_RateTpAndAmtAndRateSts", "_RateTpAndRate", "_Rate", "_NotSpcfdRate"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def NotSpcfdRate(self):
 		return self._NotSpcfdRate
@@ -35,17 +48,17 @@ class RateAndAmountFormat77Choice(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def RateTpAndAmtAndRateSts(self):
+		return self._RateTpAndAmtAndRateSts
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@RateTpAndAmtAndRateSts.setter
+	def RateTpAndAmtAndRateSts(self, value):
+		self._RateTpAndAmtAndRateSts = value if type(value) != base_types.auto else self.make_default("RateTpAndAmtAndRateSts")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@RateTpAndAmtAndRateSts.deleter
+	def RateTpAndAmtAndRateSts(self):
+		del self._RateTpAndAmtAndRateSts
+		self._RateTpAndAmtAndRateSts = None
 
 	@property
 	def RateTpAndRate(self):
@@ -60,24 +73,11 @@ class RateAndAmountFormat77Choice(base_types._BaseFieldType):
 		del self._RateTpAndRate
 		self._RateTpAndRate = None
 
-	@property
-	def RateTpAndAmtAndRateSts(self):
-		return self._RateTpAndAmtAndRateSts
-
-	@RateTpAndAmtAndRateSts.setter
-	def RateTpAndAmtAndRateSts(self, value):
-		self._RateTpAndAmtAndRateSts = value if type(value) != base_types.auto else self.make_default("RateTpAndAmtAndRateSts")
-
-	@RateTpAndAmtAndRateSts.deleter
-	def RateTpAndAmtAndRateSts(self):
-		del self._RateTpAndAmtAndRateSts
-		self._RateTpAndAmtAndRateSts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RateTpAndRate', type=RateTypeAndPercentageRate22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus54, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RateTpAndRate', type=RateTypeAndPercentageRate22, min=0, max=1, mutex_group=1, array=False),
 	))
 

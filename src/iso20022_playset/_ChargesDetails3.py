@@ -1,10 +1,10 @@
 from . import base_types
-from ._ChargesType1Choice import ChargesType1Choice
 from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
+from ._ChargesType1Choice import ChargesType1Choice
 
 class ChargesDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtOrPctg", "_Tp"]
+	__slots__ = ["_Tp", "_AmtOrPctg"]
 	@property
 	def AmtOrPctg(self):
 		return self._AmtOrPctg

@@ -1,23 +1,10 @@
 from . import base_types
-from ._PartyIdentificationAndAccount224 import PartyIdentificationAndAccount224
 from ._PartyIdentificationAndAccount223 import PartyIdentificationAndAccount223
+from ._PartyIdentificationAndAccount224 import PartyIdentificationAndAccount224
 
 class CashParties41(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_Cdtr", "_Dbtr", "_DbtrAgt", "_Intrmy"]
-	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
-
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
-
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
-
+	__slots__ = ["_CdtrAgt", "_Dbtr", "_Cdtr", "_Intrmy", "_DbtrAgt"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr
@@ -30,6 +17,19 @@ class CashParties41(base_types._BaseFieldType):
 	def Cdtr(self):
 		del self._Cdtr
 		self._Cdtr = None
+
+	@property
+	def CdtrAgt(self):
+		return self._CdtrAgt
+
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	@property
 	def Dbtr(self):
@@ -71,8 +71,8 @@ class CashParties41(base_types._BaseFieldType):
 		self._Intrmy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount223, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=PartyIdentificationAndAccount223, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),

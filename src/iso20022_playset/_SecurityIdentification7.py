@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._ISINIdentifier import ISINIdentifier
+from ._Max140Text import Max140Text
 from ._AlternateSecurityIdentification3 import AlternateSecurityIdentification3
 
 class SecurityIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrId", "_ISIN", "_Desc"]
+	__slots__ = ["_ISIN", "_Desc", "_OthrId"]
 	@property
-	def OthrId(self):
-		return self._OthrId
+	def Desc(self):
+		return self._Desc
 
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def ISIN(self):
@@ -33,21 +33,21 @@ class SecurityIdentification7(base_types._BaseFieldType):
 		self._ISIN = None
 
 	@property
-	def Desc(self):
-		return self._Desc
+	def OthrId(self):
+		return self._OthrId
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrId', type=AlternateSecurityIdentification3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrId', type=AlternateSecurityIdentification3, min=0, max=1, mutex_group=1, array=False),
 	))
 

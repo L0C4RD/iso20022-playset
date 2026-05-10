@@ -4,7 +4,7 @@ from ._TaxExemptReason1Code import TaxExemptReason1Code
 
 class TaxExemptionReasonFormat1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Strd", "_Ustrd"]
+	__slots__ = ["_Ustrd", "_Strd"]
 	@property
 	def Strd(self):
 		return self._Strd

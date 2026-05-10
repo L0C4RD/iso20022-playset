@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateType8Code import DateType8Code
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DateType8Code import DateType8Code
 
 class DateFormat45Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_NotSpcfdDt"]
+	__slots__ = ["_NotSpcfdDt", "_Dt"]
 	@property
 	def Dt(self):
 		return self._Dt

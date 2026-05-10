@@ -3,19 +3,19 @@ from ._Max35Text import Max35Text
 
 class SubAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Chrtc", "_Id", "_AcctDsgnt"]
+	__slots__ = ["_Chrtc", "_Id", "_Nm", "_AcctDsgnt"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def AcctDsgnt(self):
+		return self._AcctDsgnt
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@AcctDsgnt.setter
+	def AcctDsgnt(self, value):
+		self._AcctDsgnt = value if type(value) != base_types.auto else self.make_default("AcctDsgnt")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@AcctDsgnt.deleter
+	def AcctDsgnt(self):
+		del self._AcctDsgnt
+		self._AcctDsgnt = None
 
 	@property
 	def Chrtc(self):
@@ -44,22 +44,22 @@ class SubAccount6(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AcctDsgnt(self):
-		return self._AcctDsgnt
+	def Nm(self):
+		return self._Nm
 
-	@AcctDsgnt.setter
-	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != base_types.auto else self.make_default("AcctDsgnt")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@AcctDsgnt.deleter
-	def AcctDsgnt(self):
-		del self._AcctDsgnt
-		self._AcctDsgnt = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chrtc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

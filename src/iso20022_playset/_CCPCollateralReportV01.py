@@ -4,7 +4,7 @@ from ._CollateralAccount4 import CollateralAccount4
 
 class CCPCollateralReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcctOwnr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_CollAcctOwnr"]
 	@property
 	def CollAcctOwnr(self):
 		return self._CollAcctOwnr

@@ -1,11 +1,24 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._ISODate import ISODate
+from ._YesNoIndicator import YesNoIndicator
 from ._NationalityCode import NationalityCode
 
 class CitizenshipInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_MnrInd", "_Ntlty", "_StartDt", "_EndDt"]
+	__slots__ = ["_EndDt", "_MnrInd", "_Ntlty", "_StartDt"]
+	@property
+	def EndDt(self):
+		return self._EndDt
+
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
+
 	@property
 	def MnrInd(self):
 		return self._MnrInd
@@ -45,23 +58,10 @@ class CitizenshipInformation1(base_types._BaseFieldType):
 		del self._StartDt
 		self._StartDt = None
 
-	@property
-	def EndDt(self):
-		return self._EndDt
-
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
-
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntlty', type=NationalityCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

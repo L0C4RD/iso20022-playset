@@ -1,13 +1,13 @@
 from . import base_types
-from ._BlockChainAddressWallet2 import BlockChainAddressWallet2
-from ._SecuritiesAccount25 import SecuritiesAccount25
-from ._PartyIdentification144 import PartyIdentification144
 from ._YesNoIndicator import YesNoIndicator
+from ._BlockChainAddressWallet2 import BlockChainAddressWallet2
+from ._PartyIdentification144 import PartyIdentification144
 from ._FinancialInstrumentDetails46 import FinancialInstrumentDetails46
+from ._SecuritiesAccount25 import SecuritiesAccount25
 
 class SubAccountIdentification73(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_FinInstrmDtls", "_ActvtyInd", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
+	__slots__ = ["_ActvtyInd", "_BlckChainAdrOrWllt", "_AcctOwnr", "_SfkpgAcct", "_FinInstrmDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -20,19 +20,6 @@ class SubAccountIdentification73(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
-
-	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
-
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
-
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
 
 	@property
 	def ActvtyInd(self):
@@ -61,6 +48,19 @@ class SubAccountIdentification73(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
+
+	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -75,9 +75,9 @@ class SubAccountIdentification73(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrumentDetails46, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrumentDetails46, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount25, min=0, max=1, mutex_group=None, array=False),
 	))
 

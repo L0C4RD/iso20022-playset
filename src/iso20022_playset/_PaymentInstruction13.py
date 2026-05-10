@@ -6,19 +6,6 @@ class PaymentInstruction13(base_types._BaseFieldType):
 
 	__slots__ = ["_ReqdExctnDtTm", "_PmtTp"]
 	@property
-	def ReqdExctnDtTm(self):
-		return self._ReqdExctnDtTm
-
-	@ReqdExctnDtTm.setter
-	def ReqdExctnDtTm(self, value):
-		self._ReqdExctnDtTm = value if type(value) != base_types.auto else self.make_default("ReqdExctnDtTm")
-
-	@ReqdExctnDtTm.deleter
-	def ReqdExctnDtTm(self):
-		del self._ReqdExctnDtTm
-		self._ReqdExctnDtTm = None
-
-	@property
 	def PmtTp(self):
 		return self._PmtTp
 
@@ -31,8 +18,21 @@ class PaymentInstruction13(base_types._BaseFieldType):
 		del self._PmtTp
 		self._PmtTp = None
 
+	@property
+	def ReqdExctnDtTm(self):
+		return self._ReqdExctnDtTm
+
+	@ReqdExctnDtTm.setter
+	def ReqdExctnDtTm(self, value):
+		self._ReqdExctnDtTm = value if type(value) != base_types.auto else self.make_default("ReqdExctnDtTm")
+
+	@ReqdExctnDtTm.deleter
+	def ReqdExctnDtTm(self):
+		del self._ReqdExctnDtTm
+		self._ReqdExctnDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqdExctnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

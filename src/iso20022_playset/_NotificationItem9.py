@@ -1,19 +1,19 @@
 from . import base_types
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._TransactionAllocation1 import TransactionAllocation1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Party50Choice import Party50Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._RemittanceInformation22 import RemittanceInformation22
 from ._Purpose2Choice import Purpose2Choice
-from ._ISODate import ISODate
+from ._TransactionAllocation1 import TransactionAllocation1
+from ._UUIDv4Identifier import UUIDv4Identifier
+from ._Max35Text import Max35Text
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._CashAccount40 import CashAccount40
 
 class NotificationItem9(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_AcctOwnr", "_EndToEndId", "_IntrmyAgt", "_Purp", "_Amt", "_RmtInf", "_RltdAcct", "_UETR", "_Dbtr", "_XpctdValDt", "_UndrlygAllcn", "_AcctSvcr", "_Id", "_RltdRmtInf", "_DbtrAgt"]
+	__slots__ = ["_AcctSvcr", "_RltdAcct", "_XpctdValDt", "_Dbtr", "_UETR", "_UndrlygAllcn", "_AcctOwnr", "_IntrmyAgt", "_RmtInf", "_Acct", "_Id", "_EndToEndId", "_DbtrAgt", "_Purp", "_Amt", "_RltdRmtInf"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -41,6 +41,58 @@ class NotificationItem9(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Dbtr(self):
+		return self._Dbtr
+
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
+
+	@property
 	def EndToEndId(self):
 		return self._EndToEndId
 
@@ -52,6 +104,19 @@ class NotificationItem9(base_types._BaseFieldType):
 	def EndToEndId(self):
 		del self._EndToEndId
 		self._EndToEndId = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def IntrmyAgt(self):
@@ -80,32 +145,6 @@ class NotificationItem9(base_types._BaseFieldType):
 		self._Purp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def RmtInf(self):
-		return self._RmtInf
-
-	@RmtInf.setter
-	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
-
-	@RmtInf.deleter
-	def RmtInf(self):
-		del self._RmtInf
-		self._RmtInf = None
-
-	@property
 	def RltdAcct(self):
 		return self._RltdAcct
 
@@ -117,84 +156,6 @@ class NotificationItem9(base_types._BaseFieldType):
 	def RltdAcct(self):
 		del self._RltdAcct
 		self._RltdAcct = None
-
-	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
-
-	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
-	def XpctdValDt(self):
-		return self._XpctdValDt
-
-	@XpctdValDt.setter
-	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
-
-	@XpctdValDt.deleter
-	def XpctdValDt(self):
-		del self._XpctdValDt
-		self._XpctdValDt = None
-
-	@property
-	def UndrlygAllcn(self):
-		return self._UndrlygAllcn
-
-	@UndrlygAllcn.setter
-	def UndrlygAllcn(self, value):
-		self._UndrlygAllcn = value if type(value) != base_types.auto else self.make_default("UndrlygAllcn")
-
-	@UndrlygAllcn.deleter
-	def UndrlygAllcn(self):
-		del self._UndrlygAllcn
-		self._UndrlygAllcn = None
-
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def RltdRmtInf(self):
@@ -210,34 +171,73 @@ class NotificationItem9(base_types._BaseFieldType):
 		self._RltdRmtInf = None
 
 	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
+	def RmtInf(self):
+		return self._RmtInf
 
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+	@RmtInf.setter
+	def RmtInf(self, value):
+		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
 
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
+	@RmtInf.deleter
+	def RmtInf(self):
+		del self._RmtInf
+		self._RmtInf = None
+
+	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
+	@property
+	def UndrlygAllcn(self):
+		return self._UndrlygAllcn
+
+	@UndrlygAllcn.setter
+	def UndrlygAllcn(self, value):
+		self._UndrlygAllcn = value if type(value) != base_types.auto else self.make_default("UndrlygAllcn")
+
+	@UndrlygAllcn.deleter
+	def UndrlygAllcn(self):
+		del self._UndrlygAllcn
+		self._UndrlygAllcn = None
+
+	@property
+	def XpctdValDt(self):
+		return self._XpctdValDt
+
+	@XpctdValDt.setter
+	def XpctdValDt(self, value):
+		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+
+	@XpctdValDt.deleter
+	def XpctdValDt(self):
+		del self._XpctdValDt
+		self._XpctdValDt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygAllcn', type=TransactionAllocation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRmtInf', type=RemittanceLocation8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygAllcn', type=TransactionAllocation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

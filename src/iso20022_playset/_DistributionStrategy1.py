@@ -4,19 +4,19 @@ from ._OtherDistributionStrategy1 import OtherDistributionStrategy1
 
 class DistributionStrategy1(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_ExctnWthApprprtnssTstOrNonAdvsdSvcs", "_InvstmtAdvc", "_PrtflMgmt", "_ExctnOnly"]
+	__slots__ = ["_PrtflMgmt", "_ExctnWthApprprtnssTstOrNonAdvsdSvcs", "_InvstmtAdvc", "_Othr", "_ExctnOnly"]
 	@property
-	def Othr(self):
-		return self._Othr
+	def ExctnOnly(self):
+		return self._ExctnOnly
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+	@ExctnOnly.setter
+	def ExctnOnly(self, value):
+		self._ExctnOnly = value if type(value) != base_types.auto else self.make_default("ExctnOnly")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@ExctnOnly.deleter
+	def ExctnOnly(self):
+		del self._ExctnOnly
+		self._ExctnOnly = None
 
 	@property
 	def ExctnWthApprprtnssTstOrNonAdvsdSvcs(self):
@@ -45,6 +45,19 @@ class DistributionStrategy1(base_types._BaseFieldType):
 		self._InvstmtAdvc = None
 
 	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
 	def PrtflMgmt(self):
 		return self._PrtflMgmt
 
@@ -57,24 +70,11 @@ class DistributionStrategy1(base_types._BaseFieldType):
 		del self._PrtflMgmt
 		self._PrtflMgmt = None
 
-	@property
-	def ExctnOnly(self):
-		return self._ExctnOnly
-
-	@ExctnOnly.setter
-	def ExctnOnly(self, value):
-		self._ExctnOnly = value if type(value) != base_types.auto else self.make_default("ExctnOnly")
-
-	@ExctnOnly.deleter
-	def ExctnOnly(self):
-		del self._ExctnOnly
-		self._ExctnOnly = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=OtherDistributionStrategy1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnOnly', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnWthApprprtnssTstOrNonAdvsdSvcs', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAdvc', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherDistributionStrategy1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtflMgmt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnOnly', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

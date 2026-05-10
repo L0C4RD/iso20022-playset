@@ -1,12 +1,25 @@
 from . import base_types
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
 
 class TransactionTypeAndAdditionalParameters19(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrTxId", "_Pmt", "_PoolId", "_CorpActnEvtId", "_SctiesFincgTxTp", "_CmonId", "_SctiesMvmntTp", "_AcctOwnrTxId"]
+	__slots__ = ["_SctiesMvmntTp", "_PoolId", "_CorpActnEvtId", "_SctiesFincgTxTp", "_Pmt", "_AcctOwnrTxId", "_CmonId", "_AcctSvcrTxId"]
+	@property
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
+
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
+
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
@@ -19,6 +32,32 @@ class TransactionTypeAndAdditionalParameters19(base_types._BaseFieldType):
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
+
+	@property
+	def CmonId(self):
+		return self._CmonId
+
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
+
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def Pmt(self):
@@ -47,19 +86,6 @@ class TransactionTypeAndAdditionalParameters19(base_types._BaseFieldType):
 		self._PoolId = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
 	def SctiesFincgTxTp(self):
 		return self._SctiesFincgTxTp
 
@@ -71,19 +97,6 @@ class TransactionTypeAndAdditionalParameters19(base_types._BaseFieldType):
 	def SctiesFincgTxTp(self):
 		del self._SctiesFincgTxTp
 		self._SctiesFincgTxTp = None
-
-	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
 
 	@property
 	def SctiesMvmntTp(self):
@@ -98,27 +111,14 @@ class TransactionTypeAndAdditionalParameters19(base_types._BaseFieldType):
 		del self._SctiesMvmntTp
 		self._SctiesMvmntTp = None
 
-	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
-
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
-
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

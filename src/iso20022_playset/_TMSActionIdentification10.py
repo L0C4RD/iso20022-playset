@@ -4,7 +4,7 @@ from ._TerminalManagementAction5Code import TerminalManagementAction5Code
 
 class TMSActionIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnTp", "_DataSetId"]
+	__slots__ = ["_DataSetId", "_ActnTp"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

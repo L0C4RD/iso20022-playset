@@ -1,6 +1,6 @@
 from . import base_types
-from ._InvestorType4Code import InvestorType4Code
 from ._TargetMarket1Code import TargetMarket1Code
+from ._InvestorType4Code import InvestorType4Code
 
 class TargetMarket5Choice(base_types._BaseFieldType):
 

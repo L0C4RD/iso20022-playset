@@ -1,10 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._ISODate import ISODate
+from ._YesNoIndicator import YesNoIndicator
 
 class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Trggrd", "_TrggrdDt"]
+	__slots__ = ["_TrggrdDt", "_Trggrd"]
 	@property
 	def Trggrd(self):
 		return self._Trggrd

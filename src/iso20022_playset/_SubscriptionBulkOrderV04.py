@@ -1,14 +1,14 @@
 from . import base_types
-from ._AdditionalReference9 import AdditionalReference9
 from ._CopyInformation4 import CopyInformation4
-from ._MessageIdentification1 import MessageIdentification1
-from ._SubscriptionBulkOrder5 import SubscriptionBulkOrder5
-from ._Extension1 import Extension1
 from ._AdditionalReference8 import AdditionalReference8
+from ._MessageIdentification1 import MessageIdentification1
+from ._Extension1 import Extension1
+from ._AdditionalReference9 import AdditionalReference9
+from ._SubscriptionBulkOrder5 import SubscriptionBulkOrder5
 
 class SubscriptionBulkOrderV04(base_types._BaseFieldType):
 
-	__slots__ = ["_BlkOrdrDtls", "_Xtnsn", "_PrvsRef", "_MsgId", "_PoolRef", "_CpyDtls"]
+	__slots__ = ["_MsgId", "_CpyDtls", "_PoolRef", "_PrvsRef", "_BlkOrdrDtls", "_Xtnsn"]
 	@property
 	def BlkOrdrDtls(self):
 		return self._BlkOrdrDtls
@@ -23,30 +23,17 @@ class SubscriptionBulkOrderV04(base_types._BaseFieldType):
 		self._BlkOrdrDtls = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def CpyDtls(self):
+		return self._CpyDtls
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+	@CpyDtls.setter
+	def CpyDtls(self, value):
+		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@CpyDtls.deleter
+	def CpyDtls(self):
+		del self._CpyDtls
+		self._CpyDtls = None
 
 	@property
 	def MsgId(self):
@@ -75,24 +62,37 @@ class SubscriptionBulkOrderV04(base_types._BaseFieldType):
 		self._PoolRef = None
 
 	@property
-	def CpyDtls(self):
-		return self._CpyDtls
+	def PrvsRef(self):
+		return self._PrvsRef
 
-	@CpyDtls.setter
-	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
 
-	@CpyDtls.deleter
-	def CpyDtls(self):
-		del self._CpyDtls
-		self._CpyDtls = None
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlkOrdrDtls', type=SubscriptionBulkOrder5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

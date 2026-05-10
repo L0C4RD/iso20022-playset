@@ -1,40 +1,14 @@
 from . import base_types
 from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
-from ._ExposureType11Code import ExposureType11Code
-from ._PartyIdentification178Choice import PartyIdentification178Choice
-from ._CollateralAccount3 import CollateralAccount3
 from ._PartyIdentification242 import PartyIdentification242
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ExposureType11Code import ExposureType11Code
+from ._CollateralAccount3 import CollateralAccount3
+from ._PartyIdentification178Choice import PartyIdentification178Choice
 
 class Obligation11(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcgPtyA", "_SvcgPtyB", "_BlckChainAdrOrWllt", "_CollAcctId", "_PtyA", "_ValtnDt", "_XpsrTp", "_PtyB"]
-	@property
-	def SvcgPtyA(self):
-		return self._SvcgPtyA
-
-	@SvcgPtyA.setter
-	def SvcgPtyA(self, value):
-		self._SvcgPtyA = value if type(value) != base_types.auto else self.make_default("SvcgPtyA")
-
-	@SvcgPtyA.deleter
-	def SvcgPtyA(self):
-		del self._SvcgPtyA
-		self._SvcgPtyA = None
-
-	@property
-	def SvcgPtyB(self):
-		return self._SvcgPtyB
-
-	@SvcgPtyB.setter
-	def SvcgPtyB(self, value):
-		self._SvcgPtyB = value if type(value) != base_types.auto else self.make_default("SvcgPtyB")
-
-	@SvcgPtyB.deleter
-	def SvcgPtyB(self):
-		del self._SvcgPtyB
-		self._SvcgPtyB = None
-
+	__slots__ = ["_CollAcctId", "_SvcgPtyB", "_PtyB", "_PtyA", "_SvcgPtyA", "_XpsrTp", "_ValtnDt", "_BlckChainAdrOrWllt"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -75,6 +49,45 @@ class Obligation11(base_types._BaseFieldType):
 		self._PtyA = None
 
 	@property
+	def PtyB(self):
+		return self._PtyB
+
+	@PtyB.setter
+	def PtyB(self, value):
+		self._PtyB = value if type(value) != base_types.auto else self.make_default("PtyB")
+
+	@PtyB.deleter
+	def PtyB(self):
+		del self._PtyB
+		self._PtyB = None
+
+	@property
+	def SvcgPtyA(self):
+		return self._SvcgPtyA
+
+	@SvcgPtyA.setter
+	def SvcgPtyA(self, value):
+		self._SvcgPtyA = value if type(value) != base_types.auto else self.make_default("SvcgPtyA")
+
+	@SvcgPtyA.deleter
+	def SvcgPtyA(self):
+		del self._SvcgPtyA
+		self._SvcgPtyA = None
+
+	@property
+	def SvcgPtyB(self):
+		return self._SvcgPtyB
+
+	@SvcgPtyB.setter
+	def SvcgPtyB(self, value):
+		self._SvcgPtyB = value if type(value) != base_types.auto else self.make_default("SvcgPtyB")
+
+	@SvcgPtyB.deleter
+	def SvcgPtyB(self):
+		del self._SvcgPtyB
+		self._SvcgPtyB = None
+
+	@property
 	def ValtnDt(self):
 		return self._ValtnDt
 
@@ -100,27 +113,14 @@ class Obligation11(base_types._BaseFieldType):
 		del self._XpsrTp
 		self._XpsrTp = None
 
-	@property
-	def PtyB(self):
-		return self._PtyB
-
-	@PtyB.setter
-	def PtyB(self, value):
-		self._PtyB = value if type(value) != base_types.auto else self.make_default("PtyB")
-
-	@PtyB.deleter
-	def PtyB(self):
-		del self._PtyB
-		self._PtyB = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcgPtyA', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyA', type=PartyIdentification242, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyB', type=PartyIdentification242, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcgPtyA', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType11Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyB', type=PartyIdentification242, min=1, max=1, mutex_group=None, array=False),
 	))
 

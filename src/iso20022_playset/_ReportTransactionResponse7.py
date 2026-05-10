@@ -1,23 +1,10 @@
 from . import base_types
-from ._PositiveNumber import PositiveNumber
 from ._ServiceResponse9 import ServiceResponse9
+from ._PositiveNumber import PositiveNumber
 
 class ReportTransactionResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckStop", "_BlckStart", "_RptFullSz", "_TxRpt"]
-	@property
-	def BlckStop(self):
-		return self._BlckStop
-
-	@BlckStop.setter
-	def BlckStop(self, value):
-		self._BlckStop = value if type(value) != base_types.auto else self.make_default("BlckStop")
-
-	@BlckStop.deleter
-	def BlckStop(self):
-		del self._BlckStop
-		self._BlckStop = None
-
+	__slots__ = ["_RptFullSz", "_BlckStop", "_TxRpt", "_BlckStart"]
 	@property
 	def BlckStart(self):
 		return self._BlckStart
@@ -30,6 +17,19 @@ class ReportTransactionResponse7(base_types._BaseFieldType):
 	def BlckStart(self):
 		del self._BlckStart
 		self._BlckStart = None
+
+	@property
+	def BlckStop(self):
+		return self._BlckStop
+
+	@BlckStop.setter
+	def BlckStop(self, value):
+		self._BlckStop = value if type(value) != base_types.auto else self.make_default("BlckStop")
+
+	@BlckStop.deleter
+	def BlckStop(self):
+		del self._BlckStop
+		self._BlckStop = None
 
 	@property
 	def RptFullSz(self):
@@ -58,8 +58,8 @@ class ReportTransactionResponse7(base_types._BaseFieldType):
 		self._TxRpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptFullSz', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRpt', type=ServiceResponse9, min=0, max=None, mutex_group=None, array=True),
 	))

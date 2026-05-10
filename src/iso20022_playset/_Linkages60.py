@@ -1,12 +1,12 @@
 from . import base_types
-from ._ProcessingPosition10Choice import ProcessingPosition10Choice
+from ._PartyIdentification136Choice import PartyIdentification136Choice
 from ._DocumentNumber6Choice import DocumentNumber6Choice
 from ._References50Choice import References50Choice
-from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._ProcessingPosition10Choice import ProcessingPosition10Choice
 
 class Linkages60(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNb", "_Ref", "_RefOwnr", "_PrcgPos"]
+	__slots__ = ["_Ref", "_RefOwnr", "_MsgNb", "_PrcgPos"]
 	@property
 	def MsgNb(self):
 		return self._MsgNb
@@ -19,6 +19,19 @@ class Linkages60(base_types._BaseFieldType):
 	def MsgNb(self):
 		del self._MsgNb
 		self._MsgNb = None
+
+	@property
+	def PrcgPos(self):
+		return self._PrcgPos
+
+	@PrcgPos.setter
+	def PrcgPos(self, value):
+		self._PrcgPos = value if type(value) != base_types.auto else self.make_default("PrcgPos")
+
+	@PrcgPos.deleter
+	def PrcgPos(self):
+		del self._PrcgPos
+		self._PrcgPos = None
 
 	@property
 	def Ref(self):
@@ -46,23 +59,10 @@ class Linkages60(base_types._BaseFieldType):
 		del self._RefOwnr
 		self._RefOwnr = None
 
-	@property
-	def PrcgPos(self):
-		return self._PrcgPos
-
-	@PrcgPos.setter
-	def PrcgPos(self, value):
-		self._PrcgPos = value if type(value) != base_types.auto else self.make_default("PrcgPos")
-
-	@PrcgPos.deleter
-	def PrcgPos(self):
-		del self._PrcgPos
-		self._PrcgPos = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

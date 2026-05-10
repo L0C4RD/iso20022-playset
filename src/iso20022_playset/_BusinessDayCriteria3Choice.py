@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._BusinessDayCriteria2 import BusinessDayCriteria2
+from ._Max35Text import Max35Text
 
 class BusinessDayCriteria3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NewCrit", "_QryNm"]
+	__slots__ = ["_QryNm", "_NewCrit"]
 	@property
 	def NewCrit(self):
 		return self._NewCrit

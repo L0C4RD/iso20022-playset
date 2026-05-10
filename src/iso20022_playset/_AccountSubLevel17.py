@@ -1,28 +1,15 @@
 from . import base_types
-from ._AggregateHoldingBalance3 import AggregateHoldingBalance3
-from ._PartyIdentification100 import PartyIdentification100
-from ._AggregateHoldingBalance2 import AggregateHoldingBalance2
-from ._AccountSubLevel18 import AccountSubLevel18
-from ._BeneficialOwner2 import BeneficialOwner2
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SupplementaryData1 import SupplementaryData1
+from ._PartyIdentification100 import PartyIdentification100
+from ._AccountSubLevel18 import AccountSubLevel18
+from ._AggregateHoldingBalance2 import AggregateHoldingBalance2
+from ._AggregateHoldingBalance3 import AggregateHoldingBalance3
+from ._BeneficialOwner2 import BeneficialOwner2
 
 class AccountSubLevel17(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_AcctId", "_AcctSubLvl8", "_AcctSvcr", "_BalDtls", "_BnfclOwnr", "_SplmtryData", "_AcctSubLvl8Diff"]
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
+	__slots__ = ["_AcctSubLvl8Diff", "_BalDtls", "_AcctId", "_AcctOwnr", "_BnfclOwnr", "_AcctSubLvl8", "_SplmtryData", "_AcctSvcr"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -37,6 +24,19 @@ class AccountSubLevel17(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
 	def AcctSubLvl8(self):
 		return self._AcctSubLvl8
 
@@ -48,6 +48,19 @@ class AccountSubLevel17(base_types._BaseFieldType):
 	def AcctSubLvl8(self):
 		del self._AcctSubLvl8
 		self._AcctSubLvl8 = None
+
+	@property
+	def AcctSubLvl8Diff(self):
+		return self._AcctSubLvl8Diff
+
+	@AcctSubLvl8Diff.setter
+	def AcctSubLvl8Diff(self, value):
+		self._AcctSubLvl8Diff = value if type(value) != base_types.auto else self.make_default("AcctSubLvl8Diff")
+
+	@AcctSubLvl8Diff.deleter
+	def AcctSubLvl8Diff(self):
+		del self._AcctSubLvl8Diff
+		self._AcctSubLvl8Diff = None
 
 	@property
 	def AcctSvcr(self):
@@ -101,27 +114,14 @@ class AccountSubLevel17(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def AcctSubLvl8Diff(self):
-		return self._AcctSubLvl8Diff
-
-	@AcctSubLvl8Diff.setter
-	def AcctSubLvl8Diff(self, value):
-		self._AcctSubLvl8Diff = value if type(value) != base_types.auto else self.make_default("AcctSubLvl8Diff")
-
-	@AcctSubLvl8Diff.deleter
-	def AcctSubLvl8Diff(self):
-		del self._AcctSubLvl8Diff
-		self._AcctSubLvl8Diff = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSubLvl8', type=AccountSubLevel18, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctSubLvl8Diff', type=AggregateHoldingBalance2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalDtls', type=AggregateHoldingBalance3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BnfclOwnr', type=BeneficialOwner2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSubLvl8Diff', type=AggregateHoldingBalance2, min=0, max=None, mutex_group=None, array=True),
 	))
 

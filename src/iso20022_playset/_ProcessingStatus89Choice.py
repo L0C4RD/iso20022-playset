@@ -5,7 +5,7 @@ from ._RejectionOrRepairStatus44Choice import RejectionOrRepairStatus44Choice
 
 class ProcessingStatus89Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AckdAccptd", "_Prtry", "_Rjctd"]
+	__slots__ = ["_Rjctd", "_Prtry", "_AckdAccptd"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd

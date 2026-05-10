@@ -1,11 +1,24 @@
 from . import base_types
 from ._DetailedReportStatistics7 import DetailedReportStatistics7
-from ._DetailedTransactionStatistics7Choice import DetailedTransactionStatistics7Choice
 from ._CounterpartyData92 import CounterpartyData92
+from ._DetailedTransactionStatistics7Choice import DetailedTransactionStatistics7Choice
 
 class RejectionStatistics9(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivSttstcs", "_RptSttstcs", "_CtrPtyId"]
+	__slots__ = ["_RptSttstcs", "_CtrPtyId", "_DerivSttstcs"]
+	@property
+	def CtrPtyId(self):
+		return self._CtrPtyId
+
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
+
 	@property
 	def DerivSttstcs(self):
 		return self._DerivSttstcs
@@ -32,22 +45,9 @@ class RejectionStatistics9(base_types._BaseFieldType):
 		del self._RptSttstcs
 		self._RptSttstcs = None
 
-	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
-
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
-
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData92, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivSttstcs', type=DetailedTransactionStatistics7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData92, min=1, max=1, mutex_group=None, array=False),
 	))
 

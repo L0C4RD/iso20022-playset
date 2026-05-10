@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CountryCode import CountryCode
+from ._Max35Text import Max35Text
 
 class IdentificationSource5Choice(base_types._BaseFieldType):
 

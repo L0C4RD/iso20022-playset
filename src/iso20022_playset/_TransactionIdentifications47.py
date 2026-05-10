@@ -3,32 +3,19 @@ from ._Max35Text import Max35Text
 
 class TransactionIdentifications47(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyMktInfrstrctrTxId", "_PrcrTxId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_CmonId", "_MktInfrstrctrTxId", "_NetgSvcPrvdrId"]
+	__slots__ = ["_CtrPtyMktInfrstrctrTxId", "_CmonId", "_AcctOwnrTxId", "_NetgSvcPrvdrId", "_AcctSvcrTxId", "_PrcrTxId", "_MktInfrstrctrTxId"]
 	@property
-	def CtrPtyMktInfrstrctrTxId(self):
-		return self._CtrPtyMktInfrstrctrTxId
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
 
-	@CtrPtyMktInfrstrctrTxId.setter
-	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
 
-	@CtrPtyMktInfrstrctrTxId.deleter
-	def CtrPtyMktInfrstrctrTxId(self):
-		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
-
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -44,19 +31,6 @@ class TransactionIdentifications47(base_types._BaseFieldType):
 		self._AcctSvcrTxId = None
 
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
-
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
-
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
-
-	@property
 	def CmonId(self):
 		return self._CmonId
 
@@ -68,6 +42,19 @@ class TransactionIdentifications47(base_types._BaseFieldType):
 	def CmonId(self):
 		del self._CmonId
 		self._CmonId = None
+
+	@property
+	def CtrPtyMktInfrstrctrTxId(self):
+		return self._CtrPtyMktInfrstrctrTxId
+
+	@CtrPtyMktInfrstrctrTxId.setter
+	def CtrPtyMktInfrstrctrTxId(self, value):
+		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+
+	@CtrPtyMktInfrstrctrTxId.deleter
+	def CtrPtyMktInfrstrctrTxId(self):
+		del self._CtrPtyMktInfrstrctrTxId
+		self._CtrPtyMktInfrstrctrTxId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -95,13 +82,26 @@ class TransactionIdentifications47(base_types._BaseFieldType):
 		del self._NetgSvcPrvdrId
 		self._NetgSvcPrvdrId = None
 
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetgSvcPrvdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

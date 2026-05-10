@@ -1,16 +1,16 @@
 from . import base_types
 from ._BuyInState1Code import BuyInState1Code
-from ._AmountAndDirection102 import AmountAndDirection102
-from ._RateAndAmountFormat39Choice import RateAndAmountFormat39Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._SecurityIdentification19 import SecurityIdentification19
+from ._RateAndAmountFormat39Choice import RateAndAmountFormat39Choice
+from ._AmountAndDirection102 import AmountAndDirection102
 from ._References31 import References31
 from ._BuyInDeferral1Code import BuyInDeferral1Code
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class BuyInAdviceDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyInDfrrl", "_BuyInStat", "_CshCompstnAmt", "_FinInstrmId", "_Qty", "_BuyInPric", "_BuyInSttlmDt", "_Ref"]
+	__slots__ = ["_BuyInSttlmDt", "_BuyInStat", "_CshCompstnAmt", "_BuyInPric", "_Ref", "_BuyInDfrrl", "_Qty", "_FinInstrmId"]
 	@property
 	def BuyInDfrrl(self):
 		return self._BuyInDfrrl
@@ -25,6 +25,19 @@ class BuyInAdviceDetails2(base_types._BaseFieldType):
 		self._BuyInDfrrl = None
 
 	@property
+	def BuyInPric(self):
+		return self._BuyInPric
+
+	@BuyInPric.setter
+	def BuyInPric(self, value):
+		self._BuyInPric = value if type(value) != base_types.auto else self.make_default("BuyInPric")
+
+	@BuyInPric.deleter
+	def BuyInPric(self):
+		del self._BuyInPric
+		self._BuyInPric = None
+
+	@property
 	def BuyInStat(self):
 		return self._BuyInStat
 
@@ -36,6 +49,19 @@ class BuyInAdviceDetails2(base_types._BaseFieldType):
 	def BuyInStat(self):
 		del self._BuyInStat
 		self._BuyInStat = None
+
+	@property
+	def BuyInSttlmDt(self):
+		return self._BuyInSttlmDt
+
+	@BuyInSttlmDt.setter
+	def BuyInSttlmDt(self, value):
+		self._BuyInSttlmDt = value if type(value) != base_types.auto else self.make_default("BuyInSttlmDt")
+
+	@BuyInSttlmDt.deleter
+	def BuyInSttlmDt(self):
+		del self._BuyInSttlmDt
+		self._BuyInSttlmDt = None
 
 	@property
 	def CshCompstnAmt(self):
@@ -77,32 +103,6 @@ class BuyInAdviceDetails2(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def BuyInPric(self):
-		return self._BuyInPric
-
-	@BuyInPric.setter
-	def BuyInPric(self, value):
-		self._BuyInPric = value if type(value) != base_types.auto else self.make_default("BuyInPric")
-
-	@BuyInPric.deleter
-	def BuyInPric(self):
-		del self._BuyInPric
-		self._BuyInPric = None
-
-	@property
-	def BuyInSttlmDt(self):
-		return self._BuyInSttlmDt
-
-	@BuyInSttlmDt.setter
-	def BuyInSttlmDt(self, value):
-		self._BuyInSttlmDt = value if type(value) != base_types.auto else self.make_default("BuyInSttlmDt")
-
-	@BuyInSttlmDt.deleter
-	def BuyInSttlmDt(self):
-		del self._BuyInSttlmDt
-		self._BuyInSttlmDt = None
-
-	@property
 	def Ref(self):
 		return self._Ref
 
@@ -117,12 +117,12 @@ class BuyInAdviceDetails2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyInDfrrl', type=BuyInDeferral1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInPric', type=RateAndAmountFormat39Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInStat', type=BuyInState1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshCompstnAmt', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInPric', type=RateAndAmountFormat39Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References31, min=1, max=1, mutex_group=None, array=False),
 	))
 

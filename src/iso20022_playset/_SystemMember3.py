@@ -4,7 +4,7 @@ from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class SystemMember3(base_types._BaseFieldType):
 
-	__slots__ = ["_MmbId", "_SysId"]
+	__slots__ = ["_SysId", "_MmbId"]
 	@property
 	def MmbId(self):
 		return self._MmbId

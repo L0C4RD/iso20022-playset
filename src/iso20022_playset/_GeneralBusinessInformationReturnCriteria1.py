@@ -5,17 +5,17 @@ class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 
 	__slots__ = ["_SbjtInd", "_SbjtDtlsInd", "_QlfrInd"]
 	@property
-	def SbjtInd(self):
-		return self._SbjtInd
+	def QlfrInd(self):
+		return self._QlfrInd
 
-	@SbjtInd.setter
-	def SbjtInd(self, value):
-		self._SbjtInd = value if type(value) != base_types.auto else self.make_default("SbjtInd")
+	@QlfrInd.setter
+	def QlfrInd(self, value):
+		self._QlfrInd = value if type(value) != base_types.auto else self.make_default("QlfrInd")
 
-	@SbjtInd.deleter
-	def SbjtInd(self):
-		del self._SbjtInd
-		self._SbjtInd = None
+	@QlfrInd.deleter
+	def QlfrInd(self):
+		del self._QlfrInd
+		self._QlfrInd = None
 
 	@property
 	def SbjtDtlsInd(self):
@@ -31,21 +31,21 @@ class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 		self._SbjtDtlsInd = None
 
 	@property
-	def QlfrInd(self):
-		return self._QlfrInd
+	def SbjtInd(self):
+		return self._SbjtInd
 
-	@QlfrInd.setter
-	def QlfrInd(self, value):
-		self._QlfrInd = value if type(value) != base_types.auto else self.make_default("QlfrInd")
+	@SbjtInd.setter
+	def SbjtInd(self, value):
+		self._SbjtInd = value if type(value) != base_types.auto else self.make_default("SbjtInd")
 
-	@QlfrInd.deleter
-	def QlfrInd(self):
-		del self._QlfrInd
-		self._QlfrInd = None
+	@SbjtInd.deleter
+	def SbjtInd(self):
+		del self._SbjtInd
+		self._SbjtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SbjtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbjtDtlsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QlfrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbjtDtlsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbjtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

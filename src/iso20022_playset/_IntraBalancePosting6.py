@@ -1,70 +1,44 @@
 from . import base_types
+from ._SupplementaryData1 import SupplementaryData1
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._GenericIdentification37 import GenericIdentification37
 from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 from ._Linkages57 import Linkages57
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max350Text import Max350Text
+from ._ISODateTime import ISODateTime
 from ._Amount2Choice import Amount2Choice
 from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
-from ._GenericIdentification37 import GenericIdentification37
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._ISODateTime import ISODateTime
 
 class IntraBalancePosting6(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_PrevslySttldAmt", "_PoolId", "_Lnkgs", "_BalTo", "_CorpActnEvtId", "_RmngSttlmAmt", "_PrcrTxId", "_MktInfrstrctrTxId", "_FctvSttlmDt", "_SttldAmt", "_MsgOrgtr", "_CshSubBalId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_Prty", "_InstrPrcgAddtlDtls", "_SplmtryData", "_StsDt"]
+	__slots__ = ["_CorpActnEvtId", "_MsgOrgtr", "_RmngSttlmAmt", "_CshSubBalId", "_Lnkgs", "_Prty", "_FctvSttlmDt", "_AcctOwnrTxId", "_CreDtTm", "_PoolId", "_StsDt", "_PrevslySttldAmt", "_SttldAmt", "_PrcrTxId", "_MktInfrstrctrTxId", "_InstrPrcgAddtlDtls", "_AcctSvcrTxId", "_SplmtryData", "_BalTo"]
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
-	def PrevslySttldAmt(self):
-		return self._PrevslySttldAmt
-
-	@PrevslySttldAmt.setter
-	def PrevslySttldAmt(self, value):
-		self._PrevslySttldAmt = value if type(value) != base_types.auto else self.make_default("PrevslySttldAmt")
-
-	@PrevslySttldAmt.deleter
-	def PrevslySttldAmt(self):
-		del self._PrevslySttldAmt
-		self._PrevslySttldAmt = None
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
 
 	@property
-	def PoolId(self):
-		return self._PoolId
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
 
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
 
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
-
-	@property
-	def Lnkgs(self):
-		return self._Lnkgs
-
-	@Lnkgs.setter
-	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
-
-	@Lnkgs.deleter
-	def Lnkgs(self):
-		del self._Lnkgs
-		self._Lnkgs = None
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
 
 	@property
 	def BalTo(self):
@@ -93,82 +67,17 @@ class IntraBalancePosting6(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def RmngSttlmAmt(self):
-		return self._RmngSttlmAmt
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@RmngSttlmAmt.setter
-	def RmngSttlmAmt(self, value):
-		self._RmngSttlmAmt = value if type(value) != base_types.auto else self.make_default("RmngSttlmAmt")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
-	@RmngSttlmAmt.deleter
-	def RmngSttlmAmt(self):
-		del self._RmngSttlmAmt
-		self._RmngSttlmAmt = None
-
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
-	@property
-	def FctvSttlmDt(self):
-		return self._FctvSttlmDt
-
-	@FctvSttlmDt.setter
-	def FctvSttlmDt(self, value):
-		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
-
-	@FctvSttlmDt.deleter
-	def FctvSttlmDt(self):
-		del self._FctvSttlmDt
-		self._FctvSttlmDt = None
-
-	@property
-	def SttldAmt(self):
-		return self._SttldAmt
-
-	@SttldAmt.setter
-	def SttldAmt(self, value):
-		self._SttldAmt = value if type(value) != base_types.auto else self.make_default("SttldAmt")
-
-	@SttldAmt.deleter
-	def SttldAmt(self):
-		del self._SttldAmt
-		self._SttldAmt = None
-
-	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
-
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
-
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def CshSubBalId(self):
@@ -184,30 +93,108 @@ class IntraBalancePosting6(base_types._BaseFieldType):
 		self._CshSubBalId = None
 
 	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
+	def FctvSttlmDt(self):
+		return self._FctvSttlmDt
 
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+	@FctvSttlmDt.setter
+	def FctvSttlmDt(self, value):
+		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
 
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+	@FctvSttlmDt.deleter
+	def FctvSttlmDt(self):
+		del self._FctvSttlmDt
+		self._FctvSttlmDt = None
 
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
+	def InstrPrcgAddtlDtls(self):
+		return self._InstrPrcgAddtlDtls
 
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+	@InstrPrcgAddtlDtls.setter
+	def InstrPrcgAddtlDtls(self, value):
+		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
 
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+	@InstrPrcgAddtlDtls.deleter
+	def InstrPrcgAddtlDtls(self):
+		del self._InstrPrcgAddtlDtls
+		self._InstrPrcgAddtlDtls = None
+
+	@property
+	def Lnkgs(self):
+		return self._Lnkgs
+
+	@Lnkgs.setter
+	def Lnkgs(self, value):
+		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+
+	@Lnkgs.deleter
+	def Lnkgs(self):
+		del self._Lnkgs
+		self._Lnkgs = None
+
+	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
+
+	@property
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
+
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
+
+	@property
+	def PoolId(self):
+		return self._PoolId
+
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
+
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
+	@property
+	def PrevslySttldAmt(self):
+		return self._PrevslySttldAmt
+
+	@PrevslySttldAmt.setter
+	def PrevslySttldAmt(self, value):
+		self._PrevslySttldAmt = value if type(value) != base_types.auto else self.make_default("PrevslySttldAmt")
+
+	@PrevslySttldAmt.deleter
+	def PrevslySttldAmt(self):
+		del self._PrevslySttldAmt
+		self._PrevslySttldAmt = None
 
 	@property
 	def Prty(self):
@@ -223,17 +210,17 @@ class IntraBalancePosting6(base_types._BaseFieldType):
 		self._Prty = None
 
 	@property
-	def InstrPrcgAddtlDtls(self):
-		return self._InstrPrcgAddtlDtls
+	def RmngSttlmAmt(self):
+		return self._RmngSttlmAmt
 
-	@InstrPrcgAddtlDtls.setter
-	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
+	@RmngSttlmAmt.setter
+	def RmngSttlmAmt(self, value):
+		self._RmngSttlmAmt = value if type(value) != base_types.auto else self.make_default("RmngSttlmAmt")
 
-	@InstrPrcgAddtlDtls.deleter
-	def InstrPrcgAddtlDtls(self):
-		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
+	@RmngSttlmAmt.deleter
+	def RmngSttlmAmt(self):
+		del self._RmngSttlmAmt
+		self._RmngSttlmAmt = None
 
 	@property
 	def SplmtryData(self):
@@ -261,25 +248,38 @@ class IntraBalancePosting6(base_types._BaseFieldType):
 		del self._StsDt
 		self._StsDt = None
 
+	@property
+	def SttldAmt(self):
+		return self._SttldAmt
+
+	@SttldAmt.setter
+	def SttldAmt(self, value):
+		self._SttldAmt = value if type(value) != base_types.auto else self.make_default("SttldAmt")
+
+	@SttldAmt.deleter
+	def SttldAmt(self):
+		del self._SttldAmt
+		self._SttldAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrevslySttldAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTo', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmngSttlmAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvSttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttldAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvSttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrevslySttldAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmngSttlmAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttldAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

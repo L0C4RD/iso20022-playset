@@ -5,19 +5,19 @@ from ._AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_NmAndAdr", "_BICOrBEI"]
+	__slots__ = ["_NmAndAdr", "_PrtryId", "_BICOrBEI"]
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def BICOrBEI(self):
+		return self._BICOrBEI
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+	@BICOrBEI.setter
+	def BICOrBEI(self, value):
+		self._BICOrBEI = value if type(value) != base_types.auto else self.make_default("BICOrBEI")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@BICOrBEI.deleter
+	def BICOrBEI(self):
+		del self._BICOrBEI
+		self._BICOrBEI = None
 
 	@property
 	def NmAndAdr(self):
@@ -33,21 +33,21 @@ class PartyIdentification1Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	@property
-	def BICOrBEI(self):
-		return self._BICOrBEI
+	def PrtryId(self):
+		return self._PrtryId
 
-	@BICOrBEI.setter
-	def BICOrBEI(self, value):
-		self._BICOrBEI = value if type(value) != base_types.auto else self.make_default("BICOrBEI")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
-	@BICOrBEI.deleter
-	def BICOrBEI(self):
-		del self._BICOrBEI
-		self._BICOrBEI = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BICOrBEI', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

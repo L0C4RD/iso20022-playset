@@ -1,7 +1,7 @@
 from . import base_types
 from ._IntraBalanceOrOperationalError12Choice import IntraBalanceOrOperationalError12Choice
-from ._Pagination1 import Pagination1
 from ._SupplementaryData1 import SupplementaryData1
+from ._Pagination1 import Pagination1
 from ._IntraBalanceReport5 import IntraBalanceReport5
 from ._DocumentIdentification51 import DocumentIdentification51
 
@@ -22,19 +22,6 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def RptGnlDtls(self):
-		return self._RptGnlDtls
-
-	@RptGnlDtls.setter
-	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
-
-	@RptGnlDtls.deleter
-	def RptGnlDtls(self):
-		del self._RptGnlDtls
-		self._RptGnlDtls = None
-
-	@property
 	def Pgntn(self):
 		return self._Pgntn
 
@@ -48,17 +35,17 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def RptGnlDtls(self):
+		return self._RptGnlDtls
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@RptGnlDtls.setter
+	def RptGnlDtls(self, value):
+		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@RptGnlDtls.deleter
+	def RptGnlDtls(self):
+		del self._RptGnlDtls
+		self._RptGnlDtls = None
 
 	@property
 	def RptOrErr(self):
@@ -73,11 +60,24 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 		del self._RptOrErr
 		self._RptOrErr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptOrErr', type=IntraBalanceOrOperationalError12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

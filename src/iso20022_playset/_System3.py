@@ -1,25 +1,12 @@
 from . import base_types
 from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._CountryCode import CountryCode
+from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class System3(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_AcctId", "_SysId", "_MmbId"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
+	__slots__ = ["_SysId", "_AcctId", "_MmbId", "_Ctry"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -34,17 +21,17 @@ class System3(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def SysId(self):
-		return self._SysId
+	def Ctry(self):
+		return self._Ctry
 
-	@SysId.setter
-	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@SysId.deleter
-	def SysId(self):
-		del self._SysId
-		self._SysId = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def MmbId(self):
@@ -59,10 +46,23 @@ class System3(base_types._BaseFieldType):
 		del self._MmbId
 		self._MmbId = None
 
+	@property
+	def SysId(self):
+		return self._SysId
+
+	@SysId.setter
+	def SysId(self, value):
+		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+
+	@SysId.deleter
+	def SysId(self):
+		del self._SysId
+		self._SysId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysId', type=MarketInfrastructureIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysId', type=MarketInfrastructureIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

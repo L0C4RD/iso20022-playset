@@ -1,39 +1,39 @@
 from . import base_types
+from ._TypeOfAmount1Choice import TypeOfAmount1Choice
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._WithdrawalReason1Choice import WithdrawalReason1Choice
-from ._TypeOfAmount1Choice import TypeOfAmount1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
 
 class BonusWithdrawal2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_TpOfAmt", "_Outsdng", "_Ref", "_Amt", "_AddtlInf", "_UclmdAmt"]
+	__slots__ = ["_Outsdng", "_UclmdAmt", "_Rsn", "_Amt", "_AddtlInf", "_Ref", "_TpOfAmt"]
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
-	def TpOfAmt(self):
-		return self._TpOfAmt
+	def Amt(self):
+		return self._Amt
 
-	@TpOfAmt.setter
-	def TpOfAmt(self, value):
-		self._TpOfAmt = value if type(value) != base_types.auto else self.make_default("TpOfAmt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@TpOfAmt.deleter
-	def TpOfAmt(self):
-		del self._TpOfAmt
-		self._TpOfAmt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Outsdng(self):
@@ -62,30 +62,30 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Rsn(self):
+		return self._Rsn
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def TpOfAmt(self):
+		return self._TpOfAmt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@TpOfAmt.setter
+	def TpOfAmt(self, value):
+		self._TpOfAmt = value if type(value) != base_types.auto else self.make_default("TpOfAmt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@TpOfAmt.deleter
+	def TpOfAmt(self):
+		del self._TpOfAmt
+		self._TpOfAmt = None
 
 	@property
 	def UclmdAmt(self):
@@ -101,12 +101,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 		self._UclmdAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=WithdrawalReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpOfAmt', type=TypeOfAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Outsdng', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rsn', type=WithdrawalReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfAmt', type=TypeOfAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UclmdAmt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

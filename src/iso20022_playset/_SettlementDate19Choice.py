@@ -1,10 +1,10 @@
 from . import base_types
-from ._SettlementDateCode8Choice import SettlementDateCode8Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._SettlementDateCode8Choice import SettlementDateCode8Choice
 
 class SettlementDate19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_DtCd"]
+	__slots__ = ["_DtCd", "_Dt"]
 	@property
 	def Dt(self):
 		return self._Dt

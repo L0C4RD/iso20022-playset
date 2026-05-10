@@ -1,11 +1,11 @@
 from . import base_types
+from ._StandingOrderOrAll4Choice import StandingOrderOrAll4Choice
 from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader1 import MessageHeader1
-from ._StandingOrderOrAll4Choice import StandingOrderOrAll4Choice
 
 class DeleteStandingOrderV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_StgOrdrDtls", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_StgOrdrDtls", "_MsgHdr"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -20,19 +20,6 @@ class DeleteStandingOrderV05(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def StgOrdrDtls(self):
-		return self._StgOrdrDtls
-
-	@StgOrdrDtls.setter
-	def StgOrdrDtls(self, value):
-		self._StgOrdrDtls = value if type(value) != base_types.auto else self.make_default("StgOrdrDtls")
-
-	@StgOrdrDtls.deleter
-	def StgOrdrDtls(self):
-		del self._StgOrdrDtls
-		self._StgOrdrDtls = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,9 +32,22 @@ class DeleteStandingOrderV05(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def StgOrdrDtls(self):
+		return self._StgOrdrDtls
+
+	@StgOrdrDtls.setter
+	def StgOrdrDtls(self, value):
+		self._StgOrdrDtls = value if type(value) != base_types.auto else self.make_default("StgOrdrDtls")
+
+	@StgOrdrDtls.deleter
+	def StgOrdrDtls(self):
+		del self._StgOrdrDtls
+		self._StgOrdrDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StgOrdrDtls', type=StandingOrderOrAll4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StgOrdrDtls', type=StandingOrderOrAll4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

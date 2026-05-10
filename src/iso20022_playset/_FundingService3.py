@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max256Text import Max256Text
 from ._Max500Text import Max500Text
 from ._FundingSource4 import FundingSource4
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
 
 class FundingService3(base_types._BaseFieldType):
 
-	__slots__ = ["_BizPurp", "_Prvdr", "_Desc", "_FndgSrc", "_Ref", "_Nm", "_ClmAssgnr", "_ClmCrdntls"]
+	__slots__ = ["_Prvdr", "_Nm", "_ClmAssgnr", "_Ref", "_Desc", "_ClmCrdntls", "_FndgSrc", "_BizPurp"]
 	@property
 	def BizPurp(self):
 		return self._BizPurp
@@ -21,17 +21,30 @@ class FundingService3(base_types._BaseFieldType):
 		self._BizPurp = None
 
 	@property
-	def Prvdr(self):
-		return self._Prvdr
+	def ClmAssgnr(self):
+		return self._ClmAssgnr
 
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+	@ClmAssgnr.setter
+	def ClmAssgnr(self, value):
+		self._ClmAssgnr = value if type(value) != base_types.auto else self.make_default("ClmAssgnr")
 
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
+	@ClmAssgnr.deleter
+	def ClmAssgnr(self):
+		del self._ClmAssgnr
+		self._ClmAssgnr = None
+
+	@property
+	def ClmCrdntls(self):
+		return self._ClmCrdntls
+
+	@ClmCrdntls.setter
+	def ClmCrdntls(self, value):
+		self._ClmCrdntls = value if type(value) != base_types.auto else self.make_default("ClmCrdntls")
+
+	@ClmCrdntls.deleter
+	def ClmCrdntls(self):
+		del self._ClmCrdntls
+		self._ClmCrdntls = None
 
 	@property
 	def Desc(self):
@@ -60,19 +73,6 @@ class FundingService3(base_types._BaseFieldType):
 		self._FndgSrc = None
 
 	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
 	def Nm(self):
 		return self._Nm
 
@@ -86,39 +86,39 @@ class FundingService3(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def ClmAssgnr(self):
-		return self._ClmAssgnr
+	def Prvdr(self):
+		return self._Prvdr
 
-	@ClmAssgnr.setter
-	def ClmAssgnr(self, value):
-		self._ClmAssgnr = value if type(value) != base_types.auto else self.make_default("ClmAssgnr")
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
 
-	@ClmAssgnr.deleter
-	def ClmAssgnr(self):
-		del self._ClmAssgnr
-		self._ClmAssgnr = None
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
 
 	@property
-	def ClmCrdntls(self):
-		return self._ClmCrdntls
+	def Ref(self):
+		return self._Ref
 
-	@ClmCrdntls.setter
-	def ClmCrdntls(self, value):
-		self._ClmCrdntls = value if type(value) != base_types.auto else self.make_default("ClmCrdntls")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
-	@ClmCrdntls.deleter
-	def ClmCrdntls(self):
-		del self._ClmCrdntls
-		self._ClmCrdntls = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizPurp', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndgSrc', type=FundingSource4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClmAssgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClmCrdntls', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndgSrc', type=FundingSource4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

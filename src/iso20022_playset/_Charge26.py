@@ -4,7 +4,7 @@ from ._AmountOrRate3Choice import AmountOrRate3Choice
 
 class Charge26(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgApld", "_Tp"]
+	__slots__ = ["_Tp", "_ChrgApld"]
 	@property
 	def ChrgApld(self):
 		return self._ChrgApld

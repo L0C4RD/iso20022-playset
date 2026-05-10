@@ -1,12 +1,25 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._Pagination1 import Pagination1
-from ._MessageHeader12 import MessageHeader12
 from ._SecurityOrOperationalError4Choice import SecurityOrOperationalError4Choice
+from ._MessageHeader12 import MessageHeader12
+from ._Pagination1 import Pagination1
 
 class SecurityReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Pgntn", "_SctyRptOrErr", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_SctyRptOrErr", "_Pgntn"]
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
 	@property
 	def Pgntn(self):
 		return self._Pgntn
@@ -34,19 +47,6 @@ class SecurityReportV01(base_types._BaseFieldType):
 		self._SctyRptOrErr = None
 
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -60,9 +60,9 @@ class SecurityReportV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyRptOrErr', type=SecurityOrOperationalError4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

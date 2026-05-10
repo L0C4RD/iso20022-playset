@@ -1,10 +1,10 @@
 from . import base_types
-from ._Number import Number
 from ._ISODate import ISODate
+from ._Number import Number
 
 class AutoExtend1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Days", "_Yrs", "_Dt", "_Mnths"]
+	__slots__ = ["_Days", "_Yrs", "_Mnths", "_Dt"]
 	@property
 	def Days(self):
 		return self._Days
@@ -17,19 +17,6 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 	def Days(self):
 		del self._Days
 		self._Days = None
-
-	@property
-	def Yrs(self):
-		return self._Yrs
-
-	@Yrs.setter
-	def Yrs(self, value):
-		self._Yrs = value if type(value) != base_types.auto else self.make_default("Yrs")
-
-	@Yrs.deleter
-	def Yrs(self):
-		del self._Yrs
-		self._Yrs = None
 
 	@property
 	def Dt(self):
@@ -57,10 +44,23 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 		del self._Mnths
 		self._Mnths = None
 
+	@property
+	def Yrs(self):
+		return self._Yrs
+
+	@Yrs.setter
+	def Yrs(self, value):
+		self._Yrs = value if type(value) != base_types.auto else self.make_default("Yrs")
+
+	@Yrs.deleter
+	def Yrs(self):
+		del self._Yrs
+		self._Yrs = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Days', type=Number, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Yrs', type=Number, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mnths', type=Number, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Yrs', type=Number, min=0, max=1, mutex_group=1, array=False),
 	))
 

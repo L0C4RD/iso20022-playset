@@ -4,7 +4,7 @@ from ._PositionSetCollateralDimensions3 import PositionSetCollateralDimensions3
 
 class PositionSet22(base_types._BaseFieldType):
 
-	__slots__ = ["_Dmnsns", "_Mtrcs"]
+	__slots__ = ["_Mtrcs", "_Dmnsns"]
 	@property
 	def Dmnsns(self):
 		return self._Dmnsns

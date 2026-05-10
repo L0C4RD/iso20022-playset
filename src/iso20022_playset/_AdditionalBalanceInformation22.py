@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._SubBalanceQuantity8Choice import SubBalanceQuantity8Choice
+from ._Max140Text import Max140Text
 from ._SubBalanceType12Choice import SubBalanceType12Choice
 
 class AdditionalBalanceInformation22(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalTp", "_SubBalAddtlDtls", "_Qty"]
+	__slots__ = ["_Qty", "_SubBalAddtlDtls", "_SubBalTp"]
 	@property
-	def SubBalTp(self):
-		return self._SubBalTp
+	def Qty(self):
+		return self._Qty
 
-	@SubBalTp.setter
-	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
-	@SubBalTp.deleter
-	def SubBalTp(self):
-		del self._SubBalTp
-		self._SubBalTp = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def SubBalAddtlDtls(self):
@@ -33,21 +33,21 @@ class AdditionalBalanceInformation22(base_types._BaseFieldType):
 		self._SubBalAddtlDtls = None
 
 	@property
-	def Qty(self):
-		return self._Qty
+	def SubBalTp(self):
+		return self._SubBalTp
 
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+	@SubBalTp.setter
+	def SubBalTp(self, value):
+		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
 
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@SubBalTp.deleter
+	def SubBalTp(self):
+		del self._SubBalTp
+		self._SubBalTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType12Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType12Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

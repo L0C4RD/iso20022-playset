@@ -1,10 +1,10 @@
 from . import base_types
-from ._Position1 import Position1
 from ._GenericIdentification165 import GenericIdentification165
+from ._Position1 import Position1
 
 class PositionAccount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Pos"]
+	__slots__ = ["_Pos", "_Id"]
 	@property
 	def Id(self):
 		return self._Id

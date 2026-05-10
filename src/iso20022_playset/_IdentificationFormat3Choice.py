@@ -1,23 +1,23 @@
 from . import base_types
 from ._GenericIdentification36 import GenericIdentification36
-from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
 from ._Max30Text import Max30Text
+from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
 
 class IdentificationFormat3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtId", "_PrtryId", "_LngId"]
+	__slots__ = ["_LngId", "_ShrtId", "_PrtryId"]
 	@property
-	def ShrtId(self):
-		return self._ShrtId
+	def LngId(self):
+		return self._LngId
 
-	@ShrtId.setter
-	def ShrtId(self, value):
-		self._ShrtId = value if type(value) != base_types.auto else self.make_default("ShrtId")
+	@LngId.setter
+	def LngId(self, value):
+		self._LngId = value if type(value) != base_types.auto else self.make_default("LngId")
 
-	@ShrtId.deleter
-	def ShrtId(self):
-		del self._ShrtId
-		self._ShrtId = None
+	@LngId.deleter
+	def LngId(self):
+		del self._LngId
+		self._LngId = None
 
 	@property
 	def PrtryId(self):
@@ -33,21 +33,21 @@ class IdentificationFormat3Choice(base_types._BaseFieldType):
 		self._PrtryId = None
 
 	@property
-	def LngId(self):
-		return self._LngId
+	def ShrtId(self):
+		return self._ShrtId
 
-	@LngId.setter
-	def LngId(self, value):
-		self._LngId = value if type(value) != base_types.auto else self.make_default("LngId")
+	@ShrtId.setter
+	def ShrtId(self, value):
+		self._ShrtId = value if type(value) != base_types.auto else self.make_default("ShrtId")
 
-	@LngId.deleter
-	def LngId(self):
-		del self._LngId
-		self._LngId = None
+	@ShrtId.deleter
+	def ShrtId(self):
+		del self._ShrtId
+		self._ShrtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtId', type=Exact3UpperCaseAlphaNumericText, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LngId', type=Max30Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ShrtId', type=Exact3UpperCaseAlphaNumericText, min=0, max=1, mutex_group=1, array=False),
 	))
 

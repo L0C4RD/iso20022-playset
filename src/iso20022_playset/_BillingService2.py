@@ -1,14 +1,14 @@
 from . import base_types
-from ._BillingPrice1 import BillingPrice1
+from ._BillingServiceParameters3 import BillingServiceParameters3
 from ._AmountAndDirection34 import AmountAndDirection34
 from ._ServicePaymentMethod1Code import ServicePaymentMethod1Code
+from ._BillingPrice1 import BillingPrice1
 from ._ServiceTaxDesignation1 import ServiceTaxDesignation1
 from ._BillingMethod1Choice import BillingMethod1Choice
-from ._BillingServiceParameters3 import BillingServiceParameters3
 
 class BillingService2(base_types._BaseFieldType):
 
-	__slots__ = ["_BalReqrdAcctAmt", "_SvcDtl", "_TaxDsgnt", "_Pric", "_OrgnlChrgPric", "_OrgnlChrgSttlmAmt", "_PmtMtd", "_TaxClctn"]
+	__slots__ = ["_TaxDsgnt", "_OrgnlChrgPric", "_OrgnlChrgSttlmAmt", "_TaxClctn", "_BalReqrdAcctAmt", "_SvcDtl", "_Pric", "_PmtMtd"]
 	@property
 	def BalReqrdAcctAmt(self):
 		return self._BalReqrdAcctAmt
@@ -21,45 +21,6 @@ class BillingService2(base_types._BaseFieldType):
 	def BalReqrdAcctAmt(self):
 		del self._BalReqrdAcctAmt
 		self._BalReqrdAcctAmt = None
-
-	@property
-	def SvcDtl(self):
-		return self._SvcDtl
-
-	@SvcDtl.setter
-	def SvcDtl(self, value):
-		self._SvcDtl = value if type(value) != base_types.auto else self.make_default("SvcDtl")
-
-	@SvcDtl.deleter
-	def SvcDtl(self):
-		del self._SvcDtl
-		self._SvcDtl = None
-
-	@property
-	def TaxDsgnt(self):
-		return self._TaxDsgnt
-
-	@TaxDsgnt.setter
-	def TaxDsgnt(self, value):
-		self._TaxDsgnt = value if type(value) != base_types.auto else self.make_default("TaxDsgnt")
-
-	@TaxDsgnt.deleter
-	def TaxDsgnt(self):
-		del self._TaxDsgnt
-		self._TaxDsgnt = None
-
-	@property
-	def Pric(self):
-		return self._Pric
-
-	@Pric.setter
-	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
-
-	@Pric.deleter
-	def Pric(self):
-		del self._Pric
-		self._Pric = None
 
 	@property
 	def OrgnlChrgPric(self):
@@ -101,6 +62,32 @@ class BillingService2(base_types._BaseFieldType):
 		self._PmtMtd = None
 
 	@property
+	def Pric(self):
+		return self._Pric
+
+	@Pric.setter
+	def Pric(self, value):
+		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+
+	@Pric.deleter
+	def Pric(self):
+		del self._Pric
+		self._Pric = None
+
+	@property
+	def SvcDtl(self):
+		return self._SvcDtl
+
+	@SvcDtl.setter
+	def SvcDtl(self, value):
+		self._SvcDtl = value if type(value) != base_types.auto else self.make_default("SvcDtl")
+
+	@SvcDtl.deleter
+	def SvcDtl(self):
+		del self._SvcDtl
+		self._SvcDtl = None
+
+	@property
 	def TaxClctn(self):
 		return self._TaxClctn
 
@@ -113,14 +100,27 @@ class BillingService2(base_types._BaseFieldType):
 		del self._TaxClctn
 		self._TaxClctn = None
 
+	@property
+	def TaxDsgnt(self):
+		return self._TaxDsgnt
+
+	@TaxDsgnt.setter
+	def TaxDsgnt(self, value):
+		self._TaxDsgnt = value if type(value) != base_types.auto else self.make_default("TaxDsgnt")
+
+	@TaxDsgnt.deleter
+	def TaxDsgnt(self):
+		del self._TaxDsgnt
+		self._TaxDsgnt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalReqrdAcctAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcDtl', type=BillingServiceParameters3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxDsgnt', type=ServiceTaxDesignation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pric', type=BillingPrice1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlChrgPric', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlChrgSttlmAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMtd', type=ServicePaymentMethod1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pric', type=BillingPrice1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcDtl', type=BillingServiceParameters3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxClctn', type=BillingMethod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxDsgnt', type=ServiceTaxDesignation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

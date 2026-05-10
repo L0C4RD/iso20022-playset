@@ -1,38 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._AdditionalInformation30 import AdditionalInformation30
-from ._Max256Text import Max256Text
 from ._ActionTaken1Code import ActionTaken1Code
+from ._AdditionalInformation30 import AdditionalInformation30
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
 
 class FraudDispositionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_WrngData", "_ErrData", "_ActnTaken", "_AddtlInf", "_OthrActnTaken"]
-	@property
-	def WrngData(self):
-		return self._WrngData
-
-	@WrngData.setter
-	def WrngData(self, value):
-		self._WrngData = value if type(value) != base_types.auto else self.make_default("WrngData")
-
-	@WrngData.deleter
-	def WrngData(self):
-		del self._WrngData
-		self._WrngData = None
-
-	@property
-	def ErrData(self):
-		return self._ErrData
-
-	@ErrData.setter
-	def ErrData(self, value):
-		self._ErrData = value if type(value) != base_types.auto else self.make_default("ErrData")
-
-	@ErrData.deleter
-	def ErrData(self):
-		del self._ErrData
-		self._ErrData = None
-
+	__slots__ = ["_ErrData", "_AddtlInf", "_OthrActnTaken", "_WrngData", "_ActnTaken"]
 	@property
 	def ActnTaken(self):
 		return self._ActnTaken
@@ -60,6 +34,19 @@ class FraudDispositionStatus2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
+	def ErrData(self):
+		return self._ErrData
+
+	@ErrData.setter
+	def ErrData(self, value):
+		self._ErrData = value if type(value) != base_types.auto else self.make_default("ErrData")
+
+	@ErrData.deleter
+	def ErrData(self):
+		del self._ErrData
+		self._ErrData = None
+
+	@property
 	def OthrActnTaken(self):
 		return self._OthrActnTaken
 
@@ -72,11 +59,24 @@ class FraudDispositionStatus2(base_types._BaseFieldType):
 		del self._OthrActnTaken
 		self._OthrActnTaken = None
 
+	@property
+	def WrngData(self):
+		return self._WrngData
+
+	@WrngData.setter
+	def WrngData(self, value):
+		self._WrngData = value if type(value) != base_types.auto else self.make_default("WrngData")
+
+	@WrngData.deleter
+	def WrngData(self):
+		del self._WrngData
+		self._WrngData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='WrngData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ErrData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActnTaken', type=ActionTaken1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation30, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ErrData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrActnTaken', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WrngData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

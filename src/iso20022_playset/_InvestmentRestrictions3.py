@@ -1,131 +1,27 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Number import Number
-from ._Max350Text import Max350Text
-from ._Max70Text import Max70Text
-from ._HoldingTransferable1Code import HoldingTransferable1Code
-from ._DecimalNumber import DecimalNumber
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._DecimalNumber import DecimalNumber
+from ._HoldingTransferable1Code import HoldingTransferable1Code
+from ._Max70Text import Max70Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max350Text import Max350Text
+from ._Number import Number
 
 class InvestmentRestrictions3(base_types._BaseFieldType):
 
-	__slots__ = ["_MinSbsqntSbcptAmt", "_MinSwtchSbcptUnits", "_MinSwtchSbcptAmt", "_MinSbsqntSbcptUnits", "_OthrRedRstrctns", "_MinInitlSbcptUnits", "_MinHldgUnits", "_MaxRedUnits", "_MinHldgPrd", "_HldgTrfbl", "_MinHldgAmt", "_MinRedPctg", "_MaxRedAmt", "_MaxSwtchRedAmt", "_MaxSwtchRedUnits", "_OthrSwtchRstrctns", "_MinInitlSbcptAmt", "_AddtlInf"]
+	__slots__ = ["_MinSbsqntSbcptUnits", "_MaxSwtchRedAmt", "_MaxRedAmt", "_MinSbsqntSbcptAmt", "_MinHldgPrd", "_HldgTrfbl", "_MaxSwtchRedUnits", "_MinHldgAmt", "_MinRedPctg", "_MaxRedUnits", "_OthrSwtchRstrctns", "_OthrRedRstrctns", "_MinSwtchSbcptUnits", "_MinInitlSbcptAmt", "_AddtlInf", "_MinSwtchSbcptAmt", "_MinHldgUnits", "_MinInitlSbcptUnits"]
 	@property
-	def MinSbsqntSbcptAmt(self):
-		return self._MinSbsqntSbcptAmt
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@MinSbsqntSbcptAmt.setter
-	def MinSbsqntSbcptAmt(self, value):
-		self._MinSbsqntSbcptAmt = value if type(value) != base_types.auto else self.make_default("MinSbsqntSbcptAmt")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@MinSbsqntSbcptAmt.deleter
-	def MinSbsqntSbcptAmt(self):
-		del self._MinSbsqntSbcptAmt
-		self._MinSbsqntSbcptAmt = None
-
-	@property
-	def MinSwtchSbcptUnits(self):
-		return self._MinSwtchSbcptUnits
-
-	@MinSwtchSbcptUnits.setter
-	def MinSwtchSbcptUnits(self, value):
-		self._MinSwtchSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinSwtchSbcptUnits")
-
-	@MinSwtchSbcptUnits.deleter
-	def MinSwtchSbcptUnits(self):
-		del self._MinSwtchSbcptUnits
-		self._MinSwtchSbcptUnits = None
-
-	@property
-	def MinSwtchSbcptAmt(self):
-		return self._MinSwtchSbcptAmt
-
-	@MinSwtchSbcptAmt.setter
-	def MinSwtchSbcptAmt(self, value):
-		self._MinSwtchSbcptAmt = value if type(value) != base_types.auto else self.make_default("MinSwtchSbcptAmt")
-
-	@MinSwtchSbcptAmt.deleter
-	def MinSwtchSbcptAmt(self):
-		del self._MinSwtchSbcptAmt
-		self._MinSwtchSbcptAmt = None
-
-	@property
-	def MinSbsqntSbcptUnits(self):
-		return self._MinSbsqntSbcptUnits
-
-	@MinSbsqntSbcptUnits.setter
-	def MinSbsqntSbcptUnits(self, value):
-		self._MinSbsqntSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinSbsqntSbcptUnits")
-
-	@MinSbsqntSbcptUnits.deleter
-	def MinSbsqntSbcptUnits(self):
-		del self._MinSbsqntSbcptUnits
-		self._MinSbsqntSbcptUnits = None
-
-	@property
-	def OthrRedRstrctns(self):
-		return self._OthrRedRstrctns
-
-	@OthrRedRstrctns.setter
-	def OthrRedRstrctns(self, value):
-		self._OthrRedRstrctns = value if type(value) != base_types.auto else self.make_default("OthrRedRstrctns")
-
-	@OthrRedRstrctns.deleter
-	def OthrRedRstrctns(self):
-		del self._OthrRedRstrctns
-		self._OthrRedRstrctns = None
-
-	@property
-	def MinInitlSbcptUnits(self):
-		return self._MinInitlSbcptUnits
-
-	@MinInitlSbcptUnits.setter
-	def MinInitlSbcptUnits(self, value):
-		self._MinInitlSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinInitlSbcptUnits")
-
-	@MinInitlSbcptUnits.deleter
-	def MinInitlSbcptUnits(self):
-		del self._MinInitlSbcptUnits
-		self._MinInitlSbcptUnits = None
-
-	@property
-	def MinHldgUnits(self):
-		return self._MinHldgUnits
-
-	@MinHldgUnits.setter
-	def MinHldgUnits(self, value):
-		self._MinHldgUnits = value if type(value) != base_types.auto else self.make_default("MinHldgUnits")
-
-	@MinHldgUnits.deleter
-	def MinHldgUnits(self):
-		del self._MinHldgUnits
-		self._MinHldgUnits = None
-
-	@property
-	def MaxRedUnits(self):
-		return self._MaxRedUnits
-
-	@MaxRedUnits.setter
-	def MaxRedUnits(self, value):
-		self._MaxRedUnits = value if type(value) != base_types.auto else self.make_default("MaxRedUnits")
-
-	@MaxRedUnits.deleter
-	def MaxRedUnits(self):
-		del self._MaxRedUnits
-		self._MaxRedUnits = None
-
-	@property
-	def MinHldgPrd(self):
-		return self._MinHldgPrd
-
-	@MinHldgPrd.setter
-	def MinHldgPrd(self, value):
-		self._MinHldgPrd = value if type(value) != base_types.auto else self.make_default("MinHldgPrd")
-
-	@MinHldgPrd.deleter
-	def MinHldgPrd(self):
-		del self._MinHldgPrd
-		self._MinHldgPrd = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def HldgTrfbl(self):
@@ -141,32 +37,6 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 		self._HldgTrfbl = None
 
 	@property
-	def MinHldgAmt(self):
-		return self._MinHldgAmt
-
-	@MinHldgAmt.setter
-	def MinHldgAmt(self, value):
-		self._MinHldgAmt = value if type(value) != base_types.auto else self.make_default("MinHldgAmt")
-
-	@MinHldgAmt.deleter
-	def MinHldgAmt(self):
-		del self._MinHldgAmt
-		self._MinHldgAmt = None
-
-	@property
-	def MinRedPctg(self):
-		return self._MinRedPctg
-
-	@MinRedPctg.setter
-	def MinRedPctg(self, value):
-		self._MinRedPctg = value if type(value) != base_types.auto else self.make_default("MinRedPctg")
-
-	@MinRedPctg.deleter
-	def MinRedPctg(self):
-		del self._MinRedPctg
-		self._MinRedPctg = None
-
-	@property
 	def MaxRedAmt(self):
 		return self._MaxRedAmt
 
@@ -178,6 +48,19 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 	def MaxRedAmt(self):
 		del self._MaxRedAmt
 		self._MaxRedAmt = None
+
+	@property
+	def MaxRedUnits(self):
+		return self._MaxRedUnits
+
+	@MaxRedUnits.setter
+	def MaxRedUnits(self, value):
+		self._MaxRedUnits = value if type(value) != base_types.auto else self.make_default("MaxRedUnits")
+
+	@MaxRedUnits.deleter
+	def MaxRedUnits(self):
+		del self._MaxRedUnits
+		self._MaxRedUnits = None
 
 	@property
 	def MaxSwtchRedAmt(self):
@@ -206,17 +89,43 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 		self._MaxSwtchRedUnits = None
 
 	@property
-	def OthrSwtchRstrctns(self):
-		return self._OthrSwtchRstrctns
+	def MinHldgAmt(self):
+		return self._MinHldgAmt
 
-	@OthrSwtchRstrctns.setter
-	def OthrSwtchRstrctns(self, value):
-		self._OthrSwtchRstrctns = value if type(value) != base_types.auto else self.make_default("OthrSwtchRstrctns")
+	@MinHldgAmt.setter
+	def MinHldgAmt(self, value):
+		self._MinHldgAmt = value if type(value) != base_types.auto else self.make_default("MinHldgAmt")
 
-	@OthrSwtchRstrctns.deleter
-	def OthrSwtchRstrctns(self):
-		del self._OthrSwtchRstrctns
-		self._OthrSwtchRstrctns = None
+	@MinHldgAmt.deleter
+	def MinHldgAmt(self):
+		del self._MinHldgAmt
+		self._MinHldgAmt = None
+
+	@property
+	def MinHldgPrd(self):
+		return self._MinHldgPrd
+
+	@MinHldgPrd.setter
+	def MinHldgPrd(self, value):
+		self._MinHldgPrd = value if type(value) != base_types.auto else self.make_default("MinHldgPrd")
+
+	@MinHldgPrd.deleter
+	def MinHldgPrd(self):
+		del self._MinHldgPrd
+		self._MinHldgPrd = None
+
+	@property
+	def MinHldgUnits(self):
+		return self._MinHldgUnits
+
+	@MinHldgUnits.setter
+	def MinHldgUnits(self, value):
+		self._MinHldgUnits = value if type(value) != base_types.auto else self.make_default("MinHldgUnits")
+
+	@MinHldgUnits.deleter
+	def MinHldgUnits(self):
+		del self._MinHldgUnits
+		self._MinHldgUnits = None
 
 	@property
 	def MinInitlSbcptAmt(self):
@@ -232,36 +141,127 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 		self._MinInitlSbcptAmt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def MinInitlSbcptUnits(self):
+		return self._MinInitlSbcptUnits
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@MinInitlSbcptUnits.setter
+	def MinInitlSbcptUnits(self, value):
+		self._MinInitlSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinInitlSbcptUnits")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@MinInitlSbcptUnits.deleter
+	def MinInitlSbcptUnits(self):
+		del self._MinInitlSbcptUnits
+		self._MinInitlSbcptUnits = None
+
+	@property
+	def MinRedPctg(self):
+		return self._MinRedPctg
+
+	@MinRedPctg.setter
+	def MinRedPctg(self, value):
+		self._MinRedPctg = value if type(value) != base_types.auto else self.make_default("MinRedPctg")
+
+	@MinRedPctg.deleter
+	def MinRedPctg(self):
+		del self._MinRedPctg
+		self._MinRedPctg = None
+
+	@property
+	def MinSbsqntSbcptAmt(self):
+		return self._MinSbsqntSbcptAmt
+
+	@MinSbsqntSbcptAmt.setter
+	def MinSbsqntSbcptAmt(self, value):
+		self._MinSbsqntSbcptAmt = value if type(value) != base_types.auto else self.make_default("MinSbsqntSbcptAmt")
+
+	@MinSbsqntSbcptAmt.deleter
+	def MinSbsqntSbcptAmt(self):
+		del self._MinSbsqntSbcptAmt
+		self._MinSbsqntSbcptAmt = None
+
+	@property
+	def MinSbsqntSbcptUnits(self):
+		return self._MinSbsqntSbcptUnits
+
+	@MinSbsqntSbcptUnits.setter
+	def MinSbsqntSbcptUnits(self, value):
+		self._MinSbsqntSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinSbsqntSbcptUnits")
+
+	@MinSbsqntSbcptUnits.deleter
+	def MinSbsqntSbcptUnits(self):
+		del self._MinSbsqntSbcptUnits
+		self._MinSbsqntSbcptUnits = None
+
+	@property
+	def MinSwtchSbcptAmt(self):
+		return self._MinSwtchSbcptAmt
+
+	@MinSwtchSbcptAmt.setter
+	def MinSwtchSbcptAmt(self, value):
+		self._MinSwtchSbcptAmt = value if type(value) != base_types.auto else self.make_default("MinSwtchSbcptAmt")
+
+	@MinSwtchSbcptAmt.deleter
+	def MinSwtchSbcptAmt(self):
+		del self._MinSwtchSbcptAmt
+		self._MinSwtchSbcptAmt = None
+
+	@property
+	def MinSwtchSbcptUnits(self):
+		return self._MinSwtchSbcptUnits
+
+	@MinSwtchSbcptUnits.setter
+	def MinSwtchSbcptUnits(self, value):
+		self._MinSwtchSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinSwtchSbcptUnits")
+
+	@MinSwtchSbcptUnits.deleter
+	def MinSwtchSbcptUnits(self):
+		del self._MinSwtchSbcptUnits
+		self._MinSwtchSbcptUnits = None
+
+	@property
+	def OthrRedRstrctns(self):
+		return self._OthrRedRstrctns
+
+	@OthrRedRstrctns.setter
+	def OthrRedRstrctns(self, value):
+		self._OthrRedRstrctns = value if type(value) != base_types.auto else self.make_default("OthrRedRstrctns")
+
+	@OthrRedRstrctns.deleter
+	def OthrRedRstrctns(self):
+		del self._OthrRedRstrctns
+		self._OthrRedRstrctns = None
+
+	@property
+	def OthrSwtchRstrctns(self):
+		return self._OthrSwtchRstrctns
+
+	@OthrSwtchRstrctns.setter
+	def OthrSwtchRstrctns(self, value):
+		self._OthrSwtchRstrctns = value if type(value) != base_types.auto else self.make_default("OthrSwtchRstrctns")
+
+	@OthrSwtchRstrctns.deleter
+	def OthrSwtchRstrctns(self):
+		del self._OthrSwtchRstrctns
+		self._OthrSwtchRstrctns = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinSbsqntSbcptAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinSwtchSbcptUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinSwtchSbcptAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinSbsqntSbcptUnits', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRedRstrctns', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinInitlSbcptUnits', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinHldgUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxRedUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinHldgPrd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='HldgTrfbl', type=HoldingTransferable1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinHldgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinRedPctg', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxRedAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxRedUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxSwtchRedAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxSwtchRedUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrSwtchRstrctns', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinHldgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinHldgPrd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinHldgUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinInitlSbcptAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MinInitlSbcptUnits', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinRedPctg', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinSbsqntSbcptAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinSbsqntSbcptUnits', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinSwtchSbcptAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinSwtchSbcptUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRedRstrctns', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrSwtchRstrctns', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

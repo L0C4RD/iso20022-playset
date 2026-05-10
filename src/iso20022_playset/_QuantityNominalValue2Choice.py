@@ -4,7 +4,7 @@ from ._DecimalNumber import DecimalNumber
 
 class QuantityNominalValue2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmnlVal", "_Qty"]
+	__slots__ = ["_Qty", "_NmnlVal"]
 	@property
 	def NmnlVal(self):
 		return self._NmnlVal

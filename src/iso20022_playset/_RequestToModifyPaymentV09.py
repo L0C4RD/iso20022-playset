@@ -1,14 +1,14 @@
 from . import base_types
-from ._RequestedModification11 import RequestedModification11
+from ._SupplementaryData1 import SupplementaryData1
 from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from ._InstructionForAssignee1 import InstructionForAssignee1
 from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
-from ._SupplementaryData1 import SupplementaryData1
-from ._InstructionForAssignee1 import InstructionForAssignee1
+from ._RequestedModification11 import RequestedModification11
 
 class RequestToModifyPaymentV09(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_SplmtryData", "_Case", "_Undrlyg", "_Mod", "_InstrForAssgne"]
+	__slots__ = ["_InstrForAssgne", "_Undrlyg", "_Mod", "_Assgnmt", "_Case", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt
@@ -21,19 +21,6 @@ class RequestToModifyPaymentV09(base_types._BaseFieldType):
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def Case(self):
@@ -49,17 +36,17 @@ class RequestToModifyPaymentV09(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def Undrlyg(self):
-		return self._Undrlyg
+	def InstrForAssgne(self):
+		return self._InstrForAssgne
 
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+	@InstrForAssgne.setter
+	def InstrForAssgne(self, value):
+		self._InstrForAssgne = value if type(value) != base_types.auto else self.make_default("InstrForAssgne")
 
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
+	@InstrForAssgne.deleter
+	def InstrForAssgne(self):
+		del self._InstrForAssgne
+		self._InstrForAssgne = None
 
 	@property
 	def Mod(self):
@@ -75,24 +62,37 @@ class RequestToModifyPaymentV09(base_types._BaseFieldType):
 		self._Mod = None
 
 	@property
-	def InstrForAssgne(self):
-		return self._InstrForAssgne
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@InstrForAssgne.setter
-	def InstrForAssgne(self, value):
-		self._InstrForAssgne = value if type(value) != base_types.auto else self.make_default("InstrForAssgne")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@InstrForAssgne.deleter
-	def InstrForAssgne(self):
-		del self._InstrForAssgne
-		self._InstrForAssgne = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Undrlyg(self):
+		return self._Undrlyg
+
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mod', type=RequestedModification11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrForAssgne', type=InstructionForAssignee1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=RequestedModification11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

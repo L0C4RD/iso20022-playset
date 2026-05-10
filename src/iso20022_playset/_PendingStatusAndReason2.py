@@ -1,10 +1,10 @@
 from . import base_types
-from ._SettlementStatus16Choice import SettlementStatus16Choice
 from ._ProcessingStatus66Choice import ProcessingStatus66Choice
+from ._SettlementStatus16Choice import SettlementStatus16Choice
 
 class PendingStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_SttlmSts"]
+	__slots__ = ["_SttlmSts", "_PrcgSts"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts

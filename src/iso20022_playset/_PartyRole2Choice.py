@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._InvestmentFundRole6Code import InvestmentFundRole6Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class PartyRole2Choice(base_types._BaseFieldType):
 

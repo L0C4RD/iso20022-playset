@@ -18,19 +18,6 @@ class References72Choice(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def CtrPtyMktInfrstrctrTxId(self):
-		return self._CtrPtyMktInfrstrctrTxId
-
-	@CtrPtyMktInfrstrctrTxId.setter
-	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
-
-	@CtrPtyMktInfrstrctrTxId.deleter
-	def CtrPtyMktInfrstrctrTxId(self):
-		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
-
-	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
 
@@ -42,6 +29,19 @@ class References72Choice(base_types._BaseFieldType):
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
+
+	@property
+	def CtrPtyMktInfrstrctrTxId(self):
+		return self._CtrPtyMktInfrstrctrTxId
+
+	@CtrPtyMktInfrstrctrTxId.setter
+	def CtrPtyMktInfrstrctrTxId(self, value):
+		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+
+	@CtrPtyMktInfrstrctrTxId.deleter
+	def CtrPtyMktInfrstrctrTxId(self):
+		del self._CtrPtyMktInfrstrctrTxId
+		self._CtrPtyMktInfrstrctrTxId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -84,8 +84,8 @@ class References72Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

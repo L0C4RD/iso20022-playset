@@ -1,6 +1,6 @@
 from . import base_types
-from ._ExternalUndertakingDocumentType1Code import ExternalUndertakingDocumentType1Code
 from ._GenericIdentification1 import GenericIdentification1
+from ._ExternalUndertakingDocumentType1Code import ExternalUndertakingDocumentType1Code
 
 class PresentationDocumentFormat1Choice(base_types._BaseFieldType):
 

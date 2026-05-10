@@ -1,11 +1,11 @@
 from . import base_types
-from ._FundParameters4Choice import FundParameters4Choice
-from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference10 import AdditionalReference10
+from ._MessageIdentification1 import MessageIdentification1
+from ._FundParameters4Choice import FundParameters4Choice
 
 class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_RltdRef", "_PrvsRef", "_RptReq"]
+	__slots__ = ["_RltdRef", "_PrvsRef", "_RptReq", "_MsgId"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -20,19 +20,6 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
-	@property
 	def PrvsRef(self):
 		return self._PrvsRef
 
@@ -44,6 +31,19 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 	def PrvsRef(self):
 		del self._PrvsRef
 		self._PrvsRef = None
+
+	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def RptReq(self):
@@ -60,8 +60,8 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptReq', type=FundParameters4Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

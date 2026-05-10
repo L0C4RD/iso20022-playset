@@ -1,6 +1,6 @@
 from . import base_types
-from ._CFIOct2015Identifier import CFIOct2015Identifier
 from ._GenericIdentification39 import GenericIdentification39
+from ._CFIOct2015Identifier import CFIOct2015Identifier
 
 class SecurityClassificationType3Choice(base_types._BaseFieldType):
 

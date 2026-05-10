@@ -4,7 +4,20 @@ from ._ISODateTime import ISODateTime
 
 class DisseminationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlDssmntnIdr", "_TmStmp", "_DssmntnIdr"]
+	__slots__ = ["_TmStmp", "_DssmntnIdr", "_OrgnlDssmntnIdr"]
+	@property
+	def DssmntnIdr(self):
+		return self._DssmntnIdr
+
+	@DssmntnIdr.setter
+	def DssmntnIdr(self, value):
+		self._DssmntnIdr = value if type(value) != base_types.auto else self.make_default("DssmntnIdr")
+
+	@DssmntnIdr.deleter
+	def DssmntnIdr(self):
+		del self._DssmntnIdr
+		self._DssmntnIdr = None
+
 	@property
 	def OrgnlDssmntnIdr(self):
 		return self._OrgnlDssmntnIdr
@@ -31,22 +44,9 @@ class DisseminationData1(base_types._BaseFieldType):
 		del self._TmStmp
 		self._TmStmp = None
 
-	@property
-	def DssmntnIdr(self):
-		return self._DssmntnIdr
-
-	@DssmntnIdr.setter
-	def DssmntnIdr(self, value):
-		self._DssmntnIdr = value if type(value) != base_types.auto else self.make_default("DssmntnIdr")
-
-	@DssmntnIdr.deleter
-	def DssmntnIdr(self):
-		del self._DssmntnIdr
-		self._DssmntnIdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DssmntnIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlDssmntnIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DssmntnIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

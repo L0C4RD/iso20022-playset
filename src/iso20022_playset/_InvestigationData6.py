@@ -1,67 +1,28 @@
 from . import base_types
+from ._Max3Number import Max3Number
+from ._InvestigationReason1Choice import InvestigationReason1Choice
+from ._RelatedInvestigationData1 import RelatedInvestigationData1
 from ._InvestigationReasonSubType1Choice import InvestigationReasonSubType1Choice
 from ._FileData1 import FileData1
-from ._InvestigationDataRecord7Choice import InvestigationDataRecord7Choice
-from ._Document12 import Document12
 from ._Party40Choice import Party40Choice
-from ._InvestigationReason1Choice import InvestigationReason1Choice
-from ._Max3Number import Max3Number
-from ._RelatedInvestigationData1 import RelatedInvestigationData1
+from ._Document12 import Document12
+from ._InvestigationDataRecord7Choice import InvestigationDataRecord7Choice
 
 class InvestigationData6(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnOrgtr", "_OrgnlInvstgtnSeq", "_RspnData", "_OrgnlInvstgtnRsnSubTp", "_OrgnlInvstgtnRsn", "_NclsdFile", "_RltdFileData", "_RltdInvstgtnData"]
+	__slots__ = ["_RspnOrgtr", "_RspnData", "_OrgnlInvstgtnRsnSubTp", "_RltdInvstgtnData", "_OrgnlInvstgtnSeq", "_OrgnlInvstgtnRsn", "_NclsdFile", "_RltdFileData"]
 	@property
-	def RspnOrgtr(self):
-		return self._RspnOrgtr
+	def NclsdFile(self):
+		return self._NclsdFile
 
-	@RspnOrgtr.setter
-	def RspnOrgtr(self, value):
-		self._RspnOrgtr = value if type(value) != base_types.auto else self.make_default("RspnOrgtr")
+	@NclsdFile.setter
+	def NclsdFile(self, value):
+		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
 
-	@RspnOrgtr.deleter
-	def RspnOrgtr(self):
-		del self._RspnOrgtr
-		self._RspnOrgtr = None
-
-	@property
-	def OrgnlInvstgtnSeq(self):
-		return self._OrgnlInvstgtnSeq
-
-	@OrgnlInvstgtnSeq.setter
-	def OrgnlInvstgtnSeq(self, value):
-		self._OrgnlInvstgtnSeq = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnSeq")
-
-	@OrgnlInvstgtnSeq.deleter
-	def OrgnlInvstgtnSeq(self):
-		del self._OrgnlInvstgtnSeq
-		self._OrgnlInvstgtnSeq = None
-
-	@property
-	def RspnData(self):
-		return self._RspnData
-
-	@RspnData.setter
-	def RspnData(self, value):
-		self._RspnData = value if type(value) != base_types.auto else self.make_default("RspnData")
-
-	@RspnData.deleter
-	def RspnData(self):
-		del self._RspnData
-		self._RspnData = None
-
-	@property
-	def OrgnlInvstgtnRsnSubTp(self):
-		return self._OrgnlInvstgtnRsnSubTp
-
-	@OrgnlInvstgtnRsnSubTp.setter
-	def OrgnlInvstgtnRsnSubTp(self, value):
-		self._OrgnlInvstgtnRsnSubTp = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnRsnSubTp")
-
-	@OrgnlInvstgtnRsnSubTp.deleter
-	def OrgnlInvstgtnRsnSubTp(self):
-		del self._OrgnlInvstgtnRsnSubTp
-		self._OrgnlInvstgtnRsnSubTp = None
+	@NclsdFile.deleter
+	def NclsdFile(self):
+		del self._NclsdFile
+		self._NclsdFile = None
 
 	@property
 	def OrgnlInvstgtnRsn(self):
@@ -77,17 +38,30 @@ class InvestigationData6(base_types._BaseFieldType):
 		self._OrgnlInvstgtnRsn = None
 
 	@property
-	def NclsdFile(self):
-		return self._NclsdFile
+	def OrgnlInvstgtnRsnSubTp(self):
+		return self._OrgnlInvstgtnRsnSubTp
 
-	@NclsdFile.setter
-	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+	@OrgnlInvstgtnRsnSubTp.setter
+	def OrgnlInvstgtnRsnSubTp(self, value):
+		self._OrgnlInvstgtnRsnSubTp = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnRsnSubTp")
 
-	@NclsdFile.deleter
-	def NclsdFile(self):
-		del self._NclsdFile
-		self._NclsdFile = None
+	@OrgnlInvstgtnRsnSubTp.deleter
+	def OrgnlInvstgtnRsnSubTp(self):
+		del self._OrgnlInvstgtnRsnSubTp
+		self._OrgnlInvstgtnRsnSubTp = None
+
+	@property
+	def OrgnlInvstgtnSeq(self):
+		return self._OrgnlInvstgtnSeq
+
+	@OrgnlInvstgtnSeq.setter
+	def OrgnlInvstgtnSeq(self, value):
+		self._OrgnlInvstgtnSeq = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnSeq")
+
+	@OrgnlInvstgtnSeq.deleter
+	def OrgnlInvstgtnSeq(self):
+		del self._OrgnlInvstgtnSeq
+		self._OrgnlInvstgtnSeq = None
 
 	@property
 	def RltdFileData(self):
@@ -115,14 +89,40 @@ class InvestigationData6(base_types._BaseFieldType):
 		del self._RltdInvstgtnData
 		self._RltdInvstgtnData = None
 
+	@property
+	def RspnData(self):
+		return self._RspnData
+
+	@RspnData.setter
+	def RspnData(self, value):
+		self._RspnData = value if type(value) != base_types.auto else self.make_default("RspnData")
+
+	@RspnData.deleter
+	def RspnData(self):
+		del self._RspnData
+		self._RspnData = None
+
+	@property
+	def RspnOrgtr(self):
+		return self._RspnOrgtr
+
+	@RspnOrgtr.setter
+	def RspnOrgtr(self, value):
+		self._RspnOrgtr = value if type(value) != base_types.auto else self.make_default("RspnOrgtr")
+
+	@RspnOrgtr.deleter
+	def RspnOrgtr(self):
+		del self._RspnOrgtr
+		self._RspnOrgtr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnOrgtr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlInvstgtnSeq', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnData', type=InvestigationDataRecord7Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlInvstgtnRsnSubTp', type=InvestigationReasonSubType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlInvstgtnRsn', type=InvestigationReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NclsdFile', type=Document12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlInvstgtnRsn', type=InvestigationReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInvstgtnRsnSubTp', type=InvestigationReasonSubType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInvstgtnSeq', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdFileData', type=FileData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdInvstgtnData', type=RelatedInvestigationData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnData', type=InvestigationDataRecord7Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnOrgtr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

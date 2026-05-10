@@ -1,13 +1,26 @@
 from . import base_types
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._CardPaymentTransaction144 import CardPaymentTransaction144
 from ._CardPaymentTransaction137 import CardPaymentTransaction137
 from ._Traceability8 import Traceability8
-from ._CardPaymentTransaction144 import CardPaymentTransaction144
 from ._Max9NumericText import Max9NumericText
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class CardPaymentDataSetTransaction53(base_types._BaseFieldType):
 
-	__slots__ = ["_Tracblt", "_TxSeqCntr", "_Tx", "_TxRspn", "_Envt"]
+	__slots__ = ["_Tx", "_Tracblt", "_Envt", "_TxSeqCntr", "_TxRspn"]
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
 	@property
 	def Tracblt(self):
 		return self._Tracblt
@@ -20,19 +33,6 @@ class CardPaymentDataSetTransaction53(base_types._BaseFieldType):
 	def Tracblt(self):
 		del self._Tracblt
 		self._Tracblt = None
-
-	@property
-	def TxSeqCntr(self):
-		return self._TxSeqCntr
-
-	@TxSeqCntr.setter
-	def TxSeqCntr(self, value):
-		self._TxSeqCntr = value if type(value) != base_types.auto else self.make_default("TxSeqCntr")
-
-	@TxSeqCntr.deleter
-	def TxSeqCntr(self):
-		del self._TxSeqCntr
-		self._TxSeqCntr = None
 
 	@property
 	def Tx(self):
@@ -61,23 +61,23 @@ class CardPaymentDataSetTransaction53(base_types._BaseFieldType):
 		self._TxRspn = None
 
 	@property
-	def Envt(self):
-		return self._Envt
+	def TxSeqCntr(self):
+		return self._TxSeqCntr
 
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+	@TxSeqCntr.setter
+	def TxSeqCntr(self, value):
+		self._TxSeqCntr = value if type(value) != base_types.auto else self.make_default("TxSeqCntr")
 
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@TxSeqCntr.deleter
+	def TxSeqCntr(self):
+		del self._TxSeqCntr
+		self._TxSeqCntr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction137, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRspn', type=CardPaymentTransaction144, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
 from ._ISODateTime import ISODateTime
+from ._PartyIdentification272 import PartyIdentification272
+from ._Max35Text import Max35Text
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader128(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_CreDtTm", "_InitgPty", "_FwdgAgt", "_DbtrAgt", "_MsgId"]
+	__slots__ = ["_CreDtTm", "_DbtrAgt", "_FwdgAgt", "_InitgPty", "_MsgId", "_CdtrAgt"]
 	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt
@@ -34,17 +34,17 @@ class GroupHeader128(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def InitgPty(self):
-		return self._InitgPty
+	def DbtrAgt(self):
+		return self._DbtrAgt
 
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
 
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
 
 	@property
 	def FwdgAgt(self):
@@ -60,17 +60,17 @@ class GroupHeader128(base_types._BaseFieldType):
 		self._FwdgAgt = None
 
 	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
+	def InitgPty(self):
+		return self._InitgPty
 
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
 
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def MsgId(self):
@@ -88,9 +88,9 @@ class GroupHeader128(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
-from ._NoSpecifiedReason1 import NoSpecifiedReason1
 from ._PendingStatus75Choice import PendingStatus75Choice
+from ._NoSpecifiedReason1 import NoSpecifiedReason1
 from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 
 class EventProcessingStatus8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmplt", "_Pdg", "_Rcncld", "_PrtrySts"]
+	__slots__ = ["_Rcncld", "_Cmplt", "_PrtrySts", "_Pdg"]
 	@property
 	def Cmplt(self):
 		return self._Cmplt
@@ -33,19 +33,6 @@ class EventProcessingStatus8Choice(base_types._BaseFieldType):
 		self._Pdg = None
 
 	@property
-	def Rcncld(self):
-		return self._Rcncld
-
-	@Rcncld.setter
-	def Rcncld(self, value):
-		self._Rcncld = value if type(value) != base_types.auto else self.make_default("Rcncld")
-
-	@Rcncld.deleter
-	def Rcncld(self):
-		del self._Rcncld
-		self._Rcncld = None
-
-	@property
 	def PrtrySts(self):
 		return self._PrtrySts
 
@@ -58,10 +45,23 @@ class EventProcessingStatus8Choice(base_types._BaseFieldType):
 		del self._PrtrySts
 		self._PrtrySts = None
 
+	@property
+	def Rcncld(self):
+		return self._Rcncld
+
+	@Rcncld.setter
+	def Rcncld(self, value):
+		self._Rcncld = value if type(value) != base_types.auto else self.make_default("Rcncld")
+
+	@Rcncld.deleter
+	def Rcncld(self):
+		del self._Rcncld
+		self._Rcncld = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmplt', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=PendingStatus75Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rcncld', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rcncld', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 	))
 

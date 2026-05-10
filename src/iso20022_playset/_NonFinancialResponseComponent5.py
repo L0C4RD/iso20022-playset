@@ -1,25 +1,12 @@
 from . import base_types
-from ._NonFinancialResponseContentComponent5 import NonFinancialResponseContentComponent5
 from ._SupplementaryData1 import SupplementaryData1
-from ._ResponseType11 import ResponseType11
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._ResponseType11 import ResponseType11
+from ._NonFinancialResponseContentComponent5 import NonFinancialResponseContentComponent5
 
 class NonFinancialResponseComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Envt", "_RspnCntt", "_Rspn"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Envt", "_SplmtryData", "_Rspn", "_RspnCntt"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -32,6 +19,19 @@ class NonFinancialResponseComponent5(base_types._BaseFieldType):
 	def Envt(self):
 		del self._Envt
 		self._Envt = None
+
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
 
 	@property
 	def RspnCntt(self):
@@ -47,22 +47,22 @@ class NonFinancialResponseComponent5(base_types._BaseFieldType):
 		self._RspnCntt = None
 
 	@property
-	def Rspn(self):
-		return self._Rspn
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnCntt', type=NonFinancialResponseContentComponent5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnCntt', type=NonFinancialResponseContentComponent5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

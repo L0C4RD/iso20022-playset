@@ -1,11 +1,11 @@
 from . import base_types
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._StatusReasonInformation10 import StatusReasonInformation10
 from ._Status6Code import Status6Code
-from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class SecuritiesAccountStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdSctiesAcct", "_Sts", "_StsRsn"]
+	__slots__ = ["_Sts", "_StsRsn", "_RltdSctiesAcct"]
 	@property
 	def RltdSctiesAcct(self):
 		return self._RltdSctiesAcct

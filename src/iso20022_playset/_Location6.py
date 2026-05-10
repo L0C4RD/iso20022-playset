@@ -1,13 +1,26 @@
 from . import base_types
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._Address2 import Address2
 from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
-from ._Address2 import Address2
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._Max256Text import Max256Text
 
 class Location6(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Nm", "_LclTmZone", "_LclCcy", "_Desc", "_Adr"]
+	__slots__ = ["_LclCcy", "_Nm", "_Cd", "_Adr", "_LclTmZone", "_Desc"]
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
 	@property
 	def Cd(self):
 		return self._Cd
@@ -20,45 +33,6 @@ class Location6(base_types._BaseFieldType):
 	def Cd(self):
 		del self._Cd
 		self._Cd = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def LclTmZone(self):
-		return self._LclTmZone
-
-	@LclTmZone.setter
-	def LclTmZone(self, value):
-		self._LclTmZone = value if type(value) != base_types.auto else self.make_default("LclTmZone")
-
-	@LclTmZone.deleter
-	def LclTmZone(self):
-		del self._LclTmZone
-		self._LclTmZone = None
-
-	@property
-	def LclCcy(self):
-		return self._LclCcy
-
-	@LclCcy.setter
-	def LclCcy(self, value):
-		self._LclCcy = value if type(value) != base_types.auto else self.make_default("LclCcy")
-
-	@LclCcy.deleter
-	def LclCcy(self):
-		del self._LclCcy
-		self._LclCcy = None
 
 	@property
 	def Desc(self):
@@ -74,24 +48,50 @@ class Location6(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def Adr(self):
-		return self._Adr
+	def LclCcy(self):
+		return self._LclCcy
 
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+	@LclCcy.setter
+	def LclCcy(self, value):
+		self._LclCcy = value if type(value) != base_types.auto else self.make_default("LclCcy")
 
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
+	@LclCcy.deleter
+	def LclCcy(self):
+		del self._LclCcy
+		self._LclCcy = None
+
+	@property
+	def LclTmZone(self):
+		return self._LclTmZone
+
+	@LclTmZone.setter
+	def LclTmZone(self, value):
+		self._LclTmZone = value if type(value) != base_types.auto else self.make_default("LclTmZone")
+
+	@LclTmZone.deleter
+	def LclTmZone(self):
+		del self._LclTmZone
+		self._LclTmZone = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclTmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclTmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

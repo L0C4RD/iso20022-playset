@@ -1,51 +1,12 @@
 from . import base_types
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from ._CompareDate3 import CompareDate3
 from ._SecurityCommodityCash4 import SecurityCommodityCash4
+from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
 from ._CompareSecurityIdentification4 import CompareSecurityIdentification4
+from ._CompareDate3 import CompareDate3
 
 class CollateralMatchingCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_CollValDt", "_UncollsdFlg", "_NetXpsrCollstnInd", "_AsstTp", "_BsktIdr"]
-	@property
-	def CollValDt(self):
-		return self._CollValDt
-
-	@CollValDt.setter
-	def CollValDt(self, value):
-		self._CollValDt = value if type(value) != base_types.auto else self.make_default("CollValDt")
-
-	@CollValDt.deleter
-	def CollValDt(self):
-		del self._CollValDt
-		self._CollValDt = None
-
-	@property
-	def UncollsdFlg(self):
-		return self._UncollsdFlg
-
-	@UncollsdFlg.setter
-	def UncollsdFlg(self, value):
-		self._UncollsdFlg = value if type(value) != base_types.auto else self.make_default("UncollsdFlg")
-
-	@UncollsdFlg.deleter
-	def UncollsdFlg(self):
-		del self._UncollsdFlg
-		self._UncollsdFlg = None
-
-	@property
-	def NetXpsrCollstnInd(self):
-		return self._NetXpsrCollstnInd
-
-	@NetXpsrCollstnInd.setter
-	def NetXpsrCollstnInd(self, value):
-		self._NetXpsrCollstnInd = value if type(value) != base_types.auto else self.make_default("NetXpsrCollstnInd")
-
-	@NetXpsrCollstnInd.deleter
-	def NetXpsrCollstnInd(self):
-		del self._NetXpsrCollstnInd
-		self._NetXpsrCollstnInd = None
-
+	__slots__ = ["_UncollsdFlg", "_BsktIdr", "_NetXpsrCollstnInd", "_CollValDt", "_AsstTp"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp
@@ -72,11 +33,50 @@ class CollateralMatchingCriteria6(base_types._BaseFieldType):
 		del self._BsktIdr
 		self._BsktIdr = None
 
+	@property
+	def CollValDt(self):
+		return self._CollValDt
+
+	@CollValDt.setter
+	def CollValDt(self, value):
+		self._CollValDt = value if type(value) != base_types.auto else self.make_default("CollValDt")
+
+	@CollValDt.deleter
+	def CollValDt(self):
+		del self._CollValDt
+		self._CollValDt = None
+
+	@property
+	def NetXpsrCollstnInd(self):
+		return self._NetXpsrCollstnInd
+
+	@NetXpsrCollstnInd.setter
+	def NetXpsrCollstnInd(self, value):
+		self._NetXpsrCollstnInd = value if type(value) != base_types.auto else self.make_default("NetXpsrCollstnInd")
+
+	@NetXpsrCollstnInd.deleter
+	def NetXpsrCollstnInd(self):
+		del self._NetXpsrCollstnInd
+		self._NetXpsrCollstnInd = None
+
+	@property
+	def UncollsdFlg(self):
+		return self._UncollsdFlg
+
+	@UncollsdFlg.setter
+	def UncollsdFlg(self, value):
+		self._UncollsdFlg = value if type(value) != base_types.auto else self.make_default("UncollsdFlg")
+
+	@UncollsdFlg.deleter
+	def UncollsdFlg(self):
+		del self._UncollsdFlg
+		self._UncollsdFlg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollValDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UncollsdFlg', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetXpsrCollstnInd', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstTp', type=SecurityCommodityCash4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsktIdr', type=CompareSecurityIdentification4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollValDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetXpsrCollstnInd', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UncollsdFlg', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 	))
 

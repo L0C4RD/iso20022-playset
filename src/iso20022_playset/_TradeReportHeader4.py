@@ -1,13 +1,52 @@
 from . import base_types
-from ._Number import Number
-from ._Pagination1 import Pagination1
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._ISODate import ISODate
+from ._Pagination1 import Pagination1
 from ._Max100Text import Max100Text
+from ._Number import Number
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TradeReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_NewTradRpstryIdr", "_RptExctnDt", "_CmptntAuthrty", "_NbRcrds", "_RptgPurp", "_MsgPgntn"]
+	__slots__ = ["_RptgPurp", "_RptExctnDt", "_CmptntAuthrty", "_NbRcrds", "_NewTradRpstryIdr", "_MsgPgntn"]
+	@property
+	def CmptntAuthrty(self):
+		return self._CmptntAuthrty
+
+	@CmptntAuthrty.setter
+	def CmptntAuthrty(self, value):
+		self._CmptntAuthrty = value if type(value) != base_types.auto else self.make_default("CmptntAuthrty")
+
+	@CmptntAuthrty.deleter
+	def CmptntAuthrty(self):
+		del self._CmptntAuthrty
+		self._CmptntAuthrty = None
+
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
+	@property
+	def NbRcrds(self):
+		return self._NbRcrds
+
+	@NbRcrds.setter
+	def NbRcrds(self, value):
+		self._NbRcrds = value if type(value) != base_types.auto else self.make_default("NbRcrds")
+
+	@NbRcrds.deleter
+	def NbRcrds(self):
+		del self._NbRcrds
+		self._NbRcrds = None
+
 	@property
 	def NewTradRpstryIdr(self):
 		return self._NewTradRpstryIdr
@@ -35,32 +74,6 @@ class TradeReportHeader4(base_types._BaseFieldType):
 		self._RptExctnDt = None
 
 	@property
-	def CmptntAuthrty(self):
-		return self._CmptntAuthrty
-
-	@CmptntAuthrty.setter
-	def CmptntAuthrty(self, value):
-		self._CmptntAuthrty = value if type(value) != base_types.auto else self.make_default("CmptntAuthrty")
-
-	@CmptntAuthrty.deleter
-	def CmptntAuthrty(self):
-		del self._CmptntAuthrty
-		self._CmptntAuthrty = None
-
-	@property
-	def NbRcrds(self):
-		return self._NbRcrds
-
-	@NbRcrds.setter
-	def NbRcrds(self, value):
-		self._NbRcrds = value if type(value) != base_types.auto else self.make_default("NbRcrds")
-
-	@NbRcrds.deleter
-	def NbRcrds(self):
-		del self._NbRcrds
-		self._NbRcrds = None
-
-	@property
 	def RptgPurp(self):
 		return self._RptgPurp
 
@@ -73,25 +86,12 @@ class TradeReportHeader4(base_types._BaseFieldType):
 		del self._RptgPurp
 		self._RptgPurp = None
 
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CmptntAuthrty', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbRcrds', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewTradRpstryIdr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptExctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmptntAuthrty', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbRcrds', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPurp', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

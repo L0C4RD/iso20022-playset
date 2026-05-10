@@ -1,24 +1,11 @@
 from . import base_types
-from ._RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
 from ._Max2048Text import Max2048Text
 from ._NameAndAddress18 import NameAndAddress18
+from ._RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
 
 class RemittanceLocationData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtd", "_ElctrncAdr", "_PstlAdr"]
-	@property
-	def Mtd(self):
-		return self._Mtd
-
-	@Mtd.setter
-	def Mtd(self, value):
-		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
-
-	@Mtd.deleter
-	def Mtd(self):
-		del self._Mtd
-		self._Mtd = None
-
+	__slots__ = ["_Mtd", "_PstlAdr", "_ElctrncAdr"]
 	@property
 	def ElctrncAdr(self):
 		return self._ElctrncAdr
@@ -31,6 +18,19 @@ class RemittanceLocationData2(base_types._BaseFieldType):
 	def ElctrncAdr(self):
 		del self._ElctrncAdr
 		self._ElctrncAdr = None
+
+	@property
+	def Mtd(self):
+		return self._Mtd
+
+	@Mtd.setter
+	def Mtd(self, value):
+		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+
+	@Mtd.deleter
+	def Mtd(self):
+		del self._Mtd
+		self._Mtd = None
 
 	@property
 	def PstlAdr(self):
@@ -46,8 +46,8 @@ class RemittanceLocationData2(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mtd', type=RemittanceLocationMethod2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=RemittanceLocationMethod2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
 	))
 

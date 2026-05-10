@@ -1,14 +1,14 @@
 from . import base_types
 from ._PendingStatus63Choice import PendingStatus63Choice
-from ._MatchingStatus34Choice import MatchingStatus34Choice
 from ._CancelledStatus12Choice import CancelledStatus12Choice
 from ._RejectedStatus37Choice import RejectedStatus37Choice
+from ._MatchingStatus34Choice import MatchingStatus34Choice
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._AcceptedStatus8Choice import AcceptedStatus8Choice
 
 class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdForFrthrPrcg", "_Rjctd", "_Pdg", "_Canc", "_PrtrySts", "_MtchgSts"]
+	__slots__ = ["_Pdg", "_MtchgSts", "_Canc", "_AccptdForFrthrPrcg", "_PrtrySts", "_Rjctd"]
 	@property
 	def AccptdForFrthrPrcg(self):
 		return self._AccptdForFrthrPrcg
@@ -21,32 +21,6 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 	def AccptdForFrthrPrcg(self):
 		del self._AccptdForFrthrPrcg
 		self._AccptdForFrthrPrcg = None
-
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
 
 	@property
 	def Canc(self):
@@ -62,6 +36,32 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
+	def MtchgSts(self):
+		return self._MtchgSts
+
+	@MtchgSts.setter
+	def MtchgSts(self, value):
+		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+
+	@MtchgSts.deleter
+	def MtchgSts(self):
+		del self._MtchgSts
+		self._MtchgSts = None
+
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
+
+	@property
 	def PrtrySts(self):
 		return self._PrtrySts
 
@@ -75,24 +75,24 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 		self._PrtrySts = None
 
 	@property
-	def MtchgSts(self):
-		return self._MtchgSts
+	def Rjctd(self):
+		return self._Rjctd
 
-	@MtchgSts.setter
-	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
 
-	@MtchgSts.deleter
-	def MtchgSts(self):
-		del self._MtchgSts
-		self._MtchgSts = None
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=AcceptedStatus8Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectedStatus37Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus63Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancelledStatus12Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus34Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus63Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectedStatus37Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

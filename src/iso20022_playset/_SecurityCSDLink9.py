@@ -1,24 +1,11 @@
 from . import base_types
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class SecurityCSDLink9(base_types._BaseFieldType):
 
-	__slots__ = ["_VldFr", "_FinInstrmId", "_IssrInvstrCSD"]
-	@property
-	def VldFr(self):
-		return self._VldFr
-
-	@VldFr.setter
-	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
-
-	@VldFr.deleter
-	def VldFr(self):
-		del self._VldFr
-		self._VldFr = None
-
+	__slots__ = ["_FinInstrmId", "_VldFr", "_IssrInvstrCSD"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -45,9 +32,22 @@ class SecurityCSDLink9(base_types._BaseFieldType):
 		del self._IssrInvstrCSD
 		self._IssrInvstrCSD = None
 
+	@property
+	def VldFr(self):
+		return self._VldFr
+
+	@VldFr.setter
+	def VldFr(self, value):
+		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+
+	@VldFr.deleter
+	def VldFr(self):
+		del self._VldFr
+		self._VldFr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrInvstrCSD', type=IssuerOrInvestor2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

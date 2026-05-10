@@ -1,12 +1,25 @@
 from . import base_types
-from ._OriginalMandate10Choice import OriginalMandate10Choice
 from ._SupplementaryData1 import SupplementaryData1
-from ._MandateCancellationReason2 import MandateCancellationReason2
+from ._OriginalMandate10Choice import OriginalMandate10Choice
 from ._OriginalMessageInformation1 import OriginalMessageInformation1
+from ._MandateCancellationReason2 import MandateCancellationReason2
 
 class MandateCancellation8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMndt", "_OrgnlMsgInf", "_SplmtryData", "_CxlRsn"]
+	__slots__ = ["_OrgnlMndt", "_CxlRsn", "_SplmtryData", "_OrgnlMsgInf"]
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
 	@property
 	def OrgnlMndt(self):
 		return self._OrgnlMndt
@@ -46,23 +59,10 @@ class MandateCancellation8(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlRsn', type=MandateCancellationReason2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate10Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CxlRsn', type=MandateCancellationReason2, min=1, max=1, mutex_group=None, array=False),
 	))
 

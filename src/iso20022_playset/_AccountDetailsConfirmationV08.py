@@ -1,35 +1,35 @@
 from . import base_types
-from ._ReferredAgent3 import ReferredAgent3
-from ._MessageIdentification1 import MessageIdentification1
-from ._InvestmentFundOrder4 import InvestmentFundOrder4
-from ._InvestmentAccount74 import InvestmentAccount74
-from ._AccountManagementConfirmation5 import AccountManagementConfirmation5
-from ._AdditiononalInformation13 import AdditiononalInformation13
-from ._AccountParties17 import AccountParties17
-from ._AdditionalReference13 import AdditionalReference13
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._CashSettlement3 import CashSettlement3
-from ._InvestmentPlan17 import InvestmentPlan17
-from ._Extension1 import Extension1
-from ._NewIssueAllocation2 import NewIssueAllocation2
 from ._Intermediary46 import Intermediary46
+from ._AccountParties17 import AccountParties17
+from ._AdditiononalInformation13 import AdditiononalInformation13
+from ._InvestmentFundOrder4 import InvestmentFundOrder4
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._InvestmentAccount74 import InvestmentAccount74
+from ._CashSettlement3 import CashSettlement3
+from ._AccountManagementConfirmation5 import AccountManagementConfirmation5
+from ._NewIssueAllocation2 import NewIssueAllocation2
+from ._InvestmentPlan17 import InvestmentPlan17
 from ._DocumentToSend4 import DocumentToSend4
+from ._MessageIdentification1 import MessageIdentification1
+from ._AdditionalReference13 import AdditionalReference13
+from ._Extension1 import Extension1
+from ._ReferredAgent3 import ReferredAgent3
 
 class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_AddtlInf", "_AcctPties", "_Plcmnt", "_OrdrRef", "_MktPrctcVrsn", "_InvstmtAcct", "_CshSttlm", "_Xtnsn", "_Intrmies", "_RltdRef", "_NewIsseAllcn", "_WdrwlInvstmtPlan", "_SvgsInvstmtPlan", "_SvcLvlAgrmt", "_ConfDtls"]
+	__slots__ = ["_CshSttlm", "_Plcmnt", "_NewIsseAllcn", "_Intrmies", "_SvcLvlAgrmt", "_AddtlInf", "_OrdrRef", "_MktPrctcVrsn", "_AcctPties", "_MsgId", "_InvstmtAcct", "_RltdRef", "_WdrwlInvstmtPlan", "_Xtnsn", "_SvgsInvstmtPlan", "_ConfDtls"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def AcctPties(self):
+		return self._AcctPties
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@AcctPties.setter
+	def AcctPties(self, value):
+		self._AcctPties = value if type(value) != base_types.auto else self.make_default("AcctPties")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@AcctPties.deleter
+	def AcctPties(self):
+		del self._AcctPties
+		self._AcctPties = None
 
 	@property
 	def AddtlInf(self):
@@ -45,69 +45,17 @@ class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def AcctPties(self):
-		return self._AcctPties
+	def ConfDtls(self):
+		return self._ConfDtls
 
-	@AcctPties.setter
-	def AcctPties(self, value):
-		self._AcctPties = value if type(value) != base_types.auto else self.make_default("AcctPties")
+	@ConfDtls.setter
+	def ConfDtls(self, value):
+		self._ConfDtls = value if type(value) != base_types.auto else self.make_default("ConfDtls")
 
-	@AcctPties.deleter
-	def AcctPties(self):
-		del self._AcctPties
-		self._AcctPties = None
-
-	@property
-	def Plcmnt(self):
-		return self._Plcmnt
-
-	@Plcmnt.setter
-	def Plcmnt(self, value):
-		self._Plcmnt = value if type(value) != base_types.auto else self.make_default("Plcmnt")
-
-	@Plcmnt.deleter
-	def Plcmnt(self):
-		del self._Plcmnt
-		self._Plcmnt = None
-
-	@property
-	def OrdrRef(self):
-		return self._OrdrRef
-
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
-
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
-
-	@property
-	def MktPrctcVrsn(self):
-		return self._MktPrctcVrsn
-
-	@MktPrctcVrsn.setter
-	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
-
-	@MktPrctcVrsn.deleter
-	def MktPrctcVrsn(self):
-		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
-
-	@property
-	def InvstmtAcct(self):
-		return self._InvstmtAcct
-
-	@InvstmtAcct.setter
-	def InvstmtAcct(self, value):
-		self._InvstmtAcct = value if type(value) != base_types.auto else self.make_default("InvstmtAcct")
-
-	@InvstmtAcct.deleter
-	def InvstmtAcct(self):
-		del self._InvstmtAcct
-		self._InvstmtAcct = None
+	@ConfDtls.deleter
+	def ConfDtls(self):
+		del self._ConfDtls
+		self._ConfDtls = None
 
 	@property
 	def CshSttlm(self):
@@ -123,19 +71,6 @@ class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 		self._CshSttlm = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
 	def Intrmies(self):
 		return self._Intrmies
 
@@ -149,17 +84,43 @@ class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 		self._Intrmies = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def InvstmtAcct(self):
+		return self._InvstmtAcct
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+	@InvstmtAcct.setter
+	def InvstmtAcct(self, value):
+		self._InvstmtAcct = value if type(value) != base_types.auto else self.make_default("InvstmtAcct")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@InvstmtAcct.deleter
+	def InvstmtAcct(self):
+		del self._InvstmtAcct
+		self._InvstmtAcct = None
+
+	@property
+	def MktPrctcVrsn(self):
+		return self._MktPrctcVrsn
+
+	@MktPrctcVrsn.setter
+	def MktPrctcVrsn(self, value):
+		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+
+	@MktPrctcVrsn.deleter
+	def MktPrctcVrsn(self):
+		del self._MktPrctcVrsn
+		self._MktPrctcVrsn = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def NewIsseAllcn(self):
@@ -175,30 +136,43 @@ class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 		self._NewIsseAllcn = None
 
 	@property
-	def WdrwlInvstmtPlan(self):
-		return self._WdrwlInvstmtPlan
+	def OrdrRef(self):
+		return self._OrdrRef
 
-	@WdrwlInvstmtPlan.setter
-	def WdrwlInvstmtPlan(self, value):
-		self._WdrwlInvstmtPlan = value if type(value) != base_types.auto else self.make_default("WdrwlInvstmtPlan")
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
 
-	@WdrwlInvstmtPlan.deleter
-	def WdrwlInvstmtPlan(self):
-		del self._WdrwlInvstmtPlan
-		self._WdrwlInvstmtPlan = None
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
 
 	@property
-	def SvgsInvstmtPlan(self):
-		return self._SvgsInvstmtPlan
+	def Plcmnt(self):
+		return self._Plcmnt
 
-	@SvgsInvstmtPlan.setter
-	def SvgsInvstmtPlan(self, value):
-		self._SvgsInvstmtPlan = value if type(value) != base_types.auto else self.make_default("SvgsInvstmtPlan")
+	@Plcmnt.setter
+	def Plcmnt(self, value):
+		self._Plcmnt = value if type(value) != base_types.auto else self.make_default("Plcmnt")
 
-	@SvgsInvstmtPlan.deleter
-	def SvgsInvstmtPlan(self):
-		del self._SvgsInvstmtPlan
-		self._SvgsInvstmtPlan = None
+	@Plcmnt.deleter
+	def Plcmnt(self):
+		del self._Plcmnt
+		self._Plcmnt = None
+
+	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def SvcLvlAgrmt(self):
@@ -214,34 +188,60 @@ class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 		self._SvcLvlAgrmt = None
 
 	@property
-	def ConfDtls(self):
-		return self._ConfDtls
+	def SvgsInvstmtPlan(self):
+		return self._SvgsInvstmtPlan
 
-	@ConfDtls.setter
-	def ConfDtls(self, value):
-		self._ConfDtls = value if type(value) != base_types.auto else self.make_default("ConfDtls")
+	@SvgsInvstmtPlan.setter
+	def SvgsInvstmtPlan(self, value):
+		self._SvgsInvstmtPlan = value if type(value) != base_types.auto else self.make_default("SvgsInvstmtPlan")
 
-	@ConfDtls.deleter
-	def ConfDtls(self):
-		del self._ConfDtls
-		self._ConfDtls = None
+	@SvgsInvstmtPlan.deleter
+	def SvgsInvstmtPlan(self):
+		del self._SvgsInvstmtPlan
+		self._SvgsInvstmtPlan = None
+
+	@property
+	def WdrwlInvstmtPlan(self):
+		return self._WdrwlInvstmtPlan
+
+	@WdrwlInvstmtPlan.setter
+	def WdrwlInvstmtPlan(self, value):
+		self._WdrwlInvstmtPlan = value if type(value) != base_types.auto else self.make_default("WdrwlInvstmtPlan")
+
+	@WdrwlInvstmtPlan.deleter
+	def WdrwlInvstmtPlan(self):
+		del self._WdrwlInvstmtPlan
+		self._WdrwlInvstmtPlan = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditiononalInformation13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctPties', type=AccountParties17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Plcmnt', type=ReferredAgent3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=InvestmentFundOrder4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcct', type=InvestmentAccount74, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSttlm', type=CashSettlement3, min=0, max=8, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Intrmies', type=Intermediary46, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewIsseAllcn', type=NewIssueAllocation2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WdrwlInvstmtPlan', type=InvestmentPlan17, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvgsInvstmtPlan', type=InvestmentPlan17, min=0, max=50, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvcLvlAgrmt', type=DocumentToSend4, min=0, max=30, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=AdditiononalInformation13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ConfDtls', type=AccountManagementConfirmation5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSttlm', type=CashSettlement3, min=0, max=8, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Intrmies', type=Intermediary46, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstmtAcct', type=InvestmentAccount74, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewIsseAllcn', type=NewIssueAllocation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=InvestmentFundOrder4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Plcmnt', type=ReferredAgent3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcLvlAgrmt', type=DocumentToSend4, min=0, max=30, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SvgsInvstmtPlan', type=InvestmentPlan17, min=0, max=50, mutex_group=None, array=True),
+		base_types.FieldEntry(name='WdrwlInvstmtPlan', type=InvestmentPlan17, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

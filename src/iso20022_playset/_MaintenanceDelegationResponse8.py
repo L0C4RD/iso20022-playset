@@ -1,25 +1,12 @@
 from . import base_types
 from ._MaintenanceDelegation17 import MaintenanceDelegation17
-from ._GenericIdentification176 import GenericIdentification176
-from ._Max140Binary import Max140Binary
 from ._ISODateTime import ISODateTime
+from ._Max140Binary import Max140Binary
+from ._GenericIdentification176 import GenericIdentification176
 
 class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrTMId", "_DlgtnRspn", "_TMChllngVal", "_TMDtTm", "_TMId"]
-	@property
-	def MstrTMId(self):
-		return self._MstrTMId
-
-	@MstrTMId.setter
-	def MstrTMId(self, value):
-		self._MstrTMId = value if type(value) != base_types.auto else self.make_default("MstrTMId")
-
-	@MstrTMId.deleter
-	def MstrTMId(self):
-		del self._MstrTMId
-		self._MstrTMId = None
-
+	__slots__ = ["_TMId", "_TMDtTm", "_MstrTMId", "_TMChllngVal", "_DlgtnRspn"]
 	@property
 	def DlgtnRspn(self):
 		return self._DlgtnRspn
@@ -32,6 +19,19 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 	def DlgtnRspn(self):
 		del self._DlgtnRspn
 		self._DlgtnRspn = None
+
+	@property
+	def MstrTMId(self):
+		return self._MstrTMId
+
+	@MstrTMId.setter
+	def MstrTMId(self, value):
+		self._MstrTMId = value if type(value) != base_types.auto else self.make_default("MstrTMId")
+
+	@MstrTMId.deleter
+	def MstrTMId(self):
+		del self._MstrTMId
+		self._MstrTMId = None
 
 	@property
 	def TMChllngVal(self):
@@ -73,8 +73,8 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 		self._TMId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MstrTMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlgtnRspn', type=MaintenanceDelegation17, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrTMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),

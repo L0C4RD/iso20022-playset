@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
-from ._ClassificationType32Choice import ClassificationType32Choice
 from ._SecurityIdentification25Choice import SecurityIdentification25Choice
+from ._ClassificationType32Choice import ClassificationType32Choice
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 
 class FinancialInstrumentIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_Id", "_Nm", "_ClssfctnTp"]
+	__slots__ = ["_ShrtNm", "_ClssfctnTp", "_Id", "_Nm"]
 	@property
-	def ShrtNm(self):
-		return self._ShrtNm
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
 
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
 
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
 
 	@property
 	def Id(self):
@@ -47,22 +47,22 @@ class FinancialInstrumentIdentification2(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
+	def ShrtNm(self):
+		return self._ShrtNm
 
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
 
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

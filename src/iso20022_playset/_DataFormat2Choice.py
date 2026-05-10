@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._GenericIdentification1 import GenericIdentification1
+from ._Max140Text import Max140Text
 
 class DataFormat2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Strd", "_Ustrd"]
+	__slots__ = ["_Ustrd", "_Strd"]
 	@property
 	def Strd(self):
 		return self._Strd

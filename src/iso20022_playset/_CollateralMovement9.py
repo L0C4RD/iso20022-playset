@@ -1,10 +1,10 @@
 from . import base_types
-from ._CollateralType1Code import CollateralType1Code
 from ._ISODate import ISODate
+from ._CollateralType1Code import CollateralType1Code
 
 class CollateralMovement9(base_types._BaseFieldType):
 
-	__slots__ = ["_CollTp", "_Dt"]
+	__slots__ = ["_Dt", "_CollTp"]
 	@property
 	def CollTp(self):
 		return self._CollTp

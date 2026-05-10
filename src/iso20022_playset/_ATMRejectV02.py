@@ -4,7 +4,7 @@ from ._ATMReject2 import ATMReject2
 
 class ATMRejectV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMRjct", "_Hdr"]
+	__slots__ = ["_Hdr", "_ATMRjct"]
 	@property
 	def ATMRjct(self):
 		return self._ATMRjct

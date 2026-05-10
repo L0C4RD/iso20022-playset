@@ -1,11 +1,11 @@
 from . import base_types
-from ._Amount3 import Amount3
-from ._MarginType2Choice import MarginType2Choice
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._MarginType2Choice import MarginType2Choice
+from ._Amount3 import Amount3
 
 class InitialMarginExposure1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CoreInd", "_Tp"]
+	__slots__ = ["_CoreInd", "_Amt", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

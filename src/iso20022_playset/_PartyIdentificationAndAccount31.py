@@ -1,24 +1,24 @@
 from . import base_types
-from ._AlternatePartyIdentification4 import AlternatePartyIdentification4
 from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._PartyIdentification33Choice import PartyIdentification33Choice
+from ._AlternatePartyIdentification4 import AlternatePartyIdentification4
 from ._PartyTextInformation1 import PartyTextInformation1
+from ._PartyIdentification33Choice import PartyIdentification33Choice
 
 class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrAcct", "_AltrnId", "_AddtlInf", "_Id"]
+	__slots__ = ["_AltrnId", "_AddtlInf", "_Id", "_ClrAcct"]
 	@property
-	def ClrAcct(self):
-		return self._ClrAcct
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@ClrAcct.setter
-	def ClrAcct(self, value):
-		self._ClrAcct = value if type(value) != base_types.auto else self.make_default("ClrAcct")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@ClrAcct.deleter
-	def ClrAcct(self):
-		del self._ClrAcct
-		self._ClrAcct = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def AltrnId(self):
@@ -34,17 +34,17 @@ class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def ClrAcct(self):
+		return self._ClrAcct
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@ClrAcct.setter
+	def ClrAcct(self, value):
+		self._ClrAcct = value if type(value) != base_types.auto else self.make_default("ClrAcct")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@ClrAcct.deleter
+	def ClrAcct(self):
+		del self._ClrAcct
+		self._ClrAcct = None
 
 	@property
 	def Id(self):
@@ -60,9 +60,9 @@ class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification33Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

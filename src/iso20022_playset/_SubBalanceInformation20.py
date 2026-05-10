@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._SubBalanceType11Choice import SubBalanceType11Choice
-from ._Balance21 import Balance21
 from ._AdditionalBalanceInformation20 import AdditionalBalanceInformation20
+from ._SubBalanceType11Choice import SubBalanceType11Choice
 from ._QuantityBreakdown57 import QuantityBreakdown57
+from ._Max140Text import Max140Text
+from ._Balance21 import Balance21
 
 class SubBalanceInformation20(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlBalBrkdwnDtls", "_Qty", "_QtyBrkdwn", "_SubBalAddtlDtls", "_SubBalTp"]
+	__slots__ = ["_SubBalAddtlDtls", "_SubBalTp", "_QtyBrkdwn", "_Qty", "_AddtlBalBrkdwnDtls"]
 	@property
 	def AddtlBalBrkdwnDtls(self):
 		return self._AddtlBalBrkdwnDtls

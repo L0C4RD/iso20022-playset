@@ -1,43 +1,43 @@
 from . import base_types
-from ._Max70Text import Max70Text
-from ._ActionDestination1Code import ActionDestination1Code
 from ._ContactPersonal1 import ContactPersonal1
+from ._OutputFormat4Code import OutputFormat4Code
+from ._AdditionalData1 import AdditionalData1
+from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from ._ActionDestination1Code import ActionDestination1Code
 from ._PartyType34Code import PartyType34Code
 from ._Max140Binary import Max140Binary
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._AdditionalData1 import AdditionalData1
 from ._Max35Text import Max35Text
-from ._OutputFormat4Code import OutputFormat4Code
+from ._Max70Text import Max70Text
 from ._ActionType14Code import ActionType14Code
 
 class Action16(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDstnTp", "_DstnAdr", "_Ctct", "_Dstn", "_OthrDstn", "_Cntt", "_DstnTp", "_Lang", "_Tp", "_Frmt", "_OthrFrmt", "_OthrTp", "_CertId", "_Sgntr"]
+	__slots__ = ["_DstnTp", "_Lang", "_OthrTp", "_Ctct", "_OthrFrmt", "_OthrDstnTp", "_Frmt", "_DstnAdr", "_CertId", "_Tp", "_Cntt", "_OthrDstn", "_Dstn", "_Sgntr"]
 	@property
-	def OthrDstnTp(self):
-		return self._OthrDstnTp
+	def CertId(self):
+		return self._CertId
 
-	@OthrDstnTp.setter
-	def OthrDstnTp(self, value):
-		self._OthrDstnTp = value if type(value) != base_types.auto else self.make_default("OthrDstnTp")
+	@CertId.setter
+	def CertId(self, value):
+		self._CertId = value if type(value) != base_types.auto else self.make_default("CertId")
 
-	@OthrDstnTp.deleter
-	def OthrDstnTp(self):
-		del self._OthrDstnTp
-		self._OthrDstnTp = None
+	@CertId.deleter
+	def CertId(self):
+		del self._CertId
+		self._CertId = None
 
 	@property
-	def DstnAdr(self):
-		return self._DstnAdr
+	def Cntt(self):
+		return self._Cntt
 
-	@DstnAdr.setter
-	def DstnAdr(self, value):
-		self._DstnAdr = value if type(value) != base_types.auto else self.make_default("DstnAdr")
+	@Cntt.setter
+	def Cntt(self, value):
+		self._Cntt = value if type(value) != base_types.auto else self.make_default("Cntt")
 
-	@DstnAdr.deleter
-	def DstnAdr(self):
-		del self._DstnAdr
-		self._DstnAdr = None
+	@Cntt.deleter
+	def Cntt(self):
+		del self._Cntt
+		self._Cntt = None
 
 	@property
 	def Ctct(self):
@@ -66,30 +66,17 @@ class Action16(base_types._BaseFieldType):
 		self._Dstn = None
 
 	@property
-	def OthrDstn(self):
-		return self._OthrDstn
+	def DstnAdr(self):
+		return self._DstnAdr
 
-	@OthrDstn.setter
-	def OthrDstn(self, value):
-		self._OthrDstn = value if type(value) != base_types.auto else self.make_default("OthrDstn")
+	@DstnAdr.setter
+	def DstnAdr(self, value):
+		self._DstnAdr = value if type(value) != base_types.auto else self.make_default("DstnAdr")
 
-	@OthrDstn.deleter
-	def OthrDstn(self):
-		del self._OthrDstn
-		self._OthrDstn = None
-
-	@property
-	def Cntt(self):
-		return self._Cntt
-
-	@Cntt.setter
-	def Cntt(self, value):
-		self._Cntt = value if type(value) != base_types.auto else self.make_default("Cntt")
-
-	@Cntt.deleter
-	def Cntt(self):
-		del self._Cntt
-		self._Cntt = None
+	@DstnAdr.deleter
+	def DstnAdr(self):
+		del self._DstnAdr
+		self._DstnAdr = None
 
 	@property
 	def DstnTp(self):
@@ -105,6 +92,19 @@ class Action16(base_types._BaseFieldType):
 		self._DstnTp = None
 
 	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
+	@property
 	def Lang(self):
 		return self._Lang
 
@@ -118,30 +118,30 @@ class Action16(base_types._BaseFieldType):
 		self._Lang = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def OthrDstn(self):
+		return self._OthrDstn
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@OthrDstn.setter
+	def OthrDstn(self, value):
+		self._OthrDstn = value if type(value) != base_types.auto else self.make_default("OthrDstn")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@OthrDstn.deleter
+	def OthrDstn(self):
+		del self._OthrDstn
+		self._OthrDstn = None
 
 	@property
-	def Frmt(self):
-		return self._Frmt
+	def OthrDstnTp(self):
+		return self._OthrDstnTp
 
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+	@OthrDstnTp.setter
+	def OthrDstnTp(self, value):
+		self._OthrDstnTp = value if type(value) != base_types.auto else self.make_default("OthrDstnTp")
 
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
+	@OthrDstnTp.deleter
+	def OthrDstnTp(self):
+		del self._OthrDstnTp
+		self._OthrDstnTp = None
 
 	@property
 	def OthrFrmt(self):
@@ -170,19 +170,6 @@ class Action16(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def CertId(self):
-		return self._CertId
-
-	@CertId.setter
-	def CertId(self, value):
-		self._CertId = value if type(value) != base_types.auto else self.make_default("CertId")
-
-	@CertId.deleter
-	def CertId(self):
-		del self._CertId
-		self._CertId = None
-
-	@property
 	def Sgntr(self):
 		return self._Sgntr
 
@@ -195,20 +182,33 @@ class Action16(base_types._BaseFieldType):
 		del self._Sgntr
 		self._Sgntr = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrDstnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnAdr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntt', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dstn', type=PartyType34Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrDstn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntt', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DstnAdr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstnTp', type=ActionDestination1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ActionType14Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrDstn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrDstnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgntr', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ActionType14Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

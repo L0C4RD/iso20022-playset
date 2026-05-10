@@ -1,22 +1,22 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CashAccount206 import CashAccount206
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 
 class CashAccount205(base_types._BaseFieldType):
 
 	__slots__ = ["_ScndryAcct", "_PmryAcct", "_Ccy"]
 	@property
-	def ScndryAcct(self):
-		return self._ScndryAcct
+	def Ccy(self):
+		return self._Ccy
 
-	@ScndryAcct.setter
-	def ScndryAcct(self, value):
-		self._ScndryAcct = value if type(value) != base_types.auto else self.make_default("ScndryAcct")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@ScndryAcct.deleter
-	def ScndryAcct(self):
-		del self._ScndryAcct
-		self._ScndryAcct = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def PmryAcct(self):
@@ -32,21 +32,21 @@ class CashAccount205(base_types._BaseFieldType):
 		self._PmryAcct = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def ScndryAcct(self):
+		return self._ScndryAcct
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@ScndryAcct.setter
+	def ScndryAcct(self, value):
+		self._ScndryAcct = value if type(value) != base_types.auto else self.make_default("ScndryAcct")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@ScndryAcct.deleter
+	def ScndryAcct(self):
+		del self._ScndryAcct
+		self._ScndryAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScndryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
 	))
 

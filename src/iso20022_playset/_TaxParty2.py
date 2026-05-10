@@ -1,10 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._TaxAuthorisation1 import TaxAuthorisation1
+from ._Max35Text import Max35Text
 
 class TaxParty2(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnId", "_TaxTp", "_TaxId", "_Authstn"]
+	__slots__ = ["_TaxId", "_RegnId", "_TaxTp", "_Authstn"]
+	@property
+	def Authstn(self):
+		return self._Authstn
+
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
+
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
+
 	@property
 	def RegnId(self):
 		return self._RegnId
@@ -17,19 +30,6 @@ class TaxParty2(base_types._BaseFieldType):
 	def RegnId(self):
 		del self._RegnId
 		self._RegnId = None
-
-	@property
-	def TaxTp(self):
-		return self._TaxTp
-
-	@TaxTp.setter
-	def TaxTp(self, value):
-		self._TaxTp = value if type(value) != base_types.auto else self.make_default("TaxTp")
-
-	@TaxTp.deleter
-	def TaxTp(self):
-		del self._TaxTp
-		self._TaxTp = None
 
 	@property
 	def TaxId(self):
@@ -45,22 +45,22 @@ class TaxParty2(base_types._BaseFieldType):
 		self._TaxId = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def TaxTp(self):
+		return self._TaxTp
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
+	@TaxTp.setter
+	def TaxTp(self, value):
+		self._TaxTp = value if type(value) != base_types.auto else self.make_default("TaxTp")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
+	@TaxTp.deleter
+	def TaxTp(self):
+		del self._TaxTp
+		self._TaxTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=TaxAuthorisation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

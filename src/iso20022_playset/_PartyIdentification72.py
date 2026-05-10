@@ -1,11 +1,11 @@
 from . import base_types
-from ._TaxParty1 import TaxParty1
-from ._LegalOrganisation1 import LegalOrganisation1
 from ._PartyIdentification43 import PartyIdentification43
+from ._LegalOrganisation1 import LegalOrganisation1
+from ._TaxParty1 import TaxParty1
 
 class PartyIdentification72(base_types._BaseFieldType):
 
-	__slots__ = ["_LglOrg", "_PtyId", "_TaxPty"]
+	__slots__ = ["_PtyId", "_LglOrg", "_TaxPty"]
 	@property
 	def LglOrg(self):
 		return self._LglOrg

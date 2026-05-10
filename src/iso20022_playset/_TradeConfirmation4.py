@@ -4,7 +4,7 @@ from ._ISODateTime import ISODateTime
 
 class TradeConfirmation4(base_types._BaseFieldType):
 
-	__slots__ = ["_TmStmp", "_Tp"]
+	__slots__ = ["_Tp", "_TmStmp"]
 	@property
 	def TmStmp(self):
 		return self._TmStmp

@@ -1,40 +1,14 @@
 from . import base_types
-from ._CashAccountType2 import CashAccountType2
 from ._PartyIdentification41 import PartyIdentification41
+from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
 from ._Max70Text import Max70Text
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
-from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._CashAccountType2 import CashAccountType2
 
 class CashAccount27(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Svcr", "_Ccy", "_Nm", "_Ownr", "_Id"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Svcr(self):
-		return self._Svcr
-
-	@Svcr.setter
-	def Svcr(self, value):
-		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
-
-	@Svcr.deleter
-	def Svcr(self):
-		del self._Svcr
-		self._Svcr = None
-
+	__slots__ = ["_Id", "_Ccy", "_Tp", "_Ownr", "_Nm", "_Svcr"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -47,6 +21,19 @@ class CashAccount27(base_types._BaseFieldType):
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Nm(self):
@@ -75,24 +62,37 @@ class CashAccount27(base_types._BaseFieldType):
 		self._Ownr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Svcr(self):
+		return self._Svcr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@Svcr.setter
+	def Svcr(self, value):
+		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Svcr.deleter
+	def Svcr(self):
+		del self._Svcr
+		self._Svcr = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ownr', type=PartyIdentification41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

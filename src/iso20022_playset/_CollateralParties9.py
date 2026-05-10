@@ -4,7 +4,7 @@ from ._PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
 
 class CollateralParties9(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntPtyA", "_PtyA", "_TrptyAgt"]
+	__slots__ = ["_PtyA", "_TrptyAgt", "_ClntPtyA"]
 	@property
 	def ClntPtyA(self):
 		return self._ClntPtyA

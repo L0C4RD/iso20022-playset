@@ -1,29 +1,42 @@
 from . import base_types
-from ._Organisation44 import Organisation44
+from ._SupplementaryData1 import SupplementaryData1
+from ._AccountForAction2 import AccountForAction2
 from ._AccountForAction1 import AccountForAction1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._AccountContract4 import AccountContract4
-from ._PartyAndSignature4 import PartyAndSignature4
-from ._OrganisationIdentification39 import OrganisationIdentification39
-from ._AccountForAction2 import AccountForAction2
 from ._References4 import References4
-from ._SupplementaryData1 import SupplementaryData1
+from ._Organisation44 import Organisation44
+from ._AccountContract4 import AccountContract4
+from ._OrganisationIdentification39 import OrganisationIdentification39
+from ._PartyAndSignature4 import PartyAndSignature4
 
 class AccountClosingRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctDts", "_BalTrfAcct", "_TrfAcctSvcrId", "_DgtlSgntr", "_AcctId", "_Fr", "_OrgId", "_Refs", "_SplmtryData", "_AcctSvcrId"]
+	__slots__ = ["_Fr", "_AcctSvcrId", "_OrgId", "_DgtlSgntr", "_SplmtryData", "_AcctId", "_TrfAcctSvcrId", "_BalTrfAcct", "_Refs", "_CtrctDts"]
 	@property
-	def CtrctDts(self):
-		return self._CtrctDts
+	def AcctId(self):
+		return self._AcctId
 
-	@CtrctDts.setter
-	def CtrctDts(self, value):
-		self._CtrctDts = value if type(value) != base_types.auto else self.make_default("CtrctDts")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@CtrctDts.deleter
-	def CtrctDts(self):
-		del self._CtrctDts
-		self._CtrctDts = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def AcctSvcrId(self):
+		return self._AcctSvcrId
+
+	@AcctSvcrId.setter
+	def AcctSvcrId(self, value):
+		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+
+	@AcctSvcrId.deleter
+	def AcctSvcrId(self):
+		del self._AcctSvcrId
+		self._AcctSvcrId = None
 
 	@property
 	def BalTrfAcct(self):
@@ -39,17 +52,17 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 		self._BalTrfAcct = None
 
 	@property
-	def TrfAcctSvcrId(self):
-		return self._TrfAcctSvcrId
+	def CtrctDts(self):
+		return self._CtrctDts
 
-	@TrfAcctSvcrId.setter
-	def TrfAcctSvcrId(self, value):
-		self._TrfAcctSvcrId = value if type(value) != base_types.auto else self.make_default("TrfAcctSvcrId")
+	@CtrctDts.setter
+	def CtrctDts(self, value):
+		self._CtrctDts = value if type(value) != base_types.auto else self.make_default("CtrctDts")
 
-	@TrfAcctSvcrId.deleter
-	def TrfAcctSvcrId(self):
-		del self._TrfAcctSvcrId
-		self._TrfAcctSvcrId = None
+	@CtrctDts.deleter
+	def CtrctDts(self):
+		del self._CtrctDts
+		self._CtrctDts = None
 
 	@property
 	def DgtlSgntr(self):
@@ -63,19 +76,6 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
 		self._DgtlSgntr = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def Fr(self):
@@ -130,28 +130,28 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def AcctSvcrId(self):
-		return self._AcctSvcrId
+	def TrfAcctSvcrId(self):
+		return self._TrfAcctSvcrId
 
-	@AcctSvcrId.setter
-	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+	@TrfAcctSvcrId.setter
+	def TrfAcctSvcrId(self, value):
+		self._TrfAcctSvcrId = value if type(value) != base_types.auto else self.make_default("TrfAcctSvcrId")
 
-	@AcctSvcrId.deleter
-	def AcctSvcrId(self):
-		del self._AcctSvcrId
-		self._AcctSvcrId = None
+	@TrfAcctSvcrId.deleter
+	def TrfAcctSvcrId(self):
+		del self._TrfAcctSvcrId
+		self._TrfAcctSvcrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctDts', type=AccountContract4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTrfAcct', type=AccountForAction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfAcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctId', type=AccountForAction2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTrfAcct', type=AccountForAction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctDts', type=AccountContract4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Fr', type=OrganisationIdentification39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgId', type=Organisation44, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Refs', type=References4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfAcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

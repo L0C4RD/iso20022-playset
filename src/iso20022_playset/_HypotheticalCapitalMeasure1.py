@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max35Text import Max35Text
 
 class HypotheticalCapitalMeasure1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_DfltWtrfllId"]
+	__slots__ = ["_DfltWtrfllId", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

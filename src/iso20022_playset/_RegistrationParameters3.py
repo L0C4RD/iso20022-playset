@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._SecuritiesCertificate3 import SecuritiesCertificate3
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
+from ._Max35Text import Max35Text
 
 class RegistrationParameters3(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnId", "_CertNb", "_CertfctnDtTm", "_RegarAcct"]
-	@property
-	def CertfctnId(self):
-		return self._CertfctnId
-
-	@CertfctnId.setter
-	def CertfctnId(self, value):
-		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
-
-	@CertfctnId.deleter
-	def CertfctnId(self):
-		del self._CertfctnId
-		self._CertfctnId = None
-
+	__slots__ = ["_CertfctnId", "_CertfctnDtTm", "_RegarAcct", "_CertNb"]
 	@property
 	def CertNb(self):
 		return self._CertNb
@@ -46,6 +33,19 @@ class RegistrationParameters3(base_types._BaseFieldType):
 		self._CertfctnDtTm = None
 
 	@property
+	def CertfctnId(self):
+		return self._CertfctnId
+
+	@CertfctnId.setter
+	def CertfctnId(self, value):
+		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
+
+	@CertfctnId.deleter
+	def CertfctnId(self):
+		del self._CertfctnId
+		self._CertfctnId = None
+
+	@property
 	def RegarAcct(self):
 		return self._RegarAcct
 
@@ -59,9 +59,9 @@ class RegistrationParameters3(base_types._BaseFieldType):
 		self._RegarAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CertfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegarAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

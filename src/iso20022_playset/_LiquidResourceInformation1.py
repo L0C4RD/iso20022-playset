@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AmountAndDirection102 import AmountAndDirection102
+from ._Max35Text import Max35Text
 
 class LiquidResourceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_AsstNcmbrd", "_AgcyArrgmnts", "_Scrd", "_LqdRsrcVal", "_CntrPtyId", "_QlfygRsrc"]
+	__slots__ = ["_CntrPtyId", "_LqdRsrcVal", "_AgcyArrgmnts", "_QlfygRsrc", "_AsstNcmbrd", "_Scrd", "_MktVal"]
 	@property
-	def MktVal(self):
-		return self._MktVal
+	def AgcyArrgmnts(self):
+		return self._AgcyArrgmnts
 
-	@MktVal.setter
-	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+	@AgcyArrgmnts.setter
+	def AgcyArrgmnts(self, value):
+		self._AgcyArrgmnts = value if type(value) != base_types.auto else self.make_default("AgcyArrgmnts")
 
-	@MktVal.deleter
-	def MktVal(self):
-		del self._MktVal
-		self._MktVal = None
+	@AgcyArrgmnts.deleter
+	def AgcyArrgmnts(self):
+		del self._AgcyArrgmnts
+		self._AgcyArrgmnts = None
 
 	@property
 	def AsstNcmbrd(self):
@@ -33,30 +33,17 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		self._AsstNcmbrd = None
 
 	@property
-	def AgcyArrgmnts(self):
-		return self._AgcyArrgmnts
+	def CntrPtyId(self):
+		return self._CntrPtyId
 
-	@AgcyArrgmnts.setter
-	def AgcyArrgmnts(self, value):
-		self._AgcyArrgmnts = value if type(value) != base_types.auto else self.make_default("AgcyArrgmnts")
+	@CntrPtyId.setter
+	def CntrPtyId(self, value):
+		self._CntrPtyId = value if type(value) != base_types.auto else self.make_default("CntrPtyId")
 
-	@AgcyArrgmnts.deleter
-	def AgcyArrgmnts(self):
-		del self._AgcyArrgmnts
-		self._AgcyArrgmnts = None
-
-	@property
-	def Scrd(self):
-		return self._Scrd
-
-	@Scrd.setter
-	def Scrd(self, value):
-		self._Scrd = value if type(value) != base_types.auto else self.make_default("Scrd")
-
-	@Scrd.deleter
-	def Scrd(self):
-		del self._Scrd
-		self._Scrd = None
+	@CntrPtyId.deleter
+	def CntrPtyId(self):
+		del self._CntrPtyId
+		self._CntrPtyId = None
 
 	@property
 	def LqdRsrcVal(self):
@@ -72,17 +59,17 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		self._LqdRsrcVal = None
 
 	@property
-	def CntrPtyId(self):
-		return self._CntrPtyId
+	def MktVal(self):
+		return self._MktVal
 
-	@CntrPtyId.setter
-	def CntrPtyId(self, value):
-		self._CntrPtyId = value if type(value) != base_types.auto else self.make_default("CntrPtyId")
+	@MktVal.setter
+	def MktVal(self, value):
+		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
 
-	@CntrPtyId.deleter
-	def CntrPtyId(self):
-		del self._CntrPtyId
-		self._CntrPtyId = None
+	@MktVal.deleter
+	def MktVal(self):
+		del self._MktVal
+		self._MktVal = None
 
 	@property
 	def QlfygRsrc(self):
@@ -97,13 +84,26 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		del self._QlfygRsrc
 		self._QlfygRsrc = None
 
+	@property
+	def Scrd(self):
+		return self._Scrd
+
+	@Scrd.setter
+	def Scrd(self, value):
+		self._Scrd = value if type(value) != base_types.auto else self.make_default("Scrd")
+
+	@Scrd.deleter
+	def Scrd(self):
+		del self._Scrd
+		self._Scrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktVal', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstNcmbrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgcyArrgmnts', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Scrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LqdRsrcVal', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstNcmbrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CntrPtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LqdRsrcVal', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktVal', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QlfygRsrc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Scrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 from . import base_types
-from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
-from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
-from ._PaymentStatusReason1 import PaymentStatusReason1
 from ._AmountConsistencyType1Code import AmountConsistencyType1Code
+from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
+from ._PaymentStatusReason1 import PaymentStatusReason1
 
 class TrackerStatus4(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtIncnsstncy", "_RjctRtrRsn", "_Sts", "_Dt", "_StsRsn"]
+	__slots__ = ["_RjctRtrRsn", "_Sts", "_Dt", "_AmtIncnsstncy", "_StsRsn"]
 	@property
 	def AmtIncnsstncy(self):
 		return self._AmtIncnsstncy
@@ -20,6 +20,19 @@ class TrackerStatus4(base_types._BaseFieldType):
 	def AmtIncnsstncy(self):
 		del self._AmtIncnsstncy
 		self._AmtIncnsstncy = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def RjctRtrRsn(self):
@@ -48,19 +61,6 @@ class TrackerStatus4(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
 	def StsRsn(self):
 		return self._StsRsn
 
@@ -75,9 +75,9 @@ class TrackerStatus4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtIncnsstncy', type=AmountConsistencyType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctRtrRsn', type=PaymentRejectReturnReason1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=PaymentStatusReason1, min=0, max=None, mutex_group=None, array=True),
 	))
 

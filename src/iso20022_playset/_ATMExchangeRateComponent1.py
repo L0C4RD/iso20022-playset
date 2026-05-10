@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max256Text import Max256Text
 from ._PercentageRate import PercentageRate
 from ._ISODateTime import ISODateTime
+from ._Max256Text import Max256Text
 
 class ATMExchangeRateComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_XchgRate", "_PblshDt"]
+	__slots__ = ["_AddtlInf", "_PblshDt", "_XchgRate"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -20,19 +20,6 @@ class ATMExchangeRateComponent1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
-	@property
 	def PblshDt(self):
 		return self._PblshDt
 
@@ -45,9 +32,22 @@ class ATMExchangeRateComponent1(base_types._BaseFieldType):
 		del self._PblshDt
 		self._PblshDt = None
 
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PblshDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

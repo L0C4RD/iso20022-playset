@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
+from ._Max350Text import Max350Text
 
 class FloatingRateIdentification8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

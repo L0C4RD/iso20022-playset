@@ -1,12 +1,12 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementFailsDailyData3 import SettlementFailsDailyData3
 from ._SettlementFailsData3 import SettlementFailsData3
 from ._SettlementFailsReportHeader2 import SettlementFailsReportHeader2
+from ._SettlementFailsDailyData3 import SettlementFailsDailyData3
 
 class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DalyData", "_SplmtryData", "_RptHdr", "_MnthlyAggt"]
+	__slots__ = ["_RptHdr", "_SplmtryData", "_DalyData", "_MnthlyAggt"]
 	@property
 	def DalyData(self):
 		return self._DalyData
@@ -21,17 +21,17 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 		self._DalyData = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MnthlyAggt(self):
+		return self._MnthlyAggt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@MnthlyAggt.setter
+	def MnthlyAggt(self, value):
+		self._MnthlyAggt = value if type(value) != base_types.auto else self.make_default("MnthlyAggt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MnthlyAggt.deleter
+	def MnthlyAggt(self):
+		del self._MnthlyAggt
+		self._MnthlyAggt = None
 
 	@property
 	def RptHdr(self):
@@ -47,22 +47,22 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 		self._RptHdr = None
 
 	@property
-	def MnthlyAggt(self):
-		return self._MnthlyAggt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MnthlyAggt.setter
-	def MnthlyAggt(self, value):
-		self._MnthlyAggt = value if type(value) != base_types.auto else self.make_default("MnthlyAggt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@MnthlyAggt.deleter
-	def MnthlyAggt(self):
-		del self._MnthlyAggt
-		self._MnthlyAggt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DalyData', type=SettlementFailsDailyData3, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptHdr', type=SettlementFailsReportHeader2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnthlyAggt', type=SettlementFailsData3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptHdr', type=SettlementFailsReportHeader2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

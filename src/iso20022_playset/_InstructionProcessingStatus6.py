@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Status11Code import Status11Code
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 
 class InstructionProcessingStatus6(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Sts", "_AttndncCardNb"]
+	__slots__ = ["_AttndncCardNb", "_Sts", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -20,19 +20,6 @@ class InstructionProcessingStatus6(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
 	def AttndncCardNb(self):
 		return self._AttndncCardNb
 
@@ -45,9 +32,22 @@ class InstructionProcessingStatus6(base_types._BaseFieldType):
 		del self._AttndncCardNb
 		self._AttndncCardNb = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=Status11Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttndncCardNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=Status11Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

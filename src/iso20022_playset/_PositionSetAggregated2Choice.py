@@ -1,10 +1,10 @@
 from . import base_types
-from ._PositionSetAggregated4 import PositionSetAggregated4
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from ._PositionSetAggregated4 import PositionSetAggregated4
 
 class PositionSetAggregated2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSetActn", "_Rpt"]
+	__slots__ = ["_Rpt", "_DataSetActn"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn

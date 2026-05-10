@@ -4,20 +4,7 @@ from ._ReceivingPartiesAndAccount21 import ReceivingPartiesAndAccount21
 
 class SettlementParties37Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvgSttlmPties", "_DlvrgSttlmPties"]
-	@property
-	def RcvgSttlmPties(self):
-		return self._RcvgSttlmPties
-
-	@RcvgSttlmPties.setter
-	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
-
-	@RcvgSttlmPties.deleter
-	def RcvgSttlmPties(self):
-		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
-
+	__slots__ = ["_DlvrgSttlmPties", "_RcvgSttlmPties"]
 	@property
 	def DlvrgSttlmPties(self):
 		return self._DlvrgSttlmPties
@@ -31,8 +18,21 @@ class SettlementParties37Choice(base_types._BaseFieldType):
 		del self._DlvrgSttlmPties
 		self._DlvrgSttlmPties = None
 
+	@property
+	def RcvgSttlmPties(self):
+		return self._RcvgSttlmPties
+
+	@RcvgSttlmPties.setter
+	def RcvgSttlmPties(self, value):
+		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
+
+	@RcvgSttlmPties.deleter
+	def RcvgSttlmPties(self):
+		del self._RcvgSttlmPties
+		self._RcvgSttlmPties = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcvgSttlmPties', type=ReceivingPartiesAndAccount21, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DlvrgSttlmPties', type=DeliveringPartiesAndAccount21, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RcvgSttlmPties', type=ReceivingPartiesAndAccount21, min=0, max=1, mutex_group=1, array=False),
 	))
 

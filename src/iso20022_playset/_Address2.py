@@ -1,38 +1,25 @@
 from . import base_types
-from ._Max99Text import Max99Text
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._Max50Text import Max50Text
 from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
 from ._Max16Text import Max16Text
-from ._Max50Text import Max50Text
+from ._Max99Text import Max99Text
 
 class Address2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrySubDvsnMjr", "_StrtNm", "_AdrLine2", "_PstlCd", "_Ctry", "_CtrySubDvsnMjrNm", "_TwnNm", "_AdrLine1", "_BldgNb", "_CtrySubDvsnMnr", "_CtrySubDvsnMnrNm"]
+	__slots__ = ["_StrtNm", "_AdrLine2", "_CtrySubDvsnMjr", "_CtrySubDvsnMjrNm", "_AdrLine1", "_CtrySubDvsnMnrNm", "_PstlCd", "_BldgNb", "_Ctry", "_CtrySubDvsnMnr", "_TwnNm"]
 	@property
-	def CtrySubDvsnMjr(self):
-		return self._CtrySubDvsnMjr
+	def AdrLine1(self):
+		return self._AdrLine1
 
-	@CtrySubDvsnMjr.setter
-	def CtrySubDvsnMjr(self, value):
-		self._CtrySubDvsnMjr = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMjr")
+	@AdrLine1.setter
+	def AdrLine1(self, value):
+		self._AdrLine1 = value if type(value) != base_types.auto else self.make_default("AdrLine1")
 
-	@CtrySubDvsnMjr.deleter
-	def CtrySubDvsnMjr(self):
-		del self._CtrySubDvsnMjr
-		self._CtrySubDvsnMjr = None
-
-	@property
-	def StrtNm(self):
-		return self._StrtNm
-
-	@StrtNm.setter
-	def StrtNm(self, value):
-		self._StrtNm = value if type(value) != base_types.auto else self.make_default("StrtNm")
-
-	@StrtNm.deleter
-	def StrtNm(self):
-		del self._StrtNm
-		self._StrtNm = None
+	@AdrLine1.deleter
+	def AdrLine1(self):
+		del self._AdrLine1
+		self._AdrLine1 = None
 
 	@property
 	def AdrLine2(self):
@@ -48,17 +35,17 @@ class Address2(base_types._BaseFieldType):
 		self._AdrLine2 = None
 
 	@property
-	def PstlCd(self):
-		return self._PstlCd
+	def BldgNb(self):
+		return self._BldgNb
 
-	@PstlCd.setter
-	def PstlCd(self, value):
-		self._PstlCd = value if type(value) != base_types.auto else self.make_default("PstlCd")
+	@BldgNb.setter
+	def BldgNb(self, value):
+		self._BldgNb = value if type(value) != base_types.auto else self.make_default("BldgNb")
 
-	@PstlCd.deleter
-	def PstlCd(self):
-		del self._PstlCd
-		self._PstlCd = None
+	@BldgNb.deleter
+	def BldgNb(self):
+		del self._BldgNb
+		self._BldgNb = None
 
 	@property
 	def Ctry(self):
@@ -74,6 +61,19 @@ class Address2(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
+	def CtrySubDvsnMjr(self):
+		return self._CtrySubDvsnMjr
+
+	@CtrySubDvsnMjr.setter
+	def CtrySubDvsnMjr(self, value):
+		self._CtrySubDvsnMjr = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMjr")
+
+	@CtrySubDvsnMjr.deleter
+	def CtrySubDvsnMjr(self):
+		del self._CtrySubDvsnMjr
+		self._CtrySubDvsnMjr = None
+
+	@property
 	def CtrySubDvsnMjrNm(self):
 		return self._CtrySubDvsnMjrNm
 
@@ -85,45 +85,6 @@ class Address2(base_types._BaseFieldType):
 	def CtrySubDvsnMjrNm(self):
 		del self._CtrySubDvsnMjrNm
 		self._CtrySubDvsnMjrNm = None
-
-	@property
-	def TwnNm(self):
-		return self._TwnNm
-
-	@TwnNm.setter
-	def TwnNm(self, value):
-		self._TwnNm = value if type(value) != base_types.auto else self.make_default("TwnNm")
-
-	@TwnNm.deleter
-	def TwnNm(self):
-		del self._TwnNm
-		self._TwnNm = None
-
-	@property
-	def AdrLine1(self):
-		return self._AdrLine1
-
-	@AdrLine1.setter
-	def AdrLine1(self, value):
-		self._AdrLine1 = value if type(value) != base_types.auto else self.make_default("AdrLine1")
-
-	@AdrLine1.deleter
-	def AdrLine1(self):
-		del self._AdrLine1
-		self._AdrLine1 = None
-
-	@property
-	def BldgNb(self):
-		return self._BldgNb
-
-	@BldgNb.setter
-	def BldgNb(self, value):
-		self._BldgNb = value if type(value) != base_types.auto else self.make_default("BldgNb")
-
-	@BldgNb.deleter
-	def BldgNb(self):
-		del self._BldgNb
-		self._BldgNb = None
 
 	@property
 	def CtrySubDvsnMnr(self):
@@ -151,17 +112,56 @@ class Address2(base_types._BaseFieldType):
 		del self._CtrySubDvsnMnrNm
 		self._CtrySubDvsnMnrNm = None
 
+	@property
+	def PstlCd(self):
+		return self._PstlCd
+
+	@PstlCd.setter
+	def PstlCd(self, value):
+		self._PstlCd = value if type(value) != base_types.auto else self.make_default("PstlCd")
+
+	@PstlCd.deleter
+	def PstlCd(self):
+		del self._PstlCd
+		self._PstlCd = None
+
+	@property
+	def StrtNm(self):
+		return self._StrtNm
+
+	@StrtNm.setter
+	def StrtNm(self, value):
+		self._StrtNm = value if type(value) != base_types.auto else self.make_default("StrtNm")
+
+	@StrtNm.deleter
+	def StrtNm(self):
+		del self._StrtNm
+		self._StrtNm = None
+
+	@property
+	def TwnNm(self):
+		return self._TwnNm
+
+	@TwnNm.setter
+	def TwnNm(self, value):
+		self._TwnNm = value if type(value) != base_types.auto else self.make_default("TwnNm")
+
+	@TwnNm.deleter
+	def TwnNm(self):
+		del self._TwnNm
+		self._TwnNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrySubDvsnMjr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrtNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdrLine2', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlCd', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TwnNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdrLine1', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdrLine2', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BldgNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMjr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMnr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMnrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlCd', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrtNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TwnNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

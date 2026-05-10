@@ -1,25 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._ProceedsQuantityBreakdown1 import ProceedsQuantityBreakdown1
+from ._Max35Text import Max35Text
 from ._TransferOfProceedsType1Code import TransferOfProceedsType1Code
 
 class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfOfPrcdsTpInd", "_PrcdsQtyBrkdwn", "_RltdSttlmInstrId", "_RltdSttlmQty"]
-	@property
-	def TrfOfPrcdsTpInd(self):
-		return self._TrfOfPrcdsTpInd
-
-	@TrfOfPrcdsTpInd.setter
-	def TrfOfPrcdsTpInd(self, value):
-		self._TrfOfPrcdsTpInd = value if type(value) != base_types.auto else self.make_default("TrfOfPrcdsTpInd")
-
-	@TrfOfPrcdsTpInd.deleter
-	def TrfOfPrcdsTpInd(self):
-		del self._TrfOfPrcdsTpInd
-		self._TrfOfPrcdsTpInd = None
-
+	__slots__ = ["_RltdSttlmInstrId", "_PrcdsQtyBrkdwn", "_RltdSttlmQty", "_TrfOfPrcdsTpInd"]
 	@property
 	def PrcdsQtyBrkdwn(self):
 		return self._PrcdsQtyBrkdwn
@@ -59,10 +46,23 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 		del self._RltdSttlmQty
 		self._RltdSttlmQty = None
 
+	@property
+	def TrfOfPrcdsTpInd(self):
+		return self._TrfOfPrcdsTpInd
+
+	@TrfOfPrcdsTpInd.setter
+	def TrfOfPrcdsTpInd(self, value):
+		self._TrfOfPrcdsTpInd = value if type(value) != base_types.auto else self.make_default("TrfOfPrcdsTpInd")
+
+	@TrfOfPrcdsTpInd.deleter
+	def TrfOfPrcdsTpInd(self):
+		del self._TrfOfPrcdsTpInd
+		self._TrfOfPrcdsTpInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrfOfPrcdsTpInd', type=TransferOfProceedsType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcdsQtyBrkdwn', type=ProceedsQuantityBreakdown1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdSttlmInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdSttlmQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfOfPrcdsTpInd', type=TransferOfProceedsType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

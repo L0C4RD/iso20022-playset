@@ -1,11 +1,11 @@
 from . import base_types
-from ._ATMTransaction41 import ATMTransaction41
 from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
 from ._ATMContext25 import ATMContext25
+from ._ATMTransaction41 import ATMTransaction41
 
 class ATMExceptionAcknowledgement2(base_types._BaseFieldType):
 
-	__slots__ = ["_ATM", "_Cntxt", "_Tx"]
+	__slots__ = ["_Cntxt", "_Tx", "_ATM"]
 	@property
 	def ATM(self):
 		return self._ATM

@@ -1,27 +1,27 @@
 from . import base_types
-from ._Max9999HexBinaryText import Max9999HexBinaryText
-from ._ISOTime import ISOTime
-from ._Max35Text import Max35Text
 from ._Max2048Text import Max2048Text
 from ._ISODate import ISODate
-from ._Max5000Binary import Max5000Binary
+from ._ISOTime import ISOTime
+from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max5000Binary import Max5000Binary
+from ._Max9999HexBinaryText import Max9999HexBinaryText
 
 class VerificationValue1(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtyEndTm", "_DtTm", "_BinryVal", "_Nm", "_HexBinryVal", "_VldtyEndDt", "_TxtVal"]
+	__slots__ = ["_TxtVal", "_VldtyEndDt", "_Nm", "_DtTm", "_HexBinryVal", "_BinryVal", "_VldtyEndTm"]
 	@property
-	def VldtyEndTm(self):
-		return self._VldtyEndTm
+	def BinryVal(self):
+		return self._BinryVal
 
-	@VldtyEndTm.setter
-	def VldtyEndTm(self, value):
-		self._VldtyEndTm = value if type(value) != base_types.auto else self.make_default("VldtyEndTm")
+	@BinryVal.setter
+	def BinryVal(self, value):
+		self._BinryVal = value if type(value) != base_types.auto else self.make_default("BinryVal")
 
-	@VldtyEndTm.deleter
-	def VldtyEndTm(self):
-		del self._VldtyEndTm
-		self._VldtyEndTm = None
+	@BinryVal.deleter
+	def BinryVal(self):
+		del self._BinryVal
+		self._BinryVal = None
 
 	@property
 	def DtTm(self):
@@ -37,17 +37,17 @@ class VerificationValue1(base_types._BaseFieldType):
 		self._DtTm = None
 
 	@property
-	def BinryVal(self):
-		return self._BinryVal
+	def HexBinryVal(self):
+		return self._HexBinryVal
 
-	@BinryVal.setter
-	def BinryVal(self, value):
-		self._BinryVal = value if type(value) != base_types.auto else self.make_default("BinryVal")
+	@HexBinryVal.setter
+	def HexBinryVal(self, value):
+		self._HexBinryVal = value if type(value) != base_types.auto else self.make_default("HexBinryVal")
 
-	@BinryVal.deleter
-	def BinryVal(self):
-		del self._BinryVal
-		self._BinryVal = None
+	@HexBinryVal.deleter
+	def HexBinryVal(self):
+		del self._HexBinryVal
+		self._HexBinryVal = None
 
 	@property
 	def Nm(self):
@@ -63,17 +63,17 @@ class VerificationValue1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def HexBinryVal(self):
-		return self._HexBinryVal
+	def TxtVal(self):
+		return self._TxtVal
 
-	@HexBinryVal.setter
-	def HexBinryVal(self, value):
-		self._HexBinryVal = value if type(value) != base_types.auto else self.make_default("HexBinryVal")
+	@TxtVal.setter
+	def TxtVal(self, value):
+		self._TxtVal = value if type(value) != base_types.auto else self.make_default("TxtVal")
 
-	@HexBinryVal.deleter
-	def HexBinryVal(self):
-		del self._HexBinryVal
-		self._HexBinryVal = None
+	@TxtVal.deleter
+	def TxtVal(self):
+		del self._TxtVal
+		self._TxtVal = None
 
 	@property
 	def VldtyEndDt(self):
@@ -89,25 +89,25 @@ class VerificationValue1(base_types._BaseFieldType):
 		self._VldtyEndDt = None
 
 	@property
-	def TxtVal(self):
-		return self._TxtVal
+	def VldtyEndTm(self):
+		return self._VldtyEndTm
 
-	@TxtVal.setter
-	def TxtVal(self, value):
-		self._TxtVal = value if type(value) != base_types.auto else self.make_default("TxtVal")
+	@VldtyEndTm.setter
+	def VldtyEndTm(self, value):
+		self._VldtyEndTm = value if type(value) != base_types.auto else self.make_default("VldtyEndTm")
 
-	@TxtVal.deleter
-	def TxtVal(self):
-		del self._TxtVal
-		self._TxtVal = None
+	@VldtyEndTm.deleter
+	def VldtyEndTm(self):
+		del self._VldtyEndTm
+		self._VldtyEndTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldtyEndTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BinryVal', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HexBinryVal', type=Max9999HexBinaryText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxtVal', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyEndTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

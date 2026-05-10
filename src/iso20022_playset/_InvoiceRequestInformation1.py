@@ -1,29 +1,29 @@
 from . import base_types
-from ._PaymentInformation15 import PaymentInformation15
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
 from ._DocumentGeneralInformation1 import DocumentGeneralInformation1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PaymentInformation15 import PaymentInformation15
+from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
 from ._ReferredDocumentInformation2 import ReferredDocumentInformation2
-from ._InvoiceTotals1 import InvoiceTotals1
 from ._PartyIdentificationAndContactInformation1 import PartyIdentificationAndContactInformation1
 from ._Instalment1 import Instalment1
+from ._InvoiceTotals1 import InvoiceTotals1
 from ._PartyAndAccountIdentificationAndContactInformation1 import PartyAndAccountIdentificationAndContactInformation1
 
 class InvoiceRequestInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_RfrdDoc", "_CdtDbtNoteAmt", "_InstlmtInf", "_InvcGnlInf", "_Spplr", "_InvcTtlsInf", "_ReqdAmt", "_Buyr", "_InvcPmtInf"]
+	__slots__ = ["_RfrdDoc", "_InvcTtlsInf", "_Spplr", "_InstlmtInf", "_CdtDbtNoteAmt", "_InvcPmtInf", "_InvcGnlInf", "_Buyr", "_ReqdAmt"]
 	@property
-	def RfrdDoc(self):
-		return self._RfrdDoc
+	def Buyr(self):
+		return self._Buyr
 
-	@RfrdDoc.setter
-	def RfrdDoc(self, value):
-		self._RfrdDoc = value if type(value) != base_types.auto else self.make_default("RfrdDoc")
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
 
-	@RfrdDoc.deleter
-	def RfrdDoc(self):
-		del self._RfrdDoc
-		self._RfrdDoc = None
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
 
 	@property
 	def CdtDbtNoteAmt(self):
@@ -65,17 +65,17 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 		self._InvcGnlInf = None
 
 	@property
-	def Spplr(self):
-		return self._Spplr
+	def InvcPmtInf(self):
+		return self._InvcPmtInf
 
-	@Spplr.setter
-	def Spplr(self, value):
-		self._Spplr = value if type(value) != base_types.auto else self.make_default("Spplr")
+	@InvcPmtInf.setter
+	def InvcPmtInf(self, value):
+		self._InvcPmtInf = value if type(value) != base_types.auto else self.make_default("InvcPmtInf")
 
-	@Spplr.deleter
-	def Spplr(self):
-		del self._Spplr
-		self._Spplr = None
+	@InvcPmtInf.deleter
+	def InvcPmtInf(self):
+		del self._InvcPmtInf
+		self._InvcPmtInf = None
 
 	@property
 	def InvcTtlsInf(self):
@@ -104,40 +104,40 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 		self._ReqdAmt = None
 
 	@property
-	def Buyr(self):
-		return self._Buyr
+	def RfrdDoc(self):
+		return self._RfrdDoc
 
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+	@RfrdDoc.setter
+	def RfrdDoc(self, value):
+		self._RfrdDoc = value if type(value) != base_types.auto else self.make_default("RfrdDoc")
 
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
+	@RfrdDoc.deleter
+	def RfrdDoc(self):
+		del self._RfrdDoc
+		self._RfrdDoc = None
 
 	@property
-	def InvcPmtInf(self):
-		return self._InvcPmtInf
+	def Spplr(self):
+		return self._Spplr
 
-	@InvcPmtInf.setter
-	def InvcPmtInf(self, value):
-		self._InvcPmtInf = value if type(value) != base_types.auto else self.make_default("InvcPmtInf")
+	@Spplr.setter
+	def Spplr(self, value):
+		self._Spplr = value if type(value) != base_types.auto else self.make_default("Spplr")
 
-	@InvcPmtInf.deleter
-	def InvcPmtInf(self):
-		del self._InvcPmtInf
-		self._InvcPmtInf = None
+	@Spplr.deleter
+	def Spplr(self):
+		del self._Spplr
+		self._Spplr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RfrdDoc', type=ReferredDocumentInformation2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentificationAndContactInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtNoteAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstlmtInf', type=Instalment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvcGnlInf', type=DocumentGeneralInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Spplr', type=PartyAndAccountIdentificationAndContactInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcPmtInf', type=PaymentInformation15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvcTtlsInf', type=InvoiceTotals1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdAmt', type=FinancingRateOrAmountChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Buyr', type=PartyIdentificationAndContactInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvcPmtInf', type=PaymentInformation15, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RfrdDoc', type=ReferredDocumentInformation2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Spplr', type=PartyAndAccountIdentificationAndContactInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

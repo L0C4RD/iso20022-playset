@@ -1,12 +1,12 @@
 from . import base_types
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._Period4Choice import Period4Choice
 from ._ISODate import ISODate
+from ._Period4Choice import Period4Choice
 from ._Modification1Code import Modification1Code
+from ._CFIOct2015Identifier import CFIOct2015Identifier
 
 class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Idr", "_LastUpdtd", "_VldtyPrd", "_Mod"]
+	__slots__ = ["_Idr", "_LastUpdtd", "_Mod", "_VldtyPrd"]
 	@property
 	def Idr(self):
 		return self._Idr
@@ -34,19 +34,6 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 		self._LastUpdtd = None
 
 	@property
-	def VldtyPrd(self):
-		return self._VldtyPrd
-
-	@VldtyPrd.setter
-	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
-
-	@VldtyPrd.deleter
-	def VldtyPrd(self):
-		del self._VldtyPrd
-		self._VldtyPrd = None
-
-	@property
 	def Mod(self):
 		return self._Mod
 
@@ -59,10 +46,23 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 		del self._Mod
 		self._Mod = None
 
+	@property
+	def VldtyPrd(self):
+		return self._VldtyPrd
+
+	@VldtyPrd.setter
+	def VldtyPrd(self, value):
+		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
+
+	@VldtyPrd.deleter
+	def VldtyPrd(self):
+		del self._VldtyPrd
+		self._VldtyPrd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Idr', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

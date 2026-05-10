@@ -1,24 +1,11 @@
 from . import base_types
-from ._Header41 import Header41
 from ._ContentInformationType38 import ContentInformationType38
+from ._Header41 import Header41
 from ._SessionManagementRequest8 import SessionManagementRequest8
 
 class SaleToPOISessionManagementRequestV07(base_types._BaseFieldType):
 
 	__slots__ = ["_SsnMgmtReq", "_Hdr", "_SctyTrlr"]
-	@property
-	def SsnMgmtReq(self):
-		return self._SsnMgmtReq
-
-	@SsnMgmtReq.setter
-	def SsnMgmtReq(self, value):
-		self._SsnMgmtReq = value if type(value) != base_types.auto else self.make_default("SsnMgmtReq")
-
-	@SsnMgmtReq.deleter
-	def SsnMgmtReq(self):
-		del self._SsnMgmtReq
-		self._SsnMgmtReq = None
-
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -45,9 +32,22 @@ class SaleToPOISessionManagementRequestV07(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
+	@property
+	def SsnMgmtReq(self):
+		return self._SsnMgmtReq
+
+	@SsnMgmtReq.setter
+	def SsnMgmtReq(self, value):
+		self._SsnMgmtReq = value if type(value) != base_types.auto else self.make_default("SsnMgmtReq")
+
+	@SsnMgmtReq.deleter
+	def SsnMgmtReq(self):
+		del self._SsnMgmtReq
+		self._SsnMgmtReq = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SsnMgmtReq', type=SessionManagementRequest8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SsnMgmtReq', type=SessionManagementRequest8, min=1, max=1, mutex_group=None, array=False),
 	))
 

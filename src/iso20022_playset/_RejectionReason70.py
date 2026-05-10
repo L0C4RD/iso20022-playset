@@ -1,7 +1,7 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._ReportingMessageStatus2Code import ReportingMessageStatus2Code
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._Max140Text import Max140Text
 
 class RejectionReason70(base_types._BaseFieldType):
 

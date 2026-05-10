@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
 from ._SecuritiesTransactionPrice1 import SecuritiesTransactionPrice1
+from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
 
 class SecuritiesTransactionPrice4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoPric", "_Pric"]
+	__slots__ = ["_Pric", "_NoPric"]
 	@property
 	def NoPric(self):
 		return self._NoPric

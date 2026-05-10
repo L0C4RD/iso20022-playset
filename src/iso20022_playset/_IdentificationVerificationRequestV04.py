@@ -1,23 +1,23 @@
 from . import base_types
-from ._IdentificationVerification5 import IdentificationVerification5
 from ._SupplementaryData1 import SupplementaryData1
 from ._IdentificationAssignment4 import IdentificationAssignment4
+from ._IdentificationVerification5 import IdentificationVerification5
 
 class IdentificationVerificationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrfctn", "_SplmtryData", "_Assgnmt"]
+	__slots__ = ["_Assgnmt", "_SplmtryData", "_Vrfctn"]
 	@property
-	def Vrfctn(self):
-		return self._Vrfctn
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@Vrfctn.setter
-	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
 
-	@Vrfctn.deleter
-	def Vrfctn(self):
-		del self._Vrfctn
-		self._Vrfctn = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class IdentificationVerificationRequestV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Assgnmt(self):
-		return self._Assgnmt
+	def Vrfctn(self):
+		return self._Vrfctn
 
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+	@Vrfctn.setter
+	def Vrfctn(self, value):
+		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
 
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
+	@Vrfctn.deleter
+	def Vrfctn(self):
+		del self._Vrfctn
+		self._Vrfctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrfctn', type=IdentificationVerification5, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrfctn', type=IdentificationVerification5, min=1, max=None, mutex_group=None, array=True),
 	))
 

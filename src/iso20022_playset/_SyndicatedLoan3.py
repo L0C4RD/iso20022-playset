@@ -1,25 +1,12 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ExchangeRate1 import ExchangeRate1
 from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._TradeParty6 import TradeParty6
+from ._ExchangeRate1 import ExchangeRate1
 
 class SyndicatedLoan3(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRateInf", "_Amt", "_Brrwr", "_Lndr", "_Shr"]
-	@property
-	def XchgRateInf(self):
-		return self._XchgRateInf
-
-	@XchgRateInf.setter
-	def XchgRateInf(self, value):
-		self._XchgRateInf = value if type(value) != base_types.auto else self.make_default("XchgRateInf")
-
-	@XchgRateInf.deleter
-	def XchgRateInf(self):
-		del self._XchgRateInf
-		self._XchgRateInf = None
-
+	__slots__ = ["_Shr", "_Lndr", "_Amt", "_Brrwr", "_XchgRateInf"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -72,11 +59,24 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 		del self._Shr
 		self._Shr = None
 
+	@property
+	def XchgRateInf(self):
+		return self._XchgRateInf
+
+	@XchgRateInf.setter
+	def XchgRateInf(self, value):
+		self._XchgRateInf = value if type(value) != base_types.auto else self.make_default("XchgRateInf")
+
+	@XchgRateInf.deleter
+	def XchgRateInf(self):
+		del self._XchgRateInf
+		self._XchgRateInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRate1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brrwr', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lndr', type=TradeParty6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Shr', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRate1, min=0, max=1, mutex_group=None, array=False),
 	))
 

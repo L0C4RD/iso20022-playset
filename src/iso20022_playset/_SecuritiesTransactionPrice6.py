@@ -5,7 +5,20 @@ from ._PriceStatus1Code import PriceStatus1Code
 
 class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlTkn", "_Pdg", "_Ccy"]
+	__slots__ = ["_Pdg", "_Ccy", "_DgtlTkn"]
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	@property
 	def DgtlTkn(self):
 		return self._DgtlTkn
@@ -32,22 +45,9 @@ class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 		del self._Pdg
 		self._Pdg = None
 
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlTkn', type=DigitalTokenAmount2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pdg', type=PriceStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

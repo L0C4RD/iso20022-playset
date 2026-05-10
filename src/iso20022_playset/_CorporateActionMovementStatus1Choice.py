@@ -1,23 +1,23 @@
 from . import base_types
-from ._CorporateActionMovementProcessingStatus1 import CorporateActionMovementProcessingStatus1
-from ._CorporateActionMovementFailedStatus1 import CorporateActionMovementFailedStatus1
 from ._CorporateActionMovementRejectionStatus1 import CorporateActionMovementRejectionStatus1
+from ._CorporateActionMovementFailedStatus1 import CorporateActionMovementFailedStatus1
+from ._CorporateActionMovementProcessingStatus1 import CorporateActionMovementProcessingStatus1
 
 class CorporateActionMovementStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdSts", "_PrcdSts", "_FaildSts"]
+	__slots__ = ["_FaildSts", "_PrcdSts", "_RjctdSts"]
 	@property
-	def RjctdSts(self):
-		return self._RjctdSts
+	def FaildSts(self):
+		return self._FaildSts
 
-	@RjctdSts.setter
-	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != base_types.auto else self.make_default("RjctdSts")
+	@FaildSts.setter
+	def FaildSts(self, value):
+		self._FaildSts = value if type(value) != base_types.auto else self.make_default("FaildSts")
 
-	@RjctdSts.deleter
-	def RjctdSts(self):
-		del self._RjctdSts
-		self._RjctdSts = None
+	@FaildSts.deleter
+	def FaildSts(self):
+		del self._FaildSts
+		self._FaildSts = None
 
 	@property
 	def PrcdSts(self):
@@ -33,21 +33,21 @@ class CorporateActionMovementStatus1Choice(base_types._BaseFieldType):
 		self._PrcdSts = None
 
 	@property
-	def FaildSts(self):
-		return self._FaildSts
+	def RjctdSts(self):
+		return self._RjctdSts
 
-	@FaildSts.setter
-	def FaildSts(self, value):
-		self._FaildSts = value if type(value) != base_types.auto else self.make_default("FaildSts")
+	@RjctdSts.setter
+	def RjctdSts(self, value):
+		self._RjctdSts = value if type(value) != base_types.auto else self.make_default("RjctdSts")
 
-	@FaildSts.deleter
-	def FaildSts(self):
-		del self._FaildSts
-		self._FaildSts = None
+	@RjctdSts.deleter
+	def RjctdSts(self):
+		del self._RjctdSts
+		self._RjctdSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctdSts', type=CorporateActionMovementRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrcdSts', type=CorporateActionMovementProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaildSts', type=CorporateActionMovementFailedStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrcdSts', type=CorporateActionMovementProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RjctdSts', type=CorporateActionMovementRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
 

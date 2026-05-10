@@ -1,26 +1,13 @@
 from . import base_types
+from ._ISODate import ISODate
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._FlowDirectionType1Code import FlowDirectionType1Code
 from ._FundBalance1 import FundBalance1
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._ISODate import ISODate
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class NetCashForecast4(base_types._BaseFieldType):
 
-	__slots__ = ["_FlowDrctn", "_AddtlBal", "_CshSttlmDt", "_NetAmt", "_NetUnitsNb"]
-	@property
-	def FlowDrctn(self):
-		return self._FlowDrctn
-
-	@FlowDrctn.setter
-	def FlowDrctn(self, value):
-		self._FlowDrctn = value if type(value) != base_types.auto else self.make_default("FlowDrctn")
-
-	@FlowDrctn.deleter
-	def FlowDrctn(self):
-		del self._FlowDrctn
-		self._FlowDrctn = None
-
+	__slots__ = ["_NetUnitsNb", "_NetAmt", "_FlowDrctn", "_AddtlBal", "_CshSttlmDt"]
 	@property
 	def AddtlBal(self):
 		return self._AddtlBal
@@ -46,6 +33,19 @@ class NetCashForecast4(base_types._BaseFieldType):
 	def CshSttlmDt(self):
 		del self._CshSttlmDt
 		self._CshSttlmDt = None
+
+	@property
+	def FlowDrctn(self):
+		return self._FlowDrctn
+
+	@FlowDrctn.setter
+	def FlowDrctn(self, value):
+		self._FlowDrctn = value if type(value) != base_types.auto else self.make_default("FlowDrctn")
+
+	@FlowDrctn.deleter
+	def FlowDrctn(self):
+		del self._FlowDrctn
+		self._FlowDrctn = None
 
 	@property
 	def NetAmt(self):
@@ -74,9 +74,9 @@ class NetCashForecast4(base_types._BaseFieldType):
 		self._NetUnitsNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FlowDrctn', type=FlowDirectionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBal', type=FundBalance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlowDrctn', type=FlowDirectionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 	))

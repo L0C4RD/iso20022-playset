@@ -1,83 +1,31 @@
 from . import base_types
-from ._Count1 import Count1
-from ._BICIdentification1 import BICIdentification1
-from ._ComparisonResult2 import ComparisonResult2
-from ._MessageIdentification1 import MessageIdentification1
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._PendingActivity2 import PendingActivity2
-from ._DocumentIdentification3 import DocumentIdentification3
 from ._TransactionStatus4 import TransactionStatus4
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._ComparisonResult2 import ComparisonResult2
+from ._BICIdentification1 import BICIdentification1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._PartyIdentification26 import PartyIdentification26
 from ._DocumentIdentification1 import DocumentIdentification1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._DocumentIdentification5 import DocumentIdentification5
+from ._PendingActivity2 import PendingActivity2
+from ._Count1 import Count1
+from ._MessageIdentification1 import MessageIdentification1
 
 class DeltaReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_SellrBk", "_UsrTxRef", "_EstblishdBaselnId", "_SubmitrPropsdBaselnRef", "_Buyr", "_UpdtdElmt", "_Sellr", "_AmdmntNb", "_TxId", "_RptId", "_ReqForActn", "_TxSts"]
+	__slots__ = ["_BuyrBk", "_TxSts", "_TxId", "_RptId", "_ReqForActn", "_Sellr", "_SellrBk", "_AmdmntNb", "_SubmitrPropsdBaselnRef", "_Buyr", "_UsrTxRef", "_EstblishdBaselnId", "_UpdtdElmt"]
 	@property
-	def BuyrBk(self):
-		return self._BuyrBk
+	def AmdmntNb(self):
+		return self._AmdmntNb
 
-	@BuyrBk.setter
-	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
+	@AmdmntNb.setter
+	def AmdmntNb(self, value):
+		self._AmdmntNb = value if type(value) != base_types.auto else self.make_default("AmdmntNb")
 
-	@BuyrBk.deleter
-	def BuyrBk(self):
-		del self._BuyrBk
-		self._BuyrBk = None
-
-	@property
-	def SellrBk(self):
-		return self._SellrBk
-
-	@SellrBk.setter
-	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
-
-	@SellrBk.deleter
-	def SellrBk(self):
-		del self._SellrBk
-		self._SellrBk = None
-
-	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
-	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
-
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
-
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
-
-	@property
-	def SubmitrPropsdBaselnRef(self):
-		return self._SubmitrPropsdBaselnRef
-
-	@SubmitrPropsdBaselnRef.setter
-	def SubmitrPropsdBaselnRef(self, value):
-		self._SubmitrPropsdBaselnRef = value if type(value) != base_types.auto else self.make_default("SubmitrPropsdBaselnRef")
-
-	@SubmitrPropsdBaselnRef.deleter
-	def SubmitrPropsdBaselnRef(self):
-		del self._SubmitrPropsdBaselnRef
-		self._SubmitrPropsdBaselnRef = None
+	@AmdmntNb.deleter
+	def AmdmntNb(self):
+		del self._AmdmntNb
+		self._AmdmntNb = None
 
 	@property
 	def Buyr(self):
@@ -93,69 +41,30 @@ class DeltaReportV03(base_types._BaseFieldType):
 		self._Buyr = None
 
 	@property
-	def UpdtdElmt(self):
-		return self._UpdtdElmt
+	def BuyrBk(self):
+		return self._BuyrBk
 
-	@UpdtdElmt.setter
-	def UpdtdElmt(self, value):
-		self._UpdtdElmt = value if type(value) != base_types.auto else self.make_default("UpdtdElmt")
+	@BuyrBk.setter
+	def BuyrBk(self, value):
+		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
 
-	@UpdtdElmt.deleter
-	def UpdtdElmt(self):
-		del self._UpdtdElmt
-		self._UpdtdElmt = None
-
-	@property
-	def Sellr(self):
-		return self._Sellr
-
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
-
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
+	@BuyrBk.deleter
+	def BuyrBk(self):
+		del self._BuyrBk
+		self._BuyrBk = None
 
 	@property
-	def AmdmntNb(self):
-		return self._AmdmntNb
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
 
-	@AmdmntNb.setter
-	def AmdmntNb(self, value):
-		self._AmdmntNb = value if type(value) != base_types.auto else self.make_default("AmdmntNb")
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
 
-	@AmdmntNb.deleter
-	def AmdmntNb(self):
-		del self._AmdmntNb
-		self._AmdmntNb = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
 
 	@property
 	def ReqForActn(self):
@@ -171,6 +80,71 @@ class DeltaReportV03(base_types._BaseFieldType):
 		self._ReqForActn = None
 
 	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
+
+	@property
+	def SellrBk(self):
+		return self._SellrBk
+
+	@SellrBk.setter
+	def SellrBk(self, value):
+		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
+
+	@SellrBk.deleter
+	def SellrBk(self):
+		del self._SellrBk
+		self._SellrBk = None
+
+	@property
+	def SubmitrPropsdBaselnRef(self):
+		return self._SubmitrPropsdBaselnRef
+
+	@SubmitrPropsdBaselnRef.setter
+	def SubmitrPropsdBaselnRef(self, value):
+		self._SubmitrPropsdBaselnRef = value if type(value) != base_types.auto else self.make_default("SubmitrPropsdBaselnRef")
+
+	@SubmitrPropsdBaselnRef.deleter
+	def SubmitrPropsdBaselnRef(self):
+		del self._SubmitrPropsdBaselnRef
+		self._SubmitrPropsdBaselnRef = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
 	def TxSts(self):
 		return self._TxSts
 
@@ -183,19 +157,45 @@ class DeltaReportV03(base_types._BaseFieldType):
 		del self._TxSts
 		self._TxSts = None
 
+	@property
+	def UpdtdElmt(self):
+		return self._UpdtdElmt
+
+	@UpdtdElmt.setter
+	def UpdtdElmt(self, value):
+		self._UpdtdElmt = value if type(value) != base_types.auto else self.make_default("UpdtdElmt")
+
+	@UpdtdElmt.deleter
+	def UpdtdElmt(self):
+		del self._UpdtdElmt
+		self._UpdtdElmt = None
+
+	@property
+	def UsrTxRef(self):
+		return self._UsrTxRef
+
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitrPropsdBaselnRef', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdtdElmt', type=ComparisonResult2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrPropsdBaselnRef', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdtdElmt', type=ComparisonResult2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

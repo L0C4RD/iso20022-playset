@@ -1,10 +1,10 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
 from ._UnitOfMeasure3Choice import UnitOfMeasure3Choice
+from ._DecimalNumber import DecimalNumber
 
 class Quantity10(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_Val"]
+	__slots__ = ["_Val", "_UnitOfMeasr"]
 	@property
 	def UnitOfMeasr(self):
 		return self._UnitOfMeasr

@@ -1,11 +1,11 @@
 from . import base_types
-from ._Period4Choice import Period4Choice
 from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from ._Period4Choice import Period4Choice
 from ._ISODateTime import ISODateTime
 
 class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgNtty", "_SubmissnDtTm", "_RptgPrd"]
+	__slots__ = ["_RptgPrd", "_SubmissnDtTm", "_RptgNtty"]
 	@property
 	def RptgNtty(self):
 		return self._RptgNtty
@@ -20,19 +20,6 @@ class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 		self._RptgNtty = None
 
 	@property
-	def SubmissnDtTm(self):
-		return self._SubmissnDtTm
-
-	@SubmissnDtTm.setter
-	def SubmissnDtTm(self, value):
-		self._SubmissnDtTm = value if type(value) != base_types.auto else self.make_default("SubmissnDtTm")
-
-	@SubmissnDtTm.deleter
-	def SubmissnDtTm(self):
-		del self._SubmissnDtTm
-		self._SubmissnDtTm = None
-
-	@property
 	def RptgPrd(self):
 		return self._RptgPrd
 
@@ -45,9 +32,22 @@ class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 		del self._RptgPrd
 		self._RptgPrd = None
 
+	@property
+	def SubmissnDtTm(self):
+		return self._SubmissnDtTm
+
+	@SubmissnDtTm.setter
+	def SubmissnDtTm(self, value):
+		self._SubmissnDtTm = value if type(value) != base_types.auto else self.make_default("SubmissnDtTm")
+
+	@SubmissnDtTm.deleter
+	def SubmissnDtTm(self):
+		del self._SubmissnDtTm
+		self._SubmissnDtTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptgNtty', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

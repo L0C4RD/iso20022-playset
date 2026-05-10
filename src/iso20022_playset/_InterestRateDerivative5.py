@@ -1,14 +1,14 @@
 from . import base_types
-from ._FloatingInterestRate8 import FloatingInterestRate8
-from ._InterestRateDerivative2Choice import InterestRateDerivative2Choice
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._InflationIndex1Choice import InflationIndex1Choice
 from ._ISODate import ISODate
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BondDerivative2 import BondDerivative2
+from ._FloatingInterestRate8 import FloatingInterestRate8
+from ._InflationIndex1Choice import InflationIndex1Choice
+from ._InterestRateDerivative2Choice import InterestRateDerivative2Choice
 
 class InterestRateDerivative5(base_types._BaseFieldType):
 
-	__slots__ = ["_InfltnIndx", "_UndrlygBd", "_UndrlygTp", "_SwptnNtnlCcy", "_UndrlygSwpMtrtyDt", "_IntrstRateRef"]
+	__slots__ = ["_UndrlygTp", "_SwptnNtnlCcy", "_UndrlygBd", "_InfltnIndx", "_IntrstRateRef", "_UndrlygSwpMtrtyDt"]
 	@property
 	def InfltnIndx(self):
 		return self._InfltnIndx
@@ -23,30 +23,17 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 		self._InfltnIndx = None
 
 	@property
-	def UndrlygBd(self):
-		return self._UndrlygBd
+	def IntrstRateRef(self):
+		return self._IntrstRateRef
 
-	@UndrlygBd.setter
-	def UndrlygBd(self, value):
-		self._UndrlygBd = value if type(value) != base_types.auto else self.make_default("UndrlygBd")
+	@IntrstRateRef.setter
+	def IntrstRateRef(self, value):
+		self._IntrstRateRef = value if type(value) != base_types.auto else self.make_default("IntrstRateRef")
 
-	@UndrlygBd.deleter
-	def UndrlygBd(self):
-		del self._UndrlygBd
-		self._UndrlygBd = None
-
-	@property
-	def UndrlygTp(self):
-		return self._UndrlygTp
-
-	@UndrlygTp.setter
-	def UndrlygTp(self, value):
-		self._UndrlygTp = value if type(value) != base_types.auto else self.make_default("UndrlygTp")
-
-	@UndrlygTp.deleter
-	def UndrlygTp(self):
-		del self._UndrlygTp
-		self._UndrlygTp = None
+	@IntrstRateRef.deleter
+	def IntrstRateRef(self):
+		del self._IntrstRateRef
+		self._IntrstRateRef = None
 
 	@property
 	def SwptnNtnlCcy(self):
@@ -62,6 +49,19 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 		self._SwptnNtnlCcy = None
 
 	@property
+	def UndrlygBd(self):
+		return self._UndrlygBd
+
+	@UndrlygBd.setter
+	def UndrlygBd(self, value):
+		self._UndrlygBd = value if type(value) != base_types.auto else self.make_default("UndrlygBd")
+
+	@UndrlygBd.deleter
+	def UndrlygBd(self):
+		del self._UndrlygBd
+		self._UndrlygBd = None
+
+	@property
 	def UndrlygSwpMtrtyDt(self):
 		return self._UndrlygSwpMtrtyDt
 
@@ -75,24 +75,24 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 		self._UndrlygSwpMtrtyDt = None
 
 	@property
-	def IntrstRateRef(self):
-		return self._IntrstRateRef
+	def UndrlygTp(self):
+		return self._UndrlygTp
 
-	@IntrstRateRef.setter
-	def IntrstRateRef(self, value):
-		self._IntrstRateRef = value if type(value) != base_types.auto else self.make_default("IntrstRateRef")
+	@UndrlygTp.setter
+	def UndrlygTp(self, value):
+		self._UndrlygTp = value if type(value) != base_types.auto else self.make_default("UndrlygTp")
 
-	@IntrstRateRef.deleter
-	def IntrstRateRef(self):
-		del self._IntrstRateRef
-		self._IntrstRateRef = None
+	@UndrlygTp.deleter
+	def UndrlygTp(self):
+		del self._UndrlygTp
+		self._UndrlygTp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InfltnIndx', type=InflationIndex1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygBd', type=BondDerivative2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygTp', type=InterestRateDerivative2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SwptnNtnlCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygSwpMtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRateRef', type=FloatingInterestRate8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SwptnNtnlCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygBd', type=BondDerivative2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygSwpMtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygTp', type=InterestRateDerivative2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

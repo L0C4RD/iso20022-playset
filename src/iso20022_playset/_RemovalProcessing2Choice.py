@@ -1,23 +1,23 @@
 from . import base_types
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._GenericIdentification37 import GenericIdentification37
 from ._CountryCode import CountryCode
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class RemovalProcessing2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrCtry", "_IndxId", "_FinInstrmId"]
+	__slots__ = ["_IssrCtry", "_FinInstrmId", "_IndxId"]
 	@property
-	def IssrCtry(self):
-		return self._IssrCtry
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@IssrCtry.setter
-	def IssrCtry(self, value):
-		self._IssrCtry = value if type(value) != base_types.auto else self.make_default("IssrCtry")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
-	@IssrCtry.deleter
-	def IssrCtry(self):
-		del self._IssrCtry
-		self._IssrCtry = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
 	def IndxId(self):
@@ -33,21 +33,21 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 		self._IndxId = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
+	def IssrCtry(self):
+		return self._IssrCtry
 
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+	@IssrCtry.setter
+	def IssrCtry(self, value):
+		self._IssrCtry = value if type(value) != base_types.auto else self.make_default("IssrCtry")
 
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
+	@IssrCtry.deleter
+	def IssrCtry(self):
+		del self._IssrCtry
+		self._IssrCtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IndxId', type=GenericIdentification37, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndxId', type=GenericIdentification37, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

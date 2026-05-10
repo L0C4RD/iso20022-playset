@@ -1,64 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._PaymentInstrument19Choice import PaymentInstrument19Choice
-from ._PaymentInstrument24Choice import PaymentInstrument24Choice
 from ._PercentageBoundedRate import PercentageBoundedRate
+from ._PaymentInstrument24Choice import PaymentInstrument24Choice
 
 class PaymentInstrument17(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstPmtInstrm", "_SttlmCcy", "_SvgsPlanPmtInstrm", "_SbcptPmtInstrm", "_DvddPctg", "_DvddPmtInstrm", "_RedPmtInstrm"]
-	@property
-	def IntrstPmtInstrm(self):
-		return self._IntrstPmtInstrm
-
-	@IntrstPmtInstrm.setter
-	def IntrstPmtInstrm(self, value):
-		self._IntrstPmtInstrm = value if type(value) != base_types.auto else self.make_default("IntrstPmtInstrm")
-
-	@IntrstPmtInstrm.deleter
-	def IntrstPmtInstrm(self):
-		del self._IntrstPmtInstrm
-		self._IntrstPmtInstrm = None
-
-	@property
-	def SttlmCcy(self):
-		return self._SttlmCcy
-
-	@SttlmCcy.setter
-	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
-
-	@SttlmCcy.deleter
-	def SttlmCcy(self):
-		del self._SttlmCcy
-		self._SttlmCcy = None
-
-	@property
-	def SvgsPlanPmtInstrm(self):
-		return self._SvgsPlanPmtInstrm
-
-	@SvgsPlanPmtInstrm.setter
-	def SvgsPlanPmtInstrm(self, value):
-		self._SvgsPlanPmtInstrm = value if type(value) != base_types.auto else self.make_default("SvgsPlanPmtInstrm")
-
-	@SvgsPlanPmtInstrm.deleter
-	def SvgsPlanPmtInstrm(self):
-		del self._SvgsPlanPmtInstrm
-		self._SvgsPlanPmtInstrm = None
-
-	@property
-	def SbcptPmtInstrm(self):
-		return self._SbcptPmtInstrm
-
-	@SbcptPmtInstrm.setter
-	def SbcptPmtInstrm(self, value):
-		self._SbcptPmtInstrm = value if type(value) != base_types.auto else self.make_default("SbcptPmtInstrm")
-
-	@SbcptPmtInstrm.deleter
-	def SbcptPmtInstrm(self):
-		del self._SbcptPmtInstrm
-		self._SbcptPmtInstrm = None
-
+	__slots__ = ["_DvddPmtInstrm", "_RedPmtInstrm", "_SttlmCcy", "_SbcptPmtInstrm", "_IntrstPmtInstrm", "_SvgsPlanPmtInstrm", "_DvddPctg"]
 	@property
 	def DvddPctg(self):
 		return self._DvddPctg
@@ -86,6 +34,19 @@ class PaymentInstrument17(base_types._BaseFieldType):
 		self._DvddPmtInstrm = None
 
 	@property
+	def IntrstPmtInstrm(self):
+		return self._IntrstPmtInstrm
+
+	@IntrstPmtInstrm.setter
+	def IntrstPmtInstrm(self, value):
+		self._IntrstPmtInstrm = value if type(value) != base_types.auto else self.make_default("IntrstPmtInstrm")
+
+	@IntrstPmtInstrm.deleter
+	def IntrstPmtInstrm(self):
+		del self._IntrstPmtInstrm
+		self._IntrstPmtInstrm = None
+
+	@property
 	def RedPmtInstrm(self):
 		return self._RedPmtInstrm
 
@@ -98,13 +59,52 @@ class PaymentInstrument17(base_types._BaseFieldType):
 		del self._RedPmtInstrm
 		self._RedPmtInstrm = None
 
+	@property
+	def SbcptPmtInstrm(self):
+		return self._SbcptPmtInstrm
+
+	@SbcptPmtInstrm.setter
+	def SbcptPmtInstrm(self, value):
+		self._SbcptPmtInstrm = value if type(value) != base_types.auto else self.make_default("SbcptPmtInstrm")
+
+	@SbcptPmtInstrm.deleter
+	def SbcptPmtInstrm(self):
+		del self._SbcptPmtInstrm
+		self._SbcptPmtInstrm = None
+
+	@property
+	def SttlmCcy(self):
+		return self._SttlmCcy
+
+	@SttlmCcy.setter
+	def SttlmCcy(self, value):
+		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+
+	@SttlmCcy.deleter
+	def SttlmCcy(self):
+		del self._SttlmCcy
+		self._SttlmCcy = None
+
+	@property
+	def SvgsPlanPmtInstrm(self):
+		return self._SvgsPlanPmtInstrm
+
+	@SvgsPlanPmtInstrm.setter
+	def SvgsPlanPmtInstrm(self, value):
+		self._SvgsPlanPmtInstrm = value if type(value) != base_types.auto else self.make_default("SvgsPlanPmtInstrm")
+
+	@SvgsPlanPmtInstrm.deleter
+	def SvgsPlanPmtInstrm(self):
+		del self._SvgsPlanPmtInstrm
+		self._SvgsPlanPmtInstrm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstPmtInstrm', type=PaymentInstrument19Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvgsPlanPmtInstrm', type=PaymentInstrument24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbcptPmtInstrm', type=PaymentInstrument24Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvddPctg', type=PercentageBoundedRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvddPmtInstrm', type=PaymentInstrument19Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstPmtInstrm', type=PaymentInstrument19Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RedPmtInstrm', type=PaymentInstrument19Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbcptPmtInstrm', type=PaymentInstrument24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvgsPlanPmtInstrm', type=PaymentInstrument24Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

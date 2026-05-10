@@ -4,7 +4,7 @@ from ._LimitIdentification9 import LimitIdentification9
 
 class LimitStructure3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AllCurLmts", "_CurLmtId"]
+	__slots__ = ["_CurLmtId", "_AllCurLmts"]
 	@property
 	def AllCurLmts(self):
 		return self._AllCurLmts

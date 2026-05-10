@@ -1,38 +1,12 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._SettlementMethod1Code import SettlementMethod1Code
 from ._CashAccount40 import CashAccount40
 from ._ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
+from ._SettlementMethod1Code import SettlementMethod1Code
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class SettlementInstruction15(base_types._BaseFieldType):
 
-	__slots__ = ["_ThrdRmbrsmntAgtAcct", "_SttlmMtd", "_ClrSys", "_InstgRmbrsmntAgt", "_InstgRmbrsmntAgtAcct", "_InstdRmbrsmntAgt", "_InstdRmbrsmntAgtAcct", "_ThrdRmbrsmntAgt", "_SttlmAcct"]
-	@property
-	def ThrdRmbrsmntAgtAcct(self):
-		return self._ThrdRmbrsmntAgtAcct
-
-	@ThrdRmbrsmntAgtAcct.setter
-	def ThrdRmbrsmntAgtAcct(self, value):
-		self._ThrdRmbrsmntAgtAcct = value if type(value) != base_types.auto else self.make_default("ThrdRmbrsmntAgtAcct")
-
-	@ThrdRmbrsmntAgtAcct.deleter
-	def ThrdRmbrsmntAgtAcct(self):
-		del self._ThrdRmbrsmntAgtAcct
-		self._ThrdRmbrsmntAgtAcct = None
-
-	@property
-	def SttlmMtd(self):
-		return self._SttlmMtd
-
-	@SttlmMtd.setter
-	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
-
-	@SttlmMtd.deleter
-	def SttlmMtd(self):
-		del self._SttlmMtd
-		self._SttlmMtd = None
-
+	__slots__ = ["_ClrSys", "_InstgRmbrsmntAgt", "_SttlmMtd", "_InstgRmbrsmntAgtAcct", "_InstdRmbrsmntAgtAcct", "_InstdRmbrsmntAgt", "_ThrdRmbrsmntAgtAcct", "_SttlmAcct", "_ThrdRmbrsmntAgt"]
 	@property
 	def ClrSys(self):
 		return self._ClrSys
@@ -45,32 +19,6 @@ class SettlementInstruction15(base_types._BaseFieldType):
 	def ClrSys(self):
 		del self._ClrSys
 		self._ClrSys = None
-
-	@property
-	def InstgRmbrsmntAgt(self):
-		return self._InstgRmbrsmntAgt
-
-	@InstgRmbrsmntAgt.setter
-	def InstgRmbrsmntAgt(self, value):
-		self._InstgRmbrsmntAgt = value if type(value) != base_types.auto else self.make_default("InstgRmbrsmntAgt")
-
-	@InstgRmbrsmntAgt.deleter
-	def InstgRmbrsmntAgt(self):
-		del self._InstgRmbrsmntAgt
-		self._InstgRmbrsmntAgt = None
-
-	@property
-	def InstgRmbrsmntAgtAcct(self):
-		return self._InstgRmbrsmntAgtAcct
-
-	@InstgRmbrsmntAgtAcct.setter
-	def InstgRmbrsmntAgtAcct(self, value):
-		self._InstgRmbrsmntAgtAcct = value if type(value) != base_types.auto else self.make_default("InstgRmbrsmntAgtAcct")
-
-	@InstgRmbrsmntAgtAcct.deleter
-	def InstgRmbrsmntAgtAcct(self):
-		del self._InstgRmbrsmntAgtAcct
-		self._InstgRmbrsmntAgtAcct = None
 
 	@property
 	def InstdRmbrsmntAgt(self):
@@ -99,17 +47,30 @@ class SettlementInstruction15(base_types._BaseFieldType):
 		self._InstdRmbrsmntAgtAcct = None
 
 	@property
-	def ThrdRmbrsmntAgt(self):
-		return self._ThrdRmbrsmntAgt
+	def InstgRmbrsmntAgt(self):
+		return self._InstgRmbrsmntAgt
 
-	@ThrdRmbrsmntAgt.setter
-	def ThrdRmbrsmntAgt(self, value):
-		self._ThrdRmbrsmntAgt = value if type(value) != base_types.auto else self.make_default("ThrdRmbrsmntAgt")
+	@InstgRmbrsmntAgt.setter
+	def InstgRmbrsmntAgt(self, value):
+		self._InstgRmbrsmntAgt = value if type(value) != base_types.auto else self.make_default("InstgRmbrsmntAgt")
 
-	@ThrdRmbrsmntAgt.deleter
-	def ThrdRmbrsmntAgt(self):
-		del self._ThrdRmbrsmntAgt
-		self._ThrdRmbrsmntAgt = None
+	@InstgRmbrsmntAgt.deleter
+	def InstgRmbrsmntAgt(self):
+		del self._InstgRmbrsmntAgt
+		self._InstgRmbrsmntAgt = None
+
+	@property
+	def InstgRmbrsmntAgtAcct(self):
+		return self._InstgRmbrsmntAgtAcct
+
+	@InstgRmbrsmntAgtAcct.setter
+	def InstgRmbrsmntAgtAcct(self, value):
+		self._InstgRmbrsmntAgtAcct = value if type(value) != base_types.auto else self.make_default("InstgRmbrsmntAgtAcct")
+
+	@InstgRmbrsmntAgtAcct.deleter
+	def InstgRmbrsmntAgtAcct(self):
+		del self._InstgRmbrsmntAgtAcct
+		self._InstgRmbrsmntAgtAcct = None
 
 	@property
 	def SttlmAcct(self):
@@ -124,15 +85,54 @@ class SettlementInstruction15(base_types._BaseFieldType):
 		del self._SttlmAcct
 		self._SttlmAcct = None
 
+	@property
+	def SttlmMtd(self):
+		return self._SttlmMtd
+
+	@SttlmMtd.setter
+	def SttlmMtd(self, value):
+		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
+
+	@SttlmMtd.deleter
+	def SttlmMtd(self):
+		del self._SttlmMtd
+		self._SttlmMtd = None
+
+	@property
+	def ThrdRmbrsmntAgt(self):
+		return self._ThrdRmbrsmntAgt
+
+	@ThrdRmbrsmntAgt.setter
+	def ThrdRmbrsmntAgt(self, value):
+		self._ThrdRmbrsmntAgt = value if type(value) != base_types.auto else self.make_default("ThrdRmbrsmntAgt")
+
+	@ThrdRmbrsmntAgt.deleter
+	def ThrdRmbrsmntAgt(self):
+		del self._ThrdRmbrsmntAgt
+		self._ThrdRmbrsmntAgt = None
+
+	@property
+	def ThrdRmbrsmntAgtAcct(self):
+		return self._ThrdRmbrsmntAgtAcct
+
+	@ThrdRmbrsmntAgtAcct.setter
+	def ThrdRmbrsmntAgtAcct(self, value):
+		self._ThrdRmbrsmntAgtAcct = value if type(value) != base_types.auto else self.make_default("ThrdRmbrsmntAgtAcct")
+
+	@ThrdRmbrsmntAgtAcct.deleter
+	def ThrdRmbrsmntAgtAcct(self):
+		del self._ThrdRmbrsmntAgtAcct
+		self._ThrdRmbrsmntAgtAcct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ThrdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmMtd', type=SettlementMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSys', type=ClearingSystemIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThrdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmMtd', type=SettlementMethod1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

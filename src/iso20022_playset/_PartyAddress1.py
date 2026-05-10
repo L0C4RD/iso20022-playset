@@ -1,12 +1,12 @@
 from . import base_types
 from ._PostalAddress26 import PostalAddress26
+from ._Max2048Text import Max2048Text
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._Max256Text import Max256Text
-from ._Max2048Text import Max2048Text
 
 class PartyAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_URLAdr", "_PstlAdr", "_EmailAdr"]
+	__slots__ = ["_AnyBIC", "_EmailAdr", "_PstlAdr", "_URLAdr"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC
@@ -21,17 +21,17 @@ class PartyAddress1(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def URLAdr(self):
-		return self._URLAdr
+	def EmailAdr(self):
+		return self._EmailAdr
 
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
 
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	@property
 	def PstlAdr(self):
@@ -47,22 +47,22 @@ class PartyAddress1(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def URLAdr(self):
+		return self._URLAdr
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

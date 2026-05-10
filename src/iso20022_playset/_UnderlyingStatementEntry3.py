@@ -1,24 +1,11 @@
 from . import base_types
+from ._UUIDv4Identifier import UUIDv4Identifier
 from ._Max35Text import Max35Text
 from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._UUIDv4Identifier import UUIDv4Identifier
 
 class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlUETR", "_OrgnlGrpInf", "_OrgnlNtryId", "_OrgnlStmtId"]
-	@property
-	def OrgnlUETR(self):
-		return self._OrgnlUETR
-
-	@OrgnlUETR.setter
-	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
-
-	@OrgnlUETR.deleter
-	def OrgnlUETR(self):
-		del self._OrgnlUETR
-		self._OrgnlUETR = None
-
+	__slots__ = ["_OrgnlUETR", "_OrgnlGrpInf", "_OrgnlStmtId", "_OrgnlNtryId"]
 	@property
 	def OrgnlGrpInf(self):
 		return self._OrgnlGrpInf
@@ -58,10 +45,23 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 		del self._OrgnlStmtId
 		self._OrgnlStmtId = None
 
+	@property
+	def OrgnlUETR(self):
+		return self._OrgnlUETR
+
+	@OrgnlUETR.setter
+	def OrgnlUETR(self, value):
+		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
+
+	@OrgnlUETR.deleter
+	def OrgnlUETR(self):
+		del self._OrgnlUETR
+		self._OrgnlUETR = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlStmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._TransactionOperationType4Code import TransactionOperationType4Code
 from ._ISODate import ISODate
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ISODateTime import ISODateTime
+from ._TransactionOperationType4Code import TransactionOperationType4Code
 
 class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgDt", "_CreDtTm", "_RptSts", "_Ccy"]
+	__slots__ = ["_RptgDt", "_RptSts", "_Ccy", "_CreDtTm"]
 	@property
-	def RptgDt(self):
-		return self._RptgDt
+	def Ccy(self):
+		return self._Ccy
 
-	@RptgDt.setter
-	def RptgDt(self, value):
-		self._RptgDt = value if type(value) != base_types.auto else self.make_default("RptgDt")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@RptgDt.deleter
-	def RptgDt(self):
-		del self._RptgDt
-		self._RptgDt = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def CreDtTm(self):
@@ -47,22 +47,22 @@ class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 		self._RptSts = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def RptgDt(self):
+		return self._RptgDt
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@RptgDt.setter
+	def RptgDt(self, value):
+		self._RptgDt = value if type(value) != base_types.auto else self.make_default("RptgDt")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@RptgDt.deleter
+	def RptgDt(self):
+		del self._RptgDt
+		self._RptgDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSts', type=TransactionOperationType4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

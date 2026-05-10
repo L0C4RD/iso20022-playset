@@ -1,12 +1,12 @@
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._RetailerEvent7 import RetailerEvent7
-from ._LanguageCode import LanguageCode
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._RetailerEvent7 import RetailerEvent7
+from ._ActionMessage11 import ActionMessage11
+from ._LanguageCode import LanguageCode
 
 class EventNotificationData7(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrLang", "_MntncReqrdFlg", "_DispOutpt", "_RtlrEvt"]
+	__slots__ = ["_CstmrLang", "_DispOutpt", "_MntncReqrdFlg", "_RtlrEvt"]
 	@property
 	def CstmrLang(self):
 		return self._CstmrLang
@@ -21,19 +21,6 @@ class EventNotificationData7(base_types._BaseFieldType):
 		self._CstmrLang = None
 
 	@property
-	def MntncReqrdFlg(self):
-		return self._MntncReqrdFlg
-
-	@MntncReqrdFlg.setter
-	def MntncReqrdFlg(self, value):
-		self._MntncReqrdFlg = value if type(value) != base_types.auto else self.make_default("MntncReqrdFlg")
-
-	@MntncReqrdFlg.deleter
-	def MntncReqrdFlg(self):
-		del self._MntncReqrdFlg
-		self._MntncReqrdFlg = None
-
-	@property
 	def DispOutpt(self):
 		return self._DispOutpt
 
@@ -45,6 +32,19 @@ class EventNotificationData7(base_types._BaseFieldType):
 	def DispOutpt(self):
 		del self._DispOutpt
 		self._DispOutpt = None
+
+	@property
+	def MntncReqrdFlg(self):
+		return self._MntncReqrdFlg
+
+	@MntncReqrdFlg.setter
+	def MntncReqrdFlg(self, value):
+		self._MntncReqrdFlg = value if type(value) != base_types.auto else self.make_default("MntncReqrdFlg")
+
+	@MntncReqrdFlg.deleter
+	def MntncReqrdFlg(self):
+		del self._MntncReqrdFlg
+		self._MntncReqrdFlg = None
 
 	@property
 	def RtlrEvt(self):
@@ -61,8 +61,8 @@ class EventNotificationData7(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MntncReqrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MntncReqrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtlrEvt', type=RetailerEvent7, min=1, max=1, mutex_group=None, array=False),
 	))
 

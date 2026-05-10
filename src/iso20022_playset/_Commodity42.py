@@ -1,26 +1,13 @@
 from . import base_types
+from ._CompareUnitOfMeasure3 import CompareUnitOfMeasure3
+from ._CompareCommodityAssetClass3 import CompareCommodityAssetClass3
+from ._CompareUnitPrice6 import CompareUnitPrice6
 from ._CompareDecimalNumber3 import CompareDecimalNumber3
 from ._CompareAmountAndDirection2 import CompareAmountAndDirection2
-from ._CompareUnitPrice6 import CompareUnitPrice6
-from ._CompareCommodityAssetClass3 import CompareCommodityAssetClass3
-from ._CompareUnitOfMeasure3 import CompareUnitOfMeasure3
 
 class Commodity42(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitPric", "_Clssfctn", "_UnitOfMeasr", "_MktVal", "_Qty"]
-	@property
-	def UnitPric(self):
-		return self._UnitPric
-
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
-
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
-
+	__slots__ = ["_UnitPric", "_UnitOfMeasr", "_Clssfctn", "_Qty", "_MktVal"]
 	@property
 	def Clssfctn(self):
 		return self._Clssfctn
@@ -33,19 +20,6 @@ class Commodity42(base_types._BaseFieldType):
 	def Clssfctn(self):
 		del self._Clssfctn
 		self._Clssfctn = None
-
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
 
 	@property
 	def MktVal(self):
@@ -73,11 +47,37 @@ class Commodity42(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
+
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
+
+	@property
+	def UnitPric(self):
+		return self._UnitPric
+
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitPric', type=CompareUnitPrice6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Clssfctn', type=CompareCommodityAssetClass3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=CompareUnitOfMeasure3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=CompareAmountAndDirection2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=CompareDecimalNumber3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=CompareUnitOfMeasure3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=CompareUnitPrice6, min=0, max=1, mutex_group=None, array=False),
 	))
 

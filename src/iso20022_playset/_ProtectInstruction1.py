@@ -1,12 +1,25 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ProtectTransactionType2Code import ProtectTransactionType2Code
 from ._ISODate import ISODate
+from ._ProtectTransactionType2Code import ProtectTransactionType2Code
 from ._Max15Text import Max15Text
+from ._Max35Text import Max35Text
 
 class ProtectInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctSfkpgAcct", "_TxId", "_TxTp", "_PrtctDt"]
+	__slots__ = ["_TxId", "_PrtctSfkpgAcct", "_PrtctDt", "_TxTp"]
+	@property
+	def PrtctDt(self):
+		return self._PrtctDt
+
+	@PrtctDt.setter
+	def PrtctDt(self, value):
+		self._PrtctDt = value if type(value) != base_types.auto else self.make_default("PrtctDt")
+
+	@PrtctDt.deleter
+	def PrtctDt(self):
+		del self._PrtctDt
+		self._PrtctDt = None
+
 	@property
 	def PrtctSfkpgAcct(self):
 		return self._PrtctSfkpgAcct
@@ -46,23 +59,10 @@ class ProtectInstruction1(base_types._BaseFieldType):
 		del self._TxTp
 		self._TxTp = None
 
-	@property
-	def PrtctDt(self):
-		return self._PrtctDt
-
-	@PrtctDt.setter
-	def PrtctDt(self, value):
-		self._PrtctDt = value if type(value) != base_types.auto else self.make_default("PrtctDt")
-
-	@PrtctDt.deleter
-	def PrtctDt(self):
-		del self._PrtctDt
-		self._PrtctDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctSfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

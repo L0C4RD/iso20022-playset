@@ -1,11 +1,11 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._PercentageRate import PercentageRate
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._YesNoIndicator import YesNoIndicator
 
 class PriceRateOrAmountOrUnknownChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_UknwnInd", "_Rate"]
+	__slots__ = ["_Rate", "_UknwnInd", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -20,19 +20,6 @@ class PriceRateOrAmountOrUnknownChoice(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def UknwnInd(self):
-		return self._UknwnInd
-
-	@UknwnInd.setter
-	def UknwnInd(self, value):
-		self._UknwnInd = value if type(value) != base_types.auto else self.make_default("UknwnInd")
-
-	@UknwnInd.deleter
-	def UknwnInd(self):
-		del self._UknwnInd
-		self._UknwnInd = None
-
-	@property
 	def Rate(self):
 		return self._Rate
 
@@ -45,9 +32,22 @@ class PriceRateOrAmountOrUnknownChoice(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def UknwnInd(self):
+		return self._UknwnInd
+
+	@UknwnInd.setter
+	def UknwnInd(self, value):
+		self._UknwnInd = value if type(value) != base_types.auto else self.make_default("UknwnInd")
+
+	@UknwnInd.deleter
+	def UknwnInd(self):
+		del self._UknwnInd
+		self._UknwnInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UknwnInd', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UknwnInd', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
 

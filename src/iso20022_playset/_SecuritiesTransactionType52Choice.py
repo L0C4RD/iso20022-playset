@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesTransactionType26Code import SecuritiesTransactionType26Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._SecuritiesTransactionType26Code import SecuritiesTransactionType26Code
 
 class SecuritiesTransactionType52Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

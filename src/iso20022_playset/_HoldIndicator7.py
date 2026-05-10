@@ -1,6 +1,6 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._RegistrationReason6 import RegistrationReason6
+from ._YesNoIndicator import YesNoIndicator
 
 class HoldIndicator7(base_types._BaseFieldType):
 

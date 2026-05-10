@@ -1,23 +1,10 @@
 from . import base_types
-from ._BenchmarkCurveName5Choice import BenchmarkCurveName5Choice
 from ._InterestRateContractTerm2 import InterestRateContractTerm2
+from ._BenchmarkCurveName5Choice import BenchmarkCurveName5Choice
 
 class FloatingInterestRate8(base_types._BaseFieldType):
 
 	__slots__ = ["_Term", "_RefRate"]
-	@property
-	def Term(self):
-		return self._Term
-
-	@Term.setter
-	def Term(self, value):
-		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
-
-	@Term.deleter
-	def Term(self):
-		del self._Term
-		self._Term = None
-
 	@property
 	def RefRate(self):
 		return self._RefRate
@@ -31,8 +18,21 @@ class FloatingInterestRate8(base_types._BaseFieldType):
 		del self._RefRate
 		self._RefRate = None
 
+	@property
+	def Term(self):
+		return self._Term
+
+	@Term.setter
+	def Term(self, value):
+		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
+
+	@Term.deleter
+	def Term(self):
+		del self._Term
+		self._Term = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
 	))
 

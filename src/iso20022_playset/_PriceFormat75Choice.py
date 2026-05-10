@@ -1,7 +1,7 @@
 from . import base_types
-from ._PercentagePrice2 import PercentagePrice2
-from ._AmountPrice3 import AmountPrice3
 from ._DecimalNumber import DecimalNumber
+from ._AmountPrice3 import AmountPrice3
+from ._PercentagePrice2 import PercentagePrice2
 
 class PriceFormat75Choice(base_types._BaseFieldType):
 
@@ -20,19 +20,6 @@ class PriceFormat75Choice(base_types._BaseFieldType):
 		self._AmtPric = None
 
 	@property
-	def PctgPric(self):
-		return self._PctgPric
-
-	@PctgPric.setter
-	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
-
-	@PctgPric.deleter
-	def PctgPric(self):
-		del self._PctgPric
-		self._PctgPric = None
-
-	@property
 	def IndxPts(self):
 		return self._IndxPts
 
@@ -45,9 +32,22 @@ class PriceFormat75Choice(base_types._BaseFieldType):
 		del self._IndxPts
 		self._IndxPts = None
 
+	@property
+	def PctgPric(self):
+		return self._PctgPric
+
+	@PctgPric.setter
+	def PctgPric(self, value):
+		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
+
+	@PctgPric.deleter
+	def PctgPric(self):
+		del self._PctgPric
+		self._PctgPric = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
 	))
 

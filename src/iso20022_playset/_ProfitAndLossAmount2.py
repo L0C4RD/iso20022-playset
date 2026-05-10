@@ -1,10 +1,10 @@
 from . import base_types
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class ProfitAndLossAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Sgn"]
+	__slots__ = ["_Sgn", "_Amt"]
 	@property
 	def Amt(self):
 		return self._Amt

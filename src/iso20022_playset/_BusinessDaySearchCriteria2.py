@@ -1,25 +1,25 @@
 from . import base_types
-from ._SystemEventType2Choice import SystemEventType2Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ISODate import ISODate
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._SystemIdentification2Choice import SystemIdentification2Choice
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._SystemEventType2Choice import SystemEventType2Choice
 
 class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_SysCcy", "_EvtTp", "_ClsrPrd", "_SysId", "_SysDt"]
+	__slots__ = ["_SysDt", "_EvtTp", "_ClsrPrd", "_SysId", "_SysCcy"]
 	@property
-	def SysCcy(self):
-		return self._SysCcy
+	def ClsrPrd(self):
+		return self._ClsrPrd
 
-	@SysCcy.setter
-	def SysCcy(self, value):
-		self._SysCcy = value if type(value) != base_types.auto else self.make_default("SysCcy")
+	@ClsrPrd.setter
+	def ClsrPrd(self, value):
+		self._ClsrPrd = value if type(value) != base_types.auto else self.make_default("ClsrPrd")
 
-	@SysCcy.deleter
-	def SysCcy(self):
-		del self._SysCcy
-		self._SysCcy = None
+	@ClsrPrd.deleter
+	def ClsrPrd(self):
+		del self._ClsrPrd
+		self._ClsrPrd = None
 
 	@property
 	def EvtTp(self):
@@ -35,30 +35,17 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 		self._EvtTp = None
 
 	@property
-	def ClsrPrd(self):
-		return self._ClsrPrd
+	def SysCcy(self):
+		return self._SysCcy
 
-	@ClsrPrd.setter
-	def ClsrPrd(self, value):
-		self._ClsrPrd = value if type(value) != base_types.auto else self.make_default("ClsrPrd")
+	@SysCcy.setter
+	def SysCcy(self, value):
+		self._SysCcy = value if type(value) != base_types.auto else self.make_default("SysCcy")
 
-	@ClsrPrd.deleter
-	def ClsrPrd(self):
-		del self._ClsrPrd
-		self._ClsrPrd = None
-
-	@property
-	def SysId(self):
-		return self._SysId
-
-	@SysId.setter
-	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
-
-	@SysId.deleter
-	def SysId(self):
-		del self._SysId
-		self._SysId = None
+	@SysCcy.deleter
+	def SysCcy(self):
+		del self._SysCcy
+		self._SysCcy = None
 
 	@property
 	def SysDt(self):
@@ -73,11 +60,24 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 		del self._SysDt
 		self._SysDt = None
 
+	@property
+	def SysId(self):
+		return self._SysId
+
+	@SysId.setter
+	def SysId(self, value):
+		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+
+	@SysId.deleter
+	def SysId(self):
+		del self._SysId
+		self._SysId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EvtTp', type=SystemEventType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsrPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EvtTp', type=SystemEventType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

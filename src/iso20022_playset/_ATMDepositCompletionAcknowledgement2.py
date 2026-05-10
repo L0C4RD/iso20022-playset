@@ -1,11 +1,11 @@
 from . import base_types
-from ._ATMContext12 import ATMContext12
-from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
 from ._ATMTransaction45 import ATMTransaction45
+from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
+from ._ATMContext12 import ATMContext12
 
 class ATMDepositCompletionAcknowledgement2(base_types._BaseFieldType):
 
-	__slots__ = ["_ATM", "_Cntxt", "_Tx"]
+	__slots__ = ["_Tx", "_Cntxt", "_ATM"]
 	@property
 	def ATM(self):
 		return self._ATM

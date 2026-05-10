@@ -1,12 +1,25 @@
 from . import base_types
-from ._DetailedMissingValuationsStatistics4Choice import DetailedMissingValuationsStatistics4Choice
-from ._DetailedMissingMarginInformationStatistics4Choice import DetailedMissingMarginInformationStatistics4Choice
 from ._ISODate import ISODate
 from ._DetailedAbnormalValuesStatistics4Choice import DetailedAbnormalValuesStatistics4Choice
+from ._DetailedMissingValuationsStatistics4Choice import DetailedMissingValuationsStatistics4Choice
+from ._DetailedMissingMarginInformationStatistics4Choice import DetailedMissingMarginInformationStatistics4Choice
 
 class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 
-	__slots__ = ["_MssngMrgnInf", "_MssngValtn", "_RefDt", "_AbnrmlVals"]
+	__slots__ = ["_AbnrmlVals", "_MssngMrgnInf", "_RefDt", "_MssngValtn"]
+	@property
+	def AbnrmlVals(self):
+		return self._AbnrmlVals
+
+	@AbnrmlVals.setter
+	def AbnrmlVals(self, value):
+		self._AbnrmlVals = value if type(value) != base_types.auto else self.make_default("AbnrmlVals")
+
+	@AbnrmlVals.deleter
+	def AbnrmlVals(self):
+		del self._AbnrmlVals
+		self._AbnrmlVals = None
+
 	@property
 	def MssngMrgnInf(self):
 		return self._MssngMrgnInf
@@ -46,23 +59,10 @@ class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 		del self._RefDt
 		self._RefDt = None
 
-	@property
-	def AbnrmlVals(self):
-		return self._AbnrmlVals
-
-	@AbnrmlVals.setter
-	def AbnrmlVals(self, value):
-		self._AbnrmlVals = value if type(value) != base_types.auto else self.make_default("AbnrmlVals")
-
-	@AbnrmlVals.deleter
-	def AbnrmlVals(self):
-		del self._AbnrmlVals
-		self._AbnrmlVals = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AbnrmlVals', type=DetailedAbnormalValuesStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MssngMrgnInf', type=DetailedMissingMarginInformationStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MssngValtn', type=DetailedMissingValuationsStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AbnrmlVals', type=DetailedAbnormalValuesStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

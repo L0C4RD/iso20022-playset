@@ -1,10 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._FinancialInstrumentAggregateBalance2 import FinancialInstrumentAggregateBalance2
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgBal", "_HldgsInd"]
+	__slots__ = ["_HldgsInd", "_HldgBal"]
 	@property
 	def HldgBal(self):
 		return self._HldgBal

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Modification1Code import Modification1Code
 from ._AccountStatus3Code import AccountStatus3Code
+from ._Modification1Code import Modification1Code
 
 class AccountStatusModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ModCd", "_Sts"]
+	__slots__ = ["_Sts", "_ModCd"]
 	@property
 	def ModCd(self):
 		return self._ModCd

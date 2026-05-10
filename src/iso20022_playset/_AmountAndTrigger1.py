@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._AmountOrPercentage1Choice import AmountOrPercentage1Choice
+from ._Max35Text import Max35Text
 from ._Trigger1 import Trigger1
 
 class AmountAndTrigger1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AmtDtlsChc", "_Trggr"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_AmtDtlsChc", "_Id", "_Trggr"]
 	@property
 	def AmtDtlsChc(self):
 		return self._AmtDtlsChc
@@ -31,6 +18,19 @@ class AmountAndTrigger1(base_types._BaseFieldType):
 	def AmtDtlsChc(self):
 		del self._AmtDtlsChc
 		self._AmtDtlsChc = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Trggr(self):
@@ -46,8 +46,8 @@ class AmountAndTrigger1(base_types._BaseFieldType):
 		self._Trggr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtDtlsChc', type=AmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trggr', type=Trigger1, min=1, max=None, mutex_group=None, array=True),
 	))
 

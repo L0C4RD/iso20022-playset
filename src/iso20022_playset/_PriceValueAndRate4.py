@@ -1,10 +1,10 @@
 from . import base_types
-from ._PriceAndDirection1 import PriceAndDirection1
 from ._PercentageRate import PercentageRate
+from ._PriceAndDirection1 import PriceAndDirection1
 
 class PriceValueAndRate4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Val"]
+	__slots__ = ["_Val", "_Rate"]
 	@property
 	def Rate(self):
 		return self._Rate

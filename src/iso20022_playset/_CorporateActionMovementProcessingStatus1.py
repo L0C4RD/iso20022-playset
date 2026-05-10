@@ -4,7 +4,7 @@ from ._Max350Text import Max350Text
 
 class CorporateActionMovementProcessingStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Sts"]
+	__slots__ = ["_Sts", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

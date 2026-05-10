@@ -1,24 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CashAccountSearchCriteria8 import CashAccountSearchCriteria8
 from ._CashAccountReturnCriteria5 import CashAccountReturnCriteria5
+from ._Max35Text import Max35Text
 
 class AccountCriteria8(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_NewQryNm", "_RtrCrit"]
-	@property
-	def SchCrit(self):
-		return self._SchCrit
-
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
-
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
-
+	__slots__ = ["_RtrCrit", "_NewQryNm", "_SchCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm
@@ -45,9 +32,22 @@ class AccountCriteria8(base_types._BaseFieldType):
 		del self._RtrCrit
 		self._RtrCrit = None
 
+	@property
+	def SchCrit(self):
+		return self._SchCrit
+
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchCrit', type=CashAccountSearchCriteria8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrCrit', type=CashAccountReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=CashAccountSearchCriteria8, min=0, max=None, mutex_group=None, array=True),
 	))
 

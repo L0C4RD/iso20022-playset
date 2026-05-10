@@ -1,10 +1,10 @@
 from . import base_types
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class AcceptorDiagnosticRequest13(base_types._BaseFieldType):
 
-	__slots__ = ["_AcqrrAvlbtyReqd", "_Envt"]
+	__slots__ = ["_Envt", "_AcqrrAvlbtyReqd"]
 	@property
 	def AcqrrAvlbtyReqd(self):
 		return self._AcqrrAvlbtyReqd

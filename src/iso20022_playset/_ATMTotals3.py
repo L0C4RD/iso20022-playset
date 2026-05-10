@@ -1,13 +1,13 @@
 from . import base_types
-from ._Number import Number
-from ._Max70Text import Max70Text
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max70Text import Max70Text
 from ._ATMCounterType2Code import ATMCounterType2Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Number import Number
 
 class ATMTotals3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlId", "_Prd", "_Id", "_Amt", "_Cnt", "_Ccy"]
+	__slots__ = ["_Prd", "_Amt", "_Id", "_Cnt", "_Ccy", "_AddtlId"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId
@@ -20,32 +20,6 @@ class ATMTotals3(base_types._BaseFieldType):
 	def AddtlId(self):
 		del self._AddtlId
 		self._AddtlId = None
-
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def Amt(self):
@@ -61,6 +35,19 @@ class ATMTotals3(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
 	def Cnt(self):
 		return self._Cnt
 
@@ -74,24 +61,37 @@ class ATMTotals3(base_types._BaseFieldType):
 		self._Cnt = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Id(self):
+		return self._Id
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=ATMCounterType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=ATMCounterType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

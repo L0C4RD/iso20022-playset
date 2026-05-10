@@ -4,7 +4,7 @@ from ._AssetClassProductType2Code import AssetClassProductType2Code
 
 class EnergyCommodityLightEnd1(base_types._BaseFieldType):
 
-	__slots__ = ["_BasePdct", "_SubPdct"]
+	__slots__ = ["_SubPdct", "_BasePdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct

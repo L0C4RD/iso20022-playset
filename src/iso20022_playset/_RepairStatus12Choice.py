@@ -4,7 +4,7 @@ from ._NoReasonCode import NoReasonCode
 
 class RepairStatus12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
+	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
 	@property
 	def NoSpcfdRsn(self):
 		return self._NoSpcfdRsn

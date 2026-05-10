@@ -1,24 +1,11 @@
 from . import base_types
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISOTime import ISOTime
 from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CorrectionIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tm", "_Dt", "_Ind"]
-	@property
-	def Tm(self):
-		return self._Tm
-
-	@Tm.setter
-	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
-
-	@Tm.deleter
-	def Tm(self):
-		del self._Tm
-		self._Tm = None
-
+	__slots__ = ["_Ind", "_Dt", "_Tm"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -45,9 +32,22 @@ class CorrectionIdentification1(base_types._BaseFieldType):
 		del self._Ind
 		self._Ind = None
 
+	@property
+	def Tm(self):
+		return self._Tm
+
+	@Tm.setter
+	def Tm(self, value):
+		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+
+	@Tm.deleter
+	def Tm(self):
+		del self._Tm
+		self._Tm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ind', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

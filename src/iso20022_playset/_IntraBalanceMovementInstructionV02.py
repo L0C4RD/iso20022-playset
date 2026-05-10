@@ -1,42 +1,42 @@
 from . import base_types
 from ._NumberCount1Choice import NumberCount1Choice
-from ._Linkages57 import Linkages57
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
+from ._SupplementaryData1 import SupplementaryData1
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._IntraBalance5 import IntraBalance5
 from ._TransactionAndDocumentIdentification6 import TransactionAndDocumentIdentification6
 from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._IntraBalance5 import IntraBalance5
+from ._Linkages57 import Linkages57
+from ._CashAccount40 import CashAccount40
 
 class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraBal", "_Lnkgs", "_CshAcctOwnr", "_CshAcctSvcr", "_CorpActnEvtId", "_CshAcct", "_NbCounts", "_SplmtryData", "_Id"]
+	__slots__ = ["_Id", "_CorpActnEvtId", "_IntraBal", "_CshAcctSvcr", "_Lnkgs", "_CshAcct", "_CshAcctOwnr", "_NbCounts", "_SplmtryData"]
 	@property
-	def IntraBal(self):
-		return self._IntraBal
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@IntraBal.setter
-	def IntraBal(self, value):
-		self._IntraBal = value if type(value) != base_types.auto else self.make_default("IntraBal")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
 
-	@IntraBal.deleter
-	def IntraBal(self):
-		del self._IntraBal
-		self._IntraBal = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
-	def Lnkgs(self):
-		return self._Lnkgs
+	def CshAcct(self):
+		return self._CshAcct
 
-	@Lnkgs.setter
-	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
 
-	@Lnkgs.deleter
-	def Lnkgs(self):
-		del self._Lnkgs
-		self._Lnkgs = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def CshAcctOwnr(self):
@@ -65,30 +65,43 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 		self._CshAcctSvcr = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
+	def Id(self):
+		return self._Id
 
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def IntraBal(self):
+		return self._IntraBal
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+	@IntraBal.setter
+	def IntraBal(self, value):
+		self._IntraBal = value if type(value) != base_types.auto else self.make_default("IntraBal")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@IntraBal.deleter
+	def IntraBal(self):
+		del self._IntraBal
+		self._IntraBal = None
+
+	@property
+	def Lnkgs(self):
+		return self._Lnkgs
+
+	@Lnkgs.setter
+	def Lnkgs(self, value):
+		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+
+	@Lnkgs.deleter
+	def Lnkgs(self):
+		del self._Lnkgs
+		self._Lnkgs = None
 
 	@property
 	def NbCounts(self):
@@ -116,28 +129,15 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntraBal', type=IntraBalance5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=TransactionAndDocumentIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntraBal', type=IntraBalance5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbCounts', type=NumberCount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=TransactionAndDocumentIdentification6, min=0, max=1, mutex_group=None, array=False),
 	))
 

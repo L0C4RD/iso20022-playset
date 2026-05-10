@@ -5,20 +5,7 @@ from ._Max70Text import Max70Text
 
 class ATMFeeComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_FeeLabl", "_Amt", "_Ccy"]
-	@property
-	def FeeLabl(self):
-		return self._FeeLabl
-
-	@FeeLabl.setter
-	def FeeLabl(self, value):
-		self._FeeLabl = value if type(value) != base_types.auto else self.make_default("FeeLabl")
-
-	@FeeLabl.deleter
-	def FeeLabl(self):
-		del self._FeeLabl
-		self._FeeLabl = None
-
+	__slots__ = ["_Amt", "_FeeLabl", "_Ccy"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -45,9 +32,22 @@ class ATMFeeComponent1(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def FeeLabl(self):
+		return self._FeeLabl
+
+	@FeeLabl.setter
+	def FeeLabl(self, value):
+		self._FeeLabl = value if type(value) != base_types.auto else self.make_default("FeeLabl")
+
+	@FeeLabl.deleter
+	def FeeLabl(self):
+		del self._FeeLabl
+		self._FeeLabl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FeeLabl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FeeLabl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

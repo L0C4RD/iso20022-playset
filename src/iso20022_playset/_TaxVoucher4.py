@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max35Text import Max35Text
 
 class TaxVoucher4(base_types._BaseFieldType):
 
-	__slots__ = ["_BrgnDt", "_Id", "_BrgnSttlmDt"]
+	__slots__ = ["_Id", "_BrgnDt", "_BrgnSttlmDt"]
 	@property
 	def BrgnDt(self):
 		return self._BrgnDt
@@ -19,19 +19,6 @@ class TaxVoucher4(base_types._BaseFieldType):
 		self._BrgnDt = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def BrgnSttlmDt(self):
 		return self._BrgnSttlmDt
 
@@ -44,9 +31,22 @@ class TaxVoucher4(base_types._BaseFieldType):
 		del self._BrgnSttlmDt
 		self._BrgnSttlmDt = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrgnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrgnSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

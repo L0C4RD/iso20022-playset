@@ -1,15 +1,28 @@
 from . import base_types
-from ._FertilizerCommodityOther2 import FertilizerCommodityOther2
-from ._FertilizerCommodityPotash2 import FertilizerCommodityPotash2
-from ._FertilizerCommodityAmmonia2 import FertilizerCommodityAmmonia2
-from ._FertilizerCommodityUreaAndAmmoniumNitrate2 import FertilizerCommodityUreaAndAmmoniumNitrate2
-from ._FertilizerCommodityDiammoniumPhosphate2 import FertilizerCommodityDiammoniumPhosphate2
-from ._FertilizerCommoditySulphur2 import FertilizerCommoditySulphur2
 from ._FertilizerCommodityUrea2 import FertilizerCommodityUrea2
+from ._FertilizerCommoditySulphur2 import FertilizerCommoditySulphur2
+from ._FertilizerCommodityUreaAndAmmoniumNitrate2 import FertilizerCommodityUreaAndAmmoniumNitrate2
+from ._FertilizerCommodityOther2 import FertilizerCommodityOther2
+from ._FertilizerCommodityDiammoniumPhosphate2 import FertilizerCommodityDiammoniumPhosphate2
+from ._FertilizerCommodityAmmonia2 import FertilizerCommodityAmmonia2
+from ._FertilizerCommodityPotash2 import FertilizerCommodityPotash2
 
 class AssetClassCommodityFertilizer4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DmmnmPhspht", "_Urea", "_Slphr", "_Othr", "_UreaAndAmmnmNtrt", "_Ammn", "_Ptsh"]
+	__slots__ = ["_DmmnmPhspht", "_Ptsh", "_Ammn", "_Slphr", "_UreaAndAmmnmNtrt", "_Othr", "_Urea"]
+	@property
+	def Ammn(self):
+		return self._Ammn
+
+	@Ammn.setter
+	def Ammn(self, value):
+		self._Ammn = value if type(value) != base_types.auto else self.make_default("Ammn")
+
+	@Ammn.deleter
+	def Ammn(self):
+		del self._Ammn
+		self._Ammn = None
+
 	@property
 	def DmmnmPhspht(self):
 		return self._DmmnmPhspht
@@ -22,32 +35,6 @@ class AssetClassCommodityFertilizer4Choice(base_types._BaseFieldType):
 	def DmmnmPhspht(self):
 		del self._DmmnmPhspht
 		self._DmmnmPhspht = None
-
-	@property
-	def Urea(self):
-		return self._Urea
-
-	@Urea.setter
-	def Urea(self, value):
-		self._Urea = value if type(value) != base_types.auto else self.make_default("Urea")
-
-	@Urea.deleter
-	def Urea(self):
-		del self._Urea
-		self._Urea = None
-
-	@property
-	def Slphr(self):
-		return self._Slphr
-
-	@Slphr.setter
-	def Slphr(self, value):
-		self._Slphr = value if type(value) != base_types.auto else self.make_default("Slphr")
-
-	@Slphr.deleter
-	def Slphr(self):
-		del self._Slphr
-		self._Slphr = None
 
 	@property
 	def Othr(self):
@@ -63,32 +50,6 @@ class AssetClassCommodityFertilizer4Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def UreaAndAmmnmNtrt(self):
-		return self._UreaAndAmmnmNtrt
-
-	@UreaAndAmmnmNtrt.setter
-	def UreaAndAmmnmNtrt(self, value):
-		self._UreaAndAmmnmNtrt = value if type(value) != base_types.auto else self.make_default("UreaAndAmmnmNtrt")
-
-	@UreaAndAmmnmNtrt.deleter
-	def UreaAndAmmnmNtrt(self):
-		del self._UreaAndAmmnmNtrt
-		self._UreaAndAmmnmNtrt = None
-
-	@property
-	def Ammn(self):
-		return self._Ammn
-
-	@Ammn.setter
-	def Ammn(self, value):
-		self._Ammn = value if type(value) != base_types.auto else self.make_default("Ammn")
-
-	@Ammn.deleter
-	def Ammn(self):
-		del self._Ammn
-		self._Ammn = None
-
-	@property
 	def Ptsh(self):
 		return self._Ptsh
 
@@ -101,13 +62,52 @@ class AssetClassCommodityFertilizer4Choice(base_types._BaseFieldType):
 		del self._Ptsh
 		self._Ptsh = None
 
+	@property
+	def Slphr(self):
+		return self._Slphr
+
+	@Slphr.setter
+	def Slphr(self, value):
+		self._Slphr = value if type(value) != base_types.auto else self.make_default("Slphr")
+
+	@Slphr.deleter
+	def Slphr(self):
+		del self._Slphr
+		self._Slphr = None
+
+	@property
+	def Urea(self):
+		return self._Urea
+
+	@Urea.setter
+	def Urea(self, value):
+		self._Urea = value if type(value) != base_types.auto else self.make_default("Urea")
+
+	@Urea.deleter
+	def Urea(self):
+		del self._Urea
+		self._Urea = None
+
+	@property
+	def UreaAndAmmnmNtrt(self):
+		return self._UreaAndAmmnmNtrt
+
+	@UreaAndAmmnmNtrt.setter
+	def UreaAndAmmnmNtrt(self, value):
+		self._UreaAndAmmnmNtrt = value if type(value) != base_types.auto else self.make_default("UreaAndAmmnmNtrt")
+
+	@UreaAndAmmnmNtrt.deleter
+	def UreaAndAmmnmNtrt(self):
+		del self._UreaAndAmmnmNtrt
+		self._UreaAndAmmnmNtrt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DmmnmPhspht', type=FertilizerCommodityDiammoniumPhosphate2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Urea', type=FertilizerCommodityUrea2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Slphr', type=FertilizerCommoditySulphur2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=FertilizerCommodityOther2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UreaAndAmmnmNtrt', type=FertilizerCommodityUreaAndAmmoniumNitrate2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ammn', type=FertilizerCommodityAmmonia2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DmmnmPhspht', type=FertilizerCommodityDiammoniumPhosphate2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=FertilizerCommodityOther2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ptsh', type=FertilizerCommodityPotash2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Slphr', type=FertilizerCommoditySulphur2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Urea', type=FertilizerCommodityUrea2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UreaAndAmmnmNtrt', type=FertilizerCommodityUreaAndAmmoniumNitrate2, min=0, max=1, mutex_group=1, array=False),
 	))
 

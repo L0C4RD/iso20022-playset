@@ -4,7 +4,7 @@ from ._ATMTransaction52 import ATMTransaction52
 
 class ATMReconciliationAcknowledgement3(base_types._BaseFieldType):
 
-	__slots__ = ["_ATM", "_Tx"]
+	__slots__ = ["_Tx", "_ATM"]
 	@property
 	def ATM(self):
 		return self._ATM

@@ -1,110 +1,32 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
-from ._PaymentTransaction72 import PaymentTransaction72
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._RedemptionOrder15 import RedemptionOrder15
-from ._Max35Text import Max35Text
+from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._FinancialInstrument57 import FinancialInstrument57
 from ._CancellationRight1Choice import CancellationRight1Choice
-from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._PaymentTransaction72 import PaymentTransaction72
 
 class RedemptionBulkOrder6(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfTrad", "_IndvOrdrDtls", "_FinInstrmDtls", "_ReqdSttlmCcy", "_OrdrDtTm", "_MstrRef", "_XpryDtTm", "_CxlRght", "_ReqdNAVCcy", "_TtlSttlmAmt", "_BlkCshSttlmDtls", "_ReqdFutrTradDt"]
+	__slots__ = ["_ReqdFutrTradDt", "_ReqdSttlmCcy", "_IndvOrdrDtls", "_FinInstrmDtls", "_MstrRef", "_ReqdNAVCcy", "_CxlRght", "_TtlSttlmAmt", "_BlkCshSttlmDtls", "_XpryDtTm", "_PlcOfTrad", "_OrdrDtTm"]
 	@property
-	def PlcOfTrad(self):
-		return self._PlcOfTrad
+	def BlkCshSttlmDtls(self):
+		return self._BlkCshSttlmDtls
 
-	@PlcOfTrad.setter
-	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+	@BlkCshSttlmDtls.setter
+	def BlkCshSttlmDtls(self, value):
+		self._BlkCshSttlmDtls = value if type(value) != base_types.auto else self.make_default("BlkCshSttlmDtls")
 
-	@PlcOfTrad.deleter
-	def PlcOfTrad(self):
-		del self._PlcOfTrad
-		self._PlcOfTrad = None
-
-	@property
-	def IndvOrdrDtls(self):
-		return self._IndvOrdrDtls
-
-	@IndvOrdrDtls.setter
-	def IndvOrdrDtls(self, value):
-		self._IndvOrdrDtls = value if type(value) != base_types.auto else self.make_default("IndvOrdrDtls")
-
-	@IndvOrdrDtls.deleter
-	def IndvOrdrDtls(self):
-		del self._IndvOrdrDtls
-		self._IndvOrdrDtls = None
-
-	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
-
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
-
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
-
-	@property
-	def ReqdSttlmCcy(self):
-		return self._ReqdSttlmCcy
-
-	@ReqdSttlmCcy.setter
-	def ReqdSttlmCcy(self, value):
-		self._ReqdSttlmCcy = value if type(value) != base_types.auto else self.make_default("ReqdSttlmCcy")
-
-	@ReqdSttlmCcy.deleter
-	def ReqdSttlmCcy(self):
-		del self._ReqdSttlmCcy
-		self._ReqdSttlmCcy = None
-
-	@property
-	def OrdrDtTm(self):
-		return self._OrdrDtTm
-
-	@OrdrDtTm.setter
-	def OrdrDtTm(self, value):
-		self._OrdrDtTm = value if type(value) != base_types.auto else self.make_default("OrdrDtTm")
-
-	@OrdrDtTm.deleter
-	def OrdrDtTm(self):
-		del self._OrdrDtTm
-		self._OrdrDtTm = None
-
-	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
-	@property
-	def XpryDtTm(self):
-		return self._XpryDtTm
-
-	@XpryDtTm.setter
-	def XpryDtTm(self, value):
-		self._XpryDtTm = value if type(value) != base_types.auto else self.make_default("XpryDtTm")
-
-	@XpryDtTm.deleter
-	def XpryDtTm(self):
-		del self._XpryDtTm
-		self._XpryDtTm = None
+	@BlkCshSttlmDtls.deleter
+	def BlkCshSttlmDtls(self):
+		del self._BlkCshSttlmDtls
+		self._BlkCshSttlmDtls = None
 
 	@property
 	def CxlRght(self):
@@ -120,6 +42,84 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 		self._CxlRght = None
 
 	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
+
+	@property
+	def IndvOrdrDtls(self):
+		return self._IndvOrdrDtls
+
+	@IndvOrdrDtls.setter
+	def IndvOrdrDtls(self, value):
+		self._IndvOrdrDtls = value if type(value) != base_types.auto else self.make_default("IndvOrdrDtls")
+
+	@IndvOrdrDtls.deleter
+	def IndvOrdrDtls(self):
+		del self._IndvOrdrDtls
+		self._IndvOrdrDtls = None
+
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
+
+	@property
+	def OrdrDtTm(self):
+		return self._OrdrDtTm
+
+	@OrdrDtTm.setter
+	def OrdrDtTm(self, value):
+		self._OrdrDtTm = value if type(value) != base_types.auto else self.make_default("OrdrDtTm")
+
+	@OrdrDtTm.deleter
+	def OrdrDtTm(self):
+		del self._OrdrDtTm
+		self._OrdrDtTm = None
+
+	@property
+	def PlcOfTrad(self):
+		return self._PlcOfTrad
+
+	@PlcOfTrad.setter
+	def PlcOfTrad(self, value):
+		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+
+	@PlcOfTrad.deleter
+	def PlcOfTrad(self):
+		del self._PlcOfTrad
+		self._PlcOfTrad = None
+
+	@property
+	def ReqdFutrTradDt(self):
+		return self._ReqdFutrTradDt
+
+	@ReqdFutrTradDt.setter
+	def ReqdFutrTradDt(self, value):
+		self._ReqdFutrTradDt = value if type(value) != base_types.auto else self.make_default("ReqdFutrTradDt")
+
+	@ReqdFutrTradDt.deleter
+	def ReqdFutrTradDt(self):
+		del self._ReqdFutrTradDt
+		self._ReqdFutrTradDt = None
+
+	@property
 	def ReqdNAVCcy(self):
 		return self._ReqdNAVCcy
 
@@ -131,6 +131,19 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 	def ReqdNAVCcy(self):
 		del self._ReqdNAVCcy
 		self._ReqdNAVCcy = None
+
+	@property
+	def ReqdSttlmCcy(self):
+		return self._ReqdSttlmCcy
+
+	@ReqdSttlmCcy.setter
+	def ReqdSttlmCcy(self, value):
+		self._ReqdSttlmCcy = value if type(value) != base_types.auto else self.make_default("ReqdSttlmCcy")
+
+	@ReqdSttlmCcy.deleter
+	def ReqdSttlmCcy(self):
+		del self._ReqdSttlmCcy
+		self._ReqdSttlmCcy = None
 
 	@property
 	def TtlSttlmAmt(self):
@@ -146,43 +159,30 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 		self._TtlSttlmAmt = None
 
 	@property
-	def BlkCshSttlmDtls(self):
-		return self._BlkCshSttlmDtls
+	def XpryDtTm(self):
+		return self._XpryDtTm
 
-	@BlkCshSttlmDtls.setter
-	def BlkCshSttlmDtls(self, value):
-		self._BlkCshSttlmDtls = value if type(value) != base_types.auto else self.make_default("BlkCshSttlmDtls")
+	@XpryDtTm.setter
+	def XpryDtTm(self, value):
+		self._XpryDtTm = value if type(value) != base_types.auto else self.make_default("XpryDtTm")
 
-	@BlkCshSttlmDtls.deleter
-	def BlkCshSttlmDtls(self):
-		del self._BlkCshSttlmDtls
-		self._BlkCshSttlmDtls = None
-
-	@property
-	def ReqdFutrTradDt(self):
-		return self._ReqdFutrTradDt
-
-	@ReqdFutrTradDt.setter
-	def ReqdFutrTradDt(self, value):
-		self._ReqdFutrTradDt = value if type(value) != base_types.auto else self.make_default("ReqdFutrTradDt")
-
-	@ReqdFutrTradDt.deleter
-	def ReqdFutrTradDt(self):
-		del self._ReqdFutrTradDt
-		self._ReqdFutrTradDt = None
+	@XpryDtTm.deleter
+	def XpryDtTm(self):
+		del self._XpryDtTm
+		self._XpryDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfTrad', type=PlaceOfTradeIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvOrdrDtls', type=RedemptionOrder15, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdSttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRght', type=CancellationRight1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlkCshSttlmDtls', type=PaymentTransaction72, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRght', type=CancellationRight1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvOrdrDtls', type=RedemptionOrder15, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfTrad', type=PlaceOfTradeIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdFutrTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdSttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

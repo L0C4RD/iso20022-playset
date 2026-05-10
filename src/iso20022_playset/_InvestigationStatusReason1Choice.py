@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ExternalInvestigationStatusReason1Code import ExternalInvestigationStatusReason1Code
+from ._Max35Text import Max35Text
 
 class InvestigationStatusReason1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

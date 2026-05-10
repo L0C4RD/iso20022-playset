@@ -1,7 +1,7 @@
 from . import base_types
+from ._UnsecuredMarketReport4Choice import UnsecuredMarketReport4Choice
 from ._SupplementaryData1 import SupplementaryData1
 from ._MoneyMarketReportHeader1 import MoneyMarketReportHeader1
-from ._UnsecuredMarketReport4Choice import UnsecuredMarketReport4Choice
 
 class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 

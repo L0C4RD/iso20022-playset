@@ -1,12 +1,12 @@
 from . import base_types
 from ._TransactionIdentification7 import TransactionIdentification7
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionDetails157 import TransactionDetails157
 from ._ResponseStatus8Choice import ResponseStatus8Choice
+from ._TransactionDetails157 import TransactionDetails157
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnSts", "_SplmtryData", "_TxId", "_TxDtls"]
+	__slots__ = ["_TxDtls", "_RspnSts", "_SplmtryData", "_TxId"]
 	@property
 	def RspnSts(self):
 		return self._RspnSts
@@ -34,19 +34,6 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 		self._SplmtryData = None
 
 	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def TxDtls(self):
 		return self._TxDtls
 
@@ -59,10 +46,23 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 		del self._TxDtls
 		self._TxDtls = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RspnSts', type=ResponseStatus8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails157, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentification7, min=1, max=1, mutex_group=None, array=False),
 	))
 

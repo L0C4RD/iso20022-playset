@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._InterestRate8Choice import InterestRate8Choice
 from ._FloatingInterestRate8 import FloatingInterestRate8
+from ._InterestRate8Choice import InterestRate8Choice
 
 class DerivativeInterest3(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstLegIntrstRate", "_OthrLegIntrstRate", "_OthrNtnlCcy", "_IntrstRate"]
+	__slots__ = ["_FrstLegIntrstRate", "_OthrNtnlCcy", "_IntrstRate", "_OthrLegIntrstRate"]
 	@property
 	def FrstLegIntrstRate(self):
 		return self._FrstLegIntrstRate
@@ -18,6 +18,19 @@ class DerivativeInterest3(base_types._BaseFieldType):
 	def FrstLegIntrstRate(self):
 		del self._FrstLegIntrstRate
 		self._FrstLegIntrstRate = None
+
+	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
 
 	@property
 	def OthrLegIntrstRate(self):
@@ -45,23 +58,10 @@ class DerivativeInterest3(base_types._BaseFieldType):
 		del self._OthrNtnlCcy
 		self._OthrNtnlCcy = None
 
-	@property
-	def IntrstRate(self):
-		return self._IntrstRate
-
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
-
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrstLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=FloatingInterestRate8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrNtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRate', type=FloatingInterestRate8, min=1, max=1, mutex_group=None, array=False),
 	))
 

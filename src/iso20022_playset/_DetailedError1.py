@@ -1,24 +1,11 @@
 from . import base_types
+from ._Max500Text import Max500Text
 from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
-from ._Max500Text import Max500Text
 
 class DetailedError1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Desc", "_Val"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Desc", "_Tp", "_Val"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -31,6 +18,19 @@ class DetailedError1(base_types._BaseFieldType):
 	def Desc(self):
 		del self._Desc
 		self._Desc = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Val(self):
@@ -46,8 +46,8 @@ class DetailedError1(base_types._BaseFieldType):
 		self._Val = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max500Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

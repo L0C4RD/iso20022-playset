@@ -6,19 +6,6 @@ class DeviceInputResponse6(base_types._BaseFieldType):
 
 	__slots__ = ["_OutptRslt", "_InptRslt"]
 	@property
-	def OutptRslt(self):
-		return self._OutptRslt
-
-	@OutptRslt.setter
-	def OutptRslt(self, value):
-		self._OutptRslt = value if type(value) != base_types.auto else self.make_default("OutptRslt")
-
-	@OutptRslt.deleter
-	def OutptRslt(self):
-		del self._OutptRslt
-		self._OutptRslt = None
-
-	@property
 	def InptRslt(self):
 		return self._InptRslt
 
@@ -31,8 +18,21 @@ class DeviceInputResponse6(base_types._BaseFieldType):
 		del self._InptRslt
 		self._InptRslt = None
 
+	@property
+	def OutptRslt(self):
+		return self._OutptRslt
+
+	@OutptRslt.setter
+	def OutptRslt(self, value):
+		self._OutptRslt = value if type(value) != base_types.auto else self.make_default("OutptRslt")
+
+	@OutptRslt.deleter
+	def OutptRslt(self):
+		del self._OutptRslt
+		self._OutptRslt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OutptRslt', type=OutputResult2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InptRslt', type=InputResult6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutptRslt', type=OutputResult2, min=0, max=1, mutex_group=None, array=False),
 	))
 

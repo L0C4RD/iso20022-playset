@@ -3,7 +3,7 @@ from ._ISODate import ISODate
 
 class DatePeriod4(base_types._BaseFieldType):
 
-	__slots__ = ["_FrDt", "_ToDt"]
+	__slots__ = ["_ToDt", "_FrDt"]
 	@property
 	def FrDt(self):
 		return self._FrDt

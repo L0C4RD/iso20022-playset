@@ -5,33 +5,7 @@ from ._AdditionalInformation15 import AdditionalInformation15
 
 class Capped1(base_types._BaseFieldType):
 
-	__slots__ = ["_IncmCurPrd", "_StartDt", "_AddtlInf", "_IncmLmtCurPrd", "_IncmLmtNxtPrd"]
-	@property
-	def IncmCurPrd(self):
-		return self._IncmCurPrd
-
-	@IncmCurPrd.setter
-	def IncmCurPrd(self, value):
-		self._IncmCurPrd = value if type(value) != base_types.auto else self.make_default("IncmCurPrd")
-
-	@IncmCurPrd.deleter
-	def IncmCurPrd(self):
-		del self._IncmCurPrd
-		self._IncmCurPrd = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
+	__slots__ = ["_IncmLmtNxtPrd", "_IncmLmtCurPrd", "_IncmCurPrd", "_AddtlInf", "_StartDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -44,6 +18,19 @@ class Capped1(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
+
+	@property
+	def IncmCurPrd(self):
+		return self._IncmCurPrd
+
+	@IncmCurPrd.setter
+	def IncmCurPrd(self, value):
+		self._IncmCurPrd = value if type(value) != base_types.auto else self.make_default("IncmCurPrd")
+
+	@IncmCurPrd.deleter
+	def IncmCurPrd(self):
+		del self._IncmCurPrd
+		self._IncmCurPrd = None
 
 	@property
 	def IncmLmtCurPrd(self):
@@ -71,11 +58,24 @@ class Capped1(base_types._BaseFieldType):
 		del self._IncmLmtNxtPrd
 		self._IncmLmtNxtPrd = None
 
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IncmCurPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IncmCurPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IncmLmtCurPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IncmLmtNxtPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

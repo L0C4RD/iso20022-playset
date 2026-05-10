@@ -5,32 +5,19 @@ from ._AccountIdentification5 import AccountIdentification5
 
 class SecuritiesAccount21(base_types._BaseFieldType):
 
-	__slots__ = ["_FXRate", "_SubAcct", "_BaseCcy", "_RptgCcy", "_Acct"]
+	__slots__ = ["_Acct", "_RptgCcy", "_BaseCcy", "_FXRate", "_SubAcct"]
 	@property
-	def FXRate(self):
-		return self._FXRate
+	def Acct(self):
+		return self._Acct
 
-	@FXRate.setter
-	def FXRate(self, value):
-		self._FXRate = value if type(value) != base_types.auto else self.make_default("FXRate")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
-	@FXRate.deleter
-	def FXRate(self):
-		del self._FXRate
-		self._FXRate = None
-
-	@property
-	def SubAcct(self):
-		return self._SubAcct
-
-	@SubAcct.setter
-	def SubAcct(self, value):
-		self._SubAcct = value if type(value) != base_types.auto else self.make_default("SubAcct")
-
-	@SubAcct.deleter
-	def SubAcct(self):
-		del self._SubAcct
-		self._SubAcct = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def BaseCcy(self):
@@ -46,6 +33,19 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 		self._BaseCcy = None
 
 	@property
+	def FXRate(self):
+		return self._FXRate
+
+	@FXRate.setter
+	def FXRate(self, value):
+		self._FXRate = value if type(value) != base_types.auto else self.make_default("FXRate")
+
+	@FXRate.deleter
+	def FXRate(self):
+		del self._FXRate
+		self._FXRate = None
+
+	@property
 	def RptgCcy(self):
 		return self._RptgCcy
 
@@ -59,23 +59,23 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 		self._RptgCcy = None
 
 	@property
-	def Acct(self):
-		return self._Acct
+	def SubAcct(self):
+		return self._SubAcct
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+	@SubAcct.setter
+	def SubAcct(self, value):
+		self._SubAcct = value if type(value) != base_types.auto else self.make_default("SubAcct")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@SubAcct.deleter
+	def SubAcct(self):
+		del self._SubAcct
+		self._SubAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FXRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcct', type=AccountIdentification5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcct', type=AccountIdentification5, min=0, max=1, mutex_group=None, array=False),
 	))
 

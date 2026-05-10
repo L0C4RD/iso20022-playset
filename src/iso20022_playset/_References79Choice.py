@@ -4,7 +4,20 @@ from ._SettlementTypeAndIdentification22 import SettlementTypeAndIdentification2
 
 class References79Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraPosMvmntPstngRptId", "_TrptyCollStsAdvcId", "_SctiesTxPstngRptId", "_SctiesBalCtdyRptId", "_SctiesTxPdgRptId", "_PrtflTrfNtfctnId", "_IntraPosMvmntConfId", "_SctiesBalAcctgRptId", "_TrptyCollTxInstrPrcgStsAdvcId", "_SctiesFincgConfId", "_SctiesSttlmTxAllgmtNtfctnTxId", "_OthrMsgId", "_SctiesSttlmTxConfId", "_SctiesSttlmTxAllgmtRptId", "_SctiesSttlmTxGnrtnNtfctnId", "_TrptyCollAndXpsrRptId", "_TtlPrtflValtnRptId"]
+	__slots__ = ["_SctiesSttlmTxGnrtnNtfctnId", "_SctiesBalAcctgRptId", "_TrptyCollTxInstrPrcgStsAdvcId", "_IntraPosMvmntPstngRptId", "_TtlPrtflValtnRptId", "_SctiesTxPstngRptId", "_SctiesSttlmTxAllgmtRptId", "_TrptyCollAndXpsrRptId", "_SctiesTxPdgRptId", "_SctiesSttlmTxAllgmtNtfctnTxId", "_PrtflTrfNtfctnId", "_SctiesBalCtdyRptId", "_TrptyCollStsAdvcId", "_OthrMsgId", "_SctiesFincgConfId", "_SctiesSttlmTxConfId", "_IntraPosMvmntConfId"]
+	@property
+	def IntraPosMvmntConfId(self):
+		return self._IntraPosMvmntConfId
+
+	@IntraPosMvmntConfId.setter
+	def IntraPosMvmntConfId(self, value):
+		self._IntraPosMvmntConfId = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntConfId")
+
+	@IntraPosMvmntConfId.deleter
+	def IntraPosMvmntConfId(self):
+		del self._IntraPosMvmntConfId
+		self._IntraPosMvmntConfId = None
+
 	@property
 	def IntraPosMvmntPstngRptId(self):
 		return self._IntraPosMvmntPstngRptId
@@ -19,56 +32,17 @@ class References79Choice(base_types._BaseFieldType):
 		self._IntraPosMvmntPstngRptId = None
 
 	@property
-	def TrptyCollStsAdvcId(self):
-		return self._TrptyCollStsAdvcId
+	def OthrMsgId(self):
+		return self._OthrMsgId
 
-	@TrptyCollStsAdvcId.setter
-	def TrptyCollStsAdvcId(self, value):
-		self._TrptyCollStsAdvcId = value if type(value) != base_types.auto else self.make_default("TrptyCollStsAdvcId")
+	@OthrMsgId.setter
+	def OthrMsgId(self, value):
+		self._OthrMsgId = value if type(value) != base_types.auto else self.make_default("OthrMsgId")
 
-	@TrptyCollStsAdvcId.deleter
-	def TrptyCollStsAdvcId(self):
-		del self._TrptyCollStsAdvcId
-		self._TrptyCollStsAdvcId = None
-
-	@property
-	def SctiesTxPstngRptId(self):
-		return self._SctiesTxPstngRptId
-
-	@SctiesTxPstngRptId.setter
-	def SctiesTxPstngRptId(self, value):
-		self._SctiesTxPstngRptId = value if type(value) != base_types.auto else self.make_default("SctiesTxPstngRptId")
-
-	@SctiesTxPstngRptId.deleter
-	def SctiesTxPstngRptId(self):
-		del self._SctiesTxPstngRptId
-		self._SctiesTxPstngRptId = None
-
-	@property
-	def SctiesBalCtdyRptId(self):
-		return self._SctiesBalCtdyRptId
-
-	@SctiesBalCtdyRptId.setter
-	def SctiesBalCtdyRptId(self, value):
-		self._SctiesBalCtdyRptId = value if type(value) != base_types.auto else self.make_default("SctiesBalCtdyRptId")
-
-	@SctiesBalCtdyRptId.deleter
-	def SctiesBalCtdyRptId(self):
-		del self._SctiesBalCtdyRptId
-		self._SctiesBalCtdyRptId = None
-
-	@property
-	def SctiesTxPdgRptId(self):
-		return self._SctiesTxPdgRptId
-
-	@SctiesTxPdgRptId.setter
-	def SctiesTxPdgRptId(self, value):
-		self._SctiesTxPdgRptId = value if type(value) != base_types.auto else self.make_default("SctiesTxPdgRptId")
-
-	@SctiesTxPdgRptId.deleter
-	def SctiesTxPdgRptId(self):
-		del self._SctiesTxPdgRptId
-		self._SctiesTxPdgRptId = None
+	@OthrMsgId.deleter
+	def OthrMsgId(self):
+		del self._OthrMsgId
+		self._OthrMsgId = None
 
 	@property
 	def PrtflTrfNtfctnId(self):
@@ -84,19 +58,6 @@ class References79Choice(base_types._BaseFieldType):
 		self._PrtflTrfNtfctnId = None
 
 	@property
-	def IntraPosMvmntConfId(self):
-		return self._IntraPosMvmntConfId
-
-	@IntraPosMvmntConfId.setter
-	def IntraPosMvmntConfId(self, value):
-		self._IntraPosMvmntConfId = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntConfId")
-
-	@IntraPosMvmntConfId.deleter
-	def IntraPosMvmntConfId(self):
-		del self._IntraPosMvmntConfId
-		self._IntraPosMvmntConfId = None
-
-	@property
 	def SctiesBalAcctgRptId(self):
 		return self._SctiesBalAcctgRptId
 
@@ -110,17 +71,17 @@ class References79Choice(base_types._BaseFieldType):
 		self._SctiesBalAcctgRptId = None
 
 	@property
-	def TrptyCollTxInstrPrcgStsAdvcId(self):
-		return self._TrptyCollTxInstrPrcgStsAdvcId
+	def SctiesBalCtdyRptId(self):
+		return self._SctiesBalCtdyRptId
 
-	@TrptyCollTxInstrPrcgStsAdvcId.setter
-	def TrptyCollTxInstrPrcgStsAdvcId(self, value):
-		self._TrptyCollTxInstrPrcgStsAdvcId = value if type(value) != base_types.auto else self.make_default("TrptyCollTxInstrPrcgStsAdvcId")
+	@SctiesBalCtdyRptId.setter
+	def SctiesBalCtdyRptId(self, value):
+		self._SctiesBalCtdyRptId = value if type(value) != base_types.auto else self.make_default("SctiesBalCtdyRptId")
 
-	@TrptyCollTxInstrPrcgStsAdvcId.deleter
-	def TrptyCollTxInstrPrcgStsAdvcId(self):
-		del self._TrptyCollTxInstrPrcgStsAdvcId
-		self._TrptyCollTxInstrPrcgStsAdvcId = None
+	@SctiesBalCtdyRptId.deleter
+	def SctiesBalCtdyRptId(self):
+		del self._SctiesBalCtdyRptId
+		self._SctiesBalCtdyRptId = None
 
 	@property
 	def SctiesFincgConfId(self):
@@ -149,17 +110,17 @@ class References79Choice(base_types._BaseFieldType):
 		self._SctiesSttlmTxAllgmtNtfctnTxId = None
 
 	@property
-	def OthrMsgId(self):
-		return self._OthrMsgId
+	def SctiesSttlmTxAllgmtRptId(self):
+		return self._SctiesSttlmTxAllgmtRptId
 
-	@OthrMsgId.setter
-	def OthrMsgId(self, value):
-		self._OthrMsgId = value if type(value) != base_types.auto else self.make_default("OthrMsgId")
+	@SctiesSttlmTxAllgmtRptId.setter
+	def SctiesSttlmTxAllgmtRptId(self, value):
+		self._SctiesSttlmTxAllgmtRptId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxAllgmtRptId")
 
-	@OthrMsgId.deleter
-	def OthrMsgId(self):
-		del self._OthrMsgId
-		self._OthrMsgId = None
+	@SctiesSttlmTxAllgmtRptId.deleter
+	def SctiesSttlmTxAllgmtRptId(self):
+		del self._SctiesSttlmTxAllgmtRptId
+		self._SctiesSttlmTxAllgmtRptId = None
 
 	@property
 	def SctiesSttlmTxConfId(self):
@@ -175,19 +136,6 @@ class References79Choice(base_types._BaseFieldType):
 		self._SctiesSttlmTxConfId = None
 
 	@property
-	def SctiesSttlmTxAllgmtRptId(self):
-		return self._SctiesSttlmTxAllgmtRptId
-
-	@SctiesSttlmTxAllgmtRptId.setter
-	def SctiesSttlmTxAllgmtRptId(self, value):
-		self._SctiesSttlmTxAllgmtRptId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxAllgmtRptId")
-
-	@SctiesSttlmTxAllgmtRptId.deleter
-	def SctiesSttlmTxAllgmtRptId(self):
-		del self._SctiesSttlmTxAllgmtRptId
-		self._SctiesSttlmTxAllgmtRptId = None
-
-	@property
 	def SctiesSttlmTxGnrtnNtfctnId(self):
 		return self._SctiesSttlmTxGnrtnNtfctnId
 
@@ -199,6 +147,32 @@ class References79Choice(base_types._BaseFieldType):
 	def SctiesSttlmTxGnrtnNtfctnId(self):
 		del self._SctiesSttlmTxGnrtnNtfctnId
 		self._SctiesSttlmTxGnrtnNtfctnId = None
+
+	@property
+	def SctiesTxPdgRptId(self):
+		return self._SctiesTxPdgRptId
+
+	@SctiesTxPdgRptId.setter
+	def SctiesTxPdgRptId(self, value):
+		self._SctiesTxPdgRptId = value if type(value) != base_types.auto else self.make_default("SctiesTxPdgRptId")
+
+	@SctiesTxPdgRptId.deleter
+	def SctiesTxPdgRptId(self):
+		del self._SctiesTxPdgRptId
+		self._SctiesTxPdgRptId = None
+
+	@property
+	def SctiesTxPstngRptId(self):
+		return self._SctiesTxPstngRptId
+
+	@SctiesTxPstngRptId.setter
+	def SctiesTxPstngRptId(self, value):
+		self._SctiesTxPstngRptId = value if type(value) != base_types.auto else self.make_default("SctiesTxPstngRptId")
+
+	@SctiesTxPstngRptId.deleter
+	def SctiesTxPstngRptId(self):
+		del self._SctiesTxPstngRptId
+		self._SctiesTxPstngRptId = None
 
 	@property
 	def TrptyCollAndXpsrRptId(self):
@@ -214,6 +188,32 @@ class References79Choice(base_types._BaseFieldType):
 		self._TrptyCollAndXpsrRptId = None
 
 	@property
+	def TrptyCollStsAdvcId(self):
+		return self._TrptyCollStsAdvcId
+
+	@TrptyCollStsAdvcId.setter
+	def TrptyCollStsAdvcId(self, value):
+		self._TrptyCollStsAdvcId = value if type(value) != base_types.auto else self.make_default("TrptyCollStsAdvcId")
+
+	@TrptyCollStsAdvcId.deleter
+	def TrptyCollStsAdvcId(self):
+		del self._TrptyCollStsAdvcId
+		self._TrptyCollStsAdvcId = None
+
+	@property
+	def TrptyCollTxInstrPrcgStsAdvcId(self):
+		return self._TrptyCollTxInstrPrcgStsAdvcId
+
+	@TrptyCollTxInstrPrcgStsAdvcId.setter
+	def TrptyCollTxInstrPrcgStsAdvcId(self, value):
+		self._TrptyCollTxInstrPrcgStsAdvcId = value if type(value) != base_types.auto else self.make_default("TrptyCollTxInstrPrcgStsAdvcId")
+
+	@TrptyCollTxInstrPrcgStsAdvcId.deleter
+	def TrptyCollTxInstrPrcgStsAdvcId(self):
+		del self._TrptyCollTxInstrPrcgStsAdvcId
+		self._TrptyCollTxInstrPrcgStsAdvcId = None
+
+	@property
 	def TtlPrtflValtnRptId(self):
 		return self._TtlPrtflValtnRptId
 
@@ -227,22 +227,22 @@ class References79Choice(base_types._BaseFieldType):
 		self._TtlPrtflValtnRptId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntraPosMvmntPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TrptyCollStsAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesTxPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesBalCtdyRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesTxPdgRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtflTrfNtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntraPosMvmntConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntraPosMvmntPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrMsgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtflTrfNtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesBalAcctgRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TrptyCollTxInstrPrcgStsAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesBalCtdyRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesFincgConfId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxAllgmtNtfctnTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OthrMsgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesSttlmTxConfId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxAllgmtRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesSttlmTxConfId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxGnrtnNtfctnId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesTxPdgRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesTxPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TrptyCollAndXpsrRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TrptyCollStsAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TrptyCollTxInstrPrcgStsAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TtlPrtflValtnRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

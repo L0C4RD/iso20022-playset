@@ -1,11 +1,11 @@
 from . import base_types
+from ._ResponseType11 import ResponseType11
 from ._InformationQualify1Code import InformationQualify1Code
 from ._UserInterface4Code import UserInterface4Code
-from ._ResponseType11 import ResponseType11
 
 class OutputResult2(base_types._BaseFieldType):
 
-	__slots__ = ["_DvcTp", "_InfQlfr", "_Rspn"]
+	__slots__ = ["_Rspn", "_InfQlfr", "_DvcTp"]
 	@property
 	def DvcTp(self):
 		return self._DvcTp

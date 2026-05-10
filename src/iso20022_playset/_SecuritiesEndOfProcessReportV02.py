@@ -1,25 +1,25 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
 from ._ConfirmationParties7 import ConfirmationParties7
-from ._Pagination1 import Pagination1
 from ._Report6 import Report6
+from ._Pagination1 import Pagination1
 from ._PartyIdentificationAndAccount220 import PartyIdentificationAndAccount220
 
 class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptGnlDtls", "_Invstr", "_SplmtryData", "_ConfPties", "_Pgntn"]
+	__slots__ = ["_Invstr", "_Pgntn", "_ConfPties", "_SplmtryData", "_RptGnlDtls"]
 	@property
-	def RptGnlDtls(self):
-		return self._RptGnlDtls
+	def ConfPties(self):
+		return self._ConfPties
 
-	@RptGnlDtls.setter
-	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+	@ConfPties.setter
+	def ConfPties(self, value):
+		self._ConfPties = value if type(value) != base_types.auto else self.make_default("ConfPties")
 
-	@RptGnlDtls.deleter
-	def RptGnlDtls(self):
-		del self._RptGnlDtls
-		self._RptGnlDtls = None
+	@ConfPties.deleter
+	def ConfPties(self):
+		del self._ConfPties
+		self._ConfPties = None
 
 	@property
 	def Invstr(self):
@@ -35,32 +35,6 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 		self._Invstr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def ConfPties(self):
-		return self._ConfPties
-
-	@ConfPties.setter
-	def ConfPties(self, value):
-		self._ConfPties = value if type(value) != base_types.auto else self.make_default("ConfPties")
-
-	@ConfPties.deleter
-	def ConfPties(self):
-		del self._ConfPties
-		self._ConfPties = None
-
-	@property
 	def Pgntn(self):
 		return self._Pgntn
 
@@ -73,11 +47,37 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 		del self._Pgntn
 		self._Pgntn = None
 
+	@property
+	def RptGnlDtls(self):
+		return self._RptGnlDtls
+
+	@RptGnlDtls.setter
+	def RptGnlDtls(self, value):
+		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+
+	@RptGnlDtls.deleter
+	def RptGnlDtls(self):
+		del self._RptGnlDtls
+		self._RptGnlDtls = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptGnlDtls', type=Report6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount220, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount220, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptGnlDtls', type=Report6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

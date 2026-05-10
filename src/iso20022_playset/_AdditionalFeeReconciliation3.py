@@ -1,13 +1,13 @@
 from . import base_types
-from ._Number import Number
 from ._TypeOfAmount21Code import TypeOfAmount21Code
 from ._Max35Text import Max35Text
-from ._ReconciliationImpact1Code import ReconciliationImpact1Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Number import Number
+from ._ReconciliationImpact1Code import ReconciliationImpact1Code
 
 class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_OthrTp", "_Cnt", "_Impct", "_Tp"]
+	__slots__ = ["_Amt", "_Cnt", "_Impct", "_OthrTp", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -20,19 +20,6 @@ class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
-
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
 
 	@property
 	def Cnt(self):
@@ -61,6 +48,19 @@ class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 		self._Impct = None
 
 	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -75,9 +75,9 @@ class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Impct', type=ReconciliationImpact1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TypeOfAmount21Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

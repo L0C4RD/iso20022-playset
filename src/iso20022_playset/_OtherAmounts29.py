@@ -3,58 +3,19 @@ from ._AmountAndDirection44 import AmountAndDirection44
 
 class OtherAmounts29(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_TrfTax", "_ChrgsFees", "_CtryNtlFdrlTax", "_AcrdIntrstAmt", "_AcrdCptlstnAmt", "_ShppgAmt", "_PmtLevyTax", "_TxTax", "_LclTax", "_StockXchgTax", "_WhldgTax", "_RgltryAmt", "_CsmptnTax", "_StmpDty", "_ValAddedTax"]
+	__slots__ = ["_ChrgsFees", "_CtryNtlFdrlTax", "_CsmptnTax", "_Othr", "_LclTax", "_AcrdCptlstnAmt", "_StmpDty", "_StockXchgTax", "_TxTax", "_ShppgAmt", "_WhldgTax", "_RgltryAmt", "_PmtLevyTax", "_AcrdIntrstAmt", "_ValAddedTax", "_TrfTax"]
 	@property
-	def Othr(self):
-		return self._Othr
+	def AcrdCptlstnAmt(self):
+		return self._AcrdCptlstnAmt
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+	@AcrdCptlstnAmt.setter
+	def AcrdCptlstnAmt(self, value):
+		self._AcrdCptlstnAmt = value if type(value) != base_types.auto else self.make_default("AcrdCptlstnAmt")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
-	def TrfTax(self):
-		return self._TrfTax
-
-	@TrfTax.setter
-	def TrfTax(self, value):
-		self._TrfTax = value if type(value) != base_types.auto else self.make_default("TrfTax")
-
-	@TrfTax.deleter
-	def TrfTax(self):
-		del self._TrfTax
-		self._TrfTax = None
-
-	@property
-	def ChrgsFees(self):
-		return self._ChrgsFees
-
-	@ChrgsFees.setter
-	def ChrgsFees(self, value):
-		self._ChrgsFees = value if type(value) != base_types.auto else self.make_default("ChrgsFees")
-
-	@ChrgsFees.deleter
-	def ChrgsFees(self):
-		del self._ChrgsFees
-		self._ChrgsFees = None
-
-	@property
-	def CtryNtlFdrlTax(self):
-		return self._CtryNtlFdrlTax
-
-	@CtryNtlFdrlTax.setter
-	def CtryNtlFdrlTax(self, value):
-		self._CtryNtlFdrlTax = value if type(value) != base_types.auto else self.make_default("CtryNtlFdrlTax")
-
-	@CtryNtlFdrlTax.deleter
-	def CtryNtlFdrlTax(self):
-		del self._CtryNtlFdrlTax
-		self._CtryNtlFdrlTax = None
+	@AcrdCptlstnAmt.deleter
+	def AcrdCptlstnAmt(self):
+		del self._AcrdCptlstnAmt
+		self._AcrdCptlstnAmt = None
 
 	@property
 	def AcrdIntrstAmt(self):
@@ -70,108 +31,17 @@ class OtherAmounts29(base_types._BaseFieldType):
 		self._AcrdIntrstAmt = None
 
 	@property
-	def AcrdCptlstnAmt(self):
-		return self._AcrdCptlstnAmt
+	def ChrgsFees(self):
+		return self._ChrgsFees
 
-	@AcrdCptlstnAmt.setter
-	def AcrdCptlstnAmt(self, value):
-		self._AcrdCptlstnAmt = value if type(value) != base_types.auto else self.make_default("AcrdCptlstnAmt")
+	@ChrgsFees.setter
+	def ChrgsFees(self, value):
+		self._ChrgsFees = value if type(value) != base_types.auto else self.make_default("ChrgsFees")
 
-	@AcrdCptlstnAmt.deleter
-	def AcrdCptlstnAmt(self):
-		del self._AcrdCptlstnAmt
-		self._AcrdCptlstnAmt = None
-
-	@property
-	def ShppgAmt(self):
-		return self._ShppgAmt
-
-	@ShppgAmt.setter
-	def ShppgAmt(self, value):
-		self._ShppgAmt = value if type(value) != base_types.auto else self.make_default("ShppgAmt")
-
-	@ShppgAmt.deleter
-	def ShppgAmt(self):
-		del self._ShppgAmt
-		self._ShppgAmt = None
-
-	@property
-	def PmtLevyTax(self):
-		return self._PmtLevyTax
-
-	@PmtLevyTax.setter
-	def PmtLevyTax(self, value):
-		self._PmtLevyTax = value if type(value) != base_types.auto else self.make_default("PmtLevyTax")
-
-	@PmtLevyTax.deleter
-	def PmtLevyTax(self):
-		del self._PmtLevyTax
-		self._PmtLevyTax = None
-
-	@property
-	def TxTax(self):
-		return self._TxTax
-
-	@TxTax.setter
-	def TxTax(self, value):
-		self._TxTax = value if type(value) != base_types.auto else self.make_default("TxTax")
-
-	@TxTax.deleter
-	def TxTax(self):
-		del self._TxTax
-		self._TxTax = None
-
-	@property
-	def LclTax(self):
-		return self._LclTax
-
-	@LclTax.setter
-	def LclTax(self, value):
-		self._LclTax = value if type(value) != base_types.auto else self.make_default("LclTax")
-
-	@LclTax.deleter
-	def LclTax(self):
-		del self._LclTax
-		self._LclTax = None
-
-	@property
-	def StockXchgTax(self):
-		return self._StockXchgTax
-
-	@StockXchgTax.setter
-	def StockXchgTax(self, value):
-		self._StockXchgTax = value if type(value) != base_types.auto else self.make_default("StockXchgTax")
-
-	@StockXchgTax.deleter
-	def StockXchgTax(self):
-		del self._StockXchgTax
-		self._StockXchgTax = None
-
-	@property
-	def WhldgTax(self):
-		return self._WhldgTax
-
-	@WhldgTax.setter
-	def WhldgTax(self, value):
-		self._WhldgTax = value if type(value) != base_types.auto else self.make_default("WhldgTax")
-
-	@WhldgTax.deleter
-	def WhldgTax(self):
-		del self._WhldgTax
-		self._WhldgTax = None
-
-	@property
-	def RgltryAmt(self):
-		return self._RgltryAmt
-
-	@RgltryAmt.setter
-	def RgltryAmt(self, value):
-		self._RgltryAmt = value if type(value) != base_types.auto else self.make_default("RgltryAmt")
-
-	@RgltryAmt.deleter
-	def RgltryAmt(self):
-		del self._RgltryAmt
-		self._RgltryAmt = None
+	@ChrgsFees.deleter
+	def ChrgsFees(self):
+		del self._ChrgsFees
+		self._ChrgsFees = None
 
 	@property
 	def CsmptnTax(self):
@@ -187,6 +57,84 @@ class OtherAmounts29(base_types._BaseFieldType):
 		self._CsmptnTax = None
 
 	@property
+	def CtryNtlFdrlTax(self):
+		return self._CtryNtlFdrlTax
+
+	@CtryNtlFdrlTax.setter
+	def CtryNtlFdrlTax(self, value):
+		self._CtryNtlFdrlTax = value if type(value) != base_types.auto else self.make_default("CtryNtlFdrlTax")
+
+	@CtryNtlFdrlTax.deleter
+	def CtryNtlFdrlTax(self):
+		del self._CtryNtlFdrlTax
+		self._CtryNtlFdrlTax = None
+
+	@property
+	def LclTax(self):
+		return self._LclTax
+
+	@LclTax.setter
+	def LclTax(self, value):
+		self._LclTax = value if type(value) != base_types.auto else self.make_default("LclTax")
+
+	@LclTax.deleter
+	def LclTax(self):
+		del self._LclTax
+		self._LclTax = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
+	def PmtLevyTax(self):
+		return self._PmtLevyTax
+
+	@PmtLevyTax.setter
+	def PmtLevyTax(self, value):
+		self._PmtLevyTax = value if type(value) != base_types.auto else self.make_default("PmtLevyTax")
+
+	@PmtLevyTax.deleter
+	def PmtLevyTax(self):
+		del self._PmtLevyTax
+		self._PmtLevyTax = None
+
+	@property
+	def RgltryAmt(self):
+		return self._RgltryAmt
+
+	@RgltryAmt.setter
+	def RgltryAmt(self, value):
+		self._RgltryAmt = value if type(value) != base_types.auto else self.make_default("RgltryAmt")
+
+	@RgltryAmt.deleter
+	def RgltryAmt(self):
+		del self._RgltryAmt
+		self._RgltryAmt = None
+
+	@property
+	def ShppgAmt(self):
+		return self._ShppgAmt
+
+	@ShppgAmt.setter
+	def ShppgAmt(self, value):
+		self._ShppgAmt = value if type(value) != base_types.auto else self.make_default("ShppgAmt")
+
+	@ShppgAmt.deleter
+	def ShppgAmt(self):
+		del self._ShppgAmt
+		self._ShppgAmt = None
+
+	@property
 	def StmpDty(self):
 		return self._StmpDty
 
@@ -198,6 +146,45 @@ class OtherAmounts29(base_types._BaseFieldType):
 	def StmpDty(self):
 		del self._StmpDty
 		self._StmpDty = None
+
+	@property
+	def StockXchgTax(self):
+		return self._StockXchgTax
+
+	@StockXchgTax.setter
+	def StockXchgTax(self, value):
+		self._StockXchgTax = value if type(value) != base_types.auto else self.make_default("StockXchgTax")
+
+	@StockXchgTax.deleter
+	def StockXchgTax(self):
+		del self._StockXchgTax
+		self._StockXchgTax = None
+
+	@property
+	def TrfTax(self):
+		return self._TrfTax
+
+	@TrfTax.setter
+	def TrfTax(self, value):
+		self._TrfTax = value if type(value) != base_types.auto else self.make_default("TrfTax")
+
+	@TrfTax.deleter
+	def TrfTax(self):
+		del self._TrfTax
+		self._TrfTax = None
+
+	@property
+	def TxTax(self):
+		return self._TxTax
+
+	@TxTax.setter
+	def TxTax(self, value):
+		self._TxTax = value if type(value) != base_types.auto else self.make_default("TxTax")
+
+	@TxTax.deleter
+	def TxTax(self):
+		del self._TxTax
+		self._TxTax = None
 
 	@property
 	def ValAddedTax(self):
@@ -212,22 +199,35 @@ class OtherAmounts29(base_types._BaseFieldType):
 		del self._ValAddedTax
 		self._ValAddedTax = None
 
+	@property
+	def WhldgTax(self):
+		return self._WhldgTax
+
+	@WhldgTax.setter
+	def WhldgTax(self, value):
+		self._WhldgTax = value if type(value) != base_types.auto else self.make_default("WhldgTax")
+
+	@WhldgTax.deleter
+	def WhldgTax(self):
+		del self._WhldgTax
+		self._WhldgTax = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsFees', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryNtlFdrlTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdCptlstnAmt', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShppgAmt', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtLevyTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StockXchgTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WhldgTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RgltryAmt', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsFees', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CsmptnTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryNtlFdrlTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtLevyTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RgltryAmt', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShppgAmt', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmpDty', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockXchgTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValAddedTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhldgTax', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 	))
 

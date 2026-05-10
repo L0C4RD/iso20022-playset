@@ -5,20 +5,7 @@ from ._TransparencyDataReport15 import TransparencyDataReport15
 
 class FinancialInstrumentReportingNonEquityTradingActivityReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_NonEqtyTrnsprncyData", "_RptHdr"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_RptHdr", "_SplmtryData", "_NonEqtyTrnsprncyData"]
 	@property
 	def NonEqtyTrnsprncyData(self):
 		return self._NonEqtyTrnsprncyData
@@ -45,9 +32,22 @@ class FinancialInstrumentReportingNonEquityTradingActivityReportV01(base_types._
 		del self._RptHdr
 		self._RptHdr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NonEqtyTrnsprncyData', type=TransparencyDataReport15, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

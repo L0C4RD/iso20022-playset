@@ -5,19 +5,19 @@ from ._AmountPriceType1Code import AmountPriceType1Code
 
 class AmountPricePerFinancialInstrumentQuantity11(base_types._BaseFieldType):
 
-	__slots__ = ["_PricVal", "_FinInstrmQty", "_AmtPricTp"]
+	__slots__ = ["_PricVal", "_AmtPricTp", "_FinInstrmQty"]
 	@property
-	def PricVal(self):
-		return self._PricVal
+	def AmtPricTp(self):
+		return self._AmtPricTp
 
-	@PricVal.setter
-	def PricVal(self, value):
-		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
+	@AmtPricTp.setter
+	def AmtPricTp(self, value):
+		self._AmtPricTp = value if type(value) != base_types.auto else self.make_default("AmtPricTp")
 
-	@PricVal.deleter
-	def PricVal(self):
-		del self._PricVal
-		self._PricVal = None
+	@AmtPricTp.deleter
+	def AmtPricTp(self):
+		del self._AmtPricTp
+		self._AmtPricTp = None
 
 	@property
 	def FinInstrmQty(self):
@@ -33,21 +33,21 @@ class AmountPricePerFinancialInstrumentQuantity11(base_types._BaseFieldType):
 		self._FinInstrmQty = None
 
 	@property
-	def AmtPricTp(self):
-		return self._AmtPricTp
+	def PricVal(self):
+		return self._PricVal
 
-	@AmtPricTp.setter
-	def AmtPricTp(self, value):
-		self._AmtPricTp = value if type(value) != base_types.auto else self.make_default("AmtPricTp")
+	@PricVal.setter
+	def PricVal(self, value):
+		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
 
-	@AmtPricTp.deleter
-	def AmtPricTp(self):
-		del self._AmtPricTp
-		self._AmtPricTp = None
+	@PricVal.deleter
+	def PricVal(self):
+		del self._PricVal
+		self._PricVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PricVal', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity36Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity36Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricVal', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

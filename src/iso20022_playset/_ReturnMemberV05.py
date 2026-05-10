@@ -1,23 +1,23 @@
 from . import base_types
-from ._MessageHeader7 import MessageHeader7
 from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader7 import MessageHeader7
 from ._MemberReportOrError7Choice import MemberReportOrError7Choice
 
 class ReturnMemberV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptOrErr", "_MsgHdr"]
+	__slots__ = ["_RptOrErr", "_MsgHdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	@property
 	def RptOrErr(self):
@@ -33,21 +33,21 @@ class ReturnMemberV05(base_types._BaseFieldType):
 		self._RptOrErr = None
 
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptOrErr', type=MemberReportOrError7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptOrErr', type=MemberReportOrError7Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

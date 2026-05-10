@@ -1,27 +1,14 @@
 from . import base_types
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._CreditDebit3Code import CreditDebit3Code
 from ._ISO8583AmountTypeCode import ISO8583AmountTypeCode
+from ._Max35Text import Max35Text
+from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max70Text import Max70Text
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 
 class AdditionalAmounts4(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Amt", "_Ccy", "_CdtDbt", "_OthrTp", "_Tp"]
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
+	__slots__ = ["_Amt", "_Ccy", "_Tp", "_CdtDbt", "_OthrTp", "_Desc"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -62,6 +49,19 @@ class AdditionalAmounts4(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
+	@property
 	def OthrTp(self):
 		return self._OthrTp
 
@@ -88,10 +88,10 @@ class AdditionalAmounts4(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ISO8583AmountTypeCode, min=1, max=1, mutex_group=None, array=False),
 	))

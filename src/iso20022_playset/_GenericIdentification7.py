@@ -4,7 +4,7 @@ from ._Max8Text import Max8Text
 
 class GenericIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_Inf", "_Issr"]
+	__slots__ = ["_Issr", "_Inf"]
 	@property
 	def Inf(self):
 		return self._Inf

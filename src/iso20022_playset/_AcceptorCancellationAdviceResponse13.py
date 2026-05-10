@@ -1,11 +1,11 @@
 from . import base_types
-from ._TMSTrigger1 import TMSTrigger1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._TMSTrigger1 import TMSTrigger1
 from ._CardPaymentTransactionAdviceResponse8 import CardPaymentTransactionAdviceResponse8
 
 class AcceptorCancellationAdviceResponse13(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_TMSTrggr", "_Tx"]
+	__slots__ = ["_Envt", "_Tx", "_TMSTrggr"]
 	@property
 	def Envt(self):
 		return self._Envt

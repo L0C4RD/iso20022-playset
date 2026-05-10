@@ -1,10 +1,10 @@
 from . import base_types
-from ._RejectionReason8Code import RejectionReason8Code
 from ._GenericIdentification13 import GenericIdentification13
+from ._RejectionReason8Code import RejectionReason8Code
 
 class RejectionReason8FormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

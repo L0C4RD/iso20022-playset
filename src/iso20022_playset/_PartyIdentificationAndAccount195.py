@@ -1,13 +1,13 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._PartyIdentification120Choice import PartyIdentification120Choice
 from ._Max35Text import Max35Text
-from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 
 class PartyIdentificationAndAccount195(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_Id", "_SfkpgAcct", "_PrcgId", "_LEI"]
+	__slots__ = ["_LEI", "_BlckChainAdrOrWllt", "_Id", "_SfkpgAcct", "_PrcgId"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -35,17 +35,17 @@ class PartyIdentificationAndAccount195(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def LEI(self):
+		return self._LEI
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def PrcgId(self):
@@ -61,23 +61,23 @@ class PartyIdentificationAndAccount195(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 	))
 

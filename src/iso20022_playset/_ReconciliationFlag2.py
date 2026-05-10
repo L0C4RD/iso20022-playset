@@ -1,48 +1,22 @@
 from . import base_types
-from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
 
 class ReconciliationFlag2(base_types._BaseFieldType):
 
-	__slots__ = ["_LnRcncltnSts", "_RptTp", "_ModSts", "_CollRcncltnSts", "_PairdSts", "_BothCtrPtiesRptg"]
+	__slots__ = ["_BothCtrPtiesRptg", "_ModSts", "_RptTp", "_CollRcncltnSts", "_LnRcncltnSts", "_PairdSts"]
 	@property
-	def LnRcncltnSts(self):
-		return self._LnRcncltnSts
+	def BothCtrPtiesRptg(self):
+		return self._BothCtrPtiesRptg
 
-	@LnRcncltnSts.setter
-	def LnRcncltnSts(self, value):
-		self._LnRcncltnSts = value if type(value) != base_types.auto else self.make_default("LnRcncltnSts")
+	@BothCtrPtiesRptg.setter
+	def BothCtrPtiesRptg(self, value):
+		self._BothCtrPtiesRptg = value if type(value) != base_types.auto else self.make_default("BothCtrPtiesRptg")
 
-	@LnRcncltnSts.deleter
-	def LnRcncltnSts(self):
-		del self._LnRcncltnSts
-		self._LnRcncltnSts = None
-
-	@property
-	def RptTp(self):
-		return self._RptTp
-
-	@RptTp.setter
-	def RptTp(self, value):
-		self._RptTp = value if type(value) != base_types.auto else self.make_default("RptTp")
-
-	@RptTp.deleter
-	def RptTp(self):
-		del self._RptTp
-		self._RptTp = None
-
-	@property
-	def ModSts(self):
-		return self._ModSts
-
-	@ModSts.setter
-	def ModSts(self, value):
-		self._ModSts = value if type(value) != base_types.auto else self.make_default("ModSts")
-
-	@ModSts.deleter
-	def ModSts(self):
-		del self._ModSts
-		self._ModSts = None
+	@BothCtrPtiesRptg.deleter
+	def BothCtrPtiesRptg(self):
+		del self._BothCtrPtiesRptg
+		self._BothCtrPtiesRptg = None
 
 	@property
 	def CollRcncltnSts(self):
@@ -58,6 +32,32 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 		self._CollRcncltnSts = None
 
 	@property
+	def LnRcncltnSts(self):
+		return self._LnRcncltnSts
+
+	@LnRcncltnSts.setter
+	def LnRcncltnSts(self, value):
+		self._LnRcncltnSts = value if type(value) != base_types.auto else self.make_default("LnRcncltnSts")
+
+	@LnRcncltnSts.deleter
+	def LnRcncltnSts(self):
+		del self._LnRcncltnSts
+		self._LnRcncltnSts = None
+
+	@property
+	def ModSts(self):
+		return self._ModSts
+
+	@ModSts.setter
+	def ModSts(self, value):
+		self._ModSts = value if type(value) != base_types.auto else self.make_default("ModSts")
+
+	@ModSts.deleter
+	def ModSts(self):
+		del self._ModSts
+		self._ModSts = None
+
+	@property
 	def PairdSts(self):
 		return self._PairdSts
 
@@ -71,24 +71,24 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 		self._PairdSts = None
 
 	@property
-	def BothCtrPtiesRptg(self):
-		return self._BothCtrPtiesRptg
+	def RptTp(self):
+		return self._RptTp
 
-	@BothCtrPtiesRptg.setter
-	def BothCtrPtiesRptg(self, value):
-		self._BothCtrPtiesRptg = value if type(value) != base_types.auto else self.make_default("BothCtrPtiesRptg")
+	@RptTp.setter
+	def RptTp(self, value):
+		self._RptTp = value if type(value) != base_types.auto else self.make_default("RptTp")
 
-	@BothCtrPtiesRptg.deleter
-	def BothCtrPtiesRptg(self):
-		del self._BothCtrPtiesRptg
-		self._BothCtrPtiesRptg = None
+	@RptTp.deleter
+	def RptTp(self):
+		del self._RptTp
+		self._RptTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LnRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptTp', type=TradeRepositoryReportingType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PairdSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BothCtrPtiesRptg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LnRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PairdSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptTp', type=TradeRepositoryReportingType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

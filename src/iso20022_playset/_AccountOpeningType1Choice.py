@@ -4,7 +4,7 @@ from ._AccountOpeningType1Code import AccountOpeningType1Code
 
 class AccountOpeningType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Cd(self):
 		return self._Cd

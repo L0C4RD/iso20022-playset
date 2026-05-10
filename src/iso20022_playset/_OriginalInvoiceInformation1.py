@@ -1,23 +1,23 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max35Text import Max35Text
 
 class OriginalInvoiceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlInvcAmt", "_IsseDt", "_DocNb", "_PmtDueDt"]
+	__slots__ = ["_IsseDt", "_TtlInvcAmt", "_PmtDueDt", "_DocNb"]
 	@property
-	def TtlInvcAmt(self):
-		return self._TtlInvcAmt
+	def DocNb(self):
+		return self._DocNb
 
-	@TtlInvcAmt.setter
-	def TtlInvcAmt(self, value):
-		self._TtlInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlInvcAmt")
+	@DocNb.setter
+	def DocNb(self, value):
+		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
 
-	@TtlInvcAmt.deleter
-	def TtlInvcAmt(self):
-		del self._TtlInvcAmt
-		self._TtlInvcAmt = None
+	@DocNb.deleter
+	def DocNb(self):
+		del self._DocNb
+		self._DocNb = None
 
 	@property
 	def IsseDt(self):
@@ -33,19 +33,6 @@ class OriginalInvoiceInformation1(base_types._BaseFieldType):
 		self._IsseDt = None
 
 	@property
-	def DocNb(self):
-		return self._DocNb
-
-	@DocNb.setter
-	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
-
-	@DocNb.deleter
-	def DocNb(self):
-		del self._DocNb
-		self._DocNb = None
-
-	@property
 	def PmtDueDt(self):
 		return self._PmtDueDt
 
@@ -58,10 +45,23 @@ class OriginalInvoiceInformation1(base_types._BaseFieldType):
 		del self._PmtDueDt
 		self._PmtDueDt = None
 
+	@property
+	def TtlInvcAmt(self):
+		return self._TtlInvcAmt
+
+	@TtlInvcAmt.setter
+	def TtlInvcAmt(self, value):
+		self._TtlInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlInvcAmt")
+
+	@TtlInvcAmt.deleter
+	def TtlInvcAmt(self):
+		del self._TtlInvcAmt
+		self._TtlInvcAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlInvcAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlInvcAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

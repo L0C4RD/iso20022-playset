@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DocumentIdentification35 import DocumentIdentification35
+from ._Max35Text import Max35Text
 
 class ContractRegistrationReference2Choice(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
+from ._CardAccountType3Code import CardAccountType3Code
 from ._Max35Text import Max35Text
 from ._CustomerOrder1 import CustomerOrder1
-from ._CardAccountType3Code import CardAccountType3Code
 
 class PaymentAccountRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctRef", "_CstmrOrdr", "_AcctTp"]
+	__slots__ = ["_CstmrOrdr", "_AcctRef", "_AcctTp"]
 	@property
 	def AcctRef(self):
 		return self._AcctRef
@@ -20,19 +20,6 @@ class PaymentAccountRequest1(base_types._BaseFieldType):
 		self._AcctRef = None
 
 	@property
-	def CstmrOrdr(self):
-		return self._CstmrOrdr
-
-	@CstmrOrdr.setter
-	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
-
-	@CstmrOrdr.deleter
-	def CstmrOrdr(self):
-		del self._CstmrOrdr
-		self._CstmrOrdr = None
-
-	@property
 	def AcctTp(self):
 		return self._AcctTp
 
@@ -45,9 +32,22 @@ class PaymentAccountRequest1(base_types._BaseFieldType):
 		del self._AcctTp
 		self._AcctTp = None
 
+	@property
+	def CstmrOrdr(self):
+		return self._CstmrOrdr
+
+	@CstmrOrdr.setter
+	def CstmrOrdr(self, value):
+		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
+
+	@CstmrOrdr.deleter
+	def CstmrOrdr(self):
+		del self._CstmrOrdr
+		self._CstmrOrdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctTp', type=CardAccountType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),
 	))
 

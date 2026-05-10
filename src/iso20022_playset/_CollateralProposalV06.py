@@ -1,39 +1,13 @@
 from . import base_types
-from ._Obligation9 import Obligation9
-from ._Max35Text import Max35Text
 from ._SupplementaryData1 import SupplementaryData1
 from ._Proposal6 import Proposal6
+from ._Max35Text import Max35Text
 from ._Agreement4 import Agreement4
+from ._Obligation9 import Obligation9
 
 class CollateralProposalV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_TpAndDtls", "_Agrmt", "_SplmtryData", "_Oblgtn"]
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def TpAndDtls(self):
-		return self._TpAndDtls
-
-	@TpAndDtls.setter
-	def TpAndDtls(self, value):
-		self._TpAndDtls = value if type(value) != base_types.auto else self.make_default("TpAndDtls")
-
-	@TpAndDtls.deleter
-	def TpAndDtls(self):
-		del self._TpAndDtls
-		self._TpAndDtls = None
-
+	__slots__ = ["_Oblgtn", "_SplmtryData", "_Agrmt", "_TxId", "_TpAndDtls"]
 	@property
 	def Agrmt(self):
 		return self._Agrmt
@@ -46,6 +20,19 @@ class CollateralProposalV06(base_types._BaseFieldType):
 	def Agrmt(self):
 		del self._Agrmt
 		self._Agrmt = None
+
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
 
 	@property
 	def SplmtryData(self):
@@ -61,23 +48,36 @@ class CollateralProposalV06(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Oblgtn(self):
-		return self._Oblgtn
+	def TpAndDtls(self):
+		return self._TpAndDtls
 
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+	@TpAndDtls.setter
+	def TpAndDtls(self, value):
+		self._TpAndDtls = value if type(value) != base_types.auto else self.make_default("TpAndDtls")
 
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
+	@TpAndDtls.deleter
+	def TpAndDtls(self):
+		del self._TpAndDtls
+		self._TpAndDtls = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpAndDtls', type=Proposal6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TpAndDtls', type=Proposal6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

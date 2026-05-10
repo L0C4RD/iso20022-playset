@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max8000Text import Max8000Text
 from ._ISO2ALanguageCode import ISO2ALanguageCode
+from ._Max8000Text import Max8000Text
 
 class LanguageSpecifiedNarrative1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Lang"]
+	__slots__ = ["_Lang", "_AddtlInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

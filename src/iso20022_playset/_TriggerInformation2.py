@@ -1,38 +1,12 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._ExchangePolicy2Code import ExchangePolicy2Code
 from ._PartyType5Code import PartyType5Code
+from ._ExchangePolicy2Code import ExchangePolicy2Code
 from ._Max70Text import Max70Text
 
 class TriggerInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrggrSrc", "_TrggrTp", "_AddtlInf", "_SrcId"]
-	@property
-	def TrggrSrc(self):
-		return self._TrggrSrc
-
-	@TrggrSrc.setter
-	def TrggrSrc(self, value):
-		self._TrggrSrc = value if type(value) != base_types.auto else self.make_default("TrggrSrc")
-
-	@TrggrSrc.deleter
-	def TrggrSrc(self):
-		del self._TrggrSrc
-		self._TrggrSrc = None
-
-	@property
-	def TrggrTp(self):
-		return self._TrggrTp
-
-	@TrggrTp.setter
-	def TrggrTp(self, value):
-		self._TrggrTp = value if type(value) != base_types.auto else self.make_default("TrggrTp")
-
-	@TrggrTp.deleter
-	def TrggrTp(self):
-		del self._TrggrTp
-		self._TrggrTp = None
-
+	__slots__ = ["_AddtlInf", "_SrcId", "_TrggrTp", "_TrggrSrc"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -59,10 +33,36 @@ class TriggerInformation2(base_types._BaseFieldType):
 		del self._SrcId
 		self._SrcId = None
 
+	@property
+	def TrggrSrc(self):
+		return self._TrggrSrc
+
+	@TrggrSrc.setter
+	def TrggrSrc(self, value):
+		self._TrggrSrc = value if type(value) != base_types.auto else self.make_default("TrggrSrc")
+
+	@TrggrSrc.deleter
+	def TrggrSrc(self):
+		del self._TrggrSrc
+		self._TrggrSrc = None
+
+	@property
+	def TrggrTp(self):
+		return self._TrggrTp
+
+	@TrggrTp.setter
+	def TrggrTp(self, value):
+		self._TrggrTp = value if type(value) != base_types.auto else self.make_default("TrggrTp")
+
+	@TrggrTp.deleter
+	def TrggrTp(self):
+		del self._TrggrTp
+		self._TrggrTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrggrSrc', type=PartyType5Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrggrTp', type=ExchangePolicy2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrggrSrc', type=PartyType5Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrggrTp', type=ExchangePolicy2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

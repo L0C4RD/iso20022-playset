@@ -1,22 +1,22 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._InstructionStatus13Choice import InstructionStatus13Choice
+from ._Max35Text import Max35Text
 
 class DetailedInstructionStatus21(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglInstrId", "_InstrSts", "_SubAcctId", "_AcctId"]
+	__slots__ = ["_AcctId", "_SubAcctId", "_SnglInstrId", "_InstrSts"]
 	@property
-	def SnglInstrId(self):
-		return self._SnglInstrId
+	def AcctId(self):
+		return self._AcctId
 
-	@SnglInstrId.setter
-	def SnglInstrId(self, value):
-		self._SnglInstrId = value if type(value) != base_types.auto else self.make_default("SnglInstrId")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@SnglInstrId.deleter
-	def SnglInstrId(self):
-		del self._SnglInstrId
-		self._SnglInstrId = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def InstrSts(self):
@@ -32,6 +32,19 @@ class DetailedInstructionStatus21(base_types._BaseFieldType):
 		self._InstrSts = None
 
 	@property
+	def SnglInstrId(self):
+		return self._SnglInstrId
+
+	@SnglInstrId.setter
+	def SnglInstrId(self, value):
+		self._SnglInstrId = value if type(value) != base_types.auto else self.make_default("SnglInstrId")
+
+	@SnglInstrId.deleter
+	def SnglInstrId(self):
+		del self._SnglInstrId
+		self._SnglInstrId = None
+
+	@property
 	def SubAcctId(self):
 		return self._SubAcctId
 
@@ -44,23 +57,10 @@ class DetailedInstructionStatus21(base_types._BaseFieldType):
 		del self._SubAcctId
 		self._SubAcctId = None
 
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SnglInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrSts', type=InstructionStatus13Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrSts', type=InstructionStatus13Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SnglInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

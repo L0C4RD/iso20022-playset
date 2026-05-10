@@ -4,7 +4,7 @@ from ._ErrorHandling5 import ErrorHandling5
 
 class TransactionOrError6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BizErr", "_Tx"]
+	__slots__ = ["_Tx", "_BizErr"]
 	@property
 	def BizErr(self):
 		return self._BizErr

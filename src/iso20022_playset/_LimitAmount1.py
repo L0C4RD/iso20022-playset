@@ -5,17 +5,17 @@ class LimitAmount1(base_types._BaseFieldType):
 
 	__slots__ = ["_UtlstnAmt", "_AvlblAmt", "_Amt"]
 	@property
-	def UtlstnAmt(self):
-		return self._UtlstnAmt
+	def Amt(self):
+		return self._Amt
 
-	@UtlstnAmt.setter
-	def UtlstnAmt(self, value):
-		self._UtlstnAmt = value if type(value) != base_types.auto else self.make_default("UtlstnAmt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@UtlstnAmt.deleter
-	def UtlstnAmt(self):
-		del self._UtlstnAmt
-		self._UtlstnAmt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def AvlblAmt(self):
@@ -31,21 +31,21 @@ class LimitAmount1(base_types._BaseFieldType):
 		self._AvlblAmt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def UtlstnAmt(self):
+		return self._UtlstnAmt
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@UtlstnAmt.setter
+	def UtlstnAmt(self, value):
+		self._UtlstnAmt = value if type(value) != base_types.auto else self.make_default("UtlstnAmt")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@UtlstnAmt.deleter
+	def UtlstnAmt(self):
+		del self._UtlstnAmt
+		self._UtlstnAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UtlstnAmt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvlblAmt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblAmt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UtlstnAmt', type=CreditDebitAmount1, min=1, max=1, mutex_group=None, array=False),
 	))
 

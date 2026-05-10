@@ -1,7 +1,7 @@
 from . import base_types
-from ._ResponseType10 import ResponseType10
-from ._Max8Text import Max8Text
 from ._GenericIdentification90 import GenericIdentification90
+from ._Max8Text import Max8Text
+from ._ResponseType10 import ResponseType10
 
 class AuthorisationResult18(base_types._BaseFieldType):
 

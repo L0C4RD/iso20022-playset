@@ -1,6 +1,6 @@
 from . import base_types
-from ._ReturnedStatusReason1 import ReturnedStatusReason1
 from ._NoReasonCode import NoReasonCode
+from ._ReturnedStatusReason1 import ReturnedStatusReason1
 
 class ReturnedStatus1Choice(base_types._BaseFieldType):
 

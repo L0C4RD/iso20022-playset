@@ -1,10 +1,10 @@
 from . import base_types
-from ._UndertakingAmount4 import UndertakingAmount4
 from ._Percentage1 import Percentage1
+from ._UndertakingAmount4 import UndertakingAmount4
 
 class AmountOrPercentage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DfndAmt", "_PctgAmt"]
+	__slots__ = ["_PctgAmt", "_DfndAmt"]
 	@property
 	def DfndAmt(self):
 		return self._DfndAmt

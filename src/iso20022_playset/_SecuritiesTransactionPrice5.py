@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._Max35Text import Max35Text
 
 class SecuritiesTransactionPrice5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val"]
+	__slots__ = ["_Val", "_Tp"]
 	@property
 	def Tp(self):
 		return self._Tp

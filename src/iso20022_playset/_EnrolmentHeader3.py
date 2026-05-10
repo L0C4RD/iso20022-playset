@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._RTPPartyIdentification2 import RTPPartyIdentification2
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class EnrolmentHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_InitgPty", "_MsgRcpt", "_MsgOrgtr", "_MsgId"]
+	__slots__ = ["_InitgPty", "_MsgRcpt", "_MsgId", "_CreDtTm", "_MsgOrgtr"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -33,17 +33,17 @@ class EnrolmentHeader3(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
+	def MsgId(self):
+		return self._MsgId
 
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def MsgOrgtr(self):
@@ -59,23 +59,23 @@ class EnrolmentHeader3(base_types._BaseFieldType):
 		self._MsgOrgtr = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def MsgRcpt(self):
+		return self._MsgRcpt
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRcpt', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgOrgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgOrgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRcpt', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
 

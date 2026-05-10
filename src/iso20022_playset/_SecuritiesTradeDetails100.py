@@ -1,11 +1,24 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._Max350Text import Max350Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max350Text import Max350Text
+from ._Max3Number import Max3Number
 
 class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfDaysAcrd", "_OpngSttlmDt", "_InstrPrcgAddtlDtls", "_TradDt"]
+	__slots__ = ["_OpngSttlmDt", "_NbOfDaysAcrd", "_InstrPrcgAddtlDtls", "_TradDt"]
+	@property
+	def InstrPrcgAddtlDtls(self):
+		return self._InstrPrcgAddtlDtls
+
+	@InstrPrcgAddtlDtls.setter
+	def InstrPrcgAddtlDtls(self, value):
+		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
+
+	@InstrPrcgAddtlDtls.deleter
+	def InstrPrcgAddtlDtls(self):
+		del self._InstrPrcgAddtlDtls
+		self._InstrPrcgAddtlDtls = None
+
 	@property
 	def NbOfDaysAcrd(self):
 		return self._NbOfDaysAcrd
@@ -33,19 +46,6 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 		self._OpngSttlmDt = None
 
 	@property
-	def InstrPrcgAddtlDtls(self):
-		return self._InstrPrcgAddtlDtls
-
-	@InstrPrcgAddtlDtls.setter
-	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
-
-	@InstrPrcgAddtlDtls.deleter
-	def InstrPrcgAddtlDtls(self):
-		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
-
-	@property
 	def TradDt(self):
 		return self._TradDt
 
@@ -59,9 +59,9 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 		self._TradDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDaysAcrd', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngSttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

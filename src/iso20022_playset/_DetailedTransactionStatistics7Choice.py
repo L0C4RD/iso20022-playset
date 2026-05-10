@@ -1,6 +1,6 @@
 from . import base_types
-from ._DetailedTransactionStatistics30 import DetailedTransactionStatistics30
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from ._DetailedTransactionStatistics30 import DetailedTransactionStatistics30
 
 class DetailedTransactionStatistics7Choice(base_types._BaseFieldType):
 

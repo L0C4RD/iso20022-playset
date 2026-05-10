@@ -1,24 +1,11 @@
 from . import base_types
-from ._PartyIdentification253Choice import PartyIdentification253Choice
 from ._DeliveringPartiesAndAccount22 import DeliveringPartiesAndAccount22
 from ._ReceivingPartiesAndAccount22 import ReceivingPartiesAndAccount22
+from ._PartyIdentification253Choice import PartyIdentification253Choice
 
 class NonGuaranteedTrade4(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvgPties", "_DlvrgPties", "_TradCtrPtyClrMmbId", "_TradCtrPtyMmbId"]
-	@property
-	def RcvgPties(self):
-		return self._RcvgPties
-
-	@RcvgPties.setter
-	def RcvgPties(self, value):
-		self._RcvgPties = value if type(value) != base_types.auto else self.make_default("RcvgPties")
-
-	@RcvgPties.deleter
-	def RcvgPties(self):
-		del self._RcvgPties
-		self._RcvgPties = None
-
+	__slots__ = ["_RcvgPties", "_TradCtrPtyClrMmbId", "_TradCtrPtyMmbId", "_DlvrgPties"]
 	@property
 	def DlvrgPties(self):
 		return self._DlvrgPties
@@ -31,6 +18,19 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 	def DlvrgPties(self):
 		del self._DlvrgPties
 		self._DlvrgPties = None
+
+	@property
+	def RcvgPties(self):
+		return self._RcvgPties
+
+	@RcvgPties.setter
+	def RcvgPties(self, value):
+		self._RcvgPties = value if type(value) != base_types.auto else self.make_default("RcvgPties")
+
+	@RcvgPties.deleter
+	def RcvgPties(self):
+		del self._RcvgPties
+		self._RcvgPties = None
 
 	@property
 	def TradCtrPtyClrMmbId(self):
@@ -59,8 +59,8 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 		self._TradCtrPtyMmbId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcvgPties', type=ReceivingPartiesAndAccount22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrgPties', type=DeliveringPartiesAndAccount22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgPties', type=ReceivingPartiesAndAccount22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradCtrPtyClrMmbId', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradCtrPtyMmbId', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,10 +1,10 @@
 from . import base_types
-from ._CorporateActionDeactivationCancellationRejectionStatus1 import CorporateActionDeactivationCancellationRejectionStatus1
 from ._CorporateActionDeactivationCancellationProcessingStatus1 import CorporateActionDeactivationCancellationProcessingStatus1
+from ._CorporateActionDeactivationCancellationRejectionStatus1 import CorporateActionDeactivationCancellationRejectionStatus1
 
 class CorporateActionDeactivationCancellationStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcdSts", "_RjctdSts"]
+	__slots__ = ["_RjctdSts", "_PrcdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts

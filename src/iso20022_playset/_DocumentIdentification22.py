@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 
 class DocumentIdentification22(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOfIsse", "_Id"]
+	__slots__ = ["_Id", "_DtOfIsse"]
 	@property
 	def DtOfIsse(self):
 		return self._DtOfIsse

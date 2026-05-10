@@ -1,11 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CollateralResponse3 import CollateralResponse3
+from ._Max35Text import Max35Text
 from ._CollateralProposalResponse1Code import CollateralProposalResponse1Code
 
 class CollateralProposalResponseType4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rspn", "_Tp", "_CollPrpslId"]
+	__slots__ = ["_CollPrpslId", "_Tp", "_Rspn"]
+	@property
+	def CollPrpslId(self):
+		return self._CollPrpslId
+
+	@CollPrpslId.setter
+	def CollPrpslId(self, value):
+		self._CollPrpslId = value if type(value) != base_types.auto else self.make_default("CollPrpslId")
+
+	@CollPrpslId.deleter
+	def CollPrpslId(self):
+		del self._CollPrpslId
+		self._CollPrpslId = None
+
 	@property
 	def Rspn(self):
 		return self._Rspn
@@ -32,22 +45,9 @@ class CollateralProposalResponseType4(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def CollPrpslId(self):
-		return self._CollPrpslId
-
-	@CollPrpslId.setter
-	def CollPrpslId(self, value):
-		self._CollPrpslId = value if type(value) != base_types.auto else self.make_default("CollPrpslId")
-
-	@CollPrpslId.deleter
-	def CollPrpslId(self):
-		del self._CollPrpslId
-		self._CollPrpslId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CollPrpslId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=CollateralResponse3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CollateralProposalResponse1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPrpslId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -4,7 +4,20 @@ from ._ISODateTime import ISODateTime
 
 class AdditionalDateTime1(base_types._BaseFieldType):
 
-	__slots__ = ["_PoolgAdjstmntDt", "_XpryDtTm", "_AccptncDtTm"]
+	__slots__ = ["_AccptncDtTm", "_XpryDtTm", "_PoolgAdjstmntDt"]
+	@property
+	def AccptncDtTm(self):
+		return self._AccptncDtTm
+
+	@AccptncDtTm.setter
+	def AccptncDtTm(self, value):
+		self._AccptncDtTm = value if type(value) != base_types.auto else self.make_default("AccptncDtTm")
+
+	@AccptncDtTm.deleter
+	def AccptncDtTm(self):
+		del self._AccptncDtTm
+		self._AccptncDtTm = None
+
 	@property
 	def PoolgAdjstmntDt(self):
 		return self._PoolgAdjstmntDt
@@ -31,22 +44,9 @@ class AdditionalDateTime1(base_types._BaseFieldType):
 		del self._XpryDtTm
 		self._XpryDtTm = None
 
-	@property
-	def AccptncDtTm(self):
-		return self._AccptncDtTm
-
-	@AccptncDtTm.setter
-	def AccptncDtTm(self, value):
-		self._AccptncDtTm = value if type(value) != base_types.auto else self.make_default("AccptncDtTm")
-
-	@AccptncDtTm.deleter
-	def AccptncDtTm(self):
-		del self._AccptncDtTm
-		self._AccptncDtTm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolgAdjstmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

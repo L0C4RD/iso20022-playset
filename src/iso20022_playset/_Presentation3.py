@@ -1,23 +1,23 @@
 from . import base_types
+from ._DocumentFormat1Choice import DocumentFormat1Choice
 from ._Max256Text import Max256Text
 from ._Channel1Choice import Channel1Choice
-from ._DocumentFormat1Choice import DocumentFormat1Choice
 
 class Presentation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Frmt", "_Chanl", "_Adr"]
+	__slots__ = ["_Chanl", "_Frmt", "_Adr"]
 	@property
-	def Frmt(self):
-		return self._Frmt
+	def Adr(self):
+		return self._Adr
 
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
 
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
 
 	@property
 	def Chanl(self):
@@ -33,21 +33,21 @@ class Presentation3(base_types._BaseFieldType):
 		self._Chanl = None
 
 	@property
-	def Adr(self):
-		return self._Adr
+	def Frmt(self):
+		return self._Frmt
 
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
 
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chanl', type=Channel1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chanl', type=Channel1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

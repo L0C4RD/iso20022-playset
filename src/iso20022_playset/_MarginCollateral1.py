@@ -3,7 +3,7 @@ from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class MarginCollateral1(base_types._BaseFieldType):
 
-	__slots__ = ["_HeldByPtyA", "_HeldByPtyB", "_InTrnstToPtyA", "_InTrnstToPtyB", "_PrrAgrdToPtyB", "_PrrAgrdToPtyA"]
+	__slots__ = ["_HeldByPtyA", "_InTrnstToPtyB", "_HeldByPtyB", "_PrrAgrdToPtyA", "_InTrnstToPtyA", "_PrrAgrdToPtyB"]
 	@property
 	def HeldByPtyA(self):
 		return self._HeldByPtyA
@@ -57,19 +57,6 @@ class MarginCollateral1(base_types._BaseFieldType):
 		self._InTrnstToPtyB = None
 
 	@property
-	def PrrAgrdToPtyB(self):
-		return self._PrrAgrdToPtyB
-
-	@PrrAgrdToPtyB.setter
-	def PrrAgrdToPtyB(self, value):
-		self._PrrAgrdToPtyB = value if type(value) != base_types.auto else self.make_default("PrrAgrdToPtyB")
-
-	@PrrAgrdToPtyB.deleter
-	def PrrAgrdToPtyB(self):
-		del self._PrrAgrdToPtyB
-		self._PrrAgrdToPtyB = None
-
-	@property
 	def PrrAgrdToPtyA(self):
 		return self._PrrAgrdToPtyA
 
@@ -82,12 +69,25 @@ class MarginCollateral1(base_types._BaseFieldType):
 		del self._PrrAgrdToPtyA
 		self._PrrAgrdToPtyA = None
 
+	@property
+	def PrrAgrdToPtyB(self):
+		return self._PrrAgrdToPtyB
+
+	@PrrAgrdToPtyB.setter
+	def PrrAgrdToPtyB(self, value):
+		self._PrrAgrdToPtyB = value if type(value) != base_types.auto else self.make_default("PrrAgrdToPtyB")
+
+	@PrrAgrdToPtyB.deleter
+	def PrrAgrdToPtyB(self):
+		del self._PrrAgrdToPtyB
+		self._PrrAgrdToPtyB = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HeldByPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HeldByPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InTrnstToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InTrnstToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrrAgrdToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrrAgrdToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrrAgrdToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

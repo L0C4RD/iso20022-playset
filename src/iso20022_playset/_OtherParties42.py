@@ -4,19 +4,19 @@ from ._PartyIdentification170 import PartyIdentification170
 
 class OtherParties42(base_types._BaseFieldType):
 
-	__slots__ = ["_TradRgltr", "_StockXchg", "_Invstr"]
+	__slots__ = ["_Invstr", "_TradRgltr", "_StockXchg"]
 	@property
-	def TradRgltr(self):
-		return self._TradRgltr
+	def Invstr(self):
+		return self._Invstr
 
-	@TradRgltr.setter
-	def TradRgltr(self, value):
-		self._TradRgltr = value if type(value) != base_types.auto else self.make_default("TradRgltr")
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
 
-	@TradRgltr.deleter
-	def TradRgltr(self):
-		del self._TradRgltr
-		self._TradRgltr = None
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
 
 	@property
 	def StockXchg(self):
@@ -32,21 +32,21 @@ class OtherParties42(base_types._BaseFieldType):
 		self._StockXchg = None
 
 	@property
-	def Invstr(self):
-		return self._Invstr
+	def TradRgltr(self):
+		return self._TradRgltr
 
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+	@TradRgltr.setter
+	def TradRgltr(self, value):
+		self._TradRgltr = value if type(value) != base_types.auto else self.make_default("TradRgltr")
 
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
+	@TradRgltr.deleter
+	def TradRgltr(self):
+		del self._TradRgltr
+		self._TradRgltr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification157, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StockXchg', type=PartyIdentification157, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Invstr', type=PartyIdentification170, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockXchg', type=PartyIdentification157, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification157, min=0, max=1, mutex_group=None, array=False),
 	))
 

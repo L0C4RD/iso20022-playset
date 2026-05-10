@@ -1,11 +1,24 @@
 from . import base_types
 from ._PriceFormat93Choice import PriceFormat93Choice
-from ._PriceFormat92Choice import PriceFormat92Choice
 from ._PriceFormat94Choice import PriceFormat94Choice
+from ._PriceFormat92Choice import PriceFormat92Choice
 
 class PriceDetails43(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct", "_CshInLieuOfShrPric"]
+	__slots__ = ["_GncCshPricRcvdPerPdct", "_CshInLieuOfShrPric", "_GncCshPricPdPerPdct"]
+	@property
+	def CshInLieuOfShrPric(self):
+		return self._CshInLieuOfShrPric
+
+	@CshInLieuOfShrPric.setter
+	def CshInLieuOfShrPric(self, value):
+		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+
+	@CshInLieuOfShrPric.deleter
+	def CshInLieuOfShrPric(self):
+		del self._CshInLieuOfShrPric
+		self._CshInLieuOfShrPric = None
+
 	@property
 	def GncCshPricPdPerPdct(self):
 		return self._GncCshPricPdPerPdct
@@ -32,22 +45,9 @@ class PriceDetails43(base_types._BaseFieldType):
 		del self._GncCshPricRcvdPerPdct
 		self._GncCshPricRcvdPerPdct = None
 
-	@property
-	def CshInLieuOfShrPric(self):
-		return self._CshInLieuOfShrPric
-
-	@CshInLieuOfShrPric.setter
-	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
-
-	@CshInLieuOfShrPric.deleter
-	def CshInLieuOfShrPric(self):
-		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat92Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat93Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat94Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat92Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

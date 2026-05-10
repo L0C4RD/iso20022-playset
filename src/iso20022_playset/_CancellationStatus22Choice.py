@@ -1,10 +1,10 @@
 from . import base_types
-from ._OrderCancellationStatus2Code import OrderCancellationStatus2Code
 from ._RejectedStatus10 import RejectedStatus10
+from ._OrderCancellationStatus2Code import OrderCancellationStatus2Code
 
 class CancellationStatus22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_Sts"]
+	__slots__ = ["_Sts", "_Rjctd"]
 	@property
 	def Rjctd(self):
 		return self._Rjctd

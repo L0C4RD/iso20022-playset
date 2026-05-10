@@ -1,26 +1,13 @@
 from . import base_types
+from ._Max6Text import Max6Text
+from ._Max3NumericText import Max3NumericText
+from ._ISODateTime import ISODateTime
 from ._Number import Number
 from ._GenericIdentification32 import GenericIdentification32
-from ._Max3NumericText import Max3NumericText
-from ._Max6Text import Max6Text
-from ._ISODateTime import ISODateTime
 
 class Header23(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_CreDtTm", "_MsgSeqNb", "_FrmtVrsn", "_RcptPty", "_XchgId"]
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
+	__slots__ = ["_MsgSeqNb", "_XchgId", "_RcptPty", "_InitgPty", "_CreDtTm", "_FrmtVrsn"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -35,19 +22,6 @@ class Header23(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def MsgSeqNb(self):
-		return self._MsgSeqNb
-
-	@MsgSeqNb.setter
-	def MsgSeqNb(self, value):
-		self._MsgSeqNb = value if type(value) != base_types.auto else self.make_default("MsgSeqNb")
-
-	@MsgSeqNb.deleter
-	def MsgSeqNb(self):
-		del self._MsgSeqNb
-		self._MsgSeqNb = None
-
-	@property
 	def FrmtVrsn(self):
 		return self._FrmtVrsn
 
@@ -59,6 +33,32 @@ class Header23(base_types._BaseFieldType):
 	def FrmtVrsn(self):
 		del self._FrmtVrsn
 		self._FrmtVrsn = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
+
+	@property
+	def MsgSeqNb(self):
+		return self._MsgSeqNb
+
+	@MsgSeqNb.setter
+	def MsgSeqNb(self, value):
+		self._MsgSeqNb = value if type(value) != base_types.auto else self.make_default("MsgSeqNb")
+
+	@MsgSeqNb.deleter
+	def MsgSeqNb(self):
+		del self._MsgSeqNb
+		self._MsgSeqNb = None
 
 	@property
 	def RcptPty(self):
@@ -87,10 +87,10 @@ class Header23(base_types._BaseFieldType):
 		self._XchgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitgPty', type=GenericIdentification32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgSeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrmtVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=GenericIdentification32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgSeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptPty', type=GenericIdentification32, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgId', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))

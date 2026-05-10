@@ -1,42 +1,29 @@
 from . import base_types
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
-from ._Number import Number
 from ._PriceInformation2 import PriceInformation2
-from ._SafekeepingPlaceFormatChoice import SafekeepingPlaceFormatChoice
-from ._SubBalanceInformation2 import SubBalanceInformation2
-from ._BalanceQuantity1Choice import BalanceQuantity1Choice
 from ._ForeignExchangeTerms6 import ForeignExchangeTerms6
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._Number import Number
+from ._SubBalanceInformation2 import SubBalanceInformation2
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from ._BalanceQuantity1Choice import BalanceQuantity1Choice
 from ._AdditionalBalanceInformation2 import AdditionalBalanceInformation2
+from ._SafekeepingPlaceFormatChoice import SafekeepingPlaceFormatChoice
 
 class AggregateBalancePerSafekeepingPlace4(base_types._BaseFieldType):
 
-	__slots__ = ["_BalBrkdwnDtls", "_PrvsHldgVal", "_AcrdIntrstAmtSgn", "_HldgVal", "_BookVal", "_SfkpgPlc", "_PricDtls", "_FXDtls", "_AddtlBalBrkdwnDtls", "_DaysAcrd", "_AggtBal", "_AcrdIntrstAmt"]
+	__slots__ = ["_PricDtls", "_AggtBal", "_BalBrkdwnDtls", "_DaysAcrd", "_HldgVal", "_SfkpgPlc", "_AddtlBalBrkdwnDtls", "_AcrdIntrstAmtSgn", "_BookVal", "_AcrdIntrstAmt", "_FXDtls", "_PrvsHldgVal"]
 	@property
-	def BalBrkdwnDtls(self):
-		return self._BalBrkdwnDtls
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
 
-	@BalBrkdwnDtls.setter
-	def BalBrkdwnDtls(self, value):
-		self._BalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("BalBrkdwnDtls")
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
 
-	@BalBrkdwnDtls.deleter
-	def BalBrkdwnDtls(self):
-		del self._BalBrkdwnDtls
-		self._BalBrkdwnDtls = None
-
-	@property
-	def PrvsHldgVal(self):
-		return self._PrvsHldgVal
-
-	@PrvsHldgVal.setter
-	def PrvsHldgVal(self, value):
-		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
-
-	@PrvsHldgVal.deleter
-	def PrvsHldgVal(self):
-		del self._PrvsHldgVal
-		self._PrvsHldgVal = None
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
 
 	@property
 	def AcrdIntrstAmtSgn(self):
@@ -52,71 +39,6 @@ class AggregateBalancePerSafekeepingPlace4(base_types._BaseFieldType):
 		self._AcrdIntrstAmtSgn = None
 
 	@property
-	def HldgVal(self):
-		return self._HldgVal
-
-	@HldgVal.setter
-	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
-
-	@HldgVal.deleter
-	def HldgVal(self):
-		del self._HldgVal
-		self._HldgVal = None
-
-	@property
-	def BookVal(self):
-		return self._BookVal
-
-	@BookVal.setter
-	def BookVal(self, value):
-		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
-
-	@BookVal.deleter
-	def BookVal(self):
-		del self._BookVal
-		self._BookVal = None
-
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
-	@property
-	def PricDtls(self):
-		return self._PricDtls
-
-	@PricDtls.setter
-	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
-
-	@PricDtls.deleter
-	def PricDtls(self):
-		del self._PricDtls
-		self._PricDtls = None
-
-	@property
-	def FXDtls(self):
-		return self._FXDtls
-
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
-
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
-
-	@property
 	def AddtlBalBrkdwnDtls(self):
 		return self._AddtlBalBrkdwnDtls
 
@@ -128,19 +50,6 @@ class AggregateBalancePerSafekeepingPlace4(base_types._BaseFieldType):
 	def AddtlBalBrkdwnDtls(self):
 		del self._AddtlBalBrkdwnDtls
 		self._AddtlBalBrkdwnDtls = None
-
-	@property
-	def DaysAcrd(self):
-		return self._DaysAcrd
-
-	@DaysAcrd.setter
-	def DaysAcrd(self, value):
-		self._DaysAcrd = value if type(value) != base_types.auto else self.make_default("DaysAcrd")
-
-	@DaysAcrd.deleter
-	def DaysAcrd(self):
-		del self._DaysAcrd
-		self._DaysAcrd = None
 
 	@property
 	def AggtBal(self):
@@ -156,30 +65,121 @@ class AggregateBalancePerSafekeepingPlace4(base_types._BaseFieldType):
 		self._AggtBal = None
 
 	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
+	def BalBrkdwnDtls(self):
+		return self._BalBrkdwnDtls
 
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+	@BalBrkdwnDtls.setter
+	def BalBrkdwnDtls(self, value):
+		self._BalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("BalBrkdwnDtls")
 
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+	@BalBrkdwnDtls.deleter
+	def BalBrkdwnDtls(self):
+		del self._BalBrkdwnDtls
+		self._BalBrkdwnDtls = None
+
+	@property
+	def BookVal(self):
+		return self._BookVal
+
+	@BookVal.setter
+	def BookVal(self, value):
+		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+
+	@BookVal.deleter
+	def BookVal(self):
+		del self._BookVal
+		self._BookVal = None
+
+	@property
+	def DaysAcrd(self):
+		return self._DaysAcrd
+
+	@DaysAcrd.setter
+	def DaysAcrd(self, value):
+		self._DaysAcrd = value if type(value) != base_types.auto else self.make_default("DaysAcrd")
+
+	@DaysAcrd.deleter
+	def DaysAcrd(self):
+		del self._DaysAcrd
+		self._DaysAcrd = None
+
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
+	@property
+	def HldgVal(self):
+		return self._HldgVal
+
+	@HldgVal.setter
+	def HldgVal(self, value):
+		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+
+	@HldgVal.deleter
+	def HldgVal(self):
+		del self._HldgVal
+		self._HldgVal = None
+
+	@property
+	def PricDtls(self):
+		return self._PricDtls
+
+	@PricDtls.setter
+	def PricDtls(self, value):
+		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+
+	@PricDtls.deleter
+	def PricDtls(self):
+		del self._PricDtls
+		self._PricDtls = None
+
+	@property
+	def PrvsHldgVal(self):
+		return self._PrvsHldgVal
+
+	@PrvsHldgVal.setter
+	def PrvsHldgVal(self, value):
+		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
+
+	@PrvsHldgVal.deleter
+	def PrvsHldgVal(self):
+		del self._PrvsHldgVal
+		self._PrvsHldgVal = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalBrkdwnDtls', type=SubBalanceInformation2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsHldgVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmtSgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HldgVal', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BookVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormatChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricDtls', type=PriceInformation2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AggtBal', type=BalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmtSgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AggtBal', type=BalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalBrkdwnDtls', type=SubBalanceInformation2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BookVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgVal', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PricDtls', type=PriceInformation2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsHldgVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormatChoice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,16 +1,16 @@
 from . import base_types
+from ._IBEIIdentifier import IBEIIdentifier
+from ._BICIdentifier import BICIdentifier
 from ._CHIPSUniversalIdentifier import CHIPSUniversalIdentifier
-from ._GenericIdentification3 import GenericIdentification3
+from ._EANGLNIdentifier import EANGLNIdentifier
 from ._DunsIdentifier import DunsIdentifier
 from ._Max35Text import Max35Text
-from ._IBEIIdentifier import IBEIIdentifier
 from ._BEIIdentifier import BEIIdentifier
-from ._BICIdentifier import BICIdentifier
-from ._EANGLNIdentifier import EANGLNIdentifier
+from ._GenericIdentification3 import GenericIdentification3
 
 class OrganisationIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_BEI", "_BIC", "_IBEI", "_BkPtyId", "_DUNS", "_TaxIdNb", "_USCHU", "_PrtryId", "_EANGLN"]
+	__slots__ = ["_BIC", "_EANGLN", "_PrtryId", "_BEI", "_TaxIdNb", "_USCHU", "_IBEI", "_BkPtyId", "_DUNS"]
 	@property
 	def BEI(self):
 		return self._BEI
@@ -36,19 +36,6 @@ class OrganisationIdentification2(base_types._BaseFieldType):
 	def BIC(self):
 		del self._BIC
 		self._BIC = None
-
-	@property
-	def IBEI(self):
-		return self._IBEI
-
-	@IBEI.setter
-	def IBEI(self, value):
-		self._IBEI = value if type(value) != base_types.auto else self.make_default("IBEI")
-
-	@IBEI.deleter
-	def IBEI(self):
-		del self._IBEI
-		self._IBEI = None
 
 	@property
 	def BkPtyId(self):
@@ -77,6 +64,45 @@ class OrganisationIdentification2(base_types._BaseFieldType):
 		self._DUNS = None
 
 	@property
+	def EANGLN(self):
+		return self._EANGLN
+
+	@EANGLN.setter
+	def EANGLN(self, value):
+		self._EANGLN = value if type(value) != base_types.auto else self.make_default("EANGLN")
+
+	@EANGLN.deleter
+	def EANGLN(self):
+		del self._EANGLN
+		self._EANGLN = None
+
+	@property
+	def IBEI(self):
+		return self._IBEI
+
+	@IBEI.setter
+	def IBEI(self, value):
+		self._IBEI = value if type(value) != base_types.auto else self.make_default("IBEI")
+
+	@IBEI.deleter
+	def IBEI(self):
+		del self._IBEI
+		self._IBEI = None
+
+	@property
+	def PrtryId(self):
+		return self._PrtryId
+
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
+
+	@property
 	def TaxIdNb(self):
 		return self._TaxIdNb
 
@@ -102,41 +128,15 @@ class OrganisationIdentification2(base_types._BaseFieldType):
 		del self._USCHU
 		self._USCHU = None
 
-	@property
-	def PrtryId(self):
-		return self._PrtryId
-
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
-
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
-
-	@property
-	def EANGLN(self):
-		return self._EANGLN
-
-	@EANGLN.setter
-	def EANGLN(self, value):
-		self._EANGLN = value if type(value) != base_types.auto else self.make_default("EANGLN")
-
-	@EANGLN.deleter
-	def EANGLN(self):
-		del self._EANGLN
-		self._EANGLN = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BEI', type=BEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IBEI', type=IBEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkPtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DUNS', type=DunsIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EANGLN', type=EANGLNIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IBEI', type=IBEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='USCHU', type=CHIPSUniversalIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EANGLN', type=EANGLNIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

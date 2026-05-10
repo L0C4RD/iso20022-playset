@@ -1,13 +1,26 @@
 from . import base_types
-from ._StressItem1 import StressItem1
 from ._GenericIdentification165 import GenericIdentification165
-from ._StrategyStressType1Code import StrategyStressType1Code
 from ._Max2000Text import Max2000Text
+from ._StrategyStressType1Code import StrategyStressType1Code
+from ._StressItem1 import StressItem1
 from ._ScenarioType1Code import ScenarioType1Code
 
 class ScenarioDefinition2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_ScnroTp", "_StrssItm", "_Desc", "_StrtgyStrssTp"]
+	__slots__ = ["_ScnroTp", "_StrssItm", "_Desc", "_Id", "_StrtgyStrssTp"]
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -48,19 +61,6 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 		self._StrssItm = None
 
 	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
 	def StrtgyStrssTp(self):
 		return self._StrtgyStrssTp
 
@@ -74,10 +74,10 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 		self._StrtgyStrssTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScnroTp', type=ScenarioType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrssItm', type=StressItem1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrtgyStrssTp', type=StrategyStressType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

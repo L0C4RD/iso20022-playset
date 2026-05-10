@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._GenericIdentification1 import GenericIdentification1
 from ._NameAndAddress15 import NameAndAddress15
+from ._Max35Text import Max35Text
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class PartyIdentification182Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_NmAndAdr", "_AnyBIC", "_NtlRegnNb", "_TaxIdNb"]
+	__slots__ = ["_NtlRegnNb", "_PrtryId", "_NmAndAdr", "_TaxIdNb", "_AnyBIC"]
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def AnyBIC(self):
+		return self._AnyBIC
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
 
 	@property
 	def NmAndAdr(self):
@@ -34,19 +34,6 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
-	@property
 	def NtlRegnNb(self):
 		return self._NtlRegnNb
 
@@ -58,6 +45,19 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 	def NtlRegnNb(self):
 		del self._NtlRegnNb
 		self._NtlRegnNb = None
+
+	@property
+	def PrtryId(self):
+		return self._PrtryId
+
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def TaxIdNb(self):
@@ -73,10 +73,10 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 		self._TaxIdNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress15, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress15, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

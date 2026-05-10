@@ -1,10 +1,10 @@
 from . import base_types
-from ._DataModification2Code import DataModification2Code
 from ._FinancialInstrument87 import FinancialInstrument87
+from ._DataModification2Code import DataModification2Code
 
 class ModificationScope42(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmDtls", "_ModScpIndctn"]
+	__slots__ = ["_ModScpIndctn", "_FinInstrmDtls"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls

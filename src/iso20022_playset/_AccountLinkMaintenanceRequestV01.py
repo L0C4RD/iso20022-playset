@@ -1,12 +1,12 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
 from ._AccountLink8 import AccountLink8
-from ._MessageHeader1 import MessageHeader1
 from ._AccountLinkUpdate2 import AccountLinkUpdate2
+from ._MessageHeader1 import MessageHeader1
 
 class AccountLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctLkId", "_SplmtryData", "_Upd", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_Upd", "_AcctLkId"]
 	@property
 	def AcctLkId(self):
 		return self._AcctLkId
@@ -19,6 +19,19 @@ class AccountLinkMaintenanceRequestV01(base_types._BaseFieldType):
 	def AcctLkId(self):
 		del self._AcctLkId
 		self._AcctLkId = None
+
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -46,23 +59,10 @@ class AccountLinkMaintenanceRequestV01(base_types._BaseFieldType):
 		del self._Upd
 		self._Upd = None
 
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctLkId', type=AccountLink8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Upd', type=AccountLinkUpdate2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

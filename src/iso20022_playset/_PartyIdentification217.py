@@ -1,27 +1,40 @@
 from . import base_types
 from ._Ownership1 import Ownership1
-from ._InvestorType1Choice import InvestorType1Choice
-from ._DateAndPlaceOfBirth2 import DateAndPlaceOfBirth2
+from ._NaturalPersonIdentification1 import NaturalPersonIdentification1
 from ._CountryCode import CountryCode
 from ._PersonName3 import PersonName3
+from ._InvestorType1Choice import InvestorType1Choice
+from ._DateAndPlaceOfBirth2 import DateAndPlaceOfBirth2
 from ._Max256Text import Max256Text
-from ._NaturalPersonIdentification1 import NaturalPersonIdentification1
 
 class PartyIdentification217(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_Id", "_InvstrTp", "_Ownrsh", "_Ntlty", "_DtAndPlcOfBirth", "_EmailAdr"]
+	__slots__ = ["_Id", "_Ntlty", "_DtAndPlcOfBirth", "_EmailAdr", "_InvstrTp", "_Ownrsh", "_NmAndAdr"]
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
+	def DtAndPlcOfBirth(self):
+		return self._DtAndPlcOfBirth
 
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+	@DtAndPlcOfBirth.setter
+	def DtAndPlcOfBirth(self, value):
+		self._DtAndPlcOfBirth = value if type(value) != base_types.auto else self.make_default("DtAndPlcOfBirth")
 
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
+	@DtAndPlcOfBirth.deleter
+	def DtAndPlcOfBirth(self):
+		del self._DtAndPlcOfBirth
+		self._DtAndPlcOfBirth = None
+
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	@property
 	def Id(self):
@@ -50,17 +63,17 @@ class PartyIdentification217(base_types._BaseFieldType):
 		self._InvstrTp = None
 
 	@property
-	def Ownrsh(self):
-		return self._Ownrsh
+	def NmAndAdr(self):
+		return self._NmAndAdr
 
-	@Ownrsh.setter
-	def Ownrsh(self, value):
-		self._Ownrsh = value if type(value) != base_types.auto else self.make_default("Ownrsh")
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
-	@Ownrsh.deleter
-	def Ownrsh(self):
-		del self._Ownrsh
-		self._Ownrsh = None
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	@property
 	def Ntlty(self):
@@ -76,38 +89,25 @@ class PartyIdentification217(base_types._BaseFieldType):
 		self._Ntlty = None
 
 	@property
-	def DtAndPlcOfBirth(self):
-		return self._DtAndPlcOfBirth
+	def Ownrsh(self):
+		return self._Ownrsh
 
-	@DtAndPlcOfBirth.setter
-	def DtAndPlcOfBirth(self, value):
-		self._DtAndPlcOfBirth = value if type(value) != base_types.auto else self.make_default("DtAndPlcOfBirth")
+	@Ownrsh.setter
+	def Ownrsh(self, value):
+		self._Ownrsh = value if type(value) != base_types.auto else self.make_default("Ownrsh")
 
-	@DtAndPlcOfBirth.deleter
-	def DtAndPlcOfBirth(self):
-		del self._DtAndPlcOfBirth
-		self._DtAndPlcOfBirth = None
-
-	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@Ownrsh.deleter
+	def Ownrsh(self):
+		del self._Ownrsh
+		self._Ownrsh = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=PersonName3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=NaturalPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTp', type=InvestorType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ownrsh', type=Ownership1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ntlty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=NaturalPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrTp', type=InvestorType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=PersonName3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntlty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ownrsh', type=Ownership1, min=0, max=1, mutex_group=None, array=False),
 	))
 

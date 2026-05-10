@@ -1,10 +1,10 @@
 from . import base_types
-from ._AmountAndDirection27 import AmountAndDirection27
 from ._PartyIdentification255Choice import PartyIdentification255Choice
+from ._AmountAndDirection27 import AmountAndDirection27
 
 class Settlement2(base_types._BaseFieldType):
 
-	__slots__ = ["_Dpstry", "_SttlmAmt"]
+	__slots__ = ["_SttlmAmt", "_Dpstry"]
 	@property
 	def Dpstry(self):
 		return self._Dpstry

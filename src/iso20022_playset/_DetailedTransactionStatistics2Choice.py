@@ -1,23 +1,10 @@
 from . import base_types
-from ._DetailedTransactionStatistics13 import DetailedTransactionStatistics13
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from ._DetailedTransactionStatistics13 import DetailedTransactionStatistics13
 
 class DetailedTransactionStatistics2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldSttstcs", "_DataSetActn"]
-	@property
-	def DtldSttstcs(self):
-		return self._DtldSttstcs
-
-	@DtldSttstcs.setter
-	def DtldSttstcs(self, value):
-		self._DtldSttstcs = value if type(value) != base_types.auto else self.make_default("DtldSttstcs")
-
-	@DtldSttstcs.deleter
-	def DtldSttstcs(self):
-		del self._DtldSttstcs
-		self._DtldSttstcs = None
-
+	__slots__ = ["_DataSetActn", "_DtldSttstcs"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn
@@ -31,8 +18,21 @@ class DetailedTransactionStatistics2Choice(base_types._BaseFieldType):
 		del self._DataSetActn
 		self._DataSetActn = None
 
+	@property
+	def DtldSttstcs(self):
+		return self._DtldSttstcs
+
+	@DtldSttstcs.setter
+	def DtldSttstcs(self, value):
+		self._DtldSttstcs = value if type(value) != base_types.auto else self.make_default("DtldSttstcs")
+
+	@DtldSttstcs.deleter
+	def DtldSttstcs(self):
+		del self._DtldSttstcs
+		self._DtldSttstcs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldSttstcs', type=DetailedTransactionStatistics13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtldSttstcs', type=DetailedTransactionStatistics13, min=0, max=1, mutex_group=1, array=False),
 	))
 
